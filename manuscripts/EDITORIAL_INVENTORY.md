@@ -21,7 +21,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-seven reviewed drafts total 308 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-seven reviewed drafts total 310 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -41,7 +41,7 @@ The finite seven-link paper discharges ground existence and reconstructs genuine
 
 ## Length, attribution and publication status
 
-The 12–30-page preference is applied to mathematical substance rather than padding. Complete focused companions range from eight to sixteen pages; the signed analytic, Fourier, variation, finite-gauge and global arithmetic arguments receive longer treatments where needed. Related mechanisms are consolidated rather than split into short notes.
+The 12–30-page preference is applied to mathematical substance rather than padding. Complete focused companions range from eight to seventeen pages; the signed analytic, Fourier, variation, finite-gauge and global arithmetic arguments receive longer treatments where needed. Related mechanisms are consolidated rather than split into short notes.
 
 All are reviewed editorial drafts. Several mechanisms are explicitly classical; priority for the remaining explicit formulas and theorem packages is unresolved. The [primary comparison record](LITERATURE_COMPARISON.md) distinguishes full theorem inspection, indexed primary context and unavailable complete hypotheses. No failed fetch is treated as a negative novelty search. Independent referee and attribution review remain necessary before any submission-ready label. Project Stardust is the current editorial attribution; no external submission has been made.
 
@@ -86,3 +86,5 @@ The fifteen-page Poisson–Gaussian companion includes full-domain creation reco
 The Poisson–Gaussian companion is now fifteen pages with a positive counterpart: sharp Gaussian square entropy after the unitary is bounded on the entire original annihilation graph. The complete classical Mehler/Fisher/core proof and labelled weak-graph Fatou extension distinguish integrability conclusions, formal representative hypotheses and native Poisson entropy failure. Gross, primary exponential equality context and Douglas/contributor formal-source attribution are retained.
 
 The IBM variation/Simpson companion is now fifteen pages and includes actual compensated native-grid L2 norm escape after the full observable projection. Its spatial-kernel mass concentration, conditional Wick telescope, source-energy growth, partition-uniform centered clock variance and detecting raw-observable pairing are proved in full. This strengthens the raw-channel obstruction for one precise original sequence; it does not exclude all renormalizations or supply a completed observed-filtration calculus. Gaussian Wick-Riemann antecedents retain their Gaussian-process hypothesis.
+
+The fluid calibration companion is now seventeen pages and includes the full prescribed repaired-vorticity Hessian pairing, exact Gaussian mean and finite-slab end-flux discrepancy -16pi^2nu^2(1+epsilon^2). The solenoidal divergence identity and transverse boundary limit are proved, with both Fubini orders justified. The periodic repaired vector retains a nonperiodic base pressure and no induced repaired-pressure or Navier–Stokes evolution claim. Thirty-two exact finite checks supplement the analytic proof.

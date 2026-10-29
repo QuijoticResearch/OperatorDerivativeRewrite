@@ -1,4 +1,4 @@
-"""Exact rational polynomial and Laurent checks for Gaussian likelihood transcription."""
+"""Exact polynomial checks for the Burgers and prescribed-pressure diagnostics."""
 from fractions import Fraction as F
 import json
 N=11  # Gaussian x,y; independent symbolic matrix entries a,b,c,d,e,f.
@@ -85,5 +85,25 @@ if __name__=='__main__':
     errors['centered radial Gaussian mean']=gaussian_quarter_mean(radial)
     errors['unit radial Gaussian L2 norm']=gaussian_quarter_mean(radial**2)-1
     errors['Gaussian radius observation']=gaussian_quarter_mean(radial*rho)-F(1,2)
+    # k is the independent Gaussian vorticity profile; g,h are angular g,g'.
+    corrected=[eps*k*C,eps*k*S,k*(1+2*eps*phase)]
+    repaired_jac=[[substitute(entry,{5:k}) for entry in row] for row in B]
+    errors['repaired axial self advection']=sum((corrected[i]*repaired_jac[2][i] for i in range(3)),poly(0))
+    dxx=beta**2*(g*g+4*x*x*g*h)-4*nu*nu
+    dyy=beta**2*(g*g+4*y*y*g*h)-4*nu*nu
+    mixed=4*beta*beta*x*y*g*h
+    Hess=[[dxx,mixed,poly(0)],[mixed,dyy,poly(0)],[poly(0),poly(0),-16*nu*nu]]
+    full=sum((corrected[i]*Hess[i][j]*corrected[j] for i in range(3) for j in range(3)),poly(0))
+    full_target=k*k*(eps*eps*C*C*dxx+2*eps*eps*S*C*mixed+eps*eps*S*S*dyy-16*nu*nu*(1+2*eps*phase)**2)
+    errors['actual repaired full Hessian contraction']=full-full_target
+    errors['quarter Gaussian phase square modulo circle']=gaussian_quarter_mean(phase**2)-F(1,4)-F(1,4)*(C*C+S*S-1)
+    errors['quarter Gaussian axial square modulo circle']=gaussian_quarter_mean((1+2*eps*phase)**2)-(1+eps*eps)-eps*eps*(C*C+S*S-1)
+    errors['actual period endpoint axial weight']=gaussian_quarter_mean((1-2*eps*y)**2)-(1+eps*eps)
+    # z represents the slab length here; the phases agree at both endpoints.
+    end_w=[eps*k,poly(0),k*(1-2*eps*y)]
+    flux_difference=end_w[2]*sum((end_w[i]*(-16*nu*nu*z if i==2 else poly(0)) for i in range(3)),poly(0))
+    errors['actual axial flux endpoint difference']=flux_difference+16*nu*nu*z*k*k*(1-2*eps*y)**2
+    # z is an independent symbolic logarithmic response in this scalar identity.
+    errors['full slab equals trace plus boundary']=eps*eps*(beta*beta*z-20*nu*nu)-16*nu*nu-eps*eps*(beta*beta*z-4*nu*nu)+16*nu*nu*(1+eps*eps)
     for label,p in errors.items():assert not p,(label,p)
     print(json.dumps(dict(status='PASS',check_count=len(errors),checks={j:len(v) for j,v in errors.items()},arithmetic='Exact rational polynomial matrix identities and quarter-variance Gaussian moments',scope='Finite NS balance under the proved profile identity, incompressibility/curl, solenoidal repair/trace modulo the exact trigonometric relation and Gaussian radial normalization. Not a proof of weighted analytic integrability, the logarithmic integral or finite-slab Fubini.')))

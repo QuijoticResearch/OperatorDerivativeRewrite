@@ -3439,6 +3439,231 @@
       "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
       "declaration_header": "theorem radial_signs : radial 0 0=-1 \u2227 radial 1 0=1",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L104"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.hessian_xy",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 17,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem hessian_xy (\u03bd \u03b3 x y z : \u211d) : BurgersAxialPressureFlux.hessian \u03bd \u03b3 x y z 0 1 =\n    mixed \u03bd \u03b3 (x,y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L17"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.hessian_yx",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 28,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem hessian_yx (\u03bd \u03b3 x y z : \u211d) : BurgersAxialPressureFlux.hessian \u03bd \u03b3 x y z 1 0 =\n    mixed \u03bd \u03b3 (x,y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L28"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.hessian_eq",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 39,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem hessian_eq (\u03bd \u03b3 x y z : \u211d) : BurgersAxialPressureFlux.hessian \u03bd \u03b3 x y z =\n    ![![BurgersGaussianPressureResponse.Dxx \u03bd \u03b3 (x,y), mixed \u03bd \u03b3 (x,y), 0],\n      ![mixed \u03bd \u03b3 (x,y), BurgersGaussianPressureResponse.Dyy \u03bd \u03b3 (x,y), 0],\n      ![0,0,-16*\u03bd^2] ]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L39"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.mixed_bound",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 66,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem mixed_bound (\u03bd \u03b3 : \u211d) (q : \u211d \u00d7 \u211d) :\n    \u2016mixed \u03bd \u03b3 q\u2016 \u2264 (\u03b3^2/4)*radiusSq q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L66"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.mixed_integrable",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 89,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem mixed_integrable (\u03bd \u03b3 : \u211d) : Integrable (mixed \u03bd \u03b3) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L89"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedHessian.pairing_expansion",
+      "file": "Foundation/BurgersRepairedHessian.lean",
+      "line": 99,
+      "source_sha256": "411a8a65a5f80260d174b4fe9eefd7353e8e0ae869f861d489e58b2f370faa46",
+      "declaration_header": "theorem pairing_expansion (\u03b5 \u03bd \u03b3 : \u211d) (q : \u211d \u00d7 \u211d) (\u03b8 : \u211d) : pairing \u03b5 \u03bd \u03b3 q \u03b8 =\n    (profile q.1 q.2)^2 *\n      (\u03b5^2*(Real.cos \u03b8)^2*BurgersGaussianPressureResponse.Dxx \u03bd \u03b3 q +\n        2*\u03b5^2*Real.sin \u03b8*Real.cos \u03b8*mixed \u03bd \u03b3 q +\n          \u03b5^2*(Real.sin \u03b8)^2*BurgersGaussianPressureResponse.Dyy \u03bd \u03b3 q -\n            16*\u03bd^2*(1+2*\u03b5*phase q.1 q.2 \u03b8)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedHessian.lean#L99"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.x2_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 33,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem x2_mean : (\u222b q : \u211d \u00d7 \u211d, q.1^2 \u2202physicalGaussian) = 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L33"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.y2_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 41,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem y2_mean : (\u222b q : \u211d \u00d7 \u211d, q.2^2 \u2202physicalGaussian) = 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L41"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.xy_mean_zero",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 49,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem xy_mean_zero : (\u222b q : \u211d \u00d7 \u211d, q.1*q.2 \u2202physicalGaussian) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L49"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.dxx_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 69,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem dxx_mean (\u03bd \u03b3 : \u211d) : (\u222b q, Dxx \u03bd \u03b3 q \u2202physicalGaussian) =\n    4*(\u03b3^2*Real.log (9/8 : \u211d)/4-\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L69"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.dyy_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 81,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem dyy_mean (\u03bd \u03b3 : \u211d) : (\u222b q, Dyy \u03bd \u03b3 q \u2202physicalGaussian) =\n    4*(\u03b3^2*Real.log (9/8 : \u211d)/4-\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L81"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.mixed_mean_zero",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 87,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem mixed_mean_zero (\u03bd \u03b3 : \u211d) : (\u222b q, mixed \u03bd \u03b3 q \u2202physicalGaussian) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L87"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.phase_square_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 112,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem phase_square_mean (\u03b8 : \u211d) :\n    (\u222b q, (phase q.1 q.2 \u03b8)^2 \u2202physicalGaussian) = 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L112"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianHessianMoments.axial_square_mean",
+      "file": "Foundation/BurgersGaussianHessianMoments.lean",
+      "line": 137,
+      "source_sha256": "3193f61bac952addf9447cbd863f6fc551f57d9ed76993d900b0b12606826520",
+      "declaration_header": "theorem axial_square_mean (\u03b5 \u03b8 : \u211d) :\n    (\u222b q, (1+2*\u03b5*phase q.1 q.2 \u03b8)^2 \u2202physicalGaussian) = 1+\u03b5^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianHessianMoments.lean#L137"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.normalized_integrable",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 19,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem normalized_integrable (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) :\n    Integrable (fun q => normalized \u03b5 \u03bd \u03b3 q \u03b8) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L19"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.normalized_mean",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 26,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem normalized_mean (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) :\n    (\u222b q, normalized \u03b5 \u03bd \u03b3 q \u03b8 \u2202physicalGaussian) =\n      \u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-20*\u03bd^2)-16*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L26"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.crossSection_exact",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 55,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem crossSection_exact (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) : crossSection \u03b5 \u03bd \u03b3 \u03b8 =\n    (Real.pi/2)*(\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-20*\u03bd^2)-16*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L55"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.joint_integrable",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 99,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem joint_integrable (\u03b5 \u03bd \u03b3 a b : \u211d) (hab : a \u2264 b) :\n    Integrable (fun z : (\u211d \u00d7 \u211d) \u00d7 \u211d => pairing \u03b5 \u03bd \u03b3 z.1 z.2)\n      ((volume.prod volume).prod (phaseMeasure a b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L99"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.total_exact",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 113,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem total_exact (\u03b5 \u03bd \u03b3 : \u211d) : total \u03b5 \u03bd \u03b3 =\n    Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-20*\u03bd^2)-16*Real.pi^2*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L113"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.phase_first_exact",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 123,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem phase_first_exact (\u03b5 \u03bd \u03b3 : \u211d) :\n    (\u222b q : \u211d \u00d7 \u211d, (\u222b \u03b8 in (0 : \u211d)..(2*Real.pi), pairing \u03b5 \u03bd \u03b3 q \u03b8)\n      \u2202volume.prod volume) =\n        Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-20*\u03bd^2)-16*Real.pi^2*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L123"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.axial_self_advection_zero",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 131,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem axial_self_advection_zero (\u03b5 x y \u03b8 : \u211d) :\n    (\u2211 i : Fin 3, corrected \u03b5 x y \u03b8 i * correctedJacobian \u03b5 x y \u03b8 2 i) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L131"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.axial_flux_jump",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 141,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem axial_flux_jump (\u03b5 \u03bd \u03b3 : \u211d) (q : \u211d \u00d7 \u211d) :\n    axialFlux \u03b5 \u03bd \u03b3 q (2*Real.pi) - axialFlux \u03b5 \u03bd \u03b3 q 0 =\n      (-32*Real.pi*\u03bd^2)*(profile q.1 q.2)^2*(1-2*\u03b5*q.2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L141"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.flux_jump_integral",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 161,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem flux_jump_integral (\u03b5 \u03bd \u03b3 : \u211d) :\n    (\u222b q, axialFlux \u03b5 \u03bd \u03b3 q (2*Real.pi)-axialFlux \u03b5 \u03bd \u03b3 q 0 \u2202volume.prod volume) =\n      -16*Real.pi^2*\u03bd^2*(1+\u03b5^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L161"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.slab_boundary_identity",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 173,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem slab_boundary_identity (\u03b5 \u03bd \u03b3 : \u211d) : total \u03b5 \u03bd \u03b3 =\n    (\u222b z : (\u211d \u00d7 \u211d) \u00d7 \u211d, BurgersRepairedTracePairing.integrand \u03b5 \u03bd \u03b3 z.1 z.2\n      \u2202(volume.prod volume).prod (phaseMeasure 0 (2*Real.pi))) +\n        \u222b q, axialFlux \u03b5 \u03bd \u03b3 q (2*Real.pi)-axialFlux \u03b5 \u03bd \u03b3 q 0 \u2202volume.prod volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L173"
+    },
+    {
+      "paper": "Section 12 full prescribed base-Hessian pairing, quarter-Gaussian moments and exact finite-slab axial boundary flux",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersHessianProductIntegral.no_boundary_free_identity",
+      "file": "Foundation/BurgersHessianProductIntegral.lean",
+      "line": 180,
+      "source_sha256": "1808b252cb82c8dc6d785400af9709b31275f3a8ead0783f6844e88f2b0234cf",
+      "declaration_header": "theorem no_boundary_free_identity (\u03b5 \u03bd \u03b3 : \u211d) (h\u03bd : \u03bd \u2260 0) : total \u03b5 \u03bd \u03b3 \u2260\n    (\u222b z : (\u211d \u00d7 \u211d) \u00d7 \u211d, BurgersRepairedTracePairing.integrand \u03b5 \u03bd \u03b3 z.1 z.2\n      \u2202(volume.prod volume).prod (phaseMeasure 0 (2*Real.pi)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersHessianProductIntegral.lean#L180"
     }
   ],
   "paper_sections": {
@@ -3465,7 +3690,11 @@
     "The actual vorticity gradient-square trace vanishes while its full pressure-Hessian contraction is negative. The exact source axial integral equals a nonzero boundary flux at each transverse point. Whole-space infinite kinetic energy and the additional transverse-plane integral are explicit elementary human deductions; no decaying or periodic global cancellation identity is contradicted.",
     "The physical reference is product Gaussian with coordinate variance one quarter. The scalar radial observation is integral (2(x^2+y^2)-1) P, not the full Hessian contraction. Exact swirl response log(9/8)/4 and strained response beta^2 log(9/8)/4-nu^2 are transported from actual derivative domains, with full Gaussian domination and logarithmic parameter integral proofs.",
     "The helical ansatz is first refuted as nonsolenoidal, then repaired by an axial term of the same perturbation order. The quadratic repaired trace changes. The subsequent pairing uses the actual unperturbed Burgers base pressure and a prescribed unit-core repaired vorticity, not a pressure induced by a new helical velocity or a proved Navier-Stokes perturbation.",
-    "The finite axial interval and its two Fubini orders are retained. A 2pi interval of phase does not make the actual quadratic-axial pressure or velocity periodic. Full contraction, scalar Gaussian response and base-pressure trace pairing remain separate observables."
+    "The finite axial interval and its two Fubini orders are retained. A 2pi interval of phase does not make the actual quadratic-axial pressure or velocity periodic. Full contraction, scalar Gaussian response and base-pressure trace pairing remain separate observables.",
+    "Section 12 retains the actual base pressure p_nu,beta and separately prescribed repaired unit-core vorticity. It computes the full mixed/diagonal Hessian and its exact plane mean pi/2 [epsilon^2(beta^2 log(9/8)-20nu^2)-16nu^2], independently of axial phase.",
+    "Quarter-Gaussian symmetry and the previously proved scalar response give the Hessian entry means and phase-square mean 1/4. Polynomial Gaussian dominators prove genuine plane and finite-slab absolute integrability, permitting both Fubini orders.",
+    "The full slab contraction differs from the pressure times trace integral by -16pi^2nu^2(1+epsilon^2). A fully derived classical pointwise solenoidal divergence identity and vanishing transverse cylindrical flux identify this with the actual end flux. The repaired axial self-advection is exactly zero, while the base axial pressure gradient changes across the slab.",
+    "The general displayed solenoidal divergence identity and the lateral-cylinder limit are human classical reconstructions supporting the source exact slab identity, not additional named Lean declarations. Periodicity of the repaired vector does not make the prescribed base pressure periodic. No induced helical pressure, repaired Navier-Stokes evolution, general pressure-identity refutation, finite-energy or regularity claim follows."
   ],
   "literature": [
     {

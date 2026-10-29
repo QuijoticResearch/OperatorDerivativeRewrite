@@ -38,7 +38,7 @@ positive-sector counterexamples. Complete elementary proofs reconstruct frozen
 formal results. These are calibration examples in classical model
 families, not new fluid existence or singularity results; priority for
 the diagnostic formulations remains unresolved.
-An actual stationary Burgers vortex additionally separates an axial pressure flux from a scalar Gaussian observation, and a repaired helical field gives an exact finite-slab base-pressure pairing. \end{abstract}
+An actual stationary Burgers vortex additionally separates an axial pressure flux from a scalar Gaussian observation, and a repaired helical field gives exact finite-slab trace and full-Hessian pairings with their nonzero axial boundary discrepancy. \end{abstract}
 
 \section{Conventions and purpose}
 For a real $3\times3$ matrix $A$, use
@@ -998,6 +998,131 @@ assembled diagnostics is unresolved; no new vortex-stability theorem,
 induced helical pressure, finite-energy singularity or unrestricted
 regularity conclusion is claimed.
 
+
+\section{The full repaired pairing and its missing slab flux}
+Keep exactly the prescribed base pressure and repaired unit-core
+vorticity of the preceding section. Their full contraction can also
+be evaluated, without identifying this pressure as induced by the
+repaired field. Let $H=\nabla^2p_{\nu,\beta}$ and write
+$c=\cos z$, $d=\sin z$, $b=xd-yc$. Direct differentiation gives
+\[
+ H=\begin{pmatrix}
+ D_{xx}&4\beta^2xygg'&0\\
+ 4\beta^2xygg'&D_{yy}&0\\
+ 0&0&-16\nu^2
+ \end{pmatrix},\qquad
+ D_{xx}=\beta^2(g^2+4x^2gg')-4\nu^2,
+\]
+with $D_{yy}=\beta^2(g^2+4y^2gg')-4\nu^2$; all profile functions
+are evaluated at $s=x^2+y^2$. This includes the mixed derivatives,
+not only the diagonal Gaussian observation.
+
+\begin{proposition}\label{prop:fullrepaired}
+For every fixed $z$,
+\[
+ \int_{\R^2}\omega_\varepsilon\cdot H\omega_\varepsilon\,dxdy
+ =\frac\pi2\left[\varepsilon^2(\beta^2\ell-20\nu^2)-16\nu^2\right].
+\]
+Both orders of integration on $\R^2\times[0,2\pi]$ agree, and
+the full slab integral is
+\[
+ \pi^2\varepsilon^2(\beta^2\ell-20\nu^2)-16\pi^2\nu^2.
+\]
+Its difference from the pressure--trace integral in
+Proposition~\ref{prop:basepair} is exactly
+$-16\pi^2\nu^2(1+\varepsilon^2)$. For $\nu\ne0$ a boundary-free
+identification of these two integrals is therefore false on this slab.
+\end{proposition}
+\begin{proof}
+Multiplication by the actual corrected vector gives
+\[
+ \omega_\varepsilon\cdot H\omega_\varepsilon
+ =f^2\left[\varepsilon^2c^2D_{xx}
+ +8\varepsilon^2cd\beta^2xygg'
+ +\varepsilon^2d^2D_{yy}
+ -16\nu^2(1+2\varepsilon b)^2\right].
+\]
+All bracket terms have at most polynomial transverse growth, since
+$|g|\leq1/2$ and $|g'|\leq1/4$. On any finite axial interval
+their absolute values have a common polynomial Gaussian dominator
+after multiplication by $f^2=e^{-2s}$. Thus the plane and product
+integrals below are genuine absolutely convergent integrals.
+
+Use the probability law $d\mu=(2/\pi)f^2dxdy$ from Section 10.
+Reflection of one coordinate makes $\mathbb E_\mu[xygg']=0$.
+Coordinate interchange gives $\mathbb E_\mu D_{xx}
+=\mathbb E_\mu D_{yy}$, while \eqref{eq:radialresponse} and
+\eqref{eq:exactpressure} give
+\[
+ \mathbb E_\mu D_{xx}=\mathbb E_\mu D_{yy}
+ =4\mathcal R(p)=\beta^2\ell-4\nu^2.
+\]
+The independent centered quarter-variance coordinates give
+$\mathbb E_\mu b=0$ and
+$\mathbb E_\mu b^2=(d^2+c^2)/4=1/4$.
+Consequently $\mathbb E_\mu(1+2\varepsilon b)^2=1+\varepsilon^2$.
+Taking the expectation of the bracket and using $c^2+d^2=1$
+gives $\varepsilon^2(\beta^2\ell-4\nu^2)
+-16\nu^2(1+\varepsilon^2)$, proving the plane formula.
+Fubini and independence of the answer from $z$ give the slab formula.
+Subtract the trace-pairing value from
+Proposition~\ref{prop:basepair} to obtain the stated discrepancy.
+\end{proof}
+
+We can identify that discrepancy as an actual boundary term.
+For any smooth solenoidal vector $w$ and smooth scalar $p$, expansion
+of derivatives gives the pointwise identity
+\begin{equation}\label{eq:slabdivergence}
+ \nabla\cdot\left[w(w\cdot\nabla p)-p(w\cdot\nabla)w\right]
+ =w\cdot(\nabla^2p)w-p\operatorname{tr}((\nabla w)^2).
+\end{equation}
+Indeed the two first-derivative terms in $p$ cancel after exchanging
+their dummy indices, $\nabla\cdot w=0$ removes the terms containing
+that divergence, and its derivative removes the remaining
+second-derivative term in $w$. This derivation uses no evolution law.
+
+For $w=\omega_\varepsilon$, put
+$A=1+2\varepsilon b$ and $v=xc+yd$.
+The derivatives of its axial component are
+\[
+ \partial_x w_3=f(-2xA+2\varepsilon d),\quad
+ \partial_y w_3=f(-2yA-2\varepsilon c),\quad
+ \partial_z w_3=2\varepsilon fv.
+\]
+Multiplying by $w=f(\varepsilon c,\varepsilon d,A)$ proves
+$(w\cdot\nabla)w_3=0$ identically. Thus the axial flux in
+\eqref{eq:slabdivergence} is simply
+$\mathcal F_z=w_3(w\cdot\nabla p)$.
+At $z=0$ and $z=2\pi$ the vector $w$ agrees and
+$w_3=f(1-2\varepsilon y)$. The transverse pressure gradient also
+agrees, but $p_z=-16\nu^2z$. Therefore
+\[
+ \mathcal F_z(x,y,2\pi)-\mathcal F_z(x,y,0)
+ =-32\pi\nu^2 f^2(1-2\varepsilon y)^2.
+\]
+Its plane integral is
+\[
+ -32\pi\nu^2\frac\pi2
+   \mathbb E_\mu(1-2\varepsilon y)^2
+ =-16\pi^2\nu^2(1+\varepsilon^2),
+\]
+exactly the discrepancy above.
+To apply the divergence theorem, first integrate
+\eqref{eq:slabdivergence} over a finite cylinder and then let its
+radius tend to infinity. On the lateral cylinder every flux term
+is a polynomially bounded function times $e^{-2s}$, uniformly on
+the finite axial interval; its surface integral tends to zero.
+Absolute Gaussian domination permits the limit in the volume and
+end-face integrals. Thus the computed end flux proves the full slab
+identity directly, in agreement with the independent moment calculation.
+
+The repaired vector is periodic in $z$; the base pressure and its
+axial gradient are not. Replacing this slab by a boundary-free period
+would discard a strictly nonzero end contribution. These tests do not
+contradict a pressure identity proved under valid periodic or
+vanishing-flux hypotheses, and do not supply an induced repaired
+Navier--Stokes pressure.
+
 \section{Formal correspondence and contribution status}
 \begingroup\raggedright
 Every formal result is frozen at commit
@@ -1020,7 +1145,7 @@ threshold boundaries, downward-shift disagreement and sharp endpoint
 occupation tests use \code{CorridorMaximumRegularity},
 \code{CorridorOccupation}, \code{CorridorClassification},
 \code{CorridorBoundarySharpness} and \code{CorridorOccupationSharpness}.
-The actual regular Gaussian swirl, viscous strain, axial pressure flux and scalar response use \code{GaussianSwirlVelocity}, \code{GaussianSwirlProfileMoments}, \code{StrainedBurgersVortex}, \code{BurgersAxialPressureFlux}, \code{GaussianSwirlLaplace} and \code{BurgersGaussianPressureResponse}. Solenoidal repair and base-pressure pairings use \code{HelicalVorticityDiagnostics}, \code{HelicalRadialGaussianBridge} and \code{BurgersRepairedTracePairing}. Exact declaration locations, hashes and human proof reorganizations
+The actual regular Gaussian swirl, viscous strain, axial pressure flux and scalar response use \code{GaussianSwirlVelocity}, \code{GaussianSwirlProfileMoments}, \code{StrainedBurgersVortex}, \code{BurgersAxialPressureFlux}, \code{GaussianSwirlLaplace} and \code{BurgersGaussianPressureResponse}. Solenoidal repair and base-pressure pairings use \code{HelicalVorticityDiagnostics}, \code{HelicalRadialGaussianBridge} and \code{BurgersRepairedTracePairing}. The full repaired Hessian, Gaussian moments and actual slab flux use \code{BurgersRepairedHessian}, \code{BurgersGaussianHessianMoments} and \code{BurgersHessianProductIntegral}. Exact declaration locations, hashes and human proof reorganizations
 are in the accompanying theorem map. In particular the direct
 trigonometric proof of $J(U)=0$ replaces the formal invariant-trace
 transport proof. Infinite affine energy is the elementary deduction
