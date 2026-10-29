@@ -2842,3 +2842,6 @@ import Foundation.FourCubeFullOddIntegral
 
 import Foundation.FourCubeFullHaarOddAsymptotic
 import Foundation.FourCubeFullHaarOddFreeEnergy
+
+import Foundation.FourCubeActualErrorBudget
+import Foundation.FourCubeScalarCalibration
