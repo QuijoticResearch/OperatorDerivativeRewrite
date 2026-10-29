@@ -2092,6 +2092,213 @@
       "source_sha256": "9041b0fd8ddddd8251339394359fd1a1acda32e6f319caace3e3b8a44708b034",
       "declaration_header": "theorem no_actual_increment_energy_measure :\n    \u00ac \u2203 \u03c1 : Measure \u211d, \u2200 t : \u211d, 0 < t \u2192\n      \u03c1 (Ioc 0 t) = ENNReal.ofReal (\u222b \u03c9, (value t \u03c9 - value 0 \u03c9) ^ 2 \u2202gaussianProduct)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RawMartingaleEnergyMeasureObstruction.lean#L50"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.covariance_decomposition",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 30,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem covariance_decomposition (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) (p q : P) :\n    totalCov u p q=boundaryCov h u p q+interiorCov h u p q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L30"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.residualDiag_eq_interior",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 36,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem residualDiag_eq_interior (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) (p : P) :\n    residualDiag h u p=interiorCov h u p p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L36"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.residualDiag_nonneg",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 43,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem residualDiag_nonneg (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) (p : P) :\n    0 \u2264 residualDiag h u p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L43"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_mean",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 48,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_mean (u : P \u2192 CoefficientSpace) : (\u222b \u03c9, block u \u03c9 \u2202gaussianProduct)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L48"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_norm_sq",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 53,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_norm_sq (u : P \u2192 CoefficientSpace) :\n    \u2016block u\u2016^2=(72*T1 (totalCov u)+24*T2 (totalCov u))/576",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L53"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_prediction",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 71,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_prediction (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    conditionalProjection h (block u)=(1/24 : \u211d) \u2022 \u2211 p, prediction h (u p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L71"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_prediction_condExp",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 75,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_prediction_condExp (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    conditionalProjection h (block u) =\u1d50[gaussianProduct]\n      gaussianProduct[block u | MeasurableSpace.comap (firstChaosFamily h) inferInstance]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L75"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_prediction_norm_sq",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 80,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_prediction_norm_sq (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    \u2016conditionalProjection h (block u)\u2016^2=\n      (72*weighted (totalDiag u) (totalDiag u) (boundaryCov h u)+24*T2 (boundaryCov h u))/576",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L80"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.weighted_total_decomposition",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 121,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem weighted_total_decomposition (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    weighted (totalDiag u) (totalDiag u) (boundaryCov h u)=\n      weighted (boundaryDiag h u) (boundaryDiag h u) (boundaryCov h u)+\n      weighted (residualDiag h u) (residualDiag h u) (boundaryCov h u)+\n      2*weighted (boundaryDiag h u) (residualDiag h u) (boundaryCov h u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L121"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.boundary_T1",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 134,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem boundary_T1 (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    weighted (boundaryDiag h u) (boundaryDiag h u) (boundaryCov h u)=T1 (boundaryCov h u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L134"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticBlockVariance.block_prediction_split",
+      "file": "Foundation/GaussianQuarticBlockVariance.lean",
+      "line": 139,
+      "source_sha256": "e187f52fc4e43a3d5c2d83f29eb88317adc4d7678b24ea68197d0bee5b999a63",
+      "declaration_header": "theorem block_prediction_split (h : I \u2192 CoefficientSpace) (u : P \u2192 CoefficientSpace) :\n    \u2016conditionalProjection h (block u)\u2016^2=\n      (72*T1 (boundaryCov h u)+24*T2 (boundaryCov h u))/576+\n      (1/8 : \u211d)*weighted (residualDiag h u) (residualDiag h u) (boundaryCov h u)+\n      (1/4 : \u211d)*weighted (boundaryDiag h u) (residualDiag h u) (boundaryCov h u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticBlockVariance.lean#L139"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.shiftedCentered_coeFn",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 22,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem shiftedCentered_coeFn (b : \u211d) (u : CoefficientSpace) :\n    shiftedCentered b u =\u1d50[gaussianProduct] fun \u03c9 =>\n      (b+firstChaosEmbedding u \u03c9)^4-(b^4+6*b^2*\u2016u\u2016^2+3*(\u2016u\u2016^2)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L22"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.shiftedCentered_mean",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 55,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem shiftedCentered_mean (b : \u211d) (u : CoefficientSpace) :\n    (\u222b \u03c9, shiftedCentered b u \u03c9 \u2202gaussianProduct)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L55"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.shiftedCentered_norm_sq",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 62,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem shiftedCentered_norm_sq (b : \u211d) (u : CoefficientSpace) :\n    \u2016shiftedCentered b u\u2016^2=16*b^6*\u2016u\u2016^2+168*b^4*(\u2016u\u2016^2)^2+\n      384*b^2*(\u2016u\u2016^2)^3+96*(\u2016u\u2016^2)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L62"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.variance_minimum",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 71,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem variance_minimum (b : \u211d) (u : CoefficientSpace) :\n    96*(\u2016u\u2016^2)^4 \u2264 \u2016shiftedCentered b u\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L71"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.variance_at_zero",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 79,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem variance_at_zero (u : CoefficientSpace) :\n    \u2016shiftedCentered 0 u\u2016^2=96*(\u2016u\u2016^2)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L79"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.variance_strict",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 83,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem variance_strict (b : \u211d) (u : CoefficientSpace) (hb : b \u2260 0) (hu : u \u2260 0) :\n    96*(\u2016u\u2016^2)^4 < \u2016shiftedCentered b u\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L83"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_lift",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 95,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_lift (b : \u211d) : shiftedCentered b (direction 0) =\u1d50[gaussianProduct]\n    fun \u03c9 : SampleSpace => fiberCentered b (\u03c9 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L95"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_centered_mean",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 104,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_centered_mean (b : \u211d) : (\u222b z : \u211d, fiberCentered b z \u2202GaussianCore.\u03b3)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L104"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_integrable",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 112,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_integrable (b : \u211d) : Integrable (fiberCentered b) GaussianCore.\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L112"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_raw_mean",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 118,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_raw_mean (b : \u211d) :\n    (\u222b z : \u211d, (b+z)^4 \u2202GaussianCore.\u03b3)=b^4+6*b^2+3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L118"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_variance",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 127,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_variance (b : \u211d) :\n    (\u222b z : \u211d, (fiberCentered b z)^2 \u2202GaussianCore.\u03b3)=16*b^6+168*b^4+384*b^2+96",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L127"
+    },
+    {
+      "paper": "Section 6 actual Gaussian finite-block retained quartic variance and shifted scalar variance minimum",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShiftedQuarticVariance.fiber_variance_minimum",
+      "file": "Foundation/GaussianShiftedQuarticVariance.lean",
+      "line": 144,
+      "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
+      "declaration_header": "theorem fiber_variance_minimum (b : \u211d) :\n    96 \u2264 \u222b z : \u211d, (fiberCentered b z)^2 \u2202GaussianCore.\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L144"
     }
   ],
   "paper_sections": {
@@ -2129,7 +2336,9 @@
     "Lachal\u2019s primary author publication record/abstract is used for classical integrated-process prediction context only. The publisher full text was unavailable; no detailed bridge theorem or new state-augmentation principle is imported.",
     "Section 10 reconstructs symmetric invariant-factor defect splitting and its bounded-energy/finite-limit transfer. The actual nonreversible three-state uniform chain preserves the partition subspace but does not commute with its conditional projection; the centered witness increases defect energy from 21/8 to 3. Symmetry is not dropped from the positive theorem.",
     "Section 14 continues the same actual raw-observation martingale: all origin-increment energies equal one, contradicting continuity from above for intervals (0,1/(n+1)]. No globally finite measure assumption is required, and an atom at zero cannot repair those half-open interval values. This is not a claim against energy-measure constructions under additional regularity.",
-    "The classical reversible Dirichlet-form context was checked in an indexed primary author-PDF excerpt, Section 13.2 and Lemma 13.6 of Levin\u2013Peres. Direct full-PDF retrieval timed out; no detailed unseen factor theorem or novelty comparison is imported. The printed arguments are complete."
+    "The classical reversible Dirichlet-form context was checked in an indexed primary author-PDF excerpt, Section 13.2 and Lemma 13.6 of Levin\u2013Peres. Direct full-PDF retrieval timed out; no detailed unseen factor theorem or novelty comparison is imported. The printed arguments are complete.",
+    "Section 6 extends the existing single-target and negative cross-covariance proof with the full finite-block Gaussian variance and retained variance, normalized by 24^2. Total diagonal variances, rather than boundary diagonals alone, weight the retained second-chaos covariance. Expanding total=boundary+residual yields all three nonnegative retained-variance terms. This is Gaussian reference algebra, not interacting entropy or a uniform block theorem.",
+    "The shifted scalar centered fourth power has variance 16*b^6*r+168*b^4*r^2+384*b^2*r^3+96*r^4. The nondegenerate Gaussian residual has a unique zero-shift minimum; r=0 remains deterministic with zero variance at all shifts. A labelled human application of the existing full Gaussian orthogonal split gives the actual full-observation conditional variance; the mapped literal fiber statements concern the one-coordinate Gaussian measure."
   ],
   "literature": [
     {

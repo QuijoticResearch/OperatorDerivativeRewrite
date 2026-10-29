@@ -31,7 +31,9 @@ Gaussian observation space. A concrete quarter-Hurst covariance witness
 also separates full-past prediction from current-value prediction. An
 exact multi-target quartic calculation gives independent targets whose
 shared-observation residuals have negative cross-covariance, so block error
-cannot be assembled from diagonal residual energies alone.
+cannot be assembled from diagonal residual energies alone. Exact finite-block
+retained variances include the total-variance correction terms; shifted
+scalar quartic variance has a strict minimum at zero shift.
 The projection and Hermite mechanisms are classical, and the two
 fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
@@ -491,6 +493,135 @@ every observation value: the theorem concerns their actual integrated
 $L^2$ covariance. This is a concrete classical projection diagnostic, with
 no new law of Gaussian prediction or multi-target error bound claimed.
 
+
+
+\subsection*{Exact finite-block retained variance}
+The cross terms can be retained exactly for any finite block of target
+directions $(u_i)_{i\in J}$. Define covariance matrices and diagonal data
+\[
+ C_{ij}=\langle u_i,u_j\rangle,\quad
+ B_{ij}=\langle P_Mu_i,P_Mu_j\rangle,\quad
+ c_i=C_{ii},\quad b_i=B_{ii},\quad r_i=c_i-b_i\geq0.
+\]
+Orthogonal projection gives $C=B+A$, where
+$A_{ij}=\langle u_i-P_Mu_i,u_j-P_Mu_j\rangle$ and $A_{ii}=r_i$.
+Thus $A,B,C$ are positive semidefinite covariance matrices, but their
+individual off-diagonal entries need not be positive.
+For a real matrix $D$ and real diagonal lists $d,e$, use
+\[
+ T_1(D)=\sum_{i,j}D_{ii}D_{jj}D_{ij}^2,\qquad
+ T_2(D)=\sum_{i,j}D_{ij}^4,\qquad
+ \mathcal W(d,e;D)=\sum_{i,j}d_ie_jD_{ij}^2.
+\]
+Consider the actual Gaussian block, with its normalization fixed,
+\[
+ \mathcal V=\frac1{24}\sum_{i\in J}F_{u_i},
+ \qquad \widehat{\mathcal V}=\E[\mathcal V\mid\mathcal A].
+\]
+Both are centered square-integrable variables, since the block is finite
+and each Gaussian target has finite moments of every order.
+Proposition~\ref{prop:rescov}, summed over all ordered pairs, gives
+\begin{align}\label{eq:blockquartic}
+ \|\mathcal V\|_2^2
+ &=\frac{72T_1(C)+24T_2(C)}{576},\\
+ \|\widehat{\mathcal V}\|_2^2
+ &=\frac{72\mathcal W(c,c;B)+24T_2(B)}{576}.\nonumber
+\end{align}
+The denominator is $24^2$; no independent-site approximation is used.
+The retained second-chaos coefficient still contains the \emph{total}
+variance list $c$, not just the retained list $b$.
+
+Expanding $c=b+r$ and using symmetry of $B$ yields the full three-term
+formula
+\begin{align}\label{eq:blockquarticsplit}
+ \|\widehat{\mathcal V}\|_2^2
+ ={}&\frac{72T_1(B)+24T_2(B)}{576}\\
+ &+\frac18\mathcal W(r,r;B)
+   +\frac14\mathcal W(b,r;B).\nonumber
+\end{align}
+Indeed bilinearity gives
+$\mathcal W(b+r,b+r;B)=\mathcal W(b,b;B)
++\mathcal W(r,r;B)+2\mathcal W(b,r;B)$;
+$\mathcal W(b,b;B)=T_1(B)$, and $72/576=1/8$.
+All three terms in \eqref{eq:blockquarticsplit} are nonnegative,
+because $b_i,r_i\geq0$ and the matrix entries are squared or raised
+to the fourth power. The first term alone is the variance of
+$24^{-1}\sum_i\big(X(P_Mu_i)^4-3b_i^2\big)$.
+It generally undercounts the actual retained block variance: the other
+two terms are the precise missing corrections.
+
+Equivalently, writing $Y_i=X(P_Mu_i)$, the actual prediction is
+\[
+ \widehat{\mathcal V}
+ =\frac1{24}\sum_i
+ \big\{Y_i^4-3b_i^2+6r_i(Y_i^2-b_i)\big\}.
+\]
+This follows by the already proved quartic conditional formula. A term
+involving interior variance can survive conditioning through a retained
+quadratic observable. Orthogonality of a single residual to the retained
+space does not remove residual cross covariances between different
+sites. In particular the earlier explicit two-target example still
+prevents replacing a block residual norm by its diagonal sum.
+All these statements concern an actual Gaussian reference. They do not
+supply an interacting Gibbs entropy inequality, entropy tensorization,
+or a rate uniform in block size.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianQuarticBlockVariance};
+\code{block_norm_sq}, \code{block_prediction_condExp},
+\code{block_prediction_norm_sq}, \code{block_prediction_split}.
+\par\endgroup
+
+\subsection*{Shifted scalar fourth powers: a genuine variance minimum}
+For a deterministic shift $b\in\R$ and a centered Gaussian $Z$ of variance
+$r\geq0$, set
+\[
+ U_b=(b+Z)^4-(b^4+6b^2r+3r^2).
+\]
+The subtracted expression is its actual mean. If $r=0$, $Z=0$ almost
+surely and $U_b=0$ for every shift. For $r>0$ use the monic variance-$r$
+Hermite polynomials $H_j(Z;r)$, characterized by
+$\exp(tZ-rt^2/2)=\sum_j H_j(Z;r)t^j/j!$.
+Direct polynomial expansion gives
+\[
+ U_b=H_4+4bH_3+6(b^2+r)H_2+4b(b^2+3r)H_1.
+\]
+Here $H_1=Z$, $H_2=Z^2-r$, $H_3=Z^3-3rZ$ and
+$H_4=Z^4-6rZ^2+3r^2$; substitution verifies both centering and the
+identity. Their orthogonality follows from the same Gaussian generating
+function calculation as Lemma~\ref{lem:hermite}, with squared norms
+$j!r^j$. Therefore
+\begin{align}\label{eq:shiftquartic}
+ \E U_b^2
+ &=24r^4+16b^2(6r^3)+36(b^2+r)^2(2r^2)
+       +16b^2(b^2+3r)^2r\\
+ &=16b^6r+168b^4r^2+384b^2r^3+96r^4.\nonumber
+\end{align}
+Every shift-dependent term is nonnegative, and for $r>0$, $b\ne0$,
+the term $384b^2r^3$ is strictly positive. Thus the variance has its
+unique minimum $96r^4$ at zero shift when the residual variance is
+positive. This is a valid positive local statement, rather than an
+assumption about how all conditional errors combine.
+
+For the actual Gaussian orthogonal split $X(u)=X(P_Mu)+Z$, the residual
+$Z=X(u-P_Mu)$ is independent of the entire observed sigma-algebra and
+has variance $r=\|u-P_Mu\|^2$. Consequently the conditional variance
+of $X(u)^4$ is the polynomial \eqref{eq:shiftquartic} with
+$b=X(P_Mu)$. This identifies an actual conditional variance: integrate
+only the independent Gaussian residual, first for bounded product tests
+of the observed variables and then by Gaussian polynomial integrability.
+For one observed coordinate, it is also the literal scalar Gaussian
+fiber formula. A minimum at a deterministic shift proves neither a
+positive lower bound for every block residual nor decay of boundary
+information under resampling.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianShiftedQuarticVariance};
+\code{shiftedCentered_coeFn}, \code{shiftedCentered_norm_sq},
+\code{variance_minimum}, \code{variance_strict},
+\code{fiber_raw_mean}, \code{fiber_variance}.
+The full-observation conditional interpretation is a labelled human
+application of the existing independent orthogonal split; the mapped
+scalar fiber statements retain their literal one-coordinate law.
+\par\endgroup
 
 \section{Past-plus-terminal observations and bracket errors}
 The same Gaussian projection mechanism controls a distinct question with
