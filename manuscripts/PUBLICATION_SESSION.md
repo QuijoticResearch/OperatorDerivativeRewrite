@@ -137,3 +137,7 @@ Account-wide usage was reported as 29% at the most recent completed checkpoint, 
 ## Primary-literature follow-up
 
 Direct Cardon and Newman theorem checks now supplement the earlier arithmetic literature limitations. Exact multiplier order and quadratic-tilt quantifiers prevent unsupported reuse as growing quartic/sixth-order propagation theorems; no novelty certification follows. The separate comparison record preserves previous literature-access history and leaves every PDF/hash unchanged. Original Pólya/de Bruijn detailed comparison and independent priority review remain open.
+
+## Forcing companion completed
+
+Fifteen reviewed drafts now total 129 pages. The six-page forcing companion contains 40 exact correspondences and full proofs of its trace, continuity, completed-divergence and observed-mode geometry results. Primary classical antecedents are credited, and the stochastic-PDE/sample-path limitations are explicit. All final pages and frozen receipts were checked. The next source-first assessment concerns the preserved IBM stochastic-associativity note and whether its completed weighted-measure theorem warrants a consolidated operator paper. Research priorities and all researcher files remain untouched.

@@ -1,0 +1,348 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.responseVector_energy_exact",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 54,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem responseVector_energy_exact (rate t : \u211d\u22650) (hrate : 0<rate) :\n    \u2016responseVector rate t\u2016^2=(1-Real.exp (-2*(rate : \u211d)*(t : \u211d)))/(2*(rate : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L54"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.responseVector_energy_upper",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 79,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem responseVector_energy_upper (rate t : \u211d\u22650) (hrate : 0<rate) :\n    \u2016responseVector rate t\u2016^2\u22641/(2*(rate : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.responseVector_energy_lower",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 85,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem responseVector_energy_lower (rate t : \u211d\u22650) (hrate : 1\u2264rate) :\n    (1-Real.exp (-2*(t : \u211d)))/(2*(rate : \u211d))\u2264\u2016responseVector rate t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L85"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.reciprocal_trace_summable_iff",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 93,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem reciprocal_trace_summable_iff (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) :\n    Summable (fun n => (c n)^2*\u2016responseVector (rate n) t\u2016^2) \u2194\n      Summable (fun n => (c n)^2/(rate n : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L93"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.actual_series_trace_iff",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 123,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem actual_series_trace_iff (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) :\n    Summable (fun n => c n \u2022 gaussianMode n (responseVector (rate n) t)) \u2194\n      Summable (fun n => (c n)^2/(rate n : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.zero_rate_brownian_profile",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 129,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem zero_rate_brownian_profile (t : \u211d\u22650) : responseVector 0 t=timeVector t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L129"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.quadratic_forcing_summable",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 145,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem quadratic_forcing_summable (t : \u211d\u22650) :\n    Summable (fun n => gaussianMode n (responseVector (quadraticRates n) t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L145"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.linear_forcing_not_summable",
+      "file": "Foundation/SPDEExponentialForcing.lean",
+      "line": 156,
+      "source_sha256": "5f64181d4ca987c264aa23c42816e8cf7551e85872f48be3c41fa8f9220d8ba9",
+      "declaration_header": "theorem linear_forcing_not_summable (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac Summable (fun n => gaussianMode n (responseVector (linearRates n) t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialForcing.lean#L156"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.spatialEmbedding_inner",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 29,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem spatialEmbedding_inner (i j : \u2115) (f g : GaussianL2) :\n    inner \u211d (spatialEmbedding i f) (spatialEmbedding j g)=if i=j then inner \u211d f g else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L29"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.spatialModes_orthogonal",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 40,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem spatialModes_orthogonal : OrthogonalFamily \u211d (fun _ : \u2115 => TimeHilbert) spatialMode",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L40"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.spatialSeries_summable_iff",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 45,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem spatialSeries_summable_iff (c : \u2115 \u2192 \u211d) (v : \u2115 \u2192 TimeHilbert) :\n    Summable (fun n => c n \u2022 spatialMode n (v n)) \u2194 Summable (fun n => (c n)^2*\u2016v n\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L45"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.spatialResponse_energy",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 57,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem spatialResponse_energy (c : \u2115 \u2192 \u211d) (v : \u2115 \u2192 TimeHilbert)\n    (hs : Summable (fun n => (c n)^2*\u2016v n\u2016^2)) : HasSum (fun n => (c n)^2*\u2016v n\u2016^2) (\u2016spatialResponse c v\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.exponential_field_trace_iff",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 125,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem exponential_field_trace_iff (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) :\n    Summable (fun n => c n \u2022 spatialMode n (responseVector (rate n) t)) \u2194\n      Summable (fun n => (c n)^2/(rate n : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L125"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.exponential_field_energy",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 131,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem exponential_field_energy (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) :\n    HasSum (fun n => (c n)^2*(1-Real.exp (-2*(rate n : \u211d)*(t : \u211d)))/(2*(rate n : \u211d)))\n      (\u2016exponentialField rate c t\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L131"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.exponential_field_divergence",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 142,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem exponential_field_divergence (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) :\n    (exponentialField rate c t,completedDivergence (exponentialField rate c t))\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L142"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.exponential_field_quadratic_controls",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 148,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem exponential_field_quadratic_controls (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n)\n    (c : \u2115 \u2192 \u211d) (t : \u211d\u22650) (ht : 0<t) (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) :\n    completedDivergence (exponentialField rate c t)\u2208sector 2 \u2227\n      recovery (completedDivergence (exponentialField rate c t))=gradientProjection (exponentialField rate c t) \u2227\n      \u2016completedDivergence (exponentialField rate c t)\u2016\u2264Real.sqrt 2*\u2016exponentialField rate c t\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L148"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.quadraticField_divergence_graph",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 166,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem quadraticField_divergence_graph (t : \u211d\u22650) (ht : 0<t) :\n    (quadraticField t,completedDivergence (quadraticField t))\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L166"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.linear_field_series_not_summable",
+      "file": "Foundation/SPDEHilbertExponentialForcing.lean",
+      "line": 171,
+      "source_sha256": "6c199c40169f067dbcc947c969d35e624d9f563bb43eaea6374b28ef04ad09bc",
+      "declaration_header": "theorem linear_field_series_not_summable (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac Summable (fun n => spatialMode n (responseVector (linearRates n) t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEHilbertExponentialForcing.lean#L171"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.response_inner",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 16,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem response_inner (rate s t : \u211d\u22650) :\n    inner \u211d (responseVector rate t) (responseVector rate s)=\n      Real.exp (-(rate : \u211d)*|(t : \u211d)-s|)*\u2016responseVector rate (min s t)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.response_distance_sq",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 33,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem response_distance_sq (rate : \u211d\u22650) (hr : 0<rate) (s t : \u211d\u22650) :\n    \u2016responseVector rate t-responseVector rate s\u2016^2=\n      variance rate t+variance rate s-\n        2*Real.exp (-(rate : \u211d)*|(t : \u211d)-s|)*variance rate (min s t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L33"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.response_increment_domination",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 57,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem response_increment_domination (rate : \u211d\u22650) (hr : 0<rate) (s t : \u211d\u22650) :\n    \u2016responseVector rate t-responseVector rate s\u2016^2\u22642/(rate : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.field_increment_energy",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 95,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem field_increment_energy (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) (s t : \u211d\u22650) :\n    \u2016exponentialField rate c t-exponentialField rate c s\u2016^2=\n      \u2211' n,(c n)^2*\u2016responseVector (rate n) t-responseVector (rate n) s\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L95"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.exponentialField_continuous",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 102,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem exponentialField_continuous (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) : Continuous (exponentialField rate c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L102"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.quadratic_divergence_continuous",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 127,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem quadratic_divergence_continuous : Continuous\n    (fun t => GaussianLinearFieldDivergenceCompletion.completedDivergence (quadraticField t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L127"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completedDivergence_rank",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 39,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completedDivergence_rank (a b : CoefficientSpace) :\n    completedDivergence (scalarTensor a (firstChaosEmbedding b))=mixedTarget a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L39"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.full_divergence_graph",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 45,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem full_divergence_graph {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    (v,completedDivergence v)\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L45"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completedDivergence_mem_sector_two",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 57,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completedDivergence_mem_sector_two {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    completedDivergence v\u2208sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_derivative_graph",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 68,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_derivative_graph (v : GaussianVectorL2) :\n    (completedDivergence v,(2 : \u211d) \u2022 gradientProjection v)\u2208closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L68"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_recovery",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 72,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_recovery {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    recovery (completedDivergence v)=gradientProjection v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_energy",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 76,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_energy {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    \u2016completedDivergence v\u2016^2=2*\u2016gradientProjection v\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L76"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_norm_bound",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 87,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_norm_bound {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    \u2016completedDivergence v\u2016\u2264Real.sqrt 2*\u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_kernel_iff",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 97,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_kernel_iff {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    completedDivergence v=0 \u2194 gradientProjection v=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L97"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_series_graph",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 109,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_series_graph (v : \u2115 \u2192 GaussianVectorL2) (hv : \u2200 n,v n\u2208linearGaussianFields)\n    {V : GaussianVectorL2} (hs : HasSum v V) :\n    (V,completedDivergence V)\u2208hilbertDivergence.graph \u2227 HasSum (fun n => completedDivergence (v n)) (completedDivergence V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L109"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.infinite_observed_source_noncompact",
+      "file": "Foundation/SPDEObservationRecoveryCompactness.lean",
+      "line": 13,
+      "source_sha256": "6c62735d82ed454ac4295b69755e34cfcd615d1e944a6f71550deb7c3d1099bd",
+      "declaration_header": "theorem infinite_observed_source_noncompact {I : Type*} (h : I \u2192 CoefficientSpace)\n    (J : CoefficientSpace \u2192\u2097\u1d62[\u211d] CoefficientSpace) (hJ : \u2200 c, J c\u2208sourceSpan h) :\n    \u00ac IsCompactOperator (recoveryOperator.comp (conditionalProjection h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEObservationRecoveryCompactness.lean#L13"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.modeUnit_orthonormal",
+      "file": "Foundation/SPDEObservationRecoveryCompactness.lean",
+      "line": 35,
+      "source_sha256": "6c62735d82ed454ac4295b69755e34cfcd615d1e944a6f71550deb7c3d1099bd",
+      "declaration_header": "theorem modeUnit_orthonormal (t : \u211d\u22650) (ht : 0<t) : Orthonormal \u211d (modeUnit t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEObservationRecoveryCompactness.lean#L35"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.positive_time_recovery_noncompact",
+      "file": "Foundation/SPDEObservationRecoveryCompactness.lean",
+      "line": 67,
+      "source_sha256": "6c62735d82ed454ac4295b69755e34cfcd615d1e944a6f71550deb7c3d1099bd",
+      "declaration_header": "theorem positive_time_recovery_noncompact (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac IsCompactOperator (recoveryOperator.comp (conditionalProjection (pastDirections t)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEObservationRecoveryCompactness.lean#L67"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.zero_time_recovery_zero",
+      "file": "Foundation/SPDEObservationRecoveryCompactness.lean",
+      "line": 72,
+      "source_sha256": "6c62735d82ed454ac4295b69755e34cfcd615d1e944a6f71550deb7c3d1099bd",
+      "declaration_header": "theorem zero_time_recovery_zero : recoveryOperator.comp (conditionalProjection (pastDirections 0))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEObservationRecoveryCompactness.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.brownian_past_recovery_compact_iff",
+      "file": "Foundation/SPDEObservationRecoveryCompactness.lean",
+      "line": 86,
+      "source_sha256": "6c62735d82ed454ac4295b69755e34cfcd615d1e944a6f71550deb7c3d1099bd",
+      "declaration_header": "theorem brownian_past_recovery_compact_iff (t : \u211d\u22650) :\n    IsCompactOperator (recoveryOperator.comp (conditionalProjection (pastDirections t))) \u2194 t=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEObservationRecoveryCompactness.lean#L86"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactnessObstruction.firstChaos_graph_left_inverse",
+      "file": "Foundation/GaussianRecoveryCompactnessObstruction.lean",
+      "line": 37,
+      "source_sha256": "2e48fa4248fa05f7b51545793f608e37d07e3f2fd86facee7fa100f99d62f645",
+      "declaration_header": "theorem firstChaos_graph_left_inverse (K : GaussianL2 \u2192L[\u211d] GaussianVectorL2)\n    (hK : \u2200 h : CoefficientSpace, (K (firstChaosEmbedding h),firstChaosEmbedding h)\u2208hilbertDivergence.graph) :\n    vacuumEmbedding.toContinuousLinearMap.adjoint.comp (K.comp firstChaosEmbedding.toContinuousLinearMap)=\n      ContinuousLinearMap.id \u211d CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactnessObstruction.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactnessObstruction.no_compact_firstChaos_right_inverse",
+      "file": "Foundation/GaussianRecoveryCompactnessObstruction.lean",
+      "line": 56,
+      "source_sha256": "2e48fa4248fa05f7b51545793f608e37d07e3f2fd86facee7fa100f99d62f645",
+      "declaration_header": "theorem no_compact_firstChaos_right_inverse (K : GaussianL2 \u2192L[\u211d] GaussianVectorL2)\n    (hK : \u2200 h : CoefficientSpace, (K (firstChaosEmbedding h),firstChaosEmbedding h)\u2208hilbertDivergence.graph) :\n    \u00ac IsCompactOperator K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactnessObstruction.lean#L56"
+    }
+  ],
+  "paper_sections": {
+    "1-2": "Actual countable Gaussian forcing; exact reciprocal-rate trace criterion, cutoff energy and mean-square continuity",
+    "3": "Original closed Gaussian derivative/adjoint; linear-field completion, projection energy and kernel",
+    "4": "Actual forcing divergence and infinite observed-mode noncompactness"
+  },
+  "human_reorganization": [
+    "Hilbert--Schmidt tensors identify the closed linear Gaussian field space. The finite fourth-moment computation gives the formal completed energy/projection identity in conventional notation; no additional formal tensor theorem is claimed.",
+    "The cutoff error estimate follows from the exact orthogonal energy and the bounded completed divergence restriction.",
+    "The inverse-number recovery norm estimate is the classical orthogonal-chaos argument on a probability space generated by the isonormal family; no extraneous non-Gaussian factor is permitted.",
+    "The abstract presentation uses an arbitrary orthonormal output family in the same source Hilbert space. Frozen forcing uses its specific coordinate basis. No alignment with the Brownian input directions is added.",
+    "The generic right-inverse obstruction is reconstructed from adjointness, expectation and an infinite first-chaos left inverse. Compactness concerns the full observation operator, not a particular trace-admitted field."
+  ],
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/0907.4178",
+      "review": "Primary Hairer full notes, version 2 (2023), Sections 4.4 and 6: classical Hilbert--Schmidt stochastic integration and stochastic convolution context."
+    },
+    {
+      "url": "https://doi.org/10.1155/2016/8694365",
+      "review": "Primary Sottinen--Viitasaari Gaussian derivative and adjoint conventions inspected. Classical Gaussian chaos and divergence theory credited."
+    }
+  ],
+  "novelty": "Classical formalization companion; no new stochastic PDE existence, sample-path regularity, or priority claim."
+}
