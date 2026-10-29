@@ -10,7 +10,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
 \newcommand{\Hh}{\mathcal H}\newcommand{\tr}{\operatorname{tr}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Diagonal Gaussian forcing:\\trace thresholds, completed divergence and recovery geometry}
+\title{Diagonal Gaussian forcing:\\trace thresholds, Wick centering and recovery geometry}
 \author{Project Stardust}
 \date{Reviewed formalization companion, October 29, 2026}
 \begin{document}
@@ -27,8 +27,11 @@ field norm. The proof reconstructs finite Gaussian integration by parts
 and Hilbert--Schmidt completion, including the symmetric/antisymmetric
 kernel distinction. In contrast, observation of all Brownian modes at
 any positive time retains an infinite first-chaos isometry, preventing
-compact divergence recovery. Finite field energy and compact recovery
-are therefore separate questions. The trace and Gaussian mechanisms are
+compact divergence recovery. We also prove that the linear-rate deterministic synthesis is compact
+but has infinite stochastic trace. Wick-centered observables can converge
+when the corresponding raw sums fail; their exact Brownian prediction
+and increment energies distinguish initial Hermite scaling from
+positive-time roughness. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
 classical; the paper consolidates frozen verified constructions and
 explicit counterexamples without claiming new stochastic PDE theory.
 \end{abstract}
@@ -376,6 +379,246 @@ Nevertheless the underlying observation family still contains every
 $B_n(t)$ and retains Theorem~\ref{thm:noncompact}. The two conclusions
 concern different operators and do not contradict one another.
 
+\section{Compact deterministic synthesis does not give a stochastic trace}
+The failed linear-rate example has a useful additional property. At fixed
+$t\geq0$, define a \emph{scalar} synthesis map on deterministic amplitudes,
+\[
+ T_t:\ell^2\longrightarrow L^2(P),\qquad
+ T_tc=\sum_{n\geq0}c_nY_n(t),\qquad \lambda_n=n+1.
+\]
+This is different from the Hilbert-valued random field $F_N(t)$: its
+output is a scalar Gaussian random variable, and its input is an arbitrary
+square-summable deterministic sequence. The original modal source
+isometry supplies $T_t$ on exactly this coefficient space.
+
+\begin{proposition}\label{prop:compact}
+$T_t$ is a compact bounded operator for every $t\geq0$. For $t>0$ it
+is not Hilbert--Schmidt and does not admit the unit-amplitude stochastic
+field of Theorem~\ref{thm:trace}. If
+$T_t^{(N)}c=\sum_{n<N}c_nY_n(t)$, then
+\[
+ \|T_t-T_t^{(N)}\|\leq[2(N+1)]^{-1/2}.
+\]
+The sharper constant here is a direct consequence of the energy formula;
+the formal source records the sufficient bound $(N+1)^{-1/2}$.
+\end{proposition}
+\begin{proof}
+The source directions $h_{n,t}$ are orthogonal across $n$, so
+$\|\sum_{n\in A}c_nY_n(t)\|_2^2=\sum_{n\in A}c_n^2V_{n+1}(t)$.
+Since $V_{n+1}(t)\leq1/[2(n+1)]\leq1/2$, this defines a bounded
+operator on $\ell^2$ by completion. For its tail,
+\[
+ \|(T_t-T_t^{(N)})c\|_2^2
+  =\sum_{n\geq N}c_n^2V_{n+1}(t)
+  \leq\frac{\|c\|_{\ell^2}^2}{2(N+1)}.
+\]
+Each $T_t^{(N)}$ has finite-dimensional range. Their norm convergence
+implies compactness: approximate the image of the unit ball to any
+positive tolerance by a bounded subset of a finite-dimensional range,
+which has a finite net; completeness turns total boundedness into
+relative compactness. But for the standard coefficient basis $\epsilon_n$,
+\[
+ \sum_n\|T_t\epsilon_n\|_2^2
+   =\sum_nV_{n+1}(t)
+   \geq\frac{1-e^{-2t}}2\sum_n\frac1{n+1}=\infty
+ \quad(t>0).
+\]
+Thus $T_t$ is not Hilbert--Schmidt. The same divergent sum is the
+cutoff field energy for $c_n=1$, proving the last assertion.
+At $t=0$, $T_0=0$ and both compactness and a zero trace are trivial.
+\end{proof}
+The constant sequence one is outside $\ell^2$. Evaluating $T_t$ there
+is not an authorized extension of its deterministic domain. Compactness
+controls a supremum of tail sizes; stochastic trace requires their sum.
+These are the classical compact-versus-Hilbert--Schmidt alternatives,
+now exhibited on the actual exponential modal construction.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{SPDECompactModalSynthesis.synthesis_tail_bound},
+\code{synthesis_compact}, \code{linearSynthesis_compact},
+\code{linearSynthesis_infinite_trace}.\par\endgroup
+
+\section{Wick centering and exact series energies}
+For $h\in\Hh$, define the variance-dependent Wick polynomial
+$\mathcal W_d(h)$ by
+\begin{equation}\label{eq:wickgen}
+ e^{uX(h)-u^2\|h\|^2/2}
+   =\sum_{d\geq0}\frac{u^d}{d!}\mathcal W_d(h).
+\end{equation}
+For example $\mathcal W_0(h)=1$, $\mathcal W_1(h)=X(h)$ and
+$\mathcal W_2(h)=X(h)^2-\|h\|^2$. We use monic Hermite normalization,
+so the factorial in this definition is essential.
+Taking expectations of the product of two such exponentials gives
+$e^{uv\langle h,k\rangle}$. Comparing coefficients yields
+\begin{equation}\label{eq:wickcov}
+ \E\mathcal W_d(h)=0\ (d>0),\qquad
+ \E[\mathcal W_d(h)\mathcal W_e(k)]
+  =\mathbf1_{d=e}\,d!\langle h,k\rangle^d.
+\end{equation}
+Coefficient comparison is justified by differentiating at zero: on
+compact parameter sets, polynomial derivatives times exponentials of
+a finite Gaussian vector are integrable. Thus this derivation concerns
+actual $L^2(P)$ random variables, not formal power series alone.
+
+\begin{theorem}[Exact Wick-series energy]\label{thm:wickseries}
+Let $(g_n)$ be pairwise orthogonal directions in $\Hh$, let $d\geq1$
+be an integer, and let $a_n\in\R$. Then
+\[
+ S=\sum_n a_n\mathcal W_d(g_n)\quad\hbox{converges in }L^2(P)
+ \quad\Longleftrightarrow\quad
+ \sum_n a_n^2d!\|g_n\|^{2d}<\infty.
+\]
+In that case the squared norm is exactly the latter sum, and the
+squared cutoff error is its corresponding tail. The limit is in
+homogeneous chaos $d$, belongs to the original closed gradient domain,
+and its canonical divergence recovery satisfies
+\[
+ \delta RS=S,\qquad \|RS\|_2^2=\frac1d\|S\|_2^2.
+\]
+\end{theorem}
+\begin{proof}
+Equation \eqref{eq:wickcov} makes distinct terms orthogonal. Pythagoras
+therefore gives the finite norm and every finite tail norm exactly.
+The nonnegative energy series converges precisely when those tails
+are Cauchy; completeness proves existence and necessity. The closed
+$d$th chaos contains the limit.
+
+For completeness the gradient assertion uses its original graph.
+Differentiating \eqref{eq:wickgen} gives
+$D\mathcal W_d(g)=d\,g\mathcal W_{d-1}(g)$.
+For distinct orthogonal directions the resulting vector fields are
+orthogonal as well, and for a single term their squared norm is
+\[
+ d^2\|g\|^2(d-1)!\|g\|^{2(d-1)}
+       =d\,d!\|g\|^{2d}.
+\]
+Thus the finite partial sums and their gradients are Cauchy. Closedness
+places $S$ in the original gradient domain with
+$\|DS\|_2^2=d\|S\|_2^2$. On chaos $d$, the recovery already defined
+above is $R=D/d$, giving its exact energy. The finite product rule
+$\delta(gA)=X(g)A-\langle g,DA\rangle$, together with the recurrence for $d\geq2$
+$\mathcal W_d(g)=X(g)\mathcal W_{d-1}(g)
+ -(d-1)\|g\|^2\mathcal W_{d-2}(g)$, gives
+$\delta DS_N=dS_N$ (the $d=1$ case uses $\delta g=X(g)$);
+closedness of the original adjoint, applied to
+$DS_N/d\to DS/d$ and $S_N\to S$, proves $\delta RS=S$.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{SPDEWickModes.wickSeries_summable_iff},
+\code{finite_wick_energy}, \code{wickResponse_energy},
+\code{wickResponse_recovery_graph}, \code{wickResponse_recovery_energy}.\par\endgroup
+The explicit derivative-domain proof is a human reconstruction from the
+same finite Wick identities and original closed graph.
+
+There are two concrete applications, whose normalizations should not
+be conflated. First take independent unit normals $G_n=B_n(1)$ and
+$a_n=1/(n+1)$. The series
+\begin{equation}\label{eq:rawcenter}
+ \sum_n\frac{G_n^2-1}{n+1}
+\end{equation}
+converges in $L^2$, with variance $2\sum_n(n+1)^{-2}$. Its uncentered
+version does not: the means of its partial sums are the divergent
+harmonic sums, whereas $L^2$ convergence would imply convergence of
+expectations by Cauchy--Schwarz. The deterministic subtractions in
+\eqref{eq:rawcenter} cannot be taken as a separately convergent series.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{SPDEWickModes.actual_centered_squares_summable},
+\code{actual_raw_squares_not_summable}.\par\endgroup
+
+Second use the exponentially damped directions $g_n=h_{n,t}$ at
+$\lambda_n=n+1$ and take $a_n=1$. For every integer $d\geq2$,
+\[
+ \sum_n\mathcal W_d(h_{n,t})\quad\hbox{converges in }L^2,
+ \qquad \|S_d(t)\|_2^2=d!\sum_nV_{n+1}(t)^d<\infty,
+\]
+since $V_{n+1}(t)^d\leq[2(n+1)]^{-d}$. At $d=2$ the raw squares
+$\sum_nY_n(t)^2$ again have divergent expectations for $t>0$.
+This is a direct instantiation of Theorem~\ref{thm:wickseries}, rather
+than a separately named positive-time theorem in the formal source.
+It constructs a scalar centered observable. It does not create the
+missing unit-amplitude Hilbert-valued first-chaos field or a nonlinear
+stochastic PDE solution. Its covariance energy is a power of the
+modal variance, which explains why its summability differs.
+
+\section{Initial scaling and positive-time roughness}
+A final exact example separates chaos degree from temporal roughness.
+For any square-summable $a=(a_n)$ and integer $d\geq1$, set
+\[
+ Z_d(t)=\sum_n a_n\mathcal W_d(\iota_n\mathbf1_{(0,t]}),
+ \qquad C_d=d!\sum_na_n^2.
+\]
+This definition uses undamped Brownian directions and is separate from
+the exponentially damped $S_d(t)$. Theorem~\ref{thm:wickseries} gives
+$\|Z_d(t)\|_2^2=C_dt^d$ and $Z_d(0)=0$.
+
+For $0\leq s\leq t$, independent Brownian increments give
+\begin{equation}\label{eq:wickpredict}
+ \E[Z_d(t)\mid\mathcal A_s]=Z_d(s).
+\end{equation}
+Here $\mathcal A_s$ is the full modal past defined earlier, not only
+the present values. To verify this point explicitly, the Gaussian
+increment $B_n(t)-B_n(s)$ has zero covariance with every
+$B_m(r)$, $r\leq s$. Joint Gaussianity gives independence from each
+finite past vector, and a monotone-class argument gives independence
+from their entire generated sigma-algebra. Factoring the exponential
+in \eqref{eq:wickgen} into its past and increment factors shows that
+the conditional expectation of its increment factor is one.
+Differentiation at zero, justified by Gaussian exponential domination,
+proves the finite Wick identity. Conditional expectation is an
+$L^2$ contraction, so passing the convergent series proves
+\eqref{eq:wickpredict}.
+
+Orthogonal projection onto the observed past now gives
+\begin{equation}\label{eq:wickincrement}
+ \E[Z_d(t)Z_d(s)]=C_ds^d,\qquad
+ \|Z_d(t)-Z_d(s)\|_2^2=C_d(t^d-s^d),\quad s\leq t.
+\end{equation}
+Indeed $Z_d(s)$ is observed at $s$, so its pairing with $Z_d(t)$
+equals its pairing with the conditional expectation in
+\eqref{eq:wickpredict}. Expansion of the squared norm proves the
+second identity. It also proves mean-square continuity on all
+$[0,\infty)$ without a sample-path assertion.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{SPDEWickBrownianPrediction.full_past_prediction},
+\code{SPDEWickTemporalGeometry.response_prediction_between},
+\code{response_energy_scale}, \code{response_increment_energy}.\par\endgroup
+
+At the origin the norm is $\sqrt{C_d}\,t^{d/2}$. At any fixed $s>0$,
+however, if $C_d>0$,
+\[
+ \frac{\|Z_d(s+h)-Z_d(s)\|_2^2}{h}
+   =C_d\frac{(s+h)^d-s^d}{h}
+       \longrightarrow C_d d s^{d-1}>0.
+\]
+Thus a high initial power does not give the corresponding higher
+increment power at positive times. In the formal harmonic quadratic
+example $a_n=(n+1)^{-1}$, $C_2\geq2$. At $s=1/2$ the exact squared
+increment is $C_2(h+h^2)\geq2h$. For every $\alpha>1$, every real
+$K$ and every $\eta>0$, sufficiently small $0<h<\min(\eta,1/2)$
+therefore violate a proposed bound
+$\|Z_2(1/2+h)-Z_2(1/2)\|_2^2\leq Kh^\alpha$.
+For $K\leq0$ the violation is immediate; for $K>0$ use
+$Kh^{\alpha-1}\to0$. This is a statement about exact $L^2$
+increments, not a claimed optimal almost-sure H\"older exponent.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{SPDEWickTemporalGeometry.harmonic_positive_time_increment_lower},
+\code{no_higher_positive_time_power}.\par\endgroup
+
+Wick centering, chaos orthogonality and Brownian Hermite martingales
+are classical. Baudoin's primary lecture \cite{Baudoin} derives the
+exponential/Hermite representation and the chaos derivative-energy
+identity used here. Its Hermite normalization includes $1/d!$ in
+the polynomial itself; ours is the monic normalization in
+\eqref{eq:wickgen}. Neither the centered-series examples nor their
+initial-versus-positive-time scaling are claimed as new principles.
+They give explicit, source-traceable tests against transferring a
+compactness, first-chaos trace or initial-scaling statement to a
+different stochastic object.
+
 \section{Formal correspondence and prior theory}
 \begingroup\raggedright
 The source authority is frozen verified commit
@@ -396,7 +639,14 @@ linear-field space, the finite fourth-moment proof reconstructs its
 quadratic completion, and cutoff errors follow from the exact
 orthogonal energy identities. The maximal Gaussian adjoint and
 coefficient-space geometry remain those of the frozen construction.
-No coefficient alignment is silently added to the application.
+No coefficient alignment is silently added to the application. The new
+compact synthesis, Wick-series energy and Brownian prediction/temporal
+identities are linked to their original source declarations as well.
+The accompanying \code{verify_wick_modes.py} passes 26 exact rational
+polynomial checks, including conditional Hermite identities through
+degree eight, correlated Wick covariances through degree six and finite
+linear-rate tail bounds. Infinite convergence, graph closure and
+asymptotic exclusions rely on the printed proofs.
 
 Hairer's primary notes establish the classical Hilbert--Schmidt
 stochastic-integral and stochastic-convolution setting. The scalar
@@ -412,6 +662,9 @@ than repeated at the expense of active research resources.
 \par\endgroup
 
 \begin{thebibliography}{9}
+\bibitem{Baudoin} F. Baudoin, \emph{Lecture 34: The Wiener chaos expansion},
+primary author lecture, November 4, 2012.
+\href{https://fabricebaudoin.blog/2012/11/04/lecture-34-the-wiener-chaos-expansion/}{Author lecture}.
 \bibitem{Hairer} M. Hairer,
 \emph{An introduction to stochastic PDEs},
 \href{https://arxiv.org/abs/0907.4178}{arXiv:0907.4178},

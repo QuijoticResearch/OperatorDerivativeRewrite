@@ -320,6 +320,483 @@
       "source_sha256": "2e48fa4248fa05f7b51545793f608e37d07e3f2fd86facee7fa100f99d62f645",
       "declaration_header": "theorem no_compact_firstChaos_right_inverse (K : GaussianL2 \u2192L[\u211d] GaussianVectorL2)\n    (hK : \u2200 h : CoefficientSpace, (K (firstChaosEmbedding h),firstChaosEmbedding h)\u2208hilbertDivergence.graph) :\n    \u00ac IsCompactOperator K",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactnessObstruction.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.column_norm",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 17,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem column_norm (v : TimeHilbert) : \u2016column v\u2016=\u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L17"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.synthesis_apply",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 30,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem synthesis_apply (v : \u2115 \u2192 TimeHilbert) (M : \u211d) (hM : 0\u2264M)\n    (hv : \u2200 n,\u2016v n\u2016\u2264M) (c : CoefficientSpace) :\n    synthesis v M hM hv c=infiniteResponse c v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.synthesis_norm",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 37,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem synthesis_norm (v : \u2115 \u2192 TimeHilbert) (M : \u211d) (hM : 0\u2264M)\n    (hv : \u2200 n,\u2016v n\u2016\u2264M) : \u2016synthesis v M hM hv\u2016\u2264M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L37"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.synthesis_single",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 45,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem synthesis_single (v : \u2115 \u2192 TimeHilbert) (M : \u211d) (hM : 0\u2264M)\n    (hv : \u2200 n,\u2016v n\u2016\u2264M) (n : \u2115) :\n    synthesis v M hM hv (lp.single 2 n (1 : \u211d))=gaussianMode n (v n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L45"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.partialSynthesis_apply",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 57,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem partialSynthesis_apply (v : \u2115 \u2192 TimeHilbert) (N : \u2115) (c : CoefficientSpace) :\n    partialSynthesis v N c=\u2211 n\u2208Finset.range N,c n \u2022 gaussianMode n (v n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L57"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.partialSynthesis_compact",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 61,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem partialSynthesis_compact (v : \u2115 \u2192 TimeHilbert) (N : \u2115) :\n    IsCompactOperator (partialSynthesis v N)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L61"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.synthesis_tail_bound",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 76,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem synthesis_tail_bound (v : \u2115 \u2192 TimeHilbert) (M : \u211d) (hM : 0\u2264M)\n    (hv : \u2200 n,\u2016v n\u2016\u2264M) (N : \u2115) (C : \u211d) (hC : 0\u2264C)\n    (htail : \u2200 n,N\u2264n \u2192 \u2016v n\u2016\u2264C) :\n    \u2016synthesis v M hM hv-partialSynthesis v N\u2016\u2264C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L76"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.synthesis_compact",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 108,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem synthesis_compact (v : \u2115 \u2192 TimeHilbert) (M : \u211d) (hM : 0\u2264M)\n    (hv : \u2200 n,\u2016v n\u2016\u2264M) (C : \u2115 \u2192 \u211d) (hC : \u2200 N,0\u2264C N)\n    (htail : \u2200 N n,N\u2264n \u2192 \u2016v n\u2016\u2264C N) (hlim : Tendsto C atTop (\ud835\udcdd 0)) :\n    IsCompactOperator (synthesis v M hM hv)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L108"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.linear_profile_tail",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 122,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem linear_profile_tail (t : \u211d\u22650) (N n : \u2115) (hn : N\u2264n) :\n    \u2016responseVector (linearRates n) t\u2016\u2264modalTail N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L122"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.modalTail_tendsto",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 136,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem modalTail_tendsto : Tendsto modalTail atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L136"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.linear_profile_bound",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 143,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem linear_profile_bound (t : \u211d\u22650) (n : \u2115) : \u2016responseVector (linearRates n) t\u2016\u22641",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L143"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.linearSynthesis_compact",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 149,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem linearSynthesis_compact (t : \u211d\u22650) : IsCompactOperator (linearSynthesis t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L149"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.linearSynthesis_single",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 152,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem linearSynthesis_single (t : \u211d\u22650) (n : \u2115) :\n    linearSynthesis t (lp.single 2 n (1 : \u211d))=gaussianMode n (responseVector (linearRates n) t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L152"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.linearSynthesis_infinite_trace",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 156,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem linearSynthesis_infinite_trace (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac Summable (fun n => \u2016linearSynthesis t (lp.single 2 n (1 : \u211d))\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L156"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.compact_does_not_imply_stochastic_trace",
+      "file": "Foundation/SPDECompactModalSynthesis.lean",
+      "line": 166,
+      "source_sha256": "add7de157ba653af0795e350ebc3799e9a1224a5eb3a7998effbe1fb51fa844a",
+      "declaration_header": "theorem compact_does_not_imply_stochastic_trace : \u2203 T : CoefficientSpace \u2192L[\u211d] GaussianL2,\n    IsCompactOperator T \u2227 \u00ac Summable (fun n => \u2016T (lp.single 2 n (1 : \u211d))\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDECompactModalSynthesis.lean#L166"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickLines_orthogonal",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 20,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickLines_orthogonal (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) :\n    OrthogonalFamily \u211d (fun i => wickLine (h i) d) (fun i => (wickLine (h i) d).subtype\u2097\u1d62)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L20"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickSeries_summable_iff",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 28,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickSeries_summable_iff (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d) :\n    Summable (fun i => c i \u2022 (wick (h i) d : GaussianL2)) \u2194\n      Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L28"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickResponse_hasSum",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 41,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickResponse_hasSum (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    HasSum (fun i => c i \u2022 (wick (h i) d : GaussianL2)) (wickResponse h d c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L41"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.finite_wick_energy",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 47,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem finite_wick_energy (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d) (s : Finset \u2115) :\n    \u2016\u2211 i\u2208s, c i \u2022 (wick (h i) d : GaussianL2)\u2016^2=\n      \u2211 i\u2208s, (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L47"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickResponse_energy",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 56,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickResponse_energy (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    HasSum (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d) (\u2016wickResponse h d c\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickResponse_projection",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 67,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickResponse_projection (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) (n : \u2115) :\n    projection n (wickResponse h d c)=if n=d then wickResponse h d c else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L67"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickResponse_recovery_graph",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 79,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickResponse_recovery_graph (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    (GaussianDivergenceRecovery.recovery (wickResponse h d c),wickResponse h d c)\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L79"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.wickResponse_recovery_energy",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 86,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem wickResponse_recovery_energy (h : \u2115 \u2192 CoefficientSpace)\n    (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    \u2016GaussianDivergenceRecovery.recovery (wickResponse h d c)\u2016^2=\n      (d : \u211d)\u207b\u00b9*\u2016wickResponse h d c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L86"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.modeDirections_orthogonal",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 106,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem modeDirections_orthogonal (v : \u2115 \u2192 GaussianTimeHilbert.TimeHilbert) :\n    \u2200 i j, i\u2260j \u2192 inner \u211d (modeDirection i (v i)) (modeDirection j (v j))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L106"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.modeDirection_energy",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 111,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem modeDirection_energy (i : \u2115) (v : GaussianTimeHilbert.TimeHilbert) :\n    \u2016modeDirection i v\u2016^2=\u2016v\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L111"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.brownianDirection_energy",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 120,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem brownianDirection_energy (i : \u2115) (t : \u211d\u22650) : \u2016brownianDirection i t\u2016^2=(t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L120"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.rawSquare_coeFn",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 126,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem rawSquare_coeFn (h : CoefficientSpace) :\n    rawSquare h =\u1d50[gaussianProduct] fun \u03c9 => (firstChaosEmbedding h \u03c9)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L126"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.rawSquare_mean",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 136,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem rawSquare_mean (h : CoefficientSpace) : inner \u211d gaussianOne (rawSquare h)=\u2016h\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L136"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.rawSquareSeries_mean_obstruction",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 141,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem rawSquareSeries_mean_obstruction (h : \u2115 \u2192 CoefficientSpace) (c : \u2115 \u2192 \u211d)\n    (hc : \u00ac Summable (fun i => c i*\u2016h i\u2016^2)) :\n    \u00ac Summable (fun i => c i \u2022 rawSquare (h i))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L141"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.harmonic_square_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 153,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem harmonic_square_summable : Summable (fun i => (harmonicCoefficient i)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L153"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.harmonic_not_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 158,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem harmonic_not_summable : \u00ac Summable harmonicCoefficient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L158"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.actual_centered_squares_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 165,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem actual_centered_squares_summable :\n    Summable (fun i => harmonicCoefficient i \u2022 (wick (brownianDirection i 1) 2 : GaussianL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L165"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.actual_raw_squares_not_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 173,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem actual_raw_squares_not_summable :\n    \u00ac Summable (fun i => harmonicCoefficient i \u2022 rawSquare (brownianDirection i 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L173"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.sourceProjection_eq_of_pairings",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 13,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem sourceProjection_eq_of_pairings {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u v : CoefficientSpace) (hv : v\u2208sourceSpan h)\n    (hc : \u2200 i, inner \u211d u (h i)=inner \u211d v (h i)) : sourceProjection h u=v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.brownianDirection_inner",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 31,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem brownianDirection_inner (i j : \u2115) (s t : \u211d\u22650) :\n    inner \u211d (brownianDirection i s) (brownianDirection j t)=\n      if i=j then (min s t : \u211d\u22650) else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L31"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.mode_source_projection",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 40,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem mode_source_projection (t : \u211d\u22650) (ht : t\u22641) (i : \u2115) :\n    sourceProjection (pastDirections t) (brownianDirection i 1)=brownianDirection i t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L40"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.response_hasSum",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 53,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem response_hasSum (t : \u211d\u22650) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    HasSum (fun i => c i \u2022 (wick (brownianDirection i t) d : GaussianL2)) (response t d c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L53"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.full_past_prediction",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 59,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem full_past_prediction (t : \u211d\u22650) (ht : t\u22641) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    conditionalProjection (pastDirections t) (response 1 d c)=response t d c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.response_energy_hasSum",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 66,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem response_energy_hasSum (t : \u211d\u22650) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    HasSum (fun i => (c i)^2*(d.factorial : \u211d)*(t : \u211d)^d) (\u2016response t d c\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L66"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.full_past_prediction_energy",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 74,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem full_past_prediction_energy (t : \u211d\u22650) (ht : t\u22641) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    \u2016conditionalProjection (pastDirections t) (response 1 d c)\u2016^2=\n      (t : \u211d)^d*\u2016response 1 d c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L74"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.harmonic_square_prediction_energy",
+      "file": "Foundation/SPDEWickBrownianPrediction.lean",
+      "line": 85,
+      "source_sha256": "cadd797caab5a0771ce0cc11d7a6730fc54753fddce43eaad988f35844166138",
+      "declaration_header": "theorem harmonic_square_prediction_energy (t : \u211d\u22650) (ht : t\u22641) :\n    \u2016conditionalProjection (pastDirections t) (response 1 2 harmonicCoefficient)\u2016^2=\n      (t : \u211d)^2*\u2016response 1 2 harmonicCoefficient\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickBrownianPrediction.lean#L85"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.source_projection_between",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 12,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem source_projection_between (s t : \u211d\u22650) (hst : s\u2264t) (i : \u2115) :\n    sourceProjection (pastDirections s) (brownianDirection i t)=brownianDirection i s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L12"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.response_prediction_between",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 22,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem response_prediction_between (s t : \u211d\u22650) (hst : s\u2264t) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    conditionalProjection (pastDirections s) (response t d c)=response s d c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L22"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.response_energy_scale",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 29,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem response_energy_scale (t : \u211d\u22650) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    \u2016response t d c\u2016^2=(t : \u211d)^d*\u2016response 1 d c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L29"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.response_pairing",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 38,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem response_pairing (s t : \u211d\u22650) (hst : s\u2264t) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    inner \u211d (response t d c) (response s d c)=\u2016response s d c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L38"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.response_increment_energy",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 51,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem response_increment_energy (s t : \u211d\u22650) (hst : s\u2264t) (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2)) :\n    \u2016response t d c-response s d c\u2016^2=((t : \u211d)^d-(s : \u211d)^d)*\u2016response 1 d c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L51"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.harmonic_terminal_energy_lower",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 58,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem harmonic_terminal_energy_lower : 2\u2264\u2016response 1 2 harmonicCoefficient\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L58"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.harmonic_positive_time_increment_lower",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 65,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem harmonic_positive_time_increment_lower (h : \u211d\u22650) :\n    2*(h : \u211d)\u2264\u2016response ((1/2 : \u211d\u22650)+h) 2 harmonicCoefficient-\n      response (1/2) 2 harmonicCoefficient\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.no_higher_positive_time_power",
+      "file": "Foundation/SPDEWickTemporalGeometry.lean",
+      "line": 75,
+      "source_sha256": "340d65267ec335dfe8cb9b1ec008f92298041cd7c2c26dad1446202cb56df77d",
+      "declaration_header": "theorem no_higher_positive_time_power (\u03b1 : \u211d) (h\u03b1 : 1<\u03b1) (C \u03b4 : \u211d) (h\u03b4 : 0<\u03b4) :\n    \u2203 h : \u211d\u22650, 0<h \u2227 (h : \u211d)<\u03b4 \u2227 h\u22641/2 \u2227\n      C*(h : \u211d)^\u03b1<\u2016response ((1/2 : \u211d\u22650)+h) 2 harmonicCoefficient-\n        response (1/2) 2 harmonicCoefficient\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickTemporalGeometry.lean#L75"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_wick_projection",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 121,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_wick_projection {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    conditionalProjection h (wick u n)=(wick (sourceProjection h u) n : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L121"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_wick_energy",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 132,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_wick_energy {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    \u2016conditionalProjection h (wick u n)\u2016^2=(n.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L132"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickContinuity.wick_norm_sq",
+      "file": "Foundation/GaussianWickContinuity.lean",
+      "line": 13,
+      "source_sha256": "b495135329cd380bc3e34a3eb7e15a23fc4d98d9612004f429d9617b447ef364",
+      "declaration_header": "theorem wick_norm_sq (h : CoefficientSpace) (n : \u2115) :\n    \u2016(wick h n : GaussianL2)\u2016^2 = (n.factorial : \u211d)*(\u2016h\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickContinuity.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20138 compact deterministic modal synthesis versus stochastic trace, original Wick-series energy/recovery and actual Brownian full-past prediction/positive-time roughness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickContinuity.wick_distance_sq",
+      "file": "Foundation/GaussianWickContinuity.lean",
+      "line": 17,
+      "source_sha256": "b495135329cd380bc3e34a3eb7e15a23fc4d98d9612004f429d9617b447ef364",
+      "declaration_header": "theorem wick_distance_sq (h k : CoefficientSpace) (n : \u2115) :\n    \u2016(wick h n : GaussianL2)-(wick k n : GaussianL2)\u2016^2 =\n      (n.factorial : \u211d)*((\u2016h\u2016^2)^n+(\u2016k\u2016^2)^n-2*(inner \u211d h k)^n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickContinuity.lean#L17"
     }
   ],
   "paper_sections": {
@@ -332,7 +809,11 @@
     "The cutoff error estimate follows from the exact orthogonal energy and the bounded completed divergence restriction.",
     "The inverse-number recovery norm estimate is the classical orthogonal-chaos argument on a probability space generated by the isonormal family; no extraneous non-Gaussian factor is permitted.",
     "The abstract presentation uses an arbitrary orthonormal output family in the same source Hilbert space. Frozen forcing uses its specific coordinate basis. No alignment with the Brownian input directions is added.",
-    "The generic right-inverse obstruction is reconstructed from adjointness, expectation and an infinite first-chaos left inverse. Compactness concerns the full observation operator, not a particular trace-admitted field."
+    "The generic right-inverse obstruction is reconstructed from adjointness, expectation and an infinite first-chaos left inverse. Compactness concerns the full observation operator, not a particular trace-admitted field.",
+    "The deterministic scalar synthesis T_t on ell2 is distinct from a unit-amplitude Hilbert-valued random forcing field. For linear rates it is compact by finite-rank norm approximation but not Hilbert-Schmidt at positive time. The displayed sharper tail bound [2(N+1)]^(-1/2) is an elementary human deduction; the source sufficient bound is (N+1)^(-1/2).",
+    "The monic Wick convention includes u^d/d! in its generating function. Exact covariance d! inner(h,k)^d yields the orthogonal-series criterion. The paper reconstructs the original closed-gradient domain and adjoint recovery through finite product rules and simultaneous graph convergence, rather than positing a new derivative.",
+    "The formal actual harmonic-weighted Brownian centered-square series converges while its raw-square means diverge. A separate unit-coefficient exponential Wick series at linear rates converges for each integer d>=2 by a direct stated instantiation of the general criterion, not a separately named formal positive-time theorem. It is a scalar observable and does not construct the missing first-chaos Hilbert field or an SPDE solution.",
+    "Full modal Brownian past, including every earlier time and every mode, gives exact conditional Wick prediction. The norm and increment identity are proved by Gaussian independent increments and L2 completion. Initial t^(d/2) norm scaling is separate from positive-time square-root increment scaling. The formal harmonic quadratic example refutes every squared-increment exponent alpha>1 near time one half; no almost-sure optimal regularity is claimed."
   ],
   "literature": [
     {
