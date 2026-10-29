@@ -2070,6 +2070,375 @@
       "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
       "declaration_header": "theorem compensated_martingale : Martingale compensated history probability",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L65"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootExponentialDomain.radial_integrable",
+      "file": "Foundation/ComplexRootExponentialDomain.lean",
+      "line": 23,
+      "source_sha256": "a8a709b9615b5b56a2f4efc074f85472f7454b1f464d66c509095f6960dd3273",
+      "declaration_header": "theorem radial_integrable (r : \u211d\u22650) (a B : \u211d) (hB : 0 \u2264 B) :\n    Integrable (radial B) (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootExponentialDomain.lean#L23"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootExponentialDomain.radial_real_integrable",
+      "file": "Foundation/ComplexRootExponentialDomain.lean",
+      "line": 28,
+      "source_sha256": "a8a709b9615b5b56a2f4efc074f85472f7454b1f464d66c509095f6960dd3273",
+      "declaration_header": "theorem radial_real_integrable (r : \u211d\u22650) (a B : \u211d) (hB : 0 \u2264 B) :\n    Integrable (fun z : \u2102 => Real.exp (B*\u2016z\u2016)) (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootExponentialDomain.lean#L28"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootExponentialDomain.integrable_of_exp_bound",
+      "file": "Foundation/ComplexRootExponentialDomain.lean",
+      "line": 33,
+      "source_sha256": "a8a709b9615b5b56a2f4efc074f85472f7454b1f464d66c509095f6960dd3273",
+      "declaration_header": "theorem integrable_of_exp_bound (r : \u211d\u22650) (a : \u211d) (F : \u2102 \u2192 \u2102) (hF : Measurable F)\n    (A B : \u211d) (hB : 0 \u2264 B) (hbound : \u2200 z, \u2016F z\u2016 \u2264 A * Real.exp (B * \u2016z\u2016)) :\n    Integrable F (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootExponentialDomain.lean#L33"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootExponentialDomain.phase_norm_bound",
+      "file": "Foundation/ComplexRootExponentialDomain.lean",
+      "line": 50,
+      "source_sha256": "a8a709b9615b5b56a2f4efc074f85472f7454b1f464d66c509095f6960dd3273",
+      "declaration_header": "theorem phase_norm_bound (\u03be : \u211d) (z : \u2102) :\n    \u2016Complex.exp (Complex.I*(\u03be : \u2102)*z)\u2016 \u2264 Real.exp (|\u03be| * \u2016z\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootExponentialDomain.lean#L50"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootExponentialDomain.tilted_integrable",
+      "file": "Foundation/ComplexRootExponentialDomain.lean",
+      "line": 58,
+      "source_sha256": "a8a709b9615b5b56a2f4efc074f85472f7454b1f464d66c509095f6960dd3273",
+      "declaration_header": "theorem tilted_integrable (r : \u211d\u22650) (a \u03be : \u211d) (F : \u2102 \u2192 \u2102) (hF : Measurable F)\n    (A B : \u211d) (hB : 0 \u2264 B) (hbound : \u2200 z, \u2016F z\u2016 \u2264 A * Real.exp (B * \u2016z\u2016)) :\n    (ComplexRootTiltedLaw.law a \u03be r).Integrable F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootExponentialDomain.lean#L58"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.integrand_integrable",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 24,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem integrand_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (z : \u2102) :\n    Integrable (fun \u03be => \u03c6 \u03be*Complex.exp (Complex.I*(\u03be : \u2102)*z)) (band R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L24"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.norm_bound",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 32,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem norm_bound (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (z : \u2102) :\n    \u2016extension R \u03c6 z\u2016 \u2264 (\u222b \u03be, \u2016\u03c6 \u03be\u2016 \u2202band R)*Real.exp ((R : \u211d)*\u2016z\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L32"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.extension_continuous",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 48,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem extension_continuous (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Continuous (extension R \u03c6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L48"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.law_integrable",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 75,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem law_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d\u22650) (a : \u211d) : Integrable (extension R \u03c6) (ComplexRootPoissonLaw.law t a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L75"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.process_integrable",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 80,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem process_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d\u22650) (a : \u211d) : Integrable (fun \u03c9 : MarkedRootRenewalProcess.StateSample =>\n      extension R \u03c6 (MarkedRenewalMartingale.process a t \u03c9)) MarkedRootRenewalProcess.probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L80"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedComplexExtension.tilted_integrable",
+      "file": "Foundation/BandLimitedComplexExtension.lean",
+      "line": 86,
+      "source_sha256": "1c47fb58e35a7315efcfce252107b3e1789733a2e85a1b8a1935a6240b7ec7e1",
+      "declaration_header": "theorem tilted_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d\u22650) (a \u03be : \u211d) : (ComplexRootTiltedLaw.law a \u03be t).Integrable (extension R \u03c6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedComplexExtension.lean#L86"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedEntireCalculus.extension_hasDerivAt",
+      "file": "Foundation/BandLimitedEntireCalculus.lean",
+      "line": 27,
+      "source_sha256": "86bc11dc358c18e726a93a984a849edf57468c62034e8b519a92c50a5cf27a51",
+      "declaration_header": "theorem extension_hasDerivAt (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (z\u2080 : \u2102) :\n    HasDerivAt (extension R \u03c6) (extension R (derivativeProfile \u03c6) z\u2080) z\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedEntireCalculus.lean#L27"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedEntireCalculus.derivative_formula",
+      "file": "Foundation/BandLimitedEntireCalculus.lean",
+      "line": 60,
+      "source_sha256": "86bc11dc358c18e726a93a984a849edf57468c62034e8b519a92c50a5cf27a51",
+      "declaration_header": "theorem derivative_formula (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (z : \u2102) :\n    deriv (extension R \u03c6) z = extension R (derivativeProfile \u03c6) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedEntireCalculus.lean#L60"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedEntireCalculus.orderProfile_integrable",
+      "file": "Foundation/BandLimitedEntireCalculus.lean",
+      "line": 77,
+      "source_sha256": "86bc11dc358c18e726a93a984a849edf57468c62034e8b519a92c50a5cf27a51",
+      "declaration_header": "theorem orderProfile_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (k : \u2115) : Integrable (orderProfile k \u03c6) (band R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedEntireCalculus.lean#L77"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedEntireCalculus.iterated_derivative_formula",
+      "file": "Foundation/BandLimitedEntireCalculus.lean",
+      "line": 83,
+      "source_sha256": "86bc11dc358c18e726a93a984a849edf57468c62034e8b519a92c50a5cf27a51",
+      "declaration_header": "theorem iterated_derivative_formula (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (k : \u2115) : iteratedDeriv k (extension R \u03c6) = extension R (orderProfile k \u03c6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedEntireCalculus.lean#L83"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedEntireCalculus.fourth_derivative_formula",
+      "file": "Foundation/BandLimitedEntireCalculus.lean",
+      "line": 92,
+      "source_sha256": "86bc11dc358c18e726a93a984a849edf57468c62034e8b519a92c50a5cf27a51",
+      "declaration_header": "theorem fourth_derivative_formula (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    iteratedDeriv 4 (extension R \u03c6) = extension R (fun \u03be => \u03c6 \u03be*(\u03be : \u2102)^4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedEntireCalculus.lean#L92"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedProcessExpectation.shifted_joint_integrable",
+      "file": "Foundation/BandLimitedProcessExpectation.lean",
+      "line": 10,
+      "source_sha256": "ac52c3f8d0fddc558fb20e69bdc6d958d81f152bb5e7790bfe59c296b8efe5a4",
+      "declaration_header": "theorem shifted_joint_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (\u03ba : \u211d) (t : \u211d\u22650) (a : \u211d) :\n    Integrable (fun p : \u211d \u00d7 \u2102 => \u03c6 p.1*Complex.exp (Complex.I*((p.1+\u03ba : \u211d) : \u2102)*p.2))\n      ((band R).prod (ComplexRootPoissonLaw.law t a))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedProcessExpectation.lean#L10"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedProcessExpectation.compound_mean",
+      "file": "Foundation/BandLimitedProcessExpectation.lean",
+      "line": 44,
+      "source_sha256": "ac52c3f8d0fddc558fb20e69bdc6d958d81f152bb5e7790bfe59c296b8efe5a4",
+      "declaration_header": "theorem compound_mean (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d\u22650) (a : \u211d) :\n    (\u222b z, extension R \u03c6 z \u2202ComplexRootPoissonLaw.law t a) =\n      \u222b \u03b7, \u03c6 \u03b7*Complex.exp ((t : \u2102)*MarkedHolomorphicExponential.symbol a \u03b7) \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedProcessExpectation.lean#L44"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedProcessExpectation.process_mean",
+      "file": "Foundation/BandLimitedProcessExpectation.lean",
+      "line": 50,
+      "source_sha256": "ac52c3f8d0fddc558fb20e69bdc6d958d81f152bb5e7790bfe59c296b8efe5a4",
+      "declaration_header": "theorem process_mean (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d\u22650) (a : \u211d) :\n    (\u222b \u03c9, extension R \u03c6 (MarkedRenewalMartingale.process a t \u03c9)\n      \u2202MarkedRootRenewalProcess.probability) =\n      \u222b \u03b7, \u03c6 \u03b7*Complex.exp ((t : \u2102)*MarkedHolomorphicExponential.symbol a \u03b7) \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedProcessExpectation.lean#L50"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedProcessExpectation.tilted_mean",
+      "file": "Foundation/BandLimitedProcessExpectation.lean",
+      "line": 61,
+      "source_sha256": "ac52c3f8d0fddc558fb20e69bdc6d958d81f152bb5e7790bfe59c296b8efe5a4",
+      "declaration_header": "theorem tilted_mean (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (\u03ba : \u211d) (t : \u211d\u22650) (a : \u211d) :\n    (\u222b\u1d5b z, extension R \u03c6 z \u2202[ContinuousLinearMap.mul \u211d \u2102; ComplexRootTiltedLaw.law a \u03ba t]) =\n      \u222b \u03b7, \u03c6 \u03b7*Complex.exp ((t : \u2102)*(MarkedHolomorphicExponential.symbol a (\u03b7+\u03ba)-\n        MarkedHolomorphicExponential.symbol a \u03ba)) \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedProcessExpectation.lean#L61"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootUniformHeatBounds.near_contraction",
+      "file": "Foundation/ComplexRootUniformHeatBounds.lean",
+      "line": 11,
+      "source_sha256": "9c5fcaa864081ccc75cacb60490676889928029160762b24e19d79df5022ffa1",
+      "declaration_header": "theorem near_contraction : \u2200\u1da0 x : \u211d in \ud835\udcdd 0, factor x \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootUniformHeatBounds.lean#L11"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootUniformHeatBounds.uniform_factor_bound",
+      "file": "Foundation/ComplexRootUniformHeatBounds.lean",
+      "line": 19,
+      "source_sha256": "9c5fcaa864081ccc75cacb60490676889928029160762b24e19d79df5022ffa1",
+      "declaration_header": "theorem uniform_factor_bound (S : \u211d\u22650) :\n    \u2200\u1da0 n : \u2115 in atTop, \u2200 \u03be : \u211d, |\u03be| \u2264 (S : \u211d) \u2192 factor (amplitude 1 n*\u03be) \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootUniformHeatBounds.lean#L19"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootUniformHeatBounds.uniform_transform_norm",
+      "file": "Foundation/ComplexRootUniformHeatBounds.lean",
+      "line": 45,
+      "source_sha256": "9c5fcaa864081ccc75cacb60490676889928029160762b24e19d79df5022ffa1",
+      "declaration_header": "theorem uniform_transform_norm (T S : \u211d\u22650) :\n    \u2200\u1da0 n : \u2115 in atTop, \u2200 \u03be : \u211d, |\u03be| \u2264 (S : \u211d) \u2192\n      \u2016Complex.exp ((((n : \u211d\u22650)*T : \u211d\u22650) : \u2102)*\n        MarkedHolomorphicExponential.symbol (amplitude 1 n) \u03be)\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootUniformHeatBounds.lean#L45"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.uniform_kernel_bound",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 49,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem uniform_kernel_bound (T R : \u211d\u22650) (\u03ba : \u211d) :\n    \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200\u1da0 n : \u2115 in atTop, \u2200 \u03b7 : \u211d, |\u03b7| \u2264 (R : \u211d) \u2192\n      \u2016kernel (amplitude 1 n) \u03ba ((n : \u211d\u22650)*T) \u03b7\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L49"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.frequency_integral_limit",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 74,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem frequency_integral_limit (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (T : \u211d\u22650) (\u03ba : \u211d) :\n    Tendsto (fun n : \u2115 => \u222b \u03b7, \u03c6 \u03b7*kernel (amplitude 1 n) \u03ba ((n : \u211d\u22650)*T) \u03b7 \u2202band R)\n      atTop (\ud835\udcdd (\u222b \u03b7, \u03c6 \u03b7*(Real.exp (-(T : \u211d)*((\u03b7+\u03ba)^4-\u03ba^4)) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L74"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.tilted_expectation_limit",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 90,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem tilted_expectation_limit (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (T : \u211d\u22650) (\u03ba : \u211d) :\n    Tendsto (fun n : \u2115 => \u222b\u1d5b z, extension R \u03c6 z \u2202[ContinuousLinearMap.mul \u211d \u2102;\n      ComplexRootTiltedLaw.law (amplitude 1 n) \u03ba ((n : \u211d\u22650)*T)]) atTop\n      (\ud835\udcdd (\u222b \u03b7, \u03c6 \u03b7*(Real.exp (-(T : \u211d)*((\u03b7+\u03ba)^4-\u03ba^4)) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L90"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.process_expectation_limit",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 101,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem process_expectation_limit (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (T : \u211d\u22650) :\n    Tendsto (fun n : \u2115 => \u222b \u03c9, extension R \u03c6\n      (MarkedRenewalMartingale.process (amplitude 1 n) ((n : \u211d\u22650)*T) \u03c9)\n        \u2202MarkedRootRenewalProcess.probability) atTop\n      (\ud835\udcdd (\u222b \u03b7, \u03c6 \u03b7*(Real.exp (-(T : \u211d)*\u03b7^4) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L101"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.starting_state_limit",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 119,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem starting_state_limit (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (T : \u211d\u22650) (z : \u2102) :\n    Tendsto (fun n : \u2115 => \u222b \u03c9, extension R \u03c6\n      (z+MarkedRenewalMartingale.process (amplitude 1 n) ((n : \u211d\u22650)*T) \u03c9)\n        \u2202MarkedRootRenewalProcess.probability) atTop\n      (\ud835\udcdd (\u222b \u03b7, (\u03c6 \u03b7*Complex.exp (Complex.I*(\u03b7 : \u2102)*z))*\n        (Real.exp (-(T : \u211d)*\u03b7^4) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L119"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatLimit.operator_symbol",
+      "file": "Foundation/BandLimitedHeatLimit.lean",
+      "line": 129,
+      "source_sha256": "c551b8fec8d68f60bce4e345ec7bed024e16b61ac0c13c33d2036e0f97c3185d",
+      "declaration_header": "theorem operator_symbol (T : \u211d\u22650) (\u03b7 : \u211d) :\n    (Real.exp (-(T : \u211d)*\u03b7^4) : \u2102) = HigherHeatL2.symbol 2 T (\u03b7/(2*Real.pi))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatLimit.lean#L129"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedDifferentialHeatLimit.derivative_process_integrable",
+      "file": "Foundation/BandLimitedDifferentialHeatLimit.lean",
+      "line": 11,
+      "source_sha256": "9293f8a89db5936d479ae1ec62a3eb4dbd38551f93aeffa32e3049785f4a3d49",
+      "declaration_header": "theorem derivative_process_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102)\n    (h\u03c6 : Integrable \u03c6 (band R)) (k : \u2115) (t : \u211d\u22650) (a : \u211d) :\n    Integrable (fun \u03c9 => iteratedDeriv k (extension R \u03c6)\n      (MarkedRenewalMartingale.process a t \u03c9)) MarkedRootRenewalProcess.probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedDifferentialHeatLimit.lean#L11"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedDifferentialHeatLimit.derivative_expectation_limit",
+      "file": "Foundation/BandLimitedDifferentialHeatLimit.lean",
+      "line": 18,
+      "source_sha256": "9293f8a89db5936d479ae1ec62a3eb4dbd38551f93aeffa32e3049785f4a3d49",
+      "declaration_header": "theorem derivative_expectation_limit (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102)\n    (h\u03c6 : Integrable \u03c6 (band R)) (k : \u2115) (T : \u211d\u22650) (z : \u2102) :\n    Tendsto (fun n : \u2115 => \u222b \u03c9, iteratedDeriv k (extension R \u03c6)\n      (z+MarkedRenewalMartingale.process (ComplexRootHeatTransformLimit.amplitude 1 n)\n        ((n : \u211d\u22650)*T) \u03c9) \u2202MarkedRootRenewalProcess.probability) atTop\n      (\ud835\udcdd (\u222b \u03b7, (orderProfile k \u03c6 \u03b7*Complex.exp (Complex.I*(\u03b7 : \u2102)*z))*\n        (Real.exp (-(T : \u211d)*\u03b7^4) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedDifferentialHeatLimit.lean#L18"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatEquation.heatProfile_integrable",
+      "file": "Foundation/BandLimitedHeatEquation.lean",
+      "line": 24,
+      "source_sha256": "a0d9c5e358dae63546f3b24236a4ed17df39ab69e047aca84b01756e086a6142",
+      "declaration_header": "theorem heatProfile_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d) : Integrable (heatProfile t \u03c6) (band R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatEquation.lean#L24"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatEquation.time_derivative",
+      "file": "Foundation/BandLimitedHeatEquation.lean",
+      "line": 49,
+      "source_sha256": "a0d9c5e358dae63546f3b24236a4ed17df39ab69e047aca84b01756e086a6142",
+      "declaration_header": "theorem time_derivative (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t\u2080 : \u211d) (z : \u2102) :\n    HasDerivAt (fun t : \u211d => extension R (heatProfile t \u03c6) z)\n      (extension R (timeProfile t\u2080 \u03c6) z) t\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatEquation.lean#L49"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedHeatEquation.fourth_order_heat_equation",
+      "file": "Foundation/BandLimitedHeatEquation.lean",
+      "line": 86,
+      "source_sha256": "a0d9c5e358dae63546f3b24236a4ed17df39ab69e047aca84b01756e086a6142",
+      "declaration_header": "theorem fourth_order_heat_equation (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (t : \u211d) (z : \u2102) :\n    HasDerivAt (fun s : \u211d => extension R (heatProfile s \u03c6) z)\n      (-(iteratedDeriv 4 (extension R (heatProfile t \u03c6)) z)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedHeatEquation.lean#L86"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.propagate_integrable",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 17,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem propagate_integrable (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (r : \u211d\u22650) : Integrable (propagate a r \u03c6) (band R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L17"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.propagate_zero",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 29,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem propagate_zero (a : \u211d) (\u03c6 : \u211d \u2192 \u2102) : propagate a 0 \u03c6 = \u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L29"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.propagate_add",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 33,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem propagate_add (a : \u211d) (r q : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) :\n    propagate a r (propagate a q \u03c6) = propagate a (r+q) \u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L33"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.transition_integral",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 39,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem transition_integral (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (r : \u211d\u22650) (z : \u2102) :\n    (\u222b y, extension R \u03c6 (z+y) \u2202ComplexRootPoissonLaw.law r a) =\n      extension R (propagate a r \u03c6) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L39"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.conditional_transition",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 50,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem conditional_transition (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[fun \u03c9 => extension R \u03c6 (process a t \u03c9) | history a s] =\u1d50[probability]\n      fun \u03c9 => extension R (propagate a (t-s) \u03c6) (process a s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L50"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.terminal_condExp",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 90,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem terminal_condExp (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (T t : \u211d\u22650) :\n    probability[fun \u03c9 => extension R \u03c6 (process a T \u03c9) | history a t] =\u1d50[probability]\n      backward R \u03c6 a T t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L90"
+    },
+    {
+      "paper": "Sections 10\u201311 compact-frequency actual integrability, derivative limits, fourth-order equation and finite conditional martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BandLimitedConditionalCalculus.backward_martingale",
+      "file": "Foundation/BandLimitedConditionalCalculus.lean",
+      "line": 112,
+      "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
+      "declaration_header": "theorem backward_martingale (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (T : \u211d\u22650) : Martingale (backward R \u03c6 a T) (history a) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L112"
     }
   ],
   "human_reorganization": [
@@ -2084,7 +2453,11 @@
     "The bounded adjoint of the completed predictable integration isometry is the reconstruction derivative in this paper. It is not identified with an unbounded anticipating Malliavin derivative or a signed pseudoprocess operator.",
     "The cylinder-density and maximal-inequality proof reorganizes the verified conditional-limit mechanism into a complete human argument. Finite all-time common versions use countably many prefixes. The real sign-coordinate basis comparison is an elementary human deduction.",
     "The unit exponential source has actual finite count and marked paths. Its nonexplosion and residual-life factorization are reconstructed directly. The displayed wall-clock Dynkin/channel identity is the actual combined martingale, not a full continuous-time PRP for arbitrary holding/mark terminal variables.",
-    "Centered mark kernels have zero mark mean and therefore cannot equal a unit count jump for every mark. This explicit obstruction is not a claim that a four-channel continuous-time representation is impossible. Mark-source Hilbert isometry is not transferred to time components, signed targets or an ordinary weak scaling limit."
+    "Centered mark kernels have zero mark mean and therefore cannot equal a unit count jump for every mark. This explicit obstruction is not a claim that a four-channel continuous-time representation is impossible. Mark-source Hilbert isometry is not transferred to time components, signed targets or an ordinary weak scaling limit.",
+    "Sections 10\u201311 reconstruct the compact-frequency L1 Fourier domain. The simple radial bound from |C_a(r)|<=2|a|N_r is a human derivation of the mapped exponential integrability mechanism. Absolute product integrability precedes Fubini for both positive compound laws and complex tilted variation.",
+    "Eventual compact-frequency contraction supplies dominated convergence; the tilted multiplier is a ratio with a denominator tending to a strictly positive number. This is not uniform variation control. Complex derivative limits and the classical fourth-order equation preserve the fixed frequency radius and angular/2pi normalization.",
+    "Natural-filtration conditional integration uses the full observed past and an independent compound increment. The stopped backward version is adapted and integrable, agrees at each time with a terminal conditional expectation and is a finite-process martingale. No limiting law, limiting filtration or limiting martingale representation is inferred.",
+    "The primary Bonaccorsi\u2013Mazzucchi Hypothesis 10 and Theorem 11 directly precede this Fourier-data mechanism. Compactly supported L1 densities satisfy their spectral assumptions. No new representation principle or independently novel analytic limit is claimed."
   ],
   "literature": [
     {
@@ -2094,6 +2467,10 @@
     {
       "url": "https://arxiv.org/abs/1603.05437",
       "review": "Primary abstract/bibliography verified in this audit; analytic calculus framework additionally compared in earlier signed-multichannel audit. No complete new theorem comparison claimed."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1402.6140",
+      "review": "Hypothesis 10 and Theorem 11, pages 10\u201311 in the primary preprint, were inspected for the Fourier-measure data representation and classical higher-order equation. Compact-frequency L1 data meet those integrability assumptions; direct classical antecedent, not novelty certification."
     }
   ],
   "novelty": "UNRESOLVED; formalization companion, no priority claim"

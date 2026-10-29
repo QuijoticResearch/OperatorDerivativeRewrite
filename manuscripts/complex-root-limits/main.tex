@@ -30,7 +30,7 @@ verified fourth-order results with elementary proofs and explicit
 constants. The analytic-versus-probabilistic distinction is established
 in prior work; this is a formalization companion, and no priority claim
 is made.
-The actual mark source separately has a positive Hermitian three-channel predictable calculus, full original-source $L^2$ reconstruction and a distinct Poisson clock channel. Complete proofs retain the difference between this source calculus and its analytic scaling target. \end{abstract}
+The actual mark source separately has a positive Hermitian three-channel predictable calculus, full original-source $L^2$ reconstruction and a distinct Poisson clock channel. Complete proofs retain the difference between this source calculus and its analytic scaling target. A compact-frequency domain supports genuine integrable transitions, derivative limits and finite-process backward martingales. \end{abstract}
 
 \section{Scope and main conclusions}
 Let $\varepsilon_j,\delta_j$ be mutually independent symmetric signs and set
@@ -174,8 +174,7 @@ For $T=0$, the first two sequences are identically one, as is the third.
 
 These statements establish only the stated exponential-test limits.
 Passing a general entire function through the limit needs a separate
-integrability and domination argument. No such unrestricted extension
-is used in this paper.
+integrability and domination argument. The compact-frequency domain below supplies a justified restricted extension.
 
 \section{Exact positive moments and compact escape}
 \begin{lemma}\label{lem:moments}
@@ -725,6 +724,175 @@ for its four continuous-time components are not imported from the
 mark-index Hilbert space. Likewise no isometry is transferred to the
 signed heat target or to a nonexistent ordinary weak limit.
 
+\section{A genuine compact-frequency analytic domain}
+The failure of weak convergence does not prevent convergence on a proved
+class of unbounded complex tests. Fix $R\geq0$ and
+$\varphi\in L^1([-R,R];\C)$, and put
+\[
+ f_\varphi(z)=\int_{-R}^R\varphi(\eta)e^{i\eta z}\,d\eta.
+\]
+Lebesgue measure is used here, with no $2\pi$ normalization. At $R=0$
+this domain contains only the zero realization. For all $z\in\C$,
+\begin{equation}\label{eq:bandbound}
+ |f_\varphi(z)|\leq\|\varphi\|_1 e^{R|z|},\qquad
+ f_\varphi^{(k)}(z)=\int_{-R}^R(i\eta)^k\varphi(\eta)e^{i\eta z}\,d\eta.
+\end{equation}
+Indeed $|e^{i\eta z}|=e^{-\eta\operatorname{Im}z}\leq e^{R|z|}$;
+on $|z-z_0|\leq1$ each differentiated integrand is dominated by
+$R^k|\varphi(\eta)|e^{R(|z_0|+1)}$. Dominated differentiation proves
+the formula inductively and proves that $f_\varphi$ is entire. Its
+real restriction is bounded, whereas its complex extension can grow.
+
+Let $C_a(t)$ denote the actual unit-rate marked Poisson process of the
+preceding sections. The finite-rate compound law of $C_a(r)$ is
+$\mu_{r,a}$. Conditional on $N_r=j$, its norm is at most $2|a|j$, hence
+for every $B\geq0$,
+\begin{equation}\label{eq:radialband}
+ \E e^{B|C_a(r)|}\leq
+ \exp\{r(e^{2B|a|}-1)\}<\infty.
+\end{equation}
+Thus $f_\varphi$, every derivative, and every shifted function
+$f_\varphi(z+\cdot)$ are genuinely integrable against each finite law.
+More precisely, the absolute double integral of the defining frequency
+integrand is at most
+\[
+ \|\varphi\|_1 e^{R|z|}\E e^{R|C_a(r)|}<\infty.
+\]
+This is the Fubini justification; it is not inferred from cancellation
+in a holomorphic transform. With $\psi_a(\eta)=F(a\eta)-1$, it gives
+\begin{equation}\label{eq:bandexpect}
+ \E f_\varphi(z+C_a(r))
+ =\int_{-R}^R\varphi(\eta)e^{i\eta z}e^{r\psi_a(\eta)}\,d\eta.
+\end{equation}
+For a real tilt $\kappa$, the density defining the finite complex law
+has the modulus bound
+\[
+ e^{-r\psi_a(\kappa)}e^{|\kappa||w|}.
+\]
+Equation~\eqref{eq:radialband} with $B=R+|\kappa|$ therefore also
+proves variation-integrability before Fubini, and yields
+\begin{equation}\label{eq:bandtilt}
+ \int f_\varphi(w)\,d\nu_{r,a,\kappa}(w)
+ =\int_{-R}^R\varphi(\eta)
+ e^{r(\psi_a(\eta+\kappa)-\psi_a(\kappa))}\,d\eta.
+\end{equation}
+Here $d\nu_{r,a,\kappa}=e^{-r\psi_a(\kappa)}e^{i\kappa w}d\mu_{r,a}$;
+the notation includes exactly the rate-scaled tilts used earlier.
+
+\begin{theorem}\label{thm:bandlimit}
+For $T\geq0$, $z\in\C$ and every fixed integer $k\geq0$,
+\begin{align}
+ \E f_\varphi^{(k)}(z+C_{b_n}(nT))&\longrightarrow
+ \int_{-R}^R(i\eta)^k\varphi(\eta)e^{i\eta z-T\eta^4}\,d\eta,
+ \label{eq:bandlimit}\\
+ \int f_\varphi(w)\,d\nu_{nT,b_n,\kappa}(w)&\longrightarrow
+ \int_{-R}^R\varphi(\eta)e^{-T((\eta+\kappa)^4-\kappa^4)}\,d\eta.
+ \label{eq:bandtiltlimit}
+\end{align}
+\end{theorem}
+\begin{proof}
+The expansion $F(x)=1-x^4/6+O(x^8)$ implies $F(x)\leq1$
+on a sufficiently small real neighborhood of zero. Since $b_n\to0$,
+for every fixed frequency radius $S$ and all sufficiently large $n$,
+\[
+ 0<e^{nT\psi_{b_n}(\eta)}\leq1\quad(|\eta|\leq S).
+\]
+The pointwise limit is $e^{-T\eta^4}$. In
+\eqref{eq:bandexpect}, with $(i\eta)^k\varphi$ in place of $\varphi$,
+an eventual integrable majorant is
+$R^k|\varphi(\eta)|e^{R|z|}$. Dominated convergence proves the first
+limit, including $k=0$ with its evident bound.
+For the tilt write its multiplier as
+\[
+ \frac{e^{nT\psi_{b_n}(\eta+\kappa)}}
+ {e^{nT\psi_{b_n}(\kappa)}}.
+\]
+The numerator has modulus at most one uniformly for $|\eta|\leq R$
+eventually, by choosing $S=R+|\kappa|$. The denominator converges to
+$e^{-T\kappa^4}>0$, so its reciprocal is bounded independently of $n$
+eventually. This supplies $C|\varphi|$ as an integrable frequency
+majorant. The pointwise ratio limit proves \eqref{eq:bandtiltlimit}.
+No uniform bound on the variation of $\nu_{nT,b_n,\kappa}$ has been used;
+that variation diverges when $T>0$ and $\kappa\ne0$.
+\end{proof}
+
+The limit is a classical solution on this fixed spectral domain. Define
+\[
+ u(t,z)=\int_{-R}^R\varphi(\eta)e^{i\eta z-t\eta^4}\,d\eta
+ \quad(t\in\R,z\in\C).
+\]
+On bounded time and complex-coordinate sets, all time and space
+derivatives have integrable bounds by constants times $|\varphi|$.
+Consequently $u(0,z)=f_\varphi(z)$ and
+\[
+ \partial_tu(t,z)=-\partial_z^4u(t,z).
+\]
+Negative times are allowed here because the frequencies are bounded;
+this statement is not backward solvability on arbitrary initial data.
+In the library's $2\pi$ Fourier convention, the multiplier
+$e^{-T\eta^4}$ is the higher-heat multiplier at frequency $\eta/(2\pi)$.
+
+\section{Actual conditional transitions and backward martingales}
+Fix the finite process parameter $a\in\R$ and write
+$\mathcal H_s^a=\sigma(C_a(v):0\leq v\leq s)$ for its natural past.
+The renewal construction above supplies an increment independent of
+this entire past, with law $\mu_{t-s,a}$, for $0\leq s\leq t$.
+Define the frequency propagator
+\[
+ (P_r^a\varphi)(\eta)=\varphi(\eta)e^{r\psi_a(\eta)},\quad r\geq0.
+\]
+For fixed $a,r$, its multiplier is bounded on $[-R,R]$, so it preserves
+$L^1([-R,R])$. Direct multiplication gives $P_0^a=I$ and
+$P_r^aP_q^a=P_{r+q}^a$. It need not be a contraction on that domain
+at arbitrary finite $a$.
+
+\begin{theorem}\label{thm:bandconditional}
+For $0\leq s\leq t$,
+\[
+ \E[f_\varphi(C_a(t))\mid\mathcal H_s^a]
+ =f_{P_{t-s}^a\varphi}(C_a(s))\quad\hbox{almost surely}.
+\]
+For every fixed horizon $H\geq0$, the process
+\[
+ M_t=f_{P_{(H-t)_+}^a\varphi}(C_a(\min(t,H)))\quad(t\geq0)
+\]
+is an integrable complex martingale in this same natural filtration.
+\end{theorem}
+\begin{proof}
+The function $(p,w)\mapsto f_\varphi(p(s)+w)$ is measurable on the
+product of the coordinate past space and $\C$. Its value at the
+actual past and increment is $f_\varphi(C_a(t))$, which is integrable
+by \eqref{eq:bandbound}--\eqref{eq:radialband}. Independence therefore
+gives its conditional expectation by integrating only the increment.
+One may prove this conditional-integration rule first on product
+indicators, then on simple functions and finally on integrable functions
+by truncation and $L^1$ approximation. Formula~\eqref{eq:bandexpect}
+identifies this increment integral for every starting coordinate and
+proves the first assertion. This argument handles an unbounded test;
+bounded-continuous transition formulas alone would not justify it.
+
+For $t\leq H$, the first assertion says exactly
+$M_t=\E[f_\varphi(C_a(H))\mid\mathcal H_t^a]$. For $t\geq H$,
+$P_0^a=I$ and the terminal variable is already measurable in
+$\mathcal H_t^a$, so the same identity holds. The displayed version is
+adapted because the coordinate at $\min(t,H)$ is past-measurable and
+each propagated extension is continuous. Each time is integrable by
+the same finite-law bound. The tower property proves the martingale
+identity for every pair of times.
+\end{proof}
+
+These martingales concern each actual finite positive compound-root
+process. No limiting path law, limiting filtration or limiting
+martingale representation is supplied by the expectation limits.
+The compact-frequency Fourier mechanism has a direct antecedent:
+Bonaccorsi--Mazzucchi~\cite{BM}, Hypothesis 10 and Theorem 11, already
+represent admissible Fourier-measure data and the corresponding
+higher-order equation. Compactly supported $L^1$ densities meet those
+spectral integrability conditions. Our Poisson clock, finite conditional
+identities and fully specified domination reconstruct the frozen
+library's version; they do not establish a new analytic representation
+principle or priority over that work.
+
 \section{Classical finite-state context}
 Discrete Fourier orthogonality, finite-state martingale representation
 and its Hilbert completion have classical antecedents.
@@ -765,7 +933,7 @@ proves its uniform-topology version directly from the verified endpoint
 law; the general continuous-coordinate implication is a classical
 deduction, not an additional named formal theorem.
 
-The source-calculus correspondences additionally include \code{CyclicMarkRepresentation}, \code{RootMarkInfiniteIto}, \code{RootMarkInfiniteClarkOperator}, \code{MarkedChannelIto} and \code{CyclicClockChannelObstruction}. Their exact original probability spaces and domains remain separate from the signed target. The central approximation modules are \code{ComplexRootHeatTransformLimit},
+The additional compact-frequency correspondences cover the exponential growth domain, entire differentiation, absolute product integrability, actual finite conditional transitions, all derivative expectation limits and the classical fourth-order equation. Their proofs above retain a fixed spectral radius. The source-calculus correspondences additionally include \code{CyclicMarkRepresentation}, \code{RootMarkInfiniteIto}, \code{RootMarkInfiniteClarkOperator}, \code{MarkedChannelIto} and \code{CyclicClockChannelObstruction}. Their exact original probability spaces and domains remain separate from the signed target. The central approximation modules are \code{ComplexRootHeatTransformLimit},
 \code{ComplexRootPoissonNoWeakLimit}, \code{ComplexRootTiltedLaw}
 and \code{ComplexTiltVariationDivergence}. The theorem map also identifies
 the exact finite transform, moment, path, phase-cancellation and variation
@@ -776,16 +944,14 @@ the tilted limit uses rate $nT$ and amplitude $b_n$. These normalizations
 give the same analytic heat symbol, but are not the same finite law.
 They have been kept separate throughout the statements and proofs.
 
-The baseline's complete build and transitive axiom evidence are recorded
-and hash-checked in the accompanying verification receipt. This editorial
-work does not rerun that full build. The present paper does not prove a
-continuum probability process with biharmonic transition laws, an
-unrestricted analytic functional calculus, or a stochastic calculus for
-an ordinary weak limit. Analytic functional limits remain meaningful
-precisely on their proved test domains. Attribution, independent referee
-review and a comprehensive novelty assessment remain open.
+The complete baseline build and axiom receipts are hash-checked; no full
+Lean rebuild is run for these publication-only edits. No continuum
+probability process with biharmonic transitions, unrestricted analytic
+calculus or stochastic calculus for an ordinary weak limit is proved.
+Attribution, referee review and comprehensive novelty assessment remain open.
 \par\endgroup
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{BM}
 S. Bonaccorsi and S. Mazzucchi,
@@ -793,7 +959,7 @@ S. Bonaccorsi and S. Mazzucchi,
 arXiv:1402.6140 (2014),
 \href{https://arxiv.org/abs/1402.6140}{arxiv.org/abs/1402.6140}.
 Primary comparison: Theorem 2, Remark 1, the discussion before Theorem 7,
-and Hypothesis 10.
+and Hypothesis 10 and Theorem 11.
 \bibitem{BCM}
 S. Bonaccorsi, C. Calcaterra and S. Mazzucchi,
 \emph{An It\^o calculus for a class of limit processes arising from random
