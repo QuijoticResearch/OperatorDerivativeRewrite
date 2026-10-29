@@ -1624,6 +1624,96 @@
       "source_sha256": "e23ffe4bd8ea4f38955295afabb3e6715f2e546b37c1957baa4236ef80c5d6a7",
       "declaration_header": "theorem recovery_minimal_norm (f : GaussianL2) (u : GaussianVectorL2)\n    (hu : (u,f-projection 0 f) \u2208 hilbertDivergence.graph) : \u2016recovery f\u2016 \u2264 \u2016u\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDivergenceRecovery.lean#L166"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.observation_continuous",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 17,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem observation_continuous (\u03c9 : SampleSpace) : Continuous (fun t => observation t \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L17"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.filtration_before",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 26,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem filtration_before {t : \u211d} (ht : t \u2264 0) : filtration t = \u22a5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L26"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.coordinate_adapted",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 37,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem coordinate_adapted {t : \u211d} (ht : 0 < t) :\n    StronglyMeasurable[filtration t] (coordinate 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L37"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.filtration_not_right_continuous",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 57,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem filtration_not_right_continuous : \u00ac filtration.IsRightContinuous",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L57"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.value_memLp",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 75,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem value_memLp (t : \u211d) : MemLp (value t) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L75"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.actual_martingale",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 86,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem actual_martingale : Martingale value filtration gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L86"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.positive_law",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 98,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem positive_law {t : \u211d} (ht : 0 < t) : HasLaw (value t) GaussianCore.\u03b3 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L98"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.no_ae_right_continuous_paths",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 103,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem no_ae_right_continuous_paths :\n    \u00ac \u2200\u1d50 \u03c9 \u2202gaussianProduct, ContinuousWithinAt (fun t => value t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L103"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.no_ae_right_continuous_modification",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 109,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem no_ae_right_continuous_modification (Y : \u211d \u2192 SampleSpace \u2192 \u211d)\n    (hY : \u2200 t, Y t =\u1d50[gaussianProduct] value t) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202gaussianProduct, ContinuousWithinAt (fun t => Y t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L109"
+    },
+    {
+      "paper": "Section 12 classical raw-filtration continuous-observation and martingale regularity counterexample",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousObservationFiltrationObstruction.increment_energy",
+      "file": "Foundation/ContinuousObservationFiltrationObstruction.lean",
+      "line": 118,
+      "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
+      "declaration_header": "theorem increment_energy {t : \u211d} (ht : 0 < t) :\n    (\u222b \u03c9, (value t \u03c9 - value 0 \u03c9) ^ 2 \u2202gaussianProduct) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L118"
     }
   ],
   "paper_sections": {
@@ -1649,7 +1739,11 @@
     "The joint observed-sample and observed-source projection intertwines with full recovery. Sample conditioning alone leaves the explicit coefficient-direction defect (u-Pu)*W_(q-1)(Pu). Pure Wick polarization, finite product Hermite completeness and Gaussian cylinder density reconstruct the full-L2 identity rather than a polynomial-only assertion.",
     "Conditional projection is compact iff the observed source span is zero. Recovery after conditioning is compact iff that closed source span is finite dimensional, allowing arbitrary observation label sets and singular/redundant covariance descriptions. The combined finite-rank upper bound (N+1)^m is a direct human deduction from the finite Hermite ranges, paired with the formal operator-norm tail bound 1/sqrt(N+1).",
     "Every nonzero observed source contains a harmonic squared-image-energy obstruction, so even one-source compact recovery is not Hilbert-Schmidt. For infinite observed dimension, the exact distance one to compact operators is a labelled human deduction; the named frozen approximation-gap theorem states this for full recovery.",
-    "For any bounded K from a normed space to Gaussian L2, recovery*K is compact iff each positive-chaos block P_q*K is compact. The full inverse-number damping tail does not eliminate infinite-dimensional low-chaos blocks. No new fractional regularity, curvature or observed-process stochastic representation follows."
+    "For any bounded K from a normed space to Gaussian L2, recovery*K is compact iff each positive-chaos block P_q*K is compact. The full inverse-number damping tail does not eliminate infinite-dimensional low-chaos blocks. No new fractional regularity, curvature or observed-process stochastic representation follows.",
+    "The actual observation is Y_t=max(t,0)G for one standard Gaussian source coordinate. All its paths are continuous. The raw natural sigma algebra is trivial at t<=0 and exactly sigma(G) at t>0. M_t=G 1_(t>0) is a mean-zero square-integrable raw-filtration martingale with unit positive-time increment energy.",
+    "A countable intersection only at zero and times 1/n proves no right-continuous modification: right continuity would force the actual nonatomic Gaussian coordinate to be zero. No uncountable exceptional-set intersection or assertion about the actual IBM natural filtration is used.",
+    "The exact conditional projection norm gap one, unchanged conditional operators under null completion, and the changed time-zero information under right-continuous enlargement are explicitly labelled classical human deductions. Projection onto constants is nested in projection onto sigma(G); their difference is a nonzero orthogonal projection.",
+    "Primary author Pitera Stochastic Processes notes (2020), Section 2.3, footnote 7 on printed page 10, explicitly give the same tZ mechanism for a nondegenerate uniform random variable. Gaussian normalization is not claimed a new filtration principle. This supporting diagnostic is consolidated in the prediction paper rather than split into another note."
   ],
   "literature": [
     {

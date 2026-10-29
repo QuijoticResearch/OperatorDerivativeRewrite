@@ -21,7 +21,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-seven reviewed drafts total 310 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-seven reviewed drafts total 311 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -47,7 +47,7 @@ All are reviewed editorial drafts. Several mechanisms are explicitly classical; 
 
 ## Supporting assessments and preserved scope
 
-Sticky generator range/semigroup identification, raw observation counterexamples, conditional stable-count applications and broad triad/corridor infrastructure remain supporting assessments in the [whole-library survey](LIBRARY_SURVEY.md). A source family is not an additional paper by default.
+Sticky generator range/semigroup identification, conditional stable-count applications and broad triad/corridor infrastructure remain supporting assessments in the [whole-library survey](LIBRARY_SURVEY.md). A source family is not an additional paper by default.
 
 The original signed-Simpson note remains separately scoped. The former associativity and hidden-clock notes were deliberately expanded at their canonical paths; earlier bytes and build receipts remain in Git history. No original ResearchSources file is edited or committed. No Foundation source, researcher blueprint/commentary, research ledger, queue, verification setting, main/research branch or synchronization procedure is changed. This independent publication work does not use or alter the researcher's reflection accounting or campaign priorities. Exact chronological checkpoints remain in [PUBLICATION_SESSION.md](PUBLICATION_SESSION.md).
 
@@ -88,3 +88,5 @@ The Poisson–Gaussian companion is now fifteen pages with a positive counterpar
 The IBM variation/Simpson companion is now fifteen pages and includes actual compensated native-grid L2 norm escape after the full observable projection. Its spatial-kernel mass concentration, conditional Wick telescope, source-energy growth, partition-uniform centered clock variance and detecting raw-observable pairing are proved in full. This strengthens the raw-channel obstruction for one precise original sequence; it does not exclude all renormalizations or supply a completed observed-filtration calculus. Gaussian Wick-Riemann antecedents retain their Gaussian-process hypothesis.
 
 The fluid calibration companion is now seventeen pages and includes the full prescribed repaired-vorticity Hessian pairing, exact Gaussian mean and finite-slab end-flux discrepancy -16pi^2nu^2(1+epsilon^2). The solenoidal divergence identity and transverse boundary limit are proved, with both Fubini orders justified. The periodic repaired vector retains a nonperiodic base pressure and no induced repaired-pressure or Navier–Stokes evolution claim. Thirty-two exact finite checks supplement the analytic proof.
+
+The Gaussian prediction/recovery companion is now fifteen pages, with a separate continuous-observation raw-filtration counterexample. Arbitrarily small positive observation amplitude reveals a full Gaussian coordinate; conditional projection jumps in norm and a square-integrable raw martingale has no right-continuous modification. Complete proofs distinguish null completion from enlargement of the initial information, and credit the explicit classical tZ antecedent. This does not assert an IBM filtration pathology or create a new regularization principle.

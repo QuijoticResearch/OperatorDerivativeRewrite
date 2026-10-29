@@ -926,6 +926,94 @@ without a priority claim. Neither compactness nor its failure supplies
 new fractional-time regularity, curvature or an observed-process
 stochastic representation.
 
+
+\section{A continuous observation with instantaneous information arrival}
+The geometry of an observation space must be checked independently
+of continuity of the observed paths. The following classical example
+also explains why a raw natural filtration cannot silently be replaced
+by its right-continuous enlargement. It concerns a separate Gaussian
+observation, not an assertion about the IBM natural filtration.
+
+Let $G=X(u)$ for a unit source $u\in\Hh$, so $G$ is standard normal.
+For real $t$ put
+\[
+ Y_t=\max(t,0)G,\qquad
+ \mathcal F_t=\sigma(Y_s:s\leq t),\qquad
+ M_t=\mathbf1_{\{t>0\}}G.
+\]
+Every path of $Y$ is continuous. Nevertheless
+\[
+ \mathcal F_t=\begin{cases}\{\varnothing,\Omega\},&t\leq0,\\
+ \sigma(G),&t>0.\end{cases}
+\]
+Indeed all observations before zero vanish; for positive $t$, all
+past observations are functions of $G$ and $G=Y_t/t$. In particular
+$\mathcal F_{0+}=\bigcap_{t>0}\mathcal F_t=\sigma(G)$ differs from
+$\mathcal F_0$, since $\mathbb P(G>0)=1/2$.
+
+\begin{proposition}\label{prop:rawarrival}
+The process $M$ is a square-integrable martingale for the raw
+filtration $\mathcal F$, with mean zero at every time. For every
+$t>0$,
+\[
+ \mathbb E|M_t-M_0|^2=1.
+\]
+It has no modification whose paths are almost surely right-continuous
+at zero. If $\Pi_t$ denotes conditional expectation onto
+$\mathcal F_t$ as an operator on ambient $L^2$, then
+\[
+ \|\Pi_t-\Pi_0\|_{L^2\to L^2}=1\quad(t>0),
+ \qquad \|Y_t\|_2=t\longrightarrow0\quad(t\downarrow0).
+\]
+\end{proposition}
+\begin{proof}
+Adaptedness and square integrability follow from the displayed
+filtration and $\mathbb E G^2=1$. For $s\leq t$, if $s>0$ then
+$M_s=M_t=G$ and this variable is $\mathcal F_s$-measurable.
+If $s\leq0$, conditional expectation onto the trivial sigma algebra
+is the scalar mean, which is zero whether $M_t=0$ or $M_t=G$.
+These two cases prove the martingale property. The increment and
+observation norm identities follow directly.
+
+Let $\widetilde M$ be any modification, so
+$\widetilde M_t=M_t$ almost surely for each fixed $t$.
+Intersect these full-measure events only at $t=0$ and $t=1/n$,
+$n\geq1$. On their common event,
+$\widetilde M_0=0$ and $\widetilde M_{1/n}=G$ for every $n$.
+Right continuity at zero would force $G=0$. The latter has probability
+zero under the actual standard Gaussian law. Thus no right-continuous
+modification exists; no uncountable intersection of exceptional sets
+has been used.
+
+For positive $t$, $\Pi_t$ is the orthogonal projection onto
+$L^2(\sigma(G))$, while $\Pi_0$ projects onto constants. These
+closed spaces are nested; hence $\Pi_t-\Pi_0$ is the orthogonal
+projection onto the mean-zero part of $L^2(\sigma(G))$ and has
+norm at most one. Its value on the unit vector $G$ is $G$, proving
+the exact norm one.
+\end{proof}
+
+Completing the raw sigma algebras by null sets does not change these
+conditional expectation operators: the time-zero space still contains
+only almost surely constant variables. By contrast, right-continuous
+enlargement inserts $G$ into the time-zero information. In that enlarged
+filtration the constant process $M_t^+=G$ for $t\geq0$ is a continuous
+martingale, but is not a modification of $M$ because its time-zero
+value differs almost surely. Thus a regularization that changes the
+initial information has changed the prediction problem.
+
+The raw-filtration and martingale assertions are mapped to
+\begin{center}\code{ContinuousObservationFiltrationObstruction}.\end{center}
+The exact projection
+norm and the completion/enlargement explanation are labelled classical
+human deductions proved above. The mechanism itself is elementary
+and established: Pitera's author lecture notes \cite{Pitera}, Section
+2.3, footnote 7 on printed page 10, use $Y_t=tZ$ with a uniform
+nondegenerate $Z$ to demonstrate the same filtration issue.
+Gaussianity supplies our particular $L^2$ normalization, not a new
+filtration principle. Neither a continuous sample path nor a vanishing
+observation amplitude proves continuous arrival of information.
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -982,5 +1070,9 @@ Statistical Theory and Related Fields 5 (2021), 49--54.
 Statist. Probab. Lett. 129 (2017), 155--166.
 \href{https://arxiv.org/abs/1610.02900}{arXiv:1610.02900}.
 \bibitem{Yoshida} N. Yoshida, \emph{Asymptotic expansion of a variation with anticipative weights}, primary preprint, 2020, introduction and equations (1.2)--(1.7). \href{https://arxiv.org/abs/2101.00089}{arXiv:2101.00089}.
+\bibitem{Pitera} M. Pitera,
+\emph{Stochastic Processes---Lecture Notes}, Jagiellonian University,
+November 29, 2020, Section 2.3, footnote 7, printed page 10.
+\href{https://www2.im.uj.edu.pl/MarcinPitera/files/StochasticProcesses.pdf}{Primary author notes}.
 \end{thebibliography}
 \end{document}
