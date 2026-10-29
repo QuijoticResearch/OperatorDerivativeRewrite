@@ -29,7 +29,9 @@ The quartic normal map $\A(u)(v)=\int(\delta u)^3\delta v\,d\mu$
 is a bijection from $H$ onto its continuous dual. We give a direct proof
 using norm-Cauchy minimizing sequences and obtain a global inverse estimate
 with exponent $1/3$. A weighted lower bound at a source gives a stronger
-linear stability estimate relative to that source. On infinite Poisson
+linear stability estimate relative to that source. An actual infinite Gaussian
+first-chaos embedding has a radial normal map and regular inverse at every
+nonzero datum; its sharp fixed-source estimate is derived explicitly. On infinite Poisson
 $L^4$, however, the exponent $1/3$ is locally optimal at every dual datum,
 including data whose inverse is nonzero almost everywhere. Every fixed
 finite-dimensional set of source directions can still admit linear
@@ -370,6 +372,128 @@ $4/(3|u|^2)$. Under the usual identification of $\R^*$ with $\R$,
 the normal equation is $u^3=f$. The behavior at zero and at nonzero
 data is thus already different in one dimension.
 
+
+\section{Gaussian synthesis and inverse regularity away from zero}
+The infinite-dimensional failure below is not a consequence of dimension
+alone. Consider the actual Gaussian product space carrying independent
+standard coordinates $(G_j)_{j\geq0}$, and take $H=\ell^2(\N;\R)$.
+Its isonormal embedding $W(h)$ is the $L^2$ limit of
+$\sum_{j<N}h_jG_j$. Every finite linear combination of such limits is
+Gaussian: convergence in $L^2$ implies convergence of characteristic
+functions, whose finite formulas tend to
+$\exp(-\|h\|^2t^2/2)$. In particular
+\[
+ \mathbb E W(h)^4=3\|h\|^4,
+ \qquad \delta h:=W(h)\in L^4,
+ \qquad \|\delta h\|_4=3^{1/4}\|h\|.
+\]
+Linearity holds on the actual equivalence classes: it first holds in
+$L^2$, hence almost everywhere, and the representatives belong to
+$L^4$. Thus $\delta:H\to L^4$ is a bounded closed embedding satisfying
+\eqref{eq:lower}. It is not the identity on the whole Gaussian $L^4$.
+
+For $h,k\in H$, the joint moment generating function is
+$\exp((\|h\|^2s^2+2\langle h,k\rangle st+\|k\|^2t^2)/2)$.
+Its $s^2t^2$ and $s^3t$ coefficients give
+\begin{align}\label{eq:gaussianweighted}
+ \|\B_hk\|_2^2
+ &=\mathbb E[W(h)^2W(k)^2]
+   =\|h\|^2\|k\|^2+2\langle h,k\rangle^2,\\
+ \A(h)(k)&=\mathbb E[W(h)^3W(k)]
+   =3\|h\|^2\langle h,k\rangle.\nonumber
+\end{align}
+These are genuine finite moments by Gaussian integrability and
+H\"older's inequality, including degenerate source pairs.
+Hence $\|\B_hk\|_2\geq\|h\|\|k\|$ on the \emph{entire}
+infinite source space. At every $h\ne0$, Theorem~\ref{thm:weighted}
+already gives the mapped fixed-datum estimate
+\begin{equation}\label{eq:gaussianmapped}
+ \|h-Tf\|\leq\frac4{3\|h\|^2}\|\A(h)-f\|.
+\end{equation}
+The source \code{GaussianFirstChaosQuarticSource} proves the actual
+$L^4$ realization, these two moment identities and this estimate.
+
+\subsection{Exact radial inverse and a sharp fixed-datum constant}
+Identify $H^*$ with $H$ by the real Riesz isometry
+$Rh(k)=\langle h,k\rangle$. Equation~\eqref{eq:gaussianweighted}
+identifies the normal map with
+\[
+ N(h)=3\|h\|^2h.
+\]
+Its inverse, in these Hilbert coordinates, is
+\begin{equation}\label{eq:gaussianinverse}
+ T(y)=\begin{cases}
+ 3^{-1/3}\|y\|^{-2/3}y,&y\ne0,\\0,&y=0.
+ \end{cases}
+\end{equation}
+Indeed $\|N(h)\|=3\|h\|^3$, and substitution checks both inverse
+identities. In particular the origin retains the cubic-root singularity.
+The following sharper bound and its optimality are explicit human
+consequences of the mapped radial identity, not additional named
+formal declarations.
+
+\begin{proposition}\label{prop:gaussiansharp}
+For every fixed $h\ne0$ and every $k\in H$,
+\begin{equation}\label{eq:gaussiansharp}
+ \|h-k\|\leq\frac4{9\|h\|^2}\|N(h)-N(k)\|.
+\end{equation}
+The constant is best possible for comparison with this fixed source
+against all other sources, already on its one-dimensional span.
+Equivalently it bounds $\|T(N(h))-T(y)\|$ for every datum $y$.
+\end{proposition}
+\begin{proof}
+Put $r=\|h\|$, $s=\|k\|$, $c=\langle h,k\rangle$ and
+$d=r^2-rs+s^2$. Direct expansion of squared Hilbert norms gives
+\begin{align*}
+ &\|r^2h-s^2k\|^2-d^2\|h-k\|^2\\
+ &\hspace{12mm}=2(r^2+s^2)(r-s)^2(c+rs)\geq0.
+\end{align*}
+The sign uses Cauchy--Schwarz, $c\geq-rs$. Both norms and $d$
+are nonnegative, so taking square roots proves
+$\|r^2h-s^2k\|\geq d\|h-k\|$.
+Moreover $d=(s-r/2)^2+3r^2/4\geq3r^2/4$.
+Multiplication by three gives \eqref{eq:gaussiansharp}.
+For $k=-h/2$, the source distance is $3r/2$ and the image distance
+is $27r^3/8$. Their ratio is $4/(9r^2)$, proving optimality.
+\end{proof}
+
+\subsection{Local derivatives and the distinction between estimates}
+Away from zero, the scalar norm powers in \eqref{eq:gaussianinverse}
+are continuously differentiable. Since
+$D(\|y\|^2)[v]=2\langle y,v\rangle$, the scalar power rule and
+product rule give, at $y=N(h)$,
+\begin{equation}\label{eq:gaussianderivative}
+ DT(y)=\frac1{3\|h\|^2}\left(I-\frac23\Pi_h\right),
+ \qquad \Pi_hv=\frac{\langle h,v\rangle}{\|h\|^2}h.
+\end{equation}
+The derivative acts by $1/(9\|h\|^2)$ along $h$, and by
+$1/(3\|h\|^2)$ on its orthogonal complement. In this infinite
+Hilbert space the latter complement is nonzero, so the derivative
+norm is exactly $1/(3\|h\|^2)$. Formula~\eqref{eq:gaussiansharp}
+is a different, global comparison relative to a fixed nonzero datum;
+its sharp constant is larger than this local derivative norm.
+
+For completeness, the inverse also has ordinary two-point local
+Lipschitz regularity. On a datum ball
+$\|y-y_0\|<\rho<\|y_0\|$, its derivative norm is bounded by
+$3^{-1/3}(\|y_0\|-\rho)^{-2/3}$. The segment joining two points
+of this ball stays in the ball. Integrating the continuous derivative
+along that segment gives the same bound times their distance.
+This is an elementary human differentiation of the explicit inverse,
+not an inference that the general one-base estimate alone implies
+an arbitrary two-point estimate.
+
+The underlying radial map is the classical $p=4$ vector power map;
+Lindqvist~\cite{lindqvist}, Section 10, gives the standard vector
+power identities and monotonicity framework. The exact fixed-source
+constant above is proved directly here; the bounded comparison does
+not establish its priority in the literature. The contrast with the
+next section changes the source embedding: Gaussian first-chaos
+synthesis on $\ell^2$ has uniform weighted control, whereas the full
+Poisson $L^4$ identity permits concentrated atomic perturbations.
+Neither infinite dimension nor nonvanishing of an individual source
+settles inverse regularity without that geometry.
+
 \section{Infinite Poisson space and failure of weighted coercivity}
 Fix $\lambda>0$. Give $\N=\{0,1,\ldots\}$ its full power-set
 $\sigma$-algebra and Poisson probability measure
@@ -607,5 +731,9 @@ Monotone (nonlinear) operators in Hilbert space,
 Nonlinear elliptic boundary value problems,
 \emph{Bull. Amer. Math. Soc.} \textbf{69} (1963), 862--874.
 \href{https://doi.org/10.1090/S0002-9904-1963-11068-X}{doi:10.1090/S0002-9904-1963-11068-X}.
+\bibitem{lindqvist} P. Lindqvist,
+\emph{Notes on the p-Laplace equation}, author-hosted primary notes,
+Section 10, inequalities for vectors, pages 71--73.
+\url{https://lqvist.folk.ntnu.no/p-laplace.pdf}.
 \end{thebibliography}
 \end{document}
