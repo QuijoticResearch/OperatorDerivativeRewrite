@@ -1,0 +1,242 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "1: domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenDomain.weighted_integrable",
+      "file": "Foundation/RiemannEvenDomain.lean",
+      "line": 57,
+      "source_sha256": "f9c885def90749230b03b30d2613588547700fad55b424438457dc202f09639f",
+      "declaration_header": "theorem weighted_integrable (m k : \u2115) (T B : \u211d) :\n    IntegrableOn (weighted m k T B) (Ici 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenDomain.lean#L57"
+    },
+    {
+      "paper": "1: definition",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow",
+      "file": "Foundation/RiemannEvenFlow.lean",
+      "line": 50,
+      "source_sha256": "d8e0b845935bc7e8d8e9156f99ae4ff7998d6840f8d7d58262f37bd4f6fd6c78",
+      "declaration_header": "def flow (m : \u2115) (t : \u211d) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenFlow.lean#L50"
+    },
+    {
+      "paper": "1: entireness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow_differentiable",
+      "file": "Foundation/RiemannEvenFlow.lean",
+      "line": 82,
+      "source_sha256": "d8e0b845935bc7e8d8e9156f99ae4ff7998d6840f8d7d58262f37bd4f6fd6c78",
+      "declaration_header": "theorem flow_differentiable (m : \u2115) (t : \u211d) : Differentiable \u2102 (flow m t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenFlow.lean#L82"
+    },
+    {
+      "paper": "5: escaping maxima",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.maxima_escape",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 52,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem maxima_escape (m : \u2115) (hm : 0 < m) (R : \u211d) (hR : 0 \u2264 R) :\n    \u2200\u1da0 t in atTop, \u2200 u \u2208 Ici (0 : \u211d),\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192 R < u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L52"
+    },
+    {
+      "paper": "5: stationarity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.max_complex_stationary",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 101,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem max_complex_stationary (m : \u2115) (t u : \u211d) (hu : 0 < u)\n    (hm : IsMaxOn (weighted m 0 t 0) (Ici 0) u) :\n    ((2*m : \u2115) : \u2102)*(t : \u2102)*(u : \u2102)^(2*m-1)+\n      RiemannThetaComplexKernel.kernelDerivative (u : \u2102)/\n        RiemannThetaComplexKernel.kernelComplex (u : \u2102) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L101"
+    },
+    {
+      "paper": "5: stationary family",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.eventually_exists_nondegenerate_saddle",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 177,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem eventually_exists_nondegenerate_saddle (m : \u2115) (hm : 0 < m) (R : \u211d) (hR : 0 \u2264 R) :\n    \u2200\u1da0 t : \u211d in atTop, \u2203 u : \u211d, R < u \u2227\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2227 phaseSlope m t u = 0 \u2227\n      deriv (phaseSlope m t) u < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L177"
+    },
+    {
+      "paper": "3: correction geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionCorrection.scaled_neighbor_error",
+      "file": "Foundation/RiemannSixthTransitionCorrection.lean",
+      "line": 44,
+      "source_sha256": "9cac1dc6afda8a2d0eb174b07828a90f33ae2b9d99ba769b64ce3601b26db621",
+      "declaration_header": "theorem scaled_neighbor_error (t K : \u211d) (z w v : \u2102)\n    (ht : 1 \u2264 t) (hK : 8 \u2264 K) (hr : 10000 \u2264 w.re)\n    (hmargin : t*w.re^5+8 \u2264 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| \u2264 1/2)\n    (hy : z.im \u2264 1) (hs : modelDerivative 3 t w= -(Complex.I*z))\n    (hE : \u2016Complex.exp (4*w)\u2016 \u2264 K) (hv : \u2016v-w\u2016 \u2264 2/K) :\n    \u2016complexSlope 3 t v-modelDerivative 3 t v\u2016 \u2264 30005*Real.exp (-w.re)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionCorrection.lean#L44"
+    },
+    {
+      "paper": "3: curvature",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionCorrection.scaled_actual_real_curvature",
+      "file": "Foundation/RiemannSixthTransitionCorrection.lean",
+      "line": 252,
+      "source_sha256": "9cac1dc6afda8a2d0eb174b07828a90f33ae2b9d99ba769b64ce3601b26db621",
+      "declaration_header": "theorem scaled_actual_real_curvature (t K : \u211d) (z w v : \u2102)\n    (ht : 1 \u2264 t) (hK : 8 \u2264 K) (hr : 10000 \u2264 w.re)\n    (hmargin : t*w.re^5+8 \u2264 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| \u2264 1/2)\n    (hn : \u2016w\u2016 \u2264 2*w.re) (hy : z.im \u2264 1) (hs : modelDerivative 3 t w= -(Complex.I*z))\n    (hE : \u2016Complex.exp (4*w)\u2016 \u2264 K)\n    (hsmall : (30005*Real.exp (-w.re))*K \u2264 t*w.re^5/4)\n    (hv : v \u2208 closedBall w (1/K)) :\n    (deriv (complexSlope 3 t) v).re \u2264 -2*t*w.re^5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionCorrection.lean#L252"
+    },
+    {
+      "paper": "5: transition saddle",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionCorrection.actual_transition_saddle",
+      "file": "Foundation/RiemannSixthTransitionCorrection.lean",
+      "line": 390,
+      "source_sha256": "9cac1dc6afda8a2d0eb174b07828a90f33ae2b9d99ba769b64ce3601b26db621",
+      "declaration_header": "theorem actual_transition_saddle (t u M : \u211d) (z : \u2102)\n    (ht : 1 \u2264 t) (hM : 0 \u2264 M) (hu : 65536*(M+7) \u2264 u)\n    (hs : phaseSlope 3 t u=0) (hy : z.im \u2264 1) (hz : \u2016z\u2016 \u2264 M*realScale u) :\n    \u2203 v : \u2102, 0 \u2264 v.re \u2227 1 \u2264 (Complex.exp (4*v)).re \u2227 kernelComplex v \u2260 0 \u2227\n      complexSlope 3 t v= -(Complex.I*z) \u2227 deriv (complexSlope 3 t) v \u2260 0 \u2227\n      (deriv (complexSlope 3 t) v).re \u2264 -(t*u^5/16) \u2227 \u2016v-(u : \u2102)\u2016 \u2264 M+8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionCorrection.lean#L390"
+    },
+    {
+      "paper": "4: analytic local branch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionCorrection.local_actual_saddle_branch",
+      "file": "Foundation/RiemannSixthTransitionCorrection.lean",
+      "line": 442,
+      "source_sha256": "9cac1dc6afda8a2d0eb174b07828a90f33ae2b9d99ba769b64ce3601b26db621",
+      "declaration_header": "theorem local_actual_saddle_branch (m : \u2115) (t : \u211d) (z v : \u2102)\n    (hE : 0 < (Complex.exp (4*v)).re) (hk : kernelComplex v \u2260 0)\n    (hr : complexSlope m t v= -(Complex.I*z)) (hn : deriv (complexSlope m t) v \u2260 0) :\n    \u2203 branch : \u2102 \u2192 \u2102, branch z=v \u2227 AnalyticAt \u2102 branch z \u2227\n      HasStrictDerivAt branch (-Complex.I/deriv (complexSlope m t) v) z \u2227\n      \u2200\u1da0 q in nhds z, complexSlope m t (branch q)= -(Complex.I*q) \u2227\n        0 < (Complex.exp (4*branch q)).re \u2227 kernelComplex (branch q) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionCorrection.lean#L442"
+    },
+    {
+      "paper": "4: critical value",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthCriticalValue.criticalValue_log_derivative",
+      "file": "Foundation/RiemannSixthCriticalValue.lean",
+      "line": 72,
+      "source_sha256": "dd24f66a8edab06410b27a75c1ec1b22c28b3595e006aa900cda2c1e753fbb75",
+      "declaration_header": "theorem criticalValue_log_derivative (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 < 1) :\n    deriv (criticalValue t x ht hx w hr hi hp hs) z/criticalValue t x ht hx w hr hi hp hs z = Complex.I*B z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthCriticalValue.lean#L72"
+    },
+    {
+      "paper": "4: endpoint control",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarComplexPairing.relative_actual_branch_endpoint_bound",
+      "file": "Foundation/RiemannSixthFarComplexPairing.lean",
+      "line": 199,
+      "source_sha256": "ad1be0bbd3d14edb32dd0a4bbd9fa2d8c09539f1a8df61594b4b072609fcf2d0",
+      "declaration_header": "theorem relative_actual_branch_endpoint_bound (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 \u2264 1) :\n    \u2016(\u222b y : \u211d in (B (conj z)).im..(B z).im, weight 3 t z ((y : \u2102)*Complex.I))/\n      modelGaussianAmplitude t z (B z)\u2016 \u2264\n      1056*Real.sqrt x*Real.exp (5*(B z).re+3-2*t*(B z).re^5)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarComplexPairing.lean#L199"
+    },
+    {
+      "paper": "4: actual complex pair",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarComplexPairing.exists_uniform_actual_complex_pair",
+      "file": "Foundation/RiemannSixthFarComplexPairing.lean",
+      "line": 350,
+      "source_sha256": "ad1be0bbd3d14edb32dd0a4bbd9fa2d8c09539f1a8df61594b4b072609fcf2d0",
+      "declaration_header": "theorem exists_uniform_actual_complex_pair :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 \u03b7 : \u211d, 0 < \u03b7 \u2192 \u2203 X : \u211d, \u2200 t u x : \u211d,\n      1 \u2264 t \u2192 120021 \u2264 u \u2192 RiemannEvenRealSaddle.phaseSlope 3 t u = 0 \u2192\n      max X (K*RiemannQuarticTransitionSaddle.realScale u) \u2264 x \u2192\n      \u2203 w : \u2102, \u2203 (hx : 10000 \u2264 x) (hr : 120020 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n        (hp : 10000*(t*(\u2016w\u2016+1)^5+1) \u2264 x)\n        (hs : modelDerivative 3 t w = -(Complex.I*(x : \u2102))),\n        \u2203 B : \u2102 \u2192 \u2102, (\u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < 1 \u2192 AnalyticAt \u2102 B z) \u2227\n        \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 \u2264 1 \u2192\n          B z \u2208 closedBall w (1/x) \u2227 complexSlope 3 t (B z) = -(Complex.I*z) \u2227\n          |(B z).im| < Real.pi/8 \u2227 modelGaussianAmplitude t z (B z) \u2260 0 \u2227\n          modelGaussianAmplitude t (conj z) (B (conj z)) \u2260 0 \u2227\n          IntervalIntegrable (fun y : \u211d => weight 3 t z ((y : \u2102)*Complex.I))\n            volume (B (conj z)).im (B z).im \u2227\n          RiemannEvenFlow.flow 3 t z =\n            (horizontalIntegral 3 t z (B z).im+\n              conj (horizontalIntegral 3 t (conj z) (B (conj z)).im)+\n              Complex.I*(\u222b y : \u211d in (B (conj z)).im..(B z).im,\n                weight 3 t z ((y : \u2102)*Complex.I)))/2 \u2227\n          \u2016(\u222b y : \u211d in (B (conj z)).im..(B z).im, weight 3 t z ((y : \u2102)*Complex.I))/\n            modelGaussianAmplitude t z (B z)\u2016 \u2264 \u03b7 \u2227\n          \u2016RiemannEvenFlow.flow 3 t z-\n            (modelGaussianAmplitude t z (B z)+conj (modelGaussianAmplitude t (conj z) (B (conj z))))/2\u2016 \u2264\n            \u03b7*(\u2016modelGaussianAmplitude t z (B z)\u2016+\u2016modelGaussianAmplitude t (conj z) (B (conj z))\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarComplexPairing.lean#L350"
+    },
+    {
+      "paper": "4: envelope/phase",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarCosinePhase.actual_pair_identity",
+      "file": "Foundation/RiemannSixthFarCosinePhase.lean",
+      "line": 50,
+      "source_sha256": "1f7ede5a1a339e7e53689861a1702d5c2b3a3f9a404ead28924bf7b7824a75c0",
+      "declaration_header": "theorem actual_pair_identity (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 < 1) :\n    (modelGaussianAmplitude t z (B z)+conj (modelGaussianAmplitude t (conj z) (B (conj z))))/2=\n      envelope A\u2080 P z*Complex.cos (phase A\u2080 P z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarCosinePhase.lean#L50"
+    },
+    {
+      "paper": "4: phase derivative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarCosinePhase.phase_deriv_model_bound",
+      "file": "Foundation/RiemannSixthFarCosinePhase.lean",
+      "line": 99,
+      "source_sha256": "1f7ede5a1a339e7e53689861a1702d5c2b3a3f9a404ead28924bf7b7824a75c0",
+      "declaration_header": "theorem phase_deriv_model_bound (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 < 1) :\n    \u2016deriv (phase A\u2080 P) z-(w.re : \u2102)\u2016 \u2264 513/x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarCosinePhase.lean#L99"
+    },
+    {
+      "paper": "4: normalized cosine",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarCosinePhase.eventually_uniform_normalized_cosine_error",
+      "file": "Foundation/RiemannSixthFarCosinePhase.lean",
+      "line": 161,
+      "source_sha256": "1f7ede5a1a339e7e53689861a1702d5c2b3a3f9a404ead28924bf7b7824a75c0",
+      "declaration_header": "theorem eventually_uniform_normalized_cosine_error (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 x : \u211d in atTop, \u2200 (t : \u211d) (ht : 1 \u2264 t) (hx : 10000 \u2264 x) (w : \u2102)\n      (hr : 120020 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n      (hp : 10000*(t*(\u2016w\u2016+1)^5+1) \u2264 x) (hs : modelDerivative 3 t w= -(Complex.I*(x : \u2102)))\n      (P : \u2102 \u2192 \u2102) (hP0 : P (x : \u2102)=0)\n      (hP : \u2200 z \u2208 ball (x : \u2102) 1, HasDerivAt P (phaseSlope t x ht hx w hr hi hp hs z) z),\n      let a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarCosinePhase.lean#L161"
+    },
+    {
+      "paper": "4 and 6: zero strip",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarCosinePhase.eventually_uniform_zero_strip",
+      "file": "Foundation/RiemannSixthFarCosinePhase.lean",
+      "line": 188,
+      "source_sha256": "1f7ede5a1a339e7e53689861a1702d5c2b3a3f9a404ead28924bf7b7824a75c0",
+      "declaration_header": "theorem eventually_uniform_zero_strip (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) (h\u03b5half : \u03b5 \u2264 1/2) :\n    \u2200\u1da0 x : \u211d in atTop, \u2200 (t : \u211d) (ht : 1 \u2264 t) (hx : 10000 \u2264 x) (w : \u2102)\n      (hr : 120020 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n      (hp : 10000*(t*(\u2016w\u2016+1)^5+1) \u2264 x) (hs : modelDerivative 3 t w= -(Complex.I*(x : \u2102)))\n      (P : \u2102 \u2192 \u2102) (hP0 : P (x : \u2102)=0)\n      (hP : \u2200 z \u2208 ball (x : \u2102) 1, HasDerivAt P (phaseSlope t x ht hx w hr hi hp hs z) z),\n      let a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarCosinePhase.lean#L188"
+    },
+    {
+      "paper": "5: reflection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionReflection.eventually_actual_nonzero_lower",
+      "file": "Foundation/RiemannSixthTransitionReflection.lean",
+      "line": 389,
+      "source_sha256": "7d94dc10d07612486ea05dcb6836b59d4e63fb24bf93c55867b2686dfd5b473f",
+      "declaration_header": "theorem eventually_actual_nonzero_lower (M : \u211d) (hM : 0 \u2264 M) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u : \u211d, 65536*(M+7) \u2264 u \u2192 RiemannEvenRealSaddle.phaseSlope 3 t u=0 \u2192\n      \u2200 z : \u2102, \u2016z\u2016 \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n        z.im \u2264 -(2*reflectionCutoff (1024*(M+8)))/u \u2192 RiemannEvenFlow.flow 3 t z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionReflection.lean#L389"
+    },
+    {
+      "paper": "5: transition cosine",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionCosinePhase.eventually_actual_cosine_disks",
+      "file": "Foundation/RiemannSixthTransitionCosinePhase.lean",
+      "line": 155,
+      "source_sha256": "9875d6e2863e9348db691a8f90dd6adcc3b26636554508008c5ba813aa99b076",
+      "declaration_header": "theorem eventually_actual_cosine_disks (M \u03b5 : \u211d) (hM : 0 \u2264 M) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u : \u211d, 65536*(M+7) \u2264 u \u2192\n      RiemannEvenRealSaddle.phaseSlope 3 t u=0 \u2192 \u2200 x : \u211d,\n      |x| \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n      \u2203 E \u03a6 : \u2102 \u2192 \u2102,\n        (\u2200 z : \u2102, E z \u2260 0 \u2227 E (conj z)=conj (E z) \u2227 \u03a6 (conj z)=conj (\u03a6 z)) \u2227\n        \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < 1/(1024*(M+8)) \u2192\n          AnalyticAt \u2102 E z \u2227 AnalyticAt \u2102 \u03a6 z \u2227\n          \u2016deriv \u03a6 z-(u : \u2102)\u2016 \u2264 M+8 \u2227\n          \u2016RiemannEvenFlow.flow 3 t z/E z-Complex.cos (\u03a6 z)\u2016 \u2264 \u03b5*Real.cosh (\u03a6 z).im",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionCosinePhase.lean#L155"
+    },
+    {
+      "paper": "5: local simple zeros",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionSimpleZeros.eventually_local_real_simple_zeros",
+      "file": "Foundation/RiemannSixthTransitionSimpleZeros.lean",
+      "line": 12,
+      "source_sha256": "299ccc6d80e3b74483806d657fb668f61265795d8a8e5cab84ac2c7bad71d662",
+      "declaration_header": "theorem eventually_local_real_simple_zeros (M : \u211d) (hM : 0 \u2264 M) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u : \u211d, 1000000*(M+8) \u2264 u \u2192\n      RiemannEvenRealSaddle.phaseSlope 3 t u=0 \u2192 \u2200 x : \u211d,\n      |x| \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n      \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < 1/(2048*(M+8)) \u2192\n        RiemannEvenFlow.flow 3 t z=0 \u2192\n          z.im=0 \u2227 deriv (RiemannEvenFlow.flow 3 t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionSimpleZeros.lean#L12"
+    },
+    {
+      "paper": "5: bounded-ratio zeros",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionSimpleZeros.bounded_ratio_real_simple_zeros",
+      "file": "Foundation/RiemannSixthTransitionSimpleZeros.lean",
+      "line": 70,
+      "source_sha256": "299ccc6d80e3b74483806d657fb668f61265795d8a8e5cab84ac2c7bad71d662",
+      "declaration_header": "theorem bounded_ratio_real_simple_zeros (M R : \u211d) (hM : 0 \u2264 M) (hR : 0 \u2264 R) :\n    \u2200\u1da0 t : \u211d in atTop, \u2203 u : \u211d, R < u \u2227 1000000*(M+8) \u2264 u \u2227\n      RiemannEvenRealSaddle.phaseSlope 3 t u=0 \u2227\n      \u2200 z : \u2102, \u2016z\u2016 \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n        RiemannEvenFlow.flow 3 t z=0 \u2192\n          z.im=0 \u2227 deriv (RiemannEvenFlow.flow 3 t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionSimpleZeros.lean#L70"
+    },
+    {
+      "paper": "6: uniform far saddles",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthUniformFarSaddles.exists_uniform_actual_far_saddles",
+      "file": "Foundation/RiemannSixthUniformFarSaddles.lean",
+      "line": 13,
+      "source_sha256": "91106e55f97a9ead37315570dc008a3fa9f11be9b416648fcb523fc6f6356379",
+      "declaration_header": "theorem exists_uniform_actual_far_saddles :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 t u x : \u211d, 1 \u2264 t \u2192 120021 \u2264 u \u2192 phaseSlope 3 t u = 0 \u2192\n      K*realScale u \u2264 x \u2192 \u2203 v : \u2102, complexSlope 3 t v = -(Complex.I*(x : \u2102)) \u2227\n      HasDerivAt (fun q : \u2102 => Complex.exp ((t : \u2102)*q^6+Complex.I*(x : \u2102)*q)*\n        RiemannThetaComplexKernel.kernelComplex q) 0 v \u2227\n      Complex.exp ((t : \u2102)*v^6+Complex.I*(x : \u2102)*v)*RiemannThetaComplexKernel.kernelComplex v \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthUniformFarSaddles.lean#L13"
+    },
+    {
+      "paper": "6: uniform far frequency disks",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthUniformFarSaddles.exists_uniform_actual_far_frequency_disks",
+      "file": "Foundation/RiemannSixthUniformFarSaddles.lean",
+      "line": 47,
+      "source_sha256": "91106e55f97a9ead37315570dc008a3fa9f11be9b416648fcb523fc6f6356379",
+      "declaration_header": "theorem exists_uniform_actual_far_frequency_disks :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 t u x : \u211d, 1 \u2264 t \u2192 120021 \u2264 u \u2192 phaseSlope 3 t u = 0 \u2192\n      K*realScale u \u2264 x \u2192 \u2203 w : \u2102, 10000 \u2264 x \u2227 120020 \u2264 w.re \u2227 |w.im| \u2264 1/2 \u2227\n      10000*(t*(\u2016w\u2016+1)^5+1) \u2264 x \u2227 modelDerivative 3 t w = -(Complex.I*(x : \u2102)) \u2227\n      \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 \u2264 1 \u2192\n        \u2203! v, v \u2208 closedBall w (1/x) \u2227 complexSlope 3 t v = -(Complex.I*z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthUniformFarSaddles.lean#L47"
+    },
+    {
+      "paper": "6: far global control",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthFarZeroControl.uniform_actual_far_zeros_real_simple",
+      "file": "Foundation/RiemannSixthFarZeroControl.lean",
+      "line": 79,
+      "source_sha256": "33665a4726a0d8a25a64696c995b8c435d415fb40b0ce6c997db0e09ee7762cc",
+      "declaration_header": "theorem uniform_actual_far_zeros_real_simple :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 t u : \u211d, 1 \u2264 t \u2192 120021 \u2264 u \u2192\n      RiemannEvenRealSaddle.phaseSlope 3 t u = 0 \u2192 \u2200 z : \u2102,\n        K*realScale u \u2264 \u2016z\u2016 \u2192 flow 3 t z = 0 \u2192\n          z.im = 0 \u2227 deriv (flow 3 t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthFarZeroControl.lean#L79"
+    },
+    {
+      "paper": "Theorem 1.1",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannSixthTransitionSimpleZeros.eventually_all_zeros_real_simple",
+      "file": "Foundation/RiemannSixthTransitionSimpleZeros.lean",
+      "line": 117,
+      "source_sha256": "299ccc6d80e3b74483806d657fb668f61265795d8a8e5cab84ac2c7bad71d662",
+      "declaration_header": "theorem eventually_all_zeros_real_simple :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, RiemannEvenFlow.flow 3 t z=0 \u2192\n      z.im=0 \u2227 deriv (RiemannEvenFlow.flow 3 t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionSimpleZeros.lean#L117"
+    }
+  ],
+  "human_reorganization": [
+    "Sections 2\u20134 consolidate the actual theta-kernel, Gaussian, reflection and analytic pair estimates in admissible actual saddles with unspecified absolute constants. The formal source uses explicit separate model, correction, transition and far budgets.",
+    "The proof computes the sixth-order physical-prefix exponent difference -9*t*a^5/2+O(t*a^4), and the power-five moving-center coverage explicitly.",
+    "The finite-radius confinement on bounded time ranges in Proposition 6.2 is a human corollary of its explicit far-frequency condition, not a claimed separately named Lean declaration.",
+    "The generic local cosine lemma is reproved here; it is a regrouping of the buffered-zero mechanism reused by the formal sixth-order development."
+  ],
+  "scope_limits": [
+    "Existential eventual time only",
+    "No sixth-order early-time obstruction or threshold collision claimed",
+    "No general even-order classification or RH implication",
+    "Novelty unresolved"
+  ]
+}

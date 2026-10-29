@@ -32,6 +32,8 @@ The [Fourier covariance and physical positivity exposition](manuscripts/fourier-
 
 The [quartic arithmetic-transform threshold paper](manuscripts/quartic-threshold/main.pdf) gives the full actual-saddle argument for an attained eventual reality threshold, a certified obstruction at time eight, uniform nonreal-zero confinement and a multiple endpoint zero. Its [source map and exact scope](manuscripts/quartic-threshold/editorial-status.md) distinguish eventual-start quantifiers from stronger unproved propagation claims.
 
+The [sixth-order companion](manuscripts/sixth-order-zeros/main.pdf) reconstructs eventual reality and simplicity for every complex zero, with one time valid across the entire plane. Its [source map](manuscripts/sixth-order-zeros/theorem-map.json) records the exact theorem and the changed power-five saddle scale; it makes no general integer-order or RH claim.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

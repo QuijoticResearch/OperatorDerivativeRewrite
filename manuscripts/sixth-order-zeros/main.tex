@@ -1,0 +1,640 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\DeclareMathOperator{\Log}{Log}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Eventual reality and simplicity of zeros\protect\\
+for a growing sixth-order arithmetic transform}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a human proof of eventual reality and simplicity of
+every zero of the cosine transform obtained by multiplying
+the arithmetic theta kernel by $\exp(tu^6)$. The conclusion
+holds on the entire complex plane, with one sufficiently
+late time valid for all frequencies. The proof constructs
+actual stationary points in a moving transition region and
+its far complement, proves a uniform oscillatory Gaussian
+estimate for the full kernel, and converts an analytic
+cosine-pair approximation into exact real and simple zeros.
+The sixth-order polynomial changes, physical-prefix bound,
+and coverage by a common real stationary center are explicit.
+The final theorem is matched to a frozen Lean development.
+No general integer-order classification, optimal threshold
+or Riemann-hypothesis consequence is asserted; novelty remains
+unresolved.
+\end{abstract}
+
+\section{Statement and the actual integral}
+For $u\geq0$ let
+\begin{equation}\label{eq:kernel}
+ K(u)=\sum_{n\geq1}
+ (2\pi^2 n^4e^{9u}-3\pi n^2e^{5u})e^{-\pi n^2e^{4u}},
+ \qquad
+ F_t(z)=\int_0^\infty e^{tu^6}K(u)\cos(zu)\,du.
+\end{equation}
+The sign of the tilt is positive. Here and below $t$ is real
+and $z$ is complex. A zero is simple when $F_t'(z)\ne0$.
+
+\begin{theorem}\label{thm:main}
+There is a finite $T$ such that, for every $t\geq T$ and
+every $z\in\C$, $F_t(z)=0$ implies
+\[
+ \operatorname{Im}z=0,\qquad F_t'(z)\ne0.
+\]
+\end{theorem}
+
+The time $T$ does not depend on $z$. In particular, a
+fixed-frequency asymptotic cannot by itself prove this
+statement. We use one escaping stationary center to cover
+all frequencies. The proof follows the actual-saddle
+organization of the quartic companion~\cite{quartic}, but
+supplies the sixth-order derivatives and estimates needed
+for the extension. It does not import the quartic arithmetic
+certificate or its endpoint collision.
+
+Each summand in \eqref{eq:kernel} is positive on the
+half-line. Summation after splitting off half the
+exponential gives
+\begin{equation}\label{eq:realdecay}
+ 0<K(u)\leq C e^{9u-\frac\pi2e^{4u}},\qquad u\geq0.
+\end{equation}
+Indeed $n^2e^{4u}\geq(n^2+e^{4u})/2$ and
+$\sum n^4e^{-\pi n^2/2}<\infty$. Thus every
+$u^k e^{tu^6+B u}K(u)$ is integrable, for fixed $k,t,B$.
+On compact parameter sets these are integrable dominating
+functions for all spatial derivatives. Consequently $F_t$
+is entire, even, conjugation compatible, and nonzero since
+$F_t(0)>0$. All contour integrals below are ordinary
+absolutely convergent integrals when their parameters are fixed.
+
+\section{The theta strip and the sixth-order slope}
+The kernel has an even holomorphic continuation to
+\[
+ \mathcal U=\{w:|\operatorname{Im}w|<\pi/8\}.
+\]
+Here is the precise kernel information we shall use. Write
+$w=a+ib$, $E=e^{4w}$, $L=e^{4a}$ and $V=\operatorname{Re}E$.
+For $a\geq0$, $V\geq1$, normal convergence of the series gives
+\begin{equation}\label{eq:rho}
+ K(w)=2\pi^2e^{9w-\pi E}(1+\rho(w)),\qquad
+ |\rho^{(j)}(w)|\leq C_j\{e^{-4a}+(1+L)^j e^{-3\pi V}\},
+ \quad 0\leq j\leq4.
+\end{equation}
+For completeness, after dividing by the leading exponential
+the remaining factor is
+\[
+ 1-\frac{3}{2\pi}e^{-4w}
+ +\sum_{n\geq2}\left(n^4-\frac{3n^2}{2\pi}e^{-4w}\right)
+       e^{-\pi(n^2-1)e^{4w}}.
+\]
+Each of its first four derivatives is bounded by a constant
+times $(1+L)^j$ times a polynomial in $n$ and the same
+exponential. For $n\geq2$, $n^2-1\geq3$; splitting off this
+minimum and summing the remaining Gaussian proves
+\eqref{eq:rho}.
+
+The global strip bound needed at the physical endpoint is
+\begin{equation}\label{eq:stripbound}
+ |K(s+ib)|\leq C\cos(4b)^{-3}e^{-s},\qquad s\geq0.
+\end{equation}
+To check it, compare $\sum n^m e^{-\pi Vn^2}$, $m=2,4$,
+with the Gaussian integral from zero, obtaining
+$C_m V^{-(m+1)/2}$. Substitution of $V=e^{4s}\cos(4b)$
+in the two terms of the kernel gives respectively
+$C e^{-s}\cos(4b)^{-5/2}$ and
+$C e^{-s}\cos(4b)^{-3/2}$, both bounded as stated.
+
+Evenness follows from the Gaussian theta identity. If
+$\theta(v)=\sum_{n\in\mathbb Z}e^{-\pi n^2v}$, its modular
+identity is $\theta(v)=v^{-1/2}\theta(1/v)$, with the
+right-half-plane square root; see~\cite{dlmf}. Put
+$G(w)=e^w(\theta(e^{4w})-1)/2$. Then
+$G(-w)=G(w)+\sinh w$, and direct differentiation gives
+$(D^2-1)G=8K$. This proves evenness throughout $\mathcal U$.
+
+For large $a$, under $V\geq c_0ta^5$, $t\geq1$, the
+kernel is nonzero and its full logarithmic derivative is
+\begin{equation}\label{eq:slope}
+ \sigma_t(w)=6tw^5+\frac{K'(w)}{K(w)}
+ =6tw^5+9-4\pi e^{4w}+\epsilon(w),\qquad
+ |\epsilon^{(j)}(w)|\leq C e^{-4a}\quad(0\leq j\leq3).
+\end{equation}
+This follows by differentiating $\log(1+\rho)$ in
+\eqref{eq:rho}. Indeed $L^4e^{-cV}\leq e^{16a-cta^5}$
+is eventually smaller than $e^{-4a}$. The same bound holds
+along $w+s$, $s\geq-1$, with $Ce^{-4a}$ on the right:
+the exponential terms are bounded by
+$\exp(16a+16s-cta^5e^{4s})$, whose maximum on this
+half-line is at its left endpoint for large $a$.
+All constants below are independent of $t$ and frequency,
+unless a fixed parameter is indicated by a subscript.
+
+\section{Uniform analysis at an actual saddle}
+Fix $c_0=10^{-3}$. Call $(t,z,v)$ admissible when
+\begin{equation}\label{eq:admissible}
+ t\geq1,\quad v=a+ib\in\mathcal U,\quad a\text{ large},
+ \quad y=\operatorname{Im}z\leq1,\quad
+ \sigma_t(v)+iz=0,\quad V\geq c_0ta^5.
+\end{equation}
+These conditions will be proved in the constructions below;
+no theta asymptotic is applied at an assumed model root.
+Set
+\[
+ Y=\max(0,-y),\quad Q=ta^5+Y,\quad
+ \beta=-\sigma_t'(v)/2,\quad W_z(w)=e^{tw^6+izw}K(w).
+\]
+Taking real parts in full stationarity gives
+\begin{equation}\label{eq:stationaryreal}
+ 4\pi V=6t(a^5-10a^3b^2+5ab^4)+9-y+\operatorname{Re}\epsilon(v).
+\end{equation}
+Since $|b|<\pi/8$, this implies, uniformly,
+\begin{equation}\label{eq:geometry}
+ cQ\leq V\leq CQ,\quad Q\leq CL,\quad Q\geq a^5,
+ \qquad cL\leq|\beta|\leq CL,\quad
+ cQ\leq\operatorname{Re}\beta\leq CQ.
+\end{equation}
+In fact
+\[
+ \sigma_t'(v)=30tv^4-16\pi e^{4v}+\epsilon'(v),\qquad
+ \sigma_t''(v)=120tv^3-64\pi e^{4v}+\epsilon''(v).
+\]
+The polynomial terms have size at most $Cta^4=o(Q)$,
+whereas the exponential has modulus $L$ and real part $V$.
+On any sufficiently small fixed horizontal interval the
+second derivative is bounded by $CL$. On the entire
+horizontal ray $s\geq-1$ one has
+\begin{equation}\label{eq:curvature}
+ \operatorname{Re}\sigma_t'(v+s)\leq-cQ.
+\end{equation}
+To see this, use $(a+s)^4\leq Ca^4e^{2s}$ for $s\geq-1$
+and large $a$. Its contribution $Cta^4e^{2s}$ is absorbed
+by $16\pi V e^{4s}$; their ratio is at most $C/a$ on
+this ray. The error from \eqref{eq:slope} is negligible.
+
+\begin{proposition}\label{prop:gaussian}
+There is $\eta(a)\to0$ such that, uniformly at admissible saddles,
+\begin{align}
+ I_z(b)&:=\int_0^\infty W_z(s+ib)\,ds
+   =W_z(v)\frac{\sqrt\pi}{\sqrt\beta}(1+\delta),
+       &|\delta|&\leq\eta(a),\label{eq:gaussian}\\
+ \int_0^\infty |W_z(s+ib)|\,ds
+   &\leq C|W_z(v)|/\sqrt Q.\label{eq:mass}
+\end{align}
+The square root in \eqref{eq:gaussian} has positive real part.
+\end{proposition}
+\begin{proof}
+On $s\geq-1$ put
+$P(s)=\int_0^s(\sigma_t(v+r)+iz)\,dr$.
+The exact scalar differential equation gives
+$W_z(v+s)=W_z(v)e^{P(s)}$. Full stationarity and
+\eqref{eq:curvature} imply
+\[
+ \operatorname{Re}P(s)\leq-cQs^2,\qquad
+ P(s)=-\beta s^2+O(L|s|^3)\quad(|s|\leq\rho),
+\]
+where $\rho>0$ is fixed and small. In particular this
+argument does not assume a fixed complex disk as wide as
+the horizontal contour when $b$ is near the strip boundary.
+
+Let $r=L^{-7/16}$. The integral on $[-r,r]$ differs
+from the Gaussian integral there by $O(Lr^4)$, since
+$Lr^3\to0$ and $|e^h-1|\leq e^{|h|}|h|$.
+For $\operatorname{Re}\beta>0$,
+\[
+ \int_{\mathbb R}e^{-\beta s^2}\,ds=\sqrt\pi/\sqrt\beta,
+ \qquad
+ \left|\int_r^\infty e^{-\beta s^2}\,ds\right|
+ +\left|\int_{-\infty}^{-r}e^{-\beta s^2}\,ds\right|
+ \leq\frac{2}{|\beta|r}.
+\]
+The identity follows by differentiating in $\beta$ and
+integrating $(se^{-\beta s^2})'$: the product of the integral
+with $\sqrt\beta$ is constant and equals $\sqrt\pi$ on the
+positive real axis. Integration by parts using
+$(e^{-\beta s^2})'=-2\beta s e^{-\beta s^2}$ proves the
+tail bound. These are oscillatory bounds in $|\beta|$,
+not bounds that incorrectly compare its real part to its modulus.
+
+On $r\leq|s|\leq\rho$, Taylor's theorem gives
+$|P'(s)|\geq cL|s|$ and $|P''(s)|\leq CL$.
+Integration of $(e^P)'/P'$ bounds these annuli by
+$C/(Lr)$. The local remainder divided by the main Gaussian
+is $O(L^{3/2}r^4)=O(L^{-1/4})$, and each normalized
+Gaussian or annular tail is $O(L^{-1/16})$.
+The remaining intervals $[-1,-\rho]$ and $[\rho,\infty)$
+are bounded by $Ce^{-cQ}$, using the real-part estimate.
+After normalization their bounds still tend to zero, since
+$\sqrt L=e^{2a}$ and $Q\geq a^5$.
+
+It remains to treat the physical prefix $0\leq s\leq a-1$.
+Write $z=X+iy$. Since $\cos(4b)=V/L\geq cQ/L$,
+\eqref{eq:stripbound} and
+$\operatorname{Re}(s+ib)^6\leq s^6+C$ give
+\begin{equation}\label{eq:prefixupper}
+ |W_z(s+ib)|\leq C e^{12a}Q^{-3}
+  \exp\{t(a-1)^6+Ct+Y(a-1)-Xb\}.
+\end{equation}
+On the other hand, \eqref{eq:rho} and \eqref{eq:stationaryreal}
+give at the center
+\begin{equation}\label{eq:centerlower}
+ |W_z(v)|\geq
+ \exp\{ta^6-\tfrac32ta^5-Cta^4+9a+Y(a-\tfrac14)-Xb-Ca\}.
+\end{equation}
+Indeed $\operatorname{Re}v^6=a^6-15a^4b^2+15a^2b^4-b^6$
+and $\pi V=\tfrac32t\operatorname{Re}v^5+(9-y+\operatorname{Re}\epsilon)/4$.
+The difference of the polynomial exponents is
+\[
+ t\{(a-1)^6-a^6+\tfrac32a^5+Ca^4+C\}
+ =-\tfrac92ta^5+O(ta^4)\leq-cta^5.
+\]
+The $Y$ difference is $-3Y/4$. Thus the prefix integral,
+divided by $|W_z(v)|$, is at most $Ca e^{-cQ+Ca}$.
+It vanishes even after multiplication by $\sqrt L$.
+This completes \eqref{eq:gaussian}. Absolute integration
+of $e^{-cQs^2}$ and the same prefix bound proves
+\eqref{eq:mass}. One may, for example, bound $\eta$ by a
+constant times $L^{-1/4}+L^{-1/16}+(1+a)e^{-ca^5+Ca}$.
+\end{proof}
+
+\section{Contours, reflection, and exact local zeros}
+Let $J_z=\int_0^\infty W_z(s)\,ds$. For real $h$ in the
+theta strip, a rectangle gives
+\[
+ J_z=I_z(h)+i\int_0^hW_z(iy)\,dy.
+\]
+At its right edge the modulus tends to zero: the leading
+term $-\pi e^{4R}\cos(4h)$ dominates $tR^6+O(R^5)$
+and all frequency and kernel polynomial terms.
+For $y=\operatorname{Im}z$ this yields the exact identities
+\begin{align}
+ F_t(z)&=\frac{I_z(h)+\overline{I_{\bar z}(k)}}2
+          +\frac i2\int_k^h W_z(iq)\,dq,\label{eq:pair}\\
+ F_t(z)&=\tfrac12\{I_z(h)+I_{-z}(-h)\}.\label{eq:mirror}
+\end{align}
+Evenness of $K$ and of the sixth power cancels the vertical
+integrals in the second formula.
+
+For an admissible saddle with $y\leq0$, the reflected
+integrands satisfy the exact modulus relation
+\[
+ |W_{-z}(s-ib)|=e^{2ys}|W_z(s+ib)|.
+\]
+On $s\geq a-1$ use $e^{2ys}\leq e^{2y(a-1)}$ and
+\eqref{eq:mass}. On the prefix use $e^{2ys}\leq1$ and
+the prefix bound. With $A_z=W_z(v)\sqrt\pi/\sqrt\beta$,
+\begin{equation}\label{eq:reflected}
+ \left|I_{-z}(-b)/A_z\right|
+ \leq C\sqrt{L/Q}\,e^{2y(a-1)}+o(1).
+\end{equation}
+In particular no such zero has $y\leq-1$ for large $a$:
+$\sqrt L=e^{2a}$ cancels $e^{-2(a-1)}$, leaving
+$C/\sqrt Q+o(1)$, whereas $I_z(b)/A_z\to1$.
+
+\begin{lemma}\label{lem:cos}
+Let $f,E,\Phi$ be holomorphic on $|z-x|\leq1$, $x$ real,
+with conjugation compatibility and $E$ nonvanishing. Suppose,
+for $a$ large and $D/a\to0$,
+\[
+ |\Phi'(z)-a|\leq D,\qquad
+ |f(z)/E(z)-\cos\Phi(z)|\leq\varepsilon\cosh(\operatorname{Im}\Phi(z)),
+ \qquad\varepsilon\to0.
+\]
+Then every zero with $|z-x|<1/2$ is real and simple.
+\end{lemma}
+\begin{proof}
+At a zero $q$, write $\Phi(q)=u+iv$.
+The identity $|\cos(u+iv)|^2=\cos^2u+\sinh^2v$
+gives $\tanh|v|\leq\varepsilon$ and $|\cos u|\leq2\varepsilon$.
+On the disk $|z-q|\leq\delta/a$, $\delta=10^{-3}$,
+integration of the derivative bound gives
+$|\Phi(z)-u|\leq2\delta+2\varepsilon$.
+Take $\varepsilon$ sufficiently small. If $d=\sin u$, then
+$|d|\geq1/2$ and $|\sin\Phi(z)-d|$ is bounded by a small
+absolute constant. Cauchy's estimate on this disk bounds
+the derivative of $f/E-\cos\Phi$ on its half-disk by
+$C\varepsilon a/\delta$. Hence there
+\[
+ |(f/E)'(z)+ad|\leq a|d|/2.
+\]
+Also vertical integration of $\Phi'$ from the real axis
+gives $|\operatorname{Im}\Phi(q)|\geq(a-D)|\operatorname{Im}q|$.
+Thus $|q-\bar q|\leq C\varepsilon/a<\delta/(2a)$.
+If $q$ were nonreal, $q$ and $\bar q$ would be distinct
+zeros in the half-disk. Integration of the last derivative
+bound along their segment gives
+$|(f/E)(q)-(f/E)(\bar q)|\geq a|d||q-\bar q|/2>0$,
+a contradiction. The same bound shows the derivative at
+the real zero is nonzero. Multiplication by $E$ preserves simplicity.
+\end{proof}
+
+\begin{proposition}\label{prop:local}
+If a real $x$ has an admissible saddle $v_0=a+ib$, then,
+for large $a$, every zero $z$ with $|z-x|<1/2$ is real and simple.
+\end{proposition}
+\begin{proof}
+The theta boundary has distance at least $cQ/L$ from $v_0$,
+because $\cos(4b)\geq cQ/L$. This is much larger than
+$1/L$. For $|z-x|\leq2$, solve $\sigma_t(v)+iz=0$ by
+the contraction
+\[
+ v\longmapsto v-\frac{\sigma_t(v)+iz}{\sigma_t'(v_0)}
+\]
+on a disk of radius $C/L$ about $v_0$. Its derivative
+has modulus $O(1/L)$, by the $CL$ bound on $\sigma_t''$,
+and its center displacement is $O(1/L)$. It gives an
+analytic branch with
+$v(z)=v_0+O(1/L)$ and $v'(z)=-i/\sigma_t'(v(z))=O(1/L)$.
+For $|z-x|\leq1$, the perturbed saddle remains admissible:
+first its margin is at least $(c_0/2)ta^5$, then
+\eqref{eq:stationaryreal} restores a fixed stronger margin
+for large $a$. The quantities $a,L,Q$ remain comparable
+to their central values.
+
+The nonzero analytic function
+$A(z)=W_z(v(z))\sqrt\pi/\sqrt{\beta(z)}$
+has logarithmic derivative
+\begin{equation}\label{eq:logder}
+ \frac{A'(z)}{A(z)}=iv(z)-\frac{\beta'(z)}{2\beta(z)}
+ =iv(z)+O(1/L).
+\end{equation}
+Full stationarity cancels the derivative of $v$ in the
+exponential weight. Also $|\beta'|=O(1)$ because
+$|\sigma_t''|=O(L)$ and $|v'|=O(1/L)$.
+Choose $P=\log(A/A(x))$ with $P(x)=0$, put
+$P^*(z)=\overline{P(\bar z)}$ and fix a real argument
+$\alpha$ of $A(x)$. Define
+\[
+ E(z)=|A(x)|e^{(P+P^*)/2},\qquad
+ \Phi(z)=\alpha+(P-P^*)/(2i).
+\]
+Both have the required conjugation property and
+$\Phi'=a+O(1/L)$. Exactly,
+\[
+ \tfrac12(A(z)+\overline{A(\bar z)})=E(z)\cos\Phi(z),\qquad
+ \tfrac12(|A(z)|+|A(\bar z)|)=|E(z)|\cosh(\operatorname{Im}\Phi(z)).
+\]
+
+Use \eqref{eq:pair} with heights $h=\operatorname{Im}v(z)$
+and $k=\operatorname{Im}v(\bar z)$. Proposition~\ref{prop:gaussian}
+controls its two horizontal integrals by these $A$ terms.
+The heights differ by $O(|\operatorname{Im}z|/L)$, and
+throughout their intervening interval
+$\cos(4q)\geq cQ/L$. Equations \eqref{eq:stripbound}
+and $\operatorname{Re}(iq)^6=-q^6\leq0$ give a bound
+$\exp(Ca+t-Xh+C)$ for the residual vertical integral,
+where $X=x$ may replace $\operatorname{Re}z$ at bounded
+cost. At the central real saddle, stationarity implies
+$|x|\leq CL$, so $|X(h-k)|=O(1)$.
+By \eqref{eq:centerlower}, meanwhile,
+$|A(z)|\geq\exp(ta^6-Cta^5-Ca-Xh)$.
+The ratio tends uniformly to zero since $t\geq1$ and
+$a\to\infty$. Thus
+\[
+ |F_t(z)/E(z)-\cos\Phi(z)|
+ \leq o(1)\cosh(\operatorname{Im}\Phi(z)),\qquad |z-x|\leq1.
+\]
+Lemma~\ref{lem:cos} applies with $D=C/L$.
+\end{proof}
+
+\section{The moving transition region}
+The positive continuous function $e^{tu^6}K(u)$ tends to
+zero at infinity and attains a maximum on $[0,\infty)$.
+Every such maximizer $u=u_t$ escapes to infinity as
+$t\to\infty$. Indeed for a fixed $R$, the values on
+$[0,R]$ are at most $C_R e^{tR^6}$, whereas the value
+at $R+1$ is $K(R+1)e^{t(R+1)^6}$ and eventually larger.
+At a positive maximizer differentiation gives
+$\sigma_t(u)=0$. With $B=4\pi e^{4u}$,
+\begin{equation}\label{eq:scale}
+ B=6tu^5+9+\epsilon(u)\asymp tu^5.
+\end{equation}
+This is the center used in both frequency regions.
+
+\begin{proposition}\label{prop:transition}
+Fix $M>0$. For all sufficiently large $t$, every zero of
+$F_t$ in $|z|\leq MB$ is real and simple.
+\end{proposition}
+\begin{proof}
+It suffices first to take $\operatorname{Im}z\leq0$.
+The anchor
+$q=u+\tfrac14\Log(1+iz/B)$ has $q-u=O_M(1)$ and
+a fixed positive distance, depending on $M$, from the
+theta boundary. The exact fixed-point equation is
+\begin{equation}\label{eq:transitionmap}
+ w=u+\frac14\Log\left(1+\frac{iz}{B}
+    +\frac{6t(w^5-u^5)+\epsilon(w)-\epsilon(u)}B\right).
+\end{equation}
+On the disk $|w-q|\leq C_M/u$, the logarithm argument
+stays in a right half-plane: its leading real part is
+at least one and its perturbation is $O_M(1/u)$.
+The derivative of the perturbation is
+$O_M(tu^4/B)=O_M(1/u)$. At $q$ the displacement is
+$O_M(1/u)$; taking $C_M$ large and then $u$ large makes
+the disk invariant and the map contractive. The root
+is a full actual saddle with
+\[
+ \operatorname{Re}v=u+O_M(1),\qquad
+ \operatorname{Re}e^{4v}\asymp_M B,\qquad
+ e^{4\operatorname{Re}v}\asymp_M B.
+\]
+In particular the initial theta margin is positive; the
+real stationarity equation strengthens it to
+$\operatorname{Re}e^{4v}\geq cta^5$ with an absolute
+$c>c_0$ for large $u$. Also $L/Q\leq C_M$.
+
+For $y\leq-A_M/u$, the reflection bound
+\eqref{eq:reflected} is at most $C_M e^{-A_M}+o(1)$,
+since $a-1\geq u/2$. Choose $A_M$ large and then $u$
+large to make this less than $1/4$, while the relative
+error in \eqref{eq:gaussian} is less than $1/4$.
+Equation \eqref{eq:mirror} excludes a zero. Conjugation
+therefore confines every zero in this region to
+$|\operatorname{Im}z|<A_M/u$.
+
+For $x=\operatorname{Re}z$, $|x|\leq MB$, the same
+construction supplies an admissible real-frequency saddle.
+Once $u$ is large enough that $A_M/u<1/2$,
+Proposition~\ref{prop:local} proves the zero real and
+simple. Every estimate is uniform in this bounded-ratio region.
+\end{proof}
+
+\section{Actual far saddles and whole-plane coverage}
+\begin{lemma}\label{lem:far}
+There is an absolute $C_0$ such that, if $t\geq1$,
+$X=|z|$, $\operatorname{Im}z\leq0$,
+$\alpha=\tfrac14\log(X/(4\pi))$ is sufficiently large and
+\begin{equation}\label{eq:farcondition}
+ X\geq C_0t(\alpha+1)^5,
+\end{equation}
+then $z$ has an admissible actual saddle with real part
+$\alpha+O(1)$ and $e^{4a}\asymp X$.
+\end{lemma}
+\begin{proof}
+Start with the leading model, not the actual kernel. The
+anchor $q=\tfrac14\Log(iz/(4\pi))$ has real part
+$\alpha$ and imaginary part in $[-\pi/8,\pi/8]$,
+since $\operatorname{Re}(iz)\geq0$. Solve
+\[
+ w=\tfrac14\Log\{(iz+6tw^5+9)/(4\pi)\}
+\]
+on the disk $|w-q|\leq Ct(\alpha+1)^5/X$.
+Choose $C_0$ so large that this radius is less than $1/100$.
+On the disk $|\operatorname{Im}w|<1/2$, and
+$\operatorname{Re}w^5\geq(\operatorname{Re}w)^5/2$
+for large $\alpha$. Hence the logarithm argument lies
+strictly in the right half-plane. Its modulus is comparable
+to $X$, and the map's derivative is
+$O(t(\alpha+1)^4/X)=O(1/\alpha)$.
+The center displacement is bounded by $Ct(\alpha+1)^5/X$,
+using $|\Log(1+h)|\leq2|h|$ for $|h|\leq1/2$.
+Increasing the fixed radius constant gives an invariant
+contraction disk. Its fixed point solves
+\[
+ 6tw^5+9-4\pi e^{4w}=-iz.
+\]
+If $w=a+ib$ and $Y=-\operatorname{Im}z$, its real part is
+\[
+ 4\pi\operatorname{Re}e^{4w}
+   =6t(a^5-10a^3b^2+5ab^4)+9+Y\geq cta^5+Y.
+\]
+Since $|b|<1/2$ and this quantity is positive, in fact
+$|b|<\pi/8$. Also $e^{4a}\asymp X$. Thus the model root
+lies strictly inside the theta strip with the required
+positive margin; boundary anchors cause no missing case.
+
+Now restore the kernel error. The model derivative at its
+root is
+\[
+ 30tw^4-16\pi e^{4w}
+ =-4iz+t(30w^4-24w^5)-36.
+\]
+Its modulus is between $cX$ and $CX$, by
+\eqref{eq:farcondition} with $C_0$ large.
+On a disk of radius $1/X$, the variation is $O(1)$,
+while $\epsilon$ and its first derivative are $O(e^{-4a})$.
+Subtracting the full slope divided by the central model
+derivative gives a contraction: its center displacement
+is $O(e^{-4a}/X)$, and its derivative is $O(1/X)$.
+The disk remains inside the strip because its boundary
+distance is at least $c(ta^5+Y)/X\gg1/X$.
+The resulting actual root preserves the positive margin;
+\eqref{eq:stationaryreal} restores the fixed admissibility
+constant. This proves the lemma.
+\end{proof}
+
+\begin{proposition}\label{prop:farzeros}
+For an absolute sufficiently large $C_1$, the conditions
+$t\geq1$, $\alpha$ sufficiently large and
+$|z|\geq C_1t(\alpha+1)^5$ imply that every zero at $z$
+is real and simple. For each finite $T$, all nonreal zeros
+at $1\leq t\leq T$ lie in one finite disk.
+\end{proposition}
+\begin{proof}
+Take $C_1\geq2C_0$. For $\operatorname{Im}z\leq-1$,
+Lemma~\ref{lem:far} and \eqref{eq:reflected} exclude a
+zero. Conjugation excludes $\operatorname{Im}z\geq1$.
+If $|\operatorname{Im}z|<1$, let $x=\operatorname{Re}z$.
+For large $|z|$, $|x|\geq|z|/2$, and
+$\alpha_x=\tfrac14\log(|x|/(4\pi))\leq\alpha$.
+Thus $|x|\geq C_0t(\alpha_x+1)^5$. Lemma~\ref{lem:far}
+supplies a saddle at $x$. The local pair estimates in its
+proof hold on $|q-x|\leq1$. At any proposed zero there,
+the inequality $|\cos\Phi|\leq\varepsilon\cosh\operatorname{Im}\Phi$
+gives $|\operatorname{Im}\Phi|\leq2\varepsilon$.
+Vertical integration of $\Phi'=a+O(1/L)$ yields
+$|\operatorname{Im}z|\leq2\varepsilon/(a-O(1/L))<1/2$.
+Proposition~\ref{prop:local} now applies.
+For $1\leq t\leq T$, the displayed power condition holds
+uniformly for all sufficiently large $|z|$, since
+$(\log X)^5/X\to0$. This proves the last assertion.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Use a real maximizing center $u$ and $B=4\pi e^{4u}$ from
+\eqref{eq:scale}. If $X=|z|\geq MB$, write
+$\alpha=u+d$, so $d\geq\tfrac14\log M$. Then
+\[
+ \frac{t(\alpha+1)^5}{X}
+ \leq C e^{-4d}\left(1+\frac{d+1}{u}\right)^5
+ \leq C(2+d)^5e^{-4d},\qquad u\geq1.
+\]
+Choose one fixed $M>1$ so large that the last expression
+is at most $1/C_1$ for every $d\geq\tfrac14\log M$.
+For sufficiently late $t$, the center $u$ and hence
+$\alpha$ are large, so Proposition~\ref{prop:farzeros}
+settles all $X\geq MB$. For this same fixed $M$, enlarge
+the time once more so Proposition~\ref{prop:transition}
+settles all $X\leq MB$. These regions cover the entire
+complex plane, using the same $u$ and $B$. This proves
+the common-time conclusion.
+\end{proof}
+
+\section{Exact formal correspondence and publication scope}
+The frozen mathematical baseline is
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The exact final declaration is
+\begin{center}\small
+\code{RiemannSixthTransitionSimpleZeros.}\\
+\code{eventually_all_zeros_real_simple}.
+\end{center}
+Its namespace prefix is
+\begin{center}\code{OperatorDerivativeRewrite.Foundation}.\end{center}
+The formal transform is
+\begin{center}\code{RiemannEvenFlow.flow 3 t z}:\end{center}
+the index three means a sixth power, not a third power.
+The proof combines the bounded-ratio theorem with
+\begin{center}\code{RiemannSixthFarZeroControl.}\\
+\code{uniform_actual_far_zeros_real_simple},\end{center}
+both at a single stationary center. The theorem map records
+exact source lines and hashes. The human proof consolidates
+explicit formal constants into uniform inequalities;
+intermediate regrouped lemmas are not claimed as new named
+formal statements.
+
+De Bruijn~\cite{debruijn} and Newman~\cite{newman} provide
+the primary historical comparison for real-zero Fourier
+transforms. Newman's quadratic propagation theorem does
+not supply the sixth-order conclusion. Targeted priority
+review remains necessary; novelty is unresolved.
+
+The theorem gives an existential late time. It gives no
+numerical optimal threshold, no nonreal-zero certificate at
+a specified early sixth-order time, no assertion that the
+set of all reality times is an upper ray, and no threshold
+collision. The argument is presented for the verified
+sixth-order transform only. It does not certify every
+integer even order, a real-order interpolation, or a
+Riemann-hypothesis implication.
+
+\begin{thebibliography}{9}
+\bibitem{quartic} Project Stardust,
+\emph{An attained eventual reality threshold for a growing
+quartic arithmetic transform}, reviewed editorial draft,
+October 29, 2026. Companion manuscript in
+\code{manuscripts/quartic-threshold/}.
+\bibitem{debruijn} N. G. de Bruijn,
+The roots of trigonometric integrals,
+\emph{Duke Math. J.} \textbf{17} (1950), 197--226.
+\href{https://doi.org/10.1215/S0012-7094-50-01720-0}
+{doi:10.1215/S0012-7094-50-01720-0}.
+\bibitem{newman} C. M. Newman,
+Fourier transforms with only real zeros,
+\emph{Proc. Amer. Math. Soc.} \textbf{61} (1976), 245--251.
+\url{https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions,
+equation 20.7.32, modular theta identity.
+\url{https://dlmf.nist.gov/20.7.E32}.
+\end{thebibliography}
+\end{document}
