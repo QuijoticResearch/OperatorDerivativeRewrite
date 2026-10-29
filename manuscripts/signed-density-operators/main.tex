@@ -537,6 +537,87 @@ representative independence while preserving nonclosability.
 These are separate positive-measure examples, not failures of
 Theorem~\ref{thm:main} for a Schwartz absolute density.
 
+
+\section{Finite restrictions and a sufficient compatibility criterion}
+The mixed-measure example also shows why checking finite restrictions
+alone cannot prove closability. Let $\mathcal D$ be the real smooth
+derivative domain in $X=L^2(\widetilde\mu;\R)$ just used. For every
+finite-dimensional subspace $W\subset\mathcal D$, the linear map
+$D|_W:W\to X$ is continuous in the norm induced from $X$, by
+finite-dimensional norm equivalence. Thus $u_n\in W$, $u_n\to0$
+implies $Du_n\to0$. Its derivative form is also closable on $W$:
+indeed its values tend to zero without even needing the energy-Cauchy
+assumption. Here closability refers to the sequential test on $W$;
+$W$ need not be dense in $X$.
+
+These windows are directed under sums and cover $\mathcal D$, since
+every $u$ belongs to its one-dimensional span. Nevertheless
+\eqref{eq:atomicjetlimit} proves that their union derivative and
+every positively weighted derivative form fail closability. No fixed
+finite window contains infinitely many of those $f_n$: otherwise its
+subsequence would have derivatives tending both to zero by continuity
+and to $1_{\{0\}}$ by \eqref{eq:atomicjetlimit}. This last observation
+is a classical human deduction, not an additional formal theorem.
+The issue is compatibility across windows, not failure of any one
+finite-dimensional check.
+
+Here is a precise positive criterion from the same frozen library.
+Let $V$ be a real vector space, $X$ a normed space and $Y$ a Banach
+space, with linear maps $I:V\to X$ and $D:V\to Y$. Sequential
+closability means
+\[
+ Iu_n\to0,\quad Du_n\to y\quad\Longrightarrow\quad y=0.
+\]
+The map $I$ need not be injective. Suppose a family of linear
+maps $P_i:V\to V$ and bounded linear maps $Q_i:X\to X$ satisfies
+\begin{align}
+ IP_i&=Q_iI,\qquad \|DP_iv\|\leq\|Dv\|\quad(v\in V),
+       \label{eq:windowcompat}\\
+ &\text{for every }v\in V\text{ some }i\text{ has }P_iv=v,
+       \label{eq:windowcover}
+\end{align}
+and each pair $(IP_i,DP_i)$ is sequentially closable.
+Then $(I,D)$ is sequentially closable. No nesting, countability,
+common bound on $Q_i$, or idempotence of $P_i$ is required by this
+statement. The exact energy contraction in \eqref{eq:windowcompat}
+is an assumption, not a consequence of finite-dimensionality.
+
+\begin{proof}
+Suppose $Iu_n\to0$ and $Du_n\to y$. For each fixed $i$,
+boundedness of $Q_i$ implies $IP_iu_n\to0$, while
+\[
+ \|DP_i u_n-DP_i u_m\|\leq\|Du_n-Du_m\|
+\]
+makes the projected derivatives Cauchy. Completeness gives a
+limit, and local closability forces that limit to be zero.
+For fixed $v\in V$, choose $i$ with $P_iv=v$. Contraction applied
+to $u_n-v$ gives
+\[
+ \|DP_i u_n-Dv\|\leq\|Du_n-Dv\|.
+\]
+Take $n\to\infty$ to obtain $\|Dv\|\leq\|y-Dv\|$.
+This holds for every $v$, so substitute $v=u_m$ and then let
+$m\to\infty$. The left side tends to $\|y\|$ and the right
+side to zero; hence $y=0$.
+\end{proof}
+
+For $\kappa>0$, the form
+$\mathcal E_\kappa(v)=\kappa\|Dv\|^2$ is closable relative to
+$I$ exactly when $(I,D)$ is sequentially closable, provided $Y$
+is complete. In one direction, an energy-Cauchy sequence has
+$Du_n$ Cauchy; its limit is zero by operator closability, so
+$\mathcal E_\kappa(u_n)\to0$. In the other, if $Du_n\to y$
+and $Iu_n\to0$, then
+$\mathcal E_\kappa(u_n-u_m)\to0$; form closability gives
+$\kappa\|Du_n\|^2\to0$, forcing $y=0$. At $\kappa=0$ the
+zero form is always closable and gives no operator information.
+Thus \eqref{eq:windowcompat}--\eqref{eq:windowcover} also yield
+closability of every nonnegative weighted derivative form. The
+finite-window counterexample rules out a compatible family with all
+these hypotheses on its original nonclosable domain; a covering
+family of finite subspaces alone supplies none of the needed energy
+and input compatibility.
+
 \section{Classical antecedents and exact source boundary}
 Weighted derivative closability is classical. De Cicco--Serra
 Cassano~\cite{DCSC}, Section 2.2/condition (12), recall Hamza's
@@ -548,6 +629,17 @@ give the classical $T^+=JT^*J$ mechanism. Their coupling and
 spectral theorems are not used. Graph projection and $D^*D$ are
 classical Hilbert theory; no priority is claimed.
 
+
+For singular reference measures, Alberti--Bate--Marchese
+\cite{ABM}, Corollary 1.6, gives a much broader necessity of absolute
+continuity for classical differential-operator closability in the
+range $1\leq p<\infty$, $1\leq q\leq\infty$. Their domain is $C_c^1$ and their
+Lipschitz convergence topology is separately defined. Our smooth
+shrinking jets provide a direct witness for the particular mixture;
+we do not derive a new general classification. Finite-dimensional
+continuity and the compatible-window norm argument above are also
+presented without a priority claim.
+
 The exact theorem map records frozen declarations at
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
 The map also records the actual smooth shrinking jets and mixed
@@ -558,6 +650,7 @@ reconstructions. The original full-build/axiom evidence is
 hash-checked; no research source or original domain is changed.
 This formalization companion awaits independent referee review.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{DCSC} V. De Cicco and F. Serra Cassano,
 \emph{Relaxation and optimal finiteness domain for degenerate
@@ -565,6 +658,11 @@ quadratic functionals---one dimensional case}, primary author
 preprint, author-hosted 2024 version.
 \url{https://cvgmt.sns.it/media/doc/paper/6038/DCSC-Relaxation_22_1_2024.pdf}.
 Section 2.2/condition (12) comparison only.
+\bibitem{ABM} G. Alberti, D. Bate and A. Marchese,
+\emph{On the closability of differential operators},
+primary final preprint, May 2025.
+\href{https://arxiv.org/abs/2311.08058}{arXiv:2311.08058v2}.
+Introduction/Corollary 1.6 comparison only.
 \bibitem{DT} V. Derkach and C. Trunk,
 \emph{Coupling of definitizable operators in Kre\u\i n spaces},
 TU Ilmenau preprint M 17/03 (2017).

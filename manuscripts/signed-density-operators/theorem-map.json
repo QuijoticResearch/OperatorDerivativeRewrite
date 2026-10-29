@@ -1523,6 +1523,141 @@
       "source_sha256": "30f023f756e67eb330ec2659ff359490607faf1b1903ba7651000fd1068269f3",
       "declaration_header": "theorem nonzero_coefficient_not_closable (\u03ba : \u211d) (h\u03ba : \u03ba \u2260 0) : \u00ac FormClosable \u03ba",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AtomicGradientObstruction.lean#L73"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.WeightedFormClosability.energy_cauchy_iff",
+      "file": "Foundation/WeightedFormClosability.lean",
+      "line": 45,
+      "source_sha256": "9c2691cea9c82a44c30c5b240722acc2c89a68a0eede278339167d1c0800884d",
+      "declaration_header": "theorem energy_cauchy_iff (\u03ba : \u211d) (h\u03ba : 0 < \u03ba) (D : V \u2192\u2097[\u211d] Y) (f : \u2115 \u2192 V) :\n    Tendsto (fun q : \u2115 \u00d7 \u2115 => energy \u03ba D (f q.1 - f q.2)) atTop (nhds 0) \u2194\n      CauchySeq (fun n => D (f n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/WeightedFormClosability.lean#L45"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.WeightedFormClosability.zero_coefficient",
+      "file": "Foundation/WeightedFormClosability.lean",
+      "line": 65,
+      "source_sha256": "9c2691cea9c82a44c30c5b240722acc2c89a68a0eede278339167d1c0800884d",
+      "declaration_header": "theorem zero_coefficient (I : V \u2192\u2097[\u211d] X) (D : V \u2192\u2097[\u211d] Y) : FormClosable 0 I D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/WeightedFormClosability.lean#L65"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.WeightedFormClosability.positive_form_iff_seqClosable",
+      "file": "Foundation/WeightedFormClosability.lean",
+      "line": 89,
+      "source_sha256": "9c2691cea9c82a44c30c5b240722acc2c89a68a0eede278339167d1c0800884d",
+      "declaration_header": "theorem positive_form_iff_seqClosable [CompleteSpace Y]\n    (\u03ba : \u211d) (h\u03ba : 0 < \u03ba) (I : V \u2192\u2097[\u211d] X) (D : V \u2192\u2097[\u211d] Y) :\n    FormClosable \u03ba I D \u2194 SeqClosable I D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/WeightedFormClosability.lean#L89"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.WeightedFormClosability.seqClosable_implies_nonnegative_form",
+      "file": "Foundation/WeightedFormClosability.lean",
+      "line": 94,
+      "source_sha256": "9c2691cea9c82a44c30c5b240722acc2c89a68a0eede278339167d1c0800884d",
+      "declaration_header": "theorem seqClosable_implies_nonnegative_form [CompleteSpace Y]\n    {I : V \u2192\u2097[\u211d] X} {D : V \u2192\u2097[\u211d] Y} (h : SeqClosable I D)\n    (\u03ba : \u211d) (h\u03ba : 0 \u2264 \u03ba) : FormClosable \u03ba I D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/WeightedFormClosability.lean#L94"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ProjectedFormClosability.projected_cauchy",
+      "file": "Foundation/ProjectedFormClosability.lean",
+      "line": 16,
+      "source_sha256": "7b282a13e6c590a9ff91a501491a7b8b6639e1663c930483050ea48c7cb03d6c",
+      "declaration_header": "theorem projected_cauchy (D : V \u2192\u2097[\u211d] Y) (P : V \u2192\u2097[\u211d] V)\n    (hP : \u2200 v, \u2016D (P v)\u2016 \u2264 \u2016D v\u2016) (f : \u2115 \u2192 V)\n    (hf : CauchySeq (fun n => D (f n))) :\n    CauchySeq (fun n => D (P (f n)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ProjectedFormClosability.lean#L16"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ProjectedFormClosability.projected_derivatives_tendsto_zero",
+      "file": "Foundation/ProjectedFormClosability.lean",
+      "line": 26,
+      "source_sha256": "7b282a13e6c590a9ff91a501491a7b8b6639e1663c930483050ea48c7cb03d6c",
+      "declaration_header": "theorem projected_derivatives_tendsto_zero [CompleteSpace Y]\n    (I : V \u2192\u2097[\u211d] X) (D : V \u2192\u2097[\u211d] Y)\n    (P : V \u2192\u2097[\u211d] V) (Q : X \u2192L[\u211d] X)\n    (hcompat : \u2200 v, I (P v) = Q (I v))\n    (hcontract : \u2200 v, \u2016D (P v)\u2016 \u2264 \u2016D v\u2016)\n    (hlocal : SeqClosable (I.comp P) (D.comp P))\n    (f : \u2115 \u2192 V) (hf : Tendsto (fun n => I (f n)) atTop (\ud835\udcdd 0))\n    (hc : CauchySeq (fun n => D (f n))) :\n    Tendsto (fun n => D (P (f n))) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ProjectedFormClosability.lean#L26"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ProjectedFormClosability.seqClosable_of_covering_projections",
+      "file": "Foundation/ProjectedFormClosability.lean",
+      "line": 44,
+      "source_sha256": "7b282a13e6c590a9ff91a501491a7b8b6639e1663c930483050ea48c7cb03d6c",
+      "declaration_header": "theorem seqClosable_of_covering_projections [CompleteSpace Y]\n    (I : V \u2192\u2097[\u211d] X) (D : V \u2192\u2097[\u211d] Y)\n    (P : \u03b9 \u2192 V \u2192\u2097[\u211d] V) (Q : \u03b9 \u2192 X \u2192L[\u211d] X)\n    (hcompat : \u2200 i v, I (P i v) = Q i (I v))\n    (hcontract : \u2200 i v, \u2016D (P i v)\u2016 \u2264 \u2016D v\u2016)\n    (hcover : \u2200 v, \u2203 i, P i v = v)\n    (hlocal : \u2200 i, SeqClosable (I.comp (P i)) (D.comp (P i))) :\n    SeqClosable I D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ProjectedFormClosability.lean#L44"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ProjectedFormClosability.formClosable_of_covering_projections",
+      "file": "Foundation/ProjectedFormClosability.lean",
+      "line": 71,
+      "source_sha256": "7b282a13e6c590a9ff91a501491a7b8b6639e1663c930483050ea48c7cb03d6c",
+      "declaration_header": "theorem formClosable_of_covering_projections [CompleteSpace Y]\n    (I : V \u2192\u2097[\u211d] X) (D : V \u2192\u2097[\u211d] Y)\n    (P : \u03b9 \u2192 V \u2192\u2097[\u211d] V) (Q : \u03b9 \u2192 X \u2192L[\u211d] X)\n    (hcompat : \u2200 i v, I (P i v) = Q i (I v))\n    (hcontract : \u2200 i v, \u2016D (P i v)\u2016 \u2264 \u2016D v\u2016)\n    (hcover : \u2200 v, \u2203 i, P i v = v)\n    (hlocal : \u2200 i, FormClosable 1 (I.comp (P i)) (D.comp (P i)))\n    (\u03ba : \u211d) (h\u03ba : 0 \u2264 \u03ba) : FormClosable \u03ba I D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ProjectedFormClosability.lean#L71"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.finite_window_seqClosable",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 19,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem finite_window_seqClosable (T : X \u2192\u2097.[\u211d] Y)\n    (W : Submodule \u211d X) (hW : W \u2264 T.domain) [FiniteDimensional \u211d W] :\n    SeqClosable W.subtype (windowMap T W hW)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L19"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.finite_window_formClosable",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 31,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem finite_window_formClosable [CompleteSpace Y] (T : X \u2192\u2097.[\u211d] Y)\n    (W : Submodule \u211d X) (hW : W \u2264 T.domain) [FiniteDimensional \u211d W]\n    (\u03ba : \u211d) (h\u03ba : 0 \u2264 \u03ba) : FormClosable \u03ba W.subtype (windowMap T W hW)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L31"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.finite_windows_cover",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 36,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem finite_windows_cover (T : X \u2192\u2097.[\u211d] Y) (u : T.domain) :\n    \u2203 (W : Submodule \u211d X) (_hW : W \u2264 T.domain),\n      FiniteDimensional \u211d W \u2227 (u : X) \u2208 W",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L36"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.mixed_finite_windows_closable",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 49,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem mixed_finite_windows_closable\n    (W : Submodule \u211d MixedL2) (hW : W \u2264 derivativeOperator.domain)\n    [FiniteDimensional \u211d W] (\u03ba : \u211d) (h\u03ba : 0 \u2264 \u03ba) :\n    FormClosable \u03ba W.subtype (windowMap derivativeOperator W hW)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L49"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.mixed_windows_cover",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 55,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem mixed_windows_cover (u : derivativeOperator.domain) :\n    \u2203 (W : Submodule \u211d MixedL2) (_hW : W \u2264 derivativeOperator.domain),\n      FiniteDimensional \u211d W \u2227 (u : MixedL2) \u2208 W",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L55"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.mixed_global_not_seqClosable",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 60,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem mixed_global_not_seqClosable :\n    \u00ac SeqClosable derivativeOperator.domain.subtype derivativeOperator.toFun",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L60"
+    },
+    {
+      "paper": "Section 11 finite restrictions, original union obstruction and sufficient compatible-window criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWindowClosabilityBoundary.mixed_global_not_formClosable",
+      "file": "Foundation/FiniteWindowClosabilityBoundary.lean",
+      "line": 71,
+      "source_sha256": "b7f27e16caab0897a23475e8879700d7cbaa2f23bf4c1f03d5689c0f058a7a1a",
+      "declaration_header": "theorem mixed_global_not_formClosable (\u03ba : \u211d) (h\u03ba : 0 < \u03ba) :\n    \u00ac FormClosable \u03ba derivativeOperator.domain.subtype derivativeOperator.toFun",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWindowClosabilityBoundary.lean#L71"
     }
   ],
   "human_reorganization": [
@@ -1534,7 +1669,11 @@
     "The complete Hilbert energy proof regroups actual closed-graph projection, weak variational identity, full product domain and resolvent-range argument. Positive quadratic form is not positivity preservation or an identified Markov generator.",
     "The residual-squared test gives a shorter human proof of the actual polynomial Stein ODE. The normalized explicit signed example has a simple zero and L1 but non-L2 score. No simple-zero or non-L2-score assertion is made for every higher-heat kernel.",
     "Hamza and fundamental-symmetry mechanisms are classical antecedents. Bounded-interval weighted relaxation and Krein coupling/spectral theorems are not transferred to the original global graph.",
-    "The explicit eta cutoff realizes the same smooth compact radius-one/two witness and unit derivative as the formal bump construction. The full-support Gaussian/Dirac mixture uses REAL L2 and is separately a well-defined but nonclosable derivative; the pure Dirac example instead fails representative independence. Neither is identified with an absolute Schwartz-density space."
+    "The explicit eta cutoff realizes the same smooth compact radius-one/two witness and unit derivative as the formal bump construction. The full-support Gaussian/Dirac mixture uses REAL L2 and is separately a well-defined but nonclosable derivative; the pure Dirac example instead fails representative independence. Neither is identified with an absolute Schwartz-density space.",
+    "The actual mixed-measure derivative is closable on every finite-dimensional domain subspace, whose directed family covers the original domain, while the union remains nonclosable by the same shrinking jets. Eventual escape of those jets from each fixed finite window is explicitly labelled a human classical subsequence consequence.",
+    "The positive generic criterion retains exact input-compatible bounded Q_i, energy-contracting linear P_i, local closability and pointwise fixed-window coverage. The printed two-limit proof needs no ordering, countability, uniform bound on Q_i or idempotence of P_i. Finite subspace coverage alone is not substituted for these assumptions.",
+    "Positive derivative-form closability is equivalent to sequential operator closability when the target is complete and the coefficient is positive; the zero coefficient carries no operator information. The real mixed-measure example remains distinct from the original complex-valued real Hilbert absolute-density space.",
+    "Primary Alberti\u2013Bate\u2013Marchese Corollary 1.6 supplies broader classical necessity context, with C_c^1 domain and its own defined topologies. No general singular-measure classification is derived or attributed to this companion."
   ],
   "novelty": "Classical weighted derivative, Hilbert graph projection and signed-adjoint formalization companion. No new general closability, independence, spectral or process principle claimed."
 }
