@@ -175,3 +175,7 @@ Eight-page reviewed classical companion; 163 exact source correspondences. The p
 ## Sticky pair consolidated in the clock companion
 
 The same paper is now eleven pages, with 217 exact source correspondences. Full Brownian-coordinate finite-increment laws follow from stopped Fourier products; covariance equals expected holding, and positive diagonal mass occurs at some deterministic time in every positive horizon. All final pages and enlarged compensation/covariance/reference pages inspected. Nineteen reviewed drafts total 174 pages.
+
+## Actual IBM variation proof consolidated
+
+The Simpson companion is now twelve pages with 58 source correspondences. Complete overlap/crossing/localization proof establishes actual uniform-grid quartic limit 3T and raw-channel divergence; all final pages inspected. Exact 105-pairing enumeration and five rational rate checks pass. Nineteen reviewed drafts total 178 pages.

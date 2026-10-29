@@ -11,7 +11,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\Pconv}{\xrightarrow{\mathrm P}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Spatial Simpson integration for reflected-clock\protect\\
+\title{Variation and spatial Simpson integration for reflected-clock\protect\\
 iterated Brownian motion}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
@@ -23,7 +23,10 @@ Brownian motions. We prove convergence in probability of oriented
 spatial Simpson sums for every global $C^3$ one-form. The limit
 is its ordinary spatial primitive evaluated along $Z$. The proof
 uses a compact fourth-order Peano remainder and a direct quartic
-tightness estimate, without the sharper quartic-variation limit.
+tightness estimate. Separately, an exact scenery-overlap bound and
+Brownian clock localization prove the uniform-grid quartic limit
+$3T$, quadratic-variation divergence and the need for compensation
+between raw Taylor channels.
 We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
 chain formula, uniform control over prefixes of one common grid,
 bounded random-horizon convergence for spatial one-forms, and an
@@ -134,8 +137,8 @@ Thus the quartic sums are tight. No independence between different
 $\Delta_iZ$ is needed when summing their expectations. Continuity
 of each path on $[0,T]$ gives $M_N\to0$ almost surely.
 
-The sharper assertion $Q_{4,N}\Pconv3T$ is separately verified
-in the library, but is not needed for any main proof in this paper.
+The sharper assertion $Q_{4,N}\Pconv3T$ is proved separately in
+Section~\ref{sec:variation}; the quadrature proofs need only tightness.
 In particular it would be incorrect to infer that assertion from
 \eqref{eq:tight} or the corresponding expectation calculation.
 The present argument uses only the bound it has actually proved.
@@ -432,6 +435,225 @@ Consequently it is a polynomial smoothing, not a claimed causal
 interpolation. No adaptedness or $L^p$ convergence follows merely
 from \eqref{eq:pathlimit}.
 
+\section{Exact uniform-grid quartic variation}\label{sec:variation}
+The tightness estimate used above is deliberately weaker than the
+library's full variation result. We now reconstruct that result
+without changing the proof or domain of the Simpson formulas.
+For $t_i=iT/N$, let
+\[
+ Q_N=\sum_{i=0}^{N-1}(Z_{i+1}-Z_i)^4,
+ \qquad C_N=3\sum_{i=0}^{N-1}(|B_{t_{i+1}}|-|B_{t_i}|)^2.
+\]
+The second quantity is the exact scenery-conditional mean of the
+first, since each scenery increment has conditional variance
+$\ell_i=\big||B_{t_{i+1}}|-|B_{t_i}|\big|$.
+
+\begin{theorem}\label{thm:quartic}
+For every $T>0$, along all positive integer uniform-grid sizes,
+\begin{equation}\label{eq:quarticlimit}
+ Q_N\Pconv3T.
+\end{equation}
+\end{theorem}
+
+The scenery increments need not be independent after conditioning
+on the clock. A later traversal may revisit a previous scenery
+interval. We keep all such overlaps in the variance estimate.
+
+\subsection*{The exact Gaussian overlap calculation}
+Write $a_i=|B_{t_i}|$, $b_i=|B_{t_{i+1}}|$ and
+$I_i=(\min(a_i,b_i),\max(a_i,b_i)]$. Let $o_{ij}$ be the signed
+overlap of these oriented intervals; its absolute value is
+$|I_i\cap I_j|$. Brownian scenery increments $G_i=W_{b_i}-W_{a_i}$
+satisfy, for this fixed clock sample,
+\[
+ \mathbb E_WG_i^2=\ell_i,\qquad
+ \mathbb E_W(G_iG_j)=o_{ij}.
+\]
+The second equality follows by writing each increment as the
+oriented integral of an interval indicator against Brownian motion.
+It also follows directly by expanding the covariance
+$\mathbb E(W_uW_v)=\min(u,v)$.
+For centered jointly Gaussian variables with variances $l,m$ and
+covariance $o$, the pair-moment formula gives
+\begin{equation}\label{eq:wickquartic}
+ \operatorname{Cov}(G^4,H^4)=72lm\,o^2+24o^4.
+\end{equation}
+To verify the constants, among pairings of four $G$'s and four
+$H$'s, zero cross-pairs contribute $9l^2m^2$, two cross-pairs
+contribute $\binom42^2 2!=72$ copies of $lm\,o^2$, and four
+cross-pairs contribute $4!=24$ copies of $o^4$.
+Subtract $\mathbb EG^4\mathbb EH^4=9l^2m^2$.
+The pairing rule itself follows by expanding the Gaussian generating
+function $\exp((lx^2+2oxy+my^2)/2)$ at $x^4y^4$.
+
+If all $\ell_i\leq\delta$, then $|o_{ij}|\leq\delta$ and
+\begin{equation}\label{eq:conditionalvariance}
+ \mathbb E_W(Q_N-C_N)^2
+ \leq96\delta^3\sum_{i,j}|o_{ij}|.
+\end{equation}
+Indeed, each summand in \eqref{eq:wickquartic} is bounded by its
+coefficient times $\delta^3|o_{ij}|$. Every finite eighth moment
+exists, so the double variance expansion is legitimate. Equivalently,
+if $n(x)=\sum_i\mathbf1_{I_i}(x)$ is the return count, then
+$\sum_{i,j}|o_{ij}|=\int n(x)^2dx$. Repeated visits are counted
+quadratically, as required.
+
+\subsection*{A Brownian endpoint envelope}
+Define $\tau_\delta(x)=(2\delta-|x|)_+$ and
+\[
+ E_{N,\delta}=\sum_{i,j=0}^{N-1}
+       \tau_\delta(|B_{t_i}|-|B_{t_j}|),\qquad
+ p(s)=(2\pi s)^{-1/2}\quad(s>0).
+\]
+For two intervals starting at $a,c$ and of lengths at most
+$\delta$, their overlap length is at most
+$(2\delta-|a-c|)_+$. This follows by enclosing them in
+$[a-\delta,a+\delta]$ and $[c-\delta,c+\delta]$ and intersecting
+these two intervals. Consequently, on the event
+\[
+ \mathcal A_{N,\delta}
+ =\{\max_i|B_{t_{i+1}}-B_{t_i}|<\delta\},
+\]
+the reverse triangle inequality gives $\ell_i\leq\delta$ and
+$\sum_{i,j}|o_{ij}|\leq E_{N,\delta}$.
+
+For $s<t$, condition on $B_s=x$. The later value is $x+G$, where
+$G$ is independent normal with variance $t-s$. The folded variable
+$|x+G|$ has density on $[0,\infty)$ bounded by $2p(t-s)$,
+uniformly in $x$. The tent has height at most $2\delta$, support
+length $4\delta$, and hence integral at most $8\delta^2$.
+Thus
+\begin{equation}\label{eq:tentmean}
+ \mathbb E\tau_\delta(|B_s|-|B_t|)
+ \leq16\delta^2p(t-s).
+\end{equation}
+The diagonal is instead exactly $2\delta$; it is not evaluated
+through a singular zero-variance density formula. Set $h=T/N$.
+Since $p(kh)=p(h)/\sqrt k$ and
+\[
+ \sum_{k=1}^{N}\frac1{\sqrt k}\leq2\sqrt N,
+\]
+summing the ordered off-diagonal pairs gives
+\begin{equation}\label{eq:endpointenergy}
+ \mathbb EE_{N,\delta}
+ \leq2N\delta+64\delta^2p(h)N\sqrt N
+ =2N\delta+64p(T)N^2\delta^2.
+\end{equation}
+The inverse-square-root sum follows by telescoping
+$1/\sqrt k\leq2(\sqrt k-\sqrt{k-1})$.
+
+Let $m_{20}=\mathbb E|G_0|^{20}$ for a standard normal $G_0$;
+this is a finite fixed constant. The union bound and Markov's
+inequality give
+\begin{equation}\label{eq:badclock}
+ \mathbb P(\mathcal A_{N,\delta}^c)
+ \leq N(T/N)^{10}m_{20}\delta^{-20}.
+\end{equation}
+Choose $\delta=\delta_N=N^{-4/9}$. The right side is
+$T^{10}m_{20}N^{-1/9}\to0$, whereas
+\begin{equation}\label{eq:weightedenergy}
+ \delta_N^3\mathbb EE_{N,\delta_N}
+ \leq2N^{-7/9}+64p(T)N^{-2/9}\longrightarrow0.
+\end{equation}
+For any $\varepsilon>0$, conditional Chebyshev on the good-clock
+event, followed by Fubini, now yields
+\begin{equation}\label{eq:quarticfluctuation}
+ \mathbb P(|Q_N-C_N|\geq\varepsilon)
+ \leq\mathbb P(\mathcal A_{N,\delta_N}^c)
+     +\frac{96}{\varepsilon^2}\delta_N^3\mathbb EE_{N,\delta_N}
+ \longrightarrow0.
+\end{equation}
+On the bad event the conditional probability is bounded by one.
+No global joint $L^2$ error bound is inferred by removing that event.
+
+\subsection*{The reflected-clock correction}
+For real $a,b$ define $r(a,b)=2(|ab|-ab)\geq0$. Direct expansion gives
+\begin{equation}\label{eq:reflectionidentity}
+ (|b|-|a|)^2=(b-a)^2-r(a,b).
+\end{equation}
+Let $R_N=\sum_i r(B_{t_i},B_{t_{i+1}})$.
+If $|b-a|\leq\delta$, then
+\begin{equation}\label{eq:penaltytent}
+ r(a,b)\leq\delta\tau_\delta(a).
+\end{equation}
+When $ab\geq0$ the left side is zero. Otherwise the endpoints
+straddle zero, so $|a|\leq\delta$ and
+$r(a,b)=4|ab|\leq(b-a)^2\leq\delta^2$;
+also $\tau_\delta(a)\geq\delta$. This proves the bound in both cases.
+Therefore, on $\mathcal A_{N,\delta}$,
+\[
+ 0\leq R_N\leq\delta\sum_i\tau_\delta(B_{t_i}).
+\]
+The initial term is bounded by $2\delta^2$. At positive grid times,
+the ordinary Gaussian density and the same tent-mass bound give
+$\mathbb E\tau_\delta(B_{t_i})\leq16\delta^2p(t_i)$.
+Summing as before, with a harmless upper bound including one extra
+positive time, gives
+\[
+ \mathbb E\left[\delta\sum_i\tau_\delta(B_{t_i})\right]
+ \leq2\delta^2+32p(T)N\delta^3.
+\]
+For $\delta_N=N^{-4/9}$ this tends to zero. Markov's inequality,
+with the bad-clock probability kept separate, implies $R_N\Pconv0$.
+
+Finally $U_N=\sum_i(B_{t_{i+1}}-B_{t_i})^2$ has expectation $T$
+and variance $2T^2/N$, by independent Brownian increments. Thus
+$U_N\to T$ in $L^2$. Summing \eqref{eq:reflectionidentity} gives
+$C_N=3U_N-3R_N\Pconv3T$. Combining this with
+\eqref{eq:quarticfluctuation} proves Theorem~\ref{thm:quartic}.
+
+\section{Divergent raw channels and finite compensated sums}
+Let
+\[
+ V_N=\sum_i(Z_{i+1}-Z_i)^2,\qquad
+ m_N=\max_i|Z_{i+1}-Z_i|.
+\]
+Path continuity on $[0,T]$ implies $m_N\to0$ almost surely, and
+the elementary inequality
+\begin{equation}\label{eq:quarticquadratic}
+ Q_N\leq m_N^2V_N
+\end{equation}
+keeps the quartic and quadratic sums distinct.
+
+\begin{corollary}\label{cor:quadratic}
+For $T>0$ and every fixed real $K$,
+\[
+ \mathbb P(V_N\leq K)\longrightarrow0.
+\]
+Neither $V_N$ nor the raw first Taylor channel
+$F_N=\sum_i2Z_i(Z_{i+1}-Z_i)$ has a finite probability limit.
+Nevertheless their sum is exactly $Z_T^2-Z_0^2$ for every grid.
+\end{corollary}
+\begin{proof}
+For $K<0$ the event is empty. For $K\geq0$, on
+$\{V_N\leq K\}$, \eqref{eq:quarticquadratic} gives
+$Q_N\leq Km_N^2$. Since $Q_N\Pconv3T>0$ and
+$Km_N^2\Pconv0$, the event has probability tending to zero.
+If $V_N\Pconv Y$ for a finite random variable, choose $K$
+with $\mathbb P(|Y|>K)<1/4$. For all sufficiently large $N$,
+$\mathbb P(|V_N-Y|>1)<1/4$ would give
+$\mathbb P(V_N\leq K+1)>1/2$, contradicting the lower-tail result.
+
+Expanding $(Z_{i+1})^2-Z_i^2$ and telescoping gives
+\[
+ F_N+V_N=Z_T^2-Z_0^2.
+\]
+A finite probability limit for $F_N$ would therefore give one for
+$V_N$ by subtraction from this fixed finite endpoint variable.
+This is impossible. The compensation is essential even for the
+polynomial $z^2$; it cannot be replaced by separately convergent
+raw first and second channels.
+\end{proof}
+
+Burdzy's classical \emph{Variation of iterated Brownian motion}
+\cite{burdzy} already establishes deterministic quartic variation
+for two-sided-scenery IBM. Khoshnevisan--Lewis \cite{kl}, Theorem 4.3,
+proves a stronger weighted quartic limit on its induced random
+partition. These are explicit antecedents. Our source-mapped proof
+retains the reflected-clock model, all uniform physical grids and
+convergence in probability; it claims no priority for the quartic
+phenomenon and no stronger almost-sure or weighted limit here.
+
 \section{What this integration result means}
 The targets are genuine pathwise finite spatial or time integrals,
 and the approximations converge under the actual positive
@@ -457,11 +679,10 @@ random horizons are handled by approximation, not a martingale
 stopping theorem. Nonsmooth It\^o--Tanaka formulas and arbitrary
 partitions have their own proof obligations.
 
-Earlier library notes also discuss raw Taylor-channel divergence
-and intrinsic graph-dual obstructions. Those results are
-preserved, but they are not needed as premises of the proofs
-here. Keeping them separate avoids using a stochastic-domain
-assertion to justify a deterministic quadrature estimate.
+The variation and raw-channel results above are independent of the
+Simpson proof, which needs only quartic tightness. Intrinsic
+graph-dual obstructions remain separately scoped; no stochastic-domain
+assertion is used to justify a deterministic quadrature estimate.
 
 \section{Formal correspondence and preliminary comparisons}
 The frozen mathematical baseline is
@@ -484,6 +705,9 @@ Time quadrature&\code{IBMTimeSpaceQuadrature.increments_tendsto}\\[3pt]
 Time--space chain&\code{IBMTimeSpaceSimpson.sums_tendstoInMeasure}\\[3pt]
 Uniform time--space prefixes&\code{IBMUniformTimeSpace.maximum_tendstoInMeasure}\\[3pt]
 Time weights&\code{IBMTimeWeightedSimpson.weighted_tendstoInMeasure}\\
+Quartic variation&\code{IBMUniformQuarticVariation.quartic_tendstoInMeasure}\\[3pt]
+Quadratic divergence&\code{IBMActualQuadraticDivergence.quadratic_lower_tail}\\[3pt]
+Raw first channel&\code{IBMActualQuadraticDivergence.first_no_finite_limit}\\
 \end{longtable}
 
 The continuous-path statements are
@@ -523,6 +747,10 @@ Priority for the combined domain, prefix and path-space package
 requires further targeted comparison.
 
 \begin{thebibliography}{9}
+\bibitem{burdzy} K. Burdzy,
+Variation of iterated Brownian motion,
+\emph{CRM Proceedings and Lecture Notes} \textbf{5} (1994), 35--53.
+\href{https://hdl.handle.net/1773/2252}{University of Washington record}.
 \bibitem{kl} D. Khoshnevisan and T. M. Lewis,
 Stochastic calculus for Brownian motion on a Brownian fracture,
 \emph{Ann. Appl. Probab.} \textbf{9} (1999), 629--667.

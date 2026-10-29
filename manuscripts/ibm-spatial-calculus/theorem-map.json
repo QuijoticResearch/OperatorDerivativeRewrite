@@ -7,7 +7,8 @@
       "file": "Foundation/IBMSimpsonPeano.lean",
       "line": 21,
       "source_sha256": "49eb8ee89d87f501ceaccd270a99a9815404737f1cca82439d7b1b2240f1f13e",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSimpsonPeano.lean#L21"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSimpsonPeano.lean#L21",
+      "declaration_header": "theorem compact_error_bound (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 4 f) (R \u03b5 : \u211d)\n    (h\u03b5 : 0 < \u03b5) :\n    \u2203 \u03b4 > 0, \u2200 x y : \u211d, |x| \u2264 R \u2192 |y| \u2264 R \u2192 |y - x| < \u03b4 \u2192\n      |simpson (deriv f) x y - (f y - f x)| \u2264 \u03b5 * |y - x|^4"
     },
     {
       "paper": "1.1 / endpoint",
@@ -15,7 +16,8 @@
       "file": "Foundation/IBMActualSimpson.lean",
       "line": 175,
       "source_sha256": "326ddfd6e40b0a8b47b1b64f73c257b88dbf3fe605a9b924219a9ab95be1dec9",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualSimpson.lean#L175"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualSimpson.lean#L175",
+      "declaration_header": "theorem sums_tendstoInMeasure (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 3 g)\n    {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (sums g T) atTop (lineIntegral g T)"
     },
     {
       "paper": "1.1 / prefixes",
@@ -23,7 +25,8 @@
       "file": "Foundation/IBMUniformSimpsonProcess.lean",
       "line": 139,
       "source_sha256": "8270bb3375e8916a59eecd30840257af2bf189c7517c60973ea33e0786e08f53",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformSimpsonProcess.lean#L139"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformSimpsonProcess.lean#L139",
+      "declaration_header": "theorem maximum_tendstoInMeasure (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 3 g)\n    {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (maximum g T) atTop (fun _ => (0 : \u211d))"
     },
     {
       "paper": "4.1",
@@ -31,7 +34,8 @@
       "file": "Foundation/IBMSimpsonRandomHorizon.lean",
       "line": 87,
       "source_sha256": "af6f4ca978389b657e379afce86a3eaa292f0004c91c37163482a355243557d6",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSimpsonRandomHorizon.lean#L87"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSimpsonRandomHorizon.lean#L87",
+      "declaration_header": "theorem stopped_sums_tendstoInMeasure (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 3 g)\n    {T : \u211d\u22650} (hT : 0 < T) (\u03c4 : JointSample \u2192 \u211d\u22650) (h\u03c4 : Measurable \u03c4)\n    (h\u03c4T : \u2200 \u03c9, \u03c4 \u03c9 \u2264 T) :\n    TendstoInMeasure jointMeasure\n      (fun n \u03c9 => prefixSums g T n (index T n (\u03c4 \u03c9)) \u03c9) atTop\n      (fun \u03c9 => lineIntegral g (\u03c4 \u03c9) \u03c9)"
     },
     {
       "paper": "5.1 / spatial estimate",
@@ -39,7 +43,8 @@
       "file": "Foundation/IBMTimeSpacePeano.lean",
       "line": 79,
       "source_sha256": "94f85b78ecd33bfdff2af272b5b27283f035032f3957920fbe01670abddaa864",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpacePeano.lean#L79"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpacePeano.lean#L79",
+      "declaration_header": "theorem compact_error_bound (F : \u211d \u2192 \u211d \u2192 \u211d)\n    (hF : \u2200 t, ContDiff \u211d 4 (F t))\n    (hD : Continuous (fun p : \u211d \u00d7 \u211d => iteratedDeriv 4 (F p.1) p.2))\n    (T R \u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 \u03b4 > 0, \u2200 t \u2208 Icc 0 T, \u2200 x y : \u211d,\n      |x| \u2264 R \u2192 |y| \u2264 R \u2192 |y - x| < \u03b4 \u2192\n      |IBMSimpsonPeano.simpson (deriv (F t)) x y - (F t y-F t x)| \u2264 \u03b5 * |y - x|^4"
     },
     {
       "paper": "5.1 / time estimate",
@@ -47,7 +52,8 @@
       "file": "Foundation/IBMTimeSpaceQuadrature.lean",
       "line": 78,
       "source_sha256": "3076b37e9ffec45e1655275305dc6b2c91cdeeab38d071528a0f5b00c8943198",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpaceQuadrature.lean#L78"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpaceQuadrature.lean#L78",
+      "declaration_header": "theorem increments_tendsto (F : \u211d \u2192 \u211d \u2192 \u211d) (j : \u211d \u2192 \u211d)\n    (hF : \u2200 x, ContDiff \u211d 1 (fun t => F t x))\n    (hD : Continuous (fun p : \u211d \u00d7 \u211d => timeDerivative F p.1 p.2))\n    (hj : Continuous j) {T : \u211d} (hT : 0 \u2264 T) :\n    Tendsto (fun n => increments F j T (n + 1)) atTop\n      (\ud835\udcdd (\u222b t in (0 : \u211d)..T, timeDerivative F t (j t)))"
     },
     {
       "paper": "5.1 / endpoint",
@@ -55,7 +61,8 @@
       "file": "Foundation/IBMTimeSpaceSimpson.lean",
       "line": 156,
       "source_sha256": "db8559c487c7df54040bf8dba60fa1a8d14edab8289451954736d2eec6a12398",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpaceSimpson.lean#L156"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeSpaceSimpson.lean#L156",
+      "declaration_header": "theorem sums_tendstoInMeasure (F : \u211d \u2192 \u211d \u2192 \u211d)\n    (hspace : \u2200 t, ContDiff \u211d 4 (F t))\n    (htime : \u2200 x, ContDiff \u211d 1 (fun t => F t x))\n    (hfour : Continuous (fun p : \u211d \u00d7 \u211d => iteratedDeriv 4 (F p.1) p.2))\n    (hdt : Continuous (fun p : \u211d \u00d7 \u211d => timeDerivative F p.1 p.2))\n    {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (sums F T) atTop\n      (fun \u03c9 => F T (ibmValue T \u03c9) - F 0 (ibmValue 0 \u03c9) -\n        \u222b t in (0 : \u211d)..(T : \u211d), timeDerivative F t (path \u03c9 t))"
     },
     {
       "paper": "5.1 / prefixes",
@@ -63,7 +70,8 @@
       "file": "Foundation/IBMUniformTimeSpace.lean",
       "line": 179,
       "source_sha256": "b6e7fc35dbea921526d565b85922795e525cb2423fed989e42bf81426e263a0f",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformTimeSpace.lean#L179"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformTimeSpace.lean#L179",
+      "declaration_header": "theorem maximum_tendstoInMeasure (F : \u211d \u2192 \u211d \u2192 \u211d)\n    (hspace : \u2200 t, ContDiff \u211d 4 (F t))\n    (htime : \u2200 x, ContDiff \u211d 1 (fun t => F t x))\n    (hfour : Continuous (fun p : \u211d \u00d7 \u211d => iteratedDeriv 4 (F p.1) p.2))\n    (hdt : Continuous (fun p : \u211d \u00d7 \u211d => timeDerivative F p.1 p.2))\n    {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (maximum F T) atTop (fun _ => (0 : \u211d))"
     },
     {
       "paper": "Section 6 / weights",
@@ -71,7 +79,8 @@
       "file": "Foundation/IBMTimeWeightedSimpson.lean",
       "line": 151,
       "source_sha256": "0e2bd2237b9a9aef5470d12fa0612c45f3169b78f30439520f6fc79398b0ecc3",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeWeightedSimpson.lean#L151"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeWeightedSimpson.lean#L151",
+      "declaration_header": "theorem weighted_tendstoInMeasure (h g : \u211d \u2192 \u211d) (hh : ContDiff \u211d 1 h)\n    (hg : ContDiff \u211d 3 g) {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (weighted h g T) atTop (target h g T)"
     },
     {
       "paper": "7.1 / estimate",
@@ -79,7 +88,8 @@
       "file": "Foundation/IBMContinuousSimpsonRealization.lean",
       "line": 86,
       "source_sha256": "9fd0bbbb4170be88973411a56e85c8246d1ec1edea0ee17cf5ffe46bbf95a71f",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMContinuousSimpsonRealization.lean#L86"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMContinuousSimpsonRealization.lean#L86",
+      "declaration_header": "theorem approximation_error_bound (F : \u211d \u2192 \u211d \u2192 \u211d)\n    (hF : Continuous (fun p : \u211d \u00d7 \u211d => F p.1 p.2))\n    (hD : Continuous (fun p : \u211d \u00d7 \u211d => timeDerivative F p.1 p.2))\n    (T : \u211d\u22650) (n : \u2115) (\u03c9 : JointSample) :\n    \u2016approximation F T n \u03c9 - bernsteinApproximation (n + 1) (curve F hF hD T \u03c9)\u2016 \u2264\n      maximum F T n \u03c9"
     },
     {
       "paper": "7.1 / convergence",
@@ -87,8 +97,442 @@
       "file": "Foundation/IBMContinuousSimpsonRealization.lean",
       "line": 132,
       "source_sha256": "9fd0bbbb4170be88973411a56e85c8246d1ec1edea0ee17cf5ffe46bbf95a71f",
-      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMContinuousSimpsonRealization.lean#L132"
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMContinuousSimpsonRealization.lean#L132",
+      "declaration_header": "theorem approximation_tendstoInMeasure (F : \u211d \u2192 \u211d \u2192 \u211d)\n    (hF : Continuous (fun p : \u211d \u00d7 \u211d => F p.1 p.2))\n    (hspace : \u2200 t, ContDiff \u211d 4 (F t))\n    (htime : \u2200 x, ContDiff \u211d 1 (fun t => F t x))\n    (hfour : Continuous (fun p : \u211d \u00d7 \u211d => iteratedDeriv 4 (F p.1) p.2))\n    (hdt : Continuous (fun p : \u211d \u00d7 \u211d => timeDerivative F p.1 p.2))\n    {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (approximation F T) atTop (curve F hF hdt T)"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic_inner",
+      "file": "Foundation/GaussianQuarticWick.lean",
+      "line": 52,
+      "source_sha256": "16e719d0504dc27e1135493fd3cf716e8379ed51d702468b1320ac55b1b7f522",
+      "declaration_header": "theorem quartic_inner (h k : CoefficientSpace) :\n    inner \u211d (quartic h) (quartic k) =\n      9 * (\u2016h\u2016^2)^2 * (\u2016k\u2016^2)^2 +\n      72 * (\u2016h\u2016^2) * (\u2016k\u2016^2) * (inner \u211d h k)^2 +\n      24 * (inner \u211d h k)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticWick.lean#L52"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.firstChaos_fourth_product",
+      "file": "Foundation/GaussianQuarticWick.lean",
+      "line": 64,
+      "source_sha256": "16e719d0504dc27e1135493fd3cf716e8379ed51d702468b1320ac55b1b7f522",
+      "declaration_header": "theorem firstChaos_fourth_product (h k : CoefficientSpace) :\n    (\u222b \u03c9, (firstChaosEmbedding h \u03c9)^4 * (firstChaosEmbedding k \u03c9)^4\n      \u2202gaussianProduct) =\n      9 * (\u2016h\u2016^2)^2 * (\u2016k\u2016^2)^2 +\n      72 * (\u2016h\u2016^2) * (\u2016k\u2016^2) * (inner \u211d h k)^2 +\n      24 * (inner \u211d h k)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticWick.lean#L64"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalQuarticPair.conditional_fourth_centered_product",
+      "file": "Foundation/IBMConditionalQuarticPair.lean",
+      "line": 59,
+      "source_sha256": "87dcf33067ee0011a64331baff3c60cc223de3f6497fdfce6ae36fc63f50c9e0",
+      "declaration_header": "theorem conditional_fourth_centered_product\n    (hmodS : \u2200 r, S r =\u1d50[gaussianProduct] sceneryBase r)\n    (s t u v : \u211d\u22650) (\u03c9Y : SampleSpace) :\n    (\u222b \u03c9X, fourthPower S C hS hC s t \u03c9Y \u03c9X *\n      fourthPower S C hS hC u v \u03c9Y \u03c9X \u2202gaussianProduct) -\n      (\u222b \u03c9X, fourthPower S C hS hC s t \u03c9Y \u03c9X \u2202gaussianProduct) *\n      (\u222b \u03c9X, fourthPower S C hS hC u v \u03c9Y \u03c9X \u2202gaussianProduct) =\n      72 * abs (|C t \u03c9Y| - |C s \u03c9Y|) *\n        abs (|C v \u03c9Y| - |C u \u03c9Y|) *\n        (signedOverlap |C s \u03c9Y| |C t \u03c9Y| |C u \u03c9Y| |C v \u03c9Y|)^2 +\n      24 * (signedOverlap |C s \u03c9Y| |C t \u03c9Y| |C u \u03c9Y| |C v \u03c9Y|)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalQuarticPair.lean#L59"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteQuarticSecondMoment.conditional_fourth_memLp_two",
+      "file": "Foundation/IBMFiniteQuarticSecondMoment.lean",
+      "line": 23,
+      "source_sha256": "15179bc4cc7f6fa135c0d98a4547120126e9f44def6e86baa68073e3c7df9285",
+      "declaration_header": "theorem conditional_fourth_memLp_two\n    (hmodS : \u2200 r, S r =\u1d50[gaussianProduct] sceneryBase r)\n    (s t : \u211d\u22650) (\u03c9Y : SampleSpace) :\n    MemLp (fourthPower S C hS hC s t \u03c9Y) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteQuarticSecondMoment.lean#L23"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteQuarticSecondMoment.conditional_quarticSum_second_moment_expand",
+      "file": "Foundation/IBMFiniteQuarticSecondMoment.lean",
+      "line": 63,
+      "source_sha256": "15179bc4cc7f6fa135c0d98a4547120126e9f44def6e86baa68073e3c7df9285",
+      "declaration_header": "theorem conditional_quarticSum_second_moment_expand\n    (hmodS : \u2200 r, S r =\u1d50[gaussianProduct] sceneryBase r)\n    (I : Finset (\u211d\u22650 \u00d7 \u211d\u22650)) (\u03c9Y : SampleSpace) :\n    (\u222b \u03c9X, (quarticSum S C hS hC I \u03c9X \u03c9Y)^2 \u2202gaussianProduct) =\n      \u2211 p \u2208 I, \u2211 q \u2208 I,\n        \u222b \u03c9X, fourthPower S C hS hC p.1 p.2 \u03c9Y \u03c9X *\n          fourthPower S C hS hC q.1 q.2 \u03c9Y \u03c9X \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteQuarticSecondMoment.lean#L63"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMQuarticOccupationEnergy.abs_overlap",
+      "file": "Foundation/IBMQuarticOccupationEnergy.lean",
+      "line": 37,
+      "source_sha256": "2b69ebf0212e3f61cdb9173fa4fe013687355d129bbb66ac76b991815f3f529e",
+      "declaration_header": "theorem abs_overlap (a b c d : \u211d) :\n    |signedOverlap a b c d| =\n      max (min (max a b) (max c d) - max (min a b) (min c d)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMQuarticOccupationEnergy.lean#L37"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMQuarticOccupationEnergy.count_square_mass",
+      "file": "Foundation/IBMQuarticOccupationEnergy.lean",
+      "line": 98,
+      "source_sha256": "2b69ebf0212e3f61cdb9173fa4fe013687355d129bbb66ac76b991815f3f529e",
+      "declaration_header": "theorem count_square_mass {\u03b9 : Type*} (I : Finset \u03b9) (a b : \u03b9 \u2192 \u211d) :\n    (\u222b x, count I a b x ^ 2) =\n      \u2211 i \u2208 I, \u2211 j \u2208 I, |signedOverlap (a i) (b i) (a j) (b j)|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMQuarticOccupationEnergy.lean#L98"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMQuarticOccupationEnergy.quartic_covariance_le",
+      "file": "Foundation/IBMQuarticOccupationEnergy.lean",
+      "line": 135,
+      "source_sha256": "2b69ebf0212e3f61cdb9173fa4fe013687355d129bbb66ac76b991815f3f529e",
+      "declaration_header": "theorem quartic_covariance_le (a b c d \u03b4 : \u211d) (h\u03b4 : 0 \u2264 \u03b4)\n    (hab : |b - a| \u2264 \u03b4) (hcd : |d - c| \u2264 \u03b4) :\n    72 * |b-a| * |d-c| * signedOverlap a b c d ^ 2 +\n      24 * signedOverlap a b c d ^ 4 \u2264 96 * \u03b4 ^ 3 * |signedOverlap a b c d|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMQuarticOccupationEnergy.lean#L135"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMQuarticOccupationEnergy.actual_conditional_centered_square_le",
+      "file": "Foundation/IBMQuarticOccupationEnergy.lean",
+      "line": 273,
+      "source_sha256": "2b69ebf0212e3f61cdb9173fa4fe013687355d129bbb66ac76b991815f3f529e",
+      "declaration_header": "theorem actual_conditional_centered_square_le\n    (I : Finset (\u211d\u22650 \u00d7 \u211d\u22650)) (\u03c9Y : SampleSpace) (\u03b4 : \u211d) (h\u03b4 : 0 \u2264 \u03b4)\n    (hmesh : \u2200 p \u2208 I, abs (|IBMConstructedSources.clockPath \u03c9Y p.2| -\n      |IBMConstructedSources.clockPath \u03c9Y p.1|) \u2264 \u03b4) :\n    (\u222b \u03c9X, (quarticSum (fun r \u03c9 => IBMConstructedSources.sceneryPath \u03c9 r)\n      (fun t \u03c9 => IBMConstructedSources.clockPath \u03c9 t)\n      (fun \u03c9 => (IBMConstructedSources.sceneryPath \u03c9).continuous)\n      (fun \u03c9 => (IBMConstructedSources.clockPath \u03c9).continuous) I \u03c9X \u03c9Y -\n      \u222b \u03b7, quarticSum (fun r \u03c9 => IBMConstructedSources.sceneryPath \u03c9 r)\n        (fun t \u03c9 => IBMConstructedSources.clockPath \u03c9 t)\n        (fun \u03c9 => (IBMConstructedSources.sceneryPath \u03c9).continuous)\n        (fun \u03c9 => (IBMConstructedSources.clockPath \u03c9).continuous) I \u03b7 \u03c9Y \u2202gaussianProduct) ^ 2\n      \u2202gaussianProduct) \u2264 96 * \u03b4 ^ 3 * \u222b x,\n        count I (fun p => |IBMConstructedSources.clockPath \u03c9Y p.1|)\n          (fun p => |IBMConstructedSources.clockPath \u03c9Y p.2|) x ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMQuarticOccupationEnergy.lean#L273"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.overlap_le_tent",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 70,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem overlap_le_tent {a b c d \u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4)\n    (hab : |b - a| \u2264 \u03b4) (hcd : |d - c| \u2264 \u03b4) :\n    |signedOverlap a b c d| \u2264 tent \u03b4 (a - c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L70"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.tent_mass_le",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 48,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem tent_mass_le {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) : (\u222b x, tent \u03b4 x) \u2264 8 * \u03b4 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L48"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.folded_tent_average_le",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 100,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem folded_tent_average_le {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (r a : \u211d)\n    {v : \u211d\u22650} (hv : v \u2260 0) :\n    (\u222b x, tent \u03b4 (r - |x|) \u2202gaussianReal a v) \u2264 16 * \u03b4 ^ 2 * peak v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L100"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.actual_clock_pair_bound",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 193,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem actual_clock_pair_bound {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (s t : \u211d\u22650) :\n    (\u222b \u03c9, tent \u03b4 (|IBMConstructedSources.clockPath \u03c9 s| -\n      |IBMConstructedSources.clockPath \u03c9 t|) \u2202gaussianProduct) \u2264 pairBound \u03b4 s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L193"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.energy_integrable",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 213,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem energy_integrable {\u03b9 : Type*} (I : Finset \u03b9) (\u03c4 : \u03b9 \u2192 \u211d\u22650)\n    {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) : Integrable (energy I \u03c4 \u03b4) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L213"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTraversalEnvelope.energy_mean_le",
+      "file": "Foundation/IBMClockTraversalEnvelope.lean",
+      "line": 220,
+      "source_sha256": "4327d248182fa41d7db7e2f1f663fdb12d93595ac89cc6af5783109faa86d369",
+      "declaration_header": "theorem energy_mean_le {\u03b9 : Type*} (I : Finset \u03b9) (\u03c4 : \u03b9 \u2192 \u211d\u22650)\n    {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) :\n    (\u222b \u03c9, energy I \u03c4 \u03b4 \u03c9 \u2202gaussianProduct) \u2264 \u2211 i \u2208 I, \u2211 j \u2208 I, pairBound \u03b4 (\u03c4 i) (\u03c4 j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTraversalEnvelope.lean#L220"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockGridEnergy.inverse_sqrt_sum",
+      "file": "Foundation/IBMUniformClockGridEnergy.lean",
+      "line": 23,
+      "source_sha256": "49975a4169a353e279a771498c3aaba6c00c292d75337ba638c622c14685431a",
+      "declaration_header": "theorem inverse_sqrt_sum (n : \u2115) :\n    (\u2211 i \u2208 Finset.range n, 1 / Real.sqrt (i + 1 : \u211d)) \u2264 2 * Real.sqrt (n : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockGridEnergy.lean#L23"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockGridEnergy.actual_horizon_energy_mean_le",
+      "file": "Foundation/IBMUniformClockGridEnergy.lean",
+      "line": 144,
+      "source_sha256": "49975a4169a353e279a771498c3aaba6c00c292d75337ba638c622c14685431a",
+      "declaration_header": "theorem actual_horizon_energy_mean_le {T : \u211d\u22650} (hT : 0 < T)\n    {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (n : \u2115) (hn : 0 < n) :\n    (\u222b \u03c9, energy (Finset.range n) (grid (T / n)) \u03b4 \u03c9 \u2202gaussianProduct) \u2264\n      2 * \u03b4 * n + 64 * \u03b4 ^ 2 * peak T * (n : \u211d) ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockGridEnergy.lean#L144"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockGridEnergy.actual_weighted_energy_mean_le",
+      "file": "Foundation/IBMUniformClockGridEnergy.lean",
+      "line": 158,
+      "source_sha256": "49975a4169a353e279a771498c3aaba6c00c292d75337ba638c622c14685431a",
+      "declaration_header": "theorem actual_weighted_energy_mean_le {T : \u211d\u22650} (hT : 0 < T)\n    {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (n : \u2115) (hn : 0 < n) :\n    (\u222b \u03c9, \u03b4 ^ 3 * energy (Finset.range n) (grid (T / n)) \u03b4 \u03c9 \u2202gaussianProduct) \u2264\n      2 * n * \u03b4 ^ 4 + 64 * peak T * (n : \u211d) ^ 2 * \u03b4 ^ 5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockGridEnergy.lean#L158"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockGridEnergy.actual_weighted_energy_tendsto",
+      "file": "Foundation/IBMUniformClockGridEnergy.lean",
+      "line": 186,
+      "source_sha256": "49975a4169a353e279a771498c3aaba6c00c292d75337ba638c622c14685431a",
+      "declaration_header": "theorem actual_weighted_energy_tendsto {T : \u211d\u22650} (hT : 0 < T) :\n    Filter.Tendsto (fun n : \u2115 => \u222b \u03c9,\n      ((n + 1 : \u211d) ^ (-(4/9 : \u211d))) ^ 3 *\n        energy (Finset.range (n + 1)) (grid (T / (n + 1)))\n          ((n + 1 : \u211d) ^ (-(4/9 : \u211d))) \u03c9 \u2202gaussianProduct)\n      Filter.atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockGridEnergy.lean#L186"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockMaximum.actual_increment_tail",
+      "file": "Foundation/IBMUniformClockMaximum.lean",
+      "line": 60,
+      "source_sha256": "fb5b52a03d8b94311ecee41ce330066dda6cf4b1adcc620b40648a20ba1e2a0a",
+      "declaration_header": "theorem actual_increment_tail (s t : \u211d\u22650) {\u03b4 : \u211d} (h\u03b4 : 0 < \u03b4) :\n    gaussianProduct.real {\u03c9 | \u03b4 \u2264 |IBMConstructedSources.clockPath \u03c9 t -\n      IBMConstructedSources.clockPath \u03c9 s|} \u2264\n      |(t : \u211d) - s| ^ 10 * standardMoment 20 / \u03b4 ^ 20",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockMaximum.lean#L60"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockMaximum.bad_probability_le",
+      "file": "Foundation/IBMUniformClockMaximum.lean",
+      "line": 93,
+      "source_sha256": "fb5b52a03d8b94311ecee41ce330066dda6cf4b1adcc620b40648a20ba1e2a0a",
+      "declaration_header": "theorem bad_probability_le (T : \u211d\u22650) (n : \u2115) {\u03b4 : \u211d} (h\u03b4 : 0 < \u03b4) :\n    gaussianProduct.real (bad T n \u03b4) \u2264\n      (n : \u211d) * ((T : \u211d) / n) ^ 10 * standardMoment 20 / \u03b4 ^ 20",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockMaximum.lean#L93"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockMaximum.reflected_mesh_of_not_bad",
+      "file": "Foundation/IBMUniformClockMaximum.lean",
+      "line": 121,
+      "source_sha256": "fb5b52a03d8b94311ecee41ce330066dda6cf4b1adcc620b40648a20ba1e2a0a",
+      "declaration_header": "theorem reflected_mesh_of_not_bad (T : \u211d\u22650) (n : \u2115) (\u03b4 : \u211d) {\u03c9 : SampleSpace}\n    (h\u03c9 : \u03c9 \u2209 bad T n \u03b4) (k : Fin n) :\n    abs (|IBMConstructedSources.clockPath \u03c9 (grid (T / n) (k.val + 1))| -\n      |IBMConstructedSources.clockPath \u03c9 (grid (T / n) k.val)|) \u2264 \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockMaximum.lean#L121"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformClockMaximum.bad_probability_tendsto",
+      "file": "Foundation/IBMUniformClockMaximum.lean",
+      "line": 154,
+      "source_sha256": "fb5b52a03d8b94311ecee41ce330066dda6cf4b1adcc620b40648a20ba1e2a0a",
+      "declaration_header": "theorem bad_probability_tendsto (T : \u211d\u22650) :\n    Filter.Tendsto (fun n : \u2115 =>\n      gaussianProduct.real (bad T (n + 1) ((n + 1 : \u211d) ^ (-(4/9 : \u211d)))))\n      Filter.atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformClockMaximum.lean#L154"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticFamily.conditional_mean",
+      "file": "Foundation/IBMUniformQuarticFamily.lean",
+      "line": 71,
+      "source_sha256": "eeda4dd59d730c51e7d13ebb1d50b09b3f9e9395ab28902ce9a0edce5efd3c0c",
+      "declaration_header": "theorem conditional_mean {T : \u211d\u22650} (hT : 0 < T) (n : \u2115) (hn : 0 < n) (y : SampleSpace) :\n    (\u222b x, quartic T n (x,y) \u2202gaussianProduct) = clockMean T n y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticFamily.lean#L71"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticFamily.conditional_quartic_memLp",
+      "file": "Foundation/IBMUniformQuarticFamily.lean",
+      "line": 82,
+      "source_sha256": "eeda4dd59d730c51e7d13ebb1d50b09b3f9e9395ab28902ce9a0edce5efd3c0c",
+      "declaration_header": "theorem conditional_quartic_memLp {T : \u211d\u22650} (hT : 0 < T) (n : \u2115) (hn : 0 < n)\n    (y : SampleSpace) : MemLp (fun x => quartic T n (x,y)) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticFamily.lean#L82"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticFamily.conditional_residual_square_integrable",
+      "file": "Foundation/IBMUniformQuarticFamily.lean",
+      "line": 91,
+      "source_sha256": "eeda4dd59d730c51e7d13ebb1d50b09b3f9e9395ab28902ce9a0edce5efd3c0c",
+      "declaration_header": "theorem conditional_residual_square_integrable {T : \u211d\u22650} (hT : 0 < T)\n    (n : \u2115) (hn : 0 < n) (y : SampleSpace) :\n    Integrable (fun x => residual T n (x,y) ^ 2) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticFamily.lean#L91"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticFamily.conditional_residual_square_le",
+      "file": "Foundation/IBMUniformQuarticFamily.lean",
+      "line": 114,
+      "source_sha256": "eeda4dd59d730c51e7d13ebb1d50b09b3f9e9395ab28902ce9a0edce5efd3c0c",
+      "declaration_header": "theorem conditional_residual_square_le {T : \u211d\u22650} (hT : 0 < T)\n    (n : \u2115) (hn : 0 < n) {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) {y : SampleSpace}\n    (hy : y \u2209 bad T n \u03b4) :\n    (\u222b x, residual T n (x,y) ^ 2 \u2202gaussianProduct) \u2264\n      96 * \u03b4 ^ 3 * energy (Finset.range n) (grid (T / n)) \u03b4 y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticFamily.lean#L114"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticProbability.joint_tail_eq_integral",
+      "file": "Foundation/IBMUniformQuarticProbability.lean",
+      "line": 48,
+      "source_sha256": "fdb9d8315ef12d63fc881534ddbf06ae88253f78f4ec7b7ca560c36414bb6ca4",
+      "declaration_header": "theorem joint_tail_eq_integral (T : \u211d\u22650) (n : \u2115) (\u03b5 : \u211d) :\n    jointMeasure.real (tailEvent T n \u03b5) =\n      \u222b y, conditionalTail T n \u03b5 y \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticProbability.lean#L48"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticProbability.joint_tail_le",
+      "file": "Foundation/IBMUniformQuarticProbability.lean",
+      "line": 87,
+      "source_sha256": "fdb9d8315ef12d63fc881534ddbf06ae88253f78f4ec7b7ca560c36414bb6ca4",
+      "declaration_header": "theorem joint_tail_le {T : \u211d\u22650} (hT : 0 < T) (n : \u2115) (hn : 0 < n)\n    {\u03b4 \u03b5 : \u211d} (h\u03b4 : 0 < \u03b4) (h\u03b5 : 0 < \u03b5) :\n    jointMeasure.real (tailEvent T n \u03b5) \u2264 gaussianProduct.real (bad T n \u03b4) +\n      (96 / \u03b5 ^ 2) * (\u222b y, \u03b4 ^ 3 * energy (Finset.range n) (grid (T / n)) \u03b4 y\n        \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticProbability.lean#L87"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticProbability.residual_tendstoInMeasure",
+      "file": "Foundation/IBMUniformQuarticProbability.lean",
+      "line": 128,
+      "source_sha256": "fdb9d8315ef12d63fc881534ddbf06ae88253f78f4ec7b7ca560c36414bb6ca4",
+      "declaration_header": "theorem residual_tendstoInMeasure {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (fun n : \u2115 => residual T (n + 1))\n      Filter.atTop (fun _ => (0 : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticProbability.lean#L128"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMReflectedClockCorrection.reflected_increment_sq",
+      "file": "Foundation/IBMReflectedClockCorrection.lean",
+      "line": 12,
+      "source_sha256": "1bb995364b3705a652310761890ffa742791d6bfe80d6db5281c6f6908500fa0",
+      "declaration_header": "theorem reflected_increment_sq (x y : \u211d) :\n    (|y| - |x|)^2 = (y - x)^2 - crossingPenalty x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMReflectedClockCorrection.lean#L12"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMReflectedClockCorrection.crossingPenalty_bounds",
+      "file": "Foundation/IBMReflectedClockCorrection.lean",
+      "line": 19,
+      "source_sha256": "1bb995364b3705a652310761890ffa742791d6bfe80d6db5281c6f6908500fa0",
+      "declaration_header": "theorem crossingPenalty_bounds (x y : \u211d) :\n    0 \u2264 crossingPenalty x y \u2227 crossingPenalty x y \u2264 (y - x)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMReflectedClockCorrection.lean#L19"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMReflectedClockCorrection.crossingPenalty_eq_zero_of_nonneg",
+      "file": "Foundation/IBMReflectedClockCorrection.lean",
+      "line": 30,
+      "source_sha256": "1bb995364b3705a652310761890ffa742791d6bfe80d6db5281c6f6908500fa0",
+      "declaration_header": "theorem crossingPenalty_eq_zero_of_nonneg {x y : \u211d} (h : 0 \u2264 x * y) :\n    crossingPenalty x y = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMReflectedClockCorrection.lean#L30"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMReflectedClockCorrection.crossingPenalty_eq_of_neg",
+      "file": "Foundation/IBMReflectedClockCorrection.lean",
+      "line": 35,
+      "source_sha256": "1bb995364b3705a652310761890ffa742791d6bfe80d6db5281c6f6908500fa0",
+      "declaration_header": "theorem crossingPenalty_eq_of_neg {x y : \u211d} (h : x * y < 0) :\n    crossingPenalty x y = -4 * (x * y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMReflectedClockCorrection.lean#L35"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformCrossingPenalty.penalty_le_tent",
+      "file": "Foundation/IBMUniformCrossingPenalty.lean",
+      "line": 15,
+      "source_sha256": "a0b48f1041a38b2f1ff4f543bcb4fbf194ae58288b0fd075b518c79073bbb5f0",
+      "declaration_header": "theorem penalty_le_tent {a b \u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (hinc : |b - a| \u2264 \u03b4) :\n    crossingPenalty a b \u2264 \u03b4 * tent \u03b4 a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformCrossingPenalty.lean#L15"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformCrossingPenalty.nearEnergy_mean_le",
+      "file": "Foundation/IBMUniformCrossingPenalty.lean",
+      "line": 105,
+      "source_sha256": "a0b48f1041a38b2f1ff4f543bcb4fbf194ae58288b0fd075b518c79073bbb5f0",
+      "declaration_header": "theorem nearEnergy_mean_le {T : \u211d\u22650} (hT : 0 < T) {\u03b4 : \u211d} (h\u03b4 : 0 \u2264 \u03b4) (n : \u2115) :\n    (\u222b \u03c9, nearEnergy T (n + 1) \u03b4 \u03c9 \u2202gaussianProduct) \u2264\n      2 * \u03b4 ^ 2 + 32 * peak T * (n + 1 : \u211d) * \u03b4 ^ 3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformCrossingPenalty.lean#L105"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformCrossingPenalty.penalty_tail_le",
+      "file": "Foundation/IBMUniformCrossingPenalty.lean",
+      "line": 146,
+      "source_sha256": "a0b48f1041a38b2f1ff4f543bcb4fbf194ae58288b0fd075b518c79073bbb5f0",
+      "declaration_header": "theorem penalty_tail_le (T : \u211d\u22650) (n : \u2115) {\u03b4 \u03b5 : \u211d} (h\u03b4 : 0 < \u03b4) (h\u03b5 : 0 < \u03b5) :\n    gaussianProduct.real {\u03c9 | \u03b5 \u2264 penalty T n \u03c9} \u2264 gaussianProduct.real (bad T n \u03b4) +\n      (\u222b \u03c9, nearEnergy T n \u03b4 \u03c9 \u2202gaussianProduct) / \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformCrossingPenalty.lean#L146"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformCrossingPenalty.penalty_tendstoInMeasure",
+      "file": "Foundation/IBMUniformCrossingPenalty.lean",
+      "line": 197,
+      "source_sha256": "a0b48f1041a38b2f1ff4f543bcb4fbf194ae58288b0fd075b518c79073bbb5f0",
+      "declaration_header": "theorem penalty_tendstoInMeasure {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure gaussianProduct (fun n : \u2115 => penalty T (n + 1))\n      Filter.atTop (fun _ => (0 : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformCrossingPenalty.lean#L197"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticVariation.actual_clockSquare_tendstoInMeasure",
+      "file": "Foundation/IBMUniformQuarticVariation.lean",
+      "line": 46,
+      "source_sha256": "83bdcc8f67b24a15eb77c5ee11a05dba949f8e5fac59d2ec75ea99c37afa05ae",
+      "declaration_header": "theorem actual_clockSquare_tendstoInMeasure (T : \u211d\u22650) :\n    TendstoInMeasure gaussianProduct (fun n : \u2115 => clockSquare T (n + 1))\n      Filter.atTop (fun _ => (T : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticVariation.lean#L46"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticVariation.clockMean_identity",
+      "file": "Foundation/IBMUniformQuarticVariation.lean",
+      "line": 59,
+      "source_sha256": "83bdcc8f67b24a15eb77c5ee11a05dba949f8e5fac59d2ec75ea99c37afa05ae",
+      "declaration_header": "theorem clockMean_identity (T : \u211d\u22650) (n : \u2115) (\u03c9 : SampleSpace) :\n    clockMean T n \u03c9 = 3 * clockSquare T n \u03c9 - 3 * penalty T n \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticVariation.lean#L59"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticVariation.clockMean_tendstoInMeasure",
+      "file": "Foundation/IBMUniformQuarticVariation.lean",
+      "line": 68,
+      "source_sha256": "83bdcc8f67b24a15eb77c5ee11a05dba949f8e5fac59d2ec75ea99c37afa05ae",
+      "declaration_header": "theorem clockMean_tendstoInMeasure {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure gaussianProduct (fun n : \u2115 => clockMean T (n + 1))\n      Filter.atTop (fun _ => 3 * (T : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticVariation.lean#L68"
+    },
+    {
+      "paper": "8: complete quartic variation proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformQuarticVariation.quartic_tendstoInMeasure",
+      "file": "Foundation/IBMUniformQuarticVariation.lean",
+      "line": 116,
+      "source_sha256": "83bdcc8f67b24a15eb77c5ee11a05dba949f8e5fac59d2ec75ea99c37afa05ae",
+      "declaration_header": "theorem quartic_tendstoInMeasure {T : \u211d\u22650} (hT : 0 < T) :\n    TendstoInMeasure jointMeasure (fun n : \u2115 => quartic T (n + 1))\n      Filter.atTop (fun _ => 3 * (T : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformQuarticVariation.lean#L116"
+    },
+    {
+      "paper": "9: raw-channel consequences",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.quartic_le",
+      "file": "Foundation/IBMActualQuadraticDivergence.lean",
+      "line": 38,
+      "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
+      "declaration_header": "theorem quartic_le (T : \u211d\u22650) (n : \u2115) (\u03c9 : JointSample) :\n    quartic T (n + 1) \u03c9 \u2264 (mesh T n \u03c9)^2 * quadratic T n \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L38"
+    },
+    {
+      "paper": "9: raw-channel consequences",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.first_identity",
+      "file": "Foundation/IBMActualQuadraticDivergence.lean",
+      "line": 54,
+      "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
+      "declaration_header": "theorem first_identity (T : \u211d\u22650) (n : \u2115) (\u03c9 : JointSample) :\n    first T n \u03c9 + quadratic T n \u03c9 =\n      (ibmValue T \u03c9)^2 - (ibmValue 0 \u03c9)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L54"
+    },
+    {
+      "paper": "9: raw-channel consequences",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.quadratic_lower_tail",
+      "file": "Foundation/IBMActualQuadraticDivergence.lean",
+      "line": 125,
+      "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
+      "declaration_header": "theorem quadratic_lower_tail {T : \u211d\u22650} (hT : 0 < T) (K : \u211d) :\n    Tendsto (fun n => jointMeasure.real {\u03c9 | quadratic T n \u03c9 \u2264 K})\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L125"
+    },
+    {
+      "paper": "9: raw-channel consequences",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.quadratic_no_finite_limit",
+      "file": "Foundation/IBMActualQuadraticDivergence.lean",
+      "line": 157,
+      "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
+      "declaration_header": "theorem quadratic_no_finite_limit {T : \u211d\u22650} (hT : 0 < T) (Y : JointSample \u2192 \u211d) :\n    \u00acTendstoInMeasure jointMeasure (quadratic T) atTop Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L157"
+    },
+    {
+      "paper": "9: raw-channel consequences",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.first_no_finite_limit",
+      "file": "Foundation/IBMActualQuadraticDivergence.lean",
+      "line": 174,
+      "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
+      "declaration_header": "theorem first_no_finite_limit {T : \u211d\u22650} (hT : 0 < T) (Y : JointSample \u2192 \u211d) :\n    \u00acTendstoInMeasure jointMeasure (first T) atTop Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L174"
     }
   ],
-  "proof_reorganization": "Human proof uses the explicitly proved weaker direct Gaussian fourth-moment bound; no new named Lean proof of that shortcut is claimed."
+  "proof_reorganization": "Human proof uses the explicitly proved weaker direct Gaussian fourth-moment bound; no new named Lean proof of that shortcut is claimed. The full variation proof is now reconstructed separately, with exact Gaussian eighth moments, repeated-overlap occupation, triangular folded-Gaussian envelope, bounded-increment localization, reflected-crossing penalty and all uniform grids. The printed lower-tail consequence uses the same deterministic quartic/mesh inequality in a direct probability argument. No new formal declarations or almost-sure/weighted strengthening is claimed.",
+  "literature_comparison": [
+    {
+      "url": "https://hdl.handle.net/1773/2252",
+      "review": "Burdzy 1994: primary institutional indexed abstract and author publication record establish the classical quartic-variation antecedent; detailed original partition/model hypotheses were not fully accessible."
+    },
+    {
+      "url": "https://www.math.utah.edu/~davar/ps-pdf-files/ibm.pdf",
+      "review": "Primary Khoshnevisan--Lewis, Theorem 4.3: stronger weighted quartic variation on its induced random partition for two-sided scenery. Not an identification with this reflected-clock, deterministic physical-grid model."
+    }
+  ]
 }
