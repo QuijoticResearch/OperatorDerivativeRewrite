@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
-\usepackage[margin=1.05in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -858,6 +859,166 @@ minimum up to constants. The proposition proves the count comparison
 directly. It does not construct a general random measure or claim
 that a single plain $L^{4/3}$ norm is the appropriate integrand space.
 
+
+\section{The entropy bound that does transport}
+There is a positive counterpart to the preceding obstructions, provided
+the entropy functional is identified correctly. Define
+\[
+ \mathcal E_\lambda(f)=\Ent_\gamma((U_\lambda f)^2).
+\]
+This is Gaussian square entropy after the linear unitary, not native
+Poisson square entropy. The following is the classical Gaussian
+logarithmic Sobolev inequality of Gross \cite{Gross}; the primary
+introduction of \cite{BGRS}, equation (1.1), also gives its
+variance-one normalization and exponential equality cases.
+
+\begin{theorem}\label{thm:transport-entropy}
+Every $v\in\Dom(D)$ satisfies
+\[
+ v^2\log(v^2)\in L^1(\gamma),\qquad
+ 0\leq\Ent_\gamma(v^2)\leq2\|Dv\|_2^2.
+\]
+Consequently every $f\in\Dom(A_\lambda)$ satisfies
+\[
+ 0\leq\mathcal E_\lambda(f)\leq2\|A_\lambda f\|_2^2.
+\]
+The constant $2$ is attained by each nonconstant physical likelihood
+root $r_{\lambda,\theta}$ under this transported entropy.
+\end{theorem}
+
+We prove all limiting steps. The formal source proves the sharp
+bounded $C^1$ result and its extension to everywhere differentiable
+representatives with square-integrable actual derivative. The passage
+below to the entire weak closed graph $\Dom(D)$ is an explicit human
+deduction using the polynomial graph core already proved in Section 3;
+it is not a new named formal theorem.
+
+\begin{proof}
+First take a smooth function $g$ with $\varepsilon\leq g\leq M$
+for some $\varepsilon>0$ and with bounded first and second derivatives.
+For $t\geq0$ set
+\[
+ P_tg(x)=\int g(a_tx+b_ty)\,d\gamma(y),\qquad
+ a_t=e^{-t},\quad b_t=\sqrt{1-e^{-2t}},\quad
+ I(g)=\int\frac{g'^2}{g}\,d\gamma.
+\]
+All Fisher integrands here are bounded by a finite constant.
+If $X,Y$ are independent standard Gaussians then $a_tX+b_tY$ is
+standard Gaussian, since its characteristic function is
+$\exp[-\xi^2(a_t^2+b_t^2)/2]=e^{-\xi^2/2}$.
+Fubini therefore gives $\int P_tg\,d\gamma=\int g\,d\gamma$,
+and the same invariance holds for every bounded measurable integrand.
+Differentiation in $x$ is dominated by $\|g'\|_\infty$ and gives
+$(P_tg)'=a_tP_tg'$. Weighted Cauchy--Schwarz for this probability
+kernel gives pointwise
+\[
+ \frac{(P_tg')^2}{P_tg}\leq P_t\left(\frac{g'^2}{g}\right),
+ \qquad I(P_tg)\leq e^{-2t}I(g).
+\]
+The first inequality applies ordinary Cauchy--Schwarz to
+$g'/\sqrt g$ and $\sqrt g$ in the kernel variable; invariance proves
+the second after integration.
+
+For $t>0$ differentiate the kernel in time and integrate the $y$ term
+by Gaussian parts:
+\[
+ \partial_t P_tg=-a_txP_tg'+a_t^2P_tg''
+ =(P_tg)''-x(P_tg)'.
+\]
+Indeed $b_t'=a_t^2/b_t$ and
+$\int y g'(a_tx+b_ty)\,d\gamma(y)=b_tP_tg''(x)$.
+Before this integration the local positive-time dominator is a
+constant times $|x|+|y|$; afterwards
+$|\partial_tP_tg(x)|\leq\|g''\|_\infty+|x|\|g'\|_\infty$.
+The bounds $\varepsilon\leq P_tg\leq M$ also bound
+$1+\log P_tg$ uniformly. They justify differentiation of the outer
+entropy integral and all subsequent products. Writing $u=P_tg$,
+Gaussian integration by parts yields
+\[
+ \frac d{dt}\Ent_\gamma(P_tg)
+ =\int(1+\log u)(u''-xu')\,d\gamma
+ =-\int\frac{u'^2}{u}\,d\gamma=-I(P_tg).
+\]
+For completeness, integrate the derivative of
+$(1+\log u)u'e^{-x^2/2}$ over $[-R,R]$.
+Its endpoint terms tend to zero since $u'$ and $\log u$ are bounded;
+every remaining term is integrable by the displayed bounds and
+$\int|x|\,d\gamma<\infty$. This proves the parts formula on the
+whole line without an unproved boundary cancellation.
+
+For fixed $x$, dominated convergence in the kernel gives
+$P_tg(x)\to g(x)$ as $t\downarrow0$ and
+$P_tg(x)\to\int g\,d\gamma$ as $t\to\infty$.
+Boundedness of both $u$ and $u\log u$ gives the corresponding entropy
+limits $\Ent_\gamma(g)$ and zero. On every compact time interval
+inside $(0,\infty)$ the preceding dominators also give continuity of
+the derivative. Integrate the dissipation identity from $s$ to $T$,
+use Fisher decay, and then let $s\downarrow0$, $T\to\infty$:
+\[
+ \Ent_\gamma(g)\leq I(g)\int_0^\infty e^{-2t}\,dt
+ =\tfrac12 I(g).
+\]
+
+Now let $v\in C_c^\infty(\R)$ and take $g=v^2+\varepsilon$.
+All preceding hypotheses hold and
+\[
+ \frac{g'^2}{g}=\frac{4v^2v'^2}{v^2+\varepsilon}\leq4v'^2.
+\]
+Let $\varepsilon\downarrow0$. For $0<\varepsilon\leq1$, the values
+of $g$ lie in the fixed compact interval $[0,\|v\|_\infty^2+1]$.
+The continuous function $z\log z$, with value zero at $z=0$, is
+bounded on that interval. Dominated convergence, also for the scalar
+mass term, gives $\Ent_\gamma(v^2)\leq2\|v'\|_2^2$.
+Zeros and sign changes of $v$ require no separate positivity assumption.
+
+We next verify the graph approximation needed for arbitrary
+$v\in\Dom(D)$. Hermite polynomial truncations converge to $v$ in
+the norm $\|v\|_2+\|Dv\|_2$ by Section 3. For any such polynomial
+$p$, choose $\chi\in C_c^\infty$ with $\chi=1$ on $[-1,1]$ and
+$0\leq\chi\leq1$, and let $p_R(x)=\chi(x/R)p(x)$.
+Then $p_R\to p$ in $L^2(\gamma)$ by Gaussian tail integrability, and
+\[
+ p_R'-p'=(\chi(x/R)-1)p'+R^{-1}\chi'(x/R)p\longrightarrow0
+ \quad\hbox{in }L^2(\gamma).
+\]
+The first term tends to zero by domination by $|p'|$; the second has
+norm at most $\|\chi'\|_\infty\|p\|_2/R$.
+A diagonal choice therefore gives $v_j\in C_c^\infty$ with
+$v_j\to v$ and $v_j'\to Dv$ in $L^2(\gamma)$.
+
+Put $K(z)=z\log z-z+1$ for $z\geq0$, with $K(0)=1$.
+It is continuous and nonnegative. The core inequality reads
+\[
+ \int K(v_j^2)\,d\gamma
+ \leq2\|v_j'\|_2^2+K(\|v_j\|_2^2).
+\]
+An $L^2$-convergent sequence has an almost-everywhere convergent
+subsequence: choose errors with summable squared norms and use
+Tonelli on their pointwise squared errors. Along it, Fatou gives
+\[
+ \int K(v^2)\,d\gamma
+ \leq2\|Dv\|_2^2+K(\|v\|_2^2)<\infty.
+\]
+Thus $v^2\log(v^2)=K(v^2)+v^2-1$ is genuinely integrable.
+Subtracting $K(\|v\|_2^2)$ proves the entropy upper bound.
+Jensen for the convex function $z\log z$ proves nonnegativity;
+all its integrals have now been justified.
+
+Finally $U_\lambda$ identifies the full derivative and annihilation
+graphs and preserves their energies. Apply the Gaussian bound to
+$v=U_\lambda f$. For a physical root with displacement $a\ne0$,
+Section 6 gives $\Ent_\gamma(g_a^2)=2a^2$ and
+$\|Dg_a\|_2^2=a^2$, proving attainment and sharpness.
+\end{proof}
+
+Both the positive theorem and the native Poisson failure apply to
+the same original annihilation graph. Their entropy functionals are
+different. The unitary preserves linear norms and derivative energies;
+the ordinary square and its logarithm remain sensitive to the
+underlying probability space. This distinction is already visible in
+the coherent roots and does not depend on a formal diffusion
+curvature argument.
+
 \section{Exact provenance and mathematical scope}
 All formal source references below use the frozen verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}\end{center}
@@ -887,11 +1048,22 @@ arithmetic, including both boundary cases; it is a transcription check.
 The positivity witness is an elementary
 analytic deduction, distinguished in the theorem map.
 
+The Gaussian entropy sources retain attribution to Michael R. Douglas
+and contributors for adapted Mehler/Fisher/entropy arguments, under
+Apache-2.0; see the repository's \code{MATHEMATICAL_AUDIT.md} and
+\code{LICENSES/Apache-2.0.txt}. Our smooth-core proof above uses the
+classical second-derivative calculation, while the formal positive
+bounded $C^1$ proof uses a rotated Stein identity without that extra
+regularity. The entire weak-graph extension is the labelled human
+Fatou/core deduction above. Gross's theorem and its sharpness are
+classical, not publication-priority claims.
+
 The setting is one Poisson count and one Gaussian coordinate. The results
 do not transfer ordinary nonlinear equations, a Markov order or general
 entropy comparisons. This is a classical formalization companion;
 novelty certification and external submission remain separate questions.
 
+{\small
 \begin{thebibliography}{9}
 \bibitem{VT} A. M. Vershik and N. V. Tsilevich,
 \emph{Fock factorizations, and decompositions of the $L^2$ spaces over
@@ -915,5 +1087,15 @@ Annals of Probability \textbf{42} (2014), 2595--2643.
 \href{https://doi.org/10.1214/13-AOP906}{doi:10.1214/13-AOP906}.
 Theorem 1.1 and the norms immediately preceding it;
 \href{https://research-portal.uu.nl/ws/files/107833782/13_AOP906.pdf}{primary publisher manuscript}.
+\bibitem{Gross} L. Gross,
+\emph{Logarithmic Sobolev inequalities}, American Journal of Mathematics
+\textbf{97} (1975), 1061--1083.
+\href{https://doi.org/10.2307/2373688}{doi:10.2307/2373688}.
+\bibitem{BGRS} S. G. Bobkov, N. Gozlan, C. Roberto and P.-M. Samson,
+\emph{Bounds on the deficit in the logarithmic Sobolev inequality},
+Journal of Functional Analysis \textbf{267} (2014), 4110--4138.
+\href{https://arxiv.org/abs/1408.2115}{arXiv:1408.2115}, introduction,
+equation (1.1) and the following exponential equality examples.
 \end{thebibliography}
+}
 \end{document}

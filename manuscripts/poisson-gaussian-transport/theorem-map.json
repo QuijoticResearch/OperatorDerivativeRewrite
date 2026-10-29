@@ -1206,6 +1206,114 @@
       "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
       "declaration_header": "theorem rate_ratio_bounds {n : \u2115} (hn : 0 < n) :\n    1/(Real.sqrt 2*(n : \u211d)) \u2264 \u2016output (rate n) (rate_pos hn)\u2016/\u2016input (rate n)\u2016 \u2227\n      \u2016output (rate n) (rate_pos hn)\u2016/\u2016input (rate n)\u2016 \u2264 1/(n : \u211d)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L299"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehler.integral_mehler",
+      "file": "Foundation/GaussianMehler.lean",
+      "line": 158,
+      "source_sha256": "e7af49aa00dfd0df71ced7e93bae1b30a1a0f054b6e942fa8b0f09f9b385d86b",
+      "declaration_header": "theorem integral_mehler {f : \u211d \u2192 \u211d} (hf : Continuous f)\n    {M : \u211d} (hM : \u2200 z, \u2016f z\u2016 \u2264 M) (t : \u211d) (ht : 0 \u2264 t) :\n    \u222b x, mehler t f x \u2202\u03b3 = \u222b x, f x \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehler.lean#L158"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFisher.hasDerivAt_mehler_C1",
+      "file": "Foundation/GaussianFisherDecay.lean",
+      "line": 51,
+      "source_sha256": "fa065aaf270db035e9adc95da1ad54d4ccea663e0b09271164eb47d679dbb6dc",
+      "declaration_header": "theorem hasDerivAt_mehler_C1 (t : \u211d) {f : \u211d \u2192 \u211d}\n    (hf_C1 : ContDiff \u211d 1 f) {M : \u211d}\n    (hf_bd : \u2200 x, \u2016f x\u2016 \u2264 M) (hf'_bd : \u2200 x, \u2016deriv f x\u2016 \u2264 M)\n    (x\u2080 : \u211d) :\n    HasDerivAt (GaussianMehler.mehler t f)\n      (Real.exp (-t) * GaussianMehler.mehler t (deriv f) x\u2080) x\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFisherDecay.lean#L51"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFisher.weighted_cauchy_schwarz_mehler",
+      "file": "Foundation/GaussianFisherDecay.lean",
+      "line": 189,
+      "source_sha256": "fa065aaf270db035e9adc95da1ad54d4ccea663e0b09271164eb47d679dbb6dc",
+      "declaration_header": "theorem weighted_cauchy_schwarz_mehler\n    (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 1 g)\n    {\u03b5 M : \u211d} (h\u03b5 : 0 < \u03b5)\n    (hg_lo : \u2200 x, \u03b5 \u2264 g x) (hg_hi : \u2200 x, g x \u2264 M)\n    (hg'_bd : \u2200 x, |deriv g x| \u2264 M)\n    (t : \u211d) (_ht : 0 \u2264 t) (x : \u211d) :\n    (GaussianMehler.mehler t (deriv g) x) ^ 2 / GaussianMehler.mehler t g x \u2264\n      GaussianMehler.mehler t (fun y => (deriv g y) ^ 2 / g y) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFisherDecay.lean#L189"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFisher.fisherInformation_decay",
+      "file": "Foundation/GaussianFisherDecay.lean",
+      "line": 369,
+      "source_sha256": "fa065aaf270db035e9adc95da1ad54d4ccea663e0b09271164eb47d679dbb6dc",
+      "declaration_header": "theorem fisherInformation_decay\n    (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 1 g)\n    {\u03b5 M : \u211d} (h\u03b5 : 0 < \u03b5)\n    (hg_lo : \u2200 x, \u03b5 \u2264 g x) (hg_hi : \u2200 x, g x \u2264 M)\n    (hg'_bd : \u2200 x, |deriv g x| \u2264 M)\n    (t : \u211d) (ht : 0 \u2264 t) :\n    fisherInformation (GaussianMehler.mehler t g) \u2264\n      Real.exp (-2 * t) * fisherInformation g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFisherDecay.lean#L369"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation.entropyTrajectory_continuous",
+      "file": "Foundation/GaussianEntropyDissipation.lean",
+      "line": 103,
+      "source_sha256": "dcf8d2be00c81b7b496066a5baa691b5cff02cd15c4f03835469069a48e72f9b",
+      "declaration_header": "theorem entropyTrajectory_continuous {g : \u211d \u2192 \u211d} (hg : Continuous g)\n    {M : \u211d} (hgb : \u2200 x, \u2016g x\u2016 \u2264 M) : Continuous (entropyTrajectory g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianEntropyDissipation.lean#L103"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation.entropyTrajectory_tendsto_atTop",
+      "file": "Foundation/GaussianEntropyDissipation.lean",
+      "line": 149,
+      "source_sha256": "dcf8d2be00c81b7b496066a5baa691b5cff02cd15c4f03835469069a48e72f9b",
+      "declaration_header": "theorem entropyTrajectory_tendsto_atTop {g : \u211d \u2192 \u211d} (hg : Continuous g)\n    {M : \u211d} (hgb : \u2200 x, \u2016g x\u2016 \u2264 M) :\n    Tendsto (entropyTrajectory g) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianEntropyDissipation.lean#L149"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipationProof.hasDerivAt_entropy_dissipation",
+      "file": "Foundation/GaussianEntropyDissipationProof.lean",
+      "line": 453,
+      "source_sha256": "ac3c839d43d20cba73ecbea18ac344a825414ea26c65af9993dd1072f2e9bbc9",
+      "declaration_header": "theorem hasDerivAt_entropy_dissipation (t : \u211d) (ht : 0 < t)\n    {g : \u211d \u2192 \u211d} (hg : ContDiff \u211d 1 g)\n    {\u03b5 M B : \u211d} (h\u03b5 : 0 < \u03b5) (hlo : \u2200 z, \u03b5 \u2264 g z)\n    (hhi : \u2200 z, g z \u2264 M) (hdgb : \u2200 z, \u2016deriv g z\u2016 \u2264 B) :\n    HasDerivAt (GaussianEntropyDissipation.entropyTrajectory g)\n      (-GaussianFisher.fisherInformation (GaussianMehler.mehler t g)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianEntropyDissipationProof.lean#L453"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.entropyDensity_le_half_fisher",
+      "file": "Foundation/GaussianLogSobolevCore.lean",
+      "line": 21,
+      "source_sha256": "05bca5c5ebb53de6ec0fc60ffc48ad88eaaa1e098fca1d957bcb32724012a36e",
+      "declaration_header": "theorem entropyDensity_le_half_fisher (g : \u211d \u2192 \u211d) (hg : ContDiff \u211d 1 g)\n    {\u03b5 M : \u211d} (h\u03b5 : 0 < \u03b5) (hlo : \u2200 x, \u03b5 \u2264 g x)\n    (hhi : \u2200 x, g x \u2264 M) (hderiv : \u2200 x, \u2016deriv g x\u2016 \u2264 M) :\n    GaussianEntropyDissipation.entropyDensity g \u2264\n      (1 / 2 : \u211d) * GaussianFisher.fisherInformation g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevCore.lean#L21"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_fisher_le_energy",
+      "file": "Foundation/GaussianLogSobolevCore.lean",
+      "line": 88,
+      "source_sha256": "05bca5c5ebb53de6ec0fc60ffc48ad88eaaa1e098fca1d957bcb32724012a36e",
+      "declaration_header": "theorem regularized_fisher_le_energy {f : \u211d \u2192 \u211d} (hf : ContDiff \u211d 1 f)\n    {M \u03b5 : \u211d} (hM : 0 \u2264 M) (h\u03b5 : 0 < \u03b5)\n    (hfb : \u2200 x, \u2016f x\u2016 \u2264 M) (hfdb : \u2200 x, \u2016deriv f x\u2016 \u2264 M) :\n    GaussianFisher.fisherInformation (fun x => f x ^ 2 + \u03b5) \u2264\n      4 * \u222b x, (deriv f x) ^ 2 \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevCore.lean#L88"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_entropy_tendsto",
+      "file": "Foundation/GaussianLogSobolevCore.lean",
+      "line": 139,
+      "source_sha256": "05bca5c5ebb53de6ec0fc60ffc48ad88eaaa1e098fca1d957bcb32724012a36e",
+      "declaration_header": "theorem regularized_entropy_tendsto {f : \u211d \u2192 \u211d} (hf : Continuous f)\n    {M : \u211d} (hfb : \u2200 x, \u2016f x\u2016 \u2264 M) :\n    Tendsto (fun n : \u2115 => GaussianEntropyDissipation.entropyDensity\n      (fun x => f x ^ 2 + (1 : \u211d) / ((n : \u211d) + 1))) atTop\n      (\ud835\udcdd (entropySq \u03b3 f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevCore.lean#L139"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.gaussian_logSobolev_core",
+      "file": "Foundation/GaussianLogSobolevCore.lean",
+      "line": 198,
+      "source_sha256": "05bca5c5ebb53de6ec0fc60ffc48ad88eaaa1e098fca1d957bcb32724012a36e",
+      "declaration_header": "theorem gaussian_logSobolev_core {f : \u211d \u2192 \u211d} (hf : ContDiff \u211d 1 f)\n    {M : \u211d} (hfb : \u2200 x, \u2016f x\u2016 \u2264 M)\n    (hfdb : \u2200 x, \u2016deriv f x\u2016 \u2264 M) :\n    entropySq \u03b3 f \u2264 2 * \u222b x, (deriv f x) ^ 2 \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevCore.lean#L198"
+    },
+    {
+      "paper": "Section 10 classical Gaussian entropy counterpart; full weak-graph extension explicitly labelled human deduction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLogSobolevFull.gaussian_logSobolev_of_hasDerivAt",
+      "file": "Foundation/GaussianLogSobolevFull.lean",
+      "line": 231,
+      "source_sha256": "8d9bd09dceed7c56859e404be3a002b05f8dae5752b8d1ba2fce5898e107781a",
+      "declaration_header": "theorem gaussian_logSobolev_of_hasDerivAt {f h : \u211d \u2192 \u211d}\n    (hd : \u2200 x, HasDerivAt f (h x) x)\n    (hf_sq : Integrable (fun x => f x ^ 2) GaussianCore.\u03b3)\n    (hh_sq : Integrable (fun x => h x ^ 2) GaussianCore.\u03b3) :\n    Integrable (fun x => f x ^ 2 * Real.log (f x ^ 2)) GaussianCore.\u03b3 \u2227\n      entropySq GaussianCore.\u03b3 f \u2264\n        2 * \u222b x, h x ^ 2 \u2202GaussianCore.\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevFull.lean#L231"
     }
   ],
   "human_reorganization": [
@@ -1221,7 +1329,11 @@
     "The recovery series is expressed in the scalar Hilbert space. Original source fields belong to L2(lambda times Poisson law), and multiplication by sqrt(lambda) gives the scalar normalization. Full creation range, uniqueness, Poincare and compactness are proved directly from the previously established maximal coefficient graphs.",
     "Physical tilt conjugation gives coherent-vacuum centering, shifted creation range and kernel, shifted annihilation kernel, Poincare and compactness. Gaussian one-coordinate range and kernel statements are direct unitary deductions; they do not assert injectivity of general Gaussian vector divergence.",
     "The actual count has variance r and fourth centered moment 3r^2+r. Holder plus elementary first-moment and L2 bounds give one-quarter min(r^2,r^3) <= ||N-r||_(4/3)^4 <= 4 min(r^2,r^3). The original divergence of the constant field is N-r and its L^(4/3)(r P_r) norm is r^(3/4). The r=n^4 ratio lies between 1/(sqrt(2)n) and 1/n. Small intensity explains the rare-count scale; only large intensity is required for the no-uniform-lower-bound result.",
-    "The count-law transfer assumes an actual count with the stated Poisson law. No stable random measure, independence of several counts, general stochastic integrand completion, new Ito isomorphism or queued research campaign is constructed or activated."
+    "The count-law transfer assumes an actual count with the stated Poisson law. No stable random measure, independence of several counts, general stochastic integrand completion, new Ito isomorphism or queued research campaign is constructed or activated.",
+    "Section 10 proves the classical sharp Gaussian LSI on the entire original one-coordinate maximal weak derivative graph. This is explicitly a human extension of the named formal bounded-C1 and everywhere-differentiable results: the previously established Hermite graph core is cut off in space to form a smooth compact graph sequence, then the nonnegative K(z)=z log z-z+1 gives genuine entropy integrability and the bound by Fatou. No new named Lean declaration or changed research claim is asserted.",
+    "The printed smooth-core proof uses bounded second derivatives to justify the Mehler time-generator identity and Gaussian integration by parts. The formal positive bounded-C1 proof instead uses rotated Stein interpolation, avoiding a second-derivative assumption. Both give Fisher decay at e^(-2t) and entropy constant 2 after square-root regularization.",
+    "The transported entropy is Ent_gamma((U_lambda f)^2), bounded by 2||A_lambda f||^2 for every original annihilation-domain input; coherent roots attain equality. It is not Ent_Poisson(f^2). This positive counterpart and the native Poisson obstruction use distinct nonlinear functionals.",
+    "Mehler/Fisher/entropy source portions retain Michael R. Douglas and contributors attribution under Apache-2.0. The paper points to MATHEMATICAL_AUDIT.md and LICENSES/Apache-2.0.txt. Gross and sharp exponential equality cases are classical; primary Bobkov-Gozlan-Roberto-Samson introduction equation (1.1) and following equality examples were inspected, while original Gross full text was inaccessible through JSTOR."
   ],
   "literature": [
     {
