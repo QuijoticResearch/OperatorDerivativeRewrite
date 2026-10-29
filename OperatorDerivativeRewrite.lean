@@ -2758,3 +2758,6 @@ import Foundation.FourCubeHaarPartitionAsymptotic
 import Foundation.FourCubeHaarGibbsLimit
 
 import Foundation.FourCubePhysicalEnergy
+
+import Foundation.FourCubeBoundaryCoercivity
+import Foundation.FourCubeScaledBoundaryControl

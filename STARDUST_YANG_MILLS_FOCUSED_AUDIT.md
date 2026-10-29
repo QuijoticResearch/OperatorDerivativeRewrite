@@ -2572,3 +2572,91 @@ The integrity manifest authenticates1708's exact approved receipt. Among2806 rec
 The actual finite-cell physical-action mean and exponential domain are now CLOSED, not merely inferred from bounded chart tests. The methods are classical finite-dimensional Gibbs/Laplace tools; no novelty claim is made. Second/higher physical moment convergence, variance/heat-capacity limits and an explicit Gamma-law identification are NOT automatically certified by the first-mean proof. Uniform perturbed-boundary saddle/coercivity, third-order boundary response, differentiation with respect to boundary parameters and the full harmonic-cubic Lean coefficient remain OPEN. A next substantive bridge is quadratic-stable boundary perturbation control at theta=t*a: a merely linear-in-theta action error would blow up under beta=1/t^2 and is insufficient. Any resulting response estimate must still be connected to an ACTUAL stationary transfer operator before making a spectral claim. The loop-chain slowdown results do not automatically transfer to this72-face cell, and no volume/scale/continuum mass-gap bridge is established. Preserve these distinctions and pursue the strongest concrete transfer/response route rather than broad auxiliary expansion.
 
 Exact Git approval, new-history secret scan, guarded public two-branch synchronization and independent remote-ref verification remain closure gates; this pre-commit ledger does not claim remote backup already succeeded. Repository visibility is exclusively user-controlled. The indefinite research goal remains active.
+
+## Checkpoint1710 - quadratic-stable actual boundary window and uniform domination
+
+October29,2026. Focused Yang-Mills remains ACTIVE. The preceding physical-energy checkpoint269365f989364af20dbd78956677b05b61f26270 passed both guarded backup refs and independent PUBLIC visibility/ref checks. This checkpoint attacks the next specific bottleneck: boundary perturbations theta=t*a with beta*t^2=1. A merely linear angle error would generate beta*theta of order1/t and fail to give a uniform Boltzmann comparison. Existing actual SU(2) defect control instead supplies a quadratic boundary budget, coupled to the full72-face Haar partition.
+
+New sources: Foundation/FourCubeBoundaryCoercivity.lean and Foundation/FourCubeScaledBoundaryControl.lean. Existing actual root-pinning, coercivity, chart/Haar density, partition asymptotic and physical-energy results are reused without alteration. This is one fixed112-edge/72-face cap complex with the existing31-link pin, not an infinite four-dimensional lattice or continuum field construction. No broad gauge library or publication work was undertaken.
+
+### Arbitrary-boundary action and full partition comparisons
+
+For arbitrary actual SU(2) boundary data b define
+
+    B(b)=sum_(48 ribbons p) defect(word(b,p)),    defect(W)=1-halfTrace(W),
+    S_b(U)=fullAction(fill(b,fillPole(1,U))),    S_0(U)=pinnedAction(U).
+
+boundaryAction_decomposition identifies the ORIGINAL full72-face action as internal action plus the48 actual twisted ribbon defects. B is nonnegative. Reuse of the verified three-factor defect inequality gives, globally for EVERY boundary b and EVERY pinned state U,
+
+    S_0(U)/3-B(b) <= S_b(U) <= 3*S_0(U)+3*B(b).
+
+The upper/lower estimates are also proved before pinning, for the full32-link interior state. These are genuine action comparisons, not Taylor polynomials or hypotheses about a hypothetical minimizer. Their constants are deliberately coarse; no optimality claim is made. B is a reference-dependent boundary comparison budget in the displayed gauge/identity frame. No invariance of B under independent endpoint gauge changes, intrinsic boundary norm, or gauge-invariant mass-gap criterion is asserted.
+
+perturbedAction_measurable and perturbed_boltzmann_integrable discharge actual measure-theoretic domains for every real beta. For beta>=0, boltzmann_upper/lower and pinnedPartition_upper/lower prove on the FULL Haar integrals
+
+    exp(-3 beta B(b))*Z_0(3 beta) <= Z_b(beta)
+      <= exp(beta B(b))*Z_0(beta/3).
+
+The normalized root-gauge volume remains1; the independent checks transfer BOTH comparisons to the original unpinned32-link partition by the existing exact partition_eq_pinned. Nonnegative beta is an essential hypothesis of these order comparisons, not a restriction on finite-scale integrability; the harness explicitly refutes removing it in the scalar action96 example.
+
+### Explicit actual-cell obstruction to dropping the budget
+
+uniformChordBoundary(W) puts identity on all caps and W^(-1) on all48 boundary chords. uniformChord_word, uniformChord_cost and uniformChord_action_at_one prove EXACTLY
+
+    word(b,p)=W,   B(b)=48 defect(W),   S_b(identity interior)=48 defect(W).
+
+For W=axis(0,pi), the actual perturbed action is96 while S_0(identity)=0. no_boundary_free_upper proves that for EVERY real K it is FALSE that S_b(U)<=K*S_0(U) for all b,U. This is an actual pinned72-face counterexample, not only a single-word analogy. It does not refute estimates containing an additive boundary budget. The same construction at arbitrary W remains available for sharper local tests.
+
+### Moving three-axis boundary, uniformly over amplitude balls
+
+axis_defect_upper uses the existing actual axis trace and the elementary global sine bound to prove defect(axis(a,theta))<=theta^2/2 for ALL real theta. It makes no small-angle or sign assumption. Therefore boundaryCost_upper proves for the existing three-axis family
+
+    B(boundaryData(x,y,z)) <=216*(x^2+y^2+z^2).
+
+For b_t=boundaryData(t*x,t*y,t*z), scaled_boundaryCost checks the exact clock beta*t^2=1, beta>=0, and proves
+
+    beta*B(b_t) <=216*(x^2+y^2+z^2).
+
+Both signs of nonzero t are permitted. The independent harness proves beta*t^2=1 is impossible at t=0, and separately verifies the divergent linear-error clock (1/t^2)*t->+infinity as t->0 from the right. The quadratic correction avoids that specific failure; no claim of a full boundary expansion follows from this bound alone.
+
+normalizedPartition_bounds and moving_partition_bounds compare the ACTUAL full partition ratio Z_(b_t)(1/t^2)/Z_0(1/t^2) with the already verified coupling ratios at3 beta and beta/3. uniform_moving_partition_bounds proves: for every fixed amplitude budget R, ONE punctured neighborhood of t=0 works SIMULTANEOUSLY FOR ALL real x,y,z with x^2+y^2+z^2<=R, and there
+
+    exp(-648 R)*((sqrt(3))^(-93)/2) <= Z_(b_t)(1/t^2)/Z_0(1/t^2)
+      <= exp(216 R)*((sqrt(1/3))^(-93)+1).
+
+In particular the lower constant is strictly positive and both constants are independent of t and the amplitudes within the ball. The result follows from actual full-Haar partition comparisons and the verified dimension93, not from an assumed Gaussian shift formula. It establishes nondegeneration/boundedness, NOT a contraction factor less than1. The constants are far too coarse to infer a physical spectral gap.
+
+### Uniform integrable density and exact actual-cutoff transport
+
+Let m(Y)=sum_(31 links,3 colors)Y_ea^2 and R_Haar(Y) be the already verified product chart density. The existing cutoff is all links:1+|tY_e|^2<=2. scaled_action_lower and scaled_boltzmann_bound prove for any boundary with beta*B(b)<=A, on that cutoff,
+
+    beta*S_b(chart(tY)) >= m(Y)/1116-A,
+    exp(-beta*S_b(chart(tY))) <= exp(A)*exp(-m(Y)/1116).
+
+The factor1116=3*372 explicitly retains the loss from the actual global action comparison. broadened_gaussian_integrable reuses the existing integrable93-dimensional Gaussian envelope by a nonzero scalar dilation; no duplicate Gaussian foundation is built. boundaryScaledDensity is the ACTUAL cutoff integrand
+
+    D_(t,x,y,z)(Y)=1_cutoff R_Haar(tY)*exp(-S_(b_t)(chart(tY))/t^2).
+
+It is measurable and nonnegative. For every t!=0 and every amplitude triple in x^2+y^2+z^2<=R, boundaryScaledDensity_bound proves the SAME domination
+
+    D_(t,x,y,z)(Y) <= R_Haar(0)*exp(216 R)*exp(-m(Y)/1116).
+
+The right side is integrable over ALL93 real coordinates and independent of t and the particular amplitudes. boundaryScaledDensity_integrable follows for every nonzero t and all amplitudes. movingLocalPartition_rescale identifies its integral with the ORIGINAL actual restricted Haar partition, with exact |t|^93 Jacobian. The absolute value retains negative scales. No integrability at t=0 is asserted: the total definition there is the constant R_Haar(0), checked independently. No global quadratic chart coercivity is claimed outside the cutoff, consistent with the preserved affine-coercivity counterexample.
+
+### Verification, independent tests and source preservation
+
+ALL21 independent Lean checks passed in32.89432060002582 seconds: identity-boundary budget/action/partition, both original unpinned partition comparisons, exact cost/action96, the zero reference action and no-budget counterexample, negative axis angles and negative fluctuation clock, impossible zero clock, integrable broader Gaussian, nonzero-scale density integrability and exceptional zero-scale value, actual cutoff Jacobian, uniform amplitude-ball density control and strictly positive full-partition lower bound, zero-amplitude normalization, divergent linear-error clock and the essential nonnegative-coupling hypothesis. A test-only axis-zero reduction was written via the existing defect-zero characterization rather than expanding matrices. Proof-development namespace/finite-sum/measurability elaboration issues were resolved explicitly; no resource increase or theorem weakening was used.
+
+Independent NumPy tests evaluated the actual112-edge72-face quaternion action for4096 arbitrary normalized quaternion configurations with arbitrary boundary data and the exact root pin. Both global action inequalities passed. The actual all-chord central counterexample gave action96. Moving-boundary cutoff integration at t=0.1,0.05,0.01,-0.01 retained the product Haar density. At0.01 the estimated partition ratio was0.2325605193, empirical delta-method standard error0.0109463864; the external classical Gaussian/Schur reference was0.2459290420. This is finite-sample diagnostic evidence, not a certified Monte Carlo error bound, monotone convergence rate, formal perturbed Gaussian limit or boundary-derivative theorem. The coarse scaled-cost bound451.44 exceeded the actual tested value2.9715857298; this illustrates the lack of sharpness and is not evidence for contraction. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1710-independent.py/.json/.log.
+
+The complete root build passed7026 jobs in30.220646300003864 seconds. The canonical COMPLETE transitive safe-Foundation audit passed55302 declarations in48.42273489999934 seconds, accepting only propext, Classical.choice and Quot.sound. ALL42 public types were printed unabridged and reviewed:34 complete theorem proofs and8 definitions. Both full source files and the one private internal-action nonnegativity helper were read in full. The COMPLETE persisted Foundation/AxiomAudit.lean run passed in65.71354409999913 seconds. No sorry/admit/new mathematical axiom/native_decide, resource increase, compiler/trust setting or toolchain/configuration change was introduced. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1710-*.
+
+Integrity authenticates1709's manifest against exact approval269365f989364af20dbd78956677b05b61f26270. Among2808 recursive Foundation/root files, ONLY the two new focused modules, root imports and axiom ledger differ. All older mathematics,3 pinned configurations,113 baseline original manuscripts and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted. No manuscripts/PDFs, publication directories or editorial README were created, revised, compiled or reviewed. Existing drafts/histories, publication role and all campaign priorities remain unchanged.
+
+### Exact remaining boundary and transfer obligations
+
+Quadratic-stable comparison, full-partition nondegeneration and integrable cutoff domination on bounded moving-boundary amplitude balls are NOW VERIFIED. They should no longer be listed as missing hypotheses. A pointwise perturbed joint-action Taylor limit, its explicit effective Gaussian/Schur normalizer, parameter-uniform derivative bounds through third order, full harmonic-cubic Lean coefficient and actual large-beta third boundary response remain OPEN. Uniform domination of the density alone does not justify differentiating a limit.
+
+The next immediate integration bridge is uniform control of the ACTUAL perturbed Gibbs mass outside the existing chart cutoff. A prospective reduction to verify in Lean is a bound by exp(4A)*[Z_0(beta/3)/Z_0(3 beta)] times the existing identity-boundary outside probability at beta/3 when beta*B(b)<=A. This is a NEXT proof target, not an exported theorem here; it requires the actual normalized perturbed law and exact integral identification. Combined with a proved perturbed Taylor limit, the present envelope could then support a full normalized shifted-Gaussian theorem. Boundary derivatives would still need their own valid integrable bounds and convergence. None of the current fixed-cell results establishes stationary physical transfer contraction, a scale/volume-uniform gap, infinite-volume/continuum existence or a Yang-Mills mass gap. No novelty is claimed for the elementary compact-group/Laplace comparison method.
+
+Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility checks remain closure requirements. This pre-commit entry does not claim remote backup has already succeeded. Repository visibility belongs exclusively to the user. The indefinite research goal remains active.
