@@ -1,3 +1,27 @@
+# Authoritative role separation - October 29, 2026
+
+Effective immediately, the primary Stardust researcher is relieved of all
+publication and public-exposition maintenance responsibilities. It must not
+create, revise, compile, or review manuscripts and PDFs; maintain `manuscripts/`
+or `docs/papers/`; or perform editorial README updates. These responsibilities
+belong exclusively to a separate publication agent. Preserve all existing drafts
+and histories. This directive does not create or start a publication agent.
+
+Mathematical reflection, research ledgers, proof verification, source-integrity
+and manuscript-preservation checks, and campaign priorities remain unchanged.
+The focused Yang-Mills campaign remains active. Every existing Lean build,
+axiom/type/proof/independent-check, Git and audited two-branch backup gate remains
+in force. Do not interrupt an active proof or verification cycle for publication.
+
+This role directive supersedes earlier assignments of publication, manuscript/PDF,
+`manuscripts/`, `docs/papers/`, or editorial README work to the primary researcher,
+including earlier reflection-policy and automation wording. Historical records
+and drafts are preserved; they do not reassign those duties to the researcher.
+The existing daily reflection admission gate, accounting and 45-minute cap are
+unchanged. No research queue, mathematical claim or verification gate is changed.
+
+---
+
 # Current Git visibility amendment — October 27, 2026
 
 The authorized GitHub repository is PUBLIC by the user's explicit decision.

@@ -55616,3 +55616,63 @@ The full root build passed7013 jobs in44.6450857 seconds. The canonical COMPLETE
 Authenticated integrity compares against1704's manifest approved at c6130c55f387bc46e77f3b09f51454c3ea41f14f. Among2796 Foundation/root files, only ONE new focused Gaussian-cone/Haar-density module, the root import and axiom ledger differ. ALL older mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals(20 distinct hashes) are unchanged. ResearchSources is unmodified/uncommitted; unrelated drafts remain intact. Full evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1705-*.
 
 Exact-commit approval and guarded PUBLIC main/research synchronization are still required for closure. This pre-commit record makes no remote-success claim. Repository visibility is exclusively user-controlled; all existing research priorities and verification gates remain unchanged.
+
+
+## Checkpoint1706 - actual Haar-chart inverse, two jets, and a necessary local Gaussian cutoff
+
+October29,2026. Focused Yang-Mills remains ACTIVE. This checkpoint continues the actual fixed four-dimensional cell, not merely the seven-link loop surrogate. New sources are Foundation/SU2HemisphereChart.lean, Foundation/SU2HemisphereJets.lean and Foundation/FourCubeHemisphereCoercivity.lean. They reuse1701's normalized31-link pinning,1702's actual72-face coercivity,1703's Gibbs concentration,1704's exponential-coordinate Hessian machinery and1705's actual Haar hemisphere density. No new mathematical axiom, external existence assertion or physical mass gap is assumed.
+
+### Exact coordinate identification and normalization
+
+For y in R^3, let q(y)=(1,y)/sqrt(1+|y|^2) and let chart(y) be its actual SU(2) matrix. SU2HemisphereChart.coordinates uses the three recovered quaternion imaginary coordinates divided by its real coordinate. `coordinates_chart` proves coordinates(chart(y))=y for every y. `chart_coordinates` proves the converse for EVERY positive-half-trace SU(2) matrix, with that hemisphere hypothesis explicit. Outside the hemisphere the total division convention is not asserted to give a chart inverse. `chart_injective`, `chart_matrix`, `chart_halfTrace` and measurable maps are verified. `lintegral_coordinate_observable` identifies the actual restricted Haar integral of every nonnegative measurable coordinate observable with density
+
+    rho(y) = 1/(2*pi^2*(1+|y|^2)^2).
+
+This is the one-hemisphere restriction, not a separately normalized probability. The factor1/2 from1705 is retained; a full31-link joint change-of-variables theorem is still a separate obligation.
+
+The tangent frame is exactly frame(y)=(2*y1,2*y2,2*y0) in the repository's existing generator basis. For B=A(frame(y)), the actual matrix curve c_y(t)=chart(t*y) satisfies c_y(0)=I, c_y'(0)=B and c_y''(0)=B^2=-|y|^2*I. `curve_two_jet` proves its value and first TWO derivatives agree with exp(t*B) at zero. Derivatives are obtained from the actual normalized quaternion formula, with all-real-t differentiability of its positive scalar square-root weight; no hypothetical chart smoothness or unverified transition is used. This is a SINGLE-LINK matrix two-jet theorem: the full action's ratio-coordinate Hessian has not yet been assembled. Higher-order jets cannot silently be identified. Numerical expansion finds cubic imaginary coefficient difference -|y|^2*y/3 between the ratio chart and the corresponding exponential chart; that cubic difference is a diagnostic, NOT a new Lean theorem.
+
+### Actual local domination and cutoff probability
+
+Let Y assign R^3 coordinates to all31 retained links and define
+
+    Q(Y)=sum_e |Y_e|^2.
+
+`quadraticMass_sum_squares` verifies this exact93-real-coordinate quadratic form, including Q(0)=0 and Q(constant(a,0,0))=31*a^2. On the explicit per-link cutoff 1+|Y_e|^2<=2, `local_defect_lower` gives |Y_e|^2/4 <= defect(chart(Y_e)). Combining the actual defect<=3*S theorem and the exact31-link count gives `local_action_lower`:
+
+    Q(Y)/372 <= S(chartField(Y)),     372=4*3*31.
+
+For beta>=0 and beta*t^2=1, `scaled_action_lower` and `scaled_boltzmann_domination` therefore prove
+
+    Q(Y)/372 <= beta*S(chartField(t*Y)),
+    exp(-beta*S(chartField(t*Y))) <= exp(-Q(Y)/372),
+
+provided every scaled link satisfies 1+|t*Y_e|^2<=2. The clock relation and cutoff are actual theorem hypotheses. `gaussian_envelope_integrable` proves the right-hand envelope integrable for the actual finite-product Lebesgue measure on all93 real coordinates, from existing scalar Gaussian integrability. No normalized Gibbs fluctuation limit follows merely from this bound.
+
+Define localStateDomain in the actual pinned SU(2) state space by positive half-trace AND chartRate(coordinates)<=2 on every link. The event is measurable. Defect<1/4 implies this condition; `outside_localStateDomain_subset` identifies its complement as a subset of the existing actual configurationTail(1/4). `gibbs_outside_cutoff_le_tail` and the earlier concentration theorem imply the outside probability tends to0 and `gibbs_cutoff_tendsto_one` proves the ACTUAL normalized finite-cell Gibbs probability of this cutoff tends to1 as beta tends to infinity. For beta>=0 the previous quantitative tail result immediately supplies outside probability <=31*exp(-beta/24)/lowMass(1/24); that numeric substitution is a consequence of existing theorems, not a separately exported simplification here. This proves precisely why the local cutoff is legitimate for bounded observables in a future fluctuation-limit proof. It alone does not control arbitrary unbounded ratio-coordinate moments.
+
+### Decisive obstruction to the global shortcut
+
+`no_global_affine_quadratic_bound` proves there are NO constants c>0 and C with
+
+    c*Q(Y) <= S(chartField(Y))+C   for all Y.
+
+The actual compact-group action satisfies S<=144, whereas the constant-coordinate field Y_e=(a,0,0) has Q=31*a^2. Given c,C, the proof constructs a=sqrt((|C|+145)/(31*c)) and derives the contradiction. Thus even an additive constant cannot repair a positive global quadratic lower bound in this unbounded chart. `no_global_positive_quadratic_bound` is the C=0 corollary. This obstruction blocks removing the cutoff from this action-coercivity argument. It does NOT refute a local Gaussian limit, weighted-density estimates of another form, contraction or a physical mass gap. The chart-coordinate absolute-moment divergence discussed in1705 still requires its own Lean proof and actual-Gibbs transfer; it is not certified by the present global-action counterexample.
+
+### Independent checks and verification
+
+All17 independent Lean checks passed in27.8169723 seconds. They test both inverse identities with the correct domain, the explicit frame factor/permutation, both second-jet identities, Q(0), Q(constant(100,0,0))=310000, the scaled beta=4,t=1/2 bound, actual93-dimensional integrability, cutoff probability convergence and the global affine obstruction. Concrete counterexamples independently show Q/372<=S fails for all31 coordinates(100,0,0), and the single-link lower bound fails at y=(3,0,0) when its cutoff is omitted.
+
+Separate NumPy-only diagnostics reuse the independently enumerated actual72-face quaternion action: five rational pinned fields at three decreasing symmetric scales agree with the incidence Hessian prediction under the CORRECT factor2/permutation;25 scaled actual-action Gaussian bounds and nine explicit affine-bound counterexamples passed. The third-jet diagnostic was checked against its derived fifth-order correction rather than an unjustified tolerance. These finite differences and floating comparisons are diagnostics, not certified derivative/remainder estimates, a general parameter theorem or an actual Gibbs limit.
+
+The full root build passed7016 jobs in31.1434044 seconds. The canonical COMPLETE transitive safe-Foundation audit passed55036 declarations in42.2994637 seconds, permitting only propext, Classical.choice and Quot.sound. ALL69 public types were printed unabridged and reviewed, and all54 complete theorem proofs,14 definitions and one abbreviation were read. The complete persisted Foundation/AxiomAudit.lean verification passed in47.9066225 seconds. No sorry/admit/new axiom/native_decide, resource increase, compiler option, version/configuration change, trust alteration or reduced audit was introduced. The local `convert!` tactic resolves equivalent matrix-norm instances without introducing compiler options.
+
+Authenticated source integrity compares to1705's exact approval at bab688bb6140cd6316c80680095a914ea0d346db. Among2799 Foundation/root files, ONLY the three focused new modules, root imports and axiom ledger differ. ALL older mathematical files,3 pinned configurations,113 baseline original manuscripts and21 Yang-Mills originals(20 distinct hashes) are unchanged. ResearchSources remains unmodified and uncommitted; all unrelated planning drafts remain untouched. Evidence is C:/Users/ramir/AppData/Local/Temp/stardust-ym-1706-*.
+
+The user's publication-role separation has also been saved as a controlling preamble in AGENTS.md, STARDUST_REFLECTION_POLICY.md and STARDUST_CAMPAIGN_QUEUE.md, and the EXISTING reflection heartbeat updated without changing its target, daily trigger, active status, date gate or45-minute cap. Publication/manuscript/PDF maintenance and editorial README duties belong exclusively to the separate publication agent. No publication agent or parallel campaign was created. Existing drafts/history, mathematical reflection, research ledgers, proofs and campaign priorities are preserved. This checkpoint does no publication maintenance.
+
+### Exact next bottleneck and physical scope
+
+Next transfer the single-link two-jet identity through the full finite Wilson action, proving its ratio-coordinate scalar quadratic limit with the exact generator normalization. Then establish the31-fold product Haar transport and rescaling Jacobian, pointwise local density limit, normalized partition-function asymptotics and a justified dominated-convergence theorem using the verified local envelope. These are still OPEN; a Hessian, a chart density and a dominating function are not by themselves a completed convergence proof. Uniform perturbed-boundary saddle isolation, third-order parameter derivatives/Laplace estimates, the full harmonic-cubic Lean coefficient, stationary transfer lower obstructions at physical coupling-distance scales and scale/volume/continuum bridges remain OPEN. The constant372 explicitly depends on this31-link cell; no uniform physical four-dimensional theorem or mass gap is claimed. The route remains a precise test of the manuscript-motivated full-block asymptotic mechanism rather than broad auxiliary gauge-library expansion. No novelty claim is made for the classical chart identities or the local Laplace strategy.
+
+Exact-commit approval, secret scan and guarded PUBLIC main/research synchronization remain closure gates. This pre-commit ledger entry does not assert remote success. Repository visibility is exclusively user-controlled; master and every other research priority remain unchanged.

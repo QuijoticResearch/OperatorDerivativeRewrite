@@ -2745,3 +2745,6 @@ import Foundation.FourCubePinnedConcentration
 import Foundation.FourCubePinnedHessian
 
 import Foundation.SU2GaussianConeCoordinates
+
+import Foundation.SU2HemisphereJets
+import Foundation.FourCubeHemisphereCoercivity
