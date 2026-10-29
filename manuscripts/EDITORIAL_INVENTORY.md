@@ -71,3 +71,7 @@ The eight-page paper supplies complete common-field and finite-energy primitive 
 ## Eleventh paper: complex-root formalization companion
 
 Six pages, 38 exact source correspondences. A coherent finite-probability/complex-measure comparison with complete moment, tail, cutoff and phase-cancellation proofs. Basic analytic-versus-weak-limit distinction is classical and credited. Fixed-test novelty is unresolved; useful as a formalization companion rather than a manufactured new stochastic calculus. Every page inspected after clean compilation.
+
+## Twelfth paper: native time averages and fixed-past adjoints
+
+Eight pages. The previous open editorial proof obligations for average-domain membership and raw-past density are now discharged in the manuscript: folded Gaussian transition domination, original closed-graph membership, bounded chains, finite positive weighted laws/Fourier uniqueness and generated-past density. This supports full and fixed-past maximal-adjoint graph-dual time differentiation with actual joint pairings. Native slope norms tend to infinity along every vanishing one-sided step sequence; no temporal predictable integral or changing-past convergence claim is inferred. The original Gaussian domain obstruction and generic exact representability proof are included. All pages inspected; novelty remains unresolved.

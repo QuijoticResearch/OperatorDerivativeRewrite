@@ -1,0 +1,467 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.source_time_continuous",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 82,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem source_time_continuous : Continuous randomSourceL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L82"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.average_error",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 99,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem average_error (n : \u2115) {T : \u211d} (hT : 0 \u2264 T) :\n    \u2016mollifiedAverage n T - sourceAverage T\u2016 \u2264 T * Real.sqrt (bump n).rOut",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L99"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.joint_point_actual_ae",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 136,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem joint_point_actual_ae (t : \u211d\u22650) :\n    jointRealization (randomSourceL2 t) =\u1d50[IBMSourceLaws.jointMeasure] IBMConstructedSources.ibmValue t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L136"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.nativeAverage_eq_intrinsicAverage",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 173,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem nativeAverage_eq_intrinsicAverage (T : \u211d) :\n    nativeAverage T = (intrinsicAverage T : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L173"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.sourceAverage_source_graph",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 245,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem sourceAverage_source_graph (T : \u211d) :\n    (sourceAverage T, sourceGradient (sourceAverage T)) \u2208\n      (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L245"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTimeAveragedObservable.nativeAverage_hasDerivAt",
+      "file": "Foundation/IBMTimeAveragedObservable.lean",
+      "line": 284,
+      "source_sha256": "520d2a909107609dc47cf43e2611ff5a545f2b838a644dfb062d6c0213a752e3",
+      "declaration_header": "theorem nativeAverage_hasDerivAt {T : \u211d} (hT : 0 < T) :\n    HasDerivAt nativeAverage (jointRealization (randomSourceL2 T.toNNReal)) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTimeAveragedObservable.lean#L284"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUnmollifiedSourceDerivative.randomSource_graph",
+      "file": "Foundation/IBMUnmollifiedSourceDerivative.lean",
+      "line": 49,
+      "source_sha256": "641507455beafe51714a3e8746dc0d3be785fc89fd2ec11dcfa54e734cfaa003",
+      "declaration_header": "theorem randomSource_graph (t : \u211d\u22650) :\n    (randomSourceL2 t, gradient t) \u2208\n      (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUnmollifiedSourceDerivative.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUnmollifiedSourceDerivative.gradient_norm",
+      "file": "Foundation/IBMUnmollifiedSourceDerivative.lean",
+      "line": 66,
+      "source_sha256": "641507455beafe51714a3e8746dc0d3be785fc89fd2ec11dcfa54e734cfaa003",
+      "declaration_header": "theorem gradient_norm (t : \u211d\u22650) : \u2016gradient t\u2016 = \u2016randomSourceL2 t\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUnmollifiedSourceDerivative.lean#L66"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockObservationGraph.pullback_closed_graph",
+      "file": "Foundation/IBMClockObservationGraph.lean",
+      "line": 77,
+      "source_sha256": "a76add330b0a4dd4c62f08a04c534ca2753564194da8ce89b3ffaa007d1dff9c",
+      "declaration_header": "theorem pullback_closed_graph (h : CoefficientSpace) (hh : \u2016h\u2016 = 1)\n    {f g : GaussianCore.GaussianL2} (hfg : (f, g) \u2208 GaussianCore.closedDerivative.graph) :\n    (pullback h hh f, scalarTensor h (pullback h hh g)) \u2208 closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockObservationGraph.lean#L77"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockObservationGraph.reflected_actual_clock_graph",
+      "file": "Foundation/IBMClockObservationGraph.lean",
+      "line": 198,
+      "source_sha256": "a76add330b0a4dd4c62f08a04c534ca2753564194da8ce89b3ffaa007d1dff9c",
+      "declaration_header": "theorem reflected_actual_clock_graph (t : \u211d\u22650) (ht : 0 < t) (n : \u2115) (V : GaussianL2) :\n    \u2203 F : GaussianL2, \u2203 G : GaussianVectorL2,\n      (F, G) \u2208 closedCylindricalDerivative.graph \u2227\n      F =\u1d50[gaussianProduct] (fun \u03c9 => inner \u211d V\n        (IBMContinuousScenery.wholeLineScenery (IBMMollifier.kernel n)\n          |IBMConstructedSources.clockPath \u03c9 t|)) \u2227\n      G =\u1d50[gaussianProduct] (fun \u03c9 => (inner \u211d V\n        (IBMClockAverageCandidate.sourceColumn n |IBMConstructedSources.clockPath \u03c9 t|) *\n          BrownianSignIntegral.signum (IBMConstructedSources.clockPath \u03c9 t)) \u2022\n            IBMClockAverageCandidate.direction t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockObservationGraph.lean#L198"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFirstSourceClockGraph.mollified_clock_graph",
+      "file": "Foundation/IBMFirstSourceClockGraph.lean",
+      "line": 244,
+      "source_sha256": "b648955168b5e0590f1bcfb28235841f631bcb586fbbcea662c08a0cd4045887",
+      "declaration_header": "theorem mollified_clock_graph (n : \u2115) (t : \u211d\u22650) (ht : 0 < t) :\n    (flip (IBMRandomTimeHilbert.randomMollifiedL2 n t), clockGradient n t) \u2208\n      (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFirstSourceClockGraph.lean#L244"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedTransitionBound.overlap_nonneg",
+      "file": "Foundation/IBMFoldedTransitionBound.lean",
+      "line": 97,
+      "source_sha256": "b9f5b78bbd042954f5bc0a3a6edd0b8b02c419c4e56886736163c46d87090741",
+      "declaration_header": "theorem overlap_nonneg (n m : \u2115) (r q : \u211d) : 0 \u2264 overlap n m r q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedTransitionBound.lean#L97"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedTransitionBound.overlap_average_le",
+      "file": "Foundation/IBMFoldedTransitionBound.lean",
+      "line": 132,
+      "source_sha256": "b9f5b78bbd042954f5bc0a3a6edd0b8b02c419c4e56886736163c46d87090741",
+      "declaration_header": "theorem overlap_average_le (n m : \u2115) (r a : \u211d) {v : \u211d\u22650} (hv : v \u2260 0) :\n    (\u222b y, overlap n m r |y| \u2202gaussianReal a v) \u2264 2 * peak v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedTransitionBound.lean#L132"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedTransitionBound.clockPath_overlap_le",
+      "file": "Foundation/IBMFoldedTransitionBound.lean",
+      "line": 224,
+      "source_sha256": "b9f5b78bbd042954f5bc0a3a6edd0b8b02c419c4e56886736163c46d87090741",
+      "declaration_header": "theorem clockPath_overlap_le (n m : \u2115) (s t : \u211d\u22650) (hst : s < t) :\n    (\u222b \u03c9, overlap n m |IBMConstructedSources.clockPath \u03c9 s|\n      |IBMConstructedSources.clockPath \u03c9 t| \u2202InfiniteGaussian.gaussianProduct) \u2264\n      2 * peak (nndist (t : \u211d) (s : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedTransitionBound.lean#L224"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockAverageGraph.mollified_average_clock_graph",
+      "file": "Foundation/IBMClockAverageGraph.lean",
+      "line": 77,
+      "source_sha256": "2930f21b6ce171d295d1107d838b60c51e7fe12a3706931254c7de21349261a9",
+      "declaration_header": "theorem mollified_average_clock_graph (n : \u2115) {T : \u211d} (hT : 0 \u2264 T) :\n    (IBMFirstSourceClockGraph.flip (IBMTimeAveragedObservable.mollifiedAverage n T),\n      averageGradient n T) \u2208\n      (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockAverageGraph.lean#L77"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockAverageGraph.averageGradient_uniform_energy",
+      "file": "Foundation/IBMClockAverageGraph.lean",
+      "line": 135,
+      "source_sha256": "2930f21b6ce171d295d1107d838b60c51e7fe12a3706931254c7de21349261a9",
+      "declaration_header": "theorem averageGradient_uniform_energy (n : \u2115) {T : \u211d} (hT : 0 \u2264 T) :\n    \u2016averageGradient n T\u2016 ^ 2 \u2264 8 * IBMFoldedTransitionBound.peak 1 * T ^ 2 * Real.sqrt T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockAverageGraph.lean#L135"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockAverageGraph.clock_domain_of_bounded_graph_limit",
+      "file": "Foundation/IBMClockAverageGraph.lean",
+      "line": 145,
+      "source_sha256": "2930f21b6ce171d295d1107d838b60c51e7fe12a3706931254c7de21349261a9",
+      "declaration_header": "theorem clock_domain_of_bounded_graph_limit (u : \u2115 \u2192 ScalarSpace) (v : \u2115 \u2192 VectorSpace)\n    (f : ScalarSpace) (C : \u211d) (hC : 0 \u2264 C)\n    (hg : \u2200 n, (u n, v n) \u2208 clockDerivative.graph)\n    (hu : Tendsto u atTop (\ud835\udcdd f)) (hv : \u2200 n, \u2016v n\u2016 \u2264 C) :\n    \u2203 hf : f \u2208 clockDerivative.domain, \u2016clockDerivative \u27e8f, hf\u27e9\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockAverageGraph.lean#L145"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockAverageGraph.nativeAverage_clock_domain",
+      "file": "Foundation/IBMClockAverageGraph.lean",
+      "line": 245,
+      "source_sha256": "2930f21b6ce171d295d1107d838b60c51e7fe12a3706931254c7de21349261a9",
+      "declaration_header": "theorem nativeAverage_clock_domain {T : \u211d} (hT : 0 \u2264 T) :\n    \u2203 hf : ProductL2Curry.curryEquiv gaussianProduct gaussianProduct\n        (IBMTimeAveragedObservable.nativeAverage T) \u2208 clockDerivative.domain,\n      \u2016clockDerivative \u27e8_, hf\u27e9\u2016 ^ 2 \u2264\n        8 * IBMFoldedTransitionBound.peak 1 * T ^ 2 * Real.sqrt T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockAverageGraph.lean#L245"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockAverageGraph.nativeAverage_path_integral_ae",
+      "file": "Foundation/IBMClockAverageGraph.lean",
+      "line": 259,
+      "source_sha256": "2930f21b6ce171d295d1107d838b60c51e7fe12a3706931254c7de21349261a9",
+      "declaration_header": "theorem nativeAverage_path_integral_ae (T : \u211d) :\n    IBMTimeAveragedObservable.nativeAverage T =\u1d50[IBMSourceLaws.jointMeasure]\n      (fun \u03c9 => \u222b t : \u211d, IBMConstructedSources.ibmValue t.toNNReal \u03c9 \u2202window T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockAverageGraph.lean#L259"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteAverageCore.nativeAverage_mem",
+      "file": "Foundation/IBMFiniteAverageCore.lean",
+      "line": 39,
+      "source_sha256": "031d7cd22e8edb607947ad545489bbed3cdb46ffa537006a96bf663cce1d3b8b",
+      "declaration_header": "theorem nativeAverage_mem (T : \u211d) (hT : 0 \u2264 T) : nativeAverage T \u2208 intrinsicCore",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteAverageCore.lean#L39"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteAverageCore.bounded_chain",
+      "file": "Foundation/IBMFiniteAverageCore.lean",
+      "line": 48,
+      "source_sha256": "031d7cd22e8edb607947ad545489bbed3cdb46ffa537006a96bf663cce1d3b8b",
+      "declaration_header": "theorem bounded_chain (f : JointL2) (hf : f \u2208 intrinsicCore)\n    (\u03c6 d\u03c6 : \u211d \u2192 \u211d) (hd : \u2200 x, HasDerivAt \u03c6 (d\u03c6 x) x) (hc : Continuous d\u03c6)\n    (A B : \u211d) (hA : \u2200 x, \u2016\u03c6 x\u2016 \u2264 A) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B) :\n    \u2203 F : JointL2, F \u2208 intrinsicCore \u2227\n      F =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => \u03c6 (f \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteAverageCore.lean#L48"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteAverageCore.cosine_average_cylinder",
+      "file": "Foundation/IBMFiniteAverageCore.lean",
+      "line": 113,
+      "source_sha256": "031d7cd22e8edb607947ad545489bbed3cdb46ffa537006a96bf663cce1d3b8b",
+      "declaration_header": "theorem cosine_average_cylinder {I : Type*} [Fintype I] (w t : I \u2192 \u211d)\n    (ht : \u2200 i, 0 \u2264 t i) :\n    \u2203 F : JointL2, F \u2208 intrinsicCore \u2227\n      F =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => Real.cos (\u2211 i, w i * nativeAverage (t i) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteAverageCore.lean#L113"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFiniteAverageCore.sine_average_cylinder",
+      "file": "Foundation/IBMFiniteAverageCore.lean",
+      "line": 125,
+      "source_sha256": "031d7cd22e8edb607947ad545489bbed3cdb46ffa537006a96bf663cce1d3b8b",
+      "declaration_header": "theorem sine_average_cylinder {I : Type*} [Fintype I] (w t : I \u2192 \u211d)\n    (ht : \u2200 i, 0 \u2264 t i) :\n    \u2203 F : JointL2, F \u2208 intrinsicCore \u2227\n      F =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => Real.sin (\u2211 i, w i * nativeAverage (t i) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFiniteAverageCore.lean#L125"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAverageCore.nativeAverage_mem_past",
+      "file": "Foundation/IBMPastAverageCore.lean",
+      "line": 25,
+      "source_sha256": "f334e1719d4ec3bbb847a1a6a630685226f5e60e827c0b8a5790fb9dc0b744dd",
+      "declaration_header": "theorem nativeAverage_mem_past {r : \u211d} {T : \u211d\u22650} (hr : r \u2264 T) :\n    nativeAverage r \u2208 past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAverageCore.lean#L25"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAverageCore.point_mem_past_core_closure",
+      "file": "Foundation/IBMPastAverageCore.lean",
+      "line": 72,
+      "source_sha256": "f334e1719d4ec3bbb847a1a6a630685226f5e60e827c0b8a5790fb9dc0b744dd",
+      "declaration_header": "theorem point_mem_past_core_closure {t : \u211d} {T : \u211d\u22650} (ht : 0 < t) (hT : t \u2264 T) :\n    jointRealization (IBMRandomTimeHilbert.randomSourceL2 t.toNNReal) \u2208\n      (pastCore T).topologicalClosure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAverageCore.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastWeightedLaws.annihilator_finite_weighted_laws",
+      "file": "Foundation/IBMPastWeightedLaws.lean",
+      "line": 48,
+      "source_sha256": "6032a8fde3a812beb4819dd42309711709a807303a64078cfe21621f4da50b2b",
+      "declaration_header": "theorem annihilator_finite_weighted_laws {I : Type*} [Fintype I]\n    (T : \u211d\u22650) (H : JointL2) (hH : H \u2208 (pastCore T)\u15ee) (t : I \u2192 \u211d)\n    (ht : \u2200 i, 0 \u2264 t i) (hT : \u2200 i, t i \u2264 T) :\n    (IBMSourceLaws.jointMeasure.withDensity (fun \u03c9 => ENNReal.ofReal (H \u03c9))).map\n      (pointObservation t) =\n      (IBMSourceLaws.jointMeasure.withDensity (fun \u03c9 => ENNReal.ofReal (-H \u03c9))).map\n        (pointObservation t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastWeightedLaws.lean#L48"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastWeightedLaws.annihilator_finite_event",
+      "file": "Foundation/IBMPastWeightedLaws.lean",
+      "line": 86,
+      "source_sha256": "6032a8fde3a812beb4819dd42309711709a807303a64078cfe21621f4da50b2b",
+      "declaration_header": "theorem annihilator_finite_event {I : Type*} [Fintype I]\n    (T : \u211d\u22650) (H : JointL2) (hH : H \u2208 (pastCore T)\u15ee) (t : I \u2192 \u211d)\n    (ht : \u2200 i, 0 \u2264 t i) (hT : \u2200 i, t i \u2264 T)\n    (S : Set (EuclideanSpace \u211d I)) (hS : MeasurableSet S) :\n    (\u222b \u03c9 in pointObservation t \u207b\u00b9' S, H \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastWeightedLaws.lean#L86"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastCoreDensity.natural_eq_pastSigma",
+      "file": "Foundation/IBMPastCoreDensity.lean",
+      "line": 28,
+      "source_sha256": "28b4b650f2acdcd95463b418332541033eb7de76bfa36b6b12ed7e1be0fab101",
+      "declaration_header": "theorem natural_eq_pastSigma (T : \u211d\u22650) :\n    IBMNaturalFiltrationObstruction.naturalFiltration T = pastSigma T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastCoreDensity.lean#L28"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastCoreDensity.core_closure_eq_past",
+      "file": "Foundation/IBMPastCoreDensity.lean",
+      "line": 87,
+      "source_sha256": "28b4b650f2acdcd95463b418332541033eb7de76bfa36b6b12ed7e1be0fab101",
+      "declaration_header": "theorem core_closure_eq_past (T : \u211d\u22650) :\n    (pastCore T).topologicalClosure = IBMNaturalFiltrationObstruction.past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastCoreDensity.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCoreDensity.core_closure_eq_intrinsic",
+      "file": "Foundation/IBMIntrinsicCoreDensity.lean",
+      "line": 100,
+      "source_sha256": "365763c2bc5e68898ebded69ea33ee6343277851598a9b00bee4e158c9c2aa7e",
+      "declaration_header": "theorem core_closure_eq_intrinsic : intrinsicCore.topologicalClosure = IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCoreDensity.lean#L100"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.joint_domain_iff",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 44,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem joint_domain_iff (f : IntrinsicSpace) :\n    f \u2208 jointDerivative.domain \u2194 (f : JointL2) \u2208 intrinsicCore",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.jointDerivative_closed",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 73,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem jointDerivative_closed : jointDerivative.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.jointDerivative_dense",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 90,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem jointDerivative_dense : Dense (jointDerivative.domain : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L90"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastIntrinsicOperators.past_domain_iff",
+      "file": "Foundation/IBMPastIntrinsicOperators.lean",
+      "line": 35,
+      "source_sha256": "6aa78a05c99156b29f966b5e54a7eac4aabbbd8ee3fa10c00800cf529324f693",
+      "declaration_header": "theorem past_domain_iff (T : \u211d\u22650) (f : pastSpace T) :\n    f \u2208 (pastDerivative T).domain \u2194 (f.val : JointL2) \u2208 pastCore T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastIntrinsicOperators.lean#L35"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastIntrinsicOperators.pastDerivative_closed",
+      "file": "Foundation/IBMPastIntrinsicOperators.lean",
+      "line": 41,
+      "source_sha256": "6aa78a05c99156b29f966b5e54a7eac4aabbbd8ee3fa10c00800cf529324f693",
+      "declaration_header": "theorem pastDerivative_closed (T : \u211d\u22650) : (pastDerivative T).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastIntrinsicOperators.lean#L41"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastIntrinsicOperators.pastDerivative_dense",
+      "file": "Foundation/IBMPastIntrinsicOperators.lean",
+      "line": 44,
+      "source_sha256": "6aa78a05c99156b29f966b5e54a7eac4aabbbd8ee3fa10c00800cf529324f693",
+      "declaration_header": "theorem pastDerivative_dense (T : \u211d\u22650) :\n    Dense ((pastDerivative T).domain : Set (pastSpace T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastIntrinsicOperators.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastIntrinsicOperators.integration_by_parts",
+      "file": "Foundation/IBMPastIntrinsicOperators.lean",
+      "line": 66,
+      "source_sha256": "6aa78a05c99156b29f966b5e54a7eac4aabbbd8ee3fa10c00800cf529324f693",
+      "declaration_header": "theorem integration_by_parts (T : \u211d\u22650) (u : (pastDivergence T).domain)\n    (f : (pastDerivative T).domain) :\n    inner \u211d (pastDivergence T u) (f : pastSpace T) =\n      inner \u211d (u : JointFieldSpace) (pastDerivative T f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastIntrinsicOperators.lean#L66"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPointClockDomainObstruction.actual_point_not_partial_clock",
+      "file": "Foundation/IBMPointClockDomainObstruction.lean",
+      "line": 63,
+      "source_sha256": "c3e9d469126606c680f09989ea7ea0c4efbfc7b6312d9079922a094e7ba4c2e5",
+      "declaration_header": "theorem actual_point_not_partial_clock (t : \u211d\u22650) (ht : 0 < t) :\n    ProductL2Curry.flip gaussianProduct gaussianProduct (IBMRandomTimeHilbert.randomSourceL2 t) \u2209\n      (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPointClockDomainObstruction.lean#L63"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPointClockDomainObstruction.actual_point_not_joint_domain",
+      "file": "Foundation/IBMPointClockDomainObstruction.lean",
+      "line": 91,
+      "source_sha256": "c3e9d469126606c680f09989ea7ea0c4efbfc7b6312d9079922a094e7ba4c2e5",
+      "declaration_header": "theorem actual_point_not_joint_domain (t : \u211d\u22650) (ht : 0 < t) :\n    intrinsicCurve t \u2209 IBMJointIntrinsicDerivative.jointDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPointClockDomainObstruction.lean#L91"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.graph_agreement",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 67,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem graph_agreement (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E))\n    {u : E} {V : F} (hu : (u, V) \u2208 T.graph) : embed T hd V = derivative T hd u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L67"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.derivative_norm_le",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 49,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem derivative_norm_le (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E)) (f : E) :\n    \u2016derivative T hd f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.representable_iff_domain",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 75,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem representable_iff_domain (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed)\n    (hd : Dense (T.domain : Set E)) (f : E) :\n    (\u2203 V : F, embed T hd V = derivative T hd f) \u2194 f \u2208 T.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L75"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.graph_error_bound",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 112,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem graph_error_bound (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E))\n    {u : E} {V : F} (hu : (u, V) \u2208 T.graph) (f : E) :\n    \u2016embed T hd V - derivative T hd f\u2016 \u2264 \u2016u - f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L112"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEscapeEnergy.output_norm_tendsto_atTop",
+      "file": "Foundation/ClosedOperatorEscapeEnergy.lean",
+      "line": 46,
+      "source_sha256": "67951423f242ced23b16c8629c137feecaa54760916e30550c1fa8b4ebcebf2e",
+      "declaration_header": "theorem output_norm_tendsto_atTop (T : E \u2192\u2097.[\u211d] F)\n    (hT : T.IsClosed) (hd : Dense (T.domain : Set E))\n    {u : \u2115 \u2192 E} {v : \u2115 \u2192 F} {f : E}\n    (hg : \u2200 n, (u n, v n) \u2208 T.graph) (hu : Tendsto u atTop (\ud835\udcdd f))\n    (hf : f \u2209 T.domain) : Tendsto (fun n => \u2016v n\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEscapeEnergy.lean#L46"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMAverageNativeTimeObstruction.actual_average_hasDerivAt",
+      "file": "Foundation/IBMAverageNativeTimeObstruction.lean",
+      "line": 18,
+      "source_sha256": "9be990ad9195e1baced7b9eb01c24e53d66e1c49bb4f0bfc5fef6b7cc1363ce3",
+      "declaration_header": "theorem actual_average_hasDerivAt {T : \u211d} (hT : 0 < T) :\n    HasDerivAt (fun t : \u211d => intrinsicAverage (t.toNNReal:\u211d)) (intrinsicCurve T.toNNReal) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMAverageNativeTimeObstruction.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMAverageNativeTimeObstruction.nativeGradient_not_differentiableAt",
+      "file": "Foundation/IBMAverageNativeTimeObstruction.lean",
+      "line": 43,
+      "source_sha256": "9be990ad9195e1baced7b9eb01c24e53d66e1c49bb4f0bfc5fef6b7cc1363ce3",
+      "declaration_header": "theorem nativeGradient_not_differentiableAt {T : \u211d} (hT : 0 < T) :\n    \u00ac DifferentiableAt \u211d (fun t : \u211d => averageGradient t.toNNReal) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMAverageNativeTimeObstruction.lean#L43"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMAverageNativeTimeObstruction.native_time_slope_norm_escape",
+      "file": "Foundation/IBMAverageNativeTimeObstruction.lean",
+      "line": 51,
+      "source_sha256": "9be990ad9195e1baced7b9eb01c24e53d66e1c49bb4f0bfc5fef6b7cc1363ce3",
+      "declaration_header": "theorem native_time_slope_norm_escape {T : \u211d} (hT : 0 < T) (e : \u2115 \u2192 \u211d)\n    (he : \u2200 n, 0 < e n) (he0 : Tendsto e atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => \u2016(e n)\u207b\u00b9 \u2022\n      (averageGradient (T+e n).toNNReal-averageGradient T.toNNReal)\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMAverageNativeTimeObstruction.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.average_graphDual_hasDerivAt",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 34,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem average_graphDual_hasDerivAt {T : \u211d} (hT : 0 < T) :\n    HasDerivAt (fun t : \u211d => embed (averageGradient t.toNNReal))\n      (pointDerivative T.toNNReal) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L34"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.actual_adjoint_time_pairing",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 45,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem actual_adjoint_time_pairing {T : \u211d} (hT : 0 < T)\n    (v : jointDivergence.domain) :\n    HasDerivAt (fun t : \u211d => embed (averageGradient t.toNNReal) (testOf v))\n      (\u222b \u03c9, IBMConstructedSources.ibmValue T.toNNReal \u03c9 *\n        ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9 \u2202IBMSourceLaws.jointMeasure) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L45"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.full_past_dual_time_derivative",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 177,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem full_past_dual_time_derivative (H : \u211d\u22650) {T : \u211d} (hT : 0 < T) (hTH : T \u2264 H) :\n    HasDerivWithinAt (fun t : \u211d => pastEmbed H (averageGradient t.toNNReal))\n      (pastWeak H (intrinsicCurve T.toNNReal)) (Set.Iic (H:\u211d)) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L177"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.past_point_not_native",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 198,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem past_point_not_native (H T : \u211d\u22650) (hT : 0 < T) (hTH : T \u2264 H) :\n    \u00ac \u2203 V : JointFieldSpace, pastEmbed H V = pastWeak H (intrinsicCurve T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L198"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.past_point_actual_pairing",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 228,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem past_point_actual_pairing (H T : \u211d\u22650) (v : (pastDivergence H).domain) :\n    pastWeak H (intrinsicCurve T) (pastTestOf H v) =\n      \u222b \u03c9, IBMConstructedSources.ibmValue T \u03c9 *\n        (((pastDivergence H v : pastSpace H) : IntrinsicSpace) : JointL2) \u03c9\n          \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L228"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.past_left_slope_convergence",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 252,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem past_left_slope_convergence (H : \u211d\u22650) {T : \u211d} (hT : 0 < T) (hTH : T \u2264 H)\n    (e : \u2115 \u2192 \u211d) (he : \u2200 n, e n < 0) (he0 : Tendsto e atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => pastEmbed H ((e n)\u207b\u00b9 \u2022\n      (averageGradient (T+e n).toNNReal-averageGradient T.toNNReal))) atTop\n      (\ud835\udcdd (pastWeak H (intrinsicCurve T.toNNReal)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L252"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPastAdjointTimeCalculus.native_left_slope_escape",
+      "file": "Foundation/IBMPastAdjointTimeCalculus.lean",
+      "line": 266,
+      "source_sha256": "2249bb38367b92f7c178e032ed53f925219db04062a63d47415d1c821f87950d",
+      "declaration_header": "theorem native_left_slope_escape {T : \u211d} (hT : 0 < T) (e : \u2115 \u2192 \u211d)\n    (he : \u2200 n, e n < 0) (he0 : Tendsto e atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => \u2016(e n)\u207b\u00b9 \u2022\n      (averageGradient (T+e n).toNNReal-averageGradient T.toNNReal)\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPastAdjointTimeCalculus.lean#L266"
+    }
+  ],
+  "paper_sections": {
+    "2": "actual L2 curve, scenery graph and fundamental theorem",
+    "3": "actual mollified clock graphs, folded covariance, bounded graph limit",
+    "4": "bounded chain tests, actual finite weighted laws, raw-past density",
+    "5": "original point clock obstruction and native exclusions",
+    "6": "generic closed-operator graph duals applied to exact native/full-past operators"
+  },
+  "human_reorganization": [
+    "Canonical Brownian white-noise coefficient spaces are isometric realizations of the library separable coefficient spaces. Unused independent Gaussian coordinates are explicitly described, not assumed observed.",
+    "The exact frozen 8*peak(1)*T^2*sqrt(T) energy bound is reconstructed using the folded transition density and a loose row integral estimate; no sharper unformalized constant is advertised.",
+    "Average clock membership uses a weakly convergent bounded actual-gradient subsequence and weak closedness of a linear graph. It does not require or claim strong mollifier-gradient convergence.",
+    "Density is reconstructed with average quotients, bounded sine/cosine tests, finite signed observation-law Fourier uniqueness and a pi-lambda argument. It does not assume a Gaussian observation law or inherited density under arbitrary restriction.",
+    "The time result uses the native joint derivative with full intersection domain and maximal adjoints on fixed raw observed pasts. These are different operators/test spaces from the ambient clock-only companion.",
+    "The common-field point obstruction and generic graph-dual representability/norm-escape lemmas are included as complete human proof reconstructions, with the earlier companion as additional context."
+  ],
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/1005.3801",
+      "review": "Primary simple Brownian-time model definitions previously inspected; author/journal metadata rechecked. Excursion-based and signed-clock variants not conflated."
+    },
+    {
+      "url": "https://doi.org/10.1155/2016/8694365",
+      "review": "Primary Gaussian derivative/adjoint conventions inspected; composed process is not declared Gaussian."
+    },
+    {
+      "url": "https://arxiv.org/abs/1312.0818",
+      "review": "Primary model and introduction inspected: signed Brownian clock and fractional scenery, different from present reflected clock and native-domain time result."
+    }
+  ],
+  "novelty": "UNRESOLVED; preliminary searches are not an exhaustive priority audit"
+}

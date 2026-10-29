@@ -1,0 +1,532 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
+\newcommand{\D}{\mathcal D}\newcommand{\G}{\mathcal G}
+\newcommand{\Hh}{\mathcal H}\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Time integration and adjoint-graph differentiation\\for reflected-clock Brownian observables}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For independent Brownian motions $B,W$, let $Z_t=B(|W_t|)$ and
+$A_T=\int_0^T Z_s\,ds$. Although $Z_T$ is outside the original clock
+Gaussian Sobolev domain at every positive time, $A_T$ belongs to the
+intersection of the two original Gaussian derivative domains. A folded
+Gaussian transition bound gives a uniform finite clock energy for spatially
+mollified averages, and closedness gives the actual average-domain result.
+Bounded smooth functions of averages form a dense derivative domain in
+each fixed raw observed past. For the resulting closed derivative and its
+maximal Hilbert adjoint, the embedded gradient of $A_T$ is differentiable
+in adjoint-graph-dual norm, including left differentiation at the past
+endpoint. Its derivative pairs with actual $Z_T$ but has no native field
+representative. Along every vanishing positive or negative time-step
+sequence, the native gradient-slope norms diverge. These results give
+precise source-valued operator identities, not an observed-filtration
+It\^o or Clark--Ocone formula. They reconstruct frozen formal results;
+novelty remains unresolved.
+\end{abstract}
+
+\section{The process, operator and statement}
+Let $B$ be a two-sided standard Brownian scenery and $W$ an independent
+one-sided standard Brownian motion, on their product Gaussian probability
+space $(\Omega,\mathcal F,P)$. Put
+\[
+ Z_t=B(|W_t|),\qquad A_T=\int_0^T Z_s\,ds\quad(t,T\geq0).
+\]
+Only the positive scenery branch is used by $Z$. Extending it independently
+to negative arguments permits spatial convolution. This is the simple
+Brownian-time Brownian model of~\cite{AZ}; an excursion does not select a
+fresh scenery, and the clock is reflected. The signed-clock process
+$B(W_t)$ is a different model.
+
+Let $D_B,D_W$ be the original closed Gaussian gradients on the product
+space, acting respectively in the scenery and clock factors. Their
+coefficient Hilbert spaces can be realized as $H_B=L^2(\R)$ and
+$H_W=L^2(\R_+)$, using white noise. Equivalently one can use the frozen
+library's isometric separable Gaussian coordinates. Additional unused
+independent coordinates tensor the graph with constants; averaging over
+them gives the reverse domain implication. All fields below retain the
+ambient Gaussian codomain
+\[
+ \G=L^2(P;H_B)\oplus L^2(P;H_W).
+\]
+They are not assumed observable or predictable in physical time.
+
+Set $E=L^2(\sigma(Z_s:s\geq0),P)$, understood as the closed subspace of
+$L^2(P)$ with measurable representatives, and define the \emph{native}
+operator
+\begin{equation}\label{eq:domain}
+ \D f=(D_Bf,D_Wf),\qquad
+ D(\D)=E\cap D(D_B)\cap D(D_W).
+\end{equation}
+The domain is the entire stated intersection. For fixed $H\geq0$ let
+\[
+ \mathcal F_H^Z=\sigma(Z_s:0\leq s\leq H),\qquad
+ E_H=L^2(\mathcal F_H^Z,P),\qquad \D_H=\D|_{E_H}.
+\]
+This is the raw observed past; $L^2$ always identifies almost-everywhere
+equal variables. Taking that quotient does not assert right continuity
+of the filtration.
+
+For a closed densely defined operator $T:E_0\supset D(T)\to\G$, write
+\[
+ \mathcal T_T=D(T^*),\quad
+ \|v\|_{\mathcal T_T}^2=\|v\|_{\G}^2+\|T^*v\|_{E_0}^2,
+\]
+and define continuous linear functionals
+\begin{equation}\label{eq:dual}
+ (j_TV)(v)=\langle V,v\rangle,\qquad
+ (d_Tf)(v)=\langle f,T^*v\rangle.
+\end{equation}
+The adjoint domain here is maximal: $v\in D(T^*)$ exactly when
+$f\mapsto\langle v,Tf\rangle$ is bounded in the $E_0$ norm on $D(T)$.
+
+\begin{theorem}\label{thm:main}
+The operators $\D$ and $\D_H$ are closed and densely defined. For every
+$T\geq0$, $A_T\in D(\D)$; if $T\leq H$, also $A_T\in D(\D_H)$ and
+$\D_H A_T=\D A_T$. Write $V_T=\D A_T$. For every $T>0$,
+\begin{equation}\label{eq:fulltime}
+ \frac{d}{dT}j_{\D}V_T=d_{\D}Z_T
+ \quad\hbox{in }\mathcal T_{\D}'\hbox{ norm}.
+\end{equation}
+For $0<T\leq H$ and every $h_n<0$ with $h_n\to0$,
+\begin{equation}\label{eq:left}
+ j_{\D_H}\frac{V_{T+h_n}-V_T}{h_n}
+ \longrightarrow d_{\D_H}Z_T
+ \quad\hbox{in }\mathcal T_{\D_H}'\hbox{ norm},
+\end{equation}
+where the finitely many terms with $T+h_n<0$ may be omitted. The limit is
+nonzero and has no representative $j_{\D_H}V$ with $V\in\G$. Moreover
+\begin{equation}\label{eq:escape}
+ \left\|\frac{V_{T+h_n}-V_T}{h_n}\right\|_{\G}\longrightarrow\infty.
+\end{equation}
+The full operator has the same nonrepresentability, and
+\eqref{eq:escape} also holds for every positive vanishing step sequence.
+For each $v\in D(\D_H^*)$ the fixed-past derivative has the actual pairing
+\begin{equation}\label{eq:actual}
+ (d_{\D_H}Z_T)(v)=\E[Z_T\,\D_H^*v].
+\end{equation}
+\end{theorem}
+
+The proof separates average-domain membership, density on the observed
+past, and the change of topology needed for time differentiation. None
+of these steps assumes a Gaussian law for $Z$ or a predictable
+representation property for its observed filtration.
+
+\section{Time continuity and scenery differentiation}
+Let $e_r=\mathbf1_{(0,r]}\in H_B$ for $r\geq0$. The scenery white-noise
+isometry sends $e_r$ to $B(r)$, and
+\[
+ \|B(r)-B(q)\|_{L^2(B)}^2=|r-q|\quad(r,q\geq0).
+\]
+Conditioning on the entire clock gives
+\begin{equation}\label{eq:continuity}
+ \|Z_t-Z_s\|_2^2
+ =\E\bigl||W_t|-|W_s|\bigr|
+ \leq\E|W_t-W_s|
+ =\sqrt{2/\pi}\,|t-s|^{1/2}.
+\end{equation}
+Consequently $Z$ is continuous as an $L^2(P)$-valued curve. It is Bochner
+integrable on compact time intervals, and the integral agrees almost
+surely with the integral of its continuous paths, by Fubini. The
+fundamental theorem of calculus gives
+\begin{equation}\label{eq:FTC}
+ A'_T=Z_T\quad\hbox{in }L^2(P),\qquad T>0.
+\end{equation}
+The same derivative holds in the closed subspaces $E$ and, from the
+left for $T\leq H$, $E_H$.
+
+For fixed clock sample, $B(|W_t|)$ is first Gaussian chaos in $B$, with
+scenery gradient $e_{|W_t|}$. This gives the product closed graph and
+\[
+ \|D_BZ_t\|_{L^2(P;H_B)}^2=\E|W_t|=\sqrt{2t/\pi}.
+\]
+Here graph membership is genuine: approximate $e_r$ by finite orthogonal
+projections in the scenery coefficient space, and use dominated
+convergence with majorant $|W_t|$ for the squared errors. The finite
+linear Gaussian graphs converge strongly to the stated product graph.
+Integrating that graph yields
+\begin{equation}\label{eq:sourceaverage}
+ A_T\in D(D_B),\qquad
+ D_BA_T=\int_0^T e_{|W_s|}\,ds.
+\end{equation}
+Indeed both value and gradient are Bochner integrable: the gradient norm
+is a constant times $s^{1/4}$, which is integrable on $[0,T]$.
+A closed linear graph contains the integral of any integrable curve
+in that graph, by approximation with simple graph-valued functions.
+
+\section{The folded transition estimate and average clock domain}
+Choose the frozen nonnegative smooth probability mollifiers $\rho_n$,
+supported in $[-\epsilon_n,\epsilon_n]$, $\epsilon_n=2/(n+1)$, and let
+\[
+ B_n(r)=\int\rho_n(u)B(r-u)\,du,\quad
+ Z_t^{(n)}=B_n(|W_t|),\quad A_T^{(n)}=\int_0^T Z_s^{(n)}\,ds.
+\]
+The Brownian increment metric and Minkowski's inequality give, uniformly
+in $r\in\R$,
+\[
+ \|B_n(r)-B(r)\|_{L^2(B)}
+ \leq\int\rho_n(u)\sqrt{|u|}\,du\leq\sqrt{\epsilon_n}.
+\]
+Independence therefore gives
+\begin{equation}\label{eq:averageerror}
+ \|A_T^{(n)}-A_T\|_2\leq T\sqrt{\epsilon_n}.
+\end{equation}
+These mollified approximants need not be observed functions of $Z$;
+they are used only in the original ambient clock graph.
+
+Put $q_s=\mathbf1_{(0,s]}\in H_W$ and $\operatorname{sgn}(0)=0$.
+In the original product Gaussian clock domain,
+\begin{equation}\label{eq:clockgraph}
+ D_W Z_s^{(n)}=B_n'(|W_s|)\operatorname{sgn}(W_s)q_s,
+ \qquad
+ G_T^{(n)}=D_W A_T^{(n)}=\int_0^T D_WZ_s^{(n)}\,ds.
+\end{equation}
+To justify the point graph without assuming the scenery path has a
+classical derivative before mollification, expand $B_n(r)$ in a scenery
+orthonormal basis. Its scalar coefficients have derivative in the
+original one-dimensional Gaussian graph after $r=|W_s|$. The absolute
+value has weak derivative $\operatorname{sgn}$; approximating it by
+$\sqrt{x^2+\delta^2}$ and then taking the Gaussian closed graph proves
+that assertion. For the scenery sums, the square norms of the derivative
+coefficients sum to $\|\rho_n\|_2^2$, uniformly in $r$. Thus the value
+and derivative sums converge in the product $L^2$ graph. At $s=0$ the
+random value is clock independent and the derivative is zero. On $[0,T]$
+the derivative norms are bounded by $\sqrt{s}\|\rho_n\|_2$, so graph
+integration gives the second equality in \eqref{eq:clockgraph}.
+
+\begin{lemma}\label{lem:folded}
+For every $n$ and $T\geq0$,
+\begin{equation}\label{eq:energy}
+ \|G_T^{(n)}\|_{L^2(P;H_W)}^2
+ \leq\frac8{\sqrt{2\pi}}T^{5/2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+By the scenery white-noise isometry,
+\[
+ \E_B[B_n'(r)B_n'(q)]
+ =k_n(r,q):=\int_{\R}\rho_n(r-x)\rho_n(q-x)\,dx\geq0.
+\]
+For fixed $r$, $\int_{\R}k_n(r,q)\,dq=1$ by Tonelli and normalization.
+For $0\leq s<t$, conditional on $W_s=y$, the density of $|W_t|$ on
+$q>0$ is
+\[
+ p_{t-s}(q-y)+p_{t-s}(-q-y)
+ \leq\frac2{\sqrt{2\pi(t-s)}}.
+\]
+Hence $\E k_n(|W_s|,|W_t|)\leq2/\sqrt{2\pi(t-s)}$.
+In the double integral for the squared norm of \eqref{eq:clockgraph},
+the coefficient inner product is $\langle q_s,q_t\rangle=\min(s,t)$.
+After scenery averaging, the signs have absolute value at most one and
+$k_n\geq0$. Thus off the time diagonal the absolute integrand is bounded
+by
+\[
+ \frac{2T}{\sqrt{2\pi}}|t-s|^{-1/2}.
+\]
+For each fixed mollifier, its actual diagonal covariance is finite and
+is not assigned zero. The diagonal is a product-Lebesgue null set, so it
+does not affect integration. The bound is integrable, since
+\[
+ \int_0^T|t-s|^{-1/2}\,dt
+ =2\sqrt{s}+2\sqrt{T-s}\leq4\sqrt T.
+\]
+Integrating over $s\in[0,T]$ proves \eqref{eq:energy}. The same domination
+justifies the double integrals and conditioning. The constant is a
+convenient uniform estimate, not a sharp energy formula.
+\end{proof}
+
+\begin{proposition}\label{prop:average}
+The actual average $A_T$ belongs to $D(\D)$ for every $T\geq0$. Its
+original clock gradient satisfies
+$\|D_WA_T\|_2^2\leq8T^{5/2}/\sqrt{2\pi}$.
+\end{proposition}
+\begin{proof}
+For $T=0$ the result is immediate. Otherwise \eqref{eq:averageerror}
+gives strong value convergence, and Lemma~\ref{lem:folded} bounds the
+actual clock gradients. A bounded sequence in this Hilbert field space
+has a weakly convergent subsequence, say $G_T^{(n_k)}\rightharpoonup G$.
+The graph of the closed linear operator $D_W$ is a norm-closed subspace,
+and hence is weakly closed: a point outside it can be separated by its
+orthogonal projection. Therefore
+$(A_T^{(n_k)},G_T^{(n_k)})\rightharpoonup(A_T,G)$ lies in that graph.
+It follows that $A_T\in D(D_W)$, and lower semicontinuity of the norm
+gives the estimate. Equation~\eqref{eq:sourceaverage} gives scenery-domain
+membership. Finally $A_T$ is observable from $Z$ and is an element of $E$,
+which proves \eqref{eq:domain} membership.
+\end{proof}
+
+Uniform derivative bounds alone have been used for membership, not to
+assert strong gradient convergence. The library has a further strong
+occupation-kernel convergence theorem, but it is unnecessary for the
+time-differentiation result proved here.
+
+\section{Density in the fixed raw observed past}
+Closedness of $\D$ follows from closedness of both partial graphs and of
+$E$. Its restriction $\D_H$ is closed because $E_H$ is closed. Density
+requires proof; it does not follow merely from restricting a dense
+ambient domain.
+
+\begin{lemma}\label{lem:chain}
+Finite linear combinations of $A_t$, $0\leq t\leq H$, belong to
+$D(\D_H)$. Their sine and cosine also belong to that domain.
+\end{lemma}
+\begin{proof}
+Linearity and Proposition~\ref{prop:average} prove the first assertion;
+all averages up to $H$ are $\mathcal F_H^Z$-measurable. For either
+Gaussian factor, the closed gradient satisfies the bounded $C^1$ chain
+rule $D\phi(f)=\phi'(f)Df$ when $\phi,\phi'$ are bounded and $\phi'$
+is continuous. To see this from the original closure, take smooth
+cylindrical graph approximants $f_n\to f$, $Df_n\to Df$. Lipschitz
+continuity gives $\phi(f_n)\to\phi(f)$ in $L^2$. The derivative
+products converge: the part containing $Df_n-Df$ is bounded by
+$\|\phi'\|_\infty\|Df_n-Df\|_2$, and the part containing
+$(\phi'(f_n)-\phi'(f))Df$ tends to zero by convergence in probability
+and bounded dominated convergence. A subsequence argument gives the
+same limit for the whole sequence. Smooth compositions in finitely many
+Gaussian coordinates belong to the original closure: cut off the
+coordinates, identify the weak partial derivatives by Gaussian
+integration by parts, and expand in tensor Hermite polynomials. The
+derivative coefficient identities and Parseval show that polynomial
+partial sums converge with all first derivatives in $L^2$. Cutoff errors
+vanish by Gaussian integrability and the bounded derivative. Thus the
+finite-dimensional chain identities hold in the original closed graph,
+and closedness proves the asserted chain rule. Apply it in each factor
+to sine and cosine. Their
+compositions remain observable in $\mathcal F_H^Z$.
+\end{proof}
+
+\begin{proposition}\label{prop:dense}
+$D(\D_H)$ is dense in $E_H$, including at $H=0$, and $D(\D)$ is dense
+in $E$.
+\end{proposition}
+\begin{proof}
+For $0<t\leq H$ and $0<\epsilon<t$, put
+$Q_{t,\epsilon}=(A_t-A_{t-\epsilon})/\epsilon$. By
+\eqref{eq:continuity}, $Q_{t,\epsilon}\to Z_t$ in $L^2$ as
+$\epsilon\downarrow0$. Thus Lemma~\ref{lem:chain} and Lipschitz
+continuity show that the sine and cosine of every finite linear
+combination of points $Z_{t_1},\ldots,Z_{t_m}$ lie in the $L^2$ closure
+of $D(\D_H)$. Zero-time points cause no difficulty since $Z_0=0$.
+Constants are in the domain with zero gradient.
+
+Suppose $g\in E_H$ is orthogonal to $D(\D_H)$. It is integrable by
+Cauchy--Schwarz. For each finite observation vector
+$X=(Z_{t_1},\ldots,Z_{t_m})$, the finite signed measure
+\[
+ \lambda(S)=\E[g\mathbf1_{\{X\in S\}}]
+\]
+has all Fourier transforms zero, by the preceding sine/cosine
+approximation. Fourier uniqueness implies $\lambda=0$. One can verify
+uniqueness by convolving $\lambda$ with a centered Gaussian density:
+Fourier inversion for the Gaussian and Fubini make each such convolution
+zero; Gaussian approximate identities then recover the integrals of
+compactly supported continuous functions, and hence the finite measure.
+Therefore $\E[g\mathbf1_A]=0$ for every finite observation cylinder $A$.
+
+These cylinders form a pi-system generating the raw past. The signed
+measure $A\mapsto\E[g\mathbf1_A]$ has total mass zero; the pi-lambda
+theorem makes it zero on the whole generated sigma-algebra. Since $g$
+has a past-measurable representative, taking its positive and negative
+sets gives $\E|g|=0$. Hence $g=0$. The orthogonal complement is zero,
+which proves density. When $H=0$, $E_0$ consists of constants and the
+conclusion is immediate. The same argument with arbitrary finitely
+many nonnegative times proves density in $E$.
+\end{proof}
+
+This proof uses the actual finite observation laws; it does not replace
+them with Gaussian laws or identify conditional expectation with a
+source-chaos projection.
+
+\section{Why positive-time points remain outside the domain}
+For clarity we recall the clock obstruction underlying the time result,
+with its common-field requirement. In the scenery-valued Hilbert space
+$K=L^2(B)$, for $c>0$ consider $F_c(x)=B(c|x|)$.
+For $0\leq a<x$,
+\begin{equation}\label{eq:metric}
+ \|F_c(x)-F_c(a)\|_K^2=c(x-a).
+\end{equation}
+If $F_c$ had a locally square-integrable Bochner weak derivative $g$,
+its continuous representative would satisfy
+$F_c(x)-F_c(a)=\int_a^x g(u)\,du$. Cauchy--Schwarz and
+\eqref{eq:metric} would give
+\[
+ c\leq\int_a^x\|g(u)\|_K^2\,du.
+\]
+The right side tends to zero as $x\downarrow a$, a contradiction.
+
+\begin{lemma}\label{lem:point}
+For every $T>0$, $Z_T\notin D(D_W)$ and therefore $Z_T\notin D(\D)$.
+If $T\leq H$, also $Z_T\notin D(\D_H)$.
+\end{lemma}
+\begin{proof}
+Set $G=W_T/\sqrt T$, a standard Gaussian coordinate, and
+$h=\mathbf1_{(0,T]}/\sqrt T\in H_W$. Decompose the remaining clock
+Gaussian coordinates orthogonally to $h$. If a full original clock
+gradient $V$ existed, contract it with $h$ and conditionally average over
+those remaining clock coordinates. Jensen gives a common field
+$g\in L^2(\gamma;K)$, where $\gamma$ is standard Gaussian measure.
+The product Gaussian integration-by-parts identity, tested against a
+scenery variable $e\in K$ and a compactly supported smooth scalar
+$p(G)$, gives
+\[
+ \int\langle F_{\sqrt T}(x),e\rangle(p'(x)-xp(x))\,d\gamma(x)
+ =-\int\langle g(x),e\rangle p(x)\,d\gamma(x).
+\]
+This identity follows first on the Gaussian core and passes to the
+closed graph by Cauchy--Schwarz. The recovered $g$ is the same field
+for every $e$, a fact essential to the conclusion.
+
+Let $\gamma(x)$ also denote the strictly positive Gaussian density.
+Substitute $p=\psi/\gamma$ on any compact interval. Since
+$\gamma'=-x\gamma$, one has $(p'-xp)\gamma=\psi'$. The displayed
+identity becomes the distributional weak derivative identity relative
+to Lebesgue measure. On that interval $g$ is square integrable because
+the Gaussian density is bounded below. Testing a countable dense set
+of scenery vectors shows that
+$F_{\sqrt T}(x)-\int_a^xg(u)\,du$ is one constant $K$-valued vector
+almost everywhere. Indeed every scalar projection has zero weak
+derivative; separability and a common full-measure set identify that
+vector. Both sides have continuous representatives, so the equality
+holds throughout the interval. This contradicts \eqref{eq:metric}.
+The two native exclusions follow from their domain inclusions.
+\end{proof}
+
+This is the point obstruction from the companion~\cite{clock}. The
+scenery gradient in Section 2 remains valid; a clock chain rule is not
+applied to a point outside its domain.
+
+\section{Adjoint-graph duals and time-slope escape}
+We give the closed-operator facts explicitly to fix the test space.
+For $T:E_0\supset D(T)\to\G$ closed and densely defined, the maps in
+\eqref{eq:dual} satisfy
+\begin{equation}\label{eq:bounds}
+ \|d_Tf\|_{\mathcal T_T'}\leq\|f\|_{E_0},\quad
+ j_T(Tu)=d_Tu,\quad
+ \|j_T(Tu)-d_Tf\|_{\mathcal T_T'}\leq\|u-f\|_{E_0}.
+\end{equation}
+The first bound is Cauchy--Schwarz and $\|T^*v\|\leq\|v\|_{\mathcal T_T}$;
+adjointness gives the equality, and applying the first bound to $u-f$
+gives the last estimate.
+
+\begin{lemma}\label{lem:representation}
+The map $j_T$ is injective, and $d_Tf=j_TV$ for some $V\in\G$ if and
+only if $f\in D(T)$, in which case $V=Tf$. If
+$u_n\in D(T)$ converges to $f\notin D(T)$ in $E_0$, then
+$\|Tu_n\|_{\G}\to\infty$.
+\end{lemma}
+\begin{proof}
+The orthogonal complement of the graph is
+\[
+ \Gamma(T)^\perp=\{(-T^*v,v):v\in D(T^*)\}.
+\]
+This follows directly by testing
+$\langle x,u\rangle+\langle y,Tu\rangle=0$ on $u\in D(T)$;
+density makes $x=-T^*y$ unique. The relation $d_Tf=j_TV$ says precisely
+that $(f,V)$ is orthogonal to this complement. Since the graph is
+closed, $(f,V)\in\Gamma(T)$. The converse is adjointness. Taking
+$f=0$ proves injectivity of $j_T$.
+
+If $\|Tu_n\|$ did not tend to infinity, a subsequence would have bounded
+outputs and hence a further weakly convergent subsequence, say to $V$.
+Then $(u_n,Tu_n)$ along that subsequence converges weakly to $(f,V)$.
+The closed linear graph is weakly closed, so $f\in D(T)$,
+a contradiction. This proves full norm escape, rather than mere
+unboundedness of one subsequence.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Propositions~\ref{prop:average} and \ref{prop:dense}, together with
+closedness already noted, give the operator assertions. Put
+$V_t=\D A_t$. Adjointness gives $j_{\D}V_t=d_{\D}A_t$. The bounded
+linear map $d_{\D}$ commutes with the derivative \eqref{eq:FTC}, proving
+\eqref{eq:fulltime}. For fixed $H$, the same equality holds with
+$\D_H$ for $0\leq t\leq H$. The left value quotients converge in
+$E_H$ to $Z_T$ even when $T=H$. Applying the bound in
+\eqref{eq:bounds} proves \eqref{eq:left}; more precisely, its error is
+at most
+\[
+ \left\|\frac{A_{T+h_n}-A_T}{h_n}-Z_T\right\|_2\longrightarrow0.
+\]
+By Lemmas~\ref{lem:point} and \ref{lem:representation},
+$d_{\D_H}Z_T$ is not represented by any $j_{\D_H}V$. It cannot be
+zero, because zero has representative $V=0$. The full-operator
+conclusion is identical.
+
+The value quotients
+$u_n=(A_{T+h_n}-A_T)/h_n$ lie in $D(\D)$ and converge to
+$Z_T\notin D(\D)$. Their gradients are
+$(V_{T+h_n}-V_T)/h_n$, so Lemma~\ref{lem:representation} proves
+\eqref{eq:escape}. The proof applies to positive steps as well.
+In particular $V_t$ has no strong ordinary-time derivative at any
+positive $T$: such a derivative would force these slope norms to remain
+bounded. Finally \eqref{eq:actual} is the definition of $d_{\D_H}$
+as an $L^2$ pairing. Its integrand is integrable by Cauchy--Schwarz.
+\end{proof}
+
+No tests or past spaces change with the step index in
+\eqref{eq:left}. This is differentiation on each \emph{fixed} raw
+observed past. It does not resolve convergence of fields with a changing
+past, and it is not a temporal stochastic integral identification.
+
+\section{Formal scope and literature}
+\begingroup\raggedright
+The frozen authority is commit
+\code{bab688bb6140cd6316c80680095a914ea0d346db}.
+The accompanying theorem map records the exact average graphs, energy
+bounds, finite-average chain tests, raw-past density, closed restrictions,
+maximal adjoints and time-limit declarations. Its central endpoint is
+\code{IBMPastAdjointTimeCalculus}. The full joint operator is
+\code{IBMJointIntrinsicDerivative}; its field channels are scenery and
+clock in that order. All scalar pairings above are on the actual joint
+law, with the Fubini factor order transported isometrically.
+
+The argument retains the original finite-energy domains. The weaker
+adjoint-graph dual is explicitly named and its norm is given; it is not
+a new native point gradient. The actual full-past adjoint can have a
+larger domain than the ambient adjoint restriction, and no equality of
+these domains has been assumed. Full baseline build and transitive axiom
+evidence were hash-verified; this editorial work creates no new Lean
+proof and does not repeat a resource-intensive root build.
+
+The Gaussian derivative/adjoint construction and closed-operator arguments
+are classical; see the Gaussian conventions in~\cite{SV}. Allouba and
+Zheng~\cite{AZ} supply the Brownian-time model context. Nourdin and
+Zeineddine~\cite{NZ} study a signed Brownian clock in two-sided fractional
+scenery and an It\^o-type formula, which is a different model and type of
+conclusion. The primary model definitions, Gaussian calculus conventions
+and relevant introductions were checked. Searches for average-domain
+and observed-past analogues were preliminary, not an exhaustive novelty
+audit. No independence, priority, or absence-of-precedent claim is made.
+The native-domain regularization, fixed-past maximal-adjoint statement
+and sharp separation of convergence topologies are the paper's precise
+verified content; full physical-time intrinsic calculus remains open.
+\par\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{AZ} H. Allouba and W. Zheng,
+\emph{Brownian-time processes: the PDE connection and the half-derivative
+generator}, Ann. Probab. 29 (2001), 1780--1795.
+\href{https://arxiv.org/abs/1005.3801}{arXiv:1005.3801}.
+\bibitem{SV} T. Sottinen and L. Viitasaari,
+\emph{Stochastic analysis of Gaussian processes via Fredholm representation},
+Int. J. Stoch. Anal. (2016), article 8694365.
+\href{https://doi.org/10.1155/2016/8694365}{doi:10.1155/2016/8694365}.
+\bibitem{NZ} I. Nourdin and R. Zeineddine,
+\emph{An It\^o's type formula for the fractional Brownian motion in
+Brownian time}, \href{https://arxiv.org/abs/1312.0818}{arXiv:1312.0818}
+(2013). Model and introduction comparison only.
+\bibitem{clock} Project Stardust,
+\emph{Gaussian clock-domain obstructions for reflected-clock Brownian
+motion}, reviewed editorial companion (2026),
+\href{../ibm-clock-domain/main.pdf}{accompanying manuscript}.
+\end{thebibliography}
+\end{document}
