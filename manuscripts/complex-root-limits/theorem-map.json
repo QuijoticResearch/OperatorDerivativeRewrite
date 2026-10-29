@@ -342,6 +342,1734 @@
       "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
       "declaration_header": "theorem no_all_bounded_test_limit (T : \u211d\u22650) (hT : 0 < T) (\u03be : \u211d) (h\u03be : \u03be \u2260 0)\n    (\u03bd : VectorMeasure \u2102 \u2102) :\n    \u00ac \u2200 f : \u2102 \u2192\u1d47 \u2102, Tendsto (fun n : \u2115 => \u222b\u1d5b z, f z\n      \u2202[ContinuousLinearMap.mul \u211d \u2102;\n        ComplexRootTiltedLaw.law (amplitude 1 n) \u03be ((n : \u211d\u22650)*T)]) atTop\n      (\ud835\udcdd (\u222b\u1d5b z, f z \u2202[ContinuousLinearMap.mul \u211d \u2102; \u03bd]))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L97"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.integral_formula",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 23,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem integral_formula (f : ZMod N \u2192 \u2102) :\n    (\u222b k, f k \u2202probability N) = (\u2211 k, f k)/(N : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.character_sum",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 31,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem character_sum (j : ZMod N) :\n    (\u2211 k : ZMod N, ZMod.stdAddChar (j*k)) = if j = 0 then (N : \u2102) else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L31"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.noise_power",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 37,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem noise_power (c : \u2102) (k : ZMod N) (r : \u2115) :\n    (noise N c k)^r = c^r * ZMod.stdAddChar ((r : ZMod N)*k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L37"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.holomorphic_moment",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 41,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem holomorphic_moment (c : \u2102) (r : \u2115) :\n    (\u222b k, (noise N c k)^r \u2202probability N) = if (r : ZMod N) = 0 then c^r else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L41"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.lower_moment",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 49,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem lower_moment (c : \u2102) (r : \u2115) (hr : 0 < r) (hN : r < N) :\n    (\u222b k, (noise N c k)^r \u2202probability N) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L49"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.nth_power",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 55,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem nth_power (c : \u2102) (k : ZMod N) : (noise N c k)^N = c^N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L55"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.nth_moment",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 59,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem nth_moment (c : \u2102) : (\u222b k, (noise N c k)^N \u2202probability N) = c^N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.noise_norm",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 63,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem noise_norm (c : \u2102) (k : ZMod N) : \u2016noise N c k\u2016 = \u2016c\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L63"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicRootProbabilityNoise.absolute_second",
+      "file": "Foundation/CyclicRootProbabilityNoise.lean",
+      "line": 66,
+      "source_sha256": "9f6a76355866f76f0efe90ee460f2213a1e45a7dae1f66bd9a31604a87854856",
+      "declaration_header": "theorem absolute_second (c : \u2102) : (\u222b k, \u2016noise N c k\u2016^2 \u2202probability N) = \u2016c\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicRootProbabilityNoise.lean#L66"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.coefficient_zero",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 14,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem coefficient_zero (g : ZMod N \u2192 \u2102) : coefficient N g 0 = \u222b k, g k \u2202probability N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L14"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.representation",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 17,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem representation (g : ZMod N \u2192 \u2102) (k : ZMod N) :\n    g k = \u2211 j : ZMod N, coefficient N g j * ZMod.stdAddChar (j*k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L17"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.centered_representation",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 28,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem centered_representation (g : ZMod N \u2192 \u2102) (k : ZMod N) :\n    g k-(\u222b l, g l \u2202probability N) =\n      \u2211 j \u2208 Finset.univ.erase (0 : ZMod N), coefficient N g j * ZMod.stdAddChar (j*k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L28"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.conjugate_character",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 38,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem conjugate_character (j : ZMod N) :\n    star (ZMod.stdAddChar j) = ZMod.stdAddChar (-j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L38"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.character_gram",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 43,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem character_gram (j l : ZMod N) :\n    (\u222b k, ZMod.stdAddChar (j*k)*star (ZMod.stdAddChar (l*k)) \u2202probability N) =\n      if j = l then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L43"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.synthesis_pairing",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 59,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem synthesis_pairing (u v : ZMod N \u2192 \u2102) :\n    (\u222b k, synthesis N u k*starRingEnd \u2102 (synthesis N v k) \u2202probability N) =\n      \u2211 j : ZMod N, u j*starRingEnd \u2102 (v j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicMarkRepresentation.synthesis_energy",
+      "file": "Foundation/CyclicMarkRepresentation.lean",
+      "line": 79,
+      "source_sha256": "7461a1e1209e2c04c89eac262dc339beed7b07b3805a4bbeedf7057f886adb4c",
+      "declaration_header": "theorem synthesis_energy (u : ZMod N \u2192 \u2102) :\n    (\u222b k, \u2016synthesis N u k\u2016^2 \u2202probability N) = \u2211 j : ZMod N, \u2016u j\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicMarkRepresentation.lean#L79"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicCenteredKernel.kernel_eq_synthesis",
+      "file": "Foundation/CyclicCenteredKernel.lean",
+      "line": 12,
+      "source_sha256": "986e33b5d32df0415ab1f6004aa9f63097b97784b645b39fdb4ea254c7c63ad6",
+      "declaration_header": "theorem kernel_eq_synthesis (u : ZMod N \u2192 \u2102) (k : ZMod N) :\n    kernel N u k = CyclicMarkRepresentation.synthesis N (Function.update u 0 0) k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicCenteredKernel.lean#L12"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicCenteredKernel.kernel_mean",
+      "file": "Foundation/CyclicCenteredKernel.lean",
+      "line": 23,
+      "source_sha256": "986e33b5d32df0415ab1f6004aa9f63097b97784b645b39fdb4ea254c7c63ad6",
+      "declaration_header": "theorem kernel_mean (u : ZMod N \u2192 \u2102) :\n    (\u222b k, kernel N u k \u2202CyclicRootProbabilityNoise.probability N) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicCenteredKernel.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicCenteredKernel.kernel_energy",
+      "file": "Foundation/CyclicCenteredKernel.lean",
+      "line": 35,
+      "source_sha256": "986e33b5d32df0415ab1f6004aa9f63097b97784b645b39fdb4ea254c7c63ad6",
+      "declaration_header": "theorem kernel_energy (u : ZMod N \u2192 \u2102) :\n    (\u222b k, \u2016kernel N u k\u2016^2 \u2202CyclicRootProbabilityNoise.probability N) =\n      \u2211 j \u2208 Finset.univ.erase (0 : ZMod N), \u2016u j\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicCenteredKernel.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicCenteredKernel.shifted_kernel_energy",
+      "file": "Foundation/CyclicCenteredKernel.lean",
+      "line": 49,
+      "source_sha256": "986e33b5d32df0415ab1f6004aa9f63097b97784b645b39fdb4ea254c7c63ad6",
+      "declaration_header": "theorem shifted_kernel_energy (u : ZMod N \u2192 \u2102) (c : \u2102) :\n    (\u222b k, \u2016c+kernel N u k\u2016^2 \u2202CyclicRootProbabilityNoise.probability N) =\n      \u2016c\u2016^2+\u2211 j \u2208 Finset.univ.erase (0 : ZMod N), \u2016u j\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicCenteredKernel.lean#L49"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.prefixIncrement_eq",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 17,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem prefixIncrement_eq (H : ZMod N \u2192 Coefficients N) (n : \u2115) (\u03b7 : Source N) :\n    prefixIncrement N H n (initialSegment (n+1) \u03b7) = sumIncrement N H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L17"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.shifted_square_integrable",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 23,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem shifted_square_integrable (H : ZMod N \u2192 Coefficients N) (n : \u2115)\n    (c : Prefix (ZMod N) n \u2192 \u2102) :\n    Integrable (fun \u03b7 => \u2016c (initialSegment n \u03b7)+sumIncrement N H n \u03b7\u2016^2) (probability N)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.conditional_shifted_energy",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 32,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem conditional_shifted_energy (H : ZMod N \u2192 Coefficients N) (n : \u2115)\n    (c : Prefix (ZMod N) n \u2192 \u2102) :\n    (probability N)[fun \u03b7 => \u2016c (initialSegment n \u03b7)+sumIncrement N H n \u03b7\u2016^2 | history N n] =\u1d50[probability N]\n      fun \u03b7 => \u2016c (initialSegment n \u03b7)\u2016^2+energy N H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L32"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.conditional_energy",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 55,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem conditional_energy (H : ZMod N \u2192 Coefficients N) (n : \u2115) :\n    (probability N)[fun \u03b7 => \u2016sumIncrement N H n \u03b7\u2016^2 | history N n] =\u1d50[probability N] energy N H n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L55"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.energy_integrable",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 60,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem energy_integrable (H : ZMod N \u2192 Coefficients N) (n : \u2115) :\n    Integrable (energy N H n) (probability N)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L60"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.shifted_expectation",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 64,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem shifted_expectation (H : ZMod N \u2192 Coefficients N) (n : \u2115)\n    (c : Prefix (ZMod N) n \u2192 \u2102) :\n    (\u222b \u03b7, \u2016c (initialSegment n \u03b7)+sumIncrement N H n \u03b7\u2016^2 \u2202probability N) =\n      (\u222b \u03b7, \u2016c (initialSegment n \u03b7)\u2016^2 \u2202probability N)+(\u222b \u03b7, energy N H n \u03b7 \u2202probability N)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L64"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.totalIntegral_successor",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 79,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem totalIntegral_successor (H : ZMod N \u2192 Coefficients N) (n : \u2115) (\u03b7 : Source N) :\n    totalIntegral N H (n+1) \u03b7 = totalIntegral N H n \u03b7+sumIncrement N H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L79"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.adapted_energy",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 84,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem adapted_energy (H : ZMod N \u2192 Coefficients N) (M : \u2115 \u2192 Source N \u2192 \u2102)\n    (hM : StronglyAdapted (history N) M) (h0 : M 0 = 0)\n    (hstep : \u2200 n \u03b7, M (n+1) \u03b7 = M n \u03b7+sumIncrement N H n \u03b7) (L : \u2115) :\n    (\u222b \u03b7, \u2016M L \u03b7\u2016^2 \u2202probability N) = \u2211 i \u2208 Finset.range L, \u222b \u03b7, energy N H i \u03b7 \u2202probability N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L84"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicPredictableEnergy.ito_isometry",
+      "file": "Foundation/CyclicPredictableEnergy.lean",
+      "line": 97,
+      "source_sha256": "2ed0e62897df6354790cc1130c42a05697761ea6f21c2ec6cbdf9dcd1d4cdac5",
+      "declaration_header": "theorem ito_isometry (H : ZMod N \u2192 Coefficients N) (L : \u2115) :\n    (\u222b \u03b7, \u2016totalIntegral N H L \u03b7\u2016^2 \u2202probability N) =\n      \u2211 i \u2208 Finset.range L, \u222b \u03b7, energy N H i \u03b7 \u2202probability N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicPredictableEnergy.lean#L97"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.fourthMoment_ne_zero",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 14,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem fourthMoment_ne_zero (a : \u211d) (ha : a \u2260 0) : fourthMoment a \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L14"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.basis_identity",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 17,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem basis_identity (a : \u211d) (g : Fin 4 \u2192 \u2102) (k : Fin 4) :\n    fourthMoment a * (g k - \u222b j, g j \u2202probability) =\n      (\u222b j, g j*(noise a j)^3 \u2202probability)*noise a k +\n      (\u222b j, g j*(noise a j)^2 \u2202probability)*(noise a k)^2 +\n      (\u222b j, g j*noise a j \u2202probability)*(noise a k)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L17"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.centered_representation",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 26,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem centered_representation (a : \u211d) (ha : a \u2260 0) (g : Fin 4 \u2192 \u2102) (k : Fin 4) :\n    g k - (\u222b j, g j \u2202probability) =\n      coefficient a g 0 * noise a k + coefficient a g 1 * (noise a k)^2 +\n      coefficient a g 2 * (noise a k)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L26"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.channel_sum_moment",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 37,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem channel_sum_moment (a : \u211d) (d : Fin 3 \u2192 \u2102) (r : Fin 3) :\n    (\u222b k, (d 0*noise a k+d 1*(noise a k)^2+d 2*(noise a k)^3) *\n      (noise a k)^(3-r.val) \u2202probability) = fourthMoment a*d r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L37"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.channel_unique",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 44,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem channel_unique (a : \u211d) (ha : a \u2260 0) (d e : Fin 3 \u2192 \u2102)\n    (h : \u2200 k : Fin 4, d 0*noise a k+d 1*(noise a k)^2+d 2*(noise a k)^3 =\n      e 0*noise a k+e 1*(noise a k)^2+e 2*(noise a k)^3) : d = e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L44"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.unique_representer",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 56,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem unique_representer (a : \u211d) (ha : a \u2260 0) (g : Fin 4 \u2192 \u2102) (d : Fin 3 \u2192 \u2102)\n    (h : \u2200 k : Fin 4, g k-(\u222b j, g j \u2202probability) =\n      d 0*noise a k+d 1*(noise a k)^2+d 2*(noise a k)^3) : d = coefficient a g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootMarkRepresentation.no_single_noise_representation",
+      "file": "Foundation/ComplexRootMarkRepresentation.lean",
+      "line": 63,
+      "source_sha256": "365b74bd43e8d194baf2d1a2376f5c93a1f63a99aae5ec6083d661fd7fc02935",
+      "declaration_header": "theorem no_single_noise_representation (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 c : \u2102, \u2200 k : Fin 4, (noise a k)^2 = c*noise a k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootMarkRepresentation.lean#L63"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.gram_formula",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 13,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem gram_formula (a : \u211d) (r s : Fin 3) :\n    gram a r s = if r = s then ((2*a^2 : \u211d) : \u2102)^(r.val+1) else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.weight_pos",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 22,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem weight_pos (a : \u211d) (ha : a \u2260 0) (r : Fin 3) : 0 < (2*a^2)^(r.val+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L22"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.conjugate_weight_identity",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 25,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem conjugate_weight_identity (a : \u211d) (r : Fin 3) (k : Fin 4) :\n    ComplexRootMarkRepresentation.fourthMoment a*starRingEnd \u2102 ((noise a k)^(r.val+1)) =\n      ((2*a^2 : \u211d) : \u2102)^(r.val+1)*(noise a k)^(3-r.val)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L25"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.hermitian_coefficient",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 32,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem hermitian_coefficient (a : \u211d) (ha : a \u2260 0) (g : Fin 4 \u2192 \u2102) (r : Fin 3) :\n    (\u222b k, g k*starRingEnd \u2102 ((noise a k)^(r.val+1)) \u2202probability) =\n      ComplexRootMarkRepresentation.coefficient a g r*((2*a^2 : \u211d) : \u2102)^(r.val+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L32"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.sesquilinear_formula",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 50,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem sesquilinear_formula (a : \u211d) (u v : Fin 3 \u2192 \u2102) :\n    (\u222b k, channelKernel a u k*starRingEnd \u2102 (channelKernel a v k) \u2202probability) =\n      \u2211 r : Fin 3, (u r*starRingEnd \u2102 (v r))*((2*a^2 : \u211d) : \u2102)^(r.val+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L50"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.product_conjugate",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 69,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem product_conjugate (z : \u2102) :\n    z*starRingEnd \u2102 z = ((\u2016z\u2016^2 : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L69"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelGram.energy_formula",
+      "file": "Foundation/ComplexRootChannelGram.lean",
+      "line": 74,
+      "source_sha256": "1358e778acb606797508a6294e55c7ac795e5a3143876ff67fb5b2999d2975a7",
+      "declaration_header": "theorem energy_formula (a : \u211d) (u : Fin 3 \u2192 \u2102) :\n    (\u222b k, \u2016channelKernel a u k\u2016^2 \u2202probability) =\n      \u2211 r : Fin 3, \u2016u r\u2016^2*(2*a^2)^(r.val+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelGram.lean#L74"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.prefix_past",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 32,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem prefix_past (n : \u2115) : Measurable[history n] (initialSegment n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L32"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.coefficient_past",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 35,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem coefficient_past (H : Coefficients) (n : \u2115) :\n    StronglyMeasurable[history n] (fun \u03b7 => H n (initialSegment n \u03b7))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.coefficient_integrable",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 39,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem coefficient_integrable (H : Coefficients) (n : \u2115) :\n    Integrable (fun \u03b7 => H n (initialSegment n \u03b7)) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L39"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.fresh_independent",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 47,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem fresh_independent (n : \u2115) :\n    Indep (MeasurableSpace.comap (fun \u03b7 : MarkSample => \u03b7 n) inferInstance) (history n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L47"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.freshPower_measurable",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 61,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem freshPower_measurable (a : \u211d) (r : Fin 3) (n : \u2115) :\n    Measurable (freshPower a r n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L61"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.freshPower_integrable",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 65,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem freshPower_integrable (a : \u211d) (r : Fin 3) (n : \u2115) :\n    Integrable (freshPower a r n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.freshPower_mean",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 74,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem freshPower_mean (a : \u211d) (r : Fin 3) (n : \u2115) :\n    (\u222b \u03b7, freshPower a r n \u03b7 \u2202marks) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L74"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.freshPower_independent",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 86,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem freshPower_independent (a : \u211d) (r : Fin 3) (n : \u2115) :\n    Indep (MeasurableSpace.comap (freshPower a r n) inferInstance) (history n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L86"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.freshPower_condExp",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 94,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem freshPower_condExp (a : \u211d) (r : Fin 3) (n : \u2115) :\n    marks[freshPower a r n | history n] =\u1d50[marks] fun _ => (0 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L94"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.coefficient_fresh_independent",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 103,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem coefficient_fresh_independent (a : \u211d) (r : Fin 3) (H : Coefficients) (n : \u2115) :\n    IndepFun (fun \u03b7 => H n (initialSegment n \u03b7)) (freshPower a r n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L103"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.increment_integrable",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 108,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem increment_integrable (a : \u211d) (r : Fin 3) (H : Coefficients) (n : \u2115) :\n    Integrable (increment a r H n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L108"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.increment_condExp",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 113,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem increment_condExp (a : \u211d) (r : Fin 3) (H : Coefficients) (n : \u2115) :\n    marks[increment a r H n | history n] =\u1d50[marks] fun _ => (0 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L113"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.stochasticIntegral_adapted",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 126,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem stochasticIntegral_adapted (a : \u211d) (r : Fin 3) (H : Coefficients) :\n    StronglyAdapted history (stochasticIntegral a r H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L126"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.stochasticIntegral_integrable",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 139,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem stochasticIntegral_integrable (a : \u211d) (r : Fin 3) (H : Coefficients) (n : \u2115) :\n    Integrable (stochasticIntegral a r H n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L139"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.stochasticIntegral_successor",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 143,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem stochasticIntegral_successor (a : \u211d) (r : Fin 3) (H : Coefficients) (n : \u2115) :\n    stochasticIntegral a r H (n+1)-stochasticIntegral a r H n = increment a r H n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L143"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkStochasticIntegral.stochasticIntegral_martingale",
+      "file": "Foundation/RootMarkStochasticIntegral.lean",
+      "line": 148,
+      "source_sha256": "8b4ba6b5e1144b0dcaf45e727cca87bfd7ca8b036418118ac92c90e622d01b47",
+      "declaration_header": "theorem stochasticIntegral_martingale (a : \u211d) (r : Fin 3) (H : Coefficients) :\n    Martingale (stochasticIntegral a r H) history marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkStochasticIntegral.lean#L148"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkDoobRepresentation.prefix_append",
+      "file": "Foundation/RootMarkDoobRepresentation.lean",
+      "line": 23,
+      "source_sha256": "2f9cda88e1236f0608d1224953d1e0593ca047ca8922759e55c3ec7768e2b906",
+      "declaration_header": "theorem prefix_append (n : \u2115) (\u03b7 : MarkSample) :\n    Fin.snoc (initialSegment n \u03b7) (\u03b7 n) = initialSegment (n+1) \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkDoobRepresentation.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkDoobRepresentation.step_channels",
+      "file": "Foundation/RootMarkDoobRepresentation.lean",
+      "line": 30,
+      "source_sha256": "2f9cda88e1236f0608d1224953d1e0593ca047ca8922759e55c3ec7768e2b906",
+      "declaration_header": "theorem step_channels (a : \u211d) (ha : a \u2260 0) (F : Coefficients) (n : \u2115) (\u03b7 : MarkSample) :\n    observable F (n+1) \u03b7-observable F n \u03b7 = driftCoefficient F n (initialSegment n \u03b7)+\n      increment a 0 (channelCoefficients a F 0) n \u03b7+\n      increment a 1 (channelCoefficients a F 1) n \u03b7+\n      increment a 2 (channelCoefficients a F 2) n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkDoobRepresentation.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkDoobRepresentation.compensated_representation",
+      "file": "Foundation/RootMarkDoobRepresentation.lean",
+      "line": 50,
+      "source_sha256": "2f9cda88e1236f0608d1224953d1e0593ca047ca8922759e55c3ec7768e2b906",
+      "declaration_header": "theorem compensated_representation (a : \u211d) (ha : a \u2260 0) (F : Coefficients) :\n    compensated F = fun n \u03b7 =>\n      stochasticIntegral a 0 (channelCoefficients a F 0) n \u03b7+\n      stochasticIntegral a 1 (channelCoefficients a F 1) n \u03b7+\n      stochasticIntegral a 2 (channelCoefficients a F 2) n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkDoobRepresentation.lean#L50"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkDoobRepresentation.compensated_martingale",
+      "file": "Foundation/RootMarkDoobRepresentation.lean",
+      "line": 62,
+      "source_sha256": "2f9cda88e1236f0608d1224953d1e0593ca047ca8922759e55c3ec7768e2b906",
+      "declaration_header": "theorem compensated_martingale (a : \u211d) (ha : a \u2260 0) (F : Coefficients) :\n    Martingale (compensated F) history marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkDoobRepresentation.lean#L62"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.driftSum_predictable",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 12,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem driftSum_predictable (F : Coefficients) :\n    StronglyAdapted history (fun n => driftSum F (n+1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L12"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.driftSum_martingale",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 23,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem driftSum_martingale (F : Coefficients) (hF : Martingale (observable F) history marks) :\n    Martingale (driftSum F) history marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.driftSum_zero",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 35,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem driftSum_zero (F : Coefficients) (hF : Martingale (observable F) history marks) (n : \u2115) :\n    driftSum F n =\u1d50[marks] (0 : MarkSample \u2192 \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.martingale_representation",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 44,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem martingale_representation (a : \u211d) (ha : a \u2260 0) (F : Coefficients)\n    (hF : Martingale (observable F) history marks) (n : \u2115) :\n    (fun \u03b7 => observable F n \u03b7-observable F 0 \u03b7) =\u1d50[marks]\n      fun \u03b7 => stochasticIntegral a 0 (channelCoefficients a F 0) n \u03b7+\n        stochasticIntegral a 1 (channelCoefficients a F 1) n \u03b7+\n        stochasticIntegral a 2 (channelCoefficients a F 2) n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L44"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.adapted_factors",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 58,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem adapted_factors (M : \u2115 \u2192 MarkSample \u2192 \u2102) (hM : StronglyAdapted history M) :\n    \u2203 F : Coefficients, M = observable F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L58"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkMartingaleRepresentation.predictable_representation",
+      "file": "Foundation/RootMarkMartingaleRepresentation.lean",
+      "line": 69,
+      "source_sha256": "897d360c1b39030f5ef83a567a6cdf008dcfe506ae89d9e5cbc7e4beaae898ce",
+      "declaration_header": "theorem predictable_representation (a : \u211d) (ha : a \u2260 0) (M : \u2115 \u2192 MarkSample \u2192 \u2102)\n    (hM : Martingale M history marks) :\n    \u2203 H : Fin 3 \u2192 Coefficients, \u2200 n : \u2115,\n      (fun \u03b7 => M n \u03b7-M 0 \u03b7) =\u1d50[marks]\n        fun \u03b7 => stochasticIntegral a 0 (H 0) n \u03b7+\n          stochasticIntegral a 1 (H 1) n \u03b7+stochasticIntegral a 2 (H 2) n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkMartingaleRepresentation.lean#L69"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteClark.history_zero",
+      "file": "Foundation/RootMarkFiniteClark.lean",
+      "line": 11,
+      "source_sha256": "c192cff675f958a62182e0a010ad92d88ff7313cd55643a016ef362fbe5d0475",
+      "declaration_header": "theorem history_zero : history 0 = \u22a5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteClark.lean#L11"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteClark.terminal_integrable",
+      "file": "Foundation/RootMarkFiniteClark.lean",
+      "line": 18,
+      "source_sha256": "c192cff675f958a62182e0a010ad92d88ff7313cd55643a016ef362fbe5d0475",
+      "declaration_header": "theorem terminal_integrable (N : \u2115) (f : ComplexFourthRootWalk.Sample N \u2192 \u2102) :\n    Integrable (fun \u03b7 => f (initialSegment N \u03b7)) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteClark.lean#L18"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteClark.finite_clark",
+      "file": "Foundation/RootMarkFiniteClark.lean",
+      "line": 26,
+      "source_sha256": "c192cff675f958a62182e0a010ad92d88ff7313cd55643a016ef362fbe5d0475",
+      "declaration_header": "theorem finite_clark (a : \u211d) (ha : a \u2260 0) (N : \u2115) (f : ComplexFourthRootWalk.Sample N \u2192 \u2102) :\n    \u2203 H : Fin 3 \u2192 Coefficients,\n      (fun \u03b7 => f (initialSegment N \u03b7)-(\u222b \u03be, f (initialSegment N \u03be) \u2202marks)) =\u1d50[marks]\n        fun \u03b7 => stochasticIntegral a 0 (H 0) N \u03b7+stochasticIntegral a 1 (H 1) N \u03b7+\n          stochasticIntegral a 2 (H 2) N \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteClark.lean#L26"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkConditionalEnergy.prefixIncrement_eq",
+      "file": "Foundation/RootMarkConditionalEnergy.lean",
+      "line": 20,
+      "source_sha256": "ab0801f5db301a51ef274a8babce9e35d317999f23d3198ff6d439943534ed53",
+      "declaration_header": "theorem prefixIncrement_eq (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) (\u03b7 : MarkSample) :\n    prefixIncrement a H n (initialSegment (n+1) \u03b7) = sumIncrement a H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkConditionalEnergy.lean#L20"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkConditionalEnergy.increment_square_integrable",
+      "file": "Foundation/RootMarkConditionalEnergy.lean",
+      "line": 23,
+      "source_sha256": "ab0801f5db301a51ef274a8babce9e35d317999f23d3198ff6d439943534ed53",
+      "declaration_header": "theorem increment_square_integrable (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) :\n    Integrable (fun \u03b7 => \u2016sumIncrement a H n \u03b7\u2016^2) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkConditionalEnergy.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkConditionalEnergy.conditional_energy",
+      "file": "Foundation/RootMarkConditionalEnergy.lean",
+      "line": 33,
+      "source_sha256": "ab0801f5db301a51ef274a8babce9e35d317999f23d3198ff6d439943534ed53",
+      "declaration_header": "theorem conditional_energy (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) :\n    marks[(fun \u03b7 => \u2016sumIncrement a H n \u03b7\u2016^2) | history n] =\u1d50[marks] energy a H n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkConditionalEnergy.lean#L33"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkConditionalEnergy.energy_adapted",
+      "file": "Foundation/RootMarkConditionalEnergy.lean",
+      "line": 51,
+      "source_sha256": "ab0801f5db301a51ef274a8babce9e35d317999f23d3198ff6d439943534ed53",
+      "declaration_header": "theorem energy_adapted (a : \u211d) (H : Fin 3 \u2192 Coefficients) : StronglyAdapted history (energy a H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkConditionalEnergy.lean#L51"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkConditionalEnergy.energy_integrable",
+      "file": "Foundation/RootMarkConditionalEnergy.lean",
+      "line": 56,
+      "source_sha256": "ab0801f5db301a51ef274a8babce9e35d317999f23d3198ff6d439943534ed53",
+      "declaration_header": "theorem energy_integrable (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) :\n    Integrable (energy a H n) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkConditionalEnergy.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.channelKernel_mean",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 13,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem channelKernel_mean (a : \u211d) (u : Fin 3 \u2192 \u2102) :\n    (\u222b k, channelKernel a u k \u2202ComplexFourthRootNoise.probability) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.shifted_kernel_energy",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 28,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem shifted_kernel_energy (a : \u211d) (u : Fin 3 \u2192 \u2102) (c : \u2102) :\n    (\u222b k, \u2016c+channelKernel a u k\u2016^2 \u2202ComplexFourthRootNoise.probability) =\n      \u2016c\u2016^2+\u2211 r : Fin 3, \u2016u r\u2016^2*(2*a^2)^(r.val+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L28"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.shifted_square_integrable",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 37,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem shifted_square_integrable (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115)\n    (c : ComplexFourthRootWalk.Sample n \u2192 \u2102) :\n    Integrable (fun \u03b7 => \u2016c (initialSegment n \u03b7)+sumIncrement a H n \u03b7\u2016^2) marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L37"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.conditional_shifted_energy",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 45,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem conditional_shifted_energy (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115)\n    (c : ComplexFourthRootWalk.Sample n \u2192 \u2102) :\n    marks[(fun \u03b7 => \u2016c (initialSegment n \u03b7)+sumIncrement a H n \u03b7\u2016^2) | history n] =\u1d50[marks]\n      fun \u03b7 => \u2016c (initialSegment n \u03b7)\u2016^2+energy a H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L45"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.shifted_expectation",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 65,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem shifted_expectation (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115)\n    (c : ComplexFourthRootWalk.Sample n \u2192 \u2102) :\n    (\u222b \u03b7, \u2016c (initialSegment n \u03b7)+sumIncrement a H n \u03b7\u2016^2 \u2202marks) =\n      (\u222b \u03b7, \u2016c (initialSegment n \u03b7)\u2016^2 \u2202marks)+(\u222b \u03b7, energy a H n \u03b7 \u2202marks)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.adapted_energy",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 80,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem adapted_energy (a : \u211d) (H : Fin 3 \u2192 Coefficients) (M : \u2115 \u2192 MarkSample \u2192 \u2102)\n    (hM : StronglyAdapted history M) (h\u2080 : M 0 = 0)\n    (hstep : \u2200 n \u03b7, M (n+1) \u03b7 = M n \u03b7+sumIncrement a H n \u03b7) (N : \u2115) :\n    (\u222b \u03b7, \u2016M N \u03b7\u2016^2 \u2202marks) = \u2211 j \u2208 Finset.range N, \u222b \u03b7, energy a H j \u03b7 \u2202marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L80"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.totalIntegral_martingale",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 97,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem totalIntegral_martingale (a : \u211d) (H : Fin 3 \u2192 Coefficients) :\n    Martingale (totalIntegral a H) history marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L97"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.totalIntegral_zero",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 103,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem totalIntegral_zero (a : \u211d) (H : Fin 3 \u2192 Coefficients) : totalIntegral a H 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L103"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.totalIntegral_successor",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 107,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem totalIntegral_successor (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) (\u03b7 : MarkSample) :\n    totalIntegral a H (n+1) \u03b7 = totalIntegral a H n \u03b7+sumIncrement a H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L107"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkItoIsometry.ito_isometry",
+      "file": "Foundation/RootMarkItoIsometry.lean",
+      "line": 118,
+      "source_sha256": "a5f03330c0aee0c6f0829b18f3f7e7bdae100cf935e9796d0f4d62e45f23c2c2",
+      "declaration_header": "theorem ito_isometry (a : \u211d) (H : Fin 3 \u2192 Coefficients) (N : \u2115) :\n    (\u222b \u03b7, \u2016totalIntegral a H N \u03b7\u2016^2 \u2202marks) =\n      \u2211 j \u2208 Finset.range N, \u222b \u03b7, energy a H j \u03b7 \u2202marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkItoIsometry.lean#L118"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.totalIntegral_sub",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 11,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem totalIntegral_sub (a : \u211d) (H K : Fin 3 \u2192 Coefficients) (N : \u2115) :\n    totalIntegral a (H-K) N = totalIntegral a H N-totalIntegral a K N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L11"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.energy_nonneg",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 18,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem energy_nonneg (a : \u211d) (H : Fin 3 \u2192 Coefficients) (n : \u2115) (\u03b7 : MarkSample) :\n    0 \u2264 energy a H n \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L18"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.zero_energy",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 23,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem zero_energy (a : \u211d) (H : Fin 3 \u2192 Coefficients) (N : \u2115)\n    (hH : totalIntegral a H N =\u1d50[marks] (0 : MarkSample \u2192 \u2102)) (j : \u2115) (hj : j < N) :\n    energy a H j =\u1d50[marks] (0 : MarkSample \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.zero_coefficients",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 43,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem zero_coefficients (a : \u211d) (ha : a \u2260 0) (H : Fin 3 \u2192 Coefficients) (N : \u2115)\n    (hH : totalIntegral a H N =\u1d50[marks] (0 : MarkSample \u2192 \u2102)) (j : \u2115) (hj : j < N) (r : Fin 3) :\n    (fun \u03b7 => H r j (initialSegment j \u03b7)) =\u1d50[marks] (0 : MarkSample \u2192 \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L43"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.coefficients_unique",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 61,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem coefficients_unique (a : \u211d) (ha : a \u2260 0) (H K : Fin 3 \u2192 Coefficients) (N : \u2115)\n    (hHK : totalIntegral a H N =\u1d50[marks] totalIntegral a K N) (j : \u2115) (hj : j < N) (r : Fin 3) :\n    (fun \u03b7 => H r j (initialSegment j \u03b7)) =\u1d50[marks] fun \u03b7 => K r j (initialSegment j \u03b7)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L61"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkIntegralUniqueness.finite_clark_unique",
+      "file": "Foundation/RootMarkIntegralUniqueness.lean",
+      "line": 73,
+      "source_sha256": "da262b1f4077a1b6dbcfb30561f37c5dd9de0338ce0ffb75c6d5fa830be80ec7",
+      "declaration_header": "theorem finite_clark_unique (a : \u211d) (ha : a \u2260 0) (N : \u2115)\n    (f : ComplexFourthRootWalk.Sample N \u2192 \u2102) :\n    \u2203 H : Fin 3 \u2192 Coefficients,\n      ((fun \u03b7 => f (initialSegment N \u03b7)-(\u222b \u03be, f (initialSegment N \u03be) \u2202marks)) =\u1d50[marks]\n        totalIntegral a H N) \u2227\n      \u2200 K : Fin 3 \u2192 Coefficients,\n        ((fun \u03b7 => f (initialSegment N \u03b7)-(\u222b \u03be, f (initialSegment N \u03be) \u2202marks)) =\u1d50[marks]\n          totalIntegral a K N) \u2192\n        \u2200 j : \u2115, j < N \u2192 \u2200 r : Fin 3,\n          (fun \u03b7 => H r j (initialSegment j \u03b7)) =\u1d50[marks] fun \u03b7 => K r j (initialSegment j \u03b7)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkIntegralUniqueness.lean#L73"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.split",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 11,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem split (Y : MarkSample \u2192 \u2102) :\n    Y = lift (fun \u03b7 => (Y \u03b7).re) + Complex.I \u2022 lift (fun \u03b7 => (Y \u03b7).im)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L11"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.error_split",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 18,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem error_split (Y : MarkSample \u2192 \u2102) (hY : Integrable Y marks) (n : \u2115) :\n    (marks[Y | history n]-Y) =\u1d50[marks]\n      ((marks[lift (fun \u03b7 => (Y \u03b7).re) | history n]-lift (fun \u03b7 => (Y \u03b7).re)) +\n        Complex.I \u2022 (marks[lift (fun \u03b7 => (Y \u03b7).im) | history n]-lift (fun \u03b7 => (Y \u03b7).im)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L18"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.condExp_L1_limit",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 42,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem condExp_L1_limit (Y : MarkSample \u2192 \u2102) (hY : Integrable Y marks)\n    (hm : StronglyMeasurable Y) :\n    Tendsto (fun n : \u2115 => eLpNorm (marks[Y | history n]-Y) 1 marks) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L42"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.condExp_ae_limit",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 58,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem condExp_ae_limit (Y : MarkSample \u2192 \u2102) (hY : Integrable Y marks)\n    (hm : StronglyMeasurable Y) :\n    \u2200\u1d50 \u03b7 \u2202marks, Tendsto (fun n : \u2115 => marks[Y | history n] \u03b7) atTop (\ud835\udcdd (Y \u03b7))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L58"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.integrable_condExp_L1_limit",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 82,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem integrable_condExp_L1_limit (Y : MarkSample \u2192 \u2102) (hY : Integrable Y marks) :\n    Tendsto (fun n : \u2115 => eLpNorm (marks[Y | history n]-Y) 1 marks) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L82"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.integrable_condExp_ae_limit",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 93,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem integrable_condExp_ae_limit (Y : MarkSample \u2192 \u2102) (hY : Integrable Y marks) :\n    \u2200\u1d50 \u03b7 \u2202marks, Tendsto (fun n : \u2115 => marks[Y | history n] \u03b7) atTop (\ud835\udcdd (Y \u03b7))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L93"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.coherent_clark",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 105,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem coherent_clark (a : \u211d) (ha : a \u2260 0) (Y : MarkSample \u2192 \u2102) :\n    \u2203 H : Fin 3 \u2192 Coefficients, \u2200 n : \u2115,\n      (fun \u03b7 => marks[Y | history n] \u03b7-(\u222b \u03be, Y \u03be \u2202marks)) =\u1d50[marks]\n        RootMarkItoIsometry.totalIntegral a H n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L105"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkComplexClarkLimit.infinite_clark",
+      "file": "Foundation/RootMarkComplexClarkLimit.lean",
+      "line": 118,
+      "source_sha256": "d04a1b76da23e8271e88463b2e70e1d2268704e3aa0dc63edda79fee69b15630",
+      "declaration_header": "theorem infinite_clark (a : \u211d) (ha : a \u2260 0) (Y : MarkSample \u2192 \u2102)\n    (hY : Integrable Y marks) :\n    \u2203 H : Fin 3 \u2192 Coefficients,\n      (\u2200 n : \u2115, (fun \u03b7 => marks[Y | history n] \u03b7-(\u222b \u03be, Y \u03be \u2202marks)) =\u1d50[marks]\n        RootMarkItoIsometry.totalIntegral a H n) \u2227\n      Tendsto (fun n : \u2115 => eLpNorm\n        (RootMarkItoIsometry.totalIntegral a H n - (fun \u03b7 => Y \u03b7-(\u222b \u03be, Y \u03be \u2202marks)))\n        1 marks) atTop (\ud835\udcdd 0) \u2227\n      \u2200\u1d50 \u03b7 \u2202marks, Tendsto (fun n : \u2115 => RootMarkItoIsometry.totalIntegral a H n \u03b7)\n        atTop (\ud835\udcdd (Y \u03b7-(\u222b \u03be, Y \u03be \u2202marks)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkComplexClarkLimit.lean#L118"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkL2Limit.prefixSpace_mono",
+      "file": "Foundation/RootMarkL2Limit.lean",
+      "line": 22,
+      "source_sha256": "7a29d0df5d8f2213e321d919bf5f95d3773702f21b05df35a4c9b3a15bfcb7c6",
+      "declaration_header": "theorem prefixSpace_mono : Monotone prefixSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkL2Limit.lean#L22"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkL2Limit.prefix_projection_condExp_ae",
+      "file": "Foundation/RootMarkL2Limit.lean",
+      "line": 27,
+      "source_sha256": "7a29d0df5d8f2213e321d919bf5f95d3773702f21b05df35a4c9b3a15bfcb7c6",
+      "declaration_header": "theorem prefix_projection_condExp_ae (n : \u2115) (Y : Lp \u2102 2 marks) :\n    (prefixSpace n).starProjection Y =\u1d50[marks] marks[(Y : MarkSample \u2192 \u2102) | history n]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkL2Limit.lean#L27"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkL2Limit.conditionalValue_L2_limit",
+      "file": "Foundation/RootMarkL2Limit.lean",
+      "line": 33,
+      "source_sha256": "7a29d0df5d8f2213e321d919bf5f95d3773702f21b05df35a4c9b3a15bfcb7c6",
+      "declaration_header": "theorem conditionalValue_L2_limit (Y : Lp \u2102 2 marks) :\n    Tendsto (fun n : \u2115 => conditionalValue n Y) atTop (\ud835\udcdd Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkL2Limit.lean#L33"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkL2Limit.stochastic_projection_L2_limit",
+      "file": "Foundation/RootMarkL2Limit.lean",
+      "line": 47,
+      "source_sha256": "7a29d0df5d8f2213e321d919bf5f95d3773702f21b05df35a4c9b3a15bfcb7c6",
+      "declaration_header": "theorem stochastic_projection_L2_limit (a : \u211d) (ha : a \u2260 0) (Y : Lp \u2102 2 marks)\n    (hmean : (\u222b \u03b7, Y \u03b7 \u2202marks) = 0) :\n    Tendsto (fun n : \u2115 => RootMarkGKWProjection.projection a n Y) atTop (\ud835\udcdd Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkL2Limit.lean#L47"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.integral_conditioning",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 13,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem integral_conditioning (a : \u211d) (H : Fin 3 \u2192 Coefficients) (m n : \u2115) (h : m \u2264 n) :\n    conditionalValue m (integralL2 a H n) = integralL2 a H m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.squared_distance",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 21,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem squared_distance (a : \u211d) (H : Fin 3 \u2192 Coefficients) (m n : \u2115) (h : m \u2264 n) :\n    \u2016integralL2 a H n-integralL2 a H m\u2016^2 =\n      \u2016integralL2 a H n\u2016^2-\u2016integralL2 a H m\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L21"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.finite_energy_cauchy",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 30,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem finite_energy_cauchy (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    CauchySeq (fun n : \u2115 => integralL2 a H n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.finite_energy_integral",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 48,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem finite_energy_integral (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    \u2203 Y : Lp \u2102 2 marks, Tendsto (fun n : \u2115 => integralL2 a H n) atTop (\ud835\udcdd Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L48"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.stochasticLimit_tendsto",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 57,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem stochasticLimit_tendsto (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    Tendsto (fun n : \u2115 => integralL2 a H n) atTop (\ud835\udcdd (stochasticLimit a H hH))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L57"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.stochasticLimit_isometry",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 62,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem stochasticLimit_isometry (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    \u2016stochasticLimit a H hH\u2016^2 = \u2211' j : \u2115, \u222b \u03b7, energy a H j \u03b7 \u2202marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L62"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.conditionalValue_continuous",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 69,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem conditionalValue_continuous (m : \u2115) :\n    Continuous (fun Y : Lp \u2102 2 marks => conditionalValue m Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L69"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.stochasticLimit_conditioning",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 74,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem stochasticLimit_conditioning (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) (m : \u2115) :\n    conditionalValue m (stochasticLimit a H hH) = integralL2 a H m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L74"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.stochasticLimit_mean_zero",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 82,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem stochasticLimit_mean_zero (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    (\u222b \u03b7, stochasticLimit a H hH \u03b7 \u2202marks) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L82"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkFiniteEnergyLimit.stochasticLimit_ae_tendsto",
+      "file": "Foundation/RootMarkFiniteEnergyLimit.lean",
+      "line": 93,
+      "source_sha256": "0c170ad244b6b3a02700714348c7a86e23680377f7cf23ed2f9dbe2d2f9db941",
+      "declaration_header": "theorem stochasticLimit_ae_tendsto (a : \u211d) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    \u2200\u1d50 \u03b7 \u2202marks, Tendsto (fun n : \u2115 => RootMarkItoIsometry.totalIntegral a H n \u03b7)\n      atTop (\ud835\udcdd (stochasticLimit a H hH \u03b7))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkFiniteEnergyLimit.lean#L93"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteIto.infinite_clark_isometry",
+      "file": "Foundation/RootMarkInfiniteIto.lean",
+      "line": 14,
+      "source_sha256": "ec05c1b1b65c7c2d0dc8e4892eb4614189548159eb33d575bd37bd48d1ba5029",
+      "declaration_header": "theorem infinite_clark_isometry (a : \u211d) (ha : a \u2260 0) (Y : Lp \u2102 2 marks)\n    (hmean : (\u222b \u03b7, Y \u03b7 \u2202marks) = 0) :\n    \u2203 H : Fin 3 \u2192 Coefficients,\n      (\u2200 n : \u2115, (fun \u03b7 => marks[(Y : MarkSample \u2192 \u2102) | history n] \u03b7) =\u1d50[marks]\n        RootMarkItoIsometry.totalIntegral a H n) \u2227\n      Tendsto (fun n : \u2115 => integralL2 a H n) atTop (\ud835\udcdd Y) \u2227\n      HasSum (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks) (\u2016Y\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteIto.lean#L14"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.energy_summable_of_converges",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 14,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem energy_summable_of_converges (a : \u211d) (H : Fin 3 \u2192 Coefficients) (Y : Lp \u2102 2 marks)\n    (hY : Tendsto (fun n : \u2115 => integralL2 a H n) atTop (\ud835\udcdd Y)) :\n    Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L14"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.finite_energy_add",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 25,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem finite_energy_add (a : \u211d) (H K : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks))\n    (hK : Summable (fun j : \u2115 => \u222b \u03b7, energy a K j \u03b7 \u2202marks)) :\n    Summable (fun j : \u2115 => \u222b \u03b7, energy a (H+K) j \u03b7 \u2202marks)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L25"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.finite_energy_smul",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 35,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem finite_energy_smul (a : \u211d) (c : \u2102) (H : Fin 3 \u2192 Coefficients)\n    (hH : Summable (fun j : \u2115 => \u222b \u03b7, energy a H j \u03b7 \u2202marks)) :\n    Summable (fun j : \u2115 => \u222b \u03b7, energy a (c \u2022 H) j \u03b7 \u2202marks)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.integration_isometry",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 65,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem integration_isometry (a : \u211d) (H : integrands a) :\n    \u2016integration a H\u2016^2 = \u2211' j : \u2115, \u222b \u03b7, energy a H j \u03b7 \u2202marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.integration_mean_zero",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 69,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem integration_mean_zero (a : \u211d) (H : integrands a) :\n    (\u222b \u03b7, integration a H \u03b7 \u2202marks) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L69"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteOperator.integration_surjective_centered",
+      "file": "Foundation/RootMarkInfiniteOperator.lean",
+      "line": 72,
+      "source_sha256": "ee51bfc19e91c2c15d22845723d1fbf98c7f82fd7c6be3f5f33af75d277b40fa",
+      "declaration_header": "theorem integration_surjective_centered (a : \u211d) (ha : a \u2260 0) (Y : Lp \u2102 2 marks)\n    (hmean : (\u222b \u03b7, Y \u03b7 \u2202marks) = 0) : \u2203 H : integrands a, integration a H = Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteOperator.lean#L72"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkHilbertIntegrands.centered_iff",
+      "file": "Foundation/RootMarkHilbertIntegrands.lean",
+      "line": 16,
+      "source_sha256": "3a6290a6050d8f4756f54da49720ee9e57d1ed0ad337780dfa31809525c55905",
+      "declaration_header": "theorem centered_iff (Y : Lp \u2102 2 marks) : Y \u2208 centered \u2194 (\u222b \u03b7, Y \u03b7 \u2202marks) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkHilbertIntegrands.lean#L16"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkHilbertIntegrands.integration_range",
+      "file": "Foundation/RootMarkHilbertIntegrands.lean",
+      "line": 31,
+      "source_sha256": "3a6290a6050d8f4756f54da49720ee9e57d1ed0ad337780dfa31809525c55905",
+      "declaration_header": "theorem integration_range (a : \u211d) (ha : a \u2260 0) : (integration a).range = centered",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkHilbertIntegrands.lean#L31"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkHilbertIntegrands.integration_range_closed",
+      "file": "Foundation/RootMarkHilbertIntegrands.lean",
+      "line": 39,
+      "source_sha256": "3a6290a6050d8f4756f54da49720ee9e57d1ed0ad337780dfa31809525c55905",
+      "declaration_header": "theorem integration_range_closed (a : \u211d) (ha : a \u2260 0) :\n    IsClosed ((integration a).range : Set (Lp \u2102 2 marks))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkHilbertIntegrands.lean#L39"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkHilbertIntegrands.adjoint_identity",
+      "file": "Foundation/RootMarkHilbertIntegrands.lean",
+      "line": 78,
+      "source_sha256": "3a6290a6050d8f4756f54da49720ee9e57d1ed0ad337780dfa31809525c55905",
+      "declaration_header": "theorem adjoint_identity (a : \u211d) [Fact (a \u2260 0)] (u : IntegrandQuotient a) (Y : Lp \u2102 2 marks) :\n    \u27eaderivative a Y,u\u27eb_\u2102 = \u27eaY,infiniteIntegral a u\u27eb_\u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkHilbertIntegrands.lean#L78"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.integral_mk",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 16,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem integral_mk (a : \u211d) (H : integrands a) :\n    infiniteIntegral a (classOf a H) = integration a H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L16"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.integral_norm",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 19,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem integral_norm (a : \u211d) (u : IntegrandQuotient a) : \u2016infiniteIntegral a u\u2016 = \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L19"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.quotient_energy",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 21,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem quotient_energy (a : \u211d) (H : integrands a) :\n    \u2016(classOf a H)\u2016^2 =\n      \u2211' j : \u2115, \u222b \u03b7, RootMarkConditionalEnergy.energy a H j \u03b7 \u2202marks",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L21"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.derivative_integral",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 26,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem derivative_integral (a : \u211d) [Fact (a \u2260 0)] :\n    (derivative a).comp (infiniteIntegral a) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L26"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.derivative_integral_apply",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 30,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem derivative_integral_apply (a : \u211d) [Fact (a \u2260 0)] (u : IntegrandQuotient a) :\n    derivative a (infiniteIntegral a u) = u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.centered_clark",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 35,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem centered_clark (a : \u211d) [ha : Fact (a \u2260 0)] (Y : Lp \u2102 2 marks)\n    (hmean : (\u222b \u03b7, Y \u03b7 \u2202marks) = 0) : infiniteIntegral a (derivative a Y) = Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.clark_projection",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 42,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem clark_projection (a : \u211d) [ha : Fact (a \u2260 0)] (Y : Lp \u2102 2 marks) :\n    infiniteIntegral a (derivative a Y) = centered.starProjection Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L42"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.centered_eq_orthogonal",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 59,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem centered_eq_orthogonal : centered = (RootMarkL2Limit.prefixSpace 0)\u15ee",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.clark_centering",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 62,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem clark_centering (a : \u211d) [Fact (a \u2260 0)] (Y : Lp \u2102 2 marks) :\n    infiniteIntegral a (derivative a Y) = Y-RootMarkGKWConditioning.conditionalValue 0 Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L62"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RootMarkInfiniteClarkOperator.clark_centered_ae",
+      "file": "Foundation/RootMarkInfiniteClarkOperator.lean",
+      "line": 69,
+      "source_sha256": "09f29f5fd21343c0f15b6f35a4c2f666a51fc65606eb0a0d945183f6aa317c36",
+      "declaration_header": "theorem clark_centered_ae (a : \u211d) [Fact (a \u2260 0)] (Y : Lp \u2102 2 marks) :\n    infiniteIntegral a (derivative a Y) =\u1d50[marks] fun \u03b7 => Y \u03b7-(\u222b \u03be, Y \u03be \u2202marks)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RootMarkInfiniteClarkOperator.lean#L69"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelOperator.channel_apply",
+      "file": "Foundation/ComplexRootChannelOperator.lean",
+      "line": 15,
+      "source_sha256": "7d0d9ee0661fc5ff707c9f046cba3f733dc4ffe95fa82c747467f6c6a50296f7",
+      "declaration_header": "theorem channel_apply (a : \u211d) (r : Fin 3) (f : Test) (z : \u2102) :\n    channel a r f z = coefficient a (fun k => f (z+noise a k)) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelOperator.lean#L15"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelOperator.channel_constant",
+      "file": "Foundation/ComplexRootChannelOperator.lean",
+      "line": 20,
+      "source_sha256": "7d0d9ee0661fc5ff707c9f046cba3f733dc4ffe95fa82c747467f6c6a50296f7",
+      "declaration_header": "theorem channel_constant (a : \u211d) (r : Fin 3) (c : \u2102) :\n    channel a r (BoundedContinuousFunction.const \u2102 c) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelOperator.lean#L20"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootChannelOperator.jump_kernel_decomposition",
+      "file": "Foundation/ComplexRootChannelOperator.lean",
+      "line": 26,
+      "source_sha256": "7d0d9ee0661fc5ff707c9f046cba3f733dc4ffe95fa82c747467f6c6a50296f7",
+      "declaration_header": "theorem jump_kernel_decomposition (a : \u211d) (ha : a \u2260 0) (f : Test) (z : \u2102) (k : Fin 4) :\n    f (z+noise a k)-f z = generator 1 a f z +\n      channel a 0 f z*noise a k + channel a 1 f z*(noise a k)^2 +\n      channel a 2 f z*(noise a k)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootChannelOperator.lean#L26"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedChannelIto.jump_channels",
+      "file": "Foundation/MarkedChannelIto.lean",
+      "line": 25,
+      "source_sha256": "af4c29d80aa3876170bcc1b7d5066bb6783c80476819212a05bd65ba630c47e9",
+      "declaration_header": "theorem jump_channels (a : \u211d) (ha : a \u2260 0) (f : Test) (t : \u211d\u22650) (\u03c9 : StateSample) :\n    MarkedJumpIto.jumpSum a f t \u03c9 = clockSum a f t \u03c9 + channelSum a 0 f t \u03c9 +\n      channelSum a 1 f t \u03c9 + channelSum a 2 f t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedChannelIto.lean#L25"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedChannelIto.channelSum_leftLim",
+      "file": "Foundation/MarkedChannelIto.lean",
+      "line": 35,
+      "source_sha256": "af4c29d80aa3876170bcc1b7d5066bb6783c80476819212a05bd65ba630c47e9",
+      "declaration_header": "theorem channelSum_leftLim (a : \u211d) (r : Fin 3) (f : Test) (t : \u211d\u22650) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) :\n    channelSum a r f t \u03c9 = \u2211 j \u2208 Finset.range (ExponentialRenewalCount.count t \u03c9.1),\n      (channel a r f (Function.leftLim (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n        (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1)) *\n      (MarkedRootRenewalProcess.process a (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1) \u03c9 -\n        Function.leftLim (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n          (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1))^(r.val+1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedChannelIto.lean#L35"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedChannelIto.compensated_representation",
+      "file": "Foundation/MarkedChannelIto.lean",
+      "line": 48,
+      "source_sha256": "af4c29d80aa3876170bcc1b7d5066bb6783c80476819212a05bd65ba630c47e9",
+      "declaration_header": "theorem compensated_representation (a : \u211d) (ha : a \u2260 0) (f : Test) :\n    (fun t \u03c9 => compensatedClock a f t \u03c9 + channelSum a 0 f t \u03c9 +\n      channelSum a 1 f t \u03c9 + channelSum a 2 f t \u03c9) = MarkedJumpIto.compensated a f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedChannelIto.lean#L48"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedChannelIto.combined_martingale",
+      "file": "Foundation/MarkedChannelIto.lean",
+      "line": 56,
+      "source_sha256": "af4c29d80aa3876170bcc1b7d5066bb6783c80476819212a05bd65ba630c47e9",
+      "declaration_header": "theorem combined_martingale (a : \u211d) (ha : a \u2260 0) (f : Test) :\n    Martingale (fun t \u03c9 => compensatedClock a f t \u03c9 + channelSum a 0 f t \u03c9 +\n      channelSum a 1 f t \u03c9 + channelSum a 2 f t \u03c9) (history a) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedChannelIto.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.drift_increment_condExp",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 13,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem drift_increment_condExp (a : \u211d) (f : Test) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[fun \u03c9 => primitive a (generator 1 a f) t \u03c9-\n      primitive a (generator 1 a f) s \u03c9 | history a s] =\u1d50[probability]\n      fun \u03c9 => transition a (t-s : \u211d\u22650) f (process a s \u03c9)-f (process a s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.observable_increment_condExp",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 28,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem observable_increment_condExp (a : \u211d) (f : Test) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[fun \u03c9 => f (process a t \u03c9)-f (process a s \u03c9) | history a s] =\u1d50[probability]\n      fun \u03c9 => transition a (t-s : \u211d\u22650) f (process a s \u03c9)-f (process a s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L28"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_adapted",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 46,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_adapted (a : \u211d) (f : Test) : StronglyAdapted (history a) (dynkin a f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L46"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_integrable",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 51,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_integrable (a : \u211d) (f : Test) (t : \u211d\u22650) :\n    Integrable (dynkin a f t) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L51"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_increment_condExp_zero",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 56,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_increment_condExp_zero (a : \u211d) (f : Test) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[dynkin a f t-dynkin a f s | history a s] =\u1d50[probability] fun _ => 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L56"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_condExp",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 77,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_condExp (a : \u211d) (f : Test) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[dynkin a f t | history a s] =\u1d50[probability] dynkin a f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L77"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_martingale",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 89,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_martingale (a : \u211d) (f : Test) :\n    Martingale (dynkin a f) (history a) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L89"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_formula",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 93,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_formula (a : \u211d) (f : Test) (t : \u211d\u22650) (\u03c9 : StateSample) :\n    dynkin a f t \u03c9 = f (process a t \u03c9)-f 0-\n      \u222b r in 0..(t : \u211d), (generator 1 a f) (process a r.toNNReal \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L93"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_zero",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 98,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_zero (a : \u211d) (f : Test) (\u03c9 : StateSample) : dynkin a f 0 \u03c9 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L98"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedDynkinMartingale.dynkin_mean",
+      "file": "Foundation/MarkedDynkinMartingale.lean",
+      "line": 101,
+      "source_sha256": "d51d7fcafdf3d84f7530df0e80b6a8ef40e80bc116d38cf39b788b22bb468f3d",
+      "declaration_header": "theorem dynkin_mean (a : \u211d) (f : Test) (t : \u211d\u22650) :\n    (\u222b \u03c9, dynkin a f t \u03c9 \u2202probability) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedDynkinMartingale.lean#L101"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.position_successor",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 12,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem position_successor (a : \u211d) (n : \u2115) (\u03b7 : MarkSample) :\n    position a (n+1) \u03b7 = position a n \u03b7 + ComplexFourthRootNoise.noise a (\u03b7 n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L12"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.jump_formula",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 20,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem jump_formula (a : \u211d) (f : \u2102 \u2192 \u2102) (t : \u211d\u22650) (\u03c9 : StateSample) :\n    jumpSum a f t \u03c9 = f (process a t \u03c9)-f 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L20"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.actual_clock_formula",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 27,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem actual_clock_formula (a : \u211d) (f : \u2102 \u2192 \u2102) (t : \u211d\u22650) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) :\n    jumpSum a f t \u03c9 = \u2211 j \u2208 Finset.range (ExponentialRenewalCount.count t \u03c9.1),\n      (f (MarkedRootRenewalProcess.process a (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1) \u03c9) -\n        f (MarkedRootRenewalProcess.process a (ExponentialNonexplosiveClock.clock j \u03c9.1) \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L27"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.count_before_jump",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 38,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem count_before_jump (\u03c9 : ExponentialHoldingSequence.Sample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9) (n : \u2115) :\n    (fun u : \u211d => ExponentialRenewalCount.count u \u03c9) =\u1da0[\n      \ud835\udcdd[<] (ExponentialNonexplosiveClock.clock (n+1) \u03c9)] (fun _ => n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L38"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.process_before_jump",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 54,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem process_before_jump (a : \u211d) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) (n : \u2115) :\n    Tendsto (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n      (\ud835\udcdd[<] (ExponentialNonexplosiveClock.clock (n+1) \u03c9.1))\n      (\ud835\udcdd (position a n \u03c9.2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L54"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.process_leftLim",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 65,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem process_leftLim (a : \u211d) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) (n : \u2115) :\n    Function.leftLim (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n      (ExponentialNonexplosiveClock.clock (n+1) \u03c9.1) = position a n \u03c9.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.actual_jump",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 71,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem actual_jump (a : \u211d) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) (n : \u2115) :\n    MarkedRootRenewalProcess.process a (ExponentialNonexplosiveClock.clock (n+1) \u03c9.1) \u03c9 -\n      Function.leftLim (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n        (ExponentialNonexplosiveClock.clock (n+1) \u03c9.1) =\n      ComplexFourthRootNoise.noise a (\u03c9.2 n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L71"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.ito_leftLim_formula",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 81,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem ito_leftLim_formula (a : \u211d) (f : \u2102 \u2192 \u2102) (t : \u211d\u22650) (\u03c9 : StateSample)\n    (h\u03c9 : ExponentialNonexplosiveClock.Good \u03c9.1) :\n    f (process a t \u03c9)-f 0 = \u2211 j \u2208 Finset.range (ExponentialRenewalCount.count t \u03c9.1),\n      (f (MarkedRootRenewalProcess.process a (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1) \u03c9) -\n        f (Function.leftLim (fun u : \u211d => MarkedRootRenewalProcess.process a u \u03c9)\n          (ExponentialNonexplosiveClock.clock (j+1) \u03c9.1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L81"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.jumpSum_adapted",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 94,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem jumpSum_adapted (a : \u211d) (f : Test) : StronglyAdapted (history a) (jumpSum a f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L94"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.jumpSum_integrable",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 101,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem jumpSum_integrable (a : \u211d) (f : Test) (t : \u211d\u22650) :\n    Integrable (jumpSum a f t) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L101"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.compensated_eq_dynkin",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 110,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem compensated_eq_dynkin (a : \u211d) (f : Test) :\n    compensated a f = MarkedDynkinMartingale.dynkin a f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L110"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.compensated_martingale",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 116,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem compensated_martingale (a : \u211d) (f : Test) :\n    Martingale (compensated a f) (history a) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L116"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.stopped_jump_integrable",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 121,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem stopped_jump_integrable (a : \u211d) (f : Test) (\u03c4 : StateSample \u2192 \u211d\u22650)\n    (h\u03c4 : IsStoppingTime (history a) (fun \u03c9 => (\u03c4 \u03c9 : WithTop \u211d\u22650))) :\n    Integrable (fun \u03c9 => jumpSum a f (\u03c4 \u03c9) \u03c9) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L121"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedJumpIto.stopped_jump_compensator",
+      "file": "Foundation/MarkedJumpIto.lean",
+      "line": 130,
+      "source_sha256": "30a719457be5fa0c72a1ac23c7dee5c11330cdfb15ecff63f605b1b940f8a7ba",
+      "declaration_header": "theorem stopped_jump_compensator (a : \u211d) (f : Test) (\u03c4 : StateSample \u2192 \u211d\u22650)\n    (h\u03c4 : IsStoppingTime (history a) (fun \u03c9 => (\u03c4 \u03c9 : WithTop \u211d\u22650)))\n    (N : \u2115) (hN : \u2200 \u03c9, \u03c4 \u03c9 \u2264 N) :\n    (\u222b \u03c9, jumpSum a f (\u03c4 \u03c9) \u03c9 \u2202probability) =\n      \u222b \u03c9, primitive a (ComplexRootTransitionOperator.generator 1 a f) (\u03c4 \u03c9) \u03c9 \u2202probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedJumpIto.lean#L130"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedOperatorConditional.history_eq_past",
+      "file": "Foundation/MarkedOperatorConditional.lean",
+      "line": 12,
+      "source_sha256": "2688b713bac801d2de04e7ec4a55517f2b0ee83b14033a0a1ee5d544309ba866",
+      "declaration_header": "theorem history_eq_past (a : \u211d) (s : \u211d\u22650) :\n    history a s = MeasurableSpace.comap (pastPath a s) inferInstance",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedOperatorConditional.lean#L12"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedOperatorConditional.past_increment_independent",
+      "file": "Foundation/MarkedOperatorConditional.lean",
+      "line": 17,
+      "source_sha256": "2688b713bac801d2de04e7ec4a55517f2b0ee83b14033a0a1ee5d544309ba866",
+      "declaration_header": "theorem past_increment_independent (a : \u211d) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    IndepFun (pastPath a s) (increment a s t) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedOperatorConditional.lean#L17"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedOperatorConditional.observable_integrable",
+      "file": "Foundation/MarkedOperatorConditional.lean",
+      "line": 24,
+      "source_sha256": "2688b713bac801d2de04e7ec4a55517f2b0ee83b14033a0a1ee5d544309ba866",
+      "declaration_header": "theorem observable_integrable (a : \u211d) (t : \u211d\u22650) (f : ComplexRootTransitionOperator.Test) :\n    Integrable (fun \u03c9 => f (process a t \u03c9)) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedOperatorConditional.lean#L24"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedOperatorConditional.conditional_transition",
+      "file": "Foundation/MarkedOperatorConditional.lean",
+      "line": 30,
+      "source_sha256": "2688b713bac801d2de04e7ec4a55517f2b0ee83b14033a0a1ee5d544309ba866",
+      "declaration_header": "theorem conditional_transition (a : \u211d) (s t : \u211d\u22650) (hst : s \u2264 t)\n    (f : ComplexRootTransitionOperator.Test) :\n    probability[fun \u03c9 => f (process a t \u03c9) | history a s] =\u1d50[probability]\n      fun \u03c9 => ComplexRootPoissonSemigroup.transition a (t-s : \u211d\u22650) f (process a s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedOperatorConditional.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.process_rightContinuous",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 16,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem process_rightContinuous (a : \u211d) (\u03c9 : StateSample) :\n    IsRightContinuous (fun t : \u211d\u22650 => process a t \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L16"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.process_progressive",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 22,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem process_progressive (a : \u211d) : IsStronglyProgressive (history a) (process a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L22"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.stoppedValue_past",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 29,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem stoppedValue_past (a : \u211d) (f : ComplexRootTransitionOperator.Test) (T : \u211d\u22650) :\n    StronglyMeasurable[(history a T).prod inferInstance] (stoppedValue a f T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L29"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.stoppedValue_measurable",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 45,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem stoppedValue_measurable (a : \u211d) (f : ComplexRootTransitionOperator.Test) (T : \u211d\u22650) :\n    Measurable (stoppedValue a f T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L45"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.stoppedValue_bound",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 53,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem stoppedValue_bound (a : \u211d) (f : ComplexRootTransitionOperator.Test) (T : \u211d\u22650)\n    (p : StateSample \u00d7 \u211d) : \u2016stoppedValue a f T p\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L53"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.primitive_adapted",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 59,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem primitive_adapted (a : \u211d) (f : ComplexRootTransitionOperator.Test) :\n    StronglyAdapted (history a) (primitive a f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.stoppedValue_integrable",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 65,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem stoppedValue_integrable (a : \u211d) (f : ComplexRootTransitionOperator.Test) (T : \u211d\u22650) :\n    Integrable (stoppedValue a f T) (probability.prod (volume.restrict (Ioc 0 (T : \u211d))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L65"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.primitive_integrable",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 70,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem primitive_integrable (a : \u211d) (f : ComplexRootTransitionOperator.Test) (T : \u211d\u22650) :\n    Integrable (primitive a f T) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L70"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.primitive_eq_interval",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 74,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem primitive_eq_interval (a : \u211d) (f : ComplexRootTransitionOperator.Test)\n    (T : \u211d\u22650) (\u03c9 : StateSample) :\n    primitive a f T \u03c9 = \u222b r in 0..(T : \u211d), f (process a r.toNNReal \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L74"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.realTime_measurable",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 82,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem realTime_measurable (a : \u211d) (f : ComplexRootTransitionOperator.Test) (\u03c9 : StateSample) :\n    Measurable (fun r : \u211d => f (process a r.toNNReal \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L82"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.realTime_intervalIntegrable",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 88,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem realTime_intervalIntegrable (a : \u211d) (f : ComplexRootTransitionOperator.Test)\n    (\u03c9 : StateSample) (s t : \u211d) :\n    IntervalIntegrable (fun r : \u211d => f (process a r.toNNReal \u03c9)) volume s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L88"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MarkedTimeIntegral.primitive_continuous",
+      "file": "Foundation/MarkedTimeIntegral.lean",
+      "line": 94,
+      "source_sha256": "bc1821f2b9ec34b9deec94e521bcb20dceeb9e87c9e6596cadbeb3c5bc418f6a",
+      "declaration_header": "theorem primitive_continuous (a : \u211d) (f : ComplexRootTransitionOperator.Test) (\u03c9 : StateSample) :\n    Continuous (fun T : \u211d\u22650 => primitive a f T \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MarkedTimeIntegral.lean#L94"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.count_preserving",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 13,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem count_preserving (t : \u211d\u22650) : MeasurePreserving (count t) probability (poissonMeasure t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L13"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.process_integrable",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 16,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem process_integrable (t : \u211d\u22650) : Integrable (process t) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L16"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.process_mean",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 23,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem process_mean (t : \u211d\u22650) : (\u222b \u03c9, process t \u03c9 \u2202probability) = (t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L23"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.difference_mean",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 30,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem difference_mean (s t : \u211d\u22650) :\n    (\u222b \u03c9, process t \u03c9-process s \u03c9 \u2202probability) = (t : \u211d)-(s : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L30"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.difference_condExp",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 34,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem difference_condExp (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[fun \u03c9 => process t \u03c9-process s \u03c9 | history s] =\u1d50[probability]\n      fun _ => (t : \u211d)-(s : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L34"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.process_condExp",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 43,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem process_condExp (s t : \u211d\u22650) (hst : s \u2264 t) :\n    probability[process t | history s] =\u1d50[probability]\n      fun \u03c9 => process s \u03c9 + (t : \u211d)-(s : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L43"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.compensated_integrable",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 59,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem compensated_integrable (t : \u211d\u22650) : Integrable (compensated t) probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L59"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.compensated_adapted",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 62,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem compensated_adapted : StronglyAdapted history compensated",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L62"
+    },
+    {
+      "paper": "Sections 6\u20139 positive cyclic/actual four-mark source calculus, completion and separate clock channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RenewalCompensatedMartingale.compensated_martingale",
+      "file": "Foundation/RenewalCompensatedMartingale.lean",
+      "line": 65,
+      "source_sha256": "4a15540e200a97ade254dac1a93fc28e14505af8d25a64a04c427f7853009f4b",
+      "declaration_header": "theorem compensated_martingale : Martingale compensated history probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RenewalCompensatedMartingale.lean#L65"
     }
   ],
   "human_reorganization": [
@@ -350,7 +2078,13 @@
     "Formal polygonal paths are continuous on R with compact-open topology. The paper explicitly proves the restricted C([0,1];C) uniform-topology result from the endpoint law. The general continuous-coordinate implication is a classical deduction.",
     "The fixed-test result after every divergent reindexing is a direct classical deduction from the verified eventual exponent lower bound, not a new named Lean theorem.",
     "The elementary sine lower bound is the human proof of the formal trigonometric bound; no optimal escape constant is asserted.",
-    "Taylor O(x^8) is an elementary series strengthening used in the exposition; the formal limit only needs its mapped o(x^4) remainder."
+    "Taylor O(x^8) is an elementary series strengthening used in the exposition; the formal limit only needs its mapped o(x^4) remainder.",
+    "The arbitrary cyclic finite character basis is normalized with conjugate Fourier coefficients. The actual four-mark powers use r=1,2,3, whereas source Fin 3 index is r-1. Positive Gram weights are (2a^2)^r, while the holomorphic fourth moment is -4a^4; these are not interchangeable.",
+    "The original infinite product and its prefix filtration support coherent finite, L1/almost-sure and full L2 reconstruction. Infinite square energy is only asserted in the L2 case. The integrand quotient norm is induced by the actual integration range and identified with energy; surjectivity is proved before completeness.",
+    "The bounded adjoint of the completed predictable integration isometry is the reconstruction derivative in this paper. It is not identified with an unbounded anticipating Malliavin derivative or a signed pseudoprocess operator.",
+    "The cylinder-density and maximal-inequality proof reorganizes the verified conditional-limit mechanism into a complete human argument. Finite all-time common versions use countably many prefixes. The real sign-coordinate basis comparison is an elementary human deduction.",
+    "The unit exponential source has actual finite count and marked paths. Its nonexplosion and residual-life factorization are reconstructed directly. The displayed wall-clock Dynkin/channel identity is the actual combined martingale, not a full continuous-time PRP for arbitrary holding/mark terminal variables.",
+    "Centered mark kernels have zero mark mean and therefore cannot equal a unit count jump for every mark. This explicit obstruction is not a claim that a four-channel continuous-time representation is impossible. Mark-source Hilbert isometry is not transferred to time components, signed targets or an ordinary weak scaling limit."
   ],
   "literature": [
     {

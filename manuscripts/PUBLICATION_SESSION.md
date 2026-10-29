@@ -263,3 +263,7 @@ Completed a nine-page classical formalization companion on normalized delayed Ga
 ## Terminal-aware Brownian bracket errors
 
 Expanded Gaussian prediction from eight to ten pages with actual full-past-plus-terminal conditional square, mean bound and exact domain counterexample, and a complete bounded-Borel strong convergence proof retaining cross-cell later rows. Harmonic refinements are labelled human deductions. 103 mapped declarations, 20 exact finite checks, all ten final pages inspected; failed overflow and sparse-reference attempts retained in logs, final layout clean. Primary Yoshida comparison records regularity/aim differences. Twenty-seven drafts total 275 pages.
+
+## Positive complex-root source calculus and separate count clock
+
+Expanded the complex-root companion from six to twelve pages, preserving analytic limit/escape/fixed-test results and consolidating positive cyclic/three-channel reconstruction, exact actual finite-energy completion, L1/AE limits, bounded Hilbert adjoint and finite exponential-clock Dynkin/channel identity. Missing constant mark mode is separated from a full continuous-time PRP. 230 frozen correspondences, 177 exact complex-rational checks, all twelve final pages inspected and central new pages enlarged. Broader primary real/complex finite-state antecedents credited. Twenty-seven drafts total 281 pages.

@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-seven drafts, 275 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-seven drafts, 281 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -20,7 +20,7 @@ Twenty-seven drafts, 275 pages, all based on frozen verified commit `bab688bb614
 |---|---|---|
 | Signed multichannel reconstruction on a factorial analytic cylinder domain | [PDF](signed-multichannel/main.pdf) · [LaTeX](signed-multichannel/main.tex) · [theorem map](signed-multichannel/theorem-map.json) · [editorial status](signed-multichannel/editorial-status.md) | Thirteen pages. Full p−1-channel reconstruction in the continuous test dual on the specified observable completion; actual native Bochner L1 limits, quantitative power/refinement estimates and signed diagonal; explicit finite-variation, signed-square, L2-control and missing-channel obstructions. Reviewed draft; novelty unresolved. |
 | Closed differentiation and signed adjoints for Schwartz densities with zeros | [PDF](signed-density-operators/main.pdf) · [LaTeX](signed-density-operators/main.tex) · [theorem map](signed-density-operators/theorem-map.json) · [editorial status](signed-density-operators/editorial-status.md) | Eight pages. Original closable derivative without L2 score; bounded rigging, total adjoint probes, full signed domain and positive Hilbert energy/resolvent; normalized simple-zero counterexample and polynomial Stein obstruction. Full-support Gaussian/Dirac nonclosability and pure-Dirac representative failure. Real Hilbert formalization companion; minimal/weak domains remain distinct. |
-| Complex fourth-root approximations: analytic limits, compact escape and a fixed variation test | [PDF](complex-root-limits/main.pdf) · [LaTeX](complex-root-limits/main.tex) · [theorem map](complex-root-limits/theorem-map.json) · [editorial status](complex-root-limits/editorial-status.md) | Six pages. Exact moments, positive-law compact escape and cofinal weak-limit exclusion; Poissonization; actual complex tilts with one fixed bounded continuous test equal to divergent total variation. Formalization companion; basic distinction classical, priority unresolved. |
+| Complex fourth-root approximations: analytic limits, positive source calculus and clock channels | [PDF](complex-root-limits/main.pdf) · [LaTeX](complex-root-limits/main.tex) · [theorem map](complex-root-limits/theorem-map.json) · [editorial status](complex-root-limits/editorial-status.md) | Twelve pages. Exact moments, positive-law compact escape and cofinal weak-limit exclusion; Poissonization; actual complex tilts with one fixed bounded continuous test equal to divergent total variation. Actual positive three-channel finite/infinite mark reconstruction, precise Hilbert completion and separate count-clock obstruction/combined Dynkin identity. Classical formalization companion; priority unresolved. |
 
 ### Brownian-time paths and original operator domains
 

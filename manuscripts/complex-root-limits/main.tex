@@ -10,7 +10,7 @@
 \newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
 \newcommand{\E}{\mathbb E}\newcommand{\Pp}{\mathbb P}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Complex fourth-root approximations:\\analytic limits, compact escape and a fixed variation test}
+\title{Complex fourth-root approximations:\\analytic limits, positive source calculus and clock channels}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
 \begin{document}
@@ -30,7 +30,7 @@ verified fourth-order results with elementary proofs and explicit
 constants. The analytic-versus-probabilistic distinction is established
 in prior work; this is a formalization companion, and no priority claim
 is made.
-\end{abstract}
+The actual mark source separately has a positive Hermitian three-channel predictable calculus, full original-source $L^2$ reconstruction and a distinct Poisson clock channel. Complete proofs retain the difference between this source calculus and its analytic scaling target. \end{abstract}
 
 \section{Scope and main conclusions}
 Let $\varepsilon_j,\delta_j$ be mutually independent symmetric signs and set
@@ -374,6 +374,381 @@ Nor is the fixed-test conclusion merely a restatement that some sequence
 of test functions detects growing variation: a single explicitly given
 test works for the entire sequence.
 
+
+\section{Cyclic mark channels and positive Hermitian energy}
+The probability sources behind the preceding approximations admit an
+exact calculus before any scaling limit. Its positive Hermitian energy
+must be distinguished from its vanishing holomorphic moments and from
+the signed higher-heat target. We first record the finite mechanism.
+
+Let $K$ be uniform on $\mathbb Z/m\mathbb Z$, $m\ge1$, and put
+$\chi_j(k)=e^{2\pi i jk/m}$. The elementary character sum is
+\[
+ \frac1m\sum_{k=0}^{m-1}\chi_j(k)=\mathbf1_{j=0}.
+\]
+For $j\ne0$, multiply the geometric sum by $1-e^{2\pi i j/m}$ to
+prove it is zero; at $j=0$ it is one after normalization. Consequently
+$\E[\chi_j(K)\overline{\chi_l(K)}]=\mathbf1_{j=l}$.
+For any function $g$ on the finite mark space, define
+\[
+ \widehat g_j=\frac1m\sum_k g(k)\overline{\chi_j(k)}.
+\]
+Orthogonality and the dimension $m$ give
+\begin{equation}\label{eq:cyclic}
+ g(k)-\E g(K)=\sum_{j\ne0}\widehat g_j\chi_j(k),\qquad
+ \E|g(K)-\E g(K)|^2=\sum_{j\ne0}|\widehat g_j|^2.
+\end{equation}
+Here $j$ ranges over the residue classes; the case $m=1$ has empty
+centered sum. Fourier sign conventions are fixed by the displayed
+conjugate; the source uses its matching discrete Fourier transform.
+If $\zeta=c\chi_1(K)$, then
+\[
+ \E\zeta^r=\mathbf1_{m\mid r}c^r,\qquad
+ \E|\zeta|^2=|c|^2.
+\]
+The first identity is the character sum applied to $r$; the second
+uses the pointwise modulus. Thus holomorphic cancellation is not a
+zero variance in the Hilbert sense.
+
+For the four marks used in this paper, $\xi=a(1+i)i^K$ in their cyclic
+order. Assume $a\in\mathbb R\setminus\{0\}$, and set
+\[
+ w_r=(2a^2)^r\quad(1\le r\le3),\qquad q=-4a^4.
+\]
+Then $\xi^4=q$ pointwise, $\E\xi^r=0$ for $1\le r\le3$, and
+\begin{equation}\label{eq:rootgram}
+ \E[\xi^r\overline{\xi^s}]=\mathbf1_{r=s}w_r.
+\end{equation}
+Indeed $\xi^r=a^r(1+i)^r\chi_r(K)$ and its squared modulus is $w_r$.
+These are all three nonconstant characters with nonzero normalizations.
+For every $g$ on the four marks, put
+\begin{equation}\label{eq:rootcoefficient}
+ c_r(g)=\frac{\E[g\overline{\xi^r}]}{w_r}
+       =\frac{\E[g\xi^{4-r}]}q.
+\end{equation}
+The equality follows pointwise from
+$q\overline{\xi^r}=w_r\xi^{4-r}$, using the constant modulus and
+$\xi^4=q$. Thus \eqref{eq:cyclic} becomes
+\begin{equation}\label{eq:rootrepresent}
+ g-\E g=\sum_{r=1}^3c_r(g)\xi^r,\qquad
+ \E\left|\sum_{r=1}^3u_r\xi^r\right|^2
+   =\sum_{r=1}^3w_r|u_r|^2.
+\end{equation}
+Pairing with each conjugate power proves uniqueness. A single first
+channel cannot represent the centered square $\xi^2$: if
+$\xi^2=b\xi$, multiply by $\xi^2$ and integrate to obtain
+$q=b\E\xi^3=0$, a contradiction. This obstruction is on a genuine
+four-point probability space.
+
+\section{Predictable sums and finite reconstruction on the mark source}
+Work on the actual infinite product $\{0,1,2,3\}^{\mathbb N}$ with
+uniform independent coordinates $K_n$, and write $\xi_n=a(1+i)i^{K_n}$.
+Let $\mathcal H_n=\sigma(K_0,\ldots,K_{n-1})$. A predictable coefficient
+$H_{r,n}$ is a complex function of this prefix. Every such function
+has all finite moments at each fixed $n$, because the prefix space is
+finite; no uniform bound in $n$ is assumed. Define
+\[
+ S_N(H)=\sum_{n=0}^{N-1}\sum_{r=1}^3H_{r,n}\xi_n^r,
+ \qquad e_n(H)=\sum_{r=1}^3w_r|H_{r,n}|^2.
+\]
+Fresh-mark independence and \eqref{eq:rootgram} give the actual
+conditional identities
+\begin{align}
+ \E[\Delta S_n\mid\mathcal H_n]&=0,\label{eq:condcenter}\\
+ \E[|C+\Delta S_n|^2\mid\mathcal H_n]
+ &=|C|^2+e_n(H)\label{eq:condenergy}
+\end{align}
+for every complex prefix-measurable $C$. In the second identity, expand
+the square into its Hermitian cross terms; the linear terms vanish and
+the quadratic terms use \eqref{eq:rootgram}. In particular $S_N$ is a
+martingale and
+\begin{equation}\label{eq:rootisometry}
+ \|S_N(H)\|_2^2=\sum_{n<N}\E e_n(H).
+\end{equation}
+Iteration of \eqref{eq:condenergy} with $C=S_n$ proves this formula;
+it is not an isometry for the unconjugated square $S_N^2$.
+
+\begin{theorem}\label{thm:finiteclark}
+For every function $F$ of the first $N$ marks, there are predictable
+coefficients with
+\[
+ F-\E F=S_N(H).
+\]
+They are unique almost surely for every channel and time $n<N$.
+More generally, every integrable martingale in this prefix filtration
+has a coherent three-channel representation of all its increments.
+\end{theorem}
+\begin{proof}
+For the terminal value, set $M_n=\E[F\mid\mathcal H_n]$, $n\le N$.
+Write $M_{n+1}=f_{n+1}(K_0,\ldots,K_n)$ and, for a fixed prefix $p$,
+apply \eqref{eq:rootrepresent} to $g_p(k)=f_{n+1}(p,k)$.
+The mean of $g_p$ is $M_n(p)$ by conditioning on the fresh uniform mark.
+Thus $M_{n+1}-M_n=\sum_r c_r(g_p)\xi_n^r$. These coefficients depend
+only on the prefix. Summing telescopes to $M_N-M_0=F-\E F$.
+For a general martingale use its prefix functions at each successive
+time in the same construction. This gives one array for all finite
+horizons, rather than a separately chosen array at each horizon.
+
+If two arrays have the same terminal sum, subtract them and apply
+\eqref{eq:rootisometry}. Its nonnegative summands have sum zero.
+For every $n<N$, each positive $w_r$ therefore multiplies a coefficient
+of zero $L^2$ norm. This is the stated almost sure uniqueness. It makes
+no assertion about coefficients beyond the specified terminal horizon.
+\end{proof}
+
+The same conditional argument with the $m-1$ nonzero characters gives
+finite-horizon cyclic predictable integration and its unit-weight
+isometry for any $m\ge1$. The source formally supplies this general
+finite-energy calculation; the completed operator constructed next is
+mapped specifically to the actual four-mark source.
+
+\section{Infinite limits and the exact completed integration operator}
+A coefficient array has finite energy if
+\begin{equation}\label{eq:finiteenergy}
+ \mathcal E(H)=\sum_{n=0}^\infty\E e_n(H)<\infty.
+\end{equation}
+Cross-time martingale orthogonality gives, for $M\ge N$,
+\[
+ \|S_M(H)-S_N(H)\|_2^2=\sum_{n=N}^{M-1}\E e_n(H).
+\]
+Consequently the sums are Cauchy in the actual complex $L^2$ space.
+Let $JH$ denote their limit. Passing to norms, means and bounded
+conditional projections gives
+\begin{equation}\label{eq:infiniteenergy}
+ \|JH\|_2^2=\mathcal E(H),\quad \E JH=0,\quad
+ \E[JH\mid\mathcal H_N]=S_N(H).
+\end{equation}
+Linearity follows by taking limits of the finite sums. Conversely,
+$L^2$ convergence of those sums bounds their norms; the nonnegative
+energy partial sums in \eqref{eq:rootisometry} are then bounded, so
+\eqref{eq:finiteenergy} holds. This supplies both directions of the
+finite-energy convergence criterion.
+
+We give the needed prefix-density argument explicitly. The collection
+of sets approximable in probability by finite-coordinate cylinder sets
+is a sigma algebra: it is closed under complements; finite unions
+follow by the union bound; for a countable union first truncate the
+union using continuity of a finite measure and then approximate the
+finite union. It contains all cylinders and hence the product sigma
+algebra. Indicators of finite-measure sets can therefore be approximated
+in $L^p$, for every finite $p$, by cylinder indicators. Truncation and
+simple-function approximation extend this density to $L^1$ and $L^2$
+functions, including measurable representatives modulo null sets.
+Conditional expectation is a contraction in either norm. If $G$ is a
+cylinder function measurable at time $m$, then
+$\E[G\mid\mathcal H_N]=G$ for $N\ge m$. Thus
+\[
+ \|\E[F\mid\mathcal H_N]-F\|_p\le2\|F-G\|_p\longrightarrow0
+ \quad(p=1\text{ or }2)
+\]
+by first choosing a good cylinder approximation and then taking $N\ge m$.
+
+\begin{theorem}\label{thm:infiniteclark}
+Every centered $F\in L^2$ on the actual infinite four-mark product
+has a coherent predictable array $H$ with
+\[
+ S_N(H)=\E[F\mid\mathcal H_N],\qquad
+ S_N(H)\longrightarrow F\text{ in }L^2,\qquad
+ \mathcal E(H)=\|F\|_2^2.
+\]
+The integration range is exactly the closed centered $L^2$ subspace.
+For general $F\in L^1$, the coherent representation of
+$\E[F\mid\mathcal H_N]-\E F$ converges in $L^1$ and almost surely,
+without an assertion of finite square energy.
+\end{theorem}
+\begin{proof}
+Apply the martingale construction of Theorem~\ref{thm:finiteclark} to
+$M_N=\E[F\mid\mathcal H_N]$ for every $N$ with its single coherent
+array. Prefix density proves the claimed norm convergence. In the
+$L^2$ case, \eqref{eq:rootisometry} and norm continuity identify the
+sum of energies with $\|F\|_2^2$. Conversely every finite-energy integral
+is centered by \eqref{eq:infiniteenergy}. Centered functions form the
+kernel of the continuous mean functional, hence a closed subspace.
+
+Here is an elementary justification of the almost sure conclusion in
+the $L^1$ case. For a complex integrable $V$, conditional Jensen makes
+$|\E[V\mid\mathcal H_n]|$ a nonnegative submartingale, and the finite
+maximal inequality gives
+\[
+ P\{\sup_n|\E[V\mid\mathcal H_n]|>\lambda\}
+ \le\lambda^{-1}\E|V|.
+\]
+For a finite maximum, stop at the first crossing and use conditional
+Jensen against the final conditional value to bound $\lambda$ times
+the crossing probability by its final mean. Increasing the finite
+horizon gives the displayed inequality. Choose cylinders $G_j$ with
+$\E|F-G_j|\le2^{-3j}$, and choose $m_j$ so $G_j$ is measurable at
+$\mathcal H_{m_j}$. For $n\ge m_j$, the difference
+$\E[F\mid\mathcal H_n]-F$ is bounded in modulus by
+$|\E[F-G_j\mid\mathcal H_n]|+|F-G_j|$.
+The maximal inequality and Markov's inequality bound the probability
+that its supremum exceeds $2^{1-j}$ by $2^{1-2j}$. These probabilities
+are summable. The union bound on their tails, or the first
+Borel--Cantelli lemma, proves that eventually each supremum is small.
+This proves almost sure convergence. Subtracting the constant mean
+and using the coherent identity transfers it to the stochastic sums.
+\end{proof}
+
+For precision, the formal Hilbert integrand space is the vector space
+of finite-energy coefficient arrays modulo the kernel of $J$, with
+norm induced by its realization in the actual integration range.
+Equation~\eqref{eq:infiniteenergy} identifies this norm with the printed
+energy. The range theorem identifies it isometrically with centered
+$L^2$, so this quotient is complete; no completion is postulated to
+make surjectivity true. Write $\mathcal I$ for that Hilbert space and
+still write $J:\mathcal I\to L^2$ for its isometric inclusion onto the
+centered range. Its bounded Hilbert adjoint $D=J^*$ satisfies
+\begin{equation}\label{eq:rootadjoint}
+ DJ=I_{\mathcal I},\qquad JD F=F-\E F.
+\end{equation}
+Indeed $\langle Ju,Jv\rangle=\langle u,v\rangle$ gives $J^*J=I$;
+$JJ^*$ is the orthogonal projection onto the closed range, which is
+exactly centering. Thus $D$ is a bounded predictable reconstruction
+operator. The notation does not identify it with an unbounded
+anticipating Malliavin gradient on a different integrand space.
+
+\section{Poissonizing the source does not remove the clock channel}
+Now use an independent sequence of unit exponential holding times
+$E_1,E_2,\ldots$, arrival times $\tau_n=E_1+\cdots+E_n$, and
+$N_t=\max\{n:\tau_n\le t\}$. Positivity holds simultaneously almost
+surely. Moreover the events $E_j\ge1$ are independent with probability
+$e^{-1}$. For each fixed index $k$, the probability that none occur
+after $k$ is the limit of $(1-e^{-1})^l$, namely zero. A countable
+union shows infinitely many such events occur, so $\tau_n\to\infty$.
+Thus $N_t$ is finite at every finite $t$ on one common event, and the
+marked path
+\[
+ X_t=\sum_{j=0}^{N_t-1}\xi_j
+\]
+is an actual right-continuous finite-jump path, with its pre-jump
+positions and jumps given by the original partial sums and marks.
+
+The exponential renewal calculation gives
+$P(N_t=n)=e^{-t}t^n/n!$. To see this directly, convolution gives the
+arrival density $e^{-u}u^{n-1}/(n-1)!$ for $n\ge1$; integrating it on
+$0<u<t$ against the survival $e^{-(t-u)}$ of the next holding time
+gives the formula. For $n=0$ it is just exponential survival.
+Memorylessness $P(E>s+t\mid E>s)=e^{-t}$, together with independence
+of unused holdings and marks, supplies stationary independent marked
+future increments at deterministic wall-clock times. Here is the source-level conditioning argument. On $\{N_s=n\}$,
+condition first on completed holdings $E_1,\ldots,E_n$ with
+$\tau_n\le s$ and the first $n$ marks. The only condition on the next
+holding is $E_{n+1}>u=s-\tau_n$. In its density integral, the substitution
+$E_{n+1}=u+r$ gives $e^{-u-r}dr=e^{-u}e^{-r}dr$.
+The factor $e^{-u}$ is precisely the survival weight for this prefix;
+the residual $r$ therefore has the unit exponential law independently
+of the prefix. Unused holdings and marks retain their independent
+product laws. Testing against bounded functions of the prefix and
+fresh source, and summing over $n$, proves factorization on this
+partition. Every coordinate of the observed past is a measurable
+function of the count and completed prefixes. A monotone-class
+extension from their cylinder tests therefore proves independence
+from the entire observed past. Reconstructing the future from the
+residual holding and unused source gives the claimed increment laws.
+In particular $N_t-t$ is a genuine count-filtration martingale,
+since a future count increment has independent Poisson mean $t-s$.
+This is a separate holding/count source from the mark-only product.
+
+For bounded continuous $f:\mathbb C\to\mathbb C$, let
+\[
+ Pf(z)=\E f(z+\xi),\qquad Af=Pf-f,\qquad
+ C_rf(z)=c_r(k\mapsto f(z+\xi(k))).
+\]
+These are bounded operators in the uniform norm:
+$\|P\|\le1$, $\|A\|\le2$ and
+$\|C_r\|\le w_r^{-1/2}$. The last bound follows from
+\eqref{eq:rootcoefficient} and the constant modulus of $\xi$.
+Continuity follows from finite sums of translates. Formula
+\eqref{eq:rootrepresent} gives the exact jump identity
+\begin{equation}\label{eq:jumpchannels}
+ f(z+\xi)-f(z)=Af(z)+\sum_{r=1}^3C_rf(z)\xi^r.
+\end{equation}
+It holds for every mark, without a Taylor remainder or analyticity
+hypothesis on $f$.
+
+\begin{theorem}\label{thm:clockdecomp}
+With $X_{\tau_{j+1}-}$ denoting the actual pre-jump value, define
+\begin{align*}
+ K_t(f)&=\sum_{j<N_t}Af(X_{\tau_{j+1}-})
+              -\int_0^t Af(X_s)\,ds,\\
+ L_{r,t}(f)&=\sum_{j<N_t}C_rf(X_{\tau_{j+1}-})\xi_j^r.
+\end{align*}
+Then the exact actual path formula is
+\[
+ f(X_t)-f(0)-\int_0^tAf(X_s)\,ds
+ =K_t(f)+\sum_{r=1}^3L_{r,t}(f).
+\]
+The combined process is a martingale in the actual observed natural
+filtration of $X$. The centered mark span alone cannot represent the
+unit jump of the count process for every mark.
+\end{theorem}
+\begin{proof}
+Summing \eqref{eq:jumpchannels} at the finitely many jumps telescopes
+the left observable. Nonexplosion and the exact partial-sum path
+identify each pre-jump value, and subtracting the displayed time
+integral gives the identity.
+
+For the martingale assertion, the actual transition semigroup is
+\[
+ T_t=e^{-t}\sum_{n=0}^\infty\frac{t^n}{n!}P^n=e^{tA}.
+\]
+The series converges in bounded-operator norm; differentiating on
+bounded time intervals gives
+$T_u f-f=\int_0^u T_v Af\,dv$. The fresh-future construction above
+therefore gives, conditionally on the observed past at $s$,
+\[
+ \E[f(X_t)-f(X_s)\mid\mathcal F_s]
+ =(T_{t-s}f-f)(X_s)
+ =\int_0^{t-s}T_vAf(X_s)\,dv.
+\]
+Boundedness of $Af$ permits conditional Fubini; the same expression
+is the conditional mean of $\int_s^t Af(X_r)dr$. Their difference
+has zero conditional mean. All observable and drift terms are
+integrable, the latter bounded by $2t\|f\|_\infty$, and the actual
+finite-jump paths make the drift adapted. This proves the martingale
+claim and agrees with the mapped native Dynkin theorem.
+
+Finally every sum $\sum_{r=1}^3u_r\xi^r$ has mark mean zero, whereas
+the constant one has mean one. No choice of pre-jump coefficients
+can equate them for every fresh mark. The count increases by exactly
+one at each arrival, and its continuous compensator has no jumps,
+so its compensated jump has this same missing constant component.
+\end{proof}
+
+The last obstruction is the explicit source statement about centered
+mark channels. It is not a proof that no representation exists after
+adding a clock channel, nor does the displayed decomposition establish
+a full wall-clock predictable representation theorem for arbitrary
+terminal functions of holdings and marks. We assert the combined
+martingale just proved; separate operator-domain and isometry claims
+for its four continuous-time components are not imported from the
+mark-index Hilbert space. Likewise no isometry is transferred to the
+signed heat target or to a nonexistent ordinary weak limit.
+
+\section{Classical finite-state context}
+Discrete Fourier orthogonality, finite-state martingale representation
+and its Hilbert completion have classical antecedents.
+Franz--Hamdi \cite{FH}, Proposition 2.3 and Propositions 7.1--7.5,
+already give predictable isometry and full square-integrable
+reconstruction in a more general real obtuse-walk setting.
+Our four-mark space can equally be expressed with real coordinates
+$\operatorname{Re}(\xi)/a$, $\operatorname{Im}(\xi)/a$ and their product:
+these are three centered orthonormal sign functions on the four
+points. They span the same centered complex function space as the
+three powers above. This change of basis is an elementary deduction,
+not a new normal-martingale representation principle.
+Attal--Deschamps--Pellegrini \cite{ADP}, Sections 2.2--2.4, develop
+complex finite-state orthonormal-coordinate structure much more
+broadly. Their tensor and continuous-limit theorems are not needed
+for the finite character calculations here.
+
+The contribution of these added sections is a complete, domain-specific
+reconstruction on the actual original source, with exact normalizations,
+finite-energy completion and an explicit mark/clock distinction.
+The bounded primary comparison establishes strong classical antecedents;
+it does not certify novelty of the assembled exposition. No new Clark
+formula, cyclic Fourier transform or compound-Poisson calculus is claimed.
+
 \section{Formal correspondence and limits of the conclusions}
 \begingroup\raggedright
 All formal statements used here are frozen at verified commit
@@ -390,7 +765,7 @@ proves its uniform-topology version directly from the verified endpoint
 law; the general continuous-coordinate implication is a classical
 deduction, not an additional named formal theorem.
 
-The central modules are \code{ComplexRootHeatTransformLimit},
+The source-calculus correspondences additionally include \code{CyclicMarkRepresentation}, \code{RootMarkInfiniteIto}, \code{RootMarkInfiniteClarkOperator}, \code{MarkedChannelIto} and \code{CyclicClockChannelObstruction}. Their exact original probability spaces and domains remain separate from the signed target. The central approximation modules are \code{ComplexRootHeatTransformLimit},
 \code{ComplexRootPoissonNoWeakLimit}, \code{ComplexRootTiltedLaw}
 and \code{ComplexTiltVariationDivergence}. The theorem map also identifies
 the exact finite transform, moment, path, phase-cancellation and variation
@@ -424,5 +799,7 @@ S. Bonaccorsi, C. Calcaterra and S. Mazzucchi,
 \emph{An It\^o calculus for a class of limit processes arising from random
 walks on the complex plane}, arXiv:1603.05437 (2016),
 \href{https://arxiv.org/abs/1603.05437}{arxiv.org/abs/1603.05437}.
+\bibitem{FH} U. Franz and T. Hamdi, \emph{Stochastic analysis for obtuse random walks}, primary preprint, \href{https://arxiv.org/abs/1212.2324}{arXiv:1212.2324}, Proposition 2.3 and Propositions 7.1--7.5.
+\bibitem{ADP} S. Attal, J. Deschamps and C. Pellegrini, \emph{Complex obtuse random walks and their continuous-time limits}, primary preprint, \href{https://arxiv.org/abs/1312.3731}{arXiv:1312.3731}, Sections 2.2--2.4.
 \end{thebibliography}
 \end{document}
