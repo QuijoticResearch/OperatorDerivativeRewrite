@@ -57,3 +57,7 @@ The primary [Burdzy institutional record](https://hdl.handle.net/1773/2252) and 
 ## Gaussian quadratic products
 
 The primary [Lancaster 1954 publisher record](https://doi.org/10.1111/j.2517-6161.1954.tb00167.x) and indexed Theorem 1 identify cumulants with matrix traces; complete full-text comparison remains incomplete. The primary [Ogawa 1950 article](https://doi.org/10.18910/8824), introductory centered criterion and finite orthogonal-range discussion, explicitly supplies the classical matrix-annihilation independence context. The seven-page completed-product companion claims no new criterion, cumulant phenomenon or Gaussian approximation theorem.
+
+## Hidden-clock hybrid reconstruction
+
+The primary [Ocone 1984 institutional record and abstract](https://www.researchwithrutgers.org/en/publications/malliavins-calculus-and-stochastic-integral-representations-of-fu/) describe the extension of Clark representation to weakly H-differentiable functionals. Full-text hypothesis comparison remains incomplete. The ten-page IBM hybrid companion claims no new Clark–Ocone mechanism or inverse-number recovery. It isolates the exact original cusp/mean domains and hidden-clock/static-source versus observed-filtration distinction; no IBM priority is certified.

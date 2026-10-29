@@ -183,3 +183,7 @@ The Simpson companion is now twelve pages with 58 source correspondences. Comple
 ## Completed quadratic-product companion
 
 Seven-page classical companion; 105 exact source correspondences; six exact symbolic checks for arbitrary symmetric 2x2 matrices pass. Original source completion, sharp bounded product, strict/nonattained fourth-moment bounds, exact contraction and finite annihilation receive complete printed proofs. All pages inspected and references resolved. Twenty reviewed drafts total 185 pages.
+
+## Original clock-hybrid proof expansion
+
+The preserved five-page note is expanded into a ten-page reviewed classical formalization companion with 57 exact source correspondences. Complete original-domain arguments, value/curvature hypothesis separation and the sine mean-versus-observable test are printed. All pages inspected and baseline/source evidence checked. Twenty-one reviewed drafts total 195 pages; observed-filtration causality remains open.

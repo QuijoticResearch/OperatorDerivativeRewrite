@@ -1,228 +1,578 @@
 \documentclass[11pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amssymb,amsthm,microtype}
 \usepackage[hidelinks]{hyperref}
-\usepackage{microtype}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
-\newcommand{\R}{\mathbb R}
-\newcommand{\E}{\mathbf E}
-\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Lean reference:}\;
-  \texttt{\detokenize{#1}}\par\noindent
-  \hspace*{1em}\texttt{\detokenize{#2}}\par\smallskip}
-\title{Clock Regularity and Hybrid Reconstruction\protect\\
-for Actual Iterated Brownian Motion}
-\author{Project Stardust\protect\\\small Private mathematical synthesis}
-\date{Revision 1 --- October 25, 2026}
-\begin{document}
-\maketitle
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbf E}\newcommand{\R}{\mathbb R}
+\newcommand{\Hh}{\mathcal H}\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Source correspondence:}
+\texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\smallskip}
+\title{Clock regularity and hybrid reconstruction\\for reflected-clock iterated Brownian motion}
+\author{Project Stardust}
+\date{October 29, 2026}
+\begin{document}\maketitle
 \begin{abstract}
-For reflected-clock iterated Brownian motion, source averaging produces
-multitime covariance functions with folded and collision cusps. We describe
-their verified membership in the original closed Gaussian clock derivative
-graph, and the actual predictable Brownian-clock representation of completed
-Fourier source means. Combining that clock channel with an existing source
-adjoint reconstructs the entire centered IBM observable through the original
-intrinsic joint divergence. A sine example shows exactly why reconstructing
-the mean is insufficient. Hidden-clock predictability, intrinsic observability,
-and physical-time stochastic calculus remain distinct requirements.
+Let $Z_t=X_{|Y_t|}$ for independent Brownian motions $X,Y$.
+We reconstruct the closed-operator argument that combines static recovery in
+the scenery variable with a predictable integral in the hidden Brownian clock.
+For absolutely summable multitime Fourier observations, the two channels
+recover the entire centered observable through the original joint intrinsic
+divergence. A stronger frequency summability condition puts the conditional
+source mean in the original clock derivative domain and identifies the clock
+integrand by predictable projection. Fold and collision cusps are treated by
+strong graph approximation, including their zero levels. Complete proofs
+separate ambient adjoints, observable projection, hidden-clock predictability
+and observed-process causality. A sine observation has zero source mean but
+positive variance, so clock-mean representation alone cannot reconstruct IBM.
+This is an exposition of verified results and classical Gaussian mechanisms,
+with no claim of completed physical-time IBM calculus or external novelty.
 \end{abstract}
 
-\noindent\textbf{Status.} This note summarizes audited Lean results through
-checkpoint 1520, mathematical commit
-\begin{quote}\small\texttt{c3381683f4d7abad527dee9575f4cf57deea0431}.\end{quote}
-It asserts neither external novelty nor a completed intrinsic IBM calculus.
-All theorem names below have prefix
-\begin{quote}\small\texttt{OperatorDerivativeRewrite.Foundation.}\end{quote}
-Original research manuscripts remain unchanged. All artifacts are private.
+\section{Scope, spaces and original operators}
+The frozen mathematical source is verified commit
+\begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
+The accompanying theorem map records exact declaration headers and source
+hashes. No mathematical source or original research manuscript was changed.
+The proofs below reorganize the source into ordinary Gaussian Hilbert-space
+notation. Such reorganizations are distinguished in the map from literal
+formal declarations. In particular, the density argument for Brownian
+representation uses stochastic exponentials here, whereas the formal source
+uses its completed Brownian polynomial range.
 
-\section{The actual process and the averaging operation}
-Work on the existing independent scenery--clock Gaussian probability space.
-Write $Z_t=X(|Y_t|)$, where $X$ is the constructed Brownian scenery and $Y$ the
-constructed Brownian clock. For a finite index set $I$, nonnegative observation
-times $r_i$, real frequencies $a_{ki}$ and phases $\beta_k$, let
+Work on the product of two Gaussian probability spaces. The scenery $X$ and
+clock $Y$ are independent standard Brownian motions on $[0,\infty)$, with
+continuous versions. Write $\mathcal K=L^2(\Omega_X\times\Omega_Y)$ and
 \[
- F=\sum_{k\geq0}w_k\cos\left(\beta_k+\sum_{i\in I}a_{ki}Z_{r_i}\right),
- \qquad \sum_k|w_k|<\infty.
+ Z_t=X_{|Y_t|},\qquad
+ \Hh=L^2\bigl(\sigma(Z_t:t\geq0)\bigr)\subseteq\mathcal K.
 \]
-The preexisting Fourier observation is an actual intrinsic IBM $L^2$ class,
-identified almost everywhere with this uniformly convergent scalar series.
-Let $M=\E_X F$ be its preexisting source mean. This is a clock Gaussian $L^2$
-class. Membership in that space alone would not make it an intrinsic function
-of the observed IBM path.
+All equalities of random variables or fields are equalities of actual $L^2$
+classes unless a representative is specified. Let $P:\mathcal K\to\Hh$
+be orthogonal projection. Thus $P$ is conditional expectation onto the full
+observed IBM sigma algebra, not onto an observed past.
 
-For $b\in\R^I$ and $x\in\R^I$, the genuine scenery covariance gives
+Let $D_X,D_Y$ be the original closed Gaussian derivatives on the product
+space, valued in the corresponding ambient Gaussian direction fields.
+Their Hilbert adjoints are $\delta_X,\delta_Y$. Directions for the two factors
+can be identified with separate copies of $L^2(\R_+)$. Define
 \[
- Q_b(x)=\sum_{i,j}b_i b_j\min(|x_i|,|x_j|)
-       =\left\|\sum_i b_i h_{|x_i|}\right\|^2\geq0,
+ \Dom D_{\Hh}=\Hh\cap\Dom D_X\cap\Dom D_Y,
+ \qquad D_{\Hh}f=(D_Xf,D_Yf).
 \]
-where $h_s$ is the actual scenery first-chaos direction. Consequently
-\begin{equation}\label{eq:mean}
- M(Y)=\sum_k w_k\cos(\beta_k)
-            \exp\bigl(-Q_{a_k}((Y_{r_i})_i)/2\bigr)
- \quad\text{almost everywhere}.
+The codomain is the direct sum of \emph{ambient} field spaces. Fields are not
+assumed to be measurable functions of $Z$ or predictable for its filtration.
+The original source proves that $D_{\Hh}$ is densely defined and closed.
+Density is a foundational input here: it follows there by proving that the
+annihilator of its native intrinsic core is zero. Closedness also follows
+directly by taking the intersection of the two closed partial graphs.
+Put $\delta_{\Hh}=D_{\Hh}^{*}$ with its actual adjoint domain.
+
+\begin{lemma}[Projected ambient adjoints]\label{lem:project}
+If $u\in\Dom\delta_X$ and $v\in\Dom\delta_Y$, then
+$(u,v)\in\Dom\delta_{\Hh}$ and
+\[
+ \delta_{\Hh}(u,v)=P(\delta_Xu+\delta_Yv).
+\]
+This is an inclusion of domains; no equality with the full intrinsic
+adjoint domain is asserted.
+\end{lemma}
+\begin{proof}
+For every $f\in\Dom D_{\Hh}$, ambient duality and $Pf=f$ give
+\[
+ \langle (u,v),D_{\Hh}f\rangle
+ =\langle\delta_Xu+\delta_Yv,f\rangle
+ =\langle P(\delta_Xu+\delta_Yv),f\rangle.
+\]
+The last expression is bounded in $\|f\|_2$. This is exactly adjoint-domain
+membership, and density makes its representing vector unique.
+\end{proof}
+\lean{IBMJointIntrinsicDerivative}{jointDerivative_dense; ambient_pair_divergence; ambient_pair_duality}
+One cannot omit $P$ merely because $f$ is intrinsic. In particular,
+$\E_XF$ and $F-\E_XF$ need not separately be intrinsic observations.
+Their sum can be intrinsic even when neither summand is.
+
+\section{Static Gaussian recovery before predictability}
+We recall a Gaussian fact in a form that fixes all normalizations. Let $D$
+be the closed Gaussian derivative on one factor, $\delta=D^*$, and
+$L^2=\bigoplus_{n\geq0}\mathcal C_n$ its orthogonal Hermite-chaos expansion.
+For $f_n\in\mathcal C_n$, the original derivative has
+\[
+ \|Df_n\|_2^2=n\|f_n\|_2^2,\qquad \delta Df_n=nf_n.
+\]
+The identities follow first for finite products of normalized Hermite
+polynomials, by one-variable Gaussian integration by parts and orthogonality,
+and then by closure on each chaos. Derivative images from different chaos
+orders are orthogonal as direction fields.
+
+\begin{proposition}[Bounded original recovery]\label{prop:recovery}
+For $f=\sum_{n\geq0}f_n\in L^2$, define
+\[
+ Rf=\sum_{n\geq1}\frac1n Df_n.
+\]
+Then $Rf\in\Dom\delta$, $\delta Rf=f-\E f$, and
+\[
+ \|Rf\|_2^2=\sum_{n\geq1}\frac1n\|f_n\|_2^2\leq\|f\|_2^2.
+\]
+\end{proposition}
+\begin{proof}
+Orthogonality and the displayed derivative norm show that the field series
+converges and give its norm formula. For finite chaos sums, Gaussian
+integration by parts gives $\delta\sum_{n=1}^Nn^{-1}Df_n=\sum_{n=1}^Nf_n$.
+The fields and outputs both converge strongly. Since a Hilbert adjoint is
+closed, the limiting pair belongs to the original adjoint graph. Completeness
+of Hermite polynomials identifies the scalar limit as $f-\E f$.
+\end{proof}
+This proof constructs a static Gaussian field. It supplies no time ordering
+or predictable representative.
+
+Apply $R$ fiberwise in the scenery coordinate, writing the bounded map as
+$R_X$. Fubini and the norm bound give a bounded map on the product $L^2$
+space. Approximate a product-space input by finite sums of tensors, use the
+one-factor adjoint identity, and pass to the original closed partial adjoint
+graph. Consequently, for every $F\in\mathcal K$,
+\begin{equation}\label{eq:source}
+ R_XF\in\Dom\delta_X,\qquad
+ \delta_XR_XF=F-M,\qquad M=\E_XF,\qquad
+ \|R_XF\|_2\leq\|F\|_2.
 \end{equation}
-\lean{IBMFoldedSourceCovariance}{gram; variance_expansion}
-\lean{IBMFourierClockMeanRegularity}{clockMean_actual}
-This is a law-based source average of the actual observable, not a replacement
-random variable defined only through a formal operator identity.
+Here and below a clock-only variable is lifted to the product space when
+needed. Tensor approximation is legitimate because conditional expectation,
+the recovery map and the tensor transports are bounded. It does not assert
+that conditional expectation preserves an arbitrary derivative domain.
+\lean{IBMNativeSourceRecovery}{fiber_recovery_native_graph; source_recovery_graph; source_recovery_norm}
 
-\section{Cusps in the original closed Gaussian graph}
-Let $D_Y$ denote the original closed Gaussian derivative and let $e_r=D_Y Y_r$.
-The existing normalization gives $\|e_r\|=\sqrt r$. Products below are
-almost-everywhere statements about genuine $L^2$ representatives.
+\begin{proposition}[Static centered surjectivity]\label{prop:static}
+Every centered $F\in\Hh$ is an output of $\delta_{\Hh}$. A bounded choice of
+preimage is $(R_XF,R_YM)$, and its squared norm is at most $2\|F\|_2^2$.
+Conversely, every output of $\delta_{\Hh}$ is centered.
+\end{proposition}
+\begin{proof}
+Equation~\eqref{eq:source} and Proposition~\ref{prop:recovery} give ambient
+outputs $F-M$ and $M-\E F$. Their sum is $F-\E F\in\Hh$, so
+Lemma~\ref{lem:project} gives the asserted intrinsic output. Conditional
+expectation is a contraction, and hence the sum of the two field norms
+squared is at most $\|F\|_2^2+\|M\|_2^2\leq2\|F\|_2^2$.
+Finally $1\in\Dom D_{\Hh}$ and $D_{\Hh}1=0$. Testing any adjoint output
+against $1$ gives expectation zero.
+\end{proof}
+\lean{IBMCenteredSourceRepresentation}{centered_reconstruction; range_iff_centered; recovery_pair_bound_sq}
+Surjectivity of this static divergence is therefore a different statement
+from predictable representation in physical IBM time.
 
-\begin{theorem}[Absolute value and minimum]
-If $(f,g)$ belongs to the original closed graph, then $|f|$ has graph output
-$\operatorname{signum}(f)g$, of norm at most $\|g\|$. If also $(h,k)$ belongs
-to that graph, then $\min(f,h)$ has output
+\section{Actual multitime Fourier observations}
+Fix a finite index set $I$, times $r_i\geq0$, real frequencies $a_{ki}$,
+phases $\beta_k$, and real weights $w_k$, where $k\geq0$. Assume
+\begin{equation}\label{eq:valuecost}
+ \sum_{k\geq0}|w_k|<\infty.
+\end{equation}
+The uniformly absolutely convergent series
+\begin{equation}\label{eq:F}
+ F=\sum_{k\geq0}w_k\cos\left(\beta_k+\sum_{i\in I}a_{ki}Z_{r_i}\right)
+\end{equation}
+defines a bounded intrinsic random variable. For $b\in\R^I$ set
 \[
- \frac{g+k-\operatorname{signum}(f-h)(g-k)}2,
- \qquad \text{of norm at most }\|g\|+\|k\|.
+ A(b)=\sum_i|b_i|,\qquad
+ Q_b(x)=\sum_{i,j}b_i b_j\min(|x_i|,|x_j|).
 \]
-The convention is $\operatorname{signum}(0)=0$; no null-level hypothesis is
-imposed on either zero sets or collision sets.
+The nonnegativity of this expression is essential: signed frequencies
+cannot be handled by pretending that its individual summands are positive.
+
+\begin{lemma}[Folded Gram identity]\label{lem:gram}
+For every $x\in\R^I$,
+\[
+ Q_b(x)=\left\|\sum_i b_i1_{(0,|x_i|]}\right\|_{L^2(\R_+)}^2\geq0.
+\]
+Moreover the actual conditional source mean is
+\begin{equation}\label{eq:M}
+ M(Y)=\E_XF
+ =\sum_k w_k\cos\beta_k\exp\left(-\tfrac12 Q_{a_k}((Y_{r_i})_i)\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The inner product of $1_{(0,s]}$ and $1_{(0,t]}$ is $\min(s,t)$;
+expanding the norm proves the first claim. For a fixed clock realization,
+$\sum_i b_iX_{|Y_{r_i}|}$ is a centered real Gaussian with variance
+$Q_b((Y_{r_i})_i)$. Its characteristic function at frequency one is
+$\exp(-Q_b/2)$. Taking the real part after multiplication by $e^{i\beta_k}$
+gives the expectation of each cosine. The summable constant $\sum_k|w_k|$
+dominates the series, so Fubini or dominated convergence interchanges the
+source integral with the sum. This also proves $\E_YM=\E F$.
+\end{proof}
+\lean{IBMFoldedSourceCovariance}{gram; variance_expansion; variance_nonneg}
+\lean{IBMFourierHybridReconstruction}{source_vacuum; clockMean_expectation}
+Each term of the right side of \eqref{eq:M} is a continuous function of the
+finite clock vector. Its modulus is at most $|w_k|$. Uniform convergence
+therefore makes their sum continuous and bounded. In particular, $M$ lies in
+the $L^2$ space generated by the actual Brownian clock, and if every $r_i\leq T$
+it is measurable for its raw past at $T$. Ambient Gaussian measurability alone
+would not justify either conclusion in a larger Gaussian realization.
+
+\section{Strong graph rules at folds and collisions}
+We use the original closed Gaussian derivative $D$ on the clock factor.
+Its bounded $C^1$ chain rule says that bounded $\phi$ with continuous bounded
+derivative satisfies $D\phi(f)=\phi'(f)Df$ for $f\in\Dom D$. This is the
+closed extension of cylindrical differentiation: take a core approximation
+to $f$, use bounded slopes for scalar convergence, and dominated multiplier
+convergence for the derivative. For the latter, split the derivative error
+as $\phi'(f_n)(Df_n-Df)+(\phi'(f_n)-\phi'(f))Df$; convergence in probability
+with a uniform bound gives convergence in $L^2$ against the fixed field.
+Closedness then gives the original graph identity.
+
+\begin{theorem}[Absolute values and minima]\label{thm:cusp}
+If $f,h\in\Dom D$, then $|f|,\min(f,h)\in\Dom D$ and
+\begin{align*}
+ D|f|&=\sgn(f)Df,\\
+ D\min(f,h)&=\tfrac12\{Df+Dh-\sgn(f-h)(Df-Dh)\}.
+\end{align*}
+Here $\sgn(0)=0$. The respective norm bounds are $\|Df\|_2$ and
+$\|Df\|_2+\|Dh\|_2$. No null-level-set hypothesis is required.
 \end{theorem}
+\begin{proof}
+Put $\varepsilon_n=(n+1)^{-1}$, $r_\varepsilon(x)=\sqrt{x^2+\varepsilon^2}$,
+and
+\[
+ \phi_n(x)=\frac{\sin(\varepsilon_n r_{\varepsilon_n}(x))}{\varepsilon_n}.
+\]
+For each fixed $n$ the function is bounded, continuously differentiable and
+\[
+ \phi_n'(x)=\cos(\varepsilon_n r_{\varepsilon_n}(x))
+                  \frac{x}{r_{\varepsilon_n}(x)},\quad
+ |\phi_n'|\leq1,\quad |\phi_n(x)|\leq |x|+1.
+\]
+Pointwise, $\phi_n(x)\to|x|$ and $\phi_n'(x)\to\sgn(x)$, including $x=0$.
+The chain rule applies separately for every $n$. Dominated convergence gives
+$\phi_n(f)\to|f|$ in $L^2$, since $f\in L^2$ on a probability space, and
+$\phi_n'(f)Df\to\sgn(f)Df$ in the field $L^2$ norm. Closedness proves the
+absolute-value identity and its norm bound. Now use
+$\min(f,h)=(f+h-|f-h|)/2$ and linearity of the closed derivative.
+For its norm, apply the triangle inequality and $|\sgn|\leq1$ to obtain
+$\frac12(\|Df\|+\|Dh\|+\|Df-Dh\|)\leq\|Df\|+\|Dh\|$.
+\end{proof}
 \lean{GaussianAbsoluteMinimumGraph}{absolute_graph; minimum_graph}
-Bounded sine clips of smooth absolute radii converge strongly in both graph
-coordinates. The proof uses the existing bounded chain rule and closedness of
-the original operator. It does not introduce a new weak derivative to avoid
-the domain question.
 
-Put $v_r=\operatorname{signum}(Y_r)e_r$ and
+\begin{lemma}[Reflected damping]\label{lem:damping}
+For $c\geq0$ and $f\in\Dom D$,
 \[
- H_{rs}=\frac{v_r+v_s-
-   \operatorname{signum}(|Y_r|-|Y_s|)(v_r-v_s)}2.
+ D e^{-c|f|}=-c e^{-c|f|}\sgn(f)Df,
+ \qquad \|D e^{-c|f|}\|_2\leq c\|Df\|_2.
 \]
-Then $H_{rs}$ is the actual graph output of $\min(|Y_r|,|Y_s|)$, and
-$H_{rr}=v_r$ exactly. The output of $Q_b((Y_{r_i})_i)$ is
-$V_b=\sum_{i,j}b_i b_jH_{r_i r_j}$. Writing $A(b)=\sum_i|b_i|$, its norm is
-at most
-\[
- \sum_{i,j}|b_i b_j|(\sqrt{r_i}+\sqrt{r_j})
- \leq 2A(b)^2\sum_i\sqrt{r_i}.
-\]
-Signed rows, duplicate clocks, zero times and empty observation sets are
-included. For $\exp(-Q_b/2)$ the verified graph output is
-\[
- -\tfrac12\exp(-|Q_b|/2)\operatorname{signum}(Q_b)V_b.
-\]
-Nonnegativity removes the absolute value in the \emph{value}. The output
-retains the zero-level sign convention; no second-derivative or divergence
-domain assertion is inferred from this first graph rule.
-\lean{IBMMultitimeClockVarianceGraph}{overlap_graph; variance_graph; damping_graph}
+\end{lemma}
+\begin{proof}
+Use $\psi_n(x)=\exp(-c r_{\varepsilon_n}(x))$. These are bounded by one and
+have continuous derivatives
+$-c\psi_n(x)x/r_{\varepsilon_n}(x)$ bounded in modulus by $c$.
+The derivatives converge pointwise to $-ce^{-c|x|}\sgn(x)$.
+Apply the bounded chain rule, scalar and field dominated convergence,
+and closedness, just as in Theorem~\ref{thm:cusp}.
+\end{proof}
+\lean{GaussianReflectedDampingGraph}{closed_graph}
+These are original first-derivative statements. No second derivative,
+divergence membership of the resulting field, or physical-time Tanaka
+formula follows from them.
 
-\begin{theorem}[Completed source-mean graph]\label{thm:graph}
-Assume the value and curvature summability conditions
+\section{The source mean in the original clock domain}
+Let $e_r=1_{(0,r]}$ be the clock Gaussian direction, so
+$DY_r=e_r$ and $\|e_r\|=\sqrt r$. Introduce the actual random direction fields
+\begin{align*}
+ v_r&=\sgn(Y_r)e_r,\\
+ H_{rs}&=\tfrac12\{v_r+v_s-\sgn(|Y_r|-|Y_s|)(v_r-v_s)\},\\
+ V_b&=\sum_{i,j}b_i b_j H_{r_i r_j},\qquad
+ C_b=\sum_{i,j}|b_i b_j|(\sqrt{r_i}+\sqrt{r_j}).
+\end{align*}
+The cusp theorem proves the actual graph identities
 \[
- \sum_k|w_k|<\infty,\qquad \sum_k |w_k|A(a_k)^2<\infty.
+ D|Y_r|=v_r,\quad D\min(|Y_r|,|Y_s|)=H_{rs},\quad DQ_b(Y)=V_b.
 \]
-Then $M\in\operatorname{Dom}(D_Y)$.
-Its output is the actual vector series obtained by multiplying each damping
-output above by $w_k\cos\beta_k$ and summing. Both scalar and vector series
-are norm summable. The output norm is at most
+For $r=s$, the formula gives $H_{rr}=v_r$, including $Y_r=0$.
+The pointwise field bounds give
+\begin{equation}\label{eq:cost}
+ \|V_b\|_2\leq C_b
+ \leq2A(b)^2\sum_i\sqrt{r_i}.
+\end{equation}
+For the last inequality, the exact double sum equals
+$2A(b)\sum_i|b_i|\sqrt{r_i}$, which is at most the stated bound.
+All sums over $I$ are finite, so these operations are legitimate in the
+linear closed graph. They cover zero times, signed frequencies, repeated
+times and an empty observation set.
+
+Set
 \[
+ g_b=-\tfrac12e^{-|Q_b(Y)|/2}\sgn(Q_b(Y))V_b.
+\]
+Since $Q_b\geq0$, Lemma~\ref{lem:damping} gives
+\begin{equation}\label{eq:dampinggraph}
+ D e^{-Q_b(Y)/2}=g_b,\qquad \|g_b\|_2\leq C_b/2.
+\end{equation}
+Nonnegativity removes the absolute value in the scalar \emph{value}.
+The graph output retains the zero-level sign convention; there is no need
+to silently replace $\sgn(Q_b)$ by one on the set where $Q_b=0$.
+\lean{IBMMultitimeClockVarianceGraph}{overlap_graph; variance_graph; varianceCost_bound; damping_graph}
+
+\begin{theorem}[Completed mean graph]\label{thm:meangraph}
+In addition to \eqref{eq:valuecost}, suppose
+\begin{equation}\label{eq:curvaturecost}
+ \sum_k |w_k|A(a_k)^2<\infty.
+\end{equation}
+Then the source mean in \eqref{eq:M} belongs to $\Dom D_Y$ and
+\[
+ D_YM=G:=\sum_k w_k\cos\beta_k\,g_{a_k},\qquad
+ \|G\|_2\leq
  \left(\sum_k|w_k|A(a_k)^2\right)\sum_i\sqrt{r_i}.
 \]
+Both the scalar series defining $M$ and this vector series are norm summable.
 \end{theorem}
+\begin{proof}
+The scalar summand is bounded by $|w_k|$. Equations~\eqref{eq:cost}
+and \eqref{eq:dampinggraph} bound the derivative summand by
+$|w_k|A(a_k)^2\sum_i\sqrt{r_i}$. Thus the partial sums converge in both
+components of the original graph. Closedness proves membership and the
+output formula; the triangle inequality gives the bound. If representatives
+are desired, $L^1$ summability of the pointwise field norms follows from the
+$L^2$ estimates on a probability space. Tonelli then gives almost-everywhere
+absolute convergence to a representative of the same $L^2$ field.
+\end{proof}
 \lean{IBMFourierClockGraph}{multitime_clock_graph; multitime_clock_domain}
-The bound is sufficient, not claimed sharp. The stronger single-clock bound
-proved earlier is preserved. Classical cusp nondifferentiability therefore
-does not obstruct this original first-order closed graph.
+The conclusion concerns $M$, not $F$. A smoothing effect of source averaging
+does not transfer original clock-domain membership back to the observation.
+The summability condition is sufficient, not claimed necessary or sharp.
 
-\section{A genuine predictable clock identity}
-Let $J_Y$ be the independently constructed Brownian-clock It\^o integral on
-its actual predictable $L^2$ space, and let $P_Y$ denote the existing
-predictable projection of Gaussian vector fields.
-
-\begin{theorem}[Clock PRP and Clark--Ocone]
-For every Fourier observation above with $\sum_k|w_k|<\infty$, the actual mean
-$M$ lies in the raw Brownian-generated $L^2$ space. The unique predictable
-coefficient $U=J_Y^*M$ satisfies
-\begin{equation}\label{eq:clock}
- J_YU=M-\E_YM.
-\end{equation}
-If every $r_i\leq T$, $U$ is supported in $[0,T]$, and the original
-finite-horizon It\^o integral gives the same identity. Under the additional
-curvature summability in Theorem~\ref{thm:graph},
-$U=P_YD_YM$. Coefficients obey
-$\|U-U'\|\leq\|M-M'\|$ in their actual $L^2$ norms.
-\end{theorem}
-\lean{IBMFourierClockClarkOcone}{stochastic_reconstruction; coefficient_unique}
-\lean{IBMFourierClockClarkOcone}{coefficient_supported; finite_reconstruction}
-\lean{IBMFourierClockClarkOcone}{projected_actual_derivative; coefficient_stability}
-The representation, uniqueness and support results do not require curvature
-summability; that extra hypothesis identifies the coefficient with the full
-original derivative. Brownian and finite-past measurability are proved from
-the actual covariance series, not from ambient Gaussian measurability.
-
-\section{The actual IBM observable needs both channels}
-Let $K_XF$ be the preexisting bounded source-adjoint recovery. Let $\delta_X$
-and $\delta_Y$ be the original transported ambient source and clock adjoints.
-Lift the predictable clock field to the joint space by making it constant in
-the scenery variable, and call this field $C(U)$. Original adjoint membership
-and exact source-vacuum identities give
+\section{Predictable representation of the hidden clock mean}
+Let $\mathcal F_t^Y=\sigma(Y_s:0\leq s\leq t)$, using the raw Brownian past
+and its $L^2$ equivalence classes. Let $\mathcal P_Y$ be the closed predictable
+energy space in $L^2(ds\,d\mathbf P_Y)$, obtained by completing adapted step
+fields. Its original It\^o integral
 \[
- \delta_XK_XF=F-M,\qquad
- \delta_YC(U)=M-\E_YM,\qquad \E_YM=\E F,
+ J:\mathcal P_Y\longrightarrow L^2(\Omega_Y)
 \]
-where clock-only variables are lifted to the product space in these formulas.
+is an isometry with centered outputs. Let $\mathcal B_Y$ be the closed
+$L^2$ space generated by the Brownian path, and let $P_{\rm pred}$ be
+orthogonal projection of direction fields onto $\mathcal P_Y$.
 
-\begin{theorem}[Original intrinsic hybrid reconstruction]
-The pair $(K_XF,C(U))$ belongs to the domain of the original intrinsic joint
-divergence $\delta_{\mathrm{IBM}}$, and
-\begin{equation}\label{eq:hybrid}
- \delta_{\mathrm{IBM}}(K_XF,C(U))=F-\E F.
-\end{equation}
-Its adjoint identity holds against every input in the original intrinsic
-joint derivative domain. The reconstruction needs only $\sum_k|w_k|<\infty$.
+\begin{theorem}[Brownian range and uniqueness]\label{thm:prp}
+The range of $J$ is exactly the centered subspace of $\mathcal B_Y$.
+For every $M\in\mathcal B_Y$, its unique predictable coefficient is
+$U=J^*M$, and
+\[
+ JU=M-\E M,\qquad \|U\|_2=\|M-\E M\|_2\leq\|M\|_2.
+\]
 \end{theorem}
-\lean{IBMFourierHybridReconstruction}{source_vacuum; clockMean_expectation}
-\lean{IBMFourierHybridReconstruction}{partial_graph; clock_value; reconstruction; duality}
-The last projection onto the actual IBM observable space is legitimate
-because the centered $F$ is already in that space. There is no assumption
-that projection preserves derivative domains or predictable fields.
+\begin{proof}
+The isometry has closed range. It remains to prove that a dense collection
+of centered Brownian functionals lies in that range. For deterministic step
+$h$ of compact support, put
+\[
+ E_t(h)=\exp\left(\int_0^t h_s\,dY_s-\frac12\int_0^t h_s^2\,ds\right).
+\]
+The elementary Brownian It\^o formula gives
+$E_T(h)-1=J(1_{[0,T]}h E_\cdot(h))$. Its field has finite energy because
+$\E E_s(h)^2=\exp(\int_0^s h^2)$. These exponentials span a dense subspace
+of $\mathcal B_Y$: if a variable is orthogonal to all of them, condition
+on any finite vector of independent Brownian increments. In finite Gaussian
+dimension its Laplace transform after multiplication by the Gaussian density
+vanishes at every real vector. Cauchy--Schwarz with Gaussian exponential
+moments makes this transform entire, so successive one-variable uniqueness
+gives a vanishing Fourier transform and hence the zero conditional variable.
+An increasing collection of rational-time vectors generates the continuous
+Brownian path; convergence of conditional expectations then makes the
+original variable zero. This proves density.
 
-For a concrete test, take one frequency, one nonzero weight and phase
-$\pi/2$. The actual observable is $F=-\sin(Z_R)$. Its source mean and its
-entire clock coefficient vanish, but for every $R>0$ it is nonconstant and
-outside the original joint derivative domain. Identity~\eqref{eq:hybrid}
-still applies through the source channel. Thus~\eqref{eq:clock} cannot be
-substituted for reconstruction of $F$ itself.
+Centering is continuous, so centered exponentials have dense span in the
+centered Brownian space. Closed range now proves surjectivity onto that
+space. For any isometry $J$, $J^*J=1$ and $JJ^*$ is orthogonal projection
+onto its range. The orthogonal projection of $M\in\mathcal B_Y$ onto the
+centered subspace is $M-\E M$. This proves the formula. Isometry proves
+uniqueness and the norm equality.
+\end{proof}
+\lean{GaussianBrownianPRP}{integralRange_eq_centeredBrownianL2; brownian_representation_exists_unique}
+The range claim is deliberately restricted to $\mathcal B_Y$. It would be
+false for unrelated Gaussian coordinates in a larger ambient realization.
+For the source mean \eqref{eq:M}, membership in $\mathcal B_Y$ was established
+by its actual finite clock-vector formula.
+
+\begin{proposition}[Support and stability]\label{prop:support}
+If $M$ is measurable for $\mathcal F_T^Y$, its coefficient $U$ vanishes
+after $T$. For any two Brownian-generated inputs,
+$\|J^*M-J^*M'\|_2\leq\|M-M'\|_2$.
+\end{proposition}
+\begin{proof}
+For predictable step fields, independence of future Brownian increments and
+conditional expectation give
+$\E(Ju\mid\mathcal F_T^Y)=J(1_{[0,T]}u)$. Extend by the integral isometry
+and contraction of conditional expectation. Apply this identity to $U$.
+Since $JU=M-\E M$ is past measurable, $J(1_{(T,\infty)}U)=0$; the isometry
+forces the corresponding field to vanish. Finally the adjoint of an
+isometry has operator norm at most one, proving stability.
+\end{proof}
+\lean{IBMFourierClockClarkOcone}{coefficient_supported; finite_reconstruction; coefficient_stability}
+
+\section{Identifying the coefficient by the original derivative}
+The representation theorem requires only $M\in\mathcal B_Y$. The next
+identity requires membership in the original closed derivative domain.
+
+\begin{theorem}[Projected derivative]\label{thm:co}
+If $M\in\Dom D_Y\cap\mathcal B_Y$, then $J^*M=P_{\rm pred}D_YM$.
+Consequently, under \eqref{eq:valuecost} and \eqref{eq:curvaturecost}, the
+actual Fourier source mean has predictable coefficient $P_{\rm pred}G$,
+where $G$ is the vector series in Theorem~\ref{thm:meangraph}.
+\end{theorem}
+\begin{proof}
+First take a smooth bounded past cylinder $H$ measurable at time $a$ and
+the step field $u_s=H1_{(a,b]}(s)$. Its integral is $H(Y_b-Y_a)$.
+Gaussian integration by parts in the future increment direction gives
+\[
+ \E\{M H(Y_b-Y_a)\}
+ =\E\left\{H\int_a^b D_sM\,ds\right\}.
+\]
+The additional product-rule term involving $D_sH$ is zero for $s\in(a,b]$,
+because every direction generating $H$ is supported in $[0,a]$.
+This calculation is first for cylindrical $M$. Approximation in its original
+derivative graph extends it to all $M\in\Dom D_Y$: the integral side is
+continuous in scalar $L^2$, and the right side is continuous in the field
+$L^2$ norm, for each fixed bounded step field.
+
+Bounded smooth past cylinders are dense in the past $L^2$ space, by finite
+Gaussian conditional approximation. Their predictable step fields are dense
+in $\mathcal P_Y$ by its definition. The integral isometry and
+Cauchy--Schwarz therefore extend the pairing identity to every
+$u\in\mathcal P_Y$. It reads
+$\langle J^*M,u\rangle=\langle D_YM,u\rangle$.
+Since $J^*M$ lies in $\mathcal P_Y$, this is precisely the orthogonal
+projection characterization. Substitute Theorem~\ref{thm:meangraph} for
+the Fourier case.
+\end{proof}
+\lean{GaussianBrownianPRP}{clark_ocone; clark_ocone_representer_unique}
+\lean{IBMFourierClockClarkOcone}{projected_actual_derivative; stochastic_reconstruction}
+For adapted step fields the same calculation proves
+$\delta_Yu=Ju$ in the original Gaussian adjoint graph. Approximation by
+steps, isometry and closedness extend this equality to every predictable
+energy field. This domain assertion will be used in the hybrid theorem.
+
+\section{Hybrid reconstruction through the original intrinsic adjoint}
+For a clock-only predictable field $U$, write $C(U)$ for its lift to the
+product space, constant in the scenery coordinate. This is an isometry.
+Testing on product cylinders and using density gives
+\begin{equation}\label{eq:lift}
+ C(U)\in\Dom\delta_Y,\qquad \delta_Y C(U)=JU.
+\end{equation}
+Indeed the clock-only adjoint identity integrates over each scenery
+coordinate, and finite tensor approximation extends it to the full partial
+derivative domain. Equivalently, take a clock adjoint graph approximation
+and transport its constant-scenery tensor through the closed partial graph.
+No observable or predictable projection is commuted with a derivative.
+
+\begin{theorem}[Actual Fourier hybrid identity]\label{thm:hybrid}
+Assume only \eqref{eq:valuecost}, and let $F$ be \eqref{eq:F}, $M=\E_XF$,
+and $U=J^*M$. Then
+\[
+ (R_XF,C(U))\in\Dom\delta_{\Hh},\qquad
+ \delta_{\Hh}(R_XF,C(U))=F-\E F.
+\]
+For every $f\in\Dom D_{\Hh}$ one has the exact duality
+\[
+ \E\{(F-\E F)f\}
+ =\langle R_XF,D_Xf\rangle+\langle C(U),D_Yf\rangle.
+\]
+The squared norm of the pair is at most $2\|F\|_2^2$.
+If all $r_i\leq T$, the clock field is supported in $[0,T]$.
+Under \eqref{eq:curvaturecost} it is the lift of $P_{\rm pred}G$.
+\end{theorem}
+\begin{proof}
+The actual source-mean formula makes $M$ Brownian generated.
+Equation~\eqref{eq:source}, Theorem~\ref{thm:prp} and \eqref{eq:lift} give
+the original ambient adjoint outputs
+\[
+ \delta_XR_XF=F-M,\qquad
+ \delta_Y C(U)=M-\E_YM=M-\E F.
+\]
+Their sum is the intrinsic variable $F-\E F$, so
+Lemma~\ref{lem:project} removes the final projection on this \emph{sum}.
+Its proof also gives the duality against every original joint-domain test.
+The squared field norm is at most
+$\|F\|_2^2+\|M-\E M\|_2^2\leq2\|F\|_2^2$.
+Proposition~\ref{prop:support} gives time support. Only the last projected
+derivative identification uses Theorem~\ref{thm:meangraph} and therefore
+the stronger summability hypothesis.
+\end{proof}
+\lean{IBMFourierHybridReconstruction}{partial_graph; clock_mem; clock_value; reconstruction; duality}
+The norm estimate here is a direct human deduction from the mapped original
+recovery bound and Brownian isometry. It is not a new formal declaration or
+a claim that this joint preimage is unique. A joint divergence may have a
+kernel even though its clock-only predictable coefficient is unique.
+
+\section{A nonzero observable with zero clock mean}
+Take $T>0$ and $F=\sin Z_T$, which is a one-term Fourier observation after
+a phase change. Conditional on $Y$, the scenery value $Z_T$ is centered
+Gaussian of variance $|Y_T|$. Symmetry gives
+\[
+ M=\E_X\sin Z_T=0,\qquad U=J^*M=0.
+\]
+Nevertheless the double-angle identity and the Gaussian characteristic
+function give
+\[
+ \E F=0,\qquad
+ \E F^2=\tfrac12\left(1-\E e^{-2|Y_T|}\right)>0.
+\]
+The strict inequality follows because $Y_T$ is nondegenerate, so
+$|Y_T|>0$ almost surely and $e^{-2|Y_T|}<1$ almost surely. In particular,
+the entire predictable hidden-clock channel vanishes while $F$ is nonzero.
+The hybrid theorem instead reads $\delta_{\Hh}(R_XF,0)=F$.
 \lean{IBMFourierClockClarkOcone}{coefficient_zero_of_cos_zero}
 \lean{IBMActualSineDomainObstruction}{sinePoint_not_constant; sinePoint_not_joint_domain}
-The precise Fourier/sine identification and the simultaneous positive and
-negative domain tests are retained in checkpoint 1520's independent Lean checks.
+The verified source additionally proves that this positive-time sine
+observation is outside the original joint derivative domain. That separate
+domain obstruction is not needed in the variance proof above and is not
+reproved here. It is consistent with our theorem: membership of an
+\emph{output} in the range of an adjoint does not require it to be in the
+domain of the operator being adjointed. The paper's claim of complete
+reconstruction is therefore a claim about an original adjoint output, not
+point-observation differentiability.
 
-\section{What is still missing}
-The clock coefficient is predictable for the \emph{hidden Brownian clock}.
-The source channel is the existing static source adjoint, not a claimed
-physical-time predictable integrand. Neither construction is automatically
-measurable for the observed IBM filtration. Only $U$ has the uniqueness
-assertion above; joint divergence integrands can have a kernel.
+\section{Classical context and precise remaining obligations}
+The Gaussian recovery $DN^{-1}$ on centered chaoses, Brownian predictable
+representation and the projected-derivative mechanism are classical.
+Ocone's primary institutional publication record \cite{ocone} describes
+the extension of Clark's formula to weakly $H$-differentiable functionals.
+This supplies relevant historical context. Our bounded search inspected
+that record and abstract, not the complete article; it does not establish
+priority for any specific IBM formulation or match all analytic hypotheses.
+The paper claims neither a new Clark--Ocone theorem nor external novelty.
+Its contribution as a formalization companion is the explicit alignment of
+actual folded covariance, original cusp graph, completed Fourier mean,
+predictable clock coefficient and projected intrinsic adjoint.
 
-Other verified results do not remove that distinction. Nonseparable
-$C^1$-time/$C^4$-space Simpson formulas and Bernstein continuous-path
-realizations hold in their specified probability topologies. The Bernstein
-construction uses all grid prefixes and is not asserted causal. Separately,
-the original native grid outputs have no weak intrinsic Hilbert limit, even
-along a strictly increasing subsequence. Existing Fourier source-lowered
-actions can converge strongly without contradicting that obstruction:
-they apply a different tested/lowered map with a specified smaller domain.
-\lean{IBMTimeSpaceSimpson}{sums_tendstoInMeasure}
-\lean{IBMContinuousSimpsonRealization}{approximation_tendstoInMeasure}
-\lean{IBMNativeWeakObstruction}{no_original_weak_subsequence}
-\lean{IBMFourierCylinderSeries}{native_tendsto; source_native_tendsto}
+Three qualifications are mathematical requirements, rather than choices of
+terminology. First, $\mathcal F_t^Y$ is the hidden clock's Brownian past.
+The observed past $\sigma(Z_s:s\leq t)$ is a different sigma algebra.
+Nothing above identifies $U$ as predictable for that observed past.
+Second, $R_XF$ is a static Gaussian source field; it is not constructed as
+a physical-time predictable IBM integrand. Third, even the full observable
+projection $P$ used in the adjoint identity is not a causal projection.
+Dropping any of these distinctions would change the theorem.
 
-A precise remaining task is to identify an admissible coefficient in the
-\emph{observed} predictable integral space, prove its actual integral agrees
-with the desired physical prescription, and show that the centered remainder
-is zero in the required topology. Alternatively, an explicit nonzero residual
-would delimit that proposed formula. Hidden-clock representation alone
-establishes neither conclusion. Nonsmooth physical-time It\^o--Tanaka,
-domain/closure transfers and arbitrary-partition claims retain separate proof
-obligations. No new campaign, novel-theorem priority or completion claim is
-created by this synthesis.
+To obtain an observed-filtration physical-time reconstruction, one would
+still need a specified observed predictable integral space, an original
+closed integral realizing the desired physical prescription, admissibility
+of the proposed coefficients in that space, and a proof that its centered
+residual vanishes in the stated topology. The sine test shows why success
+for conditional source means cannot discharge those obligations. Existing
+Simpson identities and native-grid weak-limit obstructions retain their own
+domains and topologies; no transfer to arbitrary partitions, nonsmooth
+physical-time formulas or a predictable representation property is asserted.
+
+\begin{thebibliography}{9}
+\bibitem{ocone} D. Ocone, \emph{Malliavin's calculus and stochastic integral
+representations of functionals of diffusion processes}, Stochastics
+\textbf{12} (1984), 161--185.
+\href{https://doi.org/10.1080/17442508408833299}{doi:10.1080/17442508408833299}.
+Primary institutional record and abstract:
+\href{https://www.researchwithrutgers.org/en/publications/malliavins-calculus-and-stochastic-integral-representations-of-fu/}{Rutgers publication record}.
+\bibitem{source} Project Stardust, \emph{OperatorDerivativeRewrite}, frozen
+verified source commit identified in Section~1. The accompanying
+\texttt{theorem-map.json} gives declaration-level permanent source links.
+\end{thebibliography}
 \end{document}
