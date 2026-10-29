@@ -10,8 +10,8 @@
 \newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
 \newcommand{\Hh}{\mathcal H}\newcommand{\SU}{\mathrm{SU}(2)}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Gauge-invariant slow modes in a seven-link $\mathrm{SU}(2)$ transfer:\\
-finite-coupling mixing and the failure of uniform fixed-step contraction}
+\title{Finite gauge transfer comparisons:\\
+seven-link $\mathrm{SU}(2)$ and a homogeneous $\mathbf Z_2$ torus}
 \author{Project Stardust}
 \date{Reviewed finite-model draft, October 29, 2026}
 \begin{document}
@@ -35,7 +35,7 @@ mixing. We also exhibit the loss of the trial's centering symmetry when
 both spatial plaquettes are weighted. All statements concern this
 finite model; no homogeneous four-dimensional transfer or physical
 mass-gap conclusion is inferred. Classical positive-kernel and character
-methods are credited; priority for the exact comparison is unresolved.
+methods are credited; priority for the exact comparison is unresolved. A separate microscopic homogeneous $\mathbf Z_2$ torus has sharp bare gap $3/4$, but stationary weighted gap at most $39/64$, with a constructed positive algebraic ground function.
 \end{abstract}
 
 \section{The model and the quantified conclusions}
@@ -750,6 +750,190 @@ simply be transplanted. In particular, the small independent $t$
 interval in Theorem~\ref{thm:main} gives no statement along a
 homogeneous relation between spatial and temporal couplings.
 
+\section{A separate homogeneous finite $\mathbf Z_2$ comparison}
+The two-weight $\SU$ question is not settled by changing the group.
+Nevertheless the frozen library contains a useful independent test of
+an unchanged-gap claim under genuinely homogeneous Wilson weights.
+We reconstruct it explicitly. This section uses the periodic two-by-two
+$\mathbf Z_2$ lattice, not the seven-link state space.
+
+\subsection*{The microscopic law and its actual gauge quotient}
+Represent the eight link signs by $u\in\mathbf F_2^8$, with link $j$
+equal to $(-1)^{u_j}$. The four vertex-flip incidence masks have supports
+\[
+ \{0,1,3,4\},\quad\{1,2,3,6\},\quad\{0,4,5,7\},
+ \quad\{2,5,6,7\}.
+\]
+Their sum is zero. The first three are independent, so the effective
+gauge action has eight elements, acting by addition of these masks.
+Four plaquette supports and two winding supports are
+\[
+\begin{array}{c|l}
+ p_0&0,1,2,5\\ p_1&0,2,3,7\\p_2&1,4,5,6\\p_3&3,4,6,7\\
+ w_0&0,4\\w_1&1,3
+\end{array}
+\]
+Parity on each support is invariant under every vertex flip, and
+$p_3=p_0+p_1+p_2$ in $\mathbf F_2$. Label the configuration by
+the five bits $(p_0,p_1,p_2,w_0,w_1)$, in little-endian order, hence
+by an integer $i\in\{0,\ldots,31\}$. These five linear forms are
+independent: in a zero linear combination, link coordinates $6,7,2,4,3$
+successively eliminate the coefficients of $p_2,p_1,p_0,w_0,w_1$.
+The label map has rank five and kernel of dimension three. Its kernel
+therefore equals the vertex-flip space. Labels are precisely the gauge
+orbits, rather than just a selection of invariant observables.
+
+Let $\beta=(\log3)/2$. Independent temporal link increments have
+same/flip probabilities $3/4,1/4$, since their Wilson odds are
+$e^{2\beta}=3$. A microscopic increment $u$ has probability
+$3^{8-|u|}/4^8$. Its label distribution has the integer numerators
+\[
+\begin{array}{rrrrrrrr}
+7048&1800&3000&3000&3000&3000&1800&2952\\
+1800&1800&1080&3000&3000&1080&1800&1800\\
+1800&1800&3000&1080&1080&3000&1800&1800\\
+648&1800&1080&1080&1080&1080&1800&648
+\end{array}
+\]
+in label order $0$ through $31$. Denote these numbers by $n_i$.
+They are obtained by summing $3^{8-|u|}$ over the eight configurations
+in each label fiber; their sum is $65536=4^8$. The actual kinetic
+matrix on the quotient is consequently
+\[
+ K_{ij}=n_{i\mathbin\oplus j}/65536.
+\]
+Linearity of the label map proves this convolution formula directly
+from the microscopic independent increments. It is not an assumed
+quotient operator. Every entry is positive, and $K$ is symmetric and
+stochastic, with uniform stationary law.
+
+The sum of the four microscopic plaquette signs is
+\[
+ S(i)=\sum_{r=0}^3(-1)^{p_r(i)}.
+\]
+Put $o(i)=(0,2,1,1,1,1,2,3)_{i\bmod8}$, so
+$S(i)=(4,0,0,-4)_{o(i)}$. The spatial half weight at the very same
+coupling is
+\[
+ H_i=e^{\beta S(i)/2}=(3,1,1,1/3)_{o(i)},\qquad
+ T_{ij}=H_iK_{ij}H_j.
+\]
+All eight temporal links and all four spatial plaquettes thus have one
+common $\beta$. There is no orbit-dependent coupling.
+
+\subsection*{A positive ground function with exact algebraic data}
+For every function $v$ of the four orbit types, direct aggregation of
+the displayed $32$-state matrix gives
+\[
+ \sum_jT_{ij}v_{o(j)}=(Bv)_{o(i)},\qquad
+ B=\begin{pmatrix}
+3177/2048&765/512&675/1024&225/2048\\
+765/2048&257/512&255/1024&85/2048\\
+675/2048&255/512&289/1024&75/2048\\
+225/2048&85/512&75/1024&353/18432
+\end{pmatrix}.
+\]
+This identity for all $i$ and all four coordinate basis vectors is one
+of the exact finite checks. Define
+\begin{align*}
+ P(x)&=589824x^4-1388800x^3+284192x^2-5425x+9,\\
+ v(x)&=\begin{pmatrix}
+4718592x^3-3790592x^2+108928x-353\\
+1762560x^2-122400x+765\\
+1555200x^2+86400x-675\\
+518400x^2-2025
+\end{pmatrix}.
+\end{align*}
+Exact polynomial arithmetic gives
+\[
+ (B-xI)v(x)=(-8P(x),0,0,0)^T.
+\]
+Also $P(2)<0<P(9/4)$, so the intermediate value theorem supplies
+$\lambda\in[2,9/4]$ with $P(\lambda)=0$. All coordinates of $v(x)$
+are strictly positive for $x\geq2$. For the first, write
+$x^2(4718592x-3790592)+108928x-353$; for the second use
+$x(1762560x-122400)+765$. Both are positive on that interval, as are
+the last two by their displayed coefficients and $x^2\geq4$.
+Thus $g_i=v_{o(i)}(\lambda)>0$ is a genuine constructed eigenfunction
+of $T$, with eigenvalue $\lambda>0$.
+
+It follows that
+\[
+ Q_{ij}=\frac{T_{ij}g_j}{\lambda g_i},\qquad
+ \pi_i=\frac{g_i^2}{\sum_jg_j^2}
+\]
+define a positive stochastic matrix and a probability law. The row sum
+identity is exactly $Tg=\lambda g$. Symmetry of $T$ gives
+$\pi_iQ_{ij}=\pi_jQ_{ji}$, hence stationarity after summing in $i$.
+This supplies the normalized stationary model without postulating a
+vacuum or relying on a numerical eigenvector.
+
+\subsection*{The sharp bare gap and its strict deterioration}
+For $a\in\mathbf F_2^5$, the Walsh character
+$\chi_a(i)=(-1)^{a\cdot i}$ is an eigenfunction of $K$. Pulling it
+back to the links gives parity on the symmetric difference $R_a$ of
+the five support rows. Since a single noise bit has sign mean $1/2$,
+independence gives the exact eigenvalue $2^{-|R_a|}$. The rows are
+independent, so $R_a$ is nonempty when $a\ne0$. Every row has even
+incidence at each vertex; this is preserved by symmetric difference.
+A single link has two odd endpoints, and therefore $|R_a|\geq2$.
+The winding row $\{0,4\}$ attains two. The 32 characters are a full
+orthonormal basis for uniform $L^2$: their pairwise averages factor
+over the five independent uniform bits, giving $1$ on equal indices
+and $0$ otherwise. Expansion in this basis proves, for every
+uniformly centered $f$,
+\[
+ \langle f,Kf\rangle_{\rm unif}\leq\tfrac14\|f\|_{\rm unif}^2.
+\]
+Equality holds at a nonzero winding character. Thus the exact bare
+Poincar\'e gap is $3/4$, an all-function statement rather than a
+test of a few modes. This support/parity proof is a human
+reconstruction of the library's complete integer character certificate.
+
+Now use the actual gauge-invariant probe
+\[
+ f_i=\begin{cases}1,&i=0,16,\\-1,&i=8,24,\\0,&\text{otherwise}.
+ \end{cases}
+\]
+It is the first winding sign restricted to configurations with all
+plaquettes positive. The four supported states have identical $g_i$
+and $H_i=3$, so $\E_\pi f=0$ and $\E_\pi f^2>0$. On this support,
+\[
+ \sum_jK_{ij}f_j=\frac{25}{256}f_i,
+ \qquad (Qf)_i=\frac{225}{256\lambda}f_i.
+\]
+For instance the first equality at $i=0$ uses the exact numerator
+$7048-1800+1800-648=6400$. The other three equalities follow by
+the same exclusive-or translates. Only the supported states enter
+the lag pairing, so
+\begin{equation}\label{eq:z2rayleigh}
+ \frac{\langle f,Qf\rangle_\pi}{\|f\|_\pi^2}
+ =\frac{225}{256\lambda}\geq\frac{25}{64}>\frac14.
+\end{equation}
+Consequently the true stationary Poincar\'e gap is at most $39/64$,
+strictly less than the sharp bare gap $3/4$. Every comparison asserting
+the latter lower bound unchanged for all $\pi$-centered functions is
+false in this actual homogeneous finite model. More quantitatively,
+any bound $(3/4-\varepsilon)\|h\|_\pi^2\leq
+\langle h,(I-Q)h\rangle_\pi$ for all centered $h$ must pay
+$\varepsilon\geq9/64$, by substituting this probe into
+\eqref{eq:z2rayleigh}. The probe itself has bare Rayleigh quotient
+$25/256$, not the maximal bare quotient $1/4$; these are different
+comparisons.
+
+Strict positivity still gives fixed-model mixing: with $\eta=\min_{i,j}Q_{ij}/\pi_j>0$, row sums give $\eta\leq1$ and $Q\geq\eta\,1\otimes\pi$. If $\eta<1$, the remaining normalized Markov matrix preserves $\pi$ and contracts $L^2(\pi)$ by Jensen, so the centered operator norm is at most $1-\eta$; if $\eta=1$ it is zero.
+The example disproves preservation of a particular kinetic gap, not
+existence of every gap. It neither settles the equally weighted
+seven-link $\SU$ regime nor supplies a volume-uniform or physical
+four-dimensional conclusion. Positive ground normalization and Walsh
+calculus are classical. The exact finite comparison has unresolved
+priority, and no novelty is inferred from its finite verification.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{FiniteWilsonTorusNoise},
+\code{FiniteWilsonTorusGround}, \code{FiniteWilsonTorusStationary},
+\code{FiniteWilsonTorusCharacters}, \code{FiniteWilsonTorusGap}.
+\par\endgroup
+
 \section{Provenance, classical context and remaining boundaries}
 Every formal source used here is frozen at the verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -763,7 +947,7 @@ The principal sources are the shared-plaquette Haar projection and
 channel modules; seven-link transfer, variational, odd-trial and spatial
 separation; positive kernel powers; realized vacuum and original ground
 transform; full stationary $L^2$ transfer; iteration, mixing and gauge
-averaging; and the homogeneous-plaquette obstruction.
+averaging; and the homogeneous-plaquette obstruction. The separate $\mathbf Z_2$ section includes all microscopic gauge/noise fibers, the actual 32-state transfer, four-orbit algebraic ground data, the full character certificate and the stationary gap comparison. Its checker \texttt{verify\_homogeneous\_z2.py} verifies 16 exact groups with no floating eigenvector. Its support/parity proof of the sharp bare gap is a labelled human reconstruction of those complete formal character identities.
 In particular, the earlier conditional ground-data contract is
 discharged by the proved positive-power construction. It is not used
 as an existence axiom. Quaternion coordinate calculations, the factored
@@ -784,7 +968,7 @@ optimized seven-link comparison remains unresolved after a bounded
 primary-literature review.
 
 There is no volume or lattice-spacing parameter in the theorem.
-No uniform homogeneous coupling regime, reflection-positive continuum
+No uniform homogeneous $\SU$ coupling regime, reflection-positive continuum
 construction, spectral-to-physical distance identification or
 four-dimensional mass gap is supplied. Failure of a parameter-uniform
 number of these finite Markov steps does not refute a physical mass gap.
