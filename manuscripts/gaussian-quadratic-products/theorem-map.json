@@ -1746,6 +1746,222 @@
       "source_sha256": "68d7965b925d457c002c4e57156eb7007f321f373aed3912ae3ac5d393c9bcd0",
       "declaration_header": "theorem orthonormal_firstChaosFamily_law (v : I \u2192 CoefficientSpace) (hv : Orthonormal \u211d v) :\n    HasLaw (firstChaosFamily v) (productGaussian I) gaussianProduct",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianOrthonormalPolynomialLaw.lean#L33"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTwoSourceQuadraticMoments.rawProduct_coeFn",
+      "file": "Foundation/GaussianTwoSourceQuadraticMoments.lean",
+      "line": 19,
+      "source_sha256": "fd3e07d1de7b872e0f200faef3b0ec79532df0dff110cd5a16cfada2666ff661",
+      "declaration_header": "theorem rawProduct_coeFn (u v : CoefficientSpace) :\n    (rawProduct u v : GaussianL2) =\u1d50[gaussianProduct]\n      fun \u03c9 => firstChaosEmbedding u \u03c9 * firstChaosEmbedding v \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTwoSourceQuadraticMoments.lean#L19"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTwoSourceQuadraticMoments.rawProduct_variance",
+      "file": "Foundation/GaussianTwoSourceQuadraticMoments.lean",
+      "line": 38,
+      "source_sha256": "fd3e07d1de7b872e0f200faef3b0ec79532df0dff110cd5a16cfada2666ff661",
+      "declaration_header": "theorem rawProduct_variance (u v : CoefficientSpace) :\n    \u2016(rawProduct u v : GaussianL2)\u2016^2 = \u2016u\u2016^2 * \u2016v\u2016^2 + 2 * (inner \u211d u v)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTwoSourceQuadraticMoments.lean#L38"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTwoSourceQuadraticMoments.rawProduct_fourth_moment",
+      "file": "Foundation/GaussianTwoSourceQuadraticMoments.lean",
+      "line": 51,
+      "source_sha256": "fd3e07d1de7b872e0f200faef3b0ec79532df0dff110cd5a16cfada2666ff661",
+      "declaration_header": "theorem rawProduct_fourth_moment (u v : CoefficientSpace) :\n    \u2016(polynomialProduct (rawProduct u v) (rawProduct u v) : GaussianL2)\u2016^2 =\n      9 * (\u2016u\u2016^2)^2 * (\u2016v\u2016^2)^2 +\n        72 * \u2016u\u2016^2 * \u2016v\u2016^2 * (inner \u211d u v)^2 + 24 * (inner \u211d u v)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTwoSourceQuadraticMoments.lean#L51"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTwoSourceQuadraticMoments.orthogonal_rawProduct_second_chaos",
+      "file": "Foundation/GaussianTwoSourceQuadraticMoments.lean",
+      "line": 67,
+      "source_sha256": "fd3e07d1de7b872e0f200faef3b0ec79532df0dff110cd5a16cfada2666ff661",
+      "declaration_header": "theorem orthogonal_rawProduct_second_chaos (u v : CoefficientSpace) (hc : inner \u211d u v = 0) :\n    (rawProduct u v : GaussianL2) \u2208 sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTwoSourceQuadraticMoments.lean#L67"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTwoSourceQuadraticMoments.orthogonal_rawProduct_fourth_ratio",
+      "file": "Foundation/GaussianTwoSourceQuadraticMoments.lean",
+      "line": 77,
+      "source_sha256": "fd3e07d1de7b872e0f200faef3b0ec79532df0dff110cd5a16cfada2666ff661",
+      "declaration_header": "theorem orthogonal_rawProduct_fourth_ratio (u v : CoefficientSpace) (hc : inner \u211d u v = 0) :\n    \u2016(polynomialProduct (rawProduct u v) (rawProduct u v) : GaussianL2)\u2016^2 =\n      9 * (\u2016(rawProduct u v : GaussianL2)\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTwoSourceQuadraticMoments.lean#L77"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixed_fourth_moment",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 122,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixed_fourth_moment (u v : CoefficientSpace) :\n    \u2016(polynomialProduct (mixedPolynomial u v) (mixedPolynomial u v) : GaussianL2)\u2016^2 =\n      9 * (\u2016u\u2016^2)^2 * (\u2016v\u2016^2)^2 +\n        42 * \u2016u\u2016^2 * \u2016v\u2016^2 * (inner \u211d u v)^2 + 9 * (inner \u211d u v)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L122"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixedTarget_variance",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 128,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixedTarget_variance (u v : CoefficientSpace) :\n    \u2016mixedTarget u v\u2016^2 = \u2016u\u2016^2 * \u2016v\u2016^2 + (inner \u211d u v)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L128"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixed_fourth_upper_deficit",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 140,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixed_fourth_upper_deficit (u v : CoefficientSpace) :\n    15 * (\u2016mixedTarget u v\u2016^2)^2 -\n      \u2016(polynomialProduct (mixedPolynomial u v) (mixedPolynomial u v) : GaussianL2)\u2016^2 =\n        6 * (\u2016u\u2016^2 * \u2016v\u2016^2 - (inner \u211d u v)^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L140"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixed_fourth_upper_bound",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 147,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixed_fourth_upper_bound (u v : CoefficientSpace) :\n    \u2016(polynomialProduct (mixedPolynomial u v) (mixedPolynomial u v) : GaussianL2)\u2016^2 \u2264\n      15 * (\u2016mixedTarget u v\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L147"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixed_fourth_upper_equality_iff",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 153,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixed_fourth_upper_equality_iff (u v : CoefficientSpace) :\n    \u2016(polynomialProduct (mixedPolynomial u v) (mixedPolynomial u v) : GaussianL2)\u2016^2 =\n      15 * (\u2016mixedTarget u v\u2016^2)^2 \u2194 \u2016u\u2016^2 * \u2016v\u2016^2 = (inner \u211d u v)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L153"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedQuadraticFourthMoment.mixed_fourth_lower_bound",
+      "file": "Foundation/GaussianMixedQuadraticFourthMoment.lean",
+      "line": 166,
+      "source_sha256": "a8d0159c9b746778ac620bbb86e9302d511574038c03b4fa1d4b91063594d346",
+      "declaration_header": "theorem mixed_fourth_lower_bound (u v : CoefficientSpace) :\n    9 * (\u2016mixedTarget u v\u2016^2)^2 \u2264\n      \u2016(polynomialProduct (mixedPolynomial u v) (mixedPolynomial u v) : GaussianL2)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedQuadraticFourthMoment.lean#L166"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.anticommutator_zero",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 33,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem anticommutator_zero : A*B+B*A = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L33"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.product_nonzero",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 37,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem product_nonzero : A*B \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.orthogonal",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 45,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem orthogonal : inner \u211d f.val g.val = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L45"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.f_variance",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 50,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem f_variance : \u2016f.val\u2016^2 = 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.g_variance",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 55,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem g_variance : \u2016g.val\u2016^2 = 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L55"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.mixed_contraction_zero",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 60,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem mixed_contraction_zero : projection 2 (product f g) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.square_contraction_pairing",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 67,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem square_contraction_pairing :\n    inner \u211d (projection 2 (square f)) (projection 2 (square g)) = 64",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L67"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.square_covariance",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 73,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem square_covariance : inner \u211d (square f) (square g) - \u2016f.val\u2016^2 * \u2016g.val\u2016^2 = 32",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L73"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.cross_fourth_moment",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 77,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem cross_fourth_moment :\n    (\u222b \u03c9, (f.val \u03c9)^2 * (g.val \u03c9)^2 \u2202gaussianProduct) = 48",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L77"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.not_independent",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 84,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem not_independent : \u00acProbabilityTheory.IndepFun f.val g.val gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L84"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.f_coeFn",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 99,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem f_coeFn : f.val =\u1d50[gaussianProduct] fun \u03c9 =>\n    (firstChaosEmbedding (directions 0) \u03c9)^2 - (firstChaosEmbedding (directions 1) \u03c9)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L99"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.g_coeFn",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 110,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem g_coeFn : g.val =\u1d50[gaussianProduct] fun \u03c9 =>\n    2 * firstChaosEmbedding (directions 0) \u03c9 * firstChaosEmbedding (directions 1) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L110"
+    },
+    {
+      "paper": "Sections 9\u201310 actual two-source moment bounds and anticommuting dependence boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticAnticommutingExample.radial_square_identity",
+      "file": "Foundation/GaussianQuadraticAnticommutingExample.lean",
+      "line": 121,
+      "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
+      "declaration_header": "theorem radial_square_identity : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    (f.val \u03c9)^2 + (g.val \u03c9)^2 =\n      ((firstChaosEmbedding (directions 0) \u03c9)^2 + (firstChaosEmbedding (directions 1) \u03c9)^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L121"
     }
   ],
   "human_reorganization": [
@@ -1757,7 +1973,9 @@
     "Tensor symmetrization uses the transpose on both paired indices: S(A tensor B)=S(A) tensor S(B)+K(A) tensor K(B). Two skew factors therefore survive even when each factor quadratic contraction is zero. The combined coefficient tensor is not the ordinary product of the two individual zero random variables.",
     "The double-skew four-coordinate observable equals twice a 2 by 2 Gaussian determinant, has second moment 8 and fourth moment 384, and is the actual recovered original-source target. The orthonormal frame law is transported in the ambient countable Gaussian product, rather than asserted from matching moments.",
     "The exact actual determinant law is proved through conditional characteristic functions, the nonnegative Gaussian square Laplace transform and uniqueness. The density is one quarter exp(-absolute(x)/2), or one half exp(-absolute(x)) for the unscaled determinant. No general-dimension determinant law is asserted.",
-    "The paper only uses the nonnegative square-Laplace parameter, where its finite integral derivation applies. Null-set equality, law transport and singleton nullity are taken from the actual verified declarations. The dimension-two determinant density is classical, explicitly present in Nyquist-Rice-Riordan (1954), not a new distribution."
+    "The paper only uses the nonnegative square-Laplace parameter, where its finite integral derivation applies. Null-set equality, law transport and singleton nullity are taken from the actual verified declarations. The dimension-two determinant density is classical, explicitly present in Nyquist-Rice-Riordan (1954), not a new distribution.",
+    "Section 9 reconstructs actual centered two-source products from the bivariate Gaussian moment generating function, including arbitrary completed source vectors and singular covariances. Sharp constants nine and fifteen hold on this product class; nine is not a lower constant for all completed second chaos. The lower equality characterization and scalar kurtosis monotonicity are explicitly human consequences.",
+    "Section 10 consolidates the earlier brief matrix example into the exact source-mapped anticommuting pair. Orthogonality and vanishing mixed degree-two contraction coexist with positive square-contraction pairing 64 and square covariance 32. Direct Gaussian moments independently prove dependence. No new independence classification is claimed."
   ],
   "literature": [
     {
@@ -1767,6 +1985,10 @@
     {
       "url": "https://ir.library.osaka-u.ac.jp/repo/ouka/all/8824/omj02_02_05.pdf",
       "review": "Primary Ogawa 1950 introduction and orthogonal-range discussion inspected for classical centered Gaussian AB=0 independence context. No novelty is claimed and no noncentral theorem is invoked."
+    },
+    {
+      "url": "https://arxiv.org/pdf/2106.02897",
+      "review": "Gaunt primary preprint v2, Section 2.7, pages 9\u201310: actual central moments and kurtosis inspected, number of product summands one matches the new companion formulas. Classical antecedent, no novelty claim."
     }
   ],
   "novelty": "Classical formalization companion; no new quadratic independence criterion or fourth-moment phenomenon claimed."

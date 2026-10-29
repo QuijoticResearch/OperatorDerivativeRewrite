@@ -34,7 +34,9 @@ test. The completion and its source/operator normalization are made
 explicit. A centered first/second-chaos mixture has negative
 square covariance, delimiting the homogeneous-chaos hypothesis.
 Combined tensor symmetrization retains a double-skew determinant
-whose actual transported law is explicitly Laplace.
+whose actual transported law is explicitly Laplace. A two-source product
+has a sharper lower fourth-moment coefficient of nine, and an explicit
+anticommuting pair delimits incomplete independence tests.
 Classical quadratic-form theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
@@ -421,19 +423,149 @@ independent, so the two observables are independent. Thus
 this finite centered Gaussian setting. This is classical
 quadratic-form theory, not a newly claimed criterion.
 
-Orthogonality of the targets is weaker. For
+Orthogonality of the targets is weaker. The explicit source example in
+Section~\ref{sec:anticommuting} also has vanishing mixed degree-two
+contraction, while its square-contraction pairing remains positive.
+
+\section{Sharp two-source product bounds}\label{sec:twosource}
+The general lower coefficient $3$ is not the sharp coefficient on the
+smaller class of centered products of two linear Gaussian sources.
+Let $W$ be the actual isonormal embedding of the real source Hilbert
+space and set
+\[
+ X=W(u),\quad Y=W(v),\quad a=\|u\|^2,\quad b=\|v\|^2,
+ \quad c=\langle u,v\rangle,\quad A=ab,\quad Z=XY-c.
+\]
+These definitions allow arbitrary completed source vectors, not only
+finitely supported vectors. Their two-dimensional joint Gaussian law
+has moment generating function
+\[
+ \E e^{sX+tY}=\exp\!\left(\frac{as^2+2cst+bt^2}{2}\right).
+\]
+Indeed every linear combination is the embedded source $W(su+tv)$.
+This identity also covers singular covariance matrices. All polynomial
+moments are finite: Cauchy--Schwarz bounds each mixed absolute moment
+by the corresponding one-variable Gaussian moments.
+
+\begin{proposition}\label{prop:twosource}
+The actual centered product satisfies
+\begin{align}\label{eq:twosourcemoments}
+ \E Z^2&=A+c^2,\\
+ \E Z^4&=9A^2+42Ac^2+9c^4.\nonumber
+\end{align}
+Consequently
+\begin{equation}\label{eq:twosourcebounds}
+ 9(\E Z^2)^2\leq\E Z^4\leq15(\E Z^2)^2,
+ \qquad
+ 15(\E Z^2)^2-\E Z^4=6(A-c^2)^2.
+\end{equation}
+If $Z\ne0$ in $L^2$, lower equality holds exactly when $c=0$;
+upper equality holds exactly when $A=c^2$. Thus both constants are
+attained by nonzero targets. The latter equality is precisely equality
+in the source Cauchy--Schwarz inequality.
+\end{proposition}
+\begin{proof}
+Expanding the displayed exponential, the coefficient of $s^kt^k$
+is the sum over nonnegative integers $i,j,l$ with $2i+j=k$ and
+$j+2l=k$ of
+\[
+ \frac{(a/2)^i c^j(b/2)^l}{i!j!l!}.
+\]
+Multiply by $(k!)^2$. For $k=1,2,3,4$ this gives respectively
+\[
+ \E XY=c,\quad \E X^2Y^2=A+2c^2,\quad
+ \E X^3Y^3=9Ac+6c^3,
+\]
+\[
+ \E X^4Y^4=9A^2+72Ac^2+24c^4.
+\]
+Expanding $(XY-c)^2$ and $(XY-c)^4$ proves
+\eqref{eq:twosourcemoments}. Subtracting nine times the squared
+variance gives $24Ac^2\geq0$; subtracting the fourth moment from
+fifteen times the squared variance gives the stated squared Gram
+determinant. For a nonzero target, $A>0$: if $a=0$ or $b=0$,
+the corresponding centered Gaussian is zero almost surely and so is
+$Z$. Thus lower equality is equivalent to $c=0$, while upper equality
+is equivalent to $A=c^2$. Orthogonal nonzero vectors give the first
+case, and $u=v\ne0$ gives the second.
+\end{proof}
+
+For $A>0$ put $r=c^2/A\in[0,1]$. A further elementary human
+reorganization of the moment identity is
+\[
+ \frac{\E Z^4}{(\E Z^2)^2}
+ =9+\frac{24r}{(1+r)^2}.
+\]
+Its derivative with respect to $r$ is $24(1-r)/(1+r)^3\geq0$.
+This describes the exact interpolation between an orthogonal product
+and a rank-one square. It is not a lower bound of nine for the whole
+completed second chaos; the many-coordinate examples in the earlier
+section still approach three. The formal module
+\texttt{GaussianMixedQuadraticFourthMoment} supplies
+\texttt{mixed\_fourth\_moment},
+\texttt{mixed\_fourth\_upper\_deficit},
+\texttt{mixed\_fourth\_upper\_equality\_iff} and
+\texttt{mixed\_fourth\_lower\_bound} retain the actual source targets.
+The lower equality characterization and scalar monotonicity just
+proved are explicit human consequences. These Gaussian product
+moments are classical: Gaunt~\cite{Gaunt}, Section 2.7, gives the same
+central moments and kurtosis after normalizing the variances and
+setting the number of product summands to one.
+
+\section{A vanishing mixed contraction does not give independence}\label{sec:anticommuting}
+The three conditions in the square-covariance identity must be kept
+together. Let $X,Y$ be two actual independent standard source
+coordinates and take
 \[
  A=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
- B=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+ B=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+ F=X^2-Y^2,\quad G=2XY.
 \]
-$\tr AB=0$, so $\langle Q_A,Q_B\rangle=0$.
-But $AB\ne0$, $AB+BA=0$, and $\|AB\|_\HS^2=2$.
-Equation \eqref{eq:matrixcov} gives
-$\Cov(Q_A^2,Q_B^2)=32>0$, so they are dependent. The point is
-the retained contraction, not covariance of the unsquared targets.
-This explicit example is a finite matrix substitution in the
-mapped identities, rather than a new standalone formal theorem.
+Both are centered members of $\Hh_2$. Matrix multiplication gives
+$AB=-BA=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$,
+so their anticommutator vanishes but their product does not.
+In particular
+\[
+ \langle F,G\rangle=0,\qquad \E F^2=\E G^2=4.
+\]
+The first equality follows from odd one-coordinate Gaussian moments;
+the variances follow from $\E X^4=\E Y^4=3$.
 
+Using $H_3(x)=x^3-3x$, cancellation of the two degree-two terms gives
+\[
+ FG=2H_3(X)Y-2XH_3(Y)\in\Hh_4,\qquad P_2(FG)=0.
+\]
+Yet the square contractions are
+\[
+ P_2(F^2)=P_2(G^2)=4\bigl(H_2(X)+H_2(Y)\bigr).
+\]
+For the first identity expand $F^2=X^4+Y^4-2X^2Y^2$ with
+$x^4=H_4(x)+6H_2(x)+3$ and $x^2=H_2(x)+1$.
+For the second use $G^2=4X^2Y^2$. Since $H_2(X)$ and $H_2(Y)$
+are orthogonal and each has squared norm two, their contraction
+pairing is $64$. Therefore the earlier polarization identity yields
+\begin{equation}\label{eq:anticommutingcovariance}
+ \Cov(F^2,G^2)=\tfrac12\,64=32>0.
+\end{equation}
+One can also check this without any chaos projection:
+\[
+ \E F^2G^2=4\E(X^6Y^2-2X^4Y^4+X^2Y^6)
+ =4(15-18+15)=48,
+\]
+and subtracting $4\cdot4$ gives $32$. Independence would factor
+these square moments, a contradiction. This is a classical explicit
+calibration of the matrix-annihilation criterion, not a replacement
+criterion. Even orthogonality together with $P_2(FG)=0$ omits the
+nonnegative square-contraction pairing in \eqref{eq:polarized}.
+The pointwise algebraic identity
+\[
+ F^2+G^2=(X^2+Y^2)^2
+\]
+is consistent with this dependence, but the positive covariance above
+is the actual proof. All these source identifications and constants
+are recorded in \texttt{GaussianQuadraticAnticommutingExample};
+no assumption that nonlinear Gaussian targets are jointly Gaussian
+has been made.
 
 \section{Centered mixed chaoses need not have associated squares}
 The restriction to homogeneous second chaos in
@@ -686,5 +818,10 @@ with applications}, Journal of Functional Analysis \textbf{270}
 Quart. Appl. Math. \textbf{12} (1954), 97--104.
 \href{https://doi.org/10.1090/qam/63591}{doi:10.1090/qam/63591}.
 Primary scan, pages 97--98; two-dimensional density already classical.
+\bibitem{Gaunt} R. E. Gaunt,
+\emph{The basic distributional theory for the product of zero mean
+correlated normal random variables}, primary preprint arXiv:2106.02897v2
+(2022), Section 2.7.
+\url{https://arxiv.org/abs/2106.02897}.
 \end{thebibliography}
 \end{document}
