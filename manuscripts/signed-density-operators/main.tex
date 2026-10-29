@@ -9,6 +9,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
 \newcommand{\dom}{\operatorname{dom}}\newcommand{\ran}{\operatorname{ran}}
 \newcommand{\Sc}{\mathcal S}\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Closed differentiation and signed adjoints\\for Schwartz densities with zeros}
 \author{Project Stardust\\\small A classical formalization companion}
 \date{October 29, 2026}
@@ -24,7 +25,9 @@ distinct from its closed weak extension. Explicit total adjoint
 probes and multiplication by the sign of $K$ identify the exact
 domain of the signed adjoint. Orthogonal graph projection constructs
 the positive Hilbert energy resolvent, its exact minimization gap
-and the full nonnegative self-adjoint energy operator. The
+and the full nonnegative self-adjoint energy operator. An auxiliary Gaussian
+field has exactly this resolvent as its covariance, with a proved Green
+identity and original first-chaos source calculus. The
 logarithmic derivative is always absolutely integrable against
 $|K|\,dx$ but fails to be square-integrable at a simple zero.
 A normalized sign-changing polynomial-Gaussian example exhibits
@@ -362,6 +365,140 @@ It does not identify $A$ with an unqualified pointwise
 Sturm--Liouville expression or identify an energy-semigroup
 law with the signed density $K\,dx$.
 
+
+\section{An auxiliary Gaussian field with Green covariance}
+The positive Hilbert resolvent also yields an actual auxiliary Gaussian
+field, even though the original density may change sign. This construction
+uses the real Hilbert space $H=L^2(|K|\,dx;\C)_{\R}$ from Section 1,
+with its real inner product. Its index $x\in H$ is a deterministic
+Hilbert-space label. Neither $K\,dx$ nor a signed square is used as the
+Gaussian probability measure.
+
+Write $\mathcal G=H\oplus H$ with the Hilbert sum norm, and define the
+bounded real-linear feature map
+\[
+ \Phi x=(Rx,Gx)=(Rx,DRx)\in\mathcal G.
+\]
+It is exactly the orthogonal projection of $(x,0)$ onto the original
+closed graph. Thus
+\begin{equation}\label{eq:featuregreen}
+ \langle \Phi x,\Phi y\rangle_{\mathcal G}=\ip x{Ry},\qquad
+ \|\Phi x\|^2=\ip x{Rx}\leq\|x\|^2.
+\end{equation}
+For the first identity, $\Phi x$ is perpendicular to $(y,0)-\Phi y$, so
+$\langle \Phi x,\Phi y\rangle=\langle \Phi x,(y,0)\rangle=\ip{Rx}y=\ip x{Ry}$.
+Contractivity of projection proves the bound. The map is injective:
+$\Phi x=0$ implies $Rx=0$, and the dense-domain argument in Section 6
+then gives $x=0$. Consequently $\ip x{Rx}>0$ for every nonzero label,
+without asserting a uniform positive lower bound.
+
+The real Hilbert space $H$ is separable. For instance, finite rational
+step functions on rational intervals, with rational real and imaginary
+parts, give a countable dense family after the usual truncation and
+finite-Borel-measure approximation in $L^2(|K|\,dx)$. Hence $\mathcal G$
+has a finite or countable orthonormal basis $(e_j)$. On a separate product
+probability space take independent standard real Gaussians $(g_j)$ and set
+\begin{equation}\label{eq:gaussiangreen}
+ X_x=\sum_j\langle \Phi x,e_j\rangle g_j\quad\hbox{in }L^2(\mathbb P).
+\end{equation}
+If the Hilbert space is zero, take the empty sum. Parseval makes every
+series Cauchy in $L^2$, supplies an actual measurable random variable
+up to almost-everywhere equality and gives a bounded real-linear map
+$x\mapsto X_x$ from $H$ into $L^2(\mathbb P)$.
+
+\begin{theorem}\label{thm:gaussiangreen}
+The family $(X_x)_{x\in H}$ is a centered real Gaussian field and
+\begin{align}\label{eq:covgreen}
+ \operatorname{Cov}_{\mathbb P}(X_x,X_y)&=\ip x{Ry},\\
+ \mathbb E X_x^2&=\ip x{Rx}>0\qquad(x\ne0).\nonumber
+\end{align}
+For every $u\in\dom A$ and $x\in H$, its exact Green identity is
+\begin{equation}\label{eq:greeninverse}
+ \operatorname{Cov}_{\mathbb P}(X_x,X_{u+Au})=\ip x u.
+\end{equation}
+All covariance products are integrable. The linearity statements concern
+actual $L^2$ classes; they do not assert simultaneous pointwise linearity
+for every label on one common null-set complement.
+\end{theorem}
+\begin{proof}
+Finite partial sums have mean zero and covariance the corresponding
+finite coefficient pairing. Their $L^2$ limits retain zero mean, and
+Cauchy--Schwarz passes the products in $L^1$, proving the covariance
+formula by Parseval and \eqref{eq:featuregreen}.
+For any finite labels $x_1,\ldots,x_k$ and real coefficients $a_i$,
+$\sum_i a_iX_{x_i}=X_{\sum_i a_ix_i}$ in $L^2$.
+Its partial sums have characteristic function
+$\exp(-t^2\sum_{j\leq n}\langle \Phi \sum_i a_ix_i,e_j\rangle^2/2)$.
+The inequality $|e^{itv}-e^{itw}|\leq|t||v-w|$ passes these expectations
+to the limit, identifying a centered normal law of variance
+$\|\Phi \sum_i a_ix_i\|^2$. This proves joint Gaussianity by all real
+linear combinations, including degenerate combinations. Injectivity
+proves the strict variance statement. Finally the actual resolvent
+identity $R(u+Au)=u$, with $u$ in the full product domain already proved,
+turns \eqref{eq:covgreen} into \eqref{eq:greeninverse}.
+\end{proof}
+\par\noindent\code{EnergyResolventGaussianField}:\par\noindent
+\code{feature_inner}, \code{field_gaussian}, \code{field_covariance},
+\code{field_law}, \code{variance_positive}.
+\par\noindent\code{SignedSchwartzGaussianField}:\par\noindent
+\code{field_gaussian}, \code{field_covariance}, \code{variance_positive},
+\code{green_covariance}.
+
+\subsection*{Original auxiliary Gaussian calculus and its limits}
+The same construction gives a precise first-chaos derivative and
+adjoint. Identify the coefficients of $\Phi x$ with
+$a(x)=(\langle \Phi x,e_j\rangle)_j\in\ell^2$. On the auxiliary Gaussian
+product, let $\mathcal D$ be the original closed Gaussian derivative
+and $\delta_{\rm aux}=\mathcal D^*$ its Hilbert adjoint. Then
+\begin{equation}\label{eq:auxfirstchaos}
+ X_x\in\dom\mathcal D,\quad \mathcal D X_x=a(x),\qquad
+ a(x)\in\dom\delta_{\rm aux},\quad\delta_{\rm aux}a(x)=X_x.
+\end{equation}
+The vector $a(x)$ is a constant random field, so
+$\|\mathcal D X_x\|_{L^2(\mathbb P;\ell^2)}^2=\ip x{Rx}$.
+For a proof, finite-coordinate linear sums have gradient their
+constant coefficient vectors. Parseval gives strong convergence
+of both values and gradients, and closedness supplies the first graph.
+For the second graph, finite-dimensional Gaussian integration by parts
+gives $\mathbb E[fX_x]=\mathbb E\langle\mathcal Df,a(x)\rangle$ for
+smooth cylindrical $f$ by passing the finite coefficient sums in $L^2$.
+Approximation in the original Gaussian derivative graph extends it to
+every $f\in\dom\mathcal D$, establishing the full adjoint identity.
+The canonical inverse-number recovery is also $a(x)$: on first chaos
+the number eigenvalue is one, so no further inverse weighting occurs.
+This last identification is the source's first-chaos recovery, not a
+statement of uniqueness among all possible divergence preimages.
+\par\noindent\code{GaussianFirstChaosRecovery}:\par\noindent
+\code{firstChaos_derivative_graph}, \code{firstChaos_divergence_graph},
+\code{recovery_firstChaos}.
+\par\noindent\code{SignedSchwartzGaussianField}:\par\noindent \code{source_calculus}.
+
+These are auxiliary Gaussian source operators. They are not the original
+spatial derivative $D$ on $L^2(|K|\,dx)$; the construction supplies no
+intertwining that identifies those two derivatives. The exact resolvent
+covariance is the connection that has been proved. It applies, in
+particular, to each actual higher even heat Schwartz marginal and to
+the normalized simple-zero example in the next section, regardless
+of failure of a square-integrable logarithmic score.
+
+Nor has an $H$-valued Gaussian random variable with covariance $R$ been
+constructed. A Hilbert-indexed field needs no trace-class hypothesis.
+For the general closed-derivative construction this distinction is
+necessary: take $D=0$ on an infinite-dimensional Hilbert space. Then
+$R=I$ and the indexed values on an orthonormal basis are independent
+standard Gaussians. If they were coordinates of a Hilbert-valued sample,
+their squared sum would be finite. But the independent events
+$\{g_j^2\geq1\}$ have a common positive probability, so the independent
+Borel--Cantelli lemma gives infinitely many of them almost surely,
+and that sum diverges. This is a human general counterexample, not a
+claim that the specific signed-density resolvent equals $I$.
+
+Nualart~\cite{Nualart}, Section 3.4, gives the classical isonormal
+construction. The graph-projection feature above realizes its exact
+resolvent covariance directly; no new general Gaussian representation
+principle is claimed. In particular auxiliary positivity neither removes
+the sign of $K$ nor builds a positive path law for a signed pseudoprocess.
+
 \section{An integrable score, simple zeros and a normalized example}
 Define $s_K=-K'/K$ where $K\ne0$ and set it to zero where
 $K=0$, the division convention of the source. The cancellation
@@ -650,7 +787,6 @@ reconstructions. The original full-build/axiom evidence is
 hash-checked; no research source or original domain is changed.
 This formalization companion awaits independent referee review.
 
-\clearpage
 \begin{thebibliography}{9}
 \bibitem{DCSC} V. De Cicco and F. Serra Cassano,
 \emph{Relaxation and optimal finiteness domain for degenerate
@@ -668,5 +804,8 @@ Introduction/Corollary 1.6 comparison only.
 TU Ilmenau preprint M 17/03 (2017).
 \url{https://d-nb.info/1125462493/34}.
 Section 2.1 comparison only.
+\bibitem{Nualart} D. Nualart, \emph{Malliavin Calculus and Normal Approximations},
+updated primary author notes, Section 3.4.
+\url{https://nualart.ku.edu/sites/nualart/files/documents/updated/Course_Malliavin_Calculus_accessible.pdf}.
 \end{thebibliography}
 \end{document}
