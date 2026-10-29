@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
-\usepackage[margin=1.05in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -35,7 +36,7 @@ The projection and Hermite mechanisms are classical, and the two
 fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
 correspondences; no priority claim is made.
-\end{abstract}
+The same projection method also controls terminal-aware Brownian bracket errors for bounded Borel weights, with a separate counterexample to dropping the observation domain. \end{abstract}
 
 \section{Setting and main prediction formula}
 Let $X:\Hh\to L^2(\Omega,P)$ be an isonormal real Gaussian family on a
@@ -490,6 +491,174 @@ every observation value: the theorem concerns their actual integrated
 $L^2$ covariance. This is a concrete classical projection diagnostic, with
 no new law of Gaussian prediction or multi-target error bound claimed.
 
+
+\section{Past-plus-terminal observations and bracket errors}
+The same Gaussian projection mechanism controls a distinct question with
+anticipative coefficients. Let $W$ be standard Brownian motion under its
+original law and fix $T>0$. Write
+\[
+ \mathcal G_s=\sigma(W_r:0\le r\le s)\vee\sigma(W_T),\qquad 0\le s<T.
+\]
+This includes the entire raw past together with a single terminal value.
+It is not a claim of predictability for the original Brownian filtration.
+For $s\le t\le T$, put $h=t-s$, $L=T-s$ and
+$Q_{s,t}=(W_t-W_s)^2-h$.
+
+\begin{proposition}\label{prop:bridgebracket}
+The actual conditional projection is
+\begin{equation}\label{eq:bridgebracket}
+ \E[Q_{s,t}\mid\mathcal G_s]
+ =\frac{h^2}{L^2}\{(W_T-W_s)^2-L\}.
+\end{equation}
+Consequently, for $A\in L^2(\mathcal G_s)$,
+\begin{equation}\label{eq:bridgepair}
+ |\E[AQ_{s,t}]|\le \frac{2h^2}{L}\|A\|_2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Set $S=W_T-W_s$ and
+$\xi=W_t-W_s-(h/L)S$. These are jointly Gaussian, with
+$\E S^2=L$, $\E\xi^2=h-h^2/L$ and $\E\xi S=0$.
+Each increment after $s$ is independent of the whole past up to $s$.
+Thus $\xi$ is independent of the joint family consisting of $S$ and that
+whole past: the finite joint Gaussian characteristic functions factor,
+and a monotone-class argument extends independence from cylinders to
+the generated sigma algebra. This algebra is precisely $\mathcal G_s$,
+since $W_s$ is already observed. Expanding
+$((h/L)S+\xi)^2-h$ and integrating the independent centered $\xi$ gives
+\eqref{eq:bridgebracket}. When $h=0$ the same identity is zero.
+
+The centered Gaussian square has second moment $2L^2$, since
+$\E S^4=3L^2$. Hence the projected variable has norm
+$\sqrt2 h^2/L\le2h^2/L$. The product with $A$ is integrable by
+Cauchy--Schwarz. Orthogonal projection transfers its pairing to the
+conditional variable, and another Cauchy--Schwarz inequality gives
+\eqref{eq:bridgepair}. This is the actual finite/infinite-observation
+Wick projection of the mapped source, not only conditioning on the
+current endpoint in place of the entire past.
+\end{proof}
+
+Use a uniform grid $t_i=iT/n$, $0\le i\le n$, and write
+$h=T/n$ and $Q_i=Q_{t_i,t_{i+1}}$. The source indexes $n=N+1$;
+we use $n\ge1$ throughout. Let $H_n=\sum_{k=1}^n1/k$.
+\begin{theorem}\label{thm:bracketmean}
+For any triangular array $A_{n,i}\in L^2(\mathcal G_{t_i})$ with
+$\|A_{n,i}\|_2\le M$,
+\begin{equation}\label{eq:bracketmean}
+ \left|\E\sum_{i=0}^{n-1} A_{n,i}Q_i\right|
+ \le\frac{2MT}{n}H_n\le\frac{4MT}{\sqrt n}\longrightarrow0.
+\end{equation}
+The harmonic-sum bound and its consequence
+$2MT(1+\log n)/n$ are direct human refinements of the formally recorded
+last bound. No uniform boundedness or differentiability of the
+coefficients is required in this mean statement.
+\end{theorem}
+\begin{proof}
+Apply \eqref{eq:bridgepair} cell by cell. Since
+$T-t_i=h(n-i)$, each pairing is at most
+$2Mh/(n-i)$. Summing proves the first inequality. Also
+$1/k\le1/\sqrt k$ and, by integration of $x^{-1/2}$,
+$\sum_{k=1}^n1/\sqrt k\le1+\int_1^n x^{-1/2}dx
+=2\sqrt n-1\le2\sqrt n$.
+This gives the formally recorded estimate. Integration of $1/x$ gives
+$H_n\le1+\log n$, proving the stated refinement and convergence.
+Each expectation is legitimate by the pairing integrability already
+proved, and the sum is finite.
+\end{proof}
+
+Uniform bounds on the separate coefficient $L^2$ norms do not replace
+the observation-domain hypothesis. On $T=1$, set
+$A_{n,i}=nQ_i$. Then the exact Gaussian square variance gives
+\[
+ \|A_{n,i}\|_2^2=n^2(2/n^2)=2,\qquad
+ \E\sum_{i=0}^{n-1}A_{n,i}Q_i=n^2(2/n^2)=2
+\]
+for every $n$. Thus the means do not tend to zero. This coefficient
+uses the unresolved current increment. In particular the whole array
+cannot satisfy the generated-past-plus-terminal hypothesis, since
+Theorem~\ref{thm:bracketmean} would then force its constant mean two to
+vanish. The source states this existential failure of the observation
+domain; we do not strengthen it to failure for every individual cell.
+
+\section{Strong bracket convergence for bounded Borel weights}
+The previous result concerns a mean, not the norm of a random sum.
+A separate cross-cell calculation supplies a strong statement. Let
+$\varphi:\mathbb R^2\to\mathbb R$ be Borel measurable with
+$|\varphi|\le1$, and define
+\[
+ a_i=\varphi(W_{t_i},W_T),\quad B_i=a_iQ_i,\quad
+ E_n=\sum_{i=0}^{n-1}B_i.
+\]
+No continuity of $\varphi$ is imposed.
+\begin{theorem}\label{thm:strongbracket}
+The actual finite random variables satisfy
+\begin{align}
+ \|E_n\|_2^2
+ &\le \frac{4T^2}{n}+\frac{8T^2 H_n}{n},\label{eq:strongharmonic}\\
+ \|E_n\|_2^2
+ &\le \frac{4T^2}{n}+\frac{16T^2}{\sqrt n}\longrightarrow0.
+ \label{eq:strongformal}
+\end{align}
+The second estimate is the mapped formal theorem. The sharper harmonic
+estimate is a human deduction retaining the same row calculation.
+Thus the displayed error is $O(\sqrt{\log(n+1)/n})$ in $L^2$, without
+asserting optimality, a central limit theorem or a limiting weighted
+occupation integral.
+\end{theorem}
+\begin{proof}
+Each $Q_i$ has norm $\sqrt2h\le2h$. Multiplication by a bounded
+measurable variable of absolute value at most one contracts $L^2$,
+so $\|B_i\|_2\le2h$. The diagonal sum is therefore at most
+$4nh^2=4T^2/n$.
+
+For $i<j$, put $C_{ij}=Q_i a_i a_j$. Both endpoints of the $i$th
+increment are at most $t_j$. The variables $a_i,a_j$ are measurable
+with respect to $\mathcal G_{t_j}$, and so is $Q_i$. Thus
+$C_{ij}\in L^2(\mathcal G_{t_j})$ and
+$\|C_{ij}\|_2\le2h$. The exact cross pairing is
+\[
+ \E[B_iB_j]=\E[Q_j C_{ij}].
+\]
+This product is integrable: $Q_j,C_{ij}\in L^2$. Equivalently the
+original $B_iB_j$ is integrable by the same inequality. No independence
+of the weighted cells is assumed.
+
+Define the later-time row $C_j=\sum_{i<j}C_{ij}$. It belongs to
+$L^2(\mathcal G_{t_j})$ and satisfies
+$\|C_j\|_2\le2jh\le2T$. Expanding the exact finite sum energy yields
+\[
+ \|E_n\|_2^2=\sum_i\|B_i\|_2^2+2\sum_j\E[Q_jC_j].
+\]
+Apply the first bound in \eqref{eq:bracketmean} to the row array with
+$M=2T$. The absolute value of its sum of pairings is at most
+$4T^2H_n/n$. Combining with the diagonal proves
+\eqref{eq:strongharmonic}. Using $H_n\le2\sqrt n$ gives
+\eqref{eq:strongformal}. Its right side tends to zero; taking square
+roots gives the strong convergence. Finally $H_n\le1+\log n$ supplies
+the printed rate refinement. All bounded products are taken in the
+actual Gaussian probability space, rather than in an invented
+coefficient pairing.
+\end{proof}
+
+For any finite bound $|\varphi|\le K$, multiplication and rescaling
+by $K>0$ multiply these squared bounds by $K^2$; $K=0$ is immediate.
+The formal source uses one fixed function $\varphi$ and the normalized
+bound one. This rescaling and the harmonic refinement are explicit
+classical deductions. The theorem addresses the centered bracket error
+alone; it does not assert that
+$\sum_i h\varphi(W_{t_i},W_T)$ converges to a time integral for an
+arbitrary Borel function.
+
+Anticipative variation theory has extensive classical antecedents.
+Yoshida's primary introduction \cite{Yoshida} treats variation sums
+with random weights, explicitly allows nonpredictable weights, and
+sets up a substantially stronger fluctuation/expansion problem with
+Malliavin--Sobolev regularity. We use this as context, not as a theorem
+covering every bounded Borel weight here. The complete elementary
+Gaussian projection and later-row proof above has a narrower target,
+with explicit hypotheses and finite errors. No new anticipative
+stochastic integral or first variation convergence principle is claimed.
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -505,7 +674,7 @@ Raw quartic conditional energies and cross-target residuals are in
 \code{GaussianQuarticConditionalVariance} and
 \code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
-Exact declarations, original hypotheses, source hashes and human proof
+The terminal bracket application is mapped to \code{GaussianTerminalBracketPrediction}, \code{GaussianTerminalWeightedBracket}, \code{GaussianTerminalBracketObstruction}, \code{GaussianTerminalBracketProducts} and \code{GaussianTerminalStrongBracket}. Its harmonic refinements are separately labelled human deductions. Exact declarations, original hypotheses, source hashes and human proof
 reorganizations accompany the manuscript. The elementary noncompactness
 of the full potential is a classical deduction from its exact first-chaos
 identity, not a newly named formal theorem.
@@ -534,5 +703,6 @@ Statistical Theory and Related Fields 5 (2021), 49--54.
 \emph{Prediction law of fractional Brownian motion},
 Statist. Probab. Lett. 129 (2017), 155--166.
 \href{https://arxiv.org/abs/1610.02900}{arXiv:1610.02900}.
+\bibitem{Yoshida} N. Yoshida, \emph{Asymptotic expansion of a variation with anticipative weights}, primary preprint, 2020, introduction and equations (1.2)--(1.7). \href{https://arxiv.org/abs/2101.00089}{arXiv:2101.00089}.
 \end{thebibliography}
 \end{document}

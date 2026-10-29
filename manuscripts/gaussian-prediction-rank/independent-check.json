@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "check_count": 20,
+  "checks": [
+    {
+      "script": "verify_quartic_residuals.py",
+      "script_sha256": "65ecc5564ccbc34fd9582d0d34b0b4fed07b2ee1480eddc0aff9c49493269da5",
+      "result": {
+        "status": "PASS",
+        "count": 13,
+        "checks": [
+          "plus target mean",
+          "minus target mean",
+          "prediction mean",
+          "plus variance",
+          "minus variance",
+          "full target covariance",
+          "prediction variance",
+          "plus residual variance",
+          "minus residual variance",
+          "residual covariance",
+          "block residual variance",
+          "both actual conditional predictions and zero conditional residual means",
+          "exact individual and block unexplained fractions"
+        ],
+        "arithmetic": "Fraction; complete polynomial expansion and exact Gaussian even moments",
+        "scope": "Two actual independent standard Gaussian coordinates; no sampling or fractional asymptotic verification."
+      }
+    },
+    {
+      "script": "verify_bracket.py",
+      "script_sha256": "974a28c5c3cae5f05c7b117a898960faefda124598c9c28e66aa433a8e642b31",
+      "result": {
+        "status": "PASS",
+        "check_count": 7,
+        "checks": {
+          "bridge exact conditional square": 0,
+          "projected square energy": 0,
+          "native square variance": 0,
+          "counterexample coefficient energy": 0,
+          "counterexample actual mean": 0,
+          "uniform mean harmonic factor": 0,
+          "cross-row harmonic energy": 0
+        },
+        "arithmetic": "Exact rational polynomial and Laurent Gaussian moments",
+        "scope": "Finite bridge, variance, counterexample and row-factor transcription; no proof of sigma-algebra identification or limiting L2 convergence."
+      }
+    }
+  ],
+  "checked_utc": "2026-10-29T18:28:49.741240+00:00",
+  "scope": "13 exact quartic-residual and seven exact bridge/bracket finite transcription checks; analytic proofs are separate."
+}

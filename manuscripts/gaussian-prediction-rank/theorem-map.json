@@ -544,6 +544,321 @@
       "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
       "declaration_header": "theorem example_residual_integral :\n    (\u222b \u03c9 : SampleSpace,\n      ((\u03c9 0+\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3)*\n      ((\u03c9 0-\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3) \u2202gaussianProduct)= -312",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L184"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.increment_terminal_inner",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 22,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem increment_terminal_inner (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) :\n    inner \u211d (incrementDirection s t) (hilbertEmbedding TimeHilbert (timeVector T)) = (t:\u211d)-s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L22"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.bridge_covariances",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 29,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem bridge_covariances (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) (hsT : s < T)\n    (i : Option (Iic s)) :\n    inner \u211d (incrementDirection s t) (observation s T i) =\n      inner \u211d (bridgeDirection s t T) (observation s T i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L29"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.bridge_mem_sourceSpan",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 48,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem bridge_mem_sourceSpan (s t T : \u211d\u22650) (hsT : s \u2264 T) :\n    bridgeDirection s t T \u2208 sourceSpan (observation s T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L48"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.conditional_square",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 64,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem conditional_square (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) (hsT : s < T) :\n    conditionalProjection (observation s T) (wick (incrementDirection s t) 2) =\n      (wick (bridgeDirection s t T) 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L64"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.increment_wick_actual",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 72,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem increment_wick_actual (s t : \u211d\u22650) (hst : s \u2264 t) :\n    (wick (incrementDirection s t) 2 : GaussianL2) =\u1d50[gaussianProduct]\n      fun Y => (process t Y-process s Y)^2-((t:\u211d)-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L72"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.conditional_square_actual",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 80,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem conditional_square_actual (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) (hsT : s < T) :\n    conditionalProjection (observation s T) (wick (incrementDirection s t) 2) =\u1d50[gaussianProduct]\n      fun Y => (((t:\u211d)-s)/((T:\u211d)-s))^2*((process T Y-process s Y)^2-((T:\u211d)-s))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L80"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.bridge_norm_sq",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 90,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem bridge_norm_sq (s t T : \u211d\u22650) (hsT : s < T) :\n    \u2016bridgeDirection s t T\u2016^2 = ((t:\u211d)-s)^2/((T:\u211d)-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L90"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.generated_pairing",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 97,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem generated_pairing (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) (hsT : s < T)\n    (a : GaussianL2) (ha : a \u2208 generated (observation s T)) :\n    inner \u211d (wick (incrementDirection s t) 2 : GaussianL2) a =\n      inner \u211d (wick (bridgeDirection s t T) 2 : GaussianL2) a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L97"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.generated_pairing_bound",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 109,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem generated_pairing_bound (s t T : \u211d\u22650) (hst : s \u2264 t) (htT : t \u2264 T) (hsT : s < T)\n    (a : GaussianL2) (ha : a \u2208 generated (observation s T)) :\n    |inner \u211d (wick (incrementDirection s t) 2 : GaussianL2) a| \u2264\n      (2*((t:\u211d)-s)^2/((T:\u211d)-s))*\u2016a\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L109"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.actual_error_integrable",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 126,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem actual_error_integrable (s t : \u211d\u22650) (hst : s \u2264 t) (a : GaussianL2) :\n    Integrable (fun Y => ((process t Y-process s Y)^2-((t:\u211d)-s))*a Y) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L126"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketPrediction.actual_error_pairing",
+      "file": "Foundation/GaussianTerminalBracketPrediction.lean",
+      "line": 132,
+      "source_sha256": "d52d07b1a0d7e20548c077c6176853cbdce7eafa4a1b251590e7bc4c61cfe6a8",
+      "declaration_header": "theorem actual_error_pairing (s t : \u211d\u22650) (hst : s \u2264 t) (a : GaussianL2) :\n    (\u222b Y, ((process t Y-process s Y)^2-((t:\u211d)-s))*a Y \u2202gaussianProduct) =\n      inner \u211d (wick (incrementDirection s t) 2 : GaussianL2) a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketPrediction.lean#L132"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalWeightedBracket.reciprocal_sum_bound",
+      "file": "Foundation/GaussianTerminalWeightedBracket.lean",
+      "line": 13,
+      "source_sha256": "d7189d641bd9f940f25dc8af757792dabc21cb286067d2c7b000291fb71b14a7",
+      "declaration_header": "theorem reciprocal_sum_bound (n : \u2115) :\n    (\u2211 i : Fin n, 1/((n-i.val:\u2115):\u211d)) \u2264 2*Real.sqrt n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalWeightedBracket.lean#L13"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalWeightedBracket.meanError_actual",
+      "file": "Foundation/GaussianTerminalWeightedBracket.lean",
+      "line": 71,
+      "source_sha256": "d7189d641bd9f940f25dc8af757792dabc21cb286067d2c7b000291fb71b14a7",
+      "declaration_header": "theorem meanError_actual (T : \u211d\u22650) (N : \u2115) (a : Fin (N+1) \u2192 GaussianL2) :\n    meanError T N a = \u222b Y, \u2211 i : Fin (N+1),\n      ((process (uniformTime T N i.succ) Y-process (uniformTime T N i.castSucc) Y)^2-\n        ((uniformTime T N i.succ:\u211d)-uniformTime T N i.castSucc))*a i Y \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalWeightedBracket.lean#L71"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalWeightedBracket.meanError_bound",
+      "file": "Foundation/GaussianTerminalWeightedBracket.lean",
+      "line": 80,
+      "source_sha256": "d7189d641bd9f940f25dc8af757792dabc21cb286067d2c7b000291fb71b14a7",
+      "declaration_header": "theorem meanError_bound (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) (a : Fin (N+1) \u2192 GaussianL2)\n    (ha : \u2200 i, a i \u2208 generated (observation (uniformTime T N i.castSucc) T))\n    (M : \u211d) (hM : 0 \u2264 M) (hb : \u2200 i, \u2016a i\u2016 \u2264 M) :\n    |meanError T N a| \u2264 4*M*(T:\u211d)/Real.sqrt (N+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalWeightedBracket.lean#L80"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalWeightedBracket.meanError_tendsto",
+      "file": "Foundation/GaussianTerminalWeightedBracket.lean",
+      "line": 113,
+      "source_sha256": "d7189d641bd9f940f25dc8af757792dabc21cb286067d2c7b000291fb71b14a7",
+      "declaration_header": "theorem meanError_tendsto (T : \u211d\u22650) (hT : 0 < T)\n    (a : (N : \u2115) \u2192 Fin (N+1) \u2192 GaussianL2)\n    (ha : \u2200 N i, a N i \u2208 generated (observation (uniformTime T N i.castSucc) T))\n    (M : \u211d) (hM : 0 \u2264 M) (hb : \u2200 N i, \u2016a N i\u2016 \u2264 M) :\n    Tendsto (fun N => meanError T N (a N)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalWeightedBracket.lean#L113"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.coefficient_norm_sq",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 25,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem coefficient_norm_sq (N : \u2115) (i : Fin (N+1)) : \u2016coefficient N i\u2016^2 = 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L25"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.coefficient_norm_bound",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 30,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem coefficient_norm_bound (N : \u2115) (i : Fin (N+1)) : \u2016coefficient N i\u2016 \u2264 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L30"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.coefficient_actual",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 34,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem coefficient_actual (N : \u2115) (i : Fin (N+1)) :\n    coefficient N i =\u1d50[gaussianProduct] fun Y => (N+1:\u211d)*\n      ((GaussianTimeProcess.process (uniformTime 1 N i.succ) Y-\n        GaussianTimeProcess.process (uniformTime 1 N i.castSucc) Y)^2-1/(N+1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L34"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.mean_error_eq_two",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 45,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem mean_error_eq_two (N : \u2115) : meanError 1 N (coefficient N) = 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L45"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.not_tendsto_zero",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 54,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem not_tendsto_zero : \u00acTendsto (fun N => meanError 1 N (coefficient N)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L54"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketObstruction.observation_domain_essential",
+      "file": "Foundation/GaussianTerminalBracketObstruction.lean",
+      "line": 61,
+      "source_sha256": "5421b1bb01aa2647bcd92f1864528ae14297a1cc5865ffd477fbd601cf7717f4",
+      "declaration_header": "theorem observation_domain_essential : \u2203 (N : \u2115) (i : Fin (N+1)),\n    coefficient N i \u2209 generated (observation (uniformTime 1 N i.castSucc) 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketObstruction.lean#L61"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.term_actual",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 47,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem term_actual (\u03c6 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (hb : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1)\n    (s t T : \u211d\u22650) (hst : s \u2264 t) :\n    term \u03c6 h\u03c6 hb s t T =\u1d50[gaussianProduct] fun Y =>\n      ((process t Y-process s Y)^2-((t:\u211d)-s))*\u03c6 (process s Y,process T Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L47"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.wick_norm_bound",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 57,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem wick_norm_bound (s t : \u211d\u22650) (hst : s \u2264 t) :\n    \u2016(wick (incrementDirection s t) 2 : GaussianL2)\u2016 \u2264 2*((t:\u211d)-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L57"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.term_norm_bound",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 63,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem term_norm_bound (\u03c6 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (hb : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1)\n    (s t T : \u211d\u22650) (hst : s \u2264 t) : \u2016term \u03c6 h\u03c6 hb s t T\u2016 \u2264 2*((t:\u211d)-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L63"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.pairCoefficient_actual",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 74,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem pairCoefficient_actual (\u03c6 \u03c8 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (h\u03c8 : Measurable \u03c8)\n    (hb\u03c6 : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1) (hb\u03c8 : \u2200 x, \u2016\u03c8 x\u2016 \u2264 1) (s t u T : \u211d\u22650) (hst : s \u2264 t) :\n    pairCoefficient \u03c6 \u03c8 h\u03c6 h\u03c8 hb\u03c6 hb\u03c8 s t u T =\u1d50[gaussianProduct] fun Y =>\n      ((process t Y-process s Y)^2-((t:\u211d)-s))*\n        (\u03c6 (process s Y,process T Y)*\u03c8 (process u Y,process T Y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L74"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.pairCoefficient_norm_bound",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 88,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem pairCoefficient_norm_bound (\u03c6 \u03c8 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (h\u03c8 : Measurable \u03c8)\n    (hb\u03c6 : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1) (hb\u03c8 : \u2200 x, \u2016\u03c8 x\u2016 \u2264 1) (s t u T : \u211d\u22650) (hst : s \u2264 t) :\n    \u2016pairCoefficient \u03c6 \u03c8 h\u03c6 h\u03c8 hb\u03c6 hb\u03c8 s t u T\u2016 \u2264 2*((t:\u211d)-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L88"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.pairCoefficient_generated",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 93,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem pairCoefficient_generated (\u03c6 \u03c8 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (h\u03c8 : Measurable \u03c8)\n    (hb\u03c6 : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1) (hb\u03c8 : \u2200 x, \u2016\u03c8 x\u2016 \u2264 1) (s t u T : \u211d\u22650)\n    (hst : s \u2264 t) (htu : t \u2264 u) :\n    pairCoefficient \u03c6 \u03c8 h\u03c6 h\u03c8 hb\u03c6 hb\u03c8 s t u T \u2208 generated (observation u T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L93"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalBracketProducts.term_inner_pairCoefficient",
+      "file": "Foundation/GaussianTerminalBracketProducts.lean",
+      "line": 109,
+      "source_sha256": "f67859cbb726e580d984f35949e7756451db58f2ba9206c39d782a5bd50e5b62",
+      "declaration_header": "theorem term_inner_pairCoefficient (\u03c6 \u03c8 : \u211d \u00d7 \u211d \u2192 \u211d) (h\u03c6 : Measurable \u03c6) (h\u03c8 : Measurable \u03c8)\n    (hb\u03c6 : \u2200 x, \u2016\u03c6 x\u2016 \u2264 1) (hb\u03c8 : \u2200 x, \u2016\u03c8 x\u2016 \u2264 1) (s t u v T : \u211d\u22650)\n    (hst : s \u2264 t) (huv : u \u2264 v) :\n    inner \u211d (term \u03c6 h\u03c6 hb\u03c6 s t T) (term \u03c8 h\u03c8 hb\u03c8 u v T) =\n      inner \u211d (wick (incrementDirection u v) 2 : GaussianL2)\n        (pairCoefficient \u03c6 \u03c8 h\u03c6 h\u03c8 hb\u03c6 hb\u03c8 s t u T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalBracketProducts.lean#L109"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.row_generated",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 57,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem row_generated (T : \u211d\u22650) (N : \u2115) (j : Fin (N+1)) :\n    row \u03c6 h\u03c6 hb T N j \u2208 generated (observation (uniformTime T N j.castSucc) T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L57"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.row_norm_bound",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 65,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem row_norm_bound (T : \u211d\u22650) (N : \u2115) (j : Fin (N+1)) : \u2016row \u03c6 h\u03c6 hb T N j\u2016 \u2264 2*(T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L65"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.error_energy",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 84,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem error_energy (T : \u211d\u22650) (N : \u2115) :\n    \u2016error \u03c6 h\u03c6 hb T N\u2016^2 = (\u2211 i, \u2016cell \u03c6 h\u03c6 hb T N i\u2016^2)+\n      2*meanError T N (row \u03c6 h\u03c6 hb T N)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L84"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.error_norm_sq_bound",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 101,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem error_norm_sq_bound (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) :\n    \u2016error \u03c6 h\u03c6 hb T N\u2016^2 \u2264 4*(T:\u211d)^2/(N+1)+16*(T:\u211d)^2/Real.sqrt (N+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L101"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.error_tendsto",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 128,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem error_tendsto (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (error \u03c6 h\u03c6 hb T) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L128"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.error_actual",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 143,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem error_actual (T : \u211d\u22650) (N : \u2115) :\n    error \u03c6 h\u03c6 hb T N =\u1d50[gaussianProduct] fun Y =>\n      \u2211 i : Fin (N+1),\n        ((process (uniformTime T N i.succ) Y-process (uniformTime T N i.castSucc) Y)^2-\n          ((uniformTime T N i.succ:\u211d)-uniformTime T N i.castSucc))*\n            \u03c6 (process (uniformTime T N i.castSucc) Y,process T Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L143"
+    },
+    {
+      "paper": "Sections 7\u20138 actual terminal-aware Brownian bracket prediction, mean and strong convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket.finite_sum_energy",
+      "file": "Foundation/GaussianTerminalStrongBracket.lean",
+      "line": 157,
+      "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
+      "declaration_header": "theorem finite_sum_energy {n : \u2115} (v : Fin n \u2192 GaussianL2) :\n    \u2016\u2211 i, v i\u2016^2 = \u2211 i, \u2016v i\u2016^2+\n      2*\u2211 j, \u2211 i, if i < j then inner \u211d (v i) (v j) else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L157"
     }
   ],
   "paper_sections": {
@@ -560,7 +875,11 @@
     "Actual continuous-past identification is only at the L2/mod-null level. Raw sigma-algebras are not equated and no common exceptional set for uncountably many coordinates is assumed.",
     "Single-observation compactness is reconstructed by diagonal Hermite truncation. Full-source potential noncompactness is a classical consequence of exact identity on infinite first chaos, not an additional named formal theorem.",
     "The fractional exponent is only used in an explicit lower bound and no-higher-power obstruction. Primary literature already supplies sharper covariance asymptotics; no new exponent or optimal lower constant is asserted.",
-    "The raw quartic second/fourth-chaos decomposition, full cross-covariance and actual two-coordinate example are reconstructed in complete human proofs. Independence of the two original linear Gaussian coordinates follows by factorizing their joint characteristic function; no independence of residuals is inferred. Integrated covariance is distinguished from pointwise conditional covariance."
+    "The raw quartic second/fourth-chaos decomposition, full cross-covariance and actual two-coordinate example are reconstructed in complete human proofs. Independence of the two original linear Gaussian coordinates follows by factorizing their joint characteristic function; no independence of residuals is inferred. Integrated covariance is distinguished from pointwise conditional covariance.",
+    "The bracket observation is the entire Brownian past together with one terminal value; it is not the original predictable domain. Gaussian independent bridge residual gives the exact actual conditional square.",
+    "The source uniform grid has N+1 cells, renamed n. The source mean bound is 4MT/sqrt(n), and strong squared error is 4T^2/n+16T^2/sqrt(n). Keeping the elementary harmonic sum gives the explicitly printed human refinements 2MT H_n/n and 4T^2/n+8T^2 H_n/n. No optimality is claimed.",
+    "The n times centered-current-square counterexample has uniform coefficient norm sqrt(2) but actual mean error two. The source states existential failure of the whole array observation domain, not failure in every cell.",
+    "The strong result retains bounded Borel current/terminal weights. Cross terms are controlled through later-time rows in their actual generated subspace, without assuming independence of weighted cells. The K-bounded extension is elementary rescaling. No arbitrary-Borel occupation Riemann-sum convergence or new stochastic integral is inferred."
   ],
   "literature": [
     {
