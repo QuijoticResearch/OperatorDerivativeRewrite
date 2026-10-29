@@ -1714,6 +1714,150 @@
       "source_sha256": "fa499a8ed6aed4cb0fad9d29679822e020e9f90647fa6fef2092d8f092f9dc8e",
       "declaration_header": "theorem increment_energy {t : \u211d} (ht : 0 < t) :\n    (\u222b \u03c9, (value t \u03c9 - value 0 \u03c9) ^ 2 \u2202gaussianProduct) = 1",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousObservationFiltrationObstruction.lean#L118"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.integratedVector_coeFn",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 16,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem integratedVector_coeFn (t : \u211d\u22650) : integratedVector t =\u1d50[volume]\n    (Ioc 0 (t : \u211d)).indicator (fun x => (t : \u211d)-x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L16"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.current_source_projection",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 66,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem current_source_projection (s t : \u211d\u22650) (hst : s\u2264t) :\n    sourceProjection (currentDirections s) (direction t)=forecastDirection s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L66"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.terminal_state_sufficient",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 77,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem terminal_state_sufficient (s t : \u211d\u22650) (hst : s\u2264t) (f : GaussianL2) (hf : f\u2208singleGenerated (direction t)) :\n    conditionalProjection (pastDirections s) f=conditionalProjection (currentDirections s) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L77"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.integrated_pairing_exact",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 86,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem integrated_pairing_exact (s t : \u211d\u22650) (hst : s\u2264t) :\n    inner \u211d (direction t) (direction s)=(t : \u211d)*(s : \u211d)^2/2-(s : \u211d)^3/6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L86"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.full_forecast_earlier_pairing",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 116,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem full_forecast_earlier_pairing :\n    inner \u211d fullForecast (firstChaosEmbedding (direction 1))=4/3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L116"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.value_only_earlier_pairing",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 128,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem value_only_earlier_pairing :\n    inner \u211d valueOnlyForecast (firstChaosEmbedding (direction 1))=35/24",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L128"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianStatePrediction.current_integrated_value_insufficient",
+      "file": "Foundation/IntegratedBrownianStatePrediction.lean",
+      "line": 138,
+      "source_sha256": "b57b20584c4ce4a8155fa7286f353d599f3d90e3546fbf86a143faeb04d2f4fc",
+      "declaration_header": "theorem current_integrated_value_insufficient : fullForecast\u2260valueOnlyForecast",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianStatePrediction.lean#L138"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.quotient_error_bound",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 16,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem quotient_error_bound (a s : \u211d\u22650) (has : a<s) :\n    \u2016quotient a s-timeVector s\u2016\u2264Real.sqrt ((s : \u211d)-a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L16"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.quotient_tendsto",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 65,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem quotient_tendsto (s : \u211d\u22650) (hs : 0<s) :\n    Tendsto (fun n => quotient (probeTime s n) s) atTop (\ud835\udcdd (timeVector s))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L65"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.brownian_mem_integrated_history",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 77,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem brownian_mem_integrated_history (s : \u211d\u22650) :\n    brownianDirection s\u2208sourceSpan (integratedPastDirections s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L77"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.integrated_history_source_projection",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 98,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem integrated_history_source_projection (s t : \u211d\u22650) (hst : s\u2264t) :\n    sourceProjection (integratedPastDirections s) (direction t)=forecastDirection s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L98"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.integrated_history_state_sufficient",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 108,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem integrated_history_state_sufficient (s t : \u211d\u22650) (hst : s\u2264t)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (direction t)) :\n    conditionalProjection (integratedPastDirections s) f=conditionalProjection (currentDirections s) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L108"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.integrated_history_wick_prediction",
+      "file": "Foundation/IntegratedBrownianHistoryReconstruction.lean",
+      "line": 114,
+      "source_sha256": "82e91ea150aed5667d6703679a7b4f93a92afcaf626b14dba905978bbfb2723a",
+      "declaration_header": "theorem integrated_history_wick_prediction (s t : \u211d\u22650) (hst : s\u2264t) (n : \u2115) :\n    conditionalProjection (integratedPastDirections s) (wick (direction t) n)=\n      (wick (forecastDirection s t) n : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IntegratedBrownianHistoryReconstruction.lean#L114"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianHistoryRecoveryCompactness.incrementUnit_orthonormal",
+      "file": "Foundation/BrownianHistoryRecoveryCompactness.lean",
+      "line": 48,
+      "source_sha256": "bc1d5b895642b606e3acc730febb68d2d399fe105865eddd2c7228290b6e40b1",
+      "declaration_header": "theorem incrementUnit_orthonormal (t : \u211d\u22650) (ht : 0<t) : Orthonormal \u211d (incrementUnit t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianHistoryRecoveryCompactness.lean#L48"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianHistoryRecoveryCompactness.incrementUnit_mem",
+      "file": "Foundation/BrownianHistoryRecoveryCompactness.lean",
+      "line": 71,
+      "source_sha256": "bc1d5b895642b606e3acc730febb68d2d399fe105865eddd2c7228290b6e40b1",
+      "declaration_header": "theorem incrementUnit_mem (t : \u211d\u22650) (n : \u2115) : incrementUnit t n\u2208sourceSpan (pastDirections t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianHistoryRecoveryCompactness.lean#L71"
+    },
+    {
+      "paper": "Section 12 actual integrated-history reconstruction, terminal sufficient state and source-dimension comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianHistoryRecoveryCompactness.positive_history_recovery_noncompact",
+      "file": "Foundation/BrownianHistoryRecoveryCompactness.lean",
+      "line": 95,
+      "source_sha256": "bc1d5b895642b606e3acc730febb68d2d399fe105865eddd2c7228290b6e40b1",
+      "declaration_header": "theorem positive_history_recovery_noncompact (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac IsCompactOperator (recoveryOperator.comp (conditionalProjection (pastDirections t)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianHistoryRecoveryCompactness.lean#L95"
     }
   ],
   "paper_sections": {
@@ -1743,7 +1887,12 @@
     "The actual observation is Y_t=max(t,0)G for one standard Gaussian source coordinate. All its paths are continuous. The raw natural sigma algebra is trivial at t<=0 and exactly sigma(G) at t>0. M_t=G 1_(t>0) is a mean-zero square-integrable raw-filtration martingale with unit positive-time increment energy.",
     "A countable intersection only at zero and times 1/n proves no right-continuous modification: right continuity would force the actual nonatomic Gaussian coordinate to be zero. No uncountable exceptional-set intersection or assertion about the actual IBM natural filtration is used.",
     "The exact conditional projection norm gap one, unchanged conditional operators under null completion, and the changed time-zero information under right-continuous enlargement are explicitly labelled classical human deductions. Projection onto constants is nested in projection onto sigma(G); their difference is a nonzero orthogonal projection.",
-    "Primary author Pitera Stochastic Processes notes (2020), Section 2.3, footnote 7 on printed page 10, explicitly give the same tZ mechanism for a nondegenerate uniform random variable. Gaussian normalization is not claimed a new filtration principle. This supporting diagnostic is consolidated in the prediction paper rather than split into another note."
+    "Primary author Pitera Stochastic Processes notes (2020), Section 2.3, footnote 7 on printed page 10, explicitly give the same tZ mechanism for a nondegenerate uniform random variable. Gaussian normalization is not claimed a new filtration principle. This supporting diagnostic is consolidated in the prediction paper rather than split into another note.",
+    "Section 12 identifies the actual integrated time-source kernel with the Bochner L2 Brownian integral by a finite-rectangle calculation. Its exact quotient squared error h/3 is a fully proved classical human refinement of the source h upper bound. No literal raw-sigma-algebra equality or random-clock iterated-Brownian identification is made.",
+    "Backward differentiation places Brownian state in the closed integrated-history source span. Exact source projection and Hermite completeness give the same conditional expectation for every square-integrable function of the specified terminal integrated value using the full history or the two-coordinate current state. Scalar current value fails at actual times 1,2,3 via pairings 4/3 and 35/24.",
+    "The full/scalar prediction error variances h^3/3 and s*h^2/4+h^3/3 and the current-state Gram determinant s^4/12 are labelled complete human covariance calculations.",
+    "Recovered disjoint Brownian increment directions give infinite integrated-history source dimension. Noncompact integrated-history recovery and compact two-state recovery are explicit human applications of the earlier formal source-dimension criterion, not a claim that target-specific sufficiency equates the full operators.",
+    "Lachal\u2019s primary author publication record/abstract is used for classical integrated-process prediction context only. The publisher full text was unavailable; no detailed bridge theorem or new state-augmentation principle is imported."
   ],
   "literature": [
     {

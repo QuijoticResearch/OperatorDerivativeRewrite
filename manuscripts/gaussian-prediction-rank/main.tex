@@ -927,6 +927,131 @@ new fractional-time regularity, curvature or an observed-process
 stochastic representation.
 
 
+
+\section{Integrated history: a sufficient state need not compress recovery}
+The compactness theorem concerns all observed inputs. A finite state
+sufficient for one terminal target does not reduce that whole input
+space to finitely many source directions. Integrated Brownian motion
+gives an exact positive example, with a simultaneous failure of prediction
+from its scalar current value.
+
+Use the actual time-source space $L^2(\R,dx)$, isometrically embedded
+in the Gaussian coefficient space as in the preceding constructions.
+For $t\geq0$ put
+\[
+ b_t=1_{(0,t]},\qquad k_t(x)=(t-x)1_{(0,t]}(x),\qquad
+ B_t=X(b_t),\quad J_t=X(k_t).
+\]
+This is the usual integrated Brownian Gaussian family. The map $r\mapsto b_r$ is continuous in $L^2$ and has norm $\sqrt r$, so it is Bochner integrable on each bounded time interval. Indeed
+$\int_0^t b_r\,dr=k_t$ as a Bochner $L^2$ integral, by integration
+on the finite rectangle $0\leq x,r\leq t$: at fixed $x$ its length
+is $t-x$ for $0<x\leq t$, and zero otherwise. The isometry $X$
+commutes with this integral, giving $J_t=\int_0^tB_r\,dr$ in $L^2$.
+This elementary identification is a human reconstruction of the
+formal kernel realization. For $0\leq r\leq t$, direct integration
+gives
+\begin{equation}\label{eq:integratedcov}
+ \E[J_tJ_r]=\int_0^r(t-x)(r-x)\,dx
+              =\frac{tr^2}{2}-\frac{r^3}{6},\qquad
+ \E[J_r^2]=\frac{r^3}{3}.
+\end{equation}
+
+First, the integrated history recovers Brownian state in the closed
+Gaussian source span. For $0\leq a<s$, let $h=s-a$. The quotient
+$(k_s-k_a)/h$ equals $b_s$ on $(0,a]$, while on $(a,s]$ its
+difference from $b_s$ is $-(x-a)/h$. Consequently
+\begin{equation}\label{eq:integratedderivative}
+ \left\|\frac{k_s-k_a}{s-a}-b_s\right\|^2
+       =\frac1{h^2}\int_a^s(x-a)^2\,dx=\frac h3.
+\end{equation}
+The source explicitly proves the sufficient bound by $h$; the exact
+$h/3$ evaluation here is a labelled classical human refinement.
+Taking $a=s n/(n+1)$ gives convergence to $b_s$. The same argument
+at every $r\leq s$ places $b_r$ in the closed span of
+$\{k_v:0\leq v\leq s\}$. At $r=0$ the vector is zero.
+Thus the Brownian state is an $L^2$-measurable function of the
+integrated history up to that time, with no terminal observation added.
+This is a statement about completed $L^2$ observation spaces; literal
+raw sigma-algebra equality is not asserted.
+
+Let $Q_s^J$ condition on $\sigma(J_r:0\leq r\leq s)$, and
+$Q_s^{(2)}$ on $\sigma(J_s,B_s)$. For $s\leq t$, put $h=t-s$.
+The exact source decomposition is
+\[
+ k_t=k_s+h b_s+(t-x)1_{(s,t]}(x).
+\]
+The last term is orthogonal to every source supported in $(0,s]$.
+The forecast vector $k_s+h b_s$ lies both in the integrated-history
+closed span, by \eqref{eq:integratedderivative}, and in the two-state
+span. It follows that
+\begin{equation}\label{eq:integratedforecast}
+ Q_s^J J_t=Q_s^{(2)}J_t=J_s+hB_s,\qquad
+ Q_s^J W_q(k_t)=Q_s^{(2)}W_q(k_t)=W_q(k_s+h b_s).
+\end{equation}
+Hermite completeness for the one-dimensional Gaussian $J_t$, and
+contraction of both projections, extend the identity to
+\begin{equation}\label{eq:integratedstate}
+ Q_s^J f=Q_s^{(2)}f\qquad
+       \bigl(f\in L^2(\sigma(J_t),P)\bigr).
+\end{equation}
+For $t=0$ only constants occur; otherwise rescale $k_t$ to unit norm
+and apply the expansion of Section 1. Hence the entire terminal
+$L^2$ space has a two-coordinate sufficient state, not just the
+linear terminal value.
+
+The scalar current value $J_s$ does not suffice. At $s=2,t=3$,
+\eqref{eq:integratedcov} gives its scalar regression
+$\E[J_3\mid J_2]=\tfrac74J_2$. Testing against the earlier
+observation $J_1$ gives
+\[
+ \E[(Q_2^J J_3)J_1]=\E[J_3J_1]=\frac43,\qquad
+ \E\left[\left(\frac74J_2\right)J_1\right]=\frac{35}{24}.
+\]
+The first equality uses orthogonality of the conditional residual to
+the history. Since the two numbers differ, the conditional forecasts
+differ. A further classical calculation quantifies the loss: for
+$s>0,h=t-s\geq0$, the two-state prediction error has variance
+$h^3/3$, the squared norm of the future kernel in the decomposition.
+The scalar regression coefficient is $1+3h/(2s)$, so its error
+variance, by subtracting squared covariance divided by $s^3/3$,
+is $sh^2/4+h^3/3$. The extra term is strictly positive for $h>0$.
+
+Nevertheless the whole integrated-history source span is infinite
+dimensional whenever $s>0$. It contains every $b_r$, $r\leq s$,
+and therefore contains the normalized indicators of the disjoint
+intervals $(s2^{-j-1},s2^{-j}]$, $j\geq0$. They are orthonormal.
+Their first-chaos Gaussian observables are fixed by $Q_s^J$, and
+recovery maps them to the corresponding deterministic unit source
+fields. These images have pairwise distance $\sqrt2$, so $RQ_s^J$
+is not compact. In contrast the Gram determinant of $k_s,b_s$ is
+\[
+ \|k_s\|^2\|b_s\|^2-\langle k_s,b_s\rangle^2
+            =\frac{s^4}{12}>0.
+\]
+The current-state source span has dimension two; Section 10 therefore
+makes $RQ_s^{(2)}$ compact. These recovery conclusions are explicit
+human applications of the already proved source-dimension criterion.
+They are compatible with \eqref{eq:integratedstate}, which agrees
+only on the specified terminal subspace. Neither all observed inputs
+nor the full recovery operators have been identified.
+
+Integrated Gaussian prediction is classical. Lachal's primary author
+record \cite{Lachal} describes iterated Brownian integrals and their
+prediction problems; only that record's stated context, not an
+uninspected bridge theorem, is used here. No new state-augmentation
+or Markov principle is claimed. This integrated Brownian family is
+also distinct from iterated Brownian motion with a random clock.
+
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:}
+\code{IntegratedBrownianStatePrediction} and
+\code{IntegratedBrownianHistoryReconstruction} give actual source
+projections, all-terminal-$L^2$ state sufficiency and the scalar
+counterexample. \code{BrownianHistoryRecoveryCompactness} constructs
+the disjoint Brownian source directions; its adaptation to integrated
+history uses the displayed recovered-state inclusion.
+\par\endgroup
+
 \section{A continuous observation with instantaneous information arrival}
 The geometry of an observation space must be checked independently
 of continuity of the observed paths. The following classical example
@@ -1035,7 +1160,7 @@ original joint source/sample recovery identity, the exact finite-source
 compactness classification and the positive-chaos block criterion. The
 combined finite-rank estimate and observed distance-one conclusion are
 labelled human deductions. Fifty exact finite checks now pass in retained
-and new groups; \code{verify_recovery.py} checks conditional Wick defects
+and new groups. A further 42 exact integrated-state covariance, regression and quotient checks pass; their infinite-domain conclusions use the printed proofs. \code{verify_recovery.py} checks conditional Wick defects
 through degree eight and two-coordinate derivative/recovery energies
 through degree four. Infinite compactness and density arguments rest on
 the printed proofs. The elementary noncompactness
@@ -1074,5 +1199,12 @@ Statist. Probab. Lett. 129 (2017), 155--166.
 \emph{Stochastic Processes---Lecture Notes}, Jagiellonian University,
 November 29, 2020, Section 2.3, footnote 7, printed page 10.
 \href{https://www2.im.uj.edu.pl/MarcinPitera/files/StochasticProcesses.pdf}{Primary author notes}.
+\bibitem{Lachal} A. Lachal, \emph{A class of bridges of iterated
+integrals of Brownian motion related to various boundary value problems
+involving the one-dimensional polyharmonic operator}, International
+Journal of Stochastic Analysis (2011), article 762486.
+\href{https://math.univ-lyon1.fr/~alachal/english_publications.html}
+{Primary author publication record and abstract}; detailed bridge
+theorems not imported.
 \end{thebibliography}
 \end{document}
