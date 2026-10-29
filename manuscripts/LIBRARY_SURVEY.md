@@ -6,7 +6,7 @@ Frozen baseline: `bab688bb6140cd6316c80680095a914ea0d346db`. This is an independ
 
 The [machine inventory](LIBRARY_SURVEY.json) covers every one of the 2,795 Foundation Lean modules (359,781 source lines) in this frozen checkout. For each module it records its byte hash, imports, available module description, named declaration headers and an editorial subject tag. Tags based on prefixes are navigation aids, not significance scores. This is a complete module-level inventory; it is not a claim that every proof has received a new human review. The existing full verification receipt remains the authority for the baseline build and complete transitive axiom audit. The root/import files and Basic.lean add navigation or scaffolding, while the two Legacy Lean files are historical material outside this Foundation publication universe.
 
-Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Sixteen papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
+Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Seventeen papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
 
 ## Source families
 
@@ -96,3 +96,9 @@ The clock-domain manuscript is now ten pages and incorporates the exact actual e
 ## Poisson--Gaussian consolidation
 
 The Poisson/Charlier, original graph and Gaussian displacement families now form one eight-page companion: complete bases and maximal domains, polynomial and finite-support cores, actual half-density gauges, exact Hellinger geometry, physical displacement and its strong/operator-norm distinction, quartic failure and finite-core quadratic entropy obstruction. Primary literature identifies the central mechanisms as classical. The paper is useful as a rigorous domain and nonlinear-transfer account, not a new Fock correspondence. Seventeen reviewed drafts total 149 pages. The complete 2,795-module survey remains module-level inventory rather than a claim of exhaustive human proof review. The independent publication survey does not activate or reprioritize research campaigns.
+
+## Exact jump curvature consolidated in the transport paper
+
+The Poisson–Gaussian companion is now ten pages, proving the sharp quadratic jump-curvature bound and its compatibility with finite-core failure of every quadratic entropy constant. The source forward-energy bound is kept distinct from the generator carre du champ. An exact rational polynomial transcription verifier checks the interior and both half-line endpoints. Weber--Zacher supplies an explicit classical antecedent; no new curvature theory is claimed. Seventeen reviewed drafts total 151 pages.
+
+The count-norm family was also inspected in full: PoissonLpLowerObstruction, PoissonLpTwoRegime, StableLevyAnnuli and both StablePoissonRecovery modules. Exact fourth moments and Holder give the classical small/large intensity norm regimes; normalized count outputs vanish in both terminal L4/3 and L4 while the prescribed deterministic source norm stays one. The stable-mark application assumes finite-set count marginal laws and does not construct a Poisson random measure or stable process. Dirksen’s primary 2014 Ito-isomorphism Theorem 1.1 already explains why appropriate sum/intersection input norms replace a plain product Lp norm. These remain supporting norm diagnostics, not an additional standalone paper or a change to queued stable-process research.

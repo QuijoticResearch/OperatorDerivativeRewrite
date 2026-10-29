@@ -27,6 +27,8 @@ between square-root likelihoods and their derivative energies, but it
 does not preserve positivity, ordinary multiplication, or entropy.
 Coherent vectors give quantitative entropy distortion and exclude a
 bounded realization of any nonzero displacement on $L^4$.
+Positive pointwise jump curvature coexists with this entropy failure,
+and the missing diffusion chain rule is exhibited at one atom.
 The failure of a quadratic Poisson logarithmic Sobolev inequality already
 occurs on finite-support functions; we prove this by controlling the
 cutoff boundary in the original difference graph. These are classical
@@ -545,6 +547,131 @@ The same exponentials therefore attain equality in the classical
 modified estimate \cite{ALRS}, while excluding every fixed quadratic
 constant. Ordinary product structure determines which energy is relevant.
 
+\section{Positive quadratic curvature and the missing chain rule}
+The same original graphs identify the immigration--death expression
+\begin{equation}\label{eq:jumpL}
+ Lf(k)=\lambda[f(k+1)-f(k)]+k[f(k-1)-f(k)]
+       =-A_\lambda^*A_\lambda f(k).
+\end{equation}
+At zero the death term is zero. The last equality is pointwise whenever
+the two original graph memberships hold, and in particular on finite
+support. For arbitrary functions on $\N$ define, pointwise,
+\[
+ \Gamma(f,g)=\tfrac12[L(fg)-fLg-gLf],\quad
+ \Gamma(f)=\Gamma(f,f),\quad
+ \Gamma_2(f)=\tfrac12 L\Gamma(f)-\Gamma(f,Lf).
+\]
+Every expression uses only finitely many neighboring values. There is
+no summability assumption in a pointwise curvature statement.
+This quadratic jump calculus is different from diffusion chain calculus;
+Weber--Zacher \cite[Example 5.13]{WZ} already use the Poisson process to
+separate positive Bakry--\'Emery curvature from their entropy-adapted
+discrete curvature. We make no new curvature claim.
+
+\begin{theorem}\label{thm:jumpcurvature}
+For every real function $f$ on $\N$,
+\begin{equation}\label{eq:jumpGamma}
+ \Gamma(f)(k)=\frac\lambda2[f(k+1)-f(k)]^2
+       +\frac k2[f(k)-f(k-1)]^2,
+ \qquad \Gamma_2(f)(k)\geq\tfrac12\Gamma(f)(k).
+\end{equation}
+The constant $1/2$ is the largest constant valid uniformly in $k$ and
+$f$, even if the tested functions are required to have finite support.
+Nevertheless, for every $C\geq0$ there is a finite-support $f$ with
+\begin{equation}\label{eq:curvatureentropyfailure}
+ C\int\Gamma(f)\,dp_\lambda<\Ent_{p_\lambda}(f^2).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Expanding $L(fg)-fLg-gLf$ gives
+\[
+ \Gamma(f,g)(k)=\tfrac\lambda2\Delta f(k)\Delta g(k)
+ +\tfrac k2[f(k)-f(k-1)][g(k)-g(k-1)],
+\]
+and hence the first formula. To see all terms in the second assertion,
+put $u=f(k+1)-f(k)$, $v=f(k)-f(k-1)$ and
+\[
+ A=f(k+2)-2f(k+1)+f(k),\qquad
+ B=f(k)-2f(k-1)+f(k-2).
+\]
+For $k\geq2$, the neighboring first differences are $u+A$ and $v-B$,
+so
+\begin{align*}
+ \Gamma(f)(k+1)&=\tfrac\lambda2(u+A)^2+\tfrac{k+1}2u^2,\\
+ \Gamma(f)(k-1)&=\tfrac\lambda2v^2+\tfrac{k-1}2(v-B)^2,\\
+ \Delta Lf(k)&=\lambda A-u-k(u-v),\\
+ Lf(k)-Lf(k-1)&=\lambda(u-v)-v-(k-1)B.
+\end{align*}
+Substitute these four identities into the definition of $\Gamma_2$.
+The linear cross terms in $A,B$ cancel; the remaining $u,v$ cross
+term is absorbed into $(u-v)^2$. The result is the exact decomposition
+\begin{equation}\label{eq:jumpGamma2}
+ \begin{split}
+ \Gamma_2(f)(k)={}&\frac{\lambda^2}4 A^2+
+       \frac{k(k-1)}4 B^2+\frac{\lambda k}2(u-v)^2\\
+       &+\frac{3\lambda}4u^2+\frac k4v^2.
+ \end{split}
+\end{equation}
+At $k=0$ the terms with $k$ vanish, and at $k=1$ the $B$ term
+vanishes; direct evaluation of the defining expressions gives the same
+formula at both endpoints. Negative-index values can be set to zero,
+since their terms have zero coefficient. Subtracting
+$\tfrac12\Gamma(f)$ leaves the three nonnegative square terms and
+$\lambda u^2/2$, proving the bound.
+
+For the count function $f(k)=k$, one obtains
+\[
+ \Gamma(f)(k)=\frac{\lambda+k}{2},\qquad
+ \Gamma_2(f)(k)=\frac{3\lambda+k}{4},\qquad
+ \frac{\Gamma_2(f)(k)}{\Gamma(f)(k)}\longrightarrow\frac12.
+\]
+Any proposed larger constant fails at some finite $k$. Replace this
+count function by a finite-support function agreeing with it on
+$\{0,\ldots,k+2\}$; both pointwise expressions at that $k$ are unchanged.
+This proves the finite-support sharpness assertion as an elementary
+local deduction from the verified count witness.
+
+Finally detailed balance $k p_\lambda(k)=\lambda p_\lambda(k-1)$
+gives, for finite-support $f$,
+\[
+ \int\Gamma(f)\,dp_\lambda
+ =\lambda\sum_{k\geq0}p_\lambda(k)[\Delta f(k)]^2
+ =\|A_\lambda f\|_2^2.
+\]
+Indeed the death-square sum reindexes to the birth-square sum, each
+contributing half of the last energy. Corollary~\ref{cor:core} now gives
+\eqref{eq:curvatureentropyfailure}, for the same finite-support domain
+on which the curvature estimate holds everywhere.
+\end{proof}
+
+The missing diffusion step can be seen at one atom. For the count
+function $\iota(k)=k$ and $\Phi(x)=e^x$,
+\[
+ \Gamma(\Phi\circ\iota)(0)=\frac\lambda2(e-1)^2
+ >\frac\lambda2=\Phi'(\iota(0))^2\Gamma(\iota)(0).
+\]
+The strict inequality uses $e>2$. Since $p_\lambda(0)>0$, even an
+almost-everywhere version of that diffusion chain rule is false.
+The source energy $E_f(k)=\lambda[\Delta f(k)]^2$ is also different
+from $\Gamma(f)(k)$ pointwise: for $f=\iota$ at zero the values are
+$\lambda$ and $\lambda/2$. Their integrals agree on the core, which
+does not make their pointwise identities interchangeable.
+
+There is even a unit lower Bochner bound for this different forward
+energy. Direct evaluation gives
+$\Delta Lf=L\Delta f-\Delta f$. Applying
+$\tfrac12 L(h^2)=hLh+\Gamma(h)$ with $h=\Delta f$ therefore yields
+\[
+ \tfrac12 L E_f-\lambda\Delta f\,\Delta Lf
+ =E_f+\lambda\Gamma(\Delta f)\geq E_f.
+\]
+This identity and the sharp $1/2$ bound for the generator's
+$\Gamma$ are both valid. Neither supplies the missing chain rule or
+the false quadratic entropy estimate. The original graph equivalence
+with Gaussian operators must be used together with the product
+obstruction in Proposition~\ref{prop:product}.
+
+
 \section{Exact provenance and mathematical scope}
 All formal source references below use the frozen verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}\end{center}
@@ -559,13 +686,17 @@ Poisson spectral graphs; the Gaussian Hermite adjoint graphs.
 \item Half-density source gauges, Gaussian displacement from Poisson,
 coherent identification, group law, continuity and physical action.
 \item Tilt Hellinger geometry, operator-norm discontinuity, quartic
-unboundedness, coherent entropy distortion and finite-core failure.
+unboundedness, coherent entropy distortion, finite-core failure and
+original Poisson jump curvature.
 \end{itemize}
 The finite-core entropy proof specializes the verified cutoff argument to
 an explicit coherent root. Generating functions, weak-distributional
 domains and the dense coherent-span identification reorganize the exact
 formal graph results into human proofs; every displayed line is not a
-separate formal declaration. The positivity witness is an elementary
+separate formal declaration. An accompanying standard-library Python
+verifier checks the Gamma-two decomposition by exact rational polynomial
+arithmetic, including both boundary cases; it is a transcription check.
+The positivity witness is an elementary
 analytic deduction, distinguished in the theorem map.
 
 The setting is one Poisson count and one Gaussian coordinate. The results
@@ -585,5 +716,10 @@ general L\'evy processes}, Russian Mathematical Surveys \textbf{58}
 Poisson--F\"ollmer process}, arXiv:2410.06117v2 (2025).
 \href{https://arxiv.org/abs/2410.06117v2}{Primary manuscript},
 especially the introduction, Theorem 1.1 and Section 4.
+\bibitem{WZ} F. Weber and R. Zacher,
+\emph{The entropy method under curvature-dimension conditions in the
+spirit of Bakry--\'Emery in the discrete setting of Markov chains},
+Journal of Functional Analysis \textbf{281} (2021), 109061.
+\href{https://arxiv.org/abs/2007.01264}{arXiv:2007.01264}, Example 5.13.
 \end{thebibliography}
 \end{document}

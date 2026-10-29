@@ -693,6 +693,159 @@
       "source_sha256": "dc8743faa17f3acab4217957b4335f35a8b9876ae0467de466eb58c6eb7c944d",
       "declaration_header": "theorem finite_core_actual_graph_counterexample (rate : \u211d\u22650) (hr : 0<rate) (C : \u211d) (hC : 0\u2264C) :\n    \u2203 f : \u2115 \u2192\u2080 \u211d,\n      (scalarFinsupp rate f,fieldFinsupp rate (finsuppDifference f))\u2208(coreDifference rate hr).graph \u2227\n      (fieldFinsupp rate (finsuppDifference f),scalarFinsupp rate (finsuppDivergence rate (finsuppDifference f)))\n        \u2208(coreDivergence rate hr).graph \u2227\n      C*\u2016fieldFinsupp rate (finsuppDifference f)\u2016^2<entropySq (poissonLaw rate) f",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreEntropyObstruction.lean#L84"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.carre_eq_differences",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 28,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem carre_eq_differences (rate : \u211d\u22650) (f g : \u2115 \u2192 \u211d) (n : \u2115) :\n    carre rate f g n=(rate : \u211d)/2*jumpGradient f n*jumpGradient g n+\n      (n : \u211d)/2*(f n-f (n-1))*(g n-g (n-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L28"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gamma_eq_differences",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 34,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gamma_eq_differences (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    gamma rate f n=(rate : \u211d)/2*(jumpGradient f n)^2+(n : \u211d)/2*(f n-f (n-1))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L34"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gamma2_decomposition",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 43,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gamma2_decomposition (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    gamma2 rate f n=\n      (rate : \u211d)^2/4*(f (n+2)-2*f (n+1)+f n)^2+\n      (n : \u211d)*((n-1 : \u2115) : \u211d)/4*(f n-2*f (n-1)+f (n-2))^2+\n      (rate : \u211d)*(n : \u211d)/2*(f (n+1)-2*f n+f (n-1))^2+\n      (3/4 : \u211d)*(rate : \u211d)*(jumpGradient f n)^2+(n : \u211d)/4*(f n-f (n-1))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L43"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gamma2_half_lower",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 59,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gamma2_half_lower (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    (1/2 : \u211d)*gamma rate f n \u2264 gamma2 rate f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L59"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gamma_count",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 67,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gamma_count (rate : \u211d\u22650) (n : \u2115) :\n    gamma rate (fun k => (k : \u211d)) n=(rate : \u211d)/2+(n : \u211d)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L67"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gamma2_count",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 71,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gamma2_count (rate : \u211d\u22650) (n : \u2115) :\n    gamma2 rate (fun k => (k : \u211d)) n=3*(rate : \u211d)/4+(n : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L71"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.no_larger_pointwise_curvature",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 80,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem no_larger_pointwise_curvature (rate : \u211d\u22650) (\u03ba : \u211d) (h\u03ba : 1/2<\u03ba) :\n    \u2203 n : \u2115, gamma2 rate (fun k => (k : \u211d)) n<\u03ba*gamma rate (fun k => (k : \u211d)) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L80"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.number_graph_generator",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 89,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem number_graph_generator (rate : \u211d\u22650) (hr : 0<rate)\n    (f : ScalarL2 rate) (g : FieldL2 rate) (h : ScalarL2 rate)\n    (hD : (f,g)\u2208(maximalDifference rate hr).graph) (h\u03b4 : (g,h)\u2208(maximalDivergence rate hr).graph) :\n    \u2200 n : \u2115, h n=-jumpGenerator rate f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L89"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.gradient_generator_commutation",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 108,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem gradient_generator_commutation (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    jumpGradient (jumpGenerator rate f) n=jumpGenerator rate (jumpGradient f) n-jumpGradient f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L108"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.forwardBochner_identity",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 118,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem forwardBochner_identity (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    forwardBochner rate f n=forwardEnergy rate f n+(rate : \u211d)*gamma rate (jumpGradient f) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L118"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.forwardBochner_one_lower",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 124,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem forwardBochner_one_lower (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d) (n : \u2115) :\n    forwardEnergy rate f n \u2264 forwardBochner rate f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L124"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.forward_energy_not_generator_carre",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 129,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem forward_energy_not_generator_carre (rate : \u211d\u22650) (hr : 0<rate) :\n    forwardEnergy rate (fun k => (k : \u211d)) 0\u2260gamma rate (fun k => (k : \u211d)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L129"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.diffusion_chain_rule_failure",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 239,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem diffusion_chain_rule_failure (rate : \u211d\u22650) (hr : 0<rate) :\n    gamma rate (exponential 1) 0>(Real.exp 0)^2*gamma rate (fun k => (k : \u211d)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L239"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.diffusion_chain_rule_ae_failure",
+      "file": "Foundation/PoissonJumpCurvature.lean",
+      "line": 251,
+      "source_sha256": "6777bcadf91bb779b822c4c97fe3cc526fffa16d6e230beef162647ac7466896",
+      "declaration_header": "theorem diffusion_chain_rule_ae_failure (rate : \u211d\u22650) (hr : 0<rate) :\n    \u00ac (\u2200\u1d50 n \u2202poissonLaw rate, gamma rate (exponential 1) n=\n      (Real.exp (n : \u211d))^2*gamma rate (fun k => (k : \u211d)) n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonJumpCurvature.lean#L251"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreCurvatureEntropy.finite_generator_eq_neg_number",
+      "file": "Foundation/PoissonCoreCurvatureEntropy.lean",
+      "line": 13,
+      "source_sha256": "626ddf53d903ddac6c7fe91b7e9c15020a336188f36b59661cb482fd825bd46a",
+      "declaration_header": "theorem finite_generator_eq_neg_number (rate : \u211d\u22650) (f : \u2115 \u2192\u2080 \u211d) (n : \u2115) :\n    jumpGenerator rate f n=-(finsuppDivergence rate (finsuppDifference f)) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreCurvatureEntropy.lean#L13"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreCurvatureEntropy.finite_gamma_integral_source_energy",
+      "file": "Foundation/PoissonCoreCurvatureEntropy.lean",
+      "line": 52,
+      "source_sha256": "626ddf53d903ddac6c7fe91b7e9c15020a336188f36b59661cb482fd825bd46a",
+      "declaration_header": "theorem finite_gamma_integral_source_energy (rate : \u211d\u22650) (hr : 0<rate) (f : \u2115 \u2192\u2080 \u211d) :\n    (\u222b n, gamma rate f n \u2202poissonLaw rate)=\u2016fieldFinsupp rate (finsuppDifference f)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreCurvatureEntropy.lean#L52"
+    },
+    {
+      "paper": "7: original jump curvature, exact sharpness and finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreCurvatureEntropy.positive_curvature_bounded_core_entropy_failure",
+      "file": "Foundation/PoissonCoreCurvatureEntropy.lean",
+      "line": 62,
+      "source_sha256": "626ddf53d903ddac6c7fe91b7e9c15020a336188f36b59661cb482fd825bd46a",
+      "declaration_header": "theorem positive_curvature_bounded_core_entropy_failure (rate : \u211d\u22650) (hr : 0<rate)\n    (C : \u211d) (hC : 0\u2264C) :\n    \u2203 f : \u2115 \u2192\u2080 \u211d, Integrable (gamma rate f) (poissonLaw rate) \u2227\n      (\u2200 n, (1/2 : \u211d)*gamma rate f n\u2264gamma2 rate f n) \u2227\n      C*(\u222b n, gamma rate f n \u2202poissonLaw rate)<entropySq (poissonLaw rate) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreCurvatureEntropy.lean#L62"
     }
   ],
   "human_reorganization": [
@@ -703,7 +856,8 @@
     "The half-density cocycle, Gaussian unitary change of variables and dense open-interval coherent span identify the physical action. The formal proof instead uses closed physical-formula domains, coherent density and source-independent graph uniqueness.",
     "Finite-support graph cores are proved with the exact difference-of-output boundary formulas; the formal proof uses a different cutoff decomposition. The entropy proof specializes to explicit roots and verifies the remaining boundary factorial tail.",
     "Strong continuity is Hilbert norm continuity for each fixed vector; the operator norm lower bound is only sqrt(2) at positive displacement. No optimal norm value is claimed.",
-    "All correspondence, displacement and quadratic logarithmic Sobolev mechanisms are treated as classical; no new Fock correspondence or Poisson logarithmic Sobolev counterexample is claimed."
+    "All correspondence, displacement and quadratic logarithmic Sobolev mechanisms are treated as classical; no new Fock correspondence or Poisson logarithmic Sobolev counterexample is claimed.",
+    "The sharp 1/2 curvature calculation is reconstructed by neighboring differences and an explicit five-square polynomial decomposition, including k=0,1. Sharpness on finite-support tests is a local cutoff deduction from the mapped count witness, not a separate formal declaration. The integrated core energy, chain-rule failure and forward-energy distinction are separately mapped."
   ],
   "literature": [
     {
@@ -713,6 +867,10 @@
     {
       "url": "https://arxiv.org/abs/2410.06117v2",
       "review": "Aryan--Lopez-Rivera--Shenfeld 2025 v2 primary full PDF: introduction credits classical quadratic failure; Theorem 1.1 and Section 4 give the modified Wu inequality and exponential equality cases. Exact displacement/graph exposition has no independent priority certification."
+    },
+    {
+      "url": "https://arxiv.org/abs/2007.01264",
+      "review": "Weber--Zacher primary full preprint, Example 5.13 and discussion on p35, already treats the Poisson process as an example with CD(1/2,infinity) but no positive entropy-adapted CD_Upsilon bound. This is an explicit classical antecedent, not a novel curvature/entropy separation."
     }
   ]
 }

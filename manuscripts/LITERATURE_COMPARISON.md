@@ -33,3 +33,7 @@ Keep all seventeen manuscripts labelled reviewed drafts. Treat the Gaussian pred
 ## Poisson--Gaussian graph transport
 
 [Vershik--Tsilevich 2003](https://arxiv.org/abs/math/0304282), primary full manuscript, Sections 1.3 and 3.1, already constructs the canonical correspondence, gives its one-point Hermite--Charlier form and explicitly discusses failure of positivity and multiplication. [Aryan--Lopez-Rivera--Shenfeld v2, 2025](https://arxiv.org/abs/2410.06117v2), introduction, Theorem 1.1 and Section 4, place classical quadratic Poisson logarithmic Sobolev failure beside Wu's modified inequality and the exact exponential equality cases. The new editorial companion consolidates full original domains, actual gauges, physical displacement and nonlinear limitations. It claims no new correspondence, entropy obstruction or displacement theory.
+
+## Jump curvature and count-energy norms
+
+[Weber--Zacher, primary full preprint](https://arxiv.org/abs/2007.01264), Example 5.13, pp32–35, explicitly includes the Poisson CD(1/2,infinity) example and its difference from entropy-adapted curvature. The transport manuscript now credits that antecedent and reconstructs the sharp calculation and finite-core entropy comparison. [Dirksen, primary 2014 article](https://arxiv.org/abs/1208.3885), Theorem 1.1 and its six input-space cases, supplies the appropriate context for the separately inspected plain-Lp count-recovery obstruction. The latter elementary source family is retained as supporting diagnostics rather than a new paper.
