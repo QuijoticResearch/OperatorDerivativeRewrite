@@ -203,3 +203,7 @@ The Gaussian prediction companion is expanded from six to eight pages with compl
 ## Actual one-sided boundary Schur certificate
 
 Ten-page computer-assisted finite quadratic companion, 107 exact source correspondences, complete geometry/gauge/pin/norm/residual proofs and nine independent exact checks including every integer certificate entry. Physical lower 0.69639 and exact Rayleigh witness below rounded 0.6964; periodic gauge and perturbation limits preserved. Every final page inspected. Twenty-four reviewed drafts total 225 pages.
+
+## Complete-spectrum shear calibration
+
+The fluid suite expands from six to nine pages with full analytic proofs for a classical Gaussian shear, every normalized Fourier coefficient, complete sector moments, exact angular-label transfer and strict above-one ratio at every finite nonnegative time/viscosity. 98 total exact source correspondences; eight exact finite algebra/support checks pass separately from the analytic infinite-series proof. Every revised page inspected and compilation clean. Twenty-four reviewed drafts total 228 pages.

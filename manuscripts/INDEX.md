@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-four drafts, 225 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-four drafts, 228 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -68,7 +68,7 @@ Twenty-four drafts, 225 pages, all based on frozen verified commit `bab688bb6140
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
 | One-sided Fourier cones: reality, half-energy and Hermitian interactions | [PDF](cone-pairing-diagnostics/main.pdf) · [LaTeX](cone-pairing-diagnostics/main.tex) · [theorem map](cone-pairing-diagnostics/theorem-map.json) · [editorial status](cone-pairing-diagnostics/editorial-status.md) | Eight pages. Real-field cap exclusion/half-energy, actual conjugated Fourier formula and three solenoidal Schwartz cone fields with zero unconjugated and negative-square Hermitian interaction. Classical mechanisms; construction priority unresolved; no quantitative angle or PDE conclusion. |
-| Exact calibration tests for strain–pressure identities | [PDF](strain-pressure-tests/main.pdf) · [LaTeX](strain-pressure-tests/main.tex) · [theorem map](strain-pressure-tests/theorem-map.json) · [editorial status](strain-pressure-tests/editorial-status.md) | Six pages. Nonnormal restricted-Euler depletion family; affine local calibration with infinite energy; exact pressure trace consistency; smooth periodic viscous ABC plus-pressure counterexample. Diagnostic formalization companion; novelty unresolved. No finite-energy singularity or regularity claim. |
+| Exact calibration tests for strain, pressure and angular spectral ratios | [PDF](strain-pressure-tests/main.pdf) · [LaTeX](strain-pressure-tests/main.tex) · [theorem map](strain-pressure-tests/theorem-map.json) · [editorial status](strain-pressure-tests/editorial-status.md) | Nine pages. Nonnormal restricted-Euler depletion; affine infinite-energy local calibration; pressure trace consistency; periodic viscous ABC pressure-sign test; actual infinite Gaussian shear with complete angular moments and strict normalized-ratio reversal. Diagnostic formalization companion; novelty unresolved. No finite-energy singularity or regularity claim. |
 
 See the [editorial inventory](EDITORIAL_INVENTORY.md) for ranked mathematical contributions, consolidation decisions, literature limitations and deferred papers. Current PDFs have hash-linked build and visual receipts in their respective directories. The [focused primary-literature comparison](LITERATURE_COMPARISON.md) records newly accessible theorem checks and precise limits of their applicability. The [whole-library survey](LIBRARY_SURVEY.md) and [complete module inventory](LIBRARY_SURVEY.json) broaden coverage beyond the initial shortlist.
 

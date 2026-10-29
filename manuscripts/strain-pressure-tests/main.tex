@@ -9,13 +9,13 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\R}{\mathbb R}\newcommand{\tr}{\operatorname{tr}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Exact calibration tests for strain--pressure identities}
+\title{Exact calibration tests for strain, pressure\\and angular spectral ratios}
 \author{Project Stardust}
 \date{Reviewed diagnostic draft, October 29, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We assemble three exact diagnostics for velocity gradients.
+We assemble four exact diagnostics for velocity gradients and spectral ratios.
 A family of nonnormal restricted Euler matrices has fixed full spectrum but
 variable strain spectrum, with arbitrarily small positive normalized
 stretching along trajectories whose raw stretching diverges. Its affine
@@ -26,7 +26,10 @@ conventions: the proposed strain right side has trace equal to the squared
 Frobenius norm of the velocity gradient under the pressure Poisson
 constraint. Finally a smooth periodic viscous ABC flow has zero averaged
 stretching derivative, while a displayed plus-pressure balance gives
-three at the initial time. Complete elementary proofs reconstruct frozen
+three at the initial time. A fixed smooth periodic Gaussian-series shear
+has a specified normalized two-sector spectral ratio strictly above one
+at every finite nonnegative time, with its full lattice spectrum and
+antipodal conic partition retained. Complete elementary proofs reconstruct frozen
 formal results. These are calibration examples in classical model
 families, not new fluid existence or singularity results; priority for
 the diagnostic formulations remains unresolved.
@@ -328,6 +331,188 @@ the latter is smooth, periodic, and has arbitrary positive viscosity.
 Neither asserts that all pressure contractions have one sign, or that
 changing one sign establishes a complete general strain balance.
 
+\section{A fixed smooth infinite-spectrum shear and an angular ratio}
+The preceding periodic example tests pressure signs. We now test a different,
+explicitly defined spectral ratio, using a second actual periodic solution.
+The heat-governed shear mechanism is classical; the purpose is to retain
+the complete spectrum, all denominator signs and the angular partition
+when evaluating the formula.
+
+\subsection{The actual solution and every Fourier coefficient}
+On the $2\pi$-periodic three-torus with coordinates $(x_0,x_1,x_2)$, put
+\[
+ \Theta_s(y)=\sum_{n\in\mathbb Z}e^{-sn^2}\cos(ny),\qquad s>0,
+\]
+and for $\nu\geq0,t\geq0$ set
+\begin{equation}\label{eq:infshear}
+ u_\nu(t,x)=\left(2\Theta_{1+\nu t}(x_1)
+                         +e^{-\nu t}\sin x_2,\ 0,\ 0\right),\qquad p=0.
+\end{equation}
+The initial smoothing is fixed at one; it is not changed as a cutoff or
+observation horizon varies.
+
+\begin{lemma}[Classical periodic shear]\label{lem:infshear}
+Formula \eqref{eq:infshear} is a smooth spatially periodic incompressible
+Navier--Stokes solution for every nonnegative viscosity, with the printed
+zero pressure. Its normalized integral-defined Fourier coefficients have
+only the following nonzero first components:
+\begin{align}
+ \widehat u_0(t,(0,n,0))&=2e^{-(1+\nu t)n^2}\quad(n\in\mathbb Z),\label{eq:shearaxis}\\
+ \widehat u_0(t,(0,0,1))&=-\tfrac i2e^{-\nu t},\qquad
+ \widehat u_0(t,(0,0,-1))=\tfrac i2e^{-\nu t}.\label{eq:shearother}
+\end{align}
+All other components and frequencies vanish. In particular the zero
+coefficient is two, and the solution has nonzero modes beyond every finite
+axis cutoff at every finite time.
+\end{lemma}
+\begin{proof}
+For every integer $m\geq0$ and $s_0>0$, the series
+$\sum_n|n|^m e^{-s_0n^2}$ converges. For large $|n|$ its polynomial factor
+is bounded by $e^{s_0n^2/2}$, and the resulting Gaussian tail is bounded by
+a convergent geometric tail. Thus every spatial derivative of the series
+converges uniformly for $s\geq s_0$. Parameter derivatives introduce
+additional powers of $n^2$ and obey the same bound. This justifies repeated
+differentiation and gives
+$\partial_s\Theta_s=\partial_y^2\Theta_s$.
+
+The first component of $u$ is independent of $x_0$, and the other components
+vanish. Hence its divergence and its advection $(u\cdot\nabla)u$ both vanish.
+The theta heat identity and
+$\partial_t(e^{-\nu t}\sin x_2)=\nu\partial_{x_2}^2(e^{-\nu t}\sin x_2)$
+give $\partial_tu=\nu\Delta u$. This proves the complete momentum equation
+with zero pressure. Smoothness at each nonnegative time follows from
+$1+\nu t\geq1$ and the uniform derivative estimates; the formulas are defined
+on an open neighborhood of each such time with positive smoothing parameter.
+Periodicity follows termwise.
+
+\begingroup\raggedright
+Define $\widehat u(k)$ by normalized integration against $e^{-ik\cdot x}$.
+Uniform absolute convergence allows interchanging the theta sum with all
+three finite-interval integrals. Pairing $n,-n$ gives
+$\Theta_s(y)=\sum_n e^{-sn^2}e^{iny}$, since the imaginary parts cancel.
+Orthogonality of the exponentials yields \eqref{eq:shearaxis}; the elementary
+Fourier expansion of sine yields \eqref{eq:shearother}. Integration in the
+unused coordinate kills all remaining frequencies. Every displayed axis
+weight is strictly positive at a finite time, which proves the tail claim.
+\end{proof}
+The original declarations are in
+\par\noindent\code{GaussianFourierJets},
+\code{GaussianPeriodicHeat},
+\par\noindent\code{GaussianInfiniteShear},
+\code{GaussianShearSpectrum} and \code{GaussianShearFourierTail}.
+This is a real smooth finite-energy solution on the torus. It is not the
+infinite-energy affine construction used earlier.
+\par\endgroup
+
+\begingroup\raggedright
+\subsection{Actual angular sectors and exact complete moments}
+Partition the entire lattice $\mathbb Z^3$ into
+\[
+ \mathcal C_0=\{k:|k_2|\leq|k_1|\},\qquad
+ \mathcal C_1=\{k:|k_2|>|k_1|\}.
+\]
+This partition is antipodal and invariant under positive integer scaling.
+It is an explicitly specified conic partition; no identification with a
+different manuscript tessellation is assumed. Define, for $j=0,1$ and
+integer $q\geq1$,
+\[
+ M_{j,q}(t)=\sum_{k\in\mathcal C_j}|k|^{2q}
+                                  \sum_{i=0}^2|\widehat u_i(t,k)|^2.
+\]
+The zero mode contributes zero to these positive-order moments. From the
+complete coefficient formula, each nonzero axis mode belongs to
+$\mathcal C_0$ and the two transverse modes belong to $\mathcal C_1$.
+There are no other nonzero modes. Consequently the \emph{entire} lattice
+sums are absolutely convergent and exactly
+\begin{equation}\label{eq:fullmoments}
+ M_{0,q}=4\sum_{n\in\mathbb Z}n^{2q}e^{-2(1+\nu t)n^2},\qquad
+ M_{1,q}=\tfrac12e^{-2\nu t}.
+\end{equation}
+Gaussian summability proves finiteness; no untracked spectral remainder is
+discarded. These formulas agree with the source's simpler support labels
+because both labellings coincide on every nonzero Fourier coefficient.
+The actual angular transfer is verified in
+\code{AngularConeShearCentroid.label_on_spectrum} and
+\code{moment_transfer}; full summability and the exact sums are in
+\code{GaussianShearSectorMoments}.
+\par\endgroup
+
+Put
+\[
+ a=M_{0,1},\qquad b=M_{1,1},\qquad d=M_{0,2},\qquad e=M_{1,2}.
+\]
+For all finite $t\geq0$ and $\nu\geq0$ we have
+\begin{equation}\label{eq:orders}
+ 0<b<a<d,\qquad e=b.
+\end{equation}
+Indeed $b=\frac12 e^{-2\nu t}>0$. The $n=\pm1$ terms alone give
+\[
+ a\geq8e^{-2(1+\nu t)}
+           =8e^{-2}e^{-2\nu t}>\tfrac12e^{-2\nu t}=b.
+\]
+For the strict constant, $e<3$ follows for example from the exponential
+series, so $e^2<9<16$ and $16e^{-2}>1$.
+Every integer satisfies $n^4\geq n^2$, with strict inequality at $n=2$.
+Subtracting the two absolutely convergent sums in \eqref{eq:fullmoments}
+therefore gives $d-a>0$. The equality $e=b$ follows directly from the
+two unit-frequency transverse modes.
+
+\subsection{The specified normalized ratio is strictly above one}
+Let $T=a+b$, $p_0=a/T$, $p_1=b/T$ and
+$\epsilon_j=p_j-1/2$. Define the precise ratio being tested by
+\begin{equation}\label{eq:ratio}
+ \mathcal C=
+ \frac{\epsilon_0(d/a)p_0+\epsilon_1(e/b)p_1}
+ {((d+e)/T)(\epsilon_0^2+\epsilon_1^2)}.
+\end{equation}
+The formula uses sector enstrophy weights $p_j$ and their own dissipation
+ratios. It is not a generic definition of every spectral centroid used in
+the literature. Every denominator is nonzero on this actual flow:
+$a,b,T,d+e>0$ and $a>b$ makes
+$\epsilon_0^2+\epsilon_1^2>0$.
+
+\begingroup\raggedright
+\begin{theorem}[Reversed angular threshold on one fixed solution]
+For the flow \eqref{eq:infshear} and this partition,
+\[
+ \mathcal C=
+ \frac{(a+b)(d-b)}{(d+b)(a-b)}>1
+ \qquad(\nu\geq0,\ t\geq0\text{ finite}).
+\]
+In particular there is no $T_*>0$ for which $\mathcal C(t)<1$ holds for
+all $0<t\leq T_*$ on this fixed flow.
+\end{theorem}
+\begin{proof}
+Use $e=b$ from \eqref{eq:orders} and
+$\epsilon_0=(a-b)/(2T)$, $\epsilon_1=-(a-b)/(2T)$.
+The numerator of \eqref{eq:ratio} becomes
+$(a-b)(d-b)/(2T^2)$ and its denominator is
+$(d+b)(a-b)^2/(2T^3)$. Cancellation is valid by the established positive
+denominators and gives the displayed rational expression. Its difference
+from one is
+\[
+ \frac{(a+b)(d-b)-(d+b)(a-b)}{(d+b)(a-b)}
+ =\frac{2b(d-a)}{(d+b)(a-b)}>0.
+\]
+The last inequality uses the actual strict moment order, not arbitrarily
+assigned positive numbers. If such an interval existed, evaluation at
+$t=T_*/2$ would contradict this strict inequality.
+\end{proof}
+See \code{GaussianShearCentroid.sourceExpression_eq},
+\code{sourceCentroid_gt_one}, and the actual angular statements
+\code{AngularConeShearCentroid.angularCentroid_gt_one} and
+\code{no_initial_interval_below_one}.
+\par\endgroup
+
+The example excludes the stated universal threshold test on this actual
+class and partition. It does not exclude a condition with additional
+hypotheses, a different angular tessellation or a differently normalized
+ratio. It also does not produce turbulent evolution or a regularity
+theorem: its advection is identically zero. Its significance as a
+calibration is that a fixed classical smooth solution has a genuine
+infinite tail and reverses the displayed inequality with all complete
+moments and denominator conditions established.
+
 \section{Formal correspondence and contribution status}
 \begingroup\raggedright
 Every formal result is frozen at commit
@@ -342,7 +527,10 @@ momentum and pressure appear in \code{AffineNavierStokesProfiles} and
 means and viscous contraction are assembled in
 \code{ABCNavierStokesFlow}, \code{RealBeltramiMeans},
 \code{BeltramiViscousTrace} and \code{PeriodicPressureSignCounterexample}.
-Exact declaration locations, hashes and human proof reorganizations
+The full-spectrum shear and angular ratio use
+\code{GaussianInfiniteShear}, \code{GaussianShearSpectrum},
+\code{GaussianShearSectorMoments}, \code{GaussianShearCentroid} and
+\code{AngularConeShearCentroid}. Exact declaration locations, hashes and human proof reorganizations
 are in the accompanying theorem map. In particular the direct
 trigonometric proof of $J(U)=0$ replaces the formal invariant-trace
 transport proof. Infinite affine energy is the elementary deduction
@@ -359,6 +547,11 @@ Xin--Yu--Zlato\v{s} model statement. The examples test the explicit
 formulas written here, rather than an unspecified published theorem.
 Their value is reproducible diagnostic mathematics and a formalization
 companion; novelty or priority for any formulation remains unresolved.
+The heat-governed shear mechanism is also classical. The primary Gallay--Slijepcevic
+abstract \cite{GS} describes a heat-governed shear regime in a different
+two-dimensional infinite-cylinder problem. That abstract was inspected for
+context; none of its asymptotic theorems is used here, and no priority for
+the displayed two-sector ratio is certified.
 No Navier--Stokes regularity, finite-energy blow-up or Millennium
 equivalence claim follows. Complete baseline verification evidence was
 hash-checked without a redundant full Lean build.
@@ -377,5 +570,10 @@ vorticity in turbulence}, J. Fluid Mech. 983 (2024), R2.
 \emph{Periodic orbits of the ABC flow with $A=B=C=1$},
 \href{https://arxiv.org/abs/1601.02724}{arXiv:1601.02724} (2016).
 Profile comparison only; no orbit result is used here.
+\bibitem{GS} T. Gallay and S. Slijep\v{c}evi\'c,
+\emph{Uniform boundedness and long-time asymptotics for the two-dimensional
+Navier--Stokes equations in an infinite cylinder}, primary preprint,
+\href{https://arxiv.org/abs/1402.6563}{arXiv:1402.6563} (2014).
+Abstract-level context only; no asymptotic theorem imported.
 \end{thebibliography}
 \end{document}

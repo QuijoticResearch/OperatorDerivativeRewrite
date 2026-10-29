@@ -360,13 +360,439 @@
       "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
       "declaration_header": "theorem minus_pressure_initial (nu : \u211d) :\n    realBoxAverage (realAmplification (velocity nu 0))-\n      realBoxAverage (realPressureContraction (velocity nu 0) (pressure nu 0))-\n        2*nu*realBoxAverage (realViscous (velocity nu 0))=0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L89"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierJets.bound_summable",
+      "file": "Foundation/GaussianFourierJets.lean",
+      "line": 16,
+      "source_sha256": "6fb00917d9d017f295dedaa9e9f39790c4c5560ed3087c51a16f0c9ad97cefac",
+      "declaration_header": "theorem bound_summable (k : \u2115) (s : \u211d) (hs : 0 < s) : Summable (bound k s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierJets.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierJets.jet_derivative",
+      "file": "Foundation/GaussianFourierJets.lean",
+      "line": 52,
+      "source_sha256": "6fb00917d9d017f295dedaa9e9f39790c4c5560ed3087c51a16f0c9ad97cefac",
+      "declaration_header": "theorem jet_derivative (k : \u2115) (s : \u211d) (hs : 0 < s) (y : \u211d) :\n    HasDerivAt (jet k s) (jet (k+1) s y) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierJets.lean#L52"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierJets.jet_smooth",
+      "file": "Foundation/GaussianFourierJets.lean",
+      "line": 75,
+      "source_sha256": "6fb00917d9d017f295dedaa9e9f39790c4c5560ed3087c51a16f0c9ad97cefac",
+      "declaration_header": "theorem jet_smooth (k : \u2115) (s : \u211d) (hs : 0 < s) : ContDiff \u211d \u221e (jet k s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierJets.lean#L75"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierJets.jet_periodic",
+      "file": "Foundation/GaussianFourierJets.lean",
+      "line": 86,
+      "source_sha256": "6fb00917d9d017f295dedaa9e9f39790c4c5560ed3087c51a16f0c9ad97cefac",
+      "declaration_header": "theorem jet_periodic (k : \u2115) (s : \u211d) : Function.Periodic (jet k s) (2*Real.pi)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierJets.lean#L86"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPeriodicHeat.parameter_derivative",
+      "file": "Foundation/GaussianPeriodicHeat.lean",
+      "line": 31,
+      "source_sha256": "c9a2235b8826774c87562aa85398286ef9a90039bf9c933db3403414bede2ebb",
+      "declaration_header": "theorem parameter_derivative (k : \u2115) (s : \u211d) (hs : 0 < s) (y : \u211d) :\n    HasDerivAt (fun u => jet k u y) (jet (k+2) s y) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPeriodicHeat.lean#L31"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPeriodicHeat.heat_equation",
+      "file": "Foundation/GaussianPeriodicHeat.lean",
+      "line": 60,
+      "source_sha256": "c9a2235b8826774c87562aa85398286ef9a90039bf9c933db3403414bede2ebb",
+      "declaration_header": "theorem heat_equation (nu t y : \u211d) (hs : 0 < 1+nu*t) :\n    deriv (fun u => profile nu u y) t = nu*deriv (deriv (profile nu t)) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPeriodicHeat.lean#L60"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPeriodicHeat.positive_parameter",
+      "file": "Foundation/GaussianPeriodicHeat.lean",
+      "line": 70,
+      "source_sha256": "c9a2235b8826774c87562aa85398286ef9a90039bf9c933db3403414bede2ebb",
+      "declaration_header": "theorem positive_parameter (nu t : \u211d) (hnu : 0 \u2264 nu) (ht : 0 \u2264 t) : 0 < 1+nu*t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPeriodicHeat.lean#L70"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPeriodicHeat.profile_joint_continuous",
+      "file": "Foundation/GaussianPeriodicHeat.lean",
+      "line": 90,
+      "source_sha256": "c9a2235b8826774c87562aa85398286ef9a90039bf9c933db3403414bede2ebb",
+      "declaration_header": "theorem profile_joint_continuous (nu t y : \u211d) (hs : 0 < 1+nu*t) :\n    ContinuousAt (fun p : \u211d \u00d7 \u211d => profile nu p.1 p.2) (t,y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPeriodicHeat.lean#L90"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.scalar_laplacian",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 40,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem scalar_laplacian (nu t : \u211d) (hs : 0 < 1+nu*t) (x : Space) :\n    realLaplacian (scalar nu t) x =\n      2*jet 2 (1+nu*t) (x 1)-amplitude nu t*Real.sin (x 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L40"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.scalar_time_derivative",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 64,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem scalar_time_derivative (nu t : \u211d) (hs : 0 < 1+nu*t) (x : Space) :\n    HasDerivAt (fun u => scalar nu u x)\n      (nu*(2*jet 2 (1+nu*t) (x 1)-amplitude nu t*Real.sin (x 2))) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L64"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.advection_zero",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 73,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem advection_zero (nu t : \u211d) (hs : 0 < 1+nu*t) (x : Space) (i : Fin 3) :\n    realAdvection (velocity nu t) x i = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.incompressible",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 84,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem incompressible (nu t : \u211d) (hs : 0 < 1+nu*t) (x : Space) :\n    realDivergence (velocity nu t) x = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L84"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.momentum",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 92,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem momentum (nu t : \u211d) (hs : 0 < 1+nu*t) (x : Space) (i : Fin 3) :\n    deriv (fun u => velocity nu u x i) t+realAdvection (velocity nu t) x i+\n      realPartial i (fun _ : Space => (0 : \u211d)) x =\n        nu*realLaplacian (fun y => velocity nu t y i) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L92"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.spatial_smooth",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 105,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem spatial_smooth (nu t : \u211d) (hs : 0 < 1+nu*t) : ContDiff \u211d \u221e (velocity nu t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L105"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.periodic",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 121,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem periodic (nu t : \u211d) (x : Space) (j : Fin 3) :\n    Function.Periodic (fun r => velocity nu t (Function.update x j r)) (2*Real.pi)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L121"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.initial",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 129,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem initial (nu : \u211d) (x : Space) :\n    velocity nu 0 x = ![2*jet 0 1 (x 1)+Real.sin (x 2), 0, 0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L129"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.initial_smooth",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 133,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem initial_smooth (nu : \u211d) : ContDiff \u211d \u221e (velocity nu 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L133"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInfiniteShear.solution_nonnegative",
+      "file": "Foundation/GaussianInfiniteShear.lean",
+      "line": 136,
+      "source_sha256": "0c4a7434c177e345bf9311a374040b4eb0b4c6cc198506f3709871d67dd109b3",
+      "declaration_header": "theorem solution_nonnegative (nu t : \u211d) (hnu : 0 \u2264 nu) (ht : 0 \u2264 t) :\n    ContDiff \u211d \u221e (velocity nu t) \u2227\n      (\u2200 x, realDivergence (velocity nu t) x = 0) \u2227\n      (\u2200 x i, deriv (fun u => velocity nu u x i) t+realAdvection (velocity nu t) x i+\n        realPartial i (fun _ : Space => (0 : \u211d)) x =\n          nu*realLaplacian (fun y => velocity nu t y i) x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInfiniteShear.lean#L136"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierCoefficient.kernel_real",
+      "file": "Foundation/GaussianFourierCoefficient.lean",
+      "line": 55,
+      "source_sha256": "d6bf852622f54be183c4bc162fe0cc6fe4a40d857e8dac9d25b72a6b9bf3bbce",
+      "declaration_header": "theorem kernel_real (s : \u211d) (hs : 0 < s) (y : \u211d) : kernel s y = (jet 0 s y : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierCoefficient.lean#L55"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierCoefficient.coefficient_jet",
+      "file": "Foundation/GaussianFourierCoefficient.lean",
+      "line": 112,
+      "source_sha256": "d6bf852622f54be183c4bc162fe0cc6fe4a40d857e8dac9d25b72a6b9bf3bbce",
+      "declaration_header": "theorem coefficient_jet (s : \u211d) (hs : 0 < s) (m : \u2124) :\n    coefficient (fun y => (jet 0 s y : \u2102)) m = (weight s m : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierCoefficient.lean#L112"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFourierCoefficient.nonzero_tail",
+      "file": "Foundation/GaussianFourierCoefficient.lean",
+      "line": 119,
+      "source_sha256": "d6bf852622f54be183c4bc162fe0cc6fe4a40d857e8dac9d25b72a6b9bf3bbce",
+      "declaration_header": "theorem nonzero_tail (s : \u211d) (hs : 0 < s) (N : \u2115) :\n    \u2203 m : \u2124, (N : \u2124) < m \u2227 coefficient (fun y => (jet 0 s y : \u2102)) m \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFourierCoefficient.lean#L119"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearFourierTail.full_coefficient_axis",
+      "file": "Foundation/GaussianShearFourierTail.lean",
+      "line": 66,
+      "source_sha256": "65e80badf72725a3f73132b1157bdfaa381d51c0175ee4f65c80fc5c5e77bbd3",
+      "declaration_header": "theorem full_coefficient_axis (nu t : \u211d) (hs : 0 < 1+nu*t) (m : \u2124) (hm : m \u2260 0) :\n    fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) (axis m) =\n      2*(weight (1+nu*t) m : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearFourierTail.lean#L66"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearFourierTail.nonzero_tail_nonnegative",
+      "file": "Foundation/GaussianShearFourierTail.lean",
+      "line": 87,
+      "source_sha256": "65e80badf72725a3f73132b1157bdfaa381d51c0175ee4f65c80fc5c5e77bbd3",
+      "declaration_header": "theorem nonzero_tail_nonnegative (nu t : \u211d) (hnu : 0 \u2264 nu) (ht : 0 \u2264 t) (N : \u2115) :\n    \u2203 m : \u2124, (N : \u2124) < m \u2227\n      fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) (axis m) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearFourierTail.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearFourierTail.initial_tail",
+      "file": "Foundation/GaussianShearFourierTail.lean",
+      "line": 92,
+      "source_sha256": "65e80badf72725a3f73132b1157bdfaa381d51c0175ee4f65c80fc5c5e77bbd3",
+      "declaration_header": "theorem initial_tail (nu : \u211d) (N : \u2115) :\n    \u2203 m : \u2124, (N : \u2124) < m \u2227\n      fourierCoefficient (fun x => (velocity nu 0 x 0 : \u2102)) (axis m) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearFourierTail.lean#L92"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearFourierTail.enstrophy_axis_summable",
+      "file": "Foundation/GaussianShearFourierTail.lean",
+      "line": 123,
+      "source_sha256": "65e80badf72725a3f73132b1157bdfaa381d51c0175ee4f65c80fc5c5e77bbd3",
+      "declaration_header": "theorem enstrophy_axis_summable (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (fun m : \u2124 => |(m : \u211d)|^2*\n      Complex.normSq (fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) (axis m)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearFourierTail.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearFourierTail.dissipation_axis_summable",
+      "file": "Foundation/GaussianShearFourierTail.lean",
+      "line": 128,
+      "source_sha256": "65e80badf72725a3f73132b1157bdfaa381d51c0175ee4f65c80fc5c5e77bbd3",
+      "declaration_header": "theorem dissipation_axis_summable (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (fun m : \u2124 => |(m : \u211d)|^4*\n      Complex.normSq (fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) (axis m)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearFourierTail.lean#L128"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSpectrum.coefficient_formula",
+      "file": "Foundation/GaussianShearSpectrum.lean",
+      "line": 18,
+      "source_sha256": "08d70d568d1749f5d200eef8f2cfbd2c36b7c147b87963abdfac55da22995994",
+      "declaration_header": "theorem coefficient_formula (nu t : \u211d) (hs : 0 < 1+nu*t) (k : Wave) :\n    fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) k = spectrumFormula nu t k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSpectrum.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSpectrum.coefficient_nonzero_iff",
+      "file": "Foundation/GaussianShearSpectrum.lean",
+      "line": 34,
+      "source_sha256": "08d70d568d1749f5d200eef8f2cfbd2c36b7c147b87963abdfac55da22995994",
+      "declaration_header": "theorem coefficient_nonzero_iff (nu t : \u211d) (hs : 0 < 1+nu*t) (k : Wave) :\n    fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) k \u2260 0 \u2194\n      (k 0 = 0 \u2227 k 2 = 0) \u2228\n      (k 0 = 0 \u2227 k 1 = 0 \u2227 (k 2 = 1 \u2228 k 2 = -1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSpectrum.lean#L34"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.sector_zero_summable",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 79,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem sector_zero_summable (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (masked 0 p nu t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.sector_zero_exact",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 87,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem sector_zero_exact (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    moment 0 p nu t = 4*\u2211' m : \u2124, bound (2*p) (2*(1+nu*t)) m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.sector_one_summable",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 137,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem sector_one_summable (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (masked 1 p nu t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L137"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.sector_one_exact",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 142,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem sector_one_exact (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    moment 1 p nu t = (amplitude nu t)^2/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L142"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.density_summable",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 153,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem density_summable (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (density p nu t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L153"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearSectorMoments.total_moment_exact",
+      "file": "Foundation/GaussianShearSectorMoments.lean",
+      "line": 159,
+      "source_sha256": "6b139b0ce3d2ce22cfdd66f75c1270bc02eae46a05b0e56abf8e65c454800779",
+      "declaration_header": "theorem total_moment_exact (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    (\u2211' k : Wave, density p nu t k) = moment 0 p nu t+moment 1 p nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearSectorMoments.lean#L159"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.first_sector_lower",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 12,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem first_sector_lower (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    8*Real.exp (-2*(1+nu*t)) \u2264 moment 0 p nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L12"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.low_factor",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 27,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem low_factor (nu t : \u211d) :\n    Real.exp (-2*(1+nu*t)) = Real.exp (-2)*(amplitude nu t)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L27"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.low_gap_constant",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 34,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem low_gap_constant : (1 : \u211d) < 16*Real.exp (-2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L34"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.enstrophy_order",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 51,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem enstrophy_order (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    moment 1 1 nu t < moment 0 1 nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.dissipation_order",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 68,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem dissipation_order (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    moment 0 1 nu t < moment 0 2 nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L68"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.binaryRatio_eq",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 94,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem binaryRatio_eq (a b d : \u211d) (hb : 0 < b) (hba : b < a) (had : a < d) :\n    binaryRatio a b d b = (a+b)*(d-b)/((d+b)*(a-b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L94"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.binaryRatio_gt_one",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 109,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem binaryRatio_gt_one (a b d : \u211d) (hb : 0 < b) (hba : b < a) (had : a < d) :\n    1 < binaryRatio a b d b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L109"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.sourceExpression_eq",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 140,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem sourceExpression_eq (a b d e : \u211d) (ha : 0 < a) (hb : 0 < b) :\n    sourceExpression a b d e = binaryRatio a b d e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L140"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.sourceCentroid_eq",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 154,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem sourceCentroid_eq (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    sourceCentroid nu t = centroid nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L154"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianShearCentroid.sourceCentroid_gt_one",
+      "file": "Foundation/GaussianShearCentroid.lean",
+      "line": 160,
+      "source_sha256": "e4a356bafef0ed8b6ec40e07c39a800326636975e85f4d0e8412ddd57a3f1ffb",
+      "declaration_header": "theorem sourceCentroid_gt_one (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    1 < sourceCentroid nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShearCentroid.lean#L160"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.angular_antipodal",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 18,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem angular_antipodal (k : Wave) : angularSector (-k) = angularSector k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.angular_scale",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 21,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem angular_scale (q : \u2124) (hq : 0 < q) (k : Wave) :\n    angularSector (fun i => q*k i) = angularSector k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L21"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.label_on_spectrum",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 25,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem label_on_spectrum (nu t : \u211d) (hs : 0 < 1+nu*t) (k : Wave)\n    (hc : fourierCoefficient (fun x => (velocity nu t x 0 : \u2102)) k \u2260 0) :\n    angularSector k = sector k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L25"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.masked_transfer",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 33,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem masked_transfer (j : Fin 2) (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) (k : Wave) :\n    angularMasked j p nu t k = masked j p nu t k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L33"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.moment_transfer",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 39,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem moment_transfer (j : Fin 2) (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    angularMoment j p nu t = moment j p nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L39"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.angular_summable",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 44,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem angular_summable (j : Fin 2) (p : \u2115) (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    Summable (angularMasked j p nu t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.angularCentroid_eq",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 56,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem angularCentroid_eq (nu t : \u211d) (hs : 0 < 1+nu*t) :\n    angularCentroid nu t = sourceCentroid nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L56"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.angularCentroid_gt_one",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 61,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem angularCentroid_gt_one (nu t : \u211d) (hnu : 0 \u2264 nu) (ht : 0 \u2264 t) :\n    1 < angularCentroid nu t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L61"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AngularConeShearCentroid.no_initial_interval_below_one",
+      "file": "Foundation/AngularConeShearCentroid.lean",
+      "line": 67,
+      "source_sha256": "e6ccde872dd56bb3f09bca85176114460b621b1afe09e3d1a4f053550e40c802",
+      "declaration_header": "theorem no_initial_interval_below_one (nu : \u211d) (hnu : 0 \u2264 nu) :\n    \u00ac \u2203 T : \u211d, 0 < T \u2227 \u2200 t, 0 < t \u2192 t \u2264 T \u2192 angularCentroid nu t < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AngularConeShearCentroid.lean#L67"
     }
   ],
   "paper_sections": {
     "2": "RE exact family, full versus symmetric spectra, normalized depletion",
     "3": "actual affine derivatives and local PDE/sign calibration",
     "4": "full/deviatoric pressure trace consistency",
-    "5": "actual smooth periodic viscous ABC calibration"
+    "5": "actual smooth periodic viscous ABC calibration",
+    "6": "actual smooth periodic infinite Gaussian shear, all Fourier coefficients, complete angular moments, positive denominators and strict ratio reversal",
+    "7": "formal correspondence and bounded primary comparisons"
   },
   "human_reorganization": [
     "The same exact profile polynomial supplies the restricted-Euler ODE and actual affine momentum calculation. These are different mathematical assertions with different spatial hypotheses.",
@@ -374,7 +800,8 @@
     "The scaled characteristic polynomial is an elementary consequence of the mapped unscaled determinant and positive scaling, not a new named formal theorem.",
     "Equality between the full and deviatoric strain expressions is a direct classical substitution of the mapped pressure Poisson constraint; the formal trace criteria remain distinct.",
     "The periodic viscous mean is reconstructed by three explicit trigonometric products, replacing the mapped invariant-trace transport/cancellation proof.",
-    "No proposed general minus-pressure balance is inferred from the two calibration examples. The only refuted formula is written explicitly."
+    "No proposed general minus-pressure balance is inferred from the two calibration examples. The only refuted formula is written explicitly.",
+    "The uniform Gaussian derivative bounds, heat-driven shear and complete normalized integral Fourier series are reconstructed directly. The actual angular partition agrees with the simpler source support labels only on nonzero coefficients, as proved by source transfer. The ratio uses the printed normalization; it is not a claim about every angular tessellation or alternative centroid. Positivity is established on complete infinite moments, with no truncation argument. The heat-governed shear mechanism is classical; finite torus energy is a direct smooth compact-domain consequence."
   ],
   "literature": [
     {
@@ -388,6 +815,10 @@
     {
       "url": "https://arxiv.org/abs/1601.02724",
       "review": "Primary abstract/model inspected for exact ABC profile attribution; orbit theorems not used."
+    },
+    {
+      "url": "https://arxiv.org/abs/1402.6563",
+      "review": "Primary Gallay\u2013Slijepcevic abstract inspected for classical heat-governed shear context in a different two-dimensional infinite-cylinder problem. No asymptotic theorem imported; priority of the printed angular ratio unresolved."
     }
   ],
   "novelty": "UNRESOLVED; exact diagnostic/formalization companion in classical model families"

@@ -73,3 +73,5 @@ The primary [Ocone 1984 institutional record and abstract](https://www.researchw
 ## One-sided boundary Schur certificate
 
 [Gallier, primary author notes, Proposition 2.1 and Theorem 4.3](https://www.cis.upenn.edu/~jean/schur-comp.pdf) covers positive and singular Schur blocks. [Jiang–Lim–Yao–Ye, primary preprint, Theorems 4.7–4.8](https://arxiv.org/pdf/0811.1067) covers classical Hodge/Helmholtz decomposition of edge flows. Neither is imported as a geometry-specific numerical gap. Priority for this actual one-sided cell and narrow rational bracket remains unresolved; the finite table stage is explicitly computer assisted and fully supplied. No global gauge or continuum implication is claimed.
+
+The fluid suite now includes the actual infinite Gaussian shear and specified angular-ratio reversal. Gallay–Slijepcevic, arXiv:1402.6563, was checked at primary abstract level only for heat-governed shear context in a different two-dimensional infinite cylinder. No asymptotic result is imported and no priority certification is made for the angular diagnostic.
