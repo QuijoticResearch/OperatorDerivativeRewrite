@@ -35,7 +35,10 @@ The proof avoids assigning an unproved backward-generator
 domain to a logarithmic density. The construction belongs
 to classical harmonic and semigroup theory and is related
 to known Cauchy-driven phase dynamics. Exact statements
-are mapped to a frozen Lean development; novelty is unresolved.
+are mapped to a frozen Lean development. Exact single-harmonic
+corrections and real-polynomial tests distinguish the special sine
+drift from higher harmonics, Haar energies and diffusion chain rules.
+Novelty of the explicit combined package is unresolved.
 \end{abstract}
 
 \section{The circle flow and the conclusions}
@@ -518,6 +521,211 @@ Strict convexity of $\Psi$ gives $\mu=\nu_q$.
 This proves the uniqueness assertion without a path-space
 construction or a reversibility premise.
 
+
+\section{Exact finite-core drift corrections}
+The preceding entropy theorem uses the actual invariant law $\nu_q$.
+We now give finite polynomial tests that explain why its proof cannot
+be replaced by a diffusion calculation under Haar measure. All
+operators in this section act on the algebra of finite trigonometric
+polynomials; their products and derivatives stay in that algebra.
+Write $e_n(\theta)=e^{in\theta}$, $L_0e_n=-|n|e_n$, and, for an
+integer $h\geq0$, put
+\[
+ B_hf=-\sin(h\theta)f',\qquad L_{a,h}=L_0+aB_h,\quad a\in\R.
+\]
+Here $h$ denotes a harmonic index, not a time step; the generator
+already constructed is $L_{r,1}$ with the amplitude $r$ from
+\eqref{eq:parameters}. No transition family for arbitrary $h$ is
+being asserted. For a real-preserving operator $L$ define
+\begin{align*}
+ \Gamma_L(f,g)&=\tfrac12\{L(\bar f g)-\overline{Lf}\,g-\bar f Lg\},\\
+ \Gamma_{2,L}(f,g)&=\tfrac12\{L\Gamma_L(f,g)
+ -\Gamma_L(Lf,g)-\Gamma_L(f,Lg)\}.
+\end{align*}
+The conjugate in the first argument is essential. For $L_0$ let
+$\Gamma=\Gamma_{L_0}$ and $\Gamma_2=\Gamma_{2,L_0}$. Directly on modes,
+\begin{equation}\label{eq:cauchykernel}
+ \Gamma(e_n,e_m)=K(n,m)e_{m-n},\quad
+ \Gamma_2(e_n,e_m)=K(n,m)^2e_{m-n},\quad
+ K(n,m)=\frac{|n|+|m|-|m-n|}{2}.
+\end{equation}
+Indeed the first formula follows by applying $L_0$ to each of the
+three terms, and the second multiplies the first coefficient by
+$(|n|+|m|-|m-n|)/2$ again. In particular $K$ is zero when its
+indices have opposite signs and is $\min(|n|,|m|)$ when they have
+the same sign; either description gives zero at a zero index.
+
+Every $B_h$ commutes with conjugation and satisfies the product
+rule. Consequently
+\begin{equation}\label{eq:driftcommutator}
+ \Gamma_{L_{a,h}}=\Gamma,\qquad
+ \Gamma_{2,L_{a,h}}-\Gamma_2=\frac a2\mathcal C_h,
+ \quad
+ \mathcal C_h(f,g)=B_h\Gamma(f,g)-\Gamma(B_hf,g)-\Gamma(f,B_hg).
+\end{equation}
+The first assertion follows by cancelling the three derivation
+terms. Substitute it into the definition of the second form;
+the remaining $L_0$ terms give $\Gamma_2$ and the remaining drift
+terms give the displayed commutator. This proves the identities
+for every finite polynomial, without a domain limit.
+
+\begin{proposition}\label{prop:sinecorrection}
+For every real amplitude $a$ and all finite $f,g$,
+\[
+ \Gamma_{2,L_{a,1}}(f,g)
+ =\Gamma_2(f,g)+\frac a2\cos\theta\,\Gamma(f,g).
+\]
+\end{proposition}
+\begin{proof}
+The mode action is
+$B_1e_n=(n/2)(e_{n-1}-e_{n+1})$. For the coefficient of
+$e_{m-n-1}$ in $\mathcal C_1(e_n,e_m)$, \eqref{eq:cauchykernel}
+gives one half of
+\begin{equation}\label{eq:integeridentity}
+ (m-n)K(n,m)+nK(n+1,m)-mK(n,m-1)=K(n,m).
+\end{equation}
+Here is a complete sign check. If $n\geq0,m\geq1$ and
+$m\geq n+1$, the three kernels on the left are $n,n+1,n$;
+the left side is $n$. If instead $1\leq m\leq n$, they are
+$m,m,m-1$, and the left side is $m$. If $n\geq0,m\leq0$,
+all three kernels vanish. They also vanish if $n\leq-1,m\geq1$.
+Finally if $n\leq-1,m\leq0$, set $N=-m\geq0,M=-n\geq1$.
+By symmetry and simultaneous sign reversal, the expression becomes
+\[
+ (M-N)K(N,M)+NK(N+1,M)-MK(N,M-1),
+\]
+which is the already proved positive case. These cases cover all
+integer pairs. The coefficient at $e_{m-n+1}$ is also $K(n,m)/2$:
+its identity is obtained from \eqref{eq:integeridentity} by
+$(n,m)\mapsto(-n,-m)$ and $K(-n,-m)=K(n,m)$.
+There are no other frequencies. Thus
+$\mathcal C_1(e_n,e_m)=\cos\theta\,\Gamma(e_n,e_m)$.
+Conjugate linearity in $f$ and linearity in $g$ extend this equality
+to their finite sums. Equation \eqref{eq:driftcommutator} finishes.
+\end{proof}
+
+\section{The single-harmonic scalar correction is exceptional}
+\begin{theorem}\label{thm:harmonicclassification}
+Among integer harmonics $h\geq0$, a function $b(\theta)$ such that
+\[
+ \Gamma_{2,L_{1,h}}(f,f)(\theta)-\Gamma_2(f,f)(\theta)
+   =b(\theta)\Gamma(f,f)(\theta)
+\]
+for every real trigonometric polynomial $f$ and every $\theta$
+exists exactly when $h=0$ or $h=1$. The same classification holds
+if all complex polynomials are required.
+\end{theorem}
+\begin{proof}
+For $h=0$, $B_h=0$ and $b=0$ works. For $h=1$ take
+$b=\cos\theta/2$ by Proposition~\ref{prop:sinecorrection}.
+For the converse, put $p_n=e_n+e_{-n}=2\cos(n\theta)$, $n>0$.
+Equation \eqref{eq:cauchykernel} gives $\Gamma(p_n,p_n)(0)=2n$.
+At $\theta=0$ one has $B_h\Gamma(p_n,p_n)=0$, since $\sin0=0$.
+The two remaining real diagonal commutator terms agree. Also
+\[
+ B_hp_n=\frac n2(e_{n-h}-e_{n+h}-e_{-n-h}+e_{-n+h}).
+\]
+For any integer $j$, the sum
+$K(j,n)+K(j,-n)=\min(|j|,n)$. Hence direct substitution gives
+\begin{align*}
+ \Gamma(B_hp_n,p_n)(0)
+ &=n\{\min(|n-h|,n)-n\},\\
+ [\Gamma_{2,L_{1,h}}(p_n,p_n)-\Gamma_2(p_n,p_n)](0)
+ &=n\{n-\min(|n-h|,n)\}.
+\end{align*}
+If $h\geq2$, the value is zero for $n=1$, forcing $b(0)=0$.
+For $n=h$ the value is $h^2>0$, contradicting the same factor.
+These are genuine real witnesses, so allowing complex polynomials
+cannot repair the failure.
+\end{proof}
+
+For comparison, the complex diagonal has the full frequency formula
+\begin{equation}\label{eq:complexharmonic}
+ \Gamma_{2,L_{1,h}}(e_n,e_n)-\Gamma_2(e_n,e_n)
+ =\frac{n\min(n,h)}4(e_h+e_{-h}),\qquad n,h\geq0.
+\end{equation}
+To verify it, $\Gamma(e_n,e_n)=n$ is constant and $B_hn=0$.
+The action $B_he_n=(n/2)(e_{n-h}-e_{n+h})$ in the other two
+commutator terms leaves the difference
+\[
+ K(n+h,n)-K(n-h,n)=\min(n,h).
+\]
+For $n\geq h$ its two terms are $n,n-h$; for $0\leq n\leq h$
+they are $n,0$. Multiplication by $n/4$ proves
+\eqref{eq:complexharmonic}. At zero, the correction divided by
+$\Gamma(e_n,e_n)=n$ is $\min(n,h)/2$ for $n>0$, again incompatible
+with a common scalar for $h\geq2$. The stronger real-witness
+calculation above is needed to exclude an artefact of complex tests.
+For a fixed nonzero amplitude $a$, all corrections scale by $a$,
+so the same classification follows. Zero amplitude gives the
+drift-free identity for every $h$. This last amplitude observation
+is a direct deduction, rather than a separate named formal theorem.
+No classification of mixtures of harmonics or arbitrary potentials
+is inferred from a classification of one harmonic at a time.
+
+\section{Two independent obstructions to diffusion shortcuts}
+\subsection{The actual Haar energy can be negative}
+Let $L=L_{1,1}$. The real positive polynomial $f=2+\cos\theta$
+satisfies
+\[
+ Lf=-\cos\theta+\sin^2\theta,
+ \qquad \int Lf\,dm=\tfrac12.
+\]
+Thus Haar measure is not stationary even on this finite core. Using
+$\int\cos\theta\,dm=\int\cos^3\theta\,dm=0$ and
+$\int\cos^2\theta\,dm=\int\sin^2\theta\,dm=1/2$, one gets
+\[
+ \int f\,dm=2,\qquad \int f^2\,dm=\tfrac92,\qquad
+ -\int fLf\,dm=-\tfrac12.
+\]
+The last equality follows from
+$\int(2+\cos\theta)(-\cos\theta+\sin^2\theta)\,dm
+=-1/2+1=1/2$. Its variance is $1/2>0$, so there is no
+constant $C\geq0$ for which
+\[
+ \operatorname{Var}_m(f)\leq C\bigl(-\!\int fLf\,dm\bigr)
+\]
+holds for every real finite polynomial. In this counterexample
+the right side is nonpositive. This is a failure of the stated
+uncentered Haar-energy inequality: centering the test before
+applying the nonstationary energy changes that energy. It is not
+a refutation of all possible centered or invariant-law Poincar\'e
+inequalities. Amplitude one is included in the preceding semigroup:
+it corresponds to $q=\sqrt2-1$, for which the correct reference
+law is the nonuniform $\nu_q$.
+
+\subsection{A cubic chain-rule remainder survives every sine amplitude}
+A diffusion operator would satisfy
+$L(g^3)=3g^2Lg+6g\Gamma_L(g,g)$ for real $g$.
+Take $g=\cos\theta$. From $g^2=(1+\cos2\theta)/2$ and
+$g^3=(3\cos\theta+\cos3\theta)/4$,
+\[
+ L_0g(0)=-1,\quad L_0(g^2)(0)=-1,\quad
+ L_0(g^3)(0)=-\tfrac32,\quad \Gamma(g,g)(0)=\tfrac12.
+\]
+The diffusion right side would be $-3+3=0$, which differs from
+$-3/2$. More structurally define
+\[
+ \mathcal D_L(g)=L(g^3)-3gL(g^2)+3g^2Lg.
+\]
+For a derivation $B$, the product rule gives
+$B(g^2)=2gBg$ and $B(g^3)=3g^2Bg$; its three contributions
+are $3-6+3=0$. Thus $\mathcal D_{L_0+aB_1}=\mathcal D_{L_0}$
+for every real $a$, while the value on this cosine at zero is
+$-3/2$. The failure is intrinsic to the nonlocal Cauchy part and
+is not repaired by its first-harmonic scalar $\Gamma_2$ correction.
+All evaluations use actual smooth real polynomials.
+
+These tests leave the earlier positive entropy theorem intact:
+that proof uses the true stationary law and a jump-Bregman identity,
+not a diffusion chain rule. They also do not disprove a particular
+nonlocal curvature inequality. Spener--Weber--Zacher~\cite{swz}
+study a distinct question, finite-dimensional curvature-dimension
+bounds for the fractional Laplacian on Euclidean space. Their
+primary introduction and definitions place nonlocal $\Gamma$
+calculus in its established setting; their Euclidean theorem is
+not being transferred to this circle model.
+
 \section{Classical context and exact verification scope}
 The Poisson kernel and harmonic-composition construction
 are classical. The pole equation
@@ -541,7 +749,12 @@ The accompanying theorem map covers the actual Markov
 kernels, Feller semigroup, closed generator, smoothed
 core, Laplace resolvent, forward density, stationary
 Bregman identity, singular limit, modified entropy bound
-and finite nonsymmetry witness. The human proof groups
+and finite nonsymmetry witness. The additional finite-core map records
+the actual sine correction, single-harmonic classification, real
+cosine obstructions, Haar-energy failure and cubic defect. The
+one-dimensional formulas are the coordinate-axis specialization of
+the formal three-coordinate finite Fourier algebra, with all other
+coordinates zero. The human proof groups
 the same ingredients into harmonic and Banach-space
 arguments; intermediate regroupings are not claimed as
 new named Lean theorems.
@@ -560,5 +773,9 @@ a symmetric diffusion.
 Low-dimensional dynamics of phase oscillators driven by
 Cauchy noise, primary preprint, arXiv:2009.04273.
 \url{https://arxiv.org/abs/2009.04273}.
+\bibitem{swz} A. Spener, F. Weber and R. Zacher,
+The fractional Laplacian has infinite dimension,
+primary preprint, arXiv:1903.00521v3 (2019).
+\url{https://arxiv.org/abs/1903.00521}.
 \end{thebibliography}
 \end{document}

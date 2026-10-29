@@ -315,13 +315,621 @@
       "source_sha256": "beda2b92e57f78eb5bac5a35f031c5bd899b68e402734ca1bfe23bfb99d1fe7e",
       "declaration_header": "theorem positive_time_fixed_law_unique (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] (hfix : (kernel q t) \u2218\u2098 \u03bc = \u03bc) :\n    \u03bc = invariantLaw q",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonEntropyLimit.lean#L47"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteStableGamma.Core.generator_single",
+      "file": "Foundation/FiniteStableGamma.lean",
+      "line": 19,
+      "source_sha256": "2361e13af70f87335dde9a8566256d59d9a8b7bfe87e5932da9307478d587aa9",
+      "declaration_header": "theorem generator_single (a : Wave \u2192 \u211d) (k : Wave) (c : \u2102) :\n    generator a (AddMonoidAlgebra.single k c) = AddMonoidAlgebra.single k (-(a k : \u2102)*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteStableGamma.lean#L19"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteStableGamma.Core.kernel",
+      "file": "Foundation/FiniteStableGamma.lean",
+      "line": 23,
+      "source_sha256": "2361e13af70f87335dde9a8566256d59d9a8b7bfe87e5932da9307478d587aa9",
+      "declaration_header": "def kernel (a : Wave \u2192 \u211d) (k l : Wave) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteStableGamma.lean#L23"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteStableGamma.Core.gammaIter",
+      "file": "Foundation/FiniteStableGamma.lean",
+      "line": 25,
+      "source_sha256": "2361e13af70f87335dde9a8566256d59d9a8b7bfe87e5932da9307478d587aa9",
+      "declaration_header": "def gammaIter (a : Wave \u2192 \u211d) : \u2115 \u2192 Fourier \u2192 Fourier \u2192 Fourier\n  | 0, f, g => reflection f * g\n  | n+1, f, g => (1/2 : \u2102) \u2022\n      (generator a (gammaIter a n f g) - gammaIter a n (generator a f) g -\n        gammaIter a n f (generator a g))\n\ntheorem gammaIter_single (a : Wave \u2192 \u211d) (n : \u2115) (k l : Wave) (c d : \u2102) :\n    gammaIter a n (AddMonoidAlgebra.single k c) (AddMonoidAlgebra.single l d) =\n      AddMonoidAlgebra.single (l-k) ((kernel a k l : \u2102)^n * conj c * d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteStableGamma.lean#L25"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteStableGamma.Core.gammaIter_single",
+      "file": "Foundation/FiniteStableGamma.lean",
+      "line": 31,
+      "source_sha256": "2361e13af70f87335dde9a8566256d59d9a8b7bfe87e5932da9307478d587aa9",
+      "declaration_header": "theorem gammaIter_single (a : Wave \u2192 \u211d) (n : \u2115) (k l : Wave) (c d : \u2102) :\n    gammaIter a n (AddMonoidAlgebra.single k c) (AddMonoidAlgebra.single l d) =\n      AddMonoidAlgebra.single (l-k) ((kernel a k l : \u2102)^n * conj c * d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteStableGamma.lean#L31"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteStableGamma.Core.gammaIter_finite",
+      "file": "Foundation/FiniteStableGamma.lean",
+      "line": 99,
+      "source_sha256": "2361e13af70f87335dde9a8566256d59d9a8b7bfe87e5932da9307478d587aa9",
+      "declaration_header": "theorem gammaIter_finite {\u03b9 \u03ba : Type*} (a : Wave \u2192 \u211d) (n : \u2115)\n    (s : Finset \u03b9) (t : Finset \u03ba) (k : \u03b9 \u2192 Wave) (l : \u03ba \u2192 Wave)\n    (c : \u03b9 \u2192 \u2102) (d : \u03ba \u2192 \u2102) :\n    gammaIter a n (\u2211 i \u2208 s, AddMonoidAlgebra.single (k i) (c i))\n      (\u2211 j \u2208 t, AddMonoidAlgebra.single (l j) (d j)) =\n      \u2211 i \u2208 s, \u2211 j \u2208 t, AddMonoidAlgebra.single (l j-k i)\n        ((kernel a (k i) (l j) : \u2102)^n * conj (c i) * d j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteStableGamma.lean#L99"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.drift_lower_coefficient",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 9,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem drift_lower_coefficient (n m : \u2124) :\n    (m-n) * twiceKernel n m + n * twiceKernel (n+1) m -\n      m * twiceKernel n (m-1) = twiceKernel n m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L9"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.drift_upper_coefficient",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 25,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem drift_upper_coefficient (n m : \u2124) :\n    -(m-n) * twiceKernel n m - n * twiceKernel (n-1) m +\n      m * twiceKernel n (m+1) = twiceKernel n m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L25"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.cauchy_kernel_twice",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 36,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem cauchy_kernel_twice (k l : Wave) :\n    kernel (stableSymbol 1) k l = (twiceKernel (k 0) (l 0) : \u211d)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L36"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.transport_product",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 47,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem transport_product (f g : Fourier) :\n    transport (f*g) = f * transport g + g * transport f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L47"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.transport_single",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 53,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem transport_single (k : Wave) (c : \u2102) :\n    transport (AddMonoidAlgebra.single k c) =\n      AddMonoidAlgebra.single (k-unitWave) ((k 0 : \u2102)/2*c) -\n      AddMonoidAlgebra.single (k+unitWave) ((k 0 : \u2102)/2*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L53"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.transport_synthesis",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 72,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem transport_synthesis (f : Fourier) (x : FiniteFourierSynthesis.Space) :\n    FiniteFourierSynthesis.synthesis x (transport f) =\n      -(Real.sin (x 0) : \u2102) * FiniteFourierSynthesis.synthesis x (dLinear 0 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.transport_reflection",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 92,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem transport_reflection (f : Fourier) :\n    reflection (transport f) = transport (reflection f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L92"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.firstGamma",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 113,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "noncomputable def firstGamma (L : Fourier \u2192 Fourier) (f g : Fourier) : Fourier",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L113"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.secondGamma",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 132,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "noncomputable def secondGamma (L : Fourier \u2192 Fourier) (f g : Fourier) : Fourier",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L132"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.drift_secondGamma_correction",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 135,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem drift_secondGamma_correction (a : Wave \u2192 \u211d) (f g : Fourier) :\n     secondGamma (fun h => generator a h + transport h) f g =\n       gammaIter a 2 f g + (1/2 : \u2102) \u2022\n         (transport (gammaIter a 1 f g) - gammaIter a 1 (transport f) g -\n           gammaIter a 1 f (transport g))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L135"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.kernel_lower",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 159,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem kernel_lower (k l : Wave) :\n    ((l 0 : \u2102)-(k 0 : \u2102)) * (kernel (stableSymbol 1) k l : \u2102) +\n      (k 0 : \u2102) * (kernel (stableSymbol 1) (k+unitWave) l : \u2102) -\n      (l 0 : \u2102) * (kernel (stableSymbol 1) k (l-unitWave) : \u2102) =\n        (kernel (stableSymbol 1) k l : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L159"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.kernel_upper",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 170,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem kernel_upper (k l : Wave) :\n    -((l 0 : \u2102)-(k 0 : \u2102)) * (kernel (stableSymbol 1) k l : \u2102) -\n      (k 0 : \u2102) * (kernel (stableSymbol 1) (k-unitWave) l : \u2102) +\n      (l 0 : \u2102) * (kernel (stableSymbol 1) k (l+unitWave) : \u2102) =\n        (kernel (stableSymbol 1) k l : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L170"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.drift_bracket_single",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 183,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem drift_bracket_single (k l : Wave) (c d : \u2102) :\n    transport (gammaIter (stableSymbol 1) 1 (AddMonoidAlgebra.single k c)\n        (AddMonoidAlgebra.single l d)) -\n      gammaIter (stableSymbol 1) 1 (transport (AddMonoidAlgebra.single k c))\n        (AddMonoidAlgebra.single l d) -\n      gammaIter (stableSymbol 1) 1 (AddMonoidAlgebra.single k c)\n        (transport (AddMonoidAlgebra.single l d)) =\n      (1/2 : \u2102) \u2022 (AddMonoidAlgebra.single (l-k-unitWave)\n        ((kernel (stableSymbol 1) k l : \u2102)*conj c*d) +\n        AddMonoidAlgebra.single (l-k+unitWave)\n        ((kernel (stableSymbol 1) k l : \u2102)*conj c*d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L183"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.drift_bracket",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 212,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem drift_bracket (f g : Fourier) :\n    transport (gammaIter (stableSymbol 1) 1 f g) -\n      gammaIter (stableSymbol 1) 1 (transport f) g -\n      gammaIter (stableSymbol 1) 1 f (transport g) =\n        cosineMultiplier * gammaIter (stableSymbol 1) 1 f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L212"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.cauchy_drift_scalar_shift_synthesis",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 255,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem cauchy_drift_scalar_shift_synthesis (f g : Fourier)\n    (x : FiniteFourierSynthesis.Space) :\n    FiniteFourierSynthesis.synthesis x\n      (secondGamma (fun h => generator (stableSymbol 1) h + transport h) f g) =\n    FiniteFourierSynthesis.synthesis x (gammaIter (stableSymbol 1) 2 f g) +\n      ((Real.cos (x 0) : \u2102)/2) *\n        FiniteFourierSynthesis.synthesis x (gammaIter (stableSymbol 1) 1 f g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L255"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.firstGamma_scaled_transport",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 267,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem firstGamma_scaled_transport (r : \u211d) (L : Fourier \u2192 Fourier) (f g : Fourier) :\n    firstGamma (fun h => L h + r \u2022 transport h) f g = firstGamma L f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L267"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchySineDrift.cauchy_scaled_drift_scalar_shift_synthesis",
+      "file": "Foundation/CauchySineDrift.lean",
+      "line": 307,
+      "source_sha256": "fbcd498234eb5ebd52cf57fcf82d3bef57c713d2cc397c56b8b5b8e171ca0ec5",
+      "declaration_header": "theorem cauchy_scaled_drift_scalar_shift_synthesis (r : \u211d) (f g : Fourier)\n    (x : FiniteFourierSynthesis.Space) :\n    FiniteFourierSynthesis.synthesis x\n      (secondGamma (fun h => generator (stableSymbol 1) h + r \u2022 transport h) f g) =\n    FiniteFourierSynthesis.synthesis x (gammaIter (stableSymbol 1) 2 f g) +\n      ((r * Real.cos (x 0) / 2 : \u211d) : \u2102) *\n        FiniteFourierSynthesis.synthesis x (gammaIter (stableSymbol 1) 1 f g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchySineDrift.lean#L307"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.harmonic_product",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 16,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem harmonic_product (r : \u2124) (f g : Fourier) :\n    (harmonic r) (f*g) = f * (harmonic r) g + g * (harmonic r) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L16"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.harmonic_general_single",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 22,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem harmonic_general_single (r : \u2124) (k : Wave) (c : \u2102) :\n    (harmonic r) (AddMonoidAlgebra.single k c) =\n      AddMonoidAlgebra.single (k-(wave r)) ((k 0 : \u2102)/2*c) -\n      AddMonoidAlgebra.single (k+(wave r)) ((k 0 : \u2102)/2*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L22"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.harmonic_reflection",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 40,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem harmonic_reflection (r : \u2124) (f : Fourier) :\n    reflection ((harmonic r) f) = (harmonic r) (reflection f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L40"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.firstGamma_harmonic_invariant",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 60,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem firstGamma_harmonic_invariant (r : \u2124) (L : Fourier \u2192 Fourier) (f g : Fourier) :\n     firstGamma (fun h => L h + (harmonic r) h) f g = firstGamma L f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.action_axis",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 71,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem action_axis (r n : \u2124) (c : \u2102) :\n    harmonic r (AddMonoidAlgebra.single (wave n) c) =\n      AddMonoidAlgebra.single (wave (n-r)) ((n:\u2102)/2*c) -\n      AddMonoidAlgebra.single (wave (n+r)) ((n:\u2102)/2*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L71"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.kernel_axis",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 78,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem kernel_axis (n m : \u2124) :\n    (kernel (stableSymbol 1) (wave n) (wave m):\u2102) = (((|n|+|m|-|m-n|:\u2124):\u2102)/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L78"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.kernel_difference",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 83,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem kernel_difference (n r : \u2124) (hn : 0 \u2264 n) (hr : 0 \u2264 r) :\n    kernel (stableSymbol 1) (wave (n+r)) (wave n) -\n      kernel (stableSymbol 1) (wave (n-r)) (wave n) = ((min n r:\u2124):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L83"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.diagonal_bracket",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 106,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem diagonal_bracket (n r : \u2124) (hn : 0 \u2264 n) (hr : 0 \u2264 r) :\n    bracket r (mode n) (mode n) = ((n:\u2102)*(min n r:\u2124)/2) \u2022 (mode r+mode (-r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L106"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.harmonic_synthesis",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 123,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem harmonic_synthesis (r : \u2124) (f : Fourier) (x : FiniteFourierSynthesis.Space) :\n    FiniteFourierSynthesis.synthesis x (harmonic r f) =\n      -(Real.sin ((r:\u211d)*x 0):\u2102)*FiniteFourierSynthesis.synthesis x (dLinear 0 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L123"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.second_correction",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 135,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem second_correction (r : \u2124) (f g : Fourier) :\n    secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) f g =\n      gammaIter (stableSymbol 1) 2 f g + (1/2:\u2102) \u2022 bracket r f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L135"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.diagonal_correction",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 147,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem diagonal_correction (n r : \u2124) (hn : 0 \u2264 n) (hr : 0 \u2264 r) :\n    secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (mode n) (mode n) -\n      gammaIter (stableSymbol 1) 2 (mode n) (mode n) =\n        ((n:\u2102)*(min n r:\u2124)/4) \u2022 (mode r+mode (-r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L147"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.gamma_diagonal",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 154,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem gamma_diagonal (n : \u2124) (hn : 0 \u2264 n) :\n    gammaIter (stableSymbol 1) 1 (mode n) (mode n) = (n:\u2102) \u2022 mode 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L154"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.correction_at_zero",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 163,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem correction_at_zero (n r : \u2124) (hn : 0 \u2264 n) (hr : 0 \u2264 r) :\n    FiniteFourierSynthesis.synthesis 0\n      (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (mode n) (mode n) -\n        gammaIter (stableSymbol 1) 2 (mode n) (mode n)) = (n:\u2102)*(min n r:\u2124)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L163"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.no_positive_mode_scalar",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 171,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem no_positive_mode_scalar (r : \u2124) (hr : 1 < r) :\n    \u00ac \u2203 a : \u2102, \u2200 n : \u2124, 0 < n \u2192\n      FiniteFourierSynthesis.synthesis 0\n        (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (mode n) (mode n) -\n          gammaIter (stableSymbol 1) 2 (mode n) (mode n)) =\n        a*FiniteFourierSynthesis.synthesis 0 (gammaIter (stableSymbol 1) 1 (mode n) (mode n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L171"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyHarmonicDrift.scalar_iff",
+      "file": "Foundation/CauchyHarmonicDrift.lean",
+      "line": 201,
+      "source_sha256": "8f349681ba22e23a828baeec028ab6f13f7c2ad738ee3cb3dd440f0a962bf18b",
+      "declaration_header": "theorem scalar_iff (r : \u2124) (hr : 0 \u2264 r) :\n    (\u2203 a : FiniteFourierSynthesis.Space \u2192 \u2102, \u2200 f : Fourier, \u2200 x,\n      FiniteFourierSynthesis.synthesis x\n        (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) f f -\n          gammaIter (stableSymbol 1) 2 f f) =\n        a x*FiniteFourierSynthesis.synthesis x (gammaIter (stableSymbol 1) 1 f f)) \u2194\n      r = 0 \u2228 r = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyHarmonicDrift.lean#L201"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.pair_hermitian",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 16,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem pair_hermitian (n : \u2124) : Hermitian (pair n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L16"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.gamma_pair_zero",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 24,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem gamma_pair_zero (n : \u2124) (hn : 0 \u2264 n) :\n    synthesis 0 (gammaIter (stableSymbol 1) 1 (pair n) (pair n)) = (2:\u2102)*n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L24"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.pair_correction_at_zero",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 34,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem pair_correction_at_zero (n r : \u2124) :\n    synthesis 0\n      (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (pair n) (pair n) -\n        gammaIter (stableSymbol 1) 2 (pair n) (pair n)) =\n      -(1/2:\u2102)*synthesis 0 (gammaIter (stableSymbol 1) 1 (harmonic r (pair n)) (pair n)) -\n       (1/2:\u2102)*synthesis 0 (gammaIter (stableSymbol 1) 1 (pair n) (harmonic r (pair n)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L34"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.pair_one_correction",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 45,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem pair_one_correction (r : \u2124) (hr : 2 \u2264 r) :\n    synthesis 0\n      (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (pair 1) (pair 1) -\n        gammaIter (stableSymbol 1) 2 (pair 1) (pair 1)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L45"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.pair_harmonic_correction",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 63,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem pair_harmonic_correction (r : \u2124) (hr : 0 \u2264 r) :\n    synthesis 0\n      (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) (pair r) (pair r) -\n        gammaIter (stableSymbol 1) 2 (pair r) (pair r)) = (r:\u2102)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L63"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.pair_synthesis",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 76,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem pair_synthesis (n : \u2124) (x : Space) :\n    synthesis x (pair n) = 2*(Real.cos ((n:\u211d)*x 0):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L76"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.no_real_scalar_at_zero",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 86,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem no_real_scalar_at_zero (r : \u2124) (hr : 2 \u2264 r) :\n    \u00ac \u2203 a : \u2102, \u2200 f : Fourier, Hermitian f \u2192\n      synthesis 0\n        (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) f f -\n          gammaIter (stableSymbol 1) 2 f f) = a*synthesis 0 (gammaIter (stableSymbol 1) 1 f f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L86"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyRealHarmonicObstruction.real_scalar_iff",
+      "file": "Foundation/CauchyRealHarmonicObstruction.lean",
+      "line": 104,
+      "source_sha256": "6b7caea054283ea41bce27c23be4e64b5929653b0e4b08eaf0b72ace310ad259",
+      "declaration_header": "theorem real_scalar_iff (r : \u2124) (hr : 0 \u2264 r) :\n    (\u2203 a : Space \u2192 \u2102, \u2200 f : Fourier, Hermitian f \u2192 \u2200 x,\n      synthesis x\n        (secondGamma (fun h => generator (stableSymbol 1) h+harmonic r h) f f -\n          gammaIter (stableSymbol 1) 2 f f) = a x*synthesis x (gammaIter (stableSymbol 1) 1 f f)) \u2194\n      r = 0 \u2228 r = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyRealHarmonicObstruction.lean#L104"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_synthesis",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 22,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_synthesis (x : Space) : synthesis x witness = 2 + (Real.cos (x 0) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L22"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_mean",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 29,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_mean : constantTrace witness = 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L29"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.drift_mean",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 32,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem drift_mean : constantTrace (driftGenerator witness) = (1/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L32"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_square_mean",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 36,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_square_mean : constantTrace (witness*witness) = (9/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L36"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_energy",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 40,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_energy : -constantTrace (witness*driftGenerator witness) = (-1/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L40"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_circle_mean",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 45,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_circle_mean (x : Space) :\n    circleAverage 0 (fun y => synthesis y witness) x = 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L45"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.drift_circle_mean",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 50,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem drift_circle_mean (x : Space) :\n    circleAverage 0 (fun y => synthesis y (driftGenerator witness)) x = (1/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_circle_square",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 57,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_circle_square (x : Space) :\n    circleAverage 0 (fun y => synthesis y witness * synthesis y witness) x = (9/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L57"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_circle_energy",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 64,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_circle_energy (x : Space) :\n    -circleAverage 0 (fun y => synthesis y witness * synthesis y (driftGenerator witness)) x =\n      (-1/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L64"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.uniform_not_invariant",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 74,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem uniform_not_invariant (x : Space) :\n    \u00ac (\u2200 f : Fourier, circleAverage 0 (fun y => synthesis y (driftGenerator f)) x = 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.witness_no_nonnegative_constant",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 93,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem witness_no_nonnegative_constant (x : Space) (C : \u211d) (hC : 0 \u2264 C) :\n    \u00ac ((circleAverage 0 (fun y => synthesis y witness * synthesis y witness) x).re -\n      (circleAverage 0 (fun y => synthesis y witness) x).re ^ 2 \u2264\n      C * (-circleAverage 0\n        (fun y => synthesis y witness * synthesis y (driftGenerator witness)) x).re)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L93"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDriftUniformObstruction.no_uniform_poincare",
+      "file": "Foundation/CauchyDriftUniformObstruction.lean",
+      "line": 102,
+      "source_sha256": "30dd02bafcaeab5b23d93637fc3d6250931815bb9a9cb8144e92303410f32238",
+      "declaration_header": "theorem no_uniform_poincare (x : Space) (C : \u211d) (hC : 0 \u2264 C) :\n    \u00ac (\u2200 f : Fourier, (\u2200 y : Space, (synthesis y f).im = 0) \u2192\n      (circleAverage 0 (fun y => synthesis y f * synthesis y f) x).re -\n        (circleAverage 0 (fun y => synthesis y f) x).re ^ 2 \u2264\n        C * (-circleAverage 0\n          (fun y => synthesis y f * synthesis y (driftGenerator f)) x).re)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDriftUniformObstruction.lean#L102"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.drift_cubic_cancellation",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 16,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem drift_cubic_cancellation (f : Fourier) : cubicDefect transport f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L16"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cubicDefect_drift",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 20,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cubicDefect_drift (r : \u211d) (f : Fourier) :\n    cubicDefect (fun p => generator (stableSymbol 1) p + r \u2022 transport p) f =\n      cubicDefect (generator (stableSymbol 1)) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L20"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cosine_generator_at_zero",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 26,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cosine_generator_at_zero :\n    synthesis 0 (generator (stableSymbol 1) cosineMultiplier) = -1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L26"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cosine_square_generator_at_zero",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 31,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cosine_square_generator_at_zero :\n    synthesis 0 (generator (stableSymbol 1) (cosineMultiplier*cosineMultiplier)) = -1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L31"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cosine_cube_generator_at_zero",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 37,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cosine_cube_generator_at_zero :\n    synthesis 0 (generator (stableSymbol 1)\n      (cosineMultiplier*cosineMultiplier*cosineMultiplier)) = (-3/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cauchy_cubic_defect",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 44,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cauchy_cubic_defect :\n    synthesis 0 (cubicDefect (generator (stableSymbol 1)) cosineMultiplier) = (-3/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L44"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cosine_gamma_at_zero",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 49,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cosine_gamma_at_zero :\n    synthesis 0 (gammaIter (stableSymbol 1) 1 cosineMultiplier cosineMultiplier) = (1/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L49"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.cauchy_diffusion_chain_failure",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 55,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem cauchy_diffusion_chain_failure :\n    synthesis 0 (generator (stableSymbol 1) (cosineMultiplier*cosineMultiplier*cosineMultiplier)) \u2260\n      3*(synthesis 0 cosineMultiplier)^2 * synthesis 0 (generator (stableSymbol 1) cosineMultiplier) +\n      6*synthesis 0 cosineMultiplier * synthesis 0\n        (gammaIter (stableSymbol 1) 1 cosineMultiplier cosineMultiplier)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L55"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.drifted_cubic_defect",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 64,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem drifted_cubic_defect (r : \u211d) :\n    synthesis 0 (cubicDefect (fun p => generator (stableSymbol 1) p + r \u2022 transport p)\n      cosineMultiplier) = (-3/2 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L64"
+    },
+    {
+      "paper": "Sections 9\u201311 finite-core corrections and obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyDiffusionChainObstruction.drifted_cubic_nonzero",
+      "file": "Foundation/CauchyDiffusionChainObstruction.lean",
+      "line": 69,
+      "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
+      "declaration_header": "theorem drifted_cubic_nonzero (r : \u211d) :\n    cubicDefect (fun p => generator (stableSymbol 1) p + r \u2022 transport p)\n      cosineMultiplier \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L69"
     }
   ],
   "human_reorganization": [
     "Harmonic extension and the two explicit matrix eigenvectors reconstruct the actual transition-kernel composition and invariance proofs.",
     "The full graph and Laplace resolvent proofs use standard Banach-semigroup FTC/closed-graph arguments. The exact core remains the time-averaged trigonometric graph, not an unproved unsmoothed-core identification.",
     "The singular Bregman domination is reproved using uniform first-order radial defect and displacement, rather than copying the formal explicit scalar budgets.",
-    "The entropy proof uses actual forward densities and a stationary finite-step identity; it assumes no backward log-density generator domain."
+    "The entropy proof uses actual forward densities and a stationary finite-step identity; it assumes no backward log-density generator domain.",
+    "The finite Fourier algebra is specialized to its first coordinate, with frequency (n,0,0); conjugation of the first Gamma argument and amplitude/harmonic distinctions are preserved.",
+    "The full single-harmonic scalar classification is proved with actual real cosine witnesses. Its finite complex diagonal and integer coefficient identities are also reconstructed; no mixed-potential classification is inferred.",
+    "The general real-cosine correction n*(n-min(abs(n-h),n)) and nonzero-amplitude extension are printed direct deductions. The source specifically formalizes the n=1 and n=h real obstructions and zero/unit harmonic classification.",
+    "The Haar-energy counterexample uses the uncentered nonstationary energy -integral fLf; it does not refute centered-energy or correct invariant-law inequalities. The amplitude-one semigroup reference is explicitly the nonuniform wrapped Cauchy law.",
+    "The cubic defect survives every sine amplitude because the derivation contribution cancels. A special Gamma2 scalar shift is not a diffusion chain rule. No Euclidean curvature-dimension theorem is transferred from the contextual primary literature."
   ],
   "literature": [
     {

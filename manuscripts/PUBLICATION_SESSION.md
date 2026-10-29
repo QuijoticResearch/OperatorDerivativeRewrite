@@ -227,3 +227,7 @@ The triad companion expands from eight to ten pages with full raw-phase/Leray/OD
 ## Actual signed reconstruction obstructions
 
 Expanded signed multichannel from eleven to thirteen pages: complete kernel scaling/variation, signed quartic cancellation versus absolute error, L2-small fixed-clock controls and necessary final complementary channel. Exact frozen maps distinguish formal fixed-step and first-channel declarations from printed stronger deductions. 86 total correspondences; seven finite checks pass. All pages inspected, final four enlarged, clean compilation and fresh receipts. Twenty-five drafts total 247 pages.
+
+## Cauchy single-harmonic corrections and real obstructions
+
+The Cauchy companion grows from eight to eleven pages with complete finite-core sign/commutator, real harmonic classification, uncentered Haar-energy and cubic chain-rule proofs. 102 exact frozen source correspondences and nine exact Fourier checks; all revised pages inspected, new proof/context pages enlarged and typo corrected, final compilation clean. Primary nonlocal Gamma context credited with no imported Euclidean theorem. Twenty-five reviewed drafts total 250 pages.
