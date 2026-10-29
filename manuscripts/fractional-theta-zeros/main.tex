@@ -27,7 +27,7 @@ by $\exp(tu^{2a})$ on the positive half-line. For $1<a<2$ and $t\neq0$,
 the transform is entire but has only finitely many real zeros and
 infinitely many nonreal zeros. The mechanism is the endpoint asymptotic
 $F_{a,t}(x)\sim tK(0)\Gamma(2a+1)\sin(\pi(a-1))x^{-2a-1}$.
-We give the canceled-derivative proof on both sides of the cubic
+Near quadratic order a uniform absolute error gives a real-zero radius bounded by a constant times the inverse squared order gap, while full rectangular relative control fails. We give the canceled-derivative proof on both sides of the cubic
 endpoint and treat that endpoint separately. The transforms converge
 locally uniformly in the complex plane and uniformly on the entire
 real axis as the order varies. Nevertheless their global zero sets
@@ -598,6 +598,168 @@ No effective upper time, nonreal-zero escape rate, or classification
 for real orders above two follows from the present argument.
 
 
+
+\section{Uniform absolute errors and a real-frequency transition}
+The fixed-order cancellation estimates of Section 3 do not alone give
+uniformity as $a\downarrow1$. The coefficient of their singular
+derivative must be retained. This leads to a quantitative real-frequency
+statement, while still excluding relative uniformity on a full rectangle.
+
+\begin{theorem}\label{thm:transition}
+For each fixed real $t$, there is $A_t\geq0$ such that
+\begin{equation}\label{eq:uniformabsolute}
+ \bigl|x^{2a+1}F_{a,t}(x)-L(a,t)\bigr|\leq A_t x^{-1/2}
+ \quad\left(1<a\leq\frac54,\ x\geq1\right).
+\end{equation}
+If $t\ne0$, there are $0<\delta_t\leq1/4$, $C_t\geq0$ and
+$K_t>0$ such that, for $1<a<1+\delta_t$,
+\begin{align}
+ \left|\frac{x^{2a+1}F_{a,t}(x)}{L(a,t)}-1\right|
+ &\leq\frac{C_t}{(a-1)\sqrt{x}}\quad(x\geq1),
+       \label{eq:uniformrelative}\\
+ F_{a,t}(x)=0,\ x\in\R\quad&\Longrightarrow\quad
+ |x|\leq\max\left\{1,\left(\frac{K_t}{a-1}\right)^2\right\}.
+       \label{eq:realzeroradius}
+\end{align}
+In particular the relative asymptotic holds along every sequence
+$a_n>1$, $a_n\to1$, $x_n\to\infty$ with
+$(a_n-1)\sqrt{x_n}\to\infty$.
+\end{theorem}
+
+\subsection*{A uniform integrable derivative after cancellation}
+Fix $t$, put $\beta=2a$, $b=\beta-2\in(0,1/2]$ and
+$E(u)=e^{tu^\beta}$. Keep $R_3$ and $C_3$ from
+\eqref{eq:remainder}. Write
+\[
+ p_j(u)=t(\beta)_j u^{\beta-j},\qquad
+ D(u)=E(u)K(u)-K(0)e^{-u}.
+\]
+All constants in this subsection may depend on $t,K$, but are
+chosen before $a$. On $0<u\leq1$, $E,p_1,p_2$ are uniformly
+bounded. The derivative bound on $K$ and the mean-value estimates
+$|e^v-1|\leq |v|e^{|v|}$ and $1-e^{-u}\leq u$ give
+$|D(u)|\leq C u$: use
+\[
+ D=E(K-K(0))+(E-1)K(0)+K(0)(1-e^{-u}),\quad
+ u^\beta\leq u.
+\]
+Since $2<\beta\leq5/2$,
+\begin{equation}\label{eq:retainedb}
+ |p_3(u)|\leq Cb u^{b-1},\qquad
+ |p_4(u)|\leq Cb u^{b-2},\qquad
+ \int_0^1 b u^{b-1}\,du=1.
+\end{equation}
+The last equality follows by evaluating $u^b$ at the endpoints;
+the small factor $b$ must not be discarded.
+
+For clarity the entire fourth-derivative polynomial is
+\begin{align*}
+ g^{(4)}=E\bigl[&K^{(4)}+4p_1K^{(3)}+6(p_2+p_1^2)K''
+       +4(p_3+3p_1p_2+p_1^3)K'\\
+       &+(p_4+4p_1p_3+3p_2^2+6p_1^2p_2+p_1^4)K\bigr].
+\end{align*}
+It follows by repeatedly differentiating $g=EK$, using $E'=p_1E$
+and $p_j'=p_{j+1}$. Remove just the term $Ep_4K$ and call
+the remaining expression $H(u)$. Every remaining occurrence of
+$p_3$ is linear with uniformly bounded coefficient. All other
+factors are uniformly bounded on $(0,1]$, so
+$|H(u)|\leq C(1+|p_3(u)|)$. Differentiating the actual cutoff
+$C_3u^{\beta-3}e^{-u}=p_3K(0)e^{-u}$ gives the exact cancellation
+\[
+ R_3'(u)=p_4(u)D(u)+H(u)+p_3(u)K(0)e^{-u}.
+\]
+Thus \eqref{eq:retainedb} bounds its norm by
+$C(1+b u^{b-1})$ on $(0,1]$, whose integral is bounded uniformly
+in $b$. No common pointwise integrable majorant for
+$b u^{b-1}$ is asserted or needed.
+
+On $u\geq1$, the finitely many phase derivatives have a common
+polynomial bound in $u$, and $E(u)\leq e^{|t|u^{5/2}}$.
+Lemma~\ref{lem:kernel} bounds every $K^{(j)}$, $j\leq4$, by
+$C_j\exp(C_ju-c e^{4u})$ for $c>0$. Multiplication by the
+polynomial phase factors therefore leaves a common integrable
+bound, since $e^{4u}$ dominates $u^{5/2}$ and every linear or
+logarithmic term. The cutoff derivative is bounded by $Ce^{-u}$:
+its powers are $u^{b-1},u^{b-2}\leq1$ and its coefficients are
+uniformly bounded. Combining the two regions proves
+\begin{equation}\label{eq:uniformRprime}
+ \sup_{1<a\leq5/4}\int_0^\infty|R_3'(u)|\,du<\infty.
+\end{equation}
+For each order the endpoint and infinity values of $R_3$ vanish,
+as proved in Lemma~\ref{lem:cancel}. One integration by parts
+therefore yields
+\[
+ \left|\int_0^\infty R_3(u)\sin(xu)\,du\right|\leq\frac Mx.
+\]
+Multiplying by $x^b$ gives at most
+$Mx^{b-1}\leq Mx^{-1/2}$ for $x\geq1$.
+This is the classical derivative-variation error mechanism, also
+recorded in DLMF \cite[\S2.3(i)]{DLMF}; the coefficient-aware
+endpoint estimate above is what makes its constant uniform here.
+
+\subsection*{The cutoff transform has a uniform reciprocal-frequency rate}
+Let $m_t(\beta)=tK(0)\Gamma(\beta+1)$, continuous and bounded
+for $2\leq\beta\leq5/2$. Only this coefficient and the power profile are extended to $b=0$ for bounding purposes; the actual cutoff integral below still has $b>0$. Equation~\eqref{eq:gamma} and the
+Gamma recurrence give, for $x>0$,
+\[
+ x^b C_3\int_0^\infty u^{b-1}e^{-u}e^{ixu}\,du
+      =m_t(\beta)B(1/x)^b,\qquad B(y)=(y-i)^{-1}.
+\]
+The power is the principal one. On $0\leq y\leq1$, $B(y)$
+stays in the open upper half-plane, $1/\sqrt2\leq|B(y)|\leq1$
+and $|B'(y)|\leq1$. For $0\leq b\leq1/2$, differentiation
+gives
+\[
+ \left|\frac{d}{dy}B(y)^b\right|
+      =|b B(y)^{b-1}B'(y)|\leq\frac{\sqrt2}{2}.
+\]
+The branch is valid throughout the segment, so integration of this
+derivative gives $|B(1/x)^b-i^b|\leq C/x$ uniformly in $b$
+for $x\geq1$. Taking imaginary parts, the limit value is
+\[
+ m_t(\beta)\sin(\pi b/2)=L(a,t).
+\]
+The cutoff error is therefore at most $Q_t/x$ uniformly in order.
+The identity from Section 3 is
+\[
+ x^3F_{a,t}(x)=\int_0^\infty g^{(3)}(u)\sin(xu)\,du.
+\]
+Together with \eqref{eq:uniformRprime}, it proves
+\eqref{eq:uniformabsolute}, since $x^{-1}\leq x^{-1/2}$.
+
+\subsection*{Division by the vanishing coefficient and its limitation}
+For $t\ne0$, \eqref{eq:coefficientlimit} gives constants
+$c_t>0$ and $0<\delta_t\leq1/4$ with
+$|L(a,t)|\geq c_t(a-1)$ for $1<a<1+\delta_t$.
+Divide \eqref{eq:uniformabsolute} by this positive lower bound to
+obtain \eqref{eq:uniformrelative} with $C_t=A_t/c_t$.
+If $(a-1)\sqrt{x}>K_t:=C_t+1$, the right side is less than one,
+whereas a zero of the flow would make the left side equal one.
+Evenness supplies the same conclusion for negative real $x$.
+Squaring the resulting bound on $\sqrt{|x|}$, and treating
+$|x|<1$ separately, proves \eqref{eq:realzeroradius}.
+The diagonal relative limit follows directly from the bound.
+The constants exist for each fixed $t$; no numerical values,
+optimal power, complex-zero radius or uniformity in $t$ is claimed.
+
+The full rectangular relative assertion is actually false. For any
+$\delta>0$, real $R$ and finite $M$, there are $1<a<1+\delta$
+with $a<3/2$ and $x\geq\max(R,1)$ such that
+\begin{equation}\label{eq:rectangularfailure}
+ \left|\frac{x^{2a+1}F_{a,t}(x)}{L(a,t)}-1\right|>M
+                       \qquad(t\ne0).
+\end{equation}
+Indeed $F_{1,t}$ is a nonzero entire function: its value at zero
+is the positive integral of $e^{tu^2}K(u)$. Its real zeros are
+isolated, so choose such an $x$ with $F_{1,t}(x)\ne0$.
+At that fixed $x$, continuity in order gives
+$x^{2a+1}F_{a,t}(x)\to x^3F_{1,t}(x)\ne0$, while
+$L(a,t)\to0$ and is nonzero for $1<a<3/2$. The absolute
+relative error therefore tends to infinity as $a\downarrow1$,
+proving \eqref{eq:rectangularfailure}. This explains why a
+parameter-dependent region is needed; it does not assert that the
+particular transition scale in \eqref{eq:uniformrelative} is sharp.
+
 \section{Gaussian translation needs control beyond compact sets}
 The compact convergence proved above has a precise use in local zero
 arguments. It does not, by itself, justify passage through a Gaussian
@@ -757,7 +919,15 @@ Theorem~\ref{thm:limit}&\code{RiemannRealOrderZeroLimits.nonreal_zero_norm_tends
 \eqref{eq:coefficientlimit}&\code{RiemannRealOrderFractionalCoefficient.leading_div_order_gap_limit}\\
 \end{longtable}
 
-Section 8 uses the actual Gaussian averages in \code{RiemannQuadraticGaussian} and the polynomial, integrability and nonconvergence statements in \code{GaussianHeatTopology}. Their exact declarations are in the theorem map. The compact-tail mass and sufficient Gaussian-growth criterion are fully proved classical human deductions. Thirty-six exact finite checks verify moment, sign and normalization transcriptions; they do not establish the analytic limits.
+Section 8 is mapped to the uniform endpoint, regular-part,
+tail and cutoff bounds, the actual transition-rate theorems and
+the rectangular relative obstruction. The explicit Bell-polynomial
+and reciprocal-profile estimates are human reconstructions of that
+verified mechanism; their constants are not claimed to be optimized.
+The new uniform Fourier and zero-radius conclusions rest on the full
+analytic proofs, not a numerical frequency scan.
+
+Section 9 uses the actual Gaussian averages in \code{RiemannQuadraticGaussian} and the polynomial, integrability and nonconvergence statements in \code{GaussianHeatTopology}. Their exact declarations are in the theorem map. The compact-tail mass and sufficient Gaussian-growth criterion are fully proved classical human deductions. Thirty-six exact finite checks verify moment, sign and normalization transcriptions; they do not establish the analytic limits.
 
 The elementary pointwise estimates in the kernel and canceled-remainder
 proofs are human reconstructions of the verified mechanism. They
@@ -795,6 +965,7 @@ the arithmetic specialization remains unresolved. A publication
 decision should compare it directly with P\'olya-type non-even-power
 transforms and subsequent real-zero-preserving transform criteria.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{polya} G. P\'olya,
 On the zeros of an integral function represented by Fourier's integral,
@@ -812,5 +983,9 @@ Fourier transforms having only real zeros,
 \emph{Proc. Amer. Math. Soc.} \textbf{133} (2005), 1349--1356
 (published electronically October 18, 2004).
 \href{https://doi.org/10.1090/S0002-9939-04-07677-4}{doi:10.1090/S0002-9939-04-07677-4}.
+\bibitem{DLMF} NIST Digital Library of Mathematical Functions,
+\emph{Integrals of a real variable}, \S2.3(i)--(ii).
+\href{https://dlmf.nist.gov/2.3}{Official reference}.
+Derivative-variation and endpoint-method context only.
 \end{thebibliography}
 \end{document}
