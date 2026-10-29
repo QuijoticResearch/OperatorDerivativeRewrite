@@ -2875,3 +2875,7 @@ import Foundation.CubeHaarSplit
 import Foundation.CubeReducedHaar
 
 import Foundation.CubeChordTransfer
+
+import Foundation.CubeSlabSecondVariation
+
+import Foundation.CubeTemporalSchur
