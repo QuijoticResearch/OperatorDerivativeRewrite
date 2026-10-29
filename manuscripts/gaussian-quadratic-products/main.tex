@@ -31,7 +31,9 @@ nonnegative covariance of quadratic squares with exact contraction
 conditions for equality. For finite symmetric matrices these conditions
 reduce to matrix annihilation, yielding the classical independence
 test. The completion and its source/operator normalization are made
-explicit. Classical quadratic-form theory is credited throughout;
+explicit. A centered first/second-chaos mixture has negative
+square covariance, delimiting the homogeneous-chaos hypothesis.
+Classical quadratic-form theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
 
@@ -430,6 +432,68 @@ the retained contraction, not covariance of the unsquared targets.
 This explicit example is a finite matrix substitution in the
 mapped identities, rather than a new standalone formal theorem.
 
+
+\section{Centered mixed chaoses need not have associated squares}
+The restriction to homogeneous second chaos in
+\eqref{eq:polarized} cannot be replaced by centering alone, even
+for degree-two polynomials of one Gaussian coordinate. Let $Z=G_0$
+and, for $a\in\R$, define the actual random variables
+\[
+ F_a=Z+a(Z^2-1),\qquad G_a=Z-a(Z^2-1).
+\]
+They lie in $\Hh_1\oplus\Hh_2$, are centered, and have moments
+of every order. Orthogonality of $H_1$ and $H_2$ gives
+\begin{equation}\label{eq:mixturenorm}
+ \|F_a\|_2^2=\|G_a\|_2^2=1+2a^2,\qquad
+ \langle F_a,G_a\rangle=1-2a^2.
+\end{equation}
+There is an exact product identity
+\begin{equation}\label{eq:mixtureproduct}
+ F_aG_a=(1-2a^2)H_0(Z)+(1-4a^2)H_2(Z)-a^2H_4(Z).
+\end{equation}
+Indeed the left side is $Z^2-a^2(Z^2-1)^2$, while
+$Z^2=H_2+1$ and $(Z^2-1)^2=H_4+4H_2+2$. No completion
+or formal product is involved: these are polynomial equalities
+pointwise for every real $Z$. Gaussian Hermite orthogonality,
+with squared norms $1,2,24$ in degrees $0,2,4$, yields
+\begin{align}\label{eq:mixturecovariance}
+ \E(F_a^2G_a^2)&=(1-2a^2)^2+2(1-4a^2)^2+24a^4
+                    =3-20a^2+60a^4,\notag\\
+ \Cov(F_a^2,G_a^2)&=2-24a^2+56a^4.
+\end{align}
+Subtracting $(1+2a^2)^2$ proves the second identity.
+The roots of the latter polynomial in $a^2$ are
+$(3-\sqrt2)/14$ and $(3+\sqrt2)/14$. Thus the square covariance
+is negative throughout the open interval between those values
+of $a^2$, despite both targets being centered. These parameter
+formulas are direct polynomial deductions from the displayed
+family; no additional general formal theorem is being claimed.
+
+The mapped witness is $a=1/2$, for which
+\[
+ F_{1/2}G_{1/2}=\tfrac12-\tfrac14H_4(Z),\qquad
+ \|F_{1/2}\|_2^2=\|G_{1/2}\|_2^2=\tfrac32,
+\]
+and hence
+\[
+ \E(F_{1/2}^2G_{1/2}^2)=\tfrac14+\tfrac1{16}\,24
+ =\tfrac74<\tfrac94,
+ \qquad \Cov(F_{1/2}^2,G_{1/2}^2)=-\tfrac12.
+\]
+Thus even the weaker inequality
+$\E(F^2G^2)\geq\E F^2\E G^2$ fails on centered mixed-chaos
+polynomials. This is neither a signed-measure effect nor failure
+of moment integrability. The measure is the same positive
+Gaussian product probability as in Theorem~\ref{thm:main}.
+At $a\ne0$ both the first- and second-chaos projections of each
+target are nonzero; neither target belongs to a single homogeneous
+chaos. Consequently the counterexample does not contradict the
+homogeneous-chaos square inequalities of
+Malicet--Nourdin--Peccati--Poly~\cite{MNPP}, nor an inequality
+whose targets are jointly Gaussian linear variables. The mixed
+pair is a nonlinear polynomial image of a Gaussian variable,
+which is a different hypothesis.
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -443,7 +507,10 @@ The principal sources concern original linear-field divergence
 completion and recovery onto the second chaos, finite Gaussian
 matrix moments, strong box approximation, actual completed products,
 degree support, exact cumulants, strict contractions and mixed square
-covariance. The symmetric square-summable matrix model above is a
+covariance, together with the explicit centered mixed-chaos
+negative square-covariance witness. The general parameter interval
+for that witness is a printed polynomial deduction. The symmetric
+square-summable matrix model above is a
 coordinate reconstruction of their original source-field unitary.
 The direct $L^4$ Cauchy proof reorganizes the finite sharp bound;
 the formal square construction instead first identifies an actual
@@ -466,6 +533,12 @@ The formalization value here is the complete extension to original
 Gaussian $L^2$ targets and products with sharp constants, together
 with explicit nonattainment and retained contraction terms. None
 of these classical mechanisms is represented as a priority claim.
+Malicet--Nourdin--Peccati--Poly, Theorem 1.1 and its introductory
+two-variable discussion, provide a direct primary antecedent for
+homogeneous-chaos square-product nonnegativity, in much greater
+generality than needed for the second-chaos inequality here.
+Our exact contraction formula and explicit mixed-chaos boundary
+are a formalization exposition, not a new general product inequality.
 
 \begin{thebibliography}{9}
 \bibitem{Lancaster} H. O. Lancaster,
@@ -478,5 +551,10 @@ Journal of the Royal Statistical Society, Series B \textbf{16}
 \emph{On the independence of quadratic forms in a non-central normal system},
 Osaka Mathematical Journal \textbf{2} (1950), 151--159.
 \href{https://doi.org/10.18910/8824}{doi:10.18910/8824}.
+\bibitem{MNPP} D. Malicet, I. Nourdin, G. Peccati and G. Poly,
+\emph{Squared chaotic random variables: new moment inequalities
+with applications}, Journal of Functional Analysis \textbf{270}
+(2016), 649--670. Primary preprint arXiv:1503.02154.
+\url{https://arxiv.org/abs/1503.02154}.
 \end{thebibliography}
 \end{document}

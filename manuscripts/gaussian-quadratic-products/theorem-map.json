@@ -945,13 +945,95 @@
       "source_sha256": "3f830fd66c6074f91e846c8f54902dc082c64f4f45e6f9f83db203fa1f658b17",
       "declaration_header": "theorem matrix_independent_implies_mul_zero (h : I \u2192 CoefficientSpace) (hh : Orthonormal \u211d h)\n    {A B : Matrix I I \u211d} (hA : A.IsHermitian) (hB : B.IsHermitian)\n    (hind : ProbabilityTheory.IndepFun (matrixSectorMap h A).val (matrixSectorMap h B).val gaussianProduct) :\n    A*B = 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticCovarianceEquality.lean#L121"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 13,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "def mix (u : CoefficientSpace) (a : \u211d) : polynomialCylindricalDomain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L13"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix_centered",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 15,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mix_centered (u : CoefficientSpace) (a : \u211d) : inner \u211d gaussianOne (mix u a : GaussianL2)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L15"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix_norm_sq",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 20,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mix_norm_sq (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (a : \u211d) : \u2016(mix u a : GaussianL2)\u2016^2=1+2*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L20"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix_coeFn",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 29,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mix_coeFn (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (a : \u211d) :\n    (mix u a : GaussianL2) =\u1d50[gaussianProduct]\n      fun \u03c9 => firstChaosEmbedding u \u03c9+a*((firstChaosEmbedding u \u03c9)^2-1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L29"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix_product",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 40,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mix_product (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    polynomialProduct (mix u (1/2)) (mix u (-(1/2)))=\n      (1/2 : \u211d) \u2022 wick u 0-(1/4 : \u211d) \u2022 wick u 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L40"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mix_product_norm_sq",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 58,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mix_product_norm_sq (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    \u2016(polynomialProduct (mix u (1/2)) (mix u (-(1/2))) : GaussianL2)\u2016^2=7/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L58"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.mixed_square_association_failure",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 68,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem mixed_square_association_failure (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    \u2016(polynomialProduct (mix u (1/2)) (mix u (-(1/2))) : GaussianL2)\u2016^2<\n      \u2016(mix u (1/2) : GaussianL2)\u2016^2*\u2016(mix u (-(1/2)) : GaussianL2)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L68"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.negative_square_covariance",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 77,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem negative_square_covariance (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    (\u222b \u03c9, ((mix u (1/2) : GaussianL2) \u03c9)^2*((mix u (-(1/2)) : GaussianL2) \u03c9)^2 \u2202gaussianProduct)-\n      (\u222b \u03c9, ((mix u (1/2) : GaussianL2) \u03c9)^2 \u2202gaussianProduct)*\n      (\u222b \u03c9, ((mix u (-(1/2)) : GaussianL2) \u03c9)^2 \u2202gaussianProduct)=-(1/2 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L77"
+    },
+    {
+      "paper": "Section 9 centered mixed-chaos boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.exists_centered_polynomial_counterexample",
+      "file": "Foundation/GaussianMixedChaosProductCounterexample.lean",
+      "line": 91,
+      "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
+      "declaration_header": "theorem exists_centered_polynomial_counterexample : \u2203 f g : polynomialCylindricalDomain,\n    inner \u211d gaussianOne (f : GaussianL2)=0 \u2227 inner \u211d gaussianOne (g : GaussianL2)=0 \u2227\n      \u2016(polynomialProduct f g : GaussianL2)\u2016^2<\u2016(f : GaussianL2)\u2016^2*\u2016(g : GaussianL2)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L91"
     }
   ],
   "human_reorganization": [
     "The symmetric square-summable matrix model is a human coordinate realization of the original completed linear-field matrix unitary, original divergence and onto-second-chaos recovery. No trace-class assumption or unrenormalized infinite quadratic form is introduced.",
     "The printed L4 Cauchy argument applies the finite sharp bound to differences and identifies the limit with the original L2 class. The formal source constructs an actual square first through bounded approximation; both give the same original target and pointwise product. No new formal declarations are claimed.",
     "Strictness is proved by retaining one fixed nonzero source coordinate through strong square approximation, rather than assuming that strict finite cumulants remain strict in a limit.",
-    "The completed equality criterion uses the three exact projection conditions. Matrix annihilation and the mapped necessary independence test are finite-dimensional. The classical finite converse via orthogonal ranges and the explicit 2x2 dependent orthogonal example are labelled human deductions, not new formal declarations."
+    "The completed equality criterion uses the three exact projection conditions. Matrix annihilation and the mapped necessary independence test are finite-dimensional. The classical finite converse via orthogonal ranges and the explicit 2x2 dependent orthogonal example are labelled human deductions, not new formal declarations.",
+    "The general parameter polynomial 2-24a^2+56a^4 and exact negative interval are printed direct deductions. The named source explicitly supplies the half-amplitude witness and its centeredness, original product and negative square covariance. Neither target is homogeneous chaos or a jointly Gaussian linear coordinate."
   ],
   "literature": [
     {

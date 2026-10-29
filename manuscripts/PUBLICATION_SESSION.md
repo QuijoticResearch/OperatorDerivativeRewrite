@@ -231,3 +231,7 @@ Expanded signed multichannel from eleven to thirteen pages: complete kernel scal
 ## Cauchy single-harmonic corrections and real obstructions
 
 The Cauchy companion grows from eight to eleven pages with complete finite-core sign/commutator, real harmonic classification, uncentered Haar-energy and cubic chain-rule proofs. 102 exact frozen source correspondences and nine exact Fourier checks; all revised pages inspected, new proof/context pages enlarged and typo corrected, final compilation clean. Primary nonlocal Gamma context credited with no imported Euclidean theorem. Twenty-five reviewed drafts total 250 pages.
+
+## Homogeneous versus mixed Gaussian square products
+
+Expanded the quadratic companion from seven to eight pages with complete centered mixed-chaos product and covariance calculations, exact negative parameter interval and primary homogeneous-chaos antecedent. 114 frozen correspondences; ten exact finite polynomial checks pass. Every final page inspected, relevant proofs enlarged, compilation clean and receipts fresh. Twenty-five reviewed drafts total 251 pages.

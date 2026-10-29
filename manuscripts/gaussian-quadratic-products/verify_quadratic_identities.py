@@ -44,6 +44,8 @@ if __name__=='__main__':
     A=[[a,b],[b,c]];B=[[d,e],[e,f]];AB=mm(A,B);BA=mm(B,A)
     S=[[AB[i][j]+BA[i][j] for j in range(2)] for i in range(2)]
     QA=qform(A,x,y);QB=qform(B,x,y)
+    mixF=x+a*(x*x-1);mixG=x-a*(x*x-1)
+    H2=x*x-1;H4=x**4-6*x*x+3
     errors={
         'quadratic isometry':mean(QA*QB)-2*trace(AB),
         'fourth cumulant':mean(QA**4)-3*mean(QA**2)**2-48*hs(mm(A,A)),
@@ -51,6 +53,10 @@ if __name__=='__main__':
         'degree-two x-square coefficient':mean(QA*QB*(x*x-1))-4*S[0][0],
         'degree-two y-square coefficient':mean(QA*QB*(y*y-1))-4*S[1][1],
         'degree-two xy coefficient':mean(QA*QB*x*y)-4*S[0][1],
+        'mixed-chaos centered norm':mean(mixF**2)-(1+2*a*a),
+        'mixed-chaos exact Hermite product':mixF*mixG-((1-2*a*a)+(1-4*a*a)*H2-a*a*H4),
+        'mixed-chaos square covariance polynomial':mean(mixF**2*mixG**2)-mean(mixF**2)*mean(mixG**2)-(2-24*a*a+56*a**4),
+        'mapped half-amplitude negative covariance':mean((x+F(1,2)*H2)**2*(x-F(1,2)*H2)**2)-F(9,4)+F(1,2),
     }
     for name,error in errors.items():assert not error,(name,error)
     print(json.dumps(dict(status='PASS',arithmetic='exact rational polynomial coefficients and Gaussian integer moments',checks={k:len(v) for k,v in errors.items()},count=len(errors),scope='Symbolic transcription checks for arbitrary symmetric 2x2 matrices, including noncommuting mixed terms. Not a proof of completed-space limits or independence.')))
