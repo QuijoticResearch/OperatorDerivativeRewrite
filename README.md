@@ -22,6 +22,8 @@ as a historical foundation overview; its old open-problem labels are not current
 
 Start with the [manuscript catalog](manuscripts/INDEX.md). The publication branch adds a complete [quartic normal-equation paper](manuscripts/quartic-normal/main.pdf), with proofs of complete-space existence, sharp inverse exponent 1/3, and atomic counterexamples to stronger local regularity. Its [theorem map](manuscripts/quartic-normal/theorem-map.json) links every principal statement to the frozen Lean baseline.
 
+The companion [fractional theta-deformation paper](manuscripts/fractional-theta-zeros/main.pdf) explains the endpoint asymptotic that forces infinitely many nonreal zeros for 1<a<2 at nonzero time, despite compact complex convergence and uniform real-axis convergence in order. It proves the real/simple-limit conditions needed for every selected nonreal zero to escape. Its [theorem map](manuscripts/fractional-theta-zeros/theorem-map.json) fixes the exact verified statements.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

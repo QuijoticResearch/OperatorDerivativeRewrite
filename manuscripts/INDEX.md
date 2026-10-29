@@ -7,6 +7,7 @@ The independent publication branch contains reviewed editorial drafts built from
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
 | Quartic normal equations: complete-space solvability, sharp inverse stability, and atomic obstructions | [PDF](quartic-normal/main.pdf) · [LaTeX](quartic-normal/main.tex) · [theorem map](quartic-normal/theorem-map.json) · [editorial status](quartic-normal/editorial-status.md) | Nine pages. Arbitrary-measure L4 embedding with a positive lower bound; complete-space solvability, exponent 1/3, weighted regularity, and optimal exponent at every infinite Poisson datum. Full proofs. Reviewed draft; novelty unresolved. Frozen baseline `bab688bb6140cd6316c80680095a914ea0d346db`. |
+| Endpoint singularities and nonreal zeros in fractional theta deformations | [PDF](fractional-theta-zeros/main.pdf) · [LaTeX](fractional-theta-zeros/main.tex) · [theorem map](fractional-theta-zeros/theorem-map.json) · [editorial status](fractional-theta-zeros/editorial-status.md) | Ten pages. Full endpoint asymptotic for 1<a<2, t≠0; finite real/infinite nonreal zeros; uniform order convergence; exact compact-escape hypotheses. Reviewed draft; novelty unresolved. Same frozen baseline. |
 
 See the [editorial inventory](EDITORIAL_INVENTORY.md) for ranked mathematical contributions, consolidation decisions, literature limitations and deferred papers. Current PDFs have hash-linked build and visual receipts in their respective directories.
 

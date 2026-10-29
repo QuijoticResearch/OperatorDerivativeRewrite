@@ -1,0 +1,674 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{longtable,array}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\F}{F_{a,t}}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Endpoint singularities and nonreal zeros\protect\\
+in fractional theta deformations}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the cosine transforms of the arithmetic theta kernel multiplied
+by $\exp(tu^{2a})$ on the positive half-line. For $1<a<2$ and $t\neq0$,
+the transform is entire but has only finitely many real zeros and
+infinitely many nonreal zeros. The mechanism is the endpoint asymptotic
+$F_{a,t}(x)\sim tK(0)\Gamma(2a+1)\sin(\pi(a-1))x^{-2a-1}$.
+We give the canceled-derivative proof on both sides of the cubic
+endpoint and treat that endpoint separately. The transforms converge
+locally uniformly in the complex plane and uniformly on the entire
+real axis as the order varies. Nevertheless their global zero sets
+need not be real. At a limiting order with only real simple zeros,
+every selected nonreal-zero sequence escapes compact sets. The exact
+domain and quantifiers agree with a frozen Lean development. The
+Fourier endpoint mechanism has classical antecedents; novelty of the
+arithmetic specialization and its combination with order limits is
+not asserted.
+\end{abstract}
+
+\section{The family and the main obstruction}
+For $u\geq0$ set
+\begin{equation}\label{eq:kernel}
+ K(u)=\sum_{n=1}^{\infty}
+ \left(2\pi^2n^4e^{9u}-3\pi n^2e^{5u}\right)
+ e^{-\pi n^2e^{4u}}.
+\end{equation}
+The kernel has an even analytic continuation near the real axis,
+whose restriction to negative real arguments we also denote by $K$.
+For $a>0$, $t\in\R$, and $z\in\C$, define
+\begin{equation}\label{eq:flow}
+ F_{a,t}(z)=\int_0^\infty e^{tu^{2a}}K(u)\cos(zu)\,du.
+\end{equation}
+The time sign is positive. Rapid kernel decay makes the integral
+meaningful for every real time. At integer $a=k$, the tilt is
+$\exp(tu^{2k})$; thus $a=2$ is the quartic order, $a=3$ is the sixth
+order, and $a=3/2$ is the cubic endpoint between the ranges considered
+below. These parameter conventions will not be interchanged.
+
+\begin{theorem}\label{thm:main}
+Fix $1<a<2$ and $t\neq0$. The function $F_{a,t}$ is a nonzero even
+entire function, real on the real axis. As $x\to+\infty$,
+\begin{equation}\label{eq:asymptotic}
+ x^{2a+1}F_{a,t}(x)\longrightarrow
+ L(a,t):=tK(0)\Gamma(2a+1)\sin(\pi(a-1))\neq0.
+\end{equation}
+Its real zero set is finite, and its nonreal zero set is infinite.
+Consequently there is no real $T$ such that all zeros of $F_{a,t}$
+are real for every $t\geq T$.
+\end{theorem}
+
+\begin{theorem}\label{thm:limit}
+For fixed $t$ and $a_0>0$, $F_{a,t}\to F_{a_0,t}$ locally uniformly
+on $\C$ and uniformly on $\R$ as $a\to a_0$. If all zeros of
+$F_{a_0,t}$ are real and simple, and
+\[
+ a_n\to a_0,\qquad F_{a_n,t}(z_n)=0,\qquad \operatorname{Im}z_n\neq0,
+\]
+then $|z_n|\to\infty$.
+For each fixed $t\neq0$, there is an escaping selection of nonreal
+zeros along $a_n=1+1/(n+3)$ without any assumption about the zeros
+of $F_{1,t}$.
+\end{theorem}
+
+The two escape statements have different quantifiers. The last one
+chooses a sufficiently distant zero separately at each order.
+The preceding statement applies to \emph{every} selection, and
+requires both reality and simplicity of the limiting zeros. No
+reality or simplicity hypothesis at quadratic order is silently
+deduced from convergence.
+
+P\'olya's work on entire Fourier transforms is the natural historical
+context~\cite{polya}. The non-even-power examples identified in the
+literature already warn that endpoint regularity can affect global
+zero reality. Cardon's real-zero-preserving transform
+theorems~\cite{cardon} provide another comparison: their hypotheses
+are not replaced by positivity of the kernel in \eqref{eq:flow}.
+The results here concern this precise arithmetic deformation and its
+formal verification. A bounded preliminary search has not settled
+priority for that specialization. Historical context is not used as
+a premise of the analytic proofs below.
+
+\section{Kernel identities and bounds}
+We first record why the kernel has the properties needed at both
+ends of the integral. They serve different purposes: evenness cancels
+odd derivatives at zero, whereas rapid decay controls every tilt
+and differentiation at infinity.
+
+\begin{lemma}\label{lem:kernel}
+The kernel is positive on $[0,\infty)$, is even and real analytic
+on the real line, and for every integer $j\geq0$ satisfies a bound
+\begin{equation}\label{eq:decay}
+ |K^{(j)}(u)|\leq C_j\exp\left(C_j u-\frac\pi2 e^{4u}\right)
+ \qquad(u\geq0)
+\end{equation}
+for a finite positive $C_j$. In particular $K(0)>0$ and every odd
+derivative of $K$ vanishes at zero.
+\end{lemma}
+\begin{proof}
+Every summand in \eqref{eq:kernel} is positive on $u\geq0$:
+factoring out $\pi n^2e^{5u}$ leaves $2\pi n^2e^{4u}-3>0$.
+The defining series converges absolutely. After any fixed number
+of derivatives, each summand is a finite sum of terms bounded by
+\[
+ C n^M e^{Mu}e^{-\pi n^2e^{4u}}
+\]
+for some integer $M$ depending on the derivative order. With
+$s=e^{4u}\geq1$, the inequality
+$n^2s\geq(n^2+s)/2$ shows that their sum is at most
+\[
+ C e^{Mu-\pi s/2}\sum_{n\geq1}n^M e^{-\pi n^2/2}.
+\]
+The numerical series is finite. This proves \eqref{eq:decay} after
+enlarging the constant and justifies termwise differentiation on
+compact intervals.
+
+For evenness, let $\vartheta(v)=\sum_{n\in\mathbb Z}e^{-\pi n^2v}$
+and $Q(u)=e^u\vartheta(e^{4u})$. The theta transformation
+$\vartheta(v)=v^{-1/2}\vartheta(1/v)$ gives $Q(-u)=Q(u)$.
+Differentiating the absolutely convergent series shows
+\begin{equation}\label{eq:theta}
+ K(u)=\frac1{16}\big(Q''(u)-Q(u)\big).
+\end{equation}
+Hence $K$ is even. The theta transformation itself follows from
+Poisson summation of the Gaussian: periodize $e^{-\pi v x^2}$,
+whose $n$th Fourier coefficient is $v^{-1/2}e^{-\pi n^2/v}$,
+and evaluate the absolutely convergent Fourier series at zero.
+Absolute and locally uniform convergence justify this computation.
+The same defining theta series is holomorphic where
+$\operatorname{Re}(e^{4u})>0$, in particular on the strip
+$|\operatorname{Im}u|<\pi/8$. It follows that $K$ is analytic near
+the real line. Evenness gives the odd-derivative cancellations.
+\end{proof}
+
+The Gaussian Fourier coefficient in this proof follows by scaling
+the real Gaussian integral and differentiating its Fourier transform:
+integration by parts gives $\widehat g'(\xi)=-2\pi\xi\widehat g(\xi)/v$,
+and $\widehat g(0)=v^{-1/2}$. This determines the coefficient and
+fixes the normalization in \eqref{eq:theta}.
+
+\begin{lemma}\label{lem:entire}
+For every $a>0$ and $t\in\R$, the integral \eqref{eq:flow} is entire,
+even, obeys $F_{a,t}(\bar z)=\overline{F_{a,t}(z)}$, and has
+$F_{a,t}(0)>0$. Moreover, for some $C=C(a,t)>0$,
+\begin{equation}\label{eq:growth}
+ |F_{a,t}(z)|\leq C\exp(|z|^{3/2})\qquad(z\in\C).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $|z|\leq R$, the $j$th spatial derivative of the cosine is
+bounded by $u^j e^{Ru}$. Bound \eqref{eq:decay} makes
+$u^j\exp(tu^{2a}+Ru)K(u)$ absolutely integrable for every $j$.
+Differentiation under the integral therefore gives entireness.
+Evenness and conjugation symmetry follow from cosine, and positivity
+at zero follows from the positive density.
+
+For the growth bound put $r=|z|$. The elementary inequality
+$ru\leq r^{3/2}+u^3$ holds for $r,u\geq0$: if $u\leq\sqrt r$
+use the first term, and otherwise use the second. Thus
+\[
+ |F_{a,t}(z)|\leq e^{r^{3/2}}
+ \int_0^\infty \exp(tu^{2a}+u^3)K(u)\,du.
+\]
+The integral is a finite positive constant by the same decay bound.
+\end{proof}
+
+The exponent $3/2$ is a convenient subquadratic bound, not an assertion
+of the exact entire order. Its strict inequality below two will
+be enough for the finite-zero rigidity argument.
+
+\section{The endpoint Fourier calculation}
+Write $\beta=2a\in(2,4)$ and
+$g(u)=e^{tu^\beta}K(u)$ on $u>0$. All derivatives used below are
+ordinary derivatives of this actual positive-axis function. We do
+not differentiate a truncated formal jet beyond the orders for
+which it represents those derivatives.
+
+For $b>0$, the Laplace integral gives
+\begin{equation}\label{eq:gamma}
+ \int_0^\infty u^{b-1}e^{-u}e^{ixu}\,du
+ =\Gamma(b)(1-ix)^{-b}.
+\end{equation}
+The right side uses the branch with $\arg(1-ix)\in(-\pi/2,\pi/2)$.
+Indeed, for positive real $w$ the identity
+$\int u^{b-1}e^{-wu}\,du=\Gamma(b)w^{-b}$ follows by substitution.
+Both sides are holomorphic for $\operatorname{Re}w>0$, by dominated
+differentiation on compact subsets, so the identity theorem extends
+it to that half-plane and hence to $w=1-ix$.
+For $x\to+\infty$, taking imaginary and real parts yields
+\begin{align}
+ x^b\int_0^\infty u^{b-1}e^{-u}\sin(xu)\,du
+ &\longrightarrow\Gamma(b)\sin(\pi b/2),\label{eq:gammas}\\
+ x^b\int_0^\infty u^{b-1}e^{-u}\cos(xu)\,du
+ &\longrightarrow\Gamma(b)\cos(\pi b/2).\label{eq:gammac}
+\end{align}
+These formulas replace a heuristic oscillatory integral of a bare
+power by an absolutely convergent integral with a known transform.
+The subtraction of the exponential cutoff is what makes the actual
+remainder differentiable with an integrable derivative.
+
+\subsection{Cancellation estimates near zero}
+Use the falling factorial $(\beta)_m=\beta(\beta-1)\cdots(\beta-m+1)$.
+For $m=3$ or $4$, put
+\begin{equation}\label{eq:remainder}
+ C_m=tK(0)(\beta)_m,\qquad
+ R_m(u)=g^{(m)}(u)-C_m u^{\beta-m}e^{-u}.
+\end{equation}
+The following estimates are for fixed $\beta,t$; no uniformity in
+the order parameter is being asserted.
+
+\begin{lemma}\label{lem:cancel}
+If $2<\beta<3$, then $R_3,R_3'\in L^1(0,\infty)$,
+$R_3(0+)=0$, and $R_3(u)\to0$ as $u\to\infty$.
+If $3<\beta<4$, the same integrability and decay statements hold for
+$R_4,R_4'$, with $R_4(0+)=K^{(4)}(0)$ in place of zero.
+\end{lemma}
+\begin{proof}
+Near zero, expand only the regular factors:
+\[
+ K(u)=K(0)+\frac{K''(0)}2u^2+O(u^4),
+ \qquad e^{tu^\beta}=1+tu^\beta+O(u^{2\beta}).
+\]
+The estimates persist after any of the finitely many positive-axis
+derivatives required here. One justification is to write the
+exponential remainder as $u^{2\beta}h(u^\beta)$ with $h$ analytic
+near zero, and the kernel remainders as Taylor remainders with smooth
+factors. Repeated product differentiation then gives, for $m=3,4$,
+\begin{equation}\label{eq:expansion}
+ g^{(m)}(u)=K^{(m)}(u)+C_m u^{\beta-m}
+ +O(u^{\beta+2-m})+O(u^{2\beta-m}).
+\end{equation}
+Its next derivative has the differentiated power bounds, by that
+same factorization argument, rather than by differentiating an
+unqualified big-$O$ statement.
+
+For $m=3$ the singular part left after the cutoff is
+$C_3u^{\beta-3}(1-e^{-u})=O(u^{\beta-2})$.
+The kernel term $K'''(u)$ is $O(u)$ by evenness.
+Thus $R_3(0+)=0$, and locally
+\[
+ R_3'(u)=O(1)+O(u^{\beta-3})+O(u^{2\beta-4}).
+\]
+All exponents exceed $-1$ when $\beta>2$.
+
+For $m=4$ the leftover cutoff term is $O(u^{\beta-3})$,
+and the kernel term tends to $K^{(4)}(0)$. Its derivative satisfies
+\[
+ R_4'(u)=O(1)+O(u^{\beta-4})+O(u^{2\beta-5}),
+\]
+whose exponents exceed $-1$ when $\beta>3$.
+The remainders themselves are locally integrable as well.
+At infinity, repeated product differentiation gives finite sums of
+powers of $u$ times $e^{tu^\beta}K^{(j)}(u)$; all are integrable
+and tend to zero by \eqref{eq:decay}. The cutoff and its derivative
+have the same properties at infinity.
+\end{proof}
+
+In particular the fourth-order remainder need not vanish at zero.
+The forthcoming cosine integration by parts uses a sine boundary
+factor, which kills its finite endpoint value. Assuming a zero
+endpoint for that remainder would be an unnecessary and unjustified
+strengthening.
+
+\subsection{The range $2<\beta<3$}
+Since $g'(0+)=0$, three integrations by parts give
+\begin{equation}\label{eq:third}
+ x^3F_{a,t}(x)=\int_0^\infty g'''(u)\sin(xu)\,du
+ \qquad(x>0).
+\end{equation}
+For completeness, the first step is
+$F=-x^{-1}\int g'\sin(xu)$; the second produces
+$\int g'\sin(xu)=x^{-1}\int g''\cos(xu)$ because $g'(0+)=0$;
+the third gives $\int g''\cos(xu)=-x^{-1}\int g'''\sin(xu)$.
+All derivatives through the third order are integrable. Their
+positive-axis endpoint limits and rapid decay justify the boundary
+terms by first integrating over $[\varepsilon,M]$ and passing to
+the limits.
+
+By Lemma~\ref{lem:cancel}, another integration by parts gives
+\[
+ x\int_0^\infty R_3(u)\sin(xu)\,du
+ =\int_0^\infty R_3'(u)\cos(xu)\,du.
+\]
+The right side is bounded by $\norm{R_3'}_{L^1}$; here and below
+$\norm{\cdot}_{L^1}$ denotes the integral of the absolute value.
+Set $b=\beta-2\in(0,1)$. Combining \eqref{eq:third} and
+\eqref{eq:remainder}, multiplying by $x^b$, and using
+\eqref{eq:gammas}, we obtain
+\[
+ x^{\beta+1}F_{a,t}(x)\longrightarrow
+ C_3\Gamma(\beta-2)\sin(\pi(\beta-2)/2).
+\]
+The remainder vanishes because $x^bO(x^{-1})\to0$.
+The recurrence for Gamma gives
+$(\beta)_3\Gamma(\beta-2)=\Gamma(\beta+1)$, and
+$\sin(\pi(\beta-2)/2)=\sin(\pi(a-1))$. This proves
+\eqref{eq:asymptotic} in the first range.
+
+\subsection{The range $3<\beta<4$}
+Here $g'(0+)=g'''(0+)=0$. The previous integrations and one more
+give
+\begin{equation}\label{eq:fourth}
+ x^4F_{a,t}(x)=\int_0^\infty g^{(4)}(u)\cos(xu)\,du.
+\end{equation}
+Lemma~\ref{lem:cancel} now yields
+\[
+ x\int_0^\infty R_4(u)\cos(xu)\,du
+ =-\int_0^\infty R_4'(u)\sin(xu)\,du.
+\]
+At zero the boundary term is $R_4(0+)\sin0=0$; no vanishing of
+$R_4(0+)$ is required. Set $b=\beta-3\in(0,1)$ and use
+\eqref{eq:gammac}. The limit in \eqref{eq:fourth} becomes
+\[
+ C_4\Gamma(\beta-3)\cos(\pi(\beta-3)/2)
+ =tK(0)\Gamma(\beta+1)\sin(\pi(a-1)).
+\]
+Again the remainder tends to zero after scaling because $b<1$.
+This proves \eqref{eq:asymptotic} in the second range.
+
+\subsection{The cubic endpoint $\beta=3$}
+The positive-axis density is now $g(u)=e^{tu^3}K(u)$,
+smooth up to zero on that half-line. Evenness of $K$ gives
+$g'(0)=0$ and $g'''(0)=6tK(0)$. The four-step integration by parts
+retains that endpoint term:
+\begin{equation}\label{eq:cubic}
+ x^4F_{3/2,t}(x)=6tK(0)+\int_0^\infty g^{(4)}(u)\cos(xu)\,du.
+\end{equation}
+Since $g^{(4)}\in L^1$, the last integral tends to zero by the
+Riemann--Lebesgue lemma. This agrees with \eqref{eq:asymptotic}
+because $\Gamma(4)=6$ and $\sin(\pi/2)=1$.
+
+One cannot obtain this case by substituting $b=0$ into the preceding
+Gamma-cutoff argument: the cutoff $u^{b-1}e^{-u}$ would cease to be
+integrable at zero. The separate endpoint calculation is essential.
+
+\section{From the asymptotic to the global zero obstruction}
+The coefficient in \eqref{eq:asymptotic} is nonzero: $K(0)>0$,
+$\Gamma(2a+1)>0$, and $\sin(\pi(a-1))>0$ for $1<a<2$.
+Thus the asymptotic excludes zeros for all sufficiently large positive
+real $x$. Evenness excludes them for sufficiently negative $x$.
+On the remaining compact real interval, a nonzero entire function
+has finitely many zeros. This proves finiteness of the real zero set.
+
+To deduce nonreal infinitude we must also prove that the whole zero
+set is infinite. Nonpolynomiality alone is insufficient: exponential
+functions are nonpolynomial and zero free. The subquadratic growth
+bound supplies the necessary additional rigidity.
+
+\begin{lemma}[Finite-zero rigidity]\label{lem:finitezeros}
+Let $f$ be a nonzero entire function satisfying
+$|f(z)|\leq C e^{|z|^{3/2}}$ for some $C>0$. If $f$ has finitely
+many zeros, then $f(z)=P(z)e^{\alpha z}$ for a nonzero complex
+polynomial $P$ and $\alpha\in\C$. Such a function cannot tend to
+zero along both real tails.
+\end{lemma}
+\begin{proof}
+Remove every zero with its multiplicity, forming a finite polynomial
+$P_0$. Removable singularities make $h=f/P_0$ a zero-free entire
+function. A nonzero polynomial has a positive lower bound outside
+a sufficiently large disk. On the complementary disk $h$ is bounded
+by continuity. Therefore $|h(z)|\leq D e^{|z|^{3/2}}$ for some $D>0$.
+This justification for the quotient bound is needed; it does not
+follow from a numerator bound without controlling the denominator.
+
+The zero-free entire function $h$ has an entire logarithm $\ell$.
+For instance, integrate the entire function $h'/h$ on the simply
+connected plane and choose the additive constant at zero. Then
+$\operatorname{Re}\ell(z)\leq\log D+|z|^{3/2}$.
+The Borel--Carath\'eodory inequality on disks of radii $R$ and $2R$
+gives
+\[
+ \max_{|z|\leq R}|\ell(z)-\ell(0)|=O(1+R^{3/2}).
+\]
+Cauchy's estimates show for every integer $m\geq2$ that
+$|\ell^{(m)}(0)|\leq m!O(1+R^{3/2})/R^m\to0$.
+Thus the Taylor series is affine, $\ell(z)=\ell(0)+\alpha z$.
+Absorb $e^{\ell(0)}$ into $P_0$ to obtain the claimed factorization.
+
+Choose a sign $s\in\{1,-1\}$ with $s\operatorname{Re}\alpha\geq0$.
+Along $z=sx$, $x\to+\infty$, the exponential has modulus at least
+one and the nonzero polynomial has a positive lower bound. Hence
+$f(sx)$ cannot tend to zero.
+\end{proof}
+
+The Borel--Carath\'eodory estimate used here is the disk inequality
+\[
+ \max_{|z|\leq r}|h(z)-h(0)|
+ \leq\frac{2r}{R-r}
+ \left(\max_{|z|\leq R}\operatorname{Re}h(z)
+       -\operatorname{Re}h(0)\right),\quad 0<r<R,
+\]
+for holomorphic $h$ near the closed disk. It follows by applying the
+maximum principle and Schwarz's lemma to
+$(h-h(0))/(2M-(h-h(0)))$, where
+$M>\max\operatorname{Re}(h-h(0))$, and then letting $M$ decrease.
+This also explains why a bound on the real part suffices for the
+Taylor-coefficient argument.
+
+\begin{proof}[Completion of Theorem~\ref{thm:main}]
+The density in \eqref{eq:flow} is integrable, so its cosine transform
+tends to zero as $x\to\pm\infty$. This form of the Riemann--Lebesgue
+lemma follows by approximating the density in $L^1$ by finite step
+functions with bounded interval support: their cosine integrals
+decay, and the error is bounded by the $L^1$ distance uniformly in $x$.
+Lemma~\ref{lem:entire} and Lemma~\ref{lem:finitezeros} now imply
+that the total complex zero set is infinite. Removing the finite
+real zero set leaves infinitely many nonreal zeros.
+
+If an eventual all-real starting time $T$ existed, choose
+$t=\max\{T,1\}>0$. The preceding conclusion at this nonzero time
+contradicts the required reality of every zero.
+\end{proof}
+
+\begin{corollary}\label{cor:lp}
+For $1<a<2$ and $t\neq0$, $F_{a,t}$ is not a locally uniform limit
+on $\C$ of real polynomials all of whose roots are real.
+\end{corollary}
+\begin{proof}
+On the upper half-plane such polynomials are zero free, except that
+an identically zero polynomial may occur. Local convergence to the
+nonzero function $F_{a,t}$ excludes identically zero polynomials
+eventually. Hurwitz's theorem then makes the limit zero free there
+unless it is identically zero. The same argument applies to the
+lower half-plane. Either conclusion contradicts a nonreal zero of
+$F_{a,t}$.
+\end{proof}
+
+Only the necessary direction of the polynomial-limit criterion is
+used. No general converse factorization theorem for the
+Laguerre--P\'olya class is needed for this obstruction.
+
+\section{Order convergence on compact sets and on the real axis}
+Fix $t$ and $a_0>0$. In a sufficiently small interval around $a_0$,
+choose $0<A\leq a\leq B$. For $u\geq1$,
+$u^{2a}\leq u^{2B}$, and for $0\leq u\leq1$ it is bounded by one.
+For $|z|\leq R$, every fixed spatial derivative of the integrand
+is bounded by an integrable multiple of
+\[
+ (1+u^j)\exp\big(\max(t,0)(1+u^{2B})+Ru\big)K(u).
+\]
+Continuity of $a\mapsto u^{2a}$ for $u>0$, together with dominated
+convergence, therefore gives
+\begin{equation}\label{eq:weightedlimit}
+ \int_0^\infty u^j e^{Ru}
+ |e^{tu^{2a}}-e^{tu^{2a_0}}|K(u)\,du\longrightarrow0.
+\end{equation}
+At $u=0$ the integrand is defined by continuity; its value on that
+single point does not affect the integral.
+
+Taking $j=0$ bounds the supremum of
+$|F_{a,t}-F_{a_0,t}|$ on $|z|\leq R$, proving locally uniform
+convergence. Taking $j=1$ proves local uniform convergence of the
+spatial derivatives. Thus values and derivatives are jointly
+continuous in order and spatial argument near any positive order.
+
+For real $x$, $|\cos(xu)|\leq1$, giving the stronger domain bound
+\begin{equation}\label{eq:realuniform}
+ \sup_{x\in\R}|F_{a,t}(x)-F_{a_0,t}(x)|
+ \leq\int_0^\infty
+ |e^{tu^{2a}}-e^{tu^{2a_0}}|K(u)\,du\longrightarrow0.
+\end{equation}
+This is uniform convergence on the entire real axis at fixed time.
+It is not uniform convergence on the entire complex plane. The
+factor $e^{|\operatorname{Im}z|u}$ would prevent that inference
+from \eqref{eq:realuniform}.
+
+These convergence results coexist with Theorem~\ref{thm:main}:
+every nearby fractional order can have infinitely many nonreal
+zeros, even when a particular limiting transform has none. Neither
+small errors on the real axis nor convergence on each fixed disk
+controls the complete complex zero set at one common parameter
+neighborhood.
+
+\section{Simple real limits force compact escape}
+We give the local mechanism explicitly, so the simplicity hypothesis
+does not disappear behind a qualitative reference to continuity
+of roots.
+
+\begin{lemma}\label{lem:local}
+Suppose $a_n\to a_0>0$, $z_n\to w\in\R$,
+$F_{a_n,t}(z_n)=0$, and $\operatorname{Im}z_n\neq0$ for every $n$.
+Then $F_{a_0,t}(w)=0$ and $F'_{a_0,t}(w)=0$.
+\end{lemma}
+\begin{proof}
+Joint continuity gives the value assertion. Suppose the derivative
+at $w$ were $c\neq0$. Joint continuity of the derivative gives a
+disk $D$ about $w$ and an order neighborhood such that
+\[
+ |F'_{a,t}(z)-c|\leq|c|/2\qquad(z\in D)
+\]
+for all those orders. Since $D$ is convex, integration along the
+segment between $z,v\in D$ shows
+\[
+ |F_{a,t}(z)-F_{a,t}(v)-c(z-v)|
+ \leq\frac{|c|}{2}|z-v|.
+\]
+Hence $|F_{a,t}(z)-F_{a,t}(v)|\geq |c||z-v|/2$.
+For all large $n$, both $z_n$ and $\bar z_n$ lie in $D$.
+Conjugation symmetry makes both zeros of $F_{a_n,t}$.
+The lower bound forces $z_n=\bar z_n$, a contradiction.
+\end{proof}
+
+\begin{proposition}\label{prop:compact}
+If every zero of $F_{a_0,t}$ is real and simple, then for each
+compact set $Q\subset\C$ there is an order neighborhood of $a_0$
+in which every zero belonging to $Q$ is real.
+\end{proposition}
+\begin{proof}
+Otherwise select $a_n\to a_0$ and nonreal zeros $z_n\in Q$.
+Compactness supplies a subsequence converging to $w\in Q$.
+Joint continuity makes $w$ a limiting zero; the hypothesis makes
+it real. Lemma~\ref{lem:local} makes it multiple, contrary to simplicity.
+\end{proof}
+
+\begin{proof}[Proof of the escape assertions in Theorem~\ref{thm:limit}]
+Apply Proposition~\ref{prop:compact} to each closed disk
+$\{|z|\leq R\}$. A sequence of nonreal zeros with $a_n\to a_0$
+eventually avoids that disk. This is exactly $|z_n|\to\infty$.
+
+For the unconditional selection near one, put
+$a_n=1+1/(n+3)\in(1,3/2)$. Theorem~\ref{thm:main} gives an infinite
+nonreal zero set for each $a_n$. The nonzero entire function has
+only finitely many zeros in any compact disk, so choose one with
+$|z_n|>n$. This chosen sequence escapes and needs no hypothesis
+about $F_{1,t}$.
+\end{proof}
+
+The simplicity assumption cannot be dropped in the general compact
+stability principle. For instance, $z^2+\varepsilon$ converges
+locally uniformly to $z^2$ as $\varepsilon\downarrow0$, while its
+nonreal zeros converge to the double real zero at zero. This
+elementary comparison is explanatory; it is not a claim that this
+polynomial family is an arithmetic theta flow.
+
+\section{Endpoints, density analyticity, and parameter limits}
+At $t=0$, every order in \eqref{eq:flow} gives the same transform
+$\int K(u)\cos(zu)\,du$. The coefficient $L(a,0)$ vanishes,
+so the preceding nonreal-zero obstruction makes no assertion at
+that time. In particular no conclusion about the Riemann hypothesis
+is extracted from a theorem whose hypothesis is $t\neq0$.
+
+Likewise $L(1,t)=L(2,t)=0$. Direct differentiation of the explicit
+coefficient gives
+\begin{equation}\label{eq:coefficientlimit}
+ \frac{L(a,t)}{a-1}\longrightarrow2\pi tK(0)
+ \qquad(a\downarrow1).
+\end{equation}
+Indeed, the sine factor has derivative $\pi$ at one and
+$\Gamma(2\cdot1+1)=2$; derivatives of the other factors multiply
+the vanishing sine. This is a coefficient limit at fixed time,
+not a uniform relative asymptotic on the rectangle
+$a\downarrow1$, $x\to\infty$.
+
+The density distinction is also exact. At $a=3/2$ its even full-line
+form is $e^{t|u|^3}K(u)$. For $t\neq0$ the right and left third
+derivatives at zero differ by $12tK(0)$, so this full-line density
+cannot be the restriction of a holomorphic germ through zero.
+Its positive-axis form $e^{tu^3}K(u)$ does have a holomorphic
+extension there. These are different functions on the negative
+axis. Nevertheless its Fourier transform is entire by
+Lemma~\ref{lem:entire}. Entire dependence on frequency follows
+from decay and does not require analyticity of the full-line density
+at its endpoint.
+
+The same distinction prevents an unjustified complex branch choice
+for a nonintegral real exponent. Definition \eqref{eq:flow} uses
+the real power of a nonnegative real variable. The proof of its
+entireness differentiates in $z$, not in a fictitious complex
+continuation of $u^{2a}$ across zero.
+
+The library separately proves eventual real and simple zeros at
+quartic order. Combined with the compact escape principle, that
+result gives an application with $a_n=2-1/(n+3)$. Its global
+quartic saddle analysis is a separate theorem, not reconstructed
+in this paper and not an assumption in Theorem~\ref{thm:main}.
+No effective upper time, nonreal-zero escape rate, or classification
+for real orders above two follows from the present argument.
+
+\section{Formal correspondence and editorial status}
+All principal results are supported by the frozen commit
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The namespace prefix used below is
+\code{OperatorDerivativeRewrite.Foundation}.
+Exact source links are in \code{theorem-map.json}, together with
+line numbers and SHA256 hashes at this commit.
+
+\begin{longtable}{@{}p{0.25\textwidth}p{0.69\textwidth}@{}}
+\textit{Paper content}&\textit{Lean namespace and declaration}\\\hline
+Kernel, actual integral&\code{RiemannQuarticKernel.kernel};
+\code{RiemannRealOrderFlow.flow_eq_cosine_integral}\\[3pt]
+Lemma~\ref{lem:entire}&\code{RiemannRealOrderFlow.flow_differentiable},
+\code{actual_flow_zero_pos};
+\code{RiemannRealOrderComplexZeros.actual_subquadratic_growth}\\[3pt]
+First fractional range&\code{RiemannRealOrderFractionalCoefficient.actual_flow_scaled_limit}\\[3pt]
+Second fractional range&\code{RiemannRealOrderFourthAsymptotic.actual_flow_scaled_limit}\\[3pt]
+Cubic endpoint&\code{RiemannRealOrderCubicEndpoint.actual_flow_scaled_limit}\\[3pt]
+Lemma~\ref{lem:finitezeros}&\code{SubquadraticFiniteZeroFactorization.finite_zero_exponential_polynomial},
+\code{exponential_polynomial_not_real_decay}\\[3pt]
+Theorem~\ref{thm:main}&\code{RiemannRealOrderQuarticLimitZeros.between_one_two_real_zeros_finite},
+\code{between_one_two_nonreal_zeros_infinite},
+\code{between_one_two_no_eventual_real_zeros}\\[3pt]
+Corollary~\ref{cor:lp}&\code{RiemannRealOrderQuarticLimitZeros.between_one_two_no_split_polynomial_limit}\\[3pt]
+Order convergence&\code{RiemannRealOrderLimit.flow_order_tendsto_locally_uniformly};
+\code{RiemannRealOrderRealUniform.flow_order_tendsto_uniformly_real}\\[3pt]
+Lemma~\ref{lem:local}, Proposition~\ref{prop:compact}&\code{RiemannRealOrderZeroLimits.derivative_zero_of_nonreal_order_limit},
+\code{eventually_real_zeros_on_compact}\\[3pt]
+Theorem~\ref{thm:limit}&\code{RiemannRealOrderZeroLimits.nonreal_zero_norm_tendsto_atTop};
+\code{RiemannRealOrderFractionalZeros.exists_approaching_escaping_nonreal_zeros}\\[3pt]
+\eqref{eq:coefficientlimit}&\code{RiemannRealOrderFractionalCoefficient.leading_div_order_gap_limit}\\
+\end{longtable}
+
+The elementary pointwise estimates in the kernel and canceled-remainder
+proofs are human reconstructions of the verified mechanism. They
+are not claimed as additional named Lean declarations with the same
+big-$O$ notation. The actual derivatives, integrability, endpoint
+limits, integration-by-parts identities and final convergence
+statements have their own exact declarations. In particular, the
+fourth-order cancellation uses a separately verified actual fifth
+derivative; a formal exponential jet defined only through order four
+is not differentiated as if it were that fifth derivative.
+The density obstruction is separately recorded as
+\code{RiemannRealOrderBranchObstruction.three_halves_actual_density_obstruction}.
+
+The baseline audit records a complete successful root build and
+54,943 declarations audited with only \code{propext},
+\code{Classical.choice}, and \code{Quot.sound}. The editorial pass
+does not rerun a redundant full Lean build or change mathematical
+sources. Hash-linked provenance, compilation logs, and visual-review
+receipts accompany this draft.
+
+The contribution is the precise arithmetic statement and its
+readable proof, with exact endpoint and limit safeguards. General
+endpoint Fourier asymptotics, finite-zero rigidity, Hurwitz's theorem,
+and the role of simple zeros are established analysis. Priority for
+the arithmetic specialization remains unresolved. A publication
+decision should compare it directly with P\'olya-type non-even-power
+transforms and subsequent real-zero-preserving transform criteria.
+
+\begin{thebibliography}{9}
+\bibitem{polya} G. P\'olya,
+On the zeros of an integral function represented by Fourier's integral,
+\emph{Messenger of Mathematics} \textbf{52} (1923), 185--188.
+Primary paper identified in the preliminary literature search;
+detailed historical theorem comparison remains pending.
+\bibitem{cardon} D. A. Cardon,
+Fourier transforms having only real zeros,
+\emph{Proc. Amer. Math. Soc.} \textbf{133} (2005), 1349--1356
+(published electronically October 18, 2004).
+\href{https://doi.org/10.1090/S0002-9939-04-07677-4}{doi:10.1090/S0002-9939-04-07677-4}.
+\end{thebibliography}
+\end{document}
