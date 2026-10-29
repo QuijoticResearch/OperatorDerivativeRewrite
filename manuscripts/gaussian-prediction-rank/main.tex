@@ -11,7 +11,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
 \newcommand{\Hh}{\mathcal H}\newcommand{\U}{\mathcal U}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Hermite-rank prediction and fractional-time obstructions\\under inverse-number smoothing}
+\title{Gaussian prediction and recovery:\\Hermite rank, observation dimension and temporal obstructions}
 \author{Project Stardust}
 \date{Reviewed formalization companion, October 29, 2026}
 \begin{document}
@@ -36,7 +36,7 @@ The projection and Hermite mechanisms are classical, and the two
 fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
 correspondences; no priority claim is made.
-The same projection method also controls terminal-aware Brownian bracket errors for bounded Borel weights, with a separate counterexample to dropping the observation domain. \end{abstract}
+The same method controls terminal-aware Brownian bracket errors for bounded Borel weights. We also reconstruct the full joint source/sample recovery identity, compact recovery exactly at finite observed source dimension, and a positive-chaos compactness criterion. Infinite observed dimension has distance one from compact recovery approximants; even one-source compact recovery has divergent squared image energy. \end{abstract}
 
 \section{Setting and main prediction formula}
 Let $X:\Hh\to L^2(\Omega,P)$ be an isonormal real Gaussian family on a
@@ -659,6 +659,273 @@ Gaussian projection and later-row proof above has a narrower target,
 with explicit hypotheses and finite errors. No new anticipative
 stochastic integral or first variation convergence principle is claimed.
 
+\section{Recovery requires both sample and source projection}
+We now distinguish the Hermite rank of a target from the dimension of
+the observation space $M$. Work in the full Gaussian space
+$\mathcal G=L^2(\sigma(X(h):h\in\Hh),P)$, with no additional random
+factor, and in its vector counterpart $\mathcal V=L^2(P;\Hh)$ over
+the same sigma-algebra. Let $Q=\E[\,\cdot\mid\mathcal A]$ on scalars,
+let $\widehat Q$ be the Bochner conditional expectation on vectors,
+and let $\widehat P$ act pointwise by the source projection $P_M$.
+On a tensor $af$, with $a\in\Hh$, $f\in\mathcal G$,
+\[
+ \widehat Q(af)=aQf,\qquad \widehat P(af)=(P_Ma)f.
+\]
+Finite sums of such tensors are dense in $\mathcal V$. The two
+operators are commuting orthogonal projections, first on these tensors
+and then by continuity. Their product $J=\widehat P\widehat Q$ is
+therefore the orthogonal projection onto the fields that are both
+$\mathcal A$-measurable and $M$-valued.
+
+Let $D$ denote the original closed Gaussian gradient, obtained by
+closing the cylindrical polynomial gradient, and let $\delta=D^*$ be
+its maximal Hilbert adjoint. Write $P_q$ for orthogonal projection to
+chaos $q$. With the positive number-operator convention $N=\delta D$,
+define $N^{-1}$ to be zero on constants and multiplication by $1/q$
+on chaos $q\geq1$. Its associated recovery is
+\begin{equation}\label{eq:Rdefinition}
+ Rf=\sum_{q\geq1}\frac1q DP_qf,\qquad
+ \|Rf\|_{\mathcal V}^2=\sum_{q\geq1}\frac{\|P_qf\|_2^2}{q}
+ \leq\|f\|_2^2.
+\end{equation}
+This bounded map is defined for every Gaussian $L^2$ target; it does
+not require $f\in D(D)$.
+
+We give the graph justification rather than treating the notation
+$DN^{-1}$ as a domain assertion. Finite tensor Hermite polynomials
+obey $\delta Df_q=qf_q$ and
+$\langle Df_q,Dg_r\rangle=\mathbf1_{q=r}q\langle f_q,g_q\rangle$.
+These follow by one-coordinate Hermite differentiation, its Gaussian
+integration-by-parts adjoint, and orthogonality of the product basis.
+Closing these finite identities first in a fixed chaos gives
+$P_qf\in D(D)$, the same gradient norm and the original adjoint
+graph pair $(DP_qf,qP_qf)$. Equation \eqref{eq:Rdefinition} follows by
+orthogonal summation of the gradient fields. The finite recovery sums
+and their divergences converge respectively to $Rf$ and $f-\E f$;
+closedness of $\delta$ proves
+\begin{equation}\label{eq:Rgraph}
+ Rf\in D(\delta),\qquad \delta Rf=f-\E f.
+\end{equation}
+Every such recovery field is orthogonal to $\ker\delta$: for a
+divergence-free $v$, adjointness gives
+$\langle v,DP_qf\rangle=\langle\delta v,P_qf\rangle=0$.
+Pass through the convergent series. Any other field with the same
+divergence differs from $Rf$ by a kernel element, so Pythagoras proves
+that $Rf$ is the unique minimum-norm preimage.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianDivergenceRecovery.recovery_graph},
+\code{recovery_inverse_energy_hasSum}, \code{recovery_orthogonal_kernel}.
+\par\endgroup
+
+\begin{theorem}[Joint observation/recovery identity]\label{thm:jointR}
+For every $f\in\mathcal G$,
+\[
+ JRf=RQf.
+\]
+In particular $RQf$ is both observed and $M$-valued, and is the
+minimum-norm original divergence preimage of $Qf-\E f$. Projection
+of the sample variable alone generally fails: if $p=P_Mu$, then
+for $q\geq1$,
+\begin{align}
+ \widehat Q R W_q(u)-RQW_q(u)&=(u-p)W_{q-1}(p),\label{eq:Rdefect}\\
+ \|\widehat Q R W_q(u)-RQW_q(u)\|_{\mathcal V}^2
+  &=(q-1)!\|u-p\|^2\|p\|^{2(q-1)}.\label{eq:Rdefectenergy}
+\end{align}
+At $q=1$ the defect is the deterministic field $u-p$.
+\end{theorem}
+\begin{proof}
+The Wick derivative is $DW_q(u)=q\,uW_{q-1}(u)$, so
+$RW_q(u)=uW_{q-1}(u)$. The conditional identity already proved in
+Section 2 gives $QW_q(u)=W_q(p)$. Consequently
+\[
+ JRW_q(u)=pW_{q-1}(p)=RQW_q(u),\qquad
+ \widehat Q RW_q(u)=uW_{q-1}(p).
+\]
+Subtracting proves \eqref{eq:Rdefect}; its norm is the product of
+the deterministic squared norm and the Wick energy
+$(q-1)!\|p\|^{2(q-1)}$, proving \eqref{eq:Rdefectenergy}.
+The constant case has zero recovery on both sides.
+
+Pure Wick powers span a dense subspace of $\mathcal G$. To see the
+needed spanning statement, expand
+$W_q(\sum_j t_ju_j)$ as a polynomial in the parameters: its coefficients
+give every homogeneous Wick product of $q$ Gaussian directions.
+Polarization expresses each coefficient as a finite linear combination
+of values of these pure powers. Tensor Hermite polynomials are products
+of Wick powers in orthogonal directions and have exactly these
+homogeneous Wick products. Finite-dimensional product Hermite bases
+are complete by the one-coordinate completeness proof in Section 2
+and density of finite sums of product functions. Finally choose a
+countable dense orthonormal source family. Gaussian $L^2$ limits of
+its linear coordinates generate all $X(h)$ modulo null sets, and
+finite-coordinate cylindrical functions are dense in their generated
+$L^2$ space by the monotone-class approximation of indicator functions.
+This proves the asserted density.
+
+Both $JR$ and $RQ$ are bounded, so their equality on pure Wick powers
+extends to all $\mathcal G$. The range property follows from the
+definition of $J$; \eqref{eq:Rgraph} applied to $Qf$ and $\E Qf=\E f$
+gives its divergence. The minimum-norm conclusion was proved above.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianWickRecoveryPrediction.prediction_recovery_defect},
+\code{prediction_recovery_defect_energy};
+\code{GaussianJointSourceProjection.jointConditional_fixed_iff};
+\code{GaussianJointRecoveryIntertwining.joint_recovery_operator}.
+\par\endgroup
+These are source/sample constraints at a fixed observation family.
+They do not by themselves identify an adapted physical-time stochastic
+integrand or a Clark--Ocone representation for a different observed process.
+
+\section{Finite observed dimension and compact recovery}
+\begin{theorem}[Two different compactness classifications]\label{thm:compactobs}
+For an arbitrary observation index set $I$,
+\[
+ Q\text{ is compact}\ \Longleftrightarrow\ M=\{0\},\qquad
+ RQ\text{ is compact}\ \Longleftrightarrow\ \dim M<\infty.
+\]
+If $m=\dim M<\infty$ and $S_N=\sum_{q=0}^NP_q$, then
+$RS_NQ$ has finite rank at most $(N+1)^m$, and
+\begin{equation}\label{eq:Rtail}
+ \|RQ-RS_NQ\|\leq(N+1)^{-1/2}.
+\end{equation}
+The combined rank bound is an elementary consequence of the finite
+Hermite construction below; the source gives the corresponding
+per-chaos bounded-Hermite-space dimension and the recovery tail estimate.
+\end{theorem}
+\begin{proof}
+If $M\ne0$, choose a unit $u\in M$. The normalized Wick variables
+$W_q(u)/\sqrt{q!}$, $q\geq0$, are orthonormal and fixed by $Q$.
+They have no norm-convergent subsequence, so $Q$ is not compact.
+If $M=0$, every observation is zero, $Qf=\E f$ is a rank-one map,
+and $RQ=0$.
+
+Suppose $\dim M=m<\infty$, and choose an orthonormal basis
+$u_1,\ldots,u_m$. Their Gaussian coordinates are independent standard
+normals. The observation $L^2$ space has product Hermite basis
+\[
+ H_\alpha=\prod_{j=1}^m
+       \frac{\operatorname{He}_{\alpha_j}(X(u_j))}{\sqrt{\alpha_j!}},
+ \qquad \alpha\in\mathbb N^m.
+\]
+This is the same observed space even if infinitely many labels or a
+singular redundant covariance matrix describe it: source-norm convergence
+and Gaussian $L^2$ limits identify the generated sigma-algebras modulo
+null sets. The product $H_\alpha$ belongs to chaos $|\alpha|$.
+Thus $S_NQ$ takes values in the span of the finitely many $H_\alpha$
+with $|\alpha|\leq N$. Each $\alpha_j\leq N$, so there are at most
+$(N+1)^m$ such indices. Applying $R$ cannot increase rank.
+
+The chaos decomposition is preserved by $Q$, as follows on pure Wick
+powers from their conditional identity and then by density. Using
+\eqref{eq:Rdefinition},
+\[
+ \|R(I-S_N)Qf\|^2
+   =\sum_{q>N}\frac{\|P_qQf\|^2}{q}
+   \leq\frac1{N+1}\|Qf\|^2
+   \leq\frac1{N+1}\|f\|^2.
+\]
+This proves \eqref{eq:Rtail}. A norm limit of finite-rank operators
+is compact: their images give finite nets for the limiting image of
+the unit ball, which is relatively compact in the complete target.
+Hence $RQ$ is compact.
+
+Conversely if $M$ is infinite dimensional, choose an orthonormal
+sequence $u_n\in M$. The scalar inputs $X(u_n)$ have norm one,
+are observed, and $RQX(u_n)=u_n$, viewed as constant fields.
+The outputs are pairwise at distance $\sqrt2$, contradicting
+compactness. This proves necessity and completes both classifications.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianConditionalCompactness.conditionalProjection_compact_iff};
+\code{GaussianFiniteObservationRecovery.boundedHermiteSpace_dimension},
+\code{observed_chaos_block_compact}, \code{recovery_compact_iff_finite_source};
+\code{GaussianRecoverySpectralCompactness.recovery_tail_operator_bound}.
+\par\endgroup
+
+Even compact one-source recovery has infinite orthonormal image energy.
+For unit $u\in M$, its normalized Wick inputs satisfy
+\[
+ \left\|RQ\frac{W_q(u)}{\sqrt{q!}}\right\|^2=\frac1q\quad(q\geq1).
+\]
+Their squared image norms have divergent harmonic sum. In particular
+$RQ$ is not Hilbert--Schmidt whenever $M\ne0$, including $m=1$.
+Decay of each image does not give summability of all images. This is
+the explicit formal harmonic-energy obstruction, not a new compactness
+principle.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianObservedRecoveryHarmonicEnergy.observed_normalized_energy},
+\code{observed_energy_not_summable}, \code{one_source_compact_divergent_energy}.
+\par\endgroup
+
+For infinite-dimensional $M$ there is a stronger exact quantitative
+boundary:
+\begin{equation}\label{eq:essentialone}
+ \inf\{\|RQ-K\|:K:\mathcal G\to\mathcal V\text{ compact}\}=1.
+\end{equation}
+Indeed $X(u_n)$ above is orthonormal and hence weakly tends to zero
+by Bessel's inequality. A compact operator sends this sequence to zero
+in norm: otherwise a nonvanishing subsequence would have a norm
+convergent image subsequence, whose limit must be zero by weak
+continuity, a contradiction. Therefore
+$\|(RQ-K)X(u_n)\|\geq1-\|KX(u_n)\|\to1$ and $\|RQ-K\|\geq1$.
+Taking $K=0$ and $\|RQ\|\leq1$ proves \eqref{eq:essentialone}.
+The frozen source states this distance for the full recovery $R$;
+its observed infinite-dimensional version here is an explicitly labelled
+human deduction from the same first-chaos isometry argument.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianRecoveryCompactApproximationGap.compact_approximation_gap},
+\code{optimal_compact_error} (full recovery).
+\par\endgroup
+
+\section{An exact positive-chaos criterion for general inputs}
+The preceding classification concerns a Gaussian conditional projection.
+There is also a general operator statement that separates chaos-tail
+decay from compactness inside each fixed chaos.
+\begin{theorem}\label{thm:sectorcompact}
+Let $E$ be a real normed space and $K:E\to\mathcal G$ a bounded
+linear operator. Then
+\[
+ RK\text{ is compact}\quad\Longleftrightarrow\quad
+ P_qK\text{ is compact for every integer }q\geq1.
+\]
+No compactness condition on the constant component is required.
+\end{theorem}
+\begin{proof}
+Polarizing \eqref{eq:Rdefinition} gives
+$R^*R=\sum_{q\geq1}q^{-1}P_q=N^{-1}$ as a bounded operator.
+For fixed $q\geq1$, define the bounded extraction
+$A_q=qP_qR^*:\mathcal V\to\mathcal G$. Then
+$A_qR=P_q$. Thus compactness of $RK$ implies compactness of
+$P_qK=A_qRK$, since bounded maps preserve relative compactness.
+
+Conversely suppose every $P_qK$, $q\geq1$, is compact. The finite
+sum $RS_NK=\sum_{q=1}^NRP_qK$ is compact. The same tail proof as
+\eqref{eq:Rtail}, now applied to $Kx$, gives
+\[
+ \|RK-RS_NK\|\leq(N+1)^{-1/2}\|K\|\longrightarrow0.
+\]
+Norm closure of the compact operators proves the result. Constants
+are annihilated by $R$, explaining why they do not appear in the
+criterion. No finite-dimensionality of a full chaos is assumed here.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{GaussianRecoverySpectralCompactness.sectorExtract_recovery},
+\code{partial_composition_compact}, \code{recovery_composition_compact_iff}.
+\par\endgroup
+The theorem explains why inverse-number damping can have a small
+high-chaos tail while retaining an infinite first-chaos obstruction.
+It also explains finite-source compactness: each observed fixed-chaos
+block has a finite Hermite range. These are classical Gaussian spectral
+mechanisms. Baudoin's primary lecture \cite{BaudoinRecovery} reconstructs
+the chaos decomposition and derivative-energy identity underlying
+\eqref{eq:Rdefinition}; its Hermite convention includes $1/q!$ in
+the polynomial, whereas the present $W_q$ is monic. The exact operator
+classifications and their formal source reconstruction are presented
+without a priority claim. Neither compactness nor its failure supplies
+new fractional-time regularity, curvature or an observed-process
+stochastic representation.
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -675,7 +942,15 @@ Raw quartic conditional energies and cross-target residuals are in
 \code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
 The terminal bracket application is mapped to \code{GaussianTerminalBracketPrediction}, \code{GaussianTerminalWeightedBracket}, \code{GaussianTerminalBracketObstruction}, \code{GaussianTerminalBracketProducts} and \code{GaussianTerminalStrongBracket}. Its harmonic refinements are separately labelled human deductions. Exact declarations, original hypotheses, source hashes and human proof
-reorganizations accompany the manuscript. The elementary noncompactness
+reorganizations accompany the manuscript. Sections 9--11 add the
+original joint source/sample recovery identity, the exact finite-source
+compactness classification and the positive-chaos block criterion. The
+combined finite-rank estimate and observed distance-one conclusion are
+labelled human deductions. Fifty exact finite checks now pass in retained
+and new groups; \code{verify_recovery.py} checks conditional Wick defects
+through degree eight and two-coordinate derivative/recovery energies
+through degree four. Infinite compactness and density arguments rest on
+the printed proofs. The elementary noncompactness
 of the full potential is a classical deduction from its exact first-chaos
 identity, not a newly named formal theorem.
 
@@ -695,6 +970,9 @@ was hash-checked without repeating a research build.
 \par\endgroup
 
 \begin{thebibliography}{9}
+\bibitem{BaudoinRecovery} F. Baudoin, \emph{Lecture 34: The Wiener chaos expansion},
+primary author lecture, November 4, 2012.
+\href{https://fabricebaudoin.blog/2012/11/04/lecture-34-the-wiener-chaos-expansion/}{Author lecture}.
 \bibitem{MD} T. McElroy and S. Das,
 \emph{Nonlinear prediction via Hermite transformation},
 Statistical Theory and Related Fields 5 (2021), 49--54.

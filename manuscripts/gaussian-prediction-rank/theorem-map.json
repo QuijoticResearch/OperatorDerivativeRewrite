@@ -859,6 +859,771 @@
       "source_sha256": "a10a0ac8fc17a8e3ee70052df87f343d10bd687b2f07fbc26cdbb184f3c41e9f",
       "declaration_header": "theorem finite_sum_energy {n : \u2115} (v : Fin n \u2192 GaussianL2) :\n    \u2016\u2211 i, v i\u2016^2 = \u2211 i, \u2016v i\u2016^2+\n      2*\u2211 j, \u2211 i, if i < j then inner \u211d (v i) (v j) else 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalStrongBracket.lean#L157"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.wick_source_divergence_graph",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 13,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem wick_source_divergence_graph (u : CoefficientSpace) (n : \u2115) :\n    (scalarTensor u (wick u n), (wick u (n+1) : GaussianL2))\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L13"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.recovery_wick",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 20,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem recovery_wick (u : CoefficientSpace) (n : \u2115) :\n    recovery (wick u (n+1))=scalarTensor u (wick u n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L20"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.recovery_wick_energy",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 46,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem recovery_wick_energy (u : CoefficientSpace) (n : \u2115) :\n    \u2016recovery (wick u (n+1))\u2016^2=(n.factorial : \u211d)*(\u2016u\u2016^2)^(n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L46"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.fieldConditional_scalarTensor",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 57,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem fieldConditional_scalarTensor {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (f : GaussianL2) :\n    fieldConditional h (scalarTensor u f)=scalarTensor u (conditionalProjection h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L57"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.predicted_wick_recovery",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 67,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem predicted_wick_recovery {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    recovery (conditionalProjection h (wick u (n+1)))=\n      scalarTensor (sourceProjection h u) (wick (sourceProjection h u) n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L67"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.scalarTensor_sub_direction",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 72,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem scalarTensor_sub_direction (u v : CoefficientSpace) (f : GaussianL2) :\n    scalarTensor u f-scalarTensor v f=scalarTensor (u-v) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.prediction_recovery_defect",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 79,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem prediction_recovery_defect {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    fieldConditional h (recovery (wick u (n+1)))-recovery (conditionalProjection h (wick u (n+1)))=\n      scalarTensor (u-sourceProjection h u) (wick (sourceProjection h u) n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.prediction_recovery_defect_energy",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 85,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem prediction_recovery_defect_energy {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    \u2016fieldConditional h (recovery (wick u (n+1)))-recovery (conditionalProjection h (wick u (n+1)))\u2016^2=\n      (n.factorial : \u211d)*\u2016u-sourceProjection h u\u2016^2*(\u2016sourceProjection h u\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L85"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.firstChaos_noncommutation",
+      "file": "Foundation/GaussianWickRecoveryPrediction.lean",
+      "line": 92,
+      "source_sha256": "bef8352cf7da33e7ab73619c923ae54ca31c7e15ee2f979d80ed340175536d13",
+      "declaration_header": "theorem firstChaos_noncommutation {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace)\n    (hu : sourceProjection h u\u2260u) :\n    fieldConditional h (recovery (firstChaosEmbedding u))\u2260\n      recovery (conditionalProjection h (firstChaosEmbedding u))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickRecoveryPrediction.lean#L92"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldSourceProjection_scalarTensor",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 20,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldSourceProjection_scalarTensor {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (f : GaussianL2) :\n    fieldSourceProjection h (scalarTensor u f)=scalarTensor (sourceProjection h u) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L20"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldConditional_source_commute",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 29,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldConditional_source_commute {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    fieldConditional h (fieldSourceProjection h f)=fieldSourceProjection h (fieldConditional h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L29"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldSourceProjection_idempotent",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 37,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldSourceProjection_idempotent {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    fieldSourceProjection h (fieldSourceProjection h f)=fieldSourceProjection h f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldSourceProjection_inner",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 50,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldSourceProjection_inner {I : Type*} (h : I \u2192 CoefficientSpace) (f g : GaussianVectorL2) :\n    inner \u211d (fieldSourceProjection h f) g=inner \u211d f (fieldSourceProjection h g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldConditional_eq_starProjection",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 60,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldConditional_eq_starProjection {I : Type*} (h : I \u2192 CoefficientSpace) :\n    fieldConditional h=(lpMeas CoefficientSpace \u211d (MeasurableSpace.comap (firstChaosFamily h) inferInstance)\n      2 gaussianProduct).starProjection",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldConditional_idempotent",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 64,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldConditional_idempotent {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    fieldConditional h (fieldConditional h f)=fieldConditional h f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L64"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.fieldConditional_inner",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 69,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem fieldConditional_inner {I : Type*} (h : I \u2192 CoefficientSpace) (f g : GaussianVectorL2) :\n    inner \u211d (fieldConditional h f) g=inner \u211d f (fieldConditional h g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L69"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_idempotent",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 77,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_idempotent {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    jointConditional h (jointConditional h f)=jointConditional h f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L77"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_inner",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 82,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_inner {I : Type*} (h : I \u2192 CoefficientSpace) (f g : GaussianVectorL2) :\n    inner \u211d (jointConditional h f) g=inner \u211d f (jointConditional h g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L82"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_norm_le",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 87,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_norm_le {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    \u2016jointConditional h f\u2016\u2264\u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L87"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_fixed_iff",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 98,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_fixed_iff {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianVectorL2) :\n    jointConditional h f=f \u2194 fieldSourceProjection h f=f \u2227 fieldConditional h f=f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L98"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_wick_recovery",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 119,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_wick_recovery {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    jointConditional h (recovery (GaussianTimeSpaceHermite.wick u (n+1)))=\n      recovery (conditionalProjection h (GaussianTimeSpaceHermite.wick u (n+1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L119"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.jointConditional_countable_wick_recovery",
+      "file": "Foundation/GaussianJointSourceProjection.lean",
+      "line": 125,
+      "source_sha256": "958217be17b9dcf9393afefab5b23f507be566ae3951cd743aaee817450284ba",
+      "declaration_header": "theorem jointConditional_countable_wick_recovery {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : \u2115 \u2192 CoefficientSpace) (hu : \u2200 i j, i\u2260j \u2192 inner \u211d (u i) (u j)=0)\n    (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016u i\u2016^2)^d)) :\n    jointConditional h (recovery (wickResponse u d c))=recovery (conditionalProjection h (wickResponse u d c))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointSourceProjection.lean#L125"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.scalarTensor_add_source",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 14,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem scalarTensor_add_source (u v : CoefficientSpace) (f : GaussianL2) :\n    scalarTensor (u+v) f=scalarTensor u f+scalarTensor v f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.scalarTensor_smul_source",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 21,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem scalarTensor_smul_source (c : \u211d) (u : CoefficientSpace) (f : GaussianL2) :\n    scalarTensor (c \u2022 u) f=c \u2022 scalarTensor u f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L21"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.observed_rank_divergence_generated",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 40,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem observed_rank_divergence_generated {I : Type*} (h : I \u2192 CoefficientSpace)\n    (i : I) (p : MvPolynomial I \u211d) : rankDivergence (familyCore h p) (h i)\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L40"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_divergence_potential",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 56,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_divergence_potential {v : GaussianVectorL2} {f : GaussianL2}\n    (hg : (v,f)\u2208hilbertDivergence.graph) : recoveryOperator.adjoint v=potentialOperator f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L56"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_observed_polynomial_tensor",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 65,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_observed_polynomial_tensor {I : Type*} (h : I \u2192 CoefficientSpace)\n    (i : I) (p : MvPolynomial I \u211d) :\n    recoveryOperator.adjoint (scalarTensor (h i) (familyPolynomialEmbedding h p))\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L65"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_observed_tensor_generator",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 74,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_observed_tensor_generator {I : Type*} (h : I \u2192 CoefficientSpace)\n    (i : I) {f : GaussianL2} (hf : f\u2208generated h) :\n    recoveryOperator.adjoint (scalarTensor (h i) f)\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_observed_tensor",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 86,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_observed_tensor {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : u\u2208sourceSpan h) (f : GaussianL2) (hf : f\u2208generated h) :\n    recoveryOperator.adjoint (scalarTensor u f)\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L86"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_joint_mem_generated",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 98,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_joint_mem_generated {I : Type*} (h : I \u2192 CoefficientSpace) (v : GaussianVectorL2) :\n    recoveryOperator.adjoint (jointConditional h v)\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L98"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.adjoint_joint_conditional",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 114,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem adjoint_joint_conditional {I : Type*} (h : I \u2192 CoefficientSpace) (v : GaussianVectorL2) :\n    recoveryOperator.adjoint (jointConditional h v)=conditionalProjection h (recoveryOperator.adjoint v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L114"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.joint_recovery_conditional",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 124,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem joint_recovery_conditional {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianL2) :\n    jointConditional h (recovery f)=recovery (conditionalProjection h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L124"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.joint_recovery_operator",
+      "file": "Foundation/GaussianJointRecoveryIntertwining.lean",
+      "line": 134,
+      "source_sha256": "93126f409c037fe7d5fde1a73f2ba766d2dae561bf6ba7a2e4c465fe71e2c600",
+      "declaration_header": "theorem joint_recovery_operator {I : Type*} (h : I \u2192 CoefficientSpace) :\n    (jointConditional h).comp recoveryOperator=recoveryOperator.comp (conditionalProjection h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianJointRecoveryIntertwining.lean#L134"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.observed_tensor_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 15,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem observed_tensor_fixed {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : u\u2208sourceSpan h) (f : GaussianL2) (hf : f\u2208generated h) :\n    jointConditional h (scalarTensor u f)=scalarTensor u f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L15"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.finite_observed_derivative_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 23,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem finite_observed_derivative_fixed {I J : Type*} [Fintype J] (h : I \u2192 CoefficientSpace)\n    (k : J \u2192 CoefficientSpace) (hk : \u2200 j, k j\u2208sourceSpan h)\n    (hp : \u2200 q : MvPolynomial J \u211d, familyPolynomialEmbedding k q\u2208generated h)\n    (p : MvPolynomial J \u211d) :\n    jointConditional h (polynomialDerivative (cylinderCore k p))=\n      polynomialDerivative (cylinderCore k p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L23"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.family_derivative_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 36,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem family_derivative_fixed {I : Type*} (h : I \u2192 CoefficientSpace) (p : MvPolynomial I \u211d) :\n    jointConditional h (polynomialDerivative (familyCore h p))=polynomialDerivative (familyCore h p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L36"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.observed_derivative_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 51,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem observed_derivative_fixed {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} {g : GaussianVectorL2} (hf : f\u2208generated h)\n    (hd : (f,g)\u2208closedCylindricalDerivative.graph) : jointConditional h g=g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L51"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.observed_recovery_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 66,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem observed_recovery_fixed {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} (hf : f\u2208generated h) : jointConditional h (recovery f)=recovery f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L66"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.conditional_recovery_joint_fixed",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 70,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem conditional_recovery_joint_fixed {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianL2) :\n    jointConditional h (recovery (conditionalProjection h f))=recovery (conditionalProjection h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L70"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.conditional_recovery_constraints",
+      "file": "Foundation/GaussianObservedRecoveryRange.lean",
+      "line": 74,
+      "source_sha256": "05292564e264a5397c5ab2614bbd0f20212e2195b8e9e3686cdac2365573a226",
+      "declaration_header": "theorem conditional_recovery_constraints {I : Type*} (h : I \u2192 CoefficientSpace) (f : GaussianL2) :\n    fieldSourceProjection h (recovery (conditionalProjection h f))=recovery (conditionalProjection h f) \u2227\n      fieldConditional h (recovery (conditionalProjection h f))=recovery (conditionalProjection h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryRange.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.normalizedWick_orthonormal",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 16,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem normalizedWick_orthonormal (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    Orthonormal \u211d (normalizedWick u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L16"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.terminalEmbedding_hasSum",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 35,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem terminalEmbedding_hasSum (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (c : CoefficientSpace) :\n    HasSum (fun n => c n \u2022 normalizedWick u n) (terminalEmbedding u hu c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L35"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.conditional_fixes_terminalEmbedding",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 40,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem conditional_fixes_terminalEmbedding {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (hm : u\u2208sourceSpan h) (c : CoefficientSpace) :\n    conditionalProjection h (terminalEmbedding u hu c)=terminalEmbedding u hu c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L40"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.unit_observation_noncompact",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 50,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem unit_observation_noncompact {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (hm : u\u2208sourceSpan h) :\n    \u00ac IsCompactOperator (conditionalProjection h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.nonzero_observation_noncompact",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 70,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem nonzero_observation_noncompact {I : Type*} (h : I \u2192 CoefficientSpace)\n    (i : I) (hi : h i\u22600) : \u00ac IsCompactOperator (conditionalProjection h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L70"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.zero_family_polynomial_constant",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 83,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem zero_family_polynomial_constant {I : Type*} (h : I \u2192 CoefficientSpace) (hz : \u2200 i, h i=0)\n    (p : MvPolynomial I \u211d) : familyPolynomialEmbedding h p=MvPolynomial.eval (fun _ => 0) p \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L83"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.zero_family_generated",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 93,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem zero_family_generated {I : Type*} (h : I \u2192 CoefficientSpace) (hz : \u2200 i, h i=0) :\n    generated h=Submodule.span \u211d {gaussianOne}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L93"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.zero_family_projection",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 105,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem zero_family_projection {I : Type*} (h : I \u2192 CoefficientSpace) (hz : \u2200 i, h i=0) (f : GaussianL2) :\n    conditionalProjection h f=inner \u211d gaussianOne f \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L105"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.zero_family_compact",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 112,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem zero_family_compact {I : Type*} (h : I \u2192 CoefficientSpace) (hz : \u2200 i, h i=0) :\n    IsCompactOperator (conditionalProjection h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L112"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.conditionalProjection_compact_iff",
+      "file": "Foundation/GaussianConditionalCompactness.lean",
+      "line": 122,
+      "source_sha256": "6057cd1f78a583301e485203e98811f0f92cecf633beb81852e9399004c89c50",
+      "declaration_header": "theorem conditionalProjection_compact_iff {I : Type*} (h : I \u2192 CoefficientSpace) :\n    IsCompactOperator (conditionalProjection h) \u2194 \u2200 i, h i=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianConditionalCompactness.lean#L122"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.boundedHermiteSpace_dimension",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 26,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem boundedHermiteSpace_dimension {J : Type*} [Fintype J]\n    (v : J \u2192 CoefficientSpace) (n : \u2115) :\n    Module.finrank \u211d (boundedHermiteSpace v n) \u2264 (n+1)^(Fintype.card J)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L26"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.tensor_mem_bounded",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 34,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem tensor_mem_bounded {J : Type*} [Fintype J]\n    (v : J \u2192 CoefficientSpace) (n : \u2115) (a : J \u2192 \u2115) (ha : \u2211 j, a j = n) :\n    isonormalCylinderL2 v (tensorHermitePolynomial a) \u2208 boundedHermiteSpace v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L34"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.orthonormal_projection_polynomial_mem",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 43,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem orthonormal_projection_polynomial_mem {J : Type*} [Fintype J]\n    (v : J \u2192 CoefficientSpace) (hv : Orthonormal \u211d v) (n : \u2115) (p : MvPolynomial J \u211d) :\n    projection n (isonormalCylinderL2 v p) \u2208 boundedHermiteSpace v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L43"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.substituted_projection_mem",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 61,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem substituted_projection_mem {I J : Type*} [Fintype I] [Fintype J]\n    (h : I \u2192 CoefficientSpace) (v : J \u2192 CoefficientSpace) (hv : Orthonormal \u211d v)\n    (c : I \u2192 J \u2192 \u211d) (hc : \u2200 i, \u2211 j, c i j \u2022 v j = h i)\n    (n : \u2115) (p : MvPolynomial I \u211d) :\n    projection n (isonormalCylinderL2 h p) \u2208 boundedHermiteSpace v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L61"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.observed_projection_bounded",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 71,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem observed_projection_bounded {I : Type*} (h : I \u2192 CoefficientSpace)\n    [FiniteDimensional \u211d (sourceSpan h)] (n : \u2115) (f : GaussianL2) :\n    projection n (conditionalProjection h f) \u2208 boundedHermiteSpace\n      (fun j => ((stdOrthonormalBasis \u211d (sourceSpan h)) j : CoefficientSpace)) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L71"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.observed_chaos_block_compact",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 101,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem observed_chaos_block_compact {I : Type*} (h : I \u2192 CoefficientSpace)\n    [FiniteDimensional \u211d (sourceSpan h)] (n : \u2115) :\n    IsCompactOperator ((projection n).comp (conditionalProjection h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L101"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.finite_source_recovery_compact",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 115,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem finite_source_recovery_compact {I : Type*} (h : I \u2192 CoefficientSpace)\n    [FiniteDimensional \u211d (sourceSpan h)] :\n    IsCompactOperator (recoveryOperator.comp (conditionalProjection h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L115"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.compact_recovery_source_finite",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 120,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem compact_recovery_source_finite {I : Type*} (h : I \u2192 CoefficientSpace)\n    (hc : IsCompactOperator (recoveryOperator.comp (conditionalProjection h))) :\n    FiniteDimensional \u211d (sourceSpan h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L120"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.recovery_compact_iff_finite_source",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 151,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem recovery_compact_iff_finite_source {I : Type*} (h : I \u2192 CoefficientSpace) :\n    IsCompactOperator (recoveryOperator.comp (conditionalProjection h)) \u2194\n      FiniteDimensional \u211d (sourceSpan h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L151"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianFiniteObservationRecovery.finite_observations_recovery_compact",
+      "file": "Foundation/GaussianFiniteObservationRecovery.lean",
+      "line": 161,
+      "source_sha256": "ff54a20349af6f778117616ffbcca98dd1f6937fb18ae8f5ba1890fbc6c08b47",
+      "declaration_header": "theorem finite_observations_recovery_compact {I : Type*} [Finite I]\n    (h : I \u2192 CoefficientSpace) :\n    IsCompactOperator (recoveryOperator.comp (conditionalProjection h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianFiniteObservationRecovery.lean#L161"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.recovery_sector_energy",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 14,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem recovery_sector_energy {n : \u2115} (f : sector n) :\n    \u2016recovery f\u2016^2 = (n : \u211d)\u207b\u00b9 * \u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.observed_normalized_energy",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 22,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem observed_normalized_energy {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (hm : u \u2208 sourceSpan h) (n : \u2115) :\n    \u2016recovery (conditionalProjection h (normalizedWick u (n+1)))\u2016^2 = (n+1 : \u211d)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L22"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.observed_energy_sum_tendsto",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 36,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem observed_energy_sum_tendsto {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (hm : u \u2208 sourceSpan h) :\n    Tendsto (fun N : \u2115 => \u2211 n \u2208 Finset.range N,\n      \u2016recovery (conditionalProjection h (normalizedWick u (n+1)))\u2016^2) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L36"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.no_uniform_orthonormal_image_energy",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 43,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem no_uniform_orthonormal_image_energy {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (hm : u \u2208 sourceSpan h) (M : \u211d) :\n    \u2203 N : \u2115, M < \u2211 n \u2208 Finset.range N,\n      \u2016recovery (conditionalProjection h (normalizedWick u (n+1)))\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L43"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.observed_energy_not_summable",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 49,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem observed_energy_not_summable {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (hm : u \u2208 sourceSpan h) :\n    \u00ac Summable (fun n : \u2115 =>\n      \u2016recovery (conditionalProjection h (normalizedWick u (n+1)))\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L49"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryHarmonicEnergy.one_source_compact_divergent_energy",
+      "file": "Foundation/GaussianObservedRecoveryHarmonicEnergy.lean",
+      "line": 57,
+      "source_sha256": "28c5dbedd4a4a4bc587db3d286e76fa31046d962dcca8b99ff1e103750510928",
+      "declaration_header": "theorem one_source_compact_divergent_energy (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    IsCompactOperator (recoveryOperator.comp (conditionalProjection (fun _ : Unit => u))) \u2227\n      \u00ac Summable (fun n : \u2115 =>\n        \u2016recovery (conditionalProjection (fun _ : Unit => u) (normalizedWick u (n+1)))\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianObservedRecoveryHarmonicEnergy.lean#L57"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.projection_truncation",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 14,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem projection_truncation (n N : \u2115) (f : GaussianL2) :\n    projection n (truncation N f)=if n\u2264N then projection n f else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.projection_residual",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 24,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem projection_residual (n N : \u2115) (f : GaussianL2) :\n    projection n (f-truncation N f)=if n\u2264N then 0 else projection n f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L24"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.recovery_tail_energy",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 29,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem recovery_tail_energy (N : \u2115) (f : GaussianL2) :\n    \u2016recovery (f-truncation N f)\u2016^2\u2264(N+1 : \u211d)\u207b\u00b9*\u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L29"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.recovery_tail_operator_bound",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 43,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem recovery_tail_operator_bound (N : \u2115) :\n    \u2016recoveryOperator-partialRecovery N\u2016\u2264Real.sqrt ((N+1 : \u211d)\u207b\u00b9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L43"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.partialRecovery_tendsto",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 54,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem partialRecovery_tendsto : Tendsto partialRecovery atTop (\ud835\udcdd recoveryOperator)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L54"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.sectorExtract_recovery",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 66,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem sectorExtract_recovery (n : \u2115) (hn : 0<n) (f : GaussianL2) : sectorExtract n (recovery f)=projection n f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L66"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.partial_composition_compact",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 72,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem partial_composition_compact (K : E \u2192L[\u211d] GaussianL2)\n    (hK : \u2200 n,0<n \u2192 IsCompactOperator ((projection n).comp K)) (N : \u2115) :\n    IsCompactOperator ((partialRecovery N).comp K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.recovery_composition_compact_iff",
+      "file": "Foundation/GaussianRecoverySpectralCompactness.lean",
+      "line": 99,
+      "source_sha256": "e06eb6803b5a11f9bcb4a3a080ae8d87e968b7700c90263326840dbc7f80c126",
+      "declaration_header": "theorem recovery_composition_compact_iff (K : E \u2192L[\u211d] GaussianL2) :\n    IsCompactOperator (recoveryOperator.comp K) \u2194 \u2200 n,0<n \u2192 IsCompactOperator ((projection n).comp K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoverySpectralCompactness.lean#L99"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.compression_recovery",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 21,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem compression_recovery : compression recoveryOperator=ContinuousLinearMap.id \u211d CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L21"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.compression_compact",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 28,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem compression_compact {K : GaussianL2 \u2192L[\u211d] GaussianVectorL2} (hK : IsCompactOperator K) :\n    IsCompactOperator (compression K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L28"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.compression_norm_bound",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 32,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem compression_norm_bound (K : GaussianL2 \u2192L[\u211d] GaussianVectorL2) : \u2016compression K\u2016\u2264\u2016K\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L32"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.compact_endomorphism_distance",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 42,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem compact_endomorphism_distance {T : CoefficientSpace \u2192L[\u211d] CoefficientSpace}\n    (hT : IsCompactOperator T) : 1\u2264\u2016ContinuousLinearMap.id \u211d CoefficientSpace-T\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L42"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.compact_approximation_gap",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 56,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem compact_approximation_gap (K : GaussianL2 \u2192L[\u211d] GaussianVectorL2)\n    (hK : IsCompactOperator K) : 1\u2264\u2016recoveryOperator-K\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L56"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.recoveryOperator_norm_one",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 72,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem recoveryOperator_norm_one : \u2016recoveryOperator\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactApproximationGap.optimal_compact_error",
+      "file": "Foundation/GaussianRecoveryCompactApproximationGap.lean",
+      "line": 84,
+      "source_sha256": "f2d3f3feb8785550eca9928995015e37f0c8a5ff725b9017b97e4029f4862874",
+      "declaration_header": "theorem optimal_compact_error :\n    (\u2200 K : GaussianL2 \u2192L[\u211d] GaussianVectorL2,IsCompactOperator K \u2192 1\u2264\u2016recoveryOperator-K\u2016) \u2227\n      \u2203 K : GaussianL2 \u2192L[\u211d] GaussianVectorL2,IsCompactOperator K \u2227 \u2016recoveryOperator-K\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianRecoveryCompactApproximationGap.lean#L84"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.recovery_graph",
+      "file": "Foundation/GaussianDivergenceRecovery.lean",
+      "line": 70,
+      "source_sha256": "e23ffe4bd8ea4f38955295afabb3e6715f2e546b37c1957baa4236ef80c5d6a7",
+      "declaration_header": "theorem recovery_graph (f : GaussianL2) :\n    (recovery f, f-projection 0 f) \u2208 hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDivergenceRecovery.lean#L70"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.recovery_inverse_energy_hasSum",
+      "file": "Foundation/GaussianDivergenceRecovery.lean",
+      "line": 104,
+      "source_sha256": "e23ffe4bd8ea4f38955295afabb3e6715f2e546b37c1957baa4236ef80c5d6a7",
+      "declaration_header": "theorem recovery_inverse_energy_hasSum (f : GaussianL2) :\n    HasSum (fun n : \u2115 => (n : \u211d)\u207b\u00b9*\u2016projection n f\u2016^2) (\u2016recovery f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDivergenceRecovery.lean#L104"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.recovery_orthogonal_kernel",
+      "file": "Foundation/GaussianDivergenceRecovery.lean",
+      "line": 148,
+      "source_sha256": "e23ffe4bd8ea4f38955295afabb3e6715f2e546b37c1957baa4236ef80c5d6a7",
+      "declaration_header": "theorem recovery_orthogonal_kernel (f : GaussianL2) (u : GaussianVectorL2)\n    (hu : (u,0) \u2208 hilbertDivergence.graph) : inner \u211d u (recovery f) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDivergenceRecovery.lean#L148"
+    },
+    {
+      "paper": "Sections 9\u201311 original joint source/sample recovery, exact finite observed dimension classification, harmonic image-energy obstruction and positive-chaos compactness criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.recovery_minimal_norm",
+      "file": "Foundation/GaussianDivergenceRecovery.lean",
+      "line": 166,
+      "source_sha256": "e23ffe4bd8ea4f38955295afabb3e6715f2e546b37c1957baa4236ef80c5d6a7",
+      "declaration_header": "theorem recovery_minimal_norm (f : GaussianL2) (u : GaussianVectorL2)\n    (hu : (u,f-projection 0 f) \u2208 hilbertDivergence.graph) : \u2016recovery f\u2016 \u2264 \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDivergenceRecovery.lean#L166"
     }
   ],
   "paper_sections": {
@@ -879,7 +1644,12 @@
     "The bracket observation is the entire Brownian past together with one terminal value; it is not the original predictable domain. Gaussian independent bridge residual gives the exact actual conditional square.",
     "The source uniform grid has N+1 cells, renamed n. The source mean bound is 4MT/sqrt(n), and strong squared error is 4T^2/n+16T^2/sqrt(n). Keeping the elementary harmonic sum gives the explicitly printed human refinements 2MT H_n/n and 4T^2/n+8T^2 H_n/n. No optimality is claimed.",
     "The n times centered-current-square counterexample has uniform coefficient norm sqrt(2) but actual mean error two. The source states existential failure of the whole array observation domain, not failure in every cell.",
-    "The strong result retains bounded Borel current/terminal weights. Cross terms are controlled through later-time rows in their actual generated subspace, without assuming independence of weighted cells. The K-bounded extension is elementary rescaling. No arbitrary-Borel occupation Riemann-sum convergence or new stochastic integral is inferred."
+    "The strong result retains bounded Borel current/terminal weights. Cross terms are controlled through later-time rows in their actual generated subspace, without assuming independence of weighted cells. The K-bounded extension is elementary rescaling. No arbitrary-Borel occupation Riemann-sum convergence or new stochastic integral is inferred.",
+    "The recovery sections work on the full Gaussian-generated scalar/vector L2 spaces, excluding an extra independent random factor. Original closed gradient and maximal Hilbert adjoint are retained; graph convergence proves the bounded recovery for every Gaussian L2 target, with no assumed target Malliavin domain.",
+    "The joint observed-sample and observed-source projection intertwines with full recovery. Sample conditioning alone leaves the explicit coefficient-direction defect (u-Pu)*W_(q-1)(Pu). Pure Wick polarization, finite product Hermite completeness and Gaussian cylinder density reconstruct the full-L2 identity rather than a polynomial-only assertion.",
+    "Conditional projection is compact iff the observed source span is zero. Recovery after conditioning is compact iff that closed source span is finite dimensional, allowing arbitrary observation label sets and singular/redundant covariance descriptions. The combined finite-rank upper bound (N+1)^m is a direct human deduction from the finite Hermite ranges, paired with the formal operator-norm tail bound 1/sqrt(N+1).",
+    "Every nonzero observed source contains a harmonic squared-image-energy obstruction, so even one-source compact recovery is not Hilbert-Schmidt. For infinite observed dimension, the exact distance one to compact operators is a labelled human deduction; the named frozen approximation-gap theorem states this for full recovery.",
+    "For any bounded K from a normed space to Gaussian L2, recovery*K is compact iff each positive-chaos block P_q*K is compact. The full inverse-number damping tail does not eliminate infinite-dimensional low-chaos blocks. No new fractional regularity, curvature or observed-process stochastic representation follows."
   ],
   "literature": [
     {
