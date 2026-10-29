@@ -2839,3 +2839,6 @@ import Foundation.FourCubeFullColorSymmetry
 
 import Foundation.FourCubeFullOddEnvelope
 import Foundation.FourCubeFullOddIntegral
+
+import Foundation.FourCubeFullHaarOddAsymptotic
+import Foundation.FourCubeFullHaarOddFreeEnergy
