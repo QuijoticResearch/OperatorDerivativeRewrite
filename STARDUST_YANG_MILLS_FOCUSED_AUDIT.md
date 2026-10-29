@@ -2879,3 +2879,68 @@ For the limiting average,1713 supplies the actual translated centered quadratic 
 None of these pointwise results establishes a parameter-uniform boundary third-derivative theorem, actual stationary transfer contraction, physically justified iteration distance, scale/volume-uniform estimates, infinite-volume/continuum existence or positive Yang-Mills mass gap. Classical quaternion/parity tools are reused; no novelty is claimed. Continue this specific actual integration bottleneck rather than building unrelated gauge infrastructure.
 
 Exact-commit approval, new-history secret scan, guarded PUBLIC main/research backup and independent remote-ref/visibility checks remain closure gates. This pre-commit entry does not assert backup already succeeded. Visibility is exclusively user-controlled. The indefinite research goal remains active.
+
+
+## Checkpoint1715 - rigorous weighted integration and actual full-Haar odd partition correction
+
+October29,2026. Focused Yang-Mills remains ACTIVE; Bakry remains paused. Previous1714,02d20c378e3fb7a804b1bd4b5f62010e623fd526, is exactly approved and independently verified on BOTH authorized backup refs with repository PUBLIC. This checkpoint closes its missing integrable-domination and quantitative full-cutoff-removal obligations for the FIRST ODD PARTITION CORRECTION. It does not evaluate the resulting cubic average or interchange a boundary derivative with a large-beta limit. Three focused sources: Foundation/FourCubeOddEnvelope.lean, FourCubeOddIntegral.lean and FourCubeOddFullPartition.lean. No manuscript/PDF, manuscripts/, docs/papers/ or editorial README work was performed. Original-source checks are hashes only.
+
+Actual scale-uniform bounds. Write a=(x,y,z), m(Y)=quadraticMass(Y), and
+
+    H(Y,a)=1+m(Y)+|x|+|y|+|z|.
+
+For every nonzero REAL t, every actual112-edge field component and every signed face factor, the recovered imaginary quaternion component divided by t is bounded in absolute value by H. The interior proof uses the ACTUAL hemisphere weight in[0,1]; the boundary proof uses the ACTUAL axis/inverse formulas and |sin(tr)/t|<=|r|. The root pin and every inverse sign are retained. Generic determinant and weighted four-word bounds give24H^3 per face, hence the full72-face estimate
+
+    |[S(t)-S(-t)]/(2t^3)| <=1728H(Y,a)^3.
+
+This action bound is GLOBAL in chart Y and needs no cutoff. H is linear in m, so H^3 has degree up to6 in the raw chart coordinates; it is a conservative polynomial envelope, not a sharp degree3 bound in Y. No physical contraction meaning is attached to1728.
+
+The exponential mean-value inequality is applied on a common upper half-line for BOTH signed exponents. On the ACTUAL chart cutoff, the previously verified quadratic coercivity yields
+
+    |[exp(-S(t)/t^2)-exp(-S(-t)/t^2)]/(2t)
+      <=1728H^3 exp(216*(x^2+y^2+z^2)) exp(-m/1116).
+
+actual_boltzmann_odd_bound proves this for both signs of t. The cutoff is an explicit hypothesis; no false global affine chart coercivity is introduced. A proved exponential-series inequality absorbs H^3 into the broader Gaussian exp(-m/2232), with fixed-amplitude constant6*2232^3*exp((1+|x|+|y|+|z|)/2232). wider_gaussian_integrable reuses the existing Gaussian integral by scalar rescaling; cubic_weight_integrable is genuine integrability, not a formal moment declaration. Constants depend on the amplitudes; no uniform parameter-derivative convergence is claimed.
+
+Actual Haar-density integration. Let D_t(Y) be the exact existing moving-boundary scaled cutoff density with the original product Haar Jacobian, and let g_a(Y)=R_Haar(0)exp(-Q_a(Y)/2) from1712. Product Haar density and the cutoff are proved EVEN in t. Therefore the signed density
+
+    O_t(Y)=[D_t(Y)-D_(-t)(Y)]/(2t)
+
+has a single integrable Gaussian-polynomial envelope for EVERY nonzero t. The already verified pointwise odd Boltzmann limit gives
+
+    O_t(Y) -> f_a(Y)=-C(Y,a)g_a(Y).
+
+Explicit coordinate/linear-map composition proves measurability of the actual cubic coefficient and f_a. firstDensity_integrable proves f_a is genuinely integrable, and oddDensity_integrable proves each O_t is integrable. In particular the displayed integrals are not merely Lean's default-zero values outside an integrable domain. f_a is a SIGNED correction density, not a probability density or a new stochastic law. Pointwise positivity is not assumed. Scalar filter dominated convergence now proves integral O_t -> I(a)=integral f_a, and exact Jacobian cancellation identifies the ACTUAL cutoff partition odd quotient with denominator2t|t|^93. This checkpoint exports integrability and integral convergence; a separate L1-norm-convergence theorem is not claimed.
+
+Quantitative removal of the full Haar cutoff. Outside localStateDomain, the existing coordinate-tail inclusion and actual pinned link estimate give S_0(U)>=1/12. The actual boundary-action comparison gives the ALL-STATE outside bound
+
+    exp(-S_(b_t)(U)/t^2) <= exp(216*|a|_2^2)exp(-1/(36t^2)).
+
+Integrating against the ORIGINAL normalized pinned Haar probability measure yields the same upper bound for outsidePartition(t,a). gaussian_tail_power94 proves exp(-1/(36t^2))/|t|^94 ->0 through the punctured real neighborhood, by the verified inverse-square clock and exponential domination of the47th power. Both outside partitions divided by |t|^94 vanish; their signed odd difference divided by2t|t|^93 also vanishes. Mere concentration to probability1 was NOT substituted for this stronger rate.
+
+full_partition_split is an exact integral identity for ALL real t, with integrability established before splitting. Combining it with the proved cutoff correction yields
+
+    [Z_(b_t)(1/t^2)-Z_(b_(-t))(1/t^2)]/(2t|t|^93) -> I(a),
+    [N_(b_t)(1/t^2)-N_(b_(-t))(1/t^2)]/(2t) -> I(a)/C_0,
+
+where N_b=Z_b/Z_0 and C_0=integral g_0>0. These are ACTUAL FULL-HAAR partition statements for the original finite112-edge72-face cap complex and31-link pin. The independent Lean harness transports the first identity to the original unpinned32-link partition via its earlier exact equality, not measure-zero conditioning. Both signs of t are included, amplitudes are fixed, and the limiting scalar I(a) remains an explicit absolutely integrable cubic Gaussian-weighted average. This is a real integration result beyond a finite Taylor coefficient or a conditional one-link surrogate.
+
+Verification and independent evidence:
+- build: PASS, 40.21305759999086 seconds.
+- audit: PASS, 40.189566200017 seconds.
+- checks: PASS, 25.1690998999984 seconds.
+- axiom-ledger: PASS, 44.85801310001989 seconds.
+
+The complete root build passed7039 jobs. The canonical COMPLETE safe-Foundation transitive axiom audit passed55662 declarations, allowing only propext, Classical.choice and Quot.sound. ALL47 public types were printed unabridged and reviewed:42 complete theorem proofs and5 definitions, no abbreviations/instances/private helpers. All three complete proof/definition source files were read. The COMPLETE persisted Foundation/AxiomAudit.lean run passed. No sorry/admit/new mathematical axiom/native_decide, resource increase, version/configuration/compiler/trust change, hidden mathematical assumption or weakened audit was introduced. An overly unfolded measurability attempt hit the existing default heartbeat limit; it was replaced by direct compositions of existing continuous/linear coordinates and finite maps, retaining the original limit and all domains. No resource limit was increased.
+
+ALL26 independent Lean examples passed. They cover the real-weight hypothesis in the determinant envelope, exponential differences on a nonpositive half-line, the positive budget and actual coordinate bounds, total quotient behavior at t=0 versus the explicit nonzero domain, cutoff sign symmetry, both Gaussian/envelope integrability domains, measurable and genuinely integrable signed first density, cutoff and actual full-Haar corrections, the original unpinned partition, normalized partition, actual outside gap/weight/tail scale and exact full partition split. Conditional tests show the correction density is negative wherever C>0 and that a nonzero integral coefficient precludes an unpunctured normalized odd limit. These conditions are not an exported proof that I(a) is nonzero. The first harness run needed two TEST-only repairs (absolute-value orientation and mul_zero in a zero-denominator simplification); mathematical sources/resources were unchanged for those repairs. The original unpinned identity passed throughout.
+
+A fixed-seed independent NumPy diagnostic evaluated all112 actual quaternion links and72 faces on4096 shifted-Gaussian importance samples arranged in512 octets of color signs. It checked the actual cubic and local Boltzmann envelopes at t=.08,.04,.02,.01. Numerical odd cutoff integrals divided by C_0 were0.019773096062241514 at.04,0.019754207071632487 at.02 and0.01974950352849341 at.01, approaching0.019747936737136904 predicted from the external exact-rational harmonic coefficient and Schur energy. Octet sample standard errors were respectively5.4779190749057966e-5,1.363383998602818e-5,3.4056444711145376e-6. All sampled points lay inside the cutoff at these scales; this is NOT a bound on true outside Haar mass. Color-sign sample averaging of the cubic agreed to floating tolerance with its harmonic evaluation. These are importance-quadrature diagnostics, not a certified integral/error rate, a Lean color-averaging theorem, a nonzero I(a) theorem, boundary derivative interchange, continuum estimate, mass gap or novelty claim. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1715-*.
+
+Source integrity authenticates1714 against exact approval02d20c378e3fb7a804b1bd4b5f62010e623fd526. Among2821 recursive Foundation/root Lean files, only these three focused modules, root imports and AxiomAudit differ. Every older mathematical source,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remains unchanged. ResearchSources stays unmodified/uncommitted. Existing drafts/history, publication-role separation, daily reflection policy and campaign priorities are preserved.
+
+Exact remaining bottleneck. The missing scale-uniform odd envelope, genuine signed-density integrability, actual Haar limit exchange, |t|^(-94) outside removal and normalized full-partition odd formula are NOW VERIFIED and must no longer be listed as missing hypotheses. I(a) still needs a rigorous evaluation. The strongest next route is the separate color-reflection symmetry of the EXISTING centered pinned quadratic density after1713's harmonic translation: every determinant monomial uses three distinct quaternion colors, suggesting an exact eight-sign averaging identity. Prove its actual coordinate normalization, measure-preserving changes of variables and integrable polynomial domains before replacing a cubic average by its harmonic value. The external harmonic rational31877443263/69438734552 still needs an actual Lean certificate tied to C; numerical agreement is not that proof.
+
+The first odd partition correction along beta=1/t^2 with angles=t*a is NOT a theorem interchanging a fixed-beta third boundary derivative and the large-beta limit. A corresponding free-energy odd theorem, parameter-uniform derivative/closure estimates, fixed-beta actual third-response asymptotics and resulting thermal-bound implications remain OPEN unless separately proved. Stationary physical transfer contraction, a physically justified iteration distance, scale/volume-uniform bounds, infinite-volume/continuum existence and a positive Yang-Mills mass gap remain OPEN. This finite-cell integration checkpoint makes no completion claim and asserts no novelty for classical dominated-convergence/Laplace tools.
+
+Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility verification remain checkpoint closure gates. This pre-commit entry does not assert backup already succeeded. Visibility is controlled exclusively by the user. The indefinite research goal remains active.
