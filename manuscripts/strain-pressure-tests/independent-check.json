@@ -1,39 +1,68 @@
 {
   "status": "PASS",
-  "count": 14,
-  "checked_utc": "2026-10-29T17:49:40.792132+00:00",
+  "count": 25,
   "groups": [
     {
       "status": "PASS",
-      "count": 8,
-      "checks": [
-        "ratio-minus-one polynomial identity",
-        "exact normalized reduction 3",
-        "exact normalized reduction 9/5",
-        "exact normalized reduction 101/100",
-        "support labels and zero weighted mode",
-        "angular antipodes and positive scaling",
-        "transverse Fourier phases and energy",
-        "integer fourth-minus-second positivity"
-      ],
-      "scope": "Exact algebra, support and phase checks only; no numerical truncation is used to establish the infinite Gaussian tail.",
-      "script": "verify_shear_ratio.py",
-      "script_sha256": "da01d2fd0835815430d1ec5c1bd3c2b7c493f34721f14beec2396f73f1853d82"
+      "count": 14,
+      "checked_utc": "2026-10-29T17:49:40.792132+00:00",
+      "groups": [
+        {
+          "status": "PASS",
+          "count": 8,
+          "checks": [
+            "ratio-minus-one polynomial identity",
+            "exact normalized reduction 3",
+            "exact normalized reduction 9/5",
+            "exact normalized reduction 101/100",
+            "support labels and zero weighted mode",
+            "angular antipodes and positive scaling",
+            "transverse Fourier phases and energy",
+            "integer fourth-minus-second positivity"
+          ],
+          "scope": "Exact algebra, support and phase checks only; no numerical truncation is used to establish the infinite Gaussian tail.",
+          "script": "verify_shear_ratio.py",
+          "script_sha256": "da01d2fd0835815430d1ec5c1bd3c2b7c493f34721f14beec2396f73f1853d82"
+        },
+        {
+          "status": "PASS",
+          "count": 6,
+          "checks": [
+            "all ordered-label endpoint indicator cases",
+            "actual disagreement strip inclusion",
+            "downward labels monotone and eventual boundary detection on rational grid",
+            "positive normalized strictly dominant actual sector family",
+            "uniform energy difference with full threshold-label error",
+            "smooth energies exact kink ratio"
+          ],
+          "scope": "Finite indicator cases and exact scalar transcriptions only; not a substitute for universal or measure-limit proofs.",
+          "script": "verify_corridor.py",
+          "script_sha256": "1f3aada7fd251d76c794b5b1f32c195308606374cf6ca426659926582f1a7d8b"
+        }
+      ]
     },
     {
       "status": "PASS",
-      "count": 6,
-      "checks": [
-        "all ordered-label endpoint indicator cases",
-        "actual disagreement strip inclusion",
-        "downward labels monotone and eventual boundary detection on rational grid",
-        "positive normalized strictly dominant actual sector family",
-        "uniform energy difference with full threshold-label error",
-        "smooth energies exact kink ratio"
-      ],
-      "scope": "Finite indicator cases and exact scalar transcriptions only; not a substitute for universal or measure-limit proofs.",
-      "script": "verify_corridor.py",
-      "script_sha256": "1f3aada7fd251d76c794b5b1f32c195308606374cf6ca426659926582f1a7d8b"
+      "check_count": 11,
+      "checks": {
+        "actual stationary momentum coordinate 0": 0,
+        "actual stationary momentum coordinate 1": 0,
+        "actual stationary momentum coordinate 2": 0,
+        "actual incompressibility": 0,
+        "actual Gaussian curl": 0,
+        "repaired divergence": 0,
+        "repaired trace modulo exact circle relation": 0,
+        "radial response actual energy identity": 0,
+        "centered radial Gaussian mean": 0,
+        "unit radial Gaussian L2 norm": 0,
+        "Gaussian radius observation": 0
+      },
+      "arithmetic": "Exact rational polynomial matrix identities and quarter-variance Gaussian moments",
+      "scope": "Finite NS balance under the proved profile identity, incompressibility/curl, solenoidal repair/trace modulo the exact trigonometric relation and Gaussian radial normalization. Not a proof of weighted analytic integrability, the logarithmic integral or finite-slab Fubini.",
+      "script": "verify_vortex.py",
+      "script_sha256": "90a7a900e61560e501e9022f38d744d663e3b8586a0e081d19edd8a0c98f0d2d"
     }
-  ]
+  ],
+  "checked_utc": "2026-10-29T18:44:49.741864+00:00",
+  "scope": "Fourteen retained shear/corridor checks plus eleven exact vortex/profile-matrix and radial Gaussian checks; analytic integrability and log response rely on the complete proofs."
 }

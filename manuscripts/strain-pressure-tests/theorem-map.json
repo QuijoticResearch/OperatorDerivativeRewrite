@@ -1288,6 +1288,2157 @@
       "source_sha256": "e01aaad8c0059132fd20826bac2a4b72a4c13f3b903917f04f4b53e9e7a9fb6a",
       "declaration_header": "theorem down_endpoint_test_iff_boundary_null {\u03b1 : Type*} [MeasurableSpace \u03b1] (\u03bc : Measure \u03b1)\n    [IsFiniteMeasure \u03bc] (\u03c1 \u03c9 : \u03b1 \u2192 \u211d) (hr : Measurable \u03c1) (hl : Measurable \u03c9) (a b : \u211d) :\n    ((Tendsto (fun n => caseOccupation \u03bc (down \u03c1 n) (down \u03c9 n) a b 0) atTop\n      (\ud835\udcdd (caseOccupation \u03bc \u03c1 \u03c9 a b 0))) \u2227\n      (Tendsto (fun n => caseOccupation \u03bc (down \u03c1 n) (down \u03c9 n) a b 2) atTop\n        (\ud835\udcdd (caseOccupation \u03bc \u03c1 \u03c9 a b 2)))) \u2194 \u03bc (relevantBoundary \u03c1 \u03c9 a b)=0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CorridorOccupationSharpness.lean#L133"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angularProfile_hasDerivAt",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 14,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angularProfile_hasDerivAt (s\u2080 : \u211d) :\n    HasDerivAt angularProfile (angularDerivative s\u2080) s\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angularProfile_continuous",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 55,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angularProfile_continuous : Continuous angularProfile",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L55"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angularProfile_zero",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 58,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angularProfile_zero : angularProfile 0=1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L58"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angularDerivative_zero",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 60,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angularDerivative_zero : angularDerivative 0= -1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angularProfile_quotient",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 65,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angularProfile_quotient (s : \u211d) (hs : s \u2260 0) :\n    angularProfile s=(1-Real.exp (-s))/(2*s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L65"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.angular_curl_identity",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 78,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem angular_curl_identity (s : \u211d) :\n    2*angularProfile s+2*s*angularDerivative s=Real.exp (-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L78"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.radialPressure_hasDerivAt",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 99,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem radialPressure_hasDerivAt (s : \u211d) :\n    HasDerivAt radialPressure (angularProfile s^2/2) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L99"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_x",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 110,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_x (x y : \u211d) : HasDerivAt (fun t => pressure t y)\n    (x*angularProfile (x^2+y^2)^2) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L110"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_y",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 118,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_y (x y : \u211d) : HasDerivAt (fun t => pressure x t)\n    (y*angularProfile (x^2+y^2)^2) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L118"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.profile_x",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 126,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem profile_x (x y : \u211d) : HasDerivAt (fun t => angularProfile (t^2+y^2))\n    (2*x*angularDerivative (x^2+y^2)) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L126"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.profile_y",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 135,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem profile_y (x y : \u211d) : HasDerivAt (fun t => angularProfile (x^2+t^2))\n    (2*y*angularDerivative (x^2+y^2)) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L135"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.jacobian_eq",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 152,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem jacobian_eq (x y z : \u211d) : jacobian x y z=\n    ![![-2*x*y*angularDerivative (x^2+y^2),\n          -angularProfile (x^2+y^2)-2*y^2*angularDerivative (x^2+y^2),0],\n      ![angularProfile (x^2+y^2)+2*x^2*angularDerivative (x^2+y^2),\n          2*x*y*angularDerivative (x^2+y^2),0],![0,0,0] ]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L152"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.divergence_zero",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 178,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem divergence_zero (x y z : \u211d) : Matrix.trace (jacobian x y z)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L178"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.curl_gaussian",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 187,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem curl_gaussian (x y z : \u211d) : curl x y z=![0,0,Real.exp (-(x^2+y^2))]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L187"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressureGradient_eq",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 200,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressureGradient_eq (x y z : \u211d) : pressureGradient x y z=\n    ![x*angularProfile (x^2+y^2)^2,y*angularProfile (x^2+y^2)^2,0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L200"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.steady_euler",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 208,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem steady_euler (x y z : \u211d) : acceleration x y z+pressureGradient x y z=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L208"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_radial_energy",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 215,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_radial_energy (x y z : \u211d) :\n    x*deriv (fun t => pressure t y) x+y*deriv (fun t => pressure x t) y=\n      (velocity x y z 0)^2+(velocity x y z 1)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L215"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_radial_nonneg",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 222,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_radial_nonneg (x y : \u211d) :\n    0 \u2264 x*deriv (fun t => pressure t y) x+y*deriv (fun t => pressure x t) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L222"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_xx",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 227,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_xx (x y : \u211d) : HasDerivAt (fun t => t*angularProfile (t^2+y^2)^2)\n    (angularProfile (x^2+y^2)^2+4*x^2*angularProfile (x^2+y^2)*angularDerivative (x^2+y^2)) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L227"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_yy",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 237,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_yy (x y : \u211d) : HasDerivAt (fun t => t*angularProfile (x^2+t^2)^2)\n    (angularProfile (x^2+y^2)^2+4*y^2*angularProfile (x^2+y^2)*angularDerivative (x^2+y^2)) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L237"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_laplacian",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 247,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_laplacian (x y : \u211d) :\n    HelicalWeightedPressureIBP.actualLaplacian (fun p => pressure p.1 p.2) (x,y)=\n      2*angularProfile (x^2+y^2)^2+\n        4*(x^2+y^2)*angularProfile (x^2+y^2)*angularDerivative (x^2+y^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L247"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.velocity_trace_square",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 261,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem velocity_trace_square (x y z : \u211d) :\n    Matrix.trace (jacobian x y z*jacobian x y z)=\n      -2*angularProfile (x^2+y^2)^2-\n        4*(x^2+y^2)*angularProfile (x^2+y^2)*angularDerivative (x^2+y^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L261"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlVelocity.pressure_poisson",
+      "file": "Foundation/GaussianSwirlVelocity.lean",
+      "line": 270,
+      "source_sha256": "c5fe09b08cb8036b43bedccedd45dc15e9aca814e57e7b65d038f27b5048b1bf",
+      "declaration_header": "theorem pressure_poisson (x y z : \u211d) :\n    HelicalWeightedPressureIBP.actualLaplacian (fun p => pressure p.1 p.2) (x,y)=\n      -Matrix.trace (jacobian x y z*jacobian x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlVelocity.lean#L270"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.moment_hasDerivAt",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 15,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem moment_hasDerivAt (n : \u2115) (s\u2080 : \u211d) :\n    HasDerivAt (moment n) (moment (n+1) s\u2080) s\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L15"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.moment_zero",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 57,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem moment_zero : moment 0 = angularProfile",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L57"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.moment_one",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 61,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem moment_one : moment 1 = angularDerivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L61"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.moment_contDiff",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 65,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem moment_contDiff (n k : \u2115) : ContDiff \u211d k (moment n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L65"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.moment_smooth",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 79,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem moment_smooth (n : \u2115) : ContDiff \u211d \u221e (moment n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.angularProfile_smooth",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 82,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem angularProfile_smooth : ContDiff \u211d \u221e angularProfile",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L82"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.radialPressure_smooth",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 86,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem radialPressure_smooth : ContDiff \u211d \u221e radialPressure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L86"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.angularDerivative_hasDerivAt",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 96,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem angularDerivative_hasDerivAt (s : \u211d) :\n    HasDerivAt angularDerivative (angularSecond s) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L96"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.angular_second_identity",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 101,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem angular_second_identity (s : \u211d) :\n    4*angularDerivative s + 2*s*angularSecond s = -Real.exp (-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L101"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.derivative_x",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 115,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem derivative_x (x y : \u211d) :\n    HasDerivAt (fun t => angularDerivative (t^2+y^2))\n      (2*x*angularSecond (x^2+y^2)) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L115"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlProfileMoments.derivative_y",
+      "file": "Foundation/GaussianSwirlProfileMoments.lean",
+      "line": 125,
+      "source_sha256": "82f612b4c870f6e2fe5381c98bd76950b7c3625e46f8cf76f68e69fe02dbc10a",
+      "declaration_header": "theorem derivative_y (x y : \u211d) :\n    HasDerivAt (fun t => angularDerivative (x^2+t^2))\n      (2*y*angularSecond (x^2+y^2)) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlProfileMoments.lean#L125"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.angular_bounds",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 14,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem angular_bounds {s : \u211d} (hs : 0 \u2264 s) :\n    Real.exp (-s)/2 \u2264 angularProfile s \u2227 angularProfile s \u2264 1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.angular_pos",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 29,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem angular_pos {s : \u211d} (hs : 0 \u2264 s) : 0 < angularProfile s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L29"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.angularDerivative_bounds",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 32,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem angularDerivative_bounds {s : \u211d} (hs : 0 \u2264 s) :\n    -(1/4 : \u211d) \u2264 angularDerivative s \u2227 angularDerivative s \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L32"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.angularDerivative_abs",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 50,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem angularDerivative_abs {s : \u211d} (hs : 0 \u2264 s) : |angularDerivative s| \u2264 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialPressure_bounds",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 55,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialPressure_bounds {s : \u211d} (hs : 0 \u2264 s) :\n    0 \u2264 radialPressure s \u2227 radialPressure s \u2264 s/8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L55"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.angularDerivative_measurable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 72,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem angularDerivative_measurable : Measurable angularDerivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radiusSq_nonneg",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 87,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radiusSq_nonneg (x : \u211d \u00d7 \u211d) : 0 \u2264 radiusSq x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L87"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.P_continuous",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 89,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem P_continuous : Continuous P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L89"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dx_continuous",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 94,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dx_continuous : Continuous Dx",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L94"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dy_continuous",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 98,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dy_continuous : Continuous Dy",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L98"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dxx_measurable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 102,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dxx_measurable : Measurable Dxx",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L102"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dyy_measurable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 107,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dyy_measurable : Measurable Dyy",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L107"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.P_norm_bound",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 112,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem P_norm_bound (x : \u211d \u00d7 \u211d) : \u2016P x\u2016 \u2264 radiusSq x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L112"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dx_norm_bound",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 118,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dx_norm_bound (x : \u211d \u00d7 \u211d) : \u2016Dx x\u2016 \u2264 \u2016x.1\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L118"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dy_norm_bound",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 125,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dy_norm_bound (x : \u211d \u00d7 \u211d) : \u2016Dy x\u2016 \u2264 \u2016x.2\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L125"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dxx_norm_bound",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 132,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dxx_norm_bound (x : \u211d \u00d7 \u211d) : \u2016Dxx x\u2016 \u2264 1+x.1^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L132"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dyy_norm_bound",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 153,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dyy_norm_bound (x : \u211d \u00d7 \u211d) : \u2016Dyy x\u2016 \u2264 1+x.2^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L153"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.P_memLp",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 174,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem P_memLp : MemLp P 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L174"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dx_memLp",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 182,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dx_memLp : MemLp Dx 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L182"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dy_memLp",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 187,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dy_memLp : MemLp Dy 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L187"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dxx_integrable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 192,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dxx_integrable : Integrable Dxx physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L192"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.Dyy_integrable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 198,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem Dyy_integrable : Integrable Dyy physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L198"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.pressure_domain",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 204,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem pressure_domain : PressureDomain P Dx Dy Dxx Dyy",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L204"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.stein_x",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 207,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem stein_x {G K : \u211d \u00d7 \u211d \u2192 \u211d}\n    (hd : \u2200 x y, HasDerivAt (fun t => G (t,y)) (K (x,y)) x)\n    (hg : MemLp G 2 physicalGaussian) (hk : Integrable K physicalGaussian) :\n    (\u222b x, K x \u2202physicalGaussian)=4*(\u222b x, x.1*G x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L207"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.stein_y",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 222,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem stein_y {G K : \u211d \u00d7 \u211d \u2192 \u211d}\n    (hd : \u2200 x y, HasDerivAt (fun t => G (x,t)) (K (x,y)) y)\n    (hg : MemLp G 2 physicalGaussian) (hk : Integrable K physicalGaussian) :\n    (\u222b x, K x \u2202physicalGaussian)=4*(\u222b x, x.2*G x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L222"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.domain_euler",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 238,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem domain_euler {F Fx Fy Fxx Fyy : \u211d \u00d7 \u211d \u2192 \u211d} (h : PressureDomain F Fx Fy Fxx Fyy) :\n    physicalResponse (pressureL2 h)=(1/2 : \u211d)*\n      (\u222b x, x.1*Fx x+x.2*Fy x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L238"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_eq",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 251,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_eq (x : \u211d \u00d7 \u211d) : x.1*Dx x+x.2*Dy x=radialEnergy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L251"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_integrable",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 255,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_integrable : Integrable radialEnergy physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L255"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_continuous",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 259,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_continuous : Continuous radialEnergy",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L259"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_nonneg",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 264,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_nonneg (x : \u211d \u00d7 \u211d) : 0 \u2264 radialEnergy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L264"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_at_one",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 267,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_at_one : 0 < radialEnergy (1,0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L267"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.radialEnergy_integral_pos",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 279,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem radialEnergy_integral_pos : 0 < \u222b x, radialEnergy x \u2202physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L279"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.swirl_response",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 283,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem swirl_response : physicalResponse (pressureL2 pressure_domain)=\n    (1/2 : \u211d)*(\u222b x, radialEnergy x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L283"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.swirl_response_pos",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 288,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem swirl_response_pos : 0 < physicalResponse (pressureL2 pressure_domain)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L288"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlPressureDomain.swirl_leadingPressure_pos",
+      "file": "Foundation/GaussianSwirlPressureDomain.lean",
+      "line": 292,
+      "source_sha256": "f548486bf48d742bcc126efb8691324568ef2c2a5ea1ac470856aebae9d83e1d",
+      "declaration_header": "theorem swirl_leadingPressure_pos (\u03b5 : \u211d) (h\u03b5 : \u03b5 \u2260 0) :\n    0 < leadingPressure \u03b5 (pressureL2 pressure_domain)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlPressureDomain.lean#L292"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.damping_pos",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 17,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem damping_pos (a : \u211d) (x : \u211d \u00d7 \u211d) : 0 < damping a x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L17"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.damping_le_one",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 19,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem damping_le_one {a : \u211d} (ha : 0 \u2264 a) (x : \u211d \u00d7 \u211d) : damping a x \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L19"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.standard_radial_laplace",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 24,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem standard_radial_laplace (c : \u211d) (hc : 0 \u2264 c) :\n    (\u222b x : \u211d \u00d7 \u211d, Real.exp (-c*(x.1^2+x.2^2)) \u2202GaussianDeterminantConditional.rowMeasure)=\n      1/(1+2*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L24"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.physical_radial_laplace",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 37,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem physical_radial_laplace (a : \u211d) (ha : 0 \u2264 a) :\n    (\u222b x, damping a x \u2202physicalGaussian)=2/(2+a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.polynomial_damping_memLp",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 59,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem polynomial_damping_memLp (q : HelicalPolynomialPressureIBP.PlanePolynomial)\n    (a : \u211d) (ha : 0 \u2264 a) (r : \u211d\u22650\u221e) (hr : r \u2260 \u221e) :\n    MemLp (fun x : \u211d \u00d7 \u211d => MvPolynomial.eval ![x.1,x.2] q*damping a x) r physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L59"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.damping_memLp",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 69,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem damping_memLp (a : \u211d) (ha : 0 \u2264 a) (r : \u211d\u22650\u221e) (hr : r \u2260 \u221e) :\n    MemLp (damping a) r physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L69"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.x_damping_memLp",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 73,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem x_damping_memLp (a : \u211d) (ha : 0 \u2264 a) :\n    MemLp (fun x : \u211d \u00d7 \u211d => x.1*damping a x) 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L73"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.y_damping_memLp",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 77,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem y_damping_memLp (a : \u211d) (ha : 0 \u2264 a) :\n    MemLp (fun x : \u211d \u00d7 \u211d => x.2*damping a x) 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L77"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.x_square_damping_integrable",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 81,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem x_square_damping_integrable (a : \u211d) (ha : 0 \u2264 a) :\n    Integrable (fun x : \u211d \u00d7 \u211d => x.1^2*damping a x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L81"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.y_square_damping_integrable",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 87,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem y_square_damping_integrable (a : \u211d) (ha : 0 \u2264 a) :\n    Integrable (fun x : \u211d \u00d7 \u211d => x.2^2*damping a x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L87"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.damping_x",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 93,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem damping_x (a x y : \u211d) : HasDerivAt (fun t => damping a (t,y))\n    (-2*a*x*damping a (x,y)) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L93"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.damping_y",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 101,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem damping_y (a x y : \u211d) : HasDerivAt (fun t => damping a (x,t))\n    (-2*a*y*damping a (x,y)) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L101"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.weighted_x_laplace",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 109,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem weighted_x_laplace (a : \u211d) (ha : 0 \u2264 a) :\n    (\u222b x, x.1^2*damping a x \u2202physicalGaussian)=1/(2+a)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L109"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.weighted_y_laplace",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 129,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem weighted_y_laplace (a : \u211d) (ha : 0 \u2264 a) :\n    (\u222b x, x.2^2*damping a x \u2202physicalGaussian)=1/(2+a)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L129"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.weighted_radial_laplace",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 149,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem weighted_radial_laplace (a : \u211d) (ha : 0 \u2264 a) :\n    (\u222b x, radiusSq x*damping a x \u2202physicalGaussian)=2/(2+a)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L149"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.unit_nonneg",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 163,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem unit_nonneg : \u2200\u1d50 t \u2202unitMeasure, 0 \u2264 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L163"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.angularProfile_unit",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 167,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem angularProfile_unit (s : \u211d) :\n    angularProfile s=(\u222b t, Real.exp (-|t| *s) \u2202unitMeasure)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L167"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.parameter_damping_integral",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 176,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem parameter_damping_integral (x : \u211d \u00d7 \u211d) :\n    (\u222b v, damping (|v.1|+|v.2|) x \u2202parameterMeasure)=\n      (\u222b t, Real.exp (-|t| *radiusSq x) \u2202unitMeasure)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L176"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.profile_square_mixture",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 189,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem profile_square_mixture (x : \u211d \u00d7 \u211d) : angularProfile (radiusSq x)^2=\n    (1/4 : \u211d)*(\u222b v, damping (|v.1|+|v.2|) x \u2202parameterMeasure)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L189"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.radialEnergy_mixture",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 196,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem radialEnergy_mixture (x : \u211d \u00d7 \u211d) : radialEnergy x=\n    (1/4 : \u211d)*(\u222b v, mixtureKernel v x \u2202parameterMeasure)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L196"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.radiusSq_integrable",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 203,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem radiusSq_integrable : Integrable radiusSq physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L203"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.mixtureKernel_integrable",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 212,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem mixtureKernel_integrable : Integrable (fun z : (\u211d \u00d7 \u211d) \u00d7 (\u211d \u00d7 \u211d) => mixtureKernel z.1 z.2)\n    (parameterMeasure.prod physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L212"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.mixtureKernel_integral",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 224,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem mixtureKernel_integral (v : \u211d \u00d7 \u211d) :\n    (\u222b x, mixtureKernel v x \u2202physicalGaussian)=2*rationalKernel v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L224"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.rationalKernel_integrable",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 231,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem rationalKernel_integrable : Integrable rationalKernel parameterMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L231"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.response_rationalKernel",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 240,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem response_rationalKernel : physicalResponse (pressureL2 pressure_domain)=\n    (1/4 : \u211d)*(\u222b v, rationalKernel v \u2202parameterMeasure)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L240"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.rationalKernel_interval",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 249,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem rationalKernel_interval : (\u222b v, rationalKernel v \u2202parameterMeasure)=\n    \u222b t in (0 : \u211d)..1, \u222b u in (0 : \u211d)..1, 1/(2+(t+u))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L249"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.inner_inverse_square",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 263,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem inner_inverse_square (t : \u211d) (ht : 0 \u2264 t) :\n    (\u222b u in (0 : \u211d)..1, 1/(2+(t+u))^2)=1/(2+t)-1/(3+t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L263"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.parameter_interval_value",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 286,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem parameter_interval_value :\n    (\u222b t in (0 : \u211d)..1, \u222b u in (0 : \u211d)..1, 1/(2+(t+u))^2)=Real.log (9/8 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L286"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.swirl_response_exact",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 325,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem swirl_response_exact : physicalResponse (pressureL2 pressure_domain)=Real.log (9/8 : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L325"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSwirlLaplace.swirl_leadingPressure_exact",
+      "file": "Foundation/GaussianSwirlLaplace.lean",
+      "line": 329,
+      "source_sha256": "aef451fd47847fc410ae170dd3d193805e5c4b28754fa6114035bcfe5b862bdf",
+      "declaration_header": "theorem swirl_leadingPressure_exact (\u03b5 : \u211d) : leadingPressure \u03b5 (pressureL2 pressure_domain)=\n    Real.pi^2*\u03b5^2*Real.log (9/8 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSwirlLaplace.lean#L329"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.velocity_smooth",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 19,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem velocity_smooth (\u03bd \u03b3 : \u211d) :\n    ContDiff \u211d \u221e (fun q : Fin 3 \u2192 \u211d => velocity \u03bd \u03b3 (q 0) (q 1) (q 2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L19"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.pressure_smooth",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 27,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem pressure_smooth (\u03bd \u03b3 : \u211d) :\n    ContDiff \u211d \u221e (fun q : Fin 3 \u2192 \u211d => pressure \u03bd \u03b3 (q 0) (q 1) (q 2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L27"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.velocity_x",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 40,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem velocity_x (\u03bd \u03b3 x y z : \u211d) (i : Fin 3) :\n    HasDerivAt (fun t => velocity \u03bd \u03b3 t y z i) (jacobian \u03bd \u03b3 x y z i 0) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L40"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.velocity_y",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 50,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem velocity_y (\u03bd \u03b3 x y z : \u211d) (i : Fin 3) :\n    HasDerivAt (fun t => velocity \u03bd \u03b3 x t z i) (jacobian \u03bd \u03b3 x y z i 1) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L50"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.velocity_z",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 60,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem velocity_z (\u03bd \u03b3 x y z : \u211d) (i : Fin 3) :\n    HasDerivAt (fun t => velocity \u03bd \u03b3 x y t i) (jacobian \u03bd \u03b3 x y z i 2) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.divergence_zero",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 69,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem divergence_zero (\u03bd \u03b3 x y z : \u211d) : Matrix.trace (jacobian \u03bd \u03b3 x y z) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L69"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.laplacian_eq",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 78,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem laplacian_eq (\u03bd \u03b3 x y z : \u211d) : laplacian \u03bd \u03b3 x y z =\n    ![2*\u03b3*y*Real.exp (-(x^2+y^2)), -2*\u03b3*x*Real.exp (-(x^2+y^2)), 0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L78"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.pressureGradient_eq",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 119,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem pressureGradient_eq (\u03bd \u03b3 x y z : \u211d) : pressureGradient \u03bd \u03b3 x y z =\n    ![\u03b3^2*x*angularProfile (x^2+y^2)^2-4*\u03bd^2*x,\n      \u03b3^2*y*angularProfile (x^2+y^2)^2-4*\u03bd^2*y, -16*\u03bd^2*z]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L119"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.stationary_navier_stokes",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 141,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem stationary_navier_stokes (\u03bd \u03b3 x y z : \u211d) :\n    acceleration \u03bd \u03b3 x y z + pressureGradient \u03bd \u03b3 x y z = \u03bd \u2022 laplacian \u03bd \u03b3 x y z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L141"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StrainedBurgersVortex.vorticity_eq",
+      "file": "Foundation/StrainedBurgersVortex.lean",
+      "line": 154,
+      "source_sha256": "4db5e81ef465b0194a79bc7fba6a8903655e5e3c158830f09e5bcdc37002b452",
+      "declaration_header": "theorem vorticity_eq (\u03bd \u03b3 x y z : \u211d) : vorticity \u03bd \u03b3 x y z =\n    ![0, 0, \u03b3*Real.exp (-(x^2+y^2))]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StrainedBurgersVortex.lean#L154"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.hessian_zz",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 24,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem hessian_zz (\u03bd \u03b3 x y z : \u211d) : hessian \u03bd \u03b3 x y z 2 2 = -16*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L24"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.hessian_xx",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 29,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem hessian_xx (\u03bd \u03b3 x y z : \u211d) : hessian \u03bd \u03b3 x y z 0 0 =\n    \u03b3^2*(GaussianSwirlVelocity.angularProfile (x^2+y^2)^2 +\n      4*x^2*GaussianSwirlVelocity.angularProfile (x^2+y^2)*\n        GaussianSwirlVelocity.angularDerivative (x^2+y^2)) - 4*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L29"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.hessian_yy",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 45,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem hessian_yy (\u03bd \u03b3 x y z : \u211d) : hessian \u03bd \u03b3 x y z 1 1 =\n    \u03b3^2*(GaussianSwirlVelocity.angularProfile (x^2+y^2)^2 +\n      4*y^2*GaussianSwirlVelocity.angularProfile (x^2+y^2)*\n        GaussianSwirlVelocity.angularDerivative (x^2+y^2)) - 4*\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L45"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.pressure_poisson",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 62,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem pressure_poisson (\u03bd \u03b3 x y z : \u211d) : Matrix.trace (hessian \u03bd \u03b3 x y z) =\n    -Matrix.trace (jacobian \u03bd \u03b3 x y z * jacobian \u03bd \u03b3 x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L62"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.trace_square_zero",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 79,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem trace_square_zero (\u03bd \u03b3 x y z : \u211d) :\n    Matrix.trace (vorticityJacobian \u03bd \u03b3 x y z * vorticityJacobian \u03bd \u03b3 x y z) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.contraction_eq",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 88,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem contraction_eq (\u03bd \u03b3 x y z : \u211d) : contraction \u03bd \u03b3 x y z =\n    -16*\u03bd^2*\u03b3^2*(Real.exp (-(x^2+y^2)))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L88"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.contraction_neg",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 93,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem contraction_neg (\u03bd \u03b3 x y z : \u211d) (h\u03bd : \u03bd \u2260 0) (h\u03b3 : \u03b3 \u2260 0) :\n    contraction \u03bd \u03b3 x y z < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L93"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.axialFlux_eq",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 102,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem axialFlux_eq (\u03bd \u03b3 x y z : \u211d) : axialFlux \u03bd \u03b3 x y z =\n    -16*\u03bd^2*\u03b3^2*z*(Real.exp (-(x^2+y^2)))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L102"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.axial_integral_boundary",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 107,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem axial_integral_boundary (\u03bd \u03b3 x y a b : \u211d) :\n    (\u222b z in a..b, contraction \u03bd \u03b3 x y z) = axialFlux \u03bd \u03b3 x y b - axialFlux \u03bd \u03b3 x y a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L107"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.unit_slab_contraction",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 114,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem unit_slab_contraction (\u03bd \u03b3 x y : \u211d) :\n    (\u222b z in (0 : \u211d)..1, contraction \u03bd \u03b3 x y z) = contraction \u03bd \u03b3 x y 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L114"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.trace_does_not_cancel_slab",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 119,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem trace_does_not_cancel_slab (\u03bd \u03b3 x y : \u211d) (h\u03bd : \u03bd \u2260 0) (h\u03b3 : \u03b3 \u2260 0) :\n    (\u222b z in (0 : \u211d)..1, contraction \u03bd \u03b3 x y z) \u2260\n      \u222b z in (0 : \u211d)..1, pressure \u03bd \u03b3 x y z *\n        Matrix.trace (vorticityJacobian \u03bd \u03b3 x y z * vorticityJacobian \u03bd \u03b3 x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L119"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.axial_unbounded_above",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 127,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem axial_unbounded_above (\u03bd \u03b3 : \u211d) (h\u03bd : \u03bd \u2260 0) (M : \u211d) :\n    \u2203 z : \u211d, M < velocity \u03bd \u03b3 0 0 z 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L127"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersAxialPressureFlux.axial_unit_not_periodic",
+      "file": "Foundation/BurgersAxialPressureFlux.lean",
+      "line": 134,
+      "source_sha256": "9828f4d44268c386e9f926b419cd02dac6a70024caed4c2df51f4559e74fa0a4",
+      "declaration_header": "theorem axial_unit_not_periodic (\u03bd \u03b3 z : \u211d) (h\u03bd : \u03bd \u2260 0) :\n    velocity \u03bd \u03b3 0 0 (z+1) \u2260 velocity \u03bd \u03b3 0 0 z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersAxialPressureFlux.lean#L134"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.pressure_domain",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 20,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem pressure_domain (\u03bd \u03b3 z : \u211d) : PressureDomain (P \u03bd \u03b3 z)\n    (Dx \u03bd \u03b3) (Dy \u03bd \u03b3) (Dxx \u03bd \u03b3) (Dyy \u03bd \u03b3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L20"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.class_representation",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 31,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem class_representation (\u03bd \u03b3 z : \u211d) : pressureClass \u03bd \u03b3 z =\n    (\u03b3^2) \u2022 pressureL2 GaussianSwirlPressureDomain.pressure_domain +\n      (-2*\u03bd^2) \u2022 pressureL2 radius_domain +\n        (-8*\u03bd^2*z^2) \u2022 pressureL2 (constant_domain 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L31"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.response_exact",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 54,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem response_exact (\u03bd \u03b3 z : \u211d) : physicalResponse (pressureClass \u03bd \u03b3 z) =\n    \u03b3^2*Real.log (9/8 : \u211d)/4-\u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L54"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.response_axial_independent",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 64,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem response_axial_independent (\u03bd \u03b3 z w : \u211d) :\n    physicalResponse (pressureClass \u03bd \u03b3 z) = physicalResponse (pressureClass \u03bd \u03b3 w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L64"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.negative_iff",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 68,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem negative_iff (\u03bd \u03b3 z : \u211d) : physicalResponse (pressureClass \u03bd \u03b3 z) < 0 \u2194\n    \u03b3^2*Real.log (9/8 : \u211d)/4 < \u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L68"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.positive_iff",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 71,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem positive_iff (\u03bd \u03b3 z : \u211d) : 0 < physicalResponse (pressureClass \u03bd \u03b3 z) \u2194\n    \u03bd^2 < \u03b3^2*Real.log (9/8 : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L71"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.zero_iff",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 74,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem zero_iff (\u03bd \u03b3 z : \u211d) : physicalResponse (pressureClass \u03bd \u03b3 z) = 0 \u2194\n    \u03b3^2*Real.log (9/8 : \u211d)/4 = \u03bd^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.neutralViscosity_pos",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 79,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem neutralViscosity_pos : 0 < neutralViscosity",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.neutralViscosity_square",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 82,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem neutralViscosity_square : neutralViscosity^2 = Real.log (9/8 : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L82"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.neutral_response",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 85,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem neutral_response (z : \u211d) : physicalResponse (pressureClass neutralViscosity 1 z) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L85"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.neutral_actual_contraction_neg",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 89,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem neutral_actual_contraction_neg (x y z : \u211d) :\n    BurgersAxialPressureFlux.contraction neutralViscosity 1 x y z < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L89"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.smaller_viscosity_positive",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 93,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem smaller_viscosity_positive (z : \u211d) :\n    0 < physicalResponse (pressureClass (neutralViscosity/2) 1 z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L93"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.positive_response_negative_contraction",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 100,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem positive_response_negative_contraction (x y z : \u211d) :\n    0 < neutralViscosity/2 \u2227\n      0 < physicalResponse (pressureClass (neutralViscosity/2) 1 z) \u2227\n        BurgersAxialPressureFlux.contraction (neutralViscosity/2) 1 x y z < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L100"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.unit_viscosity_negative",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 108,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem unit_viscosity_negative (z : \u211d) : physicalResponse (pressureClass 1 1 z) < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L108"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersGaussianPressureResponse.leadingPressure_exact",
+      "file": "Foundation/BurgersGaussianPressureResponse.lean",
+      "line": 114,
+      "source_sha256": "f4409957b45e73cbfb331329fcd5c328e37dabe12684a146de2e92a656a3c938",
+      "declaration_header": "theorem leadingPressure_exact (\u03b5 \u03bd \u03b3 z : \u211d) : leadingPressure \u03b5 (pressureClass \u03bd \u03b3 z) =\n    Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersGaussianPressureResponse.lean#L114"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.profile_x",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 23,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem profile_x (x y : \u211d) : HasDerivAt (fun t => profile t y) (-2*x*profile x y) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L23"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.profile_y",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 27,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem profile_y (x y : \u211d) : HasDerivAt (profile x) (-2*y*profile x y) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L27"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.jacobian_eq",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 32,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem jacobian_eq (\u03b5 x y z : \u211d) :\n    jacobian \u03b5 x y z=!![-2*\u03b5*x*profile x y*Real.cos z, -2*\u03b5*y*profile x y*Real.cos z,\n      -\u03b5*profile x y*Real.sin z;\n     -2*\u03b5*x*profile x y*Real.sin z, -2*\u03b5*y*profile x y*Real.sin z, \u03b5*profile x y*Real.cos z;\n     -2*x*profile x y, -2*y*profile x y, 0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L32"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.divergence_eq",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 63,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem divergence_eq (\u03b5 x y z : \u211d) :\n    divergence \u03b5 x y z=-2*\u03b5*profile x y*(x*Real.cos z+y*Real.sin z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L63"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.divergence_witness",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 69,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem divergence_witness (\u03b5 : \u211d) (h\u03b5 : \u03b5 \u2260 0) : divergence \u03b5 1 0 0 \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L69"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.not_divergence_free",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 74,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem not_divergence_free (\u03b5 : \u211d) (h\u03b5 : \u03b5 \u2260 0) :\n    \u00ac \u2200 x y z : \u211d, divergence \u03b5 x y z=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.trace_square",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 79,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem trace_square (\u03b5 x y z : \u211d) :\n    Matrix.trace (jacobian \u03b5 x y z*jacobian \u03b5 x y z)=\n      4*\u03b5^2*(profile x y)^2*(x*Real.cos z+y*Real.sin z)^2+\n      4*\u03b5*(profile x y)^2*(x*Real.sin z-y*Real.cos z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.trace_expansion",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 90,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem trace_expansion (\u03b5 x y z : \u211d) :\n    Matrix.trace (jacobian \u03b5 x y z*jacobian \u03b5 x y z)=\n      \u03b5*linearTrace x y z+\u03b5^2*quadraticTrace x y z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L90"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.straight_trace_zero",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 97,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem straight_trace_zero (x y z : \u211d) :\n    Matrix.trace (jacobian 0 x y z*jacobian 0 x y z)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L97"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.linearTrace_period_average",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 102,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem linearTrace_period_average (x y : \u211d) :\n    (\u222b z in (0:\u211d)..(2*Real.pi), linearTrace x y z)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L102"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.fixed_pressure_linear_average",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 112,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem fixed_pressure_linear_average (p x y : \u211d) :\n    (\u222b z in (0:\u211d)..(2*Real.pi), p*linearTrace x y z)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L112"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.corrected_divergence_zero",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 125,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem corrected_divergence_zero (\u03b5 x y z : \u211d) : correctedDivergence \u03b5 x y z=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L125"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.axial_correction_nonzero",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 138,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem axial_correction_nonzero (\u03b5 : \u211d) (h\u03b5 : \u03b5 \u2260 0) :\n    corrected \u03b5 0 1 0 2 \u2260 helical \u03b5 0 1 0 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L138"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.helical_smooth",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 146,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem helical_smooth (\u03b5 : \u211d) :\n    ContDiff \u211d \u22a4 (fun p : Fin 3 \u2192 \u211d => helical \u03b5 (p 0) (p 1) (p 2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L146"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalVorticityDiagnostics.corrected_smooth",
+      "file": "Foundation/HelicalVorticityDiagnostics.lean",
+      "line": 161,
+      "source_sha256": "afa12967ca1c911a76ef6ae4037ef41f5888fd0cc2e18e37c9cbfb19596adc69",
+      "declaration_header": "theorem corrected_smooth (\u03b5 : \u211d) :\n    ContDiff \u211d \u22a4 (fun p : Fin 3 \u2192 \u211d => corrected \u03b5 (p 0) (p 1) (p 2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalVorticityDiagnostics.lean#L161"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.quarter_density_derivative",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 14,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem quarter_density_derivative (x : \u211d) :\n    HasDerivAt (gaussianPDFReal 0 (1/4)) (-4*x*gaussianPDFReal 0 (1/4) x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.integrable_density_mul",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 23,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem integrable_density_mul {f : \u211d \u2192 \u211d} (hf : Integrable f \u03bd) :\n    Integrable (fun x => gaussianPDFReal 0 (1/4) x*f x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L23"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.density_boundary_zero",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 31,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem density_boundary_zero {f g : \u211d \u2192 \u211d} (hd : \u2200 x, HasDerivAt f (g x) x)\n    (hf : Integrable f \u03bd) (hg : Integrable g \u03bd)\n    (hxf : Integrable (fun x => x*f x) \u03bd) :\n    Tendsto (fun x => f x*gaussianPDFReal 0 (1/4) x) atBot (\ud835\udcdd 0) \u2227\n    Tendsto (fun x => f x*gaussianPDFReal 0 (1/4) x) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L31"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.stein_integrable",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 51,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem stein_integrable {f g : \u211d \u2192 \u211d} (hd : \u2200 x, HasDerivAt f (g x) x)\n    (hf : Integrable f \u03bd) (hg : Integrable g \u03bd)\n    (hxf : Integrable (fun x => x*f x) \u03bd) :\n    (\u222b x, g x \u2202\u03bd)=4*(\u222b x, x*f x \u2202\u03bd)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L51"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.centered_first",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 78,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem centered_first {f g : \u211d \u2192 \u211d} (hd : \u2200 x, HasDerivAt f (g x) x)\n    (hf : Integrable f \u03bd) (hxf : Integrable (fun x => x*f x) \u03bd)\n    (hxxf : Integrable (fun x => x^2*f x) \u03bd)\n    (hxg : Integrable (fun x => x*g x) \u03bd) :\n    (\u222b x, (x^2-1/4)*f x \u2202\u03bd)=(1/4 : \u211d)*(\u222b x, x*g x \u2202\u03bd)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L78"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.centered_second",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 101,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem centered_second {f g k : \u211d \u2192 \u211d}\n    (hd : \u2200 x, HasDerivAt f (g x) x) (hdd : \u2200 x, HasDerivAt g (k x) x)\n    (hf : Integrable f \u03bd) (hg : Integrable g \u03bd) (hk : Integrable k \u03bd)\n    (hxf : Integrable (fun x => x*f x) \u03bd)\n    (hxxf : Integrable (fun x => x^2*f x) \u03bd)\n    (hxg : Integrable (fun x => x*g x) \u03bd) :\n    (\u222b x, (x^2-1/4)*f x \u2202\u03bd)=(1/16 : \u211d)*(\u222b x, k x \u2202\u03bd)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L101"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.polynomial_weight_integrable",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 116,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem polynomial_weight_integrable {P : \u211d \u00d7 \u211d \u2192 \u211d} (hp : MemLp P 2 physicalGaussian)\n    (q : HelicalPolynomialPressureIBP.PlanePolynomial) :\n    Integrable (fun x => MvPolynomial.eval ![x.1,x.2] q*P x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L116"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.x_weights_integrable",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 121,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem x_weights_integrable {P : \u211d \u00d7 \u211d \u2192 \u211d} (hp : MemLp P 2 physicalGaussian) :\n    Integrable (fun x => x.1*P x) physicalGaussian \u2227\n    Integrable (fun x => x.1^2*P x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L121"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.y_weights_integrable",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 128,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem y_weights_integrable {P : \u211d \u00d7 \u211d \u2192 \u211d} (hp : MemLp P 2 physicalGaussian) :\n    Integrable (fun x => x.2*P x) physicalGaussian \u2227\n    Integrable (fun x => x.2^2*P x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L128"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.centered_x",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 135,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem centered_x {P G K : \u211d \u00d7 \u211d \u2192 \u211d}\n    (hd : \u2200 x y, HasDerivAt (fun t => P (t,y)) (G (x,y)) x)\n    (hdd : \u2200 x y, HasDerivAt (fun t => G (t,y)) (K (x,y)) x)\n    (hp : MemLp P 2 physicalGaussian) (hg : MemLp G 2 physicalGaussian)\n    (hk : Integrable K physicalGaussian) :\n    (\u222b x, (x.1^2-1/4)*P x \u2202physicalGaussian)=(1/16 : \u211d)*(\u222b x, K x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L135"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.centered_y",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 164,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem centered_y {P G K : \u211d \u00d7 \u211d \u2192 \u211d}\n    (hd : \u2200 x y, HasDerivAt (fun t => P (x,t)) (G (x,y)) y)\n    (hdd : \u2200 x y, HasDerivAt (fun t => G (x,t)) (K (x,y)) y)\n    (hp : MemLp P 2 physicalGaussian) (hg : MemLp G 2 physicalGaussian)\n    (hk : Integrable K physicalGaussian) :\n    (\u222b x, (x.2^2-1/4)*P x \u2202physicalGaussian)=(1/16 : \u211d)*(\u222b x, K x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L164"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.radial_laplacian_integral",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 205,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem radial_laplacian_integral {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) :\n    (\u222b x, radial x.1 x.2*P x \u2202physicalGaussian)=\n      (1/8 : \u211d)*(\u222b x, Dxx x+Dyy x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L205"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.pressureL2_ae",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 234,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem pressureL2_ae {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d} (h : PressureDomain P Dx Dy Dxx Dyy) :\n    pressureL2 h =\u1d50[physicalGaussian] P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L234"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.pressure_response",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 237,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem pressure_response {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d} (h : PressureDomain P Dx Dy Dxx Dyy) :\n    physicalResponse (pressureL2 h)=(1/8 : \u211d)*(\u222b x, Dxx x+Dyy x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L237"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.leading_pressure_laplacian",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 248,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem leading_pressure_laplacian (\u03b5 : \u211d) {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) :\n    leadingPressure \u03b5 (pressureL2 h)=(Real.pi^2*\u03b5^2/2)*\n      (\u222b x, Dxx x+Dyy x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L248"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.actualLaplacian_eq",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 259,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem actualLaplacian_eq {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) (x : \u211d \u00d7 \u211d) :\n    actualLaplacian P x=Dxx x+Dyy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L259"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.actualLaplacian_integrable",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 268,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem actualLaplacian_integrable {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) : Integrable (actualLaplacian P) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L268"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.response_actual_laplacian",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 274,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem response_actual_laplacian {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) :\n    physicalResponse (pressureL2 h)=(1/8 : \u211d)*(\u222b x, actualLaplacian P x \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L274"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.harmonic_response_zero",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 280,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem harmonic_response_zero {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) (hh : \u2200 x, actualLaplacian P x=0) :\n    physicalResponse (pressureL2 h)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L280"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.response_negative_iff",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 286,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem response_negative_iff {P Dx Dy Dxx Dyy : \u211d \u00d7 \u211d \u2192 \u211d}\n    (h : PressureDomain P Dx Dy Dxx Dyy) :\n    physicalResponse (pressureL2 h)<0 \u2194 (\u222b x, actualLaplacian P x \u2202physicalGaussian)<0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L286"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.cosine_domain",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 292,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem cosine_domain : PressureDomain (fun x => Real.cos x.1)\n    (fun x => -Real.sin x.1) (fun _ => 0) (fun x => -Real.cos x.1) (fun _ => 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L292"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.cosine_laplacian",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 308,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem cosine_laplacian (x : \u211d \u00d7 \u211d) :\n    actualLaplacian (fun x => Real.cos x.1) x= -Real.cos x.1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L308"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalWeightedPressureIBP.cosine_response",
+      "file": "Foundation/HelicalWeightedPressureIBP.lean",
+      "line": 312,
+      "source_sha256": "b22368b0e29bed91b76681600117d988669eb509d4fad6b3c1969e6f707c6dd8",
+      "declaration_header": "theorem cosine_response : physicalResponse (pressureL2 cosine_domain)=\n    -(1/8 : \u211d)*(\u222b x : \u211d \u00d7 \u211d, Real.cos x.1 \u2202physicalGaussian)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalWeightedPressureIBP.lean#L312"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_mem_two",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 12,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_mem_two : radialTarget \u2208 sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L12"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_projection_fix",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 17,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_projection_fix : projection 2 radialTarget=radialTarget",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L17"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_norm",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 20,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_norm : \u2016radialTarget\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L20"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.responseCLM_apply",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 26,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem responseCLM_apply (p : GaussianL2) : responseCLM p=response p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L26"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.responseCLM_norm",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 28,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem responseCLM_norm : \u2016responseCLM\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L28"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_projection",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 31,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_projection (p : GaussianL2) : response p=response (projection 2 p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L31"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_bound",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 37,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_bound (p : GaussianL2) : |response p| \u2264 \u2016projection 2 p\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_bound_full",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 41,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_bound_full (p : GaussianL2) : |response p| \u2264 \u2016p\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L41"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 44,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_self : response radialTarget=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L44"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_neg_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 47,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_neg_self : response (-radialTarget)=-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L47"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.opposite_unit_responses",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 51,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem opposite_unit_responses :\n    \u2203 p q : GaussianL2, \u2016p\u2016=1 \u2227 \u2016q\u2016=1 \u2227 response p=1 \u2227 response q=-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L51"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_other_sector",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 55,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_other_sector (n : \u2115) (hn : n \u2260 2) (p : GaussianL2) (hp : p \u2208 sector n) :\n    response p=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L55"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_constant",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 60,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_constant (c : \u211d) : response (c \u2022 gaussianOne)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L60"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.residual_response_zero",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 68,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem residual_response_zero (p : GaussianL2) : response (p-radialComponent p)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L68"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_pythagoras",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 72,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_pythagoras (p : GaussianL2) :\n    \u2016p\u2016^2=(response p)^2+\u2016p-radialComponent p\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L72"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_divergence_graph",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 79,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_divergence_graph : (recovery radialTarget,radialTarget) \u2208 hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L79"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_derivative_duality",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 88,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_derivative_duality {p : GaussianL2} {g : GaussianVectorL2}\n    (hp : (p,g) \u2208 closedCylindricalDerivative.graph) :\n    response p=inner \u211d g (recovery radialTarget)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L88"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.response_derivative_bound",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 94,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem response_derivative_bound {p : GaussianL2} {g : GaussianVectorL2}\n    (hp : (p,g) \u2208 closedCylindricalDerivative.graph) : (response p)^2 \u2264 \u2016g\u2016^2/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L94"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radial_derivative_graph",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 104,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radial_derivative_graph : (radialTarget,radialGradient) \u2208 closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L104"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.radialGradient_energy",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 113,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem radialGradient_energy : \u2016radialGradient\u2016^2=2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L113"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.derivative_bound_attained",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 118,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem derivative_bound_attained : (response radialTarget)^2=\u2016radialGradient\u2016^2/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L118"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.coordinates_preserving",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 127,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem coordinates_preserving : MeasurePreserving coordinates gaussianProduct physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L127"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physical_radial_memLp",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 133,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physical_radial_memLp : MemLp (fun p : \u211d \u00d7 \u211d => radial p.1 p.2) 2 physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L133"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalRadial_ae",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 142,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalRadial_ae : physicalRadial =\u1d50[physicalGaussian] fun p => radial p.1 p.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L142"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.pullback_radial",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 145,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem pullback_radial : physicalPullback physicalRadial=radialTarget",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L145"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_transport",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 156,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_transport (p : PhysicalL2) : physicalResponse p=response (physicalPullback p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L156"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physical_product_integrable",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 161,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physical_product_integrable (p : PhysicalL2) :\n    Integrable (fun x : \u211d \u00d7 \u211d => radial x.1 x.2*p x) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L161"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_integral",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 165,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_integral (p : PhysicalL2) :\n    physicalResponse p=\u222b x : \u211d \u00d7 \u211d, radial x.1 x.2*p x \u2202physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L165"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_bound",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 173,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_bound (p : PhysicalL2) : |physicalResponse p| \u2264 \u2016p\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L173"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 177,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_self : physicalResponse physicalRadial=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L177"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_neg_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 180,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_neg_self : physicalResponse (-physicalRadial)=-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L180"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalRadial_norm",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 183,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalRadial_norm : \u2016physicalRadial\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L183"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.physicalResponse_derivative_duality",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 188,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem physicalResponse_derivative_duality (p : PhysicalL2) {g : GaussianVectorL2}\n    (hp : (physicalPullback p,g) \u2208 closedCylindricalDerivative.graph) :\n    physicalResponse p=inner \u211d g (recovery radialTarget)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L188"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.weighted_pressure_integrable",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 194,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem weighted_pressure_integrable (p : PhysicalL2) :\n    Integrable (fun x : \u211d \u00d7 \u211d => (HelicalVorticityDiagnostics.profile x.1 x.2)^2*\n      (radial x.1 x.2*p x)) (volume.prod volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L194"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.weighted_pressure_integral",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 209,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem weighted_pressure_integral (p : PhysicalL2) :\n    (\u222b x : \u211d \u00d7 \u211d, (HelicalVorticityDiagnostics.profile x.1 x.2)^2*(radial x.1 x.2*p x)\n      \u2202volume.prod volume)=(Real.pi/2)*physicalResponse p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L209"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.leadingPressure_integrable",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 228,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem leadingPressure_integrable (\u03b5 : \u211d) (p : PhysicalL2) :\n    Integrable (fun x : \u211d \u00d7 \u211d =>\n      p x*(8*Real.pi*\u03b5^2*(HelicalVorticityDiagnostics.profile x.1 x.2)^2*radial x.1 x.2))\n        (volume.prod volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L228"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.leadingPressure_period_trace",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 235,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem leadingPressure_period_trace (\u03b5 : \u211d) (p : PhysicalL2) :\n    leadingPressure \u03b5 p=\u222b x : \u211d \u00d7 \u211d, p x*(\u222b z in (0:\u211d)..(2*Real.pi),\n      Matrix.trace (correctedJacobian \u03b5 x.1 x.2 z*correctedJacobian \u03b5 x.1 x.2 z)) \u2202volume.prod volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L235"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.leadingPressure_formula",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 241,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem leadingPressure_formula (\u03b5 : \u211d) (p : PhysicalL2) :\n    leadingPressure \u03b5 p=4*Real.pi^2*\u03b5^2*physicalResponse p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L241"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.leadingPressure_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 250,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem leadingPressure_self (\u03b5 : \u211d) : leadingPressure \u03b5 physicalRadial=4*Real.pi^2*\u03b5^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L250"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalPressureProjection.leadingPressure_neg_self",
+      "file": "Foundation/HelicalPressureProjection.lean",
+      "line": 253,
+      "source_sha256": "6d37014566eda8df33809ce9f8e0af91c0fa530f4ec22e8e6f3d656410ee68a8",
+      "declaration_header": "theorem leadingPressure_neg_self (\u03b5 : \u211d) : leadingPressure \u03b5 (-physicalRadial)=-(4*Real.pi^2*\u03b5^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalPressureProjection.lean#L253"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.pressure_even",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 14,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem pressure_even (\u03bd \u03b3 z : \u211d) (q : \u211d \u00d7 \u211d) : P \u03bd \u03b3 z (-q) = P \u03bd \u03b3 z q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L14"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.radial_pressure_integrable",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 17,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem radial_pressure_integrable (\u03bd \u03b3 z : \u211d) :\n    Integrable (fun q => radial q.1 q.2 * P \u03bd \u03b3 z q) physicalGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L17"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.actual_radial_pairing",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 21,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem actual_radial_pairing (\u03bd \u03b3 z : \u211d) :\n    (\u222b q, radial q.1 q.2 * P \u03bd \u03b3 z q \u2202physicalGaussian) =\n      physicalResponse (pressureClass \u03bd \u03b3 z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L21"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.integrand_expansion",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 30,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem integrand_expansion (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) : (fun q => integrand \u03b5 \u03bd \u03b3 q \u03b8) =\n    fun q => \u03b5*(P \u03bd \u03b3 \u03b8 q*linearTrace q.1 q.2 \u03b8) +\n      (4*\u03b5^2)*((profile q.1 q.2)^2*(radial q.1 q.2*P \u03bd \u03b3 \u03b8 q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L30"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.integrand_integrable",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 37,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem integrand_integrable (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) :\n    Integrable (fun q => integrand \u03b5 \u03bd \u03b3 q \u03b8) (volume.prod volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L37"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.crossSection_exact",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 45,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem crossSection_exact (\u03b5 \u03bd \u03b3 \u03b8 : \u211d) : crossSection \u03b5 \u03bd \u03b3 \u03b8 =\n    (Real.pi/2)*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L45"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.crossSection_intervalIntegrable",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 58,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem crossSection_intervalIntegrable (\u03b5 \u03bd \u03b3 a b : \u211d) :\n    IntervalIntegrable (crossSection \u03b5 \u03bd \u03b3) volume a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L58"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.axial_integral_exact",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 66,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem axial_integral_exact (\u03b5 \u03bd \u03b3 a b : \u211d) :\n    (\u222b \u03b8 in a..b, crossSection \u03b5 \u03bd \u03b3 \u03b8) =\n      (b-a)*(Real.pi/2)*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L66"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersRepairedTracePairing.period_integral_exact",
+      "file": "Foundation/BurgersRepairedTracePairing.lean",
+      "line": 74,
+      "source_sha256": "8c0544db6f039a8a5c66f621beb410f60f6f9ec86c9031f6b5bd2e0ae76213e8",
+      "declaration_header": "theorem period_integral_exact (\u03b5 \u03bd \u03b3 : \u211d) :\n    (\u222b \u03b8 in (0 : \u211d)..(2*Real.pi), crossSection \u03b5 \u03bd \u03b3 \u03b8) =\n      Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersRepairedTracePairing.lean#L74"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.planeTerm_integrable",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 35,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem planeTerm_integrable (\u03bd \u03b3 : \u211d) (i : Fin 6) :\n    Integrable (planeTerm \u03bd \u03b3 i) (volume.prod volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L35"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.timeTerm_integrable",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 52,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem timeTerm_integrable (\u03b5 \u03bd a b : \u211d) (hab : a \u2264 b) (i : Fin 6) :\n    Integrable (timeTerm \u03b5 \u03bd i) (phaseMeasure a b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L52"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.pressure_phase_split",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 59,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem pressure_phase_split (\u03bd \u03b3 \u03b8 : \u211d) (q : \u211d \u00d7 \u211d) :\n    P \u03bd \u03b3 \u03b8 q = P \u03bd \u03b3 0 q - 8*\u03bd^2*\u03b8^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L59"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.integrand_sum",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 64,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem integrand_sum (\u03b5 \u03bd \u03b3 : \u211d) (q : \u211d \u00d7 \u211d) (\u03b8 : \u211d) :\n    integrand \u03b5 \u03bd \u03b3 q \u03b8 = \u2211 i : Fin 6, planeTerm \u03bd \u03b3 i q * timeTerm \u03b5 \u03bd i \u03b8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L64"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.joint_integrable",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 70,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem joint_integrable (\u03b5 \u03bd \u03b3 a b : \u211d) (hab : a \u2264 b) :\n    Integrable (fun z : (\u211d \u00d7 \u211d) \u00d7 \u211d => integrand \u03b5 \u03bd \u03b3 z.1 z.2)\n      ((volume.prod volume).prod (phaseMeasure a b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L70"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.product_integral_exact",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 81,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem product_integral_exact (\u03b5 \u03bd \u03b3 a b : \u211d) (hab : a \u2264 b) :\n    (\u222b z : (\u211d \u00d7 \u211d) \u00d7 \u211d, integrand \u03b5 \u03bd \u03b3 z.1 z.2\n      \u2202(volume.prod volume).prod (phaseMeasure a b)) =\n        (b-a)*(Real.pi/2)*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L81"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.period_product_exact",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 89,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem period_product_exact (\u03b5 \u03bd \u03b3 : \u211d) :\n    (\u222b z : (\u211d \u00d7 \u211d) \u00d7 \u211d, integrand \u03b5 \u03bd \u03b3 z.1 z.2\n      \u2202(volume.prod volume).prod (phaseMeasure 0 (2*Real.pi))) =\n        Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L89"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BurgersPhaseProductIntegral.phase_first_exact",
+      "file": "Foundation/BurgersPhaseProductIntegral.lean",
+      "line": 96,
+      "source_sha256": "f3e386602a79f77fb597185d7bd11b693edcc0eabdb45786f818dbec646905a1",
+      "declaration_header": "theorem phase_first_exact (\u03b5 \u03bd \u03b3 : \u211d) :\n    (\u222b q : \u211d \u00d7 \u211d, (\u222b \u03b8 in (0 : \u211d)..(2*Real.pi), integrand \u03b5 \u03bd \u03b3 q \u03b8)\n      \u2202volume.prod volume) = Real.pi^2*\u03b5^2*(\u03b3^2*Real.log (9/8 : \u211d)-4*\u03bd^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BurgersPhaseProductIntegral.lean#L96"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.correctedJacobian_eq",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 26,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem correctedJacobian_eq (\u03b5 x y z : \u211d) :\n    correctedJacobian \u03b5 x y z=\n    !![-2*\u03b5*x*profile x y*Real.cos z, -2*\u03b5*y*profile x y*Real.cos z, -\u03b5*profile x y*Real.sin z;\n      -2*\u03b5*x*profile x y*Real.sin z, -2*\u03b5*y*profile x y*Real.sin z, \u03b5*profile x y*Real.cos z;\n      -2*x*profile x y+2*\u03b5*profile x y*(Real.sin z-2*x*phase x y z),\n      -2*y*profile x y+2*\u03b5*profile x y*(-Real.cos z-2*y*phase x y z),\n      2*\u03b5*profile x y*(x*Real.cos z+y*Real.sin z)]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L26"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.rotation_square",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 63,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem rotation_square (x y z : \u211d) :\n    (x*Real.cos z+y*Real.sin z)^2+(phase x y z)^2=x^2+y^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L63"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.corrected_trace_algebra",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 69,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem corrected_trace_algebra (\u03b5 x y z : \u211d) :\n    Matrix.trace (correctedJacobian \u03b5 x y z*correctedJacobian \u03b5 x y z)=\n      4*\u03b5*(profile x y)^2*phase x y z+\n      8*\u03b5^2*(profile x y)^2*((x*Real.cos z+y*Real.sin z)^2+(phase x y z)^2)-\n      4*\u03b5^2*(profile x y)^2*((Real.sin z)^2+(Real.cos z)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L69"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.corrected_trace",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 81,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem corrected_trace (\u03b5 x y z : \u211d) :\n    Matrix.trace (correctedJacobian \u03b5 x y z*correctedJacobian \u03b5 x y z)=\n      \u03b5*linearTrace x y z+4*\u03b5^2*(profile x y)^2*radial x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L81"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.corrected_period_integral",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 88,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem corrected_period_integral (\u03b5 x y : \u211d) :\n    (\u222b z in (0:\u211d)..(2*Real.pi),\n      Matrix.trace (correctedJacobian \u03b5 x y z*correctedJacobian \u03b5 x y z))=\n        8*Real.pi*\u03b5^2*(profile x y)^2*radial x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L88"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.radial_scaling",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 100,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem radial_scaling (X Y : \u211d) : radial (X/2) (Y/2)=((X^2-1)+(Y^2-1))/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L100"
+    },
+    {
+      "paper": "Sections 9\u201311 actual Burgers pressure/axial flux, physical Gaussian response and prescribed repaired trace pairing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HelicalRadialGaussianBridge.radial_signs",
+      "file": "Foundation/HelicalRadialGaussianBridge.lean",
+      "line": 104,
+      "source_sha256": "c77d7ae6c311554bf0a54a55cc92e337f4fa98ad366940ec5a62b58a436e96d7",
+      "declaration_header": "theorem radial_signs : radial 0 0=-1 \u2227 radial 1 0=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HelicalRadialGaussianBridge.lean#L104"
     }
   ],
   "paper_sections": {
@@ -1309,7 +3460,12 @@
     "The prioritized score classifier and relevant boundary are reconstructed exactly. Uniform stability quantifies over all measurable real score perturbations, not merely physically realizable diagnostic trajectories. The stronger sufficient a.e. convergence statement needs the second score only on the active first-score region.",
     "The simultaneous downward shift detects exact boundary mass. The proof of occupation necessity additionally uses monotone labels and the two endpoint indicators, so cancellation of arbitrary exchanges is not ignored.",
     "Finite maximum concentration is distinguished from the earlier squared-weight centroid statistic. Kinks, denominator-controlled Lipschitz bounds and the strictly dominant three-sector constant-time counterexample are proved for their actual scalar functions; no PDE realization is inferred.",
-    "The strip-mass power rate is an explicit elementary consequence conditional on actual strip bounds. Audibert\u2013Tsybakov margin context excludes equality and measures excess risk, so it is not imported as an unweighted occupation theorem."
+    "The strip-mass power rate is an explicit elementary consequence conditional on actual strip bounds. Audibert\u2013Tsybakov margin context excludes equality and measures excess risk, so it is not imported as an unweighted occupation theorem.",
+    "The paper renames source circulation amplitude gamma as beta, avoiding its use as strain rate. The actual field has background strain rate 4nu, Gaussian core length one and density one. It proves full stationary viscous momentum balance rather than prescribing a pressure Hessian independently.",
+    "The actual vorticity gradient-square trace vanishes while its full pressure-Hessian contraction is negative. The exact source axial integral equals a nonzero boundary flux at each transverse point. Whole-space infinite kinetic energy and the additional transverse-plane integral are explicit elementary human deductions; no decaying or periodic global cancellation identity is contradicted.",
+    "The physical reference is product Gaussian with coordinate variance one quarter. The scalar radial observation is integral (2(x^2+y^2)-1) P, not the full Hessian contraction. Exact swirl response log(9/8)/4 and strained response beta^2 log(9/8)/4-nu^2 are transported from actual derivative domains, with full Gaussian domination and logarithmic parameter integral proofs.",
+    "The helical ansatz is first refuted as nonsolenoidal, then repaired by an axial term of the same perturbation order. The quadratic repaired trace changes. The subsequent pairing uses the actual unperturbed Burgers base pressure and a prescribed unit-core repaired vorticity, not a pressure induced by a new helical velocity or a proved Navier-Stokes perturbation.",
+    "The finite axial interval and its two Fubini orders are retained. A 2pi interval of phase does not make the actual quadratic-axial pressure or velocity periodic. Full contraction, scalar Gaussian response and base-pressure trace pairing remain separate observables."
   ],
   "literature": [
     {

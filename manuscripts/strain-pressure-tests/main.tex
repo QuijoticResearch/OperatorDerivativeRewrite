@@ -1,12 +1,14 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
-\usepackage[margin=1.05in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\E}{\mathbb E}
 \newcommand{\R}{\mathbb R}\newcommand{\tr}{\operatorname{tr}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Exact calibration tests for strain, pressure\\and angular spectral ratios}
@@ -36,7 +38,7 @@ positive-sector counterexamples. Complete elementary proofs reconstruct frozen
 formal results. These are calibration examples in classical model
 families, not new fluid existence or singularity results; priority for
 the diagnostic formulations remains unresolved.
-\end{abstract}
+An actual stationary Burgers vortex additionally separates an axial pressure flux from a scalar Gaussian observation, and a repaired helical field gives an exact finite-slab base-pressure pairing. \end{abstract}
 
 \section{Conventions and purpose}
 For a real $3\times3$ matrix $A$, use
@@ -713,6 +715,289 @@ positive equality mass cannot be discarded in the present theorem.
 No statistical minimax rate, learning theorem or new general
 continuity principle is being asserted.
 
+
+\section{An actual viscous vortex and its axial pressure flux}
+A further calibration has a genuine stationary Navier--Stokes velocity
+and its constructed pressure, rather than only an algebraic pressure
+candidate. It also has an indispensable spatial boundary limitation.
+Write $s=x^2+y^2$, $f=e^{-s}$, and define the regular angular profile
+and its pressure primitive by
+\begin{equation}\label{eq:swirlprofile}
+ g(s)=\frac12\int_0^1e^{-ts}\,dt,\qquad
+ F(s)=\frac12\int_0^s g(u)^2\,du.
+\end{equation}
+Then $g(0)=1/2$, and for $s\ne0$,
+$g(s)=(1-e^{-s})/(2s)$. Differentiating the parameter integral any
+number of times is justified locally uniformly by
+$|(-t)^k e^{-ts}|\le e^{|s_0|+1}$ for $0\le t\le1$ and
+$|s-s_0|<1$. Thus $g$ and $F$ are smooth even at the axis, and
+\begin{equation}\label{eq:swirlidentities}
+ 2g+2sg'=e^{-s},\qquad4g'+2sg''=-e^{-s}.
+\end{equation}
+The first identity follows by integrating the derivative of
+$te^{-ts}$ over $[0,1]$; differentiating it gives the second.
+
+For viscosity $\nu>0$ and circulation amplitude $\beta\in\mathbb R$,
+set
+\begin{align}
+ u&=(-2\nu x-\beta yg(s),\,-2\nu y+\beta xg(s),\,4\nu z),
+ \label{eq:burgersvelocity}\\
+ p&=\beta^2F(s)-2\nu^2s-8\nu^2z^2.\label{eq:burgerspressure}
+\end{align}
+The fluid density is normalized to one.
+\begin{theorem}\label{thm:burgersactual}
+The displayed fields are smooth and satisfy pointwise
+\[
+ \nabla\cdot u=0,\qquad
+ (u\cdot\nabla)u+\nabla p=\nu\Delta u,\qquad
+ \omega:=\nabla\times u=(0,0,\beta e^{-s}).
+\]
+If $\beta\ne0$, then with $H=\nabla^2p$ and $B=\nabla\omega$,
+\begin{equation}\label{eq:burgerscontraction}
+ \operatorname{tr}(B^2)=0,\qquad
+ \omega\cdot H\omega=-16\nu^2\beta^2e^{-2s}<0.
+\end{equation}
+For any axial interval $[a,b]$, this nonzero contraction has the exact
+boundary identity
+\begin{equation}\label{eq:burgersflux}
+ \int_a^b\omega\cdot H\omega\,dz
+ =[\omega_z^2\partial_zp]_{z=a}^{z=b}
+ =-16\nu^2\beta^2(b-a)e^{-2s}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The parameter integral proves smoothness. Put
+\[
+ v=g(s)(-y,x,0),\qquad D=\operatorname{diag}(-2\nu,-2\nu,4\nu),
+\]
+so $u=D(x,y,z)+\beta v$. Direct differentiation gives
+$\nabla\cdot v=0$ and
+$\nabla\times v=(0,0,2g+2sg')=(0,0,f)$. The linear part has zero
+trace and zero curl. Moreover
+\[
+ (v\cdot\nabla)v=-g^2(x,y,0),\qquad
+ \Delta v=-2f(-y,x,0).
+\]
+For the Laplacian, its scalar coefficient is
+$8g'+4sg''=-2f$, by \eqref{eq:swirlidentities}.
+The two cross accelerations satisfy
+\[
+ (Dq\cdot\nabla)v+(v\cdot\nabla)Dq
+ =-4\nu(g+sg')(-y,x,0)=-2\nu f(-y,x,0).
+\]
+The purely linear acceleration is
+$(4\nu^2x,4\nu^2y,16\nu^2z)$. Finally
+\[
+ \nabla p=(\beta^2xg^2-4\nu^2x,\,
+            \beta^2yg^2-4\nu^2y,\,-16\nu^2z),
+\]
+since $F'=g^2/2$. The linear and radial swirl accelerations cancel
+these pressure terms; the remaining cross acceleration equals
+$\nu\beta\Delta v$. This proves the actual momentum balance.
+
+The vorticity has only its third component nonzero, is independent of
+$z$, and has transverse derivatives $-2\beta xf,-2\beta yf$.
+Thus $B$ has possible nonzero entries only in its third row and first
+two columns, so $B^2=0$. On the other hand $H_{zz}=-16\nu^2$, which
+gives the second formula in \eqref{eq:burgerscontraction}. The axial
+flux is $\omega_z^2p_z=-16\nu^2\beta^2zf^2$. Ordinary integration
+in $z$ gives \eqref{eq:burgersflux} and its strict sign when $a<b$.
+\end{proof}
+
+There is no cancellation identity obtained by discarding this boundary
+term. For example, at fixed $x,y$ the unit-slab integral of the full
+contraction is negative while
+$\int_0^1p\operatorname{tr}(B^2)dz=0$.
+Integrating also over the transverse plane gives the elementary
+consequence $-8\pi\nu^2\beta^2(b-a)$, since
+$\int_{\mathbb R^2}e^{-2s}dxdy=\pi/2$. This integrated consequence is
+labelled a human deduction; the source proves the axial identity
+pointwise in the transverse variables.
+
+The axial velocity $4\nu z$ is unbounded and not periodic. Its square
+alone has infinite whole-space integral, so the full flow is not a
+finite-energy three-dimensional example. The transverse vorticity
+localization does not remove the axial flux. These observations delimit
+application of the diagnostic to a decaying or periodic global identity.
+The vortex is classical: Gallay--Maekawa's primary formulas
+\cite{GM}, equations (1.3), (1.8)--(1.9), give the background strain
+and Gaussian circulation profile in their normalization. Here the
+strain rate is $4\nu$, the core length is one and the total
+transverse circulation is $\pi\beta$. No new stationary solution or
+stability theorem is asserted.
+
+\section{A scalar Gaussian observation is not the full Hessian contraction}
+Let $\mu$ be the product Gaussian law with coordinate variance $1/4$.
+It has density $(2/\pi)e^{-2s}dxdy$. Define
+\[
+ r(x,y)=2s-1,\qquad
+ \mathcal R(P)=\int_{\mathbb R^2}rP\,d\mu.
+\]
+Here $\E_\mu r=0$ and $\|r\|_{L^2(\mu)}=1$: each coordinate has
+second moment $1/4$ and fourth moment $3/16$, so
+$\E s=1/2$ and $\E s^2=1/2$. Consequently $\mathcal R$ is a
+bounded scalar $L^2$ observation of norm one and ignores constants.
+It is not the tensor-valued pressure Hessian.
+
+For smooth functions with polynomial growth of the function and its
+first two derivatives, Gaussian integration by parts gives
+\begin{equation}\label{eq:radialresponse}
+ \mathcal R(P)=\frac18\E_\mu\Delta P
+             =\frac12\E_\mu(xP_x+yP_y).
+\end{equation}
+To check the constants, the one-coordinate Gaussian density satisfies
+$\phi'=-4x\phi$. Integration of its derivative gives
+$\E P_{xx}=4\E(xP_x)$, and integration of $(xP\phi)'$ gives
+$\E[(x^2-1/4)P]=\frac14\E(xP_x)=\frac1{16}\E P_{xx}$.
+Summing the two coordinate identities and multiplying by two proves
+\eqref{eq:radialresponse}. Polynomial growth makes every boundary term
+vanish and all integrals absolutely convergent. The formal source
+works on a larger explicitly integrable derivative domain, not only
+polynomials; the constructed pressure below belongs to that domain.
+
+For $s\ge0$, the defining parameter integral gives
+$0<g(s)\le1/2$ and $|g'(s)|\le1/4$.
+Thus $0\le F(s)\le s/8$, $\nabla F(s)$ grows at most linearly,
+and its coordinate second derivatives grow at most quadratically.
+Indeed $\partial_xF(s)=xg(s)^2$ and
+$\partial_{xx}F(s)=g(s)^2+4x^2g(s)g'(s)$.
+These bounds justify the preceding integration by parts for $F(s)$
+and for the full pressure \eqref{eq:burgerspressure} at each fixed $z$.
+
+\begin{proposition}\label{prop:burgersresponse}
+Writing $\ell=\log(9/8)>0$, the exact observations are
+\begin{equation}\label{eq:exactpressure}
+ \mathcal R(F)=\ell/4,\qquad
+ \mathcal R(p(\cdot,\cdot,z))=\beta^2\ell/4-\nu^2,
+\end{equation}
+independently of $z$. For $\beta=1$ this scalar observation is zero
+at $\nu_* =\sqrt{\ell/4}$ and positive at $\nu_*/2$, although the
+full contraction in \eqref{eq:burgerscontraction} remains strictly
+negative everywhere at both positive viscosities.
+\end{proposition}
+\begin{proof}
+Equation~\eqref{eq:radialresponse} gives
+$\mathcal R(F)=\frac12\E_\mu[s g(s)^2]$.
+Squaring the parameter integral in \eqref{eq:swirlprofile} gives
+\[
+ g(s)^2=\frac14\int_0^1\!\int_0^1 e^{-(t+u)s}\,dtdu.
+\]
+The nonnegative integrands permit Tonelli; alternatively $sg(s)^2$
+is bounded by $s/4$ and has an integrable Gaussian dominator.
+Polar integration, whose radial density is $2e^{-2s}ds$, gives
+\[
+ \E_\mu[s e^{-cs}]=\frac{2}{(2+c)^2}\quad(c\ge0).
+\]
+Therefore
+\[
+ \mathcal R(F)=\frac14\int_0^1\!\int_0^1
+       \frac{dtdu}{(2+t+u)^2}.
+\]
+Integrating first in $u$ yields $(2+t)^{-1}-(3+t)^{-1}$.
+Integrating in $t$ yields
+$(\log3-\log2)-(\log4-\log3)=\log(9/8)$.
+Also $\mathcal R(s)=2\E s^2-\E s=1/2$ and
+$\mathcal R(1)=0$. Linearity applied to
+\eqref{eq:burgerspressure} proves the second expression.
+The assertions at $\nu_*,\nu_*/2$ follow by substitution and
+$\ell>0$. The strict tensor sign is already
+Theorem~\ref{thm:burgersactual} with $\beta=1$.
+\end{proof}
+
+This is an exact mismatch of observables, not a contradiction in the
+Navier--Stokes pressure. It does not refute a criterion retaining the
+full Hessian, its proper reference measure or the axial boundary terms.
+
+\section{Solenoidal repair and a prescribed base-pressure pairing}
+A related proposed helical vorticity needs a first-order repair before
+it can be used even as a divergence-free field. With $f=e^{-s}$, set
+\[
+ \widetilde\omega_\varepsilon
+   =(\varepsilon f\cos z,\,\varepsilon f\sin z,\,f),\qquad
+ b=x\sin z-y\cos z.
+\]
+Its actual divergence is
+$-2\varepsilon f(x\cos z+y\sin z)$, nonzero at $(1,0,0)$ for
+$\varepsilon\ne0$. The corrected smooth field
+\begin{equation}\label{eq:repairedomega}
+ \omega_\varepsilon
+ =(\varepsilon f\cos z,\,\varepsilon f\sin z,\,
+   f+2\varepsilon fb)
+\end{equation}
+has zero divergence, since the $z$ derivative of its added term is
+$2\varepsilon f(x\cos z+y\sin z)$. The axial correction is of the
+same order as the transverse perturbation and cannot be dropped.
+
+Let $B_\varepsilon=\nabla\omega_\varepsilon$. Differentiating the three
+coordinates gives its first two rows
+\[
+ f(-2\varepsilon x\cos z,-2\varepsilon y\cos z,-\varepsilon\sin z),
+ \qquad
+ f(-2\varepsilon x\sin z,-2\varepsilon y\sin z,\varepsilon\cos z),
+\]
+and its third row
+\[
+ f(-2x+2\varepsilon(\sin z-2xb),\,
+   -2y+2\varepsilon(-\cos z-2yb),\,
+   2\varepsilon(x\cos z+y\sin z)).
+\]
+Multiplying these actual matrices and using
+$(x\cos z+y\sin z)^2+b^2=s$ gives
+\begin{equation}\label{eq:repairedtrace}
+ \operatorname{tr}(B_\varepsilon^2)
+ =4\varepsilon f^2b+4\varepsilon^2 f^2(2s-1).
+\end{equation}
+In particular its phase integral is
+$8\pi\varepsilon^2 f^2(2s-1)$, a sign-changing radial quantity.
+Solenoidality has changed the quadratic trace from that of the
+uncorrected ansatz; the change is not only the removal of its divergence.
+
+For the next calculation, keep the actual \emph{base} pressure
+$p_{\nu,\beta}$ from \eqref{eq:burgerspressure}, but pair it with the
+prescribed unit-core field \eqref{eq:repairedomega}. We do not assert
+that this pressure is induced by a velocity whose curl is
+$\omega_\varepsilon$, or that the latter evolves by Navier--Stokes.
+
+\begin{proposition}\label{prop:basepair}
+At every fixed phase $z$,
+\begin{equation}\label{eq:basecrosssection}
+ \int_{\mathbb R^2}p_{\nu,\beta}(x,y,z)
+            \operatorname{tr}(B_\varepsilon^2)\,dxdy
+ =\frac\pi2\varepsilon^2(\beta^2\ell-4\nu^2).
+\end{equation}
+Thus integration on any finite axial interval $[a,b]$ multiplies this
+value by $b-a$; on $[0,2\pi]$ the result is
+$\pi^2\varepsilon^2(\beta^2\ell-4\nu^2)$.
+These are finite-slab base-pressure pairings, not periodic full-flow
+identities or full pressure-Hessian contractions.
+\end{proposition}
+\begin{proof}
+The pressure is even under $(x,y)\mapsto(-x,-y)$, while $b$ is odd.
+Their linear term in \eqref{eq:repairedtrace} integrates to zero.
+All terms are absolutely integrable, since at fixed $z$ the pressure
+has at most quadratic transverse growth and the trace is a polynomial
+in $x,y$ times $e^{-2s}$. By the physical density of $\mu$, the remaining
+quadratic contribution equals
+\[
+ 4\varepsilon^2\int e^{-2s}(2s-1)p_{\nu,\beta}\,dxdy
+ =2\pi\varepsilon^2\mathcal R(p_{\nu,\beta}).
+\]
+Insert \eqref{eq:exactpressure} to obtain
+\eqref{eq:basecrosssection}. On a bounded axial interval the same
+Gaussian polynomial dominator can be chosen uniformly in $z$, so
+Fubini and the constant cross-section value justify the axial integral.
+The quadratic $z$-dependence of the base pressure does not make the
+flow periodic merely because this particular observation is independent
+of $z$.
+\end{proof}
+
+The exact response, solenoidal correction and finite-slab constants
+are calibration mathematics. The stationary Gaussian vortex and
+Gaussian integration by parts are classical. Priority for these
+assembled diagnostics is unresolved; no new vortex-stability theorem,
+induced helical pressure, finite-energy singularity or unrestricted
+regularity conclusion is claimed.
+
 \section{Formal correspondence and contribution status}
 \begingroup\raggedright
 Every formal result is frozen at commit
@@ -735,7 +1020,7 @@ threshold boundaries, downward-shift disagreement and sharp endpoint
 occupation tests use \code{CorridorMaximumRegularity},
 \code{CorridorOccupation}, \code{CorridorClassification},
 \code{CorridorBoundarySharpness} and \code{CorridorOccupationSharpness}.
-Exact declaration locations, hashes and human proof reorganizations
+The actual regular Gaussian swirl, viscous strain, axial pressure flux and scalar response use \code{GaussianSwirlVelocity}, \code{GaussianSwirlProfileMoments}, \code{StrainedBurgersVortex}, \code{BurgersAxialPressureFlux}, \code{GaussianSwirlLaplace} and \code{BurgersGaussianPressureResponse}. Solenoidal repair and base-pressure pairings use \code{HelicalVorticityDiagnostics}, \code{HelicalRadialGaussianBridge} and \code{BurgersRepairedTracePairing}. Exact declaration locations, hashes and human proof reorganizations
 are in the accompanying theorem map. In particular the direct
 trigonometric proof of $J(U)=0$ replaces the formal invariant-trace
 transport proof. Infinite affine energy is the elementary deduction
@@ -785,5 +1070,6 @@ Abstract-level context only; no asymptotic theorem imported.
 Ann. Statist. \textbf{35} (2007), 608--633.
 Primary reprint \url{https://arxiv.org/abs/0708.2321}.
 Margin-assumption comparison only; no risk theorem imported.
+\bibitem{GM} T. Gallay and Y. Maekawa, \emph{Three-dimensional stability of Burgers vortices}, primary preprint, \href{https://arxiv.org/abs/1002.2489}{arXiv:1002.2489} (2010), equations (1.3), (1.8)--(1.9). Profile/background comparison only; no stability theorem imported.
 \end{thebibliography}
 \end{document}

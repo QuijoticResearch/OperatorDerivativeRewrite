@@ -267,3 +267,7 @@ Expanded Gaussian prediction from eight to ten pages with actual full-past-plus-
 ## Positive complex-root source calculus and separate count clock
 
 Expanded the complex-root companion from six to twelve pages, preserving analytic limit/escape/fixed-test results and consolidating positive cyclic/three-channel reconstruction, exact actual finite-energy completion, L1/AE limits, bounded Hilbert adjoint and finite exponential-clock Dynkin/channel identity. Missing constant mark mode is separated from a full continuous-time PRP. 230 frozen correspondences, 177 exact complex-rational checks, all twelve final pages inspected and central new pages enlarged. Broader primary real/complex finite-state antecedents credited. Twenty-seven drafts total 281 pages.
+
+## Actual Burgers pressure, axial flux and Gaussian response
+
+Expanded the fluid companion from eleven to fifteen pages with a complete actual stationary viscous vortex/pressure proof, exact noncancelling axial flux, scalar Gaussian-response/Hessian distinction, log(9/8) evaluation and same-order solenoidal repair with actual finite-slab base-pressure pairing. 393 exact frozen correspondences, 25 finite exact checks, all fifteen final pages inspected and new pages enlarged. Missing-macro/overflow attempts retained; final clean two-pass build and fresh hashes. Primary classical vortex formulas credited; no induced perturbation pressure, finite-energy or stability claim. Twenty-seven drafts total 285 pages.
