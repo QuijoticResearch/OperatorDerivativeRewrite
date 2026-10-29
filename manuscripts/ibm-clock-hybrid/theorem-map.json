@@ -456,13 +456,223 @@
       "source_sha256": "70334b466746521eef3bcb6d57ca57e130615c2883bd016deecdb1c64f46abf7",
       "declaration_header": "theorem sinePoint_not_joint_domain (t : \u211d\u22650) (ht : 0 < t) :\n    sinePoint t \u2209 jointDerivative.domain",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualSineDomainObstruction.lean#L109"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicChainRule.bounded_chain",
+      "file": "Foundation/IBMIntrinsicChainRule.lean",
+      "line": 130,
+      "source_sha256": "b376689e5ee755bd805358e9d5fbff7260b2eccbdf9819b9a4bb0fa7f2ee0df9",
+      "declaration_header": "theorem bounded_chain (f : jointDerivative.domain)\n    (\u03c6 d\u03c6 : \u211d \u2192 \u211d) (hd : \u2200 x, HasDerivAt \u03c6 (d\u03c6 x) x) (hc : Continuous d\u03c6)\n    (A B : \u211d) (hA : \u2200 x, \u2016\u03c6 x\u2016 \u2264 A) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B) :\n    \u2203 F : jointDerivative.domain,\n      ((F : IntrinsicSpace) : JointL2) =\u1d50[IBMSourceLaws.jointMeasure]\n        (fun \u03c9 => \u03c6 (((f : IntrinsicSpace) : JointL2) \u03c9)) \u2227\n      uncurryField (jointDerivative F 1) =\u1d50[IBMSourceLaws.jointMeasure]\n        (fun \u03c9 => d\u03c6 (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022\n          uncurryField (jointDerivative f 1) \u03c9) \u2227\n      uncurryField (jointDerivative F 0) =\u1d50[IBMSourceLaws.jointMeasure]\n        (fun \u03c9 => d\u03c6 (ProductL2Curry.swap gaussianProduct gaussianProduct\n          ((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 uncurryField (jointDerivative f 0) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicChainRule.lean#L130"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeBoundedGraphCore.bounded_graph",
+      "file": "Foundation/IBMNativeBoundedGraphCore.lean",
+      "line": 38,
+      "source_sha256": "7f6a18db5d238ab43196f98d17cbee061f0337a2af3658b0ca7f4dfb8e9a7ad8",
+      "declaration_header": "theorem bounded_graph (f : jointDerivative.domain) : BoundedGraphResult f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeBoundedGraphCore.lean#L38"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformBoundedNativeTests.uniformly_bounded_approximation",
+      "file": "Foundation/IBMUniformBoundedNativeTests.lean",
+      "line": 77,
+      "source_sha256": "a21e78518aaeea7c1d4d73c7bc606a8942d0eceaddfc6a52da76bccc8ae62dea",
+      "declaration_header": "theorem uniformly_bounded_approximation (F : IntrinsicSpace)\n    (hF : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(F : JointL2) \u03c9| \u2264 1) :\n    \u2203 u : \u2115 \u2192 jointDerivative.domain,\n      (\u2200 n, \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((u n : IntrinsicSpace) : JointL2) \u03c9)| \u2264 1) \u2227\n      Tendsto (fun n => ((u n : IntrinsicSpace) : JointL2)) atTop (\ud835\udcdd (F : JointL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformBoundedNativeTests.lean#L77"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeL1TestSeparation.integral_zero_on_bounded_observable",
+      "file": "Foundation/IBMNativeL1TestSeparation.lean",
+      "line": 12,
+      "source_sha256": "f6a7cad4142cd38defe4cd0a340d5614e236b347b1039765cb96f6e3673a6ef1",
+      "declaration_header": "theorem integral_zero_on_bounded_observable (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : Integrable a IBMSourceLaws.jointMeasure)\n    (h : \u2200 v : jointDerivative.domain,\n      (\u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((v : IntrinsicSpace) : JointL2) \u03c9)| \u2264 1) \u2192\n      (\u222b \u03c9, (((v : IntrinsicSpace) : JointL2) \u03c9) * a \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0)\n    (F : IntrinsicSpace) (hF : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(F : JointL2) \u03c9| \u2264 1) :\n    (\u222b \u03c9, (F : JointL2) \u03c9 * a \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeL1TestSeparation.lean#L12"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeL1TestSeparation.annihilator_zero",
+      "file": "Foundation/IBMNativeL1TestSeparation.lean",
+      "line": 70,
+      "source_sha256": "f6a7cad4142cd38defe4cd0a340d5614e236b347b1039765cb96f6e3673a6ef1",
+      "declaration_header": "theorem annihilator_zero (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : Integrable a IBMSourceLaws.jointMeasure)\n    (hm : AEStronglyMeasurable[observationSigma] a IBMSourceLaws.jointMeasure)\n    (h : \u2200 v : jointDerivative.domain,\n      (\u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((v : IntrinsicSpace) : JointL2) \u03c9)| \u2264 1) \u2192\n      (\u222b \u03c9, (((v : IntrinsicSpace) : JointL2) \u03c9) * a \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0) :\n    a =\u1d50[IBMSourceLaws.jointMeasure] 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeL1TestSeparation.lean#L70"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalL1Realization.conditional_pairing",
+      "file": "Foundation/IBMConditionalL1Realization.lean",
+      "line": 35,
+      "source_sha256": "25f68d2ddf2014f714bfa7afc61017074f28ad0e51d256a46bba76d59b964fd2",
+      "declaration_header": "theorem conditional_pairing (q : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hq : Integrable q IBMSourceLaws.jointMeasure) (v : IntrinsicSpace)\n    (hv : MemLp ((v : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    (\u222b \u03c9, (v : JointL2) \u03c9 * q \u03c9 \u2202IBMSourceLaws.jointMeasure) =\n      \u222b \u03c9, (v : JointL2) \u03c9 * conditional q \u03c9 \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalL1Realization.lean#L35"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalL1Realization.full_pairing",
+      "file": "Foundation/IBMConditionalL1Realization.lean",
+      "line": 67,
+      "source_sha256": "25f68d2ddf2014f714bfa7afc61017074f28ad0e51d256a46bba76d59b964fd2",
+      "declaration_header": "theorem full_pairing (U : JointFieldSpace) (q : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hq : Integrable q IBMSourceLaws.jointMeasure)\n    (h2 : MemLp (conditional q) 2 IBMSourceLaws.jointMeasure)\n    (hU : BoundedWeakPairing U q) (v : jointDerivative.domain) :\n    inner \u211d (realization q h2) (v : IntrinsicSpace) = inner \u211d U (jointDerivative v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalL1Realization.lean#L67"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalL1Realization.realization_graph",
+      "file": "Foundation/IBMConditionalL1Realization.lean",
+      "line": 76,
+      "source_sha256": "25f68d2ddf2014f714bfa7afc61017074f28ad0e51d256a46bba76d59b964fd2",
+      "declaration_header": "theorem realization_graph (U : JointFieldSpace) (q : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hq : Integrable q IBMSourceLaws.jointMeasure)\n    (h2 : MemLp (conditional q) 2 IBMSourceLaws.jointMeasure)\n    (hU : BoundedWeakPairing U q) :\n    (U,realization q h2) \u2208 jointDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalL1Realization.lean#L76"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalAdjointDomain.domain_iff_conditional_L2",
+      "file": "Foundation/IBMConditionalAdjointDomain.lean",
+      "line": 65,
+      "source_sha256": "597f9ea5160e331541704530425c55df58eb27e98431536221cb09434df5262b",
+      "declaration_header": "theorem domain_iff_conditional_L2 (U : JointFieldSpace) (q : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hq : Integrable q IBMSourceLaws.jointMeasure) (hU : BoundedWeakPairing U q) :\n    U \u2208 jointDivergence.domain \u2194 MemLp (conditional q) 2 IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalAdjointDomain.lean#L65"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalAdjointDomain.conditional_eq_adjoint",
+      "file": "Foundation/IBMConditionalAdjointDomain.lean",
+      "line": 40,
+      "source_sha256": "597f9ea5160e331541704530425c55df58eb27e98431536221cb09434df5262b",
+      "declaration_header": "theorem conditional_eq_adjoint (u : jointDivergence.domain)\n    (q : IBMSourceLaws.JointSample \u2192 \u211d) (hq : Integrable q IBMSourceLaws.jointMeasure)\n    (hu : BoundedWeakPairing (u : JointFieldSpace) q) :\n    conditional q =\u1d50[IBMSourceLaws.jointMeasure]\n      ((jointDivergence u : IntrinsicSpace) : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalAdjointDomain.lean#L40"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConditionalAdjointDomain.weighted_domain_iff",
+      "file": "Foundation/IBMConditionalAdjointDomain.lean",
+      "line": 80,
+      "source_sha256": "597f9ea5160e331541704530425c55df58eb27e98431536221cb09434df5262b",
+      "declaration_header": "theorem weighted_domain_iff (g : jointDerivative.domain) (B : \u211d) (hB : 0 \u2264 B)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 B)\n    (u : jointDivergence.domain) :\n    multiply ((g : IntrinsicSpace) : JointL2) (bounded_memLp g B hg) u \u2208 jointDivergence.domain \u2194\n      MemLp (conditional (weakDensity g u)) 2 IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConditionalAdjointDomain.lean#L80"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.bounded_leibniz",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 59,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "theorem bounded_leibniz (f g : jointDerivative.domain) (C D : \u211d) (hC : 0 \u2264 C) (hD : 0 \u2264 D)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 D) :\n    LeibnizResult f g C D hf hg",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L59"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.weak_divergence",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 84,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "theorem weak_divergence (f g : jointDerivative.domain) (C D : \u211d) (hC : 0 \u2264 C) (hD : 0 \u2264 D)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 D)\n    (u : jointDivergence.domain) :\n    WeakDivergenceResult f g C D hf hg u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L84"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.weak_pairing",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 103,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem weak_pairing (g v : jointDerivative.domain) (B C : \u211d) (hB : 0 \u2264 B) (hC : 0 \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 B)\n    (hv : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((v : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (u : jointDivergence.domain) :\n    inner \u211d (multiply ((g : IntrinsicSpace) : JointL2) (bounded_memLp g B hg) u)\n      (jointDerivative v) =\n      \u222b \u03c9, (((v : IntrinsicSpace) : JointL2) \u03c9) * weakDensity g u \u03c9\n        \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L103"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.weakDensity_integrable",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 85,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem weakDensity_integrable (g : jointDerivative.domain) (u : jointDivergence.domain) :\n    Integrable (weakDensity g u) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L85"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDomainMultiplier.product_mem_domain",
+      "file": "Foundation/IBMIntrinsicDomainMultiplier.lean",
+      "line": 45,
+      "source_sha256": "bd8a1f43fed819c3ed3058e175b64f699908c34ddc18feb55cc6326949935285",
+      "declaration_header": "theorem product_mem_domain (g : jointDerivative.domain) :\n    scalarMultiplier (f : IntrinsicSpace) (bounded_memLp f C hf) (g : IntrinsicSpace) \u2208\n      jointDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDomainMultiplier.lean#L45"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDomainMultiplier.productElement_actual_ae",
+      "file": "Foundation/IBMIntrinsicDomainMultiplier.lean",
+      "line": 55,
+      "source_sha256": "bd8a1f43fed819c3ed3058e175b64f699908c34ddc18feb55cc6326949935285",
+      "declaration_header": "theorem productElement_actual_ae (g : jointDerivative.domain) :\n    (((productElement f C hC hf hDf g : jointDerivative.domain) : IntrinsicSpace) : JointL2)\n      =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n        (((f : IntrinsicSpace) : JointL2) \u03c9) * (((g : IntrinsicSpace) : JointL2) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDomainMultiplier.lean#L55"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDomainMultiplier.productElement_gradient_ae",
+      "file": "Foundation/IBMIntrinsicDomainMultiplier.lean",
+      "line": 66,
+      "source_sha256": "bd8a1f43fed819c3ed3058e175b64f699908c34ddc18feb55cc6326949935285",
+      "declaration_header": "theorem productElement_gradient_ae (g : jointDerivative.domain) (i : Fin 2) :\n    coordinate i (jointDerivative (productElement f C hC hf hDf g) i)\n      =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n        (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 coordinate i (jointDerivative g i) \u03c9 +\n        (((g : IntrinsicSpace) : JointL2) \u03c9) \u2022 coordinate i (jointDerivative f i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDomainMultiplier.lean#L66"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDomainMultiplier.productElement_gradient_norm",
+      "file": "Foundation/IBMIntrinsicDomainMultiplier.lean",
+      "line": 88,
+      "source_sha256": "bd8a1f43fed819c3ed3058e175b64f699908c34ddc18feb55cc6326949935285",
+      "declaration_header": "theorem productElement_gradient_norm (g : jointDerivative.domain) :\n    \u2016jointDerivative (productElement f C hC hf hDf g)\u2016 \u2264\n      \u2016multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf)\u2016 * \u2016jointDerivative g\u2016 +\n      \u2016correctionField (jointDerivative f) hDf\u2016 * \u2016(g : IntrinsicSpace)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDomainMultiplier.lean#L88"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDomainMultiplier.productElement_graph_limit",
+      "file": "Foundation/IBMIntrinsicDomainMultiplier.lean",
+      "line": 96,
+      "source_sha256": "bd8a1f43fed819c3ed3058e175b64f699908c34ddc18feb55cc6326949935285",
+      "declaration_header": "theorem productElement_graph_limit (g : jointDerivative.domain) (u : \u2115 \u2192 jointDerivative.domain)\n    (hu : Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd (g : IntrinsicSpace)))\n    (hDu : Tendsto (fun n => jointDerivative (u n)) atTop (\ud835\udcdd (jointDerivative g))) :\n    Tendsto (fun n => (productElement f C hC hf hDf (u n) : IntrinsicSpace)) atTop\n      (\ud835\udcdd (productElement f C hC hf hDf g : IntrinsicSpace)) \u2227\n    Tendsto (fun n => jointDerivative (productElement f C hC hf hDf (u n))) atTop\n      (\ud835\udcdd (jointDerivative (productElement f C hC hf hDf g)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDomainMultiplier.lean#L96"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.weighted_mem",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 97,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem weighted_mem (f : jointDerivative.domain) (C : \u211d) (hC : 0 \u2264 C)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) :\n    multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) u \u2208 jointDivergence.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L97"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.weighted_value",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 106,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem weighted_value (f : jointDerivative.domain) (C : \u211d) (hC : 0 \u2264 C)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) :\n    jointDivergence \u27e8multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) u,\n      weighted_mem f C hC hf hDf u\u27e9 = output f (bounded_memLp f C hf) hDf u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L106"
+    },
+    {
+      "paper": "Section 2 original restricted graph multipliers and exact conditional L1 adjoint criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.full_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 88,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem full_pairing (f : jointDerivative.domain) (C : \u211d) (hC : 0 \u2264 C)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) (g : jointDerivative.domain) :\n    PairingResult (output f (bounded_memLp f C hf) hDf u)\n      (multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) u) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L88"
     }
   ],
   "human_reorganization": [
     "Gaussian chaos recovery and finite-tensor transport are reconstructed in ordinary Hilbert space notation. Densely defined original intrinsic derivative is an explicit verified foundational input; its native-core density proof is not claimed to be newly reproduced.",
     "The Brownian range proof uses density of deterministic stochastic exponentials and finite Gaussian transform uniqueness. The mapped formal source instead uses Brownian polynomial closure. No new formal theorem is invented.",
     "The printed hybrid squared norm bound follows from mapped source recovery and Brownian isometry. It is labelled a human deduction, not a new formal declaration.",
-    "The sine variance calculation proves nontriviality directly. Its separate mapped original joint-domain exclusion is explicitly cited rather than claimed as a newly reproduced proof."
+    "The sine variance calculation proves nontriviality directly. Its separate mapped original joint-domain exclusion is explicitly cited rather than claimed as a newly reproduced proof.",
+    "Section 2 uses n*tanh(x/n) for bounded graph approximation and smooth mollified clipping for uniformly bounded value approximation. These human choices reconstruct the source properties without claiming literal equality with its approximants. Graph and value approximation are distinct.",
+    "The L1 annihilator argument proves exact adjoint membership iff the actual full-observation conditional density belongs to L2. Full unbounded-test pairings use the conditional L2 representative and do not assert integrability of the original L1 density times an unbounded test.",
+    "Bounded coefficient products have weak density f*delta(U)-<Df,U>. Exact conditional-L2 membership is retained. Essentially bounded combined derivatives suffice for every original-domain product and every adjoint field. Combined constants A,B in the printed norm bounds are elementary human estimates; mapped source hypotheses bound two derivative coordinates separately. None of these static full-observation results establishes observed-past causality or physical-time Ito calculus."
   ],
   "novelty": "Classical formalization companion; no external priority or observed-IBM predictable representation claim."
 }

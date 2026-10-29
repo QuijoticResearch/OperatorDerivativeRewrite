@@ -27,7 +27,9 @@ source mean in the original clock derivative domain and identifies the clock
 integrand by predictable projection. Fold and collision cusps are treated by
 strong graph approximation, including their zero levels. Complete proofs
 separate ambient adjoints, observable projection, hidden-clock predictability
-and observed-process causality. A sine observation has zero source mean but
+and observed-process causality. Original-domain multipliers and an exact
+conditional-L1 criterion for the native adjoint are proved, retaining the
+full observation projection and all bounded-test hypotheses. A sine observation has zero source mean but
 positive variance, so clock-mean representation alone cannot reconstruct IBM.
 This is an exposition of verified results and classical Gaussian mechanisms,
 with no claim of completed physical-time IBM calculus or external novelty.
@@ -95,6 +97,199 @@ membership, and density makes its representing vector unique.
 One cannot omit $P$ merely because $f$ is intrinsic. In particular,
 $\E_XF$ and $F-\E_XF$ need not separately be intrinsic observations.
 Their sum can be intrinsic even when neither summand is.
+
+
+\section{Multipliers and exact conditional divergence domains}
+The projected adjoint also admits precise original-domain product rules.
+Abbreviate $D=D_{\Hh}$, $\delta=\delta_{\Hh}$ and
+$\mathcal O=\sigma(Z_t:t\geq0)$. Through the original product/Fubini
+isometries, write its field space as
+$\mathcal V=L^2(\Omega;H_X\oplus H_Y)$, with pointwise real pairing
+$\langle\cdot,\cdot\rangle_{H_X\oplus H_Y}$.
+For an integrable scalar $q$, let
+\[
+ Cq=\E[q\mid\mathcal O]\in L^1.
+\]
+This is an $L^1$ conditional expectation; the earlier Hilbert projection
+$Pq$ is used only when its input belongs to $L^2$.
+
+\subsection*{Bounded graph approximation and bounded separating tests}
+We first record the exact approximation facts needed for domain claims.
+The closed Gaussian chain rule gives
+\[
+ D\phi(v)=\phi'(v)Dv\qquad(v\in\Dom D)
+\]
+when $\phi$ is bounded $C^1$ with continuous bounded derivative.
+It applies in each ambient Gaussian factor. The composed scalar remains
+$\mathcal O$-measurable, so the two graph identities belong to the
+original restricted joint domain. Here is the strong-graph mechanism:
+approximate in the original Gaussian graph by smooth cylindrical
+functions, apply the finite chain rule, and select an almost-everywhere
+convergent subsequence of the values. Bounded derivatives control the
+product with the converging gradients; dominated convergence controls
+$(\phi'(v_n)-\phi'(v))Dv$. Boundedness of $\phi'$ also gives convergence
+of the values. Closedness identifies the limit in each graph. Smooth
+approximations of $\phi$ on finite-dimensional cylinders give the same
+argument for $C^1$ functions. This is the usual Gaussian Sobolev chain
+mechanism, not an IBM physical-time chain rule.
+
+Take $\chi_n(x)=n\tanh(x/n)$, $n\geq1$. These are bounded smooth
+functions with $|\chi_n(x)|\leq|x|$, $|\chi_n'(x)|\leq1$,
+$\chi_n(x)\to x$ and $\chi_n'(x)\to1$. Thus, for every $v\in\Dom D$,
+\begin{equation}\label{eq:nativeboundedgraph}
+ v_n=\chi_n(v)\longrightarrow v\text{ in }L^2,\qquad
+ Dv_n=\chi_n'(v)Dv\longrightarrow Dv\text{ in }\mathcal V.
+\end{equation}
+Both convergences follow by dominated convergence, using $|v|^2$ and
+$\|Dv\|^2$ respectively. In particular bounded domain elements form a
+strong graph core. The displayed hyperbolic truncations are a human
+choice of approximation; the source proves the same graph-core property
+with its own bounded smooth approximants.
+
+A different fact is needed to separate $L^1$ densities. If $F\in\Hh$
+and $|F|\leq1$, density of $\Dom D$ gives $g_n\to F$ in $L^2$.
+Let $\chi(x)=\max(-1,\min(1,x))$. Convolve it with a nonnegative
+smooth unit-mass mollifier supported in $[-\varepsilon,\varepsilon]$.
+The result $\chi_\varepsilon$ is smooth, takes values in $[-1,1]$,
+has derivative bounded by one and satisfies
+$\sup_x|\chi_\varepsilon(x)-\chi(x)|\leq\varepsilon$.
+The chain rule puts $u_n=\chi_{1/n}(g_n)$ in $\Dom D$, and
+\[
+ |u_n|\leq1,\qquad
+ \|u_n-F\|_2\leq n^{-1}+\|g_n-F\|_2\longrightarrow0.
+\]
+We used that clipping is nonexpansive and fixes $F$.
+The formal source uses the exact clipping identity
+$\chi(x)=(|x+1|-|x-1|)/2$ and its proved absolute-value chain rule;
+the smooth construction here supplies the same value approximation.
+No convergence of the derivatives of $u_n$ is claimed in this statement.
+
+Consequently an $\mathcal O$-measurable $a\in L^1$ satisfying
+$\E[va]=0$ for every $v\in\Dom D$ with $|v|\leq1$ must vanish.
+Apply the approximation to $F=\operatorname{sgn}(a)$, with sign zero
+at zero. An $L^2$-convergent sequence has an almost-everywhere convergent
+subsequence. Along it, $|u_na|\leq|a|$, so dominated convergence gives
+$\E|a|=\lim_n\E[u_na]=0$. This proves $a=0$ almost surely.
+The distinction between graph approximation and uniformly bounded value
+approximation is essential to the following proof.
+\lean{IBMNativeBoundedGraphCore; IBMUniformBoundedNativeTests}
+{bounded_graph; uniformly_bounded_approximation}
+\lean{IBMNativeL1TestSeparation}{integral_zero_on_bounded_observable; annihilator_zero}
+
+\subsection*{An exact $L^1$-to-adjoint criterion}
+\begin{theorem}\label{thm:conditionaladjoint}
+Suppose $U\in\mathcal V$ and $q\in L^1$ satisfy
+\begin{equation}\label{eq:nativeweakpair}
+ \langle U,Dv\rangle_{\mathcal V}=\E[vq]
+ \quad\text{for every bounded }v\in\Dom D.
+\end{equation}
+Then
+\[
+ U\in\Dom\delta\quad\Longleftrightarrow\quad Cq\in L^2.
+\]
+When these conditions hold, $\delta U=Cq$ as an actual intrinsic $L^2$
+class. For unbounded domain tests the valid full identity is
+$\langle U,Dv\rangle=\langle Cq,v\rangle_{L^2}$; integrability of
+$vq$ is not asserted for arbitrary $v\in\Dom D$.
+\end{theorem}
+\begin{proof}
+For every bounded observable $v$, conditional expectation gives
+$\E[vq]=\E[vCq]$, with both products integrable.
+If $U\in\Dom\delta$ and $y=\delta U$, adjoint duality and
+\eqref{eq:nativeweakpair} imply $\E[v(Cq-y)]=0$ for all bounded
+domain tests. The difference $Cq-y$ is observable and integrable,
+since the probability space has mass one and $y\in L^2$.
+The separating-test argument just proved gives $Cq=y$ almost surely,
+and therefore $Cq\in L^2$.
+
+Conversely suppose $Cq\in L^2$. The bounded-test identity becomes
+$\langle U,Dv\rangle=\langle Cq,v\rangle$. For an arbitrary domain
+element use \eqref{eq:nativeboundedgraph}; convergence on both sides
+extends the identity to it. Thus
+$|\langle U,Dv\rangle|\leq\|Cq\|_2\|v\|_2$ on the whole domain,
+which is exactly membership in the Hilbert adjoint graph. Density of
+the original domain makes its output uniquely $Cq$.
+\end{proof}
+\lean{IBMConditionalL1Realization}{conditional_pairing; full_pairing; realization_graph}
+\lean{IBMConditionalAdjointDomain}{domain_iff_conditional_L2; conditional_eq_adjoint}
+
+\subsection*{Bounded products and the native divergence rule}
+If $f,v\in\Dom D$ are bounded, their product belongs to $\Dom D$ and
+\[
+ D(fv)=fDv+vDf.
+\]
+To see this on the original graphs, choose a bounded smooth function
+agreeing with $x^2$ on a neighborhood of the common bounded ranges of
+$f$, $v$ and $f+v$. The closed chain rule and
+$2fv=(f+v)^2-f^2-v^2$ prove the formula in each component.
+All terms are square integrable because both scalar factors are bounded.
+
+Now let $f\in\Dom D$ be bounded and $U\in\Dom\delta$, without yet
+assuming an essentially bounded derivative of $f$. The actual density
+\begin{equation}\label{eq:nativedensity}
+ q=f\delta U-\langle Df,U\rangle_{H_X\oplus H_Y}
+\end{equation}
+belongs to $L^1$: the first product is in $L^2$, and Cauchy--Schwarz
+makes the field contraction integrable. Also $fU\in\mathcal V$.
+For a bounded domain test $v$, apply adjoint duality to $fv$:
+\[
+ \langle fU,Dv\rangle
+ =\langle U,D(fv)\rangle-\E[v\langle Df,U\rangle]
+ =\E[vq].
+\]
+Theorem~\ref{thm:conditionaladjoint} therefore gives the exact rule
+\begin{equation}\label{eq:nativeweightedcriterion}
+ fU\in\Dom\delta\quad\Longleftrightarrow\quad
+ C\!\left(f\delta U-\langle Df,U\rangle\right)\in L^2.
+\end{equation}
+When it holds, the displayed conditional density is the adjoint value.
+Boundedness of $f$ alone does not establish this remaining $L^2$ condition.
+One need not demand that the unprojected $L^1$ density itself be in $L^2$;
+the criterion concerns its actual conditional expectation.
+\lean{IBMNativeProductOperators; IBMNativeWeakL1Divergence}
+{bounded_leibniz; weak_pairing; weakDensity_integrable}
+\lean{IBMConditionalAdjointDomain}{weighted_domain_iff}
+
+There is a useful sufficient multiplier class. Assume $|f|\leq A$ almost surely and the combined field bound
+$\|Df(\omega)\|\leq B$ almost surely,
+for finite $A,B\geq0$. Then every $v\in\Dom D$, even unbounded, satisfies
+\begin{align}\label{eq:nativemultiplier}
+ fv&\in\Dom D,\qquad D(fv)=fDv+vDf,\\
+ \|D(fv)\|_2&\leq A\|Dv\|_2+B\|v\|_2.\nonumber
+\end{align}
+Indeed use the bounded graph sequence $v_n$ above. The bounded product
+rule applies to each $fv_n$; boundedness of $f$ and $Df$ gives convergence
+of its values and gradients to the displayed pair. Closedness of $D$
+proves membership and the triangle inequality proves the bound.
+The same calculation shows continuity under every original graph limit.
+
+For every $U\in\Dom\delta$, \eqref{eq:nativedensity} is now in $L^2$,
+so the weighted field automatically belongs to the adjoint domain and
+\begin{align}\label{eq:nativeweightedstrong}
+ \delta(fU)&=f\delta U-C\langle Df,U\rangle,\\
+ \|\delta(fU)\|_2&\leq A\|\delta U\|_2+B\|U\|_2.\nonumber
+\end{align}
+We pulled out $f\delta U$ because it is already observable; conditional
+expectation is a contraction in $L^2$. In particular the contraction term
+cannot simply be assumed observable, since the derivative fields are ambient.
+The source states boundedness of the two derivative coordinates separately;
+the finite direct-sum identification gives the combined bound $B$ used here.
+The printed constants are elementary human operator-norm bounds, not new
+named formal estimates.
+\lean{IBMIntrinsicDomainMultiplier}{product_mem_domain; productElement_gradient_ae;
+productElement_graph_limit}
+\lean{IBMNativeWeightedDivergence}{weighted_mem; weighted_value; full_pairing}
+
+Nualart's primary notes~\cite{nualart}, Proposition 5.2, equation (30),
+give the classical Gaussian divergence product rule on smooth cylindrical
+data; Proposition 5.4 states the closed Sobolev chain rule. The mechanism
+is classical. The present proof aligns it with the original restricted
+IBM graph and the precise conditional $L^1$ criterion, without claiming a
+new general product principle or priority for the restriction formulation.
+Here $C$ always conditions on the \emph{full} IBM observation sigma-algebra.
+These static multiplier and adjoint identities do not imply observed-past
+predictability, a physical-time stochastic integral or differentiability of
+the positive-time point observables excluded by the companion domain audit.
 
 \section{Static Gaussian recovery before predictability}
 We recall a Gaussian fact in a form that fixes all normalizations. Let $D$
@@ -574,5 +769,9 @@ Primary institutional record and abstract:
 \bibitem{source} Project Stardust, \emph{OperatorDerivativeRewrite}, frozen
 verified source commit identified in Section~1. The accompanying
 \texttt{theorem-map.json} gives declaration-level permanent source links.
+\bibitem{nualart} D. Nualart,
+\emph{Malliavin Calculus and Normal Approximations}, primary author notes,
+Propositions 5.2 and 5.4, equation (30), printed pages 39--41.
+\url{https://nualart.ku.edu/sites/nualart/files/documents/updated/Course_Malliavin_Calculus_accessible.pdf}.
 \end{thebibliography}
 \end{document}
