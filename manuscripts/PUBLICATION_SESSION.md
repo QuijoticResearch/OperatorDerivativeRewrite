@@ -219,3 +219,7 @@ Eight-page companion gives complete actual finite-table/partition/solenoidal pro
 ## General even-order expanding windows
 
 The sixth-order companion expands from eight to twelve pages with a full actual-kernel proof for each fixed integer-even order inside the expanding saddle window, all normalizations/compact-prefix/weighted tails, cosine approximation and exact local real/simple mechanism. 63 total exact frozen correspondences; seven finite algebra/margin checks pass. Native sharper constants are distinguished from the human order-dependent cutoff proof. Every revised page inspected, final two-pass build clean. Sixth-order whole-plane reality remains distinct from general compact/window reality; no RH or global general-order inference. Twenty-five reviewed drafts total 243 pages.
+
+## Retained Gaussian dynamics, closed-gradient distance and dephasing
+
+The triad companion expands from eight to ten pages with full raw-phase/Leray/ODE/global-invariance proofs, actual original nonzero second-chaos divergence-free field and exact gradient-distance identity, coordinate Gaussian dephasing and conserved correlations/unitary action. 187 total exact frozen correspondences; seventeen exact algebra checks pass. Every revised page inspected; new proof/reference pages enlarged, final two-pass build clean. Classical Koopman antecedent credited. Twenty-five reviewed drafts total 245 pages.

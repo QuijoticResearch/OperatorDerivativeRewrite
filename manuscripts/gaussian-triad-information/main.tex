@@ -10,7 +10,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
 \newcommand{\E}{\mathbb E}\newcommand{\Var}{\operatorname{Var}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Signed transfer invisible to spectral energy statistics:\\exact Gaussian triad diagnostics}
+\title{Energy statistics, signed transfer and Gaussian dynamics\protect\\in an exact finite triad}
 \author{Project Stardust}
 \date{Reviewed diagnostic draft, October 29, 2026}
 \begin{document}
@@ -24,8 +24,7 @@ determines its square and hence its strictly positive conditional variance.
 Positive bounded changes of probability density preserve the entire joint
 law of energy and concentration while reversing mean signed transfer.
 Complete proofs distinguish equality of observed laws from equality of
-latent laws. We also derive, explicitly as classical consequences, the
-biased conditional means and a two-law prediction-risk identity. The value
+latent laws. We also derive the biased conditional means and a two-law prediction-risk identity as explicit classical consequences. The actual retained dynamics has a nonlinear Gaussian-preserving global flow, a nonzero divergence-free quadratic Gaussian drift orthogonal to every original closed gradient, and coordinate dephasing despite a conserved observable and unitary $L^2$ action. The value
 is an exact diagnostic and formalization companion: phase dependence and
 symmetry-based information loss are classical, and priority for this
 particular package remains unresolved. No turbulent evolution, invariant
@@ -48,7 +47,7 @@ observation is $S=(\mathcal E,\mathcal C)$, with the concentration
 $\mathcal C$ defined below. Its entire probability law will be preserved,
 not just one or two moments.
 
-All finite formulas are evaluated on static fields. We define a transfer
+The first six sections evaluate finite formulas on static fields. The later dynamical sections specify the retained ODE separately. We define a transfer
 diagnostic by its displayed convolution formula. We do not assume that
 the six retained modes remain closed under Euler or Navier--Stokes
 evolution. Moffatt's primary analysis~\cite{moffatt}, introduction and
@@ -402,6 +401,191 @@ The best rule when $\varepsilon$ is known is instead
 $\varepsilon br$, as~\eqref{eq:biasedconditional} states. The
 common-rule obstruction must not be read as its failure.
 
+
+\section{The actual retained dynamics and its Gaussian law}\label{sec:retainedflow}
+There is a rigorous dynamical companion for this same finite family.
+It evolves all three amplitudes rather than holding $a=2,b=1$ fixed.
+We now use the state $(a,b,c)\in\R^3$ and the product law
+$\Gamma=\gamma\otimes\gamma\otimes\gamma$. This is a different
+experiment from the one-parameter biased laws above.
+
+\subsection{Projection and the global solution}
+For $k\ne0$ let $\Pi_k v=v-k(k\cdot v)/|k|^2$. The raw vector
+convolution corresponding to the negative complex advection under our
+$iV$ convention is $iN_k$, where
+\[
+ N_k=\sum_{p+q=k}(q\cdot V(p))V(q).
+\]
+The same enumeration used in Lemma~\ref{lem:table} gives
+\[
+ N_{e_1}=(-2bc,bc,0),\quad N_{e_2}=(ac,-2ac,0),\quad
+ N_{e_1+e_2}=(-ab,-ab,0).
+\]
+For example at $e_1$ the two terms are $(-bc,0,0)$ and
+$(-bc,bc,0)$; at $e_2$ they are $(0,-ac,0)$ and $(ac,-ac,0)$.
+At $e_1+e_2$ they are $(-ab,0,0)$ and $(0,-ab,0)$.
+The opposite outputs have opposite vector values. Applying the
+projectors removes the $e_1$ component of the first vector, the
+$e_2$ component of the second, and the whole third vector.
+The retained coefficients therefore evolve by
+\begin{equation}\label{eq:ode}
+ \dot a=bc,\qquad \dot b=-ac,\qquad \dot c=0.
+\end{equation}
+The Fourier phase follows directly from $-(iV(p)\cdot iq)iV(q)
+=i(q\cdot V(p))V(q)$. Thus the sign of the displayed drift is
+fixed by the actual synthesis convention.
+
+\begin{proposition}\label{prop:flow}
+For every real $t$, the global solution map of~\eqref{eq:ode} is
+\begin{equation}\label{eq:flow}
+ \Phi_t(a,b,c)=\bigl(a\cos(tc)+b\sin(tc),
+                  -a\sin(tc)+b\cos(tc),c\bigr).
+\end{equation}
+It is a smooth group of invertible transformations, preserves
+$\alpha(a^2+b^2)+\beta c^2$ for all real $\alpha,\beta$, and
+preserves the actual probability law $\Gamma$.
+\end{proposition}
+\begin{proof}
+Differentiate the three coordinates to verify~\eqref{eq:ode} and
+the initial value. The polynomial vector field is locally Lipschitz,
+so uniqueness identifies this explicit global solution. The addition
+formulas give $\Phi_{s+t}=\Phi_s\Phi_t$ and $\Phi_{-t}\Phi_t=I$.
+The first two coordinates are an orthogonal rotation at fixed $c$;
+their squared sum and $c$ are unchanged, proving every displayed
+quadratic invariant. The transformation is nonlinear on the full
+state: at $t=\pi/2$, the first coordinate of
+$\Phi_t(1,0,1)$ is zero, whereas that of
+$\Phi_t(1,0,0)+\Phi_t(0,0,1)$ is one.
+
+For any bounded Borel test $h$, integrate first in $(a,b)$ at fixed
+$c$. The two-dimensional standard Gaussian is invariant under every
+orthogonal rotation, as follows from its radial density and the
+unit absolute Jacobian. Therefore
+\[
+ \int h(\Phi_t(a,b,c))\,d\gamma(a)d\gamma(b)
+      =\int h(a,b,c)\,d\gamma(a)d\gamma(b).
+\]
+Fubini then integrates over $c$, proving $\Phi_{t\#}\Gamma=\Gamma$.
+This proves invariance on all Borel sets by indicator tests, not just
+constancy of finitely many Gaussian moments.
+\end{proof}
+
+In particular the weighted energy $E=2a^2+2b^2+8c^2$ and the
+actual unweighted kinetic norm $2a^2+2b^2+4c^2$ are both conserved
+by this retained inviscid flow. Along any nonzero trajectory,
+differentiate the concentration in~\eqref{eq:ratio}; because $E$ is
+constant, its derivative is
+\[
+ \frac{d\mathcal C}{dt}
+  =\frac{2}{E^2}(4a^3bc-4ab^3c)
+  =\frac{8abc(a^2-b^2)}{E^2}=\Sigma.
+\]
+Consequently the original diagnostic is exactly
+$R=-d\log(\mathcal C-1/32)/dt$ \emph{for the retained ODE}.
+The positive denominator was already proved. This elementary
+derivative identification is a human deduction from the finite table
+and actual drift; it is not a claim that the full fluid solution
+stays on these six modes. The static slice $a=2,b=1$ is also not
+an invariant family of this flow.
+
+\subsection{An original Gaussian gradient obstruction}
+Let $G_1,G_2,G_3$ be the first three coordinates on the original
+countable Gaussian product space. Let $\mathbf e_j$ be the
+corresponding orthonormal source directions, and consider the actual
+square-integrable vector field
+\[
+ U=G_2G_3\mathbf e_1-G_1G_3\mathbf e_2.
+\]
+Its first three components are precisely the drift~\eqref{eq:ode}
+evaluated at these coordinates. Products here are finite Gaussian
+polynomials; no unrestricted multiplication of arbitrary $L^2$
+functions is assumed. Independence gives
+\begin{equation}\label{eq:U-norm}
+ \|U\|_2^2=\E(G_2^2G_3^2+G_1^2G_3^2)=2.
+\end{equation}
+
+Define $D$ to be the original closed Gaussian derivative obtained by
+closing the cylindrical polynomial derivative. On that polynomial
+core, one-coordinate Gaussian integration by parts gives
+\[
+ \E[\partial_1 f\,G_2G_3]=\E[fG_1G_2G_3]
+       =\E[\partial_2 f\,G_1G_3].
+\]
+To justify each integration, fix all remaining finite coordinates;
+the Gaussian density makes the polynomial boundary term zero, and
+all absolute polynomial moments are finite, so Fubini applies.
+Subtracting proves $\langle Df,U\rangle=0$ on the core. If
+$f$ lies in the original closed domain, take core $f_j$ with
+$f_j\to f$ and $Df_j\to Df$ in $L^2$. Pairing with the fixed
+$U\in L^2$ passes the identity to the limit. Thus
+\begin{equation}\label{eq:U-orthogonal}
+ \langle Df,U\rangle=0,\qquad
+ \|U-Df\|_2^2=2+\|Df\|_2^2\quad(f\in\operatorname{Dom}D).
+\end{equation}
+In particular $U$ is not an original closed gradient, and its exact
+distance from the gradient range or its closure is $\sqrt2$,
+attained by the zero gradient. Equivalently $U$ belongs to the
+adjoint divergence domain with divergence zero: the functional
+$f\mapsto\langle Df,U\rangle$ is represented by the zero scalar.
+The norm in~\eqref{eq:U-norm} proves this is a nonzero field.
+
+For cylindrical polynomial $f,g$, apply the same identity to $fg$
+and use the ordinary product rule:
+\[
+ \E[f\langle Dg,U\rangle]=-\E[g\langle Df,U\rangle].
+\]
+These pairings are integrable finite Gaussian polynomials. This is a
+skew transport pairing on the polynomial core, not an identification
+of the full generator domain of the Koopman group. All assertions
+refer to the original closed derivative, not a newly chosen maximal
+operator. They reproduce the source's nonzero quadratic second-chaos
+field and its closed-gradient obstruction.
+
+\section{Coordinate dephasing without mixing or norm decay}\label{sec:dephasing}
+Under the invariant law $\Gamma$, write $A_t$ for the first coordinate
+of $\Phi_t(A,B,C)$, where $A,B,C$ are independent standard Gaussians.
+By invariance, $A_t$ remains centered of variance one. The actual
+two-time correlation, however, is
+\begin{equation}\label{eq:dephasing}
+ \E[A_tA]=\E[\cos(tC)]\E[A^2]
+             +\E[\sin(tC)]\E[AB]=e^{-t^2/2}.
+\end{equation}
+The products are integrable by Cauchy--Schwarz or bounded sine/cosine
+and finite Gaussian second moments, so independence and Fubini
+justify the factorization. For completeness let
+$\chi(t)=\E e^{itC}$. Dominated differentiation is allowed by
+$\E|C|<\infty$. Gaussian integration by parts gives
+$\E[Ce^{itC}]=it\chi(t)$, hence $\chi'=-t\chi$ and $\chi(0)=1$.
+Solving gives $\chi(t)=e^{-t^2/2}$ and proves the last equality.
+Thus the displayed coordinate loses its correlation at a Gaussian rate.
+
+There is nonetheless a centered variance-one conserved observable:
+$C\circ\Phi_t=C$. Consequently
+\begin{equation}\label{eq:fixedcorrelation}
+ \E[(C\circ\Phi_t)C]=1\qquad\text{for all }t.
+\end{equation}
+This is enough to disprove decay of every centered $L^2$ correlation.
+It also excludes mixing, whether defined using all centered $L^2$
+tests or using events: the nontrivial event $\{C>0\}$ is invariant
+and has probability $1/2$, so its self-intersection has probability
+$1/2$ rather than the mixing limit $1/4$.
+
+Finally the composition operators $\mathcal U_t f=f\circ\Phi_t$ on
+$L^2(\Gamma)$ are norm preserving by the proved invariance, and
+$\mathcal U_{-t}$ is their inverse. Thus they form an orthogonal
+group on real $L^2$, or a unitary group after complexification.
+They preserve means and cannot satisfy
+\[
+ \|\mathcal U_t f\|_2\leq q\|f\|_2\quad
+ \text{for every centered }f,\qquad q<1.
+\]
+Taking $f=C$ already contradicts this bound; norm preservation also
+contradicts it for every nonzero centered $f$ separately. Decay of
+one correlation in~\eqref{eq:dephasing} is compatible with conservation
+of the whole $L^2$ norm. The composition-operator mechanism is
+classical Koopman theory~\cite{koopman}; the Gaussian rate is the
+ordinary Gaussian characteristic function, not a new mixing theorem.
+
 \section{Primary comparison and formal correspondence}
 Fourier triad transfer and phase dependence are established topics.
 Moffatt~\cite{moffatt} was inspected in the primary PDF through the
@@ -421,7 +605,7 @@ bounded changes of density are classical. The contribution is a
 fully reproducible exact family combining the actual partition,
 solenoidal representative, signed transfer denominator and full-law
 information loss. Priority of the particular formulas and combined
-formalization remains unresolved after this bounded comparison.
+formalization remains unresolved after this bounded comparison. Koopman's primary 1931 pages 315--316 were inspected for invariant-measure composition and unitary action. The rotational flow, skew Gaussian integration by parts and Gaussian characteristic function are classical mechanisms; no new general principle of dephasing or Hodge decomposition is claimed.
 
 All formal sources are frozen at commit
 \begin{center}\small\ttfamily
@@ -436,16 +620,16 @@ Real representative&\code{ParameterizedTriadRepresentative}\\[3pt]
 Gaussian rate and signs&\code{GaussianTriadPhase}\\[3pt]
 Hermite parity/rank&\code{GaussianTriadHermite}\\[3pt]
 Positive biased laws&\code{GaussianTriadBias}\\[3pt]
-Conditional mean/variance&\code{GaussianTriadConditional}\\
+Conditional mean/variance&\code{GaussianTriadConditional}\\[3pt]
+Retained drift and Gaussian field&\code{DictionaryTriadPotential}, \code{QuadraticTriadGaussian}\\[3pt]
+Global flow and dephasing&\code{TriadGaussianFlow}, \code{TriadGaussianDephasing}\\
 \end{longtable}
-The finite table is proved by enumerating every interacting pair.
-The concentration bound is reproved by six-term Cauchy--Schwarz.
-Equality of the sigma fields $\sigma(S)=\sigma(|C|)$, strict
-equivalence at the endpoint tilted laws, the biased conditional
-formulas and the common-risk identity are explicit classical
-deductions proved here. The source conditional variance theorem
-concerns the original symmetric Gaussian; the tilted formula is
-not misattributed to it.
+The map distinguishes the original formal statements from the
+classical sigma-field, endpoint-density and biased-conditional/common-risk
+deductions in Sections 4--6. The derivative identity along the retained
+ODE is also proved explicitly. The source conditional-variance theorem
+concerns the original symmetric Gaussian, and is not misattributed to
+the tilted laws.
 
 Original build/axiom evidence and source hashes were checked at the
 frozen baseline; no new Lean build or mathematical source change
@@ -454,12 +638,15 @@ the triad table, labels, denominator and scalar identities. They do
 not replace the printed measure-theoretic proofs with Gaussian
 sampling or numerical quadrature.
 
-The scope is static finite Fourier geometry and an actual scalar
-Gaussian experiment. No invariant fluid probability measure,
-stochastic turbulence model, continuum closure theorem, global
-regularity conclusion or singularity mechanism is established.
+The invariant product Gaussian belongs to the finite retained ODE.
+No invariant full-fluid measure, turbulent closure, continuum regularity
+or singularity conclusion is inferred.
 
 \begin{thebibliography}{9}
+\bibitem{koopman} B. O. Koopman, Hamiltonian systems and transformations
+in Hilbert space, \emph{Proc. Natl. Acad. Sci. USA} \textbf{17} (1931), 315--318.
+\url{https://new.math.uiuc.edu/MathMLseminar/seminarPapers/Koopman1931.pdf}.
+
 \bibitem{moffatt} H. K. Moffatt, Note on the triad interactions of
 homogeneous turbulence, \emph{J. Fluid Mech.} \textbf{741} (2014), R3.
 \href{https://doi.org/10.1017/jfm.2013.637}{doi:10.1017/jfm.2013.637}.

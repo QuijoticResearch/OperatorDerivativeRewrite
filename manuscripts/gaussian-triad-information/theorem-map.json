@@ -1008,6 +1008,494 @@
       "source_sha256": "d02afd156b2aeb0d59f4cf2e8b29f7ebbdcb41e0b0955eb6a7cdf4ff276c0a29",
       "declaration_header": "theorem energy_conditional_variance_pos_ae :\n    \u2200\u1d50 c \u2202\u03b3, 0 < (\u03b3[(fun z => (phaseRate z)^2) | observedSpace sourceEnergy]) c -\n      ((\u03b3[phaseRate | observedSpace sourceEnergy]) c)^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTriadConditional.lean#L170"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.raw_on_mode",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 22,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem raw_on_mode (a b c : \u211d) (j : Fin 6) :\n    rawSymbol a b c (SectorTriadSign.mode j)=rawValues a b c j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L22"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.projected_on_mode",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 30,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem projected_on_mode (a b c : \u211d) (j : Fin 6) :\n    DictionaryTriadLocalization.leray (SectorTriadSign.mode j)\n      (rawSymbol a b c (SectorTriadSign.mode j))=amplitude (b*c) (-a*c) 0 j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L30"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.phase_summand",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 60,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem phase_summand (a b c : \u211d) (p q : Wave) (i : Fin 3) :\n    -((\u2211 j : Fin 3,\n      ParameterizedTriadRepresentative.coefficient a b c p j*((q j : \u2102)*Complex.I))*\n        ParameterizedTriadRepresentative.coefficient a b c q i)=\n      Complex.I*((dotWave q (polarization a b c p)*polarization a b c q i : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L60"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.negativeComplexSymbol_phase",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 69,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem negativeComplexSymbol_phase (a b c : \u211d) (m : Wave) :\n    negativeComplexSymbol a b c m=fun i => Complex.I*(rawSymbol a b c m i : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L69"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.projected_complex_on_mode",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 103,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem projected_complex_on_mode (a b c : \u211d) (j : Fin 6) :\n    complexLeray (SectorTriadSign.mode j)\n      (negativeComplexSymbol a b c (SectorTriadSign.mode j))=\n        ParameterizedTriadRepresentative.coefficient (b*c) (-a*c) 0 (SectorTriadSign.mode j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L103"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.kineticPair_formula",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 116,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem kineticPair_formula (x y : Vector) :\n    kineticPair x y=2*x 0*y 0+2*x 1*y 1+4*x 2*y 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L116"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryTriadPotential.nonlinear_energy_cancellation",
+      "file": "Foundation/DictionaryTriadPotential.lean",
+      "line": 121,
+      "source_sha256": "8c20416095df8b522903bd8638c86a6dd97772277515361bc18dbd1f2e0445bf",
+      "declaration_header": "theorem nonlinear_energy_cancellation (x : Vector) : kineticPair x (drift 0 x)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryTriadPotential.lean#L121"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.product_coeFn",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 16,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem product_coeFn (n m : \u2115) : (product n m : GaussianL2) =\u1d50[gaussianProduct]\n    fun \u03c9 => TriadGaussianHodge.coordinate n \u03c9*TriadGaussianHodge.coordinate m \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.product_second_chaos",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 38,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem product_second_chaos (n m : \u2115) (hnm : n \u2260 m) :\n    (product n m : GaussianL2) \u2208 sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L38"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_polynomial",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 46,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_polynomial : field \u2208 cylindricalVectorDomain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L46"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_coeFn",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 50,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_coeFn : field =\u1d50[gaussianProduct] fun \u03c9 =>\n    (TriadGaussianHodge.coordinate 1 \u03c9*TriadGaussianHodge.coordinate 2 \u03c9) \u2022 direction 0-\n      (TriadGaussianHodge.coordinate 0 \u03c9*TriadGaussianHodge.coordinate 2 \u03c9) \u2022 direction 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L50"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.component_zero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 64,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem component_zero : component 0 field=(product 1 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L64"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.component_one",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 68,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem component_one : component 1 field= -(product 0 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L68"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.component_other",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 72,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem component_other (n : \u2115) (hn0 : n \u2260 0) (hn1 : n \u2260 1) : component n field=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.component_second_chaos",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 76,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem component_second_chaos (n : \u2115) : component n field \u2208 sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L76"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.components_equal_triad",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 88,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem components_equal_triad : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 i : Fin 3,\n    component (i : \u2115) field \u03c9=DictionaryTriadPotential.drift 0\n      ![TriadGaussianHodge.coordinate 0 \u03c9,TriadGaussianHodge.coordinate 1 \u03c9,\n        TriadGaussianHodge.coordinate 2 \u03c9] i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L88"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_divergence_zero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 120,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_divergence_zero : (field,0) \u2208 hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L120"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_norm_sq",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 128,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_norm_sq : \u2016field\u2016^2=2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L128"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_nonzero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 136,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_nonzero : field \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L136"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.field_orthogonal",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 142,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem field_orthogonal : field \u2208 gradientRange\u15ee",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L142"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.no_closed_gradient_potential",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 153,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem no_closed_gradient_potential :\n    \u00ac \u2203 f : GaussianL2, (f,field) \u2208 closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L153"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.gradient_pairing_zero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 161,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem gradient_pairing_zero {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f,g) \u2208 closedCylindricalDerivative.graph) : inner \u211d g field=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L161"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.transport_skew",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 166,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem transport_skew (f g : polynomialCylindricalDomain) :\n    inner \u211d (polynomialTimesDerivative f g) field=\n      -inner \u211d (polynomialTimesDerivative g f) field",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L166"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.transport_integral_skew",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 181,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem transport_integral_skew (f g : polynomialCylindricalDomain) :\n    (\u222b \u03c9, (f : GaussianL2) \u03c9*inner \u211d (polynomialDerivative g \u03c9) (field \u03c9) \u2202gaussianProduct)=\n      -(\u222b \u03c9, (g : GaussianL2) \u03c9*inner \u211d (polynomialDerivative f \u03c9) (field \u03c9) \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L181"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.transport_energy_zero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 187,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem transport_energy_zero (f : polynomialCylindricalDomain) :\n    (\u222b \u03c9, (f : GaussianL2) \u03c9*inner \u211d (polynomialDerivative f \u03c9) (field \u03c9) \u2202gaussianProduct)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L187"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.weak_integral_zero",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 192,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem weak_integral_zero {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f,g) \u2208 closedCylindricalDerivative.graph) :\n    (\u222b \u03c9, inner \u211d (g \u03c9) (field \u03c9) \u2202gaussianProduct)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L192"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.gradient_error_identity",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 198,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem gradient_error_identity {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f,g) \u2208 closedCylindricalDerivative.graph) : \u2016field-g\u2016^2=2+\u2016g\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L198"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuadraticTriadGaussian.weighted_radial_cancellation",
+      "file": "Foundation/QuadraticTriadGaussian.lean",
+      "line": 203,
+      "source_sha256": "1e4754ae9cfc075460b416235b0a21f10b407fbaf406a100b0ea9aee202c2321",
+      "declaration_header": "theorem weighted_radial_cancellation (\u03b1 \u03b2 : \u211d) : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    \u03b1*TriadGaussianHodge.coordinate 0 \u03c9*component 0 field \u03c9+\n      \u03b1*TriadGaussianHodge.coordinate 1 \u03c9*component 1 field \u03c9+\n      \u03b2*TriadGaussianHodge.coordinate 2 \u03c9*component 2 field \u03c9=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuadraticTriadGaussian.lean#L203"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.flow_zero",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 60,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem flow_zero (x : State) : flow 0 x=x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L60"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.flow_add",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 62,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem flow_add (s t : \u211d) (x : State) : flow (s+t) x=flow s (flow t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L62"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.flow_inverse",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 65,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem flow_inverse (t : \u211d) (x : State) : flow (-t) (flow t x)=x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L65"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.flow_preserving",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 75,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem flow_preserving (t : \u211d) : MeasurePreserving (flow t) law law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L75"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.vectorFlow_formula",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 123,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem vectorFlow_formula (t : \u211d) (x : Vector) : vectorFlow t x=\n    ![Real.cos (t*x 2)*x 0+Real.sin (t*x 2)*x 1,\n      -Real.sin (t*x 2)*x 0+Real.cos (t*x 2)*x 1,x 2]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.vectorFlow_add",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 130,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem vectorFlow_add (s t : \u211d) (x : Vector) :\n    vectorFlow (s+t) x=vectorFlow s (vectorFlow t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L130"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.vectorFlow_preserving",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 134,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem vectorFlow_preserving (t : \u211d) : MeasurePreserving (vectorFlow t) vectorGaussian vectorGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L134"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.gaussian_invariant",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 137,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem gaussian_invariant (t : \u211d) : vectorGaussian.map (vectorFlow t)=vectorGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L137"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.vectorFlow_inverse",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 140,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem vectorFlow_inverse (t : \u211d) (x : Vector) : vectorFlow (-t) (vectorFlow t x)=x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L140"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.third_fixed",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 144,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem third_fixed (t : \u211d) (x : Vector) : vectorFlow t x 2=x 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L144"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.plane_square_preserved",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 146,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem plane_square_preserved (t : \u211d) (x : Vector) :\n    (vectorFlow t x 0)^2+(vectorFlow t x 1)^2=(x 0)^2+(x 1)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L146"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.weighted_square_preserved",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 156,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem weighted_square_preserved (\u03b1 \u03b2 t : \u211d) (x : Vector) :\n    \u03b1*(vectorFlow t x 0)^2+\u03b1*(vectorFlow t x 1)^2+\u03b2*(vectorFlow t x 2)^2=\n      \u03b1*(x 0)^2+\u03b1*(x 1)^2+\u03b2*(x 2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L156"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.nonadditive",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 164,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem nonadditive :\n    vectorFlow (Real.pi/2) (![1,0,0]+![0,0,1]) \u2260\n      vectorFlow (Real.pi/2) ![1,0,0]+vectorFlow (Real.pi/2) ![0,0,1]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L164"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.vectorFlow_derivative",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 172,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem vectorFlow_derivative (x : Vector) (t : \u211d) :\n    HasDerivAt (fun s => vectorFlow s x)\n      (DictionaryTriadPotential.drift 0 (vectorFlow t x)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L172"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.sampleVector_preserving",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 192,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem sampleVector_preserving : MeasurePreserving sampleVector\n    InfiniteGaussian.gaussianProduct vectorGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L192"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.sourceFlow_law",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 213,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem sourceFlow_law (t : \u211d) :\n    InfiniteGaussian.gaussianProduct.map (sourceFlow t)=vectorGaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L213"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianFlow.sourceFlow_initial_velocity",
+      "file": "Foundation/TriadGaussianFlow.lean",
+      "line": 219,
+      "source_sha256": "6261fd3a3f81bd3269fb87db3de6787cdb69d3418ac3a8bd4305795dc21caee8",
+      "declaration_header": "theorem sourceFlow_initial_velocity : \u2200\u1d50 \u03c9 \u2202InfiniteGaussian.gaussianProduct,\n    HasDerivAt (fun t => sourceFlow t \u03c9)\n      (fun i : Fin 3 => TriadGaussianHodge.component (i : \u2115) QuadraticTriadGaussian.field \u03c9) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianFlow.lean#L219"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.plane_moment",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 22,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem plane_moment (i j : Fin 2) :\n    (\u222b z : Plane, z i*z j \u2202planeGaussian)=if i=j then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L22"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.gaussian_cosine",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 65,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem gaussian_cosine (t : \u211d) : (\u222b c : \u211d, Real.cos (t*c) \u2202\u03b3)=Real.exp (-t^2/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L65"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.correlation_formula",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 81,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem correlation_formula (t : \u211d) : correlation t=Real.exp (-t^2/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L81"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.correlation_tendsto_zero",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 98,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem correlation_tendsto_zero : Tendsto correlation atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L98"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.first_mean_zero",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 121,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem first_mean_zero (t : \u211d) : (\u222b x : State, (flow t x).2 0 \u2202law)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L121"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.first_second_one",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 124,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem first_second_one (t : \u211d) : (\u222b x : State, ((flow t x).2 0)^2 \u2202law)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L124"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixed_mean_zero",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 127,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixed_mean_zero : (\u222b x : State, x.1 \u2202law)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L127"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixed_second_one",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 131,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixed_second_one : (\u222b x : State, (x.1)^2 \u2202law)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L131"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixed_correlation",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 136,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixed_correlation (t : \u211d) : (\u222b x : State, (flow t x).1*x.1 \u2202law)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L136"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixedClass_centered",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 147,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixedClass_centered : (\u222b x, fixedClass x \u2202law)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L147"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixedClass_norm",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 159,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixedClass_norm : \u2016fixedClass\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L159"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.koopman_norm",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 166,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem koopman_norm (t : \u211d) (f : Lp \u211d 2 law) : \u2016koopman t f\u2016=\u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L166"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.koopman_fixed",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 168,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem koopman_fixed (t : \u211d) : koopman t fixedClass=fixedClass",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L168"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.no_strict_centered_contraction",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 177,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem no_strict_centered_contraction (t q : \u211d) (hq : q < 1) :\n    \u00ac (\u2200 f : Lp \u211d 2 law, (\u222b x, f x \u2202law)=0 \u2192 \u2016koopman t f\u2016 \u2264 q*\u2016f\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L177"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.fixed_correlation_not_tendsto_zero",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 184,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem fixed_correlation_not_tendsto_zero :\n    \u00ac Tendsto (fun t : \u211d => \u222b x : State, (flow t x).1*x.1 \u2202law) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L184"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadGaussianDephasing.not_all_centered_correlations_decay",
+      "file": "Foundation/TriadGaussianDephasing.lean",
+      "line": 194,
+      "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
+      "declaration_header": "theorem not_all_centered_correlations_decay :\n    \u00ac (\u2200 f : State \u2192 \u211d, Measurable f \u2192 MemLp f 2 law \u2192 (\u222b x, f x \u2202law)=0 \u2192\n      Tendsto (fun t : \u211d => \u222b x, f (flow t x)*f x \u2202law) atTop (\ud835\udcdd 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L194"
     }
   ],
   "human_reorganization": [
@@ -1016,7 +1504,12 @@
     "The concentration lower bound is reproved by Cauchy\u2013Schwarz on six potentially nonzero slots. All 32 directional cells are actually defined and their nonemptiness is proved.",
     "Equality sigma(S)=sigma(abs(C)) follows from E=10+8*C^2 and explicit inversion. Strict positivity/equivalence of the endpoint biased laws follows from the strict finite-point bound abs(bias)<1.",
     "Section 6 tilted conditional mean/variance and exact common-rule minimax risk are elementary classical deductions proved here. They are not presented as extra Lean declarations. Source conditional variance concerns the original Gaussian law.",
-    "Actual Gaussian conditional-integral and full pushforward-law arguments are analytic proofs, not numerical Gaussian quadrature or samples. No dynamic closure assumption is tested."
+    "Actual Gaussian conditional-integral and full pushforward-law arguments are analytic proofs, not numerical Gaussian quadrature or samples. No dynamic closure assumption is tested.",
+    "Sections 7\u20138 evolve all three coordinates under the actual retained projected drift (bc,-ac,0). Its invariant three-dimensional product Gaussian is distinct from the earlier fixed-(2,1) scalar biased experiment. Neither is asserted invariant for the full fluid PDE.",
+    "The raw convolution vectors and complex i-polarization phase are computed before the Leray projection. The resulting retained nonlinear global rotation is proved directly; no preservation of six-mode support under full Euler is inferred.",
+    "The derivative R=-d log(C-1/32)/dt along this retained ODE is an explicitly proved classical deduction, not a new named source theorem.",
+    "The nonzero second-chaos vector field is tested against the original closed cylindrical derivative via Gaussian polynomial integration by parts and graph-core approximation. Exact squared distance 2+norm(Df)^2 also gives distance sqrt(2) to the gradient range closure; no maximal-domain replacement or full Koopman generator identification is made.",
+    "The actual dephasing formula is reproduced by conditioning and an explicitly proved Gaussian characteristic function. A conserved event with mass one half excludes event mixing as a human deduction; the source supplies the nondecaying centered coordinate and isometric Koopman action."
   ],
   "novelty": "Classical parity, projection and triad-phase mechanisms; exact combined diagnostic priority unresolved after bounded primary comparison."
 }

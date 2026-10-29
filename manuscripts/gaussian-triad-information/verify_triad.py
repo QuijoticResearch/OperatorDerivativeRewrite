@@ -63,4 +63,48 @@ for x,eps in product([F(1,3),F(1),F(7,2)],[F(-1),F(-1,4),F(0),F(1,2),F(1)]):
  ok &= mean==eps*bias*r and var==r*r*(1-eps*eps*bias*bias) and var>0 and 0<p<1
 check('biased two-sign conditional mean and variance',ok)
 check('common-rule two-law risk identity',all(((1+eps)/2*(r-g)**2+(1-eps)/2*(-r-g)**2+(1-eps)/2*(r-g)**2+(1+eps)/2*(-r-g)**2)/2==r*r+g*g for eps,r,g in product([F(1,3),F(-1,2)],[F(2,5),F(-3)],[F(0),F(4,7)])))
-print(json.dumps(dict(status='PASS',count=len(checks),checks=checks,scope='Universal sparse-polynomial finite Fourier table and exact rational support/scalar checks; Gaussian integral, conditional expectation and full-law proofs are analytic in the PDF.'),indent=2))
+raw_vectors=[]
+for k in K:
+ out=[{}, {}, {}]
+ for j,l in product(range(6),repeat=2):
+  if tuple(K[j][i]+K[l][i] for i in range(3))==k:
+   factor=dot([scalar(x) for x in K[l]],V[j])
+   out=[add(out[i],mul(factor,V[l][i])) for i in range(3)]
+ raw_vectors.append(out)
+bc=mul(b,c);ac=mul(a,c);ab=mul(a,b)
+raw_expected=[[scale(-2,bc),bc,{}],[ac,scale(-2,ac),{}],[scale(-1,ab),scale(-1,ab),{}]]
+raw_expected += [[scale(-1,x) for x in v] for v in raw_expected[:3]]
+check('universal actual raw convolution vectors',raw_vectors==raw_expected)
+projected=[]
+for k,v in zip(K,raw_vectors):
+ radial=scale(F(1,sum(x*x for x in k)),dot([scalar(x) for x in k],v))
+ projected.append([add(v[i],scale(-k[i],radial)) for i in range(3)])
+project_expected=[[{},bc,{}],[ac,{},{}],[{},{},{}]]
+project_expected += [[scale(-1,x) for x in v] for v in project_expected[:3]]
+check('actual Leray projection gives retained ODE',projected==project_expected)
+def diff(p,j):
+ out={}
+ for k,v in p.items():
+  if k[j]:
+   z=list(k);z[j]-=1;out[tuple(z)]=v*k[j]
+ return out
+G=[bc,scale(-1,ac),{}]
+div={}
+for j in range(3):div=add(div,diff(G[j],j))
+check('quadratic Gaussian drift divergence and radial cancellation',div=={} and dot([a,b,c],G)=={})
+def moment(n):
+ if n%2:return F(0)
+ ans=1
+ for j in range(1,n,2):ans*=j
+ return F(ans)
+def expect(p):
+ return sum(v*moment(k[0])*moment(k[1])*moment(k[2]) for k,v in p.items())
+check('original quadratic Gaussian field exact squared norm',expect(dot(G,G))==2)
+def direction(p):return dot([diff(p,j) for j in range(3)],G)
+kin=add(add(scale(2,mul(a,a)),scale(2,mul(b,b))),scale(4,mul(c,c)))
+fourth=add(add(mul(mul(a,a),mul(a,a)),mul(mul(b,b),mul(b,b))),scale(16,mul(mul(c,c),mul(c,c))))
+check('both conserved energies and concentration derivative numerator',direction(E)=={} and direction(kin)=={} and direction(fourth)==scale(4,mul(abc,add(mul(a,a),scale(-1,mul(b,b))))))
+check('actual polynomial skew Gaussian transport pair',expect(mul(a,direction(bc)))==-1 and expect(mul(bc,direction(a)))==1)
+co=F(3,5);si=F(4,5);aa=add(scale(co,a),scale(si,b));bb=add(scale(-si,a),scale(co,b))
+check('rational rotation norm and inverse algebra',add(mul(aa,aa),mul(bb,bb))==add(mul(a,a),mul(b,b)) and add(scale(co,aa),scale(-si,bb))==a and add(scale(si,aa),scale(co,bb))==b)
+print(json.dumps(dict(status='PASS',count=len(checks),checks=checks,scope='Universal sparse-polynomial finite Fourier table and exact rational support/scalar checks; Gaussian integral, original closed-graph, full-law, exact global flow and dephasing arguments are analytic in the PDF.'),indent=2))
