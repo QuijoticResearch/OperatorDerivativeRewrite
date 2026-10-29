@@ -2845,3 +2845,6 @@ import Foundation.FourCubeFullHaarOddFreeEnergy
 
 import Foundation.FourCubeActualErrorBudget
 import Foundation.FourCubeScalarCalibration
+
+import Foundation.FourCubeFullMixedInteraction
+import Foundation.FourCubeProjectiveInteraction
