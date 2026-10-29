@@ -13101,3 +13101,26 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeInvariantTransfer.integral_projected_eq_raw
 #print axioms OperatorDerivativeRewrite.Foundation.CubeInvariantTransfer.ground_raw_eigen
 #print axioms OperatorDerivativeRewrite.Foundation.CubeInvariantTransfer.transfer_on_invariants
+
+-- Actual cube nonlinear spatial control modulo rooted axial gauge;1740.
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.Chords
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.chordEdge
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.chordLabel
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axialState
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.chord_label
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axial_chord
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.faceEnum
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.face_enum_bijective
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axialWord
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axial_words
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axial_action
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.chordEnergy
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialSlice.axial_coercive
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.rootedGauge
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.reduced
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.rooted_covariant
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.reconstruction
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.reduced_covariant
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.energy_invariant
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.coercive_mod_gauge
+#print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.flat_iff_gauge

@@ -2856,3 +2856,5 @@ import Foundation.CubeSlabGround
 import Foundation.CubeSlabL2
 import Foundation.CubeCenterProjection
 import Foundation.CubeInvariantTransfer
+import Foundation.CubeAxialSlice
+import Foundation.CubeAxialGauge
