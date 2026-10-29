@@ -522,6 +522,339 @@
       "source_sha256": "7274c9dc534cc38181cc4eca527c28975885c96e3831021b34ff9ee519565791",
       "declaration_header": "theorem first_no_finite_limit {T : \u211d\u22650} (hT : 0 < T) (Y : JointSample \u2192 \u211d) :\n    \u00acTendstoInMeasure jointMeasure (first T) atTop Y",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuadraticDivergence.lean#L174"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepSources.raw_memLp",
+      "file": "Foundation/IBMRawStepSources.lean",
+      "line": 63,
+      "source_sha256": "b0cc7964a1b579b8e3651ee84b201002a9e4f29970eaafd4e82e2ec87f678785",
+      "declaration_header": "theorem raw_memLp (s t : \u211d\u22650) : MemLp (rawSections s t) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepSources.lean#L63"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepSources.cross_memLp",
+      "file": "Foundation/IBMRawStepSources.lean",
+      "line": 71,
+      "source_sha256": "b0cc7964a1b579b8e3651ee84b201002a9e4f29970eaafd4e82e2ec87f678785",
+      "declaration_header": "theorem cross_memLp (s t : \u211d\u22650) : MemLp (crossSections s t) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepSources.lean#L71"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepSources.field_memLp",
+      "file": "Foundation/IBMRawStepSources.lean",
+      "line": 83,
+      "source_sha256": "b0cc7964a1b579b8e3651ee84b201002a9e4f29970eaafd4e82e2ec87f678785",
+      "declaration_header": "theorem field_memLp (s t : \u211d\u22650) : MemLp (fieldSections s t) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepSources.lean#L83"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepSources.native_source_graph",
+      "file": "Foundation/IBMRawStepSources.lean",
+      "line": 110,
+      "source_sha256": "b0cc7964a1b579b8e3651ee84b201002a9e4f29970eaafd4e82e2ec87f678785",
+      "declaration_header": "theorem native_source_graph (s t : \u211d\u22650) :\n    (field s t, jointRealization (crossSource s t)) \u2208 sourceDerivative.adjoint.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepSources.lean#L110"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepCompensation.compensated_actual",
+      "file": "Foundation/IBMRawStepCompensation.lean",
+      "line": 93,
+      "source_sha256": "49b5477e388dec497a9d923508516de92506fe31c8eb9eec137393ebadb94e96",
+      "declaration_header": "theorem compensated_actual (s t : \u211d\u22650) :\n    compensatedStep s t =\u1d50[IBMSourceLaws.jointMeasure] fun p => rawFunction s t p - clockFunction s t p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepCompensation.lean#L93"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepCompensation.raw_observable",
+      "file": "Foundation/IBMRawStepCompensation.lean",
+      "line": 128,
+      "source_sha256": "49b5477e388dec497a9d923508516de92506fe31c8eb9eec137393ebadb94e96",
+      "declaration_header": "theorem raw_observable (s t : \u211d\u22650) : rawStep s t \u2208 IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepCompensation.lean#L128"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepCompensation.native_value",
+      "file": "Foundation/IBMRawStepCompensation.lean",
+      "line": 159,
+      "source_sha256": "49b5477e388dec497a9d923508516de92506fe31c8eb9eec137393ebadb94e96",
+      "declaration_header": "theorem native_value (s t : \u211d\u22650) :\n    jointDivergence (nativeInput s t) = IntrinsicSpace.orthogonalProjectionOnto (compensatedStep s t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepCompensation.lean#L159"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawStepCompensation.corrected_duality",
+      "file": "Foundation/IBMRawStepCompensation.lean",
+      "line": 175,
+      "source_sha256": "49b5477e388dec497a9d923508516de92506fe31c8eb9eec137393ebadb94e96",
+      "declaration_header": "theorem corrected_duality (s t : \u211d\u22650) (F : jointDerivative.domain) :\n    inner \u211d (rawObservable s t) (F : IntrinsicSpace) =\n      inner \u211d (nativeField s t) (jointDerivative F) +\n        inner \u211d (clockCorrection s t) ((F : IntrinsicSpace) : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawStepCompensation.lean#L175"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawGridSecondChaos.cross_inner",
+      "file": "Foundation/IBMRawGridSecondChaos.lean",
+      "line": 23,
+      "source_sha256": "8f2a4ee9fe4b1ea8020181e0bb7234345efd633a0f2e89f55fbacf212eaea242",
+      "declaration_header": "theorem cross_inner (u v a b : CoefficientSpace) :\n    inner \u211d (cross u v) (cross a b) =\n      inner \u211d u a * inner \u211d v b + inner \u211d u b * inner \u211d v a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawGridSecondChaos.lean#L23"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawGridSecondChaos.telescope",
+      "file": "Foundation/IBMRawGridSecondChaos.lean",
+      "line": 71,
+      "source_sha256": "8f2a4ee9fe4b1ea8020181e0bb7234345efd633a0f2e89f55fbacf212eaea242",
+      "declaration_header": "theorem telescope (u : \u2115 \u2192 CoefficientSpace) (n : \u2115) :\n    (2:\u211d) \u2022 sourceSum u n = cross (u n) (u n)-cross (u 0) (u 0)-centeredQuadratic u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawGridSecondChaos.lean#L71"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawGridSecondChaos.source_energy_endpoint",
+      "file": "Foundation/IBMRawGridSecondChaos.lean",
+      "line": 108,
+      "source_sha256": "8f2a4ee9fe4b1ea8020181e0bb7234345efd633a0f2e89f55fbacf212eaea242",
+      "declaration_header": "theorem source_energy_endpoint (u : \u2115 \u2192 CoefficientSpace) (n : \u2115) (h0 : u 0 = 0) :\n    \u2016sourceSum u n\u2016^2 = (1/2:\u211d) * (\u2016u n\u2016^4 -\n      2 * (\u2211 i \u2208 Finset.range n, (inner \u211d (u n) (increment u i))^2) +\n        \u2211 i \u2208 Finset.range n, \u2211 j \u2208 Finset.range n, (inner \u211d (increment u i) (increment u j))^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawGridSecondChaos.lean#L108"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRawGridSecondChaos.native_grid_value",
+      "file": "Foundation/IBMRawGridSecondChaos.lean",
+      "line": 195,
+      "source_sha256": "8f2a4ee9fe4b1ea8020181e0bb7234345efd633a0f2e89f55fbacf212eaea242",
+      "declaration_header": "theorem native_grid_value (h : \u211d\u22650) (n : \u2115) :\n    jointDivergence (gridInput h n) =\n      IntrinsicSpace.orthogonalProjectionOnto (jointRealization (sourceGrid h n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRawGridSecondChaos.lean#L195"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialIncrementKernel.kernel_mass",
+      "file": "Foundation/IBMSpatialIncrementKernel.lean",
+      "line": 57,
+      "source_sha256": "eddf89912435873362220db94a2705223a9f764f01f7be35cadceb1654229e95",
+      "declaration_header": "theorem kernel_mass (r : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b z, kernel r n z \u2202(volume.prod volume)) = \u2211 i \u2208 Finset.range n, (r (i+1)-r i)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialIncrementKernel.lean#L57"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialIncrementKernel.kernel_sq_integral",
+      "file": "Foundation/IBMSpatialIncrementKernel.lean",
+      "line": 71,
+      "source_sha256": "eddf89912435873362220db94a2705223a9f764f01f7be35cadceb1654229e95",
+      "declaration_header": "theorem kernel_sq_integral (r : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b z, (kernel r n z)^2 \u2202(volume.prod volume)) =\n      \u2211 i \u2208 Finset.range n, \u2211 j \u2208 Finset.range n,\n        (volume.real (interval r i \u2229 interval r j))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialIncrementKernel.lean#L71"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialIncrementKernel.kernel_sq_eq_physical_gram",
+      "file": "Foundation/IBMSpatialIncrementKernel.lean",
+      "line": 113,
+      "source_sha256": "eddf89912435873362220db94a2705223a9f764f01f7be35cadceb1654229e95",
+      "declaration_header": "theorem kernel_sq_eq_physical_gram (r : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b z, (kernel r n z)^2 \u2202(volume.prod volume)) =\n      \u2211 i \u2208 Finset.range n, \u2211 j \u2208 Finset.range n,\n        (inner \u211d (vector (r (i+1))-vector (r i)) (vector (r (j+1))-vector (r j)))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialIncrementKernel.lean#L113"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialKernelConcentration.band_measure_real",
+      "file": "Foundation/IBMSpatialKernelConcentration.lean",
+      "line": 52,
+      "source_sha256": "c7956d0bddea06d18bd8e21ebb3c3e46b0f6e070022e63ce072114a7025aa064",
+      "declaration_header": "theorem band_measure_real {M \u03b4 : \u211d} (hM : 0 \u2264 M) (h\u03b4 : 0 \u2264 \u03b4) :\n    (volume.prod volume).real (band M \u03b4) = 2*M*\u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialKernelConcentration.lean#L52"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialKernelConcentration.kernel_concentration_bound",
+      "file": "Foundation/IBMSpatialKernelConcentration.lean",
+      "line": 121,
+      "source_sha256": "c7956d0bddea06d18bd8e21ebb3c3e46b0f6e070022e63ce072114a7025aa064",
+      "declaration_header": "theorem kernel_concentration_bound (r : \u2115 \u2192 \u211d) (n : \u2115) {M \u03b4 : \u211d}\n    (hM : 0 \u2264 M) (h\u03b4 : 0 \u2264 \u03b4) (hr : \u2200 i \u2264 n, 0 \u2264 r i \u2227 r i \u2264 M)\n    (hm : \u2200 i < n, |r (i+1)-r i| \u2264 \u03b4) :\n    (\u2211 i \u2208 Finset.range n, (r (i+1)-r i)^2)^2 \u2264\n      (2*M*\u03b4)*(\u2211 i \u2208 Finset.range n, \u2211 j \u2208 Finset.range n,\n        (volume.real (interval r i \u2229 interval r j))^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialKernelConcentration.lean#L121"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialClockEnergy.kernel_energy_le_source",
+      "file": "Foundation/IBMSpatialClockEnergy.lean",
+      "line": 33,
+      "source_sha256": "17af89977e4980422f3bdd0689f1d11f03e7b51277e4da98c497520c2012bd3d",
+      "declaration_header": "theorem kernel_energy_le_source (h : \u211d\u22650) (n : \u2115) (Y : SampleSpace)\n    (h0 : clockCurve h Y 0 = 0) :\n    (\u222b z, (kernel (radius h Y) n z)^2 \u2202(volume.prod volume)) \u2264\n      2*\u2016sourceSum (clockCurve h Y) n\u2016^2+2*clockSquares h n Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialClockEnergy.lean#L33"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSpatialClockEnergy.concentration_source_bound",
+      "file": "Foundation/IBMSpatialClockEnergy.lean",
+      "line": 48,
+      "source_sha256": "17af89977e4980422f3bdd0689f1d11f03e7b51277e4da98c497520c2012bd3d",
+      "declaration_header": "theorem concentration_source_bound (h : \u211d\u22650) (n : \u2115) (Y : SampleSpace)\n    (h0 : clockCurve h Y 0 = 0) {M \u03b4 : \u211d} (hM : 0 \u2264 M) (h\u03b4 : 0 \u2264 \u03b4)\n    (hr : \u2200 i \u2264 n, radius h Y i \u2264 M)\n    (hm : \u2200 i < n, |radius h Y (i+1)-radius h Y i| \u2264 \u03b4) :\n    (\u2211 i \u2208 Finset.range n, (radius h Y (i+1)-radius h Y i)^2)^2 \u2264\n      (4*M*\u03b4)*(\u2016sourceSum (clockCurve h Y) n\u2016^2+clockSquares h n Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSpatialClockEnergy.lean#L48"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedClockQuadraticVariation.loss_crossing_bound",
+      "file": "Foundation/IBMFoldedClockQuadraticVariation.lean",
+      "line": 27,
+      "source_sha256": "e6576073b71e02b578de99c40dfd52cf605fac8d27452dfc076d489c84dcbeef",
+      "declaration_header": "theorem loss_crossing_bound (\u03b4 x y : \u211d) :\n    loss x y \u2264 (y-x)^2*(originBand \u03b4 (x,0)+(if \u03b4 < |y-x| then 1 else 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedClockQuadraticVariation.lean#L27"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedClockQuadraticVariation.foldedClass_tendsto",
+      "file": "Foundation/IBMFoldedClockQuadraticVariation.lean",
+      "line": 139,
+      "source_sha256": "e6576073b71e02b578de99c40dfd52cf605fac8d27452dfc076d489c84dcbeef",
+      "declaration_header": "theorem foldedClass_tendsto (H : \u211d\u22650) (hH : 0 < H) :\n    Tendsto (foldedClass H) atTop (\ud835\udcdd (clockL1 ((H:\u211d) \u2022 gaussianOne)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedClockQuadraticVariation.lean#L139"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedClockQuadraticVariation.actual_absolute_error_tendsto",
+      "file": "Foundation/IBMFoldedClockQuadraticVariation.lean",
+      "line": 145,
+      "source_sha256": "e6576073b71e02b578de99c40dfd52cf605fac8d27452dfc076d489c84dcbeef",
+      "declaration_header": "theorem actual_absolute_error_tendsto (H : \u211d\u22650) (hH : 0 < H) :\n    Tendsto (fun N => \u222b Y, |foldedSum H N Y-(H:\u211d)| \u2202gaussianProduct) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedClockQuadraticVariation.lean#L145"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSourceEnergyGrowth.total_pathwise_escape",
+      "file": "Foundation/IBMSourceEnergyGrowth.lean",
+      "line": 41,
+      "source_sha256": "325d38b194b3de73b8b131241adc6da26e14e390d58790bc067f486de066d807",
+      "declaration_header": "theorem total_pathwise_escape (H : \u211d\u22650) (hH : 0 < H) (Y : SampleSpace)\n    (k : \u2115 \u2192 \u2115) (hk : Tendsto k atTop atTop)\n    (hmass : Tendsto (fun j => foldedSum H (k j) Y) atTop (\ud835\udcdd (H:\u211d)))\n    (hgrid : \u2200 N i : \u2115, IBMConstructedSources.clockPath Y (grid (H/(N+1)) i) =\n      GaussianTimeProcess.process (grid (H/(N+1)) i) Y)\n    (hinit : \u2200 N : \u2115, clockCurve (H/(N+1)) Y 0 = 0)\n    (hsource : \u2200 N : \u2115, sourceGrid (H/(N+1)) (N+1) Y =\n      sourceSum (clockCurve (H/(N+1)) Y) (N+1)) :\n    Tendsto (fun j => total H (k j) Y) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSourceEnergyGrowth.lean#L41"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSourceEnergyGrowth.source_energy_tendsto_atTop",
+      "file": "Foundation/IBMSourceEnergyGrowth.lean",
+      "line": 88,
+      "source_sha256": "325d38b194b3de73b8b131241adc6da26e14e390d58790bc067f486de066d807",
+      "declaration_header": "theorem source_energy_tendsto_atTop (H : \u211d\u22650) (hH : 0 < H) :\n    Tendsto (fun N : \u2115 => \u2016sourceGrid (H/(N+1)) (N+1)\u2016^2) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSourceEnergyGrowth.lean#L88"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedVariationTanaka.correction_le_remainder",
+      "file": "Foundation/IBMFoldedVariationTanaka.lean",
+      "line": 19,
+      "source_sha256": "e7e0c6d9d33f66bb9627ec926f6efef034365c371e68c4fa9535c592b050c603",
+      "declaration_header": "theorem correction_le_remainder (x y : \u211d) :\n    crossingCorrection x y \u2264 tanakaRemainder x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedVariationTanaka.lean#L19"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedVariationTanaka.signSum_square_bound",
+      "file": "Foundation/IBMFoldedVariationTanaka.lean",
+      "line": 70,
+      "source_sha256": "e7e0c6d9d33f66bb9627ec926f6efef034365c371e68c4fa9535c592b050c603",
+      "declaration_header": "theorem signSum_square_bound {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (h\u03c4 : Monotone \u03c4) :\n    (\u222b Y, (signSum \u03c4 Y)^2 \u2202gaussianProduct) \u2264 (\u03c4 (Fin.last n):\u211d)-\u03c4 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedVariationTanaka.lean#L70"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCenteredAbsoluteVariation.centeredSum_square_bound",
+      "file": "Foundation/IBMCenteredAbsoluteVariation.lean",
+      "line": 64,
+      "source_sha256": "5f41e5895f94d1e626a40c7b3cbef18b918416f8058dd45cb00ad71cc18febe7",
+      "declaration_header": "theorem centeredSum_square_bound {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (h\u03c4 : Monotone \u03c4) :\n    (\u222b Y, (centeredSum \u03c4 Y)^2 \u2202gaussianProduct) \u2264 (\u03c4 (Fin.last n):\u211d)-\u03c4 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCenteredAbsoluteVariation.lean#L64"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFoldedVariationBound.correction_square_bound",
+      "file": "Foundation/IBMFoldedVariationBound.lean",
+      "line": 36,
+      "source_sha256": "a263a8b5b30bbeb4417e8dba17e63ec58c01979b7a2c1f6e244ccdac735382e7",
+      "declaration_header": "theorem correction_square_bound {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (h\u03c4 : Monotone \u03c4)\n    (h0 : \u03c4 0 = 0) :\n    (\u222b Y, (correction \u03c4 Y)^2 \u2202gaussianProduct) \u2264 4*(\u03c4 (Fin.last n):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFoldedVariationBound.lean#L36"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVarianceBound.shifted_identity",
+      "file": "Foundation/IBMClockVarianceBound.lean",
+      "line": 24,
+      "source_sha256": "9a39fade8d6f0ca6af0acfa63df1e126cf97baf8947a29abb34be390b295d199",
+      "declaration_header": "theorem shifted_identity {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (Y : SampleSpace) :\n    2*value \u03c4 Y+shift \u03c4 = |process (\u03c4 (Fin.last n)) Y|-|process (\u03c4 0) Y|-\n      centeredSum \u03c4 Y+correction \u03c4 Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVarianceBound.lean#L24"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVarianceBound.shifted_square_bound",
+      "file": "Foundation/IBMClockVarianceBound.lean",
+      "line": 31,
+      "source_sha256": "9a39fade8d6f0ca6af0acfa63df1e126cf97baf8947a29abb34be390b295d199",
+      "declaration_header": "theorem shifted_square_bound {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (h\u03c4 : Monotone \u03c4) (h0 : \u03c4 0 = 0) :\n    (\u222b Y, (2*value \u03c4 Y+shift \u03c4)^2 \u2202gaussianProduct) \u2264 18*(\u03c4 (Fin.last n):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVarianceBound.lean#L31"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVarianceBound.value_variance_bound",
+      "file": "Foundation/IBMClockVarianceBound.lean",
+      "line": 59,
+      "source_sha256": "9a39fade8d6f0ca6af0acfa63df1e126cf97baf8947a29abb34be390b295d199",
+      "declaration_header": "theorem value_variance_bound {n : \u2115} (\u03c4 : Fin (n+1) \u2192 \u211d\u22650) (h\u03c4 : Monotone \u03c4) (h0 : \u03c4 0 = 0) :\n    Var[value \u03c4; gaussianProduct] \u2264 (9/2:\u211d)*(\u03c4 (Fin.last n):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVarianceBound.lean#L59"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCenteredRawGrid.centeredRaw_norm_sq",
+      "file": "Foundation/IBMCenteredRawGrid.lean",
+      "line": 98,
+      "source_sha256": "bdac3fe832d5a9da4a6e0f86617ceb159c82962598c43ccc6feb8cc91a02ef68",
+      "declaration_header": "theorem centeredRaw_norm_sq (h : \u211d\u22650) (n : \u2115) :\n    \u2016centeredRaw h n\u2016^2 = \u2016sourceGrid h n\u2016^2+\u2016centeredClock h n\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCenteredRawGrid.lean#L98"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCenteredRawGrid.native_centered_pairing",
+      "file": "Foundation/IBMCenteredRawGrid.lean",
+      "line": 104,
+      "source_sha256": "bdac3fe832d5a9da4a6e0f86617ceb159c82962598c43ccc6feb8cc91a02ef68",
+      "declaration_header": "theorem native_centered_pairing (h : \u211d\u22650) (n : \u2115) :\n    inner \u211d (jointDivergence (gridInput h n)) (centeredRaw h n) = \u2016sourceGrid h n\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCenteredRawGrid.lean#L104"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCenteredRawGrid.native_energy_lower_bound",
+      "file": "Foundation/IBMCenteredRawGrid.lean",
+      "line": 114,
+      "source_sha256": "bdac3fe832d5a9da4a6e0f86617ceb159c82962598c43ccc6feb8cc91a02ef68",
+      "declaration_header": "theorem native_energy_lower_bound (h : \u211d\u22650) (n : \u2115) :\n    (\u2016sourceGrid h n\u2016^2)^2 \u2264 \u2016jointDivergence (gridInput h n)\u2016^2*\n      (\u2016sourceGrid h n\u2016^2+\u2016centeredClock h n\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCenteredRawGrid.lean#L114"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGridEscape.centeredClock_uniform_bound",
+      "file": "Foundation/IBMNativeGridEscape.lean",
+      "line": 55,
+      "source_sha256": "1c03038a7ae14d36f1d2e51c32107e8aa81a52411999cabcdf3953c565ae0da6",
+      "declaration_header": "theorem centeredClock_uniform_bound (H : \u211d\u22650) (N : \u2115) :\n    \u2016centeredClock (H/(N+1)) (N+1)\u2016^2 \u2264 (9/2:\u211d)*(H:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGridEscape.lean#L55"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGridEscape.original_native_norm_escape",
+      "file": "Foundation/IBMNativeGridEscape.lean",
+      "line": 72,
+      "source_sha256": "1c03038a7ae14d36f1d2e51c32107e8aa81a52411999cabcdf3953c565ae0da6",
+      "declaration_header": "theorem original_native_norm_escape (H : \u211d\u22650) (hH : 0 < H) :\n    Tendsto (fun N : \u2115 => \u2016IBMJointIntrinsicDerivative.jointDivergence\n      (IBMRawGridCompensation.gridInput (H/(N+1)) (N+1))\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGridEscape.lean#L72"
+    },
+    {
+      "paper": "Section 10 actual compensated native-grid output and norm escape after the full IBM observable projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGridEscape.no_original_native_L2_limit",
+      "file": "Foundation/IBMNativeGridEscape.lean",
+      "line": 78,
+      "source_sha256": "1c03038a7ae14d36f1d2e51c32107e8aa81a52411999cabcdf3953c565ae0da6",
+      "declaration_header": "theorem no_original_native_L2_limit (H : \u211d\u22650) (hH : 0 < H)\n    (v : IBMTimeAveragedObservable.IntrinsicSpace) :\n    \u00ac Tendsto (fun N : \u2115 => IBMJointIntrinsicDerivative.jointDivergence\n      (IBMRawGridCompensation.gridInput (H/(N+1)) (N+1))) atTop (\ud835\udcdd v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGridEscape.lean#L78"
     }
   ],
   "proof_reorganization": "Human proof uses the explicitly proved weaker direct Gaussian fourth-moment bound; no new named Lean proof of that shortcut is claimed. The full variation proof is now reconstructed separately, with exact Gaussian eighth moments, repeated-overlap occupation, triangular folded-Gaussian envelope, bounded-increment localization, reflected-crossing penalty and all uniform grids. The printed lower-tail consequence uses the same deterministic quartic/mesh inequality in a direct probability argument. No new formal declarations or almost-sure/weighted strengthening is claimed.",
@@ -534,5 +867,13 @@
       "url": "https://www.math.utah.edu/~davar/ps-pdf-files/ibm.pdf",
       "review": "Primary Khoshnevisan--Lewis, Theorem 4.3: stronger weighted quartic variation on its induced random partition for two-sided scenery. Not an identification with this reflected-clock, deterministic physical-grid model."
     }
+  ],
+  "human_reorganization": [
+    "Section 10 uses N>=1 physical cells rather than source index N+1. Its R_N,C_N notation is local to that section: R_N is the actual left raw sum, C_N its random conditional scenery mean, S_N=R_N-C_N, and I_N=E[S_N|sigma(Z_t:t>=0)]. No changing-past projection, adapted representation, or projection/chaos commutation is assumed.",
+    "Folded clock quadratic variation is proved directly in L1 from crossing loss, independent increments, the one-time Gaussian density bound and fourth-moment tails, with the two successive limits N->infinity then delta->0. This is a human reorganization of the formal shrinking-width proof, not a new named rate theorem.",
+    "The spatial nonnegative rectangle kernel has folded quadratic-variation mass, squared interval Gram energy and support in a shrinking band. The conditional Wick telescope gives energy identity and the bound q_N^2<=4 M eta (conditional scenery energy+ordinary clock QV). A bounded-energy subsequence, L1/a.e. extraction, clock continuity and nonnegative Fatou contradict its bounded expected energy. This reorganizes the formal truncated dominated-convergence proof.",
+    "Discrete Tanaka crossing control and centered ordinary absolute increments give Var(C_N)<=9T/2 without an uncentered variation bound. Testing I_N against the observable R_N-E C_N gives exact a_N pairing and a_N^2<=||I_N||^2(a_N+Var C_N). Hence the projected original native output has diverging L2 norm. No probability divergence, rate, exclusion of all renormalizations, or completed physical-time Ito calculus is asserted.",
+    "The source finite field has scenery component sum X(h_i)d_i and zero clock component. Fiberwise Gaussian adjointness and original observable restriction give the displayed test identity and the exact formal native-value projection. The independently printed actual conditional-expectation theorem requires no enlarged native domain.",
+    "The non-Gaussian marginal fourth-moment comparison is an elementary actual-law deduction used only to delimit Gaussian-process Wick-Riemann antecedents. Primary Liu introduction and Hypothesis 1.1 and Khoshnevisan-Lewis process/partition conventions were inspected; priority for this exact projected escape remains unresolved."
   ]
 }

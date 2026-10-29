@@ -26,7 +26,7 @@ uses a compact fourth-order Peano remainder and a direct quartic
 tightness estimate. Separately, an exact scenery-overlap bound and
 Brownian clock localization prove the uniform-grid quartic limit
 $3T$, quadratic-variation divergence and the need for compensation
-between raw Taylor channels.
+between raw Taylor channels. A separate spatial-kernel concentration argument proves that a specific source-compensated grid has diverging $L^2$ norm even after projection onto the full actual IBM observable space.
 We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
 chain formula, uniform control over prefixes of one common grid,
 bounded random-horizon convergence for spatial one-forms, and an
@@ -654,6 +654,238 @@ retains the reflected-clock model, all uniform physical grids and
 convergence in probability; it claims no priority for the quartic
 phenomenon and no stronger almost-sure or weighted limit here.
 
+
+\section{Compensated grids still escape after observable projection}
+The raw-channel divergence does not by itself exclude a compensated
+$L^2$ limit. We now prove that a specific original compensated grid
+also has diverging norm, even after conditioning on the entire IBM
+observable sigma algebra. This assertion concerns a definite sequence;
+it does not exclude other stochastic integral domains or prescriptions.
+
+Write $r_i=|B_{t_i}|$, $h_i=\mathbf1_{(0,r_i]}\in L^2(\R_+)$,
+$d_i=h_{i+1}-h_i$, and use the scenery isonormal notation
+$X(h)=\int h\,dW$, so $Z_i=X(h_i)$. All these formulas can be
+read conditionally on $B$, where $h_i,d_i$ are deterministic.
+Define the actual finite random variables
+\[
+ R_N=\sum_{i<N}Z_i(Z_{i+1}-Z_i),\qquad
+ C_N=\sum_{i<N}\langle d_i,h_i\rangle
+ =\sum_{i<N}(\min(r_i,r_{i+1})-r_i),\qquad
+ S_N=R_N-C_N.
+\]
+The conditional scenery mean of $S_N$ is zero. Gaussian moments of
+the finitely many clock coordinates and conditional fourth moments
+show that $R_N,C_N,S_N\in L^2$ for every $N$; for example
+$\|d_i\|^2=|r_{i+1}-r_i|$ and $\|h_i\|^2=r_i$, and
+the conditional second moment of each product is bounded by
+$3\|d_i\|^2\|h_i\|^2$. Let
+\[
+ \mathcal O=\sigma(Z_t:t\geq0),\qquad
+ I_N=\mathbb E[S_N\mid\mathcal O].
+\]
+This uses the full observable space, with no changing-past or
+predictable identification.
+
+\begin{theorem}\label{thm:nativeescape}
+For every fixed $T>0$ along all uniform physical grids,
+\[
+ a_N:=\mathbb E[S_N^2]\longrightarrow\infty,\qquad
+ \operatorname{Var}(C_N)\leq\frac92T,
+ \qquad \|I_N\|_2\longrightarrow\infty.
+\]
+More precisely,
+\[
+ a_N^2\leq\|I_N\|_2^2
+       \bigl(a_N+\operatorname{Var}(C_N)\bigr).
+\]
+Thus this projected compensated sequence has no finite $L^2$ limit.
+\end{theorem}
+
+\subsection{Folded clock mass and a concentrating spatial kernel}
+Put $h=T/N$ and $U_N=\sum_{i<N}(B_{t_{i+1}}-B_{t_i})^2$.
+Independent increments give $\mathbb E U_N=T$ and
+$\operatorname{Var}(U_N)=2T^2/N$. We need the folded version
+\[
+ q_N=\sum_{i<N}(r_{i+1}-r_i)^2\longrightarrow T
+ \quad\hbox{in }L^1.
+\]
+Here is a direct proof of that additional assertion. The loss
+$(y-x)^2-(|y|-|x|)^2$ is nonnegative and at most $(y-x)^2$.
+It vanishes when $x,y$ have the same sign. For any $\delta>0$,
+a crossing with $|y-x|\leq\delta$ has $|x|\leq\delta$.
+Consequently, writing $\Delta_iB=B_{t_{i+1}}-B_{t_i}$,
+\[
+ 0\leq U_N-q_N\leq\sum_{i<N}(\Delta_iB)^2
+ \left(\mathbf1_{\{|B_{t_i}|\leq\delta\}}+
+       \mathbf1_{\{|\Delta_iB|>\delta\}}\right).
+\]
+The first summand at $i=0$ has expectation $h$. For $i\geq1$,
+independence of $B_{t_i}$ and $\Delta_iB$ and the normal density bound
+give a contribution at most
+$h\sqrt{2/\pi}\,\delta/\sqrt{ih}$.
+Since $\sum_{i=1}^{N-1}i^{-1/2}\leq2\sqrt N$, their sum is at
+most $2\sqrt{2/\pi}\,\delta\sqrt T$.
+The large-increment contribution is at most
+$\sum_i\mathbb E(\Delta_iB)^4/\delta^2=3Th/\delta^2$.
+For fixed $\delta$, let $N\to\infty$, and then $\delta\downarrow0$.
+This proves $\mathbb E(U_N-q_N)\to0$ and hence the claimed $L^1$
+limit. No pathwise quadratic-variation assertion has been substituted.
+
+For a deterministic finite nonnegative radius sequence starting at
+zero, define the spatial interval
+\[ J_i=(\min(r_i,r_{i+1}),\max(r_i,r_{i+1})]. \]
+Form the nonnegative spatial kernel
+\[
+ K_N(x,y)=\sum_{i<N}\mathbf1_{J_i}(x)\mathbf1_{J_i}(y).
+\]
+Its mass and energy are exactly
+\[
+ \int K_N=q_N,\qquad
+ G_N:=\int K_N^2=
+ \sum_{i,j<N}|J_i\cap J_j|^2
+ =\sum_{i,j<N}\langle d_i,d_j\rangle^2.
+\]
+The last equality uses the signs of oriented indicator increments;
+their signs disappear upon squaring. If $0\leq r_i\leq M$ and
+$|r_{i+1}-r_i|\leq\eta$, the kernel is supported inside
+$\{0\leq x\leq M,\ |y-x|\leq\eta\}$, of area $2M\eta$.
+Ordinary integral Cauchy--Schwarz therefore gives
+\begin{equation}\label{eq:nativeband}
+ q_N^2\leq2M\eta G_N.
+\end{equation}
+All integrals here are Lebesgue integrals on $\R^2$, and all kernels
+are finite sums of bounded finite-area indicators.
+
+For fixed clock coordinates let $e_N(B)=\mathbb E_W S_N^2$.
+Write $\mathcal W(u,v)=X(u)X(v)-\langle u,v\rangle$.
+The Gaussian pairing identity gives
+\[
+ \mathbb E_W[\mathcal W(u,v)\mathcal W(a,b)]
+ =\langle u,a\rangle\langle v,b\rangle
+  +\langle u,b\rangle\langle v,a\rangle.
+\]
+This follows by the three pairings of four centered Gaussian
+coordinates and cancellation of the product of means.
+Since $S_N=\sum_i\mathcal W(d_i,h_i)$, telescoping the identity
+\[
+ 2\mathcal W(d_i,h_i)
+ =\mathcal W(h_{i+1},h_{i+1})-\mathcal W(h_i,h_i)
+   -\mathcal W(d_i,d_i)
+\]
+and applying the pairing formula gives
+\[
+ e_N(B)=\frac12\left(r_N^2
+      -2\sum_i\langle h_N,d_i\rangle^2+G_N\right).
+\]
+Indeed the endpoint square has energy $2r_N^2$, the sum of
+increment squares has energy $2G_N$, and their cross term is
+$2\sum_i\langle h_N,d_i\rangle^2$.
+The map $r\mapsto\min(r_N,r)$ is 1-Lipschitz, so
+$\sum_i\langle h_N,d_i\rangle^2\leq q_N\leq U_N$ for the
+actual clock. Hence $G_N\leq2e_N(B)+2U_N$.
+Combining with \eqref{eq:nativeband} yields the pathwise bound
+\begin{equation}\label{eq:nativeconcentration}
+ q_N^2\leq4M\eta\bigl(e_N(B)+U_N\bigr).
+\end{equation}
+
+We now prove $a_N=\mathbb E_B e_N(B)\to\infty$ without a
+four-time lower bound. Suppose there is a subsequence with $a_N\leq A$.
+The $L^1$ convergence of $q_N$ supplies a further subsequence with
+$q_N\to T$ almost surely: select summable $L^1$ errors and apply
+Tonelli. On the common continuous clock event, choose
+$M=1+\sup_{t\leq T}|B_t|<\infty$ and
+$\eta_N=N^{-1}+\max_i|r_{i+1}-r_i|\to0$.
+Bound \eqref{eq:nativeconcentration} then forces
+$e_N(B)+U_N\to\infty$ on this further subsequence.
+Fatou applied to these nonnegative variables would give
+\[
+ \infty=\mathbb E\liminf(e_N(B)+U_N)
+ \leq\liminf\mathbb E(e_N(B)+U_N)\leq A+T,
+\]
+a contradiction. Thus no bounded-energy subsequence exists,
+which proves divergence to infinity along the entire sequence.
+
+\subsection{A bounded centered clock correction}
+The identity $2(\min(x,y)-x)=y-x-|y-x|$ gives
+\[
+ C_N=\frac12\left(r_N-\sum_i|r_{i+1}-r_i|\right).
+\]
+This uncentered quantity need not be bounded. Let instead
+\[
+ A_N=\sum_i\bigl(|\Delta_iB|-\mathbb E|\Delta_iB|\bigr),\quad
+ L_N=\sum_i\bigl(|\Delta_iB|-|r_{i+1}-r_i|\bigr),\quad
+ H_N=\sum_i\operatorname{sgn}(B_{t_i})\Delta_iB,
+\]
+where $\operatorname{sgn}(0)=0$, and put
+$d_N=\sum_i\mathbb E|\Delta_iB|$.
+Independent increments give $\mathbb E A_N^2\leq T$.
+The sign coefficients are measurable at the left endpoints and bounded
+by one; conditioning each cross term on its later left endpoint
+gives zero and hence $\mathbb E H_N^2\leq T$.
+
+The elementary discrete Tanaka inequalities are
+\[
+ 0\leq |y-x|-\bigl||y|-|x|\bigr|
+ \leq |y|-|x|-\operatorname{sgn}(x)(y-x).
+\]
+For equal signs the left difference vanishes and the upper expression
+is zero; for opposite signs both inequalities follow by inserting
+$x>0>y$ or $y>0>x$; at $x=0$ the left side is zero and the right
+side is $|y|$. Summing yields $0\leq L_N\leq r_N-H_N$.
+Therefore
+$\mathbb E L_N^2\leq2\mathbb E r_N^2+2\mathbb E H_N^2\leq4T$.
+The exact identity
+\[
+ 2C_N+d_N=r_N-A_N+L_N
+\]
+and $(u+v+w)^2\leq3(u^2+v^2+w^2)$ give
+$\mathbb E(2C_N+d_N)^2\leq18T$.
+Since deterministic shifts leave variance unchanged,
+$4\operatorname{Var}(C_N)\leq18T$, as claimed.
+This argument works for any deterministic increasing partition from
+zero, although only uniform grids are used in the escape theorem.
+
+\subsection{A detecting observable survives projection}
+The variable $R_N$ is $\mathcal O$-measurable. Conditional scenery
+centering gives $\mathbb E S_N=0$ and
+$\mathbb E[S_N(C_N-\mathbb E C_N)]=0$, with all products integrable
+by Cauchy--Schwarz. Consequently
+\[
+ R_N-\mathbb E C_N=S_N+(C_N-\mathbb E C_N),\qquad
+ \|R_N-\mathbb E C_N\|_2^2=a_N+\operatorname{Var}(C_N).
+\]
+By the defining orthogonal projection identity for conditional
+expectation,
+\[
+ \langle I_N,R_N-\mathbb E C_N\rangle
+ =\langle S_N,R_N-\mathbb E C_N\rangle=a_N.
+\]
+Cauchy--Schwarz proves the quantitative inequality in
+Theorem~\ref{thm:nativeescape}. Since $a_N\to\infty$ and the clock
+variance is bounded, it forces $\|I_N\|_2\to\infty$.
+This proves the theorem. In particular, contraction of the projection
+does not remove the divergence, and no commutation of that projection
+with a scenery-chaos projection has been assumed.
+
+In the original source construction the finite field has scenery
+component $\sum_i X(h_i)d_i$ and zero clock component.
+Its ambient scenery divergence is $S_N$: Gaussian integration by
+parts gives $\delta_W(X(h_i)d_i)=\mathcal W(d_i,h_i)$ for fixed
+clock, and the finite $L^2$ bounds above allow fiberwise integration.
+Restricting the two-source derivative to its original IBM observable
+domain makes its adjoint value $I_N$. Explicitly, every test $F$ in
+that original domain satisfies
+\[
+ \left\langle\sum_iX(h_i)d_i,D_WF\right\rangle_{L^2}
+ =\langle S_N,F\rangle=\langle I_N,F\rangle.
+\]
+This is the precise finite-graph identification recorded by the
+verified native-field declarations. The escape proof above was given
+directly for actual conditional expectations, independently of any
+enlargement of that test domain. It supplies neither a completed
+physical-time integral nor a theorem against all possible
+renormalizations or higher-channel constructions.
+
 \section{What this integration result means}
 The targets are genuine pathwise finite spatial or time integrals,
 and the approximations converge under the actual positive
@@ -678,6 +910,8 @@ operator acting on arbitrary predictable integrands. Bounded
 random horizons are handled by approximation, not a martingale
 stopping theorem. Nonsmooth It\^o--Tanaka formulas and arbitrary
 partitions have their own proof obligations.
+
+The native compensated escape concerns a specific projected finite-field sequence, not the symmetric Simpson prescription or every admissible integrand.
 
 The variation and raw-channel results above are independent of the
 Simpson proof, which needs only quartic tightness. Intrinsic
@@ -743,6 +977,18 @@ distributional limits. These are close antecedents for numerical
 prescriptions, but their process and limiting regime differ.
 The compact-remainder method itself is elementary; this paper
 does not turn its formal verification into a novelty claim.
+For the compensated-grid comparison, Liu's primary manuscript
+\cite{liu}, introduction and Hypothesis 1.1, assumes a continuous
+Gaussian driving process. Our $Z$ is not Gaussian: for $t>0$,
+$\mathbb E Z_t^2=\sqrt{2t/\pi}$ and $\mathbb E Z_t^4=3t$,
+whereas a centered Gaussian of that variance would have fourth moment
+$6t/\pi$. Conditional Gaussian scenery does not make these marginal
+laws Gaussian. Thus a general Gaussian Wick--Riemann convergence
+theorem cannot be imported solely from the covariance of $Z$.
+This is a bounded nonapplication check, not a novelty certification
+for the explicit projected escape theorem. The full weak/strong
+partition comparison remains separate.
+
 Priority for the combined domain, prefix and path-space package
 requires further targeted comparison.
 
@@ -759,5 +1005,9 @@ Stochastic calculus for Brownian motion on a Brownian fracture,
 On Simpson's rule and fractional Brownian motion with $H=1/10$,
 \emph{J. Theor. Probab.} \textbf{28} (2015), 1651--1688.
 \href{https://doi.org/10.1007/s10959-014-0552-1}{doi:10.1007/s10959-014-0552-1}.
+\bibitem{liu} Y. Liu,
+\emph{Riemann--Skorohod and Stratonovich integrals for Gaussian processes},
+primary author manuscript, introduction and Hypothesis 1.1.
+\href{https://files.blogs.baruch.cuny.edu/wp-content/blogs.dir/8996/files/2025/02/Skorohod-Riemann.pdf}{Author-hosted PDF}.
 \end{thebibliography}
 \end{document}
