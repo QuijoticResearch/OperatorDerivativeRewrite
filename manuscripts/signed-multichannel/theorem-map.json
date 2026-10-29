@@ -736,12 +736,157 @@
       "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
       "declaration_header": "theorem no_firstChannel_representation (m : \u2115) (hm : 1 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (A : Field timeMeasure) :\n    firstChannel m T A \u2260\n      pairing m (by omega) T hT (core (terminalCylinder^(2*m-1)))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L82"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticDomain.sum_norm",
+      "file": "Foundation/FactorialAnalyticDomain.lean",
+      "line": 19,
+      "source_sha256": "da20afb37d4ab232bcdd36a0f00aead64b655b67a00049415de42751d6c53f58",
+      "declaration_header": "theorem sum_norm (u : H) : Summable (fun n : \u2115 => \u2016u n\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticDomain.lean#L19"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticDomain.polynomial_apply",
+      "file": "Foundation/FactorialAnalyticDomain.lean",
+      "line": 54,
+      "source_sha256": "da20afb37d4ab232bcdd36a0f00aead64b655b67a00049415de42751d6c53f58",
+      "declaration_header": "theorem polynomial_apply (P : Polynomial \u211d) (n : \u2115) :\n    polynomial P n = (n.factorial : \u211d) * P.coeff n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticDomain.lean#L54"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticFunctions.realize_deriv",
+      "file": "Foundation/FactorialAnalyticFunctions.lean",
+      "line": 23,
+      "source_sha256": "44d03588e5a48ce9af3b89204eef36961b9a6b7aeeb4acf5e658af1188ca02da",
+      "declaration_header": "theorem realize_deriv (u : H) :\n    deriv (realize u : \u211d \u2192 \u211d) = (realize (shift u) : \u211d \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticFunctions.lean#L23"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticFunctions.realize_iterated",
+      "file": "Foundation/FactorialAnalyticFunctions.lean",
+      "line": 30,
+      "source_sha256": "44d03588e5a48ce9af3b89204eef36961b9a6b7aeeb4acf5e658af1188ca02da",
+      "declaration_header": "theorem realize_iterated (n : \u2115) (u : H) :\n    iteratedDeriv n (realize u : \u211d \u2192 \u211d) = (realize ((shift^n) u) : \u211d \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticFunctions.lean#L30"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticFunctions.coordinate_recovery",
+      "file": "Foundation/FactorialAnalyticFunctions.lean",
+      "line": 38,
+      "source_sha256": "44d03588e5a48ce9af3b89204eef36961b9a6b7aeeb4acf5e658af1188ca02da",
+      "declaration_header": "theorem coordinate_recovery (u : H) (n : \u2115) :\n    iteratedDeriv n (realize u : \u211d \u2192 \u211d) 0 = u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticFunctions.lean#L38"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticFunctions.realize_injective",
+      "file": "Foundation/FactorialAnalyticFunctions.lean",
+      "line": 42,
+      "source_sha256": "44d03588e5a48ce9af3b89204eef36961b9a6b7aeeb4acf5e658af1188ca02da",
+      "declaration_header": "theorem realize_injective : Function.Injective realize",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticFunctions.lean#L42"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FactorialAnalyticFunctions.realize_polynomial",
+      "file": "Foundation/FactorialAnalyticFunctions.lean",
+      "line": 56,
+      "source_sha256": "44d03588e5a48ce9af3b89204eef36961b9a6b7aeeb4acf5e658af1188ca02da",
+      "declaration_header": "theorem realize_polynomial (P : Polynomial \u211d) (x : \u211d) : realize (polynomial P) x = P.eval x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FactorialAnalyticFunctions.lean#L56"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.even_derivative_zero",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 16,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem even_derivative_zero (m n : \u2115) (t : \u211d) :\n    iteratedDeriv (2*n) (flow m t) 0 =\n      (-1 : \u2102)^n*((\u222b u : \u211d, weighted m (2*n) t 0 u \u2202halfLine : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L16"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.even_derivative_norm",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 36,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem even_derivative_norm (m n : \u2115) (t : \u211d) :\n    \u2016iteratedDeriv (2*n) (flow m t) 0\u2016 =\n      \u222b u : \u211d, weighted m (2*n) t 0 u \u2202halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L36"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.positive_interval_lower",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 46,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem positive_interval_lower (m : \u2115) (t : \u211d) :\n    \u2203 d : \u211d, 0 < d \u2227 \u2200 u \u2208 Icc (2 : \u211d) 3, d \u2264 weighted m 0 t 0 u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L46"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.even_derivatives_exponential_lower",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 54,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem even_derivatives_exponential_lower (m : \u2115) (t : \u211d) :\n    \u2203 d : \u211d, 0 < d \u2227 \u2200 n : \u2115,\n      d*(2 : \u211d)^(2*n) \u2264 \u2016iteratedDeriv (2*n) (flow m t) 0\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L54"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.not_summable_derivative_norms",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 86,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem not_summable_derivative_norms (m : \u2115) (t : \u211d) :\n    \u00ac Summable (fun n : \u2115 => \u2016iteratedDeriv n (flow m t) 0\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L86"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.no_factorial_derivative_coefficients",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 98,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem no_factorial_derivative_coefficients (m : \u2115) (t : \u211d) :\n    \u00ac \u2203 u : FactorialAnalyticDomain.H, \u2200 n : \u2115,\n      iteratedDeriv n (flow m t) 0 = (u n : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L98"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.real_iteratedDeriv",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 106,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem real_iteratedDeriv (m n : \u2115) (t x : \u211d) :\n    iteratedDeriv n (fun y : \u211d => (flow m t (y : \u2102)).re) x =\n      (symmetricJet m n t (x : \u2102)).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L106"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.even_real_derivative_norm",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 116,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem even_real_derivative_norm (m n : \u2115) (t : \u211d) :\n    \u2016iteratedDeriv (2*n) (fun y : \u211d => (flow m t (y : \u2102)).re) 0\u2016 =\n      \u2016iteratedDeriv (2*n) (flow m t) 0\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L116"
+    },
+    {
+      "paper": "Section 3 one-coordinate coefficient realization and actual arithmetic nonmembership",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannFactorialObstruction.no_factorial_realization",
+      "file": "Foundation/RiemannFactorialObstruction.lean",
+      "line": 129,
+      "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
+      "declaration_header": "theorem no_factorial_realization (m : \u2115) (t : \u211d) :\n    \u00ac \u2203 u : FactorialAnalyticDomain.H, \u2200 x : \u211d,\n      FactorialAnalyticFunctions.realize u x = (flow m t (x : \u2102)).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L129"
     }
   ],
   "human_reorganization": [
     "The fixed-horizon finite-variation path-law obstruction is proved directly from exact kernel scaling and variation contraction. The named formal path-law result uses arbitrarily many fixed-step increments and increasing horizons; these are not conflated.",
     "The signed quartic square cancellation is not an L2 norm limit: its actual absolute-variation error diverges. Normalized variation probabilities still have pointwise distance at least 24T from the proposed negative limit.",
     "The explicit L2-small deterministic spike has constant fourth-power clock. Angular-frequency value exp(-1) corresponds to the formal 2pi-frequency convention after rescaling; no continuity claim on the stronger factorial domain is refuted.",
-    "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The named source proves first-channel range failure; no general channel minimality or synthesis injectivity is inferred."
+    "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The named source proves first-channel range failure; no general channel minimality or synthesis injectivity is inferred.",
+    "Section 3 gives the elementary factorial-series reconstruction of the faithful one-coordinate realization. Every derivative at zero is an ell1 coefficient. Actual integer-order arithmetic theta moments have the lower bound d*4^n from the fixed positive interval [2,3], so they cannot be realized in this coefficient domain. The actual real/complex derivative bridge and nonmembership theorem are mapped. This does not assert nonrepresentability in every multivariate quotient, injectivity of the completed product pairing, a failure of the scoped signed reconstruction, or a zero/threshold/RH implication. The coefficient-growth test is elementary and is not claimed novel."
   ]
 }

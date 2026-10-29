@@ -228,6 +228,73 @@ for every $u\in\D$: the applied fields converge pointwise, even
 uniformly in the norm bound. This gives a bounded map into
 $L^\infty(\lambda;\D)$.
 
+
+\subsection*{An actual arithmetic transform outside the one-coordinate realization}
+The domain restriction can be tested on another verified family in the
+same library. In one position coordinate, the norm
+\eqref{eq:norm} is $\sum_{n\geq0}n!|c_n|$. Set $u_n=n!c_n$.
+The corresponding one-coordinate function realization is
+\begin{equation}\label{eq:factorialrealization}
+ f_u(x)=\sum_{n\geq0}u_n\frac{x^n}{n!},\qquad
+ u\in\ell^1(\N;\R).
+\end{equation}
+This is the original coefficient realization, not a replacement
+Sobolev or weighted $L^2$ domain. On $|x|\leq R$, the series
+and each differentiated series converge uniformly: for the $q$th
+derivative, the sum of absolute terms is at most
+$e^R\sum_{n\geq q}|u_n|$. Termwise differentiation is therefore
+valid, and
+\[
+ f_u^{(q)}(0)=u_q,\qquad
+ \sum_{q\geq0}|f_u^{(q)}(0)|<\infty.
+\]
+This condition is much stronger than being entire.
+
+For a concrete exclusion, let $m\geq1$ be an integer, $t\in\R$,
+and use the actual arithmetic theta kernel
+\[
+ K(v)=\sum_{j\geq1}(2\pi^2j^4e^{9v}-3\pi j^2e^{5v})
+                         e^{-\pi j^2e^{4v}}\quad(v\geq0),
+ \qquad
+ F_{m,t}(x)=\int_0^\infty e^{tv^{2m}}K(v)\cos(xv)\,dv.
+\]
+The kernel is continuous and strictly positive: each summand factors as
+\[
+ \pi j^2e^{5v}(2\pi j^2e^{4v}-3)e^{-\pi j^2e^{4v}}>0.
+\]
+The series converges uniformly on compact intervals. At infinity
+it is bounded by $C\exp(Cv-c e^{4v})$, so every moment remains
+integrable after multiplication by $e^{tv^{2m}+R v}$ for every
+fixed $m,t,R$. These bounds follow by separating half of the
+decaying exponential to sum the polynomial $j$ factors. They
+justify all differentiations of the integral, including
+\begin{equation}\label{eq:arithmeticderivatives}
+ F_{m,t}^{(2n)}(0)=(-1)^n\int_0^\infty
+                   v^{2n}e^{tv^{2m}}K(v)\,dv.
+\end{equation}
+Continuity and positivity give
+$d=\min_{2\leq v\leq3}e^{tv^{2m}}K(v)>0$. Hence the interval
+of length one supplies the lower bound
+\[
+ |F_{m,t}^{(2n)}(0)|\geq\int_2^3 v^{2n}d\,dv\geq d\,4^n.
+\]
+These derivative magnitudes do not even tend to zero. Thus no
+$u\in\ell^1$ can satisfy $f_u=F_{m,t}$ on the real line,
+since equality of the smooth functions would identify all their
+derivatives at zero, contradicting \eqref{eq:factorialrealization}.
+The exact frozen theorem also records the bridge from complex
+flow derivatives to this real-function derivative conclusion.
+
+Consequently the bounded derivative and heat operators on this
+one-coordinate factorial realization cannot simply be applied to
+these integer-order arithmetic transforms. This is a concrete
+domain obstruction, not a counterexample to the multichannel
+reconstruction theorem. It neither asserts injectivity of every
+completed product pairing nor excludes a different representation
+in another space or quotient. No arithmetic zero conclusion or
+threshold relation follows from this comparison. The coefficient
+growth mechanism is elementary; no novelty is claimed for it.
+
 \section{The product pairing and its signed character}
 Ordinary multiplication does not have norm at most the product
 of the norms in \eqref{eq:norm}. Instead define on polynomials
@@ -822,6 +889,10 @@ Uniqueness&\code{HigherHeatCompletedClarkOcone.coefficient_unique},
 \code{synthesis_uniqueness}\\[3pt]
 Actual joint diagonal&\code{HigherHeatSignedDiagonalRealization.completed_signed_realization}\\
 \end{longtable}
+
+The formal map also records the faithful one-coordinate realization, exact derivative recovery, actual theta moments and interval lower bounds, and the resulting nonmembership theorem. Its elementary series argument is a human
+reconstruction of that faithful realization, not a larger analytic
+domain or a new arithmetic theorem.
 
 The baseline receipt records a complete successful root build and
 a complete 54,943-declaration standard-axiom audit. Publication work
