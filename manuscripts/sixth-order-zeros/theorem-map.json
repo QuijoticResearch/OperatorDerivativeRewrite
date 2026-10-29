@@ -225,18 +225,365 @@
       "source_sha256": "299ccc6d80e3b74483806d657fb668f61265795d8a8e5cab84ac2c7bad71d662",
       "declaration_header": "theorem eventually_all_zeros_real_simple :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, RiemannEvenFlow.flow 3 t z=0 \u2192\n      z.im=0 \u2227 deriv (RiemannEvenFlow.flow 3 t) z \u2260 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannSixthTransitionSimpleZeros.lean#L117"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.weighted_pos",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 20,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem weighted_pos (m : \u2115) (t u : \u211d) (hu : 0 \u2264 u) : 0 < weighted m 0 t 0 u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L20"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.exists_global_max",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 24,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem exists_global_max (m : \u2115) (t : \u211d) :\n    \u2203 u \u2208 Ici (0 : \u211d), IsMaxOn (weighted m 0 t 0) (Ici 0) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L24"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealSaddle.max_real_stationary",
+      "file": "Foundation/RiemannEvenRealSaddle.lean",
+      "line": 91,
+      "source_sha256": "b0e1e89cab4d482137bd5fbaa84f6e5c0ee22258ad85e0cdbb6e207c50877c78",
+      "declaration_header": "theorem max_real_stationary (m : \u2115) (t u : \u211d) (hu : 0 < u)\n    (hm : IsMaxOn (weighted m 0 t 0) (Ici 0) u) : phaseSlope m t u = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealSaddle.lean#L91"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenSaddleTimes.phaseSlope_factor",
+      "file": "Foundation/RiemannEvenSaddleTimes.lean",
+      "line": 25,
+      "source_sha256": "e6510597334c1ab8823009a453cf5592420b773cd97651b39032e498da58b0b5",
+      "declaration_header": "theorem phaseSlope_factor (m : \u2115) (hm : 0 < m) (t u : \u211d) (hu : 0 < u) :\n    phaseSlope m t u = ((2*m : \u2115) : \u211d)*(t-saddleTime m u)*u^(2*m-1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenSaddleTimes.lean#L25"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenSaddleTimes.max_saddleTime",
+      "file": "Foundation/RiemannEvenSaddleTimes.lean",
+      "line": 41,
+      "source_sha256": "e6510597334c1ab8823009a453cf5592420b773cd97651b39032e498da58b0b5",
+      "declaration_header": "theorem max_saddleTime (m : \u2115) (hm : 0 < m) (t u : \u211d) (hu : 0 < u)\n    (hmax : IsMaxOn (weighted m 0 t 0) (Ici 0) u) : saddleTime m u = t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenSaddleTimes.lean#L41"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenSaddleTimes.saddleTime_strictMonoOn",
+      "file": "Foundation/RiemannEvenSaddleTimes.lean",
+      "line": 86,
+      "source_sha256": "e6510597334c1ab8823009a453cf5592420b773cd97651b39032e498da58b0b5",
+      "declaration_header": "theorem saddleTime_strictMonoOn (m : \u2115) (hm : 0 < m) :\n    StrictMonoOn (saddleTime m) (Ici (((2*m : \u2115) : \u211d)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenSaddleTimes.lean#L86"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenConcentration.saddleTime_deriv_gt_three_mul",
+      "file": "Foundation/RiemannEvenConcentration.lean",
+      "line": 13,
+      "source_sha256": "7ae86fc4e02fc8e06dfbe16e6a443ba44753834e659a30097372da86c91c43cb",
+      "declaration_header": "theorem saddleTime_deriv_gt_three_mul (m : \u2115) (hm : 0 < m) (u : \u211d)\n    (hu : ((2*m : \u2115) : \u211d) \u2264 u) : 3*saddleTime m u < deriv (saddleTime m) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenConcentration.lean#L13"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenConcentration.saddleTime_exponential_lower",
+      "file": "Foundation/RiemannEvenConcentration.lean",
+      "line": 55,
+      "source_sha256": "7ae86fc4e02fc8e06dfbe16e6a443ba44753834e659a30097372da86c91c43cb",
+      "declaration_header": "theorem saddleTime_exponential_lower (m : \u2115) (hm : 0 < m) (u v : \u211d)\n    (hu : ((2*m : \u2115) : \u211d) \u2264 u) (huv : u \u2264 v) :\n    saddleTime m u*Real.exp (3*(v-u)) \u2264 saddleTime m v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenConcentration.lean#L55"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenConcentration.actual_right_gaussian_envelope",
+      "file": "Foundation/RiemannEvenConcentration.lean",
+      "line": 103,
+      "source_sha256": "7ae86fc4e02fc8e06dfbe16e6a443ba44753834e659a30097372da86c91c43cb",
+      "declaration_header": "theorem actual_right_gaussian_envelope (m : \u2115) (hm : 0 < m) (t u v : \u211d)\n    (hu : ((2*m : \u2115) : \u211d) \u2264 u) (huv : u \u2264 v) (hs : phaseSlope m t u = 0) :\n    weighted m 0 t 0 v \u2264 weighted m 0 t 0 u*\n      Real.exp (-((3/2 : \u211d)*((2*m : \u2115) : \u211d)*t*u^(2*m-1))*(v-u)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenConcentration.lean#L103"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalization.actual_local_gaussian_lower",
+      "file": "Foundation/RiemannEvenNormalization.lean",
+      "line": 34,
+      "source_sha256": "fb8e063b8edbbda2ad379c320fef480752dfa7d17087761a3e815d50bcbf5707",
+      "declaration_header": "theorem actual_local_gaussian_lower (m : \u2115) (t u v : \u211d) (ht : 0 \u2264 t) (hu : 2 \u2264 u)\n    (hd : |v-u| \u2264 1/2) (hs : phaseSlope m t u = 0) :\n    let c : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalization.lean#L34"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalization.actual_halfline_mass_lower",
+      "file": "Foundation/RiemannEvenNormalization.lean",
+      "line": 97,
+      "source_sha256": "fb8e063b8edbbda2ad379c320fef480752dfa7d17087761a3e815d50bcbf5707",
+      "declaration_header": "theorem actual_halfline_mass_lower (m : \u2115) (t u : \u211d) (ht : 0 \u2264 t) (hu : 2 \u2264 u)\n    (hs : phaseSlope m t u = 0) :\n    let c : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalization.lean#L97"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalization.flow_zero_eq_mass",
+      "file": "Foundation/RiemannEvenNormalization.lean",
+      "line": 154,
+      "source_sha256": "fb8e063b8edbbda2ad379c320fef480752dfa7d17087761a3e815d50bcbf5707",
+      "declaration_header": "theorem flow_zero_eq_mass (m : \u2115) (t : \u211d) :\n    RiemannEvenFlow.flow m t 0 =\n      ((\u222b v : \u211d, weighted m 0 t 0 v \u2202RiemannQuarticFlow.halfLine : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalization.lean#L154"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalizedCompact.actual_flow_zero_pos",
+      "file": "Foundation/RiemannEvenNormalizedCompact.lean",
+      "line": 58,
+      "source_sha256": "dff66e24a0f53af1db3d3e056030ad3a25db39d89019d514f0c24d58ae4fe832",
+      "declaration_header": "theorem actual_flow_zero_pos (m : \u2115) (t : \u211d) : 0 < (RiemannEvenFlow.flow m t 0).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalizedCompact.lean#L58"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalizedCompact.exists_peak_normalization_bound",
+      "file": "Foundation/RiemannEvenNormalizedCompact.lean",
+      "line": 70,
+      "source_sha256": "dff66e24a0f53af1db3d3e056030ad3a25db39d89019d514f0c24d58ae4fe832",
+      "declaration_header": "theorem exists_peak_normalization_bound (m : \u2115) (hm : 0 < m) :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 (t u : \u211d), 0 \u2264 t \u2192 ((2*m : \u2115) : \u211d) \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n        weighted m 0 t 0 u \u2264 K*t*(RiemannEvenFlow.flow m t 0).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalizedCompact.lean#L70"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalizedCompact.exists_normalized_compact_bound",
+      "file": "Foundation/RiemannEvenNormalizedCompact.lean",
+      "line": 102,
+      "source_sha256": "dff66e24a0f53af1db3d3e056030ad3a25db39d89019d514f0c24d58ae4fe832",
+      "declaration_header": "theorem exists_normalized_compact_bound (m : \u2115) (hm : 0 < m) (R : \u211d) (hR : 0 \u2264 R) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 (t u : \u211d), 0 \u2264 t \u2192 ((2*m : \u2115) : \u211d) \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      (\u222b v : \u211d in 0..R, weighted m 0 t 0 v)/(RiemannEvenFlow.flow m t 0).re \u2264\n        C*t*Real.exp (-t*((R+1)^(2*m)-R^(2*m)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalizedCompact.lean#L102"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenNormalizedCompact.exists_normalized_left_segment_bound",
+      "file": "Foundation/RiemannEvenNormalizedCompact.lean",
+      "line": 222,
+      "source_sha256": "dff66e24a0f53af1db3d3e056030ad3a25db39d89019d514f0c24d58ae4fe832",
+      "declaration_header": "theorem exists_normalized_left_segment_bound (m : \u2115) (hm : 0 < m) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 r : \u211d, 0 < r \u2192 r \u2264 1/2 \u2192\n      \u2200 (t u : \u211d), 1 \u2264 t \u2192 ((2*m : \u2115) : \u211d)+r \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      (\u222b v : \u211d in (((2*m : \u2115) : \u211d))..(u-r), weighted m 0 t 0 v)/(RiemannEvenFlow.flow m t 0).re \u2264\n        C*t^2*Real.exp (-t*r^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenNormalizedCompact.lean#L222"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWeightedTails.exists_normalized_right_weighted_bound",
+      "file": "Foundation/RiemannEvenWeightedTails.lean",
+      "line": 84,
+      "source_sha256": "2228a579f7a20329098392f3b3397a7a1a5f83d961ce22bf4773120af776953b",
+      "declaration_header": "theorem exists_normalized_right_weighted_bound (m : \u2115) (hm : 0 < m) :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 (B r t u : \u211d), 0 \u2264 r \u2192 1 \u2264 t \u2192 ((2*m : \u2115) : \u211d) \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      (\u222b s : \u211d in Ioi r, s*Real.exp (B*s)*weighted m 0 t 0 (u+s))/\n        (RiemannEvenFlow.flow m t 0).re \u2264 K*Real.exp (B^2/(2*t)-(t/2)*r^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWeightedTails.lean#L84"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWeightedTails.exists_normalized_left_weighted_bound",
+      "file": "Foundation/RiemannEvenWeightedTails.lean",
+      "line": 132,
+      "source_sha256": "2228a579f7a20329098392f3b3397a7a1a5f83d961ce22bf4773120af776953b",
+      "declaration_header": "theorem exists_normalized_left_weighted_bound (m : \u2115) (hm : 0 < m) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 (B r t u : \u211d), 0 \u2264 B \u2192 0 < r \u2192 r \u2264 1/2 \u2192\n      1 \u2264 t \u2192 ((2*m : \u2115) : \u211d)+r \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      (\u222b v : \u211d in 0..(u-r), (u-v)*Real.exp (B*(u-v))*weighted m 0 t 0 v)/\n        (RiemannEvenFlow.flow m t 0).re \u2264\n      C*u*Real.exp (B*u)*(t*Real.exp (-t*((((2*m : \u2115) : \u211d)+1)^(2*m)-(((2*m : \u2115) : \u211d))^(2*m)))+\n        t^2*Real.exp (-t*r^2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWeightedTails.lean#L132"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWeightedTails.normalized_local_weighted_bound",
+      "file": "Foundation/RiemannEvenWeightedTails.lean",
+      "line": 173,
+      "source_sha256": "2228a579f7a20329098392f3b3397a7a1a5f83d961ce22bf4773120af776953b",
+      "declaration_header": "theorem normalized_local_weighted_bound (m : \u2115) (t u B r : \u211d)\n    (hB : 0 \u2264 B) (hr : 0 \u2264 r) (hu : r \u2264 u) :\n    (\u222b v : \u211d in (u-r)..(u+r), |v-u| * Real.exp (B*|v-u|) * weighted m 0 t 0 v)/\n      (RiemannEvenFlow.flow m t 0).re \u2264 r*Real.exp (B*r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWeightedTails.lean#L173"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWeightedTails.actual_centered_exponential_moment_integrable",
+      "file": "Foundation/RiemannEvenWeightedTails.lean",
+      "line": 209,
+      "source_sha256": "2228a579f7a20329098392f3b3397a7a1a5f83d961ce22bf4773120af776953b",
+      "declaration_header": "theorem actual_centered_exponential_moment_integrable (m : \u2115) (t u B : \u211d)\n    (hu : 0 \u2264 u) (hB : 0 \u2264 B) :\n    IntegrableOn (fun v : \u211d => |v-u| * Real.exp (B*|v-u|) * weighted m 0 t 0 v) (Ici 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWeightedTails.lean#L209"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenMomentDecomposition.actual_centered_moment_split",
+      "file": "Foundation/RiemannEvenMomentDecomposition.lean",
+      "line": 11,
+      "source_sha256": "61df46ecc3b24aab43ec2675fbe3ba0a464ef1bc500b85e121fc7dcf179772af",
+      "declaration_header": "theorem actual_centered_moment_split (m : \u2115) (t u B r : \u211d)\n    (hB : 0 \u2264 B) (hr : 0 \u2264 r) (hu : r \u2264 u) :\n    (\u222b v : \u211d in Ici 0, |v-u| * Real.exp (B*|v-u|) * weighted m 0 t 0 v) =\n      (\u222b v : \u211d in 0..(u-r), (u-v)*Real.exp (B*(u-v))*weighted m 0 t 0 v)+\n      (\u222b v : \u211d in (u-r)..(u+r), |v-u| * Real.exp (B*|v-u|) * weighted m 0 t 0 v)+\n      (\u222b s : \u211d in Ioi r, s*Real.exp (B*s)*weighted m 0 t 0 (u+s))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenMomentDecomposition.lean#L11"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenMomentDecomposition.exists_actual_full_moment_bound",
+      "file": "Foundation/RiemannEvenMomentDecomposition.lean",
+      "line": 55,
+      "source_sha256": "61df46ecc3b24aab43ec2675fbe3ba0a464ef1bc500b85e121fc7dcf179772af",
+      "declaration_header": "theorem exists_actual_full_moment_bound (m : \u2115) (hm : 0 < m) :\n    \u2203 C K : \u211d, 0 < C \u2227 0 < K \u2227 \u2200 (B r t u : \u211d), 0 \u2264 B \u2192 0 < r \u2192 r \u2264 1/2 \u2192\n      1 \u2264 t \u2192 ((2*m : \u2115) : \u211d)+r \u2264 u \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      (\u222b v : \u211d in Ici 0, |v-u| * Real.exp (B*|v-u|) * weighted m 0 t 0 v)/\n        (RiemannEvenFlow.flow m t 0).re \u2264\n      C*u*Real.exp (B*u)*(t*Real.exp (-t*((((2*m : \u2115) : \u211d)+1)^(2*m)-(((2*m : \u2115) : \u211d))^(2*m)))+\n        t^2*Real.exp (-t*r^2))+r*Real.exp (B*r)+K*Real.exp (B^2/(2*t)-(t/2)*r^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenMomentDecomposition.lean#L55"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenSaddleGrowth.stationary_time_upper",
+      "file": "Foundation/RiemannEvenSaddleGrowth.lean",
+      "line": 11,
+      "source_sha256": "8177cea646e3d5a17720a906e42c50c01bcb3aa9007951b0bb92cc3a65de2e76",
+      "declaration_header": "theorem stationary_time_upper (m : \u2115) (hm : 0 < m) (t u : \u211d)\n    (hu : ((2*m : \u2115) : \u211d) \u2264 u) (hs : phaseSlope m t u = 0) :\n    t \u2264 4*Real.pi*Real.exp (4*u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenSaddleGrowth.lean#L11"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenSaddleGrowth.exists_stationary_time_exponential_lower",
+      "file": "Foundation/RiemannEvenSaddleGrowth.lean",
+      "line": 26,
+      "source_sha256": "8177cea646e3d5a17720a906e42c50c01bcb3aa9007951b0bb92cc3a65de2e76",
+      "declaration_header": "theorem exists_stationary_time_exponential_lower (m : \u2115) (hm : 0 < m) :\n    \u2203 c : \u211d, 0 < c \u2227 \u2200 t u : \u211d, ((2*m : \u2115) : \u211d) \u2264 u \u2192\n      phaseSlope m t u = 0 \u2192 c*Real.exp (3*u) \u2264 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenSaddleGrowth.lean#L26"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenFourierMoment.phase_difference_bound",
+      "file": "Foundation/RiemannEvenFourierMoment.lean",
+      "line": 10,
+      "source_sha256": "f784539e634879d14e2f6cc913fefc1c4da41559b60ac709c3cc1b4285ac0b6e",
+      "declaration_header": "theorem phase_difference_bound (z : \u2102) (u v : \u211d) (hu : 0 \u2264 u) :\n    \u2016Complex.exp (Complex.I*(v : \u2102)*z)-Complex.exp (Complex.I*(u : \u2102)*z)\u2016 \u2264\n      Real.exp (u*|z.im|)*\u2016z\u2016*|v-u| * Real.exp (\u2016z\u2016*|v-u|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenFourierMoment.lean#L10"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenFourierMoment.actual_normalized_cosine_error_bound",
+      "file": "Foundation/RiemannEvenFourierMoment.lean",
+      "line": 96,
+      "source_sha256": "f784539e634879d14e2f6cc913fefc1c4da41559b60ac709c3cc1b4285ac0b6e",
+      "declaration_header": "theorem actual_normalized_cosine_error_bound (m : \u2115) (t u : \u211d) (z : \u2102) (hu : 0 \u2264 u) :\n    \u2016flow m t z/flow m t 0-Complex.cos ((u : \u2102)*z)\u2016 \u2264\n      (Real.exp (u*|z.im|)*\u2016z\u2016)*\n        ((\u222b v : \u211d in Ici 0, |v-u| * Real.exp (\u2016z\u2016*|v-u|) * weighted m 0 t 0 v)/\n          (flow m t 0).re)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenFourierMoment.lean#L96"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenGrowingMoment.exponential_tail_absorption",
+      "file": "Foundation/RiemannEvenGrowingMoment.lean",
+      "line": 13,
+      "source_sha256": "78803718d3fdf57ea7e76955336319849c1a6fc1a039039ae2d2bad758002465",
+      "declaration_header": "theorem exponential_tail_absorption (c Q \u0394 t u : \u211d) (hc : 0 < c) (hQ : 0 \u2264 Q)\n    (hu : 0 \u2264 u) (ht : 1 \u2264 t) (hlo : c*Real.exp (3*u) \u2264 t)\n    (hhi : t \u2264 Q*Real.exp (4*u)) (h\u0394 : Real.exp (-u) \u2264 \u0394)\n    (hdom : u^2+12*u \u2264 (c/2)*Real.exp (2*u)) :\n    u*Real.exp (u^2)*(t*Real.exp (-t*\u0394)+t^2*Real.exp (-t*Real.exp (-u))) \u2264\n      (Q+Q^2)*u*Real.exp (-4*u) \u2227\n    Real.exp (u^2/(2*t)-(t/2)*Real.exp (-u)) \u2264 Real.exp (-4*u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenGrowingMoment.lean#L13"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenGrowingMoment.centered_growing_moment_eventually_small",
+      "file": "Foundation/RiemannEvenGrowingMoment.lean",
+      "line": 56,
+      "source_sha256": "78803718d3fdf57ea7e76955336319849c1a6fc1a039039ae2d2bad758002465",
+      "declaration_header": "theorem centered_growing_moment_eventually_small (m : \u2115) (hm : 0 < m) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 u : \u211d in atTop, \u2200 t : \u211d, 1 \u2264 t \u2192\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      u*((\u222b v : \u211d in Ici 0, |v-u| * Real.exp (u*|v-u|) * weighted m 0 t 0 v)/\n        (RiemannEvenFlow.flow m t 0).re) < \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenGrowingMoment.lean#L56"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenGrowingMoment.normalized_growing_moment_eventually_small",
+      "file": "Foundation/RiemannEvenGrowingMoment.lean",
+      "line": 121,
+      "source_sha256": "78803718d3fdf57ea7e76955336319849c1a6fc1a039039ae2d2bad758002465",
+      "declaration_header": "theorem normalized_growing_moment_eventually_small (m : \u2115) (hm : 0 < m) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u \u2208 Ici (0 : \u211d),\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192\n      u*((\u222b v : \u211d in Ici 0, |v-u| * Real.exp (u*|v-u|) * weighted m 0 t 0 v)/\n        (RiemannEvenFlow.flow m t 0).re) < \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenGrowingMoment.lean#L121"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenGrowingFourier.uniform_growing_normalized_cosine",
+      "file": "Foundation/RiemannEvenGrowingFourier.lean",
+      "line": 25,
+      "source_sha256": "132e8e0a1c4c2cc3f8e17f0736af7838ebdc3b6bb44a2fcd41e6edf0d9b16ee6",
+      "declaration_header": "theorem uniform_growing_normalized_cosine (m : \u2115) (hm : 0 < m) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u \u2208 Ici (0 : \u211d),\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192 \u2200 z : \u2102, \u2016z\u2016 \u2264 u \u2192\n      \u2016RiemannEvenFlow.flow m t z/RiemannEvenFlow.flow m t 0-Complex.cos ((u : \u2102)*z)\u2016 <\n        \u03b5*Real.exp (u*|z.im|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenGrowingFourier.lean#L25"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenGrowingFourier.actual_growing_zero_strip",
+      "file": "Foundation/RiemannEvenGrowingFourier.lean",
+      "line": 62,
+      "source_sha256": "132e8e0a1c4c2cc3f8e17f0736af7838ebdc3b6bb44a2fcd41e6edf0d9b16ee6",
+      "declaration_header": "theorem actual_growing_zero_strip (m : \u2115) (hm : 0 < m) (\u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u \u2208 Ici (0 : \u211d),\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192 \u2200 z : \u2102, \u2016z\u2016 \u2264 u \u2192\n      RiemannEvenFlow.flow m t z = 0 \u2192 u*|z.im| \u2264 \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenGrowingFourier.lean#L62"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLocalCosineZeros.perturbation_deriv_bound",
+      "file": "Foundation/RiemannQuarticLocalCosineZeros.lean",
+      "line": 10,
+      "source_sha256": "f23609cf7f96d8e303c48aba4b948afc7094714fa4cceb8a026c2f86274403e7",
+      "declaration_header": "theorem perturbation_deriv_bound (f : \u2102 \u2192 \u2102) (a : \u211d)\n    (hf : \u2200 w \u2208 closedBall (a : \u2102) 1, DifferentiableAt \u2102 f w)\n    (hclose : \u2200 v \u2208 closedBall (a : \u2102) 1, \u2016f v-Complex.cos v\u2016 \u2264 1/1000)\n    (w : \u2102) (hw : w \u2208 closedBall (a : \u2102) (1/1000)) :\n    \u2016deriv f w-deriv Complex.cos w\u2016 \u2264 1/500",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLocalCosineZeros.lean#L10"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLocalCosineZeros.real_simple_zero",
+      "file": "Foundation/RiemannQuarticLocalCosineZeros.lean",
+      "line": 32,
+      "source_sha256": "f23609cf7f96d8e303c48aba4b948afc7094714fa4cceb8a026c2f86274403e7",
+      "declaration_header": "theorem real_simple_zero (f : \u2102 \u2192 \u2102) (a : \u211d)\n    (hf : \u2200 w \u2208 closedBall (a : \u2102) 1, DifferentiableAt \u2102 f w)\n    (hconj : \u2200 w, f (conj w)=conj (f w))\n    (hclose : \u2200 w \u2208 closedBall (a : \u2102) 1, \u2016f w-Complex.cos w\u2016 \u2264 1/1000)\n    (z : \u2102) (hz : z \u2208 closedBall (a : \u2102) (1/1000)) (hzero : f z=0) :\n    z.im=0 \u2227 deriv f z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLocalCosineZeros.lean#L32"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWindowZeros.actual_real_simple_window",
+      "file": "Foundation/RiemannEvenWindowZeros.lean",
+      "line": 18,
+      "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
+      "declaration_header": "theorem actual_real_simple_window (m : \u2115) (hm : 0 < m) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u \u2208 Ici (0 : \u211d),\n      IsMaxOn (weighted m 0 t 0) (Ici 0) u \u2192 \u2200 z : \u2102, \u2016z\u2016 \u2264 u/2 \u2192\n      flow m t z = 0 \u2192 z.im = 0 \u2227 deriv (flow m t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L18"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWindowZeros.eventually_real_simple_on_each_disk",
+      "file": "Foundation/RiemannEvenWindowZeros.lean",
+      "line": 103,
+      "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
+      "declaration_header": "theorem eventually_real_simple_on_each_disk (m : \u2115) (hm : 0 < m) (R : \u211d) (hR : 0 \u2264 R) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, \u2016z\u2016 \u2264 R \u2192 flow m t z = 0 \u2192\n      z.im = 0 \u2227 deriv (flow m t) z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L103"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWindowZeros.eventually_nonreal_zeros_outside_each_disk",
+      "file": "Foundation/RiemannEvenWindowZeros.lean",
+      "line": 117,
+      "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
+      "declaration_header": "theorem eventually_nonreal_zeros_outside_each_disk (m : \u2115) (hm : 0 < m) (R : \u211d) (hR : 0 \u2264 R) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, flow m t z = 0 \u2192 z.im \u2260 0 \u2192 R < \u2016z\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L117"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWindowZeros.escaping_polynomial_nonreal_root",
+      "file": "Foundation/RiemannEvenWindowZeros.lean",
+      "line": 127,
+      "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
+      "declaration_header": "theorem escaping_polynomial_nonreal_root (t : \u211d) (ht : 0 < t) :\n    (Complex.I*(t : \u2102))^2+(t : \u2102)^2 = 0 \u2227 (Complex.I*(t : \u2102)).im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L127"
+    },
+    {
+      "paper": "Section 7: general integer-even expanding window",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenWindowZeros.escaping_polynomial_no_zero_in_window",
+      "file": "Foundation/RiemannEvenWindowZeros.lean",
+      "line": 135,
+      "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
+      "declaration_header": "theorem escaping_polynomial_no_zero_in_window (t : \u211d) (ht : 0 < t) (z : \u2102) (hz : \u2016z\u2016 \u2264 t/2) :\n    z^2+(t : \u2102)^2 \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L135"
     }
   ],
   "human_reorganization": [
     "Sections 2\u20134 consolidate the actual theta-kernel, Gaussian, reflection and analytic pair estimates in admissible actual saddles with unspecified absolute constants. The formal source uses explicit separate model, correction, transition and far budgets.",
     "The proof computes the sixth-order physical-prefix exponent difference -9*t*a^5/2+O(t*a^4), and the power-five moving-center coverage explicitly.",
     "The finite-radius confinement on bounded time ranges in Proposition 6.2 is a human corollary of its explicit far-frequency condition, not a claimed separately named Lean declaration.",
-    "The generic local cosine lemma is reproved here; it is a regrouping of the buffered-zero mechanism reused by the formal sixth-order development."
+    "The generic local cosine lemma is reproved here; it is a regrouping of the buffered-zero mechanism reused by the formal sixth-order development.",
+    "Section 7 reproves the general fixed-integer-even window theorem in full, using a possibly larger order-dependent real cutoff N. The native source has explicit cutoff 2m and sharper Gaussian constants. No native constant is silently broadened into an order-uniform result.",
+    "The actual peak/mass ratio is obtained by a Taylor interval of radius exp(-2u), using the already proved full kernel derivative asymptotics. This replaces the source explicit square-root curvature budget while retaining the original integral.",
+    "The left tail uses monotonicity and a final interval of radius r<=1/2, plus a separately bounded physical compact prefix. The right tail, growing exponential weight and radius exp(-u/2) are all estimated before asserting cosine approximation.",
+    "The local cosine mechanism is reconstructed via exact complex sine/cosine bounds, Cauchy derivative control and injectivity against a constant derivative. Conjugate zeros coincide; a merely asymptotic real-part estimate is not substituted for exact reality.",
+    "For every fixed m,R, the late time may depend on both. General expanding-window/compact-disk reality is not global reality at one common time. Escaping polynomial roots refute that logical inference only and are not arithmetic-flow examples."
   ],
   "scope_limits": [
     "Existential eventual time only",
     "No sixth-order early-time obstruction or threshold collision claimed",
-    "No general even-order classification or RH implication",
+    "No global general even-order classification, order-uniform time or RH implication",
     "Novelty unresolved"
   ]
 }

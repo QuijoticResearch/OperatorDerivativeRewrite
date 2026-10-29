@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-five drafts, 239 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-five drafts, 243 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -12,7 +12,7 @@ Twenty-five drafts, 239 pages, all based on frozen verified commit `bab688bb6140
 |---|---|---|
 | Endpoint singularities and nonreal zeros in fractional theta deformations | [PDF](fractional-theta-zeros/main.pdf) · [LaTeX](fractional-theta-zeros/main.tex) · [theorem map](fractional-theta-zeros/theorem-map.json) · [editorial status](fractional-theta-zeros/editorial-status.md) | Ten pages. Full endpoint asymptotic for 1<a<2, t≠0; finite real/infinite nonreal zeros; uniform order convergence; exact compact-escape hypotheses. Reviewed draft; novelty unresolved. |
 | An attained eventual reality threshold for a growing quartic arithmetic transform | [PDF](quartic-threshold/main.pdf) · [LaTeX](quartic-threshold/main.tex) · [theorem map](quartic-threshold/theorem-map.json) · [editorial status](quartic-threshold/editorial-status.md) | Sixteen pages. Complete actual-saddle/global-zero proof, explicit computer-assisted time-eight obstruction, split-polynomial reconstruction, attained eventual threshold, confinement and finite-multiplicity endpoint collision. Exact rational transcription verifier included. Reviewed draft; novelty unresolved. |
-| Eventual reality and simplicity of zeros for a growing sixth-order arithmetic transform | [PDF](sixth-order-zeros/main.pdf) · [LaTeX](sixth-order-zeros/main.tex) · [theorem map](sixth-order-zeros/theorem-map.json) · [editorial status](sixth-order-zeros/editorial-status.md) | Eight-page companion. Full sixth-order actual-saddle proof, oscillatory and physical-prefix bounds, analytic exact-real/simple mechanism and common-center whole-plane coverage. Existential late time only; no order-six threshold collision or general-order claim. Reviewed draft; novelty unresolved. |
+| Sixth-order global reality and general even-order windows for arithmetic theta transforms | [PDF](sixth-order-zeros/main.pdf) · [LaTeX](sixth-order-zeros/main.tex) · [theorem map](sixth-order-zeros/theorem-map.json) · [editorial status](sixth-order-zeros/editorial-status.md) | Twelve-page companion. Full sixth-order actual-saddle/common-time whole-plane proof; complete general fixed-even-order real saddle/mass/weighted-tail and growing-window proof, exact real/simple zeros and fixed-disk consequences. Order-dependent times; no global general-order classification or sixth-order threshold collision. Reviewed draft; novelty unresolved. |
 
 ### Signed higher heat and complex approximations
 

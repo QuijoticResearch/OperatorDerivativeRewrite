@@ -215,3 +215,7 @@ The Fourier companion expands from eleven to fourteen pages with complete compac
 ## Gaussian triad information and full observed-law equality
 
 Eight-page companion gives complete actual finite-table/partition/solenoidal proofs, Gaussian conditional information and positive biased laws with equal joint observed distributions and opposite signed means. 126 exact frozen correspondences and ten independent exact algebra checks; labelled elementary tilted-conditional/common-risk deductions. Every page inspected, final two-pass build clean. Classical phase/statistical mechanisms credited with bounded primary access scopes. Twenty-five reviewed drafts total 239 pages.
+
+## General even-order expanding windows
+
+The sixth-order companion expands from eight to twelve pages with a full actual-kernel proof for each fixed integer-even order inside the expanding saddle window, all normalizations/compact-prefix/weighted tails, cosine approximation and exact local real/simple mechanism. 63 total exact frozen correspondences; seven finite algebra/margin checks pass. Native sharper constants are distinguished from the human order-dependent cutoff proof. Every revised page inspected, final two-pass build clean. Sixth-order whole-plane reality remains distinct from general compact/window reality; no RH or global general-order inference. Twenty-five reviewed drafts total 243 pages.

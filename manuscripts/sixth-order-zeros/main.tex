@@ -10,8 +10,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
 \DeclareMathOperator{\Log}{Log}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Eventual reality and simplicity of zeros\protect\\
-for a growing sixth-order arithmetic transform}
+\title{Sixth-order global reality and general even-order windows\protect\\for arithmetic theta transforms}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
 \begin{document}
@@ -28,7 +27,7 @@ estimate for the full kernel, and converts an analytic
 cosine-pair approximation into exact real and simple zeros.
 The sixth-order polynomial changes, physical-prefix bound,
 and coverage by a common real stationary center are explicit.
-The final theorem is matched to a frozen Lean development.
+For every fixed integer-even order we additionally prove real and simple zeros inside an expanding saddle window, with full actual weighted-moment estimates and the precise non-global quantifier boundary. The results are matched to a frozen Lean development.
 No general integer-order classification, optimal threshold
 or Riemann-hypothesis consequence is asserted; novelty remains
 unresolved.
@@ -579,6 +578,217 @@ complex plane, using the same $u$ and $B$. This proves
 the common-time conclusion.
 \end{proof}
 
+
+\section{General integer-even orders: an expanding window}\label{sec:evenwindows}
+The whole-plane theorem above is sixth order. There is also a narrower
+result for every fixed positive integer $m$, which does not require the
+complex far-saddle argument. Set $n=2m$ and define the actual transforms
+\[
+ F_{m,t}(z)=\int_0^\infty f_{m,t}(v)\cos(zv)\,dv,
+ \qquad f_{m,t}(v)=e^{tv^n}K(v),\qquad M_{m,t}=F_{m,t}(0)>0.
+\]
+The same double-exponential kernel bound proves all required moments
+integrable, uniformly on compact parameter sets, for every fixed $m$.
+Thus these are entire, even, conjugation-compatible functions. Here
+the index $m=1$ means a quadratic tilt and $m=3$ the sixth-order tilt.
+
+\begin{theorem}\label{thm:evenwindow}
+Fix $m\geq1$. For all sufficiently large $t$, every maximizer $u$ of
+$f_{m,t}$ on $[0,\infty)$ has the following property:
+\[
+ |z|\leq u/2,\quad F_{m,t}(z)=0
+ \quad\Longrightarrow\quad \operatorname{Im}z=0,\quad F_{m,t}'(z)\ne0.
+\]
+Every such maximizing center tends to infinity with $t$. Consequently,
+for each fixed $R\geq0$, all zeros in $|z|\leq R$ are real and simple
+at sufficiently late times. All constants and late times may depend
+on $m$; the last time may additionally depend on $R$.
+\end{theorem}
+
+We give complete actual-kernel estimates. The proof reorganizes the
+formal weighted-tail bounds with unspecified positive constants
+depending only on the fixed order; it does not replace the full kernel
+by its leading summand or assume a limiting probability law.
+
+\subsection{Real centers and an actual normalization bound}
+The positive continuous $f_{m,t}$ tends to zero at infinity, so attains
+a maximum $P=f_{m,t}(u)$. Every maximizer escapes: on $[0,R]$ its
+value is at most $C_R e^{tR^n}$ for $t\geq0$, while at $R+1$ it is
+$K(R+1)e^{t(R+1)^n}$, eventually larger. This excludes every center
+in $[0,R]$ at once.
+
+The real-axis specialization of~\eqref{eq:rho}, including its first
+two derivatives, gives for $v\to\infty$
+\[
+ L(v):=-\frac{K'(v)}{K(v)}=4\pi e^{4v}-9+O(e^{-4v}),\qquad
+ L'(v)=16\pi e^{4v}+O(e^{-4v}).
+\]
+Indeed write $K=2\pi^2e^{9v-\pi e^{4v}}(1+\rho)$ and differentiate
+$\log(1+\rho)$, whose first two derivatives are $O(e^{-4v})$.
+Choose one large $N\geq2n$ such that $L>0$ and
+\begin{equation}\label{eq:Tgrowth}
+ T(v):=\frac{L(v)}{nv^{n-1}}>0,\qquad
+ \frac{T'(v)}{T(v)}=\frac{L'(v)}{L(v)}-\frac{n-1}{v}\geq3
+ \quad(v\geq N).
+\end{equation}
+This is possible since the expression tends to four. At each sufficiently
+late maximum $u>N+1$, stationarity gives $t=T(u)$, whence
+\begin{equation}\label{eq:even-time-center}
+ c e^{3u}\leq t\leq Qe^{4u}
+\end{equation}
+for fixed $c,Q>0$. The first bound integrates~\eqref{eq:Tgrowth}
+from $N$ to $u$; the second follows from $L(u)=O(e^{4u})$ and
+$nu^{n-1}\geq1$. In particular $u\leq C t$ and $e^{2u}\leq Ct$
+at late centers. Moreover
+\[
+ (\log f_{m,t})'(v)=nv^{n-1}(t-T(v)),\qquad v\geq N.
+\]
+Hence $f_{m,t}$ increases on $[N,u]$ and decreases to its right.
+
+Normalization must use the actual mass $M=M_{m,t}$ rather than just
+the peak height. On $|v-u|\leq1$, the kernel derivative estimates and
+$t=T(u)=O(e^{4u}/u^{n-1})$ give
+\[
+ |(\log f_{m,t})''(v)|
+ =|n(n-1)tv^{n-2}-L'(v)|\leq C e^{4u}.
+\]
+Taylor's theorem at the stationary center implies
+$f_{m,t}(v)\geq Pe^{-C}$ for $|v-u|\leq e^{-2u}$, after increasing
+$C$. This interval lies in the positive half-line. Integrating gives
+\begin{equation}\label{eq:even-peakmass}
+ M\geq c_1 e^{-2u}P,\qquad \frac{P}{M}\leq C e^{2u}\leq Ct.
+\end{equation}
+All these estimates hold uniformly over the actual maximizing centers.
+
+\subsection{Both tails with a growing exponential weight}
+For $s\geq0$, \eqref{eq:Tgrowth} gives $T(u+s)\geq te^{3s}$.
+As $e^{3s}-1\geq3s$, integration of the log slope yields
+\begin{equation}\label{eq:even-right}
+ f_{m,t}(u+s)\leq P e^{-ts^2}.
+\end{equation}
+Here the sharper exponent from integration is
+$-(3n/2)tu^{n-1}s^2\leq-ts^2$. For $0<r\leq1/2$ and $0\leq s\leq r$,
+one has $T(u-s)\leq te^{-3s}$ and $1-e^{-3s}\geq s$.
+For the latter inequality, $1-e^{-3s}-s$ is concave, zero at zero
+and positive at $1/2$. Therefore
+\[
+ \log P-\log f_{m,t}(u-r)
+ \geq n t(u-r)^{n-1}\int_0^r s\,ds\geq tr^2,
+\]
+since $u-r\geq N\geq2$ and $n\geq2$. By monotonicity, the same
+upper envelope $Pe^{-tr^2}$ bounds $f_{m,t}$ on $[N,u-r]$.
+On $[0,N]$, use $P\geq f_{m,t}(N+1)$ to obtain
+\[
+ \int_0^N f_{m,t}(v)\,dv\leq CP e^{-t\Delta},\qquad
+ \Delta=(N+1)^n-N^n>0.
+\]
+Combining this with the interval length $u$ and
+\eqref{eq:even-peakmass} gives the genuine left-mass bound
+\begin{equation}\label{eq:even-leftmass}
+ \frac1M\int_0^{u-r}f_{m,t}(v)\,dv
+ \leq C\{te^{-t\Delta}+t^2e^{-tr^2}\}.
+\end{equation}
+The second term uses $u\leq Ct$; no compact prefix was discarded.
+
+For $B\geq0$ split the actual centered weighted first moment into
+$[0,u-r]$, $[u-r,u+r]$, and $u+(r,\infty)$. All these integrals
+are finite by the original double-exponential kernel envelope.
+On the left, $(u-v)e^{B(u-v)}\leq u e^{Bu}$.
+On the middle interval, $|v-u|e^{B|v-u|}\leq r e^{Br}$ and its
+mass is at most $M$. On the right,~\eqref{eq:even-right} and
+$Bs\leq B^2/(2t)+(t/2)s^2$ give
+\[
+ \int_r^\infty s e^{Bs}f_{m,t}(u+s)\,ds
+ \leq \frac Pt\exp\{B^2/(2t)-(t/2)r^2\},
+\]
+because $\int_r^\infty s e^{-(t/2)s^2}ds=t^{-1}e^{-(t/2)r^2}$.
+Consequently
+\begin{align}\label{eq:even-moment}
+ \frac1M\int_0^\infty |v-u|e^{B|v-u|}f_{m,t}(v)\,dv
+ &\leq C u e^{Bu}\{te^{-t\Delta}+t^2e^{-tr^2}\}\notag\\
+ &\quad+r e^{Br}+C\exp\{B^2/(2t)-(t/2)r^2\}.
+\end{align}
+The constants do not depend on $B$ or $r$ within the stated ranges.
+
+Choose $B=u$ and $r=e^{-u/2}$. Then $ur\to0$ and $r^2=e^{-u}$.
+The lower time bound gives $tr^2\geq c e^{2u}$, whereas the upper
+bound controls $t^2\leq Q^2e^{8u}$. For large $u$, $\Delta\geq e^{-u}$,
+so both exponentials in braces are at most $e^{-ce^{2u}}$ before
+their factors of $t,t^2$. The rightmost exponential tends to zero
+faster than $e^{-u}$, since
+$u^2/(2t)-(t/2)e^{-u}\leq u^2/2-(c/2)e^{2u}$.
+After multiplying~\eqref{eq:even-moment} by $u$, the left and right
+tails still tend to zero; the middle term is
+$u e^{-u/2}e^{u e^{-u/2}}\to0$. We have proved the crucial uniform
+actual moment conclusion
+\begin{equation}\label{eq:even-smallmoment}
+ \frac uM\int_0^\infty |v-u|e^{u|v-u|}f_{m,t}(v)\,dv\longrightarrow0.
+\end{equation}
+It holds as $t\to\infty$ for every maximizing center, because every
+such center escapes and all preceding bounds are uniform at those centers.
+
+\subsection{Cosine approximation and exact real simple zeros}
+The elementary exponential estimate
+$|e^w-1|\leq|w|e^{|w|}$ implies, by applying it to the two terms
+of the cosine,
+\[
+ |\cos(zv)-\cos(zu)|
+ \leq e^{u|\operatorname{Im}z|}|z|\,|v-u|e^{|z||v-u|}.
+\]
+Integrating and using~\eqref{eq:even-smallmoment} gives, for every
+$\eta>0$, at one sufficiently late time independent of $z$,
+\begin{equation}\label{eq:even-cosine}
+ \left|\frac{F_{m,t}(z)}{M}-\cos(uz)\right|
+ \leq\eta e^{u|\operatorname{Im}z|},\qquad |z|\leq u.
+\end{equation}
+This is a growing-frequency estimate, not just compact convergence.
+
+Take $\eta=10^{-6}$ and $u\geq2$. If $z$ is a zero in $|z|\leq u/2$,
+write $q=uz=a+ib$. The identity
+$|\cos(a+ib)|^2=\cos^2a+\sinh^2b$ and~\eqref{eq:even-cosine}
+give $\sinh|b|\leq\eta e^{|b|}$. Thus
+$1-e^{-2|b|}\leq2\eta$, whence $|b|\leq2\eta$.
+Define $g(w)=F_{m,t}(w/u)/M$. On $|w-a|\leq1$,
+\[
+ |w/u|\leq u/2+1/u\leq u,\qquad
+ |g(w)-\cos w|\leq e\eta.
+\]
+Indeed $|a|\leq|q|\leq u^2/2$ and $|\operatorname{Im}w|\leq1$.
+Cauchy's derivative bound on circles of radius $1/2$ gives
+$|g'(w)+\sin w|\leq2e\eta$ for $|w-a|\leq1/4$.
+Since $g(q)=0$, the cosine bound at $q$ and the derivative bound
+$|\sin w|\leq e$ on the unit-height strip imply
+$|\cos a|\leq\eta e^{2\eta}+2e\eta<10\eta$.
+Hence $|\sin a|>1/2$. On the disk $|w-a|\leq10\eta$,
+\[
+ |g'(w)+\sin a|\leq2e\eta+10e\eta<1/4<|\sin a|/2.
+\]
+Integrate $g'$ along any line segment in this disk. Subtracting
+the constant derivative $-\sin a$ gives
+\[
+ |g(w_1)-g(w_2)|\geq\tfrac12|\sin a|\,|w_1-w_2|.
+\]
+Both $q$ and $\bar q$ lie in the disk and are zeros by conjugation
+compatibility. The lower bound forces $q=\bar q$. It also gives
+$g'(q)\ne0$, and $g'(q)=F_{m,t}'(z)/(uM)$ proves simplicity.
+This proves the expanding-window assertion. For a fixed $R$, take a
+late time such that every center has $u\geq2R$; the fixed-disk
+assertion follows with the same zero argument.
+
+\subsection{The exact quantifier boundary}
+For each fixed $m,R$ there is a late time valid on that disk. The
+argument does not give a time uniform over every $R$, nor establish
+global reality for every integer-even order. Any nonreal zeros, if
+they exist at late times, must leave each fixed disk. This is not an
+existence assertion about such zeros. The elementary polynomials
+$p_t(z)=z^2+t^2$, $t>0$, have no zeros in $|z|\leq t/2$, yet have
+the nonreal roots $\pm it$. They are a counterexample to inferring
+global reality from expanding zero-free windows alone, not models
+of the arithmetic transform. Their root formula and $|it|=t$ prove
+both statements immediately. The sixth-order whole-plane theorem
+requires the separate far-frequency work above. No $A(2)$/RH
+implication or interpolation of reality thresholds is supplied.
+
 \section{Exact formal correspondence and publication scope}
 The frozen mathematical baseline is
 \begin{center}\small\ttfamily
@@ -613,10 +823,7 @@ The theorem gives an existential late time. It gives no
 numerical optimal threshold, no nonreal-zero certificate at
 a specified early sixth-order time, no assertion that the
 set of all reality times is an upper ray, and no threshold
-collision. The argument is presented for the verified
-sixth-order transform only. It does not certify every
-integer even order, a real-order interpolation, or a
-Riemann-hypothesis implication.
+collision. The whole-plane argument is presented for the verified sixth-order transform only. Section~\ref{sec:evenwindows} proves the narrower general integer-even expanding-window result. The source chain runs through \code{RiemannEvenGrowingMoment}, \code{RiemannEvenGrowingFourier} and \code{RiemannEvenWindowZeros}; its exact declarations and the classical human proof reorganizations are in the map. Constants and times are order dependent. No global integer-order classification, real-order interpolation or Riemann-hypothesis implication follows.
 
 \begin{thebibliography}{9}
 \bibitem{quartic} Project Stardust,
