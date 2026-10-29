@@ -2511,3 +2511,64 @@ The actual identity-boundary finite-cell normalization and bounded-observable fl
 Bounded-test convergence does NOT imply convergence of unrestricted chart-coordinate moments. The earlier finite-beta Cauchy-type chart-moment obstruction still awaits its own Lean divergence/actual-Gibbs proof; it is not discharged by this theorem. A productive next route is to test parameter-uniform response and rescaled BOUNDED physical observables using the established actual Gaussian limit and outside-cutoff estimate, with every polynomial-growth/domain requirement separately justified. Prefer a concrete actual transfer/correlation estimate or counterexample over broad auxiliary expansion. No novelty is claimed for classical finite-dimensional Laplace methods. This is one fixed pinned cell at identity boundary, not a four-dimensional continuum quantum field construction. Yang-Mills remains ACTIVE and all other campaign priorities remain unchanged.
 
 Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent exact remote-ref verification remain closure gates. This pre-commit entry does not claim remote backup is already verified. Visibility is exclusively user-controlled; the indefinite research goal remains active.
+
+## Checkpoint1709 - actual physical-action exponential moments, sharp domain and scaled mean
+
+October29,2026. Focused Yang-Mills remains ACTIVE. The preceding checkpoint1708 is committed at19b518b5daf7d6a956d4319c8196fd4c82554fa5; independent remote checks found BOTH authorized main/research refs exactly there and repository PUBLIC. Master and the separate publication branch were preserved. This checkpoint pursues a concrete physical-observable consequence of the actual72-face fixed-cell limit, rather than assuming convergence of unrestricted ratio-chart moments or differentiating an asymptotic expansion.
+
+The new focused source is Foundation/FourCubePhysicalEnergy.lean. It imports the existing actual partition asymptotic directly. Let S be the ACTUAL pinned72-face action, mu_beta the ACTUAL normalized Gibbs probability, beta=1/t^2 and E_t(U)=S(U)/t^2. The existing31 retained SU(2) coordinates have93 real tangent directions. Every finite-scale physical action and its exponential are integrable: scaledEnergy_integrable and exponential_integrable prove the required domains for ALL real t and s from the existing bounded physical energySource. This says nothing about unrestricted ratio-coordinate moments.
+
+### Exact exponential identity and sharp limiting domain
+
+energyMGF_partition proves, on the FULL Gibbs measure without a cutoff remainder,
+
+    M_t(s)=integral exp(s E_t(U)) dmu_(1/t^2)(U)
+          = Z((1-s)/t^2)/Z(1/t^2).
+
+The MINUS sign is essential. partition_ratio_tendsto transports the verified full partition asymptotic through the nonzero clock t/sqrt(c), for c>0; it retains the absolute93-dimensional Jacobian at negative as well as positive t. Therefore energyMGF_tendsto proves, for EVERY real s<1,
+
+    M_t(s) -> (sqrt(1-s))^(-93),   t ->0 through NONZERO real values.
+
+This conclusion follows from an exact actual partition ratio, not an unjustified application of bounded-test convergence to an unbounded exponential. normalizer_tendsto_zero and the exact Z(0)=1 prove energyMGF_boundary_tendsto: M_t(1)->+infinity. Nonnegative physical action gives monotonicity in s, so energyMGF_supercritical_tendsto proves divergence for EVERY s>=1. Thus the finite limiting exponential-moment domain s<1 is SHARP, although every finite-scale exponential moment exists. The total auxiliary definition limitMGF outside s<1 is NOT a valid limiting formula; in particular Lean's total sqrt/inverse makes limitMGF(1)=0 while the ACTUAL moments diverge there. The independent checks retain this explicit obstruction to extending the displayed finite formula across its domain. No new Gamma-law identification, moment-generating-function uniqueness theorem or distributional-convergence theorem is claimed here.
+
+### Actual mean scaling without differentiating an asymptotic
+
+energyMean_sandwich proves the two ACTUAL integral inequalities, for every a>0,
+
+    (1-M_t(-a))/a <= integral E_t dmu_(1/t^2) <= (M_t(a)-1)/a.
+
+The proof uses pointwise 1+x<=exp(x), proved integrability of all three functions and normalized probability mass1. limitMGF_hasDerivAt_zero and the two one-sided exponential secants establish the limiting slope93/2. actual_energyMean_tendsto first fixes a, takes the verified moment limit, and only THEN lets the secant approach0 using the order characterization of limits. There is NO interchange of a parameter derivative with an unproved asymptotic remainder.
+
+actual_beta_mean_tendsto checks the physical beta clock t=1/sqrt(beta), eventually beta>0, and proves
+
+    beta * integral S(U) dmu_beta(U) -> 93/2 = 46.5,   beta ->+infinity.
+
+The dimension is93 after the already verified normalized root-gauge removal, not96. The independent Lean harness explicitly rejects assigning derivative96/2 to the limiting exponential function. The result is a physical bounded-action observable with growing beta prefactor; it does not assert finite or convergent global ratio-chart moments.
+
+### Uniform exponential tail control for scaled physical energy
+
+energyTail_bound proves for EVERY real t,R and a>=0,
+
+    mu_(1/t^2)(E_t>=R) <= exp(-a R) M_t(a).
+
+This is a full actual-Gibbs integral inequality, with measurable tail set and integrability verified; it is not a conditional-chart estimate. eventual_energyTail_bound proves that, for EACH fixed 0<=a<1, eventually in nonzero t near0, SIMULTANEOUSLY FOR ALL real R,
+
+    mu_(1/t^2)(E_t>=R) <= exp(-a R) ((sqrt(1-a))^(-93)+1).
+
+Taking 0<a<1 gives exponential tightness at the physical scale S~1/beta. The positive limiting mean and the sharp exponential domain do not determine any spatial transfer spectrum. In particular no stationary correlation decay, physical mass gap, continuum existence or scale/volume-uniform inequality follows merely from these one-cell thermal statements.
+
+### Independent evidence, complete verification and integrity
+
+ALL23 independent Lean checks passed in28.055516499996884 seconds. They test the actual93-dimensional count, normalization, the exceptional t=0 convention, reflection/negative clocks, finite-scale integrability beyond the limiting exponential domain, the exact negative-coupling partition at s=2, the c=4 rescaling factor, physical-beta mean and eventual46-to47 bounds, negative-parameter moment limit, the critical total-definition/domain obstruction and actual divergence at s=1 and2, monotonicity, full-measure tail bounds, simultaneous-in-R control and rejection of the96-dimensional slope. Broad simplification in the TEST harness initially over-expanded93rd powers and reached the unchanged recursion limit; explicit rewrites repaired the harness. A temporary launcher path-name error was also corrected. No mathematical source change or resource increase was needed for these test repairs.
+
+An independent NumPy diagnostic used16384 samples of a Gaussian reference obtained from independently enumerated face incidence, then evaluated the ACTUAL72-face quaternion action with the full Haar product density and local cutoff. At beta16384 the weighted scaled energy mean was46.4858010049 versus the proved46.5 limit; exponential moments at s=-0.1,-0.05,0.05,0.1 agreed with the predicted values (at0.1:133.9475659198 versus134.1909758300). The local scaled-partition estimate was1.0005276324 times the Gaussian constant, empirical Monte Carlo standard error0.0003562094. These are finite-sample diagnostics of the cutoff representation, NOT certified error bounds, a monotone convergence rate, a proof of full-Gibbs outside contributions, or a substitute for the exact full-measure Lean proofs. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1709-independent.py/.json/.log.
+
+The complete root build passed7024 jobs in42.54991329999757 seconds. The canonical COMPLETE transitive safe-Foundation audit passed55248 declarations in43.537670199992135 seconds, allowing only propext, Classical.choice and Quot.sound. ALL28 public types were printed unabridged and reviewed:23 complete theorem proofs and5 definitions. Every complete source body was read; no private proof helpers were added. The complete persisted Foundation/AxiomAudit.lean run passed in46.15555049999966 seconds. No sorry/admit/new mathematical axiom/native_decide, changed toolchain/configuration/trust/compiler setting or increased resources were introduced. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1709-*.
+
+The integrity manifest authenticates1708's exact approved receipt. Among2806 recursive Foundation/root sources, ONLY the new physical-energy module, root import and axiom ledger differ. All older mathematics,3 pinned configurations,113 baseline original manuscripts and21 Yang-Mills originals(20 distinct hashes) remain byte/hash unchanged. ResearchSources stays unmodified/uncommitted. No manuscript/PDF, manuscripts/, docs/papers/ or editorial README was created, revised, compiled or reviewed. Existing drafts/history and the separate publication role are preserved. No campaign/queue/reflection-policy change was made.
+
+### Exact remaining focused questions
+
+The actual finite-cell physical-action mean and exponential domain are now CLOSED, not merely inferred from bounded chart tests. The methods are classical finite-dimensional Gibbs/Laplace tools; no novelty claim is made. Second/higher physical moment convergence, variance/heat-capacity limits and an explicit Gamma-law identification are NOT automatically certified by the first-mean proof. Uniform perturbed-boundary saddle/coercivity, third-order boundary response, differentiation with respect to boundary parameters and the full harmonic-cubic Lean coefficient remain OPEN. A next substantive bridge is quadratic-stable boundary perturbation control at theta=t*a: a merely linear-in-theta action error would blow up under beta=1/t^2 and is insufficient. Any resulting response estimate must still be connected to an ACTUAL stationary transfer operator before making a spectral claim. The loop-chain slowdown results do not automatically transfer to this72-face cell, and no volume/scale/continuum mass-gap bridge is established. Preserve these distinctions and pursue the strongest concrete transfer/response route rather than broad auxiliary expansion.
+
+Exact Git approval, new-history secret scan, guarded public two-branch synchronization and independent remote-ref verification remain closure gates; this pre-commit ledger does not claim remote backup already succeeded. Repository visibility is exclusively user-controlled. The indefinite research goal remains active.

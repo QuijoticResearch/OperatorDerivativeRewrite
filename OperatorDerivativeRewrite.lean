@@ -2756,3 +2756,5 @@ import Foundation.FourCubeHaarProductCoordinates
 import Foundation.FourCubeHaarLaplaceDensity
 import Foundation.FourCubeHaarPartitionAsymptotic
 import Foundation.FourCubeHaarGibbsLimit
+
+import Foundation.FourCubePhysicalEnergy
