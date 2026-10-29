@@ -11,7 +11,7 @@
 \newcommand{\E}{\mathbb E}\newcommand{\Ent}{\operatorname{Ent}}
 \newcommand{\Dom}{\operatorname{Dom}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Poisson--Gaussian transport:\\closed graphs, displacement and nonlinear limits}
+\title{Poisson--Gaussian transport:\\closed graphs, coherent recovery and nonlinear limits}
 \author{Project Stardust}
 \date{Reviewed formalization companion, October 29, 2026}
 \begin{document}
@@ -27,6 +27,7 @@ between square-root likelihoods and their derivative energies, but it
 does not preserve positivity, ordinary multiplication, or entropy.
 Coherent vectors give quantitative entropy distortion and exclude a
 bounded realization of any nonzero displacement on $L^4$.
+A compact creation inverse and a sharp shifted Poincar\'e estimate hold on the original maximal domains. A compensated-count example separates the small- and large-intensity $L^{4/3}$ scales.
 Positive pointwise jump curvature coexists with this entropy failure,
 and the missing diffusion chain rule is exhibited at one atom.
 The failure of a quadratic Poisson logarithmic Sobolev inequality already
@@ -672,6 +673,191 @@ with Gaussian operators must be used together with the product
 obstruction in Proposition~\ref{prop:product}.
 
 
+
+\section{Full-domain recovery and a displaced vacuum}
+The preceding equivalence also identifies the exact range of creation.
+We give the scalar normalization explicitly, so that no weighted-field
+factor is hidden in the estimates. Write $p_n=\varphi_n^\lambda$ for the
+orthonormal Charlier basis of Section 2, with $p_0=1$, and set
+\[
+ C_\lambda f=\sum_{n\geq0}\frac{\langle p_{n+1},f\rangle}
+ {\sqrt{n+1}}p_n,\qquad f^\circ=f-\E_\lambda f.
+\]
+\begin{proposition}\label{prop:recovery}
+The bounded compact operator $C_\lambda:H_\lambda\to H_\lambda$
+satisfies, for every $f\in H_\lambda$,
+\[
+ C_\lambda f\in\Dom(A_\lambda^*),\quad
+ A_\lambda^*C_\lambda f=f^\circ,\quad
+ \|C_\lambda f\|_2^2=
+ \sum_{q\geq1}\frac{|\langle p_q,f\rangle|^2}{q}
+ \leq\|f^\circ\|_2^2.
+\]
+Creation is injective and has range $1^\perp$. Furthermore
+\[
+ \|f^\circ\|_2\leq\|A_\lambda f\|_2,
+ \qquad f\in\Dom(A_\lambda),
+\]
+with equality for $f=p_1$.
+\end{proposition}
+\begin{proof}
+Parseval proves convergence of the displayed series and its norm
+identity. The finite sums belong to the polynomial graph core; their
+creation images converge to $f^\circ$. Closedness of the original
+creation graph therefore proves the claimed full-domain identity.
+If $u=\sum u_np_n$ belongs to that graph, its creation coefficients are
+$\sqrt{n+1}u_n$ in mode $n+1$. Thus $A_\lambda^*u=0$ forces every
+$u_n=0$, and every creation image has zero constant coefficient.
+The recovery identity proves the converse range inclusion and uniqueness
+of the preimage. The maximal annihilation graph gives
+\[
+ \|A_\lambda f\|_2^2
+ =\sum_{q\geq1}q|\langle p_q,f\rangle|^2
+ \geq\sum_{q\geq1}|\langle p_q,f\rangle|^2
+ =\|f^\circ\|_2^2.
+\]
+Only the first mode is needed for equality. Finally truncate recovery
+to input modes $1,\ldots,N$. This has finite rank, and the omitted
+operator has norm at most $(N+1)^{-1/2}$ by the same coefficient
+identity. Thus $C_\lambda$ is an operator-norm limit of finite-rank
+operators and is compact. In fact the bound is attained on $p_{N+1}$.
+\end{proof}
+
+Now fix a physical intensity change $\mu=\lambda e^\theta$, let
+$V=V_{\lambda,\theta}:H_\mu\to H_\lambda$ be the root multiplication
+unitary, and put $a=\sqrt\mu-\sqrt\lambda$ and $r=V1$.
+The vector $r$ has norm one, but its scalar mean need not be one.
+Define
+\[
+ P_rf=f-\langle r,f\rangle r,\qquad C_r=VC_\mu V^{-1}.
+\]
+\begin{corollary}\label{cor:coherent-recovery}
+For every $f\in H_\lambda$,
+\[
+ (A_\lambda^*-a)C_rf=P_rf,\qquad
+ \|C_rf\|_2\leq\|P_rf\|_2.
+\]
+The shifted creation graph has range $r^\perp$ and zero kernel;
+$C_rf$ is its unique preimage of $P_rf$. The shifted annihilation
+graph has kernel $\R r$ and satisfies
+\[
+ \|P_rf\|_2\leq\|(A_\lambda-a)f\|_2,
+ \qquad f\in\Dom(A_\lambda).
+\]
+The operator $C_r$ is compact, with the same finite-rank tail bounds.
+\end{corollary}
+\begin{proof}
+The full-domain gauge equalities proved earlier give
+$(A_\lambda-a)V=VA_\mu$ and
+$(A_\lambda^*-a)V=VA_\mu^*$.
+The orthogonal projection onto constants in $H_\mu$ becomes projection
+onto $\R r$ after conjugation. Conjugate every assertion of
+Proposition~\ref{prop:recovery} by $V$. For the annihilation kernel,
+its coefficient energy is zero exactly when all positive modes vanish.
+Conjugating the finite-rank approximants proves compactness and the
+tail bounds. Addition of the bounded scalar operator $-aI$ leaves the
+respective maximal operator domains unchanged.
+\end{proof}
+
+Under $U_\lambda$, the vacuum $r$ becomes $g_a(x)=e^{ax-a^2}$.
+Consequently the Gaussian operator $\delta-a$ has exact range
+$g_a^\perp$, its inverse on that range is compact, and
+$\ker(D-a)=\R g_a$. These are one-coordinate statements, obtained
+by the same unitary conjugation. They do not assert injectivity of
+divergence on a general Gaussian vector-field space. At fixed
+$\lambda$, physical tilts give $a>-\sqrt\lambda$; varying $\lambda$
+realizes every real Gaussian displacement. The vacuum projection,
+not subtraction of the ordinary scalar mean, is the displaced
+centering operation.
+
+\section{Two intensity regimes beyond the Hilbert norm}
+The preceding sharp Hilbert estimates do not yield a lower bound for
+the ordinary $L^p$ norm at other exponents. This can be checked on a
+single actual compensated count, without a process construction.
+Let $N_r$ have Poisson law of intensity $r>0$, and put
+\[
+ Z_r=N_r-r,\quad b(r)=\|Z_r\|_{4/3},\quad
+ s(r)=\min\{r^{1/2},r^{3/4}\}.
+\]
+\begin{proposition}\label{prop:two-regime}
+For every $r>0$,
+\[
+ \tfrac14\min\{r^2,r^3\}\leq b(r)^4
+ \leq4\min\{r^2,r^3\},\qquad
+ \frac{s(r)}{\sqrt2}\leq b(r)\leq\sqrt2\,s(r).
+\]
+No positive constant $c$ satisfies
+\[
+ c\|1\|_{L^{4/3}(r p_r)}\leq\|Z_r\|_{L^{4/3}(p_r)}
+ \quad\hbox{for every }r>0.
+\]
+Here $Z_r$ is precisely the original, unnormalized Poisson divergence
+of the constant field $1$.
+\end{proposition}
+\begin{proof}
+The generating function $\E t^{N_r}=e^{r(t-1)}$ gives factorial
+moments $\E(N_r)_j=r^j$. Expanding ordinary powers in falling
+factorials gives
+\[
+ \E Z_r^2=r,\qquad \E Z_r^4=3r^2+r.
+\]
+All moments are finite. H\"older with exponents $4/3$ and $4$, applied
+to $|Z_r|\,|Z_r|$, yields
+\[
+ r\leq b(r)(3r^2+r)^{1/4},\qquad
+ b(r)^4\geq\frac{r^3}{3r+1}.
+\]
+For $r\leq1$ the denominator is at most $4$; for $r\geq1$ it is
+at most $4r$. This proves the lower estimate. Since the law is a
+probability, monotonicity of norms gives $b(r)\leq\sqrt r$.
+For the other upper bound, H\"older applied to
+$|Z_r|^{2/3}|Z_r|^{2/3}$ with exponents $3/2$ and $3$ gives
+\[
+ \|Z_r\|_{4/3}\leq\|Z_r\|_1^{1/2}\|Z_r\|_2^{1/2}.
+\]
+The elementary inequality $\E|N_r-r|\leq2r$ then gives
+$b(r)\leq\sqrt2\,r^{3/4}$. Combining both upper bounds proves
+the assertion; taking fourth roots gives the stated comparison with
+$s(r)$.
+
+The original field space has control measure $r p_r$ and its
+unnormalized divergence is
+$\delta_r u(k)=k u(k-1)-r u(k)$.
+For $u=1$ this equals $Z_r$. This field belongs to the original
+maximal $L^2$ divergence graph: indeed the scalar unitary field
+normalization maps it to $\sqrt r\,p_0$, and
+$A_r^*(\sqrt r\,p_0)=\sqrt r\,p_1=Z_r$.
+On the other hand
+$\|1\|_{L^{4/3}(r p_r)}=r^{3/4}$.
+Choose $r=n^4$ with integers $n\geq1$. The sharper probability-norm
+upper bound and the lower estimate give
+\[
+ \frac{1}{\sqrt2\,n}\leq
+ \frac{\|\delta_{n^4}1\|_{4/3}}
+ {\|1\|_{L^{4/3}(n^4p_{n^4})}}\leq\frac1n.
+\]
+The ratio tends to zero, excluding every proposed $c>0$.
+\end{proof}
+
+The two scales have different meanings: $r^{3/4}$ describes rare
+counts for $r\leq1$, while $r^{1/2}$ describes the large-intensity
+regime. Only the latter regime is needed for the displayed failure of
+a plain $L^{4/3}$ lower bound. There is no contradiction with the
+$L^2$ estimate, where the same constant input has norm $\sqrt r$.
+Every estimate transfers to a count on another probability space
+having this Poisson law, since all expressions depend only on that
+one law; no independence of several counts is required.
+
+This elementary diagnostic belongs to established Poisson integration
+theory. Dirksen's Theorem 1.1 \cite{Dirksen} gives much stronger
+maximal stochastic integral estimates with sums and intersections of
+square-function and $L^p$-type spaces. For a scalar deterministic
+indicator of control mass $r$ and exponent $4/3$, its component
+scales are $\sqrt r$ and $r^{3/4}$; the sum-space norm selects their
+minimum up to constants. The proposition proves the count comparison
+directly. It does not construct a general random measure or claim
+that a single plain $L^{4/3}$ norm is the appropriate integrand space.
+
 \section{Exact provenance and mathematical scope}
 All formal source references below use the frozen verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}\end{center}
@@ -689,6 +875,8 @@ coherent identification, group law, continuity and physical action.
 unboundedness, coherent entropy distortion, finite-core failure and
 original Poisson jump curvature.
 \end{itemize}
+The recovery and shifted Poincar\'e results are scalar normalizations of the original weighted-field graphs. The two-regime count estimates use actual Poisson laws. Compactness and the Gaussian range statements above are also proved directly by coefficients and unitary conjugation.
+
 The finite-core entropy proof specializes the verified cutoff argument to
 an explicit coherent root. Generating functions, weak-distributional
 domains and the dense coherent-span identification reorganize the exact
@@ -721,5 +909,11 @@ especially the introduction, Theorem 1.1 and Section 4.
 spirit of Bakry--\'Emery in the discrete setting of Markov chains},
 Journal of Functional Analysis \textbf{281} (2021), 109061.
 \href{https://arxiv.org/abs/2007.01264}{arXiv:2007.01264}, Example 5.13.
+\bibitem{Dirksen} S. Dirksen,
+\emph{It\^o isomorphisms for $L^p$-valued Poisson stochastic integrals},
+Annals of Probability \textbf{42} (2014), 2595--2643.
+\href{https://doi.org/10.1214/13-AOP906}{doi:10.1214/13-AOP906}.
+Theorem 1.1 and the norms immediately preceding it;
+\href{https://research-portal.uu.nl/ws/files/107833782/13_AOP906.pdf}{primary publisher manuscript}.
 \end{thebibliography}
 \end{document}

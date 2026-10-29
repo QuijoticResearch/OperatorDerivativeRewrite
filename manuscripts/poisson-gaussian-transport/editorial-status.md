@@ -1,6 +1,6 @@
 # Poisson--Gaussian graph transport
 
-REVIEWED_DRAFT. Ten pages. Classical formalization companion, based only on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. No external submission or novelty certification.
+REVIEWED_DRAFT. Thirteen pages. Classical formalization companion, based only on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. No external submission or novelty certification.
 
 The paper consolidates complete Charlier/Hermite coordinates, original maximal graphs, both polynomial and finite-support graph cores, scalar/weighted field normalization, actual source gauges, exact root Hellinger geometry, whole-L2 physical displacement, strong versus operator-norm continuity, L4 obstruction and finite-core quadratic entropy failure. It records 77 exact source correspondences.
 
@@ -15,3 +15,7 @@ No stochastic process, nonlinear equation transfer, Markov-order identification 
 ## Curvature and the nonlinear transfer boundary
 
 The manuscript now includes the complete sharp CD(1/2,infinity) calculation, finite-support local sharpness deduction, exact integrated core/source energy, positive-curvature finite-core entropy failure, actual chain-rule failure at an atom of positive mass, and the separate forward-energy Bochner bound. Weber--Zacher Example 5.13 is credited explicitly. The standard-library exact polynomial verifier passes for symbolic interior state and both endpoint cases. The current map contains 94 correspondences. All ten final pages, including enlarged curvature and references, were inspected. This strengthens the same paper rather than creating a separate short curvature note.
+
+## Coherent recovery and non-Hilbert intensity scales
+
+Expanded to thirteen pages with full-domain scalar creation recovery, exact centered range and uniqueness, sharp Poincare, compact inverse and finite-rank tails. Physical tilt gives exact coherent-vacuum centering, shifted range/kernel and compact recovery, with one-coordinate Gaussian consequences distinguished from arbitrary Gaussian vector fields. A complete actual compensated-count proof gives small/large intensity L4/3 scales and a ratio tending to zero against the plain weighted input norm. 134 exact source correspondences. No new Lean declarations or build. The existing three exact Gamma-two boundary/interior checks pass unchanged; the new coefficient, Holder and unitary arguments were checked analytically. All thirteen pages inspected, pages 10–13 enlarged. Clean two-pass compilation and fresh receipts. Primary Dirksen Theorem 1.1 and preceding mixed norms were inspected and credited as the established broader result. No stable-process construction, new general Ito theorem, nonlinear transfer or priority claim.

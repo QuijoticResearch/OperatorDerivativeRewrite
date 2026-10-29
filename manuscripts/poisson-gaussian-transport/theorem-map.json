@@ -846,6 +846,366 @@
       "source_sha256": "626ddf53d903ddac6c7fe91b7e9c15020a336188f36b59661cb482fd825bd46a",
       "declaration_header": "theorem positive_curvature_bounded_core_entropy_failure (rate : \u211d\u22650) (hr : 0<rate)\n    (C : \u211d) (hC : 0\u2264C) :\n    \u2203 f : \u2115 \u2192\u2080 \u211d, Integrable (gamma rate f) (poissonLaw rate) \u2227\n      (\u2200 n, (1/2 : \u211d)*gamma rate f n\u2264gamma2 rate f n) \u2227\n      C*(\u222b n, gamma rate f n \u2202poissonLaw rate)<entropySq (poissonLaw rate) f",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreCurvatureEntropy.lean#L62"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.recovery_graph",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 97,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "theorem recovery_graph (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    (recovery rate hr f,centered rate hr f) \u2208 (maximalDivergence rate hr).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L97"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.recovery_unique",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 112,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "theorem recovery_unique (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate)\n    (u : FieldL2 rate) (hu : (u,centered rate hr f) \u2208 (maximalDivergence rate hr).graph) :\n    u=recovery rate hr f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L112"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.recovery_energy",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 120,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "theorem recovery_energy (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    HasSum (fun n => (inverseCoefficient rate hr f n)^2) (\u2016recovery rate hr f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L120"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.recovery_norm_le",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 136,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "theorem recovery_norm_le (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    \u2016recovery rate hr f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L136"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.exists_divergence_iff_centered",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 176,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "theorem exists_divergence_iff_centered (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    (\u2203 u : FieldL2 rate, (u,f) \u2208 (maximalDivergence rate hr).graph) \u2194\n      (\u222b k, f k \u2202poissonLaw rate)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L176"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.recoveryOperator",
+      "file": "Foundation/PoissonDivergenceRecovery.lean",
+      "line": 198,
+      "source_sha256": "70205c35d7c2e4b3d1686174e44e5b0ca1a2daa1c461387ba03ef1057906f9d1",
+      "declaration_header": "def recoveryOperator (rate : \u211d\u22650) (hr : 0 < rate) : ScalarL2 rate \u2192L[\u211d] FieldL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonDivergenceRecovery.lean#L198"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.recovery_norm_le_centered",
+      "file": "Foundation/PoissonRecoveryPoincare.lean",
+      "line": 26,
+      "source_sha256": "a9db8475a77bbbcffbbf0eb4f77067af453be354d8103dbcd88427bceb9c4e45",
+      "declaration_header": "theorem recovery_norm_le_centered (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    \u2016recovery rate hr f\u2016 \u2264 \u2016centered rate hr f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryPoincare.lean#L26"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.poincare",
+      "file": "Foundation/PoissonRecoveryPoincare.lean",
+      "line": 45,
+      "source_sha256": "a9db8475a77bbbcffbbf0eb4f77067af453be354d8103dbcd88427bceb9c4e45",
+      "declaration_header": "theorem poincare (rate : \u211d\u22650) (hr : 0 < rate) {f : ScalarL2 rate} {g : FieldL2 rate}\n    (hf : (f,g) \u2208 (maximalDifference rate hr).graph) :\n    \u2016centered rate hr f\u2016 \u2264 \u2016g\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryPoincare.lean#L45"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.divergence_coercive",
+      "file": "Foundation/PoissonRecoveryPoincare.lean",
+      "line": 56,
+      "source_sha256": "a9db8475a77bbbcffbbf0eb4f77067af453be354d8103dbcd88427bceb9c4e45",
+      "declaration_header": "theorem divergence_coercive (rate : \u211d\u22650) (hr : 0 < rate) {u : FieldL2 rate} {f : ScalarL2 rate}\n    (hu : (u,f) \u2208 (maximalDivergence rate hr).graph) : \u2016u\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryPoincare.lean#L56"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.poincare_equality_first_mode",
+      "file": "Foundation/PoissonRecoveryPoincare.lean",
+      "line": 76,
+      "source_sha256": "a9db8475a77bbbcffbbf0eb4f77067af453be354d8103dbcd88427bceb9c4e45",
+      "declaration_header": "theorem poincare_equality_first_mode (rate : \u211d\u22650) (hr : 0 < rate) :\n    \u2016centered rate hr (normalized rate hr 1)\u2016=\u2016normalizedField rate hr 0\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryPoincare.lean#L76"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.recovery_tail_energy",
+      "file": "Foundation/PoissonRecoveryCompactness.lean",
+      "line": 65,
+      "source_sha256": "c68d6696757b9a5106f75db613865b030096bb4a603952f3b1fc09601798c1a1",
+      "declaration_header": "theorem recovery_tail_energy (rate : \u211d\u22650) (hr : 0<rate) (N : \u2115) (f : ScalarL2 rate) :\n    HasSum (fun n => (tailCoefficient rate hr N f n)^2) (\u2016recovery rate hr f-partialRecovery rate hr N f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryCompactness.lean#L65"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.recovery_tail_bound",
+      "file": "Foundation/PoissonRecoveryCompactness.lean",
+      "line": 88,
+      "source_sha256": "c68d6696757b9a5106f75db613865b030096bb4a603952f3b1fc09601798c1a1",
+      "declaration_header": "theorem recovery_tail_bound (rate : \u211d\u22650) (hr : 0<rate) (N : \u2115) (f : ScalarL2 rate) :\n    \u2016recovery rate hr f-partialRecovery rate hr N f\u2016^2\u2264(N+1 : \u211d)\u207b\u00b9*\u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryCompactness.lean#L88"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.recovery_tail_operator_bound",
+      "file": "Foundation/PoissonRecoveryCompactness.lean",
+      "line": 100,
+      "source_sha256": "c68d6696757b9a5106f75db613865b030096bb4a603952f3b1fc09601798c1a1",
+      "declaration_header": "theorem recovery_tail_operator_bound (rate : \u211d\u22650) (hr : 0<rate) (N : \u2115) :\n    \u2016recoveryOperator rate hr-partialRecovery rate hr N\u2016\u2264Real.sqrt ((N+1 : \u211d)\u207b\u00b9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryCompactness.lean#L100"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.partialRecovery_tendsto",
+      "file": "Foundation/PoissonRecoveryCompactness.lean",
+      "line": 109,
+      "source_sha256": "c68d6696757b9a5106f75db613865b030096bb4a603952f3b1fc09601798c1a1",
+      "declaration_header": "theorem partialRecovery_tendsto (rate : \u211d\u22650) (hr : 0<rate) :\n    Tendsto (partialRecovery rate hr) atTop (\ud835\udcdd (recoveryOperator rate hr))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryCompactness.lean#L109"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.recovery_compact",
+      "file": "Foundation/PoissonRecoveryCompactness.lean",
+      "line": 124,
+      "source_sha256": "c68d6696757b9a5106f75db613865b030096bb4a603952f3b1fc09601798c1a1",
+      "declaration_header": "theorem recovery_compact (rate : \u211d\u22650) (hr : 0<rate) : IsCompactOperator (recoveryOperator rate hr)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonRecoveryCompactness.lean#L124"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentCentered",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 15,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "def coherentCentered (rate : \u211d\u22650) (\u03b8 : \u211d) (f : ScalarL2 rate) : ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L15"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentRecovery",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 42,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "def coherentRecovery (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) : ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L42"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentRecovery_graph",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 55,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherentRecovery_graph (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) :\n    creationGraph rate hr (coherentRecovery rate hr \u03b8 f)\n      (coherentCentered rate \u03b8 f+displacement rate \u03b8 \u2022 coherentRecovery rate hr \u03b8 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L55"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentRecovery_norm_le",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 69,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherentRecovery_norm_le (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) :\n    \u2016coherentRecovery rate hr \u03b8 f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L69"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentRecovery_unique",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 75,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherentRecovery_unique (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f u : ScalarL2 rate)\n    (hu : creationGraph rate hr u (coherentCentered rate \u03b8 f+displacement rate \u03b8 \u2022 u)) :\n    u=coherentRecovery rate hr \u03b8 f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L75"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherent_creation_range",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 104,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherent_creation_range (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) :\n    (\u2203 u : ScalarL2 rate, creationGraph rate hr u (f+displacement rate \u03b8 \u2022 u)) \u2194\n      inner \u211d (rootClass rate \u03b8) f=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L104"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherent_poincare",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 130,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherent_poincare (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f g : ScalarL2 rate)\n    (hf : annihilationGraph rate hr f (g+displacement rate \u03b8 \u2022 f)) :\n    \u2016coherentCentered rate \u03b8 f\u2016 \u2264 \u2016g\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L130"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.coherentRecovery_norm_le_centered",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 150,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem coherentRecovery_norm_le_centered (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) :\n    \u2016coherentRecovery rate hr \u03b8 f\u2016 \u2264 \u2016coherentCentered rate \u03b8 f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L150"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.shifted_annihilation_kernel",
+      "file": "Foundation/PoissonCoherentRecovery.lean",
+      "line": 172,
+      "source_sha256": "01b58b35958568ad6eddfb789d81faa224dc17ce7e4065f0a75681179bf38cd5",
+      "declaration_header": "theorem shifted_annihilation_kernel (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 rate) :\n    annihilationGraph rate hr f (displacement rate \u03b8 \u2022 f) \u2194\n      f=inner \u211d (rootClass rate \u03b8) f \u2022 rootClass rate \u03b8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoherentRecovery.lean#L172"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.centered_variance",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 20,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem centered_variance (r : \u211d\u22650) (hr : 0 < r) :\n    (\u222b n, centeredCount r n^2 \u2202poissonLaw r)=(r : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L20"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.input_norm",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 69,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem input_norm (r : \u211d\u22650) : \u2016input r\u2016=(r : \u211d)^(3/4 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L69"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.output_norm_le_sqrt",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 62,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem output_norm_le_sqrt (r : \u211d\u22650) (hr : 0 < r) : \u2016output r hr\u2016 \u2264 Real.sqrt (r : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L62"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.no_uniform_lower",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 94,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem no_uniform_lower : \u00ac \u2203 c : \u211d, 0 < c \u2227 \u2200 n : \u2115, \u2200 hn : 0 < n,\n    c*\u2016input (rate n)\u2016 \u2264 \u2016output (rate n) (rate_pos hn)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L94"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.divergence_one_actual",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 117,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem divergence_one_actual (r : \u211d\u22650) (hr : 0 < r) :\n    (PoissonMaximalOperators.maximalDivergence r hr)\n      \u27e8constantOneField r,constantOneField_mem_divergence_domain r hr\u27e9=centeredCountL2 r hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L117"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.lawOutput_norm",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 133,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem lawOutput_norm (X : \u03a9 \u2192 \u2115) (r : \u211d\u22650) (hr : 0 < r) (hX : HasLaw X (poissonLaw r) \u03bc) :\n    \u2016lawOutput X r hr hX\u2016=\u2016output r hr\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L133"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpLowerObstruction.no_lower_for_count_laws",
+      "file": "Foundation/PoissonLpLowerObstruction.lean",
+      "line": 143,
+      "source_sha256": "b2f60d43d23fecae0b4bfa3b2139d3e3210309a2576c6a3b77eeada85128e6f9",
+      "declaration_header": "theorem no_lower_for_count_laws (X : \u2115 \u2192 \u03a9 \u2192 \u2115)\n    (hX : \u2200 n, HasLaw (X n) (poissonLaw (rate n)) \u03bc) :\n    \u00ac \u2203 c : \u211d, 0 < c \u2227 \u2200 n : \u2115, \u2200 hn : 0 < n,\n      c*(n : \u211d)^3 \u2264 \u2016lawOutput (X n) (rate n) (rate_pos hn) (hX n)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpLowerObstruction.lean#L143"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.fourth_moment",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 37,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem fourth_moment (r : \u211d\u22650) (hr : 0 < r) :\n    (\u222b k, centeredCount r k^4 \u2202poissonLaw r)=3*(r : \u211d)^2+r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L37"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.holder_lower",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 77,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem holder_lower (r : \u211d\u22650) (hr : 0 < r) :\n    (r : \u211d) \u2264 \u2016output r hr\u2016*\u2016outputFour r hr\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L77"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.absolute_first_moment_bound",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 109,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem absolute_first_moment_bound (r : \u211d\u22650) (hr : 0 < r) :\n    (\u222b k, |centeredCount r k| \u2202poissonLaw r) \u2264 2*(r : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L109"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.norm_four_upper_cubic",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 193,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem norm_four_upper_cubic (r : \u211d\u22650) (hr : 0 < r) : \u2016output r hr\u2016^4 \u2264 4*(r : \u211d)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L193"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.norm_four_upper_quadratic",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 201,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem norm_four_upper_quadratic (r : \u211d\u22650) (hr : 0 < r) : \u2016output r hr\u2016^4 \u2264 (r : \u211d)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L201"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.two_regime_fourth_bounds",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 224,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem two_regime_fourth_bounds (r : \u211d\u22650) (hr : 0 < r) :\n    (1/4 : \u211d)*min ((r : \u211d)^2) ((r : \u211d)^3) \u2264 \u2016output r hr\u2016^4 \u2227\n      \u2016output r hr\u2016^4 \u2264 4*min ((r : \u211d)^2) ((r : \u211d)^3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L224"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.two_regime_bounds",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 265,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem two_regime_bounds (r : \u211d\u22650) (hr : 0 < r) :\n    scale r/Real.sqrt 2 \u2264 \u2016output r hr\u2016 \u2227 \u2016output r hr\u2016 \u2264 Real.sqrt 2*scale r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L265"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.rate_output_bounds",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 292,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem rate_output_bounds {n : \u2115} (hn : 0 < n) :\n    (n : \u211d)^2/Real.sqrt 2 \u2264 \u2016output (rate n) (rate_pos hn)\u2016 \u2227\n      \u2016output (rate n) (rate_pos hn)\u2016 \u2264 (n : \u211d)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L292"
+    },
+    {
+      "paper": "Sections 8\u20139 full maximal recovery graphs, coherent vacuum, compactness and actual compensated-count two-regime estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.rate_ratio_bounds",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 299,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem rate_ratio_bounds {n : \u2115} (hn : 0 < n) :\n    1/(Real.sqrt 2*(n : \u211d)) \u2264 \u2016output (rate n) (rate_pos hn)\u2016/\u2016input (rate n)\u2016 \u2227\n      \u2016output (rate n) (rate_pos hn)\u2016/\u2016input (rate n)\u2016 \u2264 1/(n : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L299"
     }
   ],
   "human_reorganization": [
@@ -857,7 +1217,11 @@
     "Finite-support graph cores are proved with the exact difference-of-output boundary formulas; the formal proof uses a different cutoff decomposition. The entropy proof specializes to explicit roots and verifies the remaining boundary factorial tail.",
     "Strong continuity is Hilbert norm continuity for each fixed vector; the operator norm lower bound is only sqrt(2) at positive displacement. No optimal norm value is claimed.",
     "All correspondence, displacement and quadratic logarithmic Sobolev mechanisms are treated as classical; no new Fock correspondence or Poisson logarithmic Sobolev counterexample is claimed.",
-    "The sharp 1/2 curvature calculation is reconstructed by neighboring differences and an explicit five-square polynomial decomposition, including k=0,1. Sharpness on finite-support tests is a local cutoff deduction from the mapped count witness, not a separate formal declaration. The integrated core energy, chain-rule failure and forward-energy distinction are separately mapped."
+    "The sharp 1/2 curvature calculation is reconstructed by neighboring differences and an explicit five-square polynomial decomposition, including k=0,1. Sharpness on finite-support tests is a local cutoff deduction from the mapped count witness, not a separate formal declaration. The integrated core energy, chain-rule failure and forward-energy distinction are separately mapped.",
+    "The recovery series is expressed in the scalar Hilbert space. Original source fields belong to L2(lambda times Poisson law), and multiplication by sqrt(lambda) gives the scalar normalization. Full creation range, uniqueness, Poincare and compactness are proved directly from the previously established maximal coefficient graphs.",
+    "Physical tilt conjugation gives coherent-vacuum centering, shifted creation range and kernel, shifted annihilation kernel, Poincare and compactness. Gaussian one-coordinate range and kernel statements are direct unitary deductions; they do not assert injectivity of general Gaussian vector divergence.",
+    "The actual count has variance r and fourth centered moment 3r^2+r. Holder plus elementary first-moment and L2 bounds give one-quarter min(r^2,r^3) <= ||N-r||_(4/3)^4 <= 4 min(r^2,r^3). The original divergence of the constant field is N-r and its L^(4/3)(r P_r) norm is r^(3/4). The r=n^4 ratio lies between 1/(sqrt(2)n) and 1/n. Small intensity explains the rare-count scale; only large intensity is required for the no-uniform-lower-bound result.",
+    "The count-law transfer assumes an actual count with the stated Poisson law. No stable random measure, independence of several counts, general stochastic integrand completion, new Ito isomorphism or queued research campaign is constructed or activated."
   ],
   "literature": [
     {
