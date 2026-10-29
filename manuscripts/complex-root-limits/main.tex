@@ -832,6 +832,77 @@ this statement is not backward solvability on arbitrary initial data.
 In the library's $2\pi$ Fourier convention, the multiplier
 $e^{-T\eta^4}$ is the higher-heat multiplier at frequency $\eta/(2\pi)$.
 
+\subsection*{An entire real-Schwartz test outside the finite-clock domain}
+Entire extension and rapid decay on the real line are insufficient for
+the preceding genuine process integrals. Take
+\[
+ g(z)=e^{-z^2}.
+\]
+Its real restriction is Schwartz: every derivative is a polynomial
+times $e^{-x^2}$, and every polynomial multiple is bounded and decays
+at infinity. Yet, for every $r>0$ and $a\ne0$,
+\begin{equation}\label{eq:gaussiannonintegrable}
+ \int_{\C}|g(w)|\,d\mu_{r,a}(w)=+\infty.
+\end{equation}
+Thus even a finite compound-root process time has no ordinary complex
+expectation of this test.
+
+Here is the complete rare-path proof. Conditional on exactly $2m$
+marks, prescribe the first $m$ roots to be $1+i$ and the next $m$
+to be $-1+i$. This particular word has probability $4^{-2m}$ and
+endpoint $2mai$. At that endpoint
+\[
+ |g(2mai)|=e^{4a^2m^2}.
+\]
+The nonnegative integral over the disjoint count events therefore
+dominates the sum, over $m\geq0$, of
+\[
+ u_m=e^{-r}\frac{(r/4)^{2m}}{(2m)!}e^{4a^2m^2}>0.
+\]
+For fixed nonzero $a$ and positive $r$ its consecutive ratio is
+\[
+ \frac{u_{m+1}}{u_m}
+ =\frac{(r/4)^2 e^{4a^2(2m+1)}}{(2m+2)(2m+1)}\longrightarrow+\infty.
+\]
+For an elementary justification of the last divergence, use
+$e^x\geq x^3/6$ for $x\geq0$: the resulting lower bound grows linearly
+in $m$. In particular $u_{m+1}\geq2u_m$ eventually, so the terms do
+not tend to zero and their sum diverges. Tonelli for the nonnegative
+count mixture proves \eqref{eq:gaussiannonintegrable}. The original
+process has exactly this law, so its test is nonintegrable as well.
+The exclusions are sharp for the degenerate cases $r=0$ or $a=0$,
+where the process value is identically zero and $g$ equals one there.
+
+For a deterministic finite walk every test value is integrable, since
+its sample space is finite. Even there, absolute control under the heat
+scaling can fail spectacularly. At $n=2m$ and amplitude $a_{2m}(T)$,
+the same word gives, for fixed $T>0$,
+\[
+ \E|g(S_{2m,a_{2m}(T)})|
+ \geq\exp\{4\sqrt{3T}\,m^{3/2}-2m\log4\}
+ \longrightarrow+\infty.
+\]
+This scaled specialization is an elementary human deduction from the
+mapped finite-word lower bound, not an additional named formal limit.
+It concerns absolute expectation; it does not by itself determine a
+limit or divergence of the complex expectations with cancellation.
+
+In particular, for every $n\geq1$ and $T>0$, the Poissonized test
+$g(C_{b_n}(nT))$ is already nonintegrable. No exchange of a full
+Gaussian frequency integral with these laws is justified by the earlier
+compact-frequency theorem. This is a finite-law integrability boundary,
+stronger than merely lacking a uniform bound in the approximation
+index. The spectral and entire-function hypotheses of a claimed
+representation must be checked before using its expectation notation.
+The restricted Fourier-data framework of~\cite{BM} is not refuted by
+this example.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{ComplexRootGaussianDomain.vertical_terminal},
+\code{vertical_gaussian_norm}, \code{walk_norm_lower},
+\code{not_integrable_compound}, \code{not_integrable_process};
+\code{PoissonSuperexponentialObstruction.not_summable_subsequence}.
+\par\endgroup
+
 \section{Actual conditional transitions and backward martingales}
 Fix the finite process parameter $a\in\R$ and write
 $\mathcal H_s^a=\sigma(C_a(v):0\leq v\leq s)$ for its natural past.

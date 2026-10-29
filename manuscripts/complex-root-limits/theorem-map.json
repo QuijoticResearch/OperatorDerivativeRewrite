@@ -2439,6 +2439,150 @@
       "source_sha256": "020cbb3d60bd3d9f49f1d14c233ccb2a54857110a674cb4ed0111e3142822e8a",
       "declaration_header": "theorem backward_martingale (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R))\n    (a : \u211d) (T : \u211d\u22650) : Martingale (backward R \u03c6 a T) (history a) probability",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BandLimitedConditionalCalculus.lean#L112"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.gaussian_differentiable",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 16,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem gaussian_differentiable : Differentiable \u2102 gaussian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L16"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.gaussian_real",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 18,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem gaussian_real (x : \u211d) : gaussian (x : \u2102) = (GaussianSchwartzKernel.realSchwartz x : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L18"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.vertical_terminal",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 28,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem vertical_terminal (a : \u211d) (m : \u2115) :\n    terminal (m+m) a (verticalSample m) = 2*(m : \u2102)*(a : \u2102)*Complex.I",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L28"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.vertical_gaussian_norm",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 48,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem vertical_gaussian_norm (a : \u211d) (m : \u2115) :\n    \u2016gaussian (terminal (m+m) a (verticalSample m))\u2016 = Real.exp (4*a^2*(m : \u211d)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L48"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.sample_singleton_real",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 61,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem sample_singleton_real (n : \u2115) (\u03c9 : Sample n) :\n    (probability n).real {\u03c9} = (1/4 : \u211d)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L61"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.walk_norm_lower",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 65,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem walk_norm_lower (a : \u211d) (m : \u2115) :\n    (1/4 : \u211d)^(m+m)*Real.exp (4*a^2*(m : \u211d)^2) \u2264\n      \u222b \u03c9, \u2016gaussian (terminal (m+m) a \u03c9)\u2016 \u2202probability (m+m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L65"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.walk_norm_transfer",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 82,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem walk_norm_transfer (n : \u2115) (a : \u211d) :\n    (\u222b z, \u2016gaussian z\u2016 \u2202ComplexFourthRootWalk.law n a) =\n      \u222b \u03c9, \u2016gaussian (terminal n a \u03c9)\u2016 \u2202probability n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L82"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.weight_quarter",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 88,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem weight_quarter (r : \u211d\u22650) (n : \u2115) :\n    ComplexRootPoissonLaw.weight r n*(1/4 : \u211d)^n =\n      Real.exp (-3*(r : \u211d)/4)*ComplexRootPoissonLaw.weight (r/4) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L88"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.not_integrable_compound",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 100,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem not_integrable_compound (r : \u211d\u22650) (hr : 0 < r) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac Integrable gaussian (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L100"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootGaussianDomain.not_integrable_process",
+      "file": "Foundation/ComplexRootGaussianDomain.lean",
+      "line": 140,
+      "source_sha256": "067bd1419b12ab1e543e0e2102a899e4ddb261dc267fb71c527033a3f37c6706",
+      "declaration_header": "theorem not_integrable_process (t : \u211d\u22650) (ht : 0 < t) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac Integrable (fun \u03c9 : MarkedRootRenewalProcess.StateSample =>\n      gaussian (MarkedRenewalMartingale.process a t \u03c9)) MarkedRootRenewalProcess.probability",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootGaussianDomain.lean#L140"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.recurrence",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 20,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem recurrence (r : \u211d\u22650) (c : \u211d) (n : \u2115) :\n    term r c (n+1)*((n : \u211d)+1) =\n      (r : \u211d)*Real.exp (c*(2*(n : \u211d)+1))*term r c n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L20"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.step_growth",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 36,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem step_growth (r : \u211d\u22650) (_hr : 0 < r) (c : \u211d) (hc : 0 < c) (n : \u2115)\n    (hn : 1 \u2264 (n : \u211d)) (hA : 2 \u2264 (r : \u211d) * c^2 * (n : \u211d)) :\n    2*term r c n \u2264 term r c (n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L36"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.eventually_step_growth",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 58,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem eventually_step_growth (r : \u211d\u22650) (hr : 0 < r) (c : \u211d) (hc : 0 < c) :\n    \u2200\u1da0 n : \u2115 in atTop, 2*term r c n \u2264 term r c (n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L58"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.not_summable_subsequence",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 67,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem not_summable_subsequence (r : \u211d\u22650) (hr : 0 < r) (c : \u211d) (hc : 0 < c)\n    (k : \u2115 \u2192 \u2115) (hk : Tendsto k atTop atTop) :\n    \u00ac Summable (fun n => term r c (k n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L67"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.not_summable_terms",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 83,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem not_summable_terms (r : \u211d\u22650) (hr : 0 < r) (c : \u211d) (hc : 0 < c) :\n    \u00ac Summable (term r c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L83"
+    },
+    {
+      "paper": "Section 10 entire real-Schwartz Gaussian is not integrable under any nondegenerate finite compound-root law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSuperexponentialObstruction.not_integrable",
+      "file": "Foundation/PoissonSuperexponentialObstruction.lean",
+      "line": 87,
+      "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
+      "declaration_header": "theorem not_integrable (r : \u211d\u22650) (hr : 0 < r) (c : \u211d) (hc : 0 < c) :\n    \u00ac Integrable (fun n : \u2115 => Real.exp (c*(n : \u211d)^2)) (poissonMeasure r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L87"
     }
   ],
   "human_reorganization": [
@@ -2457,7 +2601,9 @@
     "Sections 10\u201311 reconstruct the compact-frequency L1 Fourier domain. The simple radial bound from |C_a(r)|<=2|a|N_r is a human derivation of the mapped exponential integrability mechanism. Absolute product integrability precedes Fubini for both positive compound laws and complex tilted variation.",
     "Eventual compact-frequency contraction supplies dominated convergence; the tilted multiplier is a ratio with a denominator tending to a strictly positive number. This is not uniform variation control. Complex derivative limits and the classical fourth-order equation preserve the fixed frequency radius and angular/2pi normalization.",
     "Natural-filtration conditional integration uses the full observed past and an independent compound increment. The stopped backward version is adapted and integrable, agrees at each time with a terminal conditional expectation and is a finite-process martingale. No limiting law, limiting filtration or limiting martingale representation is inferred.",
-    "The primary Bonaccorsi\u2013Mazzucchi Hypothesis 10 and Theorem 11 directly precede this Fourier-data mechanism. Compactly supported L1 densities satisfy their spectral assumptions. No new representation principle or independently novel analytic limit is claimed."
+    "The primary Bonaccorsi\u2013Mazzucchi Hypothesis 10 and Theorem 11 directly precede this Fourier-data mechanism. Compactly supported L1 densities satisfy their spectral assumptions. No new representation principle or independently novel analytic limit is claimed.",
+    "The Gaussian g(z)=exp(-z^2) is entire and Schwartz on the real axis, yet a prescribed 2m-mark vertical path gives absolute value exp(4 a^2 m^2) with probability 4^(-2m). Tonelli and the explicit even Poisson-series ratio prove failure of genuine integrability for every r>0 and a nonzero. Degenerate r=0 or a=0 remains integrable.",
+    "The deterministic heat-scaled finite-walk lower bound diverges along even walk lengths by direct substitution into the mapped finite-word estimate; this specialization is a human consequence, not a separate named formal limit. Absolute divergence alone does not settle cancelling complex expectations. Poissonized Gaussian tests are already nonintegrable at each positive finite refinement; compact-frequency hypotheses cannot be dropped. This does not refute the restricted primary Fourier-data framework."
   ],
   "literature": [
     {
