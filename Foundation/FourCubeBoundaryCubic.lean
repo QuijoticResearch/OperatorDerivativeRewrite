@@ -90,7 +90,7 @@ private theorem ribbon_interior_selected (p : Upper) :
     exact Prod.ext he hj
   · exact fun he => congrArg Prod.fst he
 
-private theorem ribbon_caps_distinct (p : Upper) : capHigh p ≠ capLow p := by
+theorem ribbon_caps_distinct (p : Upper) : capHigh p ≠ capLow p := by
   have hp : p.val ∈ upperFaces := p.property
   simp only [upperFaces,edges,Finset.mem_filter,Finset.mem_univ,true_and] at hp
   intro he

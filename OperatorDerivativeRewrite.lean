@@ -2731,3 +2731,5 @@ import Foundation.FourCubeBoundaryCubic
 import Foundation.FourCubeHaarParity
 
 import Foundation.FourCubeIntegratedResponse
+
+import Foundation.FourCubeConditionalResponse

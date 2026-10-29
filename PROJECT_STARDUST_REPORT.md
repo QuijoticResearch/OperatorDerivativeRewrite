@@ -55274,3 +55274,48 @@ Independent exact Fraction/quaternion diagnostics expand the full72-face action 
 Integrity authenticates1697's source manifest against exact approval519ee2e1d2533367613a9b8270163b416239fe92. It covers2785 Foundation/root files: only the THREE focused new modules, root import and axiom ledger differ. ALL older mathematical source bytes,3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) are unchanged. ResearchSources remains read-only/uncommitted, unrelated drafts preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1698-* (full build, complete audit/types, full ledger check, independent Lean/quaternion tests, declaration inventory and authenticated manifest).
 
 Yang--Mills remains ACTIVE, Bakry PAUSED and all other queue priorities unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization remain closure gates; this pre-commit entry does not claim remote success.
+
+
+## Checkpoint1699 — cubic response survives actual one-link conditional Haar integration
+
+Focused Yang–Mills remains ACTIVE; Bakry Objective2 remains PAUSED. Return to large positive coupling after1698's full32-link SMALL-coupling nonparity theorem. This checkpoint establishes an actual conditional stochastic integral and its boundary derivatives, rather than extrapolating the small-coupling result.
+
+### Exact geometry, integral and domains
+
+`FourCubeConditionalAction.conditional_action` proves the exact existing full72-face action when the selected retained edge U is free and the OTHER31 retained edges equal1, with1698's three-axis boundary data. Writing h(U)=halfTrace(U), A=I(x)J(y)K(z), and C=5+2(1-cos x)+2(1-cos z), it is S(U)=C-4h(U)-h(UA). The selected edge meets exactly FIVE faces in this one-sided cell: three internal faces and the chosen/partner ribbons. Four staples are identity and one is A. This is not the six-plaquette conditional of a standard full four-dimensional lattice. The cap partition [1,2,2,43] is proved; no independent face-count assumption is inserted. The only older proof-source change exposes `FourCubeBoundaryCubic.ribbon_caps_distinct` publicly with its original statement/body unchanged.
+
+`FourCubeConditionalRadial` reuses the verified SU(2) quaternion polar decomposition and Haar tilt law. The five-staple radius satisfies R^2=17+8h(A), 3<=R<=5. The actual conditional partition is
+
+    Zcond(beta;x,y,z)=exp(-beta*C(x,z))*mgf halfTrace law (beta*R(x,y,z)).
+
+All real beta and all real boundary parameters are admitted. Boundedness supplies the complete scalar exponential-integrability domain, partition positivity, and the exact free energy Fcond=beta*C-cgf(beta*R). The radius never vanishes. The derivative of the scalar cgf is proved equal to the actual tilted-Haar mean m(t), with differentiability obtained from existing analytic-cgf machinery. No new probabilistic existence axiom, derivative/interior-integral exchange, or derivative-order interchange is assumed.
+
+### Integrated derivatives and large-coupling conclusion
+
+`FourCubeConditionalResponse.conditional_mixed_hessian` proves the exact ordered boundary slice
+
+    D_x D_y Fcond(beta;0,0,z)=4*beta*m(beta*R(0,0,z))/R(0,0,z)*sin z.
+
+`conditional_mixed_cubic` proves, for EVERY real beta,
+
+    D_z D_x D_y Fcond(beta;0,0,0)=(4*beta/5)*m(5*beta).
+
+Every required derivative is accompanied by differentiability/HasDerivAt proofs; totalized Lean derivatives are not being used outside their proved domains. The existing `SU2OneWordLargeCoupling.positive_mean_tendsto_one` then gives `conditional_mixed_cubic_normalized_limit`: this ordered third derivative divided by beta tends to4/5 as beta tends to positive infinity. Thus a genuine conditional Haar integration retains a cubic boundary coefficient of linear large-beta size. It does not eliminate that coefficient by an unqualified parity argument.
+
+### Exact limitations and next bottleneck
+
+This is ONE free edge with31 fixed values, NOT the32-link marginal. It neither proves nor refutes a full-block large-beta estimate, a renormalized centered-Gaussian O(g^4) theorem, a stationary-transfer spectral gap, homogeneous-coupling slowing, or a physical continuum mass gap.1697's two-axis parity and1698's three-axis full-marginal small-beta nonparity remain valid on their stated families. The manuscript's first centered-Gaussian odd-integrand identity remains valid. The new mechanism is compatible with all those results.
+
+The next precise local test is whether the displayed conditional Hessian can satisfy a coupling-uniform O(beta*z^2)+O(1) budget; its explicit mean/radius factors permit a rigorous test. A bound on a third derivative alone does not settle such a Hessian inequality. A subsequent full-marginal bridge would additionally require controlling the mean Hessian and covariance terms under the remaining31-link conditional law; pointwise conditional behavior alone supplies no such control. Any standard4D extension must first account for the omitted negative-direction plaquette and the actual stationary operator. Scale/volume-uniform and continuum estimates remain open. No novelty claim is made.
+
+### Complete verification and preserved sources
+
+The complete root build passed7005 jobs in29.8331193 seconds. The canonical complete transitive audit passed54648 safe Foundation declarations in41.869212 seconds, accepting only propext, Classical.choice and Quot.sound. All55 public types were printed unabridged and reviewed:36 new theorem proofs,18 definitions/abbreviations and the unchanged newly exposed helper theorem; all8 private proofs were reviewed in full. The entire persisted axiom ledger elaborated in50.366736 seconds. No new resource/compiler/trust setting, sorry/admit/axiom/native_decide or weakened verification gate was introduced.
+
+Sixteen independent Lean checks passed in29.2095333 seconds after correcting an omitted namespace in the external test harness; mathematical sources were unchanged. The checks include the actual72-face action, three internal faces, cap counts, radius identity/bounds, actual Haar polar integral, all-real partition positivity/exponential domain, cgf/mean derivative, nonzero radius, mixed boundary Hessian, ordered cubic, normalized limit and a concrete beta=1 specialization. Independent exact Fraction/quaternion diagnostics again passed243 full72-face conditional cases. Independent Simpson quadrature of SU(2) Haar angle integrals (4096 subdivisions) and eight-corner boundary finite differences (h=.002) agree with the formula for beta=1,5,20,100,500; the last normalized value is0.7995192259, consistent with the proved4/5 limit. These numerical checks are diagnostics, not substitutes for the Lean proofs.
+
+Source integrity authenticates1698's manifest against exact audited commit98517fb8136540f4c688b0cbff7858791681d44e. It covers2788 Foundation/root sources: only the three new conditional modules, root import, axiom ledger and the single private-to-public helper change differ. The old helper's complete statement/proof is otherwise byte-identical after newline normalization. All other old mathematical files,3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals (20 distinct hashes) are unchanged. ResearchSources remains unmodified/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1699-* (complete builds/audits/types, independent Lean/quaternion/quadrature checks, exact declaration inventory and authenticated source manifest).
+
+Exact-commit approval and guarded PUBLIC main/research synchronization follow this checkpoint; this pre-commit entry does not claim remote success. Repository visibility remains exclusively user-controlled. Campaign priorities remain unchanged.
+
+Final source-byte closure: the staged whitespace gate caught one blank EOF line in the new action module. It was removed, and the complete root build, canonical audit/all55 public types, all16 independent Lean checks and complete persisted axiom ledger were rerun successfully on the final bytes; the timings above are those final runs. No theorem statement or proof was changed by that cleanup.
