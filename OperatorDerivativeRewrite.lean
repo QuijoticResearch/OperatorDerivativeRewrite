@@ -2833,3 +2833,6 @@ import Foundation.FourCubeFullHaarCutoff
 import Foundation.FourCubeFullChartQuadratic
 import Foundation.FourCubeFullHaarGaussianLimit
 import Foundation.FourCubeFullHaarAsymptotic
+import Foundation.FourCubeCompletedSquare
+import Foundation.FourCubeFullQuadraticCenter
+import Foundation.FourCubeFullColorSymmetry
