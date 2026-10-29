@@ -15,7 +15,8 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We assemble four exact diagnostics for velocity gradients and spectral ratios.
+We assemble exact diagnostics for velocity gradients, spectral ratios
+and threshold occupation.
 A family of nonnormal restricted Euler matrices has fixed full spectrum but
 variable strain spectrum, with arbitrarily small positive normalized
 stretching along trajectories whose raw stretching diverges. Its affine
@@ -29,7 +30,9 @@ stretching derivative, while a displayed plus-pressure balance gives
 three at the initial time. A fixed smooth periodic Gaussian-series shear
 has a specified normalized two-sector spectral ratio strictly above one
 at every finite nonnegative time, with its full lattice spectrum and
-antipodal conic partition retained. Complete elementary proofs reconstruct frozen
+antipodal conic partition retained. For threshold labels, an exact
+null-boundary criterion separates stable occupation from smooth
+positive-sector counterexamples. Complete elementary proofs reconstruct frozen
 formal results. These are calibration examples in classical model
 families, not new fluid existence or singularity results; priority for
 the diagnostic formulations remains unresolved.
@@ -513,6 +516,203 @@ calibration is that a fixed classical smooth solution has a genuine
 infinite tail and reverses the displayed inequality with all complete
 moments and denominator conditions established.
 
+
+\section{Threshold labels require control of boundary occupation}
+The smoothness of a field or its sector energies is different from
+the stability of time spent in a threshold-defined diagnostic region.
+We record the exact finite-measure distinction. Let $(X,\mu)$ be a
+finite measure space, let $\rho,\zeta:X\to\R$ be measurable scores,
+and fix thresholds $A,B\in\R$. Define the prioritized label
+\[
+ \ell(\rho,\zeta)=
+ \begin{cases}
+ 0,&\rho<A,\\
+ 1,&\rho\geq A,\ \zeta<B,\\
+ 2,&\rho\geq A,\ \zeta\geq B.
+ \end{cases}
+\]
+Its occupation totals are $O_j=\mu\{\ell=j\}$. On a finite
+time interval these are ordinary durations. The relevant boundary is
+\begin{equation}\label{eq:corridorboundary}
+ D=\{\rho=A\}\ \cup\ \{\rho\geq A,\ \zeta=B\}.
+\end{equation}
+The second threshold is irrelevant where $\rho<A$. In particular
+$\{\zeta=B\}$ need not be null there. These arbitrary score pairs
+are not identified with the preceding centroid ratio or a physical
+evolution law merely by this notation.
+
+Suppose measurable approximations obey
+$|\rho'-\rho|\leq\varepsilon_\rho$ and
+$|\zeta'-\zeta|\leq\varepsilon_\zeta$ everywhere, with
+nonnegative error bounds. Their disagreement set $E$ satisfies
+\begin{equation}\label{eq:corridorband}
+ E\subseteq\{|\rho-A|\leq\varepsilon_\rho\}
+ \ \cup\ \{\rho\geq A,\ |\zeta-B|\leq\varepsilon_\zeta\}.
+\end{equation}
+Indeed, outside the first strip the original and approximating
+first scores lie on the same side of $A$: their distance is too
+small to cross it. If that side is below, both labels are zero.
+Otherwise $\rho\geq A$, and outside the second strip the two second
+scores likewise lie on the same side of $B$. Their labels agree.
+Each label-region symmetric difference is contained in $E$; thus
+\begin{align}\label{eq:corridoroccupationbound}
+ |O'_j-O_j|&\leq\mu(E)\notag\\
+ &\leq\mu\{|\rho-A|\leq\varepsilon_\rho\}
+       +\mu\{\rho\geq A,|\zeta-B|\leq\varepsilon_\zeta\}.
+\end{align}
+The first inequality follows by subtracting the two indicator
+integrals and bounding the absolute difference by $1_E$.
+For example bounds $C_\rho\varepsilon_\rho^{\gamma_\rho}$ and
+$C_\zeta\varepsilon_\zeta^{\gamma_\zeta}$ on these actual strip
+masses immediately give their sum as an occupation error rate.
+This is an elementary consequence, not a rate asserted without
+an assumption on the score distribution.
+
+\begin{theorem}\label{thm:corridorstability}
+For the displayed finite-measure classifier, the following are
+equivalent: $\mu(D)=0$; every pair of measurable uniform score
+approximations has disagreement mass tending to zero; and every
+such approximation has $O'_j\to O_j$ for all three labels.
+In the last condition it suffices to test labels zero and two for
+the simultaneous downward shifts
+$(\rho_n,\zeta_n)=(\rho-\delta_n,\zeta-\delta_n)$,
+$\delta_n=1/(n+1)$.
+\end{theorem}
+\begin{proof}
+Off $D$, any pointwise-convergent scores eventually have the same
+label. If $\rho<A$, convergence of the first score alone gives
+label zero eventually. Otherwise $\rho>A$ and $\zeta\ne B$;
+the strict distances to both relevant thresholds preserve the
+label for all sufficiently large $n$. In fact convergence of the
+second score is needed only on $\{\rho\geq A\}$. If $\mu(D)=0$,
+the disagreement indicators tend to zero almost everywhere and
+are bounded by the integrable constant one. Dominated convergence
+gives vanishing disagreement mass, and the first inequality in
+\eqref{eq:corridoroccupationbound} gives occupation convergence.
+This proves the forward assertions, even for this weaker almost
+everywhere score convergence, hence for uniform convergence.
+
+Conversely take the displayed downward shifts, which are uniformly
+within $\delta_n$ of the scores. At a point with $\rho=A$, its
+old label is one or two and every shifted first score is below
+$A$, so the label changes. At a point with $\rho>A,\zeta=B$,
+the shifted first score remains above $A$ eventually, while the
+second lies below $B$: label two changes to one. At points outside
+$D$ the labels eventually agree by the preceding argument.
+Thus dominated convergence gives the exact limit
+\begin{equation}\label{eq:downboundarylimit}
+ \mu\{\ell(\rho_n,\zeta_n)\ne\ell(\rho,\zeta)\}
+       \longrightarrow\mu(D).
+\end{equation}
+Universal vanishing disagreement therefore forces $\mu(D)=0$.
+
+Occupation convergence alone could in principle hide label exchanges,
+so a further argument is required. Here the downward shifts never
+increase a label: the prioritized rule is nondecreasing in each
+coordinate. For ordered labels $j'\leq j$ in $\{0,1,2\}$ one has
+\[
+ 1_{\{j'\ne j\}}\leq
+ (1_{\{j'=0\}}-1_{\{j=0\}})
+ +(1_{\{j=2\}}-1_{\{j'=2\}}).
+\]
+For unchanged labels both sides are zero; for changes $1\to0$
+and $2\to1$ both sides are one; for $2\to0$ the right side is
+two. These are all possible strict decreases. Integrating yields
+\[
+ \mu(E_n)\leq(O_{0,n}-O_0)+(O_2-O_{2,n}).
+\]
+If the two endpoint occupations converge, the nonnegative left
+side tends to zero. Equation \eqref{eq:downboundarylimit} now
+forces the null-boundary condition. Universal occupation convergence
+includes this particular shift test, completing every implication.
+\end{proof}
+
+The necessity quantifies over all measurable uniform perturbations
+of these scores. It is not automatically a necessity theorem for
+a narrower physically attainable family. For the converse direction
+in such a restricted family, the detecting perturbations would have
+to be realizable within that family. The following finite-sector
+example gives a concrete failure without a vanishing denominator
+or a tie for the largest sector.
+
+\section{Smooth sector energies: kinks and full occupation errors}
+\subsection{A maximum preserves a Lipschitz bound, not differentiability}
+For finitely many functions $e_i$,
+\[
+ |\max_i e_i(t)-\max_i e_i(s)|
+ \leq\max_i|e_i(t)-e_i(s)|.
+\]
+To prove the one-sided inequality, choose an index attaining the
+maximum at $t$, replace its value at $s$ by the maximum there,
+and then reverse $s,t$. Thus a common Lipschitz constant is retained.
+It need not retain differentiability even for strictly positive
+smooth sector energies. Take
+\[
+ e_\pm(t)=1\pm t+t^2=(t\pm\tfrac12)^2+\tfrac34.
+\]
+Their total is $2+2t^2>0$ but their maximum is $1+t^2+|t|$.
+The normalized maximum concentration is consequently
+\[
+ \chi(t)=\frac{\max(e_+(t),e_-(t))}{e_+(t)+e_-(t)}
+ =\frac12+\frac{|t|}{2(1+t^2)}.
+\]
+At zero its right derivative is $1/2$ and left derivative is
+$-1/2$, so it is continuous and locally Lipschitz but not
+differentiable. This normalized maximum is a different statistic
+from the squared-weight concentration in the earlier centroid ratio.
+
+There is a useful denominator-controlled bound. Suppose $N$ sector
+energies are nonnegative at $t,s$, their totals $E(t),E(s)\geq d>0$,
+and $|e_i(t)-e_i(s)|\leq K|t-s|$. Write $M=\max_i e_i$.
+Then $|M(t)-M(s)|\leq K|t-s|$,
+$|E(t)-E(s)|\leq NK|t-s|$, and $0\leq M(s)/E(s)\leq1$.
+Use the exact identity
+\[
+ \frac{M(t)}{E(t)}-\frac{M(s)}{E(s)}
+ =\frac{M(t)-M(s)}{E(t)}
+ +\frac{M(s)}{E(s)}\frac{E(s)-E(t)}{E(t)}
+\]
+to obtain
+\begin{equation}\label{eq:maxconcentrationlip}
+ |\chi(t)-\chi(s)|\leq\frac{(N+1)K}{d}|t-s|.
+\end{equation}
+If $\chi(s)\leq A-\eta$ and the right side is less than
+$\eta$, then $\chi(t)<A$. This is a local threshold-persistence
+test with actual quantitative hypotheses; a qualitative smoothness
+claim supplies neither those constants nor an occupation bound.
+
+\subsection{A strictly dominant sector can sit at a threshold}
+On the time interval $[0,1]$ with Lebesgue measure, let $|p|\leq1/8$
+and define constant-in-time energies
+\[
+ e_0^p=\tfrac12+p,\qquad e_1^p=e_2^p=\tfrac14-\tfrac p2.
+\]
+All are positive, their total is one, and the gap from the first
+sector to either other sector is $1/4+3p/2\geq1/16$. Thus the
+same sector is strictly dominant throughout the family, and its
+maximum concentration is exactly $\rho_p=1/2+p$. Every energy
+converges uniformly to the $p=0$ energy as $p\to0$, with error
+at most $|p|$. The functions are smooth in time and their parameter.
+Take the second score $\zeta_p=1$ and thresholds $A=1/2$, $B=2$.
+For $p=0$ every time has label one, whereas for every $p<0$ every
+time has label zero. Therefore $O_{0,p}=1$, $O_{0,0}=0$, and
+their difference is exactly one for arbitrarily small negative $p$.
+The relevant boundary has full time measure at $p=0$.
+The obstruction is threshold mass, despite strict spectral-sector
+dominance, positive energies and a fixed total. These energies are
+an actual finite family of scalar diagnostic data; no realization
+as a Navier--Stokes trajectory is claimed.
+
+The null-boundary and strip arguments are classical continuity-set
+and dominated-convergence mechanisms. For comparison, the primary
+margin assumption of Audibert--Tsybakov~\cite{AT} controls mass near
+a binary statistical decision threshold. That assumption explicitly
+excludes equality in its strip and concerns excess risk, not the
+unweighted disagreement/occupation considered here. In particular
+positive equality mass cannot be discarded in the present theorem.
+No statistical minimax rate, learning theorem or new general
+continuity principle is being asserted.
+
 \section{Formal correspondence and contribution status}
 \begingroup\raggedright
 Every formal result is frozen at commit
@@ -530,7 +730,12 @@ means and viscous contraction are assembled in
 The full-spectrum shear and angular ratio use
 \code{GaussianInfiniteShear}, \code{GaussianShearSpectrum},
 \code{GaussianShearSectorMoments}, \code{GaussianShearCentroid} and
-\code{AngularConeShearCentroid}. Exact declaration locations, hashes and human proof reorganizations
+\code{AngularConeShearCentroid}. Finite maximum regularity, relevant
+threshold boundaries, downward-shift disagreement and sharp endpoint
+occupation tests use \code{CorridorMaximumRegularity},
+\code{CorridorOccupation}, \code{CorridorClassification},
+\code{CorridorBoundarySharpness} and \code{CorridorOccupationSharpness}.
+Exact declaration locations, hashes and human proof reorganizations
 are in the accompanying theorem map. In particular the direct
 trigonometric proof of $J(U)=0$ replaces the formal invariant-trace
 transport proof. Infinite affine energy is the elementary deduction
@@ -575,5 +780,10 @@ Profile comparison only; no orbit result is used here.
 Navier--Stokes equations in an infinite cylinder}, primary preprint,
 \href{https://arxiv.org/abs/1402.6563}{arXiv:1402.6563} (2014).
 Abstract-level context only; no asymptotic theorem imported.
+\bibitem{AT} J.-Y. Audibert and A. B. Tsybakov,
+\emph{Fast learning rates for plug-in classifiers},
+Ann. Statist. \textbf{35} (2007), 608--633.
+Primary reprint \url{https://arxiv.org/abs/0708.2321}.
+Margin-assumption comparison only; no risk theorem imported.
 \end{thebibliography}
 \end{document}

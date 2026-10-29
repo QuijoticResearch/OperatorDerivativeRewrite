@@ -235,3 +235,7 @@ The Cauchy companion grows from eight to eleven pages with complete finite-core 
 ## Homogeneous versus mixed Gaussian square products
 
 Expanded the quadratic companion from seven to eight pages with complete centered mixed-chaos product and covariance calculations, exact negative parameter interval and primary homogeneous-chaos antecedent. 114 frozen correspondences; ten exact finite polynomial checks pass. Every final page inspected, relevant proofs enlarged, compilation clean and receipts fresh. Twenty-five reviewed drafts total 251 pages.
+
+## Sharp threshold occupation and finite-sector regularity
+
+Diagnostic companion expands from nine to eleven pages: exact relevant-boundary iff criterion, downward-shift mass limit, endpoint occupation necessity, quantitative strips, maximum kinks/positive denominators and strictly dominant smooth sector full-error test. 154 exact frozen correspondences; fourteen exact finite checks in two groups pass. All pages inspected, new pages enlarged, compilation clean and receipts fresh. Twenty-five reviewed drafts total 253 pages.
