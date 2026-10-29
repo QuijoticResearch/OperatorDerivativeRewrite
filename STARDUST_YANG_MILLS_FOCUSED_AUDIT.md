@@ -3198,3 +3198,82 @@ Exact remaining obligations. Actual fixed-beta global boundary C-infinity regula
 Stationary physical transfer estimates, a physically justified iteration scale, scale/volume-uniform continuum bridges, external Yang-Mills existence and a positive four-dimensional mass gap remain OPEN. Fixed finite-cell C-infinity does not establish any of them. Classical Banach-algebra smoothness, bounded-linear integration and repeated mean value are not claimed novel. The indefinite focused mathematical goal stays active; no campaign transition or publication is authorized by this checkpoint.
 
 Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push remote refs/visibility remain closure gates. This pre-commit ledger does not assert backup already succeeded. Only the user controls repository visibility.
+
+
+## Checkpoint1720 — actual full-Haar mixed-Hessian budget obstruction; six-face completion candidate
+
+October29,2026. Focused Yang-Mills remains ACTIVE, Bakry PAUSED and queue unchanged. Extends exact audited/two-ref verified checkpoint1719,09ca1f929dccf5de648d554e1ddd140ae1bef990. The previous goal turn made substantive progress by proving actual fixed-beta C-infinity and large intermediate-point third derivatives. This checkpoint addresses the saved MIXED-HESSIAN budget directly rather than claiming it follows from a third-derivative lower bound alone. No manuscript/PDF/publication/editorial work; originals were hash-checked only.
+
+Two Lean modules: FourCubeHessianMeanValue and FourCubeThermalHessianBudget. Define the genuine ordered mixed partial
+
+    H_beta(x,y,z)=partial_y partial_x F_beta(x,y,z),
+    F_beta=-log(actual normalized full32-link Haar partition).
+
+Its ordinary derivative domains are supplied by1719's actual global fixed-coupling C-infinity theorem. It is not a conditional one-link integral, a pointwise action derivative or a formal Gaussian observable. The integrated cell is still the EXACT one-sided72-face geometry; this domain is retained explicitly.
+
+Two-stage mean value. The public two_face_mean theorem stops1719's repeated mean-value argument after the x and y steps. For every globally C-infinity F and h>0, some |x|,|y|<h satisfy
+
+    H_F(x,y,h)-H_F(x,y,-h)=C_h(F)/(4h^2),
+
+where C_h is the exact eight-corner signed sum. The continuity, nonempty interval and derivative hypotheses are discharged, and ordered partials are identified with scalar slice derivatives. Applying it to the ACTUAL F_beta gives actual_two_face_mean:
+
+    H_beta(x,y,h)-H_beta(x,y,-h)=2h D_beta(h).
+
+Thus1718's full-Haar thermal response lower bound, beta=1/t^2, proves that for EVERY sufficiently small positive t there exist |x|,|y|<t with
+
+    H_(1/t^2)(x,y,t)-H_(1/t^2)(x,y,-t)>c/t,
+    c=31877443263/69438734552>0.
+
+This is an ACTUAL full-Haar mixed-Hessian difference growing at least as c*sqrt(beta) on the thermal corridor. The two mixed Hessians have the SAME x,y. Neither x nor y is asserted to be0. The third derivative-at-origin or a derivative-limit interchange is not used.
+
+Arbitrary reference subtraction. Let B(beta,x,y) be ANY real function, with no boundedness, continuity or beta-uniformity assumption, but independent of z. The two-face difference cancels B exactly. Triangle/order estimates prove that at one of the two faces z=+t or z=-t,
+
+    |H_(1/t^2)(x,y,z)-B(1/t^2,x,y)|>c/(2t).
+
+The public actual_large_deviation proves this eventually for small positive t. actual_deviation_eventually_gt strengthens it to exceed any prescribed finite real K. In particular subtracting an arbitrarily coupling-dependent quadratic/background reference independent of z cannot remove this two-face obstruction. The independent Lean harness specializes B=0 and B(beta,x,y)=H_beta(x,y,0), so it also verifies actual departure from the zero-z reference at the SAME x,y. A z-dependent reference is a DIFFERENT hypothesis; choosing that reference equal to H makes the deviation0, and is not ruled out.
+
+Quadratic budget. For any fixed C>=0 and ANY fixed real C0, at |x|,|y|<t and z=+/-t,
+
+    C*(1/t^2)*(x^2+y^2+t^2)+C0 <=3C+C0.
+
+The divergent actual deviation therefore violates this bound for every sufficiently small positive t at suitable x,y and at least one face. actual_quadratic_budget_violations proves the eventual existential violations; no_eventual_quadratic_budget refutes an eventual bound simultaneously valid throughout both thermal faces. This rules out a coupling-uniform scalar remainder budget C*beta*||a||^2+C0 on this specified actual native full-Haar boundary family, even after arbitrary z-independent reference subtraction. It does NOT refute every possible mass-gap estimate, a beta-dependent C/C0, a different normalization, a restricted boundary submanifold, or a reference with essential z-dependence.
+
+The saved1700 conditional obstruction concerned D_xD_y Fcond(beta;0,0,z) with31 links fixed. The present theorem instead integrates ALL32 links and controls a simultaneous pair of intermediate x,y values inside the thermal window. It neither silently fixes them0 nor identifies these two boundary derivatives with an unproved interior/boundary Delta_xy block in some other gauge-fixed corridor. Such coordinate/gauge/domain identifications remain obligations before applying this theorem to any literal external estimate. No original manuscript was reviewed for this checkpoint.
+
+Verification:
+- build: PASS, 30.391308599995682 seconds.
+- audit: PASS, 41.0744811000186 seconds.
+- checks: PASS, 26.87546380001004 seconds.
+- axiom-ledger: PASS, 51.12438090000069 seconds.
+
+Complete root build:7056 jobs. Canonical COMPLETE safe-Foundation Lean.collectAxioms audit:56203 declarations, allowing only propext, Classical.choice and Quot.sound. ALL8 public types were printed unabridged and reviewed:7 full theorem proofs and1 definition. Both complete sources and their TWO private helper proofs (mean and budget_bound) were read. The COMPLETE persisted Foundation/AxiomAudit.lean passed. All Lean targets/build/audits/tests were serialized and terminal handles checked. No sorry/admit/new mathematical axiom/native_decide, resource increase, toolchain/config/compiler/trust change or weakened gate was introduced. Initial target repairs made the curried/uncurried actual free-energy identity explicit, exposed positive-time membership for field algebra, and separated relation signs from absolute-value notation so Lean did not parse a pipeline operator. None changes the mathematical domains or hypotheses.
+
+ALL14 independent Lean examples passed on the first execution. They test exact corner normalization for xyz and x^3*y*z, the latter's zero ordered mixed derivative at x=y=0 despite nonzero corner response, cancellation of a common reference, the essential nonempty interval, exact two-face normalization on a cubic, actual full-Haar mean-value identification and c/t difference, both raw and zero-z-reference deviations, arbitrary references/thresholds, quantified quadratic-budget failure and the C=0 special case with arbitrary C0. These checks expose why intermediate locations and the z-independent reference requirement cannot be dropped. No mathematical or test source was changed after the successful complete build/audit; the new independent research script below does not affect Lean inputs.
+
+Independent standard-six-face investigation. A new self-contained standard-library Python script, tools/stardust_six_plaquette_probe.py, preserves reproducible exact-rational evidence outside ResearchSources and publication directories. It reads/modifies no repository/manuscript/network/Git state and prints only computed JSON. Its source was reviewed and executed successfully; it has NO temporary-helper dependency. Script SHA256: 7fab7b109ae2709100b427e012c49bfa807c32cb495b3d0bf59affedbc434b11.
+
+It enumerates the complete nearest-neighbor4D finite Dirichlet box with vertices[-1,2]^4:256 vertices,768 links and864 elementary plaquettes. Exactly32 links inside{0,1}^4 are treated as integrated variables;736 exterior links are fixed, except the SAME three prescribed raw-quaternion boundary axes. Every integrated link belongs to SIX plaquettes. Exact rational Gaussian elimination verifies96 normal equations and finds full interior Gram rank32. The native origin gauge is lifted; its velocity is(-1/231,-16/2079,-1/231), so reusing the old31-link root pin would change this model.
+
+The script independently reconstructs the72 positive/native active plaquettes, solves their pinned31-coordinate normal equations, and reproduces the ALREADY Lean-certified native cubic31877443263/69438734552. It then adds48 source-free negative-side active plaquettes. Every such added plaquette has exactly one integrated link and three fixed identity links. Their contribution to the Gram is exactly diagonal, with multiplicity
+
+    n_minus(v,a)=#{j!=a : v_j=0}.
+
+Of the remaining pure-exterior plaquettes, each nontrivial one contains at most ONE source edge; their source counts are3 for x,4 for y and3 for z. These combinatorial checks suggest the precise action identity
+
+    S_standard(U;x,y,z)=S_native(U;x,y,z)
+      +sum_e n_minus(e)*defect(U_e)
+      +3(1-cos x)+4(1-cos y)+3(1-cos z).
+
+THIS IS A CANDIDATE GEOMETRIC IDENTITY, NOT A LEAN THEOREM. Its pure-source terms would have zero mixed xy Hessian, while the48 link penalties genuinely change the integrated law and remove the origin gauge. The rational full-rank solution gives harmonic cubic1784975/2750517, approximately0.6489598137368356, and raw effective energy3467/231. It is NOT the old coefficient and is NOT yet an actual full-Haar asymptotic or a certified Lean coefficient for the standard model.
+
+A second concrete diagnostic verifies32 DISTINCT isolation plaquettes: for an integrated edge in direction a choose transverse j=1 if a=0, otherwise j=0; use the negative plaquette when v_j=0 and the positive plaquette when v_j=1. Each chosen plaquette contains that one integrated link, and its other three edges are fixed identity links and avoid all three sources. This is a promising route to a source-independent sum-of-link-defects coercivity estimate for this DIRICHLET model. That coercivity theorem, the finite geometry and its normal/cubic certificates still require Lean proofs. No mathematical axiom is added from the Python assertions.
+
+The frozen exterior is essential: enlarging or sampling the exterior, preserving arbitrary local gauge freedom, a physical stationary transfer operator and volume/continuum-uniform estimates are NOT supplied by this test. The evidence is an exact jet/combinatorial diagnostic and a candidate for the next direct theorem, not a proof of a standard-lattice integrated Hessian theorem, existence or mass gap. It answers the specific concern that the previous one-sided conditional had five incident faces, without silently calling the old geometry a six-plaquette lattice. Temporary evidence prefix C:/Users/ramir/AppData/Local/Temp/stardust-ym-1720-*; the reproducible script is committed with this checkpoint.
+
+Authenticated integrity compares1719's manifest against approval09ca1f929dccf5de648d554e1ddd140ae1bef990. Among2838 recursive Foundation/root Lean sources, only these two new modules, root imports and persisted AxiomAudit differ. All older mathematics,3 pinned configs,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. The new research probe is separately reviewed/tested and hashed above. ResearchSources is unmodified/uncommitted; drafts/history, publication-role separation, master and the separate publication branch remain preserved.
+
+Exact next obligation. The ACTUAL native full-Haar thermal mixed-Hessian quadratic budget obstruction, with precise moving x,y and arbitrary z-independent subtraction, is NOW VERIFIED. Do not list it as a merely conditional one-link or third-derivative inference. The most concrete next step toward the standard4D question is the minimal negative-side completion: prove the displayed geometric action decomposition and isolation coercivity using the existing actual32-link Haar state space, then build the correct unpinned96-dimensional Gaussian/cubic certificate and full-Haar limit if productive. Do NOT reuse the31-link pin or dimension93. Reuse actual bounded-linear integration/smoothness and determinant/sign machinery where their hypotheses match. First test/prove this specific standard-cell bridge rather than creating a broad gauge library.
+
+Fixed-origin derivative asymptotics, a literal gauge-fixed corridor Delta_xy identification, stationary physical transfer estimates, physically justified iteration scales, scale/volume-uniform continuum limits, external Yang-Mills existence and a positive mass gap remain OPEN. Neither a finite Dirichlet Gram gap nor a local response obstruction decides them. No novelty is claimed for classical mean-value, triangle-bound or finite Gaussian tools. The indefinite focused research goal stays active; no campaign transition is made.
+
+Exact-commit approval, full new-history secret scan, guarded PUBLIC main/research backup and independent remote refs/visibility checks remain closure gates; this pre-commit ledger does not assert remote backup succeeded. Only the user controls repository visibility.

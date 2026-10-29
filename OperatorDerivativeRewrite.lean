@@ -2809,3 +2809,7 @@ import Foundation.FourCubeBoundarySmoothAction
 import Foundation.FourCubeBoundarySmoothPartition
 
 import Foundation.FourCubeMixedMeanValue
+
+import Foundation.FourCubeHessianMeanValue
+
+import Foundation.FourCubeThermalHessianBudget
