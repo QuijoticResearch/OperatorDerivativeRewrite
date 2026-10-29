@@ -33,6 +33,8 @@ reduce to matrix annihilation, yielding the classical independence
 test. The completion and its source/operator normalization are made
 explicit. A centered first/second-chaos mixture has negative
 square covariance, delimiting the homogeneous-chaos hypothesis.
+Combined tensor symmetrization retains a double-skew determinant
+whose actual transported law is explicitly Laplace.
 Classical quadratic-form theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
@@ -494,6 +496,128 @@ whose targets are jointly Gaussian linear variables. The mixed
 pair is a nonlinear polynomial image of a Gaussian variable,
 which is a different hypothesis.
 
+
+\section{Two skew factors and an actual determinant law}
+\subsection{Symmetrize the combined coefficient, not its factors}
+For a finite real square matrix $A$, write
+$S_A=(A+A^T)/2$, $K_A=(A-A^T)/2$. For matrices $A,B$ on
+possibly different finite index sets, the tensor coefficient acts on
+pairs of indices by $(A\otimes B)_{(i,a),(j,b)}=A_{ij}B_{ab}$.
+Its full symmetrization is
+\begin{equation}\label{eq:tensorsymmetry}
+ S_{A\otimes B}=S_A\otimes S_B+K_A\otimes K_B.
+\end{equation}
+Indeed $(A\otimes B)^T=A^T\otimes B^T$. Substitute
+$A=S_A+K_A$, $A^T=S_A-K_A$ and the corresponding formulas
+for $B$: the two mixed terms cancel while the two displayed
+terms remain. This is an entrywise identity, with no positivity
+or commutation hypothesis. A symmetric factor tensored with a
+skew factor is fully skew and has zero diagonal quadratic
+contraction, but two skew factors give a fully symmetric tensor.
+
+Take
+\[
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad T=J\otimes J.
+\]
+Then $S_J=0$, whereas $S_T=T\ne0$: its quadratic contraction
+on four coordinates is
+\begin{equation}\label{eq:detobservable}
+ Q_T=2(G_{00}G_{11}-G_{01}G_{10}).
+\end{equation}
+Here the four $G_{ia}$ are independent standard Gaussians and
+$\tr T=0$, so this is exactly the centered observable
+\eqref{eq:finiteQ}. Also $T^T=T$, $T^2=I_4$ and
+$\|T\|_\HS^2=4$, by $J^T=-J$ and $J^2=-I_2$.
+Equations \eqref{eq:isometry} and \eqref{eq:finitefourth} give
+\[
+ \E Q_T^2=8,\qquad \E Q_T^4=12\cdot4^2+48\cdot4=384,
+ \qquad \frac{\E Q_T^4}{(\E Q_T^2)^2}=6.
+\]
+Thus componentwise symmetrization would erase a genuinely nonzero
+second-chaos target. The single-factor skew field $V_J=JG$ has
+$\delta V_J=Q_J=0$, while the combined field $V_T=TG$ satisfies
+\[
+ \delta V_T=Q_T,\qquad DQ_T=2V_T,\qquad \|V_T\|_{L^2(H)}^2=4.
+\]
+These are the original polynomial derivative/divergence identities
+of Section 3, now applied to the combined coefficient. This does
+not say that the ordinary product of two zero random variables
+is nonzero. Forming a tensor of coefficient matrices and then
+one quadratic observable is a different operation from multiplying
+the two individual quadratic observables.
+
+\subsection{The actual four-coordinate law, including arbitrary embeddings}
+For completeness the construction works with any four orthonormal
+vectors $h_{ia}\in\ell^2$ in the original countable Gaussian source.
+Define $W(h)$ by the $L^2$ limit of $\sum_{j<n}h_jG_j$.
+The four $W(h_{ia})$ have the independent standard Gaussian law.
+Here is a direct verification that retains the actual embedding.
+For any finite real coefficients $t_{ia}$, their linear combination
+is $W(\sum t_{ia}h_{ia})$. Its finite coordinate sums have
+characteristic function tending to
+$\exp(-\|\sum t_{ia}h_{ia}\|^2/2)$.
+The limit is valid since $L^2$ convergence implies $L^1$
+convergence and $|e^{ix}-e^{iy}|\leq|x-y|$.
+Orthonormality makes the squared norm $\sum t_{ia}^2$.
+The joint characteristic function therefore factors into four
+standard Gaussian characteristic functions; uniqueness identifies
+the full product law. In particular the two rows are independent
+Gaussian vectors, not merely uncorrelated polynomial targets.
+Substitution in \eqref{eq:detobservable} transports the same law
+to the original ambient quadratic observable for every such frame.
+
+Write $U=(G_{00},G_{01})$, $V=(G_{10},G_{11})$. Conditional
+on the first row $U=u$, \eqref{eq:detobservable} is the linear
+Gaussian combination $-2u_2V_1+2u_1V_2$. Hence, for real $t$,
+\begin{equation}\label{eq:detconditional}
+ \E(e^{itQ_T}\mid U=u)=e^{-2t^2(u_1^2+u_2^2)}.
+\end{equation}
+The formula also holds at $u=0$, where the conditional variable
+is zero. Every phase is bounded by one, so Fubini applies without
+a moment or uniform-integrability assumption. For a standard
+Gaussian $Z$ and $c\geq0$, combining its density with
+$e^{-cZ^2}$ and scaling the Gaussian integral gives
+\[
+ \E e^{-cZ^2}=(1+2c)^{-1/2}.
+\]
+Indeed the integral of $e^{-(c+1/2)x^2}$ divided by that of
+$e^{-x^2/2}$ has exactly this value by the substitution
+$y=\sqrt{1+2c}\,x$. Integrate \eqref{eq:detconditional} over
+the two independent first-row coordinates to obtain
+\begin{equation}\label{eq:detchar}
+ \E e^{itQ_T}=\frac1{1+4t^2}.
+\end{equation}
+This identifies the whole law, beyond the fourth-moment diagnostic.
+
+The nonnegative density $p(x)=e^{-|x|/2}/4$ integrates to one.
+Its characteristic function is, by absolutely convergent half-line
+integration,
+\[
+ \int_\R e^{itx}p(x)\,dx
+ =\frac14\left(\frac1{1/2-it}+\frac1{1/2+it}\right)
+ =\frac1{1+4t^2}.
+\]
+For example the first half-line formula follows by integrating
+$e^{-(1/2-it)x}$ from zero to a finite endpoint and then letting
+that endpoint tend to infinity; the boundary exponential tends
+to zero in modulus. The negative half follows by $x\mapsto-x$.
+Characteristic-function uniqueness and \eqref{eq:detchar} prove
+that $Q_T$ has the actual Laplace density $p$. In particular its
+law has no atoms, is independent of the chosen orthonormal
+source frame, and the unscaled determinant has density
+$e^{-|x|}/2$. No higher-dimensional determinant law is asserted.
+
+This distribution is a classical antecedent, not a new consequence
+claimed as a probability discovery. Nyquist--Rice--Riordan
+\cite{NRR}, page 98, explicitly display the unscaled two-dimensional
+Gaussian determinant density $e^{-|x|}/2$ and already call that
+special case well known. The formalization contribution is the
+exact combined-index symmetry, original derivative/divergence
+normalization, full law transport from arbitrary orthonormal source
+coordinates and direct density identification. No geometric or
+stochastic-process application follows solely from this tensor
+calibration.
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -508,7 +632,8 @@ completion and recovery onto the second chaos, finite Gaussian
 matrix moments, strong box approximation, actual completed products,
 degree support, exact cumulants, strict contractions and mixed square
 covariance, together with the explicit centered mixed-chaos
-negative square-covariance witness. The general parameter interval
+negative square-covariance witness, full combined tensor symmetry
+and transported determinant density. The general parameter interval
 for that witness is a printed polynomial deduction. The symmetric
 square-summable matrix model above is a
 coordinate reconstruction of their original source-field unitary.
@@ -556,5 +681,10 @@ Osaka Mathematical Journal \textbf{2} (1950), 151--159.
 with applications}, Journal of Functional Analysis \textbf{270}
 (2016), 649--670. Primary preprint arXiv:1503.02154.
 \url{https://arxiv.org/abs/1503.02154}.
+\bibitem{NRR} H. Nyquist, S. O. Rice and J. Riordan,
+\emph{The distribution of random determinants},
+Quart. Appl. Math. \textbf{12} (1954), 97--104.
+\href{https://doi.org/10.1090/qam/63591}{doi:10.1090/qam/63591}.
+Primary scan, pages 97--98; two-dimensional density already classical.
 \end{thebibliography}
 \end{document}

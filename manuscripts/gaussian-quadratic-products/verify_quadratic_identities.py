@@ -58,5 +58,23 @@ if __name__=='__main__':
         'mixed-chaos square covariance polynomial':mean(mixF**2*mixG**2)-mean(mixF**2)*mean(mixG**2)-(2-24*a*a+56*a**4),
         'mapped half-amplitude negative covariance':mean((x+F(1,2)*H2)**2*(x-F(1,2)*H2)**2)-F(9,4)+F(1,2),
     }
+    # All eight indeterminates now serve as arbitrary matrix entries.
+    C=[[x,y],[a,b]];D=[[c,d],[e,f]]
+    def trans(M):return [list(r) for r in zip(*M)]
+    def part(M,sign):return [[F(1,2)*(M[i][j]+sign*M[j][i]) for j in range(2)] for i in range(2)]
+    def tensor(M,L):return [[M[i][j]*L[k][l] for j in range(2) for l in range(2)] for i in range(2) for k in range(2)]
+    CD=tensor(C,D);SS=tensor(part(C,1),part(D,1));KK=tensor(part(C,-1),part(D,-1))
+    for i in range(4):
+        for j in range(4):errors[f'tensor symmetrization entry {i},{j}']=F(1,2)*(CD[i][j]+CD[j][i])-SS[i][j]-KK[i][j]
+    def mean4(p):
+        out=P()
+        for k,v in p.items():
+            factor=v
+            for j in range(4):factor*=moment(k[j])
+            out=out+P({(0,0,0,0)+k[4:]:factor})
+        return P({k:v for k,v in out.items() if v})
+    determinant=2*(x*b-y*a)
+    errors['actual scaled determinant second moment']=mean4(determinant**2)-8
+    errors['actual scaled determinant fourth moment']=mean4(determinant**4)-384
     for name,error in errors.items():assert not error,(name,error)
-    print(json.dumps(dict(status='PASS',arithmetic='exact rational polynomial coefficients and Gaussian integer moments',checks={k:len(v) for k,v in errors.items()},count=len(errors),scope='Symbolic transcription checks for arbitrary symmetric 2x2 matrices, including noncommuting mixed terms. Not a proof of completed-space limits or independence.')))
+    print(json.dumps(dict(status='PASS',arithmetic='exact rational polynomial coefficients and Gaussian integer moments',checks={k:len(v) for k,v in errors.items()},count=len(errors),scope='Symbolic transcription checks for arbitrary symmetric 2x2 matrices, arbitrary tensor matrix parts and four independent Gaussian determinant coordinates. Not a proof of completed-space limits or independence.')))

@@ -251,3 +251,7 @@ Expanded the signed-density companion from seven to eight pages with actual smoo
 ## Singular even moment data and actual sixth-moment escape
 
 Expanded the moment paper from eight to nine pages with complete cubic Gram/null obstruction and actual two-atom/remote-atom probability sequence, moment-image nonclosedness, quantitative law convergence, bounded-sixth/tail failure and lower-power distinction. 64 exact frozen correspondences; 52 exact polynomial checks pass. Every final page inspected, new proofs enlarged, failed layout logs retained and final references together after standard article layout cleanup. Twenty-six drafts total 262 pages.
+
+## Two skew factors and an actual determinant law
+
+Expanded Gaussian quadratic products from eight to ten pages with full tensor symmetrization, nonzero double-skew recovery, exact second/fourth moments, ambient orthonormal-frame Gaussian law transport, conditional characteristic functions and explicit classical Laplace density. 194 frozen correspondences and 28 exact polynomial checks. All ten pages inspected, new pages enlarged; final clean build and fresh review hashes. Nyquist–Rice–Riordan primary pages 97–98 establish the classical density antecedent. Twenty-six drafts total 264 pages.

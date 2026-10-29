@@ -1026,6 +1026,726 @@
       "source_sha256": "983d5aca466d99949a6a1369983bb12a14a930e9837cb7b3cea9cae7045f3995",
       "declaration_header": "theorem exists_centered_polynomial_counterexample : \u2203 f g : polynomialCylindricalDomain,\n    inner \u211d gaussianOne (f : GaussianL2)=0 \u2227 inner \u211d gaussianOne (g : GaussianL2)=0 \u2227\n      \u2016(polynomialProduct f g : GaussianL2)\u2016^2<\u2016(f : GaussianL2)\u2016^2*\u2016(g : GaussianL2)\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMixedChaosProductCounterexample.lean#L91"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.double_skew_symmetric",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 19,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem double_skew_symmetric (A : Matrix L L \u211d) (B : Matrix C C \u211d)\n    (hA : \u2200 i j, A j i= -A i j) (hB : \u2200 a b, B b a= -B a b) (i j : L\u00d7C) :\n    tensor A B j i=tensor A B i j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L19"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.symmetric_skew_full_skew",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 27,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem symmetric_skew_full_skew (A : Matrix L L \u211d) (B : Matrix C C \u211d)\n    (hA : \u2200 i j, A j i=A i j) (hB : \u2200 a b, B b a= -B a b) (i j : L\u00d7C) :\n    tensor A B j i= -tensor A B i j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L27"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.symmetric_skew_contraction_zero",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 34,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem symmetric_skew_contraction_zero (A : Matrix L L \u211d) (B : Matrix C C \u211d)\n    (hA : \u2200 i j, A j i=A i j) (hB : \u2200 a b, B b a= -B a b) (v : L\u00d7C \u2192 \u211d) :\n    contraction (tensor A B) v v=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L34"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.tensor_square_sum",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 39,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem tensor_square_sum (A : Matrix L L \u211d) (B : Matrix C C \u211d) :\n    (\u2211 i, \u2211 j, (tensor A B i j)^2)=(\u2211 i, \u2211 j, (A i j)^2)*(\u2211 a, \u2211 b, (B a b)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L39"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.double_skew_symmetrize",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 50,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem double_skew_symmetrize (A : Matrix L L \u211d) (B : Matrix C C \u211d)\n    (hA : \u2200 i j, A j i= -A i j) (hB : \u2200 a b, B b a= -B a b) :\n    symmetrize (tensor A B)=tensor A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L50"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.double_skew_gaussian_energy",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 58,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem double_skew_gaussian_energy (A : Matrix L L \u211d) (B : Matrix C C \u211d)\n    (hA : \u2200 i j, A j i= -A i j) (hB : \u2200 a b, B b a= -B a b)\n    (h : L\u00d7C \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016quadraticTarget h (tensor A B)\u2016^2=\n      2*(\u2211 i, \u2211 j, (A i j)^2)*(\u2211 a, \u2211 b, (B a b)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L58"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.J_skew",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 72,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem J_skew (i j : Fin 2) : J j i= -J i j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L72"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_symmetric",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 75,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_symmetric (i j : Fin 2\u00d7Fin 2) : T j i=T i j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L75"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.determinant_contraction",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 84,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem determinant_contraction (v : Fin 2\u00d7Fin 2 \u2192 \u211d) :\n    contraction T v v=2*(v (0,0)*v (1,1)-v (0,1)*v (1,0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L84"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_square",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 89,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_square : T*T=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L89"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_trace",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 96,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_trace : Matrix.trace T=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L96"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_square_sum",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 99,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_square_sum : (\u2211 i, \u2211 j, (T i j)^2)=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L99"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_symmetrize",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 103,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_symmetrize : symmetrize T=T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L103"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.T_not_full_skew",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 105,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem T_not_full_skew : \u00ac \u2200 i j, T j i= -T i j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L105"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.one_factor_gaussian_zero",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 111,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem one_factor_gaussian_zero (h : Fin 2 \u2192 CoefficientSpace) : quadraticTarget h J=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L111"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.one_factor_divergence_kernel",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 114,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem one_factor_divergence_kernel (h : Fin 2 \u2192 CoefficientSpace) :\n    (linearField h J,0)\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L114"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_variance",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 122,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_variance (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016quadraticTarget h T\u2016^2=8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L122"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_gradient_projection",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 134,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_gradient_projection (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) :\n    gradientProjection (linearField h T)=linearField h T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L134"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_recovery",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 143,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_recovery (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) :\n    recovery (quadraticTarget h T)=linearField h T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L143"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_divergence_graph",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 147,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_divergence_graph (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) :\n    (linearField h T, quadraticTarget h T)\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L147"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_derivative_graph",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 151,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_derivative_graph (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) :\n    (quadraticTarget h T, (2:\u211d) \u2022 linearField h T)\u2208closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L151"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_determinant_ae",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 170,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_determinant_ae (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    quadraticTarget h T =\u1d50[gaussianProduct] fun \u03c9 => 2*\n      (firstChaosEmbedding (h (0,0)) \u03c9*firstChaosEmbedding (h (1,1)) \u03c9-\n        firstChaosEmbedding (h (0,1)) \u03c9*firstChaosEmbedding (h (1,0)) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L170"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_field_energy",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 188,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_field_energy (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016linearField h T\u2016^2=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L188"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_recovery_energy",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 192,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_recovery_energy (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016recovery (quadraticTarget h T)\u2016^2=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L192"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.gaussian_not_kernel",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 196,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem gaussian_not_kernel (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u00ac (linearField h T,0)\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L196"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.coordinateIndex_injective",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 214,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem coordinateIndex_injective : Function.Injective coordinateIndex",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L214"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.directions_orthonormal",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 220,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem directions_orthonormal : Orthonormal \u211d directions",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L220"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.actual_gaussian_variance",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 224,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem actual_gaussian_variance : \u2016quadraticTarget directions T\u2016^2=8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L224"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.actual_gaussian_nonzero",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 227,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem actual_gaussian_nonzero : quadraticTarget directions T \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L227"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DoubleSkewGaussianBridge.actual_gaussian_determinant",
+      "file": "Foundation/DoubleSkewGaussianBridge.lean",
+      "line": 230,
+      "source_sha256": "4d7b9146957ba71a5cf807f3c2e01ac2bee57303487a43344100e31dd84917f8",
+      "declaration_header": "theorem actual_gaussian_determinant :\n    quadraticTarget directions T =\u1d50[gaussianProduct] fun \u03c9 => 2*\n      (firstChaosEmbedding (directions (0,0)) \u03c9*firstChaosEmbedding (directions (1,1)) \u03c9-\n        firstChaosEmbedding (directions (0,1)) \u03c9*firstChaosEmbedding (directions (1,0)) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DoubleSkewGaussianBridge.lean#L230"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.tensor_symmetrization",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 19,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem tensor_symmetrization {L C : Type*} (A : Matrix L L \u211d) (B : Matrix C C \u211d) :\n    symmetrize (tensor A B)=tensor (symmetrize A) (symmetrize B)+tensor (skewPart A) (skewPart B)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L19"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.matrix_parts",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 25,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem matrix_parts {I : Type*} (A : Matrix I I \u211d) : symmetrize A+skewPart A=A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L25"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.J_symmetrize",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 30,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem J_symmetrize : symmetrize J=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L30"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.J_skewPart",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 36,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem J_skewPart : skewPart J=J",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L36"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.componentwise_symmetrization_fails",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 42,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem componentwise_symmetrization_fails :\n    symmetrize (tensor J J) \u2260 tensor (symmetrize J) (symmetrize J)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L42"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.recovery_tensor_parts",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 56,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem recovery_tensor_parts {L C : Type*} [Fintype L] [Fintype C]\n    (A : Matrix L L \u211d) (B : Matrix C C \u211d) (h : L\u00d7C \u2192 CoefficientSpace) :\n    recovery (quadraticTarget h (tensor A B))=\n      linearField h (tensor (symmetrize A) (symmetrize B))+\n        linearField h (tensor (skewPart A) (skewPart B))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L56"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.gradient_tensor_parts",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 63,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem gradient_tensor_parts {L C : Type*} [Fintype L] [Fintype C]\n    (A : Matrix L L \u211d) (B : Matrix C C \u211d) (h : L\u00d7C \u2192 CoefficientSpace) :\n    gradientProjection (linearField h (tensor A B))=\n      linearField h (tensor (symmetrize A) (symmetrize B))+\n        linearField h (tensor (skewPart A) (skewPart B))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L63"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.T_eigen_sums",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 89,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem T_eigen_sums :\n    (\u2211 i, (T_hermitian.eigenvalues i)^2)=4 \u2227 (\u2211 i, (T_hermitian.eigenvalues i)^4)=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L89"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinantCore_eq",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 95,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinantCore_eq (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) :\n    (determinantCore h : GaussianL2)=quadraticTarget h T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L95"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinant_fourth_moment",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 98,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinant_fourth_moment (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016(polynomialProduct (determinantCore h) (determinantCore h) : GaussianL2)\u2016^2=384",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L98"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinant_fourth_ratio",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 104,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinant_fourth_ratio (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    \u2016(polynomialProduct (determinantCore h) (determinantCore h) : GaussianL2)\u2016^2=\n      6*(\u2016(determinantCore h : GaussianL2)\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L104"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinant_not_gaussian_fourth_identity",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 110,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinant_not_gaussian_fourth_identity (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) :\n    \u2016(polynomialProduct (determinantCore h) (determinantCore h) : GaussianL2)\u2016^2 \u2260\n      3*(\u2016(determinantCore h : GaussianL2)\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L110"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.actual_determinant_fourth_moment",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 117,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem actual_determinant_fourth_moment :\n    \u2016(polynomialProduct (determinantCore directions) (determinantCore directions) : GaussianL2)\u2016^2=384",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L117"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinant_fourth_integral",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 130,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinant_fourth_integral (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    (\u222b \u03c9, (quadraticTarget h T \u03c9)^4 \u2202gaussianProduct)=384",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L130"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.determinant_fourth_integrable",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 143,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem determinant_fourth_integrable (h : Fin 2\u00d7Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    Integrable (fun \u03c9 => (quadraticTarget h T \u03c9)^4) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L143"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TensorSymmetryDeterminantMoments.actual_determinant_fourth_integral",
+      "file": "Foundation/TensorSymmetryDeterminantMoments.lean",
+      "line": 150,
+      "source_sha256": "7db9a590a7456ffe0e235c5d0b0d93b5c2174131a3862a350fcebca73eb60da3",
+      "declaration_header": "theorem actual_determinant_fourth_integral :\n    (\u222b \u03c9, (quadraticTarget directions T \u03c9)^4 \u2202gaussianProduct)=384",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TensorSymmetryDeterminantMoments.lean#L150"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.standard_phase_integral",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 17,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem standard_phase_integral (s : \u211d) :\n    (\u222b x, phase s x \u2202gaussianReal 0 1) = Complex.exp (-(s : \u2102)^2 / 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L17"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.determinant_phase_factor",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 23,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem determinant_phase_factor (t : \u211d) (u v : \u211d \u00d7 \u211d) :\n    phase t (determinant u v) = phase (-2*t*u.2) v.1 * phase (2*t*u.1) v.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L23"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.row_phase_integral",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 33,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem row_phase_integral (t : \u211d) (u : \u211d \u00d7 \u211d) :\n    (\u222b v, phase t (determinant u v) \u2202rowMeasure) =\n      Complex.exp ((-2*t^2*(u.1^2+u.2^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L33"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.square_laplace",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 44,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem square_laplace (c : \u211d) :\n    (\u222b x : \u211d, Real.exp (-c*x^2) \u2202gaussianReal 0 1) =\n      (Real.sqrt (2*Real.pi))\u207b\u00b9 * Real.sqrt (Real.pi / (c+1/2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L44"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.square_laplace_squared",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 57,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem square_laplace_squared (c : \u211d) (hc : 0 \u2264 c) :\n    (\u222b x : \u211d, Real.exp (-c*x^2) \u2202gaussianReal 0 1)^2 = 1/(1+2*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L57"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.radial_average",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 68,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem radial_average (t : \u211d) :\n    (\u222b u : \u211d \u00d7 \u211d, Real.exp (-2*t^2*(u.1^2+u.2^2)) \u2202rowMeasure) =\n      1/(1+4*t^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L68"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.determinant_phase_integrable",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 83,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem determinant_phase_integrable (t : \u211d) :\n    Integrable (fun z : (\u211d \u00d7 \u211d) \u00d7 (\u211d \u00d7 \u211d) => phase t (determinant z.1 z.2))\n      (rowMeasure.prod rowMeasure)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L83"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.determinant_phase_integral",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 91,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem determinant_phase_integral (t : \u211d) :\n    (\u222b z : (\u211d \u00d7 \u211d) \u00d7 (\u211d \u00d7 \u211d), phase t (determinant z.1 z.2)\n      \u2202rowMeasure.prod rowMeasure) = ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L91"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantConditional.determinantLaw_charFun",
+      "file": "Foundation/GaussianDeterminantConditional.lean",
+      "line": 101,
+      "source_sha256": "72d1c9096ad2411213fc0e0a2f9e4a5a859b27ba5476bba1822122ba32b2ad2c",
+      "declaration_header": "theorem determinantLaw_charFun (t : \u211d) :\n    charFun determinantLaw t = ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantConditional.lean#L101"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.row_orthonormal",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 17,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem row_orthonormal (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) (a : Fin 2) : Orthonormal \u211d (fun i => h (a,i))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L17"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.cross_rows_orthogonal",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 21,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem cross_rows_orthogonal (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) (i j : Fin 2) : inner \u211d (h (0,i)) (h (1,j)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L21"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.rows_hasLaw",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 27,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem rows_hasLaw (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    HasLaw (rows h) (rowMeasure.prod rowMeasure) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L27"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.determinant_ae",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 35,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem determinant_ae (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    quadraticTarget h T =\u1d50[gaussianProduct] fun \u03c9 => determinant (rows h \u03c9).1 (rows h \u03c9).2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L35"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.target_hasLaw",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 40,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem target_hasLaw (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h) :\n    HasLaw (quadraticTarget h T) determinantLaw gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L40"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.target_charFun",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 49,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem target_charFun (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace) (hh : Orthonormal \u211d h)\n    (t : \u211d) : charFun (gaussianProduct.map (quadraticTarget h T)) t =\n      ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L49"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.target_phase_integral",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 54,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem target_phase_integral (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) (t : \u211d) :\n    (\u222b \u03c9, phase t (quadraticTarget h T \u03c9) \u2202gaussianProduct) =\n      ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L54"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.actual_target_charFun",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 63,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem actual_target_charFun (t : \u211d) :\n    charFun (gaussianProduct.map (quadraticTarget directions T)) t =\n      ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L63"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.target_law_invariant",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 67,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem target_law_invariant (h k : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) (hk : Orthonormal \u211d k) :\n    gaussianProduct.map (quadraticTarget h T) = gaussianProduct.map (quadraticTarget k T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L67"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantLawTransport.target_phase_integrable",
+      "file": "Foundation/GaussianDeterminantLawTransport.lean",
+      "line": 72,
+      "source_sha256": "3ff0a65de205ae7815aa15e1a7b9622f8ccd5897766f0ea14272762235d1a126",
+      "declaration_header": "theorem target_phase_integrable (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace) (t : \u211d) :\n    Integrable (fun \u03c9 => phase t (quadraticTarget h T \u03c9)) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantLawTransport.lean#L72"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.density_nonneg",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 14,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem density_nonneg (x : \u211d) : 0 \u2264 density x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L14"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.weightedPhase_pos",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 18,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem weightedPhase_pos (t x : \u211d) (hx : 0 < x) :\n    weightedPhase t x = Complex.exp (((-1/2 : \u2102)+(t:\u2102)*Complex.I)*x)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L18"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.weightedPhase_nonpos",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 26,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem weightedPhase_nonpos (t x : \u211d) (hx : x \u2264 0) :\n    weightedPhase t x = Complex.exp (((1/2 : \u2102)+(t:\u2102)*Complex.I)*x)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L26"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.weightedPhase_integrable",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 34,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem weightedPhase_integrable (t : \u211d) : Integrable (weightedPhase t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L34"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.density_integrable",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 46,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem density_integrable : Integrable density",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L46"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.weightedPhase_integral",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 51,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem weightedPhase_integral (t : \u211d) :\n    (\u222b x, weightedPhase t x) = ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L51"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.densityMeasure_charFun",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 98,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem densityMeasure_charFun (t : \u211d) :\n    charFun densityMeasure t = ((1/(1+4*t^2) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L98"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.density_integral",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 106,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem density_integral : (\u222b x, density x) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L106"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.determinantLaw_eq_densityMeasure",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 112,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem determinantLaw_eq_densityMeasure : determinantLaw = densityMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L112"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.target_density_hasLaw",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 118,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem target_density_hasLaw (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) : HasLaw (quadraticTarget h T) densityMeasure gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L118"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.actual_target_density_hasLaw",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 123,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem actual_target_density_hasLaw :\n    HasLaw (quadraticTarget directions T) densityMeasure gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L123"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterminantDensity.target_law_singleton",
+      "file": "Foundation/GaussianDeterminantDensity.lean",
+      "line": 136,
+      "source_sha256": "524eb61fc246e4ee327f3782a3ade45e6f88192511bb242e22654de6626e89c7",
+      "declaration_header": "theorem target_law_singleton (h : Fin 2 \u00d7 Fin 2 \u2192 CoefficientSpace)\n    (hh : Orthonormal \u211d h) (x : \u211d) :\n    (gaussianProduct.map (quadraticTarget h T)) {x} = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterminantDensity.lean#L136"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianOrthogonalPolynomialIndependence.orthogonal_families_joint_law",
+      "file": "Foundation/GaussianOrthogonalPolynomialIndependence.lean",
+      "line": 27,
+      "source_sha256": "a7e77215604f5a6f32cd14da5267db8bc482155d2a15d4b53a4758fe13f6ea0f",
+      "declaration_header": "theorem orthogonal_families_joint_law (u : I \u2192 CoefficientSpace) (v : J \u2192 CoefficientSpace)\n    (hu : Orthonormal \u211d u) (hv : Orthonormal \u211d v)\n    (huv : \u2200 i j, inner \u211d (u i) (v j) = 0) :\n    HasLaw (fun \u03c9 => (firstChaosFamily u \u03c9, firstChaosFamily v \u03c9))\n      ((productGaussian I).prod (productGaussian J)) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianOrthogonalPolynomialIndependence.lean#L27"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianOrthogonalPolynomialIndependence.orthogonal_families_independent",
+      "file": "Foundation/GaussianOrthogonalPolynomialIndependence.lean",
+      "line": 40,
+      "source_sha256": "a7e77215604f5a6f32cd14da5267db8bc482155d2a15d4b53a4758fe13f6ea0f",
+      "declaration_header": "theorem orthogonal_families_independent (u : I \u2192 CoefficientSpace) (v : J \u2192 CoefficientSpace)\n    (hu : Orthonormal \u211d u) (hv : Orthonormal \u211d v)\n    (huv : \u2200 i j, inner \u211d (u i) (v j) = 0) :\n    IndepFun (firstChaosFamily u) (firstChaosFamily v) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianOrthogonalPolynomialIndependence.lean#L40"
+    },
+    {
+      "paper": "Section 10 tensor symmetrization and actual Gaussian determinant law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianOrthonormalPolynomialLaw.orthonormal_firstChaosFamily_law",
+      "file": "Foundation/GaussianOrthonormalPolynomialLaw.lean",
+      "line": 33,
+      "source_sha256": "68d7965b925d457c002c4e57156eb7007f321f373aed3912ae3ac5d393c9bcd0",
+      "declaration_header": "theorem orthonormal_firstChaosFamily_law (v : I \u2192 CoefficientSpace) (hv : Orthonormal \u211d v) :\n    HasLaw (firstChaosFamily v) (productGaussian I) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianOrthonormalPolynomialLaw.lean#L33"
     }
   ],
   "human_reorganization": [
@@ -1033,7 +1753,11 @@
     "The printed L4 Cauchy argument applies the finite sharp bound to differences and identifies the limit with the original L2 class. The formal source constructs an actual square first through bounded approximation; both give the same original target and pointwise product. No new formal declarations are claimed.",
     "Strictness is proved by retaining one fixed nonzero source coordinate through strong square approximation, rather than assuming that strict finite cumulants remain strict in a limit.",
     "The completed equality criterion uses the three exact projection conditions. Matrix annihilation and the mapped necessary independence test are finite-dimensional. The classical finite converse via orthogonal ranges and the explicit 2x2 dependent orthogonal example are labelled human deductions, not new formal declarations.",
-    "The general parameter polynomial 2-24a^2+56a^4 and exact negative interval are printed direct deductions. The named source explicitly supplies the half-amplitude witness and its centeredness, original product and negative square covariance. Neither target is homogeneous chaos or a jointly Gaussian linear coordinate."
+    "The general parameter polynomial 2-24a^2+56a^4 and exact negative interval are printed direct deductions. The named source explicitly supplies the half-amplitude witness and its centeredness, original product and negative square covariance. Neither target is homogeneous chaos or a jointly Gaussian linear coordinate.",
+    "Tensor symmetrization uses the transpose on both paired indices: S(A tensor B)=S(A) tensor S(B)+K(A) tensor K(B). Two skew factors therefore survive even when each factor quadratic contraction is zero. The combined coefficient tensor is not the ordinary product of the two individual zero random variables.",
+    "The double-skew four-coordinate observable equals twice a 2 by 2 Gaussian determinant, has second moment 8 and fourth moment 384, and is the actual recovered original-source target. The orthonormal frame law is transported in the ambient countable Gaussian product, rather than asserted from matching moments.",
+    "The exact actual determinant law is proved through conditional characteristic functions, the nonnegative Gaussian square Laplace transform and uniqueness. The density is one quarter exp(-absolute(x)/2), or one half exp(-absolute(x)) for the unscaled determinant. No general-dimension determinant law is asserted.",
+    "The paper only uses the nonnegative square-Laplace parameter, where its finite integral derivation applies. Null-set equality, law transport and singleton nullity are taken from the actual verified declarations. The dimension-two determinant density is classical, explicitly present in Nyquist-Rice-Riordan (1954), not a new distribution."
   ],
   "literature": [
     {
