@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
-\usepackage[margin=1.05in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -12,7 +13,7 @@
 \newcommand{\Ent}{\operatorname{Ent}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{An explicit nonreversible Cauchy semigroup\protect\\
-on the circle: kernel, generator and entropy}
+on the circle: generator, entropy and dual boundaries}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
 \begin{document}
@@ -38,7 +39,11 @@ to known Cauchy-driven phase dynamics. Exact statements
 are mapped to a frozen Lean development. Exact single-harmonic
 corrections and real-polynomial tests distinguish the special sine
 drift from higher harmonics, Haar energies and diffusion chain rules.
-Novelty of the explicit combined package is unresolved.
+We also prove actual weak forward-law evolution, point-mass dual norm
+obstructions and the exact regularity of time-averaged law functionals.
+A zero-drift Fourier test separates a bounded transposed-generator value
+from norm differentiability of an averaged dual orbit. Novelty of the
+explicit combined package is unresolved.
 \end{abstract}
 
 \section{The circle flow and the conclusions}
@@ -726,6 +731,174 @@ primary introduction and definitions place nonlocal $\Gamma$
 calculus in its established setting; their Euclidean theorem is
 not being transferred to this circle model.
 
+\section{Forward law duality and point-mass norm gaps}
+Let $E=C(\T;\C)$ with its supremum norm. Its continuous complex dual
+$E'$ carries the operator norm. Define the transpose semigroup by
+\[
+ P_t'\varphi(f)=\varphi(P_tf),\qquad \varphi\in E',\quad t\geq0.
+\]
+It is contractive, and for every fixed $f\in E$ the scalar function
+$t\mapsto P_t'\varphi(f)$ is continuous. Both statements follow directly
+from contractivity and strong continuity of $P_t$ on $E$.
+For a probability law $\mu$, its functional
+$\varphi_\mu(f)=\int f\,d\mu$ has norm one: the integral bound gives
+norm at most one, and testing the constant function one gives equality.
+The kernel pairing identifies the \emph{actual} forward law:
+\[
+ P_t'\varphi_\mu(f)=\int P_tf\,d\mu=\int f\,d(\mu K_t).
+\]
+For every $f\in D(A)$, the full generator identity
+\eqref{eq:graph}, followed by this bounded functional, gives
+\begin{equation}\label{eq:dualweakint}
+ \int f\,d\mu_t-\int f\,d\mu
+      =\int_0^t\int Af\,d\mu_s\,ds.
+\end{equation}
+The integrand is continuous in $s$, so its scalar derivative at every
+positive time is $\int Af\,d\mu_t$. This weak evolution uses the full
+closed generator domain, not just a Fourier polynomial test class.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{CauchyPoissonForwardDual.actual_law_duality},
+\code{weak_forward_integrated}, \code{weak_forward_derivative},
+\code{dualOrbit_weak_continuous}.
+\par\endgroup
+
+The corresponding norm assertion fails for every admissible drift.
+Let $\delta_x$ also denote evaluation at $x\in\T$, and take
+$f_n(z)=z^n$, whose norm is one. Harmonic extension gives
+$P_tf_n(x)=\phi_t(x)^n$. Since $|\phi_t(x)|<1$ for $t>0$,
+\[
+ \|P_t'\delta_x-\delta_x\|
+  \geq|\phi_t(x)^n-x^n|
+  \geq1-|\phi_t(x)|^n\longrightarrow1\quad(n\to\infty).
+\]
+Thus the dual norm gap is at least one at every positive time, even
+as $t\downarrow0$. This is compatible with convergence against each
+fixed continuous test: the detecting powers depend on the norm test.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{CauchyPoissonDualObstruction.dirac_dual_norm_gap},
+\code{dirac_dual_not_strong_right}.
+\par\endgroup
+
+There is a generator-domain obstruction as well. Define the Banach
+transpose $A'$ by $\varphi\in D(A')$ if there exists $\psi\in E'$
+such that $\varphi(Af)=\psi(f)$ for every $f\in D(A)$. Density of
+$D(A)$ makes $\psi$ unique. At $q=0$, $Af_n=-nf_n$. If evaluation
+$\delta_x$ had a bounded transposed value $\psi$, then
+$|\psi(f_n)|=n$, contradicting $\|f_n\|=1$ and boundedness of $\psi$.
+Hence $\delta_x\notin D(A')$ at zero drift. This concerns the
+continuous-function dual; it is not a characterization of a forward
+density generator on some other normed space.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{CauchyPoissonDualObstruction.zero_dirac_no_adjoint_value}.
+\par\endgroup
+
+\section{Time averages and the transposed generator}
+For $T>0$ define the bounded orbit average on $E$ and its dual action by
+\begin{equation}\label{eq:dualavg}
+ B_Tf=\frac1T\int_0^TP_sf\,ds,\qquad
+ \overline\varphi_T(f)=\varphi(B_Tf).
+\end{equation}
+The integral here is an ordinary Bochner integral in $E$, where the
+orbit is strongly continuous. Thus this definition does not presuppose
+a norm-Bochner integral of the generally discontinuous dual orbit.
+It gives $\|B_T\|\leq1$ and $\|\overline\varphi_T\|\leq\|\varphi\|$.
+For a probability law functional it reads, on each continuous test,
+\[
+ \overline\varphi_{\mu,T}(f)
+      =\frac1T\int_0^T\int f\,d(\mu K_s)\,ds.
+\]
+Only this functional and scalar identity are needed here; no new
+measure-valued average construction is assumed from the formal source.
+
+\begin{proposition}[Exact regularity supplied by averaging]\label{prop:dualavg}
+For every $\varphi\in E'$ and $T>0$,
+\begin{align}
+ \overline\varphi_T&\in D(A'),&
+ A'\overline\varphi_T&=\frac{P_T'\varphi-\varphi}{T},\label{eq:avgtranspose}\\
+ \|P_h'\overline\varphi_T-\overline\varphi_T\|
+       &\leq\frac{2h}{T}\|\varphi\|&& (h\geq0).\label{eq:avgstrong}
+\end{align}
+Also $\overline\varphi_T(f)\to\varphi(f)$ as $T\downarrow0$ for
+every fixed $f\in E$.
+\end{proposition}
+\begin{proof}
+For $f\in D(A)$, integrate the generator orbit identity to get
+$B_TAf=(P_Tf-f)/T$. Applying $\varphi$ proves
+\eqref{eq:avgtranspose}; its right side is a bounded functional of
+norm at most $2\|\varphi\|/T$.
+The semigroup property and bounded integration give
+\begin{align*}
+ B_TP_hf-B_Tf
+ &=\frac1T\left(\int_h^{T+h}P_sf\,ds-\int_0^TP_sf\,ds\right)\\
+ &=\frac1T\left(\int_T^{T+h}P_sf\,ds-\int_0^hP_sf\,ds\right).
+\end{align*}
+Each short integral has norm at most $h\|f\|$, proving
+\eqref{eq:avgstrong} after applying $\varphi$ and taking the unit-ball
+supremum. Finally
+$\|B_Tf-f\|\leq\sup_{0\leq s\leq T}\|P_sf-f\|\to0$ by strong
+continuity at zero. Applying the bounded functional proves the last claim.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{CauchyPoissonDualAverage.average_adjoint_pairing},
+\code{average_actual_law}, \code{average_weak_limit},
+\code{average_strong_bound}, \code{average_strong_right}.
+\par\endgroup
+
+The bounded transposed value in \eqref{eq:avgtranspose} is not an
+automatic norm derivative of this dual orbit. The following quantitative
+test is a \emph{human deduction} from the zero-drift Fourier formulas,
+not a named formal theorem.
+\begin{proposition}[A continuous averaged orbit with no norm derivative]
+Take $q=0$, $x\in\T$, $T>0$ and
+$\overline\delta_{x,T}=\overline\varphi_T$ for $\varphi=\delta_x$.
+Its dual orbit is norm continuous by \eqref{eq:avgstrong}, but has no
+norm right derivative at zero. In fact, with
+$v_T=(P_T'\delta_x-\delta_x)/T$, for every $h>0$,
+\begin{equation}\label{eq:avgderivativegap}
+ \left\|\frac{P_h'\overline\delta_{x,T}-\overline\delta_{x,T}}h-v_T\right\|
+      \geq\frac1T.
+\end{equation}
+Moreover $\|\overline\delta_{x,T}-\delta_x\|\geq1$ for every $T>0$,
+despite its convergence on each fixed test as $T\downarrow0$.
+\end{proposition}
+\begin{proof}
+At zero drift $P_tf_n=e^{-nt}f_n$. Therefore
+\[
+ \overline\delta_{x,T}(f_n)=\frac{1-e^{-nT}}{nT}x^n,
+ \qquad v_T(f_n)=-\frac{1-e^{-nT}}T x^n\quad(n\geq1).
+\]
+The difference quotient minus $v_T$, tested on $f_n$, is exactly
+\[
+ \frac{1-e^{-nT}}T
+       \left(1-\frac{1-e^{-nh}}{nh}\right)x^n.
+\]
+For fixed $h,T>0$ its absolute value tends to $1/T$ as $n\to\infty$.
+Since $\|f_n\|=1$, this proves \eqref{eq:avgderivativegap}.
+To exclude any other strong derivative candidate, observe that for
+every fixed $f\in E$ the same interval-shift identity gives
+\[
+ \frac{(P_h'\overline\delta_{x,T}-\overline\delta_{x,T})(f)}h
+ =\frac1{Th}\left(\int_T^{T+h}(P_sf)(x)\,ds
+                       -\int_0^h(P_sf)(x)\,ds\right)
+       \longrightarrow v_T(f)
+\]
+by continuity of the scalar orbit. A norm derivative would have to
+be this weak limit, which \eqref{eq:avgderivativegap} excludes.
+Finally the first Fourier-average coefficient above tends to zero
+as $n\to\infty$ for fixed $T$, whereas $|\delta_x(f_n)|=1$.
+Taking this limit in the unit-test norm bound proves the final gap.
+\end{proof}
+
+These distinctions belong to classical adjoint-semigroup theory.
+Van Neerven--de Pagter \cite{adjoint}, introduction and Section 1,
+describe the norm-continuity subspace of an adjoint semigroup and
+weak-star orbit integrals in the transposed-generator domain. Our
+construction uses the explicit circle kernel and its Fourier tests
+to display these boundaries, without a priority claim. The weak law
+evolution, positive-time entropy theorem, bounded transposed value,
+norm-continuous averaged orbit and norm differentiability are separate
+assertions; the failure of the last does not contradict the others.
+
 \section{Classical context and exact verification scope}
 The Poisson kernel and harmonic-composition construction
 are classical. The pole equation
@@ -757,7 +930,12 @@ the formal three-coordinate finite Fourier algebra, with all other
 coordinates zero. The human proof groups
 the same ingredients into harmonic and Banach-space
 arguments; intermediate regroupings are not claimed as
-new named Lean theorems.
+new named Lean theorems. The added forward-dual and averaging map
+retains the Banach transpose domain and weak-star topology. The explicit
+zero-drift failure of norm differentiability and the averaged Dirac norm
+gap are labelled human deductions. The nine retained exact finite-core
+checks remain; the new functional/domain limits are verified by their
+complete analytic proofs rather than numerical sampling.
 
 The results concern the displayed circle kernels and
 the continuous-function generator. A trajectory law,
@@ -769,6 +947,10 @@ justify replacing the actual nonsymmetric operator by
 a symmetric diffusion.
 
 \begin{thebibliography}{9}
+\bibitem{adjoint} J. M. A. M. van Neerven and B. de Pagter,
+\emph{The adjoint of a positive semigroup}, Compositio Mathematica
+\textbf{90} (1994), 99--118.
+\href{https://fa.ewi.tudelft.nl/~neerven/publications/papers/Compos_Math_94.pdf}{Primary author manuscript}.
 \bibitem{tanaka} T. Tanaka,
 Low-dimensional dynamics of phase oscillators driven by
 Cauchy noise, primary preprint, arXiv:2009.04273.

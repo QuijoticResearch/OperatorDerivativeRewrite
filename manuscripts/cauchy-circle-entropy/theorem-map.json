@@ -918,6 +918,204 @@
       "source_sha256": "37f6f3fb0106a46bff2cbd1e2d0a7b3ca870e34b5fc605d2801665e2b0276592",
       "declaration_header": "theorem drifted_cubic_nonzero (r : \u211d) :\n    cubicDefect (fun p => generator (stableSymbol 1) p + r \u2022 transport p)\n      cosineMultiplier \u2260 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyDiffusionChainObstruction.lean#L69"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.lawFunctional_norm",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 21,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem lawFunctional_norm (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] : \u2016lawFunctional \u03bc\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L21"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.dualOrbit_apply",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 30,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem dualOrbit_apply (q : \u211d) (hq : |q| < 1) (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (t : \u211d) (f : C(Circle,\u2102)) :\n    dualOrbit q hq \u03c6 t f = \u03c6 (orbit q hq f t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L30"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.dualOrbit_bound",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 33,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem dualOrbit_bound (q : \u211d) (hq : |q| < 1) (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (t : \u211d) :\n    \u2016dualOrbit q hq \u03c6 t\u2016 \u2264 \u2016\u03c6\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L33"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.dualOrbit_zero",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 41,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem dualOrbit_zero (q : \u211d) (hq : |q| < 1) (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) : dualOrbit q hq \u03c6 0 = \u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L41"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.dualOrbit_add",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 45,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem dualOrbit_add (q : \u211d) (hq : |q| < 1) (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102)\n    (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    dualOrbit q hq \u03c6 (s+t) = dualOrbit q hq (dualOrbit q hq \u03c6 s) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L45"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.actual_law_duality",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 53,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem actual_law_duality (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] (f : C(Circle,\u2102)) :\n    (\u222b z, f z \u2202(kernel q t) \u2218\u2098 \u03bc) = lawFunctional \u03bc (orbit q hq f t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L53"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.weak_forward_derivative",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 63,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem weak_forward_derivative (q : \u211d) (hq : |q| < 1) (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc]\n    (f g : C(Circle,\u2102)) (h : (f,g) \u2208 (generator q hq).graph) (t : \u211d) (ht : 0 < t) :\n    HasDerivAt (fun u => \u222b z, f z \u2202(kernel q u) \u2218\u2098 \u03bc) (\u222b z, g z \u2202(kernel q t) \u2218\u2098 \u03bc) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L63"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.dualOrbit_weak_continuous",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 74,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem dualOrbit_weak_continuous (q : \u211d) (hq : |q| < 1)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (f : C(Circle,\u2102)) :\n    Continuous (fun t => dualOrbit q hq \u03c6 t f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L74"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDual.weak_forward_integrated",
+      "file": "Foundation/CauchyPoissonForwardDual.lean",
+      "line": 79,
+      "source_sha256": "1100f884dc66d32a9248d1ecbd61fdc597ea1d6907772ff4a9de0ee9b456d8a2",
+      "declaration_header": "theorem weak_forward_integrated (q : \u211d) (hq : |q| < 1)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] (f g : C(Circle,\u2102))\n    (h : (f,g) \u2208 (generator q hq).graph) (t : \u211d) (ht : 0 \u2264 t) :\n    (\u222b z, f z \u2202(kernel q t) \u2218\u2098 \u03bc) - (\u222b z, f z \u2202\u03bc) =\n      \u222b u in (0:\u211d)..t, \u222b z, g z \u2202(kernel q u) \u2218\u2098 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDual.lean#L79"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualObstruction.dirac_apply",
+      "file": "Foundation/CauchyPoissonDualObstruction.lean",
+      "line": 13,
+      "source_sha256": "c65cd69cda1e1f2ffa67cf853ae857561e3e953f593a20879879a847ba60eb9a",
+      "declaration_header": "theorem dirac_apply (x : Circle) (f : C(Circle,\u2102)) :\n    lawFunctional (Measure.dirac x) f = f x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualObstruction.lean#L13"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualObstruction.dirac_dual_power_norm",
+      "file": "Foundation/CauchyPoissonDualObstruction.lean",
+      "line": 18,
+      "source_sha256": "c65cd69cda1e1f2ffa67cf853ae857561e3e953f593a20879879a847ba60eb9a",
+      "declaration_header": "theorem dirac_dual_power_norm (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t)\n    (x : Circle) (n : \u2115) :\n    \u2016dualOrbit q hq (lawFunctional (Measure.dirac x)) t (coordinate^n)\u2016 =\n      \u2016evolution q t x\u2016^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualObstruction.lean#L18"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualObstruction.dirac_dual_norm_gap",
+      "file": "Foundation/CauchyPoissonDualObstruction.lean",
+      "line": 26,
+      "source_sha256": "c65cd69cda1e1f2ffa67cf853ae857561e3e953f593a20879879a847ba60eb9a",
+      "declaration_header": "theorem dirac_dual_norm_gap (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (x : Circle) :\n    1 \u2264 \u2016dualOrbit q hq (lawFunctional (Measure.dirac x)) t - lawFunctional (Measure.dirac x)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualObstruction.lean#L26"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualObstruction.dirac_dual_not_strong_right",
+      "file": "Foundation/CauchyPoissonDualObstruction.lean",
+      "line": 49,
+      "source_sha256": "c65cd69cda1e1f2ffa67cf853ae857561e3e953f593a20879879a847ba60eb9a",
+      "declaration_header": "theorem dirac_dual_not_strong_right (q : \u211d) (hq : |q| < 1) (x : Circle) :\n    \u00ac Tendsto (fun t => dualOrbit q hq (lawFunctional (Measure.dirac x)) t)\n      (\ud835\udcdd[Ioi 0] 0) (\ud835\udcdd (lawFunctional (Measure.dirac x)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualObstruction.lean#L49"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualObstruction.zero_dirac_no_adjoint_value",
+      "file": "Foundation/CauchyPoissonDualObstruction.lean",
+      "line": 65,
+      "source_sha256": "c65cd69cda1e1f2ffa67cf853ae857561e3e953f593a20879879a847ba60eb9a",
+      "declaration_header": "theorem zero_dirac_no_adjoint_value (x : Circle) :\n    \u00ac \u2203 \u03c8 : C(Circle,\u2102) \u2192L[\u2102] \u2102, \u2200 f g : C(Circle,\u2102),\n      (f,g) \u2208 (generator 0 (by norm_num)).graph \u2192\n      \u03c8 f = lawFunctional (Measure.dirac x) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualObstruction.lean#L65"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.averageDual_apply",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 16,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem averageDual_apply (q : \u211d) (hq : |q| < 1) (T : \u211d)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (f : C(Circle,\u2102)) :\n    averageDual q hq T \u03c6 f = T\u207b\u00b9 \u2022 \u222b s in (0:\u211d)..T, \u03c6 (orbit q hq f s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L16"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.average_adjoint_pairing",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 22,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem average_adjoint_pairing (q : \u211d) (hq : |q| < 1) (T : \u211d) (hT : 0 \u2264 T)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (f g : C(Circle,\u2102))\n    (h : (f,g) \u2208 (generator q hq).graph) :\n    averageDual q hq T \u03c6 g = (T\u207b\u00b9 \u2022 (dualOrbit q hq \u03c6 T - \u03c6)) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L22"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.average_actual_law",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 30,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem average_actual_law (q : \u211d) (hq : |q| < 1) (T : \u211d) (hT : 0 \u2264 T)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] (f : C(Circle,\u2102)) :\n    averageDual q hq T (lawFunctional \u03bc) f =\n      T\u207b\u00b9 \u2022 \u222b s in (0:\u211d)..T, \u222b z, f z \u2202(CauchyPoissonMarkovKernel.kernel q s) \u2218\u2098 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L30"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.average_weak_limit",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 41,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem average_weak_limit (q : \u211d) (hq : |q| < 1)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (f : C(Circle,\u2102)) :\n    Tendsto (fun T => averageDual q hq T \u03c6 f) (\ud835\udcdd[Ioi 0] 0) (\ud835\udcdd (\u03c6 f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L41"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.integral_commutes",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 53,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem integral_commutes (q : \u211d) (hq : |q| < 1) (T t : \u211d) (hT : 0 \u2264 T) (ht : 0 \u2264 t)\n    (f : C(Circle,\u2102)) :\n    integralOperator q hq T (orbit q hq f t) = orbit q hq (integralOperator q hq T f) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L53"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.integrated_shift_bound",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 67,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem integrated_shift_bound (q : \u211d) (hq : |q| < 1) (T t : \u211d) (hT : 0 \u2264 T) (ht : 0 \u2264 t)\n    (f : C(Circle,\u2102)) :\n    \u2016integralOperator q hq T (orbit q hq f t)-integralOperator q hq T f\u2016 \u2264 2*t*\u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L67"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.average_strong_bound",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 90,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem average_strong_bound (q : \u211d) (hq : |q| < 1) (T : \u211d) (hT : 0 < T)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) (t : \u211d) (ht : 0 \u2264 t) :\n    \u2016dualOrbit q hq (averageDual q hq T \u03c6) t - averageDual q hq T \u03c6\u2016 \u2264\n      2*t*T\u207b\u00b9*\u2016\u03c6\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L90"
+    },
+    {
+      "paper": "Sections 12\u201313 actual forward law weak duality, Dirac norm/domain obstruction and bounded time-average transpose with strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDualAverage.average_strong_right",
+      "file": "Foundation/CauchyPoissonDualAverage.lean",
+      "line": 105,
+      "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
+      "declaration_header": "theorem average_strong_right (q : \u211d) (hq : |q| < 1) (T : \u211d) (hT : 0 < T)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) :\n    Tendsto (fun t => dualOrbit q hq (averageDual q hq T \u03c6) t)\n      (\ud835\udcdd[Ioi 0] 0) (\ud835\udcdd (averageDual q hq T \u03c6))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L105"
     }
   ],
   "human_reorganization": [
@@ -929,7 +1127,11 @@
     "The full single-harmonic scalar classification is proved with actual real cosine witnesses. Its finite complex diagonal and integer coefficient identities are also reconstructed; no mixed-potential classification is inferred.",
     "The general real-cosine correction n*(n-min(abs(n-h),n)) and nonzero-amplitude extension are printed direct deductions. The source specifically formalizes the n=1 and n=h real obstructions and zero/unit harmonic classification.",
     "The Haar-energy counterexample uses the uncentered nonstationary energy -integral fLf; it does not refute centered-energy or correct invariant-law inequalities. The amplitude-one semigroup reference is explicitly the nonuniform wrapped Cauchy law.",
-    "The cubic defect survives every sine amplitude because the derivation contribution cancels. A special Gamma2 scalar shift is not a diffusion chain rule. No Euclidean curvature-dimension theorem is transferred from the contextual primary literature."
+    "The cubic defect survives every sine amplitude because the derivation contribution cancels. A special Gamma2 scalar shift is not a diffusion chain rule. No Euclidean curvature-dimension theorem is transferred from the contextual primary literature.",
+    "The forward dual is the continuous complex Banach dual of C(circle;C) with its operator norm. Actual probability-law functionals pair with the actual kernel. Weak evolution is proved on the full closed generator graph, while each Dirac law has a dual norm gap at least one for every positive time and every admissible drift.",
+    "The zero-drift Dirac functional has no bounded Banach-transposed generator value because unit Fourier tests have generator values of size n. This is not a maximal forward-density generator identification.",
+    "Time averages are defined by transposing the strongly continuous observable-space Bochner integral, without assuming norm-Bochner integrability of the dual orbit. They have a bounded A-prime value and a norm-continuous forward orbit with explicit bound 2h/T times the functional norm; their convergence as T->0 is against each fixed continuous test.",
+    "The explicit zero-drift averaged Dirac functional has no norm right derivative despite lying in the Banach-transpose domain and having a norm-continuous orbit. Its difference quotient remains at least 1/T from the uniquely possible weak derivative, and its norm distance from the original Dirac is at least one. These quantitative conclusions are labelled human deductions from the exact exponential Fourier formulas, not newly named formal theorems or source claims."
   ],
   "literature": [
     {
