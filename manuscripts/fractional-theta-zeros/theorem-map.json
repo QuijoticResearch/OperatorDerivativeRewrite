@@ -216,6 +216,222 @@
       "line": 78,
       "source_sha256": "33dcc1ccb2e52eb6888c2890b84c87819e9bfaaa6885b6ba95399cba53f882b2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderBranchObstruction.lean#L78"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.law",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 14,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "def law (s : \u211d\u22650) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L14"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.gaussian_phase_integrable",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 20,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem gaussian_phase_integrable (s : \u211d\u22650) (q : \u2102) :\n    Integrable (fun y : \u211d => Complex.exp (q*(y : \u2102))) (law s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L20"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.gaussian_phase_integral",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 26,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem gaussian_phase_integral (s : \u211d\u22650) (q : \u2102) :\n    (\u222b y : \u211d, Complex.exp (q*(y : \u2102)) \u2202law s) = Complex.exp ((s : \u2102)*q^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L26"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.kernel_integrable",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 97,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem kernel_integrable (s : \u211d\u22650) (t : \u211d) (j : \u2115) (z c : \u2102) :\n    Integrable (fun p : \u211d \u00d7 \u211d => kernel t j z c p.1 p.2) (halfLine.prod (law s))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L97"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.shifted_flow_integrable",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 160,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem shifted_flow_integrable (s : \u211d\u22650) (t : \u211d) (z c : \u2102) :\n    Integrable (fun y : \u211d => flow 1 t (z+c*(y : \u2102))) (law s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L160"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.imaginary_gaussian_average",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 190,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem imaginary_gaussian_average (s : \u211d\u22650) (t : \u211d) (z : \u2102) :\n    (\u222b y : \u211d, flow 1 t (z+Complex.I*(y : \u2102)) \u2202law s) =\n      flow 1 (t+(s : \u211d)) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L190"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticGaussian.real_gaussian_average",
+      "file": "Foundation/RiemannQuadraticGaussian.lean",
+      "line": 197,
+      "source_sha256": "da7db2bbc7139820bb92dc56c11562c3d54dda21563d669ef12bb4d4a637be7a",
+      "declaration_header": "theorem real_gaussian_average (s : \u211d\u22650) (t : \u211d) (z : \u2102) :\n    (\u222b y : \u211d, flow 1 t (z+(y : \u2102)) \u2202law s) =\n      flow 1 (t-(s : \u211d)) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticGaussian.lean#L197"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.q",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 16,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "def q (n : \u2115) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L16"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.heatAtZero",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 17,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "def heatAtZero (f : \u2102 \u2192 \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L17"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.normalized",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 118,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "def normalized (n : \u2115) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L118"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.normalized_origin",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 126,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem normalized_origin (n : \u2115) : normalized n 0=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L126"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.normalized_even",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 129,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem normalized_even (n : \u2115) (z : \u2102) : normalized n (-z)=normalized n z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L129"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.coefficient_bound",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 29,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem coefficient_bound (n : \u2115) : \u2016(coefficient n : \u2102)\u2016 \u2264 1/(n.factorial : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L29"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.q_uniform_disk",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 47,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem q_uniform_disk (R : \u211d) (hR : 0\u2264R) :\n    TendstoUniformlyOn q (fun _ => 0) atTop (closedBall (0:\u2102) R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L47"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.normalized_locally_uniform_one",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 143,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem normalized_locally_uniform_one :\n    TendstoLocallyUniformly normalized (fun _ => 1) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L143"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.normalized_law_integrable",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 161,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem normalized_law_integrable (n : \u2115) :\n    Integrable (fun y : \u211d => normalized n (I*(y:\u2102))) (RiemannQuadraticGaussian.law 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L161"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.heat_normalized_law",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 167,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem heat_normalized_law (n : \u2115) :\n    (\u222b y : \u211d, normalized n (I*(y:\u2102)) \u2202RiemannQuadraticGaussian.law 1)=2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L167"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.heat_one",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 171,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem heat_one : heatAtZero (fun _ => 1)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L171"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.heat_not_tendsto",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 173,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem heat_not_tendsto : \u00ac Tendsto (fun n => heatAtZero (normalized n)) atTop\n    (\ud835\udcdd (heatAtZero (fun _ => 1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L173"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.no_integrable_domination",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 180,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem no_integrable_domination : \u00ac \u2203 g : \u211d \u2192 \u211d,\n    Integrable g (RiemannQuadraticGaussian.law 1) \u2227\n      \u2200 n : \u2115, \u2200\u1d50 y : \u211d \u2202RiemannQuadraticGaussian.law 1,\n        \u2016normalized n (I*(y:\u2102))\u2016 \u2264 g y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L180"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.integral_distance_one",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 216,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem integral_distance_one (n : \u2115) :\n    (\u222b y : \u211d, \u2016normalized n (I*(y:\u2102))-1\u2016 \u2202RiemannQuadraticGaussian.law 1)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L216"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.q_exp_bound",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 228,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem q_exp_bound (n : \u2115) (z : \u2102) : \u2016q n z\u2016 \u2264 Real.exp (\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L228"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.polynomial_signed_expectation",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 232,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem polynomial_signed_expectation (n : \u2115) :\n    PseudoPolynomialStein.expectation 2 (-1) (polynomial n)=2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L232"
+    },
+    {
+      "paper": "Section 8 genuine quadratic-flow Gaussian translation and compact-open heat topology obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianHeatTopology.polynomial_expectation_eq_heat",
+      "file": "Foundation/GaussianHeatTopology.lean",
+      "line": 256,
+      "source_sha256": "86f9316eb66ac2b38290567abe5b758e8861c04eb5f5a3d208dc2bd380449f28",
+      "declaration_header": "theorem polynomial_expectation_eq_heat (n : \u2115) :\n    (PseudoPolynomialStein.expectation 2 (-1) (polynomial n) : \u2102)=\n      heatAtZero (normalized n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHeatTopology.lean#L256"
     }
   ],
   "primary_attribution_followup": {
@@ -223,5 +439,11 @@
     "url": "https://gymarkiv.sdu.dk/MFM/kdvs/mfm%201-9/mfm-7-17.pdf",
     "location": "Chapter I, no. 6, assertion II, printed pp. 14-15",
     "finding": "Cubic real-zero finiteness has a direct classical antecedent. Nonintegral cases retain unresolved priority. No formal theorem changed."
-  }
+  },
+  "human_reorganization": [
+    "Section 8 proves product integrability before Fubini for the actual real/imaginary Gaussian shifts of the quadratic arithmetic flow, preserving variance 2s and opposite time signs t-s versus t+s. No quadratic zero reality is inferred.",
+    "The polynomial counterexample is indexed by m>=1, corresponding to formal normalized index n=m-1. Complete Gaussian integration-by-parts and finite differential-heat calculations recover values two despite normalized even-real polynomial compact convergence to one. No split-real-root hypothesis is asserted for those polynomials.",
+    "The compact-tail mass escape and common subcritical imaginary-axis Gaussian-growth sufficient condition tau<1/4 are explicitly labelled fully proved human classical deductions, not additional formal theorems or necessary growth classifications.",
+    "The new material is classical Gaussian integral/topology reasoning and gives no priority claim, A(2) threshold relation or RH implication. P\u00f3lya 1923 full-text comparison remains pending; the already inspected P\u00f3lya 1927 cubic antecedent and Cardon multiplier-premise distinctions remain authoritative."
+  ]
 }
