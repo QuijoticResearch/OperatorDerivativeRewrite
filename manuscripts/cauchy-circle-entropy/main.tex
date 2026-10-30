@@ -10,12 +10,13 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
 \newcommand{\T}{\mathbb T}\newcommand{\D}{\mathbb D}
+\newcommand{\Dom}{\operatorname{Dom}}
 \newcommand{\Ent}{\operatorname{Ent}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{An explicit nonreversible Cauchy semigroup\protect\\
 on the circle: generator, entropy and dual boundaries}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -41,6 +42,8 @@ corrections and real-polynomial tests distinguish the special sine
 drift from higher harmonics, Haar energies and diffusion chain rules.
 We also prove actual weak forward-law evolution, point-mass dual norm
 obstructions and the exact regularity of time-averaged law functionals.
+The drift-free benchmark has a complete maximal Haar-$L^2$ fractional
+generator domain and unsmoothed finite Fourier graph core.
 A zero-drift Fourier test separates a bounded transposed-generator value
 from norm differentiability of an averaged dual orbit. Novelty of the
 explicit combined package is unresolved.
@@ -899,6 +902,124 @@ evolution, positive-time entropy theorem, bounded transposed value,
 norm-continuous averaged orbit and norm differentiability are separate
 assertions; the failure of the last does not contradict the others.
 
+
+\section{The full drift-free Haar-$L^2$ graph and unsmoothed core}
+\label{sec:haarcore}
+The drift-free benchmark has a complete $L^2$ domain theorem.
+It is useful to state it separately from the drifted continuous-function
+generator and the forward-law dual domains above. Identify
+$\R/\mathbb Z$ with the angular circle by $\theta=2\pi x$, and use
+normalized Haar measure $dx=d\theta/(2\pi)$. Let
+$E=L^2(\R/\mathbb Z;\C)$, with its actual Fourier orthonormal basis
+$e_n(x)=e^{2\pi inx}$, $n\in\mathbb Z$. Write
+$\widehat f(n)=\langle e_n,f\rangle$; Parseval gives
+$\|f\|_2^2=\sum_n|\widehat f(n)|^2$.
+
+More generally, prescribe any rates $a_n\geq0$, without a symmetry,
+growth or probability hypothesis. The diagonal maps
+\[
+ \widehat{T_tf}(n)=e^{-a_nt}\widehat f(n),\qquad t\geq0,
+\]
+are well-defined contractions of this complex $L^2$ space by Parseval.
+Coordinatewise multiplication proves $T_0=I$ and $T_sT_t=T_{s+t}$.
+For $t\to s\geq0$, each coefficient difference tends to zero and
+its squared absolute value is bounded by $4|\widehat f(n)|^2$.
+Dominated convergence of this summable sequence proves strong
+continuity of $t\mapsto T_tf$.
+
+\begin{theorem}\label{thm:haarmaximal}
+The right norm generator $A_a$ of $T$ has exactly the domain
+\[
+ \Dom A_a=\left\{f\in E:\sum_{n\in\mathbb Z}
+                         a_n^2|\widehat f(n)|^2<\infty\right\},
+ \qquad \widehat{A_af}(n)=-a_n\widehat f(n).
+\]
+Its graph is closed, and finite trigonometric polynomials form a
+graph core without time smoothing.
+\end{theorem}
+\begin{proof}
+For each $b\geq0$ and $t>0$, the elementary exponential inequalities
+$1-bt\leq e^{-bt}\leq1$ give
+\[
+ \left|\frac{e^{-bt}-1}{t}\right|\leq b,
+ \qquad \frac{e^{-bt}-1}{t}\longrightarrow-b.
+\]
+If $t^{-1}(T_tf-f)\to g$ in $E$, every continuous Fourier coordinate
+functional passes this limit and gives
+$\widehat g(n)=-a_n\widehat f(n)$. Parseval for $g$ then forces the
+stated weighted square summability. Conversely, if that summability
+holds, the Fourier basis defines the unique $g\in E$ with those
+coefficients. The coefficient difference between the quotient and
+$g$ tends to zero and is bounded by $2a_n|\widehat f(n)|$.
+Dominated convergence of its square proves convergence in $E$.
+This establishes both directions of the exact right-generator graph.
+
+For closedness, if $f_j\to f$, $g_j\to g$ in $E$ with
+$\widehat g_j(n)=-a_n\widehat f_j(n)$, pass every coefficient
+identity to the limit. The resulting $g$ has the required coefficients,
+so the pair is in the same graph. For any graph pair $(f,A_af)$,
+truncate both Fourier series to $|n|\leq N$. Their tails tend to
+zero in their respective $L^2$ norms by Parseval, and each truncated
+pair remains in the same graph. Thus these finite inputs are dense
+in the graph norm. They are also dense in $E$, proving that this
+closed generator is densely defined. No change of graph or native
+derivative value occurred in either direction.
+\end{proof}
+The formal graph-core theorem is stated as the closure of all finite
+Fourier graph pairs, with truncations over finite subsets of $\mathbb Z$.
+The symmetric sequence $\{-N,\ldots,N\}$ here is a cofinal human
+choice of those same truncations.
+\par\noindent\code{FractionalFourierGraphCore}:
+\par\noindent\code{graph_domain_iff}, \code{graph_closed}, \code{finite_graph_closure}.
+\par\noindent\code{FractionalFourierSemigroup}:
+\par\noindent\code{strong_continuity}, \code{generator_iff}.
+
+For $\gamma>0$, take $a_n=|n|^\gamma$, with $a_0=0$. The exact
+fractional domain and multiplier are therefore
+\[
+ \Dom A_\gamma=\left\{f\in E:\sum_n|n|^{2\gamma}
+                                      |\widehat f(n)|^2<\infty\right\},
+ \qquad A_\gamma=-(-\partial_\theta^2)^{\gamma/2}.
+\]
+The angular coordinate is part of this equality: the unit-period
+$x$-Laplacian has eigenvalues $(2\pi n)^2$, so its corresponding
+fractional operator has an additional factor $(2\pi)^\gamma$.
+We restrict to $\gamma>0$ here to avoid any ambiguity at the zero
+frequency. All these diagonal families are $L^2$ contractions;
+this argument alone makes no positivity or Markov assertion for
+an arbitrary rate sequence or arbitrary $\gamma$.
+Roncal--Stinga's primary Fourier definition and opening Section 5
+give the classical weighted-$L^2$ Sobolev domain with angular periods
+$2\pi$~\cite{roncalstinga}. No new fractional-domain principle is claimed.
+\par\noindent\code{FractionalFourierSemigroup}:
+\par\noindent\code{fractional_generator_domain}, \code{fractional_time_core},
+\par\noindent\code{actual_fourier_evolution}.
+
+For $\gamma=1$ this is exactly the Haar-$L^2$ extension of the
+zero-drift Cauchy kernel already constructed in this paper. Indeed
+the disk flow becomes $z\mapsto e^{-t}z$, and for $t>0$ its angular
+transition density relative to normalized Haar is
+\[
+ p_t(\theta)=\frac{1-e^{-2t}}
+                  {1-2e^{-t}\cos\theta+e^{-2t}}.
+\]
+The two geometric series give its absolutely convergent expansion
+$p_t(\theta)=\sum_{n\in\mathbb Z}e^{-|n|t}e^{in\theta}$.
+Hence convolution acts on every trigonometric polynomial by the
+stated diagonal multiplier. Haar invariance and Jensen's inequality
+make this actual kernel an $L^2$ contraction, so density extends
+the agreement to all of $E$. This kernel-to-diagonal identification
+is a human consequence of the existing zero-drift formulas.
+
+The result supplies the full unsmoothed Haar-$L^2$ graph core in
+this drift-free case. It does not identify a maximal forward-density
+domain, a pointwise Gamma extension, or the unsmoothed graph core
+of the nonsymmetric sine-drift generator. The Fourier modes of that
+drifted generator are coupled, and its stationary measure is the
+wrapped Cauchy law rather than Haar when the drift is nonzero.
+The zero-drift domain theorem cannot silently substitute for those
+different domains.
+
 \section{Classical context and exact verification scope}
 The Poisson kernel and harmonic-composition construction
 are classical. The pole equation
@@ -937,11 +1058,12 @@ gap are labelled human deductions. The nine retained exact finite-core
 checks remain; the new functional/domain limits are verified by their
 complete analytic proofs rather than numerical sampling.
 
-The results concern the displayed circle kernels and
-the continuous-function generator. A trajectory law,
-maximal forward-density generator domain, unsmoothed
-Fourier graph-core theorem, sharp entropy constant or
-diffusion curvature estimate is not asserted here.
+The results concern the displayed circle kernels, the
+continuous-function generator and the additional drift-free
+Haar-$L^2$ graph theorem. A trajectory law, maximal forward-density
+generator domain, unsmoothed Fourier graph core for the drifted
+operator, sharp entropy constant or diffusion curvature estimate
+is not asserted here.
 In particular an invariant wrapped Cauchy law cannot
 justify replacing the actual nonsymmetric operator by
 a symmetric diffusion.
@@ -959,5 +1081,12 @@ Cauchy noise, primary preprint, arXiv:2009.04273.
 The fractional Laplacian has infinite dimension,
 primary preprint, arXiv:1903.00521v3 (2019).
 \url{https://arxiv.org/abs/1903.00521}.
+
+\bibitem{roncalstinga} L. Roncal and P. R. Stinga,
+\emph{Fractional Laplacian on the torus},
+\href{https://arxiv.org/abs/1209.6104}{arXiv:1209.6104v3},
+28 January 2015. Equation (1.1), printed page 1, and opening
+Section 5, printed page 13: Fourier definition and weighted
+$L^2$ Sobolev domain comparison only.
 \end{thebibliography}
 \end{document}

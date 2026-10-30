@@ -20,7 +20,7 @@ as a historical foundation overview; its old open-problem labels are not current
 
 ## Readable papers
 
-The [manuscript catalog](manuscripts/INDEX.md) groups twenty-nine reviewed drafts (498 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review.
+The [manuscript catalog](manuscripts/INDEX.md) groups twenty-nine reviewed drafts (500 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review.
 
 | Mathematical story | Readable papers |
 |---|---|

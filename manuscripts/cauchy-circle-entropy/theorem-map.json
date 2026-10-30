@@ -1116,6 +1116,429 @@
       "source_sha256": "b89788e769d7ab9d7f21d170e8c4f994bd3691c221f3782a72046567c4370457",
       "declaration_header": "theorem average_strong_right (q : \u211d) (hq : |q| < 1) (T : \u211d) (hT : 0 < T)\n    (\u03c6 : C(Circle,\u2102) \u2192L[\u2102] \u2102) :\n    Tendsto (fun t => dualOrbit q hq (averageDual q hq T \u03c6) t)\n      (\ud835\udcdd[Ioi 0] 0) (\ud835\udcdd (averageDual q hq T \u03c6))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDualAverage.lean#L105"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.E",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 11,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "abbrev E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L11"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.basis",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 12,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def basis : HilbertBasis \u2124 \u2102 E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L12"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.graph",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 13,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def graph (a : \u2124 \u2192 \u2102) : Set (E \u00d7 E)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L13"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.truncation",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 15,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def truncation (s : Finset \u2124) (f : E) : E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L15"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.truncation_tendsto",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 17,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem truncation_tendsto (f : E) :\n    Tendsto (fun s : Finset \u2124 => truncation s f) atTop (\ud835\udcdd f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L17"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.truncation_coefficient",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 20,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem truncation_coefficient (s : Finset \u2124) (f : E) (n : \u2124) :\n    basis.repr (truncation s f) n = if n \u2208 s then basis.repr f n else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L20"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.truncation_graph",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 25,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem truncation_graph (a : \u2124 \u2192 \u2102) (f g : E) (h : (f,g) \u2208 graph a)\n    (s : Finset \u2124) : (truncation s f,truncation s g) \u2208 graph a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L25"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.graph_closed",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 32,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem graph_closed (a : \u2124 \u2192 \u2102) : IsClosed (graph a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L32"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.finiteCore",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 41,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def finiteCore : Submodule \u2102 E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L41"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.finiteGraph",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 42,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def finiteGraph (a : \u2124 \u2192 \u2102) : Set (E \u00d7 E)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L42"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.truncation_mem_core",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 44,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem truncation_mem_core (s : Finset \u2124) (f : E) : truncation s f \u2208 finiteCore",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L44"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.finite_graph_closure",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 49,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem finite_graph_closure (a : \u2124 \u2192 \u2102) : closure (finiteGraph a) = graph a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L49"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.fractionalSymbol",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 57,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "def fractionalSymbol (\u03b3 : \u211d) (n : \u2124) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L57"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.fractional_graph_core",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 58,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem fractional_graph_core (\u03b3 : \u211d) :\n    closure (finiteGraph (fractionalSymbol \u03b3)) = graph (fractionalSymbol \u03b3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L58"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.actual_fourier_graph",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 61,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem actual_fourier_graph (\u03b3 : \u211d) (f g : E) :\n    (f,g) \u2208 graph (fractionalSymbol \u03b3) \u2194\n      \u2200 n : \u2124, fourierCoeff g n = -((|(n : \u211d)| ^ \u03b3 : \u211d) : \u2102) * fourierCoeff f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L61"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.graph_unique",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 66,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem graph_unique (a : \u2124 \u2192 \u2102) (f g h : E)\n    (hg : (f,g) \u2208 graph a) (hh : (f,h) \u2208 graph a) : g = h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L66"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.graph_domain_iff",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 71,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem graph_domain_iff (a : \u2124 \u2192 \u2102) (f : E) :\n    (\u2203 g : E, (f,g) \u2208 graph a) \u2194 Mem\u2113p (fun n => a n * basis.repr f n) 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L71"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierGraphCore.mode_graph",
+      "file": "Foundation/FractionalFourierGraphCore.lean",
+      "line": 85,
+      "source_sha256": "9808c906e8c9e936122c5a29daa223caf3bea5d17d8dc04fc1d156a084b45edb",
+      "declaration_header": "theorem mode_graph (a : \u2124 \u2192 \u2102) (n : \u2124) : (basis n,a n \u2022 basis n) \u2208 graph a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierGraphCore.lean#L85"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.Coeff",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 14,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "abbrev Coeff",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L14"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.multiplier",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 15,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def multiplier (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (n : \u2124) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L15"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.multiplier_bound",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 17,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem multiplier_bound (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (n : \u2124) : \u2016multiplier a t n\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L17"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.term",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 20,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def term (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (n : \u2124) : \u2102 \u2192L[\u2102] \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L20"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.term_bound",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 22,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem term_bound (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (n : \u2124) : \u2016term a t n\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L22"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.coefficients",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 28,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def coefficients (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) : Coeff \u2192L[\u2102] Coeff",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L28"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.coefficients_apply",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 30,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem coefficients_apply (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (f : Coeff) (n : \u2124) :\n    coefficients a t f n = f n * multiplier a t n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L30"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.evolution",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 32,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def evolution (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) : E \u2192L[\u2102] E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L32"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.evolution_coeff",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 35,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem evolution_coeff (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (f : E) (n : \u2124) :\n    basis.repr (evolution a t f) n = basis.repr f n * multiplier a t n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L35"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.contraction",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 39,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem contraction (a : \u2124 \u2192 \u211d\u22650) (t : \u211d\u22650) (f : E) : \u2016evolution a t f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L39"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.evolution_zero",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 42,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem evolution_zero (a : \u2124 \u2192 \u211d\u22650) (f : E) : evolution a 0 f = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L42"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.evolution_add",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 46,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem evolution_add (a : \u2124 \u2192 \u211d\u22650) (s t : \u211d\u22650) (f : E) :\n    evolution a s (evolution a t f) = evolution a (s+t) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L46"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.coefficient_square_sum",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 52,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem coefficient_square_sum (f : E) :\n    HasSum (fun n => \u2016basis.repr f n\u2016^2) (\u2016f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L52"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.norm_limit_of_coefficients",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 55,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem norm_limit_of_coefficients {\u03b9 : Type*} {l : Filter \u03b9} (F : \u03b9 \u2192 E) (g : E)\n    (b : \u2124 \u2192 \u211d) (hb : Summable (fun n => (b n)^2))\n    (hc : \u2200 n, Tendsto (fun i => basis.repr (F i) n) l (\ud835\udcdd (basis.repr g n)))\n    (hbound : \u2200\u1da0 i in l, \u2200 n, \u2016basis.repr (F i-g) n\u2016 \u2264 b n) :\n    Tendsto F l (\ud835\udcdd g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L55"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.strong_continuity",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 72,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem strong_continuity (a : \u2124 \u2192 \u211d\u22650) (f : E) : Continuous (fun t => evolution a t f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L72"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.slope",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 92,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def slope (a : \u2124 \u2192 \u211d\u22650) (f : E) (t : \u211d) : E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L92"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.real_quotient_bound",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 94,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem real_quotient_bound (b t : \u211d) (hb : 0 \u2264 b) (ht : 0 < t) :\n    |t\u207b\u00b9*(Real.exp (-b*t)-1)| \u2264 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L94"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.real_quotient_limit",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 103,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem real_quotient_limit (b : \u211d) :\n    Tendsto (fun t : \u211d => t\u207b\u00b9*(Real.exp (-b*t)-1)) (\ud835\udcdd[>] 0) (\ud835\udcdd (-b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L103"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.slope_coeff",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 108,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem slope_coeff (a : \u2124 \u2192 \u211d\u22650) (f : E) (t : \u211d) (ht : 0 \u2264 t) (n : \u2124) :\n    basis.repr (slope a f t) n =\n      (t\u207b\u00b9*(Real.exp (-(a n : \u211d)*t)-1):\u211d) * basis.repr f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L108"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.slope_coefficient_limit",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 114,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem slope_coefficient_limit (a : \u2124 \u2192 \u211d\u22650) (f : E) (n : \u2124) :\n    Tendsto (fun t => basis.repr (slope a f t) n) (\ud835\udcdd[>] 0)\n      (\ud835\udcdd (-((a n : \u211d):\u2102)*basis.repr f n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L114"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.slope_coefficient_bound",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 123,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem slope_coefficient_bound (a : \u2124 \u2192 \u211d\u22650) (f g : E)\n    (h : (f,g) \u2208 graph (fun n => -((a n : \u211d):\u2102))) (t : \u211d) (ht : 0 < t) (n : \u2124) :\n    \u2016basis.repr (slope a f t) n\u2016 \u2264 \u2016basis.repr g n\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L123"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.graph_slope_limit",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 130,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem graph_slope_limit (a : \u2124 \u2192 \u211d\u22650) (f g : E)\n    (h : (f,g) \u2208 graph (fun n => -((a n : \u211d):\u2102))) :\n    Tendsto (slope a f) (\ud835\udcdd[>] 0) (\ud835\udcdd g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L130"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.slope_limit_graph",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 147,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem slope_limit_graph (a : \u2124 \u2192 \u211d\u22650) (f g : E)\n    (h : Tendsto (slope a f) (\ud835\udcdd[>] 0) (\ud835\udcdd g)) :\n    (f,g) \u2208 graph (fun n => -((a n : \u211d):\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L147"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.generator_iff",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 154,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem generator_iff (a : \u2124 \u2192 \u211d\u22650) (f g : E) :\n    Tendsto (slope a f) (\ud835\udcdd[>] 0) (\ud835\udcdd g) \u2194\n      (f,g) \u2208 graph (fun n => -((a n : \u211d):\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L154"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.rates",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 158,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "def rates (\u03b3 : \u211d) (n : \u2124) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L158"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.fractional_generator_iff",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 159,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem fractional_generator_iff (\u03b3 : \u211d) (f g : E) :\n    Tendsto (slope (rates \u03b3) f) (\ud835\udcdd[>] 0) (\ud835\udcdd g) \u2194\n      (f,g) \u2208 graph (fractionalSymbol \u03b3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L159"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.actual_fourier_evolution",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 163,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem actual_fourier_evolution (\u03b3 : \u211d) (t : \u211d\u22650) (f : E) (n : \u2124) :\n    fourierCoeff (evolution (rates \u03b3) t f) n =\n      fourierCoeff f n * (Real.exp (-(|(n:\u211d)|^\u03b3)*(t:\u211d)) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L163"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.fractional_generator_domain",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 170,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem fractional_generator_domain (\u03b3 : \u211d) (f : E) :\n    (\u2203 g : E, Tendsto (slope (rates \u03b3) f) (\ud835\udcdd[>] 0) (\ud835\udcdd g)) \u2194\n      Mem\u2113p (fun n : \u2124 => -((|(n:\u211d)|^\u03b3:\u211d):\u2102)*fourierCoeff f n) 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L170"
+    },
+    {
+      "paper": "Section 14 / Theorem 14.1: actual normalized-Haar circle L2, Fourier diagonal contractions for arbitrary nonnegative rates, strong continuity, exact right norm generator graph and weighted square-summable domain, unsmoothed finite Fourier graph core. Fractional specialization is printed for gamma>0 with zero mode explicitly zero and angular theta=2*pi*x normalization. Not a drifted maximal domain, forward-density domain or generic positivity theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalFourierSemigroup.fractional_time_core",
+      "file": "Foundation/FractionalFourierSemigroup.lean",
+      "line": 175,
+      "source_sha256": "0d677d065f6ccb85aad45606f05af7d86464283f776a8ee4e90533fc7abf8505",
+      "declaration_header": "theorem fractional_time_core (\u03b3 : \u211d) :\n    closure {p : E \u00d7 E | Tendsto (slope (rates \u03b3) p.1) (\ud835\udcdd[>] 0) (\ud835\udcdd p.2) \u2227 p.1 \u2208 finiteCore} =\n      {p : E \u00d7 E | Tendsto (slope (rates \u03b3) p.1) (\ud835\udcdd[>] 0) (\ud835\udcdd p.2)}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalFourierSemigroup.lean#L175"
     }
   ],
   "human_reorganization": [
@@ -1131,7 +1554,8 @@
     "The forward dual is the continuous complex Banach dual of C(circle;C) with its operator norm. Actual probability-law functionals pair with the actual kernel. Weak evolution is proved on the full closed generator graph, while each Dirac law has a dual norm gap at least one for every positive time and every admissible drift.",
     "The zero-drift Dirac functional has no bounded Banach-transposed generator value because unit Fourier tests have generator values of size n. This is not a maximal forward-density generator identification.",
     "Time averages are defined by transposing the strongly continuous observable-space Bochner integral, without assuming norm-Bochner integrability of the dual orbit. They have a bounded A-prime value and a norm-continuous forward orbit with explicit bound 2h/T times the functional norm; their convergence as T->0 is against each fixed continuous test.",
-    "The explicit zero-drift averaged Dirac functional has no norm right derivative despite lying in the Banach-transpose domain and having a norm-continuous orbit. Its difference quotient remains at least 1/T from the uniquely possible weak derivative, and its norm distance from the original Dirac is at least one. These quantitative conclusions are labelled human deductions from the exact exponential Fourier formulas, not newly named formal theorems or source claims."
+    "The explicit zero-drift averaged Dirac functional has no norm right derivative despite lying in the Banach-transpose domain and having a norm-continuous orbit. Its difference quotient remains at least 1/T from the uniquely possible weak derivative, and its norm distance from the original Dirac is at least one. These quantitative conclusions are labelled human deductions from the exact exponential Fourier formulas, not newly named formal theorems or source claims.",
+    "Section 14 adds the complete actual drift-free Haar-L2 operator benchmark already present in the frozen library, correcting the previously overbroad unsmoothed-core limitation. Arbitrary nonnegative Fourier rates give strong continuous L2 contractions; both implications of the right norm generator graph are proved, and Fourier truncation approximates both graph components without time smoothing. Fractional gamma>0 has exactly the weighted square-summable domain and angular -|n|^gamma symbol. The zero-mode and theta=2*pi*x normalization are explicit; no arbitrary-rate positivity or gamma>2 Markov property is inferred. Symmetric finite-subset truncation, identification with the actual zero-drift Cauchy kernel by its Fourier series plus Haar/Jensen contraction, and the Sobolev terminology are HUMAN classical reformulations. Drifted unsmoothed graph cores, maximal forward-density domains, pointwise Gamma extensions and sharp entropy constants remain separate obligations."
   ],
   "literature": [
     {
