@@ -1040,6 +1040,150 @@
       "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
       "declaration_header": "theorem fractional_unit_wick_bounds (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (s t : \u211d\u22650) (hs : 0 < s) (ht : 0 < t) (n : \u2115) :\n    ((n+1).factorial : \u211d)*\u2016unitDirection H hH0 hH1 s-unitDirection H hH0 hH1 t\u2016^2 \u2264\n        \u2016(wick (unitDirection H hH0 hH1 s) (n+1) : GaussianL2)-\n          (wick (unitDirection H hH0 hH1 t) (n+1) : GaussianL2)\u2016^2 \u2227\n      \u2016(wick (unitDirection H hH0 hH1 s) (n+1) : GaussianL2)-\n          (wick (unitDirection H hH0 hH1 t) (n+1) : GaussianL2)\u2016^2 \u2264\n        (n+1 : \u211d)*((n+1).factorial : \u211d)*\n          \u2016unitDirection H hH0 hH1 s-unitDirection H hH0 hH1 t\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L89"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.sourceProjection_pairing",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 87,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem sourceProjection_pairing {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (i : I) :\n    inner \u211d (sourceProjection h u) (h i)=inner \u211d u (h i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L87"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.firstChaos_mem_generated_of_sourceSpan",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 96,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem firstChaos_mem_generated_of_sourceSpan {I : Type*} (h : I \u2192 CoefficientSpace)\n    (v : CoefficientSpace) (hv : v \u2208 sourceSpan h) : firstChaosEmbedding v \u2208 generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L96"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.wick_mem_generated_of_firstChaos",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 109,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem wick_mem_generated_of_firstChaos {I : Type*} (h : I \u2192 CoefficientSpace) (v : CoefficientSpace)\n    (hv : firstChaosEmbedding v \u2208 generated h) (n : \u2115) : (wick v n : GaussianL2) \u2208 generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L109"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.wick_mem_generated_of_sourceSpan",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 117,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem wick_mem_generated_of_sourceSpan {I : Type*} (h : I \u2192 CoefficientSpace)\n    (v : CoefficientSpace) (hv : v \u2208 sourceSpan h) (n : \u2115) : (wick v n : GaussianL2) \u2208 generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L117"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_firstChaos_projection",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 128,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_firstChaos_projection {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    conditionalProjection h (firstChaosEmbedding u)=firstChaosEmbedding (sourceProjection h u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L128"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_wick_energy_from_linear",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 136,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_wick_energy_from_linear {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (n : \u2115) :\n    \u2016conditionalProjection h (wick u n)\u2016^2=\n      (n.factorial : \u211d)*(\u2016conditionalProjection h (firstChaosEmbedding u)\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L136"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.finite_wick_gram",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 18,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem finite_wick_gram (h : \u2115 \u2192 CoefficientSpace) (d : \u2115) (c : \u2115 \u2192 \u211d) (s : Finset \u2115) :\n    \u2016\u2211 i\u2208s, c i \u2022 (wick (h i) d : GaussianL2)\u2016^2=gramEnergy h d c s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L18"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.finite_prediction_gram",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 30,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem finite_prediction_gram {I : Type*} (observations : I \u2192 CoefficientSpace)\n    (h : \u2115 \u2192 CoefficientSpace) (d : \u2115) (c : \u2115 \u2192 \u211d) (s : Finset \u2115) :\n    \u2016conditionalProjection observations (\u2211 i\u2208s, c i \u2022 (wick (h i) d : GaussianL2))\u2016^2=\n      gramEnergy (fun i => sourceProjection observations (h i)) d c s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L30"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.projected_gram_bounds",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 37,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem projected_gram_bounds {I : Type*} (observations : I \u2192 CoefficientSpace)\n    (h : \u2115 \u2192 CoefficientSpace) (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0)\n    (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d) (s : Finset \u2115) :\n    0\u2264gramEnergy (fun i => sourceProjection observations (h i)) d c s \u2227\n      gramEnergy (fun i => sourceProjection observations (h i)) d c s\u2264\n        \u2211 i\u2208s, (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L37"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.predicted_response_hasSum",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 50,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem predicted_response_hasSum {I : Type*} (observations : I \u2192 CoefficientSpace)\n    (h : \u2115 \u2192 CoefficientSpace) (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0)\n    (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    HasSum (fun i => c i \u2022 (wick (sourceProjection observations (h i)) d : GaussianL2))\n      (conditionalProjection observations (wickResponse h d c))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L50"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.projected_gram_limit",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 59,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem projected_gram_limit {I : Type*} (observations : I \u2192 CoefficientSpace)\n    (h : \u2115 \u2192 CoefficientSpace) (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0)\n    (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    Tendsto (gramEnergy (fun i => sourceProjection observations (h i)) d c)\n      atTop (\ud835\udcdd (\u2016conditionalProjection observations (wickResponse h d c)\u2016^2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L59"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.predicted_response_recovery_graph",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 71,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem predicted_response_recovery_graph {I : Type*} (observations : I \u2192 CoefficientSpace)\n    (h : \u2115 \u2192 CoefficientSpace) (hh : \u2200 i j, i\u2260j \u2192 inner \u211d (h i) (h j)=0)\n    (d : \u2115) (hd : 0<d) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun i => (c i)^2*(d.factorial : \u211d)*(\u2016h i\u2016^2)^d)) :\n    (GaussianDivergenceRecovery.recovery (conditionalProjection observations (wickResponse h d c)),\n      conditionalProjection observations (wickResponse h d c))\u2208hilbertDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L71"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.two_mode_source_projection",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 82,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem two_mode_source_projection (u v : CoefficientSpace) (hu : \u2016u\u2016^2=1) (hv : \u2016v\u2016^2=1)\n    (horth : inner \u211d u v=0) :\n    sourceProjection (fun _ : Unit => u+v) u=(1/2 : \u211d) \u2022 (u+v) \u2227\n    sourceProjection (fun _ : Unit => u+v) v=(1/2 : \u211d) \u2022 (u+v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L82"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.two_mode_difference_forecast_zero",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 92,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem two_mode_difference_forecast_zero (u v : CoefficientSpace) (hu : \u2016u\u2016^2=1) (hv : \u2016v\u2016^2=1)\n    (horth : inner \u211d u v=0) (d : \u2115) :\n    conditionalProjection (fun _ : Unit => u+v)\n      ((wick u d : GaussianL2)-(wick v d : GaussianL2))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L92"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.two_mode_sum_forecast_energy",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 99,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem two_mode_sum_forecast_energy (u v : CoefficientSpace) (hu : \u2016u\u2016^2=1) (hv : \u2016v\u2016^2=1)\n    (horth : inner \u211d u v=0) (d : \u2115) :\n    \u2016conditionalProjection (fun _ : Unit => u+v)\n      ((wick u d : GaussianL2)+(wick v d : GaussianL2))\u2016^2=\n        4*(d.factorial : \u211d)*(1/2 : \u211d)^d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L99"
+    },
+    {
+      "paper": "Section 7.1 actual full Gaussian observation prediction, countable completion, projected Gram energy and two-mode calibration",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.actual_brownian_square_forecast_energy",
+      "file": "Foundation/SPDEWickPrediction.lean",
+      "line": 115,
+      "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
+      "declaration_header": "theorem actual_brownian_square_forecast_energy :\n    \u2016conditionalProjection (fun _ : Unit => brownianDirection 0 1+brownianDirection 1 1)\n      ((wick (brownianDirection 0 1) 2 : GaussianL2)+(wick (brownianDirection 1 1) 2 : GaussianL2))\u2016^2=2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L115"
     }
   ],
   "paper_sections": {
@@ -1062,7 +1206,10 @@
     "Finite Brownian entrywise covariance-power matrices factor as L diag((j+1)^k-j^k) L-transpose. Actual difference vectors give generalized eigenvalues d_k(j)/d_l(j), including 7/3 rather than 7. Congruence gives the printed sharp Loewner comparisons as explicit human classical deductions. Ordinary matrix powers remain different.",
     "The existing primary Baudoin chaos context is retained. No new Gaussian covariance theorem, temporal generator, independence principle, curvature correspondence, SPDE existence or scale-uniform estimate is claimed.",
     "Section 10 divides the monic Wick fields by sqrt(q!) and therefore divides the source squared metric bounds by q!. The positive-correlation and unit-source assumptions are explicit; equal-variance quadratic folding is not a global embedding.",
-    "The actual normalized fractional directions exclude time zero. The compact positive-time interval calculation using the mean value theorem and the exact normalized covariance proves matching squared increment exponent 2H as a labelled human deduction. No optimal sample-path exponent, Hermite-process identification or Markov generator follows."
+    "The actual normalized fractional directions exclude time zero. The compact positive-time interval calculation using the mean value theorem and the exact normalized covariance proves matching squared increment exponent 2H as a labelled human deduction. No optimal sample-path exponent, Hermite-process identification or Markov generator follows.",
+    "Section 7.1 proves the actual completed-observation conditional Wick formula by orthogonal Gaussian splitting, full generated-sigma-algebra independence and locally dominated L2 differentiation. The projected variance is used in its Wick subtraction.",
+    "Countable predicted sums converge through the bounded conditional projection of the original orthogonal series. The displayed finite double Gram sums converge in squared norm; no absolute infinite double-sum or preserved mode orthogonality is assumed. The inverse-degree recovery energy is a human consequence of the same homogeneous-chaos spectral identity already printed.",
+    "The two-mode sum/difference calibration shows why deleting projected Gram cross terms fails. The actual two Brownian unit-time quadratic modes have predicted sum energy two. These are classical exact observation identities, not nonlinear SPDE or independence claims."
   ],
   "literature": [
     {
@@ -1072,6 +1219,10 @@
     {
       "url": "https://doi.org/10.1155/2016/8694365",
       "review": "Primary Sottinen--Viitasaari Gaussian derivative and adjoint conventions inspected. Classical Gaussian chaos and divergence theory credited."
+    },
+    {
+      "url": "https://arxiv.org/abs/0901.4911",
+      "review": "Primary Hu\u2013Yan Section 2, equations (2.6)\u2013(2.7), inspected for the monic-Hermite multiple-integral normalization and isometry. The conditional observation theorem is proved in full here, not attributed to the scalar second-quantization definition."
     }
   ],
   "novelty": "Classical formalization companion; no new stochastic PDE existence, sample-path regularity, or priority claim."

@@ -6,7 +6,7 @@ Frozen baseline: `bab688bb6140cd6316c80680095a914ea0d346db`. This is an independ
 
 The [machine inventory](LIBRARY_SURVEY.json) covers every one of the 2,795 Foundation Lean modules (359,781 source lines) in this frozen checkout. For each module it records its byte hash, imports, available module description, named declaration headers and an editorial subject tag. Tags based on prefixes are navigation aids, not significance scores. This is a complete module-level inventory; it is not a claim that every proof has received a new human review. The existing full verification receipt remains the authority for the baseline build and complete transitive axiom audit. The root/import files and Basic.lean add navigation or scaffolding, while the two Legacy Lean files are historical material outside this Foundation publication universe.
 
-Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Twenty-seven papers (379 pages) now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
+Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Twenty-seven papers (381 pages) now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
 
 ## Source families
 
@@ -168,3 +168,5 @@ The observable-martingale associativity companion now has eleven pages (revision
 The signed multichannel manuscript now contains a targeted primary-literature comparison in Section 13, with a corrected bibliography and an explicit unresolved domain/topology comparison. Eighteen pages retained; all rendered pages inspected and build/visual receipts refreshed. No mathematical source or research priority changed.
 
 The signed multichannel companion now includes a complete faithful one-coordinate domain comparison, with explicit separating polynomial and cosine tests and an exact coefficient norm. This is an elementary human deduction, not a new formal declaration or priority claim. Nineteen pages, clean two-pass compilation and current reviewed receipts. Twenty-seven reviewed drafts total 379 pages.
+
+The forcing companion now contains complete arbitrary-observation Wick prediction and countable projected-Gram energy proofs. Exact two-mode cancellation exposes the error in deleting cross terms after observation. Fifteen pages, all visually inspected with clean compilation, exact source maps and current receipts; classical Gaussian mechanisms, no SPDE existence or novelty claim. Twenty-seven reviewed drafts total 381 pages.
