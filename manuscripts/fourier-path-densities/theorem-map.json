@@ -1818,12 +1818,274 @@
       "source_sha256": "549ba9c1b6b56395e7ed6cfb2d171fbd717e68b84c14170a5eeda09badb662d8",
       "declaration_header": "theorem expectation_not_in_adjoint_domain (T : \u211d\u22650) (hT : 0 < T) :\n    imaginaryExpectation T hT \u2209\n      (FourierPathDirectionalAdjoint.adjoint levels frequencies direction).domain",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughAdjointObstruction.lean#L16"
+    },
+    {
+      "paper": "Section 9.1 finite expectation operators on the actual quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathSamplerOperators.finite_apply",
+      "file": "Foundation/FourierPathSamplerOperators.lean",
+      "line": 20,
+      "source_sha256": "e2ca17292ce7b78767abbe232175778f74b4196afa5f4c60d248ae8d9f00a9a6",
+      "declaration_header": "theorem finite_apply (k : \u2115) (hk : 0 < k) (H : \u211d\u22650) (hH : 0 < H) (n : \u2115)\n    (q : TestSpace levels \u03be) : finite levels \u03be k hk H hH n q =\n      \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022 realize levels \u03be q \u03c9 \u2202probabilityPath k hk H hH n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathSamplerOperators.lean#L20"
+    },
+    {
+      "paper": "Section 9.1 finite expectation operators on the actual quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathSamplerOperators.finite_bound",
+      "file": "Foundation/FourierPathSamplerOperators.lean",
+      "line": 25,
+      "source_sha256": "e2ca17292ce7b78767abbe232175778f74b4196afa5f4c60d248ae8d9f00a9a6",
+      "declaration_header": "theorem finite_bound (k : \u2115) (hk : 0 < k) (H : \u211d\u22650) (hH : 0 < H) (n : \u2115)\n    (q : TestSpace levels \u03be) : \u2016finite levels \u03be k hk H hH n q\u2016 \u2264 \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathSamplerOperators.lean#L25"
+    },
+    {
+      "paper": "Section 9.1 finite expectation operators on the actual quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathSamplerOperators.finite_norm",
+      "file": "Foundation/FourierPathSamplerOperators.lean",
+      "line": 41,
+      "source_sha256": "e2ca17292ce7b78767abbe232175778f74b4196afa5f4c60d248ae8d9f00a9a6",
+      "declaration_header": "theorem finite_norm (k : \u2115) (hk : 0 < k) (H : \u211d\u22650) (hH : 0 < H) (n : \u2115) :\n    \u2016finite levels \u03be k hk H hH n\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathSamplerOperators.lean#L41"
+    },
+    {
+      "paper": "Section 9.1 finite expectation operators on the actual quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathSamplerOperators.finite_tendsto",
+      "file": "Foundation/FourierPathSamplerOperators.lean",
+      "line": 47,
+      "source_sha256": "e2ca17292ce7b78767abbe232175778f74b4196afa5f4c60d248ae8d9f00a9a6",
+      "declaration_header": "theorem finite_tendsto (k : \u2115) (hk : 0 < k) (H : \u211d\u22650) (hH : 0 < H) (q : TestSpace levels \u03be) :\n    Tendsto (fun n => finite levels \u03be k hk H hH n q) atTop (\ud835\udcdd (expectation levels \u03be k hk H hH q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathSamplerOperators.lean#L47"
+    },
+    {
+      "paper": "Section 9.1 genuine Bochner Lp dominated convergence for strong contractions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.LpStrongOperatorConvergence.compLp_tendsto",
+      "file": "Foundation/LpStrongOperatorConvergence.lean",
+      "line": 22,
+      "source_sha256": "8b0e2d58dd8d41a0b7a9be224fce4a6cd266edac70888310d8e0782fc2ef29ba",
+      "declaration_header": "theorem compLp_tendsto (m : \u2115) [h : Fact (0 < m)] (L : \u2115 \u2192 E \u2192L[\u2102] F) (A : E \u2192L[\u2102] F)\n    (hL : \u2200 n, \u2016L n\u2016 \u2264 1) (hA : \u2016A\u2016 \u2264 1)\n    (hpoint : \u2200 v, Tendsto (fun n => L n v) atTop (\ud835\udcdd (A v))) (f : Lp E (power m) \u03bc) :\n    Tendsto (fun n => (L n).compLpL (power m) \u03bc f) atTop\n      (\ud835\udcdd (A.compLpL (power m) \u03bc f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/LpStrongOperatorConvergence.lean#L22"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.sampledField_bound",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 21,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem sampledField_bound (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (n : \u2115) (q : TestSpace levels \u03be) :\n    \u2016sampledField levels \u03be m k hk T H hT hH n q\u2016 \u2264 (1+(T : \u211d)\u207b\u00b9)*\u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L21"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.sampledField_ae",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 31,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem sampledField_ae (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (n : \u2115) (q : TestSpace levels \u03be) :\n    (sampledField levels \u03be m k hk T H hT hH n q : \u211d \u2192 \u2102) =\u1d50[volume]\n      fun t => \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022 joint levels \u03be m T hT q (t,\u03c9)\n        \u2202probabilityPath k hk H hH n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L31"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.expectationField_ae",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 41,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem expectationField_ae (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) :\n    (expectationField levels \u03be m k hk T H hT hH q : \u211d \u2192 \u2102) =\u1d50[volume]\n      fun t => expectation levels \u03be k hk H hH (representative levels \u03be m T hT q t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L41"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.sampledField_tendsto",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 49,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem sampledField_tendsto (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) :\n    Tendsto (fun n => sampledField levels \u03be m k hk T H hT hH n q) atTop\n      (\ud835\udcdd (expectationField levels \u03be m k hk T H hT hH q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L49"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.section_tendsto",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 58,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem section_tendsto (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (t : \u211d) :\n    Tendsto (fun n => \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022 joint levels \u03be m T hT q (t,\u03c9)\n      \u2202probabilityPath k hk H hH n) atTop\n      (\ud835\udcdd (expectation levels \u03be k hk H hH (representative levels \u03be m T hT q t)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L58"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.sampledField_contraction",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 66,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem sampledField_contraction (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (n : \u2115) (q : TestSpace levels \u03be) (u : Control m) :\n    BochnerDualControlPairing.pairing \u2102 m u (sampledField levels \u03be m k hk T H hT hH n q) =\n      \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022\n        realize levels \u03be (FourierPathDualGradient.gradient levels \u03be m T hT q u) \u03c9\n          \u2202probabilityPath k hk H hH n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L66"
+    },
+    {
+      "paper": "Section 9.1 strong convergence after path averaging and uniform control contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDensityStrongLimit.contraction_operator_tendsto",
+      "file": "Foundation/FourierPathDensityStrongLimit.lean",
+      "line": 80,
+      "source_sha256": "7359b2d4433aafec09c8036f012e73c77e376e829f0a83422f6bb5623aca95c0",
+      "declaration_header": "theorem contraction_operator_tendsto (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) :\n    Tendsto (fun n => (BochnerDualControlPairing.pairing \u2102 m).flip\n      (sampledField levels \u03be m k hk T H hT hH n q)) atTop\n      (\ud835\udcdd ((BochnerDualControlPairing.pairing \u2102 m).flip\n        (expectationField levels \u03be m k hk T H hT hH q)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDensityStrongLimit.lean#L80"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.stop_continuous",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 18,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem stop_continuous (t : \u211d\u22650) : Continuous (stop t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L18"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.pullback_norm",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 34,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem pullback_norm (t : \u211d\u22650) : \u2016pullback t\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L34"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.atoms_determine",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 41,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem atoms_determine (levels : \u2115 \u2192 \u2115) (\u03be : (i : \u2115) \u2192 Grid (levels i))\n    (x y : Path) (h : \u2200 i, characterTest levels \u03be i x = characterTest levels \u03be i y)\n    (q : TestSpace levels \u03be) : realize levels \u03be q x = realize levels \u03be q y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L41"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.terminal_depends_endpoint",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 75,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem terminal_depends_endpoint (x y : Path) (h : x.val 1 = y.val 1)\n    (q : TestSpace terminalLevels terminalFrequency) :\n    realize terminalLevels terminalFrequency q x =\n      realize terminalLevels terminalFrequency q y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L75"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.stopped_generator_zero",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 89,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem stopped_generator_zero :\n    realize terminalLevels terminalFrequency (generator terminalLevels terminalFrequency 1)\n      (stop (1/2) zeroPath) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L89"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.stopped_generator_arch",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 95,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem stopped_generator_arch :\n    realize terminalLevels terminalFrequency (generator terminalLevels terminalFrequency 1)\n      (stop (1/2) arch) = -1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L95"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.stopped_generator_not_representable",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 103,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem stopped_generator_not_representable :\n    \u00ac \u2203 q : TestSpace terminalLevels terminalFrequency,\n      \u2200 path, realize terminalLevels terminalFrequency q path =\n        realize terminalLevels terminalFrequency (generator terminalLevels terminalFrequency 1)\n          (stop (1/2) path)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L103"
+    },
+    {
+      "paper": "Section 12 deterministic stopping and original dictionary obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathStopping.no_stopping_operator",
+      "file": "Foundation/FourierPathStopping.lean",
+      "line": 113,
+      "source_sha256": "417d6767bde1acf3122f92495fd2564d6c9b161c8d0f97d72e2408645af95ec0",
+      "declaration_header": "theorem no_stopping_operator :\n    \u00ac \u2203 P : TestSpace terminalLevels terminalFrequency \u2192 TestSpace terminalLevels terminalFrequency,\n      \u2200 q path, realize terminalLevels terminalFrequency (P q) path =\n        realize terminalLevels terminalFrequency q (stop (1/2) path)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathStopping.lean#L113"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.kernel_transport",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 24,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem kernel_transport : kernel levels \u03be \u2264 ((kernel targetLevels \u03b7).mkQL).ker",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L24"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.transport",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 33,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "def transport : TestSpace levels \u03be \u2192L[\u2102] TestSpace targetLevels \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L33"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.realize_transport",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 41,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem realize_transport (q : TestSpace levels \u03be) (path : Path) :\n    realize targetLevels \u03b7 (transport levels targetLevels \u03be \u03b7 \u03a6 h\u03a6 q) path =\n      realize levels \u03be q (\u03a6 path)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L41"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.transport_bound",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 47,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem transport_bound (q : TestSpace levels \u03be) :\n    \u2016transport levels targetLevels \u03be \u03b7 \u03a6 h\u03a6 q\u2016 \u2264 \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L47"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.collapse_phase",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 68,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem collapse_phase {n : \u2115} (r : Fin (gridSize n) \u2192 Fin (gridSize n))\n    (\u03be y : Grid n) : SignedDensityIntegral.configurationPhase (collapse r \u03be) y =\n      SignedDensityIntegral.configurationPhase \u03be (fun i => y (r i))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L68"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.sample_stop",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 91,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem sample_stop (n : \u2115) (k i : Fin (gridSize n)) (path : Path) :\n    sample n (stop (stoppingTime n k) path) i = sample n path (min i k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L91"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.stopped_character",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 101,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem stopped_character (levels : \u2115 \u2192 \u2115) (\u03be : (i : \u2115) \u2192 Grid (levels i))\n    (k : (i : \u2115) \u2192 Fin (gridSize (levels i))) (t : \u211d\u22650)\n    (ht : \u2200 i, stoppingTime (levels i) (k i) = t) (j : \u2115) (path : Path) :\n    characterTest levels (stoppedFrequency levels \u03be k) j path =\n      characterTest levels \u03be j (stop t path)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L101"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.stopTransport_realize",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 125,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem stopTransport_realize (levels : \u2115 \u2192 \u2115) (\u03be : (i : \u2115) \u2192 Grid (levels i))\n    (k : (i : \u2115) \u2192 Fin (gridSize (levels i))) (t : \u211d\u22650)\n    (ht : \u2200 i, stoppingTime (levels i) (k i) = t) (q : TestSpace levels \u03be) (path : Path) :\n    realize levels (stoppedFrequency levels \u03be k) (stopTransport levels \u03be k t ht q) path =\n      realize levels \u03be q (stop t path)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L125"
+    },
+    {
+      "paper": "Section 12 actual quotient contraction into a changed dictionary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDictionaryTransport.stopTransport_norm",
+      "file": "Foundation/FourierPathDictionaryTransport.lean",
+      "line": 133,
+      "source_sha256": "0b03354565f0bbdbe81005e2e6a5b5231e8b1beded464a8167a3e6c4d3e25d2c",
+      "declaration_header": "theorem stopTransport_norm (levels : \u2115 \u2192 \u2115) (\u03be : (i : \u2115) \u2192 Grid (levels i))\n    (k : (i : \u2115) \u2192 Fin (gridSize (levels i))) (t : \u211d\u22650)\n    (ht : \u2200 i, stoppingTime (levels i) (k i) = t) :\n    \u2016stopTransport levels \u03be k t ht\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDictionaryTransport.lean#L133"
     }
   ],
   "human_reorganization": [
     "The direct all-order coefficient proof and bound C(n,p,H)=(n/(e*p*H))^(n/p), semigroup strong continuity, explicit cosine non-differentiability example, two-time sign/tail calibration and permutation symmetry are HUMAN reconstructions/deductions. The exact source bound is (1+n/H)^n at prescribed horizon H; its n composed gradients each use H/n. Uniqueness identifies the direct field with the formal normalized density. No arbitrary-spectrum algebra closure, finite-variation signed path law, adapted stochastic integral or new priority claim is inferred.",
     "Sections 8\u20139 reconstruct the exact L^(p/(p-1)) controls and canonical Lp first-gradient field. The all-order Lp tower bound, compact-support compatibility with L1 towers and fixed-spectrum failure of any uniform gradient estimate in Lr for 1<=r<p/(p-1) are complete HUMAN deductions, not stronger named formal statements. Actual jointly measurable representatives, a path-uniform time majorant, genuine finite-weight product integrability/Fubini and paired sampler limit are supplied without random-control or common-law field convergence claims.",
-    "Section 11 reconstructs the actual dense closed native directional generator and the real Banach-transpose input-norm criterion. The fixed direction h(t)=max(t,0)^(1/8) and quartic dyadic frequencies have rate one but directional frequency 2^n. The actual imaginary heat expectation lies outside its native transpose domain. Unboundedness of D_h S_H on the finite-character core and the local L^(4/3) exclusion are labelled HUMAN deductions. No claim that all smoothed inputs lie outside the native domain follows. HigherHeatFourierPathC0 also formally supplies the strong continuity reconstructed earlier."
+    "Section 11 reconstructs the actual dense closed native directional generator and the real Banach-transpose input-norm criterion. The fixed direction h(t)=max(t,0)^(1/8) and quartic dyadic frequencies have rate one but directional frequency 2^n. The actual imaginary heat expectation lies outside its native transpose domain. Unboundedness of D_h S_H on the finite-character core and the local L^(4/3) exclusion are labelled HUMAN deductions. No claim that all smoothed inputs lie outside the native domain follows. HigherHeatFourierPathC0 also formally supplies the strong continuity reconstructed earlier.",
+    "Section 9.1 reconstructs genuine strong Lp convergence of the time density AFTER path averaging, from uniformly contractive finite sampler functionals. This yields convergence uniform over the unit ball of conjugate-exponent controls for a fixed test field; no common sampler-law raw-field convergence or operator-norm convergence on the whole test-space unit ball is claimed. Section 12 proves an actual terminal-dictionary stopping obstruction and the exact contractive change-of-dictionary remedy, retaining the common-node hypothesis of the formal dyadic specialization. These are deterministic maps, not conditional probability or optional stopping."
   ],
-  "review_scope": "Forty-seven named principal modules read fully. Imported library proofs not exhaustively reread; mathematical sources remain frozen."
+  "review_scope": "Fifty-two named principal modules read fully. Imported library proofs not exhaustively reread; mathematical sources remain frozen."
 }

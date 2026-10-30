@@ -16,7 +16,7 @@
 \date{October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -496,6 +496,71 @@ $u(s,\omega)$ are not admitted merely because deterministic controls
 can be paired. Their products and limits require additional domains
 and estimates.
 
+\subsection{Strong convergence of the averaged time densities}
+The paired limit has a stronger form once the path variable has
+been integrated out. This is different from convergence of the raw
+joint time/path fields under changing sampler laws. Fix the order
+$2k$ and horizon $G$ of the sampling functional, and write
+\[
+ A_rq=\int w^{(2k)}_{r,G}(\omega)\mathcal Jq(\omega)
+                 \,dP^{(2k)}_{r,G}(\omega),\qquad A=\E^{(2k)}_G.
+\]
+These are bounded functionals on the same $\A$, with
+$\norm{A_r}\le1$, $\norm A=1$ and $A_rq\to Aq$ for every $q\in\A$.
+The uniform finite-level contraction follows already from
+Lemma~\ref{lem:finitechar}: integrate a coefficient representative,
+bound its character expectations by one and take the quotient
+infimum. A coefficient relation has realized value zero, so each
+finite functional is well defined on the quotient before taking
+its limit. Large variation of the signed sampler does not enter
+this stronger coefficient-norm bound.
+
+\begin{proposition}\label{prop:strongaveraged}
+For $g=D^{[p]}_{1,H}q$, let $f_r$ and $f$ be the $L^p(\R;\C)$
+classes obtained by the Bochner lifts of $A_r$ and $A$. Then
+\[
+ \norm{f_r}_p\le\norm g_p\le C_{1,p,H}\norm q_{\A},\qquad
+ \norm{f_r-f}_p\longrightarrow0.
+\]
+One version of $f_r$ is
+$s\mapsto\int w^{(2k)}_{r,G}(\omega)j_q(s,\omega)
+\,dP^{(2k)}_{r,G}(\omega)$, and the corresponding version of $f$
+is $s\mapsto A\widetilde g(s)$. For every fixed $s$ these versions
+converge. Moreover
+\[
+ \sup_{\norm u_{q_p}\le1}
+ \left|\int u(s)(f_r(s)-f(s))\,ds\right|\longrightarrow0.
+\]
+\end{proposition}
+\begin{proof}
+The bounds for $A_r$ give the first inequality by the norm bound for
+Bochner lifting; the second is Proposition~\ref{prop:dual}.
+For every fixed $s$, $A_r\widetilde g(s)\to A\widetilde g(s)$ by
+pointwise convergence of the functionals on $\A$. Also
+\[
+ |A_r\widetilde g(s)-A\widetilde g(s)|^p
+       \le2^p\norm{\widetilde g(s)}_{\A}^p.
+\]
+The right side is integrable. Dominated convergence therefore gives
+the $p$th power of the asserted norm convergence. The finite integral
+formula follows by applying the actual sampler functional to
+$\widetilde g(s)$; it is integrable in the path variable for every
+$s$, because the test is bounded and the finite weight is integrable.
+Its equality with the lifted class is the usual almost-everywhere
+representative identity for a bounded map on $L^p$. Finally H\"older
+bounds the displayed supremum by $\norm{f_r-f}_p$.
+\end{proof}
+
+The native first-field convergence and the operator-norm convergence
+of its control contractions are both formalized in
+\code{FourierPathDensityStrongLimit}, using the genuine uniform
+finite expectation operators in \code{FourierPathSamplerOperators}.
+The common $L^p$ space here is time only, after path averaging. The
+argument supplies neither convergence of $w_{r,G}$ under one fixed
+probability law nor operator-norm convergence of $A_r$ to $A$ on
+the entire unit ball of $\A$. No quantitative rate follows from
+dominated convergence alone.
+
 \section{Two concrete domain and normalization checks}
 \subsection{A two-time character and an invisible constant control}
 Take the times $1/2,1$ with frequencies $1,-1/2$. Then $\eta$ is $\pi$ on $(0,1/2]$ and $-\pi$ on $(1/2,1]$, and $\lambda=\pi^p$. For the constant control $u=\mathbf1_{(0,1]}$, $b(u)=0$. This character is unchanged by the linear direction $h_u(t)=t$ on $[0,1]$, although its heat multiplier is strictly less than one for $H>0$.
@@ -617,6 +682,82 @@ direction does not imply that every normalized heat expectation
 belongs to its transpose domain. A bounded functional and a densely
 defined closed derivative still require their actual transfer
 estimate.
+
+\section{Deterministic stopping and a change of Fourier dictionary}\label{sec:stopping}
+Another domain boundary is independent of differentiability. For
+$t\ge0$ define $(\operatorname{stop}_t\omega)(s)=\omega(\min(s,t))$.
+This is a continuous path vanishing at zero. Composition by the
+fixed continuous clock $s\mapsto\min(s,t)$ is continuous for the
+compact-open topology: the image of each compact set is compact.
+Consequently $f\mapsto f\circ\operatorname{stop}_t$ is a contraction
+on $C_b(\X)$. It need not preserve a selected realized quotient.
+
+\begin{proposition}\label{prop:stopping}
+There is an admissible countable Fourier dictionary and a test
+$q\in\A$ for which $\mathcal Jq\circ\operatorname{stop}_{1/2}$ is
+not the realization of any element of the same $\A$.
+\end{proposition}
+\begin{proof}
+Take every nonconstant listed character to be the same terminal
+character $\chi(\omega)=e^{-2\pi i\omega(1)}$. Along with the
+adjoined constant, every test in its quotient has a realization
+depending only on $\omega(1)$; this follows term by term in its
+absolutely convergent coefficient series. Let $q$ be its character
+generator. Compare the zero path with
+$b(s)=-2s(1-s)$, a continuous path on $\R$ with $b(0)=b(1)=0$.
+They have the same endpoint, so every realized test in this
+dictionary has equal values on them. But $b(1/2)=-1/2$, and hence
+\[
+ (\chi\circ\operatorname{stop}_{1/2})(0)=1,\qquad
+ (\chi\circ\operatorname{stop}_{1/2})(b)=-1.
+\]
+No realized quotient test can equal that stopped function. This also
+rules out any same-space stopping map with the proposed realization
+property, even without linearity or continuity of that map.
+\end{proof}
+
+There is a precise positive repair using a different dictionary.
+Suppose characters $(\widetilde\chi_i)$, indexed in the same way as
+$(\chi_i)$ and including the constant, satisfy
+\[
+ \widetilde\chi_i(\omega)=\chi_i(\Phi(\omega))
+       \quad\text{for every }i,\omega,
+\]
+for a specified path map $\Phi$. Write $\widetilde\A=\ell^1/
+\widetilde K$ for the target realization kernel. Then
+\[
+ T:\A\to\widetilde\A,\qquad T(Qa)=\widetilde Q a,
+ \qquad\norm T\le1,
+ \qquad\widetilde{\mathcal J}(Tq)=\mathcal Jq\circ\Phi.
+\]
+Indeed, summing the character identity gives
+$\widetilde Ja=(Ja)\circ\Phi$. Thus $K\subset\widetilde K$, which
+proves well-definedness. The coefficient bound followed by the
+source quotient infimum proves contractivity, and the same series
+identity gives realization. No algebraic closure of the source
+dictionary is needed.
+
+For dyadic stopping this target can be explicit. If $t$ is a common
+node in every selected observation grid, choose the node $k_i$ with
+$t_{i,k_i}=t$. Stopping replaces $\omega(t_{ij})$ by
+$\omega(t_{i,\min(j,k_i)})$. The new frequency at node $\ell$ is
+\[
+ \widetilde\xi_{i\ell}=
+       \sum_{j:\,\min(j,k_i)=\ell}\xi_{ij}.
+\]
+Collecting the finite phase sum proves the character identity, and
+the displayed contraction maps into that stopped-frequency
+dictionary. The common-node condition is part of this exact source
+specialization; it is not assumed for every dictionary and time.
+The general transport statement also covers explicitly refined
+target grids when their character identities have been proved.
+
+The obstruction and contractive dictionary transport are formalized
+in \code{FourierPathStopping} and
+\code{FourierPathDictionaryTransport}. These are deterministic
+pullbacks. No optional-stopping theorem, probabilistic past
+conditional expectation, or arbitrary adapted integral is obtained
+from dictionary transport alone.
 
 \section{Antecedents, formal correspondence and limits of the claim}
 Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.
