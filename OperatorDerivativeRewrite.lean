@@ -2929,3 +2929,7 @@ import Foundation.CubeGaussianRadialEigenvector
 import Foundation.CubeFiniteQuasimode
 import Foundation.CubeFiniteGroundQuasimode
 import Foundation.CubeRadialStationaryQuasimode
+import Foundation.CubeGaussianSquareChannel
+import Foundation.CubeGaussianSquareRoot
+import Foundation.CubeNormalizedKernelSquare
+import Foundation.CubeLimitComplementGap
