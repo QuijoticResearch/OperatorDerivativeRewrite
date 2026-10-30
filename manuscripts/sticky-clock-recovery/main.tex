@@ -42,6 +42,8 @@ formal-source correspondences. The construction does not use the
 separately unfinished closed-generator or stochastic-flow identification.
 Operational-time Hermite and explicit sticky boundary martingales are
 proved in the observed filtration, with the derivative-jump factor fixed.
+An explicit vanishing boundary pair has generator value $1/4$ at zero,
+showing that uniformly dense flat smooth tests are not a graph core.
 \end{abstract}
 
 \section{The construction and its precise conclusions}
@@ -897,6 +899,144 @@ The Gaussian characteristic function proves the nonzero value.
 This is a pairing obstruction, not a classification of invariant
 measures or a closed generator theorem.
 
+
+\section{A dense value domain with a fixed graph-norm gap}
+The distinction between martingale tests and a closed-generator core can
+be made quantitative. We work in the real Banach space $C_0(\R)$ with
+its uniform norm. Fix $\kappa>0$. Call a pair $(F,G)\in C_0(\R)^2$
+\emph{admissible} if $F$ is twice differentiable off zero,
+\begin{equation}\label{eq:stickyrelation}
+ G(x)=\tfrac12F''(x)\quad(x\ne0),\qquad
+ F'(0+)-F'(0-)=2\kappa G(0),
+\end{equation}
+where both one-sided derivatives are actual finite one-sided derivatives.
+Their existence is a hypothesis, not a symbolic boundary convention.
+Continuity of $G$ fixes its value at zero uniquely from its off-zero
+values. Thus the linear space of admissible pairs is the graph of a
+single-valued linear operator $A_\kappa$ on its actual first-coordinate
+domain. Linearity follows by adding or scaling the off-zero identities
+and the two boundary derivatives.
+
+\subsection*{The uniform resolvent estimate and genuine closability}
+An admissible $F$ attains its positive maximum or negative minimum when
+its uniform norm is nonzero: vanishing at infinity restricts the relevant
+extremum to a compact interval. At a maximum away from zero the ordinary
+second-derivative test gives $G\leq0$. At a maximum at zero its right
+slope is nonpositive and its left slope nonnegative; hence
+\eqref{eq:stickyrelation}, with $\kappa>0$, again gives $G(0)\leq0$.
+Applying the same argument to $-F$ handles minima. Evaluating $qF-G$
+at a point attaining $|F|=\|F\|_\infty$ therefore proves
+\begin{equation}\label{eq:stickyresolvent}
+ q\|F\|_\infty\leq\|qF-G\|_\infty,\qquad q>0.
+\end{equation}
+In particular any two admissible solutions of the same resolvent equation
+have the same $F$: subtract their pairs and use this inequality. This
+is uniqueness and stability when solutions exist, not their existence.
+
+The domain is dense. To prove this explicitly let
+\[
+ \mathcal E=\{g\in C_c^\infty(\R):g\text{ is constant near }0\}.
+\]
+Every $g\in\mathcal E$ is admissible with $A_\kappa g=g''/2$ and
+$(A_\kappa g)(0)=0$. For any $F\in C_0(\R)$ and $\epsilon>0$ first
+choose a smooth compactly supported $u$ with
+$\|u-F\|_\infty<\epsilon/2$. Such a choice follows by cutting off
+the small tails of $F$ and convolving the compact continuous result
+with a positive smooth approximate identity; uniform continuity gives
+uniform convergence. Continuity at zero supplies $\delta>0$ with
+$|F(x)-F(0)|<\epsilon/2$ on $|x|<\delta$. Choose a smooth cutoff
+$0\leq\chi\leq1$, equal to one near zero and supported in that interval.
+Then
+\[
+ g=\chi F(0)+(1-\chi)u\in\mathcal E,
+ \quad
+ |g-F|\leq\chi|F(0)-F|+(1-\chi)|u-F|<\epsilon.
+\]
+The support is compact since both $\chi$ and $u$ have compact support.
+This proves value-norm density, including without the restriction
+$\kappa>0$.
+
+For completeness, the actual relation is closable; density plus the
+resolvent estimate gives a direct proof. Let $\Gamma$ be its graph.
+The inequality \eqref{eq:stickyresolvent} persists in its product-norm
+closure. Suppose $(0,V)\in\overline\Gamma$. For an original pair
+$(F,G)\in\Gamma$, linearity puts $(F,G+qV)$ in $\overline\Gamma$.
+Consequently
+\[
+ q\|F\|_\infty\leq\|q(F-V)-G\|_\infty
+            \leq q\|F-V\|_\infty+\|G\|_\infty.
+\]
+Send $q\to\infty$ with this pair fixed to get
+$\|F\|_\infty\leq\|F-V\|_\infty$. Now approximate $V$ in uniform
+norm by first coordinates of admissible pairs, using the density just
+proved. The inequality forces $\|V\|_\infty=0$.
+Thus the closed graph has no nonzero vertical pair, so it defines a
+closed linear operator $\overline A_\kappa$, extending $A_\kappa$
+and retaining a dense domain and \eqref{eq:stickyresolvent}.
+No range condition or semigroup identification has entered this argument.
+
+\subsection*{An explicit admissible pair missed by all flat tests}
+Put
+\[
+ a=1+\kappa/4,\quad b=1+\kappa/2,\quad
+ f_\kappa(x)=a\sqrt{1+x^2}-b\sqrt{4+x^2},
+\]
+\begin{equation}\label{eq:vanishingstickypair}
+ F_\kappa(x)=f_\kappa(x)+\frac\kappa4|x|,\qquad
+ G_\kappa(x)=\frac12\left(
+ \frac{a}{(1+x^2)^{3/2}}-\frac{4b}{(4+x^2)^{3/2}}\right).
+\end{equation}
+The smooth base has bounded first and second derivatives and
+$f_\kappa''(0)=a-b/2=1/2$. Its sticky correction is therefore exactly
+the $\kappa f''(0)|x|/2$ correction of Section~\ref{sec:boundary}.
+The resulting pair is admissible, and the actual observed-past
+martingale there applies. It has
+\[
+ G_\kappa(0)=\tfrac14,\qquad
+ F_\kappa'(0+)=\kappa/4,\quad F_\kappa'(0-)=-\kappa/4,
+ \qquad F_\kappa(0)=-1-3\kappa/4.
+\]
+Thus its derivative jump is $\kappa/2=2\kappa G_\kappa(0)$.
+It remains to check that both components really vanish at infinity.
+The second does so directly. For the first use $a-b=-\kappa/4$ to write
+\[
+ F_\kappa(x)=a(\sqrt{1+x^2}-|x|)
+                 -b(\sqrt{4+x^2}-|x|).
+\]
+For $r>0$ the identity
+$\sqrt{r^2+x^2}-|x|=r^2/(\sqrt{r^2+x^2}+|x|)$ proves that both terms
+tend to zero. Continuity at zero is immediate. Hence
+$(F_\kappa,G_\kappa)$ is an actual nonzero pair in $C_0(\R)^2$,
+not merely a linear-growth formal boundary test.
+
+For every $g\in\mathcal E$, its second derivative vanishes at zero.
+Therefore
+\begin{equation}\label{eq:stickygraphgap}
+ \left\|\tfrac12g''-G_\kappa\right\|_\infty
+ \geq\left|\tfrac12g''(0)-G_\kappa(0)\right|=\tfrac14.
+\end{equation}
+So $\mathcal E$ is not a graph core for $A_\kappa$ or its closure,
+even though it is uniformly dense in $C_0(\R)$ and consists of genuine
+martingale tests. The same fixed gap excludes graph approximation to
+this pair in any closed operator extending the admissible relation.
+The explicit gap itself also holds at $\kappa=0$; the closability proof
+above and its named relation estimate retain $\kappa>0$.
+
+This is a classical domain distinction with a concrete frozen witness.
+The corresponding source mechanisms are
+\par\noindent{\small\nolinkurl{SmoothFlatC0Approximation}};
+\par\noindent{\small\nolinkurl{StickyFlatTestDomain}};
+\par\noindent{\small\nolinkurl{StickyVanishingBoundaryTest}};
+\par\noindent{\small\nolinkurl{StickyVanishingGeneratorPair}};
+\par\noindent{\small\nolinkurl{StickyGeneratorRelation}};
+\par\noindent{\small\nolinkurl{StickyGeneratorLinearGraph}};
+\par\noindent{\small\nolinkurl{StickyGeneratorClosure}}.
+\par\noindent The density statement is a value approximation, and the
+closed operator construction supplies no inverse on arbitrary $C_0$
+right-hand sides. In particular it does not identify the generator of
+an all-start transition semigroup or prove uniqueness of a martingale
+problem. Those are precisely the separate obligations preserved below.
+
 \section{What is established and what remains separate}
 Clock recovery uses the observed prefix, not a terminal coordinate.
 It does not construct a strong solution with a prescribed physical-time
@@ -904,9 +1044,9 @@ Brownian driver. Bass's sticky SDE \cite{Bass} distinguishes weak
 existence and uniqueness from strong existence; the operational
 representation \eqref{eq:clocks} does not identify that driver filtration.
 
-The source library separately proves a densely defined closable
-continuous-function generator relation and a maximum-principle
-bound. Its range condition and closed-semigroup identification are
+The preceding section reconstructs the densely defined closable
+continuous-function generator relation, its maximum-principle bound,
+and the explicit flat-test graph gap. Its range condition and closed-semigroup identification are
 not supplied by those results. The boundary martingales in
 Section~\ref{sec:boundary} do not supply that missing range condition.
 No such missing step is assumed in

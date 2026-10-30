@@ -2376,6 +2376,618 @@
       "source_sha256": "35f05dadac6e696f252428216c94e65b342d6c44cc88e8c2cb43e204515f49cf",
       "declaration_header": "theorem bounded_smooth_witness : ContDiff \u211d \u221e Real.cos \u2227 ContDiff \u211d \u221e (fun _ : \u211d => (1:\u211d)) \u2227\n    (\u2200 x, \u2016Real.cos x\u2016 \u2264 1) \u2227 (\u2200 _x : \u211d, \u2016(1:\u211d)\u2016 \u2264 1)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTerminalLawObstruction.lean#L44"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBoundaryMaximumPrinciple.right_derivative_nonpositive",
+      "file": "Foundation/StickyBoundaryMaximumPrinciple.lean",
+      "line": 13,
+      "source_sha256": "24d868f17beb7f3139536a96ba13cf4405d07969f7872485b97bb3dab95560df",
+      "declaration_header": "theorem right_derivative_nonpositive {F : \u211d \u2192 \u211d} {r : \u211d}\n    (hF : HasDerivWithinAt F r (Ici 0) 0) (hmax : \u2200 x, F x \u2264 F 0) : r \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBoundaryMaximumPrinciple.lean#L13"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBoundaryMaximumPrinciple.left_derivative_nonnegative",
+      "file": "Foundation/StickyBoundaryMaximumPrinciple.lean",
+      "line": 23,
+      "source_sha256": "24d868f17beb7f3139536a96ba13cf4405d07969f7872485b97bb3dab95560df",
+      "declaration_header": "theorem left_derivative_nonnegative {F : \u211d \u2192 \u211d} {l : \u211d}\n    (hF : HasDerivWithinAt F l (Iic 0) 0) (hmax : \u2200 x, F x \u2264 F 0) : 0 \u2264 l",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBoundaryMaximumPrinciple.lean#L23"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBoundaryMaximumPrinciple.boundary_maximum_principle",
+      "file": "Foundation/StickyBoundaryMaximumPrinciple.lean",
+      "line": 33,
+      "source_sha256": "24d868f17beb7f3139536a96ba13cf4405d07969f7872485b97bb3dab95560df",
+      "declaration_header": "theorem boundary_maximum_principle (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f)\n    (\u03ba : \u211d\u22650) (h\u03ba : 0 < \u03ba) (hmax : \u2200 x, boundaryTest f \u03ba x \u2264 boundaryTest f \u03ba 0) :\n    candidateGenerator f 0 \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBoundaryMaximumPrinciple.lean#L33"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.second_derivative_nonpositive",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 15,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem second_derivative_nonpositive {F : \u211d \u2192 \u211d} {x : \u211d}\n    (hc : ContinuousAt F x) (hm : IsLocalMax F x) : deriv (deriv F) x \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L15"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.maximum_principle",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 36,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem maximum_principle {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {F G : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) {x : \u211d} (hm : \u2200 y, F y \u2264 F x) : G x \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L36"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.Admissible.neg",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 51,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem Admissible.neg {\u03ba : \u211d\u22650} {F G : C\u2080(\u211d, \u211d)} (h : Admissible \u03ba F G) :\n    Admissible \u03ba (-F) (-G)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L51"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.minimum_principle",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 69,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem minimum_principle {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {F G : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) {x : \u211d} (hm : \u2200 y, F x \u2264 F y) : 0 \u2264 G x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L69"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.norm_attained",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 75,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem norm_attained (F : C\u2080(\u211d, \u211d)) : \u2203 x : \u211d, \u2016F x\u2016 = \u2016F\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L75"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorRelation.resolvent_norm_bound",
+      "file": "Foundation/StickyGeneratorRelation.lean",
+      "line": 93,
+      "source_sha256": "bb66000bca1d8370e8d99124b50dd33f30e265dfb1a56b4ba93425128fbdbd99",
+      "declaration_header": "theorem resolvent_norm_bound {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {F G : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) {q : \u211d} (hq : 0 < q) :\n    q*\u2016F\u2016 \u2264 \u2016q \u2022 F-G\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorRelation.lean#L93"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.add",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 13,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem add {\u03ba : \u211d\u22650} {F G H K : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (h' : Admissible \u03ba H K) :\n    Admissible \u03ba (F+H) (G+K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L13"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.smul",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 37,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem smul {\u03ba : \u211d\u22650} {F G : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (c : \u211d) : Admissible \u03ba (c \u2022 F) (c \u2022 G)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L37"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.sub",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 56,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem sub {\u03ba : \u211d\u22650} {F G H K : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (h' : Admissible \u03ba H K) :\n    Admissible \u03ba (F-H) (G-K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L56"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.resolvent_stability",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 61,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem resolvent_stability {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {F G H K : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (h' : Admissible \u03ba H K) {q : \u211d} (hq : 0 < q) :\n    q*\u2016F-H\u2016 \u2264 \u2016(q \u2022 F-G)-(q \u2022 H-K)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L61"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.resolvent_injective",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 69,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem resolvent_injective {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {F G H K : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (h' : Admissible \u03ba H K) {q : \u211d} (hq : 0 < q)\n    (he : q \u2022 F - G = q \u2022 H - K) : F = H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L69"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.single_valued",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 79,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem single_valued {\u03ba : \u211d\u22650} {F G K : C\u2080(\u211d, \u211d)}\n    (h : Admissible \u03ba F G) (h' : Admissible \u03ba F K) : G = K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L79"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.of_boundary_test",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 88,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem of_boundary_test (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (\u03ba : \u211d\u22650)\n    (F G : C\u2080(\u211d, \u211d))\n    (hF : (F : \u211d \u2192 \u211d) = StickyC2MartingaleProblem.boundaryTest f \u03ba)\n    (hG : (G : \u211d \u2192 \u211d) = StickyBoundaryGeneratorCore.candidateGenerator f) :\n    Admissible \u03ba F G",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L88"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorLinearGraph.concrete_pair",
+      "file": "Foundation/StickyGeneratorLinearGraph.lean",
+      "line": 125,
+      "source_sha256": "4ffadbb26838fdbdd96debe39f36c3a7a8e9964cd20bb9e4303881856b10a285",
+      "declaration_header": "theorem concrete_pair (\u03ba : \u211d\u22650) :\n    Admissible \u03ba (StickyVanishingBoundaryTest.testC0 \u03ba)\n      (StickyVanishingGeneratorPair.generatorC0 \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorLinearGraph.lean#L125"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.zero_pair",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 14,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem zero_pair (\u03ba : \u211d\u22650) : Admissible \u03ba (0 : C\u2080(\u211d, \u211d)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L14"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.relation",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 17,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "def relation (\u03ba : \u211d\u22650) : Submodule \u211d (C\u2080(\u211d, \u211d) \u00d7 C\u2080(\u211d, \u211d)) where\n  carrier",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L17"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.vertical_zero",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 23,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem vertical_zero (\u03ba : \u211d\u22650) (z : C\u2080(\u211d, \u211d) \u00d7 C\u2080(\u211d, \u211d))\n    (hz : z \u2208 relation \u03ba) (h0 : z.1 = 0) : z.2 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L23"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.operator",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 29,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "def operator (\u03ba : \u211d\u22650) : C\u2080(\u211d, \u211d) \u2192\u2097.[\u211d] C\u2080(\u211d, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L29"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.operator_graph",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 31,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem operator_graph (\u03ba : \u211d\u22650) : (operator \u03ba).graph = relation \u03ba",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L31"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closure_bound",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 34,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem closure_bound {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) {q : \u211d} (hq : 0 < q)\n    (z : C\u2080(\u211d, \u211d) \u00d7 C\u2080(\u211d, \u211d)) (hz : z \u2208 (relation \u03ba).topologicalClosure) :\n    q*\u2016z.1\u2016 \u2264 \u2016q \u2022 z.1-z.2\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L34"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closure_vertical_zero",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 45,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem closure_vertical_zero {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba)\n    (y : C\u2080(\u211d, \u211d)) (hy : (0,y) \u2208 (relation \u03ba).topologicalClosure) : y = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L45"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closure_domain_dense",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 91,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem closure_domain_dense (\u03ba : \u211d\u22650) : Dense ((operator \u03ba).closure.domain : Set C\u2080(\u211d, \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L91"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closed_closure",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 94,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem closed_closure {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) : (operator \u03ba).closure.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L94"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothFlatC0Approximation.exists_smooth_compact_approx",
+      "file": "Foundation/SmoothFlatC0Approximation.lean",
+      "line": 12,
+      "source_sha256": "17033416d28b6dd04c604a4ccc1a1f1ed2927a515d48e3478a9966ccdbcd5cff",
+      "declaration_header": "theorem exists_smooth_compact_approx (F : C\u2080(\u211d, \u211d)) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) :\n    \u2203 g : \u211d \u2192 \u211d, ContDiff \u211d \u221e g \u2227 HasCompactSupport g \u2227\n      \u2200 x, |g x-F x| \u2264 \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothFlatC0Approximation.lean#L12"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothFlatC0Approximation.exists_flat_smooth_compact_approx",
+      "file": "Foundation/SmoothFlatC0Approximation.lean",
+      "line": 47,
+      "source_sha256": "17033416d28b6dd04c604a4ccc1a1f1ed2927a515d48e3478a9966ccdbcd5cff",
+      "declaration_header": "theorem exists_flat_smooth_compact_approx (F : C\u2080(\u211d, \u211d)) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) :\n    \u2203 g : \u211d \u2192 \u211d, ContDiff \u211d \u221e g \u2227 HasCompactSupport g \u2227\n      g =\u1da0[\ud835\udcdd (0 : \u211d)] (fun _ => F 0) \u2227 \u2200 x, |g x-F x| \u2264 \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothFlatC0Approximation.lean#L47"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothFlatC0Approximation.flatSmooth",
+      "file": "Foundation/SmoothFlatC0Approximation.lean",
+      "line": 86,
+      "source_sha256": "17033416d28b6dd04c604a4ccc1a1f1ed2927a515d48e3478a9966ccdbcd5cff",
+      "declaration_header": "def flatSmooth : Set C\u2080(\u211d, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothFlatC0Approximation.lean#L86"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothFlatC0Approximation.exists_flat_C0_approx",
+      "file": "Foundation/SmoothFlatC0Approximation.lean",
+      "line": 90,
+      "source_sha256": "17033416d28b6dd04c604a4ccc1a1f1ed2927a515d48e3478a9966ccdbcd5cff",
+      "declaration_header": "theorem exists_flat_C0_approx (F : C\u2080(\u211d, \u211d)) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) :\n    \u2203 G \u2208 flatSmooth, \u2016G-F\u2016 \u2264 \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothFlatC0Approximation.lean#L90"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothFlatC0Approximation.flatSmooth_dense",
+      "file": "Foundation/SmoothFlatC0Approximation.lean",
+      "line": 104,
+      "source_sha256": "17033416d28b6dd04c604a4ccc1a1f1ed2927a515d48e3478a9966ccdbcd5cff",
+      "declaration_header": "theorem flatSmooth_dense : Dense flatSmooth",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothFlatC0Approximation.lean#L104"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.second_zero",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 16,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem second_zero {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) :\n    deriv (deriv (F : \u211d \u2192 \u211d)) 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L16"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.generator",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 23,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "def generator (F : C\u2080(\u211d, \u211d)) (hF : F \u2208 flatSmooth) : C\u2080(\u211d, \u211d) where\n  toFun",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L23"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.generator_zero",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 29,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem generator_zero {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) :\n    generator F hF 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L29"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.boundary_test_eq",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 34,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem boundary_test_eq {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) (\u03ba : \u211d\u22650) :\n    boundaryTest F \u03ba = (F : \u211d \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L34"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.admissible",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 39,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem admissible {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) (\u03ba : \u211d\u22650) :\n    Admissible \u03ba F (generator F hF)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L39"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.domain_dense",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 43,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem domain_dense (\u03ba : \u211d\u22650) :\n    Dense {F : C\u2080(\u211d, \u211d) | \u2203 G, Admissible \u03ba F G}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L43"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.derivative_bounds",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 49,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem derivative_bounds {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) :\n    \u2203 K0 K1 : \u211d\u22650, (\u2200 x, \u2016deriv (F : \u211d \u2192 \u211d) x\u2016\u208a \u2264 K0) \u2227\n      (\u2200 x, \u2016deriv (deriv (F : \u211d \u2192 \u211d)) x\u2016\u208a \u2264 K1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L49"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.actual_martingale",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 63,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem actual_martingale {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => F (changedPath \u03ba \u03c9 t)-F 0-\n      \u222b s in 0..(t : \u211d), generator F hF (changedPath \u03ba \u03c9 s.toNNReal))\n      (augmentedPhysicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L63"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyFlatTestDomain.graph_generator_gap",
+      "file": "Foundation/StickyFlatTestDomain.lean",
+      "line": 72,
+      "source_sha256": "4f7b827da52f10e76d796fc9a46601f846cdc289a4e2fdca1e39fa95bf4efd22",
+      "declaration_header": "theorem graph_generator_gap {F : C\u2080(\u211d, \u211d)} (hF : F \u2208 flatSmooth) (\u03ba : \u211d\u22650) :\n    (1/4 : \u211d) \u2264 \u2016generator F hF-StickyVanishingGeneratorPair.generatorC0 \u03ba\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyFlatTestDomain.lean#L72"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.a",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 16,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "def a (\u03ba : \u211d\u22650) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L16"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.b",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 17,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "def b (\u03ba : \u211d\u22650) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L17"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 18,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "def base (\u03ba : \u211d\u22650) (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L18"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.test",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 19,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "def test (\u03ba : \u211d\u22650) : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L19"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_smooth",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 21,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_smooth (\u03ba : \u211d\u22650) : ContDiff \u211d 2 (base \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L21"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_deriv",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 25,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_deriv (\u03ba : \u211d\u22650) : deriv (base \u03ba) =\n    fun x => (a \u03ba : \u211d)*SmoothAbsoluteApproximation.slope 1 x-(b \u03ba : \u211d)*SmoothAbsoluteApproximation.slope 2 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L25"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_second_deriv",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 31,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_second_deriv (\u03ba : \u211d\u22650) : deriv (deriv (base \u03ba)) =\n    fun x => (a \u03ba : \u211d)*curvature 1 x-(b \u03ba : \u211d)*curvature 2 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L31"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_first_bound",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 38,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_first_bound (\u03ba : \u211d\u22650) (x : \u211d) : \u2016deriv (base \u03ba) x\u2016\u208a \u2264 a \u03ba+b \u03ba",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L38"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_second_bound",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 51,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_second_bound (\u03ba : \u211d\u22650) (x : \u211d) : \u2016deriv (deriv (base \u03ba)) x\u2016\u208a \u2264 a \u03ba+b \u03ba/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L51"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.base_second_zero",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 64,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem base_second_zero (\u03ba : \u211d\u22650) : deriv (deriv (base \u03ba)) 0 = 1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L64"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.coefficient_eq",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 73,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem coefficient_eq (\u03ba : \u211d\u22650) : coefficient (base \u03ba) \u03ba = (\u03ba : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L73"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.test_error_form",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 77,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem test_error_form (\u03ba : \u211d\u22650) (x : \u211d) : test \u03ba x =\n    (a \u03ba : \u211d)*(radius 1 x-|x|)-(b \u03ba : \u211d)*(radius 2 x-|x|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L77"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.radius_error_identity",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 85,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem radius_error_identity (e : \u211d) (he : 0 < e) (x : \u211d) :\n    radius e x-|x| = e^2/(radius e x+|x|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L85"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.radius_error_tendsto",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 91,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem radius_error_tendsto (e : \u211d) (he : 0 < e) :\n    Tendsto (fun x => radius e x-|x|) (cocompact \u211d) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L91"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.test_tendsto",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 102,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem test_tendsto (\u03ba : \u211d\u22650) : Tendsto (test \u03ba) (cocompact \u211d) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L102"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.testC0",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 110,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "def testC0 (\u03ba : \u211d\u22650) : C\u2080(\u211d, \u211d) where\n  toFun",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L110"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.test_zero",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 115,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem test_zero (\u03ba : \u211d\u22650) : test \u03ba 0 = -1-3*(\u03ba : \u211d)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L115"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.test_nonzero",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 124,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem test_nonzero (\u03ba : \u211d\u22650) : testC0 \u03ba \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L124"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingBoundaryTest.concrete_martingale",
+      "file": "Foundation/StickyVanishingBoundaryTest.lean",
+      "line": 131,
+      "source_sha256": "89bed83995ed012b995a3fa0aaeb7443c2568bd00a018b64c9112edd4d091e5e",
+      "declaration_header": "theorem concrete_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => testC0 \u03ba (changedPath \u03ba \u03c9 t)-testC0 \u03ba 0-\n      \u222b s in 0..(t : \u211d), candidateGenerator (base \u03ba) (changedPath \u03ba \u03c9 s.toNNReal))\n      (augmentedPhysicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingBoundaryTest.lean#L131"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.radius_tendsto",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 13,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem radius_tendsto (e : \u211d) (he : 0 < e) :\n    Tendsto (radius e) (cocompact \u211d) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L13"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.curvature_tendsto",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 21,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem curvature_tendsto (e : \u211d) (he : 0 < e) :\n    Tendsto (curvature e) (cocompact \u211d) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L21"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.generator_tendsto",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 30,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem generator_tendsto (\u03ba : \u211d\u22650) :\n    Tendsto (candidateGenerator (base \u03ba)) (cocompact \u211d) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L30"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.generatorC0",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 41,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "def generatorC0 (\u03ba : \u211d\u22650) : C\u2080(\u211d, \u211d) where\n  toFun",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L41"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.generator_zero",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 46,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem generator_zero (\u03ba : \u211d\u22650) : generatorC0 \u03ba 0 = 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L46"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.right_derivative",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 51,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem right_derivative (\u03ba : \u211d\u22650) :\n    HasDerivWithinAt (testC0 \u03ba) ((\u03ba : \u211d)/4) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L51"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.left_derivative",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 58,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem left_derivative (\u03ba : \u211d\u22650) :\n    HasDerivWithinAt (testC0 \u03ba) (-(\u03ba : \u211d)/4) (Iic 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L58"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.boundary_condition",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 65,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem boundary_condition (\u03ba : \u211d\u22650) :\n    (\u03ba : \u211d)/4-(-(\u03ba : \u211d)/4) = 2*(\u03ba : \u211d)*generatorC0 \u03ba 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L65"
+    },
+    {
+      "paper": "Section 13: actual C0 differential boundary relation, positive-parameter maximum principle/resolvent estimate, dense flat value tests, closable graph and explicit admissible C0 pair with generator value 1/4 missed by the flat-test graph closure. No resolvent range or semigroup identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyVanishingGeneratorPair.concrete_martingale",
+      "file": "Foundation/StickyVanishingGeneratorPair.lean",
+      "line": 70,
+      "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
+      "declaration_header": "theorem concrete_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => testC0 \u03ba (changedPath \u03ba \u03c9 t)-testC0 \u03ba 0-\n      \u222b s in 0..(t : \u211d), generatorC0 \u03ba (changedPath \u03ba \u03c9 s.toNNReal))\n      (augmentedPhysicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L70"
     }
   ],
   "human_reorganization": [
@@ -2389,7 +3001,8 @@
     "Two distinct Borel probability kernels disintegrate the same actual initial pair law delta_(0,0), agreeing only at the observed state zero. The constant kernel fails the all-start time-zero identity. This is a version warning, not semigroup or martingale-problem nonuniqueness.",
     "Section 12 proves the complete Hermite conditional identity with dominated differentiation and bounded sampling. The observed-past Hermite theorem is already mapped in the source. Operational time cannot be replaced by physical time even for the second Hermite polynomial.",
     "The boundary martingale source has augmented physical-past filtration. The printed observed-past extension is a human deduction from prefix Riemann-sum measurability and shrinking the filtration. The factor 2*kappa*g(0) is derived using the exact original Tanaka and half-Laplacian conventions, including kappa=0 without division.",
-    "The radius boundary test has linear growth and a derivative jump. Its martingale identity is not a C0 closed-generator domain identification or martingale-problem uniqueness theorem. The nonsticky Gaussian terminal-law pairing obstruction does not classify invariant measures."
+    "The radius boundary test has linear growth and a derivative jump. Its martingale identity is not a C0 closed-generator domain identification or martingale-problem uniqueness theorem. The nonsticky Gaussian terminal-law pairing obstruction does not classify invariant measures.",
+    "Section 13 reconstructs the actual C0 sticky differential relation, boundary slope maximum principle, uniform resolvent uniqueness/stability and a genuine dense closable graph for kappa>0. Smooth compact tests constant near zero are uniformly dense but have generator value zero there. The explicit vanishing pair F=(1+kappa/4)sqrt(1+x^2)-(1+kappa/2)sqrt(4+x^2)+(kappa/4)|x| has G(0)=1/4 and the exact sticky slope jump, so every flat-test output remains at uniform distance at least 1/4. This excludes a graph-core identification, including in any closed extension containing that pair. Value density and closure give no resolvent range, all-start transition generator or uniqueness theorem. The fixed gap itself also holds at kappa=0, while the named closability estimate retains kappa>0."
   ],
   "literature": [
     {
