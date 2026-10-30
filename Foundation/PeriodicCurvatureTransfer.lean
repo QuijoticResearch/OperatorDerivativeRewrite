@@ -33,8 +33,9 @@ theorem plaquette_gauge (a : Gauge) (U : State) (p : SpatialFace) :
   rw [plaquette,PeriodicSlabGauge.spatial_word_covariant,halfTrace_conjugate]
   rfl
 
-theorem plaquette_change (U V : State) (a : Gauge) (p : SpatialFace) :
-    (plaquette p U-plaquette p V)^2 ≤ 32*PeriodicWilsonSlab.temporalAction U V a := by
+theorem plaquette_distance_sq (U V : State) (a : Gauge) (p : SpatialFace) :
+    distance (spatialWord U p) (spatialWord (PeriodicSlabGauge.gaugeAction a V) p)^2 ≤
+      32*PeriodicWilsonSlab.temporalAction U V a := by
   let W := PeriodicSlabGauge.gaugeAction a V
   have he (e : SpatialEdge) : distance (U e) (W e) ≤
       Real.sqrt (2*PeriodicWilsonSlab.temporalAction U V a) := edge_distance U V a e
@@ -46,15 +47,18 @@ theorem plaquette_change (U V : State) (a : Gauge) (p : SpatialFace) :
     · exact he _
     · rw [distance_inv]; exact he _
     · rw [distance_inv]; exact he _
-  have ht := trace_distance (spatialWord U p) (spatialWord W p)
-  have hg : plaquette p W=plaquette p V := plaquette_gauge a V p
-  change (plaquette p U-plaquette p W)^2 ≤ _ at ht
-  rw [hg] at ht
   have hs := Real.sq_sqrt (by linarith [(PeriodicWilsonSlab.temporal_action_bounds U V a).1] :
     0 ≤ 2*PeriodicWilsonSlab.temporalAction U V a)
   have hsq := mul_self_le_mul_self (norm_nonneg (lift (spatialWord U p)-lift (spatialWord W p))) hd
   change distance (spatialWord U p) (spatialWord W p)*distance (spatialWord U p) (spatialWord W p) ≤ _ at hsq
   nlinarith
+
+theorem plaquette_change (U V : State) (a : Gauge) (p : SpatialFace) :
+    (plaquette p U-plaquette p V)^2 ≤ 32*PeriodicWilsonSlab.temporalAction U V a := by
+  have ht := trace_distance (spatialWord U p) (spatialWord (PeriodicSlabGauge.gaugeAction a V) p)
+  change (plaquette p U-plaquette p (PeriodicSlabGauge.gaugeAction a V))^2 ≤ _ at ht
+  rw [plaquette_gauge a V p] at ht
+  exact ht.trans (plaquette_distance_sq U V a p)
 
 variable {beta : ℝ} (g : GroundData beta)
 private instance stationary_probability : IsProbabilityMeasure g.stationary := g.stationary_probability
