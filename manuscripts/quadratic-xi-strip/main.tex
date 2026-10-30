@@ -1013,6 +1013,94 @@ is retained solely as the classical bound reconstructed here, without
 claiming it is the best available bound. No quartic or sixth-order
 threshold is identified with $\Lambda$.
 
+
+\section{Conditional arithmetic input and the limits of strip data}
+The width-one initial bound used above follows from the actual Euler
+product. A stronger complex zero-free statement would improve the
+waiting time, but it must be supplied as a separate hypothesis.
+Let $\theta\geq1/2$ and assume
+\begin{equation}\label{eq:arithmeticpremise}
+ \zeta(s)\ne0\quad\hbox{for every }s\in\C
+                  \hbox{ with }\operatorname{Re}s>\theta.
+\end{equation}
+Then for $t\geq0$ every actual zero satisfies
+\begin{equation}\label{eq:conditionalarithmeticstrip}
+ F_t(z)=0\ \Longrightarrow\
+ (\operatorname{Im}z)^2\leq
+       \max\{(2\theta-1)^2-2t,0\}.
+\end{equation}
+In particular all zeros are real for
+$t\geq(2\theta-1)^2/2$.
+
+To prove the initial strip, write
+$s=(1+iz)/2$, so $\operatorname{Re}s=1/2-\operatorname{Im}z/2$.
+If $\operatorname{Im}z<1-2\theta$ and $\operatorname{Re}z\ne0$,
+then $s\notin\{0,1\}$; the completed-zeta identity from Section 2
+and its nonzero gamma factor exclude $F_0(z)=0$ by
+\eqref{eq:arithmeticpremise}. If $\operatorname{Re}z=0$, the
+strictly positive integral $F_0(iy)=\int K(u)\cosh(yu)du$ excludes
+it directly, including the apparent exceptional completed points.
+Conjugation excludes the reflected upper region, giving
+$|\operatorname{Im}z|\leq2\theta-1$.
+Apply the already proved quadratic strip-contraction theorem to this
+initial width to obtain \eqref{eq:conditionalarithmeticstrip}.
+This is the same classical strip mechanism credited above, now
+with the arithmetic premise displayed explicitly.
+
+For example, the \emph{hypothesis} of a zero-free complex half-plane
+$\operatorname{Re}s>7/8$ would give initial width $3/4$ and waiting
+time $9/32$. It would not make this strip estimate force reality
+at $t=1/4$: the allowed squared width is then $1/16$.
+This limitation is exact for general polynomial heat. Indeed
+\[
+ P(z)=z^2+\frac9{16},\qquad
+ e^{-t\partial_z^2}P(z)=z^2+\frac9{16}-2t.
+\]
+Initially its only roots are $\pm3i/4$. At $t=1/4$ they are
+$\pm i/4$, still nonreal and attaining the predicted strip width.
+The polynomial is an exact witness about the information contained
+in a strip bound; it is not an actual Xi zero or an obstruction
+to using additional arithmetic information.
+
+At the critical boundary, hypothesis
+\eqref{eq:arithmeticpremise} with $\theta=1/2$ would give real
+zeros for all $t\geq0$. A family of such hypotheses only at
+$\theta=1/2+\varepsilon$, for \emph{every} $\varepsilon>0$,
+already supplies that same critical premise: if
+$\operatorname{Re}s>1/2$, choose
+$\varepsilon=(\operatorname{Re}s-1/2)/2$.
+This argument does not manufacture an asymptotic family from a
+single fixed boundary. All of these improved half-plane statements
+are conditional here; none is asserted as an arithmetic result
+proved by this manuscript.
+
+Even real-axis nonvanishing must not be substituted for the complex
+premise. The entire conjugation-symmetric polynomial
+\[
+ f(s)=(s-1)^2+1
+\]
+is strictly positive for every real $s$, yet has zeros $1\pm i$,
+whose real parts exceed $7/8$. Thus real-axis exclusion plus entire
+analyticity and conjugation symmetry alone has no such implication.
+This is a counterexample to a general analytic inference, not a
+Dirichlet $L$-function or an arithmetic counterexample. No external
+claim about a $7/8$ result is used as a premise. The present
+conditional consequences and elementary witnesses are formalization
+companions; no new general strip or arithmetic principle is claimed.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:}
+\code{RiemannQuadraticXiTransfer.nonzero_of_zeta_half_plane},
+\code{zero_im_strip_of_seven_eighths}.
+\par\noindent
+\code{RiemannQuadraticArithmeticHeat.heat_strip},
+\code{real_after_wait}, \code{critical_half_plane_real_forward}.
+\par\noindent
+\code{asymptotic_half_planes_real_forward},
+\code{polynomial_strip_sharpness},
+\code{real_axis_exclusion_not_half_plane}.
+\par\endgroup
+
 \section{Formal correspondence, primary comparison and verification}
 The map supplied with this paper records exact declarations, source
 hashes and line links at the fixed baseline. In the source,

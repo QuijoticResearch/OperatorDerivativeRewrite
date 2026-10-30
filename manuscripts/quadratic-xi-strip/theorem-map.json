@@ -3699,6 +3699,114 @@
       "source_sha256": "9bb03c97a8bbec94f84755124661ed32cda5eea8bc13659ea09697dc07d833a7",
       "declaration_header": "theorem scalar_ball_lower_bound (f : \u2102 \u2192 \u2102) (b a : \u2102) (r : \u211d)\n    (hd : \u2200 w \u2208 closedBall b r, DifferentiableAt \u2102 f w)\n    (hb : \u2200 w \u2208 closedBall b r, \u2016deriv f w-a\u2016 \u2264 \u2016a\u2016/2)\n    (x y : \u2102) (hx : x \u2208 closedBall b r) (hy : y \u2208 closedBall b r) :\n    (\u2016a\u2016/2)*\u2016x-y\u2016 \u2264 \u2016f x-f y\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFrequencyBranch.lean#L17"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticXiTransfer.seven_eighths_coordinate",
+      "file": "Foundation/RiemannQuadraticXiTransfer.lean",
+      "line": 32,
+      "source_sha256": "eff5d229d1810845cb832dda72c4008d82fe9343219c000f0dd5f37fbcefa32b",
+      "declaration_header": "theorem seven_eighths_coordinate (z : \u2102) :\n    (7/8 : \u211d) < (criticalCoordinate z).re \u2194 z.im < -(3/4 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticXiTransfer.lean#L32"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticXiTransfer.zero_iff_completed",
+      "file": "Foundation/RiemannQuadraticXiTransfer.lean",
+      "line": 37,
+      "source_sha256": "eff5d229d1810845cb832dda72c4008d82fe9343219c000f0dd5f37fbcefa32b",
+      "declaration_header": "theorem zero_iff_completed (a : \u211d) (z : \u2102)\n    (h0 : criticalCoordinate z \u2260 0) (h1 : criticalCoordinate z \u2260 1) :\n    RiemannRealOrderFlow.flow a 0 z = 0 \u2194 completedRiemannZeta (criticalCoordinate z) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticXiTransfer.lean#L37"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticXiTransfer.nonzero_of_completed_half_plane",
+      "file": "Foundation/RiemannQuadraticXiTransfer.lean",
+      "line": 45,
+      "source_sha256": "eff5d229d1810845cb832dda72c4008d82fe9343219c000f0dd5f37fbcefa32b",
+      "declaration_header": "theorem nonzero_of_completed_half_plane (theta : \u211d)\n    (hfree : \u2200 s : \u2102, theta < s.re \u2192 s \u2260 0 \u2192 s \u2260 1 \u2192 completedRiemannZeta s \u2260 0)\n    (a : \u211d) (z : \u2102) (hz : z.im < 1-2*theta)\n    (h0 : criticalCoordinate z \u2260 0) (h1 : criticalCoordinate z \u2260 1) :\n    RiemannRealOrderFlow.flow a 0 z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticXiTransfer.lean#L45"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticXiTransfer.nonzero_below_seven_eighths_strip",
+      "file": "Foundation/RiemannQuadraticXiTransfer.lean",
+      "line": 82,
+      "source_sha256": "eff5d229d1810845cb832dda72c4008d82fe9343219c000f0dd5f37fbcefa32b",
+      "declaration_header": "theorem nonzero_below_seven_eighths_strip\n    (hfree : \u2200 s : \u2102, (7/8 : \u211d) < s.re \u2192 riemannZeta s \u2260 0)\n    (a : \u211d) (z : \u2102) (hz : z.im < -(3/4 : \u211d)) :\n    RiemannRealOrderFlow.flow a 0 z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticXiTransfer.lean#L82"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticXiTransfer.zero_im_strip_of_seven_eighths",
+      "file": "Foundation/RiemannQuadraticXiTransfer.lean",
+      "line": 89,
+      "source_sha256": "eff5d229d1810845cb832dda72c4008d82fe9343219c000f0dd5f37fbcefa32b",
+      "declaration_header": "theorem zero_im_strip_of_seven_eighths\n    (hfree : \u2200 s : \u2102, (7/8 : \u211d) < s.re \u2192 riemannZeta s \u2260 0)\n    (a : \u211d) (ha : 0 \u2264 a) (z : \u2102) (hz : RiemannRealOrderFlow.flow a 0 z = 0) :\n    |z.im| \u2264 (3/4 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticXiTransfer.lean#L89"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.zero_time_strip",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 11,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem zero_time_strip (theta : \u211d)\n    (hfree : \u2200 w : \u2102, theta < w.re \u2192 riemannZeta w \u2260 0)\n    (z : \u2102) (hz : flow 1 0 z = 0) : |z.im| \u2264 2*theta-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L11"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.heat_strip",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 29,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem heat_strip (theta : \u211d)\n    (hfree : \u2200 w : \u2102, theta < w.re \u2192 riemannZeta w \u2260 0)\n    (t : \u211d) (ht : 0 \u2264 t) (z : \u2102) (hz : flow 1 t z = 0) :\n    z.im^2 \u2264 max ((2*theta-1)^2-2*t) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L29"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.real_after_wait",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 37,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem real_after_wait (theta : \u211d)\n    (hfree : \u2200 w : \u2102, theta < w.re \u2192 riemannZeta w \u2260 0)\n    (t : \u211d) (ht : (2*theta-1)^2/2 \u2264 t)\n    (z : \u2102) (hz : flow 1 t z = 0) : z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L37"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.critical_half_plane_real_forward",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 45,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem critical_half_plane_real_forward\n    (hfree : \u2200 w : \u2102, (1/2 : \u211d) < w.re \u2192 riemannZeta w \u2260 0)\n    (t : \u211d) (ht : 0 \u2264 t) (z : \u2102) (hz : flow 1 t z = 0) : z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L45"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.asymptotic_half_planes_real_forward",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 51,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem asymptotic_half_planes_real_forward\n    (hfree : \u2200 (epsilon : \u211d), 0 < epsilon \u2192\n      \u2200 w : \u2102, (1/2 : \u211d)+epsilon < w.re \u2192 riemannZeta w \u2260 0)\n    (t : \u211d) (ht : 0 \u2264 t) (z : \u2102) (hz : flow 1 t z = 0) : z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L51"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.polynomial_strip_sharpness",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 61,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem polynomial_strip_sharpness :\n    (\u2200 a : \u2102,\n      ((Polynomial.X^2 + Polynomial.C (9/16) : \u211d[X]).map (algebraMap \u211d \u2102)).eval a = 0 \u2192\n      |a.im| \u2264 (3/4 : \u211d)) \u2227\n    ((PureOrderPolynomialTransport.transport 2 (-1/4)\n      (Polynomial.X^2 + Polynomial.C (9/16) : \u211d[X])).map (algebraMap \u211d \u2102)).eval (I/4) = 0 \u2227\n    (I/4 : \u2102).im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L61"
+    },
+    {
+      "paper": "Section 10: explicit CONDITIONAL arithmetic half-plane premise, exact s=(1+iz)/2 coordinate transfer, initial width 2theta-1 and quadratic heat waiting time (2theta-1)^2/2. Critical and every-epsilon hypotheses remain external assumptions. Exact generic polynomial strip sharpness and real-axis/complex-half-plane nonimplication; neither witness is an actual Xi or Dirichlet-L-function counterexample.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticArithmeticHeat.real_axis_exclusion_not_half_plane",
+      "file": "Foundation/RiemannQuadraticArithmeticHeat.lean",
+      "line": 104,
+      "source_sha256": "9e3468205e6e35df70e7ae54c45eaf4b1227ac09db628934015d2830ed986bb8",
+      "declaration_header": "theorem real_axis_exclusion_not_half_plane :\n    \u2203 f : \u2102 \u2192 \u2102, Differentiable \u2102 f \u2227\n      (\u2200 z : \u2102, f (conj z) = conj (f z)) \u2227 (\u2200 x : \u211d, f (x : \u2102) \u2260 0) \u2227\n      \u2203 z : \u2102, f z = 0 \u2227 (7/8 : \u211d) < z.re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticArithmeticHeat.lean#L104"
     }
   ],
   "human_reorganization": [
@@ -3708,6 +3816,7 @@
     "The main strip contraction has an explicit classical antecedent, Newman 1976 Theorem 1 crediting de Bruijn. It is not a new analytic bound, a simplicity theorem, RH, an exact quadratic threshold, or a consequence of a claimed 7/8 zero-free region.",
     "Section 8 reconstructs the named finite attained quadratic threshold Lambda<=1/2 with realTimes=[Lambda,infinity), actual nonreal zeros at every time below Lambda, and endpoint reality. Upper-set propagation repeats the justified Gaussian-budget proof at any fixed starting time. Closedness is proved by inherited vertical modulus inequalities and actual time continuity. A complete elementary logarithmic four-point inequality passes through real-rooted divisor polynomials; exact variance-2epsilon^2 Gaussian density smoothing transfers it to log K(sqrt(y)), contradicting the actual theta decay. The human proof directly produces a negative-time obstruction before taking the infimum; the formal proof first excludes all-realness at every time, takes its attained infimum and then obtains a negative time. This is an explicit reordering of the same conclusions. The finite-threshold theorem is classical in Newman 1976 Theorem 3. Rodgers--Tao 2021 v5 uses exactly the same kernel/Xi/time normalization and proves the separate known lower bound Lambda>=0; that deep proof is not reconstructed or claimed in the frozen chain. No exact numerical value, RH proof, all-zero simplicity or cross-order threshold identification is established here.",
     "Section 7 adds the complete finite-root interaction and conditional uppermost-branch height barrier. All finite roots are distinct where the interaction sum is invoked; branch differentiability and persistence of the uppermost hypothesis on the interval are explicit. The source factor-velocity assumptions are retained in the map, while the human proof uses coefficientwise differentiation and the elementary root chain rule. A genuine real-coefficient quartic backward-heat polynomial has an actual nearby imaginary branch y(0)=1, y'(0)=1/3 moving upward inside the initial height-two strip. This refutes universal individual-height monotonicity for arbitrary finite polynomial heat, while neither contradicting global strip contraction nor realizing an arithmetic Xi zero. No uncontrolled infinite root sum or collision-free global labeling is asserted.",
-    "Section 8 reconstructs the exhaustive actual quadratic-flow local Hermite cluster theorem at every actual finite-multiplicity zero. The exact generating function exp(qw-q^2), all-order original integral remainder with one Cauchy majorant, finite positive Christoffel\u2013Darboux energy, real/simple Hermite roots, Cauchy derivative transfer and actual O(h^2) physical displacement are proved. A fixed-budget joint remainder remains valid for growing v/h and gives annular exclusion; compact positive-gap exclusion then proves exactly m distinct simple zeros in one fixed closed physical neighborhood for all sufficiently small later times t+h^2. Conjugation gives real clusters when the original base zero is real. The explicit contraction iteration is a HUMAN presentation of the mapped scalar-ball surjectivity/injectivity mechanism. Radii, time bounds and constants depend on the fixed original zero/time/multiplicity; no global zero-uniform simplicity, smooth label at h=0, infinite root-interaction sum, RH proof or improved Newman bound follows. The finite-threshold section map locator shifts from Section 8 to Section 9; the old source coordinates are unchanged."
+    "Section 8 reconstructs the exhaustive actual quadratic-flow local Hermite cluster theorem at every actual finite-multiplicity zero. The exact generating function exp(qw-q^2), all-order original integral remainder with one Cauchy majorant, finite positive Christoffel\u2013Darboux energy, real/simple Hermite roots, Cauchy derivative transfer and actual O(h^2) physical displacement are proved. A fixed-budget joint remainder remains valid for growing v/h and gives annular exclusion; compact positive-gap exclusion then proves exactly m distinct simple zeros in one fixed closed physical neighborhood for all sufficiently small later times t+h^2. Conjugation gives real clusters when the original base zero is real. The explicit contraction iteration is a HUMAN presentation of the mapped scalar-ball surjectivity/injectivity mechanism. Radii, time bounds and constants depend on the fixed original zero/time/multiplicity; no global zero-uniform simplicity, smooth label at h=0, infinite root-interaction sum, RH proof or improved Newman bound follows. The finite-threshold section map locator shifts from Section 8 to Section 9; the old source coordinates are unchanged.",
+    "Section 10 explicitly separates actual Euler-product input from hypothetical stronger COMPLEX zero-free half-planes. For theta>=1/2, the stated zeta half-plane premise gives initial Xi width 2theta-1, squared width max((2theta-1)^2-2t,0), and waiting time (2theta-1)^2/2. Apparent completed points are handled by the actual positive imaginary-axis integral. The theta=7/8 illustration is conditional and yields width 3/4 and wait 9/32; it does not force reality at t=1/4. The exact general polynomial z^2+9/16 evolves to z^2+9/16-2t and has roots +/-i/4 there, attaining the residual bound. A separate entire real-positive polynomial (s-1)^2+1 has nonreal zeros at real part one, proving a general real-axis/complex-half-plane nonimplication, not an arithmetic counterexample. Critical and every-epsilon premises are not proved; no external 7/8 claim is imported, no arithmetic threshold value or RH result follows. Classical strip mechanism already credited to Newman/de Bruijn, no new principle claimed."
   ]
 }
