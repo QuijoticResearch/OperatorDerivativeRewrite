@@ -2583,6 +2583,195 @@
       "source_sha256": "15124522d2ac8750e3473ba2b1c7e233c580d8bfb3f319ae5e0d56214c28c474",
       "declaration_header": "theorem not_integrable (r : \u211d\u22650) (hr : 0 < r) (c : \u211d) (hc : 0 < c) :\n    \u00ac Integrable (fun n : \u2115 => Real.exp (c*(n : \u211d)^2)) (poissonMeasure r)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSuperexponentialObstruction.lean#L87"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPolynomialDomain.power_integrable",
+      "file": "Foundation/ComplexRootPoissonPolynomialDomain.lean",
+      "line": 30,
+      "source_sha256": "9552b5c7e1dbe94453d5ff459ddb1900d15add8ae96aeea5a2c6673d24f19de6",
+      "declaration_header": "theorem power_integrable (r : \u211d\u22650) (a : \u211d) (k : \u2115) :\n    Integrable (fun z : \u2102 => z^k) (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPolynomialDomain.lean#L30"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPolynomialDomain.norm_power_integrable",
+      "file": "Foundation/ComplexRootPoissonPolynomialDomain.lean",
+      "line": 36,
+      "source_sha256": "9552b5c7e1dbe94453d5ff459ddb1900d15add8ae96aeea5a2c6673d24f19de6",
+      "declaration_header": "theorem norm_power_integrable (r : \u211d\u22650) (a : \u211d) (k : \u2115) :\n    Integrable (fun z : \u2102 => \u2016z\u2016^k) (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPolynomialDomain.lean#L36"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPolynomialDomain.power_mixture",
+      "file": "Foundation/ComplexRootPoissonPolynomialDomain.lean",
+      "line": 40,
+      "source_sha256": "9552b5c7e1dbe94453d5ff459ddb1900d15add8ae96aeea5a2c6673d24f19de6",
+      "declaration_header": "theorem power_mixture (r : \u211d\u22650) (a : \u211d) (k : \u2115) :\n    (\u222b z : \u2102, z^k \u2202ComplexRootPoissonLaw.law r a) =\n      \u222b n, (\u222b \u03c9, (terminal n a \u03c9)^k \u2202probability n) \u2202poissonMeasure r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPolynomialDomain.lean#L40"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPolynomialDomain.shifted_power_integrable",
+      "file": "Foundation/ComplexRootPoissonPolynomialDomain.lean",
+      "line": 98,
+      "source_sha256": "9552b5c7e1dbe94453d5ff459ddb1900d15add8ae96aeea5a2c6673d24f19de6",
+      "declaration_header": "theorem shifted_power_integrable (r : \u211d\u22650) (a : \u211d) (z : \u2102) (k : \u2115) :\n    Integrable (fun y : \u2102 => (z+y)^k) (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPolynomialDomain.lean#L98"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPolynomialDomain.shifted_power_mixture",
+      "file": "Foundation/ComplexRootPoissonPolynomialDomain.lean",
+      "line": 103,
+      "source_sha256": "9552b5c7e1dbe94453d5ff459ddb1900d15add8ae96aeea5a2c6673d24f19de6",
+      "declaration_header": "theorem shifted_power_mixture (r : \u211d\u22650) (a : \u211d) (z : \u2102) (k : \u2115) :\n    (\u222b y : \u2102, (z+y)^k \u2202ComplexRootPoissonLaw.law r a) =\n      \u222b n, (\u222b \u03c9, (z+terminal n a \u03c9)^k \u2202probability n) \u2202poissonMeasure r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPolynomialDomain.lean#L103"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonQuarticDrift.walk_shifted_quartic",
+      "file": "Foundation/ComplexRootPoissonQuarticDrift.lean",
+      "line": 13,
+      "source_sha256": "259940153e5dfbee8c348a161f173ab034e845a338a447963bd6e6f3788d6ee5",
+      "declaration_header": "theorem walk_shifted_quartic (n : \u2115) (a : \u211d) (z : \u2102) :\n    (\u222b \u03c9, (z+terminal n a \u03c9)^4 \u2202ComplexFourthRootWalk.probability n) =\n      z^4-4*(n : \u2102)*(a : \u2102)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonQuarticDrift.lean#L13"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonQuarticDrift.shifted_quartic_integral",
+      "file": "Foundation/ComplexRootPoissonQuarticDrift.lean",
+      "line": 37,
+      "source_sha256": "259940153e5dfbee8c348a161f173ab034e845a338a447963bd6e6f3788d6ee5",
+      "declaration_header": "theorem shifted_quartic_integral (r : \u211d\u22650) (a : \u211d) (z : \u2102) :\n    (\u222b y : \u2102, (z+y)^4 \u2202ComplexRootPoissonLaw.law r a) =\n      z^4-4*(r : \u2102)*(a : \u2102)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonQuarticDrift.lean#L37"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonQuarticDrift.quartic_integral",
+      "file": "Foundation/ComplexRootPoissonQuarticDrift.lean",
+      "line": 47,
+      "source_sha256": "259940153e5dfbee8c348a161f173ab034e845a338a447963bd6e6f3788d6ee5",
+      "declaration_header": "theorem quartic_integral (r : \u211d\u22650) (a : \u211d) :\n    (\u222b y : \u2102, y^4 \u2202ComplexRootPoissonLaw.law r a) = -4*(r : \u2102)*(a : \u2102)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonQuarticDrift.lean#L47"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.kernel_quartic",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 13,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem kernel_quartic (a : \u211d) (r : \u211d\u22650) (z : \u2102) :\n    (\u222b y : \u2102, y^4 \u2202kernel a r z) = z^4-4*(r : \u2102)*(a : \u2102)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L13"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.coordinate_quartic_integrable",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 20,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem coordinate_quartic_integrable (a : \u211d) (\u03b4 : \u211d\u22650) (n : \u2115) :\n    Integrable (fun \u03c9 => (coordinate n \u03c9)^4) (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L20"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.conditional_quartic",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 31,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem conditional_quartic (a : \u211d) (\u03b4 : \u211d\u22650) (n : \u2115) :\n    (law a \u03b4)[fun \u03c9 => (coordinate (n+1) \u03c9)^4 | past n] =\u1d50[law a \u03b4]\n      fun \u03c9 => (coordinate n \u03c9)^4-4*(\u03b4 : \u2102)*(a : \u2102)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L31"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.quartic_adapted",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 45,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem quartic_adapted : StronglyAdapted filtration (fun n \u03c9 => (coordinate n \u03c9)^4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L45"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.process_integrable",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 57,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem process_integrable (a : \u211d) (\u03b4 : \u211d\u22650) (n : \u2115) :\n    Integrable (process a \u03b4 n) (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L57"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.process_adapted",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 61,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem process_adapted (a : \u211d) (\u03b4 : \u211d\u22650) : StronglyAdapted filtration (process a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L61"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootQuarticMartingale.process_martingale",
+      "file": "Foundation/ComplexRootQuarticMartingale.lean",
+      "line": 65,
+      "source_sha256": "74a79e4e50a2e300dc9c37cf22f80205605d6438bd55480c5e54f4e4c4010b0d",
+      "declaration_header": "theorem process_martingale (a : \u211d) (\u03b4 : \u211d\u22650) :\n    Martingale (process a \u03b4) filtration (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootQuarticMartingale.lean#L65"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.weighted_gain_integrable",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 24,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem weighted_gain_integrable (n : \u2115) :\n    Integrable (fun \u03c9 => H n \u03c9 * gain a \u03b4 f n \u03c9) (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L24"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.weighted_gain_conditional_zero",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 30,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem weighted_gain_conditional_zero (n : \u2115) :\n    (law a \u03b4)[fun \u03c9 => H n \u03c9 * gain a \u03b4 f n \u03c9 | filtration n] =\u1d50[law a \u03b4] 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L30"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.stochasticSum_integrable",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 43,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem stochasticSum_integrable (n : \u2115) :\n    Integrable (stochasticSum a \u03b4 f H n) (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L43"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.stochasticSum_adapted",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 48,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem stochasticSum_adapted : StronglyAdapted filtration (stochasticSum a \u03b4 f H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L48"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.stochasticSum_successor",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 59,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem stochasticSum_successor (n : \u2115) (\u03c9 : Sample) :\n    stochasticSum a \u03b4 f H (n+1) \u03c9 - stochasticSum a \u03b4 f H n \u03c9 =\n      H n \u03c9 * gain a \u03b4 f n \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L59"
+    },
+    {
+      "paper": "Section 11 actual polynomial integrability and quartic martingale; bounded-test sums are mapped only for the stated domain contrast",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonStochasticSum.stochasticSum_martingale",
+      "file": "Foundation/ComplexRootPoissonStochasticSum.lean",
+      "line": 65,
+      "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
+      "declaration_header": "theorem stochasticSum_martingale :\n    Martingale (stochasticSum a \u03b4 f H) filtration (law a \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L65"
     }
   ],
   "human_reorganization": [
@@ -2603,7 +2792,10 @@
     "Natural-filtration conditional integration uses the full observed past and an independent compound increment. The stopped backward version is adapted and integrable, agrees at each time with a terminal conditional expectation and is a finite-process martingale. No limiting law, limiting filtration or limiting martingale representation is inferred.",
     "The primary Bonaccorsi\u2013Mazzucchi Hypothesis 10 and Theorem 11 directly precede this Fourier-data mechanism. Compactly supported L1 densities satisfy their spectral assumptions. No new representation principle or independently novel analytic limit is claimed.",
     "The Gaussian g(z)=exp(-z^2) is entire and Schwartz on the real axis, yet a prescribed 2m-mark vertical path gives absolute value exp(4 a^2 m^2) with probability 4^(-2m). Tonelli and the explicit even Poisson-series ratio prove failure of genuine integrability for every r>0 and a nonzero. Degenerate r=0 or a=0 remains integrable.",
-    "The deterministic heat-scaled finite-walk lower bound diverges along even walk lengths by direct substitution into the mapped finite-word estimate; this specialization is a human consequence, not a separate named formal limit. Absolute divergence alone does not settle cancelling complex expectations. Poissonized Gaussian tests are already nonintegrable at each positive finite refinement; compact-frequency hypotheses cannot be dropped. This does not refute the restricted primary Fourier-data framework."
+    "The deterministic heat-scaled finite-walk lower bound diverges along even walk lengths by direct substitution into the mapped finite-word estimate; this specialization is a human consequence, not a separate named formal limit. Absolute divergence alone does not settle cancelling complex expectations. Poissonized Gaussian tests are already nonintegrable at each positive finite refinement; compact-frequency hypotheses cannot be dropped. This does not refute the restricted primary Fourier-data framework.",
+    "Proposition 11.2 proves the all-continuous-time full-natural-filtration quartic martingale from the actual independent fresh compound increments and finite polynomial moments. The named native quartic martingale theorem is on the discrete coordinate grid; these scopes are explicitly distinguished. The fourth-power drift is +4 t a^4, with mark fourth moment -4 a^4.",
+    "Bounded past-measurable coefficients give a square-integrable grid stochastic sum against the quartic martingale by the printed pull-out argument. This is a human polynomial-domain extension, not use of a bounded-test formal theorem with an unbounded test. No unbounded-coefficient or continuous-time integral completion is asserted.",
+    "The unbounded polynomial z^4 is excluded from the compact-frequency L1 function class by its real-axis growth, yet has all finite-clock moments and a genuine martingale correction. The entire real-Schwartz Gaussian test has the separately proved integrability failure. No finite positive martingale is transferred to a signed heat path law or an ordinary weak limit."
   ],
   "literature": [
     {

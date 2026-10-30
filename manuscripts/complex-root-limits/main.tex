@@ -964,6 +964,103 @@ identities and fully specified domination reconstruct the frozen
 library's version; they do not establish a new analytic representation
 principle or priority over that work.
 
+\subsection*{An unbounded polynomial test with a genuine martingale}
+Admissibility on one analytic test domain is not a maximal
+integrability criterion for the finite positive process. A useful
+counterweight to \eqref{eq:gaussiannonintegrable} is the polynomial
+$z^4$. Retain the actual unit-rate compound process $C_a$ with
+marks uniform on $\{a(1+i),a(1-i),-a(1+i),-a(1-i)\}$ and natural
+past $\mathcal H_t^a$. For every integer $m\geq1$ and finite $t$,
+\[
+ |C_a(t)|\leq\sqrt2|a|N_t,\qquad
+ \E|C_a(t)|^m\leq(\sqrt2|a|)^m\E N_t^m<\infty.
+\]
+The final finiteness follows directly from
+$\E N_t^m=e^{-t}\sum_{n\geq0}n^m t^n/n!$:
+for $t>0$ consecutive nonzero terms have ratio
+$t(n+1)^{m-1}/n^m\to0$, and $t=0$ is trivial.
+Thus polynomial conditional expectations below are actual
+integrable random variables, including their squared moduli.
+
+\begin{proposition}\label{prop:quarticmartingale}
+For all $0\leq s\leq t$,
+\[
+ \E[C_a(t)^4\mid\mathcal H_s^a]
+       =C_a(s)^4-4(t-s)a^4.
+\]
+Consequently $M_t=C_a(t)^4+4ta^4$ is a square-integrable complex
+martingale in the full natural filtration, for every fixed real
+$a$. Its restriction to each grid $t=n\delta$ has the exact
+original discrete quartic martingale normalization.
+\end{proposition}
+\begin{proof}
+A single mark $J$ has $\E J^r=0$ for $r=1,2,3$, and
+$J^4=-4a^4$ at every mark. For a sum of $k$ independent marks,
+expansion of its $r$th power shows that its moments of orders
+one through three vanish: every monomial contains a positive
+single-mark exponent at most three. At order four all terms
+except the $k$ individual fourth powers vanish for the same
+reason. The fourth moment is therefore $-4ka^4$.
+Mixing over the independent Poisson count at time $u$ gives
+\[
+ \E C_a(u)^r=0\quad(1\leq r\leq3),\qquad
+ \E C_a(u)^4=-4ua^4.
+\]
+The preceding absolute-moment bound justifies the mixture and
+every finite expansion. The fresh increment $Y=C_a(t)-C_a(s)$
+is independent of the entire past and has the law of $C_a(t-s)$.
+Expanding $(C_a(s)+Y)^4$ and integrating the increment therefore
+gives the conditional identity. All mixed terms are integrable,
+for example by the finite eighth-moment bound and
+Cauchy--Schwarz. Adding the deterministic correction proves the
+martingale identity; the same eighth moment proves square
+integrability. Adaptedness follows from the actual path
+coordinates. Substitution $t=n\delta$ gives the mapped grid
+process $C_a(n\delta)^4+4n\delta a^4$.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{ComplexRootPoissonQuarticDrift.shifted_quartic_integral},
+\code{quartic_integral}.\par\noindent
+\code{ComplexRootQuarticMartingale.kernel_quartic},
+\code{coordinate_quartic_integrable}, \code{conditional_quartic},
+\code{process_martingale}.\par\endgroup
+The statement at every continuous time is the printed human
+consequence of the independently established fresh-increment
+law. The named native theorem is on the discrete natural
+coordinate filtration; the two claims are distinguished here.
+
+There is a corresponding elementary grid integration statement.
+Fix $\delta\geq0$ and complex coefficients $H_j$ measurable for
+$\mathcal H_{j\delta}^a$, with a common almost sure bound
+$|H_j|\leq K<\infty$. Then
+\[
+ I_n=\sum_{j<n}H_j(M_{(j+1)\delta}-M_{j\delta})
+\]
+is a square-integrable discrete martingale. Each term is
+integrable and square integrable by the bound and the moment
+estimate. Conditional expectation of its increment is zero by
+the bounded measurable pull-out rule and the martingale property
+of $M$; finite sums are adapted. This proves the assertion by
+telescoping conditional expectations. It is a human polynomial
+domain extension, not an application of the mapped bounded-test
+stochastic-sum theorem to an unbounded function. No assertion for
+unbounded coefficients or a continuous-time integral completion
+is made.
+
+Finally $z^4$ is outside the compact-frequency $L^1$ domain
+used earlier: along the real axis every such $f_\varphi$ is bounded
+by $\|\varphi\|_1$, while $x^4$ is unbounded. This nonmembership
+coexists with all of its finite-clock moments and its genuine
+martingale correction. In contrast the entire real-Schwartz
+function $e^{-z^2}$ has the proved finite-clock integrability
+failure. The admissible domain therefore depends on actual growth
+and the chosen law, not merely on the words polynomial, entire or
+Schwartz. These are classical compound-Poisson identities and
+domain diagnostics. Their finite positive martingales are not
+transferred to a signed heat path measure or to the heat-scaled
+sequence that lacks an ordinary weak limit.
+
 \section{Classical finite-state context}
 Discrete Fourier orthogonality, finite-state martingale representation
 and its Hilbert completion have classical antecedents.
