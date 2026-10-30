@@ -9,7 +9,7 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
 \newcommand{\Hh}{\mathcal H}\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Gaussian clock-domain obstructions\protect\\
+\title{Gaussian clock regularity and domain obstructions\protect\\
 for reflected-clock Brownian motion}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
@@ -31,8 +31,11 @@ conditional contraction of the full clock gradient
 would recover precisely such a derivative, so separate
 scalar identities cannot evade the obstruction.
 An exact correlated-clock noise formula further gives a sharp
-weighted integral-energy cutoff and divergence of the original
-square-root-weighted clock-chaos energy.
+weighted integral-energy cutoff. The actual endpoint belongs to the
+closed clock Bessel domain of order $s$ exactly when $s<1/2$. An exact
+bridge identifies the first Bessel domain with the original clock
+derivative domain; smoothing by order $2\beta$ reaches that domain
+exactly when $\beta>1/4$.
 For a closed densely defined Hilbert operator, strong
 value approximation of a point outside its domain forces
 all derivative norms to escape to infinity, while the
@@ -635,19 +638,172 @@ odd-sector vanishing would make the critical sum finite. This proves
 the final assertion.
 \end{proof}
 
-The integral criterion~\eqref{eq:noiseintegral} is an exact positive
-and negative statement for this specified correlated-clock coupling.
-Theorem~\ref{thm:critical} is a negative statement for the original
-clock-sector energies. We do not infer a positive subcritical
-weighted-sector theorem, an equivalence with a completed fractional
-clock-operator domain, or a physical correction topology. The parameter
-$h$ changes Gaussian correlation, not physical observation time.
-The Hermite correlation mechanism is classical Mehler theory;
-Gaussian interpolation and fractional smoothness have extensive prior
-theory, for example~\cite{geiss}. That literature is context rather
-than a substitute for the particular source-valued coupling and domain
-identifications proved here. A bounded preliminary search did not
-settle priority for the exact reflected-clock energy application.
+\section{The exact subcritical clock Bessel domain}
+The positive half of the energy threshold can also be proved for the
+original clock sectors. For $0<a<1/2$ and $n\geq1$, define
+\[
+ I_a(n)=2\int_0^1\frac{1-(1-h)^n}{h^{1+a}}\,dh.
+\]
+This is finite, since $1-(1-h)^n\leq nh$ and $a<1$.
+For $0<h\leq1/(2n)$, the finite geometric sum and Bernoulli's inequality
+give
+\[
+ 1-(1-h)^n=h\sum_{j=0}^{n-1}(1-h)^j
+ \geq nh(1-h)^{n-1}\geq nh(1-(n-1)h)\geq nh/2.
+\]
+Integration on this smaller interval proves the explicit lower bound
+\[
+ I_a(n)\geq n\int_0^{1/(2n)}h^{-a}\,dh
+       =\frac{2^{a-1}}{1-a}n^a.
+\]
+All summands in the clock-noise identity are nonnegative. Tonelli's
+theorem, followed by \eqref{eq:noiseintegral}, therefore gives
+\[
+ \sum_{n\geq1}I_a(n)E_n(T)
+ =\int_0^1\frac{\|Z_T-Z_T^{(h)}\|_E^2}{h^{1+a}}\,dh<\infty.
+\]
+The lower bound proves $\sum_{n\geq1}n^aE_n(T)<\infty$.
+Since $(1+n)^a\leq2^a n^a$ for $n\geq1$, the same holds for the
+Bessel weights after adding the finite zeroth sector. For $a\leq0$,
+$(1+n)^a\leq1$ and Parseval gives summability immediately.
+Together with Theorem~\ref{thm:critical}, this proves for every real $a$
+\begin{equation}\label{eq:sharpbesselsum}
+ \sum_{n\geq0}(1+n)^aE_n(T)<\infty
+                    \quad\Longleftrightarrow\quad a<1/2.
+\end{equation}
+The argument uses positive series and a genuine integral, without a
+Tauberian assumption or an asserted coefficient asymptotic.
+\par\noindent\code{IBMClockSubcritical}:
+\par\noindent\code{modeIntegral_lower}, \code{weighted_mode_integrals_summable},
+\par\noindent\code{bessel_weight_summable}, \code{actual_bessel_summable_iff}.
+
+To identify an actual closed operator, use the entire original joint
+Hilbert space $E$, not a scalar averaged endpoint. Its complete clock
+projections $\Pi_n^W$ retain all scenery coordinates. For $s\in\R$ set
+\begin{align}
+ \mathcal D_s&=\left\{f\in E:
+              \sum_{n\geq0}(1+n)^s\|\Pi_n^W f\|_E^2<\infty\right\},
+             \label{eq:besseldomain}\\
+ \mathcal B_sf&=\sum_{n\geq0}(1+n)^{s/2}\Pi_n^Wf
+                          \quad(f\in\mathcal D_s).
+\end{align}
+Orthogonality and completeness prove convergence of this series exactly
+under the displayed domain condition and give
+$\|\mathcal B_sf\|^2=\sum_n(1+n)^s\|\Pi_n^Wf\|^2$.
+Its graph is the closed intersection of the coordinate equations
+$\Pi_n^Wg=(1+n)^{s/2}\Pi_n^Wf$. Finite sector truncations
+$f_N=\sum_{n\leq N}\Pi_n^Wf$ belong to every $\mathcal D_s$ and
+converge to $f$ in $E$. If $f\in\mathcal D_s$, the weighted square tail
+also tends to zero, so $(f_N,\mathcal B_sf_N)\to(f,\mathcal B_sf)$.
+Thus the operator is densely defined and these truncations form a graph
+core. This is not a claim that each sector is finite dimensional.
+\par\noindent\code{GaussianClockSpectralPowers}:
+\par\noindent\code{operator_domain}, \code{operator_isClosed},
+\par\noindent\code{operator_energy}, \code{graph_truncation_tendsto}.
+
+The operator is positive and self-adjoint on this exact domain.
+For symmetry, its inner product with another domain input is the
+absolutely convergent sector pairing series, by Cauchy--Schwarz.
+If $(g,b)$ is in its Hilbert-adjoint graph, test that pairing against
+arbitrary vectors in each individual clock sector. One obtains
+$\Pi_n^W b=(1+n)^{s/2}\Pi_n^W g$. Parseval for $b$ then forces
+$g\in\mathcal D_s$ and $b=\mathcal B_sg$. Conversely symmetry supplies
+the other graph inclusion. Positivity follows from
+$\langle\mathcal B_sf,f\rangle=
+\sum_n(1+n)^{s/2}\|\Pi_n^W f\|^2\geq0$.
+\par\noindent\code{GaussianClockSpectralAdjoint}:
+\par\noindent\code{operator_adjoint}, \code{operator_ibp}, \code{operator_nonneg}.
+
+\begin{theorem}[Sharp actual endpoint regularity]\label{thm:bessel}
+At every $T>0$, $Z_T\in\mathcal D_s$ if and only if $s<1/2$.
+For $f\in\mathcal D_r$ one has
+\[
+ \mathcal B_rf\in\mathcal D_s\ \Longleftrightarrow\ f\in\mathcal D_{r+s},
+ \qquad \mathcal B_s\mathcal B_rf=\mathcal B_{r+s}f
+\]
+whenever these equivalent conditions hold. In particular, for $\beta\geq0$,
+$\mathcal B_{-2\beta}$ is a bounded operator on all of $E$ and
+\[
+ \mathcal B_{-2\beta}Z_T\in\mathcal D_1
+                         \quad\Longleftrightarrow\quad\beta>1/4.
+\]
+\end{theorem}
+\begin{proof}
+The first assertion is \eqref{eq:sharpbesselsum} and the actual domain
+\eqref{eq:besseldomain}. For the shift assertion,
+$\Pi_n^W\mathcal B_rf=(1+n)^{r/2}\Pi_n^Wf$, so its $s$-weighted
+squared energy is exactly the $(r+s)$-weighted energy of $f$.
+Multiplication of the scalar weights gives the composition after
+projection onto every sector; completeness identifies the outputs.
+When $\beta\geq0$, the weights $(1+n)^{-\beta}\leq1$ give an everywhere
+defined contraction. Applying the shift assertion to the actual endpoint
+gives $1-2\beta<1/2$, equivalent to the strict stated condition.
+The endpoint $\beta=1/4$ fails by the critical divergence.
+\end{proof}
+\par\noindent\code{IBMClockFractionalDomain}: \code{actual_bessel_domain}.
+\par\noindent\code{IBMClockFractionalCalculus}:
+\par\noindent\code{bessel_shift_domain}, \code{bessel_composition},
+\par\noindent\code{actual_regularized_domain}, \code{actual_smoothing_threshold}.
+
+The hypothesis $f\in\mathcal D_r$ in the composition is essential.
+For $r>0$ the product $\mathcal B_{-r}\mathcal B_r$ is the identity on
+$\mathcal D_r$, not an identity operator with domain all of $E$.
+No unqualified equality of those unbounded-operator domains is inferred.
+
+\subsection*{The bridge back to the original first clock derivative}
+There is also an exact domain bridge, rather than just a comparison with
+a newly defined norm:
+\begin{equation}\label{eq:nativebessel}
+ \mathcal D_1=D(D_W),\qquad
+ \|\mathcal B_1f\|_E^2=\|f\|_E^2+\|D_Wf\|^2.
+\end{equation}
+Here both sides use the same original scenery-first joint space. The
+formal Bochner clock derivative uses the reversed factor order; the
+probability-factor flip is an isometry and must be applied before
+identifying its domain or vector output with this notation.
+
+For completeness, the scalar Gaussian Hermite derivative lowers degree
+by one. On a normalized multi-index polynomial of total degree $n$, the
+sum of squared coordinate-gradient norms is $n$; orthogonality of the
+lowered Hermite basis also gives orthogonality of gradient outputs from
+different total degrees. Finite-coordinate polynomial approximation
+extends this to each whole clock sector, with derivative norm bounded
+by $\sqrt n$ times its value norm. Lifting to the scenery-valued space
+and using Tonelli preserves these identities and the factor flip.
+Consequently the original finite truncation graphs satisfy
+\[
+ \|D_W f_N\|^2=\sum_{n\leq N}n\|\Pi_n^Wf\|^2,
+ \qquad
+ \|D_Wf_M-D_Wf_N\|^2=\sum_{N<n\leq M}n\|\Pi_n^Wf\|^2
+ \quad(M\geq N).
+\]
+For $f\in\mathcal D_1$ this proves that their gradients are Cauchy.
+Closedness of the original derivative puts $f$ in $D(D_W)$ and gives
+the norm identity \eqref{eq:nativebessel}. Conversely, for a graph pair
+$(f,v)$, scalar Gaussian derivative Parseval applied in almost every
+scenery fiber and nonnegative integration yield
+$\|v\|^2=\sum_n n\|\Pi_n^Wf\|^2$. Adding ordinary Parseval gives
+$f\in\mathcal D_1$ and the reverse norm identity.
+In particular the smoothed endpoint belongs to the \emph{original}
+first clock domain precisely when $\beta>1/4$.
+\par\noindent\code{GaussianClockNativeDomain}:
+\par\noindent\code{flipped_native_energy_hasSum}, \code{finite_gradient_energy},
+\par\noindent\code{bessel_native_domain}, \code{bessel_native_energy},
+\par\noindent\code{native_graph_truncation_tendsto}.
+
+These statements retain the full random scenery and concern ambient
+Gaussian clock variables. Smoothing changes the observable; it does not
+put the unsmoothed $Z_T$ in its excluded native domain or provide an
+observed-past driver. The noise parameter changes Gaussian correlation,
+not physical observation time. Gaussian spectral Sobolev theory and
+noise characterizations are classical. Geiss--Toivola~\cite{geiss},
+Section 2 (Gaussian Sobolev spaces and Definition 2.2), specify their
+scalar Gaussian gradient norm and real-interpolation Besov scale.
+We do not identify every such Besov scale or fine index with the
+particular Hilbert spectral domain above. The source-valued extension,
+its original operator bridge and the endpoint calculation were proved
+here explicitly; priority for this reflected-clock application remains
+unresolved.
 
 \section{Graph-dual derivatives and escape of the original field norm}
 We give the closed-operator argument separately to
@@ -752,7 +908,8 @@ bab688bb6140cd6316c80680095a914ea0d346db.
 The accompanying theorem map records exact sources for
 the folded-section metric, primitive and contraction
 arguments, point and sine exclusions, clock-noise and
-critical-sector energies, and generic graph-dual
+critical/subcritical sector energies, exact closed spectral domains and
+the original first-clock domain bridge, and generic graph-dual
 representation/error/escape theorems. The ambient clock
 application remains distinct from the separate native
 adjoint-graph-dual time-average results.
