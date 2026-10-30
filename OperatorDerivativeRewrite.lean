@@ -2936,3 +2936,4 @@ import Foundation.CubeLimitComplementGap
 import Foundation.CubeRankOneComparison
 import Foundation.CubeFiniteGapComparison
 import Foundation.CubeFiniteStationaryGap
+import Foundation.PeriodicSU2FlatHolonomy
