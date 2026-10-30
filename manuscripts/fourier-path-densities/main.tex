@@ -16,7 +16,7 @@
 \date{October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. The full infinitesimal generator has an exact weighted-coefficient quotient graph, a bounded unit resolvent and a finite-character graph core. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. The full infinitesimal generator has an exact weighted-coefficient quotient graph, a bounded unit resolvent and a finite-character graph core. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. A jointly continuous backward heat character has no uniform-path Bochner time representative, separating scalar Fubini from Banach-valued integration. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -921,6 +921,102 @@ heat evolution $H$, distinct from the time-control derivatives
 elsewhere in this paper. No physical path generator, positive
 higher-heat process or arbitrary adapted integration is inferred.
 
+
+\section{Joint continuity does not imply uniform-path Bochner measurability}
+The time densities above were built in their specified Banach spaces,
+with strong measurability proved before integration. A moving-time
+heat observable gives a concrete reason to retain this requirement.
+Let $E=C_b(\X;\C)$ have its uniform norm and, for $0<t<1$, put
+\[
+ c_t(\omega)=e^{-2\pi i\omega(t)}.
+\]
+The scalar map $(t,\omega)\mapsto c_t(\omega)$ is jointly continuous:
+evaluation is continuous for the compact-open topology on $\X$ and
+locally compact time domain. Each $c_t$ is in $E$, with norm one.
+Nevertheless $t\mapsto c_t$ is not almost-everywhere strongly
+measurable as an $E$-valued map for Lebesgue measure on $(0,1)$.
+
+\begin{proof}
+For distinct positive $s,t$, use the explicit zero-start polynomial
+path
+\[
+ \omega_{s,t}(r)=\frac{r(r-s)}{2t(t-s)}.
+\]
+It has $\omega_{s,t}(s)=0$, $\omega_{s,t}(t)=1/2$, so
+$c_s(\omega_{s,t})=1$ and $c_t(\omega_{s,t})=-1$. The triangle
+inequality supplies the reverse estimate; hence exactly
+\[
+ \|c_s-c_t\|_E=2\quad(s\ne t,\ s,t>0).
+\]
+A separable metric space contains at most countably many points
+with pairwise distance two: balls of radius $1/2$ about those points
+are disjoint, and each contains a distinct member of a fixed countable
+dense subset. Every subset of a separable metric space is itself
+separable, so the same countability holds when these characters lie
+inside any separable subset of $E$.
+
+If an $E$-valued map is almost everywhere a pointwise norm limit of
+simple functions, then outside one null set its values lie in the
+closure of the union of their finite ranges. That closure is separable.
+Thus a strongly measurable modification of $c_t$ would put the
+characters for almost every $t\in(0,1)$ inside a separable set.
+The exact separation then makes that full-measure set of times
+countable, which is impossible for Lebesgue measure. This proves the
+assertion, including failure after any modification on a null set.
+\end{proof}
+
+\subsection*{An actual backward heat kernel with the same obstruction}
+For the fixed heat order $p=2m$, define
+\[
+ a_m(t)=e^{-(1-t)(2\pi)^p},\qquad
+ b_m(t,\omega)=a_m(t)c_t(\omega)\quad(0<t<1).
+\]
+The actual signed kernel identity, with the Fourier convention of
+\eqref{eq:char}, is
+\[
+ b_m(t,\omega)=\int_\R e^{-2\pi i(\omega(t)+y)}k_{p,1-t}(y)\,dy.
+\]
+Indeed factor the phase into its current-coordinate and increment
+factors, then apply the proved Fourier transform of the Schwartz
+heat kernel. Absolute integrability follows from $|e^{-2\pi iy}|=1$
+and the kernel's finite total variation. This is a genuine scalar
+future-increment integral, not a prescribed formal multiplier.
+
+The function $a_m$ is continuous and never zero. If $t\mapsto b_m(t)$
+were almost everywhere strongly measurable in $E$, multiplication
+by the continuous scalar $a_m(t)^{-1}$ would make $c_t$ strongly
+measurable, contradicting the proof above. Scalar multiplication
+preserves strong measurability by taking simple approximations to
+both factors and intersecting the two full-measure convergence sets;
+no boundedness assumption on the inverse is needed. Consequently,
+for every $1\le r\le\infty$, no element of $L^r((0,1);E)$ agrees
+almost everywhere with the $E$-valued backward heat map. In particular,
+its uniform-norm bound by one alone does not give a Bochner integral.
+
+On the other hand, $b_m$ is jointly continuous and $|b_m|\le1$.
+For every finite positive Borel measure $\mu$ on $\X$, it therefore
+belongs to the scalar space $L^r((0,1)\times\X,dt\,d\mu)$ for all
+$1\le r\le\infty$. Scalar product-measure Fubini is valid. There is
+no contradiction: scalar measurability on the product differs from
+strong measurability with values in the uniform path-norm space.
+This statement includes ordinary Gaussian heat $p=2$; the obstruction
+is not caused by negativity of a higher-order kernel.
+
+The necessary separable-range principle is classical; see the
+Pettis criterion in Arora--Gl\"uck--Mui~\cite{AGM}, Theorem 4.A.5,
+printed page 70. Our proof uses only its necessary direction and
+proves that direction directly from simple functions. Joint continuity
+of point evaluations is not asserted to give weak measurability
+against every element of $E^*$. Nor do we substitute $E$ for the
+original quotient $\A$ or infer that these arbitrary moving characters
+belong to a fixed countable Fourier dictionary. The constructed
+control-derivative time densities remain in their original spaces.
+
+\par\noindent\code{MovingPathCharacters}: explicit separating path and exact distance.
+\par\noindent\code{MovingPathCharacterSeparation},
+\par\noindent\code{MovingPathCharacterMeasurability}: separable-range and almost-everywhere obstruction.
+\par\noindent\code{BackwardHeatMovingObstruction}: actual kernel, scalar product integrability and no uniform-path Bochner representative.
+
 \section{Antecedents, formal correspondence and limits of the claim}
 Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.
 
@@ -961,5 +1057,10 @@ Finally, there is no construction here of a conditional expectation with respect
 \emph{One-Parameter Semigroups for Linear Evolution Equations},
 Springer, 2000. Theorem II.1.10 and equation (1.13), printed pages 55--56.
 \href{https://www.math.uni-tuebingen.de/de/forschung/agfa/members/engel-nagel_one-parameter-semigroups.pdf}{Author-hosted monograph}.
+\bibitem{AGM} S. Arora, J. Gl\"uck and J. Mui,
+\emph{Eventual Positivity}, 29th Internet Seminar lecture notes,
+winter term 2025/26, Chapter 4 version, Theorem 4.A.5, p.~70.
+\url{https://fan.uni-wuppertal.de/fileadmin/mathe/reine_mathematik/funktionalanalysis/glueck/Sonstiges/2025-10_ISEM29/lecture_notes/ISem_29__Up_to_Chapter_04.pdf}.
+Statement comparison; these notes refer elsewhere for the full Pettis proof.
 \end{thebibliography}
 \end{document}
