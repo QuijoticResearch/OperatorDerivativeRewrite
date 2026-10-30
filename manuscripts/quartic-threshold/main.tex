@@ -1384,6 +1384,164 @@ smoothing nor propagates real zeros under that quartic deformation.
 The attained threshold and every limitation of the preceding sections
 therefore retain exactly their original scope.
 
+
+\section{A four-point obstruction for the different quadratic flow}
+The quadratic comparison can be made more precise without identifying
+its threshold with the quartic one. Define the different actual transform
+\[
+ J_t(z)=\int_0^\infty e^{tu^2}K(u)\cos(uz)\,du,
+ \qquad t\in\R,\ z\in\C.
+\]
+The decay proof of Section 2 gives all absolute integral domains,
+entireness and locally uniform time continuity here as well. The same
+Young bound $|z|u\leq c|z|^{3/2}+c'u^3$, with the superexponential
+theta decay absorbing $tu^2+c'u^3$, gives
+$|J_t(z)|\leq C_t e^{|z|^{3/2}}$ after changing constants and splitting
+at a fixed large $u$; alternatively allocate the coefficient of the
+$|z|^{3/2}$ term to one by choosing its conjugate coefficient suitably.
+Also $J_t$ is even, conjugation compatible and $J_t(0)>0$.
+The growth class therefore permits the same complete divisor argument.
+Only in this section do we use the quadratic time parameter $t$.
+
+\begin{proposition}\label{prop:quadraticnegative}
+For some $t<0$, the actual $J_t$ has a nonreal zero.
+This conclusion does not specify the negative time or the zero.
+\end{proposition}
+We give the full four-point proof. It is a classical obstruction
+mechanism, not a new quadratic-threshold theorem. Newman already proves
+the stronger finite-threshold conclusion in his primary
+Theorem 3~\cite{newman}, using his measure classification. The argument
+below reconstructs the frozen library's finite-log-factor route instead
+of assuming that classification.
+
+\subsection*{The elementary four-point inequality}
+For $c\geq0$ let $\ell_c(v)=\log(1+cv)$ on $v\geq0$, and define
+\[
+ D_c=2\log(1+c/2)-\log(1+c).
+\]
+For every $y\geq1$,
+\begin{equation}\label{eq:fourpointfactor}
+ \ell_c(y)\geq \ell_c(1)+(y-1)(\ell_c(2)-\ell_c(1))
+                         -2(y-1)^2D_c.
+\end{equation}
+To verify it, put $u=c/(1+c)$ and $v=y-1$. Both are nonnegative.
+The scalar inequality $\log(1+w)\geq w-w^2/2$ for $w\geq0$ follows
+by differentiating the difference, whose derivative is $w^2/(1+w)$.
+Furthermore
+\[
+ D_c=\log\frac{(1+c/2)^2}{1+c}
+ \geq1-\frac{1+c}{(1+c/2)^2}
+ =\left(\frac c{c+2}\right)^2,
+ \qquad u\leq\frac{2c}{c+2}.
+\]
+Here $\log r\geq1-r^{-1}$ for $r>0$ follows from
+$\log x\leq x-1$ applied to $x=r^{-1}$. Consequently $u^2\leq4D_c$.
+Now $\ell_c(y)-\ell_c(1)=\log(1+uv)$ and
+$\ell_c(2)-\ell_c(1)=\log(1+u)\leq u$. Therefore
+\[
+ \log(1+uv)\geq uv-\tfrac12u^2v^2
+                 \geq v\log(1+u)-2v^2D_c,
+\]
+which proves \eqref{eq:fourpointfactor}.
+
+It follows by summation that every profile
+$q(v)=A-Bv+\sum_j\alpha_j\log(1+c_jv)$, with $c_j,\alpha_j\geq0$,
+satisfies
+\begin{equation}\label{eq:fourpointprofile}
+ q(y)\geq q(1)+(y-1)(q(2)-q(1))
+       -2(y-1)^2\bigl(2q(1/2)-q(0)-q(1)\bigr),\qquad y\geq1.
+\end{equation}
+Constant and linear functions satisfy this with equality, so adding
+$A-Bv$ changes no curvature term. For a nonzero polynomial $P$ with
+all roots real and $P(0)\ne0$, its complete real-root factorization gives
+\[
+ \log|P(iC\sqrt v)|
+ =A_P+\frac12\sum_{r\in\operatorname{roots}(P)}
+                    \log\bigl(1+(C/r)^2v\bigr).
+\]
+All roots are counted with multiplicity; each is nonzero. Hence
+$A-Bv+\log|P(iC\sqrt v)|$ satisfies \eqref{eq:fourpointprofile}.
+If an entire $f$ in our growth class has only real zeros and $f(0)\ne0$,
+Section 11 gives such real-rooted approximants with the exact disk
+zeros and preserved origin. At every point on the imaginary axis
+$f$ is nonzero: a purely imaginary real zero must be zero itself.
+Thus continuity of $\log|\cdot|$ passes their inequalities to
+$A-Bv+\log|f(iC\sqrt v)|$ at the five fixed values
+$0,1/2,1,2,y$. This step needs no differentiation or infinite logarithm sum.
+
+\subsection*{An actual density smoothing identity}
+Let $F(x)=K(|x|)$ and $Y\sim N(0,2)$. This is a bounded, strictly
+positive continuous even function. For $\epsilon>0$ put
+$S_\epsilon(x)=\mathbb E F(x+\epsilon Y)$. These are genuine positive
+integrals. Bounded dominated convergence gives
+$S_\epsilon(x)\to F(x)$ as $\epsilon\downarrow0$.
+The Gaussian variance is exactly $2\epsilon^2$. Pairing the two
+half-lines and completing the square gives
+\begin{equation}\label{eq:quadraticdensityheat}
+ S_\epsilon(x)=\frac{1}{\sqrt\pi\epsilon}
+ e^{-x^2/(4\epsilon^2)}
+ J_{-1/(4\epsilon^2)}\left(\frac{ix}{2\epsilon^2}\right).
+\end{equation}
+Indeed its full-line density is
+$(2\sqrt\pi\epsilon)^{-1}e^{-(u-x)^2/(4\epsilon^2)}$.
+The sum at $u$ and $-u$, on $u\geq0$, equals
+\[
+ (\sqrt\pi\epsilon)^{-1}e^{-x^2/(4\epsilon^2)}
+ e^{-u^2/(4\epsilon^2)}\cosh(ux/(2\epsilon^2)).
+\]
+Multiplying by $K(u)$ and using $\cos(iw)=\cosh w$ proves the formula.
+The bounded-density Gaussian integral is absolutely integrable;
+the half-line cosh integral is absolutely integrable by theta decay.
+In particular the rightmost transform value is strictly positive real,
+so every logarithm used below is legitimate.
+
+\begin{proof}[Proof of Proposition~\ref{prop:quadraticnegative}]
+Suppose instead that $J_t$ has only real zeros for every $t<0$.
+For each $\epsilon>0$ take $f=J_{-1/(4\epsilon^2)}$ in the preceding
+polynomial-limit inequality. Taking logarithms in
+\eqref{eq:quadraticdensityheat} shows that
+$q_\epsilon(v)=\log S_\epsilon(\sqrt v)$ is exactly one such profile
+with
+\[
+ A=\log(1/(\sqrt\pi\epsilon)),\qquad
+ B=1/(4\epsilon^2),\qquad C=1/(2\epsilon^2).
+\]
+Consequently \eqref{eq:fourpointprofile} holds for $q_\epsilon$.
+Fix $y\geq1$ and send $\epsilon\downarrow0$. Positivity of $F$ and
+continuity of the real logarithm imply convergence at all five required
+points. Thus the same inequality holds for
+$q(v)=\log K(\sqrt v)$.
+
+Its right side is one fixed quadratic polynomial $p(y)=ay^2+by+c$.
+For $y\geq1$,
+$p(y)\geq-(|a|+|b|+|c|)y^2$. Put $L=|a|+|b|+|c|$.
+Then $\log K(x)\geq-Lx^4$ for every $x\geq1$, equivalently
+\[
+ e^{Lx^4}K(x)\geq1\qquad(x\geq1).
+\]
+But the actual theta estimate $K(x)\leq C e^{9x-\pi e^{4x}}$
+gives $e^{Lx^4}K(x)\to0$: the exponential $e^{4x}$ dominates the
+fixed polynomial $Lx^4+9x$. This contradiction proves that at least
+one of the strictly negative quadratic times has a nonreal zero.
+\end{proof}
+The elementary scalar factors, complete polynomial passage and actual
+smoothing identity are formalized in
+\par\noindent\code{NewmanFourPointBound};
+\par\noindent\code{RiemannQuadraticDensitySmoothing};
+\par\noindent\code{RiemannQuadraticDensityHeat}.
+\par\noindent The frozen endpoint
+\code{RiemannQuadraticFiniteThreshold.negative_time_nonreal_exists}
+uses the library's finite-threshold route. The direct restriction above
+to negative smoothing times is an explicitly labelled human proof of
+that same conclusion; it invokes no positive-time strip theorem.
+
+This argument credits established quadratic theory. It gives no
+numerical lower bound for a threshold and no statement about $J_0$.
+Neither $e^{tu^2}$ in \eqref{eq:quadraticdensityheat} nor the Gaussian
+variance can be changed to a quartic weight. It therefore supplies a
+precise comparison with the quartic paper, rather than an identification
+of the two flows or their eventual-start sets.
+
 \section{Formal correspondence and limits of the conclusion}
 The mathematical baseline is the frozen verified commit
 \begin{center}\small\ttfamily

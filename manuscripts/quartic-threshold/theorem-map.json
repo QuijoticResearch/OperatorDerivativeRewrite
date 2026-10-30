@@ -1224,6 +1224,330 @@
       "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
       "type_or_definition_header": "theorem gaussian_L1_limit (\u03bc : Measure \u211d) [IsGaussian \u03bc]\n    (F : \u2115 \u2192 \u2102 \u2192 \u2102) (f : \u2102 \u2192 \u2102) (hF : \u2200 n,Continuous (F n)) (hcont : Continuous f)\n    (hlim : TendstoLocallyUniformly F f atTop)\n    (hbudget : \u2200 \u03b5 : \u211d,0<\u03b5 \u2192 \u2203 C : \u211d,0<C \u2227 \u2200 n : \u2115,\u2200 w : \u2102,\n      \u2016F n w\u2016 \u2264 C*Real.exp (\u03b5*\u2016w\u2016^2)) (z c : \u2102) :\n    Tendsto (fun n => \u222b y : \u211d,\u2016F n (z+c*(y:\u2102))-f (z+c*(y:\u2102))\u2016 \u2202\u03bc)\n      atTop (\ud835\udcdd 0)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L275"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_quadratic_lower",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 9,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem log_quadratic_lower (w : \u211d) (hw : 0 \u2264 w) :\n    w-w^2/2 \u2264 log (1+w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L9"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_gap_bound",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 17,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem log_gap_bound (c : \u211d) (hc : 0 \u2264 c) :\n    (c/(1+c))^2 \u2264 4*(2*log (1+c/2)-log (1+c))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L17"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_factor_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 35,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem log_factor_four_point (c y : \u211d) (hc : 0 \u2264 c) (hy : 1 \u2264 y) :\n    log (1+c) + (y-1)*(log (1+2*c)-log (1+c)) -\n      2*(y-1)^2*(2*log (1+c/2)-log (1+c)) \u2264 log (1+c*y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L35"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.finite_log_profile_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 60,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem finite_log_profile_four_point (L : Multiset \u211d)\n    (hL : \u2200 c \u2208 L, 0 \u2264 c) (A B alpha y : \u211d) (ha : 0 \u2264 alpha) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L60"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_linear_log",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 77,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem imaginary_linear_log (a C y : \u211d) (ha : a \u2260 0) (hy : 0 \u2264 y) :\n    log \u2016Complex.I*((C*sqrt y : \u211d):\u2102)-(a:\u2102)\u2016 =\n      log |a| + log (1+(C/a)^2*y)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L77"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_factor_ne_zero",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 96,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem imaginary_factor_ne_zero (r : \u2102) (hr : r.re \u2260 0) (x : \u211d) :\n    Complex.I*(x:\u2102)-r \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L96"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_rootProduct_ne_zero",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 106,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem imaginary_rootProduct_ne_zero (L : Multiset \u2102)\n    (hL : \u2200 r \u2208 L, r.re \u2260 0) (x : \u211d) :\n    SymmetricPolynomialStrip.rootProduct L (Complex.I*(x:\u2102)) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L106"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.rootProduct_log_profile",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 116,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem rootProduct_log_profile (L : Multiset \u2102)\n    (hL : \u2200 r \u2208 L, r.im = 0 \u2227 r.re \u2260 0) (C y : \u211d) (hy : 0 \u2264 y) :\n    log \u2016SymmetricPolynomialStrip.rootProduct L (Complex.I*((C*sqrt y:\u211d):\u2102))\u2016 =\n      (L.map (fun r => log |r.re|)).sum +\n        (1/2:\u211d)*(L.map (fun r => log (1+(C/r.re)^2*y))).sum",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L116"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.polynomial_log_profile",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 141,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem polynomial_log_profile (P : \u2102[X]) (h0 : P.eval 0 \u2260 0)\n    (hreal : \u2200 r : \u2102, P.eval r = 0 \u2192 r.im = 0) (C : \u211d) :\n    \u2203 A : \u211d, \u2203 L : Multiset \u211d, (\u2200 c \u2208 L, 0 \u2264 c) \u2227\n      \u2200 y : \u211d, 0 \u2264 y \u2192 log \u2016P.eval (Complex.I*((C*sqrt y:\u211d):\u2102))\u2016 =\n        A+(1/2:\u211d)*(L.map (fun c => log (1+c*y))).sum",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L141"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.polynomial_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 169,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem polynomial_four_point (P : \u2102[X]) (h0 : P.eval 0 \u2260 0)\n    (hreal : \u2200 r : \u2102, P.eval r = 0 \u2192 r.im = 0) (A B C y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L169"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.actual_flow_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 180,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "type_or_definition_header": "theorem actual_flow_four_point (m : \u2115) (t : \u211d)\n    (hreal : \u2200 z : \u2102, RiemannEvenFlow.flow m t z = 0 \u2192 z.im = 0)\n    (A B C y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L180"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 10,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "def evenDensity (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L10"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_continuous",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 12,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem evenDensity_continuous : Continuous evenDensity",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L12"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_pos",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 17,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem evenDensity_pos (x : \u211d) : 0 < evenDensity x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L17"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_bounded",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 19,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem evenDensity_bounded : \u2203 C : \u211d, 0 < C \u2227 \u2200 x : \u211d, |evenDensity x| \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L19"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 28,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "def smoothing (epsilon x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L28"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_integrable",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 31,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem smoothing_integrable (epsilon x : \u211d) :\n    Integrable (fun y : \u211d => evenDensity (x+epsilon*y)) (RiemannQuadraticGaussian.law 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L31"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_limit",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 39,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem smoothing_limit (epsilon : \u2115 \u2192 \u211d) (he : Tendsto epsilon atTop (\ud835\udcdd 0)) (x : \u211d) :\n    Tendsto (fun n => smoothing (epsilon n) x) atTop (\ud835\udcdd (evenDensity x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L39"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_pos",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 54,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem smoothing_pos (epsilon x : \u211d) : 0 < smoothing epsilon x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L54"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_distribution",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 65,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "type_or_definition_header": "theorem smoothing_distribution (epsilon x : \u211d) :\n    smoothing epsilon x = \u222b u : \u211d, evenDensity u\n      \u2202gaussianReal x (\u27e8epsilon^2,sq_nonneg epsilon\u27e9*2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L65"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_density_integrable",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 13,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem pdf_density_integrable (v : \u211d\u22650) (x : \u211d) :\n    Integrable (fun u : \u211d => gaussianPDFReal x v u*evenDensity u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L13"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_reflection",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 19,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem pdf_reflection (v : \u211d\u22650) (x u : \u211d) :\n    gaussianPDFReal x v (-u) = gaussianPDFReal (-x) v u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L19"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.even_density_gaussian_halfLine",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 25,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem even_density_gaussian_halfLine (v : \u211d\u22650) (x : \u211d) (hv : v \u2260 0) :\n    (\u222b u : \u211d, evenDensity u \u2202gaussianReal x v) =\n      \u222b u : \u211d, (gaussianPDFReal x v u+gaussianPDFReal (-x) v u)*kernel u \u2202halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L25"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.completed_square_cosh",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 50,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem completed_square_cosh (s x u : \u211d) :\n    exp (-s*(u-x)^2)+exp (-s*(u+x)^2) =\n      2*exp (-s*x^2)*exp (-s*u^2)*cosh ((2*s*x)*u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L50"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_pair_heat",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 58,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem pdf_pair_heat (v : \u211d\u22650) (x u : \u211d) :\n    (gaussianPDFReal x v u+gaussianPDFReal (-x) v u)*kernel u =\n      (2*(sqrt (2*Real.pi*(v:\u211d)))\u207b\u00b9*exp (-(2*(v:\u211d))\u207b\u00b9*x^2))*\n        (RiemannEvenDomain.weighted 1 0 (-(2*(v:\u211d))\u207b\u00b9) 0 u*cosh ((2*(2*(v:\u211d))\u207b\u00b9*x)*u))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L58"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.imaginary_integrand",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 69,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem imaginary_integrand (t y u : \u211d) :\n    (RiemannEvenDomain.weighted 1 0 t 0 u:\u2102)*Complex.cos ((u:\u2102)*(Complex.I*(y:\u2102))) =\n      ((RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y):\u211d):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L69"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.imaginary_integrable",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 75,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem imaginary_integrable (t y : \u211d) :\n    Integrable (fun u : \u211d => RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y)) halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L75"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.flow_imaginary_integral",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 80,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem flow_imaginary_integral (t y : \u211d) :\n    RiemannEvenFlow.flow 1 t (Complex.I*(y:\u2102)) =\n      ((\u222b u : \u211d, RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y) \u2202halfLine):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L80"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.gaussian_heat_identity",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 87,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem gaussian_heat_identity (v : \u211d\u22650) (hv : v \u2260 0) (x : \u211d) :\n    Complex.ofReal (\u222b u : \u211d, evenDensity u \u2202gaussianReal x v) =\n      ((2*(sqrt (2*Real.pi*(v:\u211d)))\u207b\u00b9*exp (-(2*(v:\u211d))\u207b\u00b9*x^2):\u211d):\u2102)*\n        RiemannEvenFlow.flow 1 (-(2*(v:\u211d))\u207b\u00b9) (Complex.I*((2*(2*(v:\u211d))\u207b\u00b9*x:\u211d):\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L87"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.smoothing_log_heat",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 99,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem smoothing_log_heat (epsilon : \u211d) (hne : epsilon \u2260 0) (x : \u211d) :\n    let v : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L99"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.smoothing_four_point",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 132,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "type_or_definition_header": "theorem smoothing_four_point\n    (hall : \u2200 t : \u211d, \u2200 z : \u2102, RiemannEvenFlow.flow 1 t z = 0 \u2192 z.im = 0)\n    (epsilon : \u211d) (hne : epsilon \u2260 0) (y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L132"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.quadratic_polynomial_lower",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 11,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "type_or_definition_header": "theorem quadratic_polynomial_lower (a b c y : \u211d) (hy : 1 \u2264 y) :\n    -(|a|+|b|+|c|)*y^2 \u2264 a*y^2+b*y+c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L11"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.density_four_point_failure",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 19,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "type_or_definition_header": "theorem density_four_point_failure :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L19"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.not_all_real_times",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 74,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "type_or_definition_header": "theorem not_all_real_times :\n    \u00ac (\u2200 t : \u211d, \u2200 z : \u2102, flow 1 t z = 0 \u2192 z.im = 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L74"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.nonreal_zero_exists",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 93,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "type_or_definition_header": "theorem nonreal_zero_exists : \u2203 (t : \u211d) (z : \u2102), flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L93"
+    },
+    {
+      "paper": "Section 12: scalar four-point inequality, complete real-rooted polynomial passage, actual bounded density/Gaussian smoothing identity, and a negative quadratic time with a nonreal zero. The direct restriction to negative smoothing times is labelled HUMAN; no threshold value, RH or quartic propagation conclusion.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.negative_time_nonreal_exists",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 118,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "type_or_definition_header": "theorem negative_time_nonreal_exists :\n    \u2203 t : \u211d, t < 0 \u2227 \u2203 z : \u2102, flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L118"
     }
   ],
   "human_proof_reorganization": {
@@ -1235,7 +1559,8 @@
     "attainment_confinement_and_multiple_endpoint_zero": "Sections 9\u201310",
     "method": "Human regrouping with unspecified uniform constants, not a claim of new named Lean lemmas for every intermediate estimate.",
     "remaining_editorial_limits": "Independent referee review, attribution and novelty determination remain outstanding; reviewed draft is not submission-ready.",
-    "general_divisor_gaussian_comparison": "Section 11 extends the fully printed finite-disk argument to complete divisor products retaining all complex, imaginary-axis and multiple zeros. A fixed zero strip, retained exactly as the formal hypothesis, yields absolute inverse-square annular tails and a common arbitrarily small quadratic budget for all approximants; actual Gaussian affine L1/integral convergence follows by domination. Local uniformity over compact affine parameter sets and Q_n=1+z^(2n)/(2n-1)!! are explicit classical HUMAN deductions. Gaussian quadratic smoothing does not identify or propagate the growing quartic flow. Five principal source modules fully read and mapped; no new general factorization or heat theorem is claimed."
+    "general_divisor_gaussian_comparison": "Section 11 extends the fully printed finite-disk argument to complete divisor products retaining all complex, imaginary-axis and multiple zeros. A fixed zero strip, retained exactly as the formal hypothesis, yields absolute inverse-square annular tails and a common arbitrarily small quadratic budget for all approximants; actual Gaussian affine L1/integral convergence follows by domination. Local uniformity over compact affine parameter sets and Q_n=1+z^(2n)/(2n-1)!! are explicit classical HUMAN deductions. Gaussian quadratic smoothing does not identify or propagate the growing quartic flow. Five principal source modules fully read and mapped; no new general factorization or heat theorem is claimed.",
+    "quadratic_four_point_comparison": "Section 12 gives a complete four-point route from nonnegative logarithmic factors to the actual theta density obstruction. The Gaussian variance is 2 epsilon^2 and the exact half-line normalizer is 1/(sqrt(pi) epsilon). Assuming all strictly negative quadratic times real-rooted forces log K(x)>=-L x^4 and contradicts actual superexponential theta decay. The direct negative-time restriction is an explicit HUMAN proof of the mapped negative_time_nonreal_exists conclusion; the named formal endpoint uses the library finite-threshold route. Classical Newman 1976 already proves the stronger finite-threshold conclusion through classification; no new quadratic principle, threshold value or RH claim is made."
   },
   "certificate_scope": "The verifier re-sums all 160x3 endpoint pairs and checks exact rational budgets and the Laguerre margin. It does not rerun the Lean interval engine. The baseline evidence covers the exact finite inclusions."
 }

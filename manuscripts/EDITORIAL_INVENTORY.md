@@ -22,7 +22,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-eight reviewed drafts total 434 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-eight reviewed drafts total 436 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
