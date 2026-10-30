@@ -2959,3 +2959,4 @@ import Foundation.PeriodicTransferVariation
 import Foundation.PeriodicCurvatureVariance
 import Foundation.PeriodicCurvatureTransfer
 import Foundation.PeriodicCurvatureWeighted
+import Foundation.PeriodicQuarticCurvature
