@@ -2908,3 +2908,5 @@ import Foundation.CubeBoundaryChartMeasure
 import Foundation.CubeBoundaryChartL2
 import Foundation.CubeBoundaryChartInverse
 import Foundation.CubeChartCompressedKernel
+import Foundation.CubeKernelOperatorBound
+import Foundation.CubeCompressedNormLimit
