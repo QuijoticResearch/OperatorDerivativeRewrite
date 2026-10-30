@@ -13,10 +13,10 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Completed Fourier path tests:\\higher-order heat smoothing and\\integrable control-derivative densities}
 \author{Project Stardust\\\small A classical formalization companion}
-\date{October 29, 2026}
+\date{October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. The full infinitesimal generator has an exact weighted-coefficient quotient graph, a bounded unit resolvent and a finite-character graph core. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -759,6 +759,168 @@ pullbacks. No optional-stopping theorem, probabilistic past
 conditional expectation, or arbitrary adapted integral is obtained
 from dictionary transport alone.
 
+
+\section{The full heat generator, unit resolvent and graph core}
+The heat evolution has an exact full infinitesimal generator on the
+same realized quotient $\A$. Fix the heat order $p=2m$, $m\geq1$,
+and the dictionary of Section 1. Define the linear relation
+\begin{equation}\label{eq:heat-generator-graph}
+ \mathfrak G=\{(Qa,Qb):a,b\in\ell^1,
+                      \ b_i=-\lambda_i a_i\text{ for every }i\}.
+\end{equation}
+Thus a graph input has at least one representative with
+$\sum_i\lambda_i|a_i|<\infty$. This is an existence condition on a
+representative in the original fixed dictionary, not a prescribed
+choice of coordinates or an assumption that every representative
+has finite weighted norm. Repeated characters and nontrivial
+representation relations remain allowed.
+
+\begin{theorem}\label{thm:full-heat-generator}
+The relation $\mathfrak G$ is the graph of a closed densely defined
+operator $L:D(L)\subset\A\to\A$, and for every $f,g\in\A$,
+\begin{equation}\label{eq:heat-full-generator}
+ \lim_{h\downarrow0}\frac{S_hf-f}{h}=g\text{ in }\A
+ \quad\Longleftrightarrow\quad (f,g)\in\mathfrak G.
+\end{equation}
+Its unit resolvent is well defined on every $f=Qa\in\A$ by
+\begin{equation}\label{eq:heat-unit-resolvent}
+ \mathcal R f=Q\left(\frac{a_i}{1+\lambda_i}\right)_i,
+ \qquad \|\mathcal R f\|\leq\|f\|.
+\end{equation}
+It satisfies $(I-L)\mathcal R f=f$ and
+$\mathcal R(I-L)x=x$ for $x\in D(L)$. The finite span of the
+pairs $(Qe_i,-\lambda_iQe_i)$ is a graph core: its closure in
+$\A\times\A$ is exactly $\mathfrak G$.
+\end{theorem}
+
+\subsection{Weighted representatives and the contraction tangent}
+For a coefficient pair in \eqref{eq:heat-generator-graph},
+\[
+ \frac{a_i(e^{-h\lambda_i}-1)}h\longrightarrow-\lambda_i a_i=b_i,
+ \qquad
+ \left|\frac{a_i(e^{-h\lambda_i}-1)}h\right|\leq|b_i|\quad(h>0).
+\]
+The bound follows from $0\leq1-e^{-r}\leq r$ for $r\geq0$.
+Dominated convergence for the summable sequence $2|b_i|$ proves
+convergence of the difference quotients in $\ell^1$. Applying $Q$
+proves the forward graph-to-limit implication. A graph pair with
+zero first entry consequently has zero second entry, since its
+quotient difference quotients are identically zero. The relation is
+therefore single valued and defines $L$. Each finite character
+combination belongs to its domain, so the previously proved finite
+character density makes $D(L)$ dense.
+
+We will use a tangent estimate valid for any contraction orbit.
+Regard the complex Banach space as a real one. Suppose
+$F(h)=x+hy+o(h)$ for $h\downarrow0$ and $\|F(h)\|\leq\|x\|$.
+A real Hahn--Banach supporting functional $\varphi$ satisfies
+$\|\varphi\|\leq1$ and $\varphi(x)=\|x\|$. Hence
+$\varphi(F(h))\leq\|x\|$, and division by $h>0$ gives
+$\varphi(y)\leq0$. For every $q>0$,
+\begin{equation}\label{eq:heat-dissipative}
+ q\|x\|\leq\varphi(qx-y)\leq\|qx-y\|.
+\end{equation}
+If $x=0$, the zero supporting functional gives the same inequality.
+In particular every graph pair satisfies this bound, because $S_h$
+is contractive and its graph tangent was just proved. The same
+estimate applies to any other vector whose right tangent exists,
+before it is known to lie in the coefficient graph.
+
+\subsection{The resolvent descends through the actual relations}
+The coefficient map $a\mapsto(a_i/(1+\lambda_i))$ is contractive
+on $\ell^1$. To prove that it preserves $K$, one may use the
+following classical Laplace presentation, here a labelled human
+reorganization of the named coefficient-resolvent construction.
+The coefficient semigroup $C_ta=(e^{-t\lambda_i}a_i)$ is strongly
+continuous in $\ell^1$ and $\|C_ta\|_1\leq\|a\|_1$. Thus
+$t\mapsto e^{-t}C_ta$ is Bochner integrable on $[0,\infty)$.
+Each continuous coefficient evaluation commutes with its integral,
+and ordinary scalar integration gives
+\[
+ \int_0^\infty e^{-t}C_ta\,dt
+   =\left(\frac{a_i}{1+\lambda_i}\right)_i.
+\]
+If $a\in K$, every $C_ta$ is in the same closed kernel by the
+already established multiplier descent. Applying $Q$ to the
+Bochner integral shows its quotient is zero. This proves kernel
+preservation and makes \eqref{eq:heat-unit-resolvent} independent
+of the representative. Its coefficient bound, followed by the
+infimum over all representatives of $f$, gives $\|\mathcal Rf\|\leq\|f\|$.
+It also gives the actual strong integral formula
+\begin{equation}\label{eq:heat-laplace-human}
+ \mathcal Rf=\int_0^\infty e^{-t}S_tf\,dt.
+\end{equation}
+This is integration of a quotient-valued heat orbit, with integrable
+norm at most $e^{-t}\|f\|$; it is not an integral over a signed
+path measure.
+
+For $a\in\ell^1$, put $c_i=a_i/(1+\lambda_i)$. Then
+$c_i-a_i=-\lambda_i c_i$ and both $c$ and $c-a$ are summable,
+since $\lambda_i/(1+\lambda_i)\leq1$. Therefore
+\begin{equation}\label{eq:heat-resolvent-graph}
+ (\mathcal Rf,\mathcal Rf-f)\in\mathfrak G
+ \quad\hbox{for every }f\in\A.
+\end{equation}
+This already proves surjectivity of $I-L$ onto the entire quotient.
+If $(x,y)\in\mathfrak G$, subtract the graph pair
+$(\mathcal R(x-y),\mathcal R(x-y)-(x-y))$.
+The difference pair has equal first and second entries.
+Estimate \eqref{eq:heat-dissipative} with $q=1$ forces that entry
+to be zero, yielding $x=\mathcal R(x-y)$. Conversely that equality
+and \eqref{eq:heat-resolvent-graph} give $(x,y)\in\mathfrak G$.
+Thus
+\begin{equation}\label{eq:heat-graph-resolvent}
+ (x,y)\in\mathfrak G\quad\Longleftrightarrow\quad
+ x=\mathcal R(x-y).
+\end{equation}
+The right side is a closed condition on $\A\times\A$ because
+$\mathcal R$ is bounded. This proves closedness of the actual
+image graph, and also the two inverse identities of the theorem.
+No assumption that an image of a closed subspace is closed is used.
+
+\subsection{Maximality of the generator and the finite graph core}
+Suppose the right limit on the left of
+\eqref{eq:heat-full-generator} exists and equals $g$. Set
+$x=\mathcal R(f-g)$ and $y=x-(f-g)$. By
+\eqref{eq:heat-resolvent-graph}, $(x,y)\in\mathfrak G$, so its
+right tangent is $y$. Linearity of $S_h$ shows the orbit of $f-x$
+has right tangent $g-y$. Contractivity and the tangent estimate,
+applied to this difference at $q=1$, give
+\[
+ \|f-x\|\leq\|(f-x)-(g-y)\|=0,
+\]
+because $y=x-f+g$. Hence $f=x=\mathcal R(f-g)$ and
+\eqref{eq:heat-graph-resolvent} puts $(f,g)$ in $\mathfrak G$.
+This proves the converse implication on every vector with a genuine
+norm derivative; the coefficient graph is the full generator,
+rather than only a convenient subdomain.
+
+Finally, for any represented graph pair $(Qa,Qb)$, truncate both
+sequences at the same index $N$. Their weighted relation is retained,
+and
+\[
+ \sum_{i<N}a_i(Qe_i,-\lambda_iQe_i)
+     =(Qa^{(N)},Qb^{(N)})\longrightarrow(Qa,Qb)
+       \quad\hbox{in }\A\times\A.
+\]
+Both convergences follow from ordinary $\ell^1$ tails. Thus every
+graph pair is in the closure of the finite eigenpairs. Those
+finite pairs are themselves in the graph, whose closedness proves
+the opposite inclusion. This completes the theorem, including
+its graph-core assertion.
+
+The semigroup and resolvent mechanism is classical. Engel--Nagel
+\cite[Theorem II.1.10, equation (1.13)]{EN} give the broader
+Laplace representation for generators of exponentially bounded
+strongly continuous semigroups. Our direct quotient proof records
+the exact weighted representative domain and original relations;
+\eqref{eq:heat-laplace-human} is the explicit human presentation,
+while the named formal proof obtains kernel descent using the same
+dissipative graph estimate. The parameter differentiated here is
+heat evolution $H$, distinct from the time-control derivatives
+elsewhere in this paper. No physical path generator, positive
+higher-heat process or arbitrary adapted integration is inferred.
+
 \section{Antecedents, formal correspondence and limits of the claim}
 Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.
 
@@ -795,5 +957,9 @@ Finally, there is no construction here of a conditional expectation with respect
 \bibitem{nishioka} K. Nishioka, \emph{Stochastic calculus for a class of evolution equations}, Japanese Journal of Mathematics, New Series \textbf{11} (1985), 59--102. \href{https://www.jstage.jst.go.jp/article/math1924/11/1/11_1_59/_article/-char/en}{Primary publisher article and full text}.
 \bibitem{cjs} K. S. Chang, G. W. Johnson and D. L. Skoug, \emph{The Feynman integral of quadratic potentials depending on two time variables}, Pacific Journal of Mathematics \textbf{122} (1986), no. 1, 11--33. \href{https://msp.org/pjm/1986/122-1/pjm-v122-n1-p02-s.pdf}{Primary full text}, especially Section 2.
 \bibitem{mnt} S. Mazzucchi, F. Nicola and S. I. Trapasso, \emph{Phase space analysis of finite and infinite dimensional Fresnel integrals}, arXiv:2403.20082, version 2 (2025). \href{https://arxiv.org/pdf/2403.20082}{Primary preprint}, especially Section 3.
+\bibitem{EN} K.-J. Engel and R. Nagel,
+\emph{One-Parameter Semigroups for Linear Evolution Equations},
+Springer, 2000. Theorem II.1.10 and equation (1.13), printed pages 55--56.
+\href{https://www.math.uni-tuebingen.de/de/forschung/agfa/members/engel-nagel_one-parameter-semigroups.pdf}{Author-hosted monograph}.
 \end{thebibliography}
 \end{document}
