@@ -22,7 +22,9 @@ We reconstruct the closed-operator argument that combines static recovery in
 the scenery variable with a predictable integral in the hidden Brownian clock.
 For absolutely summable multitime Fourier observations, the two channels
 recover the entire centered observable through the original joint intrinsic
-divergence. A stronger frequency summability condition puts the conditional
+divergence. Static contraction gives a constant-one native Poincar\'e
+bound and an actual centered Poisson solution with minimum-energy field.
+A stronger frequency summability condition puts the conditional
 source mean in the original clock derivative domain and identifies the clock
 integrand by predictable projection. Fold and collision cusps are treated by
 strong graph approximation, including their zero levels. Complete proofs
@@ -359,6 +361,153 @@ against $1$ gives expectation zero.
 Surjectivity of this static divergence is therefore a different statement
 from predictable representation in physical IBM time.
 
+\section{Native Poincar\'e control and centered Poisson solutions}
+The static recovery also controls the original intrinsic derivative.
+Here $D=D_{\Hh}$ and $\delta=D^*$ retain the full observable Hilbert space
+$\Hh$ and the ambient two-coordinate field space of Section 1.
+These are operators on random observables, not differentiation in the
+physical parameter $t$ of $Z_t$.
+
+First the static pair in Proposition~\ref{prop:static} admits the stronger
+bound
+\begin{equation}\label{eq:centeredpair}
+ \|(R_XF,R_YM)\|^2
+ \leq\|F-M\|_2^2+\|M-\E F\|_2^2
+ =\|F-\E F\|_2^2,\qquad M=\E_XF.
+\end{equation}
+Indeed the one-factor chaos formula already printed gives
+$\|Rf\|^2\leq\sum_{n\geq1}\|f_n\|^2=\|f-\E f\|^2$.
+Apply it in almost every scenery fiber and then to the clock-only $M$.
+The final equality is conditional-expectation orthogonality: $F-M$ is
+orthogonal to every clock-only $L^2$ variable, including $M-\E F$.
+Thus one can choose a linear static preimage $\mathcal RF$ of every
+centered $F\in\Hh$ with $\|\mathcal RF\|\leq\|F\|_2$.
+The source's native contraction uses the reverse, clock-first factor
+ordering; \eqref{eq:centeredpair} is a human factor-swapped proof of the
+same norm improvement for the pair actually displayed in this paper.
+Neither ordering makes its fields predictable in the observed IBM past.
+\lean{IBMNativeRecoveryContraction}{gaussian_centered_recovery_norm;
+fiber_centered_recovery_norm}
+\lean{IBMNativeRecoveryContraction}{clock_energy_decomposition; recovery_contraction}
+
+\begin{proposition}[Constant-one native Poincar\'e bound]\label{prop:nativepoincare}
+For every $f\in\Dom D$,
+\[
+ \|f-\E f\|_2\leq\|Df\|_2.
+\]
+The kernel of $D$ consists exactly of the constants in its domain.
+No optimality of the numerical constant is asserted.
+\end{proposition}
+\begin{proof}
+Put $g=f-\E f$. Constants lie in $\Dom D$ with derivative zero, so
+$g\in\Dom D$ and $Dg=Df$. Static recovery and original adjointness give
+\[
+ \|g\|_2^2=\langle\delta\mathcal Rg,g\rangle
+           =\langle\mathcal Rg,Dg\rangle
+           \leq\|g\|_2\|Df\|_2.
+\]
+If $g=0$ the inequality is immediate; otherwise divide by $\|g\|_2$.
+Zero derivative therefore forces $g=0$, and constants have zero derivative.
+\end{proof}
+\lean{IBMIntrinsicPoincare}{centered_recovery_duality; centered_poincare;
+full_poincare; kernel_iff_constant}
+
+To solve a centered native Poisson equation, first construct its actual
+resolvent without assuming a differential expression for a generator.
+The graph of the original closed $D$ is a closed subspace of the Hilbert
+product $\Hh\oplus\mathcal V$, where $\mathcal V$ is the original field
+space. Project $(x,0)$ onto it and write the result as $(Qx,DQx)$.
+Projection and coordinate extraction are bounded linear. Orthogonality
+of the residual says
+\begin{equation}\label{eq:nativeweakQ}
+ \langle Qx,v\rangle+\langle DQx,Dv\rangle=\langle x,v\rangle
+                             \quad(v\in\Dom D).
+\end{equation}
+Consequently $DQx\in\Dom\delta$ and $\delta DQx=x-Qx$, exactly the
+adjoint definition. Testing with $1$ shows $\E Qx=\E x$.
+Testing with $v=Qx$ gives
+\[
+ \|Qx\|_2^2+\|DQx\|_2^2=\langle x,Qx\rangle.
+\]
+If $x$ is centered, then $Qx$ is centered and Poincar\'e bounds its first
+norm by the second. Thus $2\|Qx\|_2^2\leq\|x\|_2\|Qx\|_2$,
+and $\|Qx\|_2\leq\|x\|_2/2$, including the zero case.
+This is a contraction statement on the centered subspace, not on constants.
+\lean{ClosedOperatorEnergyResolvent}{pair_mem_graph; weak_identity}
+\lean{ClosedOperatorEnergyResolvent}{gradient_mem_adjoint; adjoint_gradient; energy_identity}
+\lean{IBMIntrinsicEnergyResolvent}{resolvent_mean; centered_half_contraction}
+
+\begin{theorem}[Actual native centered Poisson solution]\label{thm:nativepoisson}
+For each centered $x\in\Hh$, there is a unique centered $u\in\Dom D$
+such that $Du\in\Dom\delta$ and $\delta Du=x$. It satisfies
+\[
+ \|u\|_2\leq\|Du\|_2\leq\|x\|_2.
+\]
+Among all original fields $V\in\Dom\delta$ with $\delta V=x$, the field
+$Du$ is the unique minimum-norm one, with exact gap
+\[
+ \|V\|_2^2=\|Du\|_2^2+\|V-Du\|_2^2.
+\]
+The solution depends linearly and continuously on the centered input.
+\end{theorem}
+\begin{proof}
+The mean-zero subspace $\Hh_0$ is closed and complete, because expectation
+is a bounded linear functional. For fixed $x\in\Hh_0$, the map
+$v\mapsto Q(x+v)$ preserves $\Hh_0$ and has Lipschitz constant at most
+$1/2$, by the just-proved centered bound and linearity of $Q$.
+Its unique fixed point $u$ satisfies $u=Q(x+u)$, so it belongs to the
+original domain of $D$. The actual adjoint identity for $Q$ gives
+$\delta Du=x+u-u=x$ and the required product-domain membership.
+Testing this equation against $u$ yields
+$\|Du\|_2^2=\langle x,u\rangle\leq\|x\|_2\|u\|_2
+\leq\|x\|_2\|Du\|_2$. Division when nonzero proves the bounds.
+
+If two centered solutions existed, their difference $w$ would satisfy
+$\delta Dw=0$. Original adjointness gives $\|Dw\|_2^2=0$, and
+Poincar\'e then forces $w=0$. This also proves linearity: linear
+combinations of centered solutions solve the corresponding combined
+input and must equal its unique solution. The norm bound gives continuity.
+
+For any competing field $V$, the difference $V-Du$ belongs to the
+original adjoint domain and has divergence zero. Thus
+$\langle V-Du,Du\rangle=\langle\delta(V-Du),u\rangle=0$.
+Expanding the square gives the exact gap; equality forces $V=Du$.
+This is minimization in the whole original field space, without a
+predictability constraint.
+\end{proof}
+\lean{IBMIntrinsicPoisson}{iteration_contracting; solution_fixed; solution_mem}
+\lean{IBMIntrinsicPoisson}{poisson_graph; poisson_equation}
+\lean{IBMIntrinsicPoisson}{solution_unique; gradient_minimal; solution_bounds;
+iterate_convergence}
+
+The fixed-point construction also gives a concrete graph approximation.
+Set $u_0=0$ and $u_{n+1}=Q(x+u_n)$. Then
+$\|u_n-u\|_2\leq2^{-n}\|x\|_2$. For any $y\in\Hh$, completing the
+square in the resolvent energy identity proves
+\[
+ \|Qy-y/2\|_2^2+\|DQy\|_2^2=\|y\|_2^2/4.
+\]
+Hence $DQ$ is a bounded map of norm at most $1/2$, and for $n\geq1$
+\[
+ \|Du_n-Du\|_2\leq2^{-n}\|x\|_2,
+ \qquad\|\delta Du_n-x\|_2\leq3\cdot2^{-n}\|x\|_2.
+\]
+The first bound applies $DQ$ to $u_{n-1}-u$; the second uses
+$\delta Du_n=x+u_{n-1}-u_n$ and the two value-error bounds.
+The linear solution map, exact minimum gap and these explicit graph-error
+bounds are labelled human consequences of the same source variational
+identities; the source directly records solution uniqueness, minimality,
+norm bounds and value-iterate convergence.
+
+All statements retain the original restricted observable derivative and
+its Hilbert adjoint. The positive operator here has domain
+$\{u\in\Dom D:Du\in\Dom\delta\}$ and value $\delta Du$.
+It is not identified with a derivative of the actual trajectory in $t$,
+a conditional-past generator or an observed-filtration stochastic driver.
+The constant-one estimate, graph projection, contraction mapping and
+orthogonal minimum-norm principle are classical Hilbert/Gaussian methods;
+no priority or sharp intrinsic constant is claimed.
+
 \section{Actual multitime Fourier observations}
 Fix a finite index set $I$, times $r_i\geq0$, real frequencies $a_{ki}$,
 phases $\beta_k$, and real weights $w_k$, where $k\geq0$. Assume
@@ -672,7 +821,7 @@ For every $f\in\Dom D_{\Hh}$ one has the exact duality
  \E\{(F-\E F)f\}
  =\langle R_XF,D_Xf\rangle+\langle C(U),D_Yf\rangle.
 \]
-The squared norm of the pair is at most $2\|F\|_2^2$.
+The squared norm of the pair is at most $\|F-\E F\|_2^2$.
 If all $r_i\leq T$, the clock field is supported in $[0,T]$.
 Under \eqref{eq:curvaturecost} it is the lift of $P_{\rm pred}G$.
 \end{theorem}
@@ -687,8 +836,10 @@ the original ambient adjoint outputs
 Their sum is the intrinsic variable $F-\E F$, so
 Lemma~\ref{lem:project} removes the final projection on this \emph{sum}.
 Its proof also gives the duality against every original joint-domain test.
-The squared field norm is at most
-$\|F\|_2^2+\|M-\E M\|_2^2\leq2\|F\|_2^2$.
+The source-centered recovery bound used in \eqref{eq:centeredpair},
+together with both clock isometries, gives
+$\|(R_XF,C(U))\|_2^2\leq\|F-M\|_2^2+\|M-\E M\|_2^2
+=\|F-\E F\|_2^2$.
 Proposition~\ref{prop:support} gives time support. Only the last projected
 derivative identification uses Theorem~\ref{thm:meangraph} and therefore
 the stronger summability hypothesis.
@@ -759,6 +910,7 @@ Simpson identities and native-grid weak-limit obstructions retain their own
 domains and topologies; no transfer to arbitrary partitions, nonsmooth
 physical-time formulas or a predictable representation property is asserted.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{ocone} D. Ocone, \emph{Malliavin's calculus and stochastic integral
 representations of functionals of diffusion processes}, Stochastics

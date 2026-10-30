@@ -663,6 +663,429 @@
       "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
       "declaration_header": "theorem full_pairing (f : jointDerivative.domain) (C : \u211d) (hC : 0 \u2264 C)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) (g : jointDerivative.domain) :\n    PairingResult (output f (bounded_memLp f C hf) hDf u)\n      (multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) u) g",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L88"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.gaussian_recovery_vacuum_zero",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 13,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem gaussian_recovery_vacuum_zero (f : GaussianL2) : recovery (projection 0 f) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L13"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.gaussian_recovery_center",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 22,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem gaussian_recovery_center (f : GaussianL2) : recovery (f-projection 0 f) = recovery f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L22"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.gaussian_centered_recovery_norm",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 28,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem gaussian_centered_recovery_norm (f : GaussianL2) :\n    \u2016recovery f\u2016 \u2264 \u2016f-projection 0 f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L28"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.fiber_centered_recovery_norm",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 33,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem fiber_centered_recovery_norm (u : ScalarFieldSpace) :\n    \u2016fiberRecovery gaussianProduct u\u2016 \u2264 \u2016fiberCenter gaussianProduct u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L33"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.projection_self_pairing",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 41,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem projection_self_pairing (f : GaussianL2) :\n    inner \u211d f (projection 0 f) = inner \u211d (projection 0 f) (projection 0 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L41"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.factor_energy_decomposition",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 46,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem factor_energy_decomposition (u : ScalarFieldSpace) :\n    \u2016u\u2016 ^ 2 = \u2016fiberCenter gaussianProduct u\u2016 ^ 2 + \u2016zeroSector u\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L46"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.clock_centered_recovery_norm",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 59,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem clock_centered_recovery_norm (f : JointL2) :\n    \u2016clockRecovery f\u2016 \u2264 \u2016f-clockVacuum f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L59"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.clock_energy_decomposition",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 69,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem clock_energy_decomposition (f : JointL2) :\n    \u2016f\u2016 ^ 2 = \u2016f-clockVacuum f\u2016 ^ 2 + \u2016clockVacuum f\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L69"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeRecoveryContraction.recovery_contraction",
+      "file": "Foundation/IBMNativeRecoveryContraction.lean",
+      "line": 80,
+      "source_sha256": "5b5a48e238e00717e375aa30dd2f25cbaac8b82289e02e313c1d23d3024ed99f",
+      "declaration_header": "theorem recovery_contraction (f : JointL2) : \u2016recoveryPair f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeRecoveryContraction.lean#L80"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.one_pairing",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 20,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem one_pairing : inner \u211d jointOne (intrinsicOne : JointL2) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L20"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.one_derivative",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 29,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem one_derivative : jointDerivative oneElement = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L29"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.centered_recovery_duality",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 32,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem centered_recovery_duality (f : IntrinsicSpace)\n    (hf : inner \u211d jointOne (f : JointL2) = 0) (g : jointDerivative.domain) :\n    inner \u211d f (g : IntrinsicSpace) =\n      inner \u211d (IBMNativeGaussianRecovery.recoveryPair (f : JointL2)) (jointDerivative g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L32"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.centered_poincare",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 44,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem centered_poincare (f : jointDerivative.domain)\n    (hf : inner \u211d jointOne ((f : IntrinsicSpace) : JointL2) = 0) :\n    \u2016(f : IntrinsicSpace)\u2016 \u2264 \u2016jointDerivative f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L44"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.full_poincare",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 63,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem full_poincare (f : jointDerivative.domain) :\n    \u2016(f : IntrinsicSpace) - mean (f : IntrinsicSpace) \u2022 intrinsicOne\u2016 \u2264 \u2016jointDerivative f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L63"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoincare.kernel_iff_constant",
+      "file": "Foundation/IBMIntrinsicPoincare.lean",
+      "line": 79,
+      "source_sha256": "4d29cf5b1ae984ca76bfeba28a601b52defab98d76fe1faeeb7630d4730cc169",
+      "declaration_header": "theorem kernel_iff_constant (f : jointDerivative.domain) :\n    jointDerivative f = 0 \u2194 (f : IntrinsicSpace) = mean (f : IntrinsicSpace) \u2022 intrinsicOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoincare.lean#L79"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.resolvent_mem",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 22,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem resolvent_mem (x : IntrinsicSpace) : resolvent x \u2208 jointDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L22"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.derivative_resolvent",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 25,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem derivative_resolvent (x : IntrinsicSpace) :\n    jointDerivative \u27e8resolvent x, resolvent_mem x\u27e9 = gradient x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L25"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.gradient_mem",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 29,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem gradient_mem (x : IntrinsicSpace) : gradient x \u2208 jointDivergence.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L29"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.divergence_gradient",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 32,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem divergence_gradient (x : IntrinsicSpace) :\n    jointDivergence \u27e8gradient x, gradient_mem x\u27e9 = x-resolvent x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L32"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.mean_pairing",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 36,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem mean_pairing (x : IntrinsicSpace) : mean x = inner \u211d intrinsicOne x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L36"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.resolvent_mean",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 40,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem resolvent_mean (x : IntrinsicSpace) : mean (resolvent x) = mean x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L40"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicEnergyResolvent.centered_half_contraction",
+      "file": "Foundation/IBMIntrinsicEnergyResolvent.lean",
+      "line": 48,
+      "source_sha256": "1c892126f97de6baaeef9877eea27d43a2b458e9738f94f98b40efcbf4413a6a",
+      "declaration_header": "theorem centered_half_contraction (x : IntrinsicSpace) (hx : mean x = 0) :\n    \u2016resolvent x\u2016 \u2264 \u2016x\u2016 / 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicEnergyResolvent.lean#L48"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.centered_mem",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 20,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem centered_mem (x : IntrinsicSpace) : x \u2208 centered \u2194 mean x = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L20"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.centered_closed",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 24,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem centered_closed : IsClosed (centered : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L24"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.mean_add",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 29,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem mean_add (x y : IntrinsicSpace) : mean (x+y) = mean x + mean y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L29"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.mean_sub",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 32,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem mean_sub (x y : IntrinsicSpace) : mean (x-y) = mean x - mean y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L32"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.iteration_contracting",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 41,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem iteration_contracting (x : centered) : ContractingWith (1/2 : \u211d\u22650) (iteration x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L41"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.solution_fixed",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 58,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem solution_fixed (x : centered) :\n    resolvent ((x : IntrinsicSpace)+(solution x : IntrinsicSpace)) = (solution x : IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L58"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.solution_mem",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 62,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem solution_mem (x : centered) : (solution x : IntrinsicSpace) \u2208 jointDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L62"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.solution_gradient",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 68,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem solution_gradient (x : centered) : jointDerivative (solutionElement x) =\n    gradient ((x : IntrinsicSpace)+(solution x : IntrinsicSpace))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L68"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.fixed_point_poisson_graph",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 77,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem fixed_point_poisson_graph (x u : IntrinsicSpace) (hu : resolvent (x+u) = u) :\n    (gradient (x+u), x) \u2208 jointDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L77"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.poisson_graph",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 83,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem poisson_graph (x : centered) :\n    (jointDerivative (solutionElement x), (x : IntrinsicSpace)) \u2208 jointDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L83"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.poisson_equation",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 89,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem poisson_equation (x : centered) :\n    \u2203 h : jointDerivative (solutionElement x) \u2208 jointDivergence.domain,\n      jointDivergence \u27e8jointDerivative (solutionElement x), h\u27e9 = (x : IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L89"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.graph_pairing",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 95,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem graph_pairing (u : JointFieldSpace) (y : IntrinsicSpace)\n    (hu : (u,y) \u2208 jointDivergence.graph) (v : jointDerivative.domain) :\n    inner \u211d y (v : IntrinsicSpace) = inner \u211d u (jointDerivative v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L95"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.zero_solution",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 105,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem zero_solution (v : jointDerivative.domain)\n    (hm : mean (v : IntrinsicSpace) = 0)\n    (hg : (jointDerivative v, (0 : IntrinsicSpace)) \u2208 jointDivergence.graph) :\n    (v : IntrinsicSpace) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L105"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.solution_unique",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 116,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem solution_unique (x : centered) (v : jointDerivative.domain)\n    (hm : mean (v : IntrinsicSpace) = 0)\n    (hg : (jointDerivative v, (x : IntrinsicSpace)) \u2208 jointDivergence.graph) :\n    (v : IntrinsicSpace) = (solution x : IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L116"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.gradient_minimal",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 133,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem gradient_minimal (x : centered) (v : JointFieldSpace)\n    (hv : (v, (x : IntrinsicSpace)) \u2208 jointDivergence.graph) :\n    \u2016jointDerivative (solutionElement x)\u2016 \u2264 \u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L133"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.solution_bounds",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 146,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem solution_bounds (x : centered) :\n    \u2016jointDerivative (solutionElement x)\u2016 \u2264 \u2016(x : IntrinsicSpace)\u2016 \u2227\n    \u2016(solution x : IntrinsicSpace)\u2016 \u2264 \u2016(x : IntrinsicSpace)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L146"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicPoisson.iterate_convergence",
+      "file": "Foundation/IBMIntrinsicPoisson.lean",
+      "line": 159,
+      "source_sha256": "bb622305774cce6865226643d99ac1b2610a5986e4a3b6aea3b26ac203649148",
+      "declaration_header": "theorem iterate_convergence (x : centered) (u : centered) :\n    Tendsto (fun n => (iteration x)^[n] u) atTop (\ud835\udcdd (solution x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicPoisson.lean#L159"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.pair_mem_graph",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 28,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem pair_mem_graph (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    (resolvent T hT x, gradient T hT x) \u2208 T.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L28"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.resolvent_mem_domain",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 32,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem resolvent_mem_domain (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    resolvent T hT x \u2208 T.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L32"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.derivative_resolvent",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 36,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem derivative_resolvent (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    T \u27e8resolvent T hT x, resolvent_mem_domain T hT x\u27e9 = gradient T hT x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L36"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.weak_identity",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 42,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem weak_identity (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) (u : T.domain) :\n    inner \u211d (resolvent T hT x) (u : E) + inner \u211d (gradient T hT x) (T u) =\n      inner \u211d x (u : E)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L42"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.gradient_mem_adjoint",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 54,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem gradient_mem_adjoint (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    gradient T hT x \u2208 T.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L54"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.adjoint_gradient",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 61,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem adjoint_gradient (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed)\n    (hd : Dense (T.domain : Set E)) (x : E) :\n    T.adjoint \u27e8gradient T hT x, gradient_mem_adjoint T hT x\u27e9 = x - resolvent T hT x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L61"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.energy_identity",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 75,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem energy_identity (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    \u2016resolvent T hT x\u2016 ^ 2 + \u2016gradient T hT x\u2016 ^ 2 = inner \u211d x (resolvent T hT x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L75"
+    },
+    {
+      "paper": "Section 4 original intrinsic constant-one Poincare, actual centered Poisson and minimum divergence field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEnergyResolvent.resolvent_contraction",
+      "file": "Foundation/ClosedOperatorEnergyResolvent.lean",
+      "line": 81,
+      "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
+      "declaration_header": "theorem resolvent_contraction (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    \u2016resolvent T hT x\u2016 \u2264 \u2016x\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L81"
     }
   ],
   "human_reorganization": [
@@ -672,7 +1095,10 @@
     "The sine variance calculation proves nontriviality directly. Its separate mapped original joint-domain exclusion is explicitly cited rather than claimed as a newly reproduced proof.",
     "Section 2 uses n*tanh(x/n) for bounded graph approximation and smooth mollified clipping for uniformly bounded value approximation. These human choices reconstruct the source properties without claiming literal equality with its approximants. Graph and value approximation are distinct.",
     "The L1 annihilator argument proves exact adjoint membership iff the actual full-observation conditional density belongs to L2. Full unbounded-test pairings use the conditional L2 representative and do not assert integrability of the original L1 density times an unbounded test.",
-    "Bounded coefficient products have weak density f*delta(U)-<Df,U>. Exact conditional-L2 membership is retained. Essentially bounded combined derivatives suffice for every original-domain product and every adjoint field. Combined constants A,B in the printed norm bounds are elementary human estimates; mapped source hypotheses bound two derivative coordinates separately. None of these static full-observation results establishes observed-past causality or physical-time Ito calculus."
+    "Bounded coefficient products have weak density f*delta(U)-<Df,U>. Exact conditional-L2 membership is retained. Essentially bounded combined derivatives suffice for every original-domain product and every adjoint field. Combined constants A,B in the printed norm bounds are elementary human estimates; mapped source hypotheses bound two derivative coordinates separately. None of these static full-observation results establishes observed-past causality or physical-time Ito calculus.",
+    "Section 4 uses the one-factor centered recovery bound and conditional-expectation orthogonality to improve the actual source-first static pair norm to the centered input norm. The named source contraction uses clock-first ordering; the factor-swapped bound for this displayed pair is explicitly proved as a human deduction. It also improves the actual hidden-clock Fourier hybrid preimage norm in Section 10, using both clock isometries. No uniqueness of that hybrid pair is inferred.",
+    "The original intrinsic derivative and Hilbert adjoint give constant-one Poincare and exact constant kernel. This certifies an upper Poincare constant, not its optimality or a physical-time gap. A genuine original closed-graph projection produces a mean-preserving resolvent with centered half contraction.",
+    "The centered Poisson construction is the actual source fixed point u=Q(x+u), with original derivative and divergence product-domain membership, uniqueness, field/input norm bounds and global field minimality. The exact orthogonal minimum gap, bounded linearity of the solution and explicit value/gradient/divergence iteration bounds are labelled human consequences of the mapped weak identities and contraction. They impose no predictability constraint and identify no physical-time generator."
   ],
   "novelty": "Classical formalization companion; no external priority or observed-IBM predictable representation claim."
 }
