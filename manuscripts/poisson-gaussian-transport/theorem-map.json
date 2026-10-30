@@ -2061,6 +2061,636 @@
       "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
       "declaration_header": "theorem annulus_ratio_bounds {\u03a9 : Type*} [MeasurableSpace \u03a9] {\u03bc : Measure \u03a9}\n    [IsProbabilityMeasure \u03bc] (c : \u211d) (hc : 0 < c) (N : StableLevyAnnuli.FiniteCountLaws \u03bc c)\n    {n : \u2115} (hn : 0 < n) :\n    1/(Real.sqrt 2*(n : \u211d)) \u2264\n      \u2016lawOutput (N.count (StableLevyAnnuli.block c n)) (rate n) (rate_pos hn)\n        (StableLevyAnnuli.block_count_law c hc N n)\u2016/\n        (eLpNorm ((StableLevyAnnuli.block c n).indicator (fun _ => (1 : \u211d))) exponent\n          (StableLevyAnnuli.controlMeasure c)).toReal \u2227\n    \u2016lawOutput (N.count (StableLevyAnnuli.block c n)) (rate n) (rate_pos hn)\n        (StableLevyAnnuli.block_count_law c hc N n)\u2016/\n        (eLpNorm ((StableLevyAnnuli.block c n).indicator (fun _ => (1 : \u211d))) exponent\n          (StableLevyAnnuli.controlMeasure c)).toReal \u2264 1/(n : \u211d)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L310"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_memLp",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 13,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_memLp (rate : \u211d\u22650) (f : ScalarL2 rate)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) :\n    MemLp (fun n => \u03c6 (f n)) 2 (poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L13"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 19,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "def composition (rate : \u211d\u22650) (f : ScalarL2 rate)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) :\n    ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L19"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_apply",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 24,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650)\n    (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) (n : \u2115) :\n    (composition rate f \u03c6 K h\u03c6 hzero) n = \u03c6 (f n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L24"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_memLp",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 32,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_difference_memLp (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) :\n    MemLp (fun n => (composition rate f \u03c6 K h\u03c6 hzero) (n + 1) -\n      (composition rate f \u03c6 K h\u03c6 hzero) n) 2\n      ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L32"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_mem_domain",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 48,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_mem_domain (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) :\n    composition rate f \u03c6 K h\u03c6 hzero \u2208 (maximalDifference rate hr).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L48"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_apply",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 56,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_difference_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0)\n    (n : \u2115) :\n    ((maximalDifference rate hr)\n      \u27e8composition rate f \u03c6 K h\u03c6 hzero,\n        composition_mem_domain rate hr f hf \u03c6 K h\u03c6 hzero\u27e9) n =\n      \u03c6 (f n + ((maximalDifference rate hr) \u27e8f, hf\u27e9) n) - \u03c6 (f n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L56"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_norm_le",
+      "file": "Foundation/PoissonLipschitzChain.lean",
+      "line": 74,
+      "source_sha256": "3c561a7300262313f62f58943b48a1b80fbedae918797fa96d9ee39e9aa8f6e1",
+      "declaration_header": "theorem composition_difference_norm_le (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (\u03c6 : \u211d \u2192 \u211d) (K : \u211d\u22650) (h\u03c6 : LipschitzWith K \u03c6) (hzero : \u03c6 0 = 0) :\n    \u2016(maximalDifference rate hr)\n      \u27e8composition rate f \u03c6 K h\u03c6 hzero,\n        composition_mem_domain rate hr f hf \u03c6 K h\u03c6 hzero\u27e9\u2016 \u2264\n      (K : \u211d) * \u2016(maximalDifference rate hr) \u27e8f, hf\u27e9\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLipschitzChain.lean#L74"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_scalar_memLp",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 12,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_scalar_memLp (rate : \u211d\u22650) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) : MemLp g 2 (poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L12"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_field_memLp",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 19,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_field_memLp (rate : \u211d\u22650) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) :\n    MemLp g 2 ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L19"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.scalarOfBounded",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 30,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "def scalarOfBounded (rate : \u211d\u22650) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) : ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L30"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.fieldOfBounded",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 35,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "def fieldOfBounded (rate : \u211d\u22650) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) : FieldL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L35"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.scalarOfBounded_apply",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 39,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem scalarOfBounded_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    (scalarOfBounded rate g C hg) n = g n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L39"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.fieldOfBounded_apply",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 44,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem fieldOfBounded_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    (fieldOfBounded rate g C hg) n = g n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L44"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_mul",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 51,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_mul (f g : \u2115 \u2192 \u211d) (Cf Cg : \u211d)\n    (hf : \u2200 n, |f n| \u2264 Cf) (hg : \u2200 n, |g n| \u2264 Cg) (n : \u2115) :\n    |f n * g n| \u2264 Cf * Cg",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L51"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_product_mem_maximalDifference",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 58,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_product_mem_maximalDifference (rate : \u211d\u22650) (hr : 0 < rate)\n    (f g : \u2115 \u2192 \u211d) (Cf Cg : \u211d)\n    (hf : \u2200 n, |f n| \u2264 Cf) (hg : \u2200 n, |g n| \u2264 Cg) :\n    scalarOfBounded rate (fun n => f n * g n) (Cf * Cg) (bounded_mul f g Cf Cg hf hg) \u2208\n      (maximalDifference rate hr).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L58"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_scalar_mem_maximalDifference",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 79,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_scalar_mem_maximalDifference (rate : \u211d\u22650) (hr : 0 < rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    scalarOfBounded rate g C hg \u2208 (maximalDifference rate hr).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L79"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_difference_apply",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 94,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_difference_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    ((maximalDifference rate hr) \u27e8scalarOfBounded rate g C hg,\n      bounded_scalar_mem_maximalDifference rate hr g C hg\u27e9) n =\n      g (n + 1) - g n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L94"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonBoundedCalculus.bounded_difference_product_rule",
+      "file": "Foundation/PoissonBoundedCalculus.lean",
+      "line": 106,
+      "source_sha256": "c76d79c2729f6a722a17f3bce2fe34e298ea03214e927c00470a38ce1b305d4f",
+      "declaration_header": "theorem bounded_difference_product_rule (rate : \u211d\u22650) (hr : 0 < rate)\n    (f g : \u2115 \u2192 \u211d) (Cf Cg : \u211d)\n    (hf : \u2200 n, |f n| \u2264 Cf) (hg : \u2200 n, |g n| \u2264 Cg) (n : \u2115) :\n    ((maximalDifference rate hr) \u27e8scalarOfBounded rate (fun k => f k * g k)\n      (Cf * Cg) (bounded_mul f g Cf Cg hf hg),\n      bounded_product_mem_maximalDifference rate hr f g Cf Cg hf hg\u27e9) n =\n      f n * ((maximalDifference rate hr) \u27e8scalarOfBounded rate g Cg hg,\n        bounded_scalar_mem_maximalDifference rate hr g Cg hg\u27e9) n +\n      g n * ((maximalDifference rate hr) \u27e8scalarOfBounded rate f Cf hf,\n        bounded_scalar_mem_maximalDifference rate hr f Cf hf\u27e9) n +\n      ((maximalDifference rate hr) \u27e8scalarOfBounded rate f Cf hf,\n        bounded_scalar_mem_maximalDifference rate hr f Cf hf\u27e9) n *\n      ((maximalDifference rate hr) \u27e8scalarOfBounded rate g Cg hg,\n        bounded_scalar_mem_maximalDifference rate hr g Cg hg\u27e9) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonBoundedCalculus.lean#L106"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalar_mul_memLp",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 24,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalar_mul_memLp (rate : \u211d\u22650) (f : ScalarL2 rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    MemLp (fun n => g n * f n) 2 (poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L24"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 29,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "def scalarMul (rate : \u211d\u22650) (f : ScalarL2 rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) : ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L29"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_apply",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 33,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_apply (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    (scalarMul rate f g C hg) n = g n * f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L33"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_eq_of_bounds",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 38,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_eq_of_bounds (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate)\n    (g : \u2115 \u2192 \u211d) (C C' : \u211d) (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g n| \u2264 C') :\n    scalarMul rate f g C hg = scalarMul rate f g C' hg'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L38"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.field_mul_memLp",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 46,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem field_mul_memLp (rate : \u211d\u22650) (u : FieldL2 rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    MemLp (fun n => g n * u n) 2 ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L46"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 52,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "def fieldMul (rate : \u211d\u22650) (u : FieldL2 rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) : FieldL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L52"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul_apply",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 56,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem fieldMul_apply (rate : \u211d\u22650) (hr : 0 < rate) (u : FieldL2 rate)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    (fieldMul rate u g C hg) n = g n * u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L56"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul_eq_of_bounds",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 62,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem fieldMul_eq_of_bounds (rate : \u211d\u22650) (hr : 0 < rate) (u : FieldL2 rate)\n    (g : \u2115 \u2192 \u211d) (C C' : \u211d) (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g n| \u2264 C') :\n    fieldMul rate u g C hg = fieldMul rate u g C' hg'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L62"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarAsField",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 69,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "def scalarAsField (rate : \u211d\u22650) (f : ScalarL2 rate) : FieldL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L69"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarAsField_apply",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 72,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarAsField_apply (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (n : \u2115) : (scalarAsField rate f) n = f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L72"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.bounded_difference_bound",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 77,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem bounded_difference_bound (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) : |g (n + 1) - g n| \u2264 2 * C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L77"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.boundedDifference",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 85,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "def boundedDifference (rate : \u211d\u22650) (hr : 0 < rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) : FieldL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L85"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.boundedDifference_apply",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 90,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem boundedDifference_apply (rate : \u211d\u22650) (hr : 0 < rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    (boundedDifference rate hr g C hg) n = g (n + 1) - g n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L90"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.boundedDifference_bound",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 95,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem boundedDifference_bound (rate : \u211d\u22650) (hr : 0 < rate) (g : \u2115 \u2192 \u211d)\n    (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) (n : \u2115) :\n    |(boundedDifference rate hr g C hg) n| \u2264 2 * C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L95"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.shifted_memLp",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 101,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem shifted_memLp (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain) :\n    MemLp (fun n => f (n + 1)) 2 ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L101"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.shifted_multiplier_term_memLp",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 107,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem shifted_multiplier_term_memLp (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    MemLp (fun n => (boundedDifference rate hr g C hg) n * f (n + 1)) 2\n      ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L107"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.shifted_multiplier_term_norm_le",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 118,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem shifted_multiplier_term_norm_le (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    \u2016(shifted_multiplier_term_memLp rate hr f hf g C hg).toLp\n      (fun n => (boundedDifference rate hr g C hg) n * f (n + 1))\u2016 \u2264\n      (2 * C) * \u2016(shifted_memLp rate hr f hf).toLp (fun n => f (n + 1))\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L118"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.product_difference_memLp",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 131,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem product_difference_memLp (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    MemLp (fun n => (scalarMul rate f g C hg) (n + 1) -\n      (scalarMul rate f g C hg) n) 2 ((rate : \u211d\u22650\u221e) \u2022 poissonLaw rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L131"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_mem_domain",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 150,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_mem_domain (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    scalarMul rate f g C hg \u2208 (maximalDifference rate hr).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L150"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_difference_shifted",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 158,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_difference_shifted (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    (maximalDifference rate hr) \u27e8scalarMul rate f g C hg,\n      scalarMul_mem_domain rate hr f hf g C hg\u27e9 =\n      fieldMul rate ((maximalDifference rate hr) \u27e8f, hf\u27e9) g C hg +\n      (shifted_multiplier_term_memLp rate hr f hf g C hg).toLp\n        (fun n => (boundedDifference rate hr g C hg) n * f (n + 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L158"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_difference_expanded",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 182,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_difference_expanded (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    (maximalDifference rate hr) \u27e8scalarMul rate f g C hg,\n      scalarMul_mem_domain rate hr f hf g C hg\u27e9 =\n      fieldMul rate (scalarAsField rate f)\n        (fun n => (boundedDifference rate hr g C hg) n) (2 * C)\n        (boundedDifference_bound rate hr g C hg) +\n      fieldMul rate ((maximalDifference rate hr) \u27e8f, hf\u27e9) g C hg +\n      fieldMul rate ((maximalDifference rate hr) \u27e8f, hf\u27e9)\n        (fun n => (boundedDifference rate hr g C hg) n) (2 * C)\n        (boundedDifference_bound rate hr g C hg)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L182"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_norm_le",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 210,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_norm_le (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) : \u2016scalarMul rate f g C hg\u2016 \u2264 C * \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L210"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul_norm_le",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 219,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem fieldMul_norm_le (rate : \u211d\u22650) (hr : 0 < rate)\n    (u : FieldL2 rate) (g : \u2115 \u2192 \u211d) (C : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) : \u2016fieldMul rate u g C hg\u2016 \u2264 C * \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L219"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.bounded_representatives_eq",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 228,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem bounded_representatives_eq (rate : \u211d\u22650) (hr : 0 < rate)\n    (g g' : \u2115 \u2192 \u211d) (C C' : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g' n| \u2264 C')\n    (heq : scalarOfBounded rate g C hg = scalarOfBounded rate g' C' hg')\n    (n : \u2115) : g n = g' n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L228"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_eq_of_representatives",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 236,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem scalarMul_eq_of_representatives (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (g g' : \u2115 \u2192 \u211d) (C C' : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g' n| \u2264 C')\n    (heq : scalarOfBounded rate g C hg = scalarOfBounded rate g' C' hg') :\n    scalarMul rate f g C hg = scalarMul rate f g' C' hg'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L236"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul_eq_of_representatives",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 246,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem fieldMul_eq_of_representatives (rate : \u211d\u22650) (hr : 0 < rate)\n    (u : FieldL2 rate) (g g' : \u2115 \u2192 \u211d) (C C' : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g' n| \u2264 C')\n    (heq : scalarOfBounded rate g C hg = scalarOfBounded rate g' C' hg') :\n    fieldMul rate u g C hg = fieldMul rate u g' C' hg'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L246"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultipliers.boundedDifference_eq_of_representatives",
+      "file": "Foundation/PoissonMultipliers.lean",
+      "line": 256,
+      "source_sha256": "11be2345a05d1dbe46139f863ade1d624a46a6479b526aaf0c1ebb25d198da19",
+      "declaration_header": "theorem boundedDifference_eq_of_representatives (rate : \u211d\u22650) (hr : 0 < rate)\n    (g g' : \u2115 \u2192 \u211d) (C C' : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hg' : \u2200 n, |g' n| \u2264 C')\n    (heq : scalarOfBounded rate g C hg = scalarOfBounded rate g' C' hg') :\n    boundedDifference rate hr g C hg = boundedDifference rate hr g' C' hg'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultipliers.lean#L256"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.bounded_add",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 14,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem bounded_add (g k : \u2115 \u2192 \u211d) (C B : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hk : \u2200 n, |k n| \u2264 B) (n : \u2115) :\n    |g n + k n| \u2264 C + B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L14"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.bounded_mul",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 20,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem bounded_mul (g k : \u2115 \u2192 \u211d) (C B : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hk : \u2200 n, |k n| \u2264 B) (n : \u2115) :\n    |g n * k n| \u2264 C * B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L20"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.scalarMul_comp",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 26,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem scalarMul_comp (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate)\n    (g k : \u2115 \u2192 \u211d) (C B : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hk : \u2200 n, |k n| \u2264 B) :\n    scalarMul rate (scalarMul rate f g C hg) k B hk =\n      scalarMul rate f (fun n => g n * k n) (C * B)\n        (bounded_mul g k C B hg hk)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L26"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.product_mem_domain",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 39,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem product_mem_domain (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g k : \u2115 \u2192 \u211d) (C B : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hk : \u2200 n, |k n| \u2264 B) :\n    scalarMul rate (scalarMul rate f g C hg) k B hk \u2208\n      (maximalDifference rate hr).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L39"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_commutator",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 48,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem difference_commutator (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    (maximalDifference rate hr)\n      \u27e8scalarMul rate f g C hg, scalarMul_mem_domain rate hr f hf g C hg\u27e9 -\n      fieldMul rate ((maximalDifference rate hr) \u27e8f, hf\u27e9) g C hg =\n      (shifted_multiplier_term_memLp rate hr f hf g C hg).toLp\n        (fun n => (boundedDifference rate hr g C hg) n * f (n + 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L48"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_product_norm_le",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 61,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem difference_product_norm_le (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    \u2016(maximalDifference rate hr)\n      \u27e8scalarMul rate f g C hg, scalarMul_mem_domain rate hr f hf g C hg\u27e9\u2016 \u2264\n      C * \u2016(maximalDifference rate hr) \u27e8f, hf\u27e9\u2016 +\n      (2 * C) * \u2016(shifted_memLp rate hr f hf).toLp\n        (fun n => f (n + 1))\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L61"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.scalarMul_add",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 75,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem scalarMul_add (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate)\n    (g k : \u2115 \u2192 \u211d) (C B : \u211d)\n    (hg : \u2200 n, |g n| \u2264 C) (hk : \u2200 n, |k n| \u2264 B) :\n    scalarMul rate f (fun n => g n + k n) (C + B)\n      (bounded_add g k C B hg hk) =\n      scalarMul rate f g C hg + scalarMul rate f k B hk",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L75"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_product_shifted_multiplier",
+      "file": "Foundation/PoissonMultiplierAlgebra.lean",
+      "line": 88,
+      "source_sha256": "cc90aca9513d04e0967d048af3d38c1758c02c7f4acfda0cfceabbf913b2e4be",
+      "declaration_header": "theorem difference_product_shifted_multiplier (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain)\n    (g : \u2115 \u2192 \u211d) (C : \u211d) (hg : \u2200 n, |g n| \u2264 C) :\n    (maximalDifference rate hr)\n      \u27e8scalarMul rate f g C hg, scalarMul_mem_domain rate hr f hf g C hg\u27e9 =\n      fieldMul rate (scalarAsField rate f)\n        (fun n => (boundedDifference rate hr g C hg) n) (2 * C)\n        (boundedDifference_bound rate hr g C hg) +\n      fieldMul rate ((maximalDifference rate hr) \u27e8f, hf\u27e9)\n        (fun n => g (n + 1)) C (fun n => hg (n + 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMultiplierAlgebra.lean#L88"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalarCoordinate",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 13,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "def scalarCoordinate (_hr : 0 < rate) (n : \u2115) : ScalarL2 rate \u2192L[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L13"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.fieldCoordinate",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 17,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "def fieldCoordinate (_hr : 0 < rate) (n : \u2115) : FieldL2 rate \u2192L[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L17"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalarCoordinate_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 21,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalarCoordinate_apply (v : ScalarL2 rate) (n : \u2115) :\n    scalarCoordinate rate hr n v = v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L21"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.fieldCoordinate_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 26,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem fieldCoordinate_apply (v : FieldL2 rate) (n : \u2115) :\n    fieldCoordinate rate hr n v = v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L26"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalar_coordinate_tendsto",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 35,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalar_coordinate_tendsto (hr : 0 < rate) {v : \u2115 \u2192 ScalarL2 rate} {z : ScalarL2 rate}\n    (hv : Filter.Tendsto v Filter.atTop (nhds z)) (n : \u2115) :\n    Filter.Tendsto (fun k => (v k : \u2115 \u2192 \u211d) n) Filter.atTop (nhds (z n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L35"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.field_coordinate_tendsto",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 42,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem field_coordinate_tendsto (hr : 0 < rate) {v : \u2115 \u2192 FieldL2 rate} {z : FieldL2 rate}\n    (hv : Filter.Tendsto v Filter.atTop (nhds z)) (n : \u2115) :\n    Filter.Tendsto (fun k => (v k : \u2115 \u2192 \u211d) n) Filter.atTop (nhds (z n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L42"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalar_add_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 49,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalar_add_apply (hr : 0 < rate) (v w : ScalarL2 rate) (n : \u2115) :\n    (v + w : ScalarL2 rate) n = v n + w n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L49"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalar_smul_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 54,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalar_smul_apply (hr : 0 < rate) (c : \u211d) (v : ScalarL2 rate) (n : \u2115) :\n    (c \u2022 v : ScalarL2 rate) n = c * v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L54"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalar_zero_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 60,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalar_zero_apply (hr : 0 < rate) (n : \u2115) : (0 : ScalarL2 rate) n = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L60"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.field_add_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 63,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem field_add_apply (hr : 0 < rate) (v w : FieldL2 rate) (n : \u2115) :\n    (v + w : FieldL2 rate) n = v n + w n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L63"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.field_smul_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 68,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem field_smul_apply (hr : 0 < rate) (c : \u211d) (v : FieldL2 rate) (n : \u2115) :\n    (c \u2022 v : FieldL2 rate) n = c * v n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L68"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.field_zero_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 74,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem field_zero_apply (hr : 0 < rate) (n : \u2115) : (0 : FieldL2 rate) n = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L74"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.continuous_scalar_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 78,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem continuous_scalar_apply (hr : 0 < rate) (n : \u2115) :\n    Continuous (fun v : ScalarL2 rate => (v : \u2115 \u2192 \u211d) n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L78"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.continuous_field_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 85,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem continuous_field_apply (hr : 0 < rate) (n : \u2115) :\n    Continuous (fun v : FieldL2 rate => (v : \u2115 \u2192 \u211d) n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L85"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.scalarFinsupp_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 92,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem scalarFinsupp_apply (hr : 0 < rate) (f : \u2115 \u2192\u2080 \u211d) (n : \u2115) :\n    (scalarFinsupp rate f) n = f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L92"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.fieldFinsupp_apply",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 97,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem fieldFinsupp_apply (hr : 0 < rate) (u : \u2115 \u2192\u2080 \u211d) (n : \u2115) :\n    (fieldFinsupp rate u) n = u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L97"
+    },
+    {
+      "paper": "Section 3: Lipschitz compositions fixing zero and bounded scalar multipliers preserve the original maximal difference domain. Exact jump chain/product/commutator formulas and weighted-field norm bounds are converted to the paper normalized A_lambda=sqrt(lambda)*Delta. The alternating-multiplier unbounded ambient commutator is a labelled HUMAN finite-atom deduction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation.weighted_ae_eq_implies_pointwise",
+      "file": "Foundation/PoissonCoordinateEvaluation.lean",
+      "line": 104,
+      "source_sha256": "7db8db1ac174c98e9b168509b00954024312e0d5f89f061cec27e59ac6be3b2c",
+      "declaration_header": "theorem weighted_ae_eq_implies_pointwise (hr : 0 < rate) {f g : \u2115 \u2192 \u211d}\n    (h : f =\u1d50[(rate : \u211d\u22650\u221e) \u2022 poissonLaw rate] g) (n : \u2115) : f n = g n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoordinateEvaluation.lean#L104"
     }
   ],
   "human_reorganization": [
@@ -2081,7 +2711,8 @@
     "The printed smooth-core proof uses bounded second derivatives to justify the Mehler time-generator identity and Gaussian integration by parts. The formal positive bounded-C1 proof instead uses rotated Stein interpolation, avoiding a second-derivative assumption. Both give Fisher decay at e^(-2t) and entropy constant 2 after square-root regularization.",
     "The transported entropy is Ent_gamma((U_lambda f)^2), bounded by 2||A_lambda f||^2 for every original annihilation-domain input; coherent roots attain equality. It is not Ent_Poisson(f^2). This positive counterpart and the native Poisson obstruction use distinct nonlinear functionals.",
     "Mehler/Fisher/entropy source portions retain Michael R. Douglas and contributors attribution under Apache-2.0. The paper points to MATHEMATICAL_AUDIT.md and LICENSES/Apache-2.0.txt. Gross and sharp exponential equality cases are classical; primary Bobkov-Gozlan-Roberto-Samson introduction equation (1.1) and following equality examples were inspected, while original Gross full text was inaccessible through JSTOR.",
-    "The fixed-space recovery theorem uses an explicit positive-annulus exhaustion for the c|z|^(-5/2) mark measure and only finite-set Poisson marginal laws on one probability space. Block control mass m^4 gives input norm m^3 and terminal count L4/3 norm at most m^2. Normalized inputs have norm one while the compatible terminal classes tend to zero in both L4/3 and L4. Exact recovery of these scaled tests cannot be continuous at zero, even for nonlinear maps on the range or a terminal intersection subspace. No independence, count additivity, random-measure construction or inverse in the correct mixed integrand norm is asserted. The unscaled-test condition alone is not used to infer scalar homogeneity of a nonlinear map. The elementary mechanism is credited as established Poisson norm theory; priority remains unresolved."
+    "The fixed-space recovery theorem uses an explicit positive-annulus exhaustion for the c|z|^(-5/2) mark measure and only finite-set Poisson marginal laws on one probability space. Block control mass m^4 gives input norm m^3 and terminal count L4/3 norm at most m^2. Normalized inputs have norm one while the compatible terminal classes tend to zero in both L4/3 and L4. Exact recovery of these scaled tests cannot be continuous at zero, even for nonlinear maps on the range or a terminal intersection subspace. No independence, count additivity, random-measure construction or inverse in the correct mixed integrand norm is asserted. The unscaled-test condition alone is not used to infer scalar homogeneity of a nonlinear map. The elementary mechanism is credited as established Poisson norm theory; priority remains unresolved.",
+    "The Section 3 consolidation proves the exact original maximal-domain jump chain rule for global Lipschitz maps fixing zero, contraction examples, and the full-domain bounded-multiplier product rule with its retained jump defect and shifted norm. In the normalized A_lambda graph, [A_lambda,M_g]f=sqrt(lambda)*(Delta g)*f_+. The complete HUMAN atom calculation takes g(k)=(-1)^k and f_N=1_{N}/sqrt(p_lambda(N)), obtaining ||f_N||=1, ||A_lambda f_N||^2=N+lambda and ||[A_lambda,M_g]f_N||^2=4N. Thus this bounded isometric multiplier preserves the domain but has no ambient bounded commutator. This is an elementary deduction from exact mapped graphs and Poisson weights, not a new named Lean theorem or priority claim. Graph-norm continuity, ambient bounded commutator, arbitrary unbounded products and nonlinear unitary transport remain distinct."
   ],
   "literature": [
     {

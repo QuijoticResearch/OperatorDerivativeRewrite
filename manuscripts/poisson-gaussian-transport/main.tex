@@ -21,6 +21,8 @@
 The Charlier--Hermite correspondence identifies Poisson and Gaussian
 Hilbert spaces and their complete annihilation and creation graphs.
 We reconstruct the basis, maximal domains and graph-core arguments,
+including Lipschitz jump calculus and bounded multipliers whose
+commutators need not be ambient bounded,
 then transport actual Poisson changes of intensity into a strongly
 continuous Gaussian displacement group with an explicit weighted-shift
 formula on the whole $L^2$ space. The correspondence preserves distances
@@ -281,6 +283,119 @@ In the frozen formalization the original difference is $\Delta$, with
 field space $L^2(\lambda p_\lambda)$. Multiplication of a field by
 $\sqrt\lambda$ identifies that space with $H_\lambda$ and produces
 \eqref{eq:A}. This normalization is essential for the graph transport.
+
+
+\subsection*{Nonlinear operations on the original maximal domain}
+The linear graph equivalence does not identify the two pointwise
+calculi. The original Poisson domain nevertheless has its own genuine
+nonlinear stability, which can be proved without transporting any
+Gaussian product or chain rule.
+
+\begin{proposition}\label{prop:poissonlip}
+Let $f\in\Dom A_\lambda$ and let $\phi:\R\to\R$ be globally
+$K$-Lipschitz, with $K\geq0$ and $\phi(0)=0$.
+Then $\phi\circ f\in\Dom A_\lambda$ and, at every count,
+\begin{equation}\label{eq:jumpchain}
+ A_\lambda(\phi\circ f)(k)=\sqrt\lambda
+ \left[\phi\left(f(k)+\frac{A_\lambda f(k)}{\sqrt\lambda}\right)
+              -\phi(f(k))\right].
+\end{equation}
+Moreover $\|\phi\circ f\|_2\leq K\|f\|_2$ and
+$\|A_\lambda(\phi\circ f)\|_2\leq K\|A_\lambda f\|_2$.
+\end{proposition}
+\begin{proof}
+The first norm estimate follows from $|\phi(x)|\leq K|x|$.
+At every count, Lipschitz control gives
+\[
+ \sqrt\lambda|\phi(f(k+1))-\phi(f(k))|
+ \leq K\sqrt\lambda|f(k+1)-f(k)|=K|A_\lambda f(k)|.
+\]
+The right side is square integrable. The defining maximal graph
+therefore contains the composition and its actual difference. The
+identity $f(k+1)=f(k)+A_\lambda f(k)/\sqrt\lambda$ gives
+\eqref{eq:jumpchain}, and summing its squared bound proves the
+second estimate. Every pointwise statement is representative independent
+because all atoms have positive mass.
+\end{proof}
+In particular the maps $x\mapsto|x|$, $x\mapsto x_+$ and
+$x\mapsto\min(\max(x,-R),R)$, $R\geq0$, preserve this domain and
+do not increase the difference energy. This is a jump composition
+formula; it does not replace the bracket in~\eqref{eq:jumpchain} by
+$\phi'(f)A_\lambda f$. The add-one identity and its Lipschitz bound
+are classical: see Last--Penrose~\cite{LastPenrose}, equation (21.5)
+and the following domain argument, for general Poisson functionals.
+The one-site theorem here keeps the original maximal graph and the
+explicit zero-preserving hypothesis of its formal statement.
+
+\subsection*{Bounded multipliers and the shifted commutator}
+Let $g:\N\to\R$ satisfy $|g(k)|\leq M$ for all $k$, where
+$M\geq0$, and let $f\in\Dom A_\lambda$. Write
+$f_+(k)=f(k+1)$ and $\Delta g(k)=g(k+1)-g(k)$.
+Then $f_+=f+A_\lambda f/\sqrt\lambda\in H_\lambda$,
+$|\Delta g|\leq2M$, and direct expansion gives
+\begin{equation}\label{eq:jumpmultiplier}
+ A_\lambda(gf)=gA_\lambda f+\sqrt\lambda(\Delta g)f_+
+ =gA_\lambda f+fA_\lambda g+
+      \lambda^{-1/2}(A_\lambda g)(A_\lambda f).
+\end{equation}
+Each term belongs to $H_\lambda$: the coefficients $g$ and
+$\Delta g$ are bounded, $f,f_+,A_\lambda f$ are square integrable,
+and $A_\lambda g=\sqrt\lambda\Delta g$ is bounded.
+Also $gf\in H_\lambda$, so its displayed difference proves
+$gf\in\Dom A_\lambda$. This proves the product formula on the
+full original domain, with one bounded multiplier, rather than only
+on a polynomial core. It also proves stability under any finite sum or
+product of such multipliers, since their ordinary multiplication
+operators compose. The termwise estimates give exactly
+\begin{equation}\label{eq:shiftgraphbound}
+ \|A_\lambda(gf)\|_2\leq M\|A_\lambda f\|_2
+                 +2M\sqrt\lambda\|f_+\|_2.
+\end{equation}
+Thus multiplication is continuous in the original graph norm, by the
+displayed expression for $f_+$. The source states the shift norm
+explicitly; it is not an ambient $H_\lambda$ estimate for that shift.
+In operator notation the actual commutator on $\Dom A_\lambda$ is
+\[
+ [A_\lambda,M_g]f=\sqrt\lambda(\Delta g)f_+.
+\]
+The expansion in~\eqref{eq:jumpmultiplier} retains the jump defect
+which an ordinary Leibniz rule would discard.
+
+Here is a complete human atom calculation distinguishing domain
+preservation from an ambient bounded commutator. Choose the bounded
+multiplier $g(k)=(-1)^k$, and for $N\geq1$ put
+\[
+ f_N(k)=p_\lambda(N)^{-1/2}\mathbf1_{\{N\}}(k).
+\]
+It is a finite-support vector in the original domain and has norm one.
+Its forward difference is supported on $N-1$ and $N$, so the exact
+Poisson recurrence $\lambda p_\lambda(N-1)=Np_\lambda(N)$ gives
+\[
+ \|A_\lambda f_N\|_2^2=N+\lambda.
+\]
+Since $\Delta g(k)=-2g(k)$ and $(f_N)_+$ is supported only on
+$N-1$, the same recurrence gives
+\begin{equation}\label{eq:unboundedcommutator}
+ \|[A_\lambda,M_g]f_N\|_2^2
+ =4\lambda\frac{p_\lambda(N-1)}{p_\lambda(N)}=4N.
+\end{equation}
+No bounded operator on $H_\lambda$ can agree with this commutator
+on the original domain, although $M_g$ is an isometry on
+$H_\lambda$ and preserves $\Dom A_\lambda$.
+There is no contradiction with~\eqref{eq:shiftgraphbound}:
+$\|(f_N)_+\|_2^2=N/\lambda$ and the input graph norms grow.
+This finite-atom obstruction is a labelled human deduction from the
+mapped exact multiplier graph and Poisson weights, not a new named Lean
+theorem or a novelty claim. It explains why an abstract multiplier
+condition requiring an ambient bounded commutator would be a stricter
+condition than the domain invariance proved here.
+
+The exact original-domain statements are mapped in
+\par\noindent \code{PoissonLipschitzChain} and \code{PoissonMultipliers}.
+Supporting algebra is in
+\par\noindent\code{PoissonMultiplierAlgebra} and \code{PoissonBoundedCalculus}.
+They assert neither closure under arbitrary unbounded products nor
+preservation of these pointwise operations by $U_\lambda$.
 
 \section{Likelihood roots and the physical change of intensity}
 For $\theta\in\R$ put $\lambda_\theta=\lambda e^\theta$ and
@@ -1202,6 +1317,11 @@ Theorem 1.1 and the norms immediately preceding it;
 Journal of Functional Analysis \textbf{267} (2014), 4110--4138.
 \href{https://arxiv.org/abs/1408.2115}{arXiv:1408.2115}, introduction,
 equation (1.1) and the following exponential equality examples.
+\bibitem{LastPenrose} G. Last and M. Penrose,
+\emph{Lectures on the Poisson Process}, author version August 21, 2017,
+Section 18.1, equation (18.1), and proof of Theorem 21.2,
+equation (21.5) and its following integrability argument, printed p.~220.
+\url{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}.
 \end{thebibliography}
 }
 \end{document}
