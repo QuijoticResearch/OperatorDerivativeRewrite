@@ -19,7 +19,7 @@
 \title{Quartic normal equations: complete-space solvability,\protect\\
 sharp inverse stability, and atomic obstructions}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -494,6 +494,77 @@ Poisson $L^4$ identity permits concentrated atomic perturbations.
 Neither infinite dimension nor nonvanishing of an individual source
 settles inverse regularity without that geometry.
 
+
+\subsection{Physical Gaussian functions do not supply the same embedding}
+The first-chaos synthesis above is a particular bounded operator into
+$L^4$, not an identity embedding of the whole scalar Gaussian space.
+Even adding the original first-derivative graph norm does not give the
+needed uniform bound. Let $\gamma=N(0,1)$ and let $D_\gamma$ be the
+closure in $L^2(\gamma)$ of differentiation on the polynomial core.
+For every real $\theta$, the actual function
+$f_\theta(x)=e^{\theta x}$ belongs to both $L^2(\gamma)$ and
+$L^4(\gamma)$, with
+\[
+ \|f_\theta\|_2=e^{\theta^2},\qquad
+ \|f_\theta\|_4=e^{2\theta^2}.
+\]
+These follow by completing the square in the Gaussian integral
+$\int e^{tx}\,d\gamma=e^{t^2/2}$. In particular their norm ratio
+$e^{\theta^2}$ is unbounded. A bounded linear operator from physical
+$L^2(\gamma)$ to $L^4(\gamma)$ agreeing with these same functions on
+all exponentials cannot exist: its operator-norm inequality would
+bound that ratio uniformly.
+
+The exponential also belongs to the \emph{original} closed derivative
+graph, rather than only having a classical pointwise derivative.
+Indeed let $P_N(x)=\sum_{j=0}^N(\theta x)^j/j!$. Then
+$P_N\to f_\theta$ pointwise and $P_N'=\theta P_{N-1}$ for $N\ge1$.
+The bounds $|P_N|\le e^{|\theta x|}$ and
+$|P_N'|\le|\theta|e^{|\theta x|}$ provide square-integrable Gaussian
+majorants, since
+$e^{2|\theta x|}\le e^{2\theta x}+e^{-2\theta x}$.
+Dominated convergence gives convergence in both graph components.
+Closedness proves
+\[
+ f_\theta\in D(D_\gamma),\qquad D_\gamma f_\theta=\theta f_\theta.
+\]
+Nevertheless
+\[
+ \frac{\|f_\theta\|_4}
+      {\|f_\theta\|_2+\|D_\gamma f_\theta\|_2}
+       =\frac{e^{\theta^2}}{1+|\theta|}\longrightarrow\infty.
+\]
+Thus no constant controls the physical $L^4$ norm by this original
+graph norm, even on these common-domain analytic tests. The source
+also supplies a direct finite witness for each proposed real constant
+$K$, choosing $\theta=|K|+1$ and using $e^{\theta^2}\ge1+\theta^2$.
+This is not a claim that any one displayed exponential fails $L^4$
+integrability; all of them have finite moments of every finite order.
+
+The comparison is consistent with the classical Gaussian logarithmic
+Sobolev inequality, whose output is entropy, not this $L^4$ estimate.
+For example the normalized test $g_\theta=e^{\theta x-\theta^2}$
+has $\|g_\theta\|_2=1$ and, by direct Gaussian differentiation,
+\[
+ \int g_\theta^2\log g_\theta^2\,d\gamma=2\theta^2
+       =2\|D_\gamma g_\theta\|_2^2,
+ \qquad \|g_\theta\|_4=e^{\theta^2}.
+\]
+These normalized identities are elementary human consequences of
+the same moment formula, not additional named formal declarations.
+Ledoux's primary author slides~\cite{ledoux}, PDF pages 7--8, state
+the classical Gaussian entropy inequality in this normalization.
+No new Gaussian embedding or entropy principle is claimed. To apply
+the quartic existence theorem one must prove its actual bounded
+$L^4$ source operator, as first-chaos synthesis does above; the
+physical scalar $L^2$ space and this graph norm do not supply that
+hypothesis automatically.
+
+\par\noindent\code{GaussianL2QuarticEmbeddingObstruction}:
+actual exponential classes, exact norms and no bounded physical extension.
+\par\noindent\code{GaussianExponentialSobolevObstruction}:
+Taylor graph approximation and absence of a graph-norm $L^4$ bound.
+
 \section{Infinite Poisson space and failure of weighted coercivity}
 Fix $\lambda>0$. Give $\N=\{0,1,\ldots\}$ its full power-set
 $\sigma$-algebra and Poisson probability measure
@@ -735,5 +806,10 @@ Nonlinear elliptic boundary value problems,
 \emph{Notes on the p-Laplace equation}, author-hosted primary notes,
 Section 10, inequalities for vectors, pages 71--73.
 \url{https://lqvist.folk.ntnu.no/p-laplace.pdf}.
+\bibitem{ledoux} M. Ledoux,
+\emph{Logarithmic Sobolev Inequalities}, primary author slides,
+PDF pages 7--8, Gaussian entropy inequality.
+\url{https://www.math.univ-toulouse.fr/~ledoux/Logsobwpause.pdf}.
+Statement comparison only; no full historical proof comparison claimed.
 \end{thebibliography}
 \end{document}
