@@ -1,0 +1,816 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\Smo}{\mathsf S}
+\newcommand{\Reg}{\mathsf A}
+\newcommand{\J}{\mathsf J}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{A common number regularization for\protect\\Brownian clock calculus:\protect\\full predictable limits and correction duality}
+\author{Project Stardust\\\small A formalization companion}
+\date{Reviewed editorial draft, October 30, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $W$ be a two-sided Brownian scenery independent of a Brownian clock $B$.
+For a real Schwartz function $g$, spatially smooth versions of
+$g(a+W_{|B_t|})-g(a)$ have a genuine scenery-valued reflected It\^o formula.
+We prove that one fixed injective smoothing of the clock Gaussian number
+operator gives a strong limit of the entire predictable integrand in the
+original time--clock--scenery $L^2$ space. The full curvature and local-time
+correction converges in the associated common dual norm. The limits are
+independent of the fixed nonnegative compact $C^3$ mass-one profile, and
+hold as its positive width tends continuously to zero. The decisive bound
+is proportional to $t^{-1/2}$ and is integrable at the origin. Fixed clock
+sectors converge in ordinary joint $L^2$, while independent rectangular
+source/clock truncations have uniformly small tails in the dual norm.
+Every statement retains the original Brownian-clock filtration and all
+scenery variables. No unsmoothed correction limit or intrinsic
+observed-filtration IBM It\^o formula is asserted. Classical Gaussian
+spectral and Hilbert-valued stochastic mechanisms are credited; research
+priority for this particular assembly remains unresolved.
+\end{abstract}
+
+\section{The original spaces and the result}
+Fix independent standard Brownian sources $W$ and $B$, with
+$W$ two-sided and $B_0=0$. Thus
+\[
+ \E_W(W_r-W_s)^2=|r-s|,\qquad \E_B B_t^2=t.
+\]
+The reflected-clock observation is $Z_t=W_{|B_t|}$. Work with real spaces
+\[
+ E=L^2(\Omega_W),\qquad
+ \HH=L^2(\Omega_B;E)\simeq L^2(\Omega_B\times\Omega_W).
+\]
+All these are the original sources, with their full Gaussian sigma
+algebras. Fubini identifications are isometries and do not replace the
+joint variables by variables with matching laws. A scenery-valued
+predictable process means a strongly measurable $E$-valued process
+predictable for the Brownian clock filtration. Its space at horizon
+$T\geq0$ is the closed Hilbert space
+\[
+ \DD_T=L^2_{\mathrm{pred}}((0,T]\times\Omega_B;E).
+\]
+The original Hilbert-valued It\^o integral is the isometry
+\begin{equation}\label{eq:ito}
+ \J_T:\DD_T\longrightarrow\HH,\qquad
+ \J_Tu=\int_0^T u_t\,dB_t,\qquad \|\J_Tu\|_{\HH}=\|u\|_{\DD_T}.
+\end{equation}
+The scenery is the value-space parameter; it is not averaged out.
+Equivalently one may reveal the whole independent scenery at time zero
+and integrate in $B$. This convention is different from predictability
+for the smaller observed past $\sigma(Z_s:s\leq t)$.
+
+Let $P_k$ denote the orthogonal projection onto the $k$th clock Wiener
+chaos, tensored with the identity on $E$. Put
+\begin{equation}\label{eq:smooth}
+ \Smo=P_0+N_B^{-1},\qquad
+ N_B^{-1}f=\sum_{k\geq1}\frac1k P_kf.
+\end{equation}
+The inverse here is zero on the clock vacuum. The added $P_0$ is
+essential. In particular $\Smo$ is an injective self-adjoint contraction
+on $\HH$, retaining all scenery chaoses.
+
+Fix $g\in\mathcal S(\R;\R)$ and $a\in\R$. A profile is a fixed function
+$\rho\in C_c^3(\R)$ such that $\rho\geq0$ and $\int\rho=1$.
+Evenness is not required. For $\varepsilon>0$ set
+\begin{align}
+ \rho_\varepsilon(x)&=\varepsilon^{-1}\rho(x/\varepsilon),\nonumber\\
+ S_\varepsilon(r)&=\int_\R\rho_\varepsilon(r-y)W_y\,dy\quad\hbox{in }E,\label{eq:scenery}\\
+ h_\varepsilon(r)&=g(a+S_\varepsilon(r)),\nonumber\\
+ F_{\varepsilon,t}&=h_\varepsilon(|B_t|)-h_\varepsilon(0),\qquad
+ F_{0,t}=g(a+Z_t)-g(a).\label{eq:endpoint}
+\end{align}
+The integral in \eqref{eq:scenery} is a Bochner convolution. The same
+$S_\varepsilon$ is used at both endpoint arguments. The random
+$h_\varepsilon(0)$ generally differs from $g(a)$.
+
+The raw integrand and raw correction are
+\begin{align}
+ U_{\varepsilon,t}
+  &=\operatorname{sgn}(B_t)h_\varepsilon'(|B_t|),\label{eq:rawu}\\
+ C_{\varepsilon,T}
+  &=L_T^0(B)h_\varepsilon'(0)
+       +\frac12\int_0^T h_\varepsilon''(|B_t|)\,dt.\label{eq:rawc}
+\end{align}
+Local time has the Tanaka convention
+$|B_T|=\int_0^T\operatorname{sgn}(B_t)\,dB_t+L_T^0(B)$.
+For each positive width these are actual elements of $\DD_T$ and
+$\HH$, respectively. Define the bounded predictable operator
+\begin{equation}\label{eq:A}
+ \Reg_Tu=\sum_{k\geq0}\frac1{k+1}\Pi_ku,
+\end{equation}
+where $\Pi_k$ is clock-chaos projection on the genuine time sections.
+Its construction, predictability and integral intertwining are proved below.
+
+\begin{theorem}[Full common regularized limit]\label{thm:main}
+For every $g,a,T$ as above there are $u_{0,T}\in\DD_T$ and
+$c_{0,T}\in\HH$, independent of the fixed admissible profile, such that
+as $\varepsilon\downarrow0$ through all positive real widths,
+\begin{align}
+ \Reg_T U_\varepsilon&\longrightarrow u_{0,T}
+                    &&\text{in }\DD_T,\label{eq:uconv}\\
+ \Smo C_{\varepsilon,T}&\longrightarrow c_{0,T}
+                    &&\text{in }\HH,\label{eq:cconv}\\
+ \Smo F_{0,T}&=\J_Tu_{0,T}+c_{0,T}.\label{eq:limitidentity}
+\end{align}
+For $t>0$, with $v_t=1_{(0,t]}/\sqrt t$ in the clock Cameron--Martin
+space, define $R_v=\langle v,D_BN_B^{-1}\,\cdot\,\rangle$. The time
+sections of the limit are
+\begin{equation}\label{eq:qzero}
+ u_{0,T}(t)=t^{-1/2}R_{v_t}F_{0,t}
+ \quad\text{for almost every }0<t\leq T.
+\end{equation}
+For $L=\sup|g'|$ and $m_1=\E|G|$ for a standard real Gaussian,
+\begin{equation}\label{eq:energy}
+ \|u_{0,T}(t)\|_{\HH}^2\leq L^2m_1t^{-1/2},\qquad
+ \|u_{0,T}\|_{\DD_T}^2\leq2L^2m_1\sqrt T.
+\end{equation}
+The same section bound holds for $\Reg_TU_\varepsilon$, uniformly in
+the width and the admissible profile.
+\end{theorem}
+For $T=0$ all spaces, integrals and endpoint differences in this
+assertion are zero. No statement about a common exceptional sample set
+for all terminal times is needed: this is a theorem at each fixed horizon.
+
+\paragraph{Verified scope.}
+The frozen source is commit
+\par\noindent \code{bab688bb6140cd6316c80680095a914ea0d346db}.
+The accompanying theorem map records exact declaration headers, source
+hashes and permanent line links. The principal endpoint, predictable
+limit and dual-closure modules have been reviewed with their proofs.
+The existing full-build and complete transitive axiom-audit receipts
+are checked by hash; this editorial paper changes no Lean source and
+does not claim a new library build. Gaussian chaos completeness,
+the constructed original Brownian It\^o isometry, and its established
+Tanaka/local-time formula are prerequisites. We reconstruct their
+application and the convergence proof, rather than relabeling those
+prerequisites as new theorems.
+
+\section{Spatial smoothing without a hidden profile constant}
+The map $r\mapsto W_r$ is continuous into $E$, with exact increment
+norm $\|W_r-W_s\|_E=\sqrt{|r-s|}$. Hence the convolution in
+\eqref{eq:scenery} exists on a compact interval for every $r$.
+Changing variables gives the useful identity
+\[
+ S_\varepsilon(r)=\int_\R\rho(z)W_{r-\varepsilon z}\,dz.
+\]
+This change of variables also fixes the sign convention for nonsymmetric
+profiles.
+
+\begin{lemma}[Uniform increment and approximation bounds]\label{lem:spatial}
+Suppose $\operatorname{supp}\rho\subset[-R,R]$, $R\geq0$. Then
+\begin{align}
+ \|S_\varepsilon(r)-S_\varepsilon(s)\|_E
+      &\leq\sqrt{|r-s|},\label{eq:inc}\\
+ \|S_\varepsilon(r)-W_r\|_E^2&\leq\varepsilon R,\label{eq:error}\\
+ \|h_\varepsilon(r)-h_\varepsilon(s)\|_E
+      &\leq L\sqrt{|r-s|}.\label{eq:hinc}
+\end{align}
+In particular $h_\varepsilon(r)\to g(a+W_r)$ in $E$ at every fixed $r$.
+\end{lemma}
+\begin{proof}
+Minkowski's integral inequality, positivity of $\rho$ and its unit mass
+give
+\[
+ \Big\|\int\rho(z)(W_{r-\varepsilon z}-W_{s-\varepsilon z})\,dz\Big\|_E
+ \leq\int\rho(z)\sqrt{|r-s|}\,dz=\sqrt{|r-s|}.
+\]
+For the approximation subtract $W_r\int\rho(z)\,dz$ inside the
+Bochner integral and use $\sqrt{\varepsilon|z|}\leq\sqrt{\varepsilon R}$.
+The ordinary mean value theorem gives
+$|g(a+x)-g(a+y)|\leq L|x-y|$. Apply it to the genuine jointly
+Gaussian scenery variables and take their $L^2$ norm. This proves
+\eqref{eq:hinc} and the last assertion.
+\end{proof}
+Neither derivative norms of $\rho_\varepsilon$ nor a bound on $R$
+enters \eqref{eq:inc} or \eqref{eq:hinc}. Radius $R$ occurs only in
+the approximation estimate. The proof uses a fixed admissible profile;
+it does not assert convergence for arbitrary width-dependent profiles
+with unbounded supports or unproved approximation properties.
+
+\begin{lemma}[Endpoint convergence and energy]\label{lem:endpoint}
+For every fixed $t\geq0$, $F_{\varepsilon,t}\to F_{0,t}$ in $\HH$.
+For all positive widths,
+\begin{equation}\label{eq:Fenergy}
+ \|F_{\varepsilon,t}\|_{\HH}^2\leq L^2m_1\sqrt t,
+ \qquad \|F_{0,t}\|_{\HH}^2\leq L^2m_1\sqrt t.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For every deterministic $r$, Lemma~\ref{lem:spatial} gives
+$h_\varepsilon(r)-h_\varepsilon(0)\to g(a+W_r)-g(a)$ in $E$.
+Both differences have $E$ norm at most $2\sup|g|$. Integrating their
+squared difference against the law of $|B_t|$ proves joint $L^2$
+convergence by dominated convergence. Alternatively the uniform
+scenery error gives a quantitative endpoint bound by two applications
+of the Lipschitz inequality. For the energy, first hold the clock
+fixed and use \eqref{eq:hinc} with $s=0$. Its squared norm is at most
+$L^2|B_t|$. Since $\E|B_t|=m_1\sqrt t$, Fubini proves the first
+bound. Take the norm limit for the second. At $t=0$ the endpoint
+differences are identically zero.
+\end{proof}
+
+\par\noindent Source correspondences:
+\par\noindent \code{IBMContinuousScenery.sourceScenery_increment_sq},
+\par\noindent \code{IBMDilatedMollifier.scenery_error},
+\par\noindent \code{IBMCompactKernelIncrements.spatial_increment},
+\par\noindent \code{IBMCompactClockGraph.endpoint_uniform_energy},
+and \par\noindent \code{IBMDilatedEndpointLimit.endpoint_continuum_tendsto}.
+
+\section{The genuine finite-width reflected formula}
+Finite-width regularity is used before taking any singular limit.
+Differentiation of the compact convolution in $E$ gives $S_\varepsilon'$
+and $S_\varepsilon''$. Gaussian moment estimates and bounded derivatives
+of $g$ justify the $E$-valued chain rules
+\begin{align}
+ h_\varepsilon'(r)&=g'(a+S_\varepsilon(r))S_\varepsilon'(r),\label{eq:hprime}\\
+ h_\varepsilon''(r)&=g''(a+S_\varepsilon(r))(S_\varepsilon'(r))^2
+                  +g'(a+S_\varepsilon(r))S_\varepsilon''(r).\label{eq:hsecond}
+\end{align}
+Here the products are actual scenery variables. They are not defined
+by assigning Gaussian coefficients after the fact. Indeed the
+spatial derivative of smoothed Brownian scenery has variance
+$\|\rho_\varepsilon\|_2^2$, and the second derivative has variance
+$\|\rho_\varepsilon'\|_2^2$. Thus globally in $r$,
+\begin{align*}
+ \|h_\varepsilon'(r)\|_E
+     &\leq L\|\rho_\varepsilon\|_2,\\
+ \|h_\varepsilon''(r)\|_E
+     &\leq 2\sup|g''|\,\|\rho_\varepsilon\|_2^2
+                +L\|\rho_\varepsilon'\|_2.
+\end{align*}
+The factor $2$ bounds the square root of the Gaussian fourth moment
+factor $3$. Compact $C^3$ regularity ensures the required continuity
+of the second derivative. To justify the chain rule directly, use
+Gaussian $L^p$ bounds for the convolution difference quotients for
+each finite $p$, Taylor's formula with the bounded derivatives of
+$g$, and H\"older's inequality for the remainder products. Their
+limits in $L^2$ give \eqref{eq:hprime}--\eqref{eq:hsecond}.
+
+\begin{proposition}[Original finite-width identity]\label{prop:finite}
+For every $\varepsilon>0$, $U_\varepsilon\in\DD_T$,
+$C_{\varepsilon,T}\in\HH$, and
+\begin{equation}\label{eq:finite}
+ F_{\varepsilon,T}=\J_TU_\varepsilon+C_{\varepsilon,T}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Continuity of the $E$-valued slope and Brownian predictability show
+that \eqref{eq:rawu} has a predictable version. The preceding global
+slope bound makes its time $L^2$ norm finite. The curvature term in
+\eqref{eq:rawc} is a pathwise Bochner time integral of a continuous
+$E$-valued function and has deterministically bounded $E$ norm for
+this fixed width. The boundary term belongs to $\HH$ because
+$h_\varepsilon'(0)\in E$ and $L_T^0(B)\in L^2(\Omega_B)$.
+
+For any continuous real linear functional $\ell$ on $E$, apply the
+scalar $C^2$ It\^o formula to $\ell(h_\varepsilon(|B_t|))$.
+Tanaka gives $d|B_t|=\operatorname{sgn}(B_t)dB_t+dL_t^0$;
+its quadratic variation is $dt$, since the zero set has Lebesgue
+measure zero almost surely. Local-time mass is supported on
+$B_t=0$, so the supported Stieltjes integral is
+$\ell(h_\varepsilon'(0))L_T^0$. The remaining finite-variation
+term is exactly half the curvature integral. All scalarizations
+commute with the original Hilbert-valued It\^o and Bochner integrals.
+This proves \eqref{eq:finite} after every $\ell$.
+Choose a countable separating family in the separable Hilbert space
+$E$ and intersect its full-probability sets to recover the
+$E$-valued identity. It is an equality in $\HH$.
+\end{proof}
+In particular \eqref{eq:rawc} constructs the correction before
+\eqref{eq:finite} is used. The expression is not merely a name for
+an unspecified residual. Individual derivative bounds here grow
+as the width shrinks, so they do not prove convergence of either
+raw term.
+
+\par\noindent Source correspondences:
+\par\noindent \code{IBMCompactKernelSchwartz.spatial_hasDerivAt},
+\par\noindent \code{IBMCompactKernelSchwartz.slope_hasDerivAt}, and the actual
+integrand, whole correction and finite identity in
+\par\noindent \code{IBMCompactKernelReflectedIto}. The constructed Tanaka
+and supported-local-time theorem is the prerequisite also used
+in the sticky-clock and one-time-law companions~\cite{companions}.
+
+\section{Clock number smoothing and predictable degree shift}
+We give the operator mechanisms explicitly. Orthogonality yields
+$f=\sum_{k\geq0}P_kf$ strongly in $\HH$. With
+\[
+ w_0=1,\qquad w_k=1/k\quad(k\geq1),
+\]
+\eqref{eq:smooth} is the strongly convergent sum $\sum w_kP_k$.
+Its norm is at most one. The real weights prove self-adjointness.
+If $\Smo f=0$, projection gives $w_kP_kf=0$ for every $k$;
+all weights are positive, so $f=0$. Its range is dense: finite
+clock-chaos sums have preimages obtained by multiplying their
+finitely many components by $w_k^{-1}$, and these sums are dense.
+These arguments apply to arbitrary $E$-valued coefficients and
+retain all scenery sectors.
+
+\begin{lemma}[Predictable projection and shift]\label{lem:shift}
+Clock-chaos projection on time sections preserves $\DD_T$ and defines
+an orthogonal projection $\Pi_k$ there. For every $u\in\DD_T$,
+\begin{equation}\label{eq:shift}
+ \J_T\Pi_ku=P_{k+1}\J_Tu.
+\end{equation}
+The strong series \eqref{eq:A} defines a contraction on $\DD_T$ and
+\begin{equation}\label{eq:intertwine}
+ \J_T\Reg_Tu=N_B^{-1}\J_Tu=\Smo\J_Tu.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Start with scalar predictable elementary fields
+$1_{(s,t]}F$, where $F$ is a polynomial of finitely many Brownian
+coordinates from times at most $s$. Its chaos projection is still
+a function of those past coordinates, hence is predictable.
+More generally conditional expectation onto the Brownian past
+is second quantization of the orthogonal projection onto
+$L^2(0,s]$; applying it to each homogeneous multiple integral
+commutes with taking its degree. Thus the same assertion holds
+for every past $L^2$ coefficient by polynomial density.
+Clock-chaos projection is a contraction in the full time-probability
+norm. Density of predictable elementary fields and closedness of
+the predictable subspace extend this action to all of $\DD_T$.
+For $E$-valued fields use finite tensors with vectors of $E$,
+then their density; no scenery-chaos truncation is imposed.
+
+For the elementary field, multiply its $k$th past chaos by the
+independent fresh Brownian increment. In the Gaussian product
+formula all contractions with that increment vanish, since its
+Cameron--Martin direction is orthogonal to the past. Its stochastic
+integral therefore has degree $k+1$. Expanding the coefficient
+in orthogonal degrees proves \eqref{eq:shift} on the elementary
+fields. Bounded projections, the It\^o isometry and density extend
+it to every field. Sectionwise orthogonality and completeness give
+$\sum\Pi_ku=u$ and $\sum\|\Pi_ku\|^2=\|u\|^2$. Consequently
+\eqref{eq:A} converges strongly and has norm at most one.
+Apply \eqref{eq:shift} to its finite sums and pass to the limit.
+The It\^o integral has zero clock mean as an $E$-valued variable,
+so its $P_0$ component vanishes. This proves both equalities
+in \eqref{eq:intertwine}.
+\end{proof}
+The predictable action is an actual section action, not an operator
+defined only by matching terminal stochastic integrals. Finite
+projection sums commute with the product-$L^2$ time-section
+isometry. Their strong convergence has an almost-everywhere
+convergent subsequence in time, which identifies the limiting
+section with the corresponding sectionwise chaos series wherever
+that series is already known to converge.
+
+Applying \eqref{eq:intertwine} to Proposition~\ref{prop:finite} gives
+\begin{equation}\label{eq:smfinite}
+ \Smo F_{\varepsilon,T}=\J_T\Reg_TU_\varepsilon
+                                  +\Smo C_{\varepsilon,T}.
+\end{equation}
+This identity alone does not show that either term on the right
+converges: their possible cancellation has not yet been controlled.
+
+\par\noindent Source correspondences:
+\par\noindent \code{GaussianHorizonChaosIntertwining.horizonProjection_eq},
+\par\noindent \code{GaussianSourceHorizonRegularization.integral_sourceProjection},
+\par\noindent \code{GaussianSourceHorizonRegularization.integral_sourceRegularization},
+\par\noindent \code{GaussianPredictableSourceSlices.sourceProjection_slices}, and
+\par\noindent \code{IBMRegularizedStochasticIdentity.smoothing_integral}.
+
+\section{A directional recovery estimate}
+Let $H_B$ be the clock Cameron--Martin space, and let $D_B$ be the
+original closed Gaussian derivative. On finite chaos expansions,
+$D_B$ takes degree $j$ to degree $j-1$ and
+\[
+ \|D_BP_jf\|^2=j\|P_jf\|^2.
+\]
+It follows by orthogonal summation that $D_BN_B^{-1}$ extends
+boundedly to all $\HH$, with norm at most one:
+\begin{equation}\label{eq:Rbound}
+ \|D_BN_B^{-1}f\|^2
+     =\sum_{j\geq1}\frac1j\|P_jf\|^2\leq\|f\|^2.
+\end{equation}
+Here its target is $L^2(\Omega_B;H_B\otimes E)$. Tensoring
+the scalar operator with $E$ is justified first on finite
+orthogonal tensors and then by completion.
+
+\begin{lemma}[Rank-one graph recovery]\label{lem:recovery}
+For a unit $v\in H_B$, suppose that $f$ is in the actual closed
+derivative domain and $D_Bf=v\otimes G$. Then
+\begin{equation}\label{eq:recovery}
+ R_vf:=\langle v,D_BN_B^{-1}f\rangle
+       =\sum_{k\geq0}\frac1{k+1}P_kG,
+ \qquad \|R_vf\|\leq\|f\|.
+\end{equation}
+The series converges strongly in $\HH$.
+\end{lemma}
+\begin{proof}
+The bound follows from \eqref{eq:Rbound} and contraction of a
+Hilbert tensor against a unit vector. The closed derivative
+chaos formula gives $D_BP_{k+1}f=P_kD_Bf=v\otimes P_kG$.
+In $D_BN_B^{-1}f$ this component has coefficient $1/(k+1)$.
+Contracting against $v$ proves the displayed coefficient formula.
+The series is strong by orthogonality and $G\in\HH$; alternatively
+its partial sums converge as the projections of the bounded
+recovery operator. Thus the result uses the original derivative
+graph rather than merely proposed coefficients for $G$.
+\end{proof}
+
+At time $t>0$ the actual clock coordinate is
+$B_t=\sqrt t\,X(v_t)$. Write the reflected endpoint as
+\[
+ F_{\varepsilon,t}
+   =h_\varepsilon(\sqrt t\,|X(v_t)|)-h_\varepsilon(0).
+\]
+It has closed clock derivative
+\begin{equation}\label{eq:rankgraph}
+ D_BF_{\varepsilon,t}=\sqrt t\,v_t\otimes U_{\varepsilon,t}.
+\end{equation}
+There is no ordinary differentiability assertion at the reflection
+cusp. To check the closed graph, scalarize by a continuous $\ell:E\to\R$.
+The function $x\mapsto\ell(h_\varepsilon(\sqrt t|x|)-h_\varepsilon(0))$
+is globally Lipschitz and bounded. Its weak derivative is
+$\sqrt t\operatorname{sgn}(x)\ell(h_\varepsilon'(\sqrt t|x|))$:
+integrate separately on each side of zero; continuity makes the
+two boundary terms cancel. Smooth approximation and compact
+cutoffs give convergence of function and derivative in Gaussian
+$L^2$, using their uniform bounds. Lifting the one-dimensional
+graph to $X(v_t)$ gives \eqref{eq:rankgraph} after every $\ell$.
+Finite-dimensional projections in the separable value space,
+and closedness of the vector derivative, recover the full graph.
+
+Set
+\begin{equation}\label{eq:qeps}
+ q_\varepsilon(t)=t^{-1/2}R_{v_t}F_{\varepsilon,t},\qquad
+ q_0(t)=t^{-1/2}R_{v_t}F_{0,t}\quad(t>0).
+\end{equation}
+Equations \eqref{eq:rankgraph} and \eqref{eq:recovery} identify
+$q_\varepsilon(t)$ with the time section of $\Reg_TU_\varepsilon$
+for almost every $t\in(0,T]$. No derivative-domain membership of
+$F_{0,t}$ is assumed in defining $q_0$: the operator $R_{v_t}$
+is already bounded on all $\HH$.
+
+\begin{proposition}[The integrable singular bound]\label{prop:majorant}
+For every $t>0$,
+\begin{equation}\label{eq:qbound}
+ \|q_\varepsilon(t)\|^2\leq L^2m_1t^{-1/2},\qquad
+ \|q_0(t)\|^2\leq L^2m_1t^{-1/2}.
+\end{equation}
+For every fixed $t>0$, $q_\varepsilon(t)\to q_0(t)$ in $\HH$
+as the positive width tends to zero, independently of the profile.
+\end{proposition}
+\begin{proof}
+By the recovery bound,
+$\|q_\varepsilon(t)\|^2\leq t^{-1}\|F_{\varepsilon,t}\|^2$.
+Insert \eqref{eq:Fenergy}. The limit version follows in exactly
+the same way from the second endpoint bound. At fixed $t$, apply
+the bounded operator $t^{-1/2}R_{v_t}$ to Lemma~\ref{lem:endpoint}.
+Both its argument at the limit and the operator itself are fixed
+by the original sources, so the resulting limit does not depend
+on a smoothing profile.
+\end{proof}
+This is the crucial improvement over estimating the raw slope
+by $\|\rho_\varepsilon\|_2$. It estimates the recovered slope
+through the endpoint energy, before integrating in time.
+
+\par\noindent Source correspondences:
+\par\noindent \code{GaussianDirectionalRecovery.shifted_derivative_projection},
+\par\noindent \code{IBMCompactClockGraph.tested_closed_graph},
+\par\noindent \code{IBMCompactClockRecovery.recoveredSlope_projection},
+\par\noindent \code{IBMCompactClockRecovery.recoveredSlope_uniform_energy}, and
+\par\noindent \code{IBMCompactClockRecovery.recoveredSlope_continuum_tendsto}.
+
+\section{Whole-time convergence in the original predictable space}
+Pointwise section convergence is insufficient without a time
+majorant and a measurability argument. We supply both.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+First use one fixed admissible profile and the widths
+$\varepsilon_n=1/(n+1)$. Each $q_{\varepsilon_n}$ is the
+time-section representative of a genuine predictable $L^2$ field.
+After zero extension outside $(0,T]$, these maps are strongly
+measurable from time to $\HH$. Their pointwise $\HH$ limit on
+$(0,T]$ is $q_0$ by Proposition~\ref{prop:majorant}; the common
+null set needed to identify countably many section representatives
+is harmless. Hence $1_{(0,T]}q_0$ is almost everywhere strongly
+measurable. Its squared norm is bounded by the integrable function
+\[
+ b_T(t)=1_{(0,T]}(t)L^2m_1t^{-1/2},\qquad
+ \int_\R b_T(t)\,dt=2L^2m_1\sqrt T.
+\]
+Consequently it is an actual Bochner time-$L^2$ element.
+
+Now choose any positive widths $\delta_n\to0$ and any fixed
+admissible profile. For almost every $t>0$ the sections converge
+to that same $q_0(t)$. The elementary squared-norm inequality gives
+\[
+ \|q_{\delta_n}(t)-q_0(t)\|^2
+ \leq2\|q_{\delta_n}(t)\|^2+2\|q_0(t)\|^2
+ \leq4L^2m_1t^{-1/2}.
+\]
+Dominated convergence therefore yields
+\begin{equation}\label{eq:timeconv}
+ \int_0^T\|q_{\delta_n}(t)-q_0(t)\|_{\HH}^2\,dt\longrightarrow0.
+\end{equation}
+The zero-extension and time-section map embeds $\DD_T$ isometrically
+into $L^2(\R;\HH)$. Its image is closed, since $\DD_T$ is complete.
+The canonical sequence from the first paragraph thus shows that
+$1_{(0,T]}q_0$ is in this image. Let $u_{0,T}$ be its unique
+preimage. Equation \eqref{eq:timeconv} proves convergence to it
+in the original space $\DD_T$ for every such sequence of widths.
+In metric spaces the positive-width limit at zero is characterized
+by all positive sequences tending to zero. If that limit failed,
+one could choose successively $0<\delta_n<1/(n+1)$ whose errors
+stay above a fixed positive number, contradicting
+\eqref{eq:timeconv}. This proves \eqref{eq:uconv} for the whole
+continuum of widths, not just the canonical sequence.
+
+The definition \eqref{eq:qzero} is independent of the profile, so
+the predictable limit is independent as well. Integrating
+\eqref{eq:qbound} gives \eqref{eq:energy}. By endpoint convergence
+and boundedness of $\Smo$, the left side of \eqref{eq:smfinite}
+converges in $\HH$. By \eqref{eq:uconv} and the It\^o isometry
+its stochastic term also converges. Thus its actual remaining
+term satisfies
+\[
+ \Smo C_{\varepsilon,T}\longrightarrow
+ c_{0,T}:=\Smo F_{0,T}-\J_Tu_{0,T}
+ \quad\text{in }\HH.
+\]
+This proves \eqref{eq:cconv} and \eqref{eq:limitidentity}.
+The residual expression defines the limit of already constructed
+raw corrections; it does not replace their finite-width
+definition \eqref{eq:rawc}.
+\end{proof}
+Every scenery sector is present in this argument. The convergence
+of sections is in $\HH$, and the time norm in
+\eqref{eq:timeconv} integrates its full joint squared norm. A
+proof only after scenery expectation or only after finitely many
+source tests would not establish this result.
+
+\par\noindent Source correspondences:
+\par\noindent \code{GaussianPredictableSourceSlices.regularization_slices_of_clock_limit},
+\par\noindent \code{IBMRegularizedTimeLimit.majorant_integrable},
+\par\noindent \code{IBMRegularizedTimeLimit.exists_predictable_limit},
+\par\noindent \code{IBMDilatedPredictableLimit.slices_sequence_tendsto},
+\par\noindent \code{IBMDilatedPredictableLimit.field_continuum_tendsto}, and
+\par\noindent \code{IBMDilatedPredictableLimit.correction_continuum_tendsto}.
+
+\section{The exact correction norm and fixed-sector recovery}
+The smoothing in \eqref{eq:cconv} specifies a genuine weaker
+norm on the original joint variables:
+\begin{equation}\label{eq:dualnorm}
+ \|f\|_-:=\|\Smo f\|_{\HH}.
+\end{equation}
+Its definiteness follows from injectivity. It is not equivalent
+to the original norm: if $e_k$ is a unit vector in clock chaos
+$k\geq1$, then $\|e_k\|_-=1/k$ while $\|e_k\|=1$.
+
+Give the actual test image $\mathcal T=\Smo\HH$ the unique
+preimage norm $\|\Smo\psi\|_{\mathcal T}=\|\psi\|_{\HH}$.
+This is well-defined by injectivity and makes $\mathcal T$
+a Hilbert space. Its inclusion in $\HH$ is continuous and dense.
+Self-adjointness and Cauchy--Schwarz give
+\begin{equation}\label{eq:dualattain}
+ \sup_{\|\psi\|\leq1}|\langle f,\Smo\psi\rangle|
+ =\sup_{\|\psi\|\leq1}|\langle\Smo f,\psi\rangle|
+ =\|f\|_-.
+\end{equation}
+For a nonzero smoothed field the last supremum is attained at
+$\psi=\Smo f/\|\Smo f\|$; it is zero when $f=0$.
+Thus this is the operator norm of an actual functional on a
+specified test space, not only a collection of individual pairings.
+The completion of the original space in this norm is isometric
+to $\HH$ via the dense-range isometry $f\mapsto\Smo f$.
+Under this identification the limit correction is represented
+by $c_{0,T}$. It need not have an unsmoothed $\HH$ representative.
+The completion observation is a direct human Hilbert-space
+consequence of injectivity and dense range, not an extra named
+formal completion construction.
+
+\begin{proposition}[Uniform dual convergence]\label{prop:dual}
+With the limits of Theorem~\ref{thm:main},
+\begin{equation}\label{eq:uniformdual}
+ \sup_{\|\psi\|_{\HH}\leq1}
+ |\langle C_{\varepsilon,T},\Smo\psi\rangle
+                  -\langle c_{0,T},\psi\rangle|\longrightarrow0.
+\end{equation}
+For each fixed $k\geq0$,
+\begin{equation}\label{eq:fixedsector}
+ P_kC_{\varepsilon,T}\longrightarrow w_k^{-1}P_kc_{0,T}
+                 \quad\text{in the original }\HH.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The expression under the supremum is
+$|\langle\Smo C_{\varepsilon,T}-c_{0,T},\psi\rangle|$.
+Its supremum is the norm of this difference, which tends to zero
+by \eqref{eq:cconv}. For the fixed sector apply $P_k$ to the
+same convergence, use $P_k\Smo=w_kP_k$, and multiply by the
+fixed scalar $w_k^{-1}$.
+\end{proof}
+The inverse factor in \eqref{eq:fixedsector} is $1$ at $k=0$
+and $k$ at positive $k$. It is unbounded across sectors.
+Convergence of every fixed sector therefore does not justify
+summing the raw limits in $\HH$.
+
+\par\noindent Source correspondences:
+\par\noindent \code{IBMCommonClockDual.smoothing_pairing},
+\par\noindent \code{IBMCommonClockDual.smoothing_denseRange},
+\par\noindent \code{IBMCommonClockDual.dual_attainment},
+\par\noindent \code{IBMDilatedDualClosure.correction_dual_uniform}, and
+\par\noindent \code{IBMDilatedDualClosure.raw_clock_projection_tendsto}.
+
+\section{Independent rectangular source and clock tails}
+Let $Q_m$ be the $m$th scenery-chaos projection, acting on $E$.
+It commutes with every clock projection. Set
+\[
+ R_{M,N}=\Big(\sum_{m=0}^M Q_m\Big)
+          \Big(\sum_{k=0}^N P_k\Big).
+\]
+These are orthogonal projections on $\HH$. They commute with
+$\Smo$ and converge strongly to the identity as $M,N$ tend
+independently to infinity. Indeed, writing $Q_{\leq M}$ and
+$P_{\leq N}$ for the two factors,
+\[
+ \|f-R_{M,N}f\|
+ \leq\|f-Q_{\leq M}f\|+\|f-P_{\leq N}f\|,
+\]
+which tends to zero by completeness of the separate chaos
+decompositions. The two truncation parameters need not coincide.
+
+\begin{theorem}[Uniform full-correction tails]\label{thm:tails}
+For every $\eta>0$ there exist $M_0,N_0\in\mathbb N$ and
+$\varepsilon_0>0$ such that for all $M\geq M_0$, $N\geq N_0$
+and $0<\varepsilon<\varepsilon_0$,
+\begin{equation}\label{eq:tails}
+ \|C_{\varepsilon,T}-R_{M,N}C_{\varepsilon,T}\|_-<\eta.
+\end{equation}
+For each fixed $(m,k)$ the original joint block satisfies
+\[
+ Q_mP_kC_{\varepsilon,T}\longrightarrow
+                    w_k^{-1}Q_mP_kc_{0,T}\quad\text{in }\HH.
+\]
+\end{theorem}
+\begin{proof}
+Choose $M_0,N_0$ so that
+$\|(I-R_{M_0,N_0})c_{0,T}\|<\eta/2$.
+Larger rectangular projections have smaller errors, since their
+ranges contain this range and they are orthogonal projections.
+Choose $\varepsilon_0$ so that
+$\|\Smo C_{\varepsilon,T}-c_{0,T}\|<\eta/2$ for every
+$0<\varepsilon<\varepsilon_0$. Commutation and contractivity give
+\begin{align*}
+ \|C_{\varepsilon,T}-R_{M,N}C_{\varepsilon,T}\|_-
+ &=\|(I-R_{M,N})\Smo C_{\varepsilon,T}\|\\
+ &\leq\|\Smo C_{\varepsilon,T}-c_{0,T}\|
+                    +\|(I-R_{M,N})c_{0,T}\|<\eta.
+\end{align*}
+The fixed-block assertion follows by applying the contraction
+$Q_m$ to \eqref{eq:fixedsector}.
+\end{proof}
+This uniform result follows from strong convergence of the full
+smoothed correction. Separate convergence for every fixed block
+would not imply it. Equally, \eqref{eq:tails} is a dual-norm
+tail estimate; it asserts no uniform tail bound for the raw
+correction in the original norm. Both qualifiers are essential.
+
+\par\noindent Source correspondences:
+\par\noindent \code{IBMDilatedDualClosure.uniform_joint_tail},
+\par\noindent \code{IBMDilatedDualClosure.correction_uniform_rectangular_tail}, and
+\par\noindent \code{IBMDilatedDualClosure.raw_block_tendsto}.
+
+\section{Why the clock vacuum is retained}
+A scalar model explains the $P_0$ term without appealing to the
+IBM limit. Let $\gamma$ be standard Gaussian measure and let
+$h_n$ be its orthonormal probabilists' Hermite polynomials.
+Then $h_n'=\sqrt n\,h_{n-1}$. Define
+\[
+ \mathcal Bf=\sum_{n\geq0}
+       w_n\sqrt{(n+1)(n+2)}\,\langle f,h_{n+2}\rangle h_n.
+\]
+For $n=0$ the squared gain is $2$, while for $n\geq1$ it is
+$(n+1)(n+2)/n^2\leq6$. Orthogonality proves
+$\|\mathcal B\|\leq\sqrt6$; equality holds on $h_3$, whose
+image is $\sqrt6h_1$. If $f$ has two successive actual closed
+Gaussian derivatives, differentiating its Hermite coefficients
+twice gives
+\[
+ \mathcal Bf=\Smo f''.
+\]
+This equality concerns the actual closed derivative graph.
+The bounded left side extends beyond that twice differentiable
+domain, without asserting that the ordinary second derivative
+has become an $L^2$ function there.
+
+In particular $|x|$ has first closed derivative
+$\operatorname{sgn}(x)$, and
+\[
+ \langle\mathcal B|x|,h_0\rangle=\E|G|>0.
+\]
+To check the last equality directly, $h_2=(x^2-1)/\sqrt2$,
+so the constant coefficient is
+$\E[|G|(G^2-1)]$. Integration on the positive half-line gives
+$\E|G|^3=2\E|G|$, proving the claim. The ordinary second
+derivative away from zero is zero, but its use alone would
+erase this nonzero boundary channel. With $N_B^{-1}$ alone
+the clock-vacuum component of the correction is also erased.
+Adding $P_0$ makes the common correction norm definite and
+preserves this channel.
+
+The scalar calculation is an illustration of the shared
+regularization, not an identification of the entire IBM
+correction with $\mathcal B|x|$. The joint formula also has
+the nonlinear scenery coefficients and all clock/source sectors.
+Nor does the norm $\sqrt6$ replace the different first-order
+recovery bound used in Proposition~\ref{prop:majorant}.
+
+\par\noindent Source correspondences:
+\par\noindent \code{GaussianRegularizedSecondDerivative.regularizedSecond_actual_graph},
+\par\noindent \code{GaussianRegularizedSecondDerivative.regularizedSecond_norm}, and
+\par\noindent \code{GaussianReflectedSecondBoundary.absolute_boundary_coefficient}.
+
+\section{Classical context and the remaining mathematical boundaries}
+Gaussian number operators, chaos projections, Hilbert-valued It\^o
+integration and reflected local-time formulas are classical.
+Maas and van Neerven~\cite{maas} prove vector-valued Clark--Ocone
+representations in UMD spaces. Their Theorems 6.6 and 6.7 include
+the differentiated and boundedly extended representations;
+the latter's complete short proof uses density and the integral
+isomorphism onto its range. We directly compared those statements
+and their proofs, and their closed derivative/divergence setup.
+This is relevant prior art for value-space stochastic integration
+and extension by completion. Our source space $E=L^2(\Omega_W)$
+is a Hilbert space, so its vector-valued nature is not a new
+stochastic-integration principle. We did not review every proof
+or hypothesis of their general UMD integration theorem.
+
+The specific result assembled here concerns the actual reflected
+scenery family, its mollifier-independent recovered integrand,
+the integrable origin bound and the common correction topology.
+The bounded literature search does not certify priority for that
+assembly. This is a formalization companion with complete proofs
+of its displayed convergence mechanism and exact formal source
+correspondences, not a claim to a newly discovered Gaussian calculus.
+
+Three distinctions delimit the result. First, $\J_T$ integrates
+against the original Brownian clock. The entire scenery remains
+the value-space parameter, so the integrand may use information
+unavailable from the observed past of $Z$. No theorem identifies
+$u_{0,T}$ as an observed-filtration IBM integrand.
+
+Second, $\Smo$ is fixed and injective but has no bounded inverse
+on its range with the inherited $\HH$ norm. The high-chaos
+vectors following \eqref{eq:dualnorm} prove this directly.
+One cannot apply an uncontrolled inverse to
+\eqref{eq:limitidentity} to obtain an unsmoothed $L^2$ It\^o
+identity. The theorem does not prove that the raw slopes or
+raw corrections converge, and does not assert they diverge.
+The two terms in \eqref{eq:rawc} are only controlled jointly
+after the common smoothing in the limit theorem.
+
+Third, the convergence is strong in the entire original
+predictable norm for the regularized integrand, strong in the
+common dual norm for the full correction, and strong in ordinary
+joint $L^2$ for each fixed clock sector. These different claims
+cannot be substituted for one another. Neither independent
+rectangular dual tails nor full source retention supplies
+unsmoothed raw $L^2$ tails.
+
+The other IBM companions~\cite{companions} treat spatial grid
+contractions, faithful random-kernel test spaces, graph-domain
+obstructions, actual time averages and static intrinsic adjoints.
+Those statements retain their own topologies. In particular the
+present regularization does not remove the positive-time native
+clock derivative obstruction for IBM point observations. A full
+physical-time calculus in the observed filtration would still
+require a specified closed observed integral, admissible causal
+coefficients and a reconstruction theorem in its own topology.
+Those obligations remain open here.
+
+\begin{thebibliography}{9}
+\bibitem{maas} J. Maas and J. van Neerven,
+\emph{A Clark--Ocone formula in UMD Banach spaces},
+Electronic Communications in Probability \textbf{13} (2008), 151--164.
+Primary author manuscript, arXiv:0709.2021v2, Sections 3--4
+and Theorems 6.6--6.7 (statements and the displayed proofs).
+\url{https://arxiv.org/pdf/0709.2021}.
+\bibitem{source} Project Stardust, \emph{OperatorDerivativeRewrite},
+frozen verified source commit given in Section 1. The accompanying
+\texttt{theorem-map.json} records exact headers, hashes and line links.
+\bibitem{companions} Project Stardust, reviewed editorial companions:
+\emph{Variation and spatial Simpson integration for reflected-clock iterated Brownian motion}
+(\texttt{../ibm-spatial-calculus/main.pdf});
+\emph{Gaussian clock regularity and domain obstructions for reflected-clock Brownian motion}
+(\texttt{../ibm-clock-domain/main.pdf});
+\emph{Brownian clock mixtures}
+(\texttt{../ibm-one-time-laws/main.pdf}); and the constructed
+Tanaka/holding-measure account in
+\texttt{../sticky-clock-recovery/main.pdf}.
+These are independent publication drafts from the same frozen baseline,
+not external priority evidence.
+\end{thebibliography}
+\end{document}
