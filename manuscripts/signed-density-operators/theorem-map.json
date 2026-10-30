@@ -2162,6 +2162,825 @@
       "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
       "declaration_header": "theorem closed_bidual (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed)\n    (hd : Dense (T.domain : Set E)) : T.adjoint.adjoint=T",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L59"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.Algebra",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 19,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "abbrev Algebra",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L19"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.Form",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 20,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "abbrev Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L20"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.state_card",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 22,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem state_card : Fintype.card State = 3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L22"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.\u03bc",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 24,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "def \u03bc : Measure State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L24"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.\u03bc_probability",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 26,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "instance \u03bc_probability : IsProbabilityMeasure \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L26"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.\u03bc_complete",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 31,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "instance \u03bc_complete : \u03bc.IsComplete",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L31"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.expect",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 33,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "def expect (f : Algebra) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L33"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.integral_expect",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 35,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem integral_expect (f : Algebra) : (\u222b s, f s \u2202\u03bc) = expect f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L35"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.all_memLp",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 39,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem all_memLp (f : Algebra) (p : \u211d\u22650\u221e) : MemLp f p \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L39"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.expect_const",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 41,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem expect_const (c : \u211d) : expect (fun _ => c) = c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L41"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.expect_nonneg",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 44,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem expect_nonneg (f : Algebra) (hf : \u2200 s, 0 \u2264 f s) : 0 \u2264 expect f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L44"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.expect_sum",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 47,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem expect_sum {\u03b9 : Type*} [Fintype \u03b9] (f : \u03b9 \u2192 Algebra) :\n    expect (fun s => \u2211 i, f i s) = \u2211 i, expect (f i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L47"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.beta",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 52,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "def beta : Algebra \u2192\u2097[\u211d] (Fin 2 \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L52"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.gamma",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 57,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "def gamma (f g : Algebra) : Algebra",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L57"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.beta_const",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 59,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem beta_const (c : \u211d) : beta (fun _ => c) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L59"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.gamma_symmetric",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 63,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem gamma_symmetric (f g : Algebra) : gamma f g = gamma g f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.gamma_const",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 67,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem gamma_const (c : \u211d) (g : Algebra) : gamma (fun _ => c) g = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L67"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.gamma_add_left",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 72,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem gamma_add_left (f g h : Algebra) : gamma (f+g) h = gamma f h + gamma g h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L72"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.gamma_smul_left",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 76,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem gamma_smul_left (c : \u211d) (f g : Algebra) : gamma (c \u2022 f) g = c \u2022 gamma f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L76"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.matrix_square_identity",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 80,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem matrix_square_identity {\u03b9 : Type*} [Fintype \u03b9] (f u : \u03b9 \u2192 Algebra) (s : State) :\n    (\u2211 i, \u2211 j, u i s * u j s * gamma (f i) (f j) s) =\n      dotProduct (\u2211 i, u i s \u2022 beta (f i)) (\u2211 i, u i s \u2022 beta (f i))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L80"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.matrix_pointwise_nonneg",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 92,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem matrix_pointwise_nonneg {\u03b9 : Type*} [Fintype \u03b9] (f u : \u03b9 \u2192 Algebra) (s : State) :\n    0 \u2264 \u2211 i, \u2211 j, u i s * u j s * gamma (f i) (f j) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L92"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.weighted_matrix_positive",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 97,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem weighted_matrix_positive {\u03b9 : Type*} [Fintype \u03b9] (f u : \u03b9 \u2192 Algebra)\n    (q : Algebra) (hq : \u2200 s, 0 \u2264 q s) :\n    0 \u2264 \u2211 i, \u2211 j, expect (fun s => q s * u i s * u j s * gamma (f i) (f j) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L97"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.matrix_positive",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 115,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem matrix_positive {\u03b9 : Type*} [Fintype \u03b9] (f u : \u03b9 \u2192 Algebra) :\n    0 \u2264 \u2211 i, \u2211 j, expect (fun s => u i s * u j s * gamma (f i) (f j) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L115"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.energy_formula",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 119,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem energy_formula (f : Algebra) : expect (gamma f f) = dotProduct (beta f) (beta f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L119"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaSeed.energy_tendsto_zero",
+      "file": "Foundation/FiniteGammaSeed.lean",
+      "line": 122,
+      "source_sha256": "3ae40807209b916968e5d4cac01b2b54130f7da619a418f27760627b719272c8",
+      "declaration_header": "theorem energy_tendsto_zero (f : \u2115 \u2192 Algebra) (hf : Filter.Tendsto f Filter.atTop (nhds 0)) :\n    Filter.Tendsto (fun n => expect (gamma (f n) (f n))) Filter.atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaSeed.lean#L122"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.BaseL2",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 12,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "abbrev BaseL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L12"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.ae_iff_forall",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 14,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem ae_iff_forall (p : State \u2192 Prop) : (\u2200\u1d50 s \u2202\u03bc, p s) \u2194 \u2200 s, p s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L14"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.toL2",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 17,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "def toL2 (f : Algebra) : BaseL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L17"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.toL2_coeFn",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 19,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem toL2_coeFn (f : Algebra) : \u2200 s, toL2 f s = f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L19"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.toL2Linear",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 22,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "def toL2Linear : Algebra \u2192\u2097[\u211d] BaseL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L22"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.toL2_injective",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 39,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem toL2_injective : Function.Injective toL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L39"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.toL2_surjective",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 44,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem toL2_surjective : Function.Surjective toL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L44"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.algebraEquiv",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 51,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "def algebraEquiv : Algebra \u2243\u2097[\u211d] BaseL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L51"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.algebraEquiv_apply",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 54,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem algebraEquiv_apply (f : Algebra) : algebraEquiv f = toL2 f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L54"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.baseL2_finite",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 56,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "instance baseL2_finite : FiniteDimensional \u211d BaseL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L56"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.bounded_dense_algebra",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 59,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem bounded_dense_algebra :\n    (\u2200 f : Algebra, MemLp f \u221e \u03bc \u2227 MemLp f 2 \u03bc) \u2227 DenseRange toL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L59"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.actual_energy_tendsto_zero",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 63,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem actual_energy_tendsto_zero (f : \u2115 \u2192 Algebra)\n    (hf : Filter.Tendsto (fun n => toL2 (f n)) Filter.atTop (nhds 0)) :\n    Filter.Tendsto (fun n => expect (gamma (f n) (f n))) Filter.atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaL2Algebra.form_closable",
+      "file": "Foundation/FiniteGammaL2Algebra.lean",
+      "line": 75,
+      "source_sha256": "cdf80c3eda2f5f93a5cc4a5df4d937d06a10a975aa791ed847f73959d28a339d",
+      "declaration_header": "theorem form_closable (f : \u2115 \u2192 Algebra)\n    (hf : Filter.Tendsto (fun n => toL2 (f n)) Filter.atTop (nhds 0))\n    (_hEnergyCauchy : Filter.Tendsto\n      (fun p : \u2115 \u00d7 \u2115 => expect (gamma (f p.1 - f p.2) (f p.1 - f p.2)))\n      Filter.atTop (nhds 0)) :\n    Filter.Tendsto (fun n => expect (gamma (f n) (f n))) Filter.atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaL2Algebra.lean#L75"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.singleForm",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 12,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def singleForm (f u : Algebra) : Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L12"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.singleForm_apply",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 15,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem singleForm_apply (f u : Algebra) (p : State \u00d7 Fin 2) :\n    singleForm f u p = u p.1 * beta f p.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L15"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.bilinear",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 18,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def bilinear : Algebra \u2192\u2097[\u211d] Algebra \u2192\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L18"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.Tensor",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 53,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "abbrev Tensor",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L53"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.tensorMap",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 55,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def tensorMap : Tensor \u2192\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L55"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.tensorMap_tmul",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 57,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem tensorMap_tmul (f u : Algebra) :\n    tensorMap (f \u2297\u209c[\u211d] u) = singleForm f u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L57"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.potential",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 60,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def potential (i : Fin 2) : Algebra",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L60"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.beta_potential",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 63,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem beta_potential (i j : Fin 2) : beta (potential i) j = if j = i then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.basisTensor",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 66,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def basisTensor (p : State \u00d7 Fin 2) : Tensor",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L66"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.tensorMap_basis",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 69,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem tensorMap_basis (p : State \u00d7 Fin 2) :\n    tensorMap (basisTensor p) = EuclideanSpace.single p (1 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L69"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.synthesis",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 78,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def synthesis (v : Form) : Tensor",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L78"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.tensorMap_synthesis",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 80,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem tensorMap_synthesis (v : Form) : tensorMap (synthesis v) = v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L80"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.tensorMap_surjective",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 91,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem tensorMap_surjective : Function.Surjective tensorMap",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L91"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.pure_pairing",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 95,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "theorem pure_pairing (f u g v : Algebra) :\n    (1/3 : \u211d) * inner \u211d (singleForm f u) (singleForm g v) =\n      expect (fun s => u s * v s * gamma f g s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L95"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaTensor.quotientEquiv",
+      "file": "Foundation/FiniteGammaTensor.lean",
+      "line": 111,
+      "source_sha256": "88ec8a619182d4a77c69fbdf64c08d803643833ba9e266864c8bd621cd22efb4",
+      "declaration_header": "def quotientEquiv : (Tensor \u29f8 LinearMap.ker tensorMap) \u2243\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaTensor.lean#L111"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.target",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 10,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "def target : Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L10"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.state_sum",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 13,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "theorem state_sum (f : State \u2192 \u211d) : \u2211 s, f s = f State.o + f State.x + f State.y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L13"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.rank_one_gap_identity",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 18,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "theorem rank_one_gap_identity (a b c d : \u211d) :\n    (a*c-1)^2 + (a*d)^2 + (b*c)^2 + (b*d-1)^2 =\n      1 + (a*c+b*d-1)^2 + (a*d-b*c)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L18"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.distance_squared_gap",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 22,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "theorem distance_squared_gap (f u : Algebra) : 1 \u2264 \u2016singleForm f u - target\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L22"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.probability_distance_gap",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 35,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "theorem probability_distance_gap (f u : Algebra) :\n    (1/3 : \u211d) \u2264 (1/3 : \u211d) * \u2016singleForm f u - target\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L35"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaRankOne.single_products_not_dense",
+      "file": "Foundation/FiniteGammaRankOne.lean",
+      "line": 39,
+      "source_sha256": "805884b83291c32f0d890454077456a625841736636a4b84d6f9d99cb75cdf4d",
+      "declaration_header": "theorem single_products_not_dense :\n    \u00ac DenseRange (fun p : FiniteGammaSeed.Algebra \u00d7 FiniteGammaSeed.Algebra =>\n      singleForm p.1 p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaRankOne.lean#L39"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.scale",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 11,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def scale : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L11"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.scale_pos",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 13,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem scale_pos : 0 < scale",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L13"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.scale_ne_zero",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 15,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem scale_ne_zero : scale \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L15"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.scale_sq",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 17,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem scale_sq : scale * scale = (1/3 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L17"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.normalizedMap",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 23,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def normalizedMap : Tensor \u2192\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L23"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.normalizedMap_tmul",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 25,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem normalizedMap_tmul (f u : Algebra) :\n    normalizedMap (f \u2297\u209c[\u211d] u) = scale \u2022 singleForm f u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L25"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.normalizedMap_surjective",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 29,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem normalizedMap_surjective : Function.Surjective normalizedMap",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L29"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.pairing",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 35,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def pairing (x y : Tensor) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L35"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.pairing_tmul",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 37,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem pairing_tmul (f u g v : Algebra) :\n    pairing (f \u2297\u209c[\u211d] u) (g \u2297\u209c[\u211d] v) =\n      expect (fun s => u s * v s * gamma f g s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L37"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.finite_sum_pairing",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 44,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem finite_sum_pairing {\u03b9 \u03ba : Type*} [Fintype \u03b9] [Fintype \u03ba]\n    (f u : \u03b9 \u2192 Algebra) (g v : \u03ba \u2192 Algebra) :\n    pairing (\u2211 i, f i \u2297\u209c[\u211d] u i) (\u2211 j, g j \u2297\u209c[\u211d] v j) =\n      \u2211 i, \u2211 j, expect (fun s => u i s * v j s * gamma (f i) (g j) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L44"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.Null",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 54,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "abbrev Null",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L54"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.EnergyQuotient",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 55,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "abbrev EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L55"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.realization",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 57,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def realization : EnergyQuotient \u2243\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L57"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.quotientNorm",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 60,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "instance quotientNorm : NormedAddCommGroup EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L60"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.quotientNormedSpace",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 63,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "instance quotientNormedSpace : NormedSpace \u211d EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.quotientInner",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 66,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "instance quotientInner : InnerProductSpace \u211d EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L66"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.hilbertEquiv",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 69,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def hilbertEquiv : EnergyQuotient \u2243\u2097\u1d62[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L69"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.quotientComplete",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 73,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "instance quotientComplete : CompleteSpace EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L73"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.realization_mk",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 76,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem realization_mk (x : Tensor) :\n    realization (Submodule.Quotient.mk x) = normalizedMap x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L76"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.quotient_pairing",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 80,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem quotient_pairing (x y : Tensor) :\n    inner \u211d (Submodule.Quotient.mk x : EnergyQuotient) (Submodule.Quotient.mk y) =\n      pairing x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L80"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.null_iff_zero_energy",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 87,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem null_iff_zero_energy (x : Tensor) : x \u2208 Null \u2194 pairing x x = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L87"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.singleClass",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 91,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "def singleClass (p : FiniteGammaSeed.Algebra \u00d7 FiniteGammaSeed.Algebra) : EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L91"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaHilbertQuotient.realized_single",
+      "file": "Foundation/FiniteGammaHilbertQuotient.lean",
+      "line": 94,
+      "source_sha256": "231e7edeec8313b6249349addec7afe40f25da8dffaaa912903901f81e7783e8",
+      "declaration_header": "theorem realized_single (p : FiniteGammaSeed.Algebra \u00d7 FiniteGammaSeed.Algebra) :\n    realization (singleClass p) = scale \u2022 singleForm p.1 p.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaHilbertQuotient.lean#L94"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.scale_absorbed",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 11,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem scale_absorbed (f u : Algebra) :\n    scale \u2022 singleForm f u = singleForm f (scale \u2022 u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L11"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.completed_single_products_not_dense",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 19,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem completed_single_products_not_dense : \u00ac DenseRange singleClass",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L19"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.finite_span_eq_top",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 32,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem finite_span_eq_top : Submodule.span \u211d (Set.range singleClass) = \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L32"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.multiplier",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 43,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "def multiplier (w : Algebra) : Form \u2192\u2097[\u211d] Form",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L43"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.multiplier_single",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 56,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem multiplier_single (w f u : Algebra) :\n    multiplier w (singleForm f u) = singleForm f (w * u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L56"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.action",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 63,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "def action (w : Algebra) : EnergyQuotient \u2192\u2097[\u211d] EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.action_single",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 66,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem action_single (w f u : Algebra) :\n    action w (singleClass (f,u)) = singleClass (f, w * u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L66"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.D0",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 73,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "def D0 (f : Algebra) : EnergyQuotient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L73"
+    },
+    {
+      "paper": "Section 14: actual three-state probability and full bounded L2 algebra; positive weighted Gamma matrices and scalar closability; tensor coordinate map, null quotient and probability-normalized complete Hilbert realization; single-product gap and nondensity, full finite span and multiplication action. No derivation Leibniz rule is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteGammaDensityCorrection.product_is_single",
+      "file": "Foundation/FiniteGammaDensityCorrection.lean",
+      "line": 75,
+      "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
+      "declaration_header": "theorem product_is_single (u f : Algebra) : action u (D0 f) = singleClass (f,u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L75"
     }
   ],
   "human_reorganization": [
@@ -2181,7 +3000,8 @@
     "Section 9 realizes the closed graph projection Phi(x)=(Rx,DRx) by a finite/countable independent-Gaussian series in an explicit orthonormal basis of the real Hilbert product. This is a human coordinate realization of the source isonormal embedding, with actual L2 values and finite-dimensional Gaussian laws.",
     "The exact covariance <x,Ry>, strict variance, Green identity on the full domain of A=D*D and auxiliary first-chaos derivative/divergence/recovery are reconstructed with original graph limits. The auxiliary Gaussian derivative is not identified with the spatial weighted derivative.",
     "A labelled human general D=0 infinite-dimensional counterexample uses independent Borel-Cantelli to separate a Hilbert-indexed Gaussian field from a Hilbert-valued Gaussian random variable. No assertion that the specific signed-density resolvent is the identity or is trace class is made. Neither auxiliary positivity nor covariance creates a positive original signed process law.",
-    "Section 7 reconstructs actual source dyadic scale 2^(-n), scaled-graph projection and native unscaled output. Strong value approximation holds on the whole Hilbert space; original graph approximation holds only on the original domain via the adjoint resolvent identity. The adjoint-density and pairing test are proved directly from the closed graph and its orthogonal complement. Bounded-output subsequences force native domain membership by dense extension and Riesz representation; outside-domain outputs escape to infinity. Uniformly bounded outputs converge weakly, not necessarily strongly. The diagonal ell2 example is a labelled elementary human illustration, not an added formal source result. Weighted-output vanishing never extends the original derivative."
+    "Section 7 reconstructs actual source dyadic scale 2^(-n), scaled-graph projection and native unscaled output. Strong value approximation holds on the whole Hilbert space; original graph approximation holds only on the original domain via the adjoint resolvent identity. The adjoint-density and pairing test are proved directly from the closed graph and its orthogonal complement. Bounded-output subsequences force native domain membership by dense extension and Riesz representation; outside-domain outputs escape to infinity. Uniformly bounded outputs converge weakly, not necessarily strongly. The diagonal ell2 example is a labelled elementary human illustration, not an added formal source result. Weighted-output vanishing never extends the original derivative.",
+    "Section 14 reconstructs the full three-state Gamma module with actual uniform probability, all-L2 bounded test algebra, weighted matrix positivity and scalar closability. Its exact tensor pairing is one third of the ordinary six-coordinate Euclidean pairing; the null quotient is already complete via M/sqrt(3). Single products u*d0f have squared distance at least 1/3 from the displayed two-coordinate target, while finite sums span the whole module. Sharp attainment, generation by two coordinate-potential products, the multiplier norm bound and the explicit failure of a Leibniz rule for the displayed action are labelled elementary human coordinate consequences, not additional named formal theorems. This algebraic density correction neither modifies spatial differentiation nor asserts a Markov Gamma or Gaussian field identification. The rank-one approximation mechanism is classical; original Eckart--Young full proof was not retrieved and no priority claim is made."
   ],
   "novelty": "Classical weighted derivative, Hilbert graph projection and signed-adjoint formalization companion. No new general closability, independence, spectral or process principle claimed."
 }

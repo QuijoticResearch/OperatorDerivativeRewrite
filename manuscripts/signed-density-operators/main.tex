@@ -12,7 +12,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Closed differentiation and signed adjoints\\for Schwartz densities with zeros}
 \author{Project Stardust\\\small A classical formalization companion}
-\date{October 29, 2026}
+\date{October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -37,6 +37,8 @@ sign-changing kernels. The mechanisms are classical weighted
 operator and indefinite-inner-product theory; no new general
 closability or spectral principle is claimed. A separate Gaussian/Dirac
 mixture shows that full support does not replace the density hypothesis.
+A finite positive Gamma module separates single-product nondensity from
+full finite-span generation, with an exact normalized rank-one gap.
 \end{abstract}
 
 \section{The original spaces and conclusions}
@@ -876,6 +878,121 @@ these hypotheses on its original nonclosable domain; a covering
 family of finite subspaces alone supplies none of the needed energy
 and input compatibility.
 
+
+\section{A completed positive module need not have dense single products}
+The previous section distinguishes local and global closability. There
+is a separate algebraic boundary: density of finite sums does not imply
+density of the individual products generating those sums. The following
+finite probability model satisfies all the positivity and closability
+checks below, while retaining an explicit single-product gap.
+
+Let $S=\{o,x,y\}$ with uniform probability $\mu$, and take the full
+bounded algebra $\mathcal A=\R^S=L^2(\mu)$ as a vector space. Every
+atom has positive mass, so equality almost everywhere is pointwise
+equality. Define
+\[
+ \beta f=(f(x)-f(o),f(y)-f(o)),\qquad
+ \Gamma(f,g)(s)=\beta f\cdot\beta g\quad(s\in S).
+\]
+This is a symmetric bilinear map vanishing on constants. For every
+finite collection $f_i,u_i\in\mathcal A$ and every $q\geq0$ in the
+algebra, direct expansion gives
+\[
+ \sum_{i,j}\int q u_i u_j\Gamma(f_i,f_j)\,d\mu
+ =\frac13\sum_{s\in S}q(s)
+       \left|\sum_i u_i(s)\beta f_i\right|^2\geq0.                 \tag{*}
+\]
+In particular, its scalar energy is
+$\mathcal E(f)=\int\Gamma(f,f)\,d\mu=|\beta f|^2$.
+This form is closable: $f_n\to0$ in $L^2(\mu)$ implies every coordinate
+of $f_n$ tends to zero, hence $\beta f_n\to0$ and
+$\mathcal E(f_n)\to0$, without needing the energy-Cauchy assumption.
+Thus there is no failure of positivity, representative independence,
+bounded-algebra density or scalar form closability in this example.
+
+\subsection*{The exact null quotient and its normalization}
+On the algebraic tensor product $\mathcal A\otimes\mathcal A$, set
+\[
+ M(f\otimes u)(s,i)=u(s)(\beta f)_i,\qquad i=0,1,
+\]
+and extend linearly. With the ordinary Euclidean inner product on
+$\R^{S\times\{0,1\}}$, the tensor pairing is exactly
+\[
+ \left\langle\sum_j f_j\otimes u_j,\sum_k g_k\otimes v_k\right\rangle_E
+ =\sum_{j,k}\int u_jv_k\Gamma(f_j,g_k)\,d\mu
+ =\frac13\left\langle M\sum_j f_j\otimes u_j,
+                         M\sum_k g_k\otimes v_k\right\rangle.
+\]
+Its null space is therefore $\ker M$. Let $p_0=1_{\{x\}}$ and
+$p_1=1_{\{y\}}$. Then $\beta p_i$ is the $i$th coordinate vector,
+so $M(p_i\otimes1_{\{s\}})$ is the coordinate vector labelled
+$(s,i)$. Consequently $M$ is onto, and
+\[
+ \mathcal H_E=(\mathcal A\otimes\mathcal A)/\ker M,
+ \qquad [z]\longmapsto\frac1{\sqrt3}Mz
+\]
+is an isometric isomorphism onto the six-dimensional Euclidean space.
+The quotient is already complete. This construction uses exactly the
+probability-weighted energy norm; replacing it silently by the
+unnormalized Euclidean norm would change the numerical gap.
+
+\subsection*{A single-product gap inside the actual completed quotient}
+Put $d_0f=[f\otimes1]$. Multiplication by $w\in\mathcal A$ acts on
+realized forms by $(wF)(s,i)=w(s)F(s,i)$. It descends to a bounded
+operator on $\mathcal H_E$, with norm at most $\max_s|w(s)|$,
+and $u d_0f=[f\otimes u]$. Define the unnormalized coordinate form
+\[
+ T(o,0)=T(x,1)=1,\qquad T(s,i)=0\text{ otherwise},
+\]
+and let $t_E=[p_0\otimes1_{\{o\}}+p_1\otimes1_{\{x\}}]$.
+Its realized vector is $T/\sqrt3$.
+For any real $a,b,c,d$, polynomial expansion yields
+\[
+ (ac-1)^2+(ad)^2+(bc)^2+(bd-1)^2
+ =1+(ac+bd-1)^2+(ad-bc)^2.
+\]
+Apply this with $a=u(o)$, $b=u(x)$ and $(c,d)=\beta f$.
+The two remaining coordinates at $y$ add nonnegative squares, so
+\[
+ \|u d_0f-t_E\|_{\mathcal H_E}^2
+ =\frac13\|M(f\otimes u)-T\|_{\R^6}^2\geq\frac13.
+\]
+Thus the set of single products is not dense, even in the completed
+null quotient. The lower bound is sharp: $f=p_0$, $u=1_{\{o\}}$
+reproduce the first of the two nonzero target coordinates and leave
+only the second, with squared error $1/3$. This last equality is a
+direct human specialization of the displayed coordinates; the named
+formal theorem supplies the lower bound and nondensity.
+
+In contrast, finite sums of single products equal the whole module,
+since the six $[p_i\otimes1_{\{s\}}]$ are a spanning family. In fact,
+every coordinate form $F$ is the sum of just the two forms
+$M(p_i\otimes u_i)$ with $u_i(s)=F(s,i)$. This is a finite-span
+statement, not an approximation by one product. It repairs the density
+claim without changing the positive form or its completion.
+
+The obstruction is the elementary rank-one matrix approximation
+mechanism. Eckart--Young's original publication concerns approximation
+by lower-rank matrices~\cite{EY}; its publisher abstract and bibliographic
+record were accessible, but its full proof was not retrieved here.
+The explicit identity above proves everything used in this example,
+without a priority claim for a new rank-approximation theorem.
+Only the displayed Gamma axioms and scalar closability have been
+checked: no derivation Leibniz rule for $d_0$ and this multiplication
+action is asserted. For instance, $d_0(p_0^2)=d_0p_0$ has a nonzero
+row at $o$, whereas $2p_0d_0p_0$ has zero row there. This is a direct
+human diagnostic, not a counterexample to a theorem assuming a
+Leibniz rule. The finite module also remains distinct from the original
+weighted spatial derivative and the auxiliary Gaussian field above.
+
+\par\noindent\code{FiniteGammaSeed}, \code{FiniteGammaL2Algebra}:
+probability, positivity and scalar closability.
+\par\noindent\code{FiniteGammaTensor}, \code{FiniteGammaRankOne}:
+coordinate realization and the single-product gap.
+\par\noindent\code{FiniteGammaHilbertQuotient},
+\par\noindent\code{FiniteGammaDensityCorrection}:
+completed quotient, finite span and multiplication action.
+
 \section{Classical antecedents and exact source boundary}
 Weighted derivative closability is classical. De Cicco--Serra
 Cassano~\cite{DCSC}, Section 2.2/condition (12), recall Hamza's
@@ -928,5 +1045,10 @@ Section 2.1 comparison only.
 \bibitem{Nualart} D. Nualart, \emph{Malliavin Calculus and Normal Approximations},
 updated primary author notes, Section 3.4.
 \url{https://nualart.ku.edu/sites/nualart/files/documents/updated/Course_Malliavin_Calculus_accessible.pdf}.
+\bibitem{EY} C. Eckart and G. Young,
+\emph{The approximation of one matrix by another of lower rank},
+Psychometrika \textbf{1} (1936), 211--218.
+\url{https://doi.org/10.1007/BF02288367}.
+Publisher abstract/bibliographic comparison only; original full proof not retrieved.
 \end{thebibliography}
 \end{document}
