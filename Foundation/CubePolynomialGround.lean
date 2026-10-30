@@ -44,7 +44,7 @@ private theorem four_defect (U V W Z : SU2) :
   rw [he]
   linarith
 
-private theorem axial_link_bound (t : ℝ) (q : Chords) (hq : ∀ i,q i ∈ cap t) (e : SpatialEdge) :
+theorem axial_link_bound (t : ℝ) (q : Chords) (hq : ∀ i,q i ∈ cap t) (e : SpatialEdge) :
     defect (axialState q e) ≤ 3*t^2 := by
   unfold axialState
   cases h : chordLabel e with
@@ -74,6 +74,16 @@ private theorem temporal_upper (t : ℝ) (U V : State) (g : Gauge)
   simp only [Finset.sum_const,Finset.card_univ,edge_count,nsmul_eq_mul] at h
   change (∑ e : SpatialEdge,defect (temporalWord U V g e)) ≤ _
   convert h using 1 <;> ring
+
+/-- Exact cap bound reused for genuine relative temporal Haar integration. -/
+theorem action_cap_upper (t : ℝ) (U V : State) (g : Gauge)
+    (hU : ∀ e,defect (U e) ≤ 3*t^2) (hV : ∀ e,defect (V e) ≤ 3*t^2)
+    (hg : ∀ v,defect (g v) ≤ 3*t^2) : halfAction U V g ≤ 1944*t^2 := by
+  have hA := spatial_upper t U hU
+  have hB := spatial_upper t V hV
+  have hT := temporal_upper t U V g hU hV hg
+  unfold halfAction
+  linarith
 
 /-- A genuine positive-Haar block of the actual gauge-averaged homogeneous kernel. -/
 theorem kernel_block (beta t : ℝ) (hb : 0 ≤ beta) (U V : State)

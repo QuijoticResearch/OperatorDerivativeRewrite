@@ -2882,3 +2882,5 @@ import Foundation.CubeTemporalSchur
 import Foundation.SU2HaarSmallCap
 import Foundation.CubePolynomialGround
 import Foundation.CubeLogWindow
+import Foundation.CubeTemporalRootHaar
+import Foundation.CubeRootGround
