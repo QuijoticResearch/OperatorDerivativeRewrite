@@ -1,6 +1,6 @@
 # Completed Gaussian quadratic products
 
-REVIEWED_DRAFT. Twenty pages based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. A classical formalization companion; no external submission or novelty certification. Earlier manuscript versions remain in Git history.
+REVIEWED_DRAFT. Twenty-three pages based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. A classical formalization companion; no external submission or novelty certification. Earlier manuscript versions remain in Git history.
 
 Complete human proofs cover finite normalization, original completed divergence/recovery, full second-chaos L4 completion, bounded multiplication with exact norm sqrt(15), degree 0/2/4 support, exact fourth cumulant, strict lower coefficient with nonattainment, contraction covariance, finite matrix independence, sharp two-source fourth moments, the anticommuting witness, the mixed-chaos negative square covariance and actual determinant law. The full matrix prediction section compresses both completed coordinates and retains the mixed observed/unobserved error block. The current map contains 360 exact frozen correspondences with complete headers and hashes.
 

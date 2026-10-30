@@ -6,6 +6,8 @@ The independent publication branch contains reviewed editorial drafts built from
 
 Thirty drafts, 546 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts. Page counts below match the current hash-linked PDF receipts; any paper-specific novelty remains uncertified, and classical antecedents are credited in the manuscripts. The quadratic Xi strip bound is explicitly classical.
 
+The dated [catalog identity audit](CATALOG_IDENTITY_AUDIT_20261030T094524Z.json) checks all current source/PDF hashes, page counts, two-pass build and visual receipts, mapped-source hashes and referenced frozen-baseline verification evidence. Its October 30, 09:45 UTC snapshot records 8,677 correspondences across 1,202 distinct mapped source files. It is not a new Lean build, full proof review of every library module or novelty certification. Editorial-status files retain chronological review notes: earlier counts in those notes describe their revisions; current counts are in this index and the exact theorem maps.
+
 ### Arithmetic entire functions
 
 | Paper | Read and inspect | Scope and status |

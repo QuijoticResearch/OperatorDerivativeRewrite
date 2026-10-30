@@ -1,6 +1,6 @@
 # Brownian clock mixtures — classical formalization companion
 
-REVIEWED_DRAFT. Thirteen pages, October 30, 2026. Frozen verified baseline `bab688bb6140cd6316c80680095a914ea0d346db`. No external release or submission. This focused companion is intentionally shorter than the preferred page range; no padding or novelty claim.
+REVIEWED_DRAFT. Thirteen pages, October 30, 2026. Frozen verified baseline `bab688bb6140cd6316c80680095a914ea0d346db`. No external release or submission. This focused companion has complete proofs without padding; no novelty claim.
 
 Complete proofs reconstruct the actual signed/reflected one-time Gaussian mixture, exact characteristic and Gaussian boundary identity, positive-time fourth-order Fourier ODE with its singular initial-data source, and the initial square-root cusp and convolution obstruction. A separate actual coupling proof gives negative reflected-clock increment pairing and previous-value past-projection failure at times one and two. The hidden-clock local-time formula is explicitly for a scenery-averaged Fourier cosine, not the unaveraged observed process. Its global C2 extension and all integrability conditions are printed. The existing constructed Tanaka/supported-mass theorem is a stated prerequisite, with a precise companion citation.
 
