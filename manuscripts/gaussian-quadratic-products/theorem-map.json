@@ -4212,6 +4212,222 @@
       "source_sha256": "3131f92baa09b093c2b6bf1fccd971682e27ca52be597351c7647eea96bdfc6d",
       "declaration_header": "theorem time_weighted_ito (a : \u211d \u2192 \u211d) (ha : ContDiff \u211d 1 a) (T : \u211d\u22650) :\n    a T \u2022 valueL2 (functionLip f hf K0 h0) T - a 0 \u2022 valueL2 (functionLip f hf K0 h0) 0 =\n      itoIntegral (weightedField a ha.continuous (derivativeLip f hf K1 h1) T) +\n        (\u222b t in 0..(T : \u211d), deriv a t \u2022 valueL2 (functionLip f hf K0 h0) t.toNNReal) +\n        (1 / 2 : \u211d) \u2022 (\u222b t in 0..(T : \u211d), a t \u2022 curvatureValue f hf K1 h1 t.toNNReal)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2TimeWeighted.lean#L87"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.linearFieldCore",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 14,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "def linearFieldCore : Submodule \u211d GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L14"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.linearGaussianFields",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 17,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "def linearGaussianFields : Submodule \u211d GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L17"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.mixedTarget_mem_sector_two",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 19,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem mixedTarget_mem_sector_two (a b : CoefficientSpace) : mixedTarget a b\u2208sector 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L19"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.adjoint_linear_rank",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 31,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem adjoint_linear_rank (a b : CoefficientSpace) :\n    recoveryOperator.adjoint (scalarTensor a (firstChaosEmbedding b))=(1/2 : \u211d) \u2022 mixedTarget a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L31"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completedDivergence",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 37,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "def completedDivergence : GaussianVectorL2 \u2192L[\u211d] GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L37"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completedDivergence_rank",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 39,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completedDivergence_rank (a b : CoefficientSpace) :\n    completedDivergence (scalarTensor a (firstChaosEmbedding b))=mixedTarget a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L39"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.linear_rank_mem",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 106,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem linear_rank_mem (a b : CoefficientSpace) : scalarTensor a (firstChaosEmbedding b)\u2208linearGaussianFields",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L106"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.completed_series_graph",
+      "file": "Foundation/GaussianLinearFieldDivergenceCompletion.lean",
+      "line": 109,
+      "source_sha256": "bab7bb732c0d3831085909211b7a209d7d725a82a96d44a93c929c32abee9f26",
+      "declaration_header": "theorem completed_series_graph (v : \u2115 \u2192 GaussianVectorL2) (hv : \u2200 n,v n\u2208linearGaussianFields)\n    {V : GaussianVectorL2} (hs : HasSum v V) :\n    (V,completedDivergence V)\u2208hilbertDivergence.graph \u2227 HasSum (fun n => completedDivergence (v n)) (completedDivergence V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldDivergenceCompletion.lean#L109"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 12,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "def transpose : GaussianVectorL2 \u2243\u2097\u1d62[\u211d] GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L12"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_apply",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 14,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_apply (v : GaussianVectorL2) : transpose v=2 \u2022 gradientProjection v-v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L14"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_rank",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 16,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_rank (a b : CoefficientSpace) :\n    transpose (scalarTensor a (firstChaosEmbedding b))=scalarTensor b (firstChaosEmbedding a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L16"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_involution",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 21,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_involution (v : GaussianVectorL2) : transpose (transpose v)=v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L21"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_norm",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 24,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_norm (v : GaussianVectorL2) : \u2016transpose v\u2016=\u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L24"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_pairing",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 26,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_pairing (v w : GaussianVectorL2) : inner \u211d (transpose v) w=inner \u211d v (transpose w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L26"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_mem",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 30,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_mem {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) : transpose v\u2208linearGaussianFields",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L30"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_matrix_coefficient",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 40,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_matrix_coefficient (a b : CoefficientSpace) (v : GaussianVectorL2) :\n    inner \u211d (scalarTensor a (firstChaosEmbedding b)) (transpose v)=\n      inner \u211d (scalarTensor b (firstChaosEmbedding a)) v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L40"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.symmetricPart_eq",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 45,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem symmetricPart_eq (v : GaussianVectorL2) :\n    (1/2 : \u211d) \u2022 (v+transpose v)=gradientProjection v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L45"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.antisymmetricPart_eq",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 50,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem antisymmetricPart_eq (v : GaussianVectorL2) :\n    (1/2 : \u211d) \u2022 (v-transpose v)=v-gradientProjection v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L50"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_fix_iff",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 55,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_fix_iff (v : GaussianVectorL2) : transpose v=v \u2194 v\u2208gradientRange",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L55"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_neg_iff",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 58,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_neg_iff (v : GaussianVectorL2) : transpose v=-v \u2194 gradientProjection v=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L58"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.completed_kernel_antisymmetric",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 68,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem completed_kernel_antisymmetric {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    completedDivergence v=0 \u2194 transpose v=-v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L68"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.transpose_divergence",
+      "file": "Foundation/GaussianLinearFieldTranspose.lean",
+      "line": 72,
+      "source_sha256": "ae5917e108d7c9a6678ecacc3a52804de87df9471a87594bee2f54b58470321e",
+      "declaration_header": "theorem transpose_divergence {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    completedDivergence (transpose v)=completedDivergence v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTranspose.lean#L72"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTransposeEnergy.completed_transpose_energy",
+      "file": "Foundation/GaussianLinearFieldTransposeEnergy.lean",
+      "line": 12,
+      "source_sha256": "52bc6c48f1d5ce78005e5df76ccf6c83aec0f056c0778ecb6621b5ae76a29908",
+      "declaration_header": "theorem completed_transpose_energy {v : GaussianVectorL2} (hv : v \u2208 linearGaussianFields) :\n    \u2016completedDivergence v\u2016^2 = \u2016v\u2016^2 + inner \u211d (transpose v) v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTransposeEnergy.lean#L12"
+    },
+    {
+      "paper": "Section 3 completed linear Gaussian fields: genuine divergence-domain completion, transpose reflection, symmetric gradient and antisymmetric divergence-free decomposition, and the signed transpose energy correction.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTransposeEnergy.skew_energy_cancellation",
+      "file": "Foundation/GaussianLinearFieldTransposeEnergy.lean",
+      "line": 22,
+      "source_sha256": "52bc6c48f1d5ce78005e5df76ccf6c83aec0f056c0778ecb6621b5ae76a29908",
+      "declaration_header": "theorem skew_energy_cancellation {v : GaussianVectorL2} (hv : v \u2208 linearGaussianFields)\n    (hs : transpose v = -v) :\n    completedDivergence v = 0 \u2227 inner \u211d (transpose v) v = -\u2016v\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldTransposeEnergy.lean#L22"
     }
   ],
   "human_reorganization": [
@@ -4233,7 +4449,8 @@
     "Section 15 reconstructs the full Gaussian derivative of the original Brownian Ito integral on the independently specified predictable Sobolev graph. Finite-chaos bounded graph maps and Bochner dominated convergence prove equality with the actual adapted polynomial graph closure; no graph approximation is assumed in the theorem. The actual parameterized correction is an isometry only on its proved admissible range and is orthogonal to all embedded predictable fields. Exact derivative/graph energies and a mean-profile Poincare bound give deterministic-profile rigidity. The B_a times (B_b-B_a) step witness saturates the bound and retains correction energy a(b-a). This full source-field correction is distinguished from the preceding two predictable coefficient corrections, whose cross energy is nonzero. No converse characterization of all Ito targets, physical-time derivative or observed-IBM calculus is inferred.",
     "Section 16 reconstructs a separate Brownian cubic obstruction for the bounded predictable adjoint K=I*, retaining its distinction from the unbounded Malliavin derivative. On F=W_T^2 and G=W_T, the actual conditional-product candidate is 3W_t^2+(T-t), whereas K(FG)=3W_t^2+3(T-t). Their deterministic error 2(T-t) has squared time-probability norm 4T^3/3; replacing by running 3W_t^2 instead gives 3T^3. All candidate and true fields are proved predictable L2 using genuine Gaussian fourth moments. The exact error is 2KJ_T, with J_T the original first-chaos ramp observable. Identification J_T=int_0^T W_s ds by a Bochner deterministic-source integral and bounded Ito-map interchange is explicitly a HUMAN reformulation; the terminal error identity IB=W_T^3-2J_T is likewise a HUMAN isometry consequence. No arbitrary multiplier-domain closure, general conditional derivation, bounded-C3 counterexample, physical-time IBM calculus or new product principle is inferred.",
     "Section 17 reconstructs the standard bounded-commutator route to genuine product-domain membership for the actual densely defined divergence. Original-domain invariance and a bounded commutator imply adjoint-domain invariance by an explicit Riesz representer; constants, sums and products form an algebra, and centering on a finite measure puts every admissible function and generated algebra product in the actual adjoint domain. The explicit adjoint equality and graph-norm bound are human consequences of that representer proof. A supplied zero-operator Gaussian example shows why an arbitrarily chosen admissible generated algebra need not be graph dense; it does not claim that the full admissible algebra is non-dense. For bounded everywhere-defined divergences every bounded multiplier is admissible, so this criterion does not imply a Leibniz rule. No particular unbounded Gaussian divergence is claimed to have a dense multiplier core. Classical operator argument, no new principle or priority claim.",
-    "Section 18 reconstructs genuine C2 Brownian Ito with bounded actual first and second derivatives and no third derivative assumption on the original function. Explicit interval averages give C3 approximants; the smooth proof prints the L2 third-order remainder O(T sqrt(mesh)), centered quadratic error squared O(T mesh), predictable isometry limit and Bochner drift limit. Terminal, integrand and curvature convergences are checked separately before applying the bounded predictable adjoint. The exact formula K f(W_T)=running f-prime + (1/2) K drift, its necessary-and-sufficient equality criterion and actual compensated martingale are proved. A separate bounded C-infinity sine witness has K sin(W_T)=1_(0,T] exp(-(T-t)/2) cos(W_t), with an explicitly positive HUMAN error-energy integral. It refutes the terminal-adjoint/running-derivative substitution within the bounded smooth class, not the distinct conditional-product candidate of Section 16. Six principal sources read in full, including the full time-weighted source although only its exponential sine specialization is used. This is classical Ito calculus, not a novel principle, unproved full Malliavin-domain claim, general C1,2 approximation or intrinsic physical-time IBM theorem."
+    "Section 18 reconstructs genuine C2 Brownian Ito with bounded actual first and second derivatives and no third derivative assumption on the original function. Explicit interval averages give C3 approximants; the smooth proof prints the L2 third-order remainder O(T sqrt(mesh)), centered quadratic error squared O(T mesh), predictable isometry limit and Bochner drift limit. Terminal, integrand and curvature convergences are checked separately before applying the bounded predictable adjoint. The exact formula K f(W_T)=running f-prime + (1/2) K drift, its necessary-and-sufficient equality criterion and actual compensated martingale are proved. A separate bounded C-infinity sine witness has K sin(W_T)=1_(0,T] exp(-(T-t)/2) cos(W_t), with an explicitly positive HUMAN error-energy integral. It refutes the terminal-adjoint/running-derivative substitution within the bounded smooth class, not the distinct conditional-product candidate of Section 16. Six principal sources read in full, including the full time-weighted source although only its exponential sine specialization is used. This is classical Ito calculus, not a novel principle, unproved full Malliavin-domain claim, general C1,2 approximation or intrinsic physical-time IBM theorem.",
+    "Section 3 now reconstructs the completed transpose energy identity. Literal coefficient transposition is an isometric self-adjoint involution on the closed linear-field space and restricts the ambient Hodge reflection 2G-I. Symmetric fields are genuine gradients by closedness; antisymmetric completed fields have genuine divergence zero and are orthogonal to the closed gradient range. Thus norm(delta V)^2=norm(V)^2+<TV,V>=2 norm(GV)^2. The correction is a transpose pairing, not a nonnegative coefficient-square sum. Absolute convergence of its Hilbert-Schmidt coordinate series and the explicit two-coordinate skew witness of energy 2, correction -2 and divergence zero are labelled HUMAN realizations. All three principal modules were read fully. This concerns the actual completed linear-field domain, not arbitrary nonlinear L2 fields, and is a classical Gaussian integration-by-parts/Hodge companion without priority claim."
   ],
   "literature": [
     {

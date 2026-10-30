@@ -218,6 +218,70 @@ isometry and finite-box approximations. The matrix notation is a
 human coordinate realization of those source constructions.
 
 
+
+\subsection*{The energy correction is a transpose pairing}
+The completion above also retains the orientation of the two source
+indices. On the closed linear-field space, define
+$\mathsf T V_A=V_{A^T}$. Finite coefficient orthogonality makes
+this a linear isometric involution on the completion, with
+$\langle\mathsf TV,W\rangle=\langle V,\mathsf TW\rangle$.
+On a rank field $aW(b)$ it sends $aW(b)$ to $bW(a)$.
+Let $G$ be orthogonal projection in the full vector-field space
+onto the closure of the gradient range. Then, on these linear fields,
+\begin{equation}\label{eq:transposeparts}
+ GV=\frac{V+\mathsf TV}{2},\qquad
+ (I-G)V=\frac{V-\mathsf TV}{2}.
+\end{equation}
+Indeed the symmetric part $V_{S(A)}$ is a genuine gradient:
+$D Q_{S(A)}=2V_{S(A)}$, by the finite-box identity and closedness
+of $D$. The skew part has original divergence zero, by the preceding
+completion and $S(A-S(A))=0$. The adjoint identity therefore makes
+it orthogonal to every gradient and its closure. This proves the
+orthogonal decomposition, not merely a formal index permutation.
+In the ambient source notation $\mathsf T=2G-I$ is the Hodge
+reflection; its restriction here is precisely matrix transposition.
+\par\noindent\code{GaussianLinearFieldTranspose.transpose_rank}.
+\par\noindent\code{GaussianLinearFieldTranspose.symmetricPart_eq}.
+\par\noindent\code{GaussianLinearFieldTranspose.antisymmetricPart_eq}.
+
+Writing $V_+=GV$ and $V_-=(I-G)V$, the original divergence obeys
+\begin{equation}\label{eq:transposeenergy}
+ \|\delta V\|_2^2
+ =2\|V_+\|^2
+ =\|V\|^2+\langle\mathsf TV,V\rangle,
+ \qquad
+ \langle\mathsf TV,V\rangle=\|V_+\|^2-\|V_-\|^2.
+\end{equation}
+The first equality is $\delta V_A=Q_{S(A)}$ and
+\eqref{eq:fullisometry}; the others follow by orthogonality and
+$\mathsf TV=V_+-V_-$. In particular
+$\delta V=0$ if and only if $\mathsf TV=-V$, and
+$\delta(\mathsf TV)=\delta V$, since their symmetric parts agree.
+All fields in this calculation already belong to the original
+maximal divergence domain by the graph-completion proof above.
+\par\noindent\code{GaussianLinearFieldTransposeEnergy.completed_transpose_energy}.
+\par\noindent\code{GaussianLinearFieldTranspose.completed_kernel_antisymmetric}.
+\par\noindent\code{GaussianLinearFieldTranspose.transpose_divergence}.
+
+For real Hilbert--Schmidt coefficients the correction is
+$\langle V_{A^T},V_A\rangle=\sum_{i,j}A_{ji}A_{ij}$;
+the series is absolutely convergent by Cauchy--Schwarz and
+$\|A^T\|_\HS=\|A\|_\HS$. It is not the nonnegative sum
+$\sum A_{ij}^2$. The explicit rank-two field
+$V=e_0G_1-e_1G_0$ has
+\[
+ \|V\|^2=2,\qquad \mathsf TV=-V,\qquad
+ \langle\mathsf TV,V\rangle=-2,\qquad \delta V=0.
+\]
+Thus the correction cancels the source energy exactly. This
+coordinate example and the absolute coefficient series are human
+realizations of the mapped completed reflection identity.
+The divergence norm itself remains nonnegative. The result does
+not assert that arbitrary nonlinear $L^2$ vector fields lie in
+$D(\delta)$ or transfer a Gaussian isometry to a non-Gaussian process.
+These are classical Gaussian integration-by-parts and orthogonal
+decomposition mechanisms, without a priority claim.
+
 \section{Full quadratic prediction is a two-coordinate compression}
 Let $M\subseteq H$ be any closed subspace, $P$ its orthogonal projection
 and $R=I-P$. Put $W(h)=\sum_i h_iG_i$, with convergence in $L^2$,
