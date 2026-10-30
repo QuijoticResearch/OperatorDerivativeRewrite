@@ -2963,3 +2963,4 @@ import Foundation.PeriodicQuarticCurvature
 import Foundation.PeriodicPolynomialGround
 import Foundation.PeriodicWindingRate
 import Foundation.PeriodicGroundBridge
+import Foundation.PeriodicAugmentedBridge
