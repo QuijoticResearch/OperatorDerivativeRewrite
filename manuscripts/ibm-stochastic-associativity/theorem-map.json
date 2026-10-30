@@ -3084,6 +3084,204 @@
       "source_sha256": "b7c4ac45f9aad2ae94d592f9ed2cc897515cfaad7e0e437b1b3ba68aa9420fdb",
       "declaration_header": "theorem no_deterministic_representation :\n    \u00ac \u2203 f : TimeL2, integral f =\u1d50[IBMSourceLaws.jointMeasure] IBMConstructedSources.ibmValue 1",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDeterministicRangeObstruction.lean#L91"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.process_reflect_ae",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 14,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "theorem process_reflect_ae (t : \u211d\u22650) :\n    (fun \u03c9 => GaussianTimeProcess.process t (reflect \u03c9)) =\u1d50[gaussianProduct]\n      fun \u03c9 => -GaussianTimeProcess.process t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L14"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.clock_reflect_coordinate",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 20,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "theorem clock_reflect_coordinate (t : \u211d\u22650) :\n    (fun \u03c9 => clockPath (reflect \u03c9) t) =\u1d50[gaussianProduct] fun \u03c9 => -clockPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L20"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.clock_reflect_simultaneous",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 27,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "theorem clock_reflect_simultaneous :\n    \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 t : \u211d\u22650, clockPath (reflect \u03c9) t = -clockPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L27"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.reflectClock",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 40,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "def reflectClock (\u03c9 : IBMSourceLaws.JointSample) : IBMSourceLaws.JointSample",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L40"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.reflectClock_preserving",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 43,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "theorem reflectClock_preserving :\n    MeasurePreserving reflectClock IBMSourceLaws.jointMeasure IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L43"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSignSymmetry.ibm_reflect_simultaneous",
+      "file": "Foundation/IBMClockSignSymmetry.lean",
+      "line": 47,
+      "source_sha256": "f75cc2f28bd944a415829aaf289b0bc454dc1f5864d127cb80d1d26a7a2fab78",
+      "declaration_header": "theorem ibm_reflect_simultaneous : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure,\n    \u2200 t : \u211d\u22650, ibmValue t (reflectClock \u03c9) = ibmValue t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSignSymmetry.lean#L47"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.jointReflection",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 18,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "def jointReflection : JointL2 \u2192\u2097\u1d62[\u211d] JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L18"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.jointReflection_ae",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 21,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem jointReflection_ae (f : JointL2) :\n    jointReflection f =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => f (reflectClock \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L21"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.observable_fixed",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 25,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem observable_fixed (f : JointL2) (hf : f \u2208 IntrinsicSpace) : jointReflection f = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L25"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.odd_inner_zero",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 52,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem odd_inner_zero (F : JointL2) (hF : jointReflection F = -F)\n    (f : JointL2) (hf : f \u2208 IntrinsicSpace) : inner \u211d F f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L52"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.nonzero_odd_not_observable",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 58,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem nonzero_odd_not_observable (F : JointL2) (hF : jointReflection F = -F) (hn : F \u2260 0) :\n    F \u2209 IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L58"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.odd_condExpL2_zero",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 63,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem odd_condExpL2_zero (T : \u211d\u22650) (F : JointL2) (hF : jointReflection F = -F) :\n    (condExpL2 \u211d \u211d (naturalFiltration.le T) F : JointL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L63"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.clockLift_reflection",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 72,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem clockLift_reflection (f : GaussianL2) :\n    jointReflection (clockLift f) = clockLift (reflection f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L72"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.clock_firstChaos_condExp_zero",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 84,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem clock_firstChaos_condExp_zero (T : \u211d\u22650) (h : CoefficientSpace) :\n    (condExpL2 \u211d \u211d (naturalFiltration.le T) (clockLift (firstChaosEmbedding h)) : JointL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L84"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.clock_class_actual_ae",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 89,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem clock_class_actual_ae (t : \u211d\u22650) :\n    clockLift (GaussianTimeProcess.wienerL2 t) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => IBMConstructedSources.clockPath \u03c9.2 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L89"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.signed_clock_condExp_zero",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 96,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem signed_clock_condExp_zero (T t : \u211d\u22650) :\n    IBMSourceLaws.jointMeasure[(fun \u03c9 => IBMConstructedSources.clockPath \u03c9.2 t) |\n      naturalFiltration T] =\u1d50[IBMSourceLaws.jointMeasure] fun _ => (0 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L96"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.clock_class_not_in_past",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 113,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem clock_class_not_in_past (T t : \u211d\u22650) (ht : 0 < t) :\n    clockLift (GaussianTimeProcess.wienerL2 t) \u2209 past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L113"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.signed_clock_not_measurable",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 126,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem signed_clock_not_measurable (T t : \u211d\u22650) (ht : 0 < t) :\n    \u00ac AEStronglyMeasurable[naturalFiltration T]\n      (fun \u03c9 => IBMConstructedSources.clockPath \u03c9.2 t) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L126"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInnovationObstruction.signed_clock_not_stronglyAdapted",
+      "file": "Foundation/IBMClockInnovationObstruction.lean",
+      "line": 133,
+      "source_sha256": "a807a8e10c1d3706af5fbb679c1d60da5f1e752d7264b90393099e6705a18807",
+      "declaration_header": "theorem signed_clock_not_stronglyAdapted :\n    \u00ac StronglyAdapted naturalFiltration\n      (fun t \u03c9 => IBMConstructedSources.clockPath \u03c9.2 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInnovationObstruction.lean#L133"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockMixedSymmetry.mixed_clock_odd",
+      "file": "Foundation/IBMClockMixedSymmetry.lean",
+      "line": 13,
+      "source_sha256": "46dccb0c327f53bfeec294b8e0db6367268959743bc38bb741c8c7a2a6141ea4",
+      "declaration_header": "theorem mixed_clock_odd (a : GaussianL2) (h : CoefficientSpace) :\n    jointReflection (ProductL2Curry.productTensor gaussianProduct gaussianProduct\n      a (firstChaosEmbedding h)) =\n        -ProductL2Curry.productTensor gaussianProduct gaussianProduct a (firstChaosEmbedding h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockMixedSymmetry.lean#L13"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockMixedSymmetry.mixed_clock_condExp_zero",
+      "file": "Foundation/IBMClockMixedSymmetry.lean",
+      "line": 31,
+      "source_sha256": "46dccb0c327f53bfeec294b8e0db6367268959743bc38bb741c8c7a2a6141ea4",
+      "declaration_header": "theorem mixed_clock_condExp_zero (T : \u211d\u22650) (a : GaussianL2) (h : CoefficientSpace) :\n    (condExpL2 (\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockMixedSymmetry.lean#L31"
+    },
+    {
+      "paper": "Section 1 hidden signed-clock symmetry and arbitrary scenery-times-first-clock-chaos obstruction; exact norm distance labelled human.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockMixedSymmetry.mixed_clock_orthogonal",
+      "file": "Foundation/IBMClockMixedSymmetry.lean",
+      "line": 37,
+      "source_sha256": "46dccb0c327f53bfeec294b8e0db6367268959743bc38bb741c8c7a2a6141ea4",
+      "declaration_header": "theorem mixed_clock_orthogonal (a : GaussianL2) (h : CoefficientSpace)\n    (f : JointL2) (hf : f \u2208 IntrinsicSpace) :\n    inner \u211d (ProductL2Curry.productTensor gaussianProduct gaussianProduct\n      a (firstChaosEmbedding h)) f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockMixedSymmetry.lean#L37"
     }
   ],
   "paper_sections": {
@@ -3108,7 +3306,8 @@
     "Section 1 now proves directly from the actual reflected-clock/scenery law that clock backtracking makes E[Z_s(Z_t-Z_s)] negative. The named formal negative-pairing and projection obstruction are at times one and two. The printed all-0<s<t extension uses an explicit positive independent-increment rectangle with nondegenerate Gaussian laws and is labelled human.",
     "The closed covariance formula kappa(sqrt(s)+sqrt(t)-(sqrt(t+3s)+sqrt(t-s))/2) is an explicit human derivation from min(abs(Ws),abs(Wt)) and Gaussian absolute moments. The one-dimensional linear forecast at times one and two is computed from this covariance, not identified with any full sigma-algebra conditional expectation. Conditioning gives the fourth-moment obstruction to even marginal Gaussianity. These are classical illustrations, no new named source declaration or priority asserted.",
     "The whole initial right germ is now proved trivial in the actual reflected-clock Brownian path model. The complete human proof first proves all-Gaussian small-past projection decay, lifts it through the independent clock tensor factor, localizes each bounded measurable past functional by clipped scenery, and removes the remaining clock dependence using a product section for each shrinking clock past. The modification lemma is applied per measurable functional, without intersecting uncountably many null events. Bounded truncation handles general L2 germ classes. The original time-zero projection is expectation for every joint L2 target; the centered observable domain therefore has zero initial channel. This theorem does not identify raw and right-germ pasts at positive times and supplies no temporal Ito or prescribed-driver representation theorem. Classical Gaussian density, Brownian zero-one and product-measure mechanisms are credited; the source proof is reorganized, not extended.",
-    "Section 5 consolidates the actual prescribed quadratic-clock right-germ driver and its proper completed deterministic integral range. The driver is nonzero by the exact fourth-observation pairing 6t^2. Prefix density is proved by finite-horizon signed-measure uniqueness, so the isometry has the full deterministic time L2 domain. The covariance adjoint is bounded Hilbert recovery, not a Malliavin derivative. Simultaneous scenery reflection preserves observation spaces and fixes the driver, while negating the actual observed path. This proves C Z_t=0 and ||Z_t-Jf||^2=||Z_t||^2+||f||^2, with actual Z_1 outside the closed range. The same-time formula N_t=P_t Q_t and general invariant-subspace projection commutation are labelled HUMAN classical deductions from the source horizon and symmetry statements. No positive-time raw/right-germ equality or obstruction for random predictable coefficients follows. The target-indexed/countable-channel results remain separate."
+    "Section 5 consolidates the actual prescribed quadratic-clock right-germ driver and its proper completed deterministic integral range. The driver is nonzero by the exact fourth-observation pairing 6t^2. Prefix density is proved by finite-horizon signed-measure uniqueness, so the isometry has the full deterministic time L2 domain. The covariance adjoint is bounded Hilbert recovery, not a Malliavin derivative. Simultaneous scenery reflection preserves observation spaces and fixes the driver, while negating the actual observed path. This proves C Z_t=0 and ||Z_t-Jf||^2=||Z_t||^2+||f||^2, with actual Z_1 outside the closed range. The same-time formula N_t=P_t Q_t and general invariant-subspace projection commutation are labelled HUMAN classical deductions from the source horizon and symmetry statements. No positive-time raw/right-germ equality or obstruction for random predictable coefficients follows. The target-indexed/countable-channel results remain separate.",
+    "Section 1 now reconstructs the actual simultaneous clock-sign reflection, invariance of the ENTIRE observation path, and orthogonality of every clock-odd joint L2 variable to the full all-time observable subspace. Arbitrary scenery L2 coefficients times clock first chaos remain odd, so both whole-path and every raw-past conditional expectations vanish. The literal signed clock Wt is unobservable even with all future observations for each t>0. The exact human distance identity norm(a(B)XW(h)-Y)^2=norm(a)^2 norm(h)^2+norm(Y)^2 is printed and justified by independence and orthogonality. Three principal modules IBMClockSignSymmetry, IBMClockInnovationObstruction and IBMClockMixedSymmetry read fully. This is a classical invariant-subspace mechanism on the actual law, distinct from the later scenery-reflection missing-range test. No exclusion of even clock channels, other innovations or arbitrary-driver representation is inferred."
   ],
   "literature": [
     {

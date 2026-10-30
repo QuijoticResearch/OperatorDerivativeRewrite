@@ -322,6 +322,91 @@ information in
 \par\noindent These distinguish the earlier coordinate-only
 zero-prediction statement from the proved whole-germ theorem.
 
+\subsection*{The signed clock is invisible even to the whole observation path}
+The trivial initial germ does not identify an innovation process.
+There is a separate exact symmetry obstruction to using the
+original signed clock. Let $\mathcal O=\sigma(Z_t:t\geq0)$ and
+let $\mathcal E=L^2(\mathcal O)$ inside the original joint $L^2$
+space. Reflect every Gaussian clock coordinate, leaving all
+scenery coordinates unchanged. This gives a measurable,
+probability-preserving involution $R$. For each fixed time,
+the reflected clock equals $-W_t$ almost surely. Intersect those
+events over a countable dense set of nonnegative times and use
+continuity of the two clock paths. On one common event,
+\[
+ W_t\circ R=-W_t\quad\hbox{for every }t\geq0,
+ \qquad Z_t\circ R=B(|-W_t|)=Z_t\quad\hbox{for every }t\geq0.
+\]
+This simultaneous step makes the assertion about the whole
+observation path valid, rather than just separate coordinates.
+
+The pullback $\mathcal R F=F\circ R$ is a linear isometric
+involution on joint $L^2$. Every $Y\in\mathcal E$ satisfies
+$\mathcal RY=Y$. Indeed an observable measurable version factors
+through the continuous observation path; composition with $R$
+therefore leaves it unchanged almost surely. Passing to the
+$L^2$ equivalence class also covers completed measurable versions.
+If $\mathcal RG=-G$, invariance of the inner product gives
+\[
+ \langle G,Y\rangle=\langle\mathcal RG,\mathcal RY\rangle
+                  =-\langle G,Y\rangle=0
+       \qquad(Y\in\mathcal E).
+\]
+Consequently the conditional expectation of $G$ onto $\mathcal O$,
+or onto any of the smaller raw observed pasts, is zero. This
+argument uses a genuine original-law symmetry, rather than a
+Gaussian regression formula for the non-Gaussian process $Z$.
+
+Take any scenery coefficient $a\in L^2(\Omega_B)$ and any
+deterministic clock Cameron--Martin vector $h$. Write $X_W(h)$
+for its original first-chaos isonormal clock variable. The
+random variable
+\[
+ G=a(B)X_W(h)
+\]
+is in joint $L^2$ by independence, with
+$\|G\|_2=\|a\|_2\|h\|$. Since scenery is fixed and clock first
+chaos changes sign under $R$, it is odd. Hence
+\begin{equation}\label{eq:hiddenclock}
+ \E[a(B)X_W(h)\mid\mathcal O]=0,
+ \qquad\E[a(B)X_W(h)\mid\mathcal F_T^Z]=0
+       \quad(T\geq0).
+\end{equation}
+For every actual observed $Y\in\mathcal E$, orthogonality gives
+the sharper human norm consequence
+\[
+ \|a(B)X_W(h)-Y\|_2^2
+        =\|a\|_2^2\|h\|^2+\|Y\|_2^2.
+\]
+Thus its distance to the entire observed subspace is exactly
+$\|a\|_2\|h\|$, attained at $Y=0$. The coefficient $a$ may be
+arbitrary square-integrable scenery data; it need not be a
+polynomial, bounded or centered. The tensor norm and last
+distance formula are explicit human consequences of independence
+and the mapped orthogonality theorem.
+
+In particular, for every $t>0$, $W_t$ is nonzero in $L^2$,
+with norm $\sqrt t$, and
+\[
+ \E[W_t\mid\mathcal O]=0.
+\]
+It cannot itself be observed-measurable even after observing all
+future times, and the signed clock is not strongly adapted to
+the raw observed filtration. Merely multiplying a first-clock-chaos
+variable by scenery data does not remedy the obstruction.
+The argument does not exclude clock-even channels, nonlinear
+observed innovations, or a representation using another driver.
+It also differs from the later scenery-reflection test, which
+changes the sign of $Z$ and concerns the range of one prescribed
+quadratic driver.
+
+\par\noindent\code{IBMClockSignSymmetry.ibm_reflect_simultaneous}.
+\par\noindent\code{IBMClockInnovationObstruction.observable_fixed}.
+\par\noindent\code{IBMClockInnovationObstruction.odd_inner_zero}.
+\par\noindent\code{IBMClockInnovationObstruction.signed_clock_condExp_zero}.
+\par\noindent\code{IBMClockMixedSymmetry.mixed_clock_orthogonal}.
+\par\noindent\code{IBMClockMixedSymmetry.mixed_clock_condExp_zero}.
+
 \section{The original predictable integral}
 We first specify the energy measure and integral to which later
 associativity statements refer. They are established objects, not
