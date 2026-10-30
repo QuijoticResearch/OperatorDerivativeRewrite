@@ -1517,6 +1517,186 @@
       "source_sha256": "06c4393c0cd1224084b69a8a0bb6e544680350e6a73bc14557660336ead7d18f",
       "declaration_header": "theorem no_initial_brownian_variance_bound (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1)\n    (h\u03b11 : \u03b1 < 1) (C \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2203 t : \u211d\u22650, 0 < t \u2227 (t : \u211d) < \u03b4 \u2227 t \u2264 1 \u2227\n      C * (t : \u211d) < \u2016stochasticResponse \u03b1 h\u03b1 t - stochasticResponse \u03b1 h\u03b1 0\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingObstruction.lean#L46"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedResponse",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 13,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "def modulatedResponse (\u03b1 : \u211d) (t : \u211d\u22650) (g : \u211d \u2192 \u211d) : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L13"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedResponse_memLp",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 16,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem modulatedResponse_memLp (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    MemLp (modulatedResponse \u03b1 t g) 2 volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L16"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedVector",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 30,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "def modulatedVector (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650)\n    (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L30"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedVector_coeFn",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 35,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem modulatedVector_coeFn (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650)\n    (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    modulatedVector \u03b1 h\u03b1 t g hg M hupper =\u1d50[volume]\n      modulatedResponse \u03b1 t g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L35"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedVector_energy",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 41,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem modulatedVector_energy (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650)\n    (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    \u2016modulatedVector \u03b1 h\u03b1 t g hg M hupper\u2016 ^ 2 =\n      \u222b s, (modulatedResponse \u03b1 t g s)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L41"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.stochasticModulatedResponse",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 51,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "def stochasticModulatedResponse (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650)\n    (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L51"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.stochasticModulatedResponse_energy",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 56,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem stochasticModulatedResponse_energy (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg M hupper\u2016 ^ 2 =\n      \u222b s, (modulatedResponse \u03b1 t g s)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L56"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.response_energy_integral",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 64,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem response_energy_integral (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650) :\n    (\u222b s, (response \u03b1 t s)^2) =\n      (t : \u211d)^(2*\u03b1 - 1) / ((Real.Gamma \u03b1)^2 * (2*\u03b1 - 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L64"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.stochasticModulatedResponse_energy_le",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 73,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem stochasticModulatedResponse_energy_le (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg M hupper\u2016 ^ 2 \u2264\n      M^2 * ((t : \u211d)^(2*\u03b1 - 1) / ((Real.Gamma \u03b1)^2 * (2*\u03b1 - 1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L73"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.stochasticModulatedResponse_law",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 99,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem stochasticModulatedResponse_law (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    gaussianProduct.map (stochasticModulatedResponse \u03b1 h\u03b1 t g hg M hupper) =\n      gaussianReal 0 \u27e8\u222b s, (modulatedResponse \u03b1 t g s)^2,\n        by rw [\u2190 modulatedVector_energy \u03b1 h\u03b1 t g hg M hupper]; positivity\u27e9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L99"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.stochasticModulatedResponse_derivative_graph",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 111,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem stochasticModulatedResponse_derivative_graph (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g : \u211d \u2192 \u211d) (hg : Measurable g) (M : \u211d)\n    (hupper : \u2200 s, |g s| \u2264 M) :\n    (stochasticModulatedResponse \u03b1 h\u03b1 t g hg M hupper,\n      GaussianContinuousRigidity.fieldEmbedding\n        (GaussianTimeProductL2.productTensor\n          (modulatedVector \u03b1 h\u03b1 t g hg M hupper) gaussianOne)) \u2208\n        closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L111"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedResponse.modulatedResponse_memLp_iff",
+      "file": "Foundation/SPDEModulatedResponse.lean",
+      "line": 121,
+      "source_sha256": "c39b96f9e566e21a6ebabcbf1b62392b4e349e801a2b66fd7beeaf08db33042c",
+      "declaration_header": "theorem modulatedResponse_memLp_iff (\u03b1 : \u211d) (h\u03b1 : 0 < \u03b1)\n    (t : \u211d\u22650) (ht : 0 < t) (g : \u211d \u2192 \u211d)\n    (hg : Measurable g) (M m : \u211d) (hm : 0 < m)\n    (hupper : \u2200 s, |g s| \u2264 M) (hlower : \u2200 s, m \u2264 |g s|) :\n    MemLp (modulatedResponse \u03b1 t g) 2 volume \u2194 1 / 2 < \u03b1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedResponse.lean#L121"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.modulated_cross_moment",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 13,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem modulated_cross_moment (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh) :\n    (\u222b \u03c9, isonormal TimeHilbert (modulatedVector \u03b1 h\u03b1 t g hg Mg hgM) \u03c9 *\n      isonormal TimeHilbert (modulatedVector \u03b1 h\u03b1 t h hh Mh hhM) \u03c9 \u2202gaussianProduct) =\n      \u222b s, modulatedResponse \u03b1 t g s * modulatedResponse \u03b1 t h s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L13"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.modulatedVector_sub",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 25,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem modulatedVector_sub (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh \u03b4 : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh)\n    (hdiff : \u2200 s, |g s - h s| \u2264 \u03b4) :\n    modulatedVector \u03b1 h\u03b1 t g hg Mg hgM -\n      modulatedVector \u03b1 h\u03b1 t h hh Mh hhM =\n      modulatedVector \u03b1 h\u03b1 t (g - h) (hg.sub hh) \u03b4 hdiff",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L25"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.stochasticModulatedResponse_sub",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 44,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem stochasticModulatedResponse_sub (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh \u03b4 : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh)\n    (hdiff : \u2200 s, |g s - h s| \u2264 \u03b4) :\n    stochasticModulatedResponse \u03b1 h\u03b1 t g hg Mg hgM -\n      stochasticModulatedResponse \u03b1 h\u03b1 t h hh Mh hhM =\n      stochasticModulatedResponse \u03b1 h\u03b1 t (g - h) (hg.sub hh) \u03b4 hdiff",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L44"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.stochasticModulatedResponse_error_sq",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 55,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem stochasticModulatedResponse_error_sq (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh \u03b4 : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh)\n    (hdiff : \u2200 s, |g s - h s| \u2264 \u03b4) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg Mg hgM -\n      stochasticModulatedResponse \u03b1 h\u03b1 t h hh Mh hhM\u2016 ^ 2 =\n      \u222b s, ((g s - h s) * response \u03b1 t s)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L55"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.stochasticModulatedResponse_error_le",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 66,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem stochasticModulatedResponse_error_le (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh \u03b4 : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh)\n    (hdiff : \u2200 s, |g s - h s| \u2264 \u03b4) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg Mg hgM -\n      stochasticModulatedResponse \u03b1 h\u03b1 t h hh Mh hhM\u2016 ^ 2 \u2264\n      \u03b4^2 * ((t : \u211d)^(2 * \u03b1 - 1) / ((Real.Gamma \u03b1)^2 * (2 * \u03b1 - 1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L66"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEModulatedSensitivity.stochasticModulatedResponse_tendsto",
+      "file": "Foundation/SPDEModulatedSensitivity.lean",
+      "line": 78,
+      "source_sha256": "c466175460f25328d360514154c40179d1d429cf6f9f01475a03199143fe59d6",
+      "declaration_header": "theorem stochasticModulatedResponse_tendsto\n    (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1) (t : \u211d\u22650)\n    (g : \u2115 \u2192 \u211d \u2192 \u211d) (h : \u211d \u2192 \u211d)\n    (hg : \u2200 n, Measurable (g n)) (hh : Measurable h)\n    (Mg : \u2115 \u2192 \u211d) (Mh : \u211d)\n    (hgM : \u2200 n s, |g n s| \u2264 Mg n) (hhM : \u2200 s, |h s| \u2264 Mh)\n    (\u03b4 : \u2115 \u2192 \u211d)\n    (hdiff : \u2200 n s, |g n s - h s| \u2264 \u03b4 n)\n    (h\u03b4 : Filter.Tendsto \u03b4 Filter.atTop (nhds 0)) :\n    Filter.Tendsto\n      (fun n => stochasticModulatedResponse \u03b1 h\u03b1 t (g n) (hg n) (Mg n) (hgM n))\n      Filter.atTop\n      (nhds (stochasticModulatedResponse \u03b1 h\u03b1 t h hh Mh hhM))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEModulatedSensitivity.lean#L78"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDETemporalCovariance.modulated_cross_time_moment",
+      "file": "Foundation/SPDETemporalCovariance.lean",
+      "line": 13,
+      "source_sha256": "56cc574705fe67245ac29b7096108aa46cf2311e06ce80537f17c22d000a3b29",
+      "declaration_header": "theorem modulated_cross_time_moment (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t u : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh) :\n    (\u222b \u03c9, isonormal TimeHilbert (modulatedVector \u03b1 h\u03b1 t g hg Mg hgM) \u03c9 *\n      isonormal TimeHilbert (modulatedVector \u03b1 h\u03b1 u h hh Mh hhM) \u03c9 \u2202gaussianProduct) =\n      \u222b s, modulatedResponse \u03b1 t g s * modulatedResponse \u03b1 u h s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDETemporalCovariance.lean#L13"
+    },
+    {
+      "paper": "Section 12: actual scalar deterministic modulation, Gaussian law and original derivative graph, exact covariance/increment/error formula, multiplier stability and threshold converse with a global positive lower bound. Finite-mode extensions are not claimed in this section.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDETemporalIncrements.stochasticModulatedResponse_increment_energy",
+      "file": "Foundation/SPDETemporalIncrements.lean",
+      "line": 13,
+      "source_sha256": "7ac20cdd04479ba31d6eee263d86293bc15b237b3694a88dc6b943c56c55ca1b",
+      "declaration_header": "theorem stochasticModulatedResponse_increment_energy (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t u : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg Mg hgM -\n      stochasticModulatedResponse \u03b1 h\u03b1 u h hh Mh hhM\u2016^2 =\n      \u222b s, (modulatedResponse \u03b1 t g s - modulatedResponse \u03b1 u h s)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDETemporalIncrements.lean#L13"
     }
   ],
   "paper_sections": {
@@ -1543,7 +1723,8 @@
     "Section 7.1 proves the actual completed-observation conditional Wick formula by orthogonal Gaussian splitting, full generated-sigma-algebra independence and locally dominated L2 differentiation. The projected variance is used in its Wick subtraction.",
     "Countable predicted sums converge through the bounded conditional projection of the original orthogonal series. The displayed finite double Gram sums converge in squared norm; no absolute infinite double-sum or preserved mode orthogonality is assumed. The inverse-degree recovery energy is a human consequence of the same homogeneous-chaos spectral identity already printed.",
     "The two-mode sum/difference calibration shows why deleting projected Gram cross terms fails. The actual two Brownian unit-time quadratic modes have predicted sum energy two. These are classical exact observation identities, not nonlinear SPDE or independence claims.",
-    "Section 11 separates the one-mode temporal threshold alpha>1/2 from the infinite-mode reciprocal-rate trace condition. The actual zero-generator Riemann-Liouville response has exact variance t^(2 alpha-1)/(Gamma(alpha)^2(2 alpha-1)), original Gaussian-source derivative and sharp initial variance exponent. Explicit cutoff-energy divergence at and below alpha=1/2 and the covariance asymptotic distinguishing unit-variance Liouville motion from standard fBM for H unequal to 1/2 are labelled classical human deductions. Neither a Mittag-Leffler resolvent, physical-time derivative nor a new stochastic PDE solution is asserted."
+    "Section 11 separates the one-mode temporal threshold alpha>1/2 from the infinite-mode reciprocal-rate trace condition. The actual zero-generator Riemann-Liouville response has exact variance t^(2 alpha-1)/(Gamma(alpha)^2(2 alpha-1)), original Gaussian-source derivative and sharp initial variance exponent. Explicit cutoff-energy divergence at and below alpha=1/2 and the covariance asymptotic distinguishing unit-variance Liouville motion from standard fBM for H unequal to 1/2 are labelled classical human deductions. Neither a Mittag-Leffler resolvent, physical-time derivative nor a new stochastic PDE solution is asserted.",
+    "Section 12 reconstructs exact scalar deterministic-multiplier covariance, increment and approximation-error identities in the original Gaussian L2 space, with the same original closed Gaussian derivative. The threshold converse explicitly retains 0<m<=|g|<=M globally. Sharp supremum-to-L2 operator norm and uniform-on-bounded-time mean-square norm convergence are labelled elementary human deductions of the mapped bound; expected suprema, path convergence and random-coefficient integration are not inferred. Four principal modules were read fully, while only their relevant scalar declarations are mapped."
   ],
   "literature": [
     {

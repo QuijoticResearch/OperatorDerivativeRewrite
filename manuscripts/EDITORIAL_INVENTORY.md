@@ -22,7 +22,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-eight reviewed drafts total 440 pages. The [catalog](INDEX.md) is the current authority for each paper's title, length, PDF, source, exact map and status. Every reviewed PDF has matching source/PDF build and visual-review hashes; its mapped frozen source hashes are checked. The whole-library inventory covers 2,795 modules, while detailed proof review remains candidate-specific.
+Twenty-eight reviewed drafts total 441 pages. The [catalog](INDEX.md) is the current authority for each paper's title, length, PDF, source, exact map and status. Every reviewed PDF has matching source/PDF build and visual-review hashes; its mapped frozen source hashes are checked. The whole-library inventory covers 2,795 modules, while detailed proof review remains candidate-specific.
 
 The arithmetic package separates fractional endpoint/global zero phenomena, the attained quartic eventual-start threshold and exact certificate, and sixth-order whole-plane reality from fixed-order expanding windows. Complete divisor products retain complex zeros. Gaussian integration budgets and the classical quadratic four-point comparison do not identify different deformations or establish an RH implication.
 

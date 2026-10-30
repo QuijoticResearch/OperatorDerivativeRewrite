@@ -33,7 +33,7 @@ when the corresponding raw sums fail; their exact Brownian prediction
 and increment energies distinguish initial Hermite scaling from
 positive-time roughness. Predictions from arbitrary Gaussian observations retain full projected Gram cross terms. Normalized Wick metric bounds retain the
 positive-correlation hypothesis; fractional positive-time exponents and
-the antipodal obstruction are proved explicitly. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
+the antipodal obstruction are proved explicitly. A separate fractional time profile has the sharp threshold $\alpha>1/2$ and exact deterministic-multiplier error bounds. Its normalized Liouville covariance differs from standard fBM except at the Brownian index. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
 classical; the paper consolidates frozen verified constructions and
 explicit counterexamples without claiming new stochastic PDE theory.
 \end{abstract}
@@ -1085,6 +1085,119 @@ with its $\Gamma(H+1/2)^{-2}$ normalization; their Section 4 compares
 it with classical fBM. Our unit-variance convention multiplies their
 process by $\sqrt{2H}\Gamma(H+1/2)$. Their broader stochastic evolution
 theory is not transferred to this zero-generator test.
+
+
+\section{Deterministic modulation and exact approximation error}
+The singularity threshold also has a precise deterministic-multiplier
+version. It is useful to state the actual norm that controls
+approximation, rather than invoke an unspecified stochastic stability
+principle. Throughout this section $g,h:\R\to\R$ are deterministic
+bounded measurable functions. For $\alpha>1/2$ put
+\[
+ V_\alpha(t)=\frac{t^{2\alpha-1}}{\Gamma(\alpha)^2(2\alpha-1)},
+ \qquad X_g(t)=I(g r_{\alpha,t}),\quad X_g(0)=0.
+\]
+Set $r_{\alpha,0}=0$. The time-channel isometry is the same original $I$ as above. No
+random coefficient, change of law or stochastic Fubini theorem is
+used in this construction.
+
+\begin{proposition}\label{prop:modulatedforcing}
+If $|g|\leq M$ and $|h|\leq N$ everywhere, then $X_g(t)$ is a
+centered Gaussian variable of variance
+\[
+ \E X_g(t)^2=\int_0^t g(s)^2 r_{\alpha,t}(s)^2\,ds
+                      \leq M^2 V_\alpha(t).
+\]
+It belongs to the original closed Gaussian derivative graph with
+constant source derivative equal to the embedded profile
+$g r_{\alpha,t}$. For all $t,u\geq0$,
+\begin{align}
+ \E[X_g(t)X_h(u)]
+  &=\int_0^{t\wedge u}g(s)h(s)r_{\alpha,t}(s)r_{\alpha,u}(s)\,ds,
+       \label{eq:modulatedcov}\\
+ \|X_g(t)-X_h(u)\|_2^2
+  &=\int_0^\infty
+           |g(s)r_{\alpha,t}(s)-h(s)r_{\alpha,u}(s)|^2\,ds.
+       \label{eq:modulatedincrement}
+\end{align}
+In particular, if $|g-h|\leq\delta$ everywhere, then
+\begin{equation}\label{eq:modulatederror}
+ \|X_g(t)-X_h(t)\|_2^2
+   =\int_0^t|g(s)-h(s)|^2r_{\alpha,t}(s)^2\,ds
+   \leq\delta^2 V_\alpha(t).
+\end{equation}
+For every $t>0$ this constant is sharp.
+\end{proposition}
+\begin{proof}
+The pointwise bound $|g r_{\alpha,t}|^2\leq M^2r_{\alpha,t}^2$
+and the already computed profile integral prove genuine $L^2$
+membership and the variance estimate. The isonormal law is centered
+normal with precisely that variance, including the possible zero
+variance. The finite-source approximation and closed-graph argument
+in Proposition~\ref{prop:rlforcing} applies to this deterministic
+profile without alteration.
+
+The isometry preserves real inner products, by polarization.
+Cauchy--Schwarz makes the profile product absolutely integrable;
+their supports intersect in $(0,t\wedge u)$, proving
+\eqref{eq:modulatedcov}. Linearity of the same isometry gives
+$X_g(t)-X_h(u)=I(g r_{\alpha,t}-h r_{\alpha,u})$ in actual
+Gaussian $L^2$. Its squared norm proves
+\eqref{eq:modulatedincrement}. Taking $u=t$ and using
+$|g-h|\leq\delta$ proves \eqref{eq:modulatederror}.
+For sharpness choose $g\equiv\delta$, $h\equiv0$, with $\delta>0$;
+then equality holds. Thus the norm of the deterministic map
+$g\mapsto X_g(t)$ from the supremum norm to Gaussian $L^2$ is
+exactly $\sqrt{V_\alpha(t)}$. This norm interpretation is an
+explicit elementary human consequence of the named error identity.
+\end{proof}
+
+If bounded measurable $g_n,g$ obey
+$|g_n-g|\leq\delta_n\to0$, the estimate implies, for every finite
+$T>0$,
+\[
+ \sup_{0\leq t\leq T}\|X_{g_n}(t)-X_g(t)\|_2^2
+       \leq\delta_n^2V_\alpha(T)\longrightarrow0.
+\]
+Here $2\alpha-1>0$, so $V_\alpha$ is increasing. This is a
+labelled human uniform-in-time \emph{mean-square norm} consequence
+of the fixed-time mapped convergence theorem. It is not convergence
+of the expected supremum, a sample-path estimate or a uniform
+almost-sure conclusion. The constants and all terminal-time profiles
+are kept inside the same isonormal space.
+
+\subsection*{What the multiplier threshold actually assumes}
+For $\alpha>0$, a fixed $t>0$ and deterministic measurable $g$
+with the global two-sided bounds
+\[
+ 0<m\leq |g(s)|\leq M\qquad(s\in\R),
+\]
+the exact threshold remains
+\[
+ g r_{\alpha,t}\in L^2\quad\Longleftrightarrow\quad\alpha>1/2.
+\]
+The upper direction was proved above. For the converse,
+$r_{\alpha,t}^2\leq m^{-2}|g r_{\alpha,t}|^2$; integrability
+would therefore imply the unmodulated profile integrability,
+whose sharp threshold was proved in the preceding section.
+This is exactly the global lower-bound hypothesis in the mapped
+formal theorem. Boundedness alone does not imply its converse:
+$g\equiv0$ gives the zero deterministic profile even for
+$0<\alpha\leq1/2$. No nondegeneracy assumption may be omitted.
+
+These are classical deterministic Brownian-integral mechanisms,
+not a new general stochastic evolution theorem. The Liouville
+integration context of~\cite{BNS} is credited, without importing
+its broader integrand spaces or evolution-equation conclusions.
+The fully read scalar modulation sources are
+\par\noindent\code{SPDEModulatedResponse};
+\par\noindent\code{SPDEModulatedSensitivity}.
+\par\noindent Cross-time and increment identities also occur in
+\par\noindent\code{SPDETemporalCovariance};
+\par\noindent\code{SPDETemporalIncrements}.
+\par\noindent Their finite-mode extensions require the explicitly
+orthogonal mode channels in those sources; no independence of
+arbitrary forcing directions is inferred here.
 
 \section{Formal correspondence and prior theory}
 \begingroup\raggedright
