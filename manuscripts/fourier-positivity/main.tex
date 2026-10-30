@@ -1143,6 +1143,73 @@ whose genuine dissipation was established earlier.
 \code{modes_orthogonal}, \code{componentEnergy_flow},
 \code{false_rate_on_second_frequency}.
 
+\subsection*{Positive Gram powers do not imply subordination monotonicity}
+There is a second distinction already at the actual positive frequencies
+one and two. For $0<\gamma<2$, put $H=\gamma/2$, and let
+\[
+ R_\gamma=\begin{pmatrix}1&2^{\gamma-1}\\
+                    2^{\gamma-1}&2^\gamma\end{pmatrix},\qquad
+ P_\gamma=R_\gamma^{\circ2}.
+\]
+These are the anchored covariance matrix and its entrywise square;
+both are positive semidefinite. For a real two-mode coefficient vector
+$v$ at the torus origin, their quadratic forms are exactly the first and
+second Gamma energies. For these two forms, positivity of both matrices
+does not order them in the positive-semidefinite sense.
+
+At $\gamma=1$, the previous matrices give
+\[
+ P_1-R_1=\begin{pmatrix}0&0\\0&2\end{pmatrix}.
+\]
+Consequently $v^TP_1v\geq v^TR_1v$ for every $v$, with equality
+and positive denominator at $v=(1,0)$. Thus the best lower-comparison
+constant restricted to these two modes is exactly one.
+At $\gamma=3/2$, however,
+\[
+ R_{3/2}=\begin{pmatrix}1&\sqrt2\\\sqrt2&2\sqrt2\end{pmatrix},
+ \qquad P_{3/2}=\begin{pmatrix}1&2\\2&8\end{pmatrix}.
+\]
+Take the same actual coefficient vector $v=(1,-1/8)$. Direct multiplication
+gives
+\[
+ v^TR_{3/2}v=1-\frac{7\sqrt2}{32}>0,\qquad
+ v^TP_{3/2}v=\frac58,
+\]
+so every valid lower comparison $P_{3/2}\geq\kappa R_{3/2}$ must satisfy
+\[
+ \kappa\leq\frac{20}{32-7\sqrt2}<1.
+\]
+All strict signs are exact: $\sqrt2<2$ makes the denominator positive,
+and $12>7\sqrt2$ follows by squaring positive quantities,
+$144>98$. Their positive difference is
+$v^T(R_{3/2}-P_{3/2})v=(12-7\sqrt2)/32$.
+This proves failure of $P_{3/2}\geq R_{3/2}$ despite positivity
+of each matrix; no approximate eigenvalue is involved.
+\par\noindent\code{FractionalCurvatureSubordinationObstruction}:
+\par\noindent\code{R_three_quarters}, \code{P_three_quarters},
+\par\noindent\code{witness_R_energy}, \code{witness_P_energy},
+\par\noindent\code{cauchy_lower}, \code{cauchy_sharp}, \code{lower_bound_strict}.
+
+Precisely which monotonicity does this exclude? Suppose a proposed
+function $\kappa(\gamma)$ is normalized by $\kappa(1)=1$, obeys the
+necessary displayed two-mode bound at $3/2$, and is asserted to satisfy
+\[
+ \kappa(\alpha\gamma)\leq\kappa(\gamma)
+       \quad(0<\gamma<2,\ 0<\alpha<1).
+\]
+Taking $\gamma=3/2$ and $\alpha=2/3$ forces
+$1=\kappa(1)\leq\kappa(3/2)<1$, a contradiction. The normalization
+one is established here for the \emph{two-mode} comparison at one,
+not for a full-domain pointwise curvature theorem. Without that
+normalization the argument does not refute every possible curvature
+function or any valid subordination theorem. In particular, the already
+proved positivity of the stable semigroups remains intact. The conclusion
+isolates incompatible coefficient-form requirements; it neither builds
+a new curvature invariant nor identifies a generalized form eigenvalue
+with a time-decay rate.
+\par\noindent\code{FractionalCurvatureSubordinationObstruction}:
+\par\noindent\code{universal_subordination_incompatible}.
+
 \subsection*{The complex ellipsoid ratio is three, not square root three}
 The same two forms give an exact volume diagnostic. For real coefficient
 pairs, a determinant square root controls ellipse area. For complex
