@@ -1332,6 +1332,393 @@
       "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
       "declaration_header": "theorem regularized_graph_approximation (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) (hb : 1/4 < \u03b2) :\n    Tendsto (fun N =>\n      ((GaussianNumberSectors.truncation N).compLpL 2 gaussianProduct\n          (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT)),\n        (GaussianNumberSectors.gradientTruncation N).compLpL 2 gaussianProduct\n          (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT))))\n      atTop (\ud835\udcdd (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT),\n        regularizedGradient \u03b2 h\u03b2 T hT hb))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L96"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseVectors.vector",
+      "file": "Foundation/IBMPhysicalNoiseVectors.lean",
+      "line": 13,
+      "source_sha256": "5c867e0ea292dd666b836343524d25d32a42ca5a5b7e9fc7d65a0cb10e7bf583",
+      "declaration_header": "def vector (r : \u211d) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseVectors.lean#L13"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseVectors.vector_norm_sq",
+      "file": "Foundation/IBMPhysicalNoiseVectors.lean",
+      "line": 40,
+      "source_sha256": "5c867e0ea292dd666b836343524d25d32a42ca5a5b7e9fc7d65a0cb10e7bf583",
+      "declaration_header": "theorem vector_norm_sq (r : \u211d) : \u2016vector r\u2016^2 = |r|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseVectors.lean#L40"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseVectors.vector_increment_sq",
+      "file": "Foundation/IBMPhysicalNoiseVectors.lean",
+      "line": 52,
+      "source_sha256": "5c867e0ea292dd666b836343524d25d32a42ca5a5b7e9fc7d65a0cb10e7bf583",
+      "declaration_header": "theorem vector_increment_sq (s r : \u211d) : \u2016vector r-vector s\u2016^2 = |r-s|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseVectors.lean#L52"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseVectors.vector_inner_integral",
+      "file": "Foundation/IBMPhysicalNoiseVectors.lean",
+      "line": 59,
+      "source_sha256": "5c867e0ea292dd666b836343524d25d32a42ca5a5b7e9fc7d65a0cb10e7bf583",
+      "declaration_header": "theorem vector_inner_integral (f : TimeHilbert) (r : \u211d) :\n    inner \u211d (vector r) f = \u222b x in 0..r, f x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseVectors.lean#L59"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseVectors.span_dense",
+      "file": "Foundation/IBMPhysicalNoiseVectors.lean",
+      "line": 75,
+      "source_sha256": "5c867e0ea292dd666b836343524d25d32a42ca5a5b7e9fc7d65a0cb10e7bf583",
+      "declaration_header": "theorem span_dense : (Submodule.span \u211d (Set.range vector)).topologicalClosure = \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseVectors.lean#L75"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.combination_inner",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 45,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "theorem combination_inner (c d : \u211d \u2192\u2080 \u211d) :\n    inner \u211d (sourceCombination c) (sourceCombination d) =\n      inner \u211d (physicalCombination c) (physicalCombination d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L45"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalToCoefficient",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 58,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "def physicalToCoefficient : TimeHilbert \u2192\u2097\u1d62[\u211d] CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L58"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalNoise",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 67,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "def physicalNoise : TimeHilbert \u2192\u2097\u1d62[\u211d] GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L67"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalNoise_vector",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 69,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "theorem physicalNoise_vector (r : \u211d) : physicalNoise (vector r) = sourceScenery r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L69"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalNoise_law",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 87,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "theorem physicalNoise_law (f : TimeHilbert) :\n    gaussianProduct.map (physicalNoise f) =\n      gaussianReal 0 (NNReal.mk (\u2016f\u2016^2) (sq_nonneg _))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L87"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalNoise_mean",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 93,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "theorem physicalNoise_mean (f : TimeHilbert) :\n    (\u222b \u03c9, physicalNoise f \u03c9 \u2202gaussianProduct) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L93"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseRealization.physicalNoise_covariance",
+      "file": "Foundation/IBMPhysicalNoiseRealization.lean",
+      "line": 97,
+      "source_sha256": "a78ef6ea81cabe0a6d231d85e71290d2c34b8913686462d98da6b2f95a6f90c5",
+      "declaration_header": "theorem physicalNoise_covariance (f h : TimeHilbert) :\n    cov[physicalNoise f,physicalNoise h;gaussianProduct] = inner \u211d f h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseRealization.lean#L97"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseCalculus.physicalNoise_closedDerivative_graph",
+      "file": "Foundation/IBMPhysicalNoiseCalculus.lean",
+      "line": 33,
+      "source_sha256": "6e65c868d906dbb5dbc26cb8f0bf64b8d94ba80addc29ab9d96ddcc54b2ad445",
+      "declaration_header": "theorem physicalNoise_closedDerivative_graph (f : TimeHilbert) :\n    (physicalNoise f,Lp.const 2 gaussianProduct (physicalToCoefficient f)) \u2208\n      closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseCalculus.lean#L33"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseCalculus.convolutionKernel_realizes",
+      "file": "Foundation/IBMPhysicalNoiseCalculus.lean",
+      "line": 72,
+      "source_sha256": "6e65c868d906dbb5dbc26cb8f0bf64b8d94ba80addc29ab9d96ddcc54b2ad445",
+      "declaration_header": "theorem convolutionKernel_realizes {\u03c1 : \u211d \u2192 \u211d} (hc : Continuous \u03c1)\n    (hs : HasCompactSupport \u03c1) (x : \u211d) :\n    physicalNoise (convolutionKernel \u03c1 x) = wholeLineScenery \u03c1 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseCalculus.lean#L72"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseCalculus.convolution_gradient_pullback",
+      "file": "Foundation/IBMPhysicalNoiseCalculus.lean",
+      "line": 99,
+      "source_sha256": "6e65c868d906dbb5dbc26cb8f0bf64b8d94ba80addc29ab9d96ddcc54b2ad445",
+      "declaration_header": "theorem convolution_gradient_pullback {\u03c1 : \u211d \u2192 \u211d} (hc : Continuous \u03c1)\n    (hs : HasCompactSupport \u03c1) (x : \u211d) :\n    gradientPullback (firstChaosGradient (wholeLineScenery \u03c1 x)) =\n      Lp.const 2 gaussianProduct (convolutionKernel \u03c1 x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseCalculus.lean#L99"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseCalculus.mollifier_kernel_tendsto",
+      "file": "Foundation/IBMPhysicalNoiseCalculus.lean",
+      "line": 134,
+      "source_sha256": "6e65c868d906dbb5dbc26cb8f0bf64b8d94ba80addc29ab9d96ddcc54b2ad445",
+      "declaration_header": "theorem mollifier_kernel_tendsto (r : \u211d) :\n    Tendsto (fun n => convolutionKernel (IBMMollifier.kernel n) r) atTop (\ud835\udcdd (vector r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseCalculus.lean#L134"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseClock.sourceKernel_actual_realization",
+      "file": "Foundation/IBMPhysicalNoiseClock.lean",
+      "line": 63,
+      "source_sha256": "e26600a34fcfdc6184cd348723037940647b0b1fd1081d74693423aa1b5b5167",
+      "declaration_header": "theorem sourceKernel_actual_realization (t : \u211d\u22650) : \u2200\u1d50 \u03c9Y \u2202gaussianProduct,\n    physicalNoise (sourceKernel t \u03c9Y) =\u1d50[gaussianProduct]\n      fun \u03c9X => IBMConstructedSources.ibmValue t (\u03c9X,\u03c9Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseClock.lean#L63"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseClock.mollifiedKernel_tendsto",
+      "file": "Foundation/IBMPhysicalNoiseClock.lean",
+      "line": 71,
+      "source_sha256": "e26600a34fcfdc6184cd348723037940647b0b1fd1081d74693423aa1b5b5167",
+      "declaration_header": "theorem mollifiedKernel_tendsto (t : \u211d\u22650) :\n    Tendsto (fun n => mollifiedKernel n t) atTop (\ud835\udcdd (sourceKernel t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseClock.lean#L71"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseClock.physicalDerivative_toDistr",
+      "file": "Foundation/IBMPhysicalNoiseClock.lean",
+      "line": 83,
+      "source_sha256": "e26600a34fcfdc6184cd348723037940647b0b1fd1081d74693423aa1b5b5167",
+      "declaration_header": "theorem physicalDerivative_toDistr (f : TimeHilbert) :\n    (physicalDerivative f).toDistr =\n      LineDeriv.lineDerivOp (1 : \u211d) ((complexify f : Lp \u2102 2 volume) : \ud835\udce2'(\u211d,\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseClock.lean#L83"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNoiseClock.mollifiedDerivative_tendsto",
+      "file": "Foundation/IBMPhysicalNoiseClock.lean",
+      "line": 109,
+      "source_sha256": "e26600a34fcfdc6184cd348723037940647b0b1fd1081d74693423aa1b5b5167",
+      "declaration_header": "theorem mollifiedDerivative_tendsto (t : \u211d\u22650) :\n    Tendsto (fun n => mollifiedDerivative n t) atTop (\ud835\udcdd (sourceDerivative t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNoiseClock.lean#L109"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDiracDifference.physicalDerivative_vector_toDistr",
+      "file": "Foundation/IBMPhysicalDiracDifference.lean",
+      "line": 30,
+      "source_sha256": "5e6f33ab85273e7b4b40d9a65f4a97afbfd3b8a3495cfaa2a5df6d115967957b",
+      "declaration_header": "theorem physicalDerivative_vector_toDistr (r : \u211d) :\n    (physicalDerivative (vector r)).toDistr = delta (0 : \u211d)-delta r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDiracDifference.lean#L30"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDiracDifference.difference_toDistr",
+      "file": "Foundation/IBMPhysicalDiracDifference.lean",
+      "line": 51,
+      "source_sha256": "5e6f33ab85273e7b4b40d9a65f4a97afbfd3b8a3495cfaa2a5df6d115967957b",
+      "declaration_header": "theorem difference_toDistr (r s : \u211d) :\n    (difference r s).toDistr = delta r-delta s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDiracDifference.lean#L51"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDiracDifference.difference_bound",
+      "file": "Foundation/IBMPhysicalDiracDifference.lean",
+      "line": 58,
+      "source_sha256": "5e6f33ab85273e7b4b40d9a65f4a97afbfd3b8a3495cfaa2a5df6d115967957b",
+      "declaration_header": "theorem difference_bound (r s : \u211d) :\n    \u2016difference r s\u2016 \u2264 \u2016physicalDerivative\u2016*Real.sqrt |s-r|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDiracDifference.lean#L58"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDeltaBoundary.delta_zero_memHminusOne",
+      "file": "Foundation/IBMDeltaBoundary.lean",
+      "line": 29,
+      "source_sha256": "d86a45b1d7f0275969bf16f97d38e116e33e1d22b41982e5989a559213733c76",
+      "declaration_header": "theorem delta_zero_memHminusOne :\n    (TemperedDistribution.delta (0 : \u211d)).MemSobolev (-1) 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDeltaBoundary.lean#L29"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDeltaBoundary.deltaZeroHminusOne_toDistr",
+      "file": "Foundation/IBMDeltaBoundary.lean",
+      "line": 48,
+      "source_sha256": "d86a45b1d7f0275969bf16f97d38e116e33e1d22b41982e5989a559213733c76",
+      "declaration_header": "@[simp] theorem deltaZeroHminusOne_toDistr :\n    deltaZeroHminusOne.toDistr = TemperedDistribution.delta (0 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDeltaBoundary.lean#L48"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDirac.dirac_toDistr",
+      "file": "Foundation/IBMPhysicalDirac.lean",
+      "line": 102,
+      "source_sha256": "c7a72dfbfcff13942ae3d0e25f2d8b223d956871e205b0d778b28b5f566eaa8a",
+      "declaration_header": "theorem dirac_toDistr (r : \u211d) : (dirac r).toDistr = delta r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDirac.lean#L102"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDirac.translated_eq",
+      "file": "Foundation/IBMPhysicalDirac.lean",
+      "line": 107,
+      "source_sha256": "c7a72dfbfcff13942ae3d0e25f2d8b223d956871e205b0d778b28b5f566eaa8a",
+      "declaration_header": "theorem translated_eq (n : \u2115) (r : \u211d) :\n    translated n r = deltaZeroHminusOne-\n      physicalDerivative (convolutionKernel (IBMMollifier.kernel n) r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDirac.lean#L107"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDirac.translated_tendsto",
+      "file": "Foundation/IBMPhysicalDirac.lean",
+      "line": 116,
+      "source_sha256": "c7a72dfbfcff13942ae3d0e25f2d8b223d956871e205b0d778b28b5f566eaa8a",
+      "declaration_header": "theorem translated_tendsto (r : \u211d) :\n    Tendsto (fun n => translated n r) atTop (\ud835\udcdd (dirac r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDirac.lean#L116"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDirac.mollifiedDirac_tendsto",
+      "file": "Foundation/IBMPhysicalDirac.lean",
+      "line": 161,
+      "source_sha256": "c7a72dfbfcff13942ae3d0e25f2d8b223d956871e205b0d778b28b5f566eaa8a",
+      "declaration_header": "theorem mollifiedDirac_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => mollifiedDirac n T) atTop (\ud835\udcdd (diracClass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDirac.lean#L161"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNegativeEmbedding.embedding",
+      "file": "Foundation/IBMPhysicalNegativeEmbedding.lean",
+      "line": 62,
+      "source_sha256": "5724f8416ae7c0dc9c35329361c32e6cefc1d2ff2494760b322851e06c58d264",
+      "declaration_header": "def embedding : TimeHilbert \u2192L[\u211d] H^{(-1 : \u211d)}(\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNegativeEmbedding.lean#L62"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalNegativeEmbedding.embedding_toDistr",
+      "file": "Foundation/IBMPhysicalNegativeEmbedding.lean",
+      "line": 67,
+      "source_sha256": "5724f8416ae7c0dc9c35329361c32e6cefc1d2ff2494760b322851e06c58d264",
+      "declaration_header": "theorem embedding_toDistr (u : TimeHilbert) :\n    (embedding u).toDistr = (complexify u : Lp \u2102 2 volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalNegativeEmbedding.lean#L67"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDerivativeKernel.translatedClass_coeFn",
+      "file": "Foundation/IBMPhysicalDerivativeKernel.lean",
+      "line": 16,
+      "source_sha256": "0a4e018386084c0ea4ed0f95b3dca089472a4a7b65c770c66e6735d6ea190f21",
+      "declaration_header": "theorem translatedClass_coeFn (\u03c1 : \u211d \u2192 \u211d) (hc : Continuous \u03c1) (hs : HasCompactSupport \u03c1) (x : \u211d) :\n    translatedClass \u03c1 hc hs x =\u1d50[volume] fun w => \u03c1 (x-w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDerivativeKernel.lean#L16"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalDerivativeKernel.derivative_eq_translated",
+      "file": "Foundation/IBMPhysicalDerivativeKernel.lean",
+      "line": 60,
+      "source_sha256": "0a4e018386084c0ea4ed0f95b3dca089472a4a7b65c770c66e6735d6ea190f21",
+      "declaration_header": "theorem derivative_eq_translated {\u03c1 : \u211d \u2192 \u211d} (hf : ContDiff \u211d 1 \u03c1)\n    (hs : HasCompactSupport \u03c1) (x : \u211d) :\n    convolutionKernel (deriv \u03c1) x = translatedClass \u03c1 hf.continuous hs x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalDerivativeKernel.lean#L60"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalWhiteNoiseObstruction.probe_profile_pairing",
+      "file": "Foundation/IBMPhysicalWhiteNoiseObstruction.lean",
+      "line": 31,
+      "source_sha256": "b54e645acff626ef733291e2dfdb7bd93743c56b9c46cc07486f36eba95bec1c",
+      "declaration_header": "theorem probe_profile_pairing (n : \u2115) : inner \u211d (probe n) (profile n) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalWhiteNoiseObstruction.lean#L31"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalWhiteNoiseObstruction.profile_hminus_tendsto",
+      "file": "Foundation/IBMPhysicalWhiteNoiseObstruction.lean",
+      "line": 56,
+      "source_sha256": "b54e645acff626ef733291e2dfdb7bd93743c56b9c46cc07486f36eba95bec1c",
+      "declaration_header": "theorem profile_hminus_tendsto :\n    Tendsto (fun n => IBMPhysicalNegativeEmbedding.embedding (profile n)) atTop\n      (nhds (IBMPhysicalDirac.dirac 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalWhiteNoiseObstruction.lean#L56"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalWhiteNoiseObstruction.whiteNoise_not_tendsto",
+      "file": "Foundation/IBMPhysicalWhiteNoiseObstruction.lean",
+      "line": 61,
+      "source_sha256": "b54e645acff626ef733291e2dfdb7bd93743c56b9c46cc07486f36eba95bec1c",
+      "declaration_header": "theorem whiteNoise_not_tendsto (G : GaussianL2) :\n    \u00ac Tendsto (fun n => physicalNoise (profile n)) atTop (nhds G)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalWhiteNoiseObstruction.lean#L61"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalWhiteNoiseObstruction.whiteNoise_norm_escape",
+      "file": "Foundation/IBMPhysicalWhiteNoiseObstruction.lean",
+      "line": 73,
+      "source_sha256": "b54e645acff626ef733291e2dfdb7bd93743c56b9c46cc07486f36eba95bec1c",
+      "declaration_header": "theorem whiteNoise_norm_escape :\n    Tendsto (fun n => \u2016physicalNoise (profile n)\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalWhiteNoiseObstruction.lean#L73"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPhysicalWhiteNoiseObstruction.no_continuous_extension",
+      "file": "Foundation/IBMPhysicalWhiteNoiseObstruction.lean",
+      "line": 95,
+      "source_sha256": "b54e645acff626ef733291e2dfdb7bd93743c56b9c46cc07486f36eba95bec1c",
+      "declaration_header": "theorem no_continuous_extension :\n    \u00ac \u2203 F : H^{(-1 : \u211d)}(\u211d) \u2192 GaussianL2,\n      ContinuousAt F (IBMPhysicalDirac.dirac 0) \u2227\n      \u2200 u : TimeHilbert, F (IBMPhysicalNegativeEmbedding.embedding u) = physicalNoise u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPhysicalWhiteNoiseObstruction.lean#L95"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_nonneg",
+      "file": "Foundation/IBMMollifier.lean",
+      "line": 25,
+      "source_sha256": "5c6326516bcb436c79d2cfefa428a6eb9de3068f5f14d92443d2922b62ad143a",
+      "declaration_header": "theorem kernel_nonneg (n : \u2115) (x : \u211d) : 0 \u2264 kernel n x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMollifier.lean#L25"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_integral",
+      "file": "Foundation/IBMMollifier.lean",
+      "line": 28,
+      "source_sha256": "5c6326516bcb436c79d2cfefa428a6eb9de3068f5f14d92443d2922b62ad143a",
+      "declaration_header": "theorem kernel_integral (n : \u2115) : \u222b x, kernel n x = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMollifier.lean#L28"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_compactSupport",
+      "file": "Foundation/IBMMollifier.lean",
+      "line": 34,
+      "source_sha256": "5c6326516bcb436c79d2cfefa428a6eb9de3068f5f14d92443d2922b62ad143a",
+      "declaration_header": "theorem kernel_compactSupport (n : \u2115) : HasCompactSupport (kernel n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMollifier.lean#L34"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMollifier.bump_outer_tendsto_zero",
+      "file": "Foundation/IBMMollifier.lean",
+      "line": 37,
+      "source_sha256": "5c6326516bcb436c79d2cfefa428a6eb9de3068f5f14d92443d2922b62ad143a",
+      "declaration_header": "theorem bump_outer_tendsto_zero :\n    Tendsto (fun n : \u2115 => (bump n).rOut) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMollifier.lean#L37"
+    },
+    {
+      "paper": "Section 11 physical Lebesgue L2 scenery isometry, actual random-clock H-minus-one Dirac limits and nonextension of original white-noise input domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSpatial.kernel_zero_of_far",
+      "file": "Foundation/IBMClockNativeSpatial.lean",
+      "line": 28,
+      "source_sha256": "c2bd50cb3474dd4e68f91678ef595ba8d18cb5087a66edb60ba3fcb139e6512e",
+      "declaration_header": "theorem kernel_zero_of_far (n : \u2115) (r : \u211d) (hr : (IBMMollifier.bump n).rOut \u2264 |r|) :\n    IBMMollifier.kernel n r = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSpatial.lean#L28"
     }
   ],
   "human_reorganization": [
@@ -1350,7 +1737,8 @@
     "Section 9 reconstructs actual clock-vacuum failure of completed observed right-past membership. Positive confinement of the clock at one small horizon follows from path continuity at zero and a countable union, not an imported unproved small-ball estimate. A source-only past functional must be scenery-history measurable on that positive confinement event; Fubini and continuous-path Doob-Dynkin factorization make the representative and exceptional-set argument explicit. The source uses measurable past coefficients and fixed-clock sections.",
     "The future scenery increment B2-B1 has positive pairing with the actual clock average at every positive time, by its overlap min(abs(WT),2)-min(abs(WT),1) and a strictly positive Gaussian tail. This rules out the necessary local scenery measurability. Taking T=S/2 transfers the raw-past exclusion to the closed right-past intersection. The constructed T is existential, not arbitrary.",
     "The all-large-real-order uniform distance is the exact source conclusion. The explicit estimate norm(B_(-2beta)ZT-Pi0ZT)<=3^(-beta) norm(ZT) is an added human Parseval/parity consequence of already proved odd-clock-sector vanishing. The source proves the strong limit by dominated convergence. The half-distance follows by orthogonal best approximation and the triangle inequality; native membership follows from the sharp beta>1/4 threshold.",
-    "No failure is asserted for every small positive smoothing order, every observation time, full all-time intrinsic observability or preservation of the native clock derivative by causal projection. Native differentiability does not supply time-specific adaptedness; none of these results completes physical-time calculus."
+    "No failure is asserted for every small positive smoothing order, every observation time, full all-time intrinsic observability or preservation of the native clock derivative by causal projection. Native differentiability does not supply time-specific adaptedness; none of these results completes physical-time calculus.",
+    "Section 11 reconstructs the original scenery isometry on actual physical Lebesgue L2 kernels, fixed by all oriented Brownian indicators. It gives strong Bochner L2(clock;L2physical) and L2(clock;H^-1physical) mollifier/Dirac limits with exact anchored spatial derivative delta0-delta_r. The original white-noise images of shrinking unit-mass profiles escape in Gaussian L2 and admit no even nonlinear H^-1 extension continuous at delta0. The uniform kernel error sqrt(epsilon_n), induced H^-1 error and explicit norm lower bound sqrt(n+1)/2 are labelled HUMAN deductions. Physical spatial differentiation, clock Bessel regularity and the adjoint-graph dual are different operators/topologies; none supplies observed-filtration physical-time calculus."
   ],
   "literature": [
     {
@@ -1368,6 +1756,10 @@
     {
       "url": "https://arxiv.org/abs/1206.5415",
       "review": "Primary introduction plus Section 2 Gaussian Sobolev construction and Definition 2.2 inspected in the v2 primary PDF. The scalar gradient norm and real-interpolation Besov scale supply classical context. No wholesale identification of its Besov fine indices with this original scenery-valued Hilbert spectral domain, application of its stochastic-integral approximation theorems or settled reflected-clock priority is claimed. HTML fetch unavailable; primary PDF was accessible."
+    },
+    {
+      "url": "https://arxiv.org/pdf/0907.4178",
+      "review": "Hairer, An Introduction to Stochastic PDEs, v2 (2023), primary Example 4.63/formula (4.16), printed page 38: isonormal covariance and ordinary L2 test inputs. No global whole-line negative-Sobolev white-noise sample or input-domain extension is inferred."
     }
   ],
   "novelty": "UNRESOLVED; no negative exhaustive literature-search or priority claim"

@@ -1014,6 +1014,152 @@ Every original-domain value approximation has divergent
 clock energy, although its embedded derivatives converge
 in a weaker, precisely defined norm.
 
+\section{Physical spatial kernels and the white-noise domain boundary}\label{sec:physical}
+The negative norm in the preceding section is an adjoint-graph norm.
+There is also a separate, actual physical-space $H^{-1}(\R)$
+construction. It has a different variable, operator and norm, which
+must be specified before comparing limits. In this section $x\in\R$
+is the spatial coordinate of the two-sided scenery. It is not the
+clock Gaussian coordinate or the physical observation time.
+
+\subsection*{An isonormal map fixed by the original scenery}
+In $L^2(\R,dx;\R)$ define the oriented indicator
+\[
+ v_r(x)=\mathbf1_{\{x\le r\}}-\mathbf1_{\{x\le0\}}.
+\]
+For $r\ge0$ this is $\mathbf1_{(0,r]}$, and for $r<0$ it is
+$-\mathbf1_{(r,0]}$. Direct integration gives
+\[
+ \|v_r\|_2^2=|r|,\qquad
+ \|v_r-v_s\|_2^2=|r-s|,\qquad
+ \langle v_r,f\rangle=\int_0^r f(x)\,dx.
+\]
+The span of these vectors is dense. Indeed, a vector orthogonal to
+them has primitive $\int_0^rf=0$ for every $r$. Local integrability
+and the almost-everywhere fundamental theorem of calculus then give
+$f=0$. Thus the orthogonal complement of the span is zero.
+
+The actual two-sided scenery satisfies the same norm and increment
+identities: $\E B_r^2=|r|$ and $\E(B_r-B_s)^2=|r-s|$.
+Polarization gives equality of the Gram matrices of $(v_r)$ and
+$(B_r)$. Therefore
+\[
+ \mathcal I\left(\sum_j a_jv_{r_j}\right)=\sum_j a_jB_{r_j}
+\]
+is well defined and isometric on their finite span. Density extends
+it uniquely to an isometry from all physical $L^2(\R)$ into the
+original scenery Gaussian $L^2$ space. Its image lies in first
+chaos; it is not asserted to exhaust every unused ambient Gaussian
+coordinate. The map is fixed by $\mathcal I v_r=B_r$, rather than
+chosen by an unrelated basis identification. Finite Gaussian laws
+and passage to $L^2$ limits show
+\[
+ \E\mathcal If=0,\qquad
+ \E[(\mathcal If)(\mathcal Ig)]=\langle f,g\rangle,
+ \qquad \mathcal If\sim N(0,\|f\|_2^2).
+\]
+This is the original physical scenery white-noise integral. It is a
+map with deterministic $L^2$ input; a distribution-valued
+realization of white noise does not automatically enlarge that
+input space. Hairer~\cite{hairer}, Example 4.63 and formula (4.16),
+provide the classical isonormal covariance context.
+
+\subsection*{Strong physical kernels and anchored Dirac limits}
+Let $\rho_n$ be the actual nonnegative normalized smooth compactly
+supported mollifiers, with support in
+$[-\varepsilon_n,\varepsilon_n]$, where
+$\varepsilon_n=2/(n+1)$. Define the physical $L^2$ kernel
+\[
+ K_{n,r}=\int_\R\rho_n(r-s)v_s\,ds.
+\]
+The Bochner integral exists: the parameter is confined to a compact
+interval and $s\mapsto v_s$ is $L^2$ continuous. Bounded linearity
+of $\mathcal I$ gives the actual source equality
+$\mathcal IK_{n,r}=\int\rho_n(r-s)B_s\,ds$.
+Normalization and the indicator metric give the uniform estimate
+\begin{equation}\label{eq:physicalkernelrate}
+ \|K_{n,r}-v_r\|_2
+ \le\int\rho_n(r-s)|s-r|^{1/2}ds
+ \le\varepsilon_n^{1/2}.
+\end{equation}
+This elementary rate is a human deduction; the formal source
+supplies actual strong physical $L^2$ convergence and source
+realization.
+
+Use the actual Bessel space $H^{-1}(\R;\mathbb C)$, with real scalars for
+maps from real kernels. Spatial distributional differentiation is
+a bounded map $\partial_x:L^2(\R)\to H^{-1}(\R)$: the Fourier
+multiplier for a derivative, divided by the Bessel weight, is
+bounded. Write $C_\partial$ for its fixed norm; no convention-
+dependent sharp numerical value is claimed. A single Dirac mass
+belongs to this space because its Fourier transform has constant
+modulus and $\int_\R(1+\xi^2)^{-1}d\xi<\infty$.
+
+Testing against a Schwartz function and using the oriented
+integral gives
+\[
+ \partial_xv_r=\delta_0-\delta_r.
+\]
+For the mollified kernel, interchange the bounded distributional
+test with its compactly supported Bochner integral. Since
+$\int\rho_n=1$, the same identity yields
+\begin{equation}\label{eq:physicaldiracidentity}
+ \partial_xK_{n,r}=\delta_0-\rho_n(r-\cdot),\qquad
+ \rho_n(r-\cdot)\longrightarrow\delta_r\quad\text{in }H^{-1}.
+\end{equation}
+The last assertion follows from boundedness of $\partial_x$ and
+\eqref{eq:physicalkernelrate}, with error at most
+$C_\partial\varepsilon_n^{1/2}$. The zero-order embedding of the
+scalar mollifier into $H^{-1}$ is understood in this formula. The
+physical derivative, zero-order embedding and a Dirac mass are
+three different objects.
+
+These limits also hold strongly in
+$L^2(\Omega_W;L^2(\R_x))$ and
+$L^2(\Omega_W;H^{-1}(\R_x))$ at the actual random clock
+$r=|W_t|$. The uniform bound \eqref{eq:physicalkernelrate} gives the
+same error bound after the clock expectation. The target indicator
+field is square integrable since
+$\E\|v_{|W_t|}\|_2^2=\E|W_t|<\infty$; the mollified fields are
+then square integrable by the triangle inequality. Strong
+measurability follows from continuity in $r$ and the actual
+measurable clock. Applying the original scenery isometry in each
+independent clock section realizes $B_{|W_t|}$ and its mollified
+values in the same source space. The derivative limit is precisely
+$\delta_0-\delta_{|W_t|}$ in the physical variable. These statements
+do not supply a derivative in the clock Gaussian coordinate.
+
+\subsection*{The same Dirac limit cannot be fed into the Wiener map}
+At $r=0$, put $p_n(x)=\rho_n(-x)$. The actual zero-order embedded
+profiles satisfy $p_n\to\delta_0$ in $H^{-1}$ by
+\eqref{eq:physicaldiracidentity}. However
+\[
+ 1=\left|\int_{-\varepsilon_n}^{\varepsilon_n}p_n(x)dx\right|
+ \le(2\varepsilon_n)^{1/2}\|p_n\|_2,
+ \qquad
+ \|\mathcal Ip_n\|_{L^2(\Omega_B)}=\|p_n\|_2
+       \ge\frac{\sqrt{n+1}}2\longrightarrow\infty.
+\]
+This is just Cauchy--Schwarz on the shrinking support and the
+original isometry. It rules out convergence to any original
+Gaussian $L^2$ random variable. More strongly, there is no map
+$F:H^{-1}(\R)\to L^2(\Omega_B)$, even nonlinear, continuous at
+$\delta_0$ and agreeing with $\mathcal I$ on all ordinarily
+embedded real $L^2$ kernels. Otherwise continuity along this
+sequence would force $\mathcal Ip_n\to F(\delta_0)$, contradicting
+norm escape. The source formalizes this actual nonextension and
+escape; the explicit $\sqrt{n+1}/2$ lower bound is a labelled human
+consequence of the particular support radius.
+
+The formal physical-kernel, Dirac and white-noise modules supply
+the original isometry, exact source equalities, strong random-clock
+Bochner limits and the nonextension theorem. This construction
+does not manufacture a random variable $\mathcal I\delta_r$ in
+the old $L^2$ space. Nor does the physical negative norm become
+the preceding clock Bessel norm or the adjoint-graph-dual norm. The positive physical distributional limit and the
+negative original-noise statement are compatible precisely because
+their operators have different domains and topologies.
+
 \section{Scope, antecedents and formal correspondence}
 The Brownian-time model is classical~\cite{alloubazheng}.
 Gaussian derivatives act on its independent sources;
@@ -1075,5 +1221,6 @@ On fractional smoothness and $L_p$-approximation on the Gaussian space,
 Brownian-time change of measure, preprint,
 arXiv:2605.07044 (2026).
 \url{https://arxiv.org/abs/2605.07044}.
+\bibitem{hairer} M. Hairer, \emph{An Introduction to Stochastic PDEs}, primary lecture notes, arXiv:0907.4178v2 (2023), Example 4.63 and formula (4.16). \url{https://arxiv.org/pdf/0907.4178}.
 \end{thebibliography}
 \end{document}
