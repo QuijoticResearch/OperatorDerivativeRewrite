@@ -2969,3 +2969,4 @@ import Foundation.QuaternionTiltComparison
 import Foundation.QuaternionTiltCovariance
 import Foundation.PeriodicLinkStaples
 import Foundation.PeriodicLinkDisintegration
+import Foundation.PeriodicPlaquetteVarianceLower
