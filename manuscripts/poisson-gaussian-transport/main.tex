@@ -14,7 +14,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Poisson--Gaussian transport:\\closed graphs, coherent recovery and nonlinear limits}
 \author{Project Stardust}
-\date{Reviewed formalization companion, October 29, 2026}
+\date{Reviewed formalization companion, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -28,7 +28,7 @@ between square-root likelihoods and their derivative energies, but it
 does not preserve positivity, ordinary multiplication, or entropy.
 Coherent vectors give quantitative entropy distortion and exclude a
 bounded realization of any nonzero displacement on $L^4$.
-A compact creation inverse and a sharp shifted Poincar\'e estimate hold on the original maximal domains. A compensated-count example separates the small- and large-intensity $L^{4/3}$ scales.
+A compact creation inverse and a sharp shifted Poincar\'e estimate hold on the original maximal domains. A compensated-count example separates the small- and large-intensity $L^{4/3}$ scales. On one fixed power-law control space, normalized count observations converge to zero in both $L^{4/3}$ and $L^4$, whereas their prescribed recovered inputs have $L^{4/3}$ norm one.
 Positive pointwise jump curvature coexists with this entropy failure,
 and the missing diffusion chain rule is exhibited at one atom.
 The failure of a quadratic Poisson logarithmic Sobolev inequality already
@@ -860,6 +860,112 @@ directly. It does not construct a general random measure or claim
 that a single plain $L^{4/3}$ norm is the appropriate integrand space.
 
 
+
+\section{A fixed-space obstruction to continuous recovery}
+The changing-intensity test can be placed on one fixed control measure,
+so that continuity of recovery has its literal topological meaning.
+This requires a precise count-law hypothesis, rather than an unproved
+identification of all jump constructions. Fix $c>0$ and put
+\[
+ d\nu_c(t,z)=1_{(0,1]}(t)\,dt\;c|z|^{-5/2}\,dz,
+ \qquad p=4/3.
+\]
+The mark density is that of a symmetric $3/2$-stable L\'evy measure,
+up to its positive normalization. We use only finite positive annuli.
+For each integer $m\geq1$ define
+\[
+ a_m=\left(1+\frac{3m^4}{2c}\right)^{-2/3},\qquad
+ B_m=(0,1]\times(a_m,1].
+\]
+Then $0<a_m<1$, and elementary integration gives
+\begin{equation}\label{eq:stable-block}
+ \nu_c(B_m)=\frac{2c}{3}(a_m^{-3/2}-1)=m^4.
+\end{equation}
+Each block is finite and stays away from the singular mark zero;
+there is no integral over all small jumps in this computation.
+
+Let $(\Omega,\mathcal F,\mu)$ be a fixed probability space equipped
+with measurable integer counts $N(B)$ for measurable finite-control
+sets, satisfying only
+\[
+ N(B)\ \hbox{has Poisson law with parameter }\nu_c(B).
+\]
+This is a hypothesis on finite-set marginal laws. Additivity,
+independent increments and existence of a Poisson random measure are
+not derived from it. In particular no independence among the nested
+counts $N(B_m)$ will be used. Define, on these fixed spaces,
+\[
+ X=L^p(\nu_c\otimes\mu),\quad
+ U_m=1_{B_m\times\Omega}\in X,\quad
+ Y_m=N(B_m)-m^4\in L^p(\mu)\cap L^4(\mu).
+\]
+The physical input norm and the terminal count bounds are
+\begin{equation}\label{eq:fixed-count-norms}
+ \|U_m\|_X=m^3,\qquad
+ \|Y_m\|_p\leq m^2,\qquad
+ \|Y_m\|_4^4=3m^8+m^4\leq16m^8.
+\end{equation}
+The first follows from \eqref{eq:stable-block} and $1/p=3/4$.
+The other two follow from the preceding actual-law moment calculation
+and probability-norm monotonicity. In particular $\|Y_m\|_4\leq2m^2$.
+These assertions concern specified equivalence classes in the original
+spaces, not classes transported through the Charlier unitary.
+
+\begin{theorem}\label{thm:fixed-recovery}
+Let $S$ be any linear subspace of $L^p(\mu)$ containing every $Y_m$,
+with its inherited norm; closedness is unnecessary. No bounded linear
+map $R:S\to X$ can satisfy $RY_m=U_m$ for every $m\geq1$.
+More strongly, set
+\[
+ u_m=m^{-3}U_m,\qquad y_m=m^{-3}Y_m.
+\]
+No map $R:S\to X$ that satisfies $R0=0$ and $Ry_m=u_m$ for every
+$m$ is continuous at zero. This excludes nonlinear recovery as well.
+The same conclusion holds if the observation space is any linear
+subspace of $L^p(\mu)\cap L^4(\mu)$ containing all $y_m$, with
+norm $\max\{\|\cdot\|_p,\|\cdot\|_4\}$.
+\end{theorem}
+\begin{proof}
+If a bounded linear recovery existed, \eqref{eq:fixed-count-norms}
+would imply $m^3\leq\|R\|m^2$, hence $m\leq\|R\|$ for every
+positive integer, an impossibility. This already works on the range
+subspace itself and does not require extending its inverse to all
+terminal observables.
+
+For the stronger assertion, absolute homogeneity in the fixed spaces
+gives
+\[
+ \|u_m\|_X=1,\qquad
+ \|y_m\|_p\leq m^{-1},\qquad
+ \|y_m\|_4\leq2m^{-1}.
+\]
+Thus $y_m\to0$ in each terminal norm and in their intersection norm.
+Continuity at zero, $R0=0$ and $Ry_m=u_m$ would give
+$\|u_m\|_X\to0$, contrary to its exact value one. This argument is
+purely sequential and uses no linearity of $R$. The $L^p$ and $L^4$
+versions of each $y_m$ are the same almost-everywhere measurable
+function; consequently the intersection assertion uses compatible
+classes, rather than two unrelated terminal observations.
+\end{proof}
+
+The stronger hypothesis on a nonlinear map is intentional: recovery
+of the unscaled tests alone does not imply recovery of their scalar
+multiples. A linear map does have that implication, so it is also
+excluded by the normalized test. The theorem specifies the input
+norm being recovered. It does not rule out recovery in a mixed
+square-function/sum-space norm, nor every nonlinear statistical
+estimator under a different loss or restricted input class.
+
+This fixed-space test explains why adding an ordinary terminal $L^4$
+observation norm cannot repair the particular plain-$L^{4/3}$ input
+inverse. Dirksen's classical Theorem 1.1 \cite{Dirksen} uses the
+appropriate sums and intersections of integrand norms; its stronger
+stochastic integration conclusions assume an actual compensated
+Poisson random measure. We retain the weaker finite-count interface
+here. The annulus calculation, count moments and continuity argument
+are elementary mechanisms, with specific priority unresolved; no new
+stable-process calculus or random-measure construction is asserted.
+
 \section{The entropy bound that does transport}
 There is a positive counterpart to the preceding obstructions, provided
 the entropy functional is identified correctly. Define
@@ -1058,7 +1164,7 @@ regularity. The entire weak-graph extension is the labelled human
 Fatou/core deduction above. Gross's theorem and its sharpness are
 classical, not publication-priority claims.
 
-The setting is one Poisson count and one Gaussian coordinate. The results
+The unitary setting is one Poisson count and one Gaussian coordinate. The fixed-space recovery obstruction separately uses the stated finite-count-law interface on a power-law control measure. The results
 do not transfer ordinary nonlinear equations, a Markov order or general
 entropy comparisons. This is a classical formalization companion;
 novelty certification and external submission remain separate questions.

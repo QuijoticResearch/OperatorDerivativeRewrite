@@ -1314,6 +1314,753 @@
       "source_sha256": "8d9bd09dceed7c56859e404be3a002b05f8dae5752b8d1ba2fce5898e107781a",
       "declaration_header": "theorem gaussian_logSobolev_of_hasDerivAt {f h : \u211d \u2192 \u211d}\n    (hd : \u2200 x, HasDerivAt f (h x) x)\n    (hf_sq : Integrable (fun x => f x ^ 2) GaussianCore.\u03b3)\n    (hh_sq : Integrable (fun x => h x ^ 2) GaussianCore.\u03b3) :\n    Integrable (fun x => f x ^ 2 * Real.log (f x ^ 2)) GaussianCore.\u03b3 \u2227\n      entropySq GaussianCore.\u03b3 f \u2264\n        2 * \u222b x, h x ^ 2 \u2202GaussianCore.\u03b3",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLogSobolevFull.lean#L231"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.density",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 14,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def density (c z : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L14"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.markMeasure",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 15,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def markMeasure (c : \u211d) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L15"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.base",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 16,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def base (c : \u211d) (n : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L16"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.endpoint",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 17,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def endpoint (c : \u211d) (n : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L17"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.annulus",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 18,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def annulus (c : \u211d) (n : \u2115) : Set \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L18"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.base_ge_one",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 20,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem base_ge_one (c : \u211d) (hc : 0 < c) (n : \u2115) : 1 \u2264 base c n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L20"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.endpoint_pos",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 25,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem endpoint_pos (c : \u211d) (hc : 0 < c) (n : \u2115) : 0 < endpoint c n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L25"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.endpoint_le_one",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 28,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem endpoint_le_one (c : \u211d) (hc : 0 < c) (n : \u2115) : endpoint c n \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L28"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.endpoint_power",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 31,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem endpoint_power (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    endpoint c n^(-3/2 : \u211d)=base c n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L31"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.positive_power_integrable",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 37,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem positive_power_integrable (c a : \u211d) (ha : 0 < a) (ha1 : a \u2264 1) :\n    IntervalIntegrable (fun z : \u211d => c*z^(-5/2 : \u211d)) volume a 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L37"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.positive_power_integral",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 45,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem positive_power_integral (c a : \u211d) (ha : 0 < a) (ha1 : a \u2264 1) :\n    (\u222b z in a..1, c*z^(-5/2 : \u211d))=(2*c/3)*(a^(-3/2 : \u211d)-1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L45"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.markMeasure_Ioc",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 59,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem markMeasure_Ioc (c : \u211d) (hc : 0 \u2264 c) (a : \u211d) (ha : 0 < a) (ha1 : a \u2264 1) :\n    markMeasure c (Ioc a 1)=ENNReal.ofReal ((2*c/3)*(a^(-3/2 : \u211d)-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L59"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.annulus_mass",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 79,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem annulus_mass (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    markMeasure c (annulus c n)=(rate n : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L79"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.annulus_measurable",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 90,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem annulus_measurable (c : \u211d) (n : \u2115) : MeasurableSet (annulus c n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L90"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.annulus_away_zero",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 92,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem annulus_away_zero (c : \u211d) (hc : 0 < c) (n : \u2115) {z : \u211d} (hz : z \u2208 annulus c n) : 0 < z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L92"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.unitTime",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 95,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "abbrev unitTime : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L95"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.controlMeasure",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 96,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def controlMeasure (c : \u211d) : Measure (\u211d \u00d7 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L96"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 97,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "def block (c : \u211d) (n : \u2115) : Set (\u211d \u00d7 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L97"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block_measurable",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 101,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem block_measurable (c : \u211d) (n : \u2115) : MeasurableSet (block c n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L101"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block_mass",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 104,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem block_mass (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    controlMeasure c (block c n)=(rate n : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L104"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block_memLp",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 110,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem block_memLp (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    MemLp ((block c n).indicator (fun _ => (1 : \u211d))) exponent (controlMeasure c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L110"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block_norm",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 114,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem block_norm (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    (eLpNorm ((block c n).indicator (fun _ => (1 : \u211d))) exponent (controlMeasure c)).toReal=(n : \u211d)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L114"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.no_stable_indicator_lower",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 118,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem no_stable_indicator_lower {\u03a9 : Type*} [MeasurableSpace \u03a9] {\u03bc : Measure \u03a9}\n    [IsProbabilityMeasure \u03bc] (c : \u211d) (hc : 0 < c) (X : \u2115 \u2192 \u03a9 \u2192 \u2115)\n    (hX : \u2200 n, HasLaw (X n) (poissonLaw (rate n)) \u03bc) :\n    \u00ac \u2203 C : \u211d, 0 < C \u2227 \u2200 n : \u2115, \u2200 hn : 0 < n,\n      C*(eLpNorm ((block c n).indicator (fun _ => (1 : \u211d))) exponent (controlMeasure c)).toReal \u2264\n        \u2016lawOutput (X n) (rate n) (rate_pos hn) (hX n)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L118"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.FiniteCountLaws",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 130,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "structure FiniteCountLaws (c : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L130"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.block_count_law",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 137,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem block_count_law (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c) (n : \u2115) :\n    HasLaw (N.count (block c n)) (poissonLaw (rate n)) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L137"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableLevyAnnuli.no_plain_lower_from_finite_count_laws",
+      "file": "Foundation/StableLevyAnnuli.lean",
+      "line": 145,
+      "source_sha256": "d528bbf1494b493ddd1a579324bd2d8ef3e85b46aade8d791273ff4079beee9a",
+      "declaration_header": "theorem no_plain_lower_from_finite_count_laws [IsProbabilityMeasure \u03bc]\n    (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c) :\n    \u00ac \u2203 C : \u211d, 0 < C \u2227 \u2200 n : \u2115, \u2200 hn : 0 < n,\n      C*(eLpNorm ((block c n).indicator (fun _ => (1 : \u211d))) exponent (controlMeasure c)).toReal \u2264\n        \u2016lawOutput (N.count (block c n)) (rate n) (rate_pos hn) (block_count_law c hc N n)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableLevyAnnuli.lean#L145"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.energyMeasure",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 17,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "def energyMeasure (c : \u211d) : Measure ((\u211d \u00d7 \u211d) \u00d7 \u03a9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L17"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.energyBlock",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 18,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "def energyBlock (c : \u211d) (n : \u2115) : Set ((\u211d \u00d7 \u211d) \u00d7 \u03a9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L18"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.Energy",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 19,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "abbrev Energy (c : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L19"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.energyBlock_measurable",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 21,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem energyBlock_measurable (c : \u211d) (n : \u2115) : MeasurableSet (energyBlock (\u03a9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L21"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.energyBlock_mass",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 24,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem energyBlock_mass (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    energyMeasure \u03bc c (energyBlock c n) = (rate n : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L24"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.energyBlock_memLp",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 29,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem energyBlock_memLp (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    MemLp ((energyBlock (\u03a9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L29"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.deterministicInput",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 33,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "def deterministicInput (c : \u211d) (hc : 0 < c) (n : \u2115) : Energy \u03bc c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L33"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.deterministicInput_norm",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 36,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem deterministicInput_norm (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    \u2016deterministicInput \u03bc c hc n\u2016 = (n : \u211d)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L36"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.observed",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 43,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "def observed (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c) (n : \u2115) : Lp \u211d exponent \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L43"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.observed_norm_le",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 47,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem observed_norm_le (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c) (n : \u2115) :\n    \u2016observed c hc N n\u2016 \u2264 ((n+1 : \u2115) : \u211d)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L47"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.observed_memLp_four",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 52,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem observed_memLp_four (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c) (n : \u2115) :\n    MemLp (fun \u03c9 => (N.count (block c (n+1)) \u03c9 : \u211d) - (rate (n+1) : \u211d)) 4 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L52"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.recovery_norm_ge",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 58,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem recovery_norm_ge (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c)\n    (S : Submodule \u211d (Lp \u211d exponent \u03bc)) (hS : \u2200 n, observed c hc N n \u2208 S)\n    (R : S \u2192L[\u211d] Energy \u03bc c)\n    (hR : \u2200 n, R \u27e8observed c hc N n, hS n\u27e9 = deterministicInput \u03bc c hc (n+1))\n    (n : \u2115) : ((n+1 : \u2115) : \u211d) \u2264 \u2016R\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L58"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryObstruction.no_bounded_range_recovery",
+      "file": "Foundation/StablePoissonRecoveryObstruction.lean",
+      "line": 73,
+      "source_sha256": "d3a15192439e8bf4eef2a3b51677adecff299a94cbe6e3b2de918853e22c8a18",
+      "declaration_header": "theorem no_bounded_range_recovery (c : \u211d) (hc : 0 < c) (N : FiniteCountLaws \u03bc c)\n    (S : Submodule \u211d (Lp \u211d exponent \u03bc)) (hS : \u2200 n, observed c hc N n \u2208 S) :\n    \u00ac \u2203 R : S \u2192L[\u211d] Energy \u03bc c,\n      \u2200 n, R \u27e8observed c hc N n, hS n\u27e9 = deterministicInput \u03bc c hc (n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryObstruction.lean#L73"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.coefficient",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 18,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "def coefficient (n : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L18"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.coefficient_pos",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 20,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem coefficient_pos (n : \u2115) : 0 < coefficient n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L20"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedInput",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 22,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "def normalizedInput (c : \u211d) (hc : 0 < c) (n : \u2115) : Energy \u03bc c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L22"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedInput_norm",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 25,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalizedInput_norm (c : \u211d) (hc : 0 < c) (n : \u2115) :\n    \u2016normalizedInput (\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L25"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedOutput",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 36,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "def normalizedOutput (n : \u2115) : S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L36"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedOutput_norm_le",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 38,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalizedOutput_norm_le (n : \u2115) :\n    \u2016normalizedOutput c hc N S hS n\u2016 \u2264 1 / ((n : \u211d) + 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L38"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedOutput_tendsto",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 50,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalizedOutput_tendsto :\n    Tendsto (normalizedOutput c hc N S hS) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L50"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.recovery_not_continuousAt_zero",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 56,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem recovery_not_continuousAt_zero (R : S \u2192 Energy \u03bc c) (hzero : R 0 = 0)\n    (hR : \u2200 n, R (normalizedOutput c hc N S hS n) = normalizedInput c hc n) :\n    \u00ac ContinuousAt R 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L56"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.linear_recovery_not_continuousAt_zero",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 67,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem linear_recovery_not_continuousAt_zero (R : S \u2192\u2097[\u211d] Energy \u03bc c)\n    (hR : \u2200 n, R \u27e8observed c hc N n, hS n\u27e9 = deterministicInput \u03bc c hc (n + 1)) :\n    \u00ac ContinuousAt R 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L67"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.observedFour",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 74,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "def observedFour (n : \u2115) : Lp \u211d 4 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L74"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.observedFour_norm",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 77,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem observedFour_norm (n : \u2115) :\n    \u2016observedFour c hc N n\u2016 =\n      \u2016PoissonLpTwoRegime.outputFour (rate (n + 1)) (rate_pos (by omega))\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L77"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.observedFour_norm_le",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 90,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem observedFour_norm_le (n : \u2115) :\n    \u2016observedFour c hc N n\u2016 \u2264 2 * ((n : \u211d) + 1)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L90"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedFour",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 105,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "def normalizedFour (n : \u2115) : Lp \u211d 4 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L105"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedFour_norm_le",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 107,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalizedFour_norm_le (n : \u2115) :\n    \u2016normalizedFour c hc N n\u2016 \u2264 2 / ((n : \u211d) + 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L107"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalizedFour_tendsto",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 117,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalizedFour_tendsto : Tendsto (normalizedFour c hc N) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L117"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalized_classes_ae",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 122,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalized_classes_ae (n : \u2115) :\n    (fun \u03c9 => (normalizedOutput c hc N S hS n : Lp \u211d exponent \u03bc) \u03c9) =\u1d50[\u03bc]\n      normalizedFour c hc N n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L122"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.normalized_pair_tendsto",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 138,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem normalized_pair_tendsto :\n    Tendsto (fun n => (normalizedOutput c hc N S hS n, normalizedFour c hc N n))\n      atTop (\ud835\udcdd (0, 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L138"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StablePoissonRecoveryDiscontinuity.intersection_recovery_not_continuousAt_zero",
+      "file": "Foundation/StablePoissonRecoveryDiscontinuity.lean",
+      "line": 144,
+      "source_sha256": "82f6483cfd5f795b04255f116ae6b5abb40358adc0264ce978dd611f26d7fb6d",
+      "declaration_header": "theorem intersection_recovery_not_continuousAt_zero\n    (T : Submodule \u211d (S \u00d7 Lp \u211d 4 \u03bc))\n    (hT : \u2200 n, (normalizedOutput c hc N S hS n, normalizedFour c hc N n) \u2208 T)\n    (R : T \u2192 Energy \u03bc c) (hzero : R 0 = 0)\n    (hR : \u2200 n, R \u27e8(normalizedOutput c hc N S hS n, normalizedFour c hc N n), hT n\u27e9 =\n      normalizedInput c hc n) : \u00ac ContinuousAt R 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StablePoissonRecoveryDiscontinuity.lean#L144"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.square_charlier_decomposition",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 21,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem square_charlier_decomposition (r : \u211d\u22650) (hr : 0 < r) :\n    centeredCountSqL2 r hr=scalar r hr 2+scalar r hr 1+(r : \u211d) \u2022 scalar r hr 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L21"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.square_L2_energy",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 31,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem square_L2_energy (r : \u211d\u22650) (hr : 0 < r) :\n    \u2016centeredCountSqL2 r hr\u2016^2=3*(r : \u211d)^2+r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L31"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.count_memLp_four",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 49,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem count_memLp_four (r : \u211d\u22650) (hr : 0 < r) :\n    MemLp (centeredCount r) 4 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L49"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.outputFour",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 58,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "def outputFour (r : \u211d\u22650) (hr : 0 < r) : Lp \u211d 4 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L58"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.outputFour_ae",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 61,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem outputFour_ae (r : \u211d\u22650) (hr : 0 < r) :\n    outputFour r hr =\u1d50[poissonLaw r] centeredCount r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L61"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.outputFour_energy",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 64,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem outputFour_energy (r : \u211d\u22650) (hr : 0 < r) :\n    \u2016outputFour r hr\u2016^4=3*(r : \u211d)^2+r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L64"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.output_ae",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 74,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem output_ae (r : \u211d\u22650) (hr : 0 < r) :\n    output r hr =\u1d50[poissonLaw r] centeredCount r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L74"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.norm_four_lower_polynomial",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 103,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem norm_four_lower_polynomial (r : \u211d\u22650) (hr : 0 < r) :\n    (r : \u211d)^4 \u2264 \u2016output r hr\u2016^4*(3*(r : \u211d)^2+r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L103"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtAbs",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 127,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "def sqrtAbs (r : \u211d\u22650) (k : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L127"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtAbs_sq",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 129,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtAbs_sq (r : \u211d\u22650) (k : \u2115) : sqrtAbs r k^2=|centeredCount r k|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L129"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtAbs_memLp_two",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 132,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtAbs_memLp_two (r : \u211d\u22650) (hr : 0 < r) : MemLp (sqrtAbs r) 2 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L132"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtAbs_memLp_four",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 142,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtAbs_memLp_four (r : \u211d\u22650) (hr : 0 < r) : MemLp (sqrtAbs r) 4 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L142"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtTwo",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 151,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "def sqrtTwo (r : \u211d\u22650) (hr : 0 < r) : Lp \u211d 2 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L151"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtFour",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 152,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "def sqrtFour (r : \u211d\u22650) (hr : 0 < r) : Lp \u211d 4 (poissonLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L152"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtTwo_ae",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 154,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtTwo_ae (r : \u211d\u22650) (hr : 0 < r) : sqrtTwo r hr =\u1d50[poissonLaw r] sqrtAbs r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L154"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtFour_ae",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 155,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtFour_ae (r : \u211d\u22650) (hr : 0 < r) : sqrtFour r hr =\u1d50[poissonLaw r] sqrtAbs r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L155"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtTwo_energy_bound",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 157,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtTwo_energy_bound (r : \u211d\u22650) (hr : 0 < r) : \u2016sqrtTwo r hr\u2016^2 \u2264 2*(r : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L157"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrtFour_energy",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 166,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrtFour_energy (r : \u211d\u22650) (hr : 0 < r) : \u2016sqrtFour r hr\u2016^4=(r : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L166"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.sqrt_product_bound",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 177,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem sqrt_product_bound (r : \u211d\u22650) (hr : 0 < r) :\n    \u2016output r hr\u2016 \u2264 \u2016sqrtTwo r hr\u2016*\u2016sqrtFour r hr\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L177"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.small_rate_lower",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 206,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem small_rate_lower (r : \u211d\u22650) (hr : 0 < r) (hr1 : (r : \u211d) \u2264 1) :\n    (r : \u211d)^3 \u2264 4*\u2016output r hr\u2016^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L206"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.large_rate_lower",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 215,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem large_rate_lower (r : \u211d\u22650) (hr : 0 < r) (hr1 : (1 : \u211d) \u2264 r) :\n    (r : \u211d)^2 \u2264 4*\u2016output r hr\u2016^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L215"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.scale",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 242,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "def scale (r : \u211d\u22650) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L242"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.scale_nonneg",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 244,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem scale_nonneg (r : \u211d\u22650) : 0 \u2264 scale r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L244"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.scale_fourth",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 247,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem scale_fourth (r : \u211d\u22650) : scale r^4=min ((r : \u211d)^2) ((r : \u211d)^3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L247"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.scale_rate",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 281,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem scale_rate {n : \u2115} (hn : 0 < n) : scale (rate n)=(n : \u211d)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L281"
+    },
+    {
+      "paper": "Fixed-space recovery section: explicit finite power-law annuli, finite count-law interface, original L4/3 input norm, bounded range inverse obstruction and normalized nonlinear/intersection-norm discontinuity. Existing two-regime actual Poisson estimates supply the count moments.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonLpTwoRegime.annulus_ratio_bounds",
+      "file": "Foundation/PoissonLpTwoRegime.lean",
+      "line": 310,
+      "source_sha256": "c735d293aed3b93b2c6f6aa34b853821585077d5d92ac516cc82ecfba37fb020",
+      "declaration_header": "theorem annulus_ratio_bounds {\u03a9 : Type*} [MeasurableSpace \u03a9] {\u03bc : Measure \u03a9}\n    [IsProbabilityMeasure \u03bc] (c : \u211d) (hc : 0 < c) (N : StableLevyAnnuli.FiniteCountLaws \u03bc c)\n    {n : \u2115} (hn : 0 < n) :\n    1/(Real.sqrt 2*(n : \u211d)) \u2264\n      \u2016lawOutput (N.count (StableLevyAnnuli.block c n)) (rate n) (rate_pos hn)\n        (StableLevyAnnuli.block_count_law c hc N n)\u2016/\n        (eLpNorm ((StableLevyAnnuli.block c n).indicator (fun _ => (1 : \u211d))) exponent\n          (StableLevyAnnuli.controlMeasure c)).toReal \u2227\n    \u2016lawOutput (N.count (StableLevyAnnuli.block c n)) (rate n) (rate_pos hn)\n        (StableLevyAnnuli.block_count_law c hc N n)\u2016/\n        (eLpNorm ((StableLevyAnnuli.block c n).indicator (fun _ => (1 : \u211d))) exponent\n          (StableLevyAnnuli.controlMeasure c)).toReal \u2264 1/(n : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonLpTwoRegime.lean#L310"
     }
   ],
   "human_reorganization": [
@@ -1333,7 +2080,8 @@
     "Section 10 proves the classical sharp Gaussian LSI on the entire original one-coordinate maximal weak derivative graph. This is explicitly a human extension of the named formal bounded-C1 and everywhere-differentiable results: the previously established Hermite graph core is cut off in space to form a smooth compact graph sequence, then the nonnegative K(z)=z log z-z+1 gives genuine entropy integrability and the bound by Fatou. No new named Lean declaration or changed research claim is asserted.",
     "The printed smooth-core proof uses bounded second derivatives to justify the Mehler time-generator identity and Gaussian integration by parts. The formal positive bounded-C1 proof instead uses rotated Stein interpolation, avoiding a second-derivative assumption. Both give Fisher decay at e^(-2t) and entropy constant 2 after square-root regularization.",
     "The transported entropy is Ent_gamma((U_lambda f)^2), bounded by 2||A_lambda f||^2 for every original annihilation-domain input; coherent roots attain equality. It is not Ent_Poisson(f^2). This positive counterpart and the native Poisson obstruction use distinct nonlinear functionals.",
-    "Mehler/Fisher/entropy source portions retain Michael R. Douglas and contributors attribution under Apache-2.0. The paper points to MATHEMATICAL_AUDIT.md and LICENSES/Apache-2.0.txt. Gross and sharp exponential equality cases are classical; primary Bobkov-Gozlan-Roberto-Samson introduction equation (1.1) and following equality examples were inspected, while original Gross full text was inaccessible through JSTOR."
+    "Mehler/Fisher/entropy source portions retain Michael R. Douglas and contributors attribution under Apache-2.0. The paper points to MATHEMATICAL_AUDIT.md and LICENSES/Apache-2.0.txt. Gross and sharp exponential equality cases are classical; primary Bobkov-Gozlan-Roberto-Samson introduction equation (1.1) and following equality examples were inspected, while original Gross full text was inaccessible through JSTOR.",
+    "The fixed-space recovery theorem uses an explicit positive-annulus exhaustion for the c|z|^(-5/2) mark measure and only finite-set Poisson marginal laws on one probability space. Block control mass m^4 gives input norm m^3 and terminal count L4/3 norm at most m^2. Normalized inputs have norm one while the compatible terminal classes tend to zero in both L4/3 and L4. Exact recovery of these scaled tests cannot be continuous at zero, even for nonlinear maps on the range or a terminal intersection subspace. No independence, count additivity, random-measure construction or inverse in the correct mixed integrand norm is asserted. The unscaled-test condition alone is not used to infer scalar homogeneity of a nonlinear map. The elementary mechanism is credited as established Poisson norm theory; priority remains unresolved."
   ],
   "literature": [
     {
