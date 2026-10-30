@@ -2912,3 +2912,5 @@ import Foundation.CubeKernelOperatorBound
 import Foundation.CubeCompressedNormLimit
 import Foundation.CubeFullCompressionError
 import Foundation.CubeGroundNormLimit
+import Foundation.CubeGaussianModes
+import Foundation.CubeGaussianKernelChannels
