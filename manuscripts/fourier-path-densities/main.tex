@@ -1,0 +1,337 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\A}{\mathcal A}\newcommand{\X}{\mathcal X}
+\newcommand{\E}{\mathcal E}\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Completed Fourier path tests:\\higher-order heat smoothing and\\integrable control-derivative densities}
+\author{Project Stardust\\\small A classical formalization companion}
+\date{October 29, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. A summable cosine example fails to be differentiable without smoothing. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+\end{abstract}
+
+\section{The realized domain and the main statement}
+Throughout, $p=2m$ with an integer $m\ge1$. The smoothing parameter $H$ is nonnegative and is not the physical coordinate of a path. Set
+\[
+ \X=\{\omega\in C(\R,\R):\omega(0)=0\},
+\]
+with the compact-open topology. Choose any countable list of dyadic levels $r_i\ge0$ and vectors $\xi_i\in\R^{2^{r_i}}$. Adjoin the zero vector as index zero. With $N_i=2^{r_i}$ and $t_{ij}=(j+1)/N_i$, define
+\begin{equation}\label{eq:char}
+ \chi_i(\omega)=\exp\left(-2\pi i\sum_{j=0}^{N_i-1}\xi_{ij}\omega(t_{ij})\right).
+\end{equation}
+Repeated frequencies and characters are permitted. All characters have modulus one and are continuous. Their coefficient realization is
+\[
+ J:\ell^1(\mathbb N,\C)\longrightarrow C_b(\X,\C),\qquad
+ Ja=\sum_i a_i\chi_i.
+\]
+The series converges uniformly, and $\norm{Ja}_\infty\le\norm a_1$. Put
+\begin{equation}\label{eq:quotient}
+ K=\ker J,\quad \A=\ell^1/K,\quad Q:\ell^1\to\A,\qquad
+ \norm{Qa}_{\A}=\inf_{b:\,Jb=Ja}\norm b_1.
+\end{equation}
+Thus $\A$ is complete, and its induced realization $\mathcal J:\A\to C_b(\X)$ is injective and contractive. The quotient norm is part of the theorem: it is not replaced by the uniform norm. An arbitrary selected list need not be closed under frequency addition or negation, so no algebra or conjugation closure is assumed.
+
+Let $U=L^\infty(\R,ds;\R)$, and define the control direction
+\[
+ h_u(t)=\int_0^t u(s)\,ds\quad(t\in\R).
+\]
+The integral has the usual orientation for negative $t$. It depends only on the almost-everywhere class of $u$, is globally Lipschitz, and vanishes at zero. Translation is denoted by $\tau_h$, with realization $\mathcal J(\tau_h q)(\omega)=\mathcal Jq(\omega+h)$.
+
+Define the step functions, extended by zero outside $[0,1]$,
+\begin{equation}\label{eq:eta}
+ \eta_i(s)=2\pi\sum_j\xi_{ij}\mathbf1_{(0,t_{ij}]}(s),
+ \qquad \lambda_i=\int_0^1|\eta_i(s)|^p\,ds.
+\end{equation}
+Endpoints of the intervals do not affect these classes. The heat evolution will be
+\begin{equation}\label{eq:heat}
+ S_H Qa=Q\big((a_i e^{-H\lambda_i})_i\big).
+\end{equation}
+Its well-definedness requires proof; arbitrary coefficient multipliers do not automatically preserve $K$.
+
+For a real Banach space $B$, write $B_0=B$ and $B_{n+1}=L^1(\R;B_n)$, with Bochner integrability. Complex spaces are regarded as real when taking control derivatives. For $u_1,\ldots,u_n\in U$, let $\langle u_1\otimes\cdots\otimes u_n,F\rangle$ denote successive Bochner pairings, starting with the outer variable. Its norm is bounded by $\norm F\prod_j\norm{u_j}_\infty$.
+
+\begin{theorem}\label{thm:main}
+The formula \eqref{eq:heat} defines a strongly continuous contraction semigroup on $\A$. For $H>0$ and $q\in\A$, the map
+\[
+ F_q(u)=\tau_{h_u}S_Hq\quad(U\to\A)
+\]
+is $C^\infty$ over $\R$. For every integer $n\ge1$, there is a unique $D_{n,H}q\in\A_n$ such that
+\begin{equation}\label{eq:density}
+ D^nF_q(0)[u_1,\ldots,u_n]
+ =\langle u_1\otimes\cdots\otimes u_n,D_{n,H}q\rangle.
+\end{equation}
+These densities are supported in $[0,1]^n$, in the iterated $L^1$ sense. The frozen formal construction gives
+\begin{equation}\label{eq:formalbound}
+ \norm{D_{n,H}q}\le(1+n/H)^n\norm q_{\A}.
+\end{equation}
+The direct human Fourier estimate proved below gives the stronger bound
+\begin{equation}\label{eq:humanbound}
+ \norm{D_{n,H}q}\le C_{n,p,H}\norm q_{\A},\qquad
+ C_{n,p,H}=\left(\frac{n}{epH}\right)^{n/p}.
+\end{equation}
+For every bounded real-linear $L:\A\to\C$, application of $L$ at every Bochner level gives the unique scalar density of $D^n(LF_q)(0)$, of norm at most $\norm L C_{n,p,H}\norm q_{\A}$.
+\end{theorem}
+
+The weighted-sampler interpretation is proved in Section~\ref{sec:weighted}. This statement concerns every element of the specified completion. It does not identify that completion with all bounded continuous path functions or with a space of predictable integrands. The sharper constant in \eqref{eq:humanbound} is not asserted to be a named Lean theorem or the optimal operator norm for every selected spectrum.
+
+\section{Actual finite signed samplers and the expectation functional}
+For $t>0$, let $k_{p,t}$ be the real Schwartz inverse Fourier transform of $e^{-t(2\pi\xi)^p}$, with Fourier convention $\widehat f(\xi)=\int e^{-2\pi i\xi x}f(x)\,dx$. Then
+\[
+ \int k_{p,t}=1,\qquad
+ k_{p,t}(x)=t^{-1/p}k_{p,1}(t^{-1/p}x).
+\]
+Reality follows from the real even multiplier. Schwartz regularity follows because every derivative of the multiplier is a polynomial times a rapidly decreasing function. In particular its inverse transform is integrable. Write $M_p=\int|k_{p,1}|$, a finite number at least one, independent of $t$ after scaling.
+
+At dyadic level $r$, take $N=2^r$ signed independent increments with density $\prod_{j<N}k_{p,H/N}(x_j)$, and take the unique Lagrange polynomial path through zero at time zero and the cumulative sums at the dyadic times. This is a continuous path on the whole real line, depending linearly on the increments. This produces a finite signed Borel measure $\nu_{r,H}$ on $\X$, of mass one and total variation $M_p^N$; the interpolation map is injective, since its increments can be recovered from dyadic evaluations.
+
+The positive sampler $P_{r,H}$ is the pushforward of the normalized absolute increment density. If $\rho(x)=\prod_j k_{p,H/N}(x_j)$, use
+\[
+ w_{r,H}(\omega)=M_p^N\operatorname{sgn}_*(\rho(x(\omega))),
+\]
+where $x(\omega)$ recovers the increments, and $\operatorname{sgn}_*$ agrees with the sign off zero and has modulus one at zero. The convention at zeros does not affect the sampler. Recovery outside the interpolated-path support may be defined by the same evaluations. Consequently
+\begin{equation}\label{eq:weights}
+ d\nu_{r,H}=w_{r,H}\,dP_{r,H},\quad
+ |w_{r,H}|=M_p^N,\quad
+ \int w_{r,H}\,dP_{r,H}=1,
+\end{equation}
+and $\int|w_{r,H}|=M_p^N$, $\int w_{r,H}^2=M_p^{2N}$. This is an actual finite positive sampling law with a signed weight. The positive sampler is generally not a Gaussian proposal law.
+
+\begin{lemma}\label{lem:finitechar}
+For every $i$ and $r$, $|\int\chi_i\,d\nu_{r,H}|\le1$. For $r\ge r_i$,
+\begin{equation}\label{eq:exactchar}
+ \int\chi_i\,d\nu_{r,H}=e^{-H\lambda_i}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At any level, every interpolated evaluation is a real linear combination of the independent increments. Substitution into \eqref{eq:char} therefore gives a product of their Fourier transforms, each of the form $e^{-(H/N)(2\pi b)^p}\in(0,1]$. This proves the bound even when some character times are finer than the sampler.
+
+If $r\ge r_i$, all the character times are grid points. In the coarse $i$-grid, write $\omega(t_{ij})=\sum_{k\le j}\Delta_k$. Collecting coefficients gives $\sum_j\xi_{ij}\omega(t_{ij})=\sum_k(\sum_{j\ge k}\xi_{ij})\Delta_k$. Independence and convolution of the finer increments yield
+\[
+ \prod_{k<N_i}\exp\left[-\frac{H}{N_i}
+ \left(2\pi\sum_{j\ge k}\xi_{ij}\right)^p\right].
+\]
+This is \eqref{eq:exactchar}, since $\eta_i$ equals the corresponding tail sum on each interval of length $1/N_i$.
+\end{proof}
+
+\begin{proposition}\label{prop:expect}
+For every $a\in\ell^1$,
+\begin{equation}\label{eq:expectlimit}
+ \int Ja\,d\nu_{r,H}\longrightarrow\sum_i a_i e^{-H\lambda_i}.
+\end{equation}
+The limit depends only on $Ja$ and defines a functional $\E_H:\A\to\C$ of norm exactly one.
+\end{proposition}
+\begin{proof}
+For each fixed $r$, uniform convergence of the character series allows integration term by term against the finite variation measure $\nu_{r,H}$. Although its variation depends on $r$, Lemma~\ref{lem:finitechar} bounds the resulting $i$th scalar term by $|a_i|$, uniformly in $r$. Dominated convergence for this counting-measure series proves \eqref{eq:expectlimit}. This uses a character-specific bound, not a nonexistent uniform variation estimate.
+
+If $Ja=0$, every finite integral on the left vanishes. The limiting scalar series is consequently zero. It annihilates $K$, so descends to $\A$. Its coefficient bound is $\norm a_1$; taking the infimum over all representatives gives $|\E_H q|\le\norm q_{\A}$. The constant character represents $\mathbf1\in\A$ with norm one: its coefficient norm is one and its realized supremum norm is one. Its expectation is one, proving the reverse norm inequality. Finite character combinations are dense in the quotient, since finitely supported sequences are dense in $\ell^1$.
+\end{proof}
+
+\section{Translations, heat evolution and the quotient relations}
+On coefficients define $T_h a=(a_i\chi_i(h))_i$. It is an invertible isometry with inverse $T_{-h}$, and
+\[
+ J(T_h a)(\omega)=Ja(\omega+h).
+\]
+Thus $T_hK=K$, and $\tau_h Qa=Q(T_h a)$ is an isometry of $\A$. Dominated convergence in $\ell^1$ proves continuity in $h$ for the compact-open topology: each coordinate $\chi_i(h)$ is continuous, and the coefficient difference is bounded by $2|a_i|$. The same argument, using the finitely many times of each character, proves continuity of $u\mapsto\tau_{h_u}q$ in the $L^\infty$ norm.
+
+\begin{proposition}\label{prop:heat}
+The multiplier in \eqref{eq:heat} preserves $K$. The induced $S_H$ is a contraction, $S_0=I$, $S_{H+G}=S_HS_G$, and $S_H\tau_h=\tau_hS_H$. Moreover
+\begin{equation}\label{eq:translatedexpect}
+ \mathcal J(S_Hq)(\omega)=\E_H(\tau_\omega q),\qquad H>0.
+\end{equation}
+The map $H\mapsto S_Hq$ is norm continuous on $[0,\infty)$ for every $q\in\A$.
+\end{proposition}
+\begin{proof}
+For coefficients the right side of \eqref{eq:translatedexpect} is $\sum_i a_i\chi_i(\omega)e^{-H\lambda_i}$, the realization of the proposed evolved coefficients. If $a\in K$, then $T_\omega a\in K$, and Proposition~\ref{prop:expect} makes this scalar zero for every $\omega$. Hence the evolved coefficients belong to $K$. At $H=0$ preservation is immediate.
+
+The coefficient multiplier has norm at most one. Its quotient operator is therefore contractive. The remaining algebraic identities follow from multiplication of the diagonal factors, including $e^{-(H+G)\lambda_i}=e^{-H\lambda_i}e^{-G\lambda_i}$, and descend because $K$ is preserved. Finally, if $H_j\to H\ge0$, the coefficient norm difference tends to zero by domination by $2|a_i|$ and coordinate continuity. Its quotient norm is no larger. This proves strong continuity, without requiring uniform continuity in operator norm.
+\end{proof}
+
+There is no positivity assertion in this proposition. The existence of a normalized contraction functional in a coefficient quotient is weaker than existence of a probability path law. Likewise the boundedness of $\mathcal J$ does not give a bounded inverse on its range equipped with the uniform norm.
+
+\section{Bounded controls separate genuine Bochner time fields}\label{sec:bochner}
+For a real Banach space $B$, the map
+\[
+ P_u:L^1(\R;B)\to B,\qquad P_uf=\int u(s)f(s)\,ds
+\]
+has norm at most $\norm u_\infty$. Multiplication by $u$ preserves strong measurability and has integrable norm, so this is an ordinary Bochner integral. Bounded linear maps commute with it. Iterating gives the pairing and norm bound used in Theorem~\ref{thm:main}.
+
+\begin{lemma}\label{lem:separate}
+If $F\in B_n$ and all bounded-control pairings of $F$ vanish, then $F=0$ in $B_n$. In particular a density satisfying \eqref{eq:density}, if it exists, is unique as an iterated $L^1$ class.
+\end{lemma}
+\begin{proof}
+First let $n=1$. Taking $u=\mathbf1_E$ for every measurable set $E$ of finite measure shows $\int_E F=0$. A Bochner integrable function is essentially valued in a separable closed subspace $B'\subset B$. There is a countable family $(\ell_j)$ of norm-one bounded real-linear functionals on $B$ that norms $B'$: choose a countable dense subset of its unit sphere, choose a supporting functional for each point by Hahn--Banach, and use density to obtain $\norm x=\sup_j|\ell_j(x)|$ for $x\in B'$. The scalar functions $\ell_j(F)$ have integral zero on every finite-measure set, so each vanishes almost everywhere. For example, apply the integral identity on bounded subsets of $\{\ell_j(F)>1/k\}$ and of $\{\ell_j(F)<-1/k\}$, then let their bounds and $k$ increase. The countable norming family now yields $F=0$ almost everywhere.
+
+For the induction step, fix the first control $u_1$. Pairing the outer variable gives an element of $B_{n-1}$ whose every remaining control pairing is zero. It vanishes by induction. Thus all first-control pairings vanish as elements of $B_{n-1}$. The case $n=1$, now with Banach target $B_{n-1}$, gives $F=0$. Apply this to a difference to obtain uniqueness.
+\end{proof}
+
+This proof avoids an uncountable intersection of exceptional sets indexed by all functionals. No reflexivity or Radon--Nikodym property of $B$ is needed. When desired, the iterated spaces identify isometrically with Bochner $L^1$ on $\R^n$ by the Bochner Fubini theorem. The iterated formulation already defines every contraction and is the one used in the source construction.
+
+\section{Native Fr\'echet derivatives and direct density bounds}\label{sec:derivatives}
+Fubini for the finite sum in \eqref{eq:eta} gives the exact control phase
+\begin{equation}\label{eq:phase}
+ \chi_i(h_u)=e^{-i b_i(u)},\qquad
+ b_i(u)=\int\eta_i(s)u(s)\,ds.
+\end{equation}
+The sign and the factor $2\pi$ come from \eqref{eq:char}; neither can be discarded. Since the support has length one, H\"older's inequality gives
+\begin{equation}\label{eq:coercive}
+ \norm{\eta_i}_1\le\norm{\eta_i}_p=\lambda_i^{1/p},\qquad
+ |b_i(u)|\le\lambda_i^{1/p}\norm u_\infty.
+\end{equation}
+For $n\ge1$ and $H>0$, differentiation of a real scalar exponential suggests the coefficient tensor
+\begin{equation}\label{eq:tensorcoeff}
+ \Big(a_i e^{-H\lambda_i}e^{-i b_i(u)}
+       (-i)^n\prod_{j=1}^n b_i(v_j)\Big)_i.
+\end{equation}
+We prove both summability and genuine Fr\'echet differentiability before passing to the quotient.
+
+\begin{lemma}\label{lem:multiplier}
+For $n\ge1$,
+\[
+ \sup_{x\ge0}x^{n/p}e^{-Hx}
+ =\left(\frac{n}{epH}\right)^{n/p}=C_{n,p,H}.
+\]
+The tensor \eqref{eq:tensorcoeff} has $\ell^1$ norm at most $C_{n,p,H}\norm a_1\prod_j\norm{v_j}_\infty$. For $n=0$, use $C_{0,p,H}=1$.
+\end{lemma}
+\begin{proof}
+For $x>0$, the logarithmic derivative of $x^{n/p}e^{-Hx}$ is $n/(px)-H$. The function increases up to $x=n/(pH)$, then decreases to zero, and vanishes at $x=0$. Substitution yields the maximum. Apply \eqref{eq:coercive} to every factor in \eqref{eq:tensorcoeff}, sum $|a_i|$, and use this scalar bound.
+\end{proof}
+
+\begin{proposition}\label{prop:smooth}
+The coefficient orbit $u\mapsto(a_i e^{-H\lambda_i}e^{-ib_i(u)})_i$ is $C^\infty$ from $U$ to $\ell^1$. Its $n$th derivative is \eqref{eq:tensorcoeff}. The quotient orbit $F_q$ is also $C^\infty$.
+\end{proposition}
+\begin{proof}
+For real $x,y$, the integral Taylor formula gives
+\[
+ |e^{-i(x+y)}-e^{-ix}+iy e^{-ix}|\le |y|^2/2,
+ \qquad |e^{-i(x+y)}-e^{-ix}|\le |y|.
+\]
+At derivative order $n$, multiply the first inequality by $|a_i|e^{-H\lambda_i}\prod_{j\le n}|b_i(v_j)|$, substitute $y=b_i(w)$, and sum. The remainder in the space of bounded $n$-linear maps is at most
+\[
+ \tfrac12 C_{n+2,p,H}\norm a_1\norm w_\infty^2
+        \prod_{j\le n}\norm{v_j}_\infty.
+\]
+The candidate derivative is the $(n+1)$st tensor. The second inequality similarly bounds the difference of the $n$th tensors at $u+w$ and $u$ by $C_{n+1,p,H}\norm a_1\norm w_\infty\prod_j\norm{v_j}_\infty$. This proves differentiability and continuity in operator norm, inductively at every order, including order zero. Composition with the bounded quotient map proves the last assertion. In particular the tensors annihilate $K$ after applying $Q$: if $a\in K$, the entire quotient orbit is identically zero by Proposition~\ref{prop:heat} and translation invariance of $K$.
+\end{proof}
+
+For a representative $a$, define a field in the iterated $\ell^1$-valued $L^1$ space by the absolutely convergent sum
+\begin{equation}\label{eq:fieldcoeff}
+ \widetilde D_{n,H}a(s_1,\ldots,s_n)
+ =\sum_i a_i e^{-H\lambda_i}(-i)^n
+       \eta_i(s_1)\cdots\eta_i(s_n)e_i.
+\end{equation}
+Each summand is strongly measurable, supported in $[0,1]^n$, and has integral norm $|a_i|e^{-H\lambda_i}\norm{\eta_i}_1^n$. Lemma~\ref{lem:multiplier} bounds the sum of these norms by $C_{n,p,H}\norm a_1$. Thus the sum converges in the complete Bochner space; no pointwise convergence on a common exceptional set is required. Its contraction against controls is exactly the coefficient tensor at $u=0$, by continuity of the pairings.
+
+\begin{proof}[Proof of the density assertions in Theorem~\ref{thm:main}]
+Apply $Q$ at each Bochner level to \eqref{eq:fieldcoeff}; call the resulting field $\mathcal D a$. If $a\in K$, every control pairing of $\mathcal D a$ is zero by Proposition~\ref{prop:smooth}. Lemma~\ref{lem:separate} implies $\mathcal D a=0$. Hence $\mathcal D$ descends to a bounded linear map $D_{n,H}:\A\to\A_n$. Taking the infimum of the coefficient bound over representatives proves \eqref{eq:humanbound}. Its control pairing is the derivative of the quotient orbit, establishing \eqref{eq:density}; uniqueness follows from the same separation lemma. Support is preserved by summation, quotient maps and norm limits.
+
+For a bounded real-linear $L:\A\to\C$, apply its Bochner lift at every depth. Each lift has norm at most $\norm L$, rather than a new factor at each depth: induction lifts the same previously constructed map, so its norm never increases. Pairing commutes with every lift, yielding $L$ of the tensor in \eqref{eq:density}. The bounded linear chain rule identifies this with $D^n(LF_q)(0)$. The norm bound and scalar uniqueness follow.
+\end{proof}
+
+At a general control $u$, replace $q$ by $\tau_{h_u}q$ in the zero-control density; its norm is unchanged. Thus these are native Banach-space derivatives at every control. Their multilinear symmetry follows directly from the product in \eqref{eq:tensorcoeff}, and the density is invariant under permutation of the time variables in its Bochner product-space realization. These are consequences of the explicit formula and uniqueness, not assumptions about formal functional differentiation.
+
+\section{The source construction and the total heat horizon}
+The formal source takes a compositional route. Its first time-gradient map at horizon $T>0$ is a bounded map
+\[
+ G_T:\A\to L^1(\R;\A),\qquad \norm{G_T}\le1+T^{-1}.
+\]
+It is constructed from the step-function character atoms and descended through the same kernel using bounded-control separation. Its contraction is the genuine first derivative of $u\mapsto\tau_{h_u}S_Tq$ at zero. On a generator the representative is $-i\eta_i(s)e^{-T\lambda_i}Qe_i$, agreeing with \eqref{eq:fieldcoeff} at $n=1$.
+
+Iterate $G_T$ using its Bochner lifts. The order-$n$ map has norm at most $(1+T^{-1})^n$ and contracts to the ordered composition of $n$ smoothed directional derivatives. Each step contributes a new heat factor. On finite generators their product is $e^{-nT\lambda_i}(-i)^n\prod_jb_i(u_j)$. Both the maps and contractions are bounded, so finite-generator density extends this identity to every $q\in\A$. Proposition~\ref{prop:smooth}, or the source's heat-splitting induction, identifies it with the native $n$th derivative at total horizon $nT$.
+
+To obtain the derivative at a prescribed $H$, one must therefore take $T=H/n$. This yields \eqref{eq:formalbound}. Taking all $n$ factors at horizon $H$ would instead describe total smoothing $nH$; it would not prove the stated fixed-horizon identity. The normalized formal density and the direct field of Section~\ref{sec:derivatives} have identical contractions, so Lemma~\ref{lem:separate} identifies them. Consequently the human estimate \eqref{eq:humanbound} bounds that same canonical density; no new domain or alternative completed space is being substituted.
+
+For $n=2$, the source also allows two unequal positive horizons $S,T$. The nested Hessian field has bound $(1+S^{-1})(1+T^{-1})\norm q$ and contracts to the Hessian at total horizon $S+T$. Pairing it against $u,v$ is a genuine iterated Bochner integral. In the present notation its generator formula is
+\[
+ -e^{-(S+T)\lambda_i}\eta_i(s)\eta_i(t)Qe_i.
+\]
+This checks the two minus-imaginary phase factors and the sum, rather than product, of the heat horizons.
+
+\section{Realized derivatives and weighted expectation limits}\label{sec:weighted}
+Path evaluation $L_\omega q=\mathcal Jq(\omega)$ has norm at most one. Its scalar lifted field realizes the $n$th derivative of
+\[
+ u\longmapsto\mathcal J(S_Hq)(\omega+h_u).
+\]
+This follows from the translation identity and the bounded linear chain rule. It is a derivative of an actual bounded continuous path function in the specified Banach domain.
+
+An expectation functional may have a different even heat order $2k$ and a different positive horizon $G$. Denote it by $\E^{(2k)}_G$ and use the samplers $P^{(2k)}_{r,G},w^{(2k)}_{r,G}$. The domain $\A$ depends on the chosen characters, not on the heat order, so this comparison uses the same space. The smoothing densities above still use order $p$ and horizon $H$.
+
+\begin{theorem}\label{thm:weighted}
+Fix $H,G>0$, $m,k\ge1$, $q\in\A$, $n\ge1$ and bounded controls $u_1,\ldots,u_n$. At every dyadic sampling level, the weighted realized native derivative is integrable. Moreover
+\begin{align*}
+ &\lim_{r\to\infty}\int w^{(2k)}_{r,G}(\omega)
+ D^n\big[v\mapsto\mathcal J(S_Hq)(\omega+h_v)\big](0)
+ [u_1,\ldots,u_n],dP^{(2k)}_{r,G}(\omega)\\
+ &\hspace{12mm}=D^n\big[v\mapsto\E^{(2k)}_G(\tau_{h_v}S_Hq)\big](0)
+ [u_1,\ldots,u_n]\\
+ &\hspace{12mm}=\langle u_1\otimes\cdots\otimes u_n,
+        (\E^{(2k)}_G)_n D_{n,H}q\rangle.
+\end{align*}
+Here $(\E^{(2k)}_G)_n$ is the iterated Bochner lift, not an integral over an unspecified infinite-dimensional signed law.
+\end{theorem}
+\begin{proof}
+Let $a_*=D^nF_q(0)[u_1,\ldots,u_n]\in\A$. The realized tensor is exactly $\mathcal J a_*(\omega)$ by the bounded evaluation chain rule. Its absolute value is at most $\norm{a_*}_{\A}$. Equation~\eqref{eq:weights} now bounds the absolute weighted integrand by $M_{2k}^{2^r}\norm{a_*}_{\A}$, a finite constant at every fixed $r$. This proves integrability.
+
+Apply Proposition~\ref{prop:expect}, with order $2k$ and horizon $G$, to the single completed test $a_*$. Its finite weighted expectations converge to $\E^{(2k)}_G a_*$. The bounded linear chain rule gives the first identity on the right; commutation with the lifted density pairing gives the second. No derivative is interchanged with a limit using a uniform bound on the weights. Instead the derivative is first established in the completed test space, and the existing continuous expectation-limit theorem is then applied to that test.
+\end{proof}
+
+The theorem is pointwise in the chosen controls and derivative order. Its scalar limiting multilinear map has the bound from Theorem~\ref{thm:main}, since $\norm{\E^{(2k)}_G}=1$. It makes no claim that the weighted densities themselves converge in $L^1$ under one common probability measure as $r$ varies. The finite sampler laws change with $r$.
+
+\section{Two concrete domain and normalization checks}
+\subsection{A two-time character and an invisible constant control}
+Take the times $1/2,1$ with frequencies $1,-1/2$. Then $\eta$ is $\pi$ on $(0,1/2]$ and $-\pi$ on $(1/2,1]$, and $\lambda=\pi^p$. For the constant control $u=\mathbf1_{(0,1]}$, $b(u)=0$. This character is unchanged by the linear direction $h_u(t)=t$ on $[0,1]$, although its heat multiplier is strictly less than one for $H>0$.
+
+Let $v=\mathbf1_{(0,1/2]}$ and $z=\mathbf1_{(1/2,1]}$. Then $b(v)=\pi/2$ and $b(z)=-\pi/2$. At zero path the first $v$-derivative is $-i(\pi/2)e^{-H\pi^p}$ and the mixed $(v,z)$ derivative is $+(\pi^2/4)e^{-H\pi^p}$. Pairing the density \eqref{eq:fieldcoeff} gives these same signs and constants. This example shows why the frequency energy uses all tail sums, rather than just the derivative in a constant-control direction or the terminal frequency alone.
+
+\subsection{An unsmoothed orbit that is not differentiable}
+Choose a spectrum containing the terminal frequencies $j,-j$ for every $j\ge1$, and put
+\[
+ f(\omega)=\sum_{j=1}^\infty\frac{\cos(2\pi j\omega(1))}{j^2}.
+\]
+This is an element $q\in\A$: use coefficients $1/(2j^2)$ for the two characters. The coefficient sum is finite and the realization is exactly $f$. Along $u=\mathbf1_{(0,1]}$, write $g(x)=f(h_{xu})$. It is an even continuous real function. With $h_N=1/(4N)$, all terms in $g(0)-g(h_N)$ are nonnegative, and for $N\le j\le2N$ the angle $2\pi jh_N$ lies in $[\pi/2,\pi]$. Therefore
+\[
+ g(0)-g(h_N)\ge\sum_{j=N}^{2N}j^{-2}
+ \ge\frac{N+1}{4N^2}>h_N.
+\]
+If $g$ were differentiable at zero, evenness would force $g'(0)=0$, contradicting these difference quotients. Evaluation at zero path is a bounded functional on $\A$, so the unsmoothed $\A$-valued control orbit is not Fr\'echet differentiable there either. This is a concrete element of the completed domain, not merely growth of an operator norm on a sequence of generators.
+
+For a single terminal character of integer frequency $j$, its quotient norm is exactly one, since its realized supremum norm and its one-coefficient bound are both one. Its unsmoothed control derivative in direction $u$ has norm $2\pi|j|$. Thus no uniform bounded first derivative on all these generators can hold at $H=0$. Positive heat suppresses these frequencies by $e^{-H(2\pi j)^p}$, exactly the mechanism of Lemma~\ref{lem:multiplier}.
+
+\section{Antecedents, formal correspondence and limits of the claim}
+Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.
+
+Chang, Johnson and Skoug \cite{cjs}, Section 2, describe a classical Banach algebra of Wiener-space functionals represented by finite complex measures on $L^2[0,T]$ through Paley--Wiener--Zygmund integrals. The measure's total variation supplies its norm. Here the characters are pointwise continuous on every path, the spectrum is a fixed countable list, and the realization is quotiented by its actual kernel. Closure under pointwise multiplication was not assumed. Their analytic Wiener/Feynman integral is not the higher-order heat expectation used here.
+
+Mazzucchi, Nicola and Trapasso \cite{mnt}, Section 3 and its Parseval formula, give modern primary context for Fresnel functionals on Fourier transforms of finite complex measures. Their quadratic oscillatory multiplier has modulus one; our multiplier is the real damping $e^{-H\lambda_i}$. No Sj\"ostrand-class extension or inclusion between their full infinite-dimensional domain and $\A$ is deduced. The sources establish that a Fourier-functional construction, despite failure of an ambient path measure, is an established idea. A complete priority determination for the precise quotient and density package remains unresolved.
+
+The following source correspondence fixes the scope of the formal evidence. The normalization, finite-sampler, translation and density constructions are reconstructed above; the semigroup strong-continuity argument in Section 3 is a human dominated-convergence deduction. All files are under \code{Foundation/} at frozen commit \code{bab688bb6140cd6316c80680095a914ea0d346db}; exact declarations, line numbers and source hashes are supplied separately in \code{theorem-map.json}.
+\begin{itemize}
+ \item \code{HigherHeatFourierBanach}: closed-kernel quotient, completeness, bounded injective realization, norm-one expectation and dense finite generators. \code{HigherHeatMixedFourierPaths}: character bounds, completed series limits and representation independence.
+ \item \code{HigherHeatWeightedPaths}: actual signed density over the absolute-density probability sampler, its exact first and absolute moments, and finite-level integrability. \par\noindent\code{HigherHeatFourierPathSemigroup}: multiplier kernel preservation and contraction semigroup.
+ \item \code{FourierPathControlFrechet} and
+\par\noindent\code{FourierPathSmoothControls}: native real Fr\'echet differentiability and all-order smoothness on $L^\infty$ controls. \par\noindent\code{BochnerTimeControlPairing} and
+\par\noindent\code{BochnerControlTowers}: actual Bochner pairing, norm bounds and separation.
+ \item \code{FourierPathTimeTowers},
+\par\noindent\code{FourierPathTimeTensorIdentity} and
+\par\noindent\code{FourierPathTimeTensorRealization}: composed densities, total-horizon normalization, uniqueness, scalar realization and the weighted density limit. \code{FourierPathHessianRealization} gives the unequal-horizon two-time specialization.
+\end{itemize}
+The direct bound \eqref{eq:humanbound}, the explicit cosine obstruction, the two-time calibration, and the direct all-order coefficient proof are human reconstructions or deductions. The formal bound being cited is \eqref{eq:formalbound}; the stronger estimate is not attributed to a declaration that proves only the coarser bound. The source proof review is specific to the mapped modules, not a claim that all imported library proofs were reread.
+
+For $p>2$, the one-time signed kernel changes sign and $M_p>1$. Finite-grid variation then grows as $M_p^{2^r}$, obstructing a finite-variation path measure with all these marginals. The separate signed multichannel companion reconstructs that classical obstruction in detail. The growth is compatible with Proposition~\ref{prop:expect}, whose bound exploits individual Fourier characters. It does not become a probability law through the positive finite samplers of \eqref{eq:weights}. At $p=2$ the Gaussian case has $M_2=1$, while all control-density assertions above remain valid.
+
+Finally, there is no construction here of a conditional expectation with respect to an infinite signed law, a martingale filtration, an It\^o isometry, or an integral of arbitrary adapted random controls. The Banach domain and positive smoothing horizon are essential assumptions. Every claimed derivative is a native derivative of its specified orbit, and every displayed time integral is a Bochner integral of an established integrable density.
+
+\begin{thebibliography}{9}
+\bibitem{nishioka} K. Nishioka, \emph{Stochastic calculus for a class of evolution equations}, Japanese Journal of Mathematics, New Series \textbf{11} (1985), 59--102. \href{https://www.jstage.jst.go.jp/article/math1924/11/1/11_1_59/_article/-char/en}{Primary publisher article and full text}.
+\bibitem{cjs} K. S. Chang, G. W. Johnson and D. L. Skoug, \emph{The Feynman integral of quadratic potentials depending on two time variables}, Pacific Journal of Mathematics \textbf{122} (1986), no. 1, 11--33. \href{https://msp.org/pjm/1986/122-1/pjm-v122-n1-p02-s.pdf}{Primary full text}, especially Section 2.
+\bibitem{mnt} S. Mazzucchi, F. Nicola and S. I. Trapasso, \emph{Phase space analysis of finite and infinite dimensional Fresnel integrals}, arXiv:2403.20082, version 2 (2025). \href{https://arxiv.org/pdf/2403.20082}{Primary preprint}, especially Section 3.
+\end{thebibliography}
+\end{document}

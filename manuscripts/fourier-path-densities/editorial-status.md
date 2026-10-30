@@ -1,0 +1,11 @@
+# Completed Fourier path tests
+
+REVIEWED_DRAFT. Ten pages at frozen verified baseline `bab688bb6140cd6316c80680095a914ea0d346db`. Classical formalization companion; novelty unresolved, no external submission.
+
+The paper reconstructs the actual countable-character l1 quotient and continuous realization, finite Lagrange polynomial path samplers with normalized absolute-density probability laws and signed weights, character-specific limiting expectation, kernel-preserving heat semigroup and translations. Genuine bounded-control Frechet derivatives have unique Bochner L1 time densities at every order, with explicit source total-horizon normalization and the actual weighted expectation limit. The arbitrary selected spectrum is not presumed to be an algebra.
+
+The direct all-order coefficient proof and bound C(n,p,H)=(n/(e*p*H))^(n/p), semigroup strong continuity, explicit cosine non-differentiability example, two-time sign/tail calibration and permutation symmetry are HUMAN reconstructions/deductions. The exact source bound is (1+n/H)^n at prescribed horizon H; its n composed gradients each use H/n. Uniqueness identifies the direct field with the formal normalized density. No arbitrary-spectrum algebra closure, finite-variation signed path law, adapted stochastic integral or new priority claim is inferred.
+
+All ten final pages rendered and inspected; pages 6–8 enlarged for the quotient descent, total heat horizon, actual signed sampler derivative limit and non-differentiability example. Clean two-pass compilation has resolved references and no overfull boxes. Analytic arguments were reviewed directly; no redundant implementation-mirroring checker or new full Lean build was run. The unchanged frozen baseline approval and its build/audit evidence hashes were checked. All 112 correspondences retain exact source headers, lines and hashes. The three primary comparisons and their access/review limits are in literature-review.json.
+
+This is an editorial reconstruction of frozen mathematics. ResearchSources, mathematical code, campaign priorities, researcher checkout and research refs are unchanged. No generalized conditional probability, adapted stochastic integral, or infinite-dimensional signed law is asserted.

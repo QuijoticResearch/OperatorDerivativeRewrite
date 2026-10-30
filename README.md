@@ -20,7 +20,7 @@ as a historical foundation overview; its old open-problem labels are not current
 
 ## Readable papers
 
-The [manuscript catalog](manuscripts/INDEX.md) groups twenty-seven reviewed drafts (404 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review.
+The [manuscript catalog](manuscripts/INDEX.md) groups twenty-eight reviewed drafts (414 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review.
 
 | Mathematical story | Readable papers |
 |---|---|
@@ -32,6 +32,8 @@ The [manuscript catalog](manuscripts/INDEX.md) groups twenty-seven reviewed draf
 | Brownian time changes | [Sticky clocks and balanced Brownian couplings](manuscripts/sticky-clock-recovery/main.pdf). Actual supported mass, inverse-clock holding transport, causal observed-clock recovery, full Brownian coordinate increment laws and observed operational Hermite/boundary martingales. |
 | Finite gauge transfers | [Pinned boundary Schur gap, exact certificate and nonlinear Haar response](manuscripts/one-sided-schur-gap/main.pdf), [Retained boundary entropy and replacement-kernel decay](manuscripts/conditional-boundary-entropy/main.pdf), [Seven-link SU(2) and homogeneous Z2 transfer comparisons](manuscripts/seven-link-transfer/main.pdf). Proved ground existence, actual centered stationary covariance, fixed-step persistence, full-cell Haar pin/concentration and finite-parameter mixing; no physical mass-gap claim. |
 | Fluid calibration | [Triad information, original Gaussian gradients and dephasing](manuscripts/gaussian-triad-information/main.pdf), [Fourier-cone reality and explicit Hermitian interaction](manuscripts/cone-pairing-diagnostics/main.pdf), [Strain, pressure and angular-ratio tests](manuscripts/strain-pressure-tests/main.pdf). Nonnormal restricted-Euler geometry, local infinite-energy affine fields, trace conventions, a smooth periodic viscous ABC counterexample, and a full infinite-spectrum shear angular-ratio reversal retain their distinct hypotheses. |
+
+The [completed Fourier path companion](manuscripts/fourier-path-densities/main.pdf) proves native bounded-control smoothness and unique integrable time densities on its realized quotient, with an actual signed-sampler limit and explicit smoothing-domain boundary.
 
 These are reviewed drafts, not external releases. Novelty and attribution review remain unresolved; several papers are explicitly classical formalization companions or diagnostic notes. The [editorial assessment](manuscripts/EDITORIAL_INVENTORY.md) records significance, consolidation choices and remaining issues. Earlier IBM working notes are preserved separately in the catalog.
 
