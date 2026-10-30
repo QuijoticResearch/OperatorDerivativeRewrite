@@ -2954,3 +2954,5 @@ import Foundation.PeriodicCenteredHolonomy
 import Foundation.PeriodicSlabL2
 import Foundation.PeriodicSlabJoint
 import Foundation.PeriodicTemporalConcentration
+import Foundation.PeriodicLoopVariation
+import Foundation.PeriodicTransferVariation
