@@ -34,7 +34,10 @@ no positive path-space measure or stochastic isometry is asserted.
 Static Appell reconstruction, unique higher-order polynomial Stein weight,
 missing first polynomial coordinate dual and actual Schwartz-density duals
 are proved separately from the chronological formula.
-We distinguish canonical coefficient uniqueness from uniqueness of channel synthesis. Exact variation/path-law, quartic-error, deterministic $L^2$-input and terminal-channel obstructions delimit stronger interpretations. All principal results are supported by a frozen
+We distinguish canonical coefficient uniqueness from uniqueness of channel synthesis. Exact variation/path-law, quartic-error, deterministic $L^2$-input and terminal-channel obstructions delimit stronger interpretations. A normalized
+polynomial sequence also proves nonclosability of the mean in compact-open
+path topology, including the Gaussian case; zero-start and all-start
+Schwartz testing are distinguished. All principal results are supported by a frozen
 Lean development. Novelty relative to earlier higher-order signed
 calculus remains unresolved.
 \end{abstract}
@@ -994,6 +997,97 @@ injectivity of channel synthesis. The original first-channel
 obstruction is formalized; the statement about all earlier channels
 is the same explicitly proved derivative calculation applied to
 \eqref{eq:channel}.
+
+
+\subsection{Compact-open path convergence does not close the mean}
+The norm in Section~\ref{sec:domain} is substantive. Consider instead
+$\mathcal P=\{\omega\in C(\R,\R):\omega(0)=0\}$ and the space
+$C(\mathcal P,\R)$ with uniform convergence on compact subsets of
+$\mathcal P$. Dyadic polynomial cylinders have a faithful realization
+in this space. Indeed each dyadic evaluation map is continuous; every
+finite list of prescribed values is realized by a piecewise linear
+path starting at zero. Equality of two realized cylinder polynomials
+therefore gives equality of the finite polynomials after passage to
+a common refinement. Thus the original cylinder mean defines an
+unambiguous linear functional on this realized polynomial algebra.
+The path coordinate is normalized time: $U(\omega)=\omega(1)$
+has the original terminal signed moments at physical horizon $T$.
+
+Set $a=cT\ne0$ and, for $n\geq0$, form the actual cylinder
+\[
+ F_n(\omega)=\frac{n!}{(pn)!a^n}U(\omega)^{pn}.
+\]
+Equation~\eqref{eq:moments} gives $\E_T(F_n)=1$ exactly.
+Nevertheless $F_n\to0$ uniformly on every compact subset of
+$\mathcal P$. To prove this, for compact $K\subset\mathcal P$,
+continuity of $U$ gives $|U|\leq R$ on $K$ for a finite $R\geq0$.
+The integer inequality $(pn)!\geq(n!)^2$ holds for $p\geq2$:
+$\binom{2n}{n}\geq1$ gives $(2n)!\geq(n!)^2$ and factorials
+increase from $2n$ to $pn$. Consequently
+\[
+ \sup_{\omega\in K}|F_n(\omega)|
+ \leq\frac{(R^p/|a|)^n}{n!}\longrightarrow0.
+\]
+For the limit, if $A=R^p/|a|$, the consecutive ratio of
+$A^n/n!$ is $A/(n+1)$, eventually at most $1/2$; the zero case
+is immediate. This proves the compact-open convergence.
+
+\begin{proposition}\label{prop:compactopenmean}
+The realized polynomial mean has no closed linear partial-operator
+extension from $C(\mathcal P,\R)$ to $\mathbb C$ with the
+compact-open input topology. In particular its graph is not closable
+in that topology.
+\end{proposition}
+\begin{proof}
+Its graph contains $(F_n,1)$, which converges to $(0,1)$ by the
+proved uniform-on-compacts limit. Every closed graph containing the
+polynomial graph must therefore contain $(0,1)$. The graph of a
+linear operator also contains $(0,0)$ and has only one value at
+zero. This is impossible. In particular the closure of the original
+graph cannot be the graph of a linear partial operator.
+\end{proof}
+This obstruction holds already at $m=1$, where the kernel is the
+positive Gaussian heat law of variance $2T$. It therefore does not
+prove absence of a probability representation. Compact-open control
+of unbounded polynomials does not control their integrals, even in
+that positive case. It also does not contradict the bounded mean on
+the stronger factorial analytic completion: this sequence is not
+asserted to converge in the norm of that completion. No claim about
+expectations of uniformly bounded path functions follows from this
+particular sequence.
+
+\subsection{One starting point does not separate Schwartz tests}
+A different testing distinction survives even at fixed positive time.
+The nonzero real Schwartz function $f(x)=xe^{-x^2}$ is odd, whereas
+every $k_t$ in this paper is even. Their product is integrable:
+$f$ is bounded and $k_t\in L^1$, or one may use Schwartz decay.
+Changing $x$ to $-x$ then gives
+\[
+ \int_\R f(x)k_t(x)\,dx=0\qquad\hbox{for every }t>0,
+ \qquad f(1)=e^{-1}>0.
+\]
+Thus all zero-start heat marginals together do not separate the
+Schwartz class. This is an elementary parity obstruction, not a
+failure of Fourier injectivity or a proof that the completed
+analytic pairing $J_T$ is noninjective.
+
+In fact all starting points at one fixed positive time do separate
+Schwartz functions. If $f\in\mathcal S(\R,\mathbb C)$ satisfies
+\[
+ \int_\R f(x+y)k_t(y)\,dy=0\qquad\hbox{for every }x\in\R,
+\]
+then evenness of $k_t$ identifies this function with $k_t*f$.
+Both factors are Schwartz, and the convolution Fourier formula gives
+\[
+ e^{-t\xi^p}\widehat f(\xi)=0\qquad(\xi\in\R)
+\]
+in the angular-frequency convention of Section 1. The multiplier
+never vanishes, so $\widehat f=0$ pointwise and Fourier inversion
+gives $f=0$. This proves separation without a bounded inverse:
+dividing by $e^{-t\xi^p}$ need not preserve the Schwartz class
+for an arbitrary proposed output. These topology and testing
+obstructions use classical factorial and Fourier mechanisms; no
+new general extension principle is claimed.
 
 \section{Verified source and literature boundary}
 The mathematical source is the frozen Git commit

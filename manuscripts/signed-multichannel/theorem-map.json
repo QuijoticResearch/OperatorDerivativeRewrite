@@ -1168,6 +1168,294 @@
       "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
       "declaration_header": "theorem schwartz_stein (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (f : \ud835\udce2(\u211d,\u2102)) :\n    (\u222b x : \u211d, (x:\u2102)*f x*evenKernel m hm t ht x)=\n      (2*m:\u2115)*(-1:\u2102)^(m+1)*(t:\u211d)*\n        (\u222b x : \u211d, jet (2*m-1) f x*evenKernel m hm t ht x)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L69"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.factorial_square_le",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 15,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem factorial_square_le (p : \u2115) (hp : 2 \u2264 p) (n : \u2115) :\n    n.factorial * n.factorial \u2264 (p*n).factorial",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L15"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.factorial_ratio_le",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 21,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem factorial_ratio_le (p : \u2115) (hp : 2 \u2264 p) (n : \u2115) :\n    (n.factorial : \u211d) / ((p*n).factorial : \u211d) \u2264 1 / (n.factorial : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L21"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.normalizer_moment",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 28,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem normalizer_moment (p : \u2115) (hp : 0 < p) (a : \u211d) (ha : a \u2260 0) (n : \u2115) :\n    normalizer p a n * PseudoPolynomialStein.moment p a (p*n) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L28"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.normalizer_abs",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 37,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem normalizer_abs (p : \u2115) (a : \u211d) (n : \u2115) :\n    |normalizer p a n| = (n.factorial : \u211d) / ((p*n).factorial : \u211d) / |a|^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L37"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.monomial_bound",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 41,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem monomial_bound (p : \u2115) (hp : 2 \u2264 p) (a : \u211d) (ha : a \u2260 0)\n    (R : \u211d) (_hR : 0 \u2264 R) (x : \u211d) (hx : |x| \u2264 R) (n : \u2115) :\n    |normalizer p a n * x^(p*n)| \u2264 (R^p/|a|)^n / (n.factorial : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L41"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderCompactDecay.family_compact_decay",
+      "file": "Foundation/PureOrderCompactDecay.lean",
+      "line": 55,
+      "source_sha256": "1e2ab7d84e90e371c008e8bd6a9124aef63953adcd5a1ad143fe21236faeb060",
+      "declaration_header": "theorem family_compact_decay {\u03b1 : Type*} [TopologicalSpace \u03b1] (p : \u2115) (hp : 2 \u2264 p)\n    (a : \u211d) (ha : a \u2260 0) (u : C(\u03b1,\u211d)) :\n    Tendsto (family p a u) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderCompactDecay.lean#L55"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.parameter_ne_zero",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 14,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem parameter_ne_zero (m : \u2115) (T : \u211d\u22650) (hT : 0 < T) : parameter m T \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L14"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.expectation_bad",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 24,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem expectation_bad (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    pathExpectation m hm T hT (badObservable m T n) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L24"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.observable_val",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 31,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem observable_val (m : \u2115) (T : \u211d\u22650) (n : \u2115) :\n    (badObservable m T n).val = family (2*m) (parameter m T) (realize terminalCylinder) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L31"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.ambient_decay",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 38,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem ambient_decay (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => (badObservable m T n).val) atTop (\ud835\udcdd (0 : C(Path,\u211d)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.observable_decay",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 43,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem observable_decay (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (badObservable m T) atTop (\ud835\udcdd (0 : realizedAlgebra))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L43"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.expectation_not_continuous",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 48,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem expectation_not_continuous (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac Continuous (pathExpectation m hm T hT)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L48"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.graph_pair_decay",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 56,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem graph_pair_decay (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => ((badObservable m T n).val, pathExpectation m hm T hT (badObservable m T n)))\n      atTop (\ud835\udcdd ((0 : C(Path,\u211d)), (1 : \u2102)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L56"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.no_closed_graph_extension",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 64,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem no_closed_graph_extension (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (G : Submodule \u211d (C(Path,\u211d) \u00d7 \u2102)) (hG : IsClosed (G : Set (C(Path,\u211d) \u00d7 \u2102)))\n    (hcore : \u2200 F : realizedAlgebra, (F.val, pathExpectation m hm T hT F) \u2208 G)\n    (hvertical : \u2200 z : \u2102, ((0 : C(Path,\u211d)), z) \u2208 G \u2192 z = 0) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L64"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.no_closed_partial_extension",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 73,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem no_closed_partial_extension (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (L : C(Path,\u211d) \u2192\u2097.[\u211d] \u2102) (hL : IsClosed (L.graph : Set (C(Path,\u211d) \u00d7 \u2102)))\n    (hcore : \u2200 F : realizedAlgebra, (F.val, pathExpectation m hm T hT F) \u2208 L.graph) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L73"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompactOpenObstruction.partialExpectation_not_closable",
+      "file": "Foundation/HigherHeatCompactOpenObstruction.lean",
+      "line": 90,
+      "source_sha256": "bb3766f41679c5dab4c8000973cbb815f089318182948d1d4c8e5b1ce44b488c",
+      "declaration_header": "theorem partialExpectation_not_closable (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac (partialExpectation m hm T hT).IsClosable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompactOpenObstruction.lean#L90"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPolynomialPathDomain.increments_surjective",
+      "file": "Foundation/HigherHeatPolynomialPathDomain.lean",
+      "line": 22,
+      "source_sha256": "903b0aefb8c3aafc02ae7d92b51313ae55988559e02d2b66029895aeb0af674f",
+      "declaration_header": "theorem increments_surjective (n : \u2115) : Function.Surjective (increments n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialPathDomain.lean#L22"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPolynomialPathDomain.sampleLift_injective",
+      "file": "Foundation/HigherHeatPolynomialPathDomain.lean",
+      "line": 61,
+      "source_sha256": "903b0aefb8c3aafc02ae7d92b51313ae55988559e02d2b66029895aeb0af674f",
+      "declaration_header": "theorem sampleLift_injective (n : \u2115) : Function.Injective (sampleLift n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialPathDomain.lean#L61"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPolynomialPathDomain.realize_injective",
+      "file": "Foundation/HigherHeatPolynomialPathDomain.lean",
+      "line": 90,
+      "source_sha256": "903b0aefb8c3aafc02ae7d92b51313ae55988559e02d2b66029895aeb0af674f",
+      "declaration_header": "theorem realize_injective : Function.Injective realize",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialPathDomain.lean#L90"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPolynomialPathDomain.pathExpectation_apply",
+      "file": "Foundation/HigherHeatPolynomialPathDomain.lean",
+      "line": 104,
+      "source_sha256": "903b0aefb8c3aafc02ae7d92b51313ae55988559e02d2b66029895aeb0af674f",
+      "declaration_header": "theorem pathExpectation_apply (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (F : Cylinder) :\n    pathExpectation m hm T hT (realizationEquiv F) = cylindricalExpectation m hm T hT F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialPathDomain.lean#L104"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPolynomialPathDomain.realize_position",
+      "file": "Foundation/HigherHeatPolynomialPathDomain.lean",
+      "line": 154,
+      "source_sha256": "903b0aefb8c3aafc02ae7d92b51313ae55988559e02d2b66029895aeb0af674f",
+      "declaration_header": "theorem realize_position (n : \u2115) (i : Fin (size n)) (\u03c9 : Path) :\n    realize (positionCylinder n i) \u03c9 =\n      HigherHeatContinuousCylinders.coordinate (HigherHeatContinuousCylinders.sampleTime n i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialPathDomain.lean#L154"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.witness_positive",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 11,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem witness_positive : 0 < oddPart (1 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L11"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.witness_nonzero",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 15,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem witness_nonzero : oddPart \u2260 (0 : \ud835\udce2(\u211d,\u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.witness_odd",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 20,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem witness_odd (x : \u211d) : oddPart (-x) = -oddPart x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L20"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.pairing_integrable",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 25,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem pairing_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    Integrable (fun x : \u211d => oddPart x*realKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L25"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.all_marginal_pairings_zero",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 36,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem all_marginal_pairings_zero (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    (\u222b x : \u211d, oddPart x*realKernel m hm t ht x) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L36"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.nonseparating",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 48,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem nonseparating (m : \u2115) (hm : 0 < m) :\n    \u2203 f : \ud835\udce2(\u211d,\u211d), f \u2260 0 \u2227\n      \u2200 (t : \u211d\u22650) (ht : 0 < t), (\u222b x : \u211d, f x*realKernel m hm t ht x) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L48"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.not_marginal_separation",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 53,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem not_marginal_separation (m : \u2115) (hm : 0 < m) :\n    \u00ac (\u2200 f : \ud835\udce2(\u211d,\u211d),\n      (\u2200 (t : \u211d\u22650) (ht : 0 < t), (\u222b x : \u211d, f x*realKernel m hm t ht x) = 0) \u2192 f = 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L53"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMarginalSeparationObstruction.all_starting_points_separate",
+      "file": "Foundation/HigherHeatMarginalSeparationObstruction.lean",
+      "line": 59,
+      "source_sha256": "7c6af47b2683816bf733d92d9d25910516b22bf267d4dfc83ec3cf9129a6f9cf",
+      "declaration_header": "theorem all_starting_points_separate (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (f : \ud835\udce2(\u211d, \u2102))\n    (hf : \u2200 x : \u211d, (\u222b y : \u211d, f (x+y)*(realKernel m hm t ht y : \u2102)) = 0) : f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMarginalSeparationObstruction.lean#L59"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzTransition.realKernel_even",
+      "file": "Foundation/HigherHeatSchwartzTransition.lean",
+      "line": 28,
+      "source_sha256": "f30ad4b5d7c1b363ce004806ed04753cc2ecfa04249e743021f04f5e493f69e9",
+      "declaration_header": "theorem realKernel_even (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (x : \u211d) :\n    realKernel m hm t ht (-x)=realKernel m hm t ht x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzTransition.lean#L28"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzTransition.transition_integrable",
+      "file": "Foundation/HigherHeatSchwartzTransition.lean",
+      "line": 34,
+      "source_sha256": "f30ad4b5d7c1b363ce004806ed04753cc2ecfa04249e743021f04f5e493f69e9",
+      "declaration_header": "theorem transition_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (f : \ud835\udce2(\u211d,\u2102)) (x : \u211d) :\n    Integrable (fun z : \u211d => f (x+z)*(realKernel m hm t ht z:\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzTransition.lean#L34"
+    },
+    {
+      "paper": "Section 12.5\u201312.6 compact-open nonclosability and exact Schwartz starting-point separation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzTransition.transition_evolve",
+      "file": "Foundation/HigherHeatSchwartzTransition.lean",
+      "line": 45,
+      "source_sha256": "f30ad4b5d7c1b363ce004806ed04753cc2ecfa04249e743021f04f5e493f69e9",
+      "declaration_header": "theorem transition_evolve (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (f : \ud835\udce2(\u211d,\u2102)) (x : \u211d) : transition m hm t ht f x=evolve m hm t f x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzTransition.lean#L45"
     }
   ],
   "human_reorganization": [
@@ -1179,7 +1467,10 @@
     "Section 3 reconstructs the finite Appell algebra using explicitly formal coefficient generating functions, not an unproved integral of an exponential series. Leading pairings expose full polynomial nondegeneracy, uniqueness of x/(pa) as the higher-order polynomial Stein weight, and failure of a polynomial representative for coordinate one or first derivative when p>2. The Gaussian p=2 case is retained as an exception.",
     "Actual derivatives of the real Schwartz heat kernel divided by factorials give absolutely polynomial-integrable Lebesgue density duals. No L2 score or bounded completed coordinate map is inferred. The impossibility of rho_1=W*k for polynomial W is a labelled elementary consequence of the mapped first-order obstruction.",
     "The unique centered polynomial primitive and all finite derivative-primitive tails are reconstructed on the monic basis. Removing all low Appell coordinates is distinct from centering; x^(p+1) supplies a nonzero coordinate-one witness. These static identities are not asserted to define chronological stochastic integration or replace the native multitime convergence proof.",
-    "Hile\u2013Stanoyevitch primary Sections 3\u20134 establish broader classical polynomial evolution/generating-function antecedents. Exact polynomial-coordinate obstruction priority remains unresolved; no new Appell mechanism is claimed."
+    "Hile\u2013Stanoyevitch primary Sections 3\u20134 establish broader classical polynomial evolution/generating-function antecedents. Exact polynomial-coordinate obstruction priority remains unresolved; no new Appell mechanism is claimed.",
+    "Section 12.5 realizes normalized-time terminal cylinders on actual zero-start continuous real paths. The physical terminal moments are at horizon T. The normalized polynomial sequence converges uniformly on every compact subset of path space but its signed means remain exactly one, proving no closed partial-operator extension in that input topology.",
+    "The compact-open obstruction also holds at p=2 for the positive Gaussian heat law with variance 2T, so it is expressly not presented as a probability-law obstruction. It does not concern uniformly bounded tests or convergence in the stronger factorial analytic norm.",
+    "Section 12.6 uses the actual nonzero odd Schwartz function x exp(-x^2) against all even zero-start heat marginals. All starts at one fixed positive time do separate by nonvanishing Fourier multiplier. Angular frequency is kept consistent with the paper, while source multiplier formulas use unit frequency 2pi. No bounded inverse or completed-pairing injectivity claim follows."
   ],
   "literature": [
     {
