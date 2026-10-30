@@ -43,4 +43,35 @@ check('unrestricted right inverse norm',average(scale(astar,F(8)))==c and dot(sc
 check('feasible constrained gradient residual',all(x==0 for x in average(r).values()) and gram(j)==add(r,p,F(1),F(36)) and dot(r,r)==2304 and energy(r)==11520)
 check('optimal feasible step reaches actual minimizer',add(j,r,F(1),-F(1,5))==h and dot(r,r)/energy(r)==F(1,5))
 check('exact line energy for nine rational steps',all(energy(add(j,r,F(1),-alpha))==2304-4608*alpha+11520*alpha*alpha for alpha in [F(k,5) for k in range(-3,6)]))
-print(json.dumps(dict(status='PASS',count=len(checks),checks=checks,arithmetic='Unbounded rational arithmetic; every one of 1024 edges and 1536 plaquettes',scope='Actual periodic witness and exact line energies. Uniqueness and physical-domain arguments use the printed proofs.')))
+# Independent incidence enumeration of the three-mask and checkerboard modes.
+def sig(v):return (-1)**sum(v[k]//2 for k in range(3))
+a3=field(lambda v,i:sig(v) if i==3 else 0)
+w3=field(lambda v,i:sig(v) if i==3 and v[3]%2 else 0)
+g3=gram(w3);b3=add(g3,a3,F(1),F(-3))
+p3=add(a3,b3,F(1,16),F(1,80));z3=add(a3,b3,F(1,96),F(1,800));h3=scale(z3,F(1200,17))
+c3={(q,i):F((-1)**sum(q[:3]) if i==3 else 0) for q in CV for i in range(4)}
+def div(a):return {v:sum(a[v,i]-a[shift(v,i,delta=-1),i] for i in range(4)) for v in V}
+def cg(a):
+ out={e:F(0) for e in a}
+ for v in CV:
+  for i,j in combinations(range(4),2):
+   val=a[v,i]+a[shift(v,i,2),j]-a[shift(v,j,2),i]-a[v,j]
+   for e,sg in [((v,i),1),((shift(v,i,2),j),1),((shift(v,j,2),i),-1),((v,j),-1)]:out[e]+=sg*val
+ return out
+check('three-mask coarse size and physical coarse Gram',sum(x*x for x in c3.values())==16 and cg(c3)=={e:12*x for e,x in c3.items()})
+check('three-mask full explicit fine Gram formula',all(g3[v,i]==(6*w3[v,i] if i==3 else (-2*sig(v)*(2*(v[3]%2)-1) if v[i]%2 else 0)) for v,i in edges))
+check('three-mask orthogonal positive-eigenvalue directions',gram(a3)==scale(a3,6) and gram(b3)==scale(b3,10) and dot(a3,b3)==0)
+check('three-mask full fine divergences vanish',all(x==0 for x in div(a3).values()) and all(x==0 for x in div(b3).values()))
+check('three-mask all averaged directions',average(a3)==c3 and average(g3)=={e:6*x for e,x in c3.items()} and average(b3)=={e:3*x for e,x in c3.items()})
+check('three-mask actual projected and Green identities',gram(p3)==scale(g3,F(1,8)) and gram(z3)==p3)
+check('three-mask projection removes a closed fine field',all(x==0 for x in curl(add(p3,w3,F(1),F(-1,8))).values()))
+check('three-mask actual compression and compliance',average(p3)=={e:x/10 for e,x in c3.items()} and average(z3)=={e:F(17,1200)*x for e,x in c3.items()})
+check('three-mask constrained energy and feasibility',average(h3)==c3 and energy(h3)==F(19200,17) and dot(p3,h3)==16)
+check('strict comparison with proposed checkerboard floor',F(17,1200)<F(1,64) and F(19200,17)>64*16)
+cc={(q,i):F((-1)**sum(q)*((i==0)-(i==1))) for q in CV for i in range(4)}
+ell=field(lambda v,i:cc[tuple(k//2 for k in v),i] if v[i]%2 else 0)
+check('checkerboard coarse physicality and norm',cg(cc)=={e:16*x for e,x in cc.items()} and sum(x*x for x in cc.values())==32)
+check('checkerboard full fine divergence and Gram',all(x==0 for x in div(ell).values()) and gram(ell)==scale(ell,8))
+check('checkerboard actual average and compliance',average(ell)==cc and average(scale(ell,F(1,64)))=={e:x/64 for e,x in cc.items()})
+check('checkerboard actual energy minimizing lift',energy(ell)==2048 and dot(ell,ell)==256)
+print(json.dumps(dict(status='PASS',count=len(checks),checks=checks,arithmetic='Unbounded rational arithmetic; every one of 1024 edges and 1536 plaquettes',scope='Actual periodic witnesses, exact line energies, full three-mask compliance and checkerboard comparison. Uniqueness and physical-domain arguments use the printed proofs.')))

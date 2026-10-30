@@ -660,6 +660,149 @@ Hodge/Schur mechanisms are classical \cite{gallier,hodge}; priority for
 the particular witness is not certified. None of these finite linear
 identities concerns a nonlinear continuum gauge measure or mass gap.
 
+\subsection*{A physical mode below the checkerboard compliance}
+A second exact periodic calculation tests a proposed compliance
+floor, rather than a norm-versus-energy minimum for the previous
+coarse field. Retain $\mathcal F$, $G_4$ and $\mathsf A$ above.
+Let $\Pi$ be the orthogonal projection onto $\mathcal F$, set
+$B=\Pi\mathsf A^*$, and define the actual finite compliance
+\[
+ S=\mathsf A(G_4|_{\mathcal F})^{-1}B.
+\]
+The inverse exists: $G_4$ is symmetric, its kernel is exactly
+$\ker D_4$, and its restriction to the orthogonal complement is
+positive definite in finite dimension. No inverse on the full
+fine edge space is used. Coarse physical fields are the orthogonal
+complement of all closed coarse fields.
+
+Put $\sigma(q)=(-1)^{q_0+q_1+q_2}$ and define
+\[
+ c_\triangle(q,i)=\mathbf1_{\{i=3\}}\sigma(q),\quad
+ a(v,i)=\mathbf1_{\{i=3\}}\sigma(q),\quad
+ w(v,i)=\mathbf1_{\{b_i=1\}}c_\triangle(q,i),\qquad v=2q+b.
+\]
+Thus $\|c_\triangle\|^2=16$ and
+$\mathsf A^*c_\triangle=w/8$. In this paragraph $a$ is a new
+three-mask field, distinct from \eqref{eq:periodica}.
+For clarity define $\epsilon_j=2b_j-1$. Direct curl incidence gives
+$g=G_4w$ with the complete component formula
+\[
+ g(v,3)=6w(v,3),\qquad
+ g(v,i)=-2\mathbf1_{\{b_i=1\}}\sigma(q)\epsilon_3
+            \quad(i=0,1,2).
+\]
+Here is a proof and a short way to verify its next Gram identity.
+For any edge field, define backward divergence by
+$\operatorname{div}_{-}f(v)=\sum_i[f(v,i)-f(v-e_i,i)]$ and
+componentwise positive scalar Laplacian by
+$\Delta_+f=\sum_j[2f-f(\cdot+e_j)-f(\cdot-e_j)]$.
+Expanding the four edges of every curl square proves
+\[
+ (G_4f)(v,i)=(\Delta_+f)(v,i)
+       +\operatorname{div}_{-}f(v+e_i)-\operatorname{div}_{-}f(v).
+\]
+For $w$ its direction-three component is
+$\mathbf1_{\{b_3=1\}}\sigma(q)$. Its three transverse scalar
+second differences each equal twice that component; the parallel
+term cancels its divergence correction. The off-direction
+correction is
+$\epsilon_3[\sigma(q(v+e_i))-\sigma(q(v))]$,
+which is zero at $b_i=0$ and $-2\epsilon_3\sigma(q)$ at $b_i=1$.
+This proves the displayed formula, including the periodic wrap.
+
+Now let $b=g-3a$. Its components are
+$b(v,3)=3\epsilon_3\sigma(q)$ and
+$b(v,i)=-2\mathbf1_{\{b_i=1\}}\epsilon_3\sigma(q)$ for $i<3$.
+Each of the three transverse backward differences contributes
+$-2\epsilon_3\sigma(q)$ to its divergence; the direction-three
+difference contributes $6\epsilon_3\sigma(q)$. Thus
+$\operatorname{div}_{-}b=0$. Along each of the first three axes,
+both the sequence $\sigma(q)$ and its odd-site restriction have
+scalar Laplacian eigenvalue two: their four-site patterns are
+$(1,1,-1,-1)$ and $(0,1,0,-1)$, up to a common sign.
+The factor $\epsilon_3$ has eigenvalue four along the last axis.
+The full stencil therefore gives
+\[
+ G_4a=6a,\qquad G_4b=10b,\qquad G_4g=10g-12a.
+\]
+The field $a$ is divergence free because its only component is
+independent of direction three. These positive-eigenvalue fields
+lie in $\mathcal F$. Their averages are
+$\mathsf A a=c_\triangle$ and $\mathsf A g=6c_\triangle$:
+the direction-three sums give these values directly and the other
+sums cancel over $b_3$. Hence $\mathsf A b=3c_\triangle$.
+
+Define the actual physical fields
+\[
+ p=\frac a{16}+\frac b{80},\qquad
+ z=\frac a{96}+\frac b{800}.
+\]
+The proved identities imply
+\[
+ G_4p=g/8=G_4(w/8),\quad G_4z=p,\quad
+ \mathsf A p=c_\triangle/10,\quad
+ \mathsf A z=\frac{17}{1200}c_\triangle.
+\]
+Since $p\in\mathcal F$ and $p-w/8\in\ker G_4$, the first identity
+proves $Bc_\triangle=p$ by the defining orthogonal decomposition.
+Since $z\in\mathcal F$, the second identifies its Green image.
+Consequently
+\begin{equation}\label{eq:threemaskcompliance}
+ Sc_\triangle=\frac{17}{1200}c_\triangle.
+\end{equation}
+The coarse field itself is physical: it has zero backward
+divergence and coarse scalar Laplacian eigenvalue twelve, so its
+coarse curl Gram is $12c_\triangle$. Its positive eigenvalue makes
+it orthogonal to every closed coarse field.
+
+For comparison the genuine checkerboard field is
+\[
+ c_*(q,i)=(-1)^{q_0+q_1+q_2+q_3}
+             (\mathbf1_{\{i=0\}}-\mathbf1_{\{i=1\}}),\qquad
+ \ell(v,i)=\mathbf1_{\{b_i=1\}}c_*(q,i).
+\]
+The direction-zero backward difference of $\ell$ is the common
+sign $(-1)^{\sum q_j}$ and the direction-one difference is its
+negative; thus its divergence vanishes. In each coordinate its
+nonzero components have scalar Laplacian eigenvalue two by the
+same four-site patterns, giving $G_4\ell=8\ell$.
+Also $\mathsf A\ell=c_*$ and $\mathsf A^*c_*=\ell/8$.
+It follows that $Bc_*=\ell/8$ and
+\[
+ Sc_*=c_*/64.
+\]
+The coarse field has zero divergence and coarse Laplacian
+eigenvalue sixteen, so it too is nonzero and physical. The
+checkerboard value is therefore attained, but is not a lower
+bound on the physical sector:
+\[
+ \frac{\langle c_\triangle,Sc_\triangle\rangle}
+      {\|c_\triangle\|^2}
+       =\frac{17}{1200}<\frac1{64}.
+\]
+This supplies a physical counterexample, rather than using a
+closed coarse zero mode to refute a positive lower bound.
+
+The same construction gives an attained energy consequence. Put
+$h=(1200/17)z$. Then $\mathsf A h=c_\triangle$ and
+$G_4h=(1200/17)p$. For every feasible physical residual $r$,
+$\mathsf A r=0$ implies
+$\langle p,r\rangle=\langle\mathsf A^*c_\triangle,r\rangle=0$.
+Hence $E(h+r)=E(h)+E(r)$, proving the unique minimum and its value
+\[
+ \min_{f\in\mathcal F,\,\mathsf A f=c_\triangle}E(f)
+       =\frac{1200}{17}\|c_\triangle\|^2
+       =\frac{19200}{17}>64\|c_\triangle\|^2.
+\]
+All constants refer to these unweighted side-four/side-two
+lattices. A smaller compliance means larger constrained energy,
+not instability of the positive fine Gram. The classical finite
+Hodge/Schur construction is unchanged; neither an optimal global
+compliance floor nor a scale-uniform estimate is asserted.
+\lean{PeriodicThreeMaskCertificates}{g_formula; a_certificate; g_certificate; projection_certificate; green_certificate}
+\lean{PeriodicThreeMaskCompliance}{projected_lift; Green_fineP; S_source; no_checker_lower_bound; constrained_minimum_value}
+\lean{PeriodicCheckerboardCompliance}{S_checker; same_minimizing_field}
+
 \section{A separate perturbation boundary: missing linear loss}
 Even finite positive blocks do not allow a general perturbation estimate
 that drops coupling cross terms. For a scalar block
@@ -1498,11 +1641,11 @@ human reorganizations. The original full-build and axiom-audit evidence
 hashes were checked; publication work changes no mathematical source and
 runs no competing Lean research build.
 
-Four independent standard-library checkers retain 66 exact groups:
+Four independent standard-library checkers retain 80 exact groups:
 nine certificate checks rebuild the geometry, all integer Gram/residual
 identities and the witness quotient; 21 Haar checks enumerate actual
 ribbons and rational quaternion actions; 20 sparse checks test all
-face words, second jets and Schur identities; and 16 periodic checks
+face words, second jets and Schur identities; and 30 periodic checks
 traverse the fine lattice and verify the two attained lift costs and
 feasible step. Their integers and fractions involve no floating
 arithmetic. The checker files and exact certificate data accompany the
