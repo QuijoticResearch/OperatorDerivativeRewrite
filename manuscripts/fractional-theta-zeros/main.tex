@@ -626,6 +626,104 @@ $a_n>1$, $a_n\to1$, $x_n\to\infty$ with
 $(a_n-1)\sqrt{x_n}\to\infty$.
 \end{theorem}
 
+
+\subsection*{A surviving boundary mass behind pointwise vanishing}
+There is an exact measure-level reason to keep the small coefficient
+in the cutoff. For $a>1$, put $b=2a-2>0$ and define the real
+signed density on $u>0$
+\[
+ c_{a,t}(u)=tK(0)(2a)(2a-1)(2a-2)u^{2a-3}e^{-u},
+ \qquad m(a,t)=tK(0)\Gamma(2a+1).
+\]
+This is precisely the real value of the cutoff subtracted from the
+third derivative, not the full deformed arithmetic density.
+The Gamma integral and its recurrence give
+\begin{align}\label{eq:cutoffmassmoments}
+ \int_0^\infty c_{a,t}(u)\,du&=m(a,t),&
+ \int_0^\infty|c_{a,t}(u)|\,du&=|m(a,t)|,\\
+ \int_0^\infty u|c_{a,t}(u)|\,du&=b|m(a,t)|.\notag
+\end{align}
+Indeed the integrals of $u^{b-1}e^{-u}$ and $u^be^{-u}$
+are $\Gamma(b)$ and $\Gamma(b+1)=b\Gamma(b)$,
+respectively; three recurrences yield
+$b(b+1)(b+2)\Gamma(b)=\Gamma(b+3)=\Gamma(2a+1)$.
+All coefficients other than $t$ are positive. This proves both
+the signed and absolute formulas, as well as integrability and
+the first absolute moment.
+\par\noindent\code{RiemannRealOrderCutoffBoundary.cutoff_integral}.
+\par\noindent\code{RiemannRealOrderCutoffBoundary.cutoff_norm_integral}.
+\par\noindent\code{RiemannRealOrderCutoffBoundary.cutoff_norm_first_moment}.
+
+If $f:\R\to\C$ is globally Lipschitz with constant $L$, then
+$|f(u)|\leq|f(0)|+Lu$ on the positive half-line, so the
+preceding moments justify every integral in
+\begin{equation}\label{eq:cutofftestbound}
+ \left|\int_0^\infty c_{a,t}(u)f(u)\,du-m(a,t)f(0)\right|
+ \leq Lb|m(a,t)|.
+\end{equation}
+To prove it, subtract $f(0)$ under the integral, use
+$|f(u)-f(0)|\leq Lu$, and apply the last identity in
+\eqref{eq:cutoffmassmoments}. Since Gamma is continuous at $3$,
+$m(a,t)\to2tK(0)$ as $a\downarrow1$; hence
+\begin{equation}\label{eq:cutoffweak}
+ \int_0^\infty c_{a,t}(u)f(u)\,du\longrightarrow2tK(0)f(0).
+\end{equation}
+This holds also for unbounded Lipschitz tests, and for either sign
+of $t$. At $t=0$ the density and all the displayed quantities vanish.
+\par\noindent\code{RiemannRealOrderCutoffConcentration.cutoff_lipschitz_error_bound}.
+\par\noindent\code{RiemannRealOrderCutoffConcentration.cutoff_lipschitz_tendsto}.
+
+For $t\ne0$ the normalized density is exactly the positive
+Gamma probability density
+\[
+ \frac{c_{a,t}(u)}{m(a,t)}
+       =\frac{u^{b-1}e^{-u}}{\Gamma(b)}.
+\]
+Let $\nu_a$ denote this probability on $[0,\infty)$, with no
+atom at zero. Its first moment is $b$. The preceding calculation
+therefore gives the exact human consequence
+\begin{equation}\label{eq:cutofflipmetric}
+ \sup_{\operatorname{Lip}(f)\leq1}
+ \left|\int f\,d\nu_a-f(0)\right|=b,
+\end{equation}
+where tests are real functions on $[0,\infty)$ with no boundedness
+restriction. The upper bound is the first-moment inequality; the
+test $f(u)=u$ attains it. Integrals exist because such tests grow
+at most linearly. This is an explicit Gamma approximate identity,
+not a new probability law associated with the entire transform.
+
+It also converges against every bounded continuous test, a human
+consequence beyond the named globally Lipschitz formulation.
+For $\eta>0$, the first moment implies
+$\nu_a([\eta,\infty))\leq b/\eta$. Splitting the test error
+at $\eta$ gives
+\[
+ \left|\int f\,d\nu_a-f(0)\right|
+ \leq\sup_{0\leq u\leq\eta}|f(u)-f(0)|
+           +2\|f\|_\infty b/\eta.
+\]
+First let $a\downarrow1$ at fixed $\eta$, then let
+$\eta\downarrow0$. Thus the signed cutoff measures converge
+weakly on the \emph{closed} half-line to $2tK(0)\delta_0$.
+The endpoint is included in this statement; the original density
+integrals themselves remain over $u>0$.
+
+Nevertheless $c_{a,t}(u)\to0$ for every fixed $u>0$: the factor
+$2a-2$ tends to zero and the other factors have finite limits there.
+For $t\ne0$, \eqref{eq:cutoffmassmoments} instead gives
+$\int|c_{a,t}|\to|2tK(0)|>0$, because $K(0)>0$.
+There is no common integrable dominator on any order neighborhood
+$1<a<1+\delta$. Otherwise take the sequence
+$a_n=1+\delta/(n+2)$; the countable intersection of its
+almost-everywhere domination events and dominated convergence
+would force its integrals to zero, contradicting the mass limit.
+This is precisely why pointwise disappearance cannot remove this
+cutoff from the parameter-limit analysis. It does not contradict
+the already proved uniform convergence of the original transforms,
+nor does it alter any zero classification.
+\par\noindent\code{RiemannRealOrderCutoffConcentration.cutoff_pointwise_tendsto_zero}.
+\par\noindent\code{RiemannRealOrderCutoffConcentration.no_common_integrable_majorant}.
+
 \subsection*{A uniform integrable derivative after cancellation}
 Fix $t$, put $\beta=2a$, $b=\beta-2\in(0,1/2]$ and
 $E(u)=e^{tu^\beta}$. Keep $R_3$ and $C_3$ from

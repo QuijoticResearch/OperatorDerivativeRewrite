@@ -720,6 +720,177 @@
       "source_sha256": "7cca743470d476deed10eff227765c919b91199b39286753c527f57ba77680b8",
       "declaration_header": "theorem uniform_relative_error_unbounded (t \u03b4 R M : \u211d) (ht : t \u2260 0) (h\u03b4 : 0 < \u03b4) :\n    \u2203 a x : \u211d, 1 < a \u2227 a < 1+\u03b4 \u2227 a < 3/2 \u2227 0 < x \u2227 R \u2264 x \u2227\n      M < \u2016scaledValue a t x/(leading a t : \u2102)-1\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderRelativeObstruction.lean#L84"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.mass",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 13,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "def mass (a t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L13"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_real",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 15,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_real (a t u : \u211d) (hu : 0 \u2264 u) :\n    cutoff a t u=((t*falling (2*a) 3*RiemannQuarticKernel.kernel 0*\n      u^(2*a-3)*Real.exp (-u) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L15"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_norm",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 25,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_norm (a t u : \u211d) (hu : 0 \u2264 u) :\n    \u2016cutoff a t u\u2016=|t*falling (2*a) 3*RiemannQuarticKernel.kernel 0| *\n      u^(2*a-3)*Real.exp (-u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L25"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_integral",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 31,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_integral (a t : \u211d) (ha : 1 < a) :\n    (\u222b u : \u211d in Ioi 0, cutoff a t u)=(mass a t : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L31"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_norm_integral",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 57,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_norm_integral (a t : \u211d) (ha : 1 < a) :\n    (\u222b u : \u211d in Ioi 0, \u2016cutoff a t u\u2016)=|mass a t|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L57"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_norm_moment_integrable",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 78,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_norm_moment_integrable (a t : \u211d) (ha : 1 < a) :\n    IntegrableOn (fun u : \u211d => u*\u2016cutoff a t u\u2016) (Ioi 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L78"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_norm_first_moment",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 91,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_norm_first_moment (a t : \u211d) (ha : 1 < a) :\n    (\u222b u : \u211d in Ioi 0, u*\u2016cutoff a t u\u2016)=(2*a-2)*|mass a t|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L91"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.mass_one",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 122,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem mass_one (t : \u211d) : mass 1 t=2*t*RiemannQuarticKernel.kernel 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L122"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.mass_continuousAt_one",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 126,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem mass_continuousAt_one (t : \u211d) : ContinuousAt (fun a : \u211d => mass a t) 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L126"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_integral_tendsto",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 132,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_integral_tendsto (t : \u211d) :\n    Tendsto (fun a : \u211d => \u222b u : \u211d in Ioi 0, cutoff a t u) (\ud835\udcdd[>] 1)\n      (\ud835\udcdd ((2*t*RiemannQuarticKernel.kernel 0 : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L132"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_norm_integral_tendsto",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 143,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_norm_integral_tendsto (t : \u211d) :\n    Tendsto (fun a : \u211d => \u222b u : \u211d in Ioi 0, \u2016cutoff a t u\u2016) (\ud835\udcdd[>] 1)\n      (\ud835\udcdd |2*t*RiemannQuarticKernel.kernel 0|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L143"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffBoundary.cutoff_first_moment_tendsto_zero",
+      "file": "Foundation/RiemannRealOrderCutoffBoundary.lean",
+      "line": 154,
+      "source_sha256": "0067c4d9d1fb2a08a56243195f23794e4d19462837691cf81120232d6eddaa39",
+      "declaration_header": "theorem cutoff_first_moment_tendsto_zero (t : \u211d) :\n    Tendsto (fun a : \u211d => \u222b u : \u211d in Ioi 0, u*\u2016cutoff a t u\u2016) (\ud835\udcdd[>] 1) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffBoundary.lean#L154"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_pointwise_tendsto_zero",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 12,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_pointwise_tendsto_zero (t u : \u211d) (hu : 0 < u) :\n    Tendsto (fun a : \u211d => cutoff a t u) (\ud835\udcdd 1) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L12"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_norm_not_tendsto_zero",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 28,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_norm_not_tendsto_zero (t : \u211d) (ht : t \u2260 0) :\n    \u00ac Tendsto (fun a : \u211d => \u222b u : \u211d in Ioi 0, \u2016cutoff a t u\u2016) (\ud835\udcdd[>] 1) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L28"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.no_common_integrable_majorant",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 36,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem no_common_integrable_majorant (t : \u211d) (ht : t \u2260 0) :\n    \u00ac \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u2203 g : \u211d \u2192 \u211d, IntegrableOn g (Ioi 0) \u2227\n      \u2200 a : \u211d, 1 < a \u2192 a < 1+\u03b4 \u2192\n        \u2200\u1d50 u : \u211d \u2202volume.restrict (Ioi 0), \u2016cutoff a t u\u2016 \u2264 g u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L36"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_lipschitz_error_integrable",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 74,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_lipschitz_error_integrable (a t : \u211d) (ha : 1 < a) (L : NNReal)\n    (f : \u211d \u2192 \u2102) (hf : LipschitzWith L f) :\n    IntegrableOn (fun u : \u211d => cutoff a t u*(f u-f 0)) (Ioi 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L74"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_lipschitz_integrable",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 83,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_lipschitz_integrable (a t : \u211d) (ha : 1 < a) (L : NNReal)\n    (f : \u211d \u2192 \u2102) (hf : LipschitzWith L f) :\n    IntegrableOn (fun u : \u211d => cutoff a t u*f u) (Ioi 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L83"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_lipschitz_error_bound",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 92,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_lipschitz_error_bound (a t : \u211d) (ha : 1 < a) (L : NNReal)\n    (f : \u211d \u2192 \u2102) (hf : LipschitzWith L f) :\n    \u2016(\u222b u : \u211d in Ioi 0, cutoff a t u*f u)-(mass a t : \u2102)*f 0\u2016 \u2264\n      (L : \u211d)*(\u222b u : \u211d in Ioi 0, u*\u2016cutoff a t u\u2016)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L92"
+    },
+    {
+      "paper": "Section 8 actual signed third-derivative cutoff at quadratic order: exact Gamma mass and first absolute moment, globally Lipschitz tests, pointwise disappearance, nonvanishing L1 mass and no common integrable dominator. Normalized Gamma identity, exact Lipschitz-test distance and bounded-continuous weak-measure extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannRealOrderCutoffConcentration.cutoff_lipschitz_tendsto",
+      "file": "Foundation/RiemannRealOrderCutoffConcentration.lean",
+      "line": 108,
+      "source_sha256": "7ebae7ec8206022a2d2e4430a2a38a5aef587c8f34ba932ba0e62f8df384e057",
+      "declaration_header": "theorem cutoff_lipschitz_tendsto (t : \u211d) (L : NNReal) (f : \u211d \u2192 \u2102) (hf : LipschitzWith L f) :\n    Tendsto (fun a : \u211d => \u222b u : \u211d in Ioi 0, cutoff a t u*f u) (\ud835\udcdd[>] 1)\n      (\ud835\udcdd (((2*t*RiemannQuarticKernel.kernel 0 : \u211d) : \u2102)*f 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannRealOrderCutoffConcentration.lean#L108"
     }
   ],
   "primary_attribution_followup": {
@@ -736,6 +907,7 @@
     "Section 8 reconstructs the actual coefficient-aware fourth-derivative cancellation uniformly for 1<a<=5/4. The normalized endpoint weight b*u^(b-1) has unit integral; no common raw pointwise integrable majorant is assumed. A common derivative integral bound, one further integration by parts and a principal-power reciprocal-frequency estimate yield the actual x^(-1/2) uniform absolute Fourier rate.",
     "The displayed complete Bell polynomial, the elementary global superexponential tail majorant and explicit sqrt(2)/2 reciprocal-profile derivative bound are human reconstructions/refinements of the verified mechanism, not new named formal theorems with optimized constants. The cutoff coefficient/profile extension to b=0 is explicitly distinct from evaluating the original cutoff integral there.",
     "For each fixed nonzero time, the retained linear leading-coefficient lower bound gives relative error C/((a-1)*sqrt(x)), relative diagonal convergence in its parameter-dependent region and the exact real-zero radius max(1,(K/(a-1))^2). Constants are not numerically identified; no sharp scale, complex-zero escape rate, uniformity in time, A(2) relation or RH conclusion follows.",
-    "The full rectangle cannot have any bounded relative error near order one: at each chosen arbitrarily large nonzero quadratic coordinate, continuity leaves a nonzero scaled limit while the leading coefficient vanishes. This is compatible with the parameter-dependent positive theorem. Classical endpoint/integration-by-parts methods are credited, and arithmetic priority remains unresolved."
+    "The full rectangle cannot have any bounded relative error near order one: at each chosen arbitrarily large nonzero quadratic coordinate, continuity leaves a nonzero scaled limit while the leading coefficient vanishes. This is compatible with the parameter-dependent positive theorem. Classical endpoint/integration-by-parts methods are credited, and arithmetic priority remains unresolved.",
+    "Section 8 now explains the surviving boundary mass of the actual third-derivative cutoff, not of the full deformed arithmetic density. Exact Gamma integrals give signed mass m=t K(0) Gamma(2a+1), absolute mass abs(m), and first absolute moment (2a-2)abs(m). Globally Lipschitz complex tests are integrable even when unbounded and have error <=L(2a-2)abs(m), hence limit 2t K(0)f(0). The density goes pointwise to zero on the open half-line but its absolute integral stays nonzero for t!=0; a sequence and countable AE intersection rule out any common integrable majorant near one. As labelled HUMAN consequences, normalization for t!=0 is exactly Gamma(shape 2a-2, rate 1), the supremum error over all real one-Lipschitz tests is exactly 2a-2 (test u attains it), and a moment-tail split proves weak convergence against bounded continuous tests on the CLOSED half-line to the endpoint atom. No new probability law for the entire transform, uniformity in time, analytic continuation or zero classification is inferred. Both principal modules read fully. These are classical Gamma approximate-identity and dominated-convergence mechanisms, without a priority claim."
   ]
 }
