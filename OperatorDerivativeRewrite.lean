@@ -2926,3 +2926,6 @@ import Foundation.CubeGaussianTripleMoment
 import Foundation.CubeGaussianRadialChannel
 import Foundation.CubeGaussianRadialRoot
 import Foundation.CubeGaussianRadialEigenvector
+import Foundation.CubeFiniteQuasimode
+import Foundation.CubeFiniteGroundQuasimode
+import Foundation.CubeRadialStationaryQuasimode
