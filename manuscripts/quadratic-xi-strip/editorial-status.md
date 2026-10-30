@@ -1,0 +1,13 @@
+# Classical quadratic Xi strip contraction
+
+REVIEWED_DRAFT. Nine pages, October 30, 2026. Frozen verified baseline `bab688bb6140cd6316c80680095a914ea0d346db`. Classical formalization companion; no new analytic bound or external submission.
+
+The complete human proof reconstructs the literal arithmetic kernel, its exact Xi normalization F_0(z)=xi((1+iz)/2)/8, initial width-one strip, the same actual divisor-polynomial sequence with a common arbitrarily small Gaussian growth budget, integrable imaginary Gaussian averaging, finite symmetric-shift contraction, its fixed-degree heat limit, vertical-modulus strip closure and transfer to the actual flow. For t>=0 every zero satisfies (Im z)^2<=max(1-2t,0), including repeated roots; t>=1/2 gives real zeros without simplicity. No exact quadratic threshold, RH, external 7/8 premise or unrestricted backward-heat domain is claimed.
+
+234 exact correspondences record full source headers, line links and byte hashes. Principal modules in the map were read completely, except the deliberately selected definition of PureOrderPolynomialTransport.transport and selected quadratic coordinate/growth statements whose precise proof scope is retained. Complete import-proof review is not claimed. Hadamard/Jensen and the coefficient Euler estimate are explicit human classical reorganizations; the different formal annular-tail/factorial proofs remain mapped. Foundational complex analysis, Jacobi, Mellin and Euler-product inputs are stated where used.
+
+Every final page inspected; the conjugate-pair and finite-shift argument on page 6 enlarged. Clean two-pass compilation with resolved references and no overfull boxes. Three independent exact finite-algebra groups pass; these check only transcriptions, not analytic theorems. Baseline approval/evidence and mapped source hashes verified. No redundant full Lean build: the mathematics is unchanged from the completely built and axiom-audited frozen baseline.
+
+Newman 1976 Theorem 1 already supplies the broader classical strip contraction and credits de Bruijn. Its complete statement was inspected; coordinate, time-sign and closed/strict-strip conventions are compared explicitly. McMullen's primary Hadamard passages were previously inspected. Original de Bruijn full-text comparison remains incomplete and is not claimed. No novelty is claimed for the general strip, Gaussian or product mechanisms. Nine pages are retained because the complete argument fits naturally; no page-count padding.
+
+ResearchSources, Foundation, researcher files/branches and campaign priorities remain unchanged. Publication-only reviewed draft requires independent referee and attribution review before any external release.

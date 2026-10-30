@@ -1,0 +1,559 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Classical strip contraction\\for the actual quadratic Xi flow}
+\author{Project Stardust\\\small A classical formalization companion}
+\date{Reviewed editorial draft, October 30, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We reconstruct the classical coarse zero-strip bound for the quadratic
+heat deformation of the actual arithmetic Xi kernel. For the normalization
+$F_t(z)=\int_0^\infty K(u)e^{tu^2}\cos(zu)\,du$, every zero at
+$t\ge0$ satisfies $(\operatorname{Im}z)^2\le\max(1-2t,0)$.
+In particular all zeros are real for $t\ge1/2$.
+The proof constructs real even divisor polynomials retaining the initial
+zeros and one arbitrarily small quadratic growth budget shared by all
+approximants. This budget justifies locally uniform imaginary-Gaussian
+heat convergence. A conjugate-root product identity contracts zero strips
+under symmetric imaginary shifts, and a finite-degree Euler limit gives
+the actual polynomial heat operator. A vertical modulus argument transfers
+the strip even across repeated roots and collisions. We include the exact
+Xi frequency normalization, positive origin value and original Gaussian
+integrability before passing to limits. These are classical de Bruijn
+mechanisms, already stated in broader form by Newman; no new strip bound,
+exact threshold, zero-time reality or Riemann-hypothesis result is claimed.
+Exact declarations and hypotheses are mapped to a frozen Lean library.
+\end{abstract}
+
+\section{The arithmetic flow and the conclusion}
+For $v>0$ write $\Theta_k(v)=\sum_{n\ge1}n^ke^{-\pi n^2v}$ and, for
+$u\ge0$, set
+\begin{equation}\label{eq:kernel}
+ K(u)=2\pi^2e^{9u}\Theta_4(e^{4u})-3\pi e^{5u}\Theta_2(e^{4u}).
+\end{equation}
+The quadratic flow is the actual absolutely convergent integral
+\begin{equation}\label{eq:flow}
+ F_t(z)=\int_0^\infty K(u)e^{tu^2}\cos(zu)\,du,
+       \qquad t\in\R,\ z\in\C.
+\end{equation}
+Time has the \emph{growing} sign $e^{tu^2}$, so its equation is
+$\partial_tF_t=-\partial_z^2F_t$. It is distinct from the positive-time
+Fourier multiplier $e^{-tu^2}$ of ordinary real heat evolution.
+Let
+\[
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)
+\]
+with its entire continuation at the apparent exceptional points. Our
+frequency and scalar normalizations are
+\begin{equation}\label{eq:xi}
+ F_0(z)=\frac18\xi\left(\frac12+\frac{iz}{2}\right).
+\end{equation}
+Thus the elementary critical strip $0\le\operatorname{Re}s\le1$
+corresponds to $|\operatorname{Im}z|\le1$, rather than width $1/2$.
+
+\begin{theorem}\label{thm:main}
+For every real $t\ge0$ and $z\in\C$,
+\[
+ F_t(z)=0\quad\Longrightarrow\quad
+       (\operatorname{Im}z)^2\le\max(1-2t,0).
+\]
+In particular $F_t$ has only real zeros for every $t\ge1/2$.
+Each $F_t$ is an even real entire function and $F_t(0)>0$.
+\end{theorem}
+The all-real conclusion includes multiplicities; it does not assert
+simplicity. The upper bound $1/2$ is coarse and classical. No assertion
+about the exact infimum of all-real times, or about zeros at time zero,
+is made. The fixed mathematical baseline is
+\begin{center}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
+
+Newman's Theorem 1, printed page 246~\cite{Newman}, already states the
+broader classical strip contraction for even rapidly decaying Fourier
+kernels, crediting de Bruijn~\cite{deBruijn}. Our purpose is to expose how
+the actual arithmetic and approximation hypotheses in the verified
+library close that argument. This is a formalization exposition, not a
+new analytic theorem.
+
+\section{Integrability, positivity and the exact Xi normalization}
+The theta series and their derivatives converge uniformly on compact
+subsets of $v>0$. For example any polynomial factor $n^k$ is dominated
+by a constant times $e^{\pi n^2a/2}$ on $v\ge a>0$, leaving a summable
+Gaussian tail. Termwise differentiation consequently gives
+$\Theta_k'=-\pi\Theta_{k+2}$ there.
+Expanding \eqref{eq:kernel} yields
+\[
+ K(u)=\sum_{n\ge1}\pi n^2e^{5u}
+       (2\pi n^2e^{4u}-3)e^{-\pi n^2e^{4u}}>0\qquad(u\ge0),
+\]
+since $2\pi>3$. Moreover, for $v\ge1$,
+\[
+ \Theta_k(v)\le\Theta_k(1/2)e^{-\pi v/2}.
+\]
+Indeed $n^2v\ge n^2/2+v/2$ for $n\ge1$. Thus for a finite constant $C$,
+\begin{equation}\label{eq:tail}
+ |K(u)|\le C e^{9u-\pi e^{4u}/2}\quad(u\ge0).
+\end{equation}
+Every fixed nonnegative integer power of $u$, multiplied by
+$e^{Tu^a+Bu}$ with a fixed nonnegative integer $a$ and real $T,B$,
+is integrable against this bound. This follows because $e^{4u}$
+dominates every fixed power of $u$; beyond a finite cutoff the full
+integrand is bounded by a constant times $e^{-u}$. On the remaining
+compact interval continuity supplies integrability.
+
+For $z$ in any fixed complex disk, $|\cos(zu)|\le e^{|z|u}$, and each
+spatial derivative adds only a power of $u$. The same bound with a larger
+disk is a common integrable majorant. Differentiation under the integral
+therefore proves entireness, all spatial derivatives and the stated time
+equation. Evenness is literal; conjugation gives
+$F_t(\overline z)=\overline{F_t(z)}$. At zero the integrand is strictly
+positive, so $F_t(0)>0$. In particular none of the functions to which the
+zero-limit argument will be applied is identically zero.
+
+For completeness the normalization can be recovered without treating
+\eqref{eq:xi} as a new assumption about the kernel. Put
+\[
+ \psi(u)=e^u\Theta_0(e^{4u}).
+\]
+Direct differentiation gives $K=(\psi''-\psi)/8$. Jacobi's classical
+theta identity implies
+\[
+ \psi(u)-\psi(-u)=\frac{e^{-u}-e^u}{2},\qquad \psi'(0)=-\frac12.
+\]
+The derivative follows by differentiating the first identity at zero.
+The functions $\psi,\psi'$ decay at positive infinity with the same
+superexponential mechanism as \eqref{eq:tail}. For real $x$ the derivative
+of
+$\psi'(u)\cos(xu)+x\psi(u)\sin(xu)$ is
+$(\psi''(u)+x^2\psi(u))\cos(xu)$. Integrating and evaluating both boundary
+terms gives
+\begin{equation}\label{eq:primitive}
+ F_0(x)=\frac1{16}-\frac{1+x^2}{8}
+                    \int_0^\infty\psi(u)\cos(xu)\,du.
+\end{equation}
+The standard theta Mellin representation of the pole-removed completed
+zeta, split at one and transformed by the same Jacobi identity, is
+\[
+ \Lambda_0(s)=\int_1^\infty\Theta_0(v)
+                 \bigl(v^{s/2}+v^{(1-s)/2}\bigr)\,\frac{dv}{v}.
+\]
+Here $\Lambda_0$ is the entire part after removing the two simple pole
+terms, so $\xi(s)=(s(s-1)\Lambda_0(s)+1)/2$. The integral converges for
+all $s$ by exponential theta decay, and is the usual analytic continuation
+of its convergent Mellin representation. At $s=(1+ix)/2$, substitution
+$v=e^{4u}$ gives
+$\Lambda_0(s)=8\int_0^\infty\psi(u)\cos(xu)\,du$.
+Since $s(s-1)=-(1+x^2)/4$, this identity and \eqref{eq:primitive} prove
+\eqref{eq:xi} on the real axis. Both sides are entire, so the identity
+theorem proves it on the entire complex plane. The foundational inputs
+here are the classical Jacobi theta identity and Mellin representation;
+the displayed derivatives, substitutions and boundary evaluations are
+the actual normalization calculation in the source library.
+
+\subsection*{The initial strip and a subquadratic bound}
+The Euler product gives $\zeta(s)\ne0$ for $\operatorname{Re}s>1$.
+Equation~\eqref{eq:xi}, the nonvanishing gamma factor and the functional
+equation therefore exclude zeros with $\operatorname{Im}z<-1$ or
+$\operatorname{Im}z>1$. Apparent exceptional points in the completed
+formula do not introduce zeros: on the imaginary axis the actual integral
+is $\int K(u)\cosh(yu)du>0$.
+Thus
+\begin{equation}\label{eq:initialstrip}
+ F_0(z)=0\quad\Longrightarrow\quad |\operatorname{Im}z|\le1.
+\end{equation}
+No improved arithmetic zero-free half-plane is imported.
+
+For fixed $t$, there is $C_t>0$ such that
+\begin{equation}\label{eq:growth}
+ |F_t(z)|\le C_t e^{|z|^{3/2}}\qquad(z\in\C).
+\end{equation}
+Here is an elementary bound matching the source exponent. If $R\ge0$
+and $u\ge0$, then $Ru\le R^{3/2}+u^3$: for $u\le\sqrt R$ use
+$Ru\le R^{3/2}$; otherwise use $Ru\le u^3$. Therefore
+\[
+ |F_t(z)|\le e^{|z|^{3/2}}\int_0^\infty
+                      |K(u)|e^{tu^2+u^3}\,du,
+\]
+and the integral is finite by \eqref{eq:tail}. This is a genuine
+subquadratic entire growth bound, not only a real-axis estimate.
+
+\section{Real divisor polynomials with one common Gaussian budget}
+We use the classical Hadamard factorization theorem under its explicit
+finite-order hypotheses. An even entire $f$ with $f(0)\ne0$ and
+$|f(z)|\le C e^{|z|^{3/2}}$ has the paired factorization
+\begin{equation}\label{eq:product}
+ f(z)=f(0)\prod_{\rho\in\mathcal Z_+}
+                (1-z^2/\rho^2)^{m_\rho}.
+\end{equation}
+Here $\mathcal Z_+$ contains one representative of each nonzero opposite
+zero pair, and $m_\rho$ is the actual multiplicity. Products are ordered
+by expanding disks. Hadamard's genus-one elementary factors for opposite
+zeros multiply to $1-z^2/\rho^2$; the residual exponential has degree at
+most one, and evenness makes its linear coefficient zero. This is the
+classical entire-function input, not an asserted Lean theorem in the
+shorter notation above. McMullen's primary notes state the required
+Hadamard theorem and opposite-pair simplification~\cite{McMullen}.
+
+The inverse squares are absolutely summable. One way to see the exact
+hypothesis is Jensen's formula: $f(0)\ne0$ and the growth bound give
+$n_f(R)\le C'(1+R^{3/2})$ by applying Jensen at $2R$. On dyadic annuli,
+\[
+ \sum_{2^j\le|\rho|<2^{j+1}}\frac{m_\rho}{|\rho|^2}
+ \le\frac{n_f(2^{j+1})}{2^{2j}}=O(2^{-j/2}),
+\]
+so summing the tail proves the assertion. There are finitely many zeros
+in bounded disks and none in a sufficiently small disk around zero.
+These facts justify uniform convergence of the paired product on compact
+sets and all finite products used below.
+
+Apply this to $f=F_0$. Choose radii $R_n\to\infty$ avoiding zeros, and let
+\begin{equation}\label{eq:polys}
+ P_n(z)=F_0(0)\prod_{\substack{\rho\in\mathcal Z_+\\|\rho|<R_n}}
+                          (1-z^2/\rho^2)^{m_\rho}.
+\end{equation}
+Complete disks preserve all conjugate and opposite zeros, so $P_n$ is a
+real even polynomial. It is nonzero because $P_n(0)=F_0(0)>0$.
+Its zeros, with their multiplicities, are exactly the zeros of $F_0$ in
+that disk, and all satisfy \eqref{eq:initialstrip}. Also $P_n\to F_0$
+locally uniformly. The source makes a definite expanding-radius choice
+$2(n+1)<R_n<2(n+1)+1$; no monotonicity of that particular choice is
+needed. Radii can always be chosen away from the discrete zero set.
+
+\begin{lemma}\label{lem:budget}
+For every $\epsilon>0$ there is $C_\epsilon>0$, independent of $n$, with
+\[
+ |P_n(z)|\le C_\epsilon e^{\epsilon|z|^2}\quad(n\ge0,\ z\in\C).
+\]
+\end{lemma}
+\begin{proof}
+Choose a finite initial set of paired zeros so the sum of
+$m_\rho/|\rho|^2$ outside it is at most $\epsilon/2$. For any finite
+subset of that tail,
+\[
+ \prod|1-z^2/\rho^2|^{m_\rho}
+ \le\exp\left(|z|^2\sum\frac{m_\rho}{|\rho|^2}\right)
+ \le e^{\epsilon|z|^2/2}.
+\]
+For each of the finitely many initial factors, its polynomial growth is
+bounded by a constant times an arbitrarily small Gaussian. More
+explicitly, $1+a r^2\le(1+a/\delta)e^{\delta r^2}$ for $a\ge0$,
+$\delta>0$. Choose $\delta$ so the sum of the allocated multiplicity
+budgets is at most $\epsilon/2$. This bounds every subset of the finite
+initial product by one constant times $e^{\epsilon|z|^2/2}$, enlarging
+the constant to at least one for omitted factors. Combine head and tail
+and include $|F_0(0)|$. The same bound handles the finitely many early
+approximants and establishes a single constant for all $n$.
+\end{proof}
+The source proves this common budget by finite divisor jets and an
+absolute annular tail estimate in the initial strip. The Jensen/Hadamard
+presentation above is a labelled classical human reorganization of the
+same actual divisor-polynomial conclusion. It does not assume that
+$F_0$ has real or simple zeros.
+
+\section{The Gaussian heat limit is in its actual domain}
+Let $Y_s\sim N(0,2s)$ for fixed $s\ge0$. The actual flow obeys
+\begin{equation}\label{eq:heat}
+ \E F_t(z+iY_s)=F_{t+s}(z),
+ \qquad \E F_t(z+Y_s)=F_{t-s}(z).
+\end{equation}
+For a complex exponential, $\E e^{qY_s}=e^{sq^2}$. In the half-line
+Fourier representation this turns $e^{iu(z+iY_s)}$ into
+$e^{iuz+su^2}$. Every interchange is absolutely integrable: integrating
+the absolute value first in $Y_s$ is bounded by a constant times
+$|K(u)|e^{(t+s)u^2+|\operatorname{Im}z|u}$, integrable by
+\eqref{eq:tail}. The opposite-frequency term is handled identically.
+For real shifts the absolute-value bound is even smaller, and the
+Gaussian characteristic function yields $e^{-su^2}$. This proves both
+identities, including their time signs. At $s=0$ the law is a point mass.
+
+\begin{proposition}\label{prop:gaussianlimit}
+For every fixed $s\ge0$,
+\[
+ \E P_n(z+iY_s)\longrightarrow F_s(z)
+\]
+locally uniformly in $z\in\C$. Each expectation is absolutely integrable.
+For each fixed $z,c\in\C$, the same approximants also converge to $F_0$
+in the shifted Gaussian $L^1$ norm:
+$\E|P_n(z+cY_s)-F_0(z+cY_s)|\to0$.
+\end{proposition}
+\begin{proof}
+Assume $s>0$; $s=0$ is immediate from local uniform convergence.
+For a compact disk $|z|\le R$, Lemma~\ref{lem:budget} and
+$|z+cy|^2\le2R^2+2|c|^2y^2$ give
+\[
+ |P_n(z+cy)|\le C_\epsilon e^{2\epsilon R^2}
+                                  e^{2\epsilon|c|^2y^2}.
+\]
+Choose $\epsilon>0$ with $2\epsilon|c|^2<1/(4s)$. This is integrable
+under $N(0,2s)$, uniformly in $n$ and in that disk. The limit $F_0$
+inherits the same bound. Dominated convergence proves the stated $L^1$
+limit at each fixed $z$. To obtain local uniform integral convergence,
+first restrict to $|y|\le A$. The affine images of $|z|\le R$ form a
+compact set, so the integrand differences tend to zero uniformly there.
+Outside $|y|\le A$, the displayed common Gaussian majorant bounds the
+integral tail uniformly in $n,z$, and that tail tends to zero as
+$A\to\infty$. Finally use \eqref{eq:heat} at $t=0$, $c=i$.
+\end{proof}
+
+For polynomials define the finite operator
+\begin{equation}\label{eq:operator}
+ H_sP=e^{-s\partial_z^2}P
+       :=\sum_{j=0}^{\lfloor\deg P/2\rfloor}
+                       \frac{(-s)^j}{j!}P^{(2j)}.
+\end{equation}
+Taylor's finite formula and
+$\E Y_s^{2j}=(2j)!s^j/j!$ give exactly
+$H_sP(z)=\E P(z+iY_s)$. Thus the locally uniform limit in
+Proposition~\ref{prop:gaussianlimit} is the actual finite polynomial
+operator limit, with no infinite-dimensional backward-heat series
+assumed convergent on an unspecified domain.
+
+The common budget cannot be omitted. For $Y\sim N(0,1)$ the polynomials
+$Q_n(z)=1+z^{2n}/(2n-1)!!$ tend to one on every compact complex set,
+but $\E Q_n(Y)=2$ for every $n$. The compact convergence follows from
+the ratio $R^2/(2n+1)\to0$ of successive nonconstant bounds on $|z|\le R$;
+the expectation identity is the exact even Gaussian moment. Local
+uniform convergence by itself does not license this Gaussian averaging.
+This is a classical diagnostic, not an alternative Xi approximant.
+
+\section{Conjugate-root products contract strips under imaginary shifts}
+For a real nonzero polynomial $P$, let
+\[
+ C_hP(z)=\frac{P(z+ih)+P(z-ih)}2,\qquad h>0.
+\]
+Its leading coefficient and degree are unchanged, so it is nonzero and
+has real coefficients. Suppose all zeros of $P$ obey
+$(\operatorname{Im}a)^2\le b^2$.
+\begin{lemma}\label{lem:shift}
+Every zero of $C_hP$ satisfies
+\[
+ (\operatorname{Im}z)^2\le\max(b^2-h^2,0).
+\]
+\end{lemma}
+\begin{proof}
+If $P$ is constant the assertion is vacuous. Otherwise list its complex
+roots with multiplicity in a nonempty multiset $L$, invariant under
+conjugation. For $z=x+iy$, direct polynomial expansion gives
+\begin{align}\label{eq:pair}
+ &|z+ih-a|^2|z+ih-\overline a|^2
+       -|z-ih-a|^2|z-ih-\overline a|^2\\
+ &\hspace{2em}=8hy\bigl((x-\operatorname{Re}a)^2+y^2+h^2
+                                      -(\operatorname{Im}a)^2\bigr).\notag
+\end{align}
+If $y>0$ and $y^2+h^2>b^2$, this difference is strictly positive for
+every root, including real roots and repeated roots. Multiplying the
+strict inequalities over $L$, all factors on the larger side are
+positive. Conjugation invariance makes each paired product a square
+of the unpaired product. Taking nonnegative square roots and restoring
+the nonzero leading coefficient gives
+\[
+ |P(z-ih)|<|P(z+ih)|.
+\]
+The two terms cannot sum to zero. For a lower-half-plane candidate use
+conjugation of the real polynomial $C_hP$. Any nonreal zero violating
+the proposed bound has $y^2>0$ and $y^2+h^2>b^2$, so both half-planes
+are excluded. Real zeros already satisfy the nonnegative bound.
+\end{proof}
+
+Iterating the same shift $n$ times therefore gives
+\begin{equation}\label{eq:iterstrip}
+ C_h^nP(z)=0\quad\Longrightarrow\quad
+       (\operatorname{Im}z)^2\le\max(b^2-nh^2,0).
+\end{equation}
+The budget identity is
+$\max(\max(B,0)-q,0)=\max(B-q,0)$ for $q\ge0$, proved by separating
+$B\ge0$ and $B<0$. Thus induction remains valid after the strip has
+collapsed. No root is followed through a collision, and no simple-root
+or distinct-root assumption is imposed at any stage.
+
+\section{The finite-degree shift limit and closure of zero strips}
+Fix $s>0$ and a degree bound $d$. On the finite-dimensional space of
+polynomials of degree at most $d$, differentiation $D$ is a bounded
+nilpotent operator. Taylor's formula gives the exact finite identity
+\[
+ C_h=\sum_{j=0}^{\lfloor d/2\rfloor}\frac{(-1)^jh^{2j}}{(2j)!}D^{2j}.
+\]
+Set $h_n=\sqrt{2s/n}$ for $n\ge1$, and $A=-sD^2$. For any fixed
+coefficient-space norm,
+\[
+ C_{h_n}=I+A/n+E_n,\qquad \|E_n\|\le C/n^2.
+\]
+There are only finitely many terms; the estimate includes $d<4$, when
+the remainder is zero. Also $\|C_{h_n}\|,\|I+A/n\|\le1+C'/n$ after
+enlarging the constants. The difference-of-powers telescoping identity
+therefore bounds
+\[
+ \|C_{h_n}^{\,n}-(I+A/n)^n\|
+ \le n\frac{C}{n^2}(1+C'/n)^{n-1}\le\frac{Ce^{C'}}n\longrightarrow0.
+\]
+Finally $A$ is nilpotent, so the binomial expansion of $(I+A/n)^n$
+has a fixed finite number of terms. For each fixed $j$,
+$\binom nj/n^j\to1/j!$. Hence
+\begin{equation}\label{eq:shiftlimit}
+ C_{h_n}^{\,n}P\longrightarrow\sum_j\frac{A^jP}{j!}=H_sP
+\end{equation}
+in coefficients and locally uniformly on the complex plane. This
+finite-dimensional proof is a human reorganization of the formal
+Hasse-derivative/factorial-jet Euler limit, not a claim that the actual
+Xi function belongs to that bounded factorial coefficient domain.
+
+We will use the following precise limit fact twice.
+\begin{lemma}\label{lem:closure}
+Let nonzero polynomials $Q_n$ have all zeros in
+$|\operatorname{Im}z|\le b$, with $b\ge0$. If $Q_n(z)\to f(z)$
+pointwise on $\C$, and $f$ is an entire function not identically zero,
+then all zeros of $f$ lie in the same strip.
+\end{lemma}
+\begin{proof}
+For a factor $z-a$ with $\operatorname{Im}a\le b$, and real
+$b\le y_1\le y_2$, its modulus at $x+iy_1$ is at most its modulus at
+$x+iy_2$, since $(y_1-\operatorname{Im}a)^2\le
+(y_2-\operatorname{Im}a)^2$. Factorization into all roots with
+multiplicity gives
+\[
+ |Q_n(x+iy_1)|\le|Q_n(x+iy_2)|.
+\]
+Pass to the pointwise limit. If $f(x+iy_2)=0$ for $y_2>b$, then
+$f(x+iy)=0$ for every $y\in[b,y_2]$. The identity theorem makes
+$f$ identically zero, a contradiction. Applying the same argument
+to $Q_n(-z)$ and $f(-z)$ excludes zeros below $-b$.
+\end{proof}
+This argument uses the given entireness and nonzero hypothesis of the
+limit. Pointwise limits in general need not be entire, and the zero
+function cannot be admitted. It avoids assuming convergence of individual
+zeros or a continuous ordering of roots.
+
+\begin{proposition}\label{prop:polystrip}
+For every nonzero real polynomial $P$, every $s\ge0$, and every bound
+$(\operatorname{Im}a)^2\le b^2$ on its initial zeros, the zeros of $H_sP$
+obey $(\operatorname{Im}z)^2\le\max(b^2-2s,0)$.
+\end{proposition}
+\begin{proof}
+At $s=0$ the operator is the identity. At $s>0$, the scaled shifts in
+\eqref{eq:shiftlimit} all have this same strip by
+\eqref{eq:iterstrip}, since $nh_n^2=2s$. Their locally uniform limit
+$H_sP$ is nonzero: \eqref{eq:operator} preserves the leading coefficient.
+Apply Lemma~\ref{lem:closure} with
+$\sqrt{\max(b^2-2s,0)}$ and square the resulting nonnegative bounds.
+\end{proof}
+
+\section{Transfer to the actual Xi flow and exact scope}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The actual polynomials $P_n$ of \eqref{eq:polys} are nonzero real even
+polynomials, and \eqref{eq:initialstrip} bounds all their initial zeros
+by width one. Proposition~\ref{prop:polystrip} gives all zeros of
+$H_tP_n$ the common width $\sqrt{\max(1-2t,0)}$.
+Proposition~\ref{prop:gaussianlimit} identifies their locally uniform
+limit with the actual $F_t$, after establishing the necessary Gaussian
+integrability and common tail bound. That limit is entire and nonzero
+by Section 2. Lemma~\ref{lem:closure} transfers the strip, proving the
+claimed squared inequality. For $t\ge1/2$ its right side is zero,
+forcing $\operatorname{Im}z=0$. The symmetry and positive-origin claims
+were already proved directly from the kernel.
+\end{proof}
+
+The proof uses two different limiting operations. First, for each fixed
+polynomial, increasingly many small symmetric shifts give its finite
+heat operator, with degree fixed during that limit. Second, the genuine
+divisor-polynomial sequence has increasing degree and converges after
+Gaussian averaging because of the shared budget. No degree-uniform
+Euler estimate is needed, and no interchange of these two limits is
+asserted. This is the useful domain distinction in the formalization.
+
+The coordinate conversion is likewise part of the conclusion. Newman's
+classical definition uses $s=1/2+iz$ and a damping parameter in
+$e^{-bu^2}$~\cite{Newman}. Here the Xi argument is $z/2$, the initial
+strip has width one, and forward $t$ multiplies the arithmetic kernel
+by $e^{+tu^2}$. Numerical thresholds cannot be transferred between these
+conventions without rescaling both frequency and time. We use only the
+bound proved in the displayed normalization.
+
+This manuscript does not prove reality at $t=0$, an exact quadratic
+threshold, a sharper arithmetic zero-free region, or any relation between
+a higher-even-order threshold and RH. It also proves neither simplicity
+of all positive-time zeros nor an unrestricted backward-heat operator on
+an entire-function space. Local Hermite splitting and simple-root motion
+have their own verified hypotheses and are not needed here. These limits
+are mathematical scope statements, not unresolved steps in the proof of
+Theorem~\ref{thm:main}.
+
+\section{Formal correspondence, primary comparison and verification}
+The map supplied with this paper records exact declarations, source
+hashes and line links at the fixed baseline. In the source,
+$F_t$ is \code{RiemannEvenFlow.flow 1 t} and $H_t$ is
+\code{PureOrderPolynomialTransport.transport 2 (-t)}.
+The main chain is:
+\begin{itemize}
+\item \code{RiemannQuadraticZeroProductTails.zero_time_strip} derives
+width one from the actual zeta nonvanishing theorem for
+$\operatorname{Re}s>1$, without an external $7/8$ premise.
+\item \code{RiemannQuadraticPolynomialHeat} supplies the actual even
+polynomials, disk-zero retention, normalization and common Gaussian budget.
+\item \code{RiemannQuadraticUniformHeat} and
+\code{RiemannQuadraticOperatorApproximation} identify genuine locally
+uniform Gaussian and polynomial-operator limits.
+\item \code{SymmetricPolynomialStrip},
+\code{SymmetricPolynomialTaylor} and
+\code{SymmetricPolynomialHeatLimit} retain multiplicities, the scaled
+shift budget and the fixed-degree heat limit.
+\item \code{PolynomialStripLimit} proves strip closure and finite
+polynomial heat contraction.
+\item \code{RiemannQuadraticGlobalStrip.flow_zero_strip} and
+\code{real_zeros_after_half} give exactly Theorem~\ref{thm:main}.
+\end{itemize}
+The proof above uses classical Hadamard factorization with Jensen's
+estimate for the divisor-polynomial construction, and a finite-dimensional
+coefficient telescoping proof for the Euler step. These are explicit human
+presentations of the named formal conclusions, rather than shorter new
+Lean declarations. The source's annular divisor-tail and factorial-jet
+proofs remain separately mapped. Fundamental complex-analysis inputs
+(identity theorem, Jensen and Hadamard), the elementary theta identity,
+Mellin continuation and the Euler-product zero-free half-plane are stated
+where used. No new Lean proof or research-source modification is made.
+
+The classical status of the main bound is settled by the exact primary
+antecedent: Newman's 1976 Theorem 1 states the broader strip contraction
+and credits de Bruijn. Its complete statement was inspected, including
+its decay and evenness hypotheses and its growing quadratic multiplier.
+Its strict initial strip can be widened from width one to $1+\epsilon$
+and then $\epsilon\downarrow0$, giving the closed-boundary convention
+used here.
+The original de Bruijn full-text comparison remains incomplete in this
+editorial audit; the source's citation identifies its finite-shift route,
+but that is not presented as a fresh full-text review by the editor.
+McMullen's primary course Hadamard passages provide the foundational
+factorization context. No novelty is claimed for any general strip,
+Gaussian heat or entire-product mechanism. The contribution of this
+companion is a readable, exact-domain reconstruction of an actual verified
+arithmetic proof chain. A reviewed draft is not an external submission.
+
+The frozen baseline already has a complete successful Lean root build
+and transitive axiom audit, with the standard classical axioms only.
+Publication work checks those recorded evidence hashes and all mapped
+source bytes; it does not consume a redundant research build. Independent
+finite algebra checks, when supplied, verify only the displayed pair
+identity and finite heat/shift transcriptions, not the analytic theorems.
+The source/PDF compilation and visual-review receipts are kept separately.
+
+\begin{thebibliography}{9}
+\bibitem{deBruijn} N. G. de Bruijn,
+\emph{The roots of trigonometric integrals}, Duke Math. J. \textbf{17}
+(1950), 197--226. \url{https://doi.org/10.1215/S0012-7094-50-01720-0}.
+Original full-text comparison remains incomplete.
+\bibitem{Newman} C. M. Newman,
+\emph{Fourier transforms with only real zeros}, Proc. Amer. Math. Soc.
+\textbf{61} (1976), no.~2, 245--251. Theorem 1, p.~246.
+\url{https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf}.
+\bibitem{McMullen} C. McMullen,
+\emph{Complex Analysis}, Harvard Math 213a course notes, 2023,
+Theorems 3.15 and 3.18, printed pp.~80--82.
+\url{https://people.math.harvard.edu/~ctm/home/text/class/harvard/213a/23/html/home/course/course.pdf}.
+\end{thebibliography}
+\end{document}
