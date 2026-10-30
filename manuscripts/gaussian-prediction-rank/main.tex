@@ -13,7 +13,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Gaussian prediction and recovery:\\Hermite rank, observation dimension and temporal obstructions}
 \author{Project Stardust}
-\date{Reviewed formalization companion, October 29, 2026}
+\date{Reviewed formalization companion, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -1016,6 +1016,102 @@ the centered Brownian-generated $L^2$ subspace, rather than every
 centered variable in a possibly larger ambient Gaussian space.
 The comparison below only needs $\mathfrak I^*\mathfrak I=I$,
 which follows from its isometry and does not require a range claim.
+
+
+\subsection*{The exact Brownian range and a genuine ambient obstruction}
+Let $\mathcal B=\sigma(B_t:t\geq0)$ and write $L^2(\mathcal B)$
+for the closed subspace of ambient Gaussian classes having a
+$\mathcal B$-measurable representative modulo null sets. Then
+\begin{equation}\label{eq:exactBrownianrange}
+ \operatorname{ran}\mathfrak I
+       =\{F\in L^2(\mathcal B):\E F=0\}.
+\end{equation}
+Here is a complete classical polynomial-to-$L^2$ proof of the
+nontrivial inclusion. Sort a finite set of observation times and
+remove repetitions and zero-length cells, giving
+$0=t_0<t_1<\cdots<t_m$. Put $h_j=t_j-t_{j-1}$ and
+$\Delta_j=B_{t_j}-B_{t_{j-1}}$. These are independent normals
+of variances $h_j>0$. The tensor monic Hermite polynomials
+\[
+ \prod_{j=1}^m H_{n_j}(\Delta_j;h_j),\qquad
+ e^{zx-hz^2/2}=\sum_{n\geq0}\frac{z^n}{n!}H_n(x;h),
+\]
+span every polynomial in the observed values: each Hermite
+polynomial is monic in its coordinate, and Brownian values are
+linear sums of the increments. Every displayed tensor except the
+all-zero one is centered by independence and Hermite centering.
+
+For a nonconstant tensor let $k$ be its largest index with
+$n_k>0$, and set
+$A=\prod_{j<k}H_{n_j}(\Delta_j;h_j)$. Its genuine predictable
+representer is supported on $(t_{k-1},t_k]$ and equals
+\[
+ A n_k H_{n_k-1}
+       (B_s-B_{t_{k-1}};s-t_{k-1}).
+\]
+Indeed the time-space polynomial $H_n(x;h)$ obeys
+$\partial_hH_n+\tfrac12\partial_x^2H_n=0$,
+$\partial_xH_n=nH_{n-1}$ and $H_n(0;0)=0$ for $n>0$.
+The ordinary polynomial It\^o identity on this cell therefore
+gives its terminal value $A H_{n_k}(\Delta_k;h_k)$.
+All moments of $A$ are finite and it is measurable at the left
+endpoint. Independence of the fresh Brownian cell and the Hermite
+energy formula show that the proposed coefficient has finite
+$L^2(ds\otimes P)$ norm. Multiplication by $A$ in the integral
+identity can be justified first for bounded truncations of $A$,
+then by this independent-cell $L^2$ factorization and the original
+integral isometry. Thus no unproved unbounded associativity or
+predictable representation is used in this polynomial step.
+The all-zero tensor gives its constant expectation. Finite linear
+combinations represent every centered observation polynomial.
+
+These polynomials are dense in $L^2(\mathcal B)$: finite-coordinate
+cylinders are dense by the generating-pi-system argument, and on
+each finite independent Gaussian coordinate space the product
+Hermite completeness proved in Section 2 gives polynomial density.
+Degenerate original observation vectors were already resolved by
+the positive-length increment coordinates. Centering is continuous,
+and the range of the isometry $\mathfrak I$ is closed. Hence all
+centered Brownian-generated $L^2$ classes lie in its range.
+Conversely predictable step integrals are centered and
+$\mathcal B$-measurable; their $L^2$ limits retain both properties,
+proving \eqref{eq:exactBrownianrange}. Isometry gives uniqueness
+of the representer, and it equals $\mathfrak I^*F$. If additionally
+$F\in D(D)$, equation~\eqref{eq:causaladjoint} identifies that
+representer with $\pi DF$. This last identification retains the
+actual derivative-domain hypothesis.
+
+For a concrete limitation, use the actual embedded time-source
+space $L^2(\R)$ and define
+\[
+ Z=X(\mathbf1_{(-1,0]}),\qquad
+ B_t=X(\mathbf1_{(0,t]}),\quad t\geq0.
+\]
+Then $\E Z=0$ and $\|Z\|_2^2=1$. The negative-time source vector
+is orthogonal to every positive-time Brownian direction. Joint
+Gaussian characteristic functions therefore show independence
+from every finite Brownian observation family, and a pi-lambda
+argument extends this independence to $\mathcal B$. It follows
+that $Z\perp L^2(\mathcal B)$ after centering, and in particular
+$\mathfrak I^*Z=0$. If $Z=\mathfrak Iu$, isometry would give
+$u=\mathfrak I^*Z=0$ and then $Z=0$, contradicting its variance.
+Thus $Z$ is an actual centered ambient target outside the Brownian
+integral range, even though it is a smooth first-chaos variable
+in the original Gaussian derivative domain. Its full source
+recovery is the nonzero deterministic negative-time direction;
+its predictable projection is zero. This example does not
+contradict Brownian predictable representation on its stated
+sigma algebra.
+
+The mapped range proof uses finite sorted tensor-Hermite
+representations in
+\par\noindent\code{GaussianMultitimeRepresentation};
+\par\noindent\code{GaussianBrownianPRP}.
+\par\noindent The negative-time witness is
+\par\noindent\code{GaussianAmbientRepresentationObstruction}.
+\par\noindent The proof is classical Brownian representation,
+not a new range theorem. The stronger primary Banach-valued
+context in~\cite{MaasNeerven} retains its own Brownian filtration.
 
 Let $\Pi_\nabla$ be orthogonal projection onto the closed gradient
 range. Here closedness has an actual graph proof. The earlier

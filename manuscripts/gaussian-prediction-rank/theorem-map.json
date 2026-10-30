@@ -3262,6 +3262,204 @@
       "source_sha256": "192e0c667612e3e328043ba85b52213cd6045d899471ff135178e0721f50b9e0",
       "declaration_header": "theorem recovery_divergence_gradientProjection (v : GaussianVectorL2) (f : GaussianL2)\n    (hg : (v,f)\u2208hilbertDivergence.graph) : recovery f=gradientProjection v",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticSourceHodge.lean#L28"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.partition_direction_span",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 16,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "theorem partition_direction_span {m : \u2115} (\u03c4 : Fin (m + 1) \u2192 \u211d\u22650)\n    (h\u03c4 : Monotone \u03c4) (h0 : \u03c4 0 = 0) (j : Fin (m + 1)) :\n    hilbertEmbedding TimeHilbert (timeVector (\u03c4 j)) \u2208 Submodule.span \u211d\n      (Set.range (fun i : Fin m => incrementDirection (\u03c4 i.castSucc) (\u03c4 i.succ)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L16"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.centered_observationPolynomial_mem_range",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 35,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "theorem centered_observationPolynomial_mem_range {\u03b9 : Type*} [Fintype \u03b9]\n    (r : \u03b9 \u2192 \u211d\u22650) (p : MvPolynomial \u03b9 \u211d) :\n    centering (pastCoefficient r p : GaussianL2) \u2208 itoIntegral.toLinearMap.range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L35"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.centered_brownianPolynomial_mem_range",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 70,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "theorem centered_brownianPolynomial_mem_range (p : MvPolynomial \u211d\u22650 \u211d) :\n    centering (brownianPolynomial p) \u2208 itoIntegral.toLinearMap.range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L70"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.multitimePolynomialIntegrand",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 77,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "def multitimePolynomialIntegrand {\u03b9 : Type*} [Fintype \u03b9]\n    (r : \u03b9 \u2192 \u211d\u22650) (p : MvPolynomial \u03b9 \u211d) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L77"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.multitimePolynomial_representation",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 81,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "theorem multitimePolynomial_representation {\u03b9 : Type*} [Fintype \u03b9]\n    (r : \u03b9 \u2192 \u211d\u22650) (p : MvPolynomial \u03b9 \u211d) :\n    itoIntegral (multitimePolynomialIntegrand r p) =\n      (pastCoefficient r p : GaussianL2) -\n        (\u222b \u03c9, (pastCoefficient r p : GaussianL2) \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L81"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMultitimeRepresentation.multitimePolynomial_exists_unique",
+      "file": "Foundation/GaussianMultitimeRepresentation.lean",
+      "line": 92,
+      "source_sha256": "7add92d41705807349a0b158aaf13a98134003c9f524cd6f94e50aa0be580290",
+      "declaration_header": "theorem multitimePolynomial_exists_unique {\u03b9 : Type*} [Fintype \u03b9]\n    (r : \u03b9 \u2192 \u211d\u22650) (p : MvPolynomial \u03b9 \u211d) :\n    \u2203! U : fullPredictable, itoIntegral U = centering (pastCoefficient r p : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMultitimeRepresentation.lean#L92"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.centered_brownianL2_mem_range",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 14,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem centered_brownianL2_mem_range (F : GaussianL2) (hF : F \u2208 brownianL2) :\n    centering F \u2208 itoIntegral.toLinearMap.range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L14"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.predictableAdjoint_centering",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 33,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem predictableAdjoint_centering (F : GaussianL2) :\n    predictableAdjoint (centering F) = predictableAdjoint F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L33"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.brownian_representation_exists_unique",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 45,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem brownian_representation_exists_unique (F : GaussianL2) (hF : F \u2208 brownianL2) :\n    \u2203! U : fullPredictable,\n      itoIntegral U = F - (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L45"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.centered_representation_exists_unique",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 52,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem centered_representation_exists_unique (F : GaussianL2)\n    (hF : AEStronglyMeasurable[brownianSigma] F gaussianProduct)\n    (h0 : (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) = 0) :\n    \u2203! U : fullPredictable, itoIntegral U = F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L52"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.clark_ocone_representer_unique",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 67,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem clark_ocone_representer_unique (F : closedCylindricalDerivative.domain)\n    (hF : (F : GaussianL2) \u2208 brownianL2) (U : fullPredictable)\n    (hU : itoIntegral U = (F : GaussianL2) -\n      (\u222b \u03c9, (F : GaussianL2) \u03c9 \u2202gaussianProduct) \u2022 gaussianOne) :\n    U = predictableProjection (closedCylindricalDerivative F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L67"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBrownianPRP.multitime_representer_agrees",
+      "file": "Foundation/GaussianBrownianPRP.lean",
+      "line": 74,
+      "source_sha256": "bc173a603d9fc464dba544e405e41d8a9099721b89e54ca1bb696ca4b8e1df3f",
+      "declaration_header": "theorem multitime_representer_agrees {\u03b9 : Type*} [Fintype \u03b9]\n    (r : \u03b9 \u2192 \u211d\u22650) (p : MvPolynomial \u03b9 \u211d) :\n    multitimePolynomialIntegrand r p =\n      predictableAdjoint (GaussianTimeDivergence.pastCoefficient r p : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBrownianPRP.lean#L74"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.negativeTimeVector",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 16,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "def negativeTimeVector : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L16"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 18,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "def invisiblePolynomial : polynomialCylindricalDomain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L18"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.negativeField",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 21,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "def negativeField : TimeProbabilityL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L21"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial_norm_sq",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 24,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem invisiblePolynomial_norm_sq : \u2016(invisiblePolynomial : GaussianL2)\u2016 ^ 2 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L24"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial_centered",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 30,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem invisiblePolynomial_centered :\n    (\u222b \u03c9, (invisiblePolynomial : GaussianL2) \u03c9 \u2202gaussianProduct) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L30"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial_derivative",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 37,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem invisiblePolynomial_derivative :\n    polynomialDerivative invisiblePolynomial = fieldEmbedding negativeField",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L37"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.negativeField_orthogonal",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 48,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem negativeField_orthogonal (u : fullPredictable) :\n    inner \u211d negativeField (u : TimeProbabilityL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L48"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial_predictableAdjoint",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 67,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem invisiblePolynomial_predictableAdjoint :\n    predictableAdjoint (invisiblePolynomial : GaussianL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L67"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.invisiblePolynomial_not_representable",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 84,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem invisiblePolynomial_not_representable :\n    (invisiblePolynomial : GaussianL2) \u2209 itoIntegral.toLinearMap.range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L84"
+    },
+    {
+      "paper": "Section 10 exact Brownian-generated centered integral range: sorted finite tensor-Hermite representations and L2 closure. The actual negative-time unit first-chaos target is outside the positive Brownian integral range although it lies in the original Gaussian derivative domain.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAmbientRepresentationObstruction.exists_centered_not_representable",
+      "file": "Foundation/GaussianAmbientRepresentationObstruction.lean",
+      "line": 97,
+      "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
+      "declaration_header": "theorem exists_centered_not_representable : \u2203 F : GaussianL2,\n    (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) = 0 \u2227 \u2016F\u2016 ^ 2 = 1 \u2227\n      F \u2209 itoIntegral.toLinearMap.range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L97"
     }
   ],
   "paper_sections": {
@@ -3308,7 +3506,8 @@
     "The no-right-continuous-realization proof uses only the exact one-time laws and a countable decreasing time sequence, so survives every coordinatewise modification. The Mehler source adaptation credit to Michael R. Douglas and the repository Apache-2.0 notice are retained.",
     "The added Section 3 diagnostic concerns exactly the scalar <Q_0 u_1,u_t-u_0>, which vanishes because the initial observed source span is zero. Its actual full-past forecast remainder has squared norm at least t^(2H)/4, excluding min(4H,2H+1) for every 0<H<1 and every proposed local big-O constant. The Brownian case distinguishes projection of a deterministic source direction from conditioning the random gradient field; no correctly formulated Ito/Taylor or Clark\u2013Ocone theorem is refuted.",
     "Section 15 proves strong measurability of increasing past projections from monotone energies and real polarization, with the six exact frozen measurability correspondences fully read. The Bochner L2 fiber projection, strong right limits onto intersections of future subspaces, a common countable discontinuity set, and the finite Stieltjes energy measure after right enlargement are complete classical HUMAN deductions, not new named formal results. The shifted information-arrival example proves that the enlargement changes the past; neither original raw energy additivity, operator-norm continuity nor a physical-time stochastic integrator follows.",
-    "Section 10 reconstructs the original gradient-range Hodge projection of an actual raw Brownian predictable field. The original Gaussian divergence agrees with its Ito integral; minimum recovery has squared energy 1/q of the causal integrand in pure chaos q, with residual energy (1-1/q) times that norm and predictable reprojection u/q. All original graphs and Brownian-generated versus larger ambient range distinctions are explicit. The exact q^(-k) iteration and full quadratic witness (causal coefficient 2B_s, minimum field B_T, energy gap T^2) are labelled human reconstructions, including actual partition L2 errors 2T^2/n. No nonzero predictable zero-Ito-integral field, observed-IBM calculus or arbitrary-filtration representation is inferred. Classical Gaussian Hodge and Clark-Ocone antecedents are credited."
+    "Section 10 reconstructs the original gradient-range Hodge projection of an actual raw Brownian predictable field. The original Gaussian divergence agrees with its Ito integral; minimum recovery has squared energy 1/q of the causal integrand in pure chaos q, with residual energy (1-1/q) times that norm and predictable reprojection u/q. All original graphs and Brownian-generated versus larger ambient range distinctions are explicit. The exact q^(-k) iteration and full quadratic witness (causal coefficient 2B_s, minimum field B_T, energy gap T^2) are labelled human reconstructions, including actual partition L2 errors 2T^2/n. No nonzero predictable zero-Ito-integral field, observed-IBM calculus or arbitrary-filtration representation is inferred. Classical Gaussian Hodge and Clark-Ocone antecedents are credited.",
+    "Section 10 now proves the exact centered raw Brownian-generated integral range using sorted positive-length increment coordinates, tensor Hermite expansion, a last-nonzero-cell representer and full L2 closure. Bounded truncation and independent-cell L2 factorization justify multiplying the integral identity by an unbounded past polynomial. The actual negative-time source coordinate has mean zero and variance one, is independent of the whole positive Brownian sigma algebra and has zero predictable adjoint, so it is an original smooth Gaussian target outside that integral range. Its nonzero full source recovery remains distinct from its zero predictable projection. This is classical Brownian representation with the original range/domain qualifications, not an arbitrary ambient or IBM representation theorem."
   ],
   "literature": [
     {
