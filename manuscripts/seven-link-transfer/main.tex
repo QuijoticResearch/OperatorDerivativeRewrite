@@ -804,6 +804,35 @@ $c_\beta^4$, since the quotient is nonnegative. The inequality
 $\lambda\geq1$ is an explicit premise here; this argument does not
 construct such a normalizing eigenvalue or a ground state.
 
+The normalization premise can itself be proved under precise supplied
+eigenfunction hypotheses. Suppose $\lambda>0$, $\psi$ is measurable,
+$0<l\leq\psi(s)\leq u<\infty$ at every configuration, and
+$\widetilde S_{\beta,t}\psi=\lambda\psi$ pointwise. Then
+\begin{equation}\label{eq:homogeneousfloor}
+ \lambda\geq1.
+\end{equation}
+Indeed set $V=(x+y)/2$, $h=e^{tV}$ and $q=tV+\log\psi$.
+The bounds on $V$ and $\psi$ make $q$ bounded and measurable;
+therefore $q$ and $e^q$ are integrable for every Markov row and
+under $H$. The eigenfunction equation gives
+\[
+ K_\beta e^q=\lambda\psi/h
+     =\exp(\log\lambda+q-2tV).
+\]
+Jensen's inequality for each probability row yields
+$K_\beta q\leq\log\lambda+q-2tV$.
+The original kinetic transfer preserves Haar measure, so integration
+gives $\int q\,dH\leq\log\lambda+\int q\,dH$, since
+$\int V\,dH=0$. Thus $\log\lambda\geq0$, proving
+\eqref{eq:homogeneousfloor}. Consequently the normalized bare-exchange
+quotient is at most $c_\beta^4$ for every eigenpair satisfying exactly
+these hypotheses. The argument supplies a normalization bound,
+not existence of a homogeneous ground state. It does not infer a
+stationary centering or a spectral-gap identification for this trial.
+The full source is \texttt{SU2HomogeneousEigenvalueFloor}; its proof
+is the same bounded Jensen argument, with the positive lower bound
+on $\psi$ kept explicit.
+
 There is also a genuine centering check at the reset coupling.
 Exchange symmetry makes $\delta$ centered for the actual law
 $d\widetilde\pi_t\propto e^{t(x+y)}dH$. The inverse-ground
