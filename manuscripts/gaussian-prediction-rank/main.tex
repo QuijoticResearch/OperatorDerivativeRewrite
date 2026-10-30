@@ -265,6 +265,63 @@ one current observation to obstruct any faster full-past decay. It
 does not claim discovery of those exponents or replace the explicit
 prediction kernel.
 
+\subsection*{An initial projected-leading-term remainder diagnostic}
+The variance lower bound also tests a specific proposed remainder,
+without assuming a general fractional It\^o or Taylor theorem.
+Let $u_t$ be the actual fractional Gaussian directions, so
+$B_t^H=X(u_t)$ and $u_0=0$. Write
+\[
+ K_t=\overline{\operatorname{span}}\{u_s:0\leq s\leq t\},
+ \qquad Q_t:\mathcal H\to K_t
+\]
+for the source projection, distinct from conditional expectation
+on random variables. Let $F_t=\E[B_1^H\mid\mathcal F_t^H]$ be the
+actual full-past forecast already studied. Define the proposed
+initial scalar leading term and its remainder by
+\[
+ L_0(t)=\langle Q_0u_1,u_t-u_0\rangle,\qquad
+ \mathcal R_t=F_t-F_0-L_0(t)\mathbf1.
+\]
+Because the only observed direction at zero is $u_0=0$, one has
+$K_0=\{0\}$ and $Q_0=0$. Also $F_0=0$ by centering and the
+trivial initial Gaussian observation. Hence $L_0(t)=0$ and
+$\mathcal R_t=F_t$ exactly.
+
+For every $0<H<1$, put $\alpha_H=\min(4H,2H+1)$.
+Both candidates exceed $2H$, so $\alpha_H>2H$. The proved
+current-coordinate lower bound gives, for $0<t\leq1$,
+\[
+ \|\mathcal R_t\|_2^2\geq\frac14t^{2H},\qquad
+ \frac{\|\mathcal R_t\|_2^2}{t^{\alpha_H}}
+       \geq\frac14t^{-(\alpha_H-2H)}\longrightarrow+\infty.
+\]
+This is a complete quantitative exclusion of the proposed squared
+remainder order. Given any real $C$ and $\delta>0$, if $C\leq0$
+any $0<t<\min(1,\delta)$ violates
+$\|\mathcal R_t\|_2^2\leq Ct^{\alpha_H}$. If $C>0$, choose such a
+$t$ additionally satisfying $Ct^{\alpha_H-2H}<1/4$; the same
+lower bound gives a strict violation. No limiting equality or
+upper asymptotic for the full fractional forecast is needed.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{FractionalUnifiedRemainderDiagnostic.initial_sourceSpan},
+\code{initial_sourceProjection}, \code{initialLeading_zero},
+\code{claimed_exponent_gt}, \code{no_claimed_remainder_bound}.
+\par\endgroup
+
+At $H=1/2$, the forecast is simply $F_t=B(t)$ for $0\leq t\leq1$,
+so the actual squared remainder is $t$, whereas $\alpha_H=2$.
+This Brownian special case identifies the distinction in the
+leading term: $Q_0u_1=0$ is a projection of a deterministic source
+direction onto the initially observed source span. It is not the
+conditional expectation of the random gradient field. For the
+linear terminal target that gradient is the deterministic vector
+$u_1$, whose conditional expectation is still $u_1$.
+The failure concerns precisely the displayed projected-source
+scalar leading term and its claimed order. It does not refute
+correctly formulated Brownian or fractional stochastic expansions,
+which require their own integrands, domains and remainder norms.
+
 \section{Inverse-number smoothing preserves the obstruction}
 Define on the one-coordinate terminal space the inverse-number potential
 \begin{equation}\label{eq:potential}

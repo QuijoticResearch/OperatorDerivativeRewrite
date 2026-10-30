@@ -2731,6 +2731,51 @@
       "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
       "declaration_header": "theorem no_right_continuous_modification (X Y : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc)\n    (hmod : \u2200 t, Y t =\u1d50[\u03bc] X t) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202\u03bc, ContinuousWithinAt (fun t => Y t \u03c9) (Ici 0) 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L40"
+    },
+    {
+      "paper": "Section 3 exact initial source-projected leading term and fractional forecast remainder diagnostic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalUnifiedRemainderDiagnostic.initial_sourceSpan",
+      "file": "Foundation/FractionalUnifiedRemainderDiagnostic.lean",
+      "line": 14,
+      "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
+      "declaration_header": "theorem initial_sourceSpan : sourceSpan (pastDirections H hH0 hH1 0) = \u22a5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L14"
+    },
+    {
+      "paper": "Section 3 exact initial source-projected leading term and fractional forecast remainder diagnostic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalUnifiedRemainderDiagnostic.initial_sourceProjection",
+      "file": "Foundation/FractionalUnifiedRemainderDiagnostic.lean",
+      "line": 23,
+      "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
+      "declaration_header": "theorem initial_sourceProjection (u : CoefficientSpace) :\n    sourceProjection (pastDirections H hH0 hH1 0) u = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L23"
+    },
+    {
+      "paper": "Section 3 exact initial source-projected leading term and fractional forecast remainder diagnostic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalUnifiedRemainderDiagnostic.initialLeading_zero",
+      "file": "Foundation/FractionalUnifiedRemainderDiagnostic.lean",
+      "line": 37,
+      "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
+      "declaration_header": "theorem initialLeading_zero (t : \u211d\u22650) : initialLeading H hH0 hH1 t = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L37"
+    },
+    {
+      "paper": "Section 3 exact initial source-projected leading term and fractional forecast remainder diagnostic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalUnifiedRemainderDiagnostic.claimed_exponent_gt",
+      "file": "Foundation/FractionalUnifiedRemainderDiagnostic.lean",
+      "line": 43,
+      "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
+      "declaration_header": "theorem claimed_exponent_gt (hpos : 0 < H) : 2*H < min (4*H) (2*H+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L43"
+    },
+    {
+      "paper": "Section 3 exact initial source-projected leading term and fractional forecast remainder diagnostic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalUnifiedRemainderDiagnostic.no_claimed_remainder_bound",
+      "file": "Foundation/FractionalUnifiedRemainderDiagnostic.lean",
+      "line": 48,
+      "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
+      "declaration_header": "theorem no_claimed_remainder_bound (C \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2203 t : \u211d\u22650, 0 < t \u2227 (t:\u211d) < \u03b4 \u2227 t \u2264 1 \u2227\n      C * (t:\u211d)^(min (4*H) (2*H+1)) < \u2016initialRemainder H hH0 hH1 t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L48"
     }
   ],
   "paper_sections": {
@@ -2774,7 +2819,8 @@
     "Section 15 reconstructs actual Mehler Markov kernels by a common independent normal, proves weak row continuity at each finite acceleration and weak row convergence to the identity-at-zero/constant-positive-time kernel. This is not supremum-norm strong continuity of the approximants on Cb.",
     "The exact right norm-derivative domain for the limiting Cb semigroup is the constants, with derivative zero and cosine jump norm 1+exp(-1/2). Mixed-topology and bounded-pointwise generators are not identified with that norm derivative.",
     "The real-indexed formal product process is restricted to nonnegative times in the printed proof. Independence against the whole raw past is proved via cylinders and the pi-lambda theorem. An explicit conditional distribution avoids invoking general disintegration on an uncountable product. Joint time/sample measurability is not assumed.",
-    "The no-right-continuous-realization proof uses only the exact one-time laws and a countable decreasing time sequence, so survives every coordinatewise modification. The Mehler source adaptation credit to Michael R. Douglas and the repository Apache-2.0 notice are retained."
+    "The no-right-continuous-realization proof uses only the exact one-time laws and a countable decreasing time sequence, so survives every coordinatewise modification. The Mehler source adaptation credit to Michael R. Douglas and the repository Apache-2.0 notice are retained.",
+    "The added Section 3 diagnostic concerns exactly the scalar <Q_0 u_1,u_t-u_0>, which vanishes because the initial observed source span is zero. Its actual full-past forecast remainder has squared norm at least t^(2H)/4, excluding min(4H,2H+1) for every 0<H<1 and every proposed local big-O constant. The Brownian case distinguishes projection of a deterministic source direction from conditioning the random gradient field; no correctly formulated Ito/Taylor or Clark\u2013Ocone theorem is refuted."
   ],
   "literature": [
     {
