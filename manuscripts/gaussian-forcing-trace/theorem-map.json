@@ -1697,6 +1697,798 @@
       "source_sha256": "7ac20cdd04479ba31d6eee263d86293bc15b237b3694a88dc6b943c56c55ca1b",
       "declaration_header": "theorem stochasticModulatedResponse_increment_energy (\u03b1 : \u211d) (h\u03b1 : 1 / 2 < \u03b1)\n    (t u : \u211d\u22650) (g h : \u211d \u2192 \u211d) (hg : Measurable g) (hh : Measurable h)\n    (Mg Mh : \u211d) (hgM : \u2200 s, |g s| \u2264 Mg) (hhM : \u2200 s, |h s| \u2264 Mh) :\n    \u2016stochasticModulatedResponse \u03b1 h\u03b1 t g hg Mg hgM -\n      stochasticModulatedResponse \u03b1 h\u03b1 u h hh Mh hhM\u2016^2 =\n      \u222b s, (modulatedResponse \u03b1 t g s - modulatedResponse \u03b1 u h s)^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDETemporalIncrements.lean#L13"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.decay",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 16,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def decay (rate s t : \u211d\u22650) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L16"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.response_pairing",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 18,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem response_pairing (rate r s t : \u211d\u22650) (hrs : r\u2264s) (hst : s\u2264t) :\n    inner \u211d (responseVector rate t) (responseVector rate r)=\n      decay rate s t*inner \u211d (responseVector rate s) (responseVector rate r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L18"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.direction",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 39,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def direction (rate t : \u211d\u22650) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L39"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.pastDirections",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 41,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def pastDirections (rate s : \u211d\u22650) : Iic s \u2192 CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L41"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.direction_pairing",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 43,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem direction_pairing (rate r s t : \u211d\u22650) (hrs : r\u2264s) (hst : s\u2264t) :\n    inner \u211d (direction rate t) (direction rate r)=\n      decay rate s t*inner \u211d (direction rate s) (direction rate r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L43"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.past_source_projection",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 49,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem past_source_projection (rate s t : \u211d\u22650) (hst : s\u2264t) :\n    sourceProjection (pastDirections rate s) (direction rate t)=decay rate s t \u2022 direction rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L49"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.current_source_projection",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 59,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem current_source_projection (rate s t : \u211d\u22650) (hst : s\u2264t) :\n    sourceProjection (fun _ : Unit => direction rate s) (direction rate t)=decay rate s t \u2022 direction rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L59"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.terminal_prediction_eq_of_sourceProjection_eq",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 69,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem terminal_prediction_eq_of_sourceProjection_eq {I J : Type*}\n    (h : I \u2192 CoefficientSpace) (k : J \u2192 CoefficientSpace) (u : CoefficientSpace)\n    (he : sourceProjection h u=sourceProjection k u) (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    conditionalProjection h f=conditionalProjection k f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L69"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.terminal_markov_prediction",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 85,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem terminal_markov_prediction (rate s t : \u211d\u22650) (hst : s\u2264t)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (direction rate t)) :\n    conditionalProjection (pastDirections rate s) f=\n      conditionalProjection (fun _ : Unit => direction rate s) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L85"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.wick_prediction",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 92,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem wick_prediction (rate s t : \u211d\u22650) (hst : s\u2264t) (n : \u2115) :\n    conditionalProjection (pastDirections rate s) (wick (direction rate t) n)=\n      (wick (decay rate s t \u2022 direction rate s) n : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L92"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.wick_prediction_energy",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 97,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem wick_prediction_energy (rate s t : \u211d\u22650) (hst : s\u2264t) (n : \u2115) :\n    \u2016conditionalProjection (pastDirections rate s) (wick (direction rate t) n)\u2016^2=\n      (n.factorial : \u211d)*(decay rate s t)^ (2*n)*(\u2016responseVector rate s\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L97"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.response_support",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 104,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem response_support (rate t : \u211d\u22650) :\n    \u2200\u1d50 x \u2202(volume : Measure \u211d), x\u2209Ioc 0 (t : \u211d) \u2192 responseVector rate t x=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L104"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.causalProfile",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 109,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def causalProfile (rate t : \u211d\u22650) : GaussianDeterministicVolterra.positiveProfiles",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L109"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.value",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 112,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def value (rate t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L112"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.value_is_actual_ito",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 114,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem value_is_actual_ito (rate t : \u211d\u22650) :\n    value rate t=GaussianPredictableFull.itoIntegral\n      (GaussianDeterministicVolterra.profileField (causalProfile rate t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L114"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.value_jointGaussian",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 119,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem value_jointGaussian (rate : \u211d\u22650) : ProbabilityTheory.IsGaussianProcess\n    (fun t \u03c9 => value rate t \u03c9) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L119"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.linear_prediction",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 123,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem linear_prediction (rate s t : \u211d\u22650) (hst : s\u2264t) :\n    conditionalProjection (pastDirections rate s) (value rate t)=decay rate s t \u2022 value rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L123"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.innovationDirection",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 128,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "def innovationDirection (rate s t : \u211d\u22650) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L128"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.innovation_orthogonal_past",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 131,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem innovation_orthogonal_past (rate s t : \u211d\u22650) (hst : s\u2264t) (r : Iic s) :\n    inner \u211d (innovationDirection rate s t) (direction rate r)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L131"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianExponentialMarkovPrediction.innovation_independent_history",
+      "file": "Foundation/GaussianExponentialMarkovPrediction.lean",
+      "line": 135,
+      "source_sha256": "0c6da77007958f252c498c9abfb4e8537458a0ecacf1ce4566813b059e24d778",
+      "declaration_header": "theorem innovation_independent_history (rate s t : \u211d\u22650) (hst : s\u2264t) :\n    ProbabilityTheory.IndepFun (firstChaosEmbedding (innovationDirection rate s t))\n      (fun \u03c9 (r : Iic s) => value rate r \u03c9) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianExponentialMarkovPrediction.lean#L135"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.process",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 15,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "def process (rate t : \u211d\u22650) : SampleSpace \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L15"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.process_stronglyMeasurable",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 17,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem process_stronglyMeasurable (rate t : \u211d\u22650) : StronglyMeasurable (process rate t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L17"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.history",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 20,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "def history (rate : \u211d\u22650) : Filtration \u211d\u22650 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L20"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.process_adapted",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 23,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem process_adapted (rate : \u211d\u22650) : StronglyAdapted (history rate) (process rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L23"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.history_eq",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 26,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem history_eq (rate s : \u211d\u22650) : history rate s =\n    MeasurableSpace.comap (firstChaosFamily (pastDirections rate s)) inferInstance",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L26"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.process_condExp",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 31,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem process_condExp (rate s t : \u211d\u22650) (hst : s \u2264 t) :\n    gaussianProduct[process rate t | history rate s] =\u1d50[gaussianProduct]\n      fun \u03c9 => decay rate s t*process rate s \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L31"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.value_norm_sq",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 41,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem value_norm_sq (rate t : \u211d\u22650) (hr : 0 < rate) :\n    \u2016value rate t\u2016^2 = (1-Real.exp (-2*(rate : \u211d)*(t : \u211d)))/(2*(rate : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L41"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.prediction_defect_exact",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 46,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem prediction_defect_exact (rate s t : \u211d\u22650) (hr : 0 < rate) (hst : s \u2264 t) :\n    \u2016conditionalProjection (pastDirections rate s) (value rate t)-value rate s\u2016^2 =\n      (decay rate s t-1)^2*(1-Real.exp (-2*(rate : \u211d)*(s : \u211d)))/(2*(rate : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L46"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.decay_lt_one",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 55,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem decay_lt_one (rate s t : \u211d\u22650) (hr : 0 < rate) (hst : s < t) : decay rate s t < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L55"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.prediction_defect_positive",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 61,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem prediction_defect_positive (rate s t : \u211d\u22650) (hr : 0 < rate) (hs : 0 < s) (hst : s < t) :\n    0 < \u2016conditionalProjection (pastDirections rate s) (value rate t)-value rate s\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L61"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.no_condExp_equality",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 73,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem no_condExp_equality (rate s t : \u211d\u22650) (hr : 0 < rate) (hs : 0 < s) (hst : s < t) :\n    \u00ac gaussianProduct[process rate t | history rate s] =\u1d50[gaussianProduct] process rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L73"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleObstruction.not_martingale",
+      "file": "Foundation/GaussianVolterraMartingaleObstruction.lean",
+      "line": 85,
+      "source_sha256": "65ba60918e9e9316bad6d69ad508388b42c7c4808648fa799f6ccd6728495d65",
+      "declaration_header": "theorem not_martingale (rate : \u211d\u22650) (hr : 0 < rate) :\n    \u00ac Martingale (process rate) (history rate) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleObstruction.lean#L85"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.scaling",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 14,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "def scaling (rate t : \u211d\u22650) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L14"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weightedClass",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 16,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "def weightedClass (rate t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L16"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weighted",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 18,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "def weighted (rate t : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L18"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weightedClass_ae",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 20,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem weightedClass_ae (rate t : \u211d\u22650) : weightedClass rate t =\u1d50[gaussianProduct] weighted rate t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L20"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.scaling_decay",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 24,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem scaling_decay (rate s t : \u211d\u22650) : scaling rate t*decay rate s t = scaling rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L24"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weighted_adapted",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 30,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem weighted_adapted (rate : \u211d\u22650) : StronglyAdapted (history rate) (weighted rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L30"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weighted_condExp",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 34,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem weighted_condExp (rate s t : \u211d\u22650) (hst : s \u2264 t) :\n    gaussianProduct[weighted rate t | history rate s] =\u1d50[gaussianProduct] weighted rate s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L34"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weighted_martingale",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 43,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem weighted_martingale (rate : \u211d\u22650) : Martingale (weighted rate) (history rate) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L43"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.zero_rate_martingale",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 46,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem zero_rate_martingale : Martingale (process 0) (history 0) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L46"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.weighted_is_actual_ito",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 53,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem weighted_is_actual_ito (rate t : \u211d\u22650) :\n    weightedClass rate t = GaussianPredictableFull.itoIntegral\n      (scaling rate t \u2022 GaussianDeterministicVolterra.profileField (causalProfile rate t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L53"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraMartingaleRepair.compensated_response",
+      "file": "Foundation/GaussianVolterraMartingaleRepair.lean",
+      "line": 59,
+      "source_sha256": "cdfa9eba2a86d7acc754010ff40713029d7843eb3226658bc278c44da8f13354",
+      "declaration_header": "theorem compensated_response (rate t : \u211d\u22650) (u : \u211d) :\n    scaling rate t*response rate t u =\n      (Ioc 0 (t : \u211d)).indicator (fun s => Real.exp ((rate : \u211d)*s)) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraMartingaleRepair.lean#L59"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.value_eq_isonormal",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 16,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem value_eq_isonormal (rate t : \u211d\u22650) :\n    value rate t = isonormalEmbedding TimeHilbert (responseVector rate t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L16"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.value_continuous",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 19,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem value_continuous (rate : \u211d\u22650) (hr : 0 < rate) : Continuous (value rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L19"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.primitive",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 23,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "def primitive (rate : \u211d\u22650) (t : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L23"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.value_intervalIntegrable",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 26,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem value_intervalIntegrable (rate : \u211d\u22650) (hr : 0 < rate) (a b : \u211d) :\n    IntervalIntegrable (fun s : \u211d => value rate s.toNNReal) volume a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L26"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.primitive_derivative",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 30,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem primitive_derivative (rate : \u211d\u22650) (hr : 0 < rate) (t : \u211d) :\n    HasDerivAt (primitive rate) (value rate t.toNNReal) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L30"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.primitive_exact",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 36,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem primitive_exact (rate T : \u211d\u22650) (hr : 0 < rate) :\n    primitive rate T = (rate : \u211d)\u207b\u00b9 \u2022 (GaussianTimeProcess.wienerL2 T-value rate T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L36"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.drift_balance",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 50,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem drift_balance (rate T : \u211d\u22650) (hr : 0 < rate) :\n    value rate T+(rate : \u211d) \u2022 primitive rate T = GaussianTimeProcess.wienerL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L50"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.driftPrimitive",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 56,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "def driftPrimitive (rate : \u211d\u22650) (t : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L56"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.drift_derivative",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 58,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem drift_derivative (rate : \u211d\u22650) (hr : 0 < rate) (t : \u211d) :\n    HasDerivAt (driftPrimitive rate) (-(rate : \u211d) \u2022 value rate t.toNNReal) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L58"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.drift_derivative_norm_sq",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 62,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem drift_derivative_norm_sq (rate T : \u211d\u22650) (hr : 0 < rate) :\n    \u2016deriv (driftPrimitive rate) (T : \u211d)\u2016^2 =\n      (rate : \u211d)*(1-Real.exp (-2*(rate : \u211d)*(T : \u211d)))/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L62"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.drift_derivative_nonzero",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 69,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem drift_derivative_nonzero (rate T : \u211d\u22650) (hr : 0 < rate) (hT : 0 < T) :\n    deriv (driftPrimitive rate) (T : \u211d) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L69"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.original_noise_plus_drift",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 83,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem original_noise_plus_drift (rate T : \u211d\u22650) (hr : 0 < rate) :\n    value rate T = GaussianTimeProcess.wienerL2 T+driftPrimitive rate T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L83"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.compensated_is_brownian",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 90,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem compensated_is_brownian (rate T : \u211d\u22650) (hr : 0 < rate) :\n    value rate T-driftPrimitive rate T = GaussianTimeProcess.wienerL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L90"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianVolterraDriftBalance.zero_rate_value",
+      "file": "Foundation/GaussianVolterraDriftBalance.lean",
+      "line": 94,
+      "source_sha256": "3a15631d07012533ff80b4ffdbecfe064aacdf1a3b85c5f82aa4e738986d1c6a",
+      "declaration_header": "theorem zero_rate_value (T : \u211d\u22650) : value 0 T = GaussianTimeProcess.wienerL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianVolterraDriftBalance.lean#L94"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.triangle",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 12,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "def triangle (rate : \u211d\u22650) (z : \u211d \u00d7 \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L12"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.triangle_measurable",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 16,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem triangle_measurable (rate : \u211d\u22650) : StronglyMeasurable (triangle rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L16"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.triangle_bound",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 21,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem triangle_bound (rate T : \u211d\u22650) (t u : \u211d) (ht : t \u2208 Ioc 0 (T : \u211d)) :\n    \u2016triangle rate (t,u)\u2016 \u2264 (Ioc 0 (T : \u211d)).indicator (fun _ => (1 : \u211d)) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L21"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.scalar_primitive",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 34,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem scalar_primitive (rate : \u211d\u22650) (hr : 0 < rate) (u t : \u211d) :\n    HasDerivAt (fun t => -Real.exp (-(rate : \u211d)*(t-u))/(rate : \u211d))\n      (Real.exp (-(rate : \u211d)*(t-u))) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L34"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.column_exact",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 41,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem column_exact (rate T : \u211d\u22650) (hr : 0 < rate) (u : \u211d) :\n    (\u222b t in Ioc 0 (T : \u211d), triangle rate (t,u)) = (rate : \u211d)\u207b\u00b9*\n      ((Ioc 0 (T : \u211d)).indicator (fun _ => (1 : \u211d)) u-response rate T u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L41"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.integratedProfile",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 70,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "def integratedProfile (rate T : \u211d\u22650) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L70"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.integratedProfile_coeFn",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 73,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem integratedProfile_coeFn (rate T : \u211d\u22650) : integratedProfile rate T =\u1d50[volume]\n    fun u => (rate : \u211d)\u207b\u00b9*((Ioc 0 (T : \u211d)).indicator (fun _ => (1 : \u211d)) u-response rate T u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L73"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.profile_intervalIntegrable",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 86,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem profile_intervalIntegrable (rate T : \u211d\u22650) (hr : 0 < rate) :\n    IntervalIntegrable (fun t : \u211d => responseVector rate t.toNNReal) volume 0 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L86"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialResponseTimeIntegral.integral_responseVector",
+      "file": "Foundation/ExponentialResponseTimeIntegral.lean",
+      "line": 90,
+      "source_sha256": "11962a4fa6e94db769b23f5856d11aa7834f5dd4723f0418b53e0c6600a94e79",
+      "declaration_header": "theorem integral_responseVector (rate T : \u211d\u22650) (hr : 0 < rate) :\n    (\u222b t in 0..(T : \u211d), responseVector rate t.toNNReal) = integratedProfile rate T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialResponseTimeIntegral.lean#L90"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.predictable_time_measurable",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 15,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem predictable_time_measurable :\n    @Measurable (\u211d\u22650 \u00d7 SampleSpace) \u211d\u22650 naturalFiltration.predictable inferInstance Prod.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L15"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.positive_profile_predictable",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 25,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem positive_profile_predictable (a : TimeHilbert)\n    (ha : \u2200\u1d50 t \u2202(volume : Measure \u211d), t \u2264 0 \u2192 a t = 0) :\n    productTensor a gaussianOne \u2208 fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L25"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.positiveProfiles",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 57,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "def positiveProfiles : Submodule \u211d TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L57"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileField",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 60,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "def profileField (a : positiveProfiles) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L60"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 66,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "def profileIntegral (a : positiveProfiles) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L66"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral_eq_isonormal",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 68,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profileIntegral_eq_isonormal (a : positiveProfiles) :\n    profileIntegral a = isonormalEmbedding TimeHilbert a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L68"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral_derivative",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 72,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profileIntegral_derivative (a : positiveProfiles) :\n    (profileIntegral a, fieldEmbedding (productTensor a gaussianOne)) \u2208\n      closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L72"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral_law",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 78,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profileIntegral_law (a : positiveProfiles) :\n    gaussianProduct.map (profileIntegral a) = gaussianReal 0 \u27e8\u2016(a : TimeHilbert)\u2016 ^ 2, sq_nonneg _\u27e9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L78"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral_pair_integrable",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 83,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profileIntegral_pair_integrable (a b : positiveProfiles) :\n    Integrable (fun \u03c9 => profileIntegral a \u03c9 * profileIntegral b \u03c9) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L83"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profile_pair_integrable",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 88,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profile_pair_integrable (a b : positiveProfiles) :\n    Integrable (fun t => a.val t * b.val t) (volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L88"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.profileIntegral_covariance",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 92,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem profileIntegral_covariance (a b : positiveProfiles) :\n    cov[profileIntegral a, profileIntegral b; gaussianProduct] =\n      \u222b t, a.val t * b.val t \u2202(volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L92"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.causal_profile_mem",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 103,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem causal_profile_mem (t : \u211d\u22650) (k : TimeHilbert)\n    (hk : \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 k s = 0) :\n    k \u2208 positiveProfiles",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L103"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.volterraProcess",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 112,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "def volterraProcess (K : \u211d\u22650 \u2192 TimeHilbert)\n    (hK : \u2200 t : \u211d\u22650, \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 K t s = 0)\n    (t : \u211d\u22650) : SampleSpace \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L112"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.volterraProcess_eq",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 117,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem volterraProcess_eq (K : \u211d\u22650 \u2192 TimeHilbert)\n    (hK : \u2200 t : \u211d\u22650, \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 K t s = 0) (t : \u211d\u22650) :\n    volterraProcess K hK t = isonormal TimeHilbert (K t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L117"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.volterraProcess_isGaussianProcess",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 123,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem volterraProcess_isGaussianProcess (K : \u211d\u22650 \u2192 TimeHilbert)\n    (hK : \u2200 t : \u211d\u22650, \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 K t s = 0) :\n    IsGaussianProcess (volterraProcess K hK) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L123"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDeterministicVolterra.volterraProcess_covariance",
+      "file": "Foundation/GaussianDeterministicVolterra.lean",
+      "line": 131,
+      "source_sha256": "1a689e7d8e7a99a019d2dfa1605690724cb8e783ed97e722fd4a10fe1dfc3f9a",
+      "declaration_header": "theorem volterraProcess_covariance (K : \u211d\u22650 \u2192 TimeHilbert)\n    (hK : \u2200 t : \u211d\u22650, \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 K t s = 0) (s t : \u211d\u22650) :\n    cov[volterraProcess K hK s, volterraProcess K hK t; gaussianProduct] =\n      \u222b r, K s r * K t r \u2202(volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDeterministicVolterra.lean#L131"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.variance",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 14,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "def variance (rate t : \u211d\u22650) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L14"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.responseVector_continuous",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 42,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem responseVector_continuous (rate : \u211d\u22650) (hr : 0<rate) : Continuous (responseVector rate)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L42"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.profile_trace",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 70,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem profile_trace (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) (t : \u211d\u22650) :\n    Summable (fun n => (c n)^2*\u2016responseVector (rate n) t\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L70"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.increment_trace",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 78,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem increment_trace (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) (s t : \u211d\u22650) :\n    Summable (fun n => (c n)^2*\u2016responseVector (rate n) t-responseVector (rate n) s\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L78"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.field_sub",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 87,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem field_sub (rate : \u2115 \u2192 \u211d\u22650) (hrate : \u2200 n,1\u2264rate n) (c : \u2115 \u2192 \u211d)\n    (hs : Summable (fun n => (c n)^2/(rate n : \u211d))) (s t : \u211d\u22650) :\n    exponentialField rate c t-exponentialField rate c s=\n      spatialResponse c (fun n => responseVector (rate n) t-responseVector (rate n) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L87"
+    },
+    {
+      "paper": "Exponential Volterra calibration and its supporting original domains: actual deterministic predictable integral, full terminal-observable Markov prediction, natural-filtration martingale defect, integrating factor, Bochner profile/time integral and original-noise drift balance. Existing modal continuity results retain their own reciprocal-rate hypotheses.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.quadraticField_continuous",
+      "file": "Foundation/SPDEExponentialTimeContinuity.lean",
+      "line": 123,
+      "source_sha256": "37dfb07b6fef681fb1c048330171bc68994c1d5bafa397d826673222769f4543",
+      "declaration_header": "theorem quadraticField_continuous : Continuous quadraticField",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEExponentialTimeContinuity.lean#L123"
     }
   ],
   "paper_sections": {
@@ -1724,7 +2516,8 @@
     "Countable predicted sums converge through the bounded conditional projection of the original orthogonal series. The displayed finite double Gram sums converge in squared norm; no absolute infinite double-sum or preserved mode orthogonality is assumed. The inverse-degree recovery energy is a human consequence of the same homogeneous-chaos spectral identity already printed.",
     "The two-mode sum/difference calibration shows why deleting projected Gram cross terms fails. The actual two Brownian unit-time quadratic modes have predicted sum energy two. These are classical exact observation identities, not nonlinear SPDE or independence claims.",
     "Section 11 separates the one-mode temporal threshold alpha>1/2 from the infinite-mode reciprocal-rate trace condition. The actual zero-generator Riemann-Liouville response has exact variance t^(2 alpha-1)/(Gamma(alpha)^2(2 alpha-1)), original Gaussian-source derivative and sharp initial variance exponent. Explicit cutoff-energy divergence at and below alpha=1/2 and the covariance asymptotic distinguishing unit-variance Liouville motion from standard fBM for H unequal to 1/2 are labelled classical human deductions. Neither a Mittag-Leffler resolvent, physical-time derivative nor a new stochastic PDE solution is asserted.",
-    "Section 12 reconstructs exact scalar deterministic-multiplier covariance, increment and approximation-error identities in the original Gaussian L2 space, with the same original closed Gaussian derivative. The threshold converse explicitly retains 0<m<=|g|<=M globally. Sharp supremum-to-L2 operator norm and uniform-on-bounded-time mean-square norm convergence are labelled elementary human deductions of the mapped bound; expected suprema, path convergence and random-coefficient integration are not inferred. Four principal modules were read fully, while only their relevant scalar declarations are mapped."
+    "Section 12 reconstructs exact scalar deterministic-multiplier covariance, increment and approximation-error identities in the original Gaussian L2 space, with the same original closed Gaussian derivative. The threshold converse explicitly retains 0<m<=|g|<=M globally. Sharp supremum-to-L2 operator norm and uniform-on-bounded-time mean-square norm convergence are labelled elementary human deductions of the mapped bound; expected suprema, path convergence and random-coefficient integration are not inferred. Four principal modules were read fully, while only their relevant scalar declarations are mapped.",
+    "The exponential Volterra calibration proves exact full-terminal Markov prediction in the original natural past by orthogonal Gaussian innovation and the finite-cylinder monotone-class passage. The strictly positive L2 martingale defect at positive damping is retained. Its integrating-factor martingale has the actual deterministic Ito coefficient exp(lambda u). A separate complete Bochner profile/Fubini calculation gives Y_t=B_t-lambda integral_0^t Y_r dr in the original Gaussian L2 space, with continuous drift derivative and exact nonzero derivative energy. Zero damping is treated directly. These classical OU mechanisms supply no all-path simultaneous semimartingale identity or random-kernel stochastic Fubini theorem and are not transferred to arbitrary fractional Volterra kernels."
   ],
   "literature": [
     {

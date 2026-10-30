@@ -12,7 +12,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Diagonal Gaussian forcing:\\trace thresholds, Wick centering and recovery geometry}
 \author{Project Stardust}
-\date{Reviewed formalization companion, October 29, 2026}
+\date{Reviewed formalization companion, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -33,7 +33,7 @@ when the corresponding raw sums fail; their exact Brownian prediction
 and increment energies distinguish initial Hermite scaling from
 positive-time roughness. Predictions from arbitrary Gaussian observations retain full projected Gram cross terms. Normalized Wick metric bounds retain the
 positive-correlation hypothesis; fractional positive-time exponents and
-the antipodal obstruction are proved explicitly. A separate fractional time profile has the sharp threshold $\alpha>1/2$ and exact deterministic-multiplier error bounds. Its normalized Liouville covariance differs from standard fBM except at the Brownian index. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
+the antipodal obstruction are proved explicitly. A separate fractional time profile has the sharp threshold $\alpha>1/2$ and exact deterministic-multiplier error bounds. Its normalized Liouville covariance differs from standard fBM except at the Brownian index. An individual exponential response is Markov but fails the martingale identity at positive damping; its integrating factor and original-noise Bochner drift corrections are computed exactly. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
 classical; the paper consolidates frozen verified constructions and
 explicit counterexamples without claiming new stochastic PDE theory.
 \end{abstract}
@@ -1199,6 +1199,138 @@ The fully read scalar modulation sources are
 orthogonal mode channels in those sources; no independence of
 arbitrary forcing directions is inferred here.
 
+
+\section{Markov prediction and two distinct drift corrections}
+Fix one input copy $\iota$ and abbreviate
+\[
+ h_t=\iota[1_{(0,t]}(u)e^{-\lambda(t-u)}],\quad
+ Y_t=X(h_t),\quad B_t=X(\iota1_{(0,t]}),\quad \lambda\geq0.
+\]
+Let $\mathcal G_s=\sigma(Y_r:0\leq r\leq s)$ be the raw natural
+past, interpreted through its original $L^2$ measurable classes. Put
+\[
+ v_\lambda(t)=\begin{cases}(1-e^{-2\lambda t})/(2\lambda),&\lambda>0,\\
+ t,&\lambda=0.\end{cases}
+\]
+Although $Y_t$ is an actual deterministic predictable Brownian
+integral for each $t$, its kernel depends on that terminal time.
+It need not itself be a martingale in $t$.
+
+\begin{proposition}\label{prop:ou-prediction}
+For $0\leq s\leq t$, the original past conditional expectation is
+\[
+ \E[Y_t\mid\mathcal G_s]=e^{-\lambda(t-s)}Y_s.
+\]
+More generally, conditional prediction of every square-integrable
+terminal observable $f(Y_t)$ from $\mathcal G_s$ equals its prediction
+from $\sigma(Y_s)$. For $\lambda>0$ and $0<s<t$,
+\[
+ \|\E[Y_t\mid\mathcal G_s]-Y_s\|_2^2
+ =(1-e^{-\lambda(t-s)})^2v_\lambda(s)>0.
+\]
+Consequently $Y$ is not a martingale in this natural filtration.
+In contrast, $M_t=e^{\lambda t}Y_t$ is such a martingale, and its
+actual deterministic-integrand representation is
+\[
+ M_t=\int_0^t e^{\lambda u}\,dB_u.
+\]
+\end{proposition}
+\begin{proof}
+The literal profile identity is
+\[
+ h_t=e^{-\lambda(t-s)}h_s+
+ \iota[1_{(s,t]}(u)e^{-\lambda(t-u)}].
+\]
+The second summand is orthogonal to every $h_r$, $r\leq s$.
+Joint Gaussianity makes its isonormal image independent of every
+finite history vector: the joint characteristic function factors
+because the cross-covariances vanish. A monotone-class argument on
+finite history cylinders extends this independence to
+$\mathcal G_s$. The image is centered Gaussian with variance
+$v_\lambda(t-s)$. Thus, for bounded Borel $f$, conditional expectation
+is the Gaussian kernel
+\[
+ \int f(e^{-\lambda(t-s)}Y_s+z)\,
+       dN(0,v_\lambda(t-s))(z).
+\]
+This is $\sigma(Y_s)$-measurable and has the defining conditional
+integral against each bounded past test, by independence and Fubini.
+For $f(Y_t)\in L^2$, clamp its values to $[-j,j]$ and pass to the
+$L^2$ limit by conditional-expectation contraction. This proves the
+full terminal-observable assertion, not merely linear regression.
+The first-chaos norm is $\|Y_s\|_2^2=\|h_s\|^2=v_\lambda(s)$;
+subtract $Y_s$ to obtain the displayed strict defect.
+
+Multiplying the forecast identity by $e^{\lambda t}$ proves the
+martingale property of $M$, including its raw adaptedness and
+integrability. Finally
+$e^{\lambda t}1_{(0,t]}(u)e^{-\lambda(t-u)}
+ =1_{(0,t]}(u)e^{\lambda u}$.
+Linearity of the original deterministic predictable integral proves
+its claimed representation. No new driver or measure is introduced.
+\end{proof}
+
+A different correction recovers the original Brownian coordinate
+without multiplying $Y$ by a time factor. All time integrals in the
+following proposition are Bochner integrals in the original scalar
+Gaussian $L^2$ space.
+\begin{proposition}\label{prop:ou-drift}
+For $\lambda>0$ the map $t\mapsto Y_t$ is $L^2$-continuous and
+\[
+ A_t=-\lambda\int_0^tY_r\,dr,\qquad
+ Y_t=B_t+A_t,\qquad Y_t-A_t=B_t.
+\]
+For $t>0$, $A$ has an $L^2$ derivative satisfying
+\[
+ A_t'=-\lambda Y_t,\qquad
+ \|A_t'\|_2^2=\frac{\lambda}{2}(1-e^{-2\lambda t})>0.
+\]
+At $\lambda=0$, $Y_t=B_t$ and the drift correction is zero.
+\end{proposition}
+\begin{proof}
+For $s,t\geq0$, direct profile pairing gives
+\[
+ \|h_t-h_s\|^2=v_\lambda(t)+v_\lambda(s)
+ -2e^{-\lambda|t-s|}v_\lambda(\min\{s,t\}).
+\]
+Its continuity and zero diagonal prove continuity of $h$, hence of
+$Y$. The profiles are Bochner integrable on each finite interval.
+For fixed $T$, their scalar integrand on $0\leq r\leq T$ is
+$1_{0<u\leq r}e^{-\lambda(r-u)}$, bounded by $1_{(0,T]}(u)$.
+This common $L^2(du)$ majorant has finite norm; in particular the
+corresponding product integrals are integrable on the finite time
+triangle. Testing against arbitrary $L^2(du)$ functions and applying
+Fubini therefore identifies the Bochner integral with the profile
+whose value is
+\[
+ \int_u^T e^{-\lambda(r-u)}dr
+ =\lambda^{-1}(1-e^{-\lambda(T-u)})\quad(0<u\leq T),
+\]
+and zero elsewhere. The bounded isonormal map commutes with this
+Bochner integral, giving
+\[
+ \int_0^T Y_r\,dr=\lambda^{-1}(B_T-Y_T).
+\]
+Rearrangement proves the original-noise identities. The Banach-valued
+fundamental theorem of calculus applies to the continuous $L^2$
+integrand, giving $A_t'=-\lambda Y_t$. Its exact squared norm is
+$\lambda^2v_\lambda(t)$, as stated. If $\lambda=0$, the original
+profile is the Brownian indicator directly; no division by zero or
+limiting definition of the primitive is needed.
+\end{proof}
+
+These are classical Ornstein--Uhlenbeck prediction and variation of
+constants facts. Hairer's primary notes \cite[Proposition 4.31,
+equation (4.24)]{HairerASA} give a much broader stochastic variation of
+constants formula with its adaptation and It\^o corrections. Here
+the kernel is deterministic and the above direct proof retains only
+the named formal $L^2$ forecast, martingale and Bochner drift claims.
+It does not establish an all-path simultaneous semimartingale
+identity, a stochastic Fubini theorem for arbitrary random kernels,
+or a martingale law for a general fractional Volterra response.
+The two corrections are different: $e^{\lambda t}Y_t$ changes the
+noise coefficient, whereas subtracting $A_t$ recovers $B_t$ itself.
+
 \section{Formal correspondence and prior theory}
 \begingroup\raggedright
 The source authority is frozen verified commit
@@ -1261,5 +1393,9 @@ Int. J. Stoch. Anal. (2016), article 8694365.
 Brownian motion}, Czechoslovak Mathematical Journal 62 (2012), 1--27.
 \href{https://arxiv.org/pdf/1001.4013}{Primary preprint v3, March 7, 2012},
 Definition 3.1 and Section 4.
+\bibitem{HairerASA} M. Hairer, \emph{Advanced Stochastic Analysis},
+author lecture notes, May 19, 2026, Section 4.6, Proposition 4.31,
+equation (4.24), printed page 41.
+\href{https://hairer.org/notes/StochasticAnalysisCourse.pdf}{Primary notes}.
 \end{thebibliography}
 \end{document}
