@@ -12,7 +12,7 @@
 \newcommand{\Hh}{\mathcal H}\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Time integration and adjoint-graph differentiation\\for reflected-clock Brownian observables}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -30,8 +30,7 @@ endpoint. Its derivative pairs with actual $Z_T$ but has no native field
 representative. Along every vanishing positive or negative time-step
 sequence, the native gradient-slope norms diverge. At a fixed horizon,
 contractions with each fixed clock direction have actual spatial occupation
-kernels whose mollifications converge strongly; full-vector strong convergence
-is not inferred. These results give
+kernels whose mollifications converge strongly; full-vector strong convergence for those linear approximants is not inferred. Separately, the nonlinear sine time average belongs to the same original joint domain, and both its native gradient channels converge strongly in full Hilbert norm. A compact spatial operator bound, summable occupation trace and uniform cutoff tail prove the vector limit. These results give
 precise source-valued operator identities, not an observed-filtration
 It\^o or Clark--Ocone formula. They reconstruct frozen formal results;
 novelty remains unresolved.
@@ -672,6 +671,300 @@ it coexists with native time-slope norm escape in Theorem~\ref{thm:main}.
 It supplies neither a point clock gradient nor physical-time observed
 stochastic integration.
 
+
+\section{A nonlinear average with strong native gradient approximation}
+There is a separate, stronger vector statement for
+\[
+ U_T=\int_0^T\sin(Z_t)\,dt.
+\]
+This is not $\sin(A_T)$. Its proof needs more than the fixed-direction
+argument of the preceding section. Write $v_r=1_{(0,r]}$ for $r\geq0$
+in the physical scenery realization and $q_t=1_{(0,t]}\in H_W$.
+Use the original two-sided oriented extension of $v_r$ at negative
+$r$. The mollified scenery $B_n$ is the one fixed in Section 3.
+Define the full clock fields
+\begin{equation}\label{eq:sine-native-clock}
+ V_n(T)=\int_0^T\operatorname{sgn}(W_t)
+       \cos(B_n(|W_t|))B_n'(|W_t|)q_t\,dt
+       \ \in L^2(P;H_W).
+\end{equation}
+Each fixed-width integral is an ordinary Bochner integral in this
+Hilbert field space. Its actual representatives use the original
+scenery and clock, with their factor-order isometries retained.
+For the source channel put $t_{j,n}=jT/(n+1)$ and
+\begin{equation}\label{eq:sine-native-source}
+ S_n(T)=\frac{T}{n+1}\sum_{j=1}^{n+1}
+       \cos(Z_{t_{j,n}})v_{|W_{t_{j,n}}|}
+       \ \in L^2(P;H_B).
+\end{equation}
+
+\begin{theorem}\label{thm:sine-strong}
+For every fixed $T\geq0$, $U_T\in D(\D)$, and
+\[
+ S_n(T)\longrightarrow D_BU_T,\qquad
+ V_n(T)\longrightarrow D_WU_T
+\]
+strongly in the original respective Hilbert field norms. In particular
+$(S_n(T),V_n(T))\to\D U_T$ in $\G$. Its clock energy satisfies
+\begin{equation}\label{eq:sine-energy}
+ \|D_WU_T\|_2^2\leq C_T,
+ \qquad C_T=8p_1T^2\sqrt T+4T^3,\quad p_1=(2\pi)^{-1/2}.
+\end{equation}
+For every $v\in D(\D^*)$,
+\begin{equation}\label{eq:sine-uniform-test}
+ \left|\langle(S_n(T),V_n(T)),v\rangle
+       -\E[U_T\D^*v]\right|
+ \leq\|(S_n(T),V_n(T))-\D U_T\|_{\G}\,\|v\|_{\G}.
+\end{equation}
+Thus one index works for all such tests in the field unit ball,
+without a common bound on their divergence norms.
+\end{theorem}
+
+\subsection{The original source channel}
+For each fixed clock value, the bounded Gaussian chain rule gives
+$D_B\sin(B(|W_t|))=\cos(Z_t)v_{|W_t|}$ in the original source graph.
+One proves this by approximating the Brownian indicator with finite
+source projections and applying the closed Gaussian chain rule;
+$|\cos|\leq1$ bounds the derivatives, and finite Gaussian moments
+justify the limit. Product Fubini gives the same graph on the joint
+space. The field
+$g_t=\cos(Z_t)v_{|W_t|}$ has continuous paths in $H_B$: the scenery
+and clock paths are continuous and $r\mapsto v_r$ is continuous in
+$L^2(\R)$. Moreover
+\[
+ \|g_t\|_{H_B}^4\leq|W_t|^2,\qquad
+ \E\|g_t\|_{H_B}^4\leq t.
+\]
+For any convergent time sequence in a compact interval, these fourth
+moments are uniformly bounded. They imply uniform integrability of
+the squared field differences: their fourth moments are bounded by
+$8(\E\|g_{t_n}\|^4+\E\|g_t\|^4)$, and the squared-difference tail
+above level $R$ is at most this bound divided by $R$. Almost-sure
+continuity, truncation at $R$, and then $R\to\infty$ prove
+$g_{t_n}\to g_t$ in $L^2(P;H_B)$. This supplies strong time continuity,
+not an assumed pointwise evaluation map on $L^2$ classes.
+
+Consequently the right Riemann sums \eqref{eq:sine-native-source}
+converge to the Bochner integral of $g_t$. The corresponding scalar
+Riemann sums converge in $L^2$ to $U_T$, since $\sin$ is Lipschitz
+and $Z$ is mean-square continuous. Every finite pair is in the
+original source graph, and that graph is closed. Therefore
+\begin{equation}\label{eq:sine-source-formula}
+ D_BU_T=\int_0^T\cos(Z_t)v_{|W_t|}\,dt,
+ \qquad S_n(T)\to D_BU_T.
+\end{equation}
+The bounded continuous-path observable $U_T$ is measurable in the
+raw observed past at $T$, by its scalar Riemann sums.
+
+\subsection{The nonlinear covariance correction and a rough spatial operator}
+For the clock channel, set
+\[
+ Q_n(r)=\cos(B_n(r))B_n'(r),\qquad
+ O_{nm}(r,z)=\int_\R\rho_n(r-x)\rho_m(z-x)\,dx.
+\]
+The decisive bound is
+\begin{equation}\label{eq:sine-covariance}
+ |\E_B[Q_n(r)Q_m(z)]|\leq O_{nm}(r,z)+4.
+\end{equation}
+It bounds the absolute expectation, not the expectation of the
+absolute product. In particular it does not assert independence
+between the values and derivatives of the same Gaussian scenery.
+Here is a direct derivation retaining those correlations. For any
+original Gaussian directions $u,a,b$, differentiation of their joint
+characteristic function gives
+\[
+ \E[X(a)X(b)\cos X(u)]
+ =\bigl(\langle a,b\rangle-\langle u,a\rangle\langle u,b\rangle\bigr)
+       e^{-\|u\|^2/2}.
+\]
+Finite Gaussian second moments dominate the differentiated
+integrands, so this identity also includes degenerate directions.
+Use $\cos X(w)\cos X(v)=\tfrac12[\cos X(w+v)+\cos X(w-v)]$.
+The covariance of the derivative directions is $O_{nm}(r,z)$.
+Every pairing of one mollified value direction with one derivative
+direction has absolute value at most one: the Brownian indicator
+pairing is an integral of a positive unit-mass mollifier over an
+oriented interval; averaging it against the other positive unit-mass
+mollifier preserves the bound. Thus the pairings with $w+v$ or
+$w-v$ are at most two, and each correction product at most four.
+The exponential factor is at most one. This proves
+\eqref{eq:sine-covariance} without a divergent derivative variance
+on the right.
+
+Fix a finite interval $I=(a,b]$ of length $\ell=b-a\geq0$ and define
+\[
+ J_n^I\phi=\int_I\phi(r)Q_n(r)\,dr
+ \quad\hbox{as a Bochner integral in }L^2(P_B).
+\]
+For fixed $n$ the columns $Q_n$ are strongly measurable and uniformly
+bounded in source $L^2$ by $\|\rho_n\|_2$. Hence every
+$\phi\in L^2(I)$ gives a well-defined integral. Since $O_{nn}$ is
+symmetric, nonnegative and has whole-line row mass one,
+\eqref{eq:sine-covariance} and $2|\phi(r)\phi(z)|\leq\phi(r)^2+\phi(z)^2$
+give, with all integrals on the finite product interval integrable,
+\begin{equation}\label{eq:sine-spatial-bound}
+ \|J_n^I\phi\|_{L^2(B)}^2
+ \leq(1+4\ell)\|\phi\|_{L^2(I)}^2.
+\end{equation}
+Indeed the row integral of $O_{nn}+4$ is at most $1+4\ell$;
+expansion of the squared Bochner norm and Fubini prove the estimate.
+
+These operators converge strongly at every rough $L^2(I)$ input.
+To prove it, first take a smooth test $\phi$. Ordinary pathwise
+integration by parts for the smooth $B_n$ gives
+\[
+ J_n^I\phi=\phi(b)\sin B_n(b)-\phi(a)\sin B_n(a)
+             -\int_a^b\phi'(r)\sin B_n(r)\,dr.
+\]
+Canonical scenery convolution converges uniformly on compact spatial
+sets on the continuous-path event. The original Gaussian
+mollifier fields represent those convolutions on one event for all
+$n,r$: fixed rational-coordinate identities and continuity give
+this common event, without an uncountable null intersection.
+The displayed expression converges almost surely to the same formula
+with $B$ in place of $B_n$, and is bounded by the deterministic
+constant $|\phi(a)|+|\phi(b)|+\int_a^b|\phi'|$. Dominated convergence
+therefore gives convergence in source $L^2$, including both endpoint
+terms. Smooth restrictions are dense in $L^2(I)$. The common bound
+\eqref{eq:sine-spatial-bound} and a three-term approximation show
+$J_n^I\phi$ is Cauchy for every rough $\phi\in L^2(I)$.
+Its limit $J^I$ is linear and bounded by $\sqrt{1+4\ell}$.
+This is pointwise strong operator convergence, not operator-norm
+convergence or a pointwise white-noise evaluation.
+
+\subsection{The summable occupation trace supplies full-vector convergence}
+For the actual linear occupation kernels of
+Theorem~\ref{thm:occupationstrong}, an orthonormal basis $(e_i)$
+of the original clock coefficient space satisfies
+\begin{equation}\label{eq:occupation-trace}
+ \sum_i\|K_{e_i,T}\|_{L^2(W;L^2_x)}^2
+ =\sum_i\|\langle D_WA_T,e_i\rangle\|_{L^2(P)}^2
+ =\|D_WA_T\|_2^2<\infty.
+\end{equation}
+The first equality uses the original lifted scenery isometry; the
+second is Parseval followed by Tonelli. Extra unused source directions
+have zero contraction and cause no change.
+
+Choose $0\leq\chi\leq1$ continuous with compact support inside $I$,
+and insert $\chi(|W_t|)$ in \eqref{eq:sine-native-clock}, obtaining
+$V_n^\chi(T)$. For every fixed clock direction $h$, the actual
+occupation identity gives
+\begin{equation}\label{eq:nonlinear-occupation}
+ \langle V_n^\chi(T),h\rangle
+   =J_n^I(\chi K_{h,T})
+ \quad\hbox{in }L^2(P_W;L^2(P_B)).
+\end{equation}
+For precision, the right side applies the deterministic bounded
+operator to each clock-section input. To verify the identity, the
+$L^2(P_B)$-valued function $r\mapsto\chi(r)Q_n(r)$ is continuous
+and compactly supported. Test its spatial and clock-time integrals
+against any source Hilbert vector and apply the scalar occupation
+identity already proved. A countable dense set of such tests, plus
+Bochner integrability and separability, yields equality of the actual
+source-Hilbert vectors for almost every clock sample. Boundedness
+of the compactly supported column then gives their clock $L^2$
+membership and product Fubini. This proves
+\eqref{eq:nonlinear-occupation} on the original product law.
+
+The strong convergence of $J_n^I$ lifts through $L^2(P_W)$.
+For a fixed input $k(W)$, pointwise source convergence holds for
+almost every $W$, while the squared difference is bounded by
+$4(1+4\ell)\|k(W)\|^2$. Dominated convergence proves the lifted
+strong limit. In particular every contraction in
+\eqref{eq:nonlinear-occupation} is Cauchy, and
+\[
+ \|\langle V_n^\chi(T),e_i\rangle\|_2^2
+ \leq(1+4\ell)\|K_{e_i,T}\|_{L^2(W;L^2_x)}^2.
+\]
+The bound is summable in $i$, uniformly in $n$, by
+\eqref{eq:occupation-trace}. Parseval applied to
+$V_n^\chi-V_m^\chi$ now proves full-vector Cauchy convergence:
+each fixed coefficient difference tends to zero, its squared norm
+is bounded by four times this summable majorant, and a finite head
+plus summably small tail proves the sum tends to zero. This is the
+extra step that a collection of directional limits alone would lack.
+
+\subsection{Uniform spatial tails remove the cutoff}
+The cutoff error is uniform in the smoothing index. If
+$\chi=1$ on $[-R,R]$, $R>0$, then
+\begin{equation}\label{eq:nonlinear-cutoff-tail}
+ \|V_n(T)-V_n^\chi(T)\|_2^2\leq\frac{T}{R^2}C_T.
+\end{equation}
+We prove the dependence between the earlier clock and its tail is
+retained. Conditional on $W_s=x$, $s<t$, the folded later clock has
+density bounded by $2p_1(t-s)^{-1/2}$. Since the overlap row mass is
+one, any measurable $0\leq w\leq1$ gives
+\[
+ \E[w(W_s)O_{nm}(|W_s|,|W_t|)]
+ \leq2p_1(t-s)^{-1/2}\E[w(W_s)].
+\]
+This integrates the proved independent future Brownian increment,
+not an independent tail event. For $w(x)=1_{|x|>R}$, Chebyshev and
+$\E W_s^2=s$ give $\E w(W_s)\leq s/R^2$. The nonlinear $+4$
+term contributes at most $4s/R^2$ as well.
+
+Expand the squared norm of the cutoff-error time integral.
+The coefficient inner product is $\langle q_s,q_t\rangle=\min(s,t)$;
+the signs have absolute value at most one. For $s<t$, the two
+nonnegative complementary masks have product at most
+$1_{|W_s|>R}$. Combining the preceding weighted bound with
+\eqref{eq:sine-covariance}, and using $s\min(s,t)\leq T^2$, bounds
+the absolute time covariance by
+\[
+ \frac{T^2}{R^2}\bigl(2p_1|t-s|^{-1/2}+4\bigr).
+\]
+The case $t<s$ follows by symmetry. The diagonal has two-dimensional
+Lebesgue measure zero, and
+$\int_0^T\int_0^T|t-s|^{-1/2}\,ds\,dt\leq4T\sqrt T$.
+Integration proves \eqref{eq:nonlinear-cutoff-tail}. With both masks
+replaced by one the same computation, using $\min(s,t)\leq T$,
+gives $\|V_n(T)\|_2^2\leq C_T$.
+Choose compact cutoffs with radii tending to infinity. For any
+prescribed error, first make their uniform tail small; at that fixed
+cutoff use the full-vector Cauchy result. The triangle inequality
+therefore makes $V_n(T)$ Cauchy without cutoff. Completeness gives
+a strong limit $V(T)$ and \eqref{eq:sine-energy} for that limit.
+
+\subsection{Identification in the original graph and the adjoint identity}
+At each width the original clock Gaussian chain rule gives
+$D_W\sin(B_n(|W_t|))$
+equal to the integrand of \eqref{eq:sine-native-clock}.
+The kink at $W_t=0$ causes no extra first weak derivative:
+$|\cdot|$ has almost-everywhere derivative $\operatorname{sgn}$;
+smooth approximations give the closed-graph identity. More explicitly, condition on clock directions orthogonal to $q_t$ and use the scalar coordinate $W_t/\sqrt t$ for $t>0$. The mollified value has source second moment bounded by $(\sqrt{|r|}+\sqrt{\epsilon_n})^2$, and its spatial derivative has source second moment $\|\rho_n\|_2^2$, uniformly in $r$. These bounds are integrable against the scalar Gaussian clock density. Ordinary weak differentiation on bounded scalar intervals, followed by cutoff removal with these integrable bounds, proves the original Gaussian $W^{1,2}$ graph formula. Multiplying by the bounded cosine preserves the derivative bound.
+The graph, a closed linear subspace of value times field, is closed
+under Bochner integration of graph pairs. This follows, for example,
+by applying its bounded quotient map to the integral.
+Consequently
+\[
+ D_W\int_0^T\sin(B_n(|W_t|))dt=V_n(T).
+\]
+The value error is at most $T\sqrt{\epsilon_n}$ by the sine
+Lipschitz bound and the original mollifier estimate. Its value tends
+to $U_T$ and its field tends to $V(T)$ strongly. Closedness proves
+$U_T\in D(D_W)$ and $V(T)=D_WU_T$. Combined with
+\eqref{eq:sine-source-formula} and observed measurability, this gives
+$U_T\in D(\D)$ and both strong limits of the theorem. No weak
+convergence is promoted without the preceding summable-trace and
+tail proof.
+
+The two channels in the approximating pair need not share one
+finite-stage graph input: the source channel is an unmollified
+finite-time quadrature, and the clock channel is a spatially
+mollified time integral. Their full-field limit is the actual joint
+gradient. The separate ramp-weighted cosine Simpson sums for $U_T$
+have their established value and adjoint-graph-dual limits; no
+strong native joint derivatives of those particular sums are
+inferred here. Finally the original adjoint identity gives
+$\langle\D U_T,v\rangle=\E[U_T\D^*v]$; its product is integrable
+by $L^2$ Cauchy--Schwarz. Subtracting and applying field
+Cauchy--Schwarz proves \eqref{eq:sine-uniform-test}, completing
+the proof. This also permits tests depending on $n$ with uniformly
+bounded field norms, even if their divergence norms grow.
+The horizon is fixed throughout. This nonlinear result supplies
+neither a positive-time point clock gradient nor an observed
+physical-time It\^o or prescribed-driver representation theorem.
+
 \section{Formal scope and literature}
 \begingroup\raggedright
 The frozen authority is commit
@@ -681,7 +974,7 @@ bounds, finite-average chain tests, raw-past density, closed restrictions,
 maximal adjoints and time-limit declarations. Its central endpoint is
 \code{IBMPastAdjointTimeCalculus}. The full joint operator is
 \code{IBMJointIntrinsicDerivative}; its field channels are scenery and
-clock in that order. All scalar pairings above are on the actual joint
+clock in that order. The additional nonlinear endpoints are \code{IBMSineAverageStrongClock} and \code{IBMSineAverageStrongJoint}; their summable coefficient trace and cutoff argument are reconstructed in full above. All scalar pairings above are on the actual joint
 law, with the Fubini factor order transported isometrically.
 
 The argument retains the original finite-energy domains. The weaker
@@ -702,7 +995,7 @@ and relevant introductions were checked. Searches for average-domain
 and observed-past analogues were preliminary, not an exhaustive novelty
 audit. No independence, priority, or absence-of-precedent claim is made.
 The native-domain regularization, fixed-past maximal-adjoint statement
-and sharp separation of convergence topologies are the paper's precise
+and strong nonlinear approximation in Theorem~\ref{thm:sine-strong} are the paper's precise
 verified content; full physical-time intrinsic calculus remains open.
 \par\endgroup
 
