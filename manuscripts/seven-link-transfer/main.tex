@@ -752,6 +752,78 @@ simply be transplanted. In particular, the small independent $t$
 interval in Theorem~\ref{thm:main} gives no statement along a
 homogeneous relation between spatial and temporal couplings.
 
+\subsection*{An exact bound for the bare exchange repair}
+One corrected two-weight trial can be assessed completely, without
+postulating a ground eigenfunction. Put $\delta=y-x$ and
+\[
+ f_t=\widetilde h_t^{-1}\delta
+     =e^{-t(x+y)/2}(y-x),\qquad
+ D_t=\int e^{-t(x+y)}(y-x)^2\,dH.
+\]
+These are genuine bounded measurable functions on the finite compact
+configuration space: $|\delta|\leq2$ and $|f_t|\leq2e^{|t|}$.
+The exact all-tilt comparison is
+\begin{equation}\label{eq:exchangetrial}
+ \frac{\langle f_t,\widetilde S_{\beta,t}f_t\rangle_H}
+      {\|f_t\|_H^2}
+ =\frac{c_\beta^4}{2D_t}\leq c_\beta^4,
+ \qquad D_t\geq\tfrac12.
+\end{equation}
+Here $c_\beta$ is the same one-link coefficient as earlier in this
+paper; no homogeneous spectral gap is identified by this quotient.
+
+To prove the bound, first note that the joint Haar law of $(x,y)$
+is that of two independent SU(2) half-traces. In the path coordinates
+already used above these are $x=r(LU)$ and $y=r(U^{-1}R)$, with
+$L,R,U$ independent Haar variables. For each fixed $U$, translation
+of $L$ and $R$ preserves their separate Haar laws. Fubini therefore
+reduces every bounded measurable function of $(x,y)$ to the product
+of two independent half-trace laws. In particular
+\[
+ \int\delta^2\,dH=\tfrac14+\tfrac14-2\cdot0=\tfrac12.
+\]
+The joint law is invariant under simultaneous sign reversal and
+under exchange of $x,y$. Sign reversal preserves $\delta^2$, so
+\[
+ D_t=D_{-t}
+ =\int\cosh(t(x+y))\delta^2\,dH\geq\int\delta^2\,dH=\tfrac12.
+\]
+Every integral here is finite, with integrand bounded by $4e^{2|t|}$.
+The kinetic identities for $x$ and $y$ give
+$K_\beta\delta=c_\beta^4\delta$. Multiplication by the two
+weights cancels exactly in the numerator:
+\[
+ \langle f_t,\widetilde S_{\beta,t}f_t\rangle_H
+ =\langle\delta,K_\beta\delta\rangle_H
+ =\tfrac12c_\beta^4,
+ \qquad \|f_t\|_H^2=D_t.
+\]
+This proves \eqref{eq:exchangetrial}. If a later normalization divides
+this quotient by a number $\lambda\geq1$, the result is still at most
+$c_\beta^4$, since the quotient is nonnegative. The inequality
+$\lambda\geq1$ is an explicit premise here; this argument does not
+construct such a normalizing eigenvalue or a ground state.
+
+There is also a genuine centering check at the reset coupling.
+Exchange symmetry makes $\delta$ centered for the actual law
+$d\widetilde\pi_t\propto e^{t(x+y)}dH$. The inverse-ground
+observable associated with the trial is
+$f_t/\widetilde h_t=e^{-t(x+y)}\delta$; its integral under that
+law is the Haar integral of $\delta$ divided by the partition
+function, hence is zero as well. This verifies reset centering,
+without asserting centering under an unconstructed nonzero-coupling
+ground law. Thus the bare exchange repair is legitimate at reset
+but cannot increase the kinetic factor at any tilt. Higher
+corrections to the trial and other variational subspaces are not
+excluded.
+
+\par\noindent
+The source \texttt{SU2HomogeneousExchangeTrial} was read in full.
+Its joint-Haar reduction, all-tilt denominator bound, exact numerator,
+quotient bound and both reset-centering statements are the precise
+formal correspondences. This is a finite-model obstruction to one
+specified trial, with no claim of a new general variational principle.
+
 \section{A separate homogeneous finite $\mathbf Z_2$ comparison}
 The two-weight $\SU$ question is not settled by changing the group.
 Nevertheless the frozen library contains a useful independent test of
