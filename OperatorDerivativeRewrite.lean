@@ -2900,3 +2900,5 @@ import Foundation.CubeMixedForm
 import Foundation.SU2RootAdjoint
 import Foundation.CubeRootSchur
 import Foundation.CubeSchurIntegral
+import Foundation.CubeBoundaryKernelL2
+import Foundation.CubeBoundaryHaarL2
