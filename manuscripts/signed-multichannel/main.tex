@@ -818,6 +818,119 @@ This estimate is independent of degree and mesh, but does not by
 itself prove that the sequence converges. That requires the next
 two quantitative arguments.
 
+
+\subsection*{Fourier innovations have their own exact product correction}
+There is a complementary bounded-test calculation on the actual finite
+signed laws. We retain the angular convention of Section 1: put
+$\lambda(\xi)=\xi^p$, $b_h(\xi)=e^{-h\lambda(\xi)}$ and
+$e_\xi(z)=e^{-i\xi z}$. Thus
+$\int e_\xi(z)k_h(z)\,dz=b_h(\xi)$. The source uses unit
+frequency $\zeta$, with $\xi=2\pi\zeta$ and
+$\lambda=(2\pi\zeta)^p$; all displayed rates below are in
+angular frequency.
+For $h>0$ define
+\[
+ J_h(\xi,z)=e_\xi(z)-b_h(\xi),\qquad
+ C_h(\xi,\eta)=b_h(\xi+\eta)-b_h(\xi)b_h(\eta).
+\]
+Then $|J_h|\leq2$ and its signed mean is zero. Direct expansion
+and the Fourier identity give
+\begin{equation}\label{eq:fouriercov}
+ \int J_h(\xi,z)J_h(\eta,z)k_h(z)\,dz=C_h(\xi,\eta).
+\end{equation}
+This is a bilinear identity without complex conjugation, not a
+positive covariance assertion. Every integral is absolutely
+convergent against $|k_h|$ because the phases are bounded and
+$k_h\in L^1$. If $G$ is any bounded measurable function of a
+finite past with integrable signed density $q$, then
+\[
+ \int G(y)J_h(\xi,z)q(y)k_h(z)\,dy\,dz=0.
+\]
+Fubini is justified by
+$2\|G\|_\infty\|q\|_1\|k_h\|_1<\infty$.
+The same argument applies to the centered product
+$J_h(\xi)J_h(\eta)-C_h(\xi,\eta)$.
+\par\noindent\code{HigherHeatFourierInnovations.predictable_gain_zero}.
+\par\noindent\code{HigherHeatFourierCovariance.kernel_product}.
+\par\noindent\code{HigherHeatFourierCovariance.centered_product_zero}.
+
+For a fixed terminal horizon $T$, let
+\[
+ Z_t^\xi(x)=b_{T-t}(\xi)e_\xi(x),\qquad 0\leq t\leq T.
+\]
+For $s<t\leq T$, write $h=t-s$ and
+$a_t(x)=b_{T-t}(\xi)b_{T-t}(\eta)e_{\xi+\eta}(x)$.
+The exact one-step product identity is
+\begin{align}\label{eq:fourierproduct}
+ Z_t^\xi(x+z)Z_t^\eta(x+z)-Z_s^\xi(x)Z_s^\eta(x)
+ &=a_t(x)J_h(\xi+\eta,z)
+                 +a_t(x)C_h(\xi,\eta).
+\end{align}
+To prove it, use $b_{T-s}=b_{T-t}b_h$ and
+$e_\xi e_\eta=e_{\xi+\eta}$. After factoring $a_t(x)$,
+the left side is
+$e_{\xi+\eta}(z)-b_h(\xi)b_h(\eta)$, exactly the sum on
+the right. Equivalently the usual algebraic expansion
+$\Delta(Z^\xi Z^\eta)=Z_s^\xi\Delta Z^\eta+
+Z_s^\eta\Delta Z^\xi+\Delta Z^\xi\Delta Z^\eta$
+contains the centered product from \eqref{eq:fouriercov};
+its two linear terms and that centered product combine into
+$a_tJ_h(\xi+\eta)$. Since $|a_t(x)|\leq1$, this first term
+has zero signed gain against every bounded measurable finite past.
+The second is the actual signed spectral compensator.
+\par\noindent\code{HigherHeatFourierProduct.product_step}.
+\par\noindent\code{HigherHeatFourierProduct.martingale_step_factor}.
+\par\noindent\code{HigherHeatFourierProduct.actual_past_martingale_step_zero}.
+
+Summing \eqref{eq:fourierproduct} over a finite increasing grid
+and positions $x_j$ gives
+\begin{align*}
+ Z_{t_n}^\xi(x_n)Z_{t_n}^\eta(x_n)
+  -Z_{t_0}^\xi(x_0)Z_{t_0}^\eta(x_0)
+ ={}&\sum_{j<n}a_{t_{j+1}}(x_j)
+           J_{t_{j+1}-t_j}(\xi+\eta,x_{j+1}-x_j)\\
+ &+\sum_{j<n}a_{t_{j+1}}(x_j)
+           C_{t_{j+1}-t_j}(\xi,\eta).
+\end{align*}
+This is a finite algebraic telescope for arbitrary positions;
+inserting the actual signed increment laws justifies its signed
+mean interpretation. The single-frequency gains likewise telescope
+to $e_\xi(x_n)-b_T(\xi)$ when $t_0=x_0=0$ and $t_n=T$.
+Their partition independence is a pointwise endpoint identity; it
+does not construct a positive law on continuous paths.
+\par\noindent\code{HigherHeatFourierProduct.finite_product_rule}.
+\par\noindent\code{HigherHeatFourierCalculus.terminal_representation}.
+\par\noindent\code{HigherHeatFourierCalculus.partition_independence}.
+
+Finally ordinary differentiation of the two exponentials gives
+\begin{equation}\label{eq:fourierbracketrate}
+ \frac{C_h(\xi,\eta)}h\longrightarrow
+ \gamma_p(\xi,\eta)
+ =\xi^p+\eta^p-(\xi+\eta)^p\qquad(h\downarrow0).
+\end{equation}
+For $p=2$ this is $-2\xi\eta$, consistent with Brownian
+variance $2h$ and the derivative of $e^{-i\xi x}$. For $p=4$ it is
+\[
+ -4\xi^3\eta-6\xi^2\eta^2-4\xi\eta^3.
+\]
+No constant $c$ makes this $c\xi\eta$ at every pair of
+frequencies: $(1,1)$ requires $c=-14$, whereas $(2,2)$
+requires $4c=-224$. Thus a Brownian quadratic frequency rule
+cannot replace the actual fourth-order compensator. The negative
+sign in this bilinear formula alone is not an argument against
+positivity; the positive-path obstruction was proved separately.
+\par\noindent\code{HigherHeatFourierBracket.covariance_slope_tendsto}.
+\par\noindent\code{HigherHeatFourierBracket.fourth_order_not_quadratic}.
+
+These are bounded Fourier tests on finite signed configurations,
+kept distinct from the factorial polynomial completion. No passage
+of either product sum to a continuous-time stochastic integral,
+positive quadratic variation, martingale probability structure or
+new completed observable domain follows from this finite identity.
+The calculation supplies an exact signed product correction and
+a normalization check, with no claim of a new general stochastic
+product principle or priority over the earlier signed calculus.
+
 \section{Signed power estimates in the test dual}\label{sec:powers}
 For strict-past $H$ and integer $r\geq0$, signed integration by
 parts gives the exact dual identity
