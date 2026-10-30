@@ -3781,6 +3781,438 @@
       "source_sha256": "d3ba74af7f0429e90ff0dea70339d55e529276e18c1e85eb77741126181a4514",
       "declaration_header": "theorem checker_energy : fineEnergy lift = 2048",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCheckerboardCompliance.lean#L82"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.window_hasDerivAt",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 23,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem window_hasDerivAt (f : \u211d \u2192 \u211d) (hf : Continuous f) (he : \u2200 y, f (-y)=f y) (r : \u211d) :\n    HasDerivAt (window f) (2*f r) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L23"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.normalizer_pos",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 39,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem normalizer_pos (c r : \u211d) (hr : 0 < r) : 0 < normalizer c r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L39"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.gap_integral",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 45,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem gap_integral (c r : \u211d) :\n    gap c r=\u222b y in (-r)..r, (r^2-y^2)*weight c y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L45"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.gap_pos",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 55,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem gap_pos (c r : \u211d) (hr : 0 < r) : 0 < gap c r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L55"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.squareMean_hasDerivAt",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 67,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem squareMean_hasDerivAt (c r : \u211d) (hr : 0 < r) :\n    HasDerivAt (squareMean c) (2*weight c r*gap c r/(normalizer c r)^2) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L67"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.corridor_slice",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 89,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem corridor_slice (x y : \u211d) (hx : x^2 < 1) :\n    y \u2208 Icc (-radius x) (radius x) \u2194 x^2+y^2 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L89"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.corridorMean_hasDerivAt",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 104,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem corridorMean_hasDerivAt (c x : \u211d) (hx : x^2 < 1) :\n    HasDerivAt (corridorMean c) (boundarySlope c x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L104"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.fullExpectation_eq",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 145,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem fullExpectation_eq (a c x : \u211d) (F : \u211d \u2192 \u211d) :\n    fullExpectation a c x F=expectation c (radius x) F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L145"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.full_normalizer_pos",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 154,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem full_normalizer_pos (a c x : \u211d) (hx : x^2 < 1) :\n    0 < window (fun y => Real.exp (-potential a c x y)) (radius x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L154"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.fullExpectation_ball",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 161,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem fullExpectation_ball (a c x : \u211d) (F : \u211d \u2192 \u211d) (hx : x^2 < 1) :\n    fullExpectation a c x F =\n      (\u222b y in {y : \u211d | x^2+y^2 \u2264 1}, F y*Real.exp (-potential a c x y))/\n        (\u222b y in {y : \u211d | x^2+y^2 \u2264 1}, Real.exp (-potential a c x y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L161"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.fullSquareMean_eq",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 187,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem fullSquareMean_eq (a c x : \u211d) : fullSquareMean a c x=corridorMean c x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L187"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.hessian_eq",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 218,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem hessian_eq (a c x y : \u211d) : hessian a c x y=!![2*a,0;0,2*c]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L218"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.scoreCovariance_zero",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 245,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem scoreCovariance_zero (a c x : \u211d) (hx : x^2 < 1) : scoreCovariance a c x=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L245"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.covariance_identity_fails",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 251,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem covariance_identity_fails (a c : \u211d) :\n    deriv (fullSquareMean a c) (1/2) \u2260 -scoreCovariance a c (1/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L251"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveMovingBoundary.uniformly_convex_counterexample",
+      "file": "Foundation/CoerciveMovingBoundary.lean",
+      "line": 257,
+      "source_sha256": "a4b5fb0be885d9c21328ed6978ec01d93c21436c3209eed9d736d93719a40851",
+      "declaration_header": "theorem uniformly_convex_counterexample (\u03b2 : \u211d) (h\u03b2 : 0 < \u03b2) :\n    0 < 2*\u03b2 \u2227 (\u2200 x y, hessian \u03b2 \u03b2 x y=(2*\u03b2) \u2022 (1 : Matrix (Fin 2) (Fin 2) \u211d)) \u2227\n      deriv (fullSquareMean \u03b2 \u03b2) (1/2) \u2260 -scoreCovariance \u03b2 \u03b2 (1/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveMovingBoundary.lean#L257"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.gap_le",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 15,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem gap_le (c r : \u211d) (hr : 0 < r) : gap c r \u2264 r^2*normalizer c r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L15"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.central_weight_lower",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 19,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem central_weight_lower (c r y : \u211d) (hc : 0 \u2264 c)\n    (hy : y \u2208 Icc (-r/2) (r/2)) : Real.exp (-c*r^2/4) \u2264 weight c y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L19"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.normalizer_lower",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 28,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem normalizer_lower (c r : \u211d) (hc : 0 \u2264 c) (hr : 0 < r) :\n    r*Real.exp (-c*r^2/4) \u2264 normalizer c r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L28"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.endpoint_ratio_bound",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 43,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem endpoint_ratio_bound (c r : \u211d) (hc : 0 \u2264 c) (hr : 0 < r) :\n    r*weight c r/normalizer c r \u2264 Real.exp (-3*c*r^2/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L43"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.boundarySlope_abs",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 54,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem boundarySlope_abs (c x : \u211d) (hx : x^2 < 1) :\n    |boundarySlope c x|=2*|x| *weight c (radius x)*gap c (radius x)/\n      (radius x*(normalizer c (radius x))^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L54"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.boundarySlope_crude",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 66,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem boundarySlope_crude (c x : \u211d) (hx : x^2 < 1) :\n    |boundarySlope c x| \u2264 2*|x| *radius x*weight c (radius x)/normalizer c (radius x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L66"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.boundarySlope_exponential",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 80,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem boundarySlope_exponential (c x : \u211d) (hc : 0 \u2264 c) (hx : x^2 < 1) :\n    |boundarySlope c x| \u2264 2*|x| *Real.exp (-3*c*(radius x)^2/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L80"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.strict_subcorridor_bound",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 88,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem strict_subcorridor_bound (c x \u03c1 : \u211d) (hc : 0 \u2264 c) (h\u03c1 : 0 < \u03c1)\n    (hx : x^2 < 1) (hmargin : \u03c1 \u2264 radius x) :\n    |boundarySlope c x| \u2264 2*Real.exp (-3*c*\u03c1^2/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L88"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.full_derivative_exponential",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 104,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem full_derivative_exponential (a c x : \u211d) (hc : 0 \u2264 c) (hx : x^2 < 1) :\n    |deriv (fullSquareMean a c) x| \u2264 2*|x| *Real.exp (-3*c*(radius x)^2/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L104"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryFluxBound.full_derivative_subcorridor",
+      "file": "Foundation/GaussianBoundaryFluxBound.lean",
+      "line": 110,
+      "source_sha256": "e7e797f769bd9ce60ed231519ca398c94bf9838868b79b4713b30fa41e7edbff",
+      "declaration_header": "theorem full_derivative_subcorridor (a c x \u03c1 : \u211d) (hc : 0 \u2264 c) (h\u03c1 : 0 < \u03c1)\n    (hx : x^2 < 1) (hmargin : \u03c1 \u2264 radius x) :\n    |deriv (fullSquareMean a c) x| \u2264 2*Real.exp (-3*c*\u03c1^2/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryFluxBound.lean#L110"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.normalizer_upper",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 10,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem normalizer_upper (c r : \u211d) (hc : 0 \u2264 c) (hr : 0 < r) : normalizer c r \u2264 2*r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L10"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.gap_central_lower",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 22,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem gap_central_lower (c r : \u211d) (hc : 0 \u2264 c) (hr : 0 < r) :\n    3*r^3*Real.exp (-c*r^2/4)/4 \u2264 gap c r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L22"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.boundarySlope_lower",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 48,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem boundarySlope_lower (c x : \u211d) (hc : 0 \u2264 c) (hx : x^2 < 1) :\n    3*|x| /8*Real.exp (-5*c*(radius x)^2/4) \u2264 |boundarySlope c x|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L48"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.boundaryPoint_properties",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 79,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem boundaryPoint_properties (c : \u211d) (hc : 1 \u2264 c) :\n    1/2 \u2264 boundaryPoint c \u2227 (boundaryPoint c)^2 < 1 \u2227 c*(radius (boundaryPoint c))^2=1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L79"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.fluxFloor_pos",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 97,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem fluxFloor_pos : 0 < fluxFloor",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L97"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.persistent_boundarySlope",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 99,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem persistent_boundarySlope (c : \u211d) (hc : 1 \u2264 c) :\n    fluxFloor \u2264 |boundarySlope c (boundaryPoint c)|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L99"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.persistent_full_derivative",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 112,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem persistent_full_derivative (a c : \u211d) (hc : 1 \u2264 c) :\n    fluxFloor \u2264 |deriv (fullSquareMean a c) (boundaryPoint c)|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L112"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryLayer.no_whole_corridor_decay",
+      "file": "Foundation/GaussianBoundaryLayer.lean",
+      "line": 120,
+      "source_sha256": "8aa9dd34a839076fa38f28200d0cfe28890abe0f9b440dc987cc86d73c8f9dd8",
+      "declaration_header": "theorem no_whole_corridor_decay :\n    \u00ac \u2203 C : \u211d, \u2200 c : \u211d, C \u2264 c \u2192 \u2200 x : \u211d, x^2 < 1 \u2192\n      |deriv (fullSquareMean c c) x| < fluxFloor",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryLayer.lean#L120"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.derivative_square_bound",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 18,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem derivative_square_bound (a c x : \u211d) (hc : 0 \u2264 c) (hx : x^2 < 1) :\n    (deriv (fullSquareMean a c) x)^2 \u2264 envelope c x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L18"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.envelope_integrable",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 50,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem envelope_integrable (c : \u211d) : IntegrableOn (envelope c) (Ioo (-1:\u211d) 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L50"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.derivative_square_integrable",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 53,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem derivative_square_integrable (a c : \u211d) (hc : 0 \u2264 c) :\n    IntegrableOn (fun x => (deriv (fullSquareMean a c) x)^2) (Ioo (-1:\u211d) 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L53"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.derivative_memLp",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 60,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem derivative_memLp (a c : \u211d) (hc : 0 \u2264 c) :\n    MemLp (deriv (fullSquareMean a c)) 2 (volume.restrict (Ioo (-1:\u211d) 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L60"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.envelope_half_integral",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 64,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem envelope_half_integral (c : \u211d) (hc : 0 < c) :\n    (\u222b x in (0:\u211d)..1, envelope c x)=8*(1-Real.exp (-3*c/2))/(3*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L64"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.envelope_integral",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 85,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem envelope_integral (c : \u211d) (hc : 0 < c) :\n    (\u222b x in Ioo (-1:\u211d) 1, envelope c x)=16*(1-Real.exp (-3*c/2))/(3*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L85"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.errorEnergy_bound",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 99,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem errorEnergy_bound (a c : \u211d) (hc : 0 < c) : errorEnergy a c \u2264 16/(3*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L99"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Decay.uniform_errorEnergy_decay",
+      "file": "Foundation/GaussianBoundaryL2Decay.lean",
+      "line": 117,
+      "source_sha256": "9928da1a099a202fe818ec8463780d3984249cef65b18846ea0daf794a0e3d6a",
+      "declaration_header": "theorem uniform_errorEnergy_decay (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 c : \u211d, C \u2264 c \u2192 \u2200 a : \u211d, errorEnergy a c \u2264 \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Decay.lean#L117"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.strip_subset",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 12,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem strip_subset (c : \u211d) (hc : 1 \u2264 c) : strip c \u2286 Ioo (-1:\u211d) 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L12"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.strip_flux_lower",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 17,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem strip_flux_lower (c x : \u211d) (hc : 1 \u2264 c) (hx : x \u2208 strip c) :\n    fluxFloor \u2264 |boundarySlope c x|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L17"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.strip_derivative_lower",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 39,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem strip_derivative_lower (a c x : \u211d) (hc : 1 \u2264 c) (hx : x \u2208 strip c) :\n    fluxFloor \u2264 |deriv (fullSquareMean a c) x|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L39"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.strip_width",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 46,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem strip_width (c : \u211d) (hc : 1 \u2264 c) : 1/(4*c) \u2264 1-boundaryPoint c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L46"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.errorEnergy_lower",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 61,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem errorEnergy_lower (a c : \u211d) (hc : 1 \u2264 c) :\n    fluxFloor^2/(4*c) \u2264 errorEnergy a c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L61"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.errorEnergy_two_sided",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 88,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem errorEnergy_two_sided (a c : \u211d) (hc : 1 \u2264 c) :\n    fluxFloor^2/(4*c) \u2264 errorEnergy a c \u2227 errorEnergy a c \u2264 16/(3*c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L88"
+    },
+    {
+      "paper": "Section 18 actual disk-fiber Gaussian cutoff flux, persistent endpoint supremum and matching flat integrated energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianBoundaryL2Lower.scaled_errorEnergy_bounds",
+      "file": "Foundation/GaussianBoundaryL2Lower.lean",
+      "line": 92,
+      "source_sha256": "547e73283924b596fed98e9c963222e80081dd1787dbedb929695a6cc24a1beb",
+      "declaration_header": "theorem scaled_errorEnergy_bounds (a c : \u211d) (hc : 1 \u2264 c) :\n    fluxFloor^2/4 \u2264 c*errorEnergy a c \u2227 c*errorEnergy a c \u2264 16/3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianBoundaryL2Lower.lean#L92"
     }
   ],
   "human_reorganization": [
@@ -3806,7 +4238,14 @@
     "At identity boundary the actual 72-face action has global coordinate defect bound d(y_e)<=3S and unique pinned zero. A positive strict-sublevel Haar mass supplies the needed lower partition bound, so the normalized union tail is 31 exp(-beta epsilon/6)/m_epsilon. No uniform control of m_epsilon across boundary, size or scale is supplied.",
     "Weak convergence of the fixed compact 31-link pinned Gibbs measures to the identity point mass is a labelled human deduction from the full-configuration tail bound, proved with continuous tests. It is not the different one-link conditional ensemble or a continuum limit.",
     "The full logarithmic parametrization is C2 and its actual Hessian diagonal is one quarter of the sum of three copies of the positive pinned incidence Gram form. The proof expands all oriented face words and ribbons and uses cyclicity of trace. This is not a global Gaussian approximation or partition asymptotic.",
-    "Section 10 reconstructs the actual three-mask fine Gram and Green identities by a full curl/divergence stencil and four-site parity eigenvectors. Positive eigenvalues establish fine and coarse physical membership; orthogonal decomposition identifies the projected adjoint. The resulting compliance 17/1200 lies strictly below the attained physical checkerboard value 1/64, and the constrained energy is exactly 19200/17. This printed parity proof reorganizes the mapped integer certificates; no optimal global floor, nonlinear continuum estimate or mass gap follows."
+    "Section 10 reconstructs the actual three-mask fine Gram and Green identities by a full curl/divergence stencil and four-site parity eigenvectors. Positive eigenvalues establish fine and coarse physical membership; orthogonal decomposition identifies the projected adjoint. The resulting compliance 17/1200 lies strictly below the attained physical checkerboard value 1/64, and the constrained energy is exactly 19200/17. This printed parity proof reorganizes the mapped integer certificates; no optimal global floor, nonlinear continuum estimate or mass gap follows.",
+    "Section 18 proves the actual normalized Gaussian disk-fiber covariance-only failure with arbitrarily strong positive quadratic Hessian. Central-window estimates yield exponential interior-margin decay, a positive derivative floor on a strip of width at least 1/(4c), and matching flat-dx squared energy order 1/c. The L2 norm therefore has order c^(-1/2), while the whole-corridor supremum does not vanish. The boundary marginal of the joint truncated Gaussian is not substituted for flat dx. No exact asymptotic constant, Wilson-measure identification or new general differentiation principle is asserted."
   ],
-  "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim."
+  "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim.",
+  "literature": [
+    {
+      "url": "https://jbds.isdsa.org/public/journals/1/html/v1n1/p2/",
+      "review": "Primary Manjunath\u2013Wilhelm 2021 Sections 2\u20133 inspected for classical rectangularly truncated Gaussian moment methods. The actual disk-fiber flux and layer estimates are proved directly in Section 18; priority for their explicit form remains unresolved."
+    }
+  ]
 }

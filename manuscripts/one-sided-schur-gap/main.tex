@@ -1633,31 +1633,156 @@ the finite geometry and factors are reconstructed here without a
 priority claim. This does not identify the different conditional
 large-coupling ensemble above, or establish a physical spectral gap.
 
+\section{A Gaussian cutoff: persistent sup error and decaying flat energy}
+The preceding finite gauge integrals have fixed integration spaces.
+A different proposed simplification drops derivatives of a moving
+cutoff. The following two-dimensional calibration shows exactly
+why convexity does not justify that step. It is a Gaussian slice
+calculation, not an identification with the Wilson measure.
+
+For $|x|<1$, set $r=r(x)=\sqrt{1-x^2}$ and use the actual conditional
+probability density on the unit-disk fiber
+\[
+ \nu_x(dy)=\frac{\mathbf1_{[-r,r]}(y)e^{-ax^2-cy^2}\,dy}
+                  {\int_{-r}^r e^{-ax^2-cu^2}\,du}.
+\]
+The denominator is positive. Its common factor $e^{-ax^2}$ cancels,
+so the conditional second moment $m_c(x)=\int y^2\,d\nu_x$ is
+independent of $a$. Define
+\[
+ Z_c(r)=\int_{-r}^r e^{-cy^2}\,dy,\quad
+ N_c(r)=\int_{-r}^r y^2e^{-cy^2}\,dy,\quad
+ L_c(r)=r^2Z_c(r)-N_c(r).
+\]
+For $r>0$, $Z_c(r)>0$ and
+$L_c(r)=\int_{-r}^r(r^2-y^2)e^{-cy^2}dy>0$.
+These facts hold for every real $c$. The fundamental theorem of
+calculus at both endpoints gives $Z_c'(r)=2e^{-cr^2}$ and
+$N_c'(r)=2r^2e^{-cr^2}$. Quotient and chain differentiation,
+with $r'(x)=-x/r$, therefore yield the exact identity
+\begin{equation}\label{eq:gaussianflux}
+ m_c'(x)=-\frac{2xe^{-cr^2}L_c(r)}{rZ_c(r)^2}.
+\end{equation}
+All functions are continuously differentiable on $|x|<1$.
+In particular $m_c'(x)<0$ for $0<x<1$.
+
+For the potential $V(x,y)=ax^2+cy^2$, however,
+$\partial_xV=2ax$ is constant on each fiber. Consequently
+$\operatorname{Cov}_{\nu_x}(y^2,\partial_xV)=0$.
+The fixed-domain covariance formula alone would incorrectly
+predict a zero derivative. Taking $a=c=\beta>0$ gives Hessian
+$2\beta I$, with zero mixed derivative and arbitrary positive
+uniform convexity, while \eqref{eq:gaussianflux} is still nonzero.
+The missing term is the moving-endpoint flux. Even at $c=0$ the
+explicit answer is $m_0(x)=(1-x^2)/3$, which independently checks
+its derivative $-2x/3$ and the failure of the covariance-only rule.
+\lean{CoerciveMovingBoundary}{fullExpectation_ball; fullSquareMean_eq; corridorMean_hasDerivAt}
+\lean{CoerciveMovingBoundary}{scoreCovariance_zero; uniformly_convex_counterexample}
+
+\begin{proposition}\label{prop:gaussianlayer}
+For $c\geq0$ and $|x|<1$,
+\[
+ |m_c'(x)|\leq2|x|e^{-3c(1-x^2)/4}.
+\]
+If $\rho>0$ and $r(x)\geq\rho$, the upper bound is at most
+$2e^{-3c\rho^2/4}$. On the whole interval this decay is not uniform.
+For $c\geq1$, put $x_c=\sqrt{1-1/(2c)}$ and
+$\kappa_0=3e^{-5/8}/16>0$. Then
+\[
+ |m_c'(x)|\geq\kappa_0\quad(x_c<x<1),\qquad
+ \frac{\kappa_0^2}{4c}\leq
+ \mathcal E_c:=\int_{-1}^1|m_c'(x)|^2dx\leq\frac{16}{3c}.
+\]
+\end{proposition}
+\begin{proof}
+On the central half interval $[-r/2,r/2]$, the weight is at least
+$e^{-cr^2/4}$ when $c\geq0$. Thus
+\[
+ Z_c(r)\geq r e^{-cr^2/4},\qquad
+ 0<L_c(r)\leq r^2Z_c(r).
+\]
+Substituting both inequalities into \eqref{eq:gaussianflux} gives
+\[
+ |m_c'(x)|\leq 2|x|\frac{r e^{-cr^2}}{Z_c(r)}
+                  \leq2|x|e^{-3cr^2/4}.
+\]
+The margin bound follows from $|x|\leq1$ and $r^2\geq\rho^2$.
+This proves convergence uniformly on each strict interior
+subinterval, with its required radius margin explicit.
+
+For the lower bound, $Z_c(r)\leq2r$ since the weight is at most
+one. On $[-r/2,r/2]$, also $r^2-y^2\geq3r^2/4$, so
+\[
+ L_c(r)\geq\frac{3r^3}{4}e^{-cr^2/4}.
+\]
+Using this numerator lower bound and $Z_c(r)^2\leq4r^2$ in
+\eqref{eq:gaussianflux} proves
+\[
+ |m_c'(x)|\geq\frac{3|x|}{8}e^{-5cr^2/4}.
+\]
+For $c\geq1$, $x_c\geq1/2$. Every $x\in(x_c,1)$ satisfies
+$|x|\geq1/2$ and $cr(x)^2\leq1/2$. The last inequality gives
+$|m_c'(x)|\geq\kappa_0$ throughout that interval, and also at
+$x=x_c$. Thus the supremum cannot tend to zero. Moreover
+\[
+ 1-x_c=\frac{1}{2c(1+x_c)}\geq\frac1{4c}.
+\]
+Integrating the squared lower bound over this positive-width
+strip proves $\mathcal E_c\geq\kappa_0^2/(4c)$; a lower bound at
+one moving point alone would not prove this integral statement.
+
+For the upper bound, squaring the first estimate and using
+$x^2\leq|x|\leq1$ on this interval gives
+\[
+ |m_c'(x)|^2\leq4e^{-3c(1-|x|)/2}.
+\]
+The right side is continuous and integrable. For $c>0$ its
+integral over $(-1,1)$ is
+$16(1-e^{-3c/2})/(3c)\leq16/(3c)$, obtained by splitting at zero
+and integrating the elementary exponential. This also proves
+integrability of the squared derivative and the stated upper
+bound for $c\geq1$.
+\end{proof}
+\lean{GaussianBoundaryFluxBound}{normalizer_lower; boundarySlope_exponential; full_derivative_subcorridor}
+\lean{GaussianBoundaryLayer}{gap_central_lower; persistent_full_derivative; no_whole_corridor_decay}
+\lean{GaussianBoundaryL2Decay}{derivative_memLp; envelope_integral; errorEnergy_bound}
+\lean{GaussianBoundaryL2Lower}{strip_derivative_lower; strip_width; errorEnergy_two_sided}
+
+The matching orders here are $\mathcal E_c\asymp c^{-1}$ and
+$\|m_c'\|_{L^2(-1,1)}\asymp c^{-1/2}$, with the displayed positive
+constants. They are uniform in $a$, including the increasingly
+convex choice $a=c$. For each fixed $x$ strictly inside the
+interval the derivative decays exponentially, while the supremum
+retains the endpoint layer. This energy uses flat $dx$ on the
+boundary coordinate, not the boundary marginal of the joint
+truncated Gaussian. No change to that measure, asymptotic leading
+constant, or Wilson integral is inferred.
+
+Truncated Gaussian moments and moving-endpoint differentiation
+are classical. Manjunath--Wilhelm~\cite{truncnormal}, Sections 2--3,
+provide primary moment formulas for rectangular truncations;
+the disk-fiber calculation and all bounds needed here were proved
+directly above. That comparison does not establish priority for
+the explicit layer estimates. Their role is to separate the
+covariance-only rule, an interior-margin estimate, a whole-corridor
+supremum and flat integrated energy.
+
 \section{Provenance and remaining uniformity questions}
 The frozen source is commit
 \begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
-The theorem map records exact declarations, original source hashes and
-human reorganizations. The original full-build and axiom-audit evidence
-hashes were checked; publication work changes no mathematical source and
-runs no competing Lean research build.
+The map records exact declarations, source hashes and human deductions.
+Frozen full-build and axiom receipts were hash-checked; no mathematical
+source or research build changed. Four standard-library checkers pass
+80 exact groups: nine incidence/residual/quotient groups, 21 Haar groups,
+20 sparse Wilson groups and 30 periodic groups. They reconstruct actual
+geometry using integers and fractions, without floating eigenvalues.
+Analytic differentiation, Haar invariance, normalized-integral bounds,
+Gaussian flux/energy and closed-domain arguments use the printed proofs.
+Norms, measures and conditioning sets remain explicit. No varying scale,
+continuum construction, uniform gap or physical mass gap is supplied.
+The mechanisms are classical; exact-geometry priority remains unresolved.
 
-Four independent standard-library checkers retain 80 exact groups:
-nine certificate checks rebuild the geometry, all integer Gram/residual
-identities and the witness quotient; 21 Haar checks enumerate actual
-ribbons and rational quaternion actions; 20 sparse checks test all
-face words, second jets and Schur identities; and 30 periodic checks
-traverse the fine lattice and verify the two attained lift costs and
-feasible step. Their integers and fractions involve no floating
-arithmetic. The checker files and exact certificate data accompany the
-paper. Differentiation, Haar integrals, normalizer lower bounds and
-asymptotic claims rely on the printed proofs, not sampled integration.
-
-All results retain their stated ensembles, metrics and boundary conditions.
-Sublevel masses have no claimed uniform control over volume or boundary
-data. No varying lattice scale, continuum construction or physical
-spectral identification is supplied. The general mechanisms are classical;
-priority for the exact finite geometry and witnesses remains unresolved.
-
+\clearpage
 \begin{thebibliography}{9}\small
 \bibitem{creutz80} M. Creutz, \emph{Monte Carlo study of quantized
 $SU(2)$ gauge theory}, Physical Review D \textbf{21} (1980), 2308--2315.
@@ -1665,6 +1790,10 @@ $SU(2)$ gauge theory}, Physical Review D \textbf{21} (1980), 2308--2315.
 \bibitem{creutz78} M. Creutz, \emph{On invariant integration over $SU(N)$},
 Journal of Mathematical Physics \textbf{19} (1978), 2043--2046.
 \href{https://www.latticeguy.net/mypubs/pub028.pdf}{Primary author scan}.
+\bibitem{truncnormal} B. G. Manjunath and S. Wilhelm,
+\emph{Moments Calculation for the Doubly Truncated Multivariate Normal Density},
+Journal of Behavioral Data Science \textbf{1} (2021), 17--33.
+\url{https://jbds.isdsa.org/public/journals/1/html/v1n1/p2/}.
 \bibitem{gallier} J. Gallier, \emph{The Schur complement and symmetric positive
 semidefinite (and definite) matrices}, author notes, August 24, 2019.
 \href{https://www.cis.upenn.edu/~jean/schur-comp.pdf}{Primary author PDF}.
