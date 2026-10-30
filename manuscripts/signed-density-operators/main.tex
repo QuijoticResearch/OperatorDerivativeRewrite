@@ -39,6 +39,10 @@ closability or spectral principle is claimed. A separate Gaussian/Dirac
 mixture shows that full support does not replace the density hypothesis.
 A finite positive Gamma module separates single-product nondensity from
 full finite-span generation, with an exact normalized rank-one gap.
+Common-core higher derivative jets have an injective marginal value,
+whereas signed mean projections have exact norm equal to total variation
+and expand an explicit vector. The higher-heat Stein identity retains
+its actual odd derivative order and unique polynomial weight.
 \end{abstract}
 
 \section{The original spaces and conclusions}
@@ -717,6 +721,53 @@ above. The formal library uses Fourier phases $e^{2\pi i\xi x}$;
 rescaling angular frequency changes neither zero second moment
 nor sign and operator conclusions.
 
+
+\subsection*{The higher-order identity that survives}
+For the same kernel, put $p=2m$, $m\geq1$, $t>0$ and
+$\alpha=p(-1)^{m+1}t\ne0$. Fourier differentiation gives
+\begin{equation}\label{eq:heatsteinode}
+ xk_t(x)=-\alpha k_t^{(p-1)}(x).
+\end{equation}
+Here the angular convention is
+$\widehat f(\xi)=\int e^{-i\xi x}f(x)\,dx$. Indeed the Fourier
+transform of the left side is
+$i\partial_\xi e^{-t\xi^p}=-ipt\xi^{p-1}e^{-t\xi^p}$;
+that of the right side is
+$-\alpha(i\xi)^{p-1}e^{-t\xi^p}$, the same expression since
+$i^{2m-1}=(-1)^{m+1}i$. Fourier injectivity on Schwartz space
+proves \eqref{eq:heatsteinode}. Integrating by parts $p-1$
+times, an odd number, now gives for every complex Schwartz $g$
+\begin{equation}\label{eq:highstein}
+ \int g^{(p-1)}(x)k_t(x)\,dx
+ =\int g(x)\frac{x}{\alpha}k_t(x)\,dx.
+\end{equation}
+Every differentiated product is Schwartz, so all terms are absolutely
+integrable and all boundary terms vanish. For $p=2$ this is the
+usual Gaussian identity with variance $2t$. For $p=4$ it is
+$\int g^{(3)}k_t=-(4t)^{-1}\int xgk_t$; its derivative order and
+minus sign cannot be replaced by the Gaussian ones.
+
+The real polynomial weight in \eqref{eq:highstein} is unique.
+If another polynomial $W$ gives the identity for all complex Schwartz
+tests, put $P=W-X/\alpha$. Subtraction gives $\int gPk_t=0$.
+The real function $h=Pk_t$ is Schwartz; testing with $g=h$ gives
+$\int h^2=0$. Hence $Pk_t=0$ almost everywhere. A nonzero polynomial
+has only finitely many real zeros, so it would force $k_t=0$
+almost everywhere, contradicting $\int k_t=1$. Thus $P=0$.
+This classifies real polynomial weights for this specified derivative
+order and test class. It does not classify arbitrary measurable
+weights or make a signed marginal into a probability law.
+The kernel ODE is classical: D'Ovidio's primary equation (4.5)
+and the Fourier calculation immediately following it give the same
+identity for even order $n=p$, with $\kappa_p=(-1)^{m+1}$
+\cite{DOvidio}. The integration-by-parts form here is its direct
+consequence; no new general Stein principle is claimed.
+\par\noindent\code{HigherHeatKernelStein}, \code{HigherHeatSteinWeight}:
+kernel equation and exact polynomial weight.
+\par\noindent\code{SchwartzPolynomialSeparation}:
+the signed-density polynomial separation argument.
+
+
 This is a statement about each fixed signed marginal. It gives
 neither a finite-variation signed path law nor predictable
 representation, and its positive energy is not a signed-square
@@ -993,6 +1044,130 @@ coordinate realization and the single-product gap.
 \par\noindent\code{FiniteGammaDensityCorrection}:
 completed quotient, finite span and multiplication action.
 
+
+\section{A complete common-core jet domain}
+\label{sec:completedjets}
+The first derivative closure also controls a precise higher-order
+domain. Fix an integer $r\geq0$ and equip $H^{r+1}$ with the finite
+product norm $\|(u_0,\ldots,u_r)\|_{\max}=\max_j\|u_j\|_H$.
+This is the norm used by the formal finite-product construction;
+no signed-square norm is involved. Define
+\[
+ \mathcal C_r=\{(u_0,\ldots,u_r):(u_j,u_{j+1})\in\operatorname{graph}D
+                    \text{ for }0\leq j<r\},
+\]
+and the common-core closure
+\begin{equation}\label{eq:jetdomain}
+ \mathcal J_r=\overline{\{(f,f',\ldots,f^{(r)}):f\in\Sc(\R;\C)\}}
+          ^{\,H^{r+1}}.
+\end{equation}
+Every adjacent-coordinate map is continuous and the graph of $D$
+is closed. Thus $\mathcal C_r$ is closed. Schwartz jets belong to it,
+so $\mathcal J_r\subseteq\mathcal C_r$. The space $\mathcal J_r$
+is complete, being a closed linear subspace of a finite product of
+complete spaces. Its Schwartz core is dense by definition, with
+simultaneous convergence of all components, rather than separately
+chosen approximations for each derivative.
+
+The value map $v_r:\mathcal J_r\to H$, $v_r(u)=u_0$, is bounded
+and injective. In fact, for any compatible jet with $u_0=0$,
+single-valuedness and linearity of $D$ successively give
+$u_1=D0=0,\ldots,u_r=0$. Apply this to the difference of two jets
+having the same value. Consequently $E_r=v_r(\mathcal J_r)$ is a
+well-defined dense subspace of $H$, carrying the complete norm
+\[
+ \|u_0\|_{E_r}=\max_{0\leq j\leq r}\|u_j\|_H,
+ \qquad (u_0,\ldots,u_r)\in\mathcal J_r.
+\]
+Density follows because $E_r$ contains every Schwartz class.
+Each component defines a bounded map from this complete domain to
+$H$, and agrees with the ordinary derivative on its common core.
+Compatibility implies inductively that $u_j=D^ju_0$, with every
+intermediate value in $\dom D$ when needed. In particular
+$E_r\subseteq\dom D^r$ for $r\geq1$, using the iterated operator
+domain convention. The zeroth-order case is $E_0=H$, and the
+first-order case is exactly $E_1=\dom D$ with its maximum graph norm,
+by the definition of $D$ as the closed Schwartz graph.
+
+For $r>1$ we do not identify the common-core closure with every
+compatible jet or all of $\dom D^r$: a common approximating Schwartz
+sequence is part of \eqref{eq:jetdomain}. Nor is an inverse value map
+asserted bounded in the ambient $H$ norm. The identification of its
+image as a normed domain above is a human reformulation of the
+formal injective value and component maps. It is not a larger maximal
+weighted Sobolev domain, a signed path norm or a causal estimate.
+\par\noindent\code{SignedSchwartzJetDomain}:
+\par\noindent\code{coreClosure_compatible}, \code{compatible_zero},
+\par\noindent\code{value_injective}, \code{core_dense}, \code{core_component}.
+
+\section{Signed averaging is an expanding oblique projection}
+\label{sec:signedmean}
+Write $V=\int|K|$ and $M=\int K$. The signed mean is a bounded
+complex-linear functional on the same underlying $H$:
+\[
+ \ell(f)=\int fK\,dx=\int \sigma f\,d\mu.
+\]
+Absolute integrability follows from Cauchy--Schwarz and finiteness of
+$\mu$. Define $Pf=\ell(f)1$. Since $\|1\|=\|\sigma\|=\sqrt V$,
+\[
+ |\ell(f)|\leq\sqrt V\|f\|,\qquad \|Pf\|\leq V\|f\|.
+\]
+If $V>0$, the input $f=\sigma$ attains this bound:
+$\ell(\sigma)=V$, $P\sigma=V1$ and
+$\|P\sigma\|/\|\sigma\|=V$. If $V=0$, both $H$ and $P$ are zero.
+Thus in all cases
+\begin{equation}\label{eq:signedmeannorm}
+ \|P\|=V,\qquad P^2=MP.
+\end{equation}
+The second identity follows by integrating the constant $\ell(f)$
+against $K$. In particular, if $M=1$, this is an actual bounded
+projection onto the constant classes, with kernel $\ker\ell$.
+It is a rank-one complex-linear operator on the complex Hilbert
+space. Regarded as a real operator as in the rest of this paper,
+its nonzero range has real dimension two; the norm is unchanged.
+
+For unit signed mass, $V\geq1$. Moreover $V=1$ holds exactly when
+$K\geq0$ almost everywhere, because
+$V-1=\int(|K|-K)$ and the integrand is nonnegative.
+If $K$ has a negative value, continuity supplies an interval of
+strict negativity, so $V>1$. The explicit $\sigma$ vector is then
+strictly expanded by $P$. Hence signed averaging is not a Hilbert
+orthogonal projection or a contraction in this absolute-density
+space. The orthogonal projection onto constants instead is
+\[
+ Qf=\frac1V\left(\int f\,d\mu\right)1 \quad(V>0).
+\]
+Its defining residual is perpendicular to both $1$ and $i1$, as
+required by the real Hilbert structure. In the unit-mass case $V=1$
+implies $P=Q$; if $V>1$ their norms distinguish them. General oblique
+projection geometry is classical; Simoncini--Szyld's Lemma 2.2
+gives its standard orthogonal block form and norm relation
+\cite{SS}. The direct rank-one computation proves the special case
+here, without using their numerical-range results.
+
+For the higher even heat kernels with $p>2$, the preceding
+zero-second-moment argument supplies a negative value and therefore
+\[
+ \|P_{k_t}\|=\int|k_t|>1,\qquad P_{k_t}^2=P_{k_t}.
+\]
+This is an exact marginal norm and an explicit expanding vector,
+not an infinite-path-space conditional expectation construction.
+For an elementary connection with the native derivative, choose a
+compact smooth cutoff $\chi$ equal to one near zero and set
+$\chi_R(x)=\chi(x/R)$, $R\geq1$. Dominated convergence gives
+$\chi_R\to1$ in $H$; for every $j\geq1$,
+$\|\chi_R^{(j)}\|_H\leq R^{-j}\|\chi^{(j)}\|_\infty\sqrt V\to0$.
+Thus $(1,0,\ldots,0)\in\mathcal J_r$ for every fixed $r$.
+This is a labelled human cutoff consequence: every $Pf$ belongs
+to every common-core domain $E_r$, with all its positive-order
+derivatives zero. As a map from $H$ into the maximum-norm jet space,
+$f\mapsto(\ell(f)1,0,\ldots,0)$ still has exact norm $V$.
+Regularity of these constant outputs does not turn $P$ into a
+contractive averaging operator.
+\par\noindent\code{SignedSchwartzMeanProjection}:
+\par\noindent\code{projection_norm}, \code{projection_idempotent},
+\par\noindent\code{projection_core}, \code{higherHeat_expands}.
+
 \section{Classical antecedents and exact source boundary}
 Weighted derivative closability is classical. De Cicco--Serra
 Cassano~\cite{DCSC}, Section 2.2/condition (12), recall Hamza's
@@ -1050,5 +1225,16 @@ updated primary author notes, Section 3.4.
 Psychometrika \textbf{1} (1936), 211--218.
 \url{https://doi.org/10.1007/BF02288367}.
 Publisher abstract/bibliographic comparison only; original full proof not retrieved.
+
+\bibitem{SS} V. Simoncini and D. B. Szyld,
+\emph{On the field of values of oblique projections}, primary author
+version dated 22 March 2010, Lemma 2.2 and its proof, printed page 4.
+\url{https://www.dm.unibo.it/~simoncin/FOVfinal.pdf}.
+\bibitem{DOvidio} M. D'Ovidio,
+\emph{On the fractional counterpart of the higher-order equations},
+\href{https://arxiv.org/abs/1106.1906}{arXiv:1106.1906v1}, Section 4,
+equations (4.1)--(4.2), (4.5) and its immediately following Fourier
+calculation, printed page 5. Kernel identity comparison only; the
+remaining time-change claims are not used.
 \end{thebibliography}
 \end{document}

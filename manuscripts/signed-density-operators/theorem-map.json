@@ -2981,6 +2981,591 @@
       "source_sha256": "2eec71aa675e57a98782942778174a4421dc93e7eedb8aec430f4a3195a9c1e0",
       "declaration_header": "theorem product_is_single (u f : Algebra) : action u (D0 f) = singleClass (f,u)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteGammaDensityCorrection.lean#L75"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.Jets",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 12,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "abbrev Jets (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L12"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.step",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 14,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def step (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (i : Fin r) : Jets K r \u2192L[\u211d] H K \u00d7 H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L14"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.compatible",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 17,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def compatible (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : Submodule \u211d (Jets K r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L17"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.mem_compatible",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 20,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem mem_compatible (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (u : Jets K r) :\n    u \u2208 compatible K r \u2194 \u2200 i : Fin r,\n      (u i.castSucc, u i.succ) \u2208 (closedDerivative K).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L20"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.compatible_closed",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 25,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem compatible_closed (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) :\n    IsClosed (compatible K r : Set (Jets K r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L25"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.jets",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 35,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def jets (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : \ud835\udce2(\u211d, \u2102) \u2192\u2097[\u211d] Jets K r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L35"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.jets_apply",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 39,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem jets_apply (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (f : \ud835\udce2(\u211d, \u2102)) (i : Fin (r + 1)) :\n    jets K r f i = coreInput K ((SchwartzMap.derivCLM \u2102 \u2102)^[i.val] f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L39"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.jets_compatible",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 46,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem jets_compatible (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (f : \ud835\udce2(\u211d, \u2102)) :\n    jets K r f \u2208 compatible K r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L46"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.coreClosure",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 55,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def coreClosure (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : Submodule \u211d (Jets K r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L55"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.coreClosure_closed",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 58,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem coreClosure_closed (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) :\n    IsClosed (coreClosure K r : Set (Jets K r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L58"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.coreClosure_compatible",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 62,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem coreClosure_compatible (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) :\n    coreClosure K r \u2264 compatible K r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L62"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.Domain",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 69,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "abbrev Domain (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L69"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.compatible_zero",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 74,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem compatible_zero (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (u : Jets K r)\n    (hu : u \u2208 compatible K r) (hz : u 0 = 0) : u = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L74"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.value",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 84,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def value (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : Domain K r \u2192L[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L84"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.value_injective",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 87,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem value_injective (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : Function.Injective (value K r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L87"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.core",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 95,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def core (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : \ud835\udce2(\u211d, \u2102) \u2192\u2097[\u211d] Domain K r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L95"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.core_value",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 99,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem core_value (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (f : \ud835\udce2(\u211d, \u2102)) :\n    value K r (core K r f) = coreInput K f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L99"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.core_dense",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 105,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem core_dense (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) : DenseRange (core K r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L105"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.component",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 111,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "def component (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (i : Fin (r + 1)) : Domain K r \u2192L[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L111"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzJetDomain.core_component",
+      "file": "Foundation/SignedSchwartzJetDomain.lean",
+      "line": 114,
+      "source_sha256": "4d474dc6f4c6bd56c46e0cd3688169babef2af2e242b6d81a18ec4f8e5ecef5c",
+      "declaration_header": "theorem core_component (K : \ud835\udce2(\u211d, \u211d)) (r : \u2115) (i : Fin (r + 1)) (f : \ud835\udce2(\u211d, \u2102)) :\n    component K r i (core K r f) = coreInput K ((SchwartzMap.derivCLM \u2102 \u2102)^[i.val] f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzJetDomain.lean#L114"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.unitVector",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 12,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "def unitVector (K : \ud835\udce2(\u211d, \u211d)) : H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L12"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.unitVector_ae",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 15,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem unitVector_ae (K : \ud835\udce2(\u211d, \u211d)) :\n    unitVector K =\u1d50[measure K] (fun _ => (1: \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L15"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.weighted_integral",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 18,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem weighted_integral (K : \ud835\udce2(\u211d, \u211d)) (f : \u211d \u2192 \u211d) :\n    (\u222b x, f x \u2202measure K) = \u222b x : \u211d, |K x| * f x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L18"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.unitVector_norm_sq",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 30,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem unitVector_norm_sq (K : \ud835\udce2(\u211d, \u211d)) : \u2016unitVector K\u2016^2 = \u222b x : \u211d, |K x|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L30"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.unitVector_mass",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 40,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem unitVector_mass (K : \ud835\udce2(\u211d, \u211d)) :\n    inner \u2102 (symmetry K (unitVector K)) (unitVector K) = (((\u222b x : \u211d, K x): \u211d): \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L40"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.projection",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 55,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "def projection (K : \ud835\udce2(\u211d, \u211d)) : H K \u2192L[\u2102] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L55"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.projection_norm",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 58,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem projection_norm (K : \ud835\udce2(\u211d, \u211d)) : \u2016projection K\u2016 = \u222b x : \u211d, |K x|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L58"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.projection_idempotent",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 61,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem projection_idempotent (K : \ud835\udce2(\u211d, \u211d)) (hK : (\u222b x : \u211d, K x) = 1) :\n    (projection K).comp (projection K) = projection K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L61"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.projection_expands",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 68,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem projection_expands (K : \ud835\udce2(\u211d, \u211d)) (hK : 1 < \u222b x : \u211d, |K x|) :\n    \u2016symmetry K (unitVector K)\u2016 < \u2016projection K (symmetry K (unitVector K))\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L68"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.higherHeat_norm_gt_one",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 79,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem higherHeat_norm_gt_one (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    1 < \u2016projection (HigherHeatSignedLaws.realKernel m (by omega) t ht)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L79"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.higherHeat_idempotent",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 84,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem higherHeat_idempotent (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    (projection (HigherHeatSignedLaws.realKernel m hm t ht)).comp\n      (projection (HigherHeatSignedLaws.realKernel m hm t ht)) =\n      projection (HigherHeatSignedLaws.realKernel m hm t ht)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L84"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.higherHeat_expands",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 90,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem higherHeat_expands (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    let K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L90"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzMeanProjection.projection_core",
+      "file": "Foundation/SignedSchwartzMeanProjection.lean",
+      "line": 97,
+      "source_sha256": "edba5f298fd819ef87921d91b565cbebbbba7f4b7c224c9fa2fb70b03730a97f",
+      "declaration_header": "theorem projection_core (K : \ud835\udce2(\u211d, \u211d)) (f : \ud835\udce2(\u211d, \u2102)) :\n    projection K (SignedSchwartzClosedDerivative.coreInput K f) =\n      (\u222b\u1d5b x : \u211d, f x \u2202<\u2022volume.withDensity\u1d65 (K: \u211d \u2192 \u211d)) \u2022 unitVector K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzMeanProjection.lean#L97"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.odeCoefficient",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 10,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "def odeCoefficient (m : \u2115) (t : \u211d\u22650) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L10"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.symbol_deriv",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 12,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem symbol_deriv (m : \u2115) (t : \u211d\u22650) (\u03be : \u211d) :\n    deriv (symbol m t) \u03be=\n      ((-(t:\u211d)*(2*m:\u2115)*(2*Real.pi)^(2*m)*\u03be^(2*m-1):\u211d):\u2102)*symbol m t \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L12"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.coefficient_factor",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 27,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem coefficient_factor (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (\u03be : \u211d) :\n    (-2*Real.pi*Complex.I)*odeCoefficient m t*(2*Real.pi*Complex.I*(\u03be:\u2102))^(2*m-1)=\n      ((-(t:\u211d)*(2*m:\u2115)*(2*Real.pi)^(2*m)*\u03be^(2*m-1):\u211d):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L27"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.kernel_ode_schwartz",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 44,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem kernel_ode_schwartz (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    weighted (evenKernel m hm t ht)=odeCoefficient m t \u2022 jet (2*m-1) (evenKernel m hm t ht)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L44"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.kernel_ode",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 63,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem kernel_ode (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (x : \u211d) :\n    (x:\u2102)*evenKernel m hm t ht x=\n      odeCoefficient m t*iteratedDeriv (2*m-1) (evenKernel m hm t ht : \u211d \u2192 \u2102) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L63"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.schwartz_stein",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 69,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem schwartz_stein (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (f : \ud835\udce2(\u211d,\u2102)) :\n    (\u222b x : \u211d, (x:\u2102)*f x*evenKernel m hm t ht x)=\n      (2*m:\u2115)*(-1:\u2102)^(m+1)*(t:\u211d)*\n        (\u222b x : \u211d, jet (2*m-1) f x*evenKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L69"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSteinWeight.alpha",
+      "file": "Foundation/HigherHeatSteinWeight.lean",
+      "line": 12,
+      "source_sha256": "9751e940d1eb34f7c046d257ae77082e6a4ea272de7a20461fb8106f7ef2d217",
+      "declaration_header": "def alpha (m : \u2115) (t : \u211d\u22650) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSteinWeight.lean#L12"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSteinWeight.canonicalWeight",
+      "file": "Foundation/HigherHeatSteinWeight.lean",
+      "line": 14,
+      "source_sha256": "9751e940d1eb34f7c046d257ae77082e6a4ea272de7a20461fb8106f7ef2d217",
+      "declaration_header": "def canonicalWeight (m : \u2115) (t : \u211d\u22650) : Polynomial \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSteinWeight.lean#L14"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSteinWeight.alpha_ne_zero",
+      "file": "Foundation/HigherHeatSteinWeight.lean",
+      "line": 16,
+      "source_sha256": "9751e940d1eb34f7c046d257ae77082e6a4ea272de7a20461fb8106f7ef2d217",
+      "declaration_header": "theorem alpha_ne_zero (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) : alpha m t \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSteinWeight.lean#L16"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSteinWeight.canonical_weight_identity",
+      "file": "Foundation/HigherHeatSteinWeight.lean",
+      "line": 21,
+      "source_sha256": "9751e940d1eb34f7c046d257ae77082e6a4ea272de7a20461fb8106f7ef2d217",
+      "declaration_header": "theorem canonical_weight_identity (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (g : \ud835\udce2(\u211d,\u2102)) :\n    (\u222b x : \u211d, jet (2*m-1) g x*evenKernel m hm t ht x)=\n      (\u222b x : \u211d, g x*((((canonicalWeight m t).eval x):\u211d):\u2102)*evenKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSteinWeight.lean#L21"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSteinWeight.polynomial_weight_unique",
+      "file": "Foundation/HigherHeatSteinWeight.lean",
+      "line": 40,
+      "source_sha256": "9751e940d1eb34f7c046d257ae77082e6a4ea272de7a20461fb8106f7ef2d217",
+      "declaration_header": "theorem polynomial_weight_unique (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (W : Polynomial \u211d)\n    (hW : \u2200 g : \ud835\udce2(\u211d,\u2102), (\u222b x : \u211d, jet (2*m-1) g x*evenKernel m hm t ht x)=\n      (\u222b x : \u211d, g x*(((W.eval x):\u211d):\u2102)*evenKernel m hm t ht x)) :\n    W=canonicalWeight m t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSteinWeight.lean#L40"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.polynomialKernel",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 11,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "def polynomialKernel (P : Polynomial \u211d) (K : \ud835\udce2(\u211d,\u211d)) : \ud835\udce2(\u211d,\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L11"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.polynomialKernel_apply",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 14,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "theorem polynomialKernel_apply (P : Polynomial \u211d) (K : \ud835\udce2(\u211d,\u211d)) (x : \u211d) :\n    polynomialKernel P K x=P.eval x*K x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L14"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.schwartz_pairing_separates",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 19,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "theorem schwartz_pairing_separates (f : \ud835\udce2(\u211d,\u211d))\n    (h : \u2200 g : \ud835\udce2(\u211d,\u211d), (\u222b x : \u211d, g x*f x)=0) : (f : \u211d \u2192 \u211d)=\u1d50[volume] 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L19"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.eval_ne_zero_ae",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 30,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "theorem eval_ne_zero_ae (P : Polynomial \u211d) (hP : P \u2260 0) : \u2200\u1d50 x : \u211d \u2202volume, P.eval x \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L30"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.annihilator_zero",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 36,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "theorem annihilator_zero (K : \ud835\udce2(\u211d,\u211d)) (hK : (\u222b x : \u211d, K x) \u2260 0) (P : Polynomial \u211d)\n    (h : \u2200 g : \ud835\udce2(\u211d,\u211d), (\u222b x : \u211d, g x*P.eval x*K x)=0) : P=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L36"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SchwartzPolynomialSeparation.polynomial_weight_unique",
+      "file": "Foundation/SchwartzPolynomialSeparation.lean",
+      "line": 53,
+      "source_sha256": "7941311f095853439cbe236adf7f350f93d6fb86343c830dfec230c6772628f5",
+      "declaration_header": "theorem polynomial_weight_unique (K : \ud835\udce2(\u211d,\u211d)) (hK : (\u222b x : \u211d, K x) \u2260 0)\n    (P Q : Polynomial \u211d)\n    (h : \u2200 g : \ud835\udce2(\u211d,\u211d), (\u222b x : \u211d, g x*P.eval x*K x)=(\u222b x : \u211d, g x*Q.eval x*K x)) : P=Q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SchwartzPolynomialSeparation.lean#L53"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.exponential_second_zero",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 11,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem exponential_second_zero (n : \u2115) (hn : 3 \u2264 n) (a : \u211d) :\n    iteratedDeriv 2 (fun x : \u211d => (Real.exp (-a*x^n) : \u2102)) 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L11"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.symbol_second_zero",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 30,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem symbol_second_zero (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) :\n    iteratedDeriv 2 (HigherHeatL2.symbol m t) 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L30"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.complex_second_moment",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 41,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem complex_second_moment (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    \u222b x : \u211d, (x : \u2102)^2 * evenKernel m (by omega) t ht x = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L41"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.real_second_moment_integrable",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 68,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem real_second_moment_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    Integrable (fun x : \u211d => x^2 * realKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L68"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.norm_integral_gt_one",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 114,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem norm_integral_gt_one (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    1 < \u222b x : \u211d, \u2016realKernel m (by omega) t ht x\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L114"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzWeakDerivative.testWeight",
+      "file": "Foundation/SignedSchwartzWeakDerivative.lean",
+      "line": 81,
+      "source_sha256": "0cddf0566e08ac9212f6a226c83d63158f88d6bdfbf00e88fde0c0db7b04656d",
+      "declaration_header": "def testWeight (K : \ud835\udce2(\u211d,\u211d)) (g : \ud835\udce2(\u211d,\u2102)) : \ud835\udce2(\u211d,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzWeakDerivative.lean#L81"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.constraint",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 13,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def constraint (K : \ud835\udce2(\u211d,\u211d)) : H K \u00d7 H K \u2192L[\u211d] \ud835\udce2'(\u211d,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L13"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.weakGraph",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 18,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def weakGraph (K : \ud835\udce2(\u211d,\u211d)) : Submodule \u211d (H K \u00d7 H K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L18"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.weakDerivative",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 32,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def weakDerivative (K : \ud835\udce2(\u211d,\u211d)) : H K \u2192\u2097.[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L32"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.coreInput",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 45,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def coreInput (K : \ud835\udce2(\u211d,\u211d)) : \ud835\udce2(\u211d,\u2102) \u2192L[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L45"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.coreDerivative",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 48,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def coreDerivative (K : \ud835\udce2(\u211d,\u211d)) : \ud835\udce2(\u211d,\u2102) \u2192L[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L48"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.coreGraph",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 56,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def coreGraph (K : \ud835\udce2(\u211d,\u211d)) : Submodule \u211d (H K \u00d7 H K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L56"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.coreOperator",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 63,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def coreOperator (K : \ud835\udce2(\u211d,\u211d)) : H K \u2192\u2097.[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L63"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.closedDerivative",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 90,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def closedDerivative (K : \ud835\udce2(\u211d,\u211d)) : H K \u2192\u2097.[\u211d] H K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L90"
+    },
+    {
+      "paper": "Sections 3, 11, 15\u201316: original closed derivative and compatible common-core jets; injective marginal value in the finite maximum product norm; exact signed mean norm, idempotence and expanding sign vector; higher-order heat Stein identity and uniqueness of real polynomial weight. No maximal-domain identification or signed path averaging is added.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedSchwartzClosedDerivative.higherHeatDerivative",
+      "file": "Foundation/SignedSchwartzClosedDerivative.lean",
+      "line": 125,
+      "source_sha256": "4ff16560a7943430edfed6e47f67aaabd2a1ae9e85fb03fe2fe4ac83559da76e",
+      "declaration_header": "def higherHeatDerivative (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    H (HigherHeatSignedLaws.realKernel m hm t ht) \u2192\u2097.[\u211d]\n      H (HigherHeatSignedLaws.realKernel m hm t ht)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedSchwartzClosedDerivative.lean#L125"
     }
   ],
   "human_reorganization": [
@@ -3001,7 +3586,8 @@
     "The exact covariance <x,Ry>, strict variance, Green identity on the full domain of A=D*D and auxiliary first-chaos derivative/divergence/recovery are reconstructed with original graph limits. The auxiliary Gaussian derivative is not identified with the spatial weighted derivative.",
     "A labelled human general D=0 infinite-dimensional counterexample uses independent Borel-Cantelli to separate a Hilbert-indexed Gaussian field from a Hilbert-valued Gaussian random variable. No assertion that the specific signed-density resolvent is the identity or is trace class is made. Neither auxiliary positivity nor covariance creates a positive original signed process law.",
     "Section 7 reconstructs actual source dyadic scale 2^(-n), scaled-graph projection and native unscaled output. Strong value approximation holds on the whole Hilbert space; original graph approximation holds only on the original domain via the adjoint resolvent identity. The adjoint-density and pairing test are proved directly from the closed graph and its orthogonal complement. Bounded-output subsequences force native domain membership by dense extension and Riesz representation; outside-domain outputs escape to infinity. Uniformly bounded outputs converge weakly, not necessarily strongly. The diagonal ell2 example is a labelled elementary human illustration, not an added formal source result. Weighted-output vanishing never extends the original derivative.",
-    "Section 14 reconstructs the full three-state Gamma module with actual uniform probability, all-L2 bounded test algebra, weighted matrix positivity and scalar closability. Its exact tensor pairing is one third of the ordinary six-coordinate Euclidean pairing; the null quotient is already complete via M/sqrt(3). Single products u*d0f have squared distance at least 1/3 from the displayed two-coordinate target, while finite sums span the whole module. Sharp attainment, generation by two coordinate-potential products, the multiplier norm bound and the explicit failure of a Leibniz rule for the displayed action are labelled elementary human coordinate consequences, not additional named formal theorems. This algebraic density correction neither modifies spatial differentiation nor asserts a Markov Gamma or Gaussian field identification. The rank-one approximation mechanism is classical; original Eckart--Young full proof was not retrieved and no priority claim is made."
+    "Section 14 reconstructs the full three-state Gamma module with actual uniform probability, all-L2 bounded test algebra, weighted matrix positivity and scalar closability. Its exact tensor pairing is one third of the ordinary six-coordinate Euclidean pairing; the null quotient is already complete via M/sqrt(3). Single products u*d0f have squared distance at least 1/3 from the displayed two-coordinate target, while finite sums span the whole module. Sharp attainment, generation by two coordinate-potential products, the multiplier norm bound and the explicit failure of a Leibniz rule for the displayed action are labelled elementary human coordinate consequences, not additional named formal theorems. This algebraic density correction neither modifies spatial differentiation nor asserts a Markov Gamma or Gaussian field identification. The rank-one approximation mechanism is classical; original Eckart--Young full proof was not retrieved and no priority claim is made.",
+    "Section 11 reconstructs the actual higher-heat ODE x*k=-alpha*k^(p-1) and the odd-order Stein identity with alpha=p*(-1)^(m+1)*t, including uniqueness only among real polynomial weights under all Schwartz tests. D'Ovidio equation (4.5) and its immediate Fourier calculation explicitly give the classical antecedent, with conventions compared; no novel Stein principle is claimed. Sections 15\u201316 give the complete finite maximum-norm common-core jet closure and injective zeroth component, exact signed averaging norm V=integral|K| and an expanding sign vector when V>1. The operator is complex rank one and real rank two. The image-domain reformulation, r=0/1 identifications, positive-mass orthogonal comparison, and cutoff showing constant outputs belong to every fixed common-core jet domain are explicitly human consequences of the printed constructions. No equality with the maximal compatible domain for r>1, ambient inverse norm, path-space conditional expectation, probability law, signed-square isometry or causal estimate is inferred."
   ],
   "novelty": "Classical weighted derivative, Hilbert graph projection and signed-adjoint formalization companion. No new general closability, independence, spectral or process principle claimed."
 }
