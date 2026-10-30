@@ -34,6 +34,9 @@ exact threshold, zero-time reality or Riemann-hypothesis result is claimed.
 Exact declarations and hypotheses are mapped to a frozen Lean library.
 The same actual flow has a finite attained all-real threshold; a complete
 four-point smoothing proof supplies the needed lower obstruction.
+At every finite-multiplicity zero, a proved all-order Hermite expansion
+and a joint physical remainder give an exhaustive local simple-zero
+cluster at sufficiently short later times, with local constants.
 \end{abstract}
 
 \section{The arithmetic flow and the conclusion}
@@ -72,9 +75,9 @@ In particular $F_t$ has only real zeros for every $t\ge1/2$.
 Each $F_t$ is an even real entire function and $F_t(0)>0$.
 \end{theorem}
 The all-real conclusion includes multiplicities; it does not assert
-simplicity. The upper bound $1/2$ is coarse and classical. No assertion
-about the exact infimum of all-real times, or about zeros at time zero,
-is made. The fixed mathematical baseline is
+simplicity. The upper bound $1/2$ is coarse and classical. No exact numerical value
+of the infimum of all-real times, or conclusion about zeros at time zero,
+is asserted. The fixed mathematical baseline is
 \begin{center}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
 
 Newman's Theorem 1, printed page 246~\cite{Newman}, already states the
@@ -481,8 +484,8 @@ This manuscript does not prove reality at $t=0$, an exact numerical value of the
 threshold, a sharper arithmetic zero-free region, or any relation between
 a higher-even-order threshold and RH. It also proves neither simplicity
 of all positive-time zeros nor an unrestricted backward-heat operator on
-an entire-function space. Local Hermite splitting and simple-root motion
-have their own verified hypotheses and are not needed here. These limits
+an entire-function space. The local Hermite splitting proved below and simple-root motion
+have their own verified hypotheses and are not needed for the strip bound. These limits
 are mathematical scope statements, not unresolved steps in the proof of
 Theorem~\ref{thm:main}.
 
@@ -562,6 +565,252 @@ Its factor-velocity theorem retains explicit factor differentiability;
 the finite coefficient chain-rule presentation above is the corresponding
 human reorganization. No statement here extends finite root interaction
 sums to an uncontrolled infinite Xi sum.
+
+
+\section{Exhaustive local Hermite clusters at every actual zero}
+\label{sec:hermitecluster}
+There is a separate local simplicity theorem for this same actual flow.
+It concerns a fixed zero and a sufficiently short later-time interval;
+its constants need not be uniform over all zeros or all times.
+Define the monic variance-two Hermite polynomials by
+\begin{equation}\label{eq:hermitegen}
+ e^{qw-q^2}=\sum_{n\geq0}\frac{q^n}{n!}H_n(w).
+\end{equation}
+Thus $H_0=1$, $H_1=w$, $H_2=w^2-2$. All time increments below
+are $+h^2$, with real $h\ne0$; negative $h$ changes the spatial
+labelling, not the direction of time.
+
+\begin{theorem}\label{thm:exactcluster}
+Fix $t\in\R$ and an actual zero $F_t(z_0)=0$, of multiplicity $m$.
+Then $1\leq m<\infty$. There are $\delta,\varepsilon>0$ such that
+for every real $0<|h|<\varepsilon$ the complete zero set of
+$F_{t+h^2}$ in $\{z:|z-z_0|\leq\delta\}$ consists of exactly $m$
+distinct simple zeros. They may be labelled by the $m$ roots $a$ of
+$H_m$ so that
+\[
+ z_a(h)=z_0+ha+O(h^2)\qquad(h\longrightarrow0, h\in\R\setminus\{0\}).
+\]
+The bound can be chosen simultaneously for this finite set of labels.
+If $z_0$ is real, every zero in this cluster is real.
+\end{theorem}
+No smooth or analytic choice of the labels at $h=0$ is required by
+this statement. We prove the exact count by an actual integrable
+remainder and exclusion of an annulus, including rescaled positions
+which escape every fixed disk.
+
+\subsection*{All-order expansion in the original integral}
+Put $d_n=F_t^{(n)}(z_0)$. Differentiation under the integral is justified
+by the theta decay already proved: every factor $u^j e^{Au^2+Bu}$
+is integrable against $K(u)\,du$, for finite real $A,B$ and $j\geq0$.
+For $R\geq0$ set the finite, nonnegative budget
+\[
+ B_R=2\int_0^\infty K(u)
+          e^{(t+1)u^2+(|z_0|+R)u}\,du.
+\]
+For every $N\geq0$, real $|h|\leq1/2$ and $|w|\leq R$,
+\begin{equation}\label{eq:hermiteexpansion}
+ \left|F_{t+h^2}(z_0+hw)
+       -\sum_{n=0}^N\frac{h^nH_n(w)}{n!}d_n\right|
+ \leq B_R|h|^{N+1}.
+\end{equation}
+Here is a complete remainder justification, rather than a formal
+application of an infinite heat-operator series. For fixed complex
+$c,w$, Cauchy's coefficient estimate on $|q|=1$ bounds every Taylor
+coefficient of $e^{cqw-c^2q^2}$ by
+$e^{|c||w|+|c|^2}$. Indeed the exponential modulus is at most this
+number on that circle, and the Cauchy coefficient integral has the
+same bound. The Taylor series is entire. Summing its tail for
+$|h|\leq1/2$ therefore bounds the degree-$N$ remainder by
+$2e^{|c||w|+|c|^2}|h|^{N+1}$.
+
+Write cosine as the average of two exponentials. For its positive
+frequency part the actual integrand factor is
+\[
+ e^{(t+h^2)u^2+iu(z_0+hw)}
+ =e^{tu^2+iuz_0}e^{(iu)hw-(iu)^2h^2}.
+\]
+Use the preceding Taylor estimate with $c=iu$. The negative frequency
+part uses $c=-iu$. In either case the absolute remainder is bounded
+by the integrand of $B_R|h|^{N+1}$. Integrating this bound and the
+finite Taylor sum proves \eqref{eq:hermiteexpansion}; the coefficient
+$(\pm iu)^n$ is precisely the corresponding spatial derivative.
+All integrations occur after the absolute majorant has been established.
+
+The order of vanishing of a nonzero entire function is finite:
+if all Taylor coefficients at $z_0$ vanished, its convergent Taylor
+series would vanish on a disk and the identity theorem would give
+$F_t\equiv0$, contrary to $F_t(0)>0$. Thus the actual zero has
+$d_n=0$ for $n<m$ and $d_m\ne0$. Dividing
+\eqref{eq:hermiteexpansion} with $N=m$ by $h^m$ gives
+\begin{equation}\label{eq:scaledhermite}
+ G_h(w):=\frac{F_{t+h^2}(z_0+hw)}{h^m},\qquad
+ g(w):=\frac{d_m}{m!}H_m(w),\qquad
+ \sup_{|w|\leq R}|G_h(w)-g(w)|\leq B_R|h|.
+\end{equation}
+This is locally uniform complex convergence for punctured real $h$.
+\par\noindent\code{RiemannQuadraticAllOrders}:
+\par\noindent\code{flow_expansion_bound}, \code{multiplicity_scaled_bound},
+\par\noindent\code{multiplicity_uniform_on_disk}.
+
+\subsection*{The model has exactly $m$ simple real roots}
+The generating function gives
+\[
+ H_{n+2}=wH_{n+1}-2(n+1)H_n,\qquad H_{n+1}'=(n+1)H_n.
+\]
+For example, differentiating \eqref{eq:hermitegen} in $q$ and
+equating coefficients proves the first identity, and differentiating
+in $w$ proves the second. Induction shows $H_n$ is monic of degree
+$n$. To prove reality without assuming orthogonality, define
+\[
+ E_0(w)=1,\qquad E_{n+1}(w)=|H_{n+1}(w)|^2+2(n+1)E_n(w)>0.
+\]
+An induction using the recursion and its complex conjugate gives
+\[
+ H_{n+1}(w)\overline{H_n(w)}-H_n(w)\overline{H_{n+1}(w)}
+ =(w-\overline w)E_n(w).
+\]
+The base case is $w-\overline w$; the induction step collects
+$|H_{n+1}|^2$ and $2(n+1)$ times the preceding identity.
+At a zero of $H_{n+1}$, positivity of $E_n$ forces $w=\overline w$.
+Consecutive polynomials have no common zero: the recursion would
+propagate such a zero down to $H_0=1$. The derivative identity
+therefore makes every root simple. The fundamental theorem of
+algebra, together with the monic degree, now supplies exactly $m$
+distinct real roots of $H_m$. In particular all roots of $g$ are
+simple since $d_m\ne0$.
+
+\subsection*{A local zero transfer with a quantitative displacement}
+Fix one such root $a$ and write $d=g'(a)\ne0$. Choose $r>0$
+small enough that $|g'(w)-d|\leq|d|/4$ on $|w-a|\leq r$.
+We may shrink these radii so the finitely many corresponding closed
+disks are disjoint. If an entire $f$ satisfies
+\[
+ \sup_{|w-a|\leq2r}|f(w)-g(w)|\leq\eta,
+ \qquad \eta\leq|d|r/4,
+\]
+Cauchy's derivative estimate on radius-$r$ circles about points of
+$\overline B(a,r)$ gives $|f'(w)-g'(w)|\leq\eta/r$ there.
+These circles lie in $\overline B(a,2r)$. Hence
+$|f'(w)-d|\leq|d|/2$ throughout the smaller disk.
+
+The map $T(w)=w-f(w)/d$ is a contraction of that closed disk
+into itself. Integrating its derivative along a segment gives
+$|T(w)-T(v)|\leq|w-v|/2$, and
+$|T(a)-a|=|f(a)|/|d|\leq\eta/|d|\leq r/4$.
+Thus $|T(w)-a|\leq r/2+r/4<r$. Starting at $a$, successive
+iterates have geometrically decreasing increments, converge in the
+closed disk, and their limit is a fixed point by continuity.
+The contraction bound makes it unique. It is the unique zero $w_f$
+of $f$ there, with
+\[
+ |w_f-a|\leq\tfrac12|w_f-a|+\eta/|d|,
+ \qquad |w_f-a|\leq2\eta/|d|.
+\]
+Moreover $|f'(w_f)|\geq|d|/2>0$, so this zero is simple.
+This contraction presentation is a human reconstruction of the
+source scalar-ball surjectivity and injectivity argument.
+
+Apply this to $f=G_h$ and \eqref{eq:scaledhermite}, with
+$R\geq|a|+2r$. For sufficiently small nonzero $h$ there is exactly
+one $w_a(h)$ in the disk, it is simple, and
+$|w_a(h)-a|\leq C_a|h|$, where $C_a=2B_R/|d|$.
+Multiplication by $h$ gives
+$|z_0+hw_a(h)-(z_0+ha)|\leq C_a|h|^2$.
+Since $G_h'(w)=h^{1-m}F_{t+h^2}'(z_0+hw)$, simplicity transfers
+to the actual flow. The finite collection of disks and constants
+can be handled simultaneously by taking a minimum of positive
+smallness bounds and a maximum of the finite $C_a$.
+If $z_0$ is real, conjugation preserves each disk about real $a$,
+and preserves the zero equation because $h,t$ are real. Uniqueness
+then gives $w_a(h)=\overline{w_a(h)}$, proving reality of its
+actual zero. No limiting approximate reality is being substituted.
+\par\noindent\code{RiemannQuadraticZeroTransfer}:
+\par\noindent\code{existsUnique_simple_zero_of_close},
+\par\noindent\code{actual_unique_simple_near_model_root},
+\par\noindent\code{actual_root_real_of_unique}, \code{physical_displacement_bound}.
+
+\subsection*{A joint remainder excludes every escaping rescaled zero}
+Local convergence in a fixed $w$ disk alone does not yet give the
+complete zero set in a fixed physical neighborhood of $z_0$.
+The required bound has a fixed budget even when $|w|$ grows.
+Put $A=1+|w|$ in the phase calculation, replace $c$ by $c/A$
+and the Taylor variable $h$ by $Ah$. Their product is unchanged,
+and
+\[
+ |c/A||w|+|c/A|^2\leq|c|+|c|^2.
+\]
+Consequently the same Cauchy-tail proof has the bound
+$2e^{|c|+|c|^2}(|h|(1+|w|))^{N+1}$ whenever
+$|h|(1+|w|)\leq1/2$. Integrating the two frequency parts as
+before, taking $N=m$ and $w=v/h$, yields
+\begin{equation}\label{eq:physicaljoint}
+ \left|F_{t+h^2}(z_0+v)-h^m\frac{d_m}{m!}H_m(v/h)\right|
+ \leq B_1(|h|+|v|)^{m+1}
+ \quad(0<|h|,\ |h|+|v|\leq1/2).
+\end{equation}
+This is proved with one genuine integrable majorant; it is not
+obtained by letting an unspecified fixed-disk constant depend on $v/h$.
+
+Let $A_m$ be the finite root set of $H_m$ and put
+$L=1+\sum_{a\in A_m}|a|$. Since
+$H_m(w)=\prod_{a\in A_m}(w-a)$, for $|w|\geq2L$ we have
+$|H_m(w)|\geq(|w|/2)^m$. Hence with
+$k=|d_m|/(m!2^m)>0$,
+\[
+ \left|h^m\frac{d_m}{m!}H_m(v/h)\right|\geq k|v|^m
+ \quad\hbox{if } |v|\geq R_0|h|,
+ \qquad R_0=\max(1,2L).
+\]
+Choose $0<\delta\leq1/4$ so that
+$B_1 2^{m+1}\delta<k$. If $0<|h|\leq\delta$,
+$|v|\leq\delta$, $|v|\geq R_0|h|$ and the actual value
+$F_{t+h^2}(z_0+v)$ were zero, \eqref{eq:physicaljoint} would give
+\[
+ k|v|^m\leq B_1(2|v|)^{m+1}
+             \leq B_1 2^{m+1}\delta |v|^m<k|v|^m.
+\]
+Here $|v|\geq|h|>0$, so the strict contradiction is valid.
+Every actual zero in the closed physical $\delta$ disk is therefore
+confined to $|v|<R_0|h|$.
+
+To finish the exact count, use the finitely many model disks from
+the local transfer. Their radii can be chosen smaller if necessary.
+The compact set
+\[
+ \{w:|w|\leq R_0\}\ \setminus\!
+       \bigcup_{a\in A_m} B(a,r_a)
+\]
+contains no zero of $g$. If nonempty, the continuous function
+$|g|$ attains a strictly positive minimum there. Uniform convergence
+\eqref{eq:scaledhermite} excludes every zero of $G_h$ on this set
+for small $h$; if the set is empty there is nothing to exclude.
+Confinement then forces every actual zero in the physical disk
+into one of the model disks, where it is unique and simple.
+Conversely the $m$ transferred zeros lie in the physical disk for
+small $h$, by their displacement bounds. Disjoint model disks
+and $h\ne0$ make them distinct. Thus these are all the zeros,
+proving Theorem~\ref{thm:exactcluster}, including its closed-disk
+boundary assertion.
+\par\noindent\code{RiemannQuadraticCluster}:
+\par\noindent\code{physical_multiplicity_remainder}, \code{at_least_m_simple_zeros_near}.
+\par\noindent\code{RiemannQuadraticConfinement}:
+\par\noindent\code{actual_annular_confinement}, \code{actual_exact_cluster},
+\par\noindent\code{every_actual_zero_has_exact_simple_cluster}.
+
+Hermite models at finite-multiplicity heat zeros are classical.
+Galaktionov's primary introduction explicitly recalls Sturm's
+one-dimensional multiple-zero analysis and its Hermite scaling
+context~\cite{Galaktionov}. We have not re-audited Sturm's original
+proof or a general parabolic zero-classification theorem. The proof
+above independently supplies the actual arithmetic integral budgets,
+local zero transfer and exhaustive complex-disk count used here.
+Tao's author exposition~\cite{TaoHeat} gives the classical finite
+polynomial root-motion calculation in ordinary forward-heat time;
+the sign reverses for our growing-time convention. Neither that
+finite calculation nor the local cluster theorem supplies a bound
+uniform over infinitely many original zeros. They do not establish
+global simplicity at every later time, zero-time reality or a new
+de Bruijn--Newman estimate.
 
 \section{A finite attained threshold for the actual quadratic flow}
 \begin{theorem}\label{thm:finitethreshold}
@@ -840,5 +1089,16 @@ Theorems 3.15 and 3.18, printed pp.~80--82.
 author manuscript v5, July 3, 2021, equations (1)--(4) and Theorem 1,
 printed pp.~2--3. \url{https://arxiv.org/abs/1801.05914}.
 The external nonnegativity proof is not reproduced here.
+
+\bibitem{Galaktionov} V. A. Galaktionov,
+\emph{Sturmian multiple zeros for Stokes and Navier--Stokes equations
+in $\R^3$ via solenoidal Hermite polynomials},
+\href{https://arxiv.org/abs/1107.3045}{arXiv:1107.3045v2}.
+Introduction/abstract comparison for classical one-dimensional Sturm
+and Hermite context only; its fluid results are not used.
+\bibitem{TaoHeat} T. Tao, \emph{Heat flow and zeroes of polynomials},
+author exposition, 17 October 2017, equations (1)--(3) and their
+derivation (ordinary forward-heat convention).
+\url{https://terrytao.wordpress.com/2017/10/17/heat-flow-and-zeroes-of-polynomials/}.
 \end{thebibliography}
 \end{document}
