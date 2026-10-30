@@ -10,10 +10,10 @@
 \newcommand{\R}{\mathbb R}
 \newcommand{\Lk}{\mathcal L_{v,k}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Exact truncated moment boundaries\protect\\
-for a Gaussian--cubic polynomial functional}
+\title{Exact polynomial moment boundaries\protect\\
+Gaussian--cubic truncations and pure-order positivity}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -39,7 +39,7 @@ An attained sixth-moment bound gives a concrete low-degree
 diagnostic. A separate singular positive cubic-square functional
 has no measure representation but is a limit of genuine moment
 vectors, with an explicit escaping sixth-moment defect.
-The methods are classical truncated moment
+For the separate pure-order generating series $e^{az^p}$, we give the complete all-degree square-positivity classification and an explicit negative-square witness. The methods are classical truncated moment
 theory; the explicit parameter formulas are matched to a
 frozen Lean development, with no priority claim.
 \end{abstract}
@@ -642,6 +642,106 @@ The construction illustrates standard noncompact moment geometry
 and uniform-integrability limits; no new general nonclosedness
 or weak-convergence principle is claimed.
 
+
+\section{The separate pure-order Gaussian boundary}
+The mixed Gaussian--cubic truncation is different from a pure-order
+functional. To make the distinction exact, fix an integer $p\geq2$
+and $a\in\R$. Define $L_{p,a}$ by the formal coefficient identity
+\[
+ L_{p,a}(e^{xz})=e^{az^p},\qquad
+ L_{p,a}(x^n)=\begin{cases}(pj)!a^j/j!,&n=pj,\\0,&p\nmid n.
+ \end{cases}
+\]
+This defines a real linear functional on polynomials by finite sums.
+It introduces no measure or interchange of an infinite series with
+an integral. Its normalization and polynomial Stein identity are
+\begin{equation}\label{eq:pure-stein}
+ L_{p,a}(1)=1,\qquad
+ L_{p,a}(xg)=pa\,L_{p,a}(g^{(p-1)}).
+\end{equation}
+Indeed, on $g=x^n$, this is the recurrence
+$m_{n+1}=pa(n)_{p-1}m_{n-p+1}$, with the entire right-hand side defined as zero when $n<p-1$.
+For $n+1=pj$, substitution of the displayed moments gives
+$(pj)!a^j/j!$ on both sides; when $p\nmid n+1$, both sides vanish.
+Linearity proves the identity for every polynomial. Conversely this
+recurrence and $m_0=1$ determine each successive moment, hence the
+whole functional. Thus \eqref{eq:pure-stein} characterizes this
+particular algebraic object uniquely.
+
+\begin{theorem}\label{thm:pure-positive}
+For every $p\geq2$ and real $a$,
+\[
+ \bigl[L_{p,a}(g^2)\geq0\text{ for all }g\in\R[x]\bigr]
+ \quad\Longleftrightarrow\quad
+ a=0\ \text{or}\ (p=2\text{ and }a\geq0).
+\]
+Equivalently the functional is represented on all polynomials by a
+centered Gaussian variable, allowing variance zero. It is strictly
+positive on squares of nonzero polynomials exactly when $p=2$ and
+$a>0$.
+\end{theorem}
+\begin{proof}
+If $a=0$, the coefficient formula gives $L_{p,0}(g)=g(0)$, so
+square positivity holds. It is not strict since $g=x$ has zero square
+value. If $p=2$ and $a\geq0$, let $Z$ be standard Gaussian and set
+$h=\sqrt{2a}$. All polynomials in $hZ$ are integrable. Gaussian
+integration by parts gives
+\[
+ \mathbb E[hZg(hZ)]=h^2\mathbb E[g'(hZ)]
+ =2a\,\mathbb E[g'(hZ)].
+\]
+The parts formula follows directly by integrating the derivative of
+$g(hz)e^{-z^2/2}$; polynomial growth makes the boundary terms vanish.
+Normalization and the just-proved uniqueness show
+$L_{2,a}(g)=\mathbb E[g(hZ)]$, which is square positive.
+When $a>0$, its Gaussian density is strictly positive everywhere.
+A nonzero polynomial has finitely many zeros and is nonzero on some
+open interval, so the integral of its square is strictly positive.
+For $p=2$, the necessary test $g=x$ gives $2a\geq0$; strict
+positivity gives $2a>0$.
+
+It remains to exclude every $p>2$ with $a\ne0$, including odd orders
+and either sign of $a$. Put $b=p!a\ne0$. Since $p$ divides neither
+$2$ nor $2(p-1)$, the moments give
+\[
+ L_{p,a}(x^2)=L_{p,a}((x^{p-1})^2)=0,
+ \qquad L_{p,a}(x\,x^{p-1})=b.
+\]
+For the second divisibility assertion, $p\mid2p-2$ would imply
+$p\mid2$, impossible when $p>2$. Expanding the actual polynomial
+square now gives the explicit witness
+\begin{equation}\label{eq:pure-negative}
+ L_{p,a}\bigl((x-bx^{p-1})^2\bigr)=-2b^2<0.
+\end{equation}
+Thus no such functional is square positive or Gaussian represented.
+Conversely every Gaussian-represented functional is square positive,
+which proves the claimed equivalence. The preceding cases also
+settle strict positivity completely.
+\end{proof}
+
+The witness diagnoses an indefinite pairing before any completion.
+Both $x$ and $x^{p-1}$ have null square value, whereas their sum has
+square value $2b\ne0$. Consequently the vectors with null square
+value do not even form an additive set. Quotienting those vectors
+cannot create a Hilbert space. Reversing the sign in
+\eqref{eq:pure-negative} gives square value $2b^2>0$; the failure is
+indefiniteness rather than an identically zero pairing. These are
+exact polynomial identities, not conclusions about a conjectural
+positive path law or convergence of signed stochastic integrals.
+
+The broader characteristic-function obstruction is classical:
+Lukacs \cite[Theorem B, printed page 487]{Lukacs} recalls
+Marcinkiewicz's theorem excluding an exponential of a polynomial of
+degree greater than two as a characteristic function. Our much
+narrower pure-order classification uses the two null diagonal
+moments directly and never assumes a characteristic-function
+representation of the formal exponential. It does not classify
+all degrees of the mixed $\mathcal L_{v,k}$ above, whose low-order
+variance is nonzero when $v>0$. The strict finite truncation regions
+and their null compatibility boundaries remain the separate results
+of the preceding sections. No new Gaussian characterization or
+general Marcinkiewicz theorem is claimed.
+
 \section{Normalization, interpretation and exact formal scope}
 For $v>0$, $x=\sqrt v\,y$ gives the normalized generating series
 $\exp(z^2/2+\kappa z^3/6)$, $\kappa=k/v^{3/2}$. Reflection changes
@@ -651,7 +751,7 @@ the sign of $k$; thus $r=\kappa^2$ governs the boundaries:
 \]
 Here $r_4$ solves $8-40r-45r^3=0$ and
 $r_3=(2\sqrt7-4)/3$. Finite matching does not certify a positive
-all-degree functional; no all-degree classification is asserted.
+all-degree functional; no all-degree classification of the mixed $\mathcal L_{v,k}$ is asserted. The separate pure-order theorem has its own hypotheses.
 
 Gram matrices, Schur complements, finite spectral measures and
 null-polynomial compatibility are classical truncated Hamburger
@@ -677,5 +777,10 @@ Recursiveness, positivity, and truncated moment problems,
 \emph{Houston J. Math.} \textbf{17} (1991), no.~4,
 603--635. In particular Theorems 3.1 and 3.9.
 \url{https://www.math.uh.edu/~hjm/v017n4/0603CURTO.pdf}.
+\bibitem{Lukacs} E. Lukacs,
+Some extensions of a theorem of Marcinkiewicz,
+\emph{Pacific Journal of Mathematics} \textbf{8} (1958), no.~3,
+487--501. Theorem B in the introduction.
+\url{https://msp.org/pjm/1958/8-3/pjm-v8-n3-p11-p.pdf}.
 \end{thebibliography}
 \end{document}

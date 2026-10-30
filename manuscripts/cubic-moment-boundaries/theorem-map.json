@@ -576,6 +576,375 @@
       "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
       "declaration_header": "theorem realizable_not_isClosed : \u00ac IsClosed realizable",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L207"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.square_pairing_expansion",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 9,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem square_pairing_expansion (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (P Q : Polynomial \u211d) (a : \u211d) :\n    E ((P + a \u2022 Q)^2) = E (P^2) + 2*a*E (P*Q) + a^2*E (Q^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L9"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.two_null_squares_witness",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 19,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem two_null_squares_witness (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (P Q : Polynomial \u211d) (hP : E (P^2) = 0) (hQ : E (Q^2) = 0) :\n    E ((P - E (P*Q) \u2022 Q)^2) = -2 * E (P*Q)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L19"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.two_null_squares_positive_witness",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 25,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem two_null_squares_positive_witness (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (P Q : Polynomial \u211d) (hP : E (P^2) = 0) (hQ : E (Q^2) = 0) :\n    E ((P + E (P*Q) \u2022 Q)^2) = 2 * E (P*Q)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L25"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.null_squares_not_additive",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 32,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem null_squares_not_additive (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (P Q : Polynomial \u211d) (hP : E (P^2) = 0) (hQ : E (Q^2) = 0)\n    (hPQ : E (P*Q) \u2260 0) : E ((P+Q)^2) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L32"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.two_null_squares_not_positive",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 40,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem two_null_squares_not_positive (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (P Q : Polynomial \u211d) (hP : E (P^2) = 0) (hQ : E (Q^2) = 0)\n    (hPQ : E (P*Q) \u2260 0) : \u00ac \u2200 R : Polynomial \u211d, 0 \u2264 E (R^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L40"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.pure_order_nondiagonal_degrees",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 48,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem pure_order_nondiagonal_degrees (p : \u2115) (hp : 2 < p) :\n    \u00ac p \u2223 2 \u2227 \u00ac p \u2223 2*(p-1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L48"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.pure_order_negative_square",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 60,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem pure_order_negative_square (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (p : \u2115) (hp : 2 < p)\n    (hzero : \u2200 n : \u2115, \u00ac p \u2223 n \u2192 E (X^n) = 0) :\n    E ((X - E (X^p) \u2022 X^(p-1))^2) = -2 * E (X^p)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L60"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.pure_order_not_square_positive",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 72,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem pure_order_not_square_positive (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (p : \u2115) (hp : 2 < p)\n    (hzero : \u2200 n : \u2115, \u00ac p \u2223 n \u2192 E (X^n) = 0)\n    (hlead : E (X^p) \u2260 0) : \u00ac \u2200 R : Polynomial \u211d, 0 \u2264 E (R^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L72"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.factorial_pseudo_moments_not_positive",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 82,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem factorial_pseudo_moments_not_positive (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (p : \u2115) (hp : 2 < p) (c T : \u211d) (hc : c \u2260 0) (hT : 0 < T)\n    (hzero : \u2200 n : \u2115, \u00ac p \u2223 n \u2192 E (X^n) = 0)\n    (hlead : E (X^p) = (p.factorial : \u211d)*c*T) :\n    \u00ac \u2200 R : Polynomial \u211d, 0 \u2264 E (R^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L82"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentPositivity.airy_negative_square",
+      "file": "Foundation/PseudoMomentPositivity.lean",
+      "line": 93,
+      "source_sha256": "599de750e1e86ca315c98c0519ebc5e4398529615650a79726701b57ab7ea97a",
+      "declaration_header": "theorem airy_negative_square (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d) (T : \u211d)\n    (h2 : E (X^2) = 0) (h3 : E (X^3) = -6*T) (h4 : E (X^4) = 0) :\n    E ((X + (6*T) \u2022 X^2)^2) = -72*T^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentPositivity.lean#L93"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 10,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "def moment (p : \u2115) (a : \u211d) : \u2115 \u2192 \u211d\n  | 0 => 1\n  | n+1 => (p : \u211d)*a*(n.descFactorial (p-1) : \u211d)*moment p a (n-(p-1))\ntermination_by n => n\n\ntheorem moment_zero (p : \u2115) (a : \u211d) : moment p a 0 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L10"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_zero",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 15,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_zero (p : \u2115) (a : \u211d) : moment p a 0 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L15"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_succ",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 17,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_succ (p n : \u2115) (a : \u211d) :\n    moment p a (n+1) = (p : \u211d)*a*(n.descFactorial (p-1) : \u211d)*moment p a (n-(p-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L17"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.expectation",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 21,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "def expectation (p : \u2115) (a : \u211d) : Polynomial \u211d \u2192\u2097[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L21"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.expectation_monomial",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 24,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem expectation_monomial (p n : \u2115) (a c : \u211d) :\n    expectation p a (monomial n c) = c * moment p a n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L24"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.expectation_X_pow",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 28,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem expectation_X_pow (p n : \u2115) (a : \u211d) : expectation p a (X^n) = moment p a n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L28"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.stein_X_pow",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 31,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem stein_X_pow (p n : \u2115) (a : \u211d) :\n    expectation p a (X * X^n) = (p : \u211d)*a * expectation p a (derivative^[p-1] (X^n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L31"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.polynomial_stein",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 38,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem polynomial_stein (p : \u2115) (a : \u211d) (g : Polynomial \u211d) :\n    expectation p a (X*g) = (p : \u211d)*a * expectation p a (derivative^[p-1] g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L38"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_off_order",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 51,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_off_order (p : \u2115) (hp : 0 < p) (a : \u211d) (n : \u2115)\n    (hn : \u00ac p \u2223 n) : moment p a n = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L51"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_leading",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 71,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_leading (p : \u2115) (hp : 0 < p) (a : \u211d) :\n    moment p a p = (p.factorial : \u211d)*a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L71"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.stein_moments_unique",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 82,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem stein_moments_unique (p : \u2115) (a : \u211d) (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (h1 : E 1 = 1)\n    (hstein : \u2200 g : Polynomial \u211d, E (X*g) = (p : \u211d)*a*E (derivative^[p-1] g))\n    (n : \u2115) : E (X^n) = moment p a n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L82"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.expectation_unique",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 97,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem expectation_unique (p : \u2115) (a : \u211d) (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (h1 : E 1 = 1)\n    (hstein : \u2200 g : Polynomial \u211d, E (X*g) = (p : \u211d)*a*E (derivative^[p-1] g)) :\n    E = expectation p a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L97"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.expectation_not_positive",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 110,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem expectation_not_positive (p : \u2115) (hp : 2 < p) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2200 R : Polynomial \u211d, 0 \u2264 expectation p a (R^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L110"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_multiple_factorial",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 119,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_multiple_factorial (p : \u2115) (hp : 0 < p) (a : \u211d) (k : \u2115) :\n    moment p a (p*k) * (k.factorial : \u211d) = ((p*k).factorial : \u211d)*a^k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L119"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoPolynomialStein.moment_multiple",
+      "file": "Foundation/PseudoPolynomialStein.lean",
+      "line": 150,
+      "source_sha256": "235d4071747617404521abe60754561731cd434186dd4332f8ef33670c5138a5",
+      "declaration_header": "theorem moment_multiple (p : \u2115) (hp : 0 < p) (a : \u211d) (k : \u2115) :\n    moment p a (p*k) = ((p*k).factorial : \u211d)*a^k/(k.factorial : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoPolynomialStein.lean#L150"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.scaled_polynomial_integrable",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 11,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem scaled_polynomial_integrable (h : \u211d) (g : Polynomial \u211d) :\n    Integrable (fun x => g.eval (h*x)) \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L11"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 16,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "def gaussianExpectation (h : \u211d) : Polynomial \u211d \u2192\u2097[\u211d] \u211d where\n  toFun g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L16"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation_apply",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 24,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussianExpectation_apply (h : \u211d) (g : Polynomial \u211d) :\n    gaussianExpectation h g = \u222b x, g.eval (h*x) \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L24"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation_one",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 27,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussianExpectation_one (h : \u211d) : gaussianExpectation h 1 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L27"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation_stein",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 30,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussianExpectation_stein (h : \u211d) (g : Polynomial \u211d) :\n    gaussianExpectation h (X*g) = h^2 * gaussianExpectation h g.derivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L30"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation_eq_expectation",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 52,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussianExpectation_eq_expectation (h : \u211d) :\n    gaussianExpectation h = expectation 2 (h^2/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L52"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.expectation_standard_gaussian",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 59,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem expectation_standard_gaussian (g : Polynomial \u211d) :\n    expectation 2 (1/2) g = \u222b x, g.eval x \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L59"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.expectation_nonnegative_gaussian",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 65,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem expectation_nonnegative_gaussian (a : \u211d) (ha : 0 \u2264 a) (g : Polynomial \u211d) :\n    expectation 2 a g = \u222b x, g.eval (Real.sqrt (2*a)*x) \u2202\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L65"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussianExpectation_square_nonneg",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 72,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussianExpectation_square_nonneg (h : \u211d) (g : Polynomial \u211d) :\n    0 \u2264 gaussianExpectation h (g^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L72"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.expectation_two_square_nonneg",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 79,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem expectation_two_square_nonneg (a : \u211d) (ha : 0 \u2264 a) (g : Polynomial \u211d) :\n    0 \u2264 expectation 2 a (g^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L79"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.expectation_zero_eval",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 86,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem expectation_zero_eval (p : \u2115) (g : Polynomial \u211d) :\n    expectation p 0 g = g.eval 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L86"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.square_positive_iff",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 92,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem square_positive_iff (p : \u2115) (hp : 2 \u2264 p) (a : \u211d) :\n    (\u2200 g : Polynomial \u211d, 0 \u2264 expectation p a (g^2)) \u2194\n      a = 0 \u2228 p = 2 \u2227 0 \u2264 a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L92"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.square_positive_iff_gaussian_realizable",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 114,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem square_positive_iff_gaussian_realizable (p : \u2115) (hp : 2 \u2264 p) (a : \u211d) :\n    (\u2200 g : Polynomial \u211d, 0 \u2264 expectation p a (g^2)) \u2194\n      \u2203 h : \u211d, expectation p a = gaussianExpectation h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L114"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussian_square_eq_zero_iff",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 132,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussian_square_eq_zero_iff (h : \u211d) (hh : h \u2260 0) (g : Polynomial \u211d) :\n    gaussianExpectation h (g^2) = 0 \u2194 g = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L132"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.gaussian_square_strict",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 156,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem gaussian_square_strict (h : \u211d) (hh : h \u2260 0) (g : Polynomial \u211d) (hg : g \u2260 0) :\n    0 < gaussianExpectation h (g^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L156"
+    },
+    {
+      "paper": "Pure-order polynomial functional section: normalized Stein recurrence and uniqueness, exact factorial moments, two-null-square indefinite witness, all-degree square positivity iff degenerate or nonnegative quadratic Gaussian, and strict positivity iff a positive-variance quadratic Gaussian. These are separate from the mixed Gaussian-cubic finite truncations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PseudoMomentGaussianBoundary.square_strictly_positive_iff",
+      "file": "Foundation/PseudoMomentGaussianBoundary.lean",
+      "line": 163,
+      "source_sha256": "154bd09e7fb985cf52f02f70bf0b54274f049bc4144875d41bbf8b5650d2234c",
+      "declaration_header": "theorem square_strictly_positive_iff (p : \u2115) (hp : 2 \u2264 p) (a : \u211d) :\n    (\u2200 g : Polynomial \u211d, g \u2260 0 \u2192 0 < expectation p a (g^2)) \u2194\n      p = 2 \u2227 0 < a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PseudoMomentGaussianBoundary.lean#L163"
     }
   ],
   "human_reorganization": [
@@ -587,7 +956,8 @@
     "The explicit two-atom positions 1 plus/minus sqrt(3) and weights are a printed human coordinate realization of the actual formal two-dimensional coordinate-zero spectral law; its mean and null recurrence identify the same law.",
     "The native index n+1 is renamed N>=1. The remote atom has weight N^-6 and exact sixth-moment contribution one. Actual probability vectors approach nonrepresentable data although their laws converge on all bounded observables.",
     "The quantitative total-variation bound 2N^-6, uniform tightness via the sixth-moment bound and lower-power uniform tail estimate are explicitly proved classical deductions. The formal source directly supplies bounded-observable convergence, exact moment limits, uniform sixth-moment bound and failure of uniform sixth-tail control.",
-    "Nonclosedness concerns the actual moment image on unbounded support, not the positive-semidefinite matrix cone or loss of probability mass. Coordinate multiplication fails on the null quotient even though the semidefinite quotient norm itself exists."
+    "Nonclosedness concerns the actual moment image on unbounded support, not the positive-semidefinite matrix cone or loss of probability mass. Coordinate multiplication fails on the null quotient even though the semidefinite quotient norm itself exists.",
+    "The pure-order functional with formal generating series exp(a z^p), integer p>=2, has a fully reconstructed polynomial Stein identity and unique moment recurrence. For p>2 and a nonzero, the literal square (x-p!a x^(p-1))^2 has value -2(p!a)^2. The two separate null squares therefore cannot be quotiented as an additive null space. Positivity holds exactly for a=0 or p=2 and a>=0, with actual centered Gaussian realization; strict positivity holds exactly for p=2 and a>0. The classical Gaussian integration-by-parts proof and all low-degree conventions are explicit. This all-degree theorem is confined to the pure-order functional, and does not promote the mixed Gaussian-cubic finite tests to an all-degree classification. The broader Marcinkiewicz obstruction is credited only as primary historical context, not imported through a formal exponential as a characteristic function."
   ],
   "literature": "Classical truncated Hamburger theory; exact two-parameter priority unresolved. Curto\u2013Fialkow Theorems 3.1 and 3.9 consulted in the primary paper."
 }
