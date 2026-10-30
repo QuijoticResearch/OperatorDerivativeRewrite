@@ -34,7 +34,9 @@ at every positive time. Exact integrated Gamma dissipation and sharp
 all-level decay are also proved, including non-Markov power orders. A finite-time
 increment kernel remains positive at every time, yet an exact
 two-frequency quadratic-heat example shows that it need not increase
-in Loewner order. The main equivalence is classical Schoenberg
+in Loewner order. Normalized Gaussian Wick lifts realize finite Gamma Gram
+powers; exact two-mode tests distinguish form eigenvalues from semigroup
+rates and real from complex coefficient volumes. The main equivalence is classical Schoenberg
 theory, organized here around a frozen Lean development. No new
 priority claim, completed pointwise Gamma domain or continuous-time
 path construction is asserted.
@@ -1041,6 +1043,148 @@ zero. The derivative varies the one-step Poisson parameter across a
 family of discrete chains; it does not construct a continuous-time
 compound-Poisson process with cadlag paths.
 
+
+\section{Gaussian Gram powers, mode rates and complex coefficient volume}
+The covariance identities also permit exact realizations and comparisons.
+They must retain the finite algebra, factorial normalization and distinction
+between a coefficient form and the generator acting on that coefficient.
+
+\subsection*{A normalized Gaussian realization on the finite algebra}
+Fix $0<H<1$ and the active-coordinate symbol $\psi(k)=|k_0|^{2H}$.
+Take a finite list of waves with $t_i=(k_i)_0\geq0$. Its anchored matrix is
+\[
+ R_{ij}=\tfrac12(t_i^{2H}+t_j^{2H}-|t_i-t_j|^{2H}).
+\]
+It is positive semidefinite by the already proved power-symbol criterion.
+Choose real Euclidean vectors $h_i$ with
+$\langle h_i,h_j\rangle=R_{ij}$; diagonalizing the finite positive
+matrix and taking square roots of its nonnegative eigenvalues constructs
+them explicitly. Let $W$ be an isonormal Gaussian family on their span.
+Define the degree-$q$ Wick polynomial $W_q(h)$ by the coefficient identity
+\[
+ e^{sW(h)-s^2\|h\|^2/2}
+   =\sum_{q\geq0}\frac{s^q}{q!}W_q(h).
+\]
+The coefficient defines a finite polynomial, including at $h=0$.
+The joint Gaussian moment generating function gives
+\[
+ \mathbb E\!\left[e^{sW(h)-s^2\|h\|^2/2}
+                 e^{tW(k)-t^2\|k\|^2/2}\right]
+ =e^{st\langle h,k\rangle}.
+\]
+Differentiation at the origin proves
+\[
+ \mathbb E[W_q(h)W_q(k)]=q!\langle h,k\rangle^q.
+\]
+These finite differentiations under Gaussian integration are justified
+on every bounded parameter rectangle by a polynomial times
+$e^{C(|W(h)|+|W(k)|)}$, integrable by completing Gaussian squares
+and Cauchy--Schwarz. Put $\widetilde W_q=W_q/\sqrt{q!}$.
+For $z_i=c_i e_{k_i}(x)$, define two \emph{real} Gaussian-space variables
+\[
+ U=\sum_i\operatorname{Re}(z_i)\widetilde W_q(h_i),\qquad
+ V=\sum_i\operatorname{Im}(z_i)\widetilde W_q(h_i).
+\]
+Their real Hilbert-sum norm is exactly
+\begin{equation}\label{eq:wickgram}
+ \|U\|_2^2+\|V\|_2^2
+ =\sum_{i,j}\bigl(\operatorname{Re} z_i\operatorname{Re} z_j+\operatorname{Im} z_i\operatorname{Im} z_j\bigr)R_{ij}^{q}
+ =\Gamma_q(f,f)(x),\quad f=\sum_i c_i e_{k_i}.
+\end{equation}
+The imaginary part of the Hermitian coefficient sum cancels by symmetry
+of $R^{\circ q}$, so the last value is real, as required. This also covers
+$q=0$, when all Wick polynomials and all entrywise zeroth powers are one.
+Without the factor $1/\sqrt{q!}$ the squared norm would be $q!$ times
+this Gamma energy. In one unit direction, the unnormalized second Wick
+polynomial has squared norm two, rather than one.
+\par\noindent\code{FractionalGammaChaosRealization}:
+\par\noindent\code{normalizedWick_inner}, \code{complexLift_norm_sq},\par\noindent
+\code{actual_gamma_realization}, \code{wick_two_normalization_obstruction}.
+
+The formal source realizes the same Gram data using its actual fractional
+Gaussian directions; the finite Gram construction above is a human
+coordinate reorganization. The complex coefficients use a real direct
+sum of two Gaussian $L^2$ spaces, not an asserted completed complex tensor
+space. This is a covariance/energy realization. It does not identify the
+stable Fourier generator with the Gaussian number operator or construct
+a new fractional-process calculus. The factorial convention is classical;
+compare Nualart~\cite{nualart}, Proposition 2.1.
+
+\subsection*{A curvature form eigenvalue is not a mode decay rate}
+At $H=1/2$ and the two actual frequencies one and two,
+\[
+ R=\begin{pmatrix}1&1\\1&2\end{pmatrix},\qquad
+ P=R^{\circ2}=\begin{pmatrix}1&1\\1&4\end{pmatrix}.
+\]
+The vectors $a=(1,0)$ and $b=(-1,1)$ are orthonormal for the
+$R$ inner product. Direct multiplication gives $Pa=Ra$ and
+$Pb=3Rb$, so the generalized form eigenvalues are one and three.
+Every $v=(v_0,v_1)$ decomposes as $(v_0+v_1)a+v_1b$. Its
+$R$-orthogonal component on the generalized eigenline three therefore
+has energy
+\[
+ E_3(v)=v_1^2.
+\]
+But the \emph{actual} Cauchy Fourier semigroup acts in the original
+frequency coordinates by
+\[
+ S_tv=(e^{-t}v_0,e^{-2t}v_1),\qquad
+ E_3(S_tv)=e^{-4t}E_3(v).
+\]
+For $v=(0,1)$ and every $t>0$, this is strictly larger than
+$e^{-6t}E_3(v)$. Thus replacing the actual rate four by twice
+the generalized form eigenvalue three is false. In particular $S_t$
+does not preserve the line spanned by $b$ at positive time; diagonalizing
+a pair of forms has not diagonalized the semigroup. This is a component
+of the origin coefficient form, not the circle-integrated Gamma energy
+whose genuine dissipation was established earlier.
+\par\noindent\code{BrownianCurvatureModeDecayObstruction}:
+\par\noindent\code{thirdMode_eigenpair}, \code{mode_decomposition},\par\noindent
+\code{modes_orthogonal}, \code{componentEnergy_flow},
+\code{false_rate_on_second_frequency}.
+
+\subsection*{The complex ellipsoid ratio is three, not square root three}
+The same two forms give an exact volume diagnostic. For real coefficient
+pairs, a determinant square root controls ellipse area. For complex
+coefficient pairs $z=x+iy\in\C^2$, the underlying Lebesgue space is
+four dimensional, and both $x$ and $y$ carry the same form.
+For $r>0$ let
+\[
+ T_r=\begin{pmatrix}1&1\\0&r\end{pmatrix},\qquad
+ M_r=T_r^{\mathsf T}T_r=
+       \begin{pmatrix}1&1\\1&1+r^2\end{pmatrix}.
+\]
+Then $M_1=R$, $M_{\sqrt3}=P$, and
+\[
+ z^*M_rz=\|T_rx\|^2+\|T_ry\|^2.
+\]
+Let $\mathcal E_r=\{z:z^*M_rz\leq1\}$. It is the inverse image
+of the real Euclidean unit ball $B_4$ under
+$\operatorname{diag}(T_r,T_r)$, whose real determinant is $r^2$.
+The ordinary real change-of-variables formula gives
+\[
+ \operatorname{vol}_4(\mathcal E_r)=r^{-2}\operatorname{vol}_4(B_4),
+ \qquad
+ \frac{\operatorname{vol}_4(\mathcal E_1)}
+      {\operatorname{vol}_4(\mathcal E_{\sqrt3})}=3.
+\]
+The ball has positive finite volume: it contains $[-1/2,1/2]^4$
+and is contained in $[-1,1]^4$. These bounds also justify division
+by the ellipsoid volumes. Applying a real two-dimensional formula to
+these complex coefficients would incorrectly give $\sqrt3$.
+\par\noindent\code{ComplexGammaEllipsoidVolume}:
+\par\noindent\code{realDouble_det}, \code{factor_energy},
+\code{cauchy_second_ellipsoid_volume}, \code{cauchy_complex_volume_ratio}.
+
+These are coefficient ellipsoids for the finite Gamma forms at one fixed
+torus point. At any other fixed $x$, the phases $c_i\mapsto c_ie_{k_i}(x)$
+are coordinatewise real rotations of determinant one, so their separate
+volumes agree; this is an elementary human consequence. Intersecting
+the constraints over every $x$, integrating their energies or evolving
+them under a semigroup are different operations. None of their volumes
+or decay rates is identified by this fixed-point ratio.
+
+\begin{samepage}
 \section{Formal source correspondence and editorial scope}
 The mathematical source is frozen at
 \begin{center}\small\ttfamily
@@ -1048,6 +1192,7 @@ bab688bb6140cd6316c80680095a914ea0d346db.
 \end{center}
 The namespace prefix is
 \begin{center}\code{OperatorDerivativeRewrite.Foundation}\end{center}
+\end{samepage}
 The accompanying \code{theorem-map.json} records full
 declaration names, exact lines, source hashes and baseline links.
 The main correspondences are as follows.
@@ -1102,7 +1247,6 @@ unsmoothed pointwise Gamma domain. Gamma remains on the finite Fourier
 algebra. No continuous-time path regularity, positive curvature
 constant or physical gauge-field mass gap is established.
 
-\clearpage
 \begin{thebibliography}{9}
 \bibitem{varadhan} S. R. S. Varadhan,
 \emph{Poisson Processes}, Spring 2006 lecture notes, Sections 1.2 and 2.2.
@@ -1118,5 +1262,8 @@ Diffusions hypercontractives,
 \emph{S\'eminaire de Probabilit\'es XIX},
 Lecture Notes in Math. \textbf{1123}, Springer, 1985, 177--206.
 \url{https://www.numdam.org/item/SPS_1985__19__177_0/}.
+\bibitem{nualart} D. Nualart, \emph{Malliavin Calculus and Normal Approximations},
+updated primary author notes, Proposition 2.1.
+\url{https://nualart.ku.edu/sites/nualart/files/documents/updated/Course_Malliavin_Calculus_accessible.pdf}.
 \end{thebibliography}
 \end{document}
