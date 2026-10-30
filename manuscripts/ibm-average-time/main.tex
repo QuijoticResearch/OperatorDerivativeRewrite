@@ -28,7 +28,10 @@ maximal Hilbert adjoint, the embedded gradient of $A_T$ is differentiable
 in adjoint-graph-dual norm, including left differentiation at the past
 endpoint. Its derivative pairs with actual $Z_T$ but has no native field
 representative. Along every vanishing positive or negative time-step
-sequence, the native gradient-slope norms diverge. These results give
+sequence, the native gradient-slope norms diverge. At a fixed horizon,
+contractions with each fixed clock direction have actual spatial occupation
+kernels whose mollifications converge strongly; full-vector strong convergence
+is not inferred. These results give
 precise source-valued operator identities, not an observed-filtration
 It\^o or Clark--Ocone formula. They reconstruct frozen formal results;
 novelty remains unresolved.
@@ -266,8 +269,9 @@ which proves \eqref{eq:domain} membership.
 
 Uniform derivative bounds alone have been used for membership, not to
 assert strong gradient convergence. The library has a further strong
-occupation-kernel convergence theorem, but it is unnecessary for the
-time-differentiation result proved here.
+directional occupation-kernel convergence theorem, proved separately below;
+it is unnecessary for the time-differentiation result and does not assert
+full-vector strong convergence.
 
 \section{Density in the fixed raw observed past}
 Closedness of $\D$ follows from closedness of both partial graphs and of
@@ -477,6 +481,197 @@ No tests or past spaces change with the step index in
 observed past. It does not resolve convergence of fields with a changing
 past, and it is not a temporal stochastic integral identification.
 
+
+\section{Actual directional occupation kernels and their strong limit}
+The average-domain proof requires only bounded clock gradients. There is
+also a stronger statement for each fixed clock direction. We prove it
+without replacing a physical spatial kernel by a pointwise white-noise
+value. Fix $T\geq0$ and $h\in H_W$, and put
+\[
+ a_h(s)=\langle h,q_s\rangle,\qquad
+ X_{n,h}=\langle G_T^{(n)},h\rangle_{H_W},\qquad
+ X_h=\langle D_WA_T,h\rangle_{H_W}.
+\]
+Here $a_h$ is continuous and $|a_h(s)|\leq\|h\|\sqrt T$ on $[0,T]$.
+Let $I:L^2(\R_x)\to L^2(P_B)$ denote the original scenery white-noise
+isometry, determined by the oriented Brownian interval indicators.
+Its range is closed. It is applied only to ordinary spatial $L^2$
+inputs, never to a Dirac distribution. Independence gives the isometric
+Bochner lift
+\[
+ \mathcal I:L^2(P_W;L^2(\R_x))\longrightarrow L^2(P_W\otimes P_B),
+ \qquad(\mathcal I k)(W)=I(k(W)).
+\]
+Fubini transports this to the original factor order. The equation is
+an $L^2(P_B)$ equality for almost every clock sample.
+
+\begin{theorem}\label{thm:occupationstrong}
+For every fixed $h,T$ there is a unique
+$K_{h,T}\in L^2(P_W;L^2(\R_x))$ such that $X_h=\mathcal I K_{h,T}$.
+The finite-width kernels
+\begin{equation}\label{eq:occupationkernel}
+ k_{n,h,T}(W,x)=\int_0^T a_h(s)\operatorname{sgn}(W_s)
+                      \rho_n(|W_s|-x)\,ds
+\end{equation}
+are genuine members of that Bochner space, satisfy
+$X_{n,h}=\mathcal I k_{n,h,T}$, and obey
+\begin{equation}\label{eq:occupationstrong}
+ k_{n,h,T}\longrightarrow K_{h,T}
+ \quad\hbox{in }L^2(P_W;L^2(\R_x)),\qquad
+ X_{n,h}\longrightarrow X_h\quad\hbox{in }L^2(P).
+\end{equation}
+For each fixed $\phi\in C_c(\R)$,
+\begin{equation}\label{eq:occupationtest}
+ \int_\R K_{h,T}(W,x)\phi(x)\,dx
+ =\int_0^T a_h(s)\operatorname{sgn}(W_s)\phi(|W_s|)\,ds
+ \quad\hbox{for almost every }W.
+\end{equation}
+A specified countable test family has a common probability-one event.
+\end{theorem}
+\begin{proof}
+For each fixed width, the spatial profile in
+\eqref{eq:occupationkernel} is an $L^2(\R_x)$ vector with norm
+$\|\rho_n\|_2$. Its coefficient is bounded by $\|h\|\sqrt T$.
+Translations of a fixed smooth compactly supported profile are
+continuous in spatial $L^2$, so the time/clock field is strongly
+measurable. Bochner integration and Minkowski show
+\[
+ \|k_{n,h,T}(W,\cdot)\|_2
+ \leq T\|h\|\sqrt T\,\|\rho_n\|_2.
+\]
+Thus it defines the asserted clock-Bochner element. Moving the bounded
+isometry through the time integral in \eqref{eq:clockgraph} proves
+$X_{n,h}=\mathcal I k_{n,h,T}$.
+
+The full gradients $G_T^{(n)}$ converge weakly to $D_WA_T$.
+Indeed strong value convergence and uniform gradient bounds show that
+all weak subsequential limits belong to that closed graph and equal its
+unique gradient. Equivalently, adjoint-domain pairings converge directly
+and extend to all field tests by their density and the uniform bound.
+Consequently $X_{n,h}\rightharpoonup X_h$. The range of $\mathcal I$
+is a closed linear subspace, hence weakly closed. It follows that
+$X_h=\mathcal I K_{h,T}$ for exactly one $K_{h,T}$, by isometry.
+Applying the adjoint of $\mathcal I$ also proves
+$k_{n,h,T}\rightharpoonup K_{h,T}$ in the physical Bochner space.
+
+Test this weak limit against $\zeta(W)\phi(x)$, with
+$\zeta\in L^2(P_W)$ and $\phi\in C_c(\R)$. Fubini in
+\eqref{eq:occupationkernel} gives
+\[
+ \langle k_{n,h,T},\zeta\otimes\phi\rangle
+ =\mathbb E_W\!\left[\zeta\int_0^T a_h(s)\operatorname{sgn}(W_s)
+                 (\rho_n*\phi)(|W_s|)\,ds\right].
+\]
+The frozen mollifiers are even, nonnegative and have mass one.
+Their convolutions tend to $\phi$ pointwise and are bounded by
+$\|\phi\|_\infty$. The integrand is dominated by
+$|\zeta|\,\|h\|\sqrt T\|\phi\|_\infty$ on the finite time interval;
+$\mathbb E|\zeta|<\infty$. Dominated convergence proves the corresponding
+identity with $K_{h,T}$ and $\phi$. Both random scalar sides belong to
+$L^2(P_W)$: the spatial side by Cauchy--Schwarz, the time side by its
+deterministic bound. Equality against all $\zeta$ proves
+\eqref{eq:occupationtest}. Countable intersection gives the stated
+family version, with no uncountable intersection of null sets.
+
+The crucial additional identification is
+\begin{equation}\label{eq:occupationconvolution}
+ k_{n,h,T}(W,\cdot)=\rho_n*K_{h,T}(W,\cdot)
+ \quad\hbox{in spatial }L^2,\quad\hbox{for almost every }W.
+\end{equation}
+Here are the representative details. For each fixed spatial $x$, apply
+\eqref{eq:occupationtest} with $\phi(r)=\rho_n(x-r)$.
+Its spatial side is the continuous pairing of the Bochner kernel with a
+continuously translated $L^2$ profile. Its time side is the integral of
+a jointly measurable time/space/clock function. Both sides are jointly
+measurable in $(x,W)$. Product-measure Fubini therefore converts the
+fixed-$x$ almost-sure identities into an identity for almost every
+$(x,W)$, then for almost every $W$ and almost every $x$.
+
+For the finite-width time integral its actual spatial $L^2$
+representative is \eqref{eq:occupationkernel}: for a continuous clock
+sample set $M=\sup_{s\leq T}|W_s|<\infty$. The scalar integrand
+vanishes outside $[-\epsilon_n,M+\epsilon_n]$ and is bounded by
+$\|h\|\sqrt T\|\rho_n\|_\infty$. This compact spatial majorant is
+square integrable, so scalar Fubini agrees with the spatial Bochner
+integral. Lebesgue measure on the whole line has not been treated as
+finite. These observations prove \eqref{eq:occupationconvolution} as an
+identity of actual stored $L^2$ classes, not merely of formal pairings.
+
+Positive unit-mass convolution is an $L^2$ contraction, even for signed
+inputs: Jensen gives
+\[
+ |(\rho_n*u)(x)|^2\leq\int\rho_n(x-r)|u(r)|^2\,dr,
+ \qquad \|\rho_n*u\|_2^2\leq\|u\|_2^2
+\]
+by Tonelli and translation invariance. Consequently
+$\|k_{n,h,T}\|\leq\|K_{h,T}\|$ in the full clock/spatial norm.
+Using the already proved weak convergence,
+\[
+ \|k_{n,h,T}-K_{h,T}\|^2
+ \leq2\|K_{h,T}\|^2-2\langle k_{n,h,T},K_{h,T}\rangle
+ \longrightarrow0.
+\]
+This proves the first strong limit; applying the isometry proves the
+second. Norms converge as well. At $T=0$ all kernels and fields vanish.
+\end{proof}
+The named formal endpoint is
+\par\noindent\code{IBMClockOccupationStrong.native_directional_tendsto}.
+\par\noindent Its proof uses precisely the positive-convolution norm
+bound and weak pairing argument above. The intermediate physical,
+spatial representative and product-null-set modules are mapped separately.
+
+\subsection*{A signed occupation density and the exact quantifiers}
+A further \emph{classical human deduction} identifies a measure after
+fixing $h,T$. For each continuous clock path define the finite signed
+measure
+\[
+ \nu_{h,T,W}(A)=\int_0^T a_h(s)\operatorname{sgn}(W_s)
+                                      \mathbf1_A(|W_s|)\,ds.
+\]
+Its total variation is at most $T\|h\|\sqrt T$, and its support is in
+$[0,M]$. Choose, for every positive integer $m$, a countable uniformly
+dense family of continuous functions supported in $[-m,m]$ (rational
+piecewise linear functions suffice). Apply the countable-family identity
+\eqref{eq:occupationtest} once to their union. On that common event,
+spatial Cauchy--Schwarz bounds the kernel pairing error for a uniform
+test approximation by $\sqrt{2m}\|K_{h,T}(W)\|_2$ times its uniform
+error. The time-side error is at most $T\|h\|\sqrt T$ times that error.
+Thus the identity holds for every compactly supported continuous test
+on the same event. Uniqueness of locally finite signed Radon measures
+gives $\nu_{h,T,W}(dx)=K_{h,T}(W,x)\,dx$ locally. It also forces the
+density to vanish outside $[0,M]$. Spatial $L^2$ on this bounded support
+implies $L^1$, so this is equality of finite signed measures globally.
+It asserts no common event for uncountably many $h$ or $T$, and no
+positivity or jointly continuous local-time field. Classical Brownian
+occupation density is already established; the primary exposition
+of Pitman--Yor~\cite{PY} supplies that context. The present proof instead
+identifies the particular density recovered from the original clock graph.
+
+For completeness, two more \emph{human consequences} make the topology
+precise. For any fixed finite orthonormal family $h_1,\ldots,h_N$,
+\[
+ \mathbb E\left\|P_N(G_T^{(n)}-D_WA_T)\right\|_{H_W}^2
+ =\sum_{j=1}^N\|X_{n,h_j}-X_{h_j}\|_2^2\longrightarrow0.
+\]
+Moreover convergence is uniform over $h$ in any fixed compact subset
+of $H_W$. The maps $h\mapsto X_{n,h}-X_h$ have uniformly bounded
+operator norms by Lemma~\ref{lem:folded} and the average-domain bound.
+Cover the compact set by finitely many sufficiently small balls; use
+the fixed-direction limit at their centers and this common bound on
+the remaining errors. This is the usual finite-net proof, not an
+operator-norm convergence assertion on the whole unit ball.
+
+Neither conclusion implies full-vector strong convergence: if $(e_n)$
+is an orthonormal family in an infinite-dimensional coefficient space
+and $\xi$ is any fixed scalar random variable of $L^2$ norm one, the
+fields $\xi e_n$ have norm one while every fixed contraction tends to
+zero in scalar $L^2$. This is a logical counterexample, not a claimed
+nonconvergence theorem for the actual IBM gradients. The strong
+directional spatial limit also concerns mollifier width at fixed $T$;
+it coexists with native time-slope norm escape in Theorem~\ref{thm:main}.
+It supplies neither a point clock gradient nor physical-time observed
+stochastic integration.
+
 \section{Formal scope and literature}
 \begingroup\raggedright
 The frozen authority is commit
@@ -528,5 +723,9 @@ Brownian time}, \href{https://arxiv.org/abs/1312.0818}{arXiv:1312.0818}
 \emph{Gaussian clock-domain obstructions for reflected-clock Brownian
 motion}, reviewed editorial companion (2026),
 \href{../ibm-clock-domain/main.pdf}{accompanying manuscript}.
+\bibitem{PY} J. Pitman and M. Yor,
+\emph{A guide to Brownian motion and related stochastic processes},
+primary author exposition (2018), occupation density discussion.
+\url{https://www.stat.berkeley.edu/~aldous/205B/pitman_yor_guide_bm.pdf}.
 \end{thebibliography}
 \end{document}
