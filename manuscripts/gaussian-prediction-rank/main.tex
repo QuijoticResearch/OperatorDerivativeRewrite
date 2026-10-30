@@ -1113,6 +1113,106 @@ representations in
 not a new range theorem. The stronger primary Banach-valued
 context in~\cite{MaasNeerven} retains its own Brownian filtration.
 
+
+\subsection*{Predictable representation beyond the full derivative domain}
+The derivative-domain hypothesis in \eqref{eq:causaladjoint} cannot be
+recovered from the existence of a predictable representation. There is
+an explicit counterexample depending on the single actual observation
+$B_1$. Let $H_n(x;1)$ be the monic Hermite polynomials used above and set
+\[
+ h_n=\frac{H_n(B_1;1)}{\sqrt{n!}},\qquad
+ F_N=\sum_{n=0}^N\frac{h_n}{n+1},\qquad
+ F=\sum_{n=0}^\infty\frac{h_n}{n+1}\quad\text{in }L^2(P).
+\]
+Orthonormality of the $h_n$ and $\sum(n+1)^{-2}<\infty$ prove
+existence of this limit. The subspace of classes measurable modulo
+null sets with respect to $\sigma(B_1)$ is closed, so $F$ belongs to
+that actual one-observation space. Its mean is one.
+
+Let $v=\mathbf1_{(0,1]}$ be the unit source direction of $B_1$.
+Polynomial differentiation gives
+\[
+ DF_N=\sum_{n=1}^N\frac{nH_{n-1}(B_1;1)}{(n+1)\sqrt{n!}}v,
+ \qquad \|DF_N\|^2=\sum_{n=1}^N\frac{n}{(n+1)^2}\longrightarrow\infty.
+\]
+The divergence follows from
+$n/(n+1)^2=1/(n+1)-1/(n+1)^2$.
+This alone would not establish $F\notin D(D)$ without connecting
+these particular approximants to the original closed operator.
+Here that connection has a direct adjoint test. Gaussian polynomial
+integration by parts gives
+\[
+ \delta(Dh_n)=nh_n.
+\]
+Indeed $Dh_n=nH_{n-1}(B_1;1)v/\sqrt{n!}$ and
+$\delta(g(B_1)v)=B_1g(B_1)-g'(B_1)$; the Hermite recurrence
+$xH_{n-1}(x;1)-(n-1)H_{n-2}(x;1)=H_n(x;1)$ proves the identity.
+All these variables are in the original polynomial graphs and have
+finite moments. If $F\in D(D)$ with derivative $G$, adjoint duality
+would imply
+\[
+ \langle G,DF_N\rangle
+ =\langle F,\delta DF_N\rangle
+ =\sum_{n=1}^N\frac{n}{(n+1)^2}=\|DF_N\|^2.
+\]
+Cauchy--Schwarz would give $\|DF_N\|\le\|G\|$ for every $N$, a
+contradiction. Thus $F$ has no full derivative value and, equivalently,
+no full-adjoint pair for $\delta^*=D$.
+
+Yet every finite centered sum has the predictable representative
+\[
+ u_N(s)=\mathbf1_{(0,1]}(s)
+       \sum_{n=1}^N\frac{nH_{n-1}(B_s;s)}{(n+1)\sqrt{n!}},
+ \qquad \mathfrak Iu_N=F_N-1.
+\]
+This is the genuine time-space Hermite formula proved in the preceding
+range argument. Isometry shows that the $u_N$ are Cauchy in the full
+predictable space, with exact squared tail error
+\[
+ \|u_N-u_M\|^2=\sum_{n=M+1}^N\frac1{(n+1)^2}\quad(N\ge M).
+\]
+Let their limit be $u$. Continuity gives
+$\mathfrak Iu=F-1$ and uniqueness gives $u=\mathfrak I^*F$.
+Its finite energy is $\sum_{n\ge1}(n+1)^{-2}$, although the full
+source-gradient energies above diverge.
+
+Moreover these are precisely the predictable projections of the
+full truncated gradients: $u_N=\pi DF_N$ by
+\eqref{eq:causaladjoint}. At the coefficient level the same fact follows
+from
+\[
+ \E[H_{n-1}(B_1;1)\mid\mathcal F_s^B]=H_{n-1}(B_s;s),
+       \qquad 0\le s\le1.
+\]
+To verify this, split $B_1=B_s+(B_1-B_s)$, use independence and the
+Gaussian exponential moment in the generating function, and compare
+finite polynomial coefficients. Thus the projected gradients
+converge strongly while the original gradients escape in norm. No
+limit is being assigned to $DF$ outside its domain.
+
+More generally, for every ambient scalar Gaussian $G\in L^2$, its
+finite-chaos truncations $G_N$ obey
+\[
+ (G_N,\pi DG_N)\longrightarrow(G,\mathfrak I^*G)
+                 \quad\text{in }L^2\oplus\mathcal P.
+\]
+Each truncation lies in the full derivative domain by finite-chaos
+boundedness; \eqref{eq:causaladjoint} identifies its projected gradient,
+and boundedness of $\mathfrak I^*$ proves the convergence. This is a
+bounded extension of the projected graph, not an extension of the
+full derivative. For arbitrary ambient $G$, its integral represents
+the Brownian-range projection, as the independent negative-time
+example already shows. The classical bounded-extension context is
+covered by Maas--van Neerven~\cite{MaasNeerven}; no new general
+Clark--Ocone theorem is claimed.
+
+\par\noindent\code{GaussianPredictableDomainGap} contains the actual
+one-observation target, full-domain exclusion, gradient energy escape,
+predictable representation and projected graph convergence.
+\par\noindent\code{GaussianChaosGraphConvergence} supplies the exact
+original derivative graph and weighted-chaos criterion. The finite
+Hermite-adjoint calculation above reconstructs the exclusion directly.
+
 Let $\Pi_\nabla$ be orthogonal projection onto the closed gradient
 range. Here closedness has an actual graph proof. The earlier
 recovery satisfies $R^*Df=f-\E f$ on $D(D)$. Thus $v\in\operatorname{ran}D$

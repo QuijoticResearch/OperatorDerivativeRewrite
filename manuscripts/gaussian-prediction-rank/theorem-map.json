@@ -3460,6 +3460,429 @@
       "source_sha256": "724e068a1a4f55e3fdd49fcae9aa8cf8f577eae9dd8bceb2ab46afd0461bc974",
       "declaration_header": "theorem exists_centered_not_representable : \u2203 F : GaussianL2,\n    (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) = 0 \u2227 \u2016F\u2016 ^ 2 = 1 \u2227\n      F \u2209 itoIntegral.toLinearMap.range",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAmbientRepresentationObstruction.lean#L97"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.harmonicSequence",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 20,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "def harmonicSequence : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L20"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.harmonic_weighted_not_summable",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 24,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem harmonic_weighted_not_summable :\n    \u00ac Summable (fun n : \u2115 => (n : \u211d) * (harmonicSequence n)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L24"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.projection_terminalEmbedding",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 35,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem projection_terminalEmbedding (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1)\n    (c : CoefficientSpace) (n : \u2115) :\n    projection n (terminalEmbedding u hu c) = c n \u2022 normalizedWick u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L35"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.roughTerminal",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 51,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "def roughTerminal (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L51"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_single_observation",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 54,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_single_observation (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    roughTerminal u hu \u2208 generated (fun _ : Unit => u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L54"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_projection_energy",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 61,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_projection_energy (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (n : \u2115) :\n    \u2016projection n (roughTerminal u hu)\u2016^2 = (harmonicSequence n)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L61"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_not_in_derivative_domain",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 66,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_not_in_derivative_domain (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    roughTerminal u hu \u2209 closedCylindricalDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L66"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalDirection",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 71,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "def terminalDirection : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L71"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalDirection_unit",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 75,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem terminalDirection_unit : \u2016terminalDirection\u2016^2 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L75"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.brownian_wick_mem",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 79,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem brownian_wick_mem (n : \u2115) : (wick terminalDirection n : GaussianL2) \u2208 brownianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L79"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_brownian_mem",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 88,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_brownian_mem : roughTerminal terminalDirection terminalDirection_unit \u2208 brownianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L88"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalSigma",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 98,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "def terminalSigma : MeasurableSpace SampleSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L98"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalSigma_le",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 101,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem terminalSigma_le : terminalSigma \u2264 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L101"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalL2",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 104,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "def terminalL2 : Submodule \u211d GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L104"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminalL2_isClosed",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 106,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem terminalL2_isClosed : IsClosed (terminalL2 : Set GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L106"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.brownian_wick_terminal_mem",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 109,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem brownian_wick_terminal_mem (n : \u2115) :\n    (wick terminalDirection n : GaussianL2) \u2208 terminalL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L109"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_terminal_mem",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 119,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_terminal_mem : roughTerminal terminalDirection terminalDirection_unit \u2208 terminalL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L119"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.actual_predictable_representation",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 126,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem actual_predictable_representation :\n    itoIntegral (predictableAdjoint (roughTerminal terminalDirection terminalDirection_unit)) =\n      roughTerminal terminalDirection terminalDirection_unit -\n        (\u222b \u03c9, roughTerminal terminalDirection terminalDirection_unit \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L126"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.representation_without_full_derivative",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 132,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem representation_without_full_derivative :\n    \u2203 F : GaussianL2, F \u2208 brownianL2 \u2227 F \u2209 closedCylindricalDerivative.domain \u2227\n      itoIntegral (predictableAdjoint F) = F - (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L132"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_not_in_full_adjoint_domain",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 138,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_not_in_full_adjoint_domain (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    roughTerminal u hu \u2209 hilbertDivergence.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L138"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.no_full_adjoint_pair",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 143,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem no_full_adjoint_pair (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    \u00ac \u2203 v : GaussianVectorL2, (roughTerminal u hu, v) \u2208 hilbertDivergence.adjoint.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L143"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.terminal_representation_without_full_adjoint",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 148,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem terminal_representation_without_full_adjoint :\n    \u2203 F : GaussianL2, AEStronglyMeasurable[terminalSigma] F gaussianProduct \u2227\n      F \u2209 hilbertDivergence.adjoint.domain \u2227\n      itoIntegral (predictableAdjoint F) = F - (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L148"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_gradient_truncation_energy",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 154,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_gradient_truncation_energy (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) (N : \u2115) :\n    \u2016gradientTruncation N (roughTerminal u hu)\u2016^2 =\n      \u2211 n \u2208 Finset.range (N+1), (n : \u211d) * (harmonicSequence n)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L154"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_gradient_energy_diverges",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 160,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_gradient_energy_diverges (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    Tendsto (fun N : \u2115 => \u2016gradientTruncation N (roughTerminal u hu)\u2016^2) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L160"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_predictable_approximation",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 168,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_predictable_approximation (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    Tendsto (fun N : \u2115 => predictableAdjoint (truncation N (roughTerminal u hu)))\n      atTop (\ud835\udcdd (predictableAdjoint (roughTerminal u hu)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L168"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.predictableProjection_gradientTruncation",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 172,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem predictableProjection_gradientTruncation (F : GaussianL2) (N : \u2115) :\n    predictableProjection (gradientTruncation N F) = predictableAdjoint (truncation N F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L172"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.all_L2_projected_graph_approximation",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 183,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem all_L2_projected_graph_approximation (F : GaussianL2) :\n    (\u2200 N : \u2115, (truncation N F, gradientTruncation N F) \u2208 closedCylindricalDerivative.graph) \u2227\n      Tendsto (fun N : \u2115 => (truncation N F, predictableProjection (gradientTruncation N F)))\n        atTop (\ud835\udcdd (F, predictableAdjoint F))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L183"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictableDomainGap.rough_projected_derivatives_converge",
+      "file": "Foundation/GaussianPredictableDomainGap.lean",
+      "line": 192,
+      "source_sha256": "20ffe6e19361cc77e25858f96d8fd8ab873a804b432df53320e6c12cc07cd920",
+      "declaration_header": "theorem rough_projected_derivatives_converge (u : CoefficientSpace) (hu : \u2016u\u2016^2 = 1) :\n    Tendsto (fun N : \u2115 => predictableProjection (gradientTruncation N (roughTerminal u hu)))\n      atTop (\ud835\udcdd (predictableAdjoint (roughTerminal u hu)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictableDomainGap.lean#L192"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 11,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "def projectedGradient (n : \u2115) : GaussianL2 \u2192L[\u211d] GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L11"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_graph",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 14,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_graph (n : \u2115) (f : GaussianL2) :\n    (projection n f, projectedGradient n f) \u2208 sectorGraph n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L14"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_energy",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 17,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_energy (n : \u2115) (f : GaussianL2) :\n    \u2016projectedGradient n f\u2016 ^ 2 = (n : \u211d) * \u2016projection n f\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L17"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.gradient_ranges_orthogonal",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 21,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem gradient_ranges_orthogonal :\n    OrthogonalFamily \u211d (fun n => (gradient n).range)\n      (fun n => (gradient n).range.subtype\u2097\u1d62)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L21"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.gradientComponent",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 34,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "def gradientComponent (f : GaussianL2) (n : \u2115) : (gradient n).range",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L34"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_sum_energy",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 37,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_sum_energy (f : GaussianL2) (s : Finset \u2115) :\n    \u2016\u2211 n \u2208 s, projectedGradient n f\u2016 ^ 2 = \u2211 n \u2208 s, \u2016projectedGradient n f\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L37"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.derivative_projectedGradient_pairing",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 41,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem derivative_projectedGradient_pairing {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) (n : \u2115) :\n    inner \u211d g (projectedGradient n f) = \u2016projectedGradient n f\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L41"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_finite_bound",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 53,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_finite_bound {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) (s : Finset \u2115) :\n    \u2211 n \u2208 s, \u2016projectedGradient n f\u2016 ^ 2 \u2264 \u2016g\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L53"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_summable",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 63,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_summable {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) :\n    Summable (fun n => projectedGradient n f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L63"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.finite_projection_graph",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 70,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem finite_projection_graph (f : GaussianL2) (s : Finset \u2115) :\n    (\u2211 n \u2208 s, projection n f, \u2211 n \u2208 s, projectedGradient n f) \u2208\n      closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L70"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.projectedGradient_hasSum",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 76,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem projectedGradient_hasSum {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) :\n    HasSum (fun n => projectedGradient n f) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L76"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.gradientTruncation",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 86,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "def gradientTruncation (N : \u2115) : GaussianL2 \u2192L[\u211d] GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L86"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.truncation_graph",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 89,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem truncation_graph (N : \u2115) (f : GaussianL2) :\n    (truncation N f, gradientTruncation N f) \u2208 closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L89"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.simultaneous_graph_tendsto",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 94,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem simultaneous_graph_tendsto {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) :\n    Tendsto (fun N => (truncation N f, gradientTruncation N f)) atTop (\ud835\udcdd (f, g))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L94"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.derivative_domain_iff_weighted_chaos",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 103,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem derivative_domain_iff_weighted_chaos (f : GaussianL2) :\n    f \u2208 closedCylindricalDerivative.domain \u2194\n      Summable (fun n : \u2115 => (n : \u211d) * \u2016projection n f\u2016 ^ 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L103"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianNumberSectors.derivative_energy_hasSum",
+      "file": "Foundation/GaussianChaosGraphConvergence.lean",
+      "line": 122,
+      "source_sha256": "a7edc6d7a08be96682efc9af798afc45ecbc80f385c33c609482f0a11329367a",
+      "declaration_header": "theorem derivative_energy_hasSum {f : GaussianL2} {g : GaussianVectorL2}\n    (hf : (f, g) \u2208 closedCylindricalDerivative.graph) :\n    HasSum (fun n : \u2115 => (n : \u211d) * \u2016projection n f\u2016 ^ 2) (\u2016g\u2016 ^ 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianChaosGraphConvergence.lean#L122"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.harmonicCoefficient",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 151,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "def harmonicCoefficient (i : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L151"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.harmonic_square_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 153,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem harmonic_square_summable : Summable (fun i => (harmonicCoefficient i)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L153"
+    },
+    {
+      "paper": "Section 10, predictable representation beyond full derivative domain: actual single B1-observation harmonic Hermite target, exact full-gradient truncation energy escape, bounded predictable adjoint, terminal Brownian representation and strong projected graph convergence for every ambient L2 target. No ambient PRP or full-gradient extension is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SPDEWickModes.harmonic_not_summable",
+      "file": "Foundation/SPDEWickModes.lean",
+      "line": 158,
+      "source_sha256": "8ab214aa40b6759ade31ea0f4874343d466dd3f503f36af3fff577e03d2899a2",
+      "declaration_header": "theorem harmonic_not_summable : \u00ac Summable harmonicCoefficient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickModes.lean#L158"
     }
   ],
   "paper_sections": {
@@ -3507,7 +3930,8 @@
     "The added Section 3 diagnostic concerns exactly the scalar <Q_0 u_1,u_t-u_0>, which vanishes because the initial observed source span is zero. Its actual full-past forecast remainder has squared norm at least t^(2H)/4, excluding min(4H,2H+1) for every 0<H<1 and every proposed local big-O constant. The Brownian case distinguishes projection of a deterministic source direction from conditioning the random gradient field; no correctly formulated Ito/Taylor or Clark\u2013Ocone theorem is refuted.",
     "Section 15 proves strong measurability of increasing past projections from monotone energies and real polarization, with the six exact frozen measurability correspondences fully read. The Bochner L2 fiber projection, strong right limits onto intersections of future subspaces, a common countable discontinuity set, and the finite Stieltjes energy measure after right enlargement are complete classical HUMAN deductions, not new named formal results. The shifted information-arrival example proves that the enlargement changes the past; neither original raw energy additivity, operator-norm continuity nor a physical-time stochastic integrator follows.",
     "Section 10 reconstructs the original gradient-range Hodge projection of an actual raw Brownian predictable field. The original Gaussian divergence agrees with its Ito integral; minimum recovery has squared energy 1/q of the causal integrand in pure chaos q, with residual energy (1-1/q) times that norm and predictable reprojection u/q. All original graphs and Brownian-generated versus larger ambient range distinctions are explicit. The exact q^(-k) iteration and full quadratic witness (causal coefficient 2B_s, minimum field B_T, energy gap T^2) are labelled human reconstructions, including actual partition L2 errors 2T^2/n. No nonzero predictable zero-Ito-integral field, observed-IBM calculus or arbitrary-filtration representation is inferred. Classical Gaussian Hodge and Clark-Ocone antecedents are credited.",
-    "Section 10 now proves the exact centered raw Brownian-generated integral range using sorted positive-length increment coordinates, tensor Hermite expansion, a last-nonzero-cell representer and full L2 closure. Bounded truncation and independent-cell L2 factorization justify multiplying the integral identity by an unbounded past polynomial. The actual negative-time source coordinate has mean zero and variance one, is independent of the whole positive Brownian sigma algebra and has zero predictable adjoint, so it is an original smooth Gaussian target outside that integral range. Its nonzero full source recovery remains distinct from its zero predictable projection. This is classical Brownian representation with the original range/domain qualifications, not an arbitrary ambient or IBM representation theorem."
+    "Section 10 now proves the exact centered raw Brownian-generated integral range using sorted positive-length increment coordinates, tensor Hermite expansion, a last-nonzero-cell representer and full L2 closure. Bounded truncation and independent-cell L2 factorization justify multiplying the integral identity by an unbounded past polynomial. The actual negative-time source coordinate has mean zero and variance one, is independent of the whole positive Brownian sigma algebra and has zero predictable adjoint, so it is an original smooth Gaussian target outside that integral range. Its nonzero full source recovery remains distinct from its zero predictable projection. This is classical Brownian representation with the original range/domain qualifications, not an arbitrary ambient or IBM representation theorem.",
+    "Section 10 includes the actual harmonic-coefficient Hermite target F=sum H_n(B1;1)/(sqrt(n!)*(n+1)), which is in one-observation L2 and has mean one, but has no original full Gaussian derivative or full-adjoint pair. The printed finite-polynomial adjoint test proves full-domain exclusion directly, rather than inferring exclusion merely from a divergent arbitrary approximation. The genuine time-space Hermite predictable coefficients have exact square-summable tail energy and converge to I*F, representing F-1. Predictable projections of the full truncated gradients converge strongly even while their original norms diverge. Finite-chaos projected graph convergence holds for every ambient target because I* is bounded; its integral only yields Brownian-range projection outside the Brownian-generated space. Exact finite coefficient formulas and adjoint-test regrouping are human reconstructions of the named frozen results; no new Clark--Ocone principle or derivative-domain extension is claimed."
   ],
   "literature": [
     {
