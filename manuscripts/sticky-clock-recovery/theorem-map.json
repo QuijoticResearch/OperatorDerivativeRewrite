@@ -3591,6 +3591,429 @@
       "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
       "declaration_header": "theorem pullback_adjoint_eq (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) :\n    (pullback U T).adjoint = U.symm.toLinearEquiv.toLinearMap.compPMap T.adjoint",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L139"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.originalOccupation",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 14,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "def originalOccupation (\u03c9 : SampleSpace) (T : \u211d\u22650) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L14"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.changedOccupation",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 17,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "def changedOccupation (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (T : \u211d\u22650) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L17"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.restricted_transport",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 20,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "theorem restricted_transport (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (T : \u211d\u22650) :\n    ordinaryTime.restrict (Iic T) = Measure.map (forward \u03ba \u03c9)\n      ((clockMeasure \u03ba \u03c9).restrict (Iic (inverse \u03ba \u03c9 T)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L20"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.changedOccupation_total",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 27,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "theorem changedOccupation_total (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (T : \u211d\u22650) :\n    changedOccupation \u03ba \u03c9 T univ = (T : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L27"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.originalOccupation_total",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 32,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "theorem originalOccupation_total (\u03c9 : SampleSpace) (T : \u211d\u22650) :\n    originalOccupation \u03c9 T univ = (T : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L32"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedOccupationMeasure.occupation_decomposition",
+      "file": "Foundation/BrownianTimeChangedOccupationMeasure.lean",
+      "line": 37,
+      "source_sha256": "45b656df3f9f913ceb77efec5fdf1d2cc965e7a5905ac05280caee2ac90632d0",
+      "declaration_header": "theorem occupation_decomposition : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    changedOccupation \u03ba \u03c9 T = originalOccupation \u03c9 (inverse \u03ba \u03c9 T)+\n      ((\u03ba : \u211d\u22650\u221e)*(mass \u03c9 (inverse \u03ba \u03c9 T) : \u211d\u22650\u221e)) \u2022 Measure.dirac (0 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedOccupationMeasure.lean#L37"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianOccupationIntegralTransport.ordinaryTime_restrict",
+      "file": "Foundation/BrownianOccupationIntegralTransport.lean",
+      "line": 14,
+      "source_sha256": "e94ea1d4b7a92757567cc3469433da3319e4e5de30f8f1542bcafeab934e4090",
+      "declaration_header": "theorem ordinaryTime_restrict (T : \u211d\u22650) :\n    ordinaryTime.restrict (Iic T) =\n      Measure.map Real.toNNReal ((volume : Measure \u211d).restrict (Ioc 0 (T : \u211d)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianOccupationIntegralTransport.lean#L14"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianOccupationIntegralTransport.ordinaryTime_integral",
+      "file": "Foundation/BrownianOccupationIntegralTransport.lean",
+      "line": 21,
+      "source_sha256": "e94ea1d4b7a92757567cc3469433da3319e4e5de30f8f1542bcafeab934e4090",
+      "declaration_header": "theorem ordinaryTime_integral (h : \u211d\u22650 \u2192 \u211d) (hc : Continuous h) (T : \u211d\u22650) :\n    (\u222b t in Iic T, h t \u2202ordinaryTime) = \u222b s in 0..(T : \u211d), h s.toNNReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianOccupationIntegralTransport.lean#L21"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianOccupationIntegralTransport.bounded_observation_transport",
+      "file": "Foundation/BrownianOccupationIntegralTransport.lean",
+      "line": 26,
+      "source_sha256": "e94ea1d4b7a92757567cc3469433da3319e4e5de30f8f1542bcafeab934e4090",
+      "declaration_header": "theorem bounded_observation_transport (g : \u211d \u2192 \u211d) (hg : Continuous g) (K : \u211d)\n    (hK : \u2200 x, \u2016g x\u2016 \u2264 K) : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    (\u222b s in 0..(T : \u211d), g (changedPath \u03ba \u03c9 s.toNNReal)) =\n      (\u222b s in 0..(inverse \u03ba \u03c9 T : \u211d), g (clockPath \u03c9 s.toNNReal))+\n        (\u03ba : \u211d)*(mass \u03c9 (inverse \u03ba \u03c9 T) : \u211d)*g 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianOccupationIntegralTransport.lean#L26"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.state",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 16,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "def state (\u03ba t : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L16"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.marginal",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 17,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "def marginal (\u03ba t : \u211d\u22650) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L17"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.pairLaw",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 18,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "def pairLaw (\u03ba s t : \u211d\u22650) : Measure (\u211d \u00d7 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L18"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.pairKernel",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 20,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "def pairKernel (\u03ba s t : \u211d\u22650) : Kernel \u211d \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L20"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.state_measurable",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 22,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem state_measurable (\u03ba t : \u211d\u22650) : Measurable (state \u03ba t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L22"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.pairLaw_disintegration",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 31,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem pairLaw_disintegration (\u03ba s t : \u211d\u22650) :\n    marginal \u03ba s \u2297\u2098 pairKernel \u03ba s t = pairLaw \u03ba s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L31"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.pairKernel_marginal_transport",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 35,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem pairKernel_marginal_transport (\u03ba s t : \u211d\u22650) :\n    pairKernel \u03ba s t \u2218\u2098 marginal \u03ba s = marginal \u03ba t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L35"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.diagonal_kernel",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 39,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem diagonal_kernel (\u03ba s : \u211d\u22650) : pairKernel \u03ba s s =\u1d50[marginal \u03ba s] Kernel.id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L39"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.bounded_conditional",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 42,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem bounded_conditional (\u03ba s t : \u211d\u22650) (f : \u211d \u2192 \u211d) (hf : Measurable f)\n    (K : \u211d) (hK : \u2200 x, \u2016f x\u2016 \u2264 K) :\n    gaussianProduct[(fun \u03c9 => f (state \u03ba t \u03c9)) |\n      MeasurableSpace.comap (state \u03ba s) inferInstance] =\u1d50[gaussianProduct]\n      (fun \u03c9 => \u222b y, f y \u2202pairKernel \u03ba s t (state \u03ba s \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L42"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.current_mean",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 53,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem current_mean (\u03ba s t : \u211d\u22650) (hst : s \u2264 t) :\n    gaussianProduct[state \u03ba t | MeasurableSpace.comap (state \u03ba s) inferInstance]\n      =\u1d50[gaussianProduct] state \u03ba s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L53"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.row_mean_on_state",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 70,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem row_mean_on_state (\u03ba s t : \u211d\u22650) (hst : s \u2264 t) :\n    (fun \u03c9 => \u222b y, y \u2202pairKernel \u03ba s t (state \u03ba s \u03c9)) =\u1d50[gaussianProduct] state \u03ba s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L70"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedConditionalKernel.row_identity_integrable",
+      "file": "Foundation/BrownianTimeChangedConditionalKernel.lean",
+      "line": 75,
+      "source_sha256": "43e31293a8ec91fc41f6a1232778852caac2278bc51f393733bbb6dfaa600a15",
+      "declaration_header": "theorem row_identity_integrable (\u03ba s t : \u211d\u22650) :\n    \u2200\u1d50 x \u2202marginal \u03ba s, Integrable (fun y : \u211d => y) (pairKernel \u03ba s t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedConditionalKernel.lean#L75"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.StateL2",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 15,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "abbrev StateL2 (\u03ba t : \u211d\u22650)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L15"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.state_preserving",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 17,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "def state_preserving (\u03ba t : \u211d\u22650) : MeasurePreserving (state \u03ba t) gaussianProduct (marginal \u03ba t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L17"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.embedding",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 20,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "def embedding (\u03ba t : \u211d\u22650) : StateL2 \u03ba t \u2192\u2097\u1d62[\u211d] GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L20"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.embedding_coeFn",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 23,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem embedding_coeFn (\u03ba t : \u211d\u22650) (f : StateL2 \u03ba t) :\n    embedding \u03ba t f =\u1d50[gaussianProduct] fun \u03c9 => f (state \u03ba t \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L23"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.embedding_range",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 27,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem embedding_range (\u03ba t : \u211d\u22650) : (embedding \u03ba t).toLinearMap.range =\n    lpMeas \u211d \u211d (MeasurableSpace.comap (state \u03ba t) inferInstance) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L27"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 31,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "def transition (\u03ba s t : \u211d\u22650) : StateL2 \u03ba t \u2192L[\u211d] StateL2 \u03ba s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L31"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_diagonal",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 34,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_diagonal (\u03ba t : \u211d\u22650) (f : StateL2 \u03ba t) : transition \u03ba t t f = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L34"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_pairing",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 37,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_pairing (\u03ba s t : \u211d\u22650) (f : StateL2 \u03ba t) (g : StateL2 \u03ba s) :\n    inner \u211d (transition \u03ba s t f) g = inner \u211d (embedding \u03ba t f) (embedding \u03ba s g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L37"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_contraction",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 41,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_contraction (\u03ba s t : \u211d\u22650) (f : StateL2 \u03ba t) :\n    \u2016transition \u03ba s t f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L41"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_adjoint",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 49,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_adjoint (\u03ba s t : \u211d\u22650) : (transition \u03ba s t).adjoint = transition \u03ba t s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L49"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.current_projection_condExp",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 53,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem current_projection_condExp (\u03ba s : \u211d\u22650) (F : GaussianL2) :\n    representationProjection (embedding \u03ba s) F =\u1d50[gaussianProduct]\n      gaussianProduct[F | MeasurableSpace.comap (state \u03ba s) inferInstance]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L53"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_condExp",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 66,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_condExp (\u03ba s t : \u211d\u22650) (f : StateL2 \u03ba t) :\n    embedding \u03ba s (transition \u03ba s t f) =\u1d50[gaussianProduct]\n      gaussianProduct[(fun \u03c9 => f (state \u03ba t \u03c9)) |\n        MeasurableSpace.comap (state \u03ba s) inferInstance]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L66"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.transition_kernel",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 73,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem transition_kernel (\u03ba s t : \u211d\u22650) (f : StateL2 \u03ba t) :\n    embedding \u03ba s (transition \u03ba s t f) =\u1d50[gaussianProduct]\n      (fun \u03c9 => \u222b y, f y \u2202pairKernel \u03ba s t (state \u03ba s \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L73"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.composition_defect",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 82,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem composition_defect (\u03ba s t u : \u211d\u22650) (f : StateL2 \u03ba u) :\n    transition \u03ba s u f-transition \u03ba s t (transition \u03ba t u f) =\n      predictableAdjoint (embedding \u03ba s)\n        (embedding \u03ba u f-representationProjection (embedding \u03ba t) (embedding \u03ba u f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L82"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2Transitions.composition_iff_residual_zero",
+      "file": "Foundation/BrownianStickyL2Transitions.lean",
+      "line": 90,
+      "source_sha256": "22c500782e977fb46877a764a0333b9263071e4d1b15083f810bb545a0c050e9",
+      "declaration_header": "theorem composition_iff_residual_zero (\u03ba s t u : \u211d\u22650) (f : StateL2 \u03ba u) :\n    transition \u03ba s u f = transition \u03ba s t (transition \u03ba t u f) \u2194\n      predictableAdjoint (embedding \u03ba s)\n        (embedding \u03ba u f-representationProjection (embedding \u03ba t) (embedding \u03ba u f)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2Transitions.lean#L90"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.one",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 13,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "def one (\u03ba t : \u211d\u22650) : StateL2 \u03ba t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L13"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.one_coeFn",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 18,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem one_coeFn (\u03ba t : \u211d\u22650) : one \u03ba t =\u1d50[marginal \u03ba t] fun _ => 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L18"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.embedding_one",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 20,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem embedding_one (\u03ba t : \u211d\u22650) : embedding \u03ba t (one \u03ba t) =\u1d50[gaussianProduct] fun _ => 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L20"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.transition_one",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 24,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem transition_one (\u03ba s t : \u211d\u22650) : transition \u03ba s t (one \u03ba t) = one \u03ba s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L24"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.transition_nonnegative",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 30,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem transition_nonnegative (\u03ba s t : \u211d\u22650) (f : StateL2 \u03ba t)\n    (hf : 0 \u2264\u1d50[marginal \u03ba t] f) : 0 \u2264\u1d50[marginal \u03ba s] transition \u03ba s t f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L30"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.coordinate_memLp",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 43,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem coordinate_memLp (\u03ba t : \u211d\u22650) : MemLp (fun x : \u211d => x) 2 (marginal \u03ba t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L43"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.coordinate",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 49,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "def coordinate (\u03ba t : \u211d\u22650) : StateL2 \u03ba t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L49"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.coordinate_coeFn",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 51,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem coordinate_coeFn (\u03ba t : \u211d\u22650) : coordinate \u03ba t =\u1d50[marginal \u03ba t] fun x => x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L51"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.embedding_coordinate",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 54,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem embedding_coordinate (\u03ba t : \u211d\u22650) :\n    embedding \u03ba t (coordinate \u03ba t) =\u1d50[gaussianProduct] state \u03ba t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L54"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.transition_coordinate",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 59,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem transition_coordinate (\u03ba s t : \u211d\u22650) (hst : s \u2264 t) :\n    transition \u03ba s t (coordinate \u03ba t) = coordinate \u03ba s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L59"
+    },
+    {
+      "paper": "Section 5 full spatial occupation measure and Section 15 actual current-state conditional kernels, marginal L2 contractions and exact composition residual. Finite martingale diagnostic and bounded-Borel integral extension explicitly human consequences.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyL2MarkovProperties.coordinate_norm_sq",
+      "file": "Foundation/BrownianStickyL2MarkovProperties.lean",
+      "line": 68,
+      "source_sha256": "aa3506fc681c741e8f509c06faf9f56e8aec6e245e8c406e34e21de9f423ba35",
+      "declaration_header": "theorem coordinate_norm_sq (\u03ba t : \u211d\u22650) : \u2016coordinate \u03ba t\u2016^2 =\n    \u222b \u03c9, (BrownianMassRandomTimeChange.inverse \u03ba \u03c9 t : \u211d) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyL2MarkovProperties.lean#L68"
     }
   ],
   "human_reorganization": [
@@ -3606,7 +4029,8 @@
     "The boundary martingale source has augmented physical-past filtration. The printed observed-past extension is a human deduction from prefix Riemann-sum measurability and shrinking the filtration. The factor 2*kappa*g(0) is derived using the exact original Tanaka and half-Laplacian conventions, including kappa=0 without division.",
     "The radius boundary test has linear growth and a derivative jump. Its martingale identity is not a C0 closed-generator domain identification or martingale-problem uniqueness theorem. The nonsticky Gaussian terminal-law pairing obstruction does not classify invariant measures.",
     "Section 13 reconstructs the actual C0 sticky differential relation, boundary slope maximum principle, uniform resolvent uniqueness/stability and a genuine dense closable graph for kappa>0. Smooth compact tests constant near zero are uniformly dense but have generator value zero there. The explicit vanishing pair F=(1+kappa/4)sqrt(1+x^2)-(1+kappa/2)sqrt(4+x^2)+(kappa/4)|x| has G(0)=1/4 and the exact sticky slope jump, so every flat-test output remains at uniform distance at least 1/4. This excludes a graph-core identification, including in any closed extension containing that pair. Value density and closure give no resolvent range, all-start transition generator or uniqueness theorem. The fixed gap itself also holds at kappa=0, while the named closability estimate retains kappa>0.",
-    "Section 14 adds the actual whole-path Borel equivalence and complete operator-domain transport. A fixed smooth-mass subsequence produces a raw Borel continuous-path functional; a monotonicity replacement gives an everywhere defined clock and path map agreeing with the actual construction. Full observed-path recovery plus a countable raw-version/factorization argument gives a Borel inverse modulo the respective path laws. Both pushforward measures and almost-sure inverse directions are proved before composing L2 classes. The resulting real L2 map is onto, preserving norms and means. For supplied dense T into a fixed Hilbert codomain, the transported domain is exactly U^-1 D(T); density and closedness are equivalent, and D((TU)^*)=D(T^*) with value U^-1 T^*. Graph-core transport is explicitly a HUMAN graph-norm consequence. The printed raw factorization and Cauchy-set totalization reorganize the existing version lemmas without claiming new formal definitions. No equality of the laws in the same coordinates, physical-time filtrations, prescribed SDE drivers, physical generators, or all-start transition families is inferred."
+    "Section 14 adds the actual whole-path Borel equivalence and complete operator-domain transport. A fixed smooth-mass subsequence produces a raw Borel continuous-path functional; a monotonicity replacement gives an everywhere defined clock and path map agreeing with the actual construction. Full observed-path recovery plus a countable raw-version/factorization argument gives a Borel inverse modulo the respective path laws. Both pushforward measures and almost-sure inverse directions are proved before composing L2 classes. The resulting real L2 map is onto, preserving norms and means. For supplied dense T into a fixed Hilbert codomain, the transported domain is exactly U^-1 D(T); density and closedness are equivalent, and D((TU)^*)=D(T^*) with value U^-1 T^*. Graph-core transport is explicitly a HUMAN graph-norm consequence. The printed raw factorization and Cauchy-set totalization reorganize the existing version lemmas without claiming new formal definitions. No equality of the laws in the same coordinates, physical-time filtrations, prescribed SDE drivers, physical generators, or all-start transition families is inferred.",
+    "The full spatial occupation measure now decomposes simultaneously for all sticky parameters and horizons into original Brownian occupation up to the inverse clock plus kappa times stopped local time times delta-zero. Restriction and pushforward proofs retain the holding contribution. Named bounded-continuous integral transport is reconstructed; bounded-Borel and nonnegative extended tests are labelled human measure consequences, with no unbounded signed integrability assumption. New Section 15 constructs actual marginal Hilbert embeddings, current-state conditional projections, pair-law disintegrations and contractions Pst=Js-adjoint Jt. Positivity, constants, reverse adjoints and the actual coordinate martingale are printed without stationarity. The exact composition defect is Js-adjoint (I-Qt) Ju; vanishing requires only earlier-state orthogonality, not zero whole residual. Its norm bound is a human contraction consequence. A fully proved finite three-time martingale with independent signs has P13(y^2)(1)=3 but P12 P23(y^2)(1)=15/4. This HUMAN example demonstrates the logical insufficiency of those operator and martingale properties; it is not a named Lean declaration or a counterexample for the actual sticky process. Five principal modules and supporting L2GeneratedSubspace read fully. No full-past Markov, all-start family, stationary law or closed physical generator claimed."
   ],
   "literature": [
     {

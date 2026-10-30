@@ -47,6 +47,8 @@ showing that uniformly dense flat smooth tests are not a graph core.
 Borel maps recover the complete Wiener and sticky paths from one another
 almost surely, yielding an onto whole-path $L^2$ isometry and exact
 transport of supplied closed operator and adjoint domains.
+The complete spatial occupation measure retains its holding atom;
+current-state conditional operators have an exact composition residual.
 \end{abstract}
 
 \section{The construction and its precise conclusions}
@@ -373,6 +375,49 @@ generating pi system and exhaust the half-line by finite-mass
 integer intervals. Uniqueness of locally finite measures proves
 \eqref{eq:pushforward} on every Borel set. This is a measure identity,
 so it also applies to each sample's own Borel zero set.
+
+
+\subsection*{The complete spatial occupation measure}
+The same pathwise transport determines more than time spent at zero.
+For a fixed good sample define finite Borel measures
+\[
+ \mathcal O_T^X=(X^\kappa)_\#(dt|_{[0,T]}),\qquad
+ \mathcal O_S^B=B_\#(ds|_{[0,S]}).
+\]
+Then, simultaneously for all $\kappa,T\geq0$,
+\begin{equation}\label{eq:fulloccupation}
+ \mathcal O_T^X=\mathcal O_{C_\kappa(T)}^B
+                  +\kappa L_{C_\kappa(T)}\delta_0.
+\end{equation}
+Indeed restriction of \eqref{eq:pushforward} gives
+$dt|_{[0,T]}=(A_\kappa)_\#
+((ds+\kappa dL)|_{[0,C_\kappa(T)]})$.
+Push this identity forward by $X^\kappa$, use
+$X^\kappa\circ A_\kappa=B$, distribute the image measure over
+the two finite measures, and apply \eqref{eq:masscollapse} to
+the second one. All these are equalities of measures on the same
+good path; thus no test-dependent exceptional sets are introduced.
+\par\noindent\code{BrownianTimeChangedOccupationMeasure.occupation\_decomposition}.
+
+Consequently every bounded continuous $g:\R\to\R$ satisfies
+\begin{equation}\label{eq:occupationtest}
+ \int_0^T g(X_t^\kappa)\,dt
+ =\int_0^{C_\kappa(T)}g(B_s)\,ds
+       +\kappa L_{C_\kappa(T)}g(0).
+\end{equation}
+Both ordinary integrals exist by continuity on compact intervals;
+the measure identity also proves this for every bounded Borel $g$.
+The latter assertion is a human consequence of
+\eqref{eq:fulloccupation}; the named integral theorem uses bounded
+continuous tests. Nonnegative Borel tests are allowed as extended
+integrals as well. No integrability of an arbitrary unbounded signed
+test is inferred. Taking total masses gives
+$T=C_\kappa(T)+\kappa L_{C_\kappa(T)}$, while testing the
+singleton zero gives the holding identity below, since the Brownian
+ordinary occupation of zero vanishes. Thus a temporally singular
+clock measure becomes an explicit spatial atom in the changed
+occupation measure.
+\par\noindent\code{BrownianOccupationIntegralTransport.bounded\_observation\_transport}.
 
 \section{Holding time and a strict second-moment budget}
 Fix a sample on which \eqref{eq:support} and
@@ -1207,6 +1252,115 @@ filtrations, transition semigroups, or a prescribed SDE driver.
 \code{AdjointUnitaryTransport.mem\_pullback\_adjoint\_domain},
 \code{pullback\_adjoint\_eq}.
 \par\endgroup
+
+
+\section{Two-time operators and the exact composition residual}
+Fix $\kappa$ and the actual starting law of the constructed path.
+Let $\mu_t$ be the law of $X_t^\kappa$, let
+$H_t=L^2(\mu_t;\R)$, and let $H=L^2(\Pp;\R)$ on the
+underlying source probability space. Pullback is an isometry
+\[
+ J_t:H_t\longrightarrow H,\qquad J_tf=f(X_t^\kappa).
+\]
+Its range is exactly $L^2(\sigma(X_t^\kappa))$: one inclusion
+is immediate, and Doob--Dynkin applied to an almost-everywhere
+measurable representative proves the converse. The factor belongs
+to $H_t$ by the pushforward norm identity. Thus the orthogonal
+projection $Q_t=J_tJ_t^*$ is conditional expectation onto the
+\emph{current state}, rather than the full observed past.
+\par\noindent\code{BrownianStickyL2Transitions.embedding\_range}.
+\par\noindent\code{BrownianStickyL2Transitions.current\_projection\_condExp}.
+
+Define $P_{s,t}=J_s^*J_t:H_t\to H_s$. For $f\in H_t$ and
+$g\in H_s$, its defining pairing is
+\[
+ \langle P_{s,t}f,g\rangle_{H_s}
+      =\E[f(X_t^\kappa)g(X_s^\kappa)].
+\]
+Conditional Jensen or the orthogonal projection inequality proves
+$\|P_{s,t}f\|_{H_s}\leq\|f\|_{H_t}$.
+Its pullback is $\E[f(X_t^\kappa)\mid X_s^\kappa]$.
+It preserves nonnegativity and constants, $P_{t,t}=I$, and
+$P_{s,t}^*=P_{t,s}$. The last identity is the adjoint relation
+between two different marginal spaces, not stationarity or
+reversibility in one invariant marginal. The actual observed
+martingale theorem and the tower property also give
+$P_{s,t}(y\mapsto y)=(x\mapsto x)$ for $s\leq t$;
+the coordinates lie in these spaces by the established second
+moment bound.
+\par\noindent\code{BrownianStickyL2MarkovProperties.transition\_coordinate}.
+
+Since the state space is standard Borel, the actual pair law has
+a regular conditional probability kernel $K_{s,t}(x,dy)$.
+Disintegration gives $\mu_s(dx)K_{s,t}(x,dy)$ equal to that
+pair law and $\mu_sK_{s,t}=\mu_t$. Moreover
+$P_{s,t}f(x)=\int f(y)K_{s,t}(x,dy)$ for $\mu_s$-almost every
+$x$. This is legitimate for $f\in H_t$: it is in $L^1(\mu_t)$,
+and disintegration first proves row integrability almost everywhere
+and then the conditional identity. Values of a chosen kernel at
+$\mu_s$-null states are not determined by the pair law.
+\par\noindent\code{BrownianTimeChangedConditionalKernel.pairLaw\_disintegration}.
+\par\noindent\code{BrownianStickyL2Transitions.transition\_kernel}.
+
+For every $f\in H_u$ there is the exact identity
+\begin{equation}\label{eq:memoryresidual}
+ P_{s,u}f-P_{s,t}P_{t,u}f
+       =J_s^*(I-Q_t)J_uf.
+\end{equation}
+This follows simply by expanding
+$J_s^*J_uf-J_s^*J_tJ_t^*J_uf$. Thus composition holds on a
+particular test precisely when the current-state residual
+$(I-Q_t)J_uf$ is orthogonal to the earlier current-state subspace
+$J_sH_s$. It need not vanish in all of $H$. The human bound
+\[
+ \|P_{s,u}f-P_{s,t}P_{t,u}f\|_{H_s}
+ \leq\|(I-Q_t)J_uf\|_H
+\]
+follows from $\|J_s^*\|\leq1$.
+\par\noindent\code{BrownianStickyL2Transitions.composition\_defect}.
+\par\noindent\code{BrownianStickyL2Transitions.composition\_iff\_residual\_zero}.
+
+A full-past Markov identity would make this residual orthogonal
+to the entire past at $t$, and hence to $J_sH_s$ for $s\leq t$.
+No such identity has been assumed to obtain
+\eqref{eq:memoryresidual}. The whole-path isometry in the previous
+section likewise supplies no nesting of the one-time subspaces.
+
+\subsection*{A finite martingale diagnostic (human example)}
+Even a martingale coordinate and all the positive two-time
+contractions above do not alone prove composition. Here is an
+explicit example, unrelated to a claim about the actual sticky path.
+Let $\varepsilon,\eta,\zeta$ be independent symmetric signs and set
+\[
+ Y_1=\varepsilon,\qquad Y_2=\varepsilon+\eta,\qquad
+ Y_3=Y_2+a(\varepsilon)\zeta,\qquad
+ a(1)=1,\quad a(-1)=2.
+\]
+These bounded random variables form a martingale in the successive
+source filtration, and hence in their observed filtration, by
+independence and the zero mean of the fresh signs. Their conditional
+operators, defined exactly by $J_s^*J_t$, are positive contractions,
+preserve constants and the martingale coordinate, and have reverse
+adjoints. Yet composition fails. Take $f(y)=y^2$, an $L^2$ test
+for the finite marginal at time three. Conditional on $Y_1=1$,
+$Y_2$ is equally likely $0$ or $2$ and the final added variance
+is one. Hence
+\[
+ (P_{1,3}f)(1)=3.
+\]
+Conditional on $Y_2=2$, $\varepsilon=1$ and the final square
+mean is $5$. Conditional on $Y_2=0$, the two values of
+$\varepsilon$ are equally likely, so the final square mean is
+$(1+4)/2=5/2$. Therefore
+\[
+ (P_{1,2}P_{2,3}f)(1)=\tfrac12(5+5/2)=15/4\ne3.
+\]
+The defect is $-3/4$ at the positive-mass state $1$.
+This elementary human counterexample is not a new named Lean
+declaration and is not a failure theorem for sticky Brownian motion.
+It identifies the logical role of the remaining Markov obligation:
+current-state conditional expectations do not form a nested tower
+merely because all coordinate martingale tests pass.
 
 \section{What is established and what remains separate}
 Clock recovery uses the observed prefix, not a terminal coordinate.
