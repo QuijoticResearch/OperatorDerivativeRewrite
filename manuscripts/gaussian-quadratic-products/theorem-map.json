@@ -2052,6 +2052,177 @@
       "source_sha256": "6548c7f596c818a68e30f55b4d5087bd10aabe5ef674e8948f5017a8655b4544",
       "declaration_header": "theorem coordinates_energy (v : linearGaussianFields) :\n    HasSum (fun p => (coordinates v p)^2) (\u2016(v : GaussianVectorL2)\u2016^2)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldMatrixCoordinates.lean#L101"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.driver",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 17,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "def driver (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L17"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.driver_integral",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 19,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem driver_integral (T : \u211d\u22650) : itoIntegral (hermiteIntegrand 1 T) = driver T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L19"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.terminalSquare_coeFn",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 32,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem terminalSquare_coeFn (T : \u211d\u22650) :\n    terminalSquare T =\u1d50[gaussianProduct] fun \u03c9 => (driver T \u03c9)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L32"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.correct",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 53,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "def correct (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L53"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.candidate",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 56,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "def candidate (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L56"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.correction",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 59,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "def correction (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L59"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.corrected_representation",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 62,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem corrected_representation (T : \u211d\u22650) :\n    itoIntegral (correct T) = terminalSquare T - ((T : \u211d)^2/2) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L62"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.correction_identity",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 69,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem correction_identity (T : \u211d\u22650) : correct T - candidate T = correction T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L69"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.polynomial_candidate",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 73,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem polynomial_candidate (x t : \u211d) :\n    value 3 x t + 2*t*value 1 x t = 2*((1/2 : \u211d)*value 2 x t)*x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L73"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquare.polynomial_correct",
+      "file": "Foundation/BrownianVolatilitySquare.lean",
+      "line": 78,
+      "source_sha256": "eb7ccff00e8c67c28af580e134d75b2d5dca87b2861b08f652f3a56efbe10977",
+      "declaration_header": "theorem polynomial_correct (x t T : \u211d) :\n    value 3 x t + 2*T*value 1 x t =\n      (2*((1/2 : \u211d)*value 2 x t)+2*(T-t))*x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquare.lean#L78"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.square_mean",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 15,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem square_mean (T : \u211d\u22650) :\n    (\u222b \u03c9, terminalSquare T \u03c9 \u2202gaussianProduct) = (T : \u211d)^2/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L15"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.candidate_slices",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 23,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem candidate_slices (T : \u211d\u22650) :\n    scalarCurry (candidate T : TimeProbabilityL2) =\u1d50[volume]\n      (Ioc 0 (T : \u211d)).indicator (fun t => (brownianCore t.toNNReal 3 : GaussianL2) +\n        (2*t) \u2022 (brownianCore t.toNNReal 1 : GaussianL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L23"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.running_coefficient",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 41,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem running_coefficient (t : \u211d\u22650) (r : \u211d) :\n    ((brownianCore t 3 : GaussianL2) + (2*r) \u2022 (brownianCore t 1 : GaussianL2))\n      =\u1d50[gaussianProduct] fun \u03c9 =>\n        (2*driver t \u03c9+2*(r-t))*GaussianTimeProcess.process t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L41"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.correction_slices",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 58,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem correction_slices (T : \u211d\u22650) :\n    scalarCurry (correction T : TimeProbabilityL2) =\n      (2 : \u211d) \u2022 tailField (fun t => t) continuous_id 1 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L58"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.correction_norm_sq",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 65,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem correction_norm_sq (T : \u211d\u22650) : \u2016correction T\u2016^2 = (T : \u211d)^4/3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L65"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.terminal_defect",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 97,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem terminal_defect (T : \u211d\u22650) :\n    terminalSquare T - ((T : \u211d)^2/2) \u2022 gaussianOne - itoIntegral (candidate T) =\n      itoIntegral (correction T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L97"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.defect_eq_integrated_quadratic",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 102,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem defect_eq_integrated_quadratic (T : \u211d\u22650) :\n    terminalSquare T - ((T : \u211d)^2/2) \u2022 gaussianOne - itoIntegral (candidate T) =\n      \u222b t in 0..(T : \u211d), (brownianCore t.toNNReal 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L102"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.terminal_defect_norm_sq",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 109,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem terminal_defect_norm_sq (T : \u211d\u22650) :\n    \u2016terminalSquare T - ((T : \u211d)^2/2) \u2022 gaussianOne - itoIntegral (candidate T)\u2016^2 =\n      (T : \u211d)^4/3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L109"
+    },
+    {
+      "paper": "Section 14 actual quadratic Brownian martingale centered square, corrected original predictable representation and exact T^4/3 defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianVolatilitySquareDefect.candidate_fails",
+      "file": "Foundation/BrownianVolatilitySquareDefect.lean",
+      "line": 114,
+      "source_sha256": "f1a0fdb10e317469d6979f06926844248e890e89e4039d4fbc4272c1fda8f0a0",
+      "declaration_header": "theorem candidate_fails (T : \u211d\u22650) (hT : 0 < T) :\n    itoIntegral (candidate T) \u2260 terminalSquare T - ((T : \u211d)^2/2) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianVolatilitySquareDefect.lean#L114"
     }
   ],
   "human_reorganization": [
@@ -2068,7 +2239,8 @@
     "Section 10 consolidates the earlier brief matrix example into the exact source-mapped anticommuting pair. Orthogonality and vanishing mixed degree-two contraction coexist with positive square-contraction pairing 64 and square covariance 32. Direct Gaussian moments independently prove dependence. No new independence classification is claimed.",
     "Section 4 reconstructs completed Gaussian conditioning as PAP compression on symmetric Hilbert-Schmidt coordinates, with actual original divergence and squared norm 2||PAP||_HS^2. Rank tensors and bounded completion supply the printed proof of formal matrix-coordinate prediction.",
     "The exact nonlinear least-prediction error, block split 4||RAP||_HS^2+2||RAR||_HS^2, and zero-error iff A=PAP are human Hilbert-space consequences.",
-    "The conditional residual variance 4||U_RAP||^2+2||RAR||_HS^2 is a labelled human deduction: finite adapted Gaussian bases, vanishing third moments and strong L2/L1 completion. It is not a named formal conditional-variance theorem. The actual cross product 2G0G1 has zero conditional mean given G0 but conditional variance 4G0^2, hence is not independent of the observations."
+    "The conditional residual variance 4||U_RAP||^2+2||RAR||_HS^2 is a labelled human deduction: finite adapted Gaussian bases, vanishing third moments and strong L2/L1 completion. It is not a named formal conditional-variance theorem. The actual cross product 2G0G1 has zero conditional mean given G0 but conditional variance 4G0^2, hence is not independent of the observations.",
+    "Section 14 reconstructs the original predictable L2 representation of M_T^2-E M_T^2 for M_t=(W_t^2-t)/2. The actual correction is 2(T-t)W_t and its terminal squared defect is T^4/3. The ordinary Ito formula retains its random quadratic variation and is not refuted. Exact naive/correction/cross energies 5*T^4/2, T^4/3, T^4/3, conditional covariance (T-t)W_t and the direct polynomial-localization proof are labelled HUMAN deductions; full conditional product expectation is not replaced by the product of conditional means. No projected-Malliavin representation on an unstated domain is asserted."
   ],
   "literature": [
     {

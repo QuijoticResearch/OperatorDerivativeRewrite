@@ -886,6 +886,139 @@ coordinates and direct density identification. No geometric or
 stochastic-process application follows solely from this tensor
 calibration.
 
+\section{The centered square of an actual quadratic martingale}\label{sec:martingalesquare}
+The product and conditioning issues above have a concrete temporal
+calibration. Let $W$ be standard Brownian motion with its full natural
+past, and fix $T>0$. The actual square-integrable martingale
+\[
+ M_t=\frac{W_t^2-t}{2}=\int_0^tW_s\,dW_s
+\]
+is in second Gaussian chaos at every time. In particular
+$\E M_T^2=T^2/2$. Squaring this martingale and centering the terminal
+value does not give the integral with coefficient $2M_tW_t$ alone.
+The quadratic variation is random, so its centered part remains.
+
+\begin{theorem}\label{thm:martingalesquare}
+On the original predictable $L^2(dt\otimes P)$ domain,
+\begin{align*}
+ M_T^2-T^2/2
+ &=\int_0^T\{W_t^3+(2T-3t)W_t\}\,dW_t\\
+ &=\int_0^T2M_tW_t\,dW_t+
+                    \int_0^T2(T-t)W_t\,dW_t.
+\end{align*}
+The defect left by the first integral alone is also the genuine
+Bochner-$L^2$ time integral
+\[
+ \Delta_T=\int_0^T(W_t^2-t)\,dt,
+ \qquad \E\Delta_T^2=T^4/3>0.
+\]
+Thus the naive centered-square representation fails at every
+positive horizon. This is a statement about the centered martingale
+representation; the ordinary It\^o formula retains its full random
+quadratic-variation term and is valid.
+\end{theorem}
+\begin{proof}
+Use the time-space Hermite polynomials
+\[
+ H_1(t,x)=x,\quad H_2(t,x)=x^2-t,\quad
+ H_3(t,x)=x^3-3tx,\quad
+ H_4(t,x)=x^4-6tx^2+3t^2.
+\]
+They satisfy $(\partial_t+\frac12\partial_x^2)H_n=0$ for the
+displayed orders, and $\partial_xH_n=nH_{n-1}$, as direct polynomial
+differentiation verifies. For fixed terminal $T$, set
+\[
+ F_T(t,x)=\tfrac14H_4(t,x)+T H_2(t,x).
+\]
+Then $F_T(0,0)=0$, and polynomial expansion gives
+$F_T(T,W_T)=M_T^2-T^2/2$.
+Its spatial derivative is
+$H_3(t,x)+2T H_1(t,x)=x^3+(2T-3t)x$.
+It\^o's formula with its vanishing heat drift yields the first
+representation. All polynomial moments needed to remove bounded
+stopping are finite on $[0,T]$; more directly the coefficient has
+integrable squared norm, as evaluated below, so its integral is in
+the original predictable $L^2$ space. Stopped It\^o integrals
+therefore converge in $L^2$ by the isometry. For the terminal values,
+their squares are bounded by $C_T(1+\sup_{s\le T}|W_s|^8)$.
+Doob's $L^8$ inequality gives
+$\E\sup_{s\le T}|W_s|^8\le(8/7)^8\E|W_T|^8<\infty$.
+Dominated convergence thus removes the stopping in the polynomial
+terminal values as well.
+
+Since $2M_tW_t=W_t^3-tW_t$, subtraction gives the correction
+$2(T-t)W_t$. It too is in the same predictable domain, and the
+isometry gives
+\[
+ \E\left(\int_0^T2(T-t)W_t\,dW_t\right)^2
+       =4\int_0^T(T-t)^2t\,dt=T^4/3.
+\]
+To identify the time integral without an unjustified random Fubini
+step, apply the deterministic product rule to
+$(T-t)(W_t^2-t)$. Since $d(W_t^2-t)=2W_t\,dW_t$, integration from
+zero to $T$ gives
+\[
+ 0=-\int_0^T(W_t^2-t)\,dt+
+                       \int_0^T2(T-t)W_t\,dW_t.
+\]
+The time integrand defines a Bochner-$L^2$ integral because
+$\|W_t^2-t\|_2=\sqrt2\,t$, which is integrable on the finite
+interval, and it is $L^2$ continuous. The identities thus hold in
+the actual terminal $L^2$ space as well as in their continuous-path
+versions. This proves the defect identity and its positive norm.
+\end{proof}
+
+One can also see the omitted term from ordinary It\^o calculus:
+$M_T^2=\int_0^T2M_tW_t\,dW_t+\int_0^TW_t^2dt$. Subtracting its
+mean removes $\int_0^Tt\,dt$, not the random residual $\Delta_T$.
+The source modules \texttt{BrownianVolatilitySquare} and
+\texttt{BrownianVolatilitySquareDefect} supply these actual Hermite
+integrands, their native slices, the corrected representation and
+the exact squared defect.
+
+\subsection*{Exact cross energy and the conditioning correction}
+The three coefficient energies can be computed without confusing
+orthogonality of Hermite degrees with orthogonality of these sums.
+Write $h_t=W_t^3-tW_t$ and $c_t=2(T-t)W_t$. The centered Gaussian
+moments $\E W_t^2=t$, $\E W_t^4=3t^2$, $\E W_t^6=15t^3$ give
+\[
+ \E\int_0^T h_t^2dt=\frac52T^4,\qquad
+ \E\int_0^T c_t^2dt=\frac13T^4,\qquad
+ \E\int_0^T h_tc_tdt=\frac13T^4.
+\]
+Indeed the respective pointwise integrands are $10t^3$,
+$4(T-t)^2t$ and $4(T-t)t^2$. Thus
+$\E\int_0^T(h_t+c_t)^2dt=\frac72T^4$, agreeing with the variance
+of $M_T^2$ from the sharp one-coordinate quadratic fourth moment.
+The cross term is nonzero. Adding the first two energies as if
+the naive field and the correction were orthogonal would give the
+wrong value. These three-energy identities are elementary human
+deductions from the exact fields, rather than additional named
+formal energy declarations.
+
+For a direct conditional check, put $r=T-t$. The entire future
+increment $V=W_T-W_t$ is independent of $\mathcal F_t$ and has
+variance $r$. Expanding $(W_t+V)^3-T(W_t+V)$ gives
+\[
+ \E[W_T^3-TW_T\mid\mathcal F_t]
+       =W_t^3+(2T-3t)W_t=h_t+c_t.
+\]
+Equivalently,
+\[
+ \E[M_TW_T\mid\mathcal F_t]
+ -\E[M_T\mid\mathcal F_t]\E[W_T\mid\mathcal F_t]
+       =(T-t)W_t.
+\]
+Here $\E[M_T\mid\mathcal F_t]=M_t$ and
+$\E[W_T\mid\mathcal F_t]=W_t$. Conditional expectation of a
+product retains this covariance term, even though the two factors
+are martingales. The corrected integrand has already been
+constructed in the theorem; this conditional calculation interprets
+it and does not assume a projected-derivative representation on an
+unstated operator domain. Every identity in this section is
+classical Brownian/Hermite calculus, reconstructed to fix its exact
+source normalization and native predictable scope.
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
