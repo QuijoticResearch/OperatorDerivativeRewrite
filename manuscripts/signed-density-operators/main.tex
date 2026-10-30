@@ -25,7 +25,7 @@ distinct from its closed weak extension. Explicit total adjoint
 probes and multiplication by the sign of $K$ identify the exact
 domain of the signed adjoint. Orthogonal graph projection constructs
 the positive Hilbert energy resolvent, its exact minimization gap
-and the full nonnegative self-adjoint energy operator. An auxiliary Gaussian
+and the full nonnegative self-adjoint energy operator. Dyadic resolvents approximate the original graph on its domain, while native outputs escape at every excluded limit. An auxiliary Gaussian
 field has exactly this resolvent as its covariance, with a proved Green
 identity and original first-chaos source calculus. The
 logarithmic derivative is always absolutely integrable against
@@ -318,6 +318,127 @@ nonnegative, so $Rx$ minimizes $\|x-u\|^2+\|Du\|^2$.
 If equality holds for another input, $\|u-Rx\|^2=0$ gives
 uniqueness. Both its domain membership and its derivative value
 have been established before writing this minimization statement.
+
+\section{Regularization preserves the original domain boundary}
+The construction has a useful convergence consequence which does not
+extend the native derivative. We give the argument for any closed densely
+defined real Hilbert operator $T:E\supset\dom T\to F$; in particular it
+applies to the original closed derivative $D$ above. Put $\varepsilon_n=2^{-n}$,
+and project $(x,0)$ onto the graph of $\varepsilon_nT$. Write its first
+coordinate as $R_n^Tx$, and set $V_n^Tx=TR_n^Tx$, the \emph{unscaled}
+native output. The same projection argument gives
+\begin{align}
+ \ip{R_n^Tx}u+\varepsilon_n^2\ip{V_n^Tx}{Tu}&=\ip xu
+                       &&(u\in\dom T),\label{eq:scaledweak}\\
+ \|x-R_n^Tx\|^2+\varepsilon_n^2\|V_n^Tx\|^2
+ &\leq\|x-u\|^2+\varepsilon_n^2\|Tu\|^2.\label{eq:scaledmin}
+\end{align}
+Taking $u=R_n^Tx$ in the weak equation yields
+$\|R_n^Tx\|^2+\varepsilon_n^2\|V_n^Tx\|^2=\ip x{R_n^Tx}$.
+Thus $\|R_n^Tx\|\leq\|x\|$, and also
+$\varepsilon_n\|V_n^Tx\|\leq\|x\|$.
+For any fixed $x\in E$, choose $u\in\dom T$ arbitrarily close to $x$;
+then let $n\to\infty$ in \eqref{eq:scaledmin}. This proves
+\[
+ R_n^Tx\longrightarrow x\quad\hbox{for every }x\in E,
+ \qquad \varepsilon_n^2V_n^Tx\longrightarrow0.
+\]
+The second assertion follows from the bound
+$\varepsilon_n^2\|V_n^Tx\|\leq\varepsilon_n\|x\|$.
+It does not assert convergence of $V_n^Tx$.
+\par\noindent\code{ScaledGraphResolvent}:
+\par\noindent\code{regularize_mem}, \code{native_weak_identity},
+\code{regularize_tendsto}, \code{weighted_gradient_tendsto_zero}.
+
+We recall the required adjoint graph fact directly. For a densely defined
+$T$, its product-space graph satisfies
+\[
+ \operatorname{graph}(T)^\perp
+    =\{(-T^*w,w):w\in\dom T^*\}.
+\]
+Indeed orthogonality says precisely $\ip w{Tu}=\ip{-z}u$ for
+a pair $(z,w)$ and every $u\in\dom T$, the definition of the adjoint.
+If $y\perp\dom T^*$, then $(0,y)$ is perpendicular to this orthogonal
+graph and so belongs to the original closed graph. Single-valuedness
+forces $y=T0=0$. Hence $\dom T^*$ is dense. The same graph identity
+also proves the following test: $(x,v)$ belongs to the original graph
+if and only if $\ip x{T^*w}=\ip vw$ for every $w\in\dom T^*$.
+Thus the graph is recovered from all its adjoint tests, without assuming
+an unproved maximal differential expression.
+\par\noindent\code{HilbertAdjointDomainDensity}:
+\par\noindent\code{closed_adjoint_dense}, \code{closed_bidual}.
+
+The weak equation \eqref{eq:scaledweak} implies
+$V_n^Tx\in\dom T^*$ and
+$\varepsilon_n^2T^*V_n^Tx=x-R_n^Tx$.
+If $x\in\dom T$, then for every $w\in\dom T^*$,
+\[
+ \ip{V_n^Tx}w+\varepsilon_n^2\ip{T^*V_n^Tx}{T^*w}
+ =\ip{R_n^Tx}{T^*w}+\ip{x-R_n^Tx}{T^*w}=\ip{Tx}w.
+\]
+This is the variational equation for the same resolvent construction
+applied to $T^*$ with input $Tx$. That solution is unique: subtract two
+weak equations and test against their difference to obtain the sum
+of a norm square and $\varepsilon_n^2$ times another norm square equal
+to zero. Therefore
+\[
+ TR_n^Tx=R_n^{T^*}(Tx),\qquad
+ \|TR_n^Tx\|\leq\|Tx\|,\qquad TR_n^Tx\longrightarrow Tx
+                    \quad(x\in\dom T).
+\]
+The adjoint is closed because its defining pairing identities persist
+under convergence of both graph coordinates. The last limit therefore
+uses the already proved strong identity approximation for that closed
+densely defined adjoint. This proves convergence in the
+\emph{original} graph norm on its original domain.
+\par\noindent\code{ScaledGraphResolventDomain}:
+\par\noindent\code{nativeGradient_dual_regularize}, \code{nativeGradient_norm_le},
+\par\noindent\code{nativeGradient_tendsto}, \code{original_graph_tendsto}.
+
+\begin{proposition}[Escape outside the native domain]\label{prop:escape}
+If $u_j\in\dom T$ converge strongly to $x\notin\dom T$, then
+$\|Tu_j\|\to\infty$. In particular $\|TR_n^Tx\|\to\infty$ for
+such an $x$, despite strong convergence of the regularized values.
+\end{proposition}
+\begin{proof}
+Otherwise some infinite subsequence has $\|Tu_j\|\leq C$ for a fixed
+$C\geq0$. For $w\in\dom T^*$, pass to the limit along it in
+$\ip{u_j}{T^*w}=\ip{Tu_j}w$. Cauchy--Schwarz gives
+$|\ip x{T^*w}|\leq C\|w\|$. This bounded linear functional on the dense
+subspace $\dom T^*\subset F$ extends continuously to $F$; the Hilbert
+Riesz theorem represents it as $\ip vw$ for some $v\in F$.
+The adjoint graph test just proved places $(x,v)$ in the graph of $T$,
+a contradiction. Consequently only finitely many indices can have
+$\|Tu_j\|\leq C$ for any finite $C$, exactly the asserted divergence.
+\end{proof}
+\par\noindent\code{ClosedOperatorEscapeEnergy}:
+\par\noindent\code{mem_domain_of_frequently_bounded_graph},
+\par\noindent\code{output_norm_tendsto_atTop}.
+
+There is a complementary bounded-output conclusion. If $u_j\to x$
+and $\sup_j\|Tu_j\|\leq C$, the same functional argument first shows
+$x\in\dom T$. The adjoint pairings converge to those of $Tx$.
+For arbitrary $w\in F$, approximate $w$ by $z\in\dom T^*$ and use
+\[
+ |\ip{Tu_j-Tx}{w-z}|\leq(C+\|Tx\|)\|w-z\|.
+\]
+Letting $j\to\infty$ and then $z\to w$ proves $Tu_j\rightharpoonup Tx$.
+Strong convergence of outputs does not follow. For example, on real
+$\ell^2$ take the dense closed diagonal operator $(Tx)_j=jx_j$,
+with domain $\sum_{j\geq1}j^2x_j^2<\infty$. Finite sequences give
+density; coordinatewise convergence of a converging graph sequence
+identifies its closed graph. For its unit vectors, $u_j=e_j/j\to0$
+but $Tu_j=e_j$ has norm one and converges only weakly to zero,
+since every $\ell^2$ coordinate sequence tends to zero.
+This last example is an elementary human illustration, not a separate
+mapped formal counterexample.
+\par\noindent\code{ClosedOperatorWeakGraphLimit}:
+\par\noindent\code{adjoint_pairing_tendsto}, \code{pairing_tendsto}, \code{weak_tendsto}.
+
+These classical Hilbert facts apply to the minimal signed-density
+derivative already constructed. They do not identify it with the weak
+extension, repair a nonclosable atomic derivative, or turn a vanishing
+weighted output into a native gradient at a point outside its domain.
 
 \section{The full Hilbert energy operator}
 We finish the operator part without invoking an unspecified
