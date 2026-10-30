@@ -35,8 +35,7 @@ the null polynomial forces a different ninth moment. A
 parallel obstruction occurs between degrees six and seven.
 Finite Jacobi matrices construct the representing measures
 and steer an arbitrary ninth moment in the strict region.
-An attained sixth-moment bound gives a concrete low-degree
-diagnostic. A separate singular positive cubic-square functional
+A sharp attained sixth-moment floor for the entire regular variance/skewness family gives a concrete low-degree diagnostic. A separate singular positive cubic-square functional
 has no measure representation but is a limit of genuine moment
 vectors, with an explicit escaping sixth-moment defect.
 For the separate pure-order generating series $e^{az^p}$, we give the complete all-degree square-positivity classification and an explicit negative-square witness. The methods are classical truncated moment
@@ -450,51 +449,115 @@ realizability. This example is a direct specialization
 of the exact criteria, not an appeal to numerical eigenvalues.
 
 \section{An attained sixth-moment bound}
-The formal sequence can fail much earlier at particular
-parameters. A sharp bound explains the obstruction at
-$v=k=1$ and supplies an independent finite construction.
+The regular variance/skewness family admits an exact sixth-moment
+floor at every prescribed fifth moment, not only at $v=k=1$.
+The construction is a concrete instance of the classical finite
+Jacobi spectral argument already used above.
 
 \begin{proposition}\label{prop:sharp}
-If a probability measure has moments
+Fix $v>0$, $k,t\in\R$ and $\delta=2v^3-k^2>0$. If a probability
+measure has finite sixth absolute moment and
 \[
- m_0=1,\quad m_1=0,\quad m_2=1,\quad m_3=1,
- \quad m_4=3,\quad m_5=t,
+ m_0=1,\quad m_1=0,\quad m_2=v,\quad m_3=k,
+ \quad m_4=3v^2,\quad m_5=t,
 \]
-and finite sixth absolute moment, then
+then
+\begin{equation}\label{eq:regular-sixth}
+ m_6\geq F(v,k,t):=9v^3+k^2+\frac{v(t-4vk)^2}{\delta}.
+\end{equation}
+For every such $v,k,t$, equality is attained by a probability measure
+with at most three support points and all absolute moments finite.
+\end{proposition}
+\begin{proof}
+Set $u=t-4vk$ and define
+\[
+ \alpha=\frac{vu}{\delta},\qquad
+ \beta=3v-\frac{ku}{\delta},\qquad
+ \gamma=k-\frac{v^2u}{\delta},\qquad
+ q(x)=x^3-\alpha x^2-\beta x-\gamma.
+\]
+The given moments imply the three exact orthogonality identities
+\[
+ \int q\,d\mu=k-\alpha v-\gamma=0,
+ \qquad \int xq\,d\mu=3v^2-\alpha k-\beta v=0,
+\]
+\[
+ \int x^2q\,d\mu=t-3\alpha v^2-\beta k-\gamma v=0.
+\]
+For the last equality, substitution reduces its subtracted part to
+$4vk+(2v^3-k^2)u/\delta=4vk+u=t$. Thus $q$ is orthogonal to
+$r(x)=\alpha x^2+\beta x+\gamma$. Since $q=x^3-r$,
+\[
+ \int q^2\,d\mu=m_6-(\alpha t+3\beta v^2+\gamma k)
+ =m_6-F(v,k,t).
+\]
+Indeed the parenthesis equals
+$9v^3+k^2+vu(t-4vk)/\delta$. Nonnegativity of the actual square
+integral proves \eqref{eq:regular-sixth}. The same proof works for
+any square-positive polynomial functional with these moments.
+
+For attainment let
+\[
+ d=\alpha-\frac{k}{v}
+   =\frac{v^2t-6v^3k+k^3}{v\delta},\qquad
+ J=\begin{pmatrix}
+ 0&\sqrt v&0\\
+ \sqrt v&k/v&\sqrt\delta/v\\
+ 0&\sqrt\delta/v&d
+ \end{pmatrix}.
+\]
+This is a real symmetric matrix for every allowed parameter. If
+$J=\sum_\lambda\lambda P_\lambda$ is its orthogonal spectral
+decomposition, define
+$\mu_J=\sum_\lambda\|P_\lambda e_0\|^2\delta_\lambda$.
+Its nonnegative weights sum to $\|e_0\|^2=1$, and its at most
+three atoms give all absolute moments. For nonnegative integers
+$r,s$,
+\[
+ \int x^{r+s}\,d\mu_J
+ =\langle J^re_0,J^se_0\rangle.
+\]
+The necessary coordinate vectors can be computed without a large
+matrix-power expansion:
+\[
+ Je_0=(0,\sqrt v,0),\qquad
+ J^2e_0=\left(v,\frac{k}{\sqrt v},\frac{\sqrt\delta}{\sqrt v}\right),
+\]
+\[
+ J^3e_0=\left(k,3v\sqrt v,
+                    \frac{\alpha\sqrt\delta}{\sqrt v}\right).
+\]
+For the second entry of the last vector use
+$k^2+\delta=2v^3$; for the third use $d+k/v=\alpha$.
+These vectors give $m_0=1,m_1=0,m_2=v,m_3=k$ and
+\[
+ m_4=v^2+\frac{k^2+\delta}{v}=3v^2,\qquad
+ m_5=4vk+\frac{\alpha\delta}{v}=t,
+\]
+\[
+ m_6=k^2+9v^3+\frac{\alpha^2\delta}{v}=F(v,k,t).
+\]
+Thus the claimed bound is attained in an actual probability law.
+Its integral of $q^2$ is zero, so $q=0$ almost everywhere under
+that law and its support is contained in the real zero set of $q$.
+No moment beyond those displayed is prescribed by this construction.
+\end{proof}
+
+At $v=k=1$ one has $\delta=1$ and recovers
 \begin{equation}\label{eq:sharp}
  m_6\geq t^2-8t+26.
 \end{equation}
-For every real $t$ equality is attained by a finitely
-supported probability measure.
-\end{proposition}
-\begin{proof}
-Put $p_t(x)=x^3+(4-t)x^2+(t-7)x+(t-5)$.
-Expanding its square with the prescribed first five
-moments gives
+Here $q=p_t=x^3+(4-t)x^2+(t-7)x+(t-5)$ and the same spectral
+matrix becomes $\left(\begin{smallmatrix}0&1&0\\1&1&1\\0&1&t-5\end{smallmatrix}\right)$.
+For the mixed Gaussian--cubic sequence, substitute $t=10vk$ to obtain
 \[
- \int p_t(x)^2\,d\mu=m_6-(t^2-8t+26),
+ 15v^3+10k^2-F(v,k,10vk)
+ =\frac{12v^6-24v^3k^2-9k^4}{\delta}=\frac D\delta.
 \]
-which proves the lower bound.
-For attainment, take the spectral measure at $e_0$ of
-\[
- A_t=\begin{pmatrix}0&1&0\\1&1&1\\0&1&t-5\end{pmatrix}.
-\]
-Its first four coordinate-power vectors are
-\[
- e_0,\quad A_t e_0=(0,1,0),\quad
- A_t^2e_0=(1,1,1),\quad A_t^3e_0=(1,3,t-4).
-\]
-Their inner products give moments $m_0,\ldots,m_4$
-as stated, and
-\[
- \langle A_t^2e_0,A_t^3e_0\rangle=t,\qquad
- \|A_t^3e_0\|^2=1+9+(t-4)^2=t^2-8t+26.
-\]
-The spectral measure is a probability measure with at
-most three support points and all absolute moments.
-Its square integral of $p_t$ is zero, so its support
-is contained in the real zero set of $p_t$.
-\end{proof}
+Thus the earlier cubic-square boundary has a sharp attained
+sixth-moment interpretation throughout the regular region. The
+singular case $\delta=0$ is excluded from this division and is not
+settled by a limiting convention.
 
 For the prescribed sequence at $v=k=1$, $m_5=10$ and
 $m_6=25$, whereas \eqref{eq:sharp} requires $m_6\geq46$.

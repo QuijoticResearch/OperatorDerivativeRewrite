@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-eight drafts, 461 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts. Page counts below match the current hash-linked PDF receipts; novelty remains unresolved for every paper, and classical antecedents are credited in the manuscripts.
+Twenty-eight drafts, 462 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts. Page counts below match the current hash-linked PDF receipts; novelty remains unresolved for every paper, and classical antecedents are credited in the manuscripts.
 
 ### Arithmetic entire functions
 
@@ -38,7 +38,7 @@ Twenty-eight drafts, 461 pages, all based on frozen verified commit `bab688bb614
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
 | Quartic normal equations: complete-space solvability, sharp inverse stability, and atomic obstructions | [PDF](quartic-normal/main.pdf) · [LaTeX](quartic-normal/main.tex) · [theorem map](quartic-normal/theorem-map.json) · [editorial status](quartic-normal/editorial-status.md) | 11 pages. Complete-space quartic normal-map solvability and sharp inverse exponent 1/3, with weighted regularity and infinite Poisson atomic obstructions. A different infinite Gaussian embedding has a radial inverse regular away from zero, with fully proved sharp constant and derivative. |
-| Exact polynomial moment boundaries: Gaussian–cubic truncations and pure-order positivity | [PDF](cubic-moment-boundaries/main.pdf) · [LaTeX](cubic-moment-boundaries/main.tex) · [theorem map](cubic-moment-boundaries/theorem-map.json) · [editorial status](cubic-moment-boundaries/editorial-status.md) | 11 pages. The separate pure-order Stein functional has a complete all-degree Gaussian positivity classification and explicit negative-square witness. Exact Gaussian–cubic square-test thresholds, spectral realization and singular null-boundary gaps. Actual probability laws approach nonrepresentable moment data through sixth-moment escape; square positivity alone is insufficient. Includes 52 exact checks. |
+| Exact polynomial moment boundaries: Gaussian–cubic truncations and pure-order positivity | [PDF](cubic-moment-boundaries/main.pdf) · [LaTeX](cubic-moment-boundaries/main.tex) · [theorem map](cubic-moment-boundaries/theorem-map.json) · [editorial status](cubic-moment-boundaries/editorial-status.md) | 12 pages. Includes the sharp attained sixth-moment floor for every regular variance/skewness pair and every real fifth moment, via an explicit three-point spectral law. The separate pure-order Stein functional has a complete all-degree Gaussian positivity classification and explicit negative-square witness. Exact Gaussian–cubic square-test thresholds, spectral realization and singular null-boundary gaps. Actual probability laws approach nonrepresentable moment data through sixth-moment escape; square positivity alone is insufficient. Includes 52 exact checks. |
 
 ### Gaussian prediction, forcing and nonlocal semigroups
 
