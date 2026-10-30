@@ -30,7 +30,7 @@ between raw Taylor channels. Continuous spatial weights yield a combined
 three-channel $C^4$ Taylor limit with correction $1/8$ times the
 fourth-derivative time integral, without global derivative bounds.
 A separate spatial-kernel concentration argument proves that a specific source-compensated grid has diverging $L^2$ norm even after projection onto the full actual IBM observable space.
-Nevertheless, fixed quadratic and bounded $C^2$ terminal tests admit strong clock-source contraction limits, with explicit capped-occupation corrections.
+Nevertheless, fixed quadratic and bounded $C^2$ terminal tests admit strong clock-source contraction limits, with explicit capped-occupation corrections. A faithful quotient Banach domain also supports clock-$L^1$-valued limits of the original source contractions.
 We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
 chain formula, uniform control over prefixes of one common grid,
 bounded random-horizon convergence for spatial one-forms, and an
@@ -1389,6 +1389,288 @@ integral, or physical-time It\^o formula follows. The proof uses
 classical Gaussian regression, Wick pairing, Brownian bracket control
 and bounded-coefficient continuity; priority for this specific IBM
 source-contraction package has not been established.
+
+
+\section{A faithful Banach domain for clock-valued source limits}
+The fixed-test limits just proved do not give convergence against every
+observable $L^2$ test. A separate completed test domain does support
+continuous clock-$L^1$ limits of the original source contractions.
+We construct that domain explicitly, including the norm and the
+consistency needed to forget a test's spatial presentation.
+
+\subsection{Spatial square kernels and their precise completed domain}
+For $x,y\geq0$ let $J(x,y)=(\min(x,y),\max(x,y)]$, and for a bounded
+continuous real function $F$ on $\R^2$ put
+\[
+ C_F(x,y)=\int_{J(x,y)^2}F(u,v)\,du\,dv.
+\]
+This rectangle is unoriented: its area is $(y-x)^2$ even when $y<x$.
+Thus $|C_F(x,y)|\leq\|F\|_\infty(y-x)^2$. For Lipschitz $F$ with
+constant $L$ in the maximum product metric,
+\begin{equation}\label{eq:spatialcellerror}
+ |C_F(x,y)-F(x,x)(y-x)^2|\leq L|y-x|^3,
+\end{equation}
+since each point of the square is within $|y-x|$ of $(x,x)$.
+Let $\mathcal C$ be the supremum-norm completion of the bounded
+Lipschitz functions on $\R^2$. It embeds isometrically into
+$C_b(\R^2)$: a norm-Cauchy sequence converges uniformly to a bounded
+continuous function, with the same norm. This specifies the completed
+domain used below; we make no identification with all of $C_b$.
+\par\noindent\code{IBMSpatialKernelTesting.cell_diagonal_error}.
+\par\noindent\code{IBMSpatialCompletedTestLimit.realize}.
+
+For the same original clock $r_i=|B_{t_i}|$, define
+\[
+ K_NF=\sum_{i<N}C_F(r_i,r_{i+1}),\qquad
+ KF=\int_0^T F(|B_t|,|B_t|)\,dt.
+\]
+For each deterministic $F\in\mathcal C$,
+\begin{equation}\label{eq:detspatialtest}
+ K_NF\longrightarrow KF\quad\hbox{in clock }L^1,
+ \qquad \|K_NF\|_1,\ \|KF\|_1\leq T\|F\|_\infty.
+\end{equation}
+Here is a full proof on the Lipschitz core. Equation
+\eqref{eq:spatialcellerror} bounds the expected error in replacing
+each cell by its diagonal value by
+\[
+ L\sum_i\mathbb E_B|r_{i+1}-r_i|^3
+ \leq L\mathbb E|G|^3\,\frac{T^{3/2}}{\sqrt N},
+ \qquad G\sim N(0,1).
+\]
+For the diagonal sum, replace $(\Delta r_i)^2$ by $(\Delta B_i)^2$.
+The resulting $L^1$ error is at most $\|F\|_\infty$ times the
+folded-clock quadratic-variation loss proved in Section~10, which
+tends to zero. The bounded coefficient $F(r_i,r_i)$ is measurable
+at $t_i$, so independent increments and centering give
+\[
+ \left\|\sum_i F(r_i,r_i)((\Delta B_i)^2-h)\right\|_2^2
+ \leq\frac{2T^2\|F\|_\infty^2}{N}.
+\]
+Cross-cell terms vanish by conditioning on the later left past;
+the diagonal conditional variance is $2h^2$. The remaining Riemann
+sum converges pathwise to $KF$ by continuity and in $L^1$ by its
+deterministic bound $T\|F\|_\infty$. This proves convergence.
+The bounds in \eqref{eq:detspatialtest} follow from
+$|K_NF|\leq\|F\|_\infty\sum(\Delta r_i)^2$,
+$\mathbb E\sum(\Delta r_i)^2\leq T$, and the time-integral bound.
+For $F\in\mathcal C$, choose core $F_j\to F$ uniformly. The two
+uniform operator bounds make the approximation error at most
+$2T\|F-F_j\|_\infty$, independently of $N$; first fix $j$, take
+$N\to\infty$, then $j\to\infty$. This proves the completed assertion
+and retains the displayed actual formulas.
+\par\noindent\code{IBMSpatialLipschitzTestLimit.core_tendsto}.
+\par\noindent\code{IBMSpatialCompletedTestLimit.completed_tendsto}.
+
+\subsection{Random completed tests need a separate extension argument}
+Set $\mathcal R=L^2(\mathbb P_B;\mathcal C)$, the actual Bochner space
+of almost everywhere strongly measurable random tests. For $u\in\mathcal R$,
+define the pointwise expressions
+\[
+ K_N[u](B)=\sum_i C_{u(B)}(r_i,r_{i+1}),\qquad
+ K[u](B)=\int_0^T u(B)(|B_t|,|B_t|)\,dt.
+\]
+No independence between $u(B)$ and the clock is imposed.
+These evaluations are measurable. Indeed evaluation of either
+pathwise continuous linear functional at each fixed $F$ is measurable
+in $B$, by the actual rectangle/time integrals. A strongly measurable
+version of $u$ has simple-function approximations converging pointwise
+in $\mathcal C$; continuity of the functional then proves measurability
+of its evaluation at $u(B)$. Almost everywhere changes do not affect
+the resulting scalar classes. This argument requires no strong
+measurability of the random functional in the full norm-dual.
+
+Let $U_N=\sum_i(\Delta B_i)^2$. Pathwise,
+\[
+ |K_N[u](B)|\leq U_N(B)\|u(B)\|_\infty,
+ \qquad |K[u](B)|\leq T\|u(B)\|_\infty.
+\]
+The original Gaussian moments give
+$\|U_N\|_2=T\sqrt{1+2/N}\leq3T$. Cauchy--Schwarz yields actual
+$L^1$ classes and uniform bounds
+\begin{equation}\label{eq:randomspatialbounds}
+ \|K_N[u]\|_1,\ \|K[u]\|_1\leq3T\|u\|_{\mathcal R}.
+\end{equation}
+They also prove continuity and linearity in the actual equivalence classes.
+\par\noindent\code{IBMWeakRandomEvaluation.evaluation_measurable}.
+\par\noindent\code{IBMSpatialRandomTestBounds.finite_norm_bound}.
+
+For a finite-valued random test $u=\sum_{j=1}^m\mathbf1_{A_j}F_j$
+on disjoint measurable sets, its error is bounded by
+\[
+ \|K_N[u]-K[u]\|_1\leq\sum_{j=1}^m\|K_NF_j-KF_j\|_1\to0.
+\]
+The events $A_j$ may depend on the entire clock. Such simple functions
+are dense in the Bochner $L^2$ space. For arbitrary $u$, approximate
+it there by one simple function $v$. Equations
+\eqref{eq:randomspatialbounds} give total approximation error
+$6T\|u-v\|_{\mathcal R}$, uniformly in $N$. The fixed simple-function
+error tends to zero, proving
+\begin{equation}\label{eq:randomspatiallimit}
+ K_N[u]\to K[u]\quad\hbox{in clock }L^1
+                    \quad(u\in\mathcal R).
+\end{equation}
+Deterministic-test convergence alone would not justify this step;
+the common $L^2$ random bounds and the finite-valued approximation
+are essential to the argument.
+\par\noindent\code{IBMSpatialRandomTestConvergence.random_tendsto}.
+
+For later use put
+\[
+ H_N[u](B)=C_{u(B)}(0,|B_T|)-K_N[u](B),\qquad
+ H[u](B)=C_{u(B)}(0,|B_T|)-K[u](B).
+\]
+The endpoint term is bounded by $|B_T|^2\|u(B)\|_\infty$, and
+$\||B_T|^2\|_2=\sqrt3T\leq3T$. Hence
+\begin{equation}\label{eq:signedrandomlimit}
+ H_N[u]\to H[u]\ \hbox{in }L^1,\qquad
+ \|H_N[u]\|_1,\ \|H[u]\|_1\leq6T\|u\|_{\mathcal R}.
+\end{equation}
+The symbol $H$ here denotes the difference of two real spatial
+actions; it changes no probability law. Its pathwise formula is a
+bounded functional on spatial tests, with bound
+$(|B_T|^2+T)\|F\|_\infty$.
+\par\noindent\code{IBMSpatialSignedRandomTests.signed_random_tendsto}.
+\par\noindent\code{IBMSpatialPathReconstruction.signedPath_bound}.
+
+\subsection{The original joint tests and their spatial symbols}
+Use the physical scenery isometry $X$ on $L^2(\R)$ fixed by the
+original two-sided Brownian indicator coordinates; on
+$\mathbf1_{(0,r]}$, $r\geq0$, it agrees with the scenery $W_r$
+already used. The clock-domain companion reconstructs this same-source
+isometry; no new independent noise is introduced. For real Schwartz
+functions $g,k$, write $X_g=X(g')$, $X_k=X(k')$. The exact overlap is
+\[
+ \langle\mathbf1_{(0,r]},g'\rangle=g(r)-g(0),\qquad r\geq0,
+\]
+by the fundamental theorem of calculus. Put
+\[
+ q_{g,k,a}(W,B)=a(B)X_g(W)X_k(W),\qquad
+ u_{g,k,a}(B)(x,y)=a(B)g'(x)k'(y),
+ \quad a\in L^2(\mathbb P_B).
+\]
+The joint test belongs to $\mathcal E=L^2(\mathbb P_W\otimes\mathbb P_B)$:
+the fixed Gaussian product $X_gX_k$ has finite second moment and is
+independent of $a$. The symbol belongs to $\mathcal R$, since
+$g'(x)k'(y)$ is bounded Lipschitz and its random norm is a constant
+times $|a(B)|$. These are original joint tests; intrinsic observable
+membership is an additional condition, not part of the definition.
+\par\noindent\code{IBMPhysicalWickTestDomain.source_primitive}.
+\par\noindent\code{IBMJointMixedSpatialTransport.jointTest_actual}.
+
+For any $q\in\mathcal E$ define the finite source contraction
+$\mathsf C_Nq=\mathbb E_W[S_Nq\mid B]$, where this again means
+scenery integration with clock fixed. Fubini and Cauchy--Schwarz give
+\[
+ \|\mathsf C_Nq\|_1\leq\|S_N\|_2\|q\|_2.
+\]
+It is therefore a continuous linear map $\mathcal E\to L^1(\mathbb P_B)$
+for each fixed $N$; no uniform bound in this ambient norm is asserted.
+Gaussian Wick pairing and the same finite product telescope as before
+give the exact identity
+\begin{equation}\label{eq:jointsymbolidentity}
+ \mathsf C_N q_{g,k,a}=H_N[u_{g,k,a}].
+\end{equation}
+To check the spatial side, the actual rectangle integral factors as
+\[
+ C_{g'\otimes k'}(x,y)=(g(y)-g(x))(k(y)-k(x)).
+\]
+For $y<x$ both one-dimensional integrals reverse sign, leaving the
+same product. The endpoint term is
+$(g(|B_T|)-g(0))(k(|B_T|)-k(0))$, and subtracting the cell sum gives
+exactly the Gaussian overlap telescope. This also verifies that no
+extra factor $1/2$ belongs in \eqref{eq:jointsymbolidentity}.
+\par\noindent\code{IBMJointRandomContraction.joint_bound}.
+\par\noindent\code{IBMSpatialMixedWickTesting.cell_mixed}.
+\par\noindent\code{IBMJointRandomGraphIdentity.generator_identity}.
+
+\subsection{Complete paired presentations, then quotient the zero joint tests}
+Give $\mathcal E\times\mathcal R$ the maximum product norm, and let
+$\mathcal G$ be the closed linear span of all the pairs
+$(q_{g,k,a},u_{g,k,a})$. It is a Banach space. Denote its two
+continuous coordinate maps by $j$ and $s$, so
+$\|jp\|_2,\|sp\|_{\mathcal R}\leq\|p\|_{\mathcal G}$.
+For each fixed $N$, both sides of
+\eqref{eq:jointsymbolidentity} are continuous on this product.
+They agree on the generating pairs, hence on their finite linear
+span and its closure. Consequently for every $p\in\mathcal G$,
+\begin{equation}\label{eq:completedjointsymbol}
+ \mathsf C_N(jp)=H_N[sp]\longrightarrow H[sp]
+                                      \quad\hbox{in clock }L^1.
+\end{equation}
+This extends the \emph{random} identity, before taking expectations.
+\par\noindent\code{IBMJointCompletedTestGraph.testGraph}.
+\par\noindent\code{IBMJointRandomGraphIdentity.finite_identity}.
+
+If $jp=0$, every finite left side of
+\eqref{eq:completedjointsymbol} is zero. Uniqueness of its $L^1$ limit
+then forces $H[sp]=0$ as an actual $L^1$ class. More generally two
+presentations with the same joint test have the same limiting clock
+class. No injectivity of the spatial symbol map is assumed.
+The closed kernel $\mathcal K=\ker j$ can therefore be quotiented out.
+Define
+\[
+ \mathcal T=\mathcal G/\mathcal K,\qquad
+ \|[p]\|_{\mathcal T}=\inf_{k\in\mathcal K}\|p+k\|_{\mathcal G}.
+\]
+It is Banach, and the induced realization
+$J:\mathcal T\to\mathcal E$, $J[p]=jp$, is injective and satisfies
+$\|Jx\|_2\leq\|x\|_{\mathcal T}$. Indeed $J[p]=0$ means
+$p\in\mathcal K$, exactly the zero quotient class; the norm estimate
+follows by taking the infimum of $\|j(p+k)\|_2\leq\|p+k\|$.
+Thus these tests are faithful original joint random variables, with
+their specified quotient norm.
+
+The limiting map
+\[
+ \mathsf D_T:\mathcal T\to L^1(\mathbb P_B),\qquad
+ \mathsf D_T[p]=H[sp]
+\]
+is well-defined by the kernel argument. For every $x\in\mathcal T$,
+\begin{equation}\label{eq:faithfultestlimit}
+ \mathsf C_N(Jx)\longrightarrow\mathsf D_Tx\quad\hbox{in clock }L^1,
+ \qquad
+ \|\mathsf C_N(Jx)\|_1,\ \|\mathsf D_Tx\|_1\leq6T\|x\|_{\mathcal T}.
+\end{equation}
+For the bounds, apply \eqref{eq:signedrandomlimit} to $s(p+k)$
+for every $k\in\mathcal K$; the finite and limiting values are
+independent of $k$. Infimizing proves the inequalities. Continuity
+and linearity follow, and pointwise uniqueness follows from uniqueness
+of $L^1$ limits. On a generator its value is the actual formula
+\[
+ \mathsf D_T[q_{g,k,a},u_{g,k,a}](B)
+ =a(B)\left[(g(|B_T|)-g(0))(k(|B_T|)-k(0))
+       -\int_0^T g'(|B_t|)k'(|B_t|)\,dt\right].
+\]
+The brackets here denote the corresponding quotient class of the
+pair, not a class of arbitrary original joint functions.
+\par\noindent\code{IBMJointBanachTestSpace.realize_injective}.
+\par\noindent\code{IBMJointRandomDistribution.native_tendsto}.
+\par\noindent\code{IBMJointRandomDistribution.native_bound}.
+\par\noindent\code{IBMJointRandomDistribution.distribution_bound}.
+
+Taking clock expectation is a continuous map on $L^1$, so it recovers
+the scalar limiting functional. If $Jx$ independently belongs to the
+intrinsic observable space, then
+$\langle I_N,Jx\rangle=\mathbb E_B\mathsf C_N(Jx)$, and hence these
+pairings converge to $\mathbb E_B\mathsf D_Tx$. This does not assign
+observable membership to every joint generator.
+\par\noindent\code{IBMJointRandomDistribution.expectation_eq}.
+\par\noindent\code{IBMJointBanachTestSpace.intrinsic_native_tendsto}.
+
+Finally the realized test range omits some intrinsic observables.
+Choose the fixed observable $v$ whose pairings with $I_N$ are unbounded,
+as constructed by the earlier Baire argument. If $v=Jx$,
+\eqref{eq:faithfultestlimit} and the last pairing identity would make
+those pairings converge to a finite scalar, a contradiction.
+\par\noindent\code{IBMJointBanachTestSpace.exists_intrinsic_outside_range}.
+This is a genuine completed test-space result with a controlled
+stronger norm. It does not identify that range with all original
+observable $L^2$, prove that it is a closed subspace there, or put the
+fixed quadratic and bounded $C^2$ observations of Section~11 in
+$\mathcal T$. Those observations were handled separately without such
+membership assumptions. The construction uses classical completion,
+Bochner approximation and closed-kernel quotient arguments; specific
+priority for the actual IBM test-space package remains unresolved.
 
 \section{What this integration result means}
 The targets are genuine pathwise finite spatial or time integrals,
