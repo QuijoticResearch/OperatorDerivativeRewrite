@@ -2879,3 +2879,6 @@ import Foundation.CubeChordTransfer
 import Foundation.CubeSlabSecondVariation
 
 import Foundation.CubeTemporalSchur
+import Foundation.SU2HaarSmallCap
+import Foundation.CubePolynomialGround
+import Foundation.CubeLogWindow
