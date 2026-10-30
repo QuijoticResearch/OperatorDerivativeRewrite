@@ -12,7 +12,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Complex-root approximations:\\analytic limits, positive source calculus and clock channels}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -1061,6 +1061,154 @@ domain diagnostics. Their finite positive martingales are not
 transferred to a signed heat path measure or to the heat-scaled
 sequence that lacks an ordinary weak limit.
 
+
+\section{Bounded stopping times of the actual complex process}
+Return to the unit-rate process $C_a(t)$, with fixed real $a$ and
+marks uniform on $\{a(1+i),a(1-i),-a(1+i),-a(1-i)\}$.
+The stopping times in this section concern its actual natural
+filtration $\mathcal H_t^a$. Let $\tau$ be such a stopping time and
+assume $0\leq\tau\leq K$ pointwise, for a deterministic integer
+$K\geq0$. This is a bound on physical time, not a deterministic bound
+on the random number $N_K$ of jumps.
+
+For a bounded continuous complex function $f$, put
+\[
+ A_af(z)=\E[f(z+a\zeta)]-f(z),\qquad
+ D_t^f=f(C_a(t))-f(0)-\int_0^t A_af(C_a(s))\,ds.
+\]
+The earlier Dynkin argument applies with these scaled marks and gives
+an actual martingale. Two unbounded martingales are
+\[
+ Q_t=C_a(t)^4+4ta^4,\qquad
+ E_t^\xi=\exp\{-t\psi_a(\xi)+i\xi C_a(t)\},\quad \xi\in\R.
+\]
+For the latter, the integrable exponential conditional transition gives
+\[
+ \E[e^{i\xi C_a(t)}\mid\mathcal H_s^a]
+   =e^{i\xi C_a(s)}e^{(t-s)\psi_a(\xi)}.
+\]
+Multiplication by $e^{-t\psi_a(\xi)}$ proves the martingale identity
+and $\E E_t^\xi=1$. The quartic martingale was proved above.
+All three versions have right-continuous paths: $C_a$ is cadlag,
+continuous functions preserve right continuity, and the Dynkin drift
+integral is continuous on bounded intervals.
+
+\begin{theorem}\label{thm:markedstopping}
+Each of $D_\tau^f$, $Q_\tau$ and $E_\tau^\xi$ is integrable.
+For any of these three martingales $M$,
+\begin{equation}\label{eq:stoppedclosed}
+ M_\tau=\E[M_K\mid\mathcal H_\tau^a]\quad\hbox{almost surely}.
+\end{equation}
+In particular
+\begin{align}
+ \E f(C_a(\tau))-f(0)
+   &=\E\int_0^\tau A_af(C_a(s))\,ds,\label{eq:stoppeddynkin}\\
+ \E[C_a(\tau)^4]&=-4a^4\E\tau,\label{eq:stoppedquartic}\\
+ \E\exp\{-\tau\psi_a(\xi)+i\xi C_a(\tau)\}&=1.
+ \label{eq:stoppedexponential}
+\end{align}
+If $\sigma\leq\tau$ is another nonnegative stopping time, then
+$\E[M_\tau\mid\mathcal H_\sigma^a]=M_\sigma$ almost surely.
+\end{theorem}
+\begin{proof}
+We first supply an actual common integrable bound on the whole
+time interval $[0,K]$. Since each mark has modulus $\sqrt2|a|$,
+\[
+ |C_a(t)|\leq\sqrt2|a|N_K\qquad(0\leq t\leq K)
+\]
+on the common nonexplosive source event. The Poisson series gives
+\[
+ \E e^{qN_K}=\exp(K(e^q-1))<\infty\quad(q\geq0),
+ \qquad \E N_K^m<\infty\quad(m\in\mathbb N).
+\]
+The polynomial-moment proof above applies at time $K$; for the
+exponential identity simply sum
+$e^{-K}\sum_{j\geq0}(Ke^q)^j/j!$.
+Now $\|A_af\|_\infty\leq2\|f\|_\infty$, so
+\begin{align*}
+ |D_t^f|&\leq2(1+K)\|f\|_\infty,\\
+ |Q_t|&\leq4|a|^4N_K^4+4K|a|^4,\\
+ |E_t^\xi|&\leq e^{K|\psi_a(\xi)|}
+                   e^{\sqrt2|a\xi|N_K}.
+\end{align*}
+Each right side is integrable. No boundedness of the exponential
+observable on the complex plane has been assumed.
+
+For $n\geq0$ let
+$\tau_n=\lceil(n+1)\tau\rceil/(n+1)$.
+Then $\tau\leq\tau_n<\tau+1/(n+1)$, each $\tau_n$ is a stopping
+time on its finite grid in $[0,K]$, and $\tau_n\to\tau$ from the
+right. At a grid value $j/(n+1)$ its lower event is exactly
+$\{\tau_n\leq j/(n+1)\}=\{\tau\leq j/(n+1)\}$.
+Ceiling preserves the bound $K$ because $(n+1)K$ is an integer.
+Right continuity and the preceding common majorant give
+\begin{equation}\label{eq:roundedLone}
+ M_{\tau_n}\longrightarrow M_\tau\quad\hbox{in }L^1
+ \quad\hbox{and almost surely}.
+\end{equation}
+The case $K=0$ is immediate.
+
+For completeness, the required stopped measurability is obtained
+without silently replacing the natural filtration. An adapted
+right-continuous process is progressive here by the following explicit
+construction. On each $[0,T]$, replace $t$ by
+$\min(T,\lceil(n+1)t\rceil/(n+1))$. Each approximation is jointly
+$\mathcal B([0,T])\otimes\mathcal H_T^a$ measurable, because it
+selects among countably many adapted values at times at most $T$.
+Its pointwise right-continuous limit is the original process. For a
+stopping time $\tau$, the variable $\tau\wedge T$ is
+$\mathcal H_T^a$ measurable, so this joint measurability makes
+$M_{\tau\wedge T}$ measurable there. On $\{\tau\leq T\}$ it
+equals $M_\tau$, proving measurability in the stopping sigma algebra
+$\mathcal H_\tau^a$.
+
+If $B\in\mathcal H_\tau^a$, then
+$B\in\mathcal H_{\tau_n}^a$. Partition $B$ according to the finite
+grid values of $\tau_n$. The event
+$B\cap\{\tau_n=t_j\}$ belongs to $\mathcal H_{t_j}^a$,
+and the deterministic-time martingale identity gives
+\[
+ \E[\mathbf1_{B\cap\{\tau_n=t_j\}}M_{t_j}]
+    =\E[\mathbf1_{B\cap\{\tau_n=t_j\}}M_K].
+\]
+Summation yields $\E[\mathbf1_B M_{\tau_n}]=\E[\mathbf1_BM_K]$.
+The $L^1$ limit~\eqref{eq:roundedLone} proves the same equality
+for $M_\tau$. Integrability and the stopped measurability just proved
+now identify its conditional expectation as~\eqref{eq:stoppedclosed}.
+Taking expectations uses $\E D_K^f=\E Q_K=0$ and
+$\E E_K^\xi=1$ and gives the three displayed identities.
+Every separated term in~\eqref{eq:stoppeddynkin} is integrable by
+the deterministic bounds; in~\eqref{eq:stoppedquartic}, both
+$C_a(\tau)^4$ and $\tau$ are integrable by the Poisson bound.
+Finally $\mathcal H_\sigma^a\subset\mathcal H_\tau^a$ and the
+tower property applied to~\eqref{eq:stoppedclosed} give the two-time
+conditional assertion.
+\end{proof}
+
+This is classical bounded optional sampling. Lalley's primary
+Proposition 2~\cite{Lalley} gives the usual right-grid and
+uniform-integrability proof under a standard filtration. The native
+formal construction proves the required measurability and sampling
+statements for its specified natural filtration; the proof above uses
+explicit Poisson majorants in place of an abstract conditional
+uniform-integrability argument. The mesh $1/(n+1)$ matches the
+source ceiling construction and need not be nested.
+Exact original correspondences are in
+\par\noindent\code{RightContinuousBoundedSampling},
+\code{MarkedDynkinSampling},
+\par\noindent\code{MarkedUnboundedSampling} and
+\code{MarkedExponentialMartingale}.
+
+The stopped exponential is a complex weight with mean one; this does
+not make it a positive probability density. Bounded stopping has not
+been extended to arbitrary finite or unbounded stopping times.
+Moreover the Poisson majorants depend on the fixed finite process
+and deterministic horizon. They do not supply uniform domination
+under the high-rate scaling limit, a limiting stopped process,
+a weak signed/probability path law, or a full wall-clock predictable
+representation theorem. Those different assertions remain outside
+the conclusions proved here.
+
 \section{Every positive even order on an explicit analytic domain}
 The frozen construction also covers $p=2m$, $m\geq1$, with a
 normalization different from the four diagonal marks above.
@@ -1305,5 +1453,9 @@ walks on the complex plane}, arXiv:1603.05437 (2016),
 \href{https://arxiv.org/abs/1603.05437}{arxiv.org/abs/1603.05437}.
 \bibitem{FH} U. Franz and T. Hamdi, \emph{Stochastic analysis for obtuse random walks}, primary preprint, \href{https://arxiv.org/abs/1212.2324}{arXiv:1212.2324}, Proposition 2.3 and Propositions 7.1--7.5.
 \bibitem{ADP} S. Attal, J. Deschamps and C. Pellegrini, \emph{Complex obtuse random walks and their continuous-time limits}, primary preprint, \href{https://arxiv.org/abs/1312.3731}{arXiv:1312.3731}, Sections 2.2--2.4.
+\bibitem{Lalley} S. P. Lalley,
+\emph{Continuous Martingales I. Fundamentals}, October 25, 2016,
+Section 3.2, Proposition 2 and its complete proof, printed p.~5.
+\url{https://galton.uchicago.edu/~lalley/Courses/385/ContinuousMG1.pdf}.
 \end{thebibliography}
 \end{document}
