@@ -1496,6 +1496,591 @@
       "source_sha256": "5698cdb241b77ed8ccb455fb34d6581c1888ad875c95d95025ac4801a2af2bc4",
       "declaration_header": "theorem not_all_centered_correlations_decay :\n    \u00ac (\u2200 f : State \u2192 \u211d, Measurable f \u2192 MemLp f 2 law \u2192 (\u222b x, f x \u2202law)=0 \u2192\n      Tendsto (fun t : \u211d => \u222b x, f (flow t x)*f x \u2202law) atTop (\ud835\udcdd 0))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadGaussianDephasing.lean#L194"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.damping",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 11,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def damping (\u03bd t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L11"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.angle",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 13,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def angle (\u03bd t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L13"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.stateFlow",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 15,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def stateFlow (\u03bd t : \u211d) (x : State) : State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L15"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.vectorFlow",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 18,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def vectorFlow (\u03bd t : \u211d) (x : Vector) : Vector",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L18"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.vectorFlow_formula",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 20,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem vectorFlow_formula (\u03bd t : \u211d) (x : Vector) : vectorFlow \u03bd t x=\n    ![damping \u03bd t*(Real.cos (angle \u03bd t*x 2)*x 0+Real.sin (angle \u03bd t*x 2)*x 1),\n      damping \u03bd t*(-Real.sin (angle \u03bd t*x 2)*x 0+Real.cos (angle \u03bd t*x 2)*x 1),\n      damping (2*\u03bd) t*x 2]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L20"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.stateFlow_zero",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 25,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem stateFlow_zero (\u03bd : \u211d) (x : State) : stateFlow \u03bd 0 x=x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L25"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.vectorFlow_zero",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 28,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem vectorFlow_zero (\u03bd : \u211d) (x : Vector) : vectorFlow \u03bd 0 x=x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L28"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.damping_derivative",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 31,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem damping_derivative (\u03bd t : \u211d) :\n    HasDerivAt (damping \u03bd) (-\u03bd*damping \u03bd t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L31"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.angle_derivative",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 36,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem angle_derivative (\u03bd t : \u211d) (h\u03bd : \u03bd \u2260 0) :\n    HasDerivAt (angle \u03bd) (damping (2*\u03bd) t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L36"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.vectorFlow_derivative",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 47,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem vectorFlow_derivative (\u03bd : \u211d) (h\u03bd : \u03bd \u2260 0) (x : Vector) (t : \u211d) :\n    HasDerivAt (fun s => vectorFlow \u03bd s x)\n      (DictionaryTriadPotential.drift \u03bd (vectorFlow \u03bd t x)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L47"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.damping_square",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 64,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem damping_square (\u03bd t : \u211d) : (damping \u03bd t)^2=damping (2*\u03bd) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L64"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.plane_square",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 69,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem plane_square (\u03bd t : \u211d) (x : Vector) :\n    (vectorFlow \u03bd t x 0)^2+(vectorFlow \u03bd t x 1)^2=\n      damping (2*\u03bd) t*((x 0)^2+(x 1)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L69"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.energy",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 81,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def energy (x : Vector) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L81"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.energy_eq_kinetic",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 84,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem energy_eq_kinetic (x : Vector) : energy x=DictionaryTriadPotential.kineticPair x x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L84"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.energy_formula",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 89,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem energy_formula (\u03bd t : \u211d) (x : Vector) :\n    energy (vectorFlow \u03bd t x)=\n      2*damping (2*\u03bd) t*((x 0)^2+(x 1)^2)+4*damping (4*\u03bd) t*(x 2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L89"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.damping_le_one",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 101,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem damping_le_one (\u03bd t : \u211d) (h\u03bd : 0 \u2264 \u03bd) (ht : 0 \u2264 t) : damping \u03bd t \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L101"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.energy_decay",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 105,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem energy_decay (\u03bd t : \u211d) (h\u03bd : 0 \u2264 \u03bd) (ht : 0 \u2264 t) (x : Vector) :\n    energy (vectorFlow \u03bd t x) \u2264 damping (2*\u03bd) t*energy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L105"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.energy_strict",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 114,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem energy_strict (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) (x : Vector)\n    (hx : 0 < energy x) : energy (vectorFlow \u03bd t x)<energy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L114"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.third_second",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 122,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem third_second (\u03bd t : \u211d) :\n    (\u222b x : State, ((stateFlow \u03bd t x).1)^2 \u2202law)=damping (4*\u03bd) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L122"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.not_gaussian_preserving",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 132,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem not_gaussian_preserving (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    \u00ac MeasurePreserving (stateFlow \u03bd t) law law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L132"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.zero_viscosity",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 143,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem zero_viscosity (t : \u211d) (x : State) : stateFlow 0 t x=TriadGaussianFlow.flow t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L143"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.damping_add",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 146,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem damping_add (\u03bd s t : \u211d) : damping \u03bd (s+t)=damping \u03bd s*damping \u03bd t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L146"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.angle_add",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 151,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem angle_add (\u03bd s t : \u211d) :\n    angle \u03bd (s+t)=angle \u03bd t+damping (2*\u03bd) t*angle \u03bd s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L151"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.stateFlow_add",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 160,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem stateFlow_add (\u03bd s t : \u211d) (x : State) :\n    stateFlow \u03bd (s+t) x=stateFlow \u03bd s (stateFlow \u03bd t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L160"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.secondHermite",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 174,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "def secondHermite (x : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L174"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.secondHermite_memLp",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 176,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem secondHermite_memLp : MemLp secondHermite 2 law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L176"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.secondHermite_centered",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 182,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem secondHermite_centered : (\u222b x : State, secondHermite x \u2202law)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L182"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.secondHermite_evolved_mean",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 189,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem secondHermite_evolved_mean (\u03bd t : \u211d) :\n    (\u222b x : State, secondHermite (stateFlow \u03bd t x) \u2202law)=damping (4*\u03bd) t-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L189"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadFlow.secondHermite_not_centered",
+      "file": "Foundation/ViscousTriadFlow.lean",
+      "line": 202,
+      "source_sha256": "2c8500f6c4bfb9d5f12eff1e20b7e33a5e05d97c96357e1fb920ba38471c4adf",
+      "declaration_header": "theorem secondHermite_not_centered (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    (\u222b x : State, secondHermite (stateFlow \u03bd t x) \u2202law)<0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadFlow.lean#L202"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.energy_nonneg",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 12,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem energy_nonneg (x : Vector) : 0 \u2264 energy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L12"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.same_third_energy",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 16,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem same_third_energy (\u03bd t : \u211d) (x y : Vector) (hc : x 2=y 2) :\n    energy (ViscousTriadFlow.vectorFlow \u03bd t x-ViscousTriadFlow.vectorFlow \u03bd t y)=\n      damping (2*\u03bd) t*energy (x-y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L16"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.angle_pos",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 31,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem angle_pos (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) : 0 < angle \u03bd t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L31"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.jump",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 38,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "def jump (\u03bd t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L38"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.jump_pos",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 40,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem jump_pos (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) : 0 < jump \u03bd t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L40"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.jump_phase",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 43,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem jump_phase (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    angle \u03bd t*jump \u03bd t=Real.pi",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L43"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.base",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 48,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "def base (A : \u211d) : Vector",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L48"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.shifted",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 49,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "def shifted (\u03bd t A : \u211d) : Vector",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L49"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.base_flow",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 51,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem base_flow (\u03bd t A : \u211d) :\n    ViscousTriadFlow.vectorFlow \u03bd t (base A)=![damping \u03bd t*A,0,0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L51"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.shifted_flow",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 55,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem shifted_flow (\u03bd t A : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    ViscousTriadFlow.vectorFlow \u03bd t (shifted \u03bd t A)=\n      ![-damping \u03bd t*A,0,damping (2*\u03bd) t*jump \u03bd t]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L55"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.initial_separation",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 60,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem initial_separation (\u03bd t A : \u211d) :\n    energy (shifted \u03bd t A-base A)=4*(jump \u03bd t)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L60"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.evolved_separation",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 64,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem evolved_separation (\u03bd t A : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    energy (ViscousTriadFlow.vectorFlow \u03bd t (shifted \u03bd t A)-\n      ViscousTriadFlow.vectorFlow \u03bd t (base A))=\n        8*(damping \u03bd t*A)^2+4*(damping (2*\u03bd) t*jump \u03bd t)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L64"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.amplitude",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 72,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "def amplitude (\u03bd t K : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L72"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.amplitude_pos",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 74,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem amplitude_pos (\u03bd t K : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    0 < amplitude \u03bd t K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L74"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.amplitude_damped",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 79,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem amplitude_damped (\u03bd t K : \u211d) :\n    damping \u03bd t*amplitude \u03bd t K=jump \u03bd t*(|K|+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L79"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.arbitrary_amplification",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 84,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem arbitrary_amplification (\u03bd t K : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    K*energy (shifted \u03bd t (amplitude \u03bd t K)-base (amplitude \u03bd t K)) <\n      energy (ViscousTriadFlow.vectorFlow \u03bd t (shifted \u03bd t (amplitude \u03bd t K))-\n        ViscousTriadFlow.vectorFlow \u03bd t (base (amplitude \u03bd t K)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L84"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.no_uniform_energy_factor",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 96,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem no_uniform_energy_factor (\u03bd t K : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    \u00ac (\u2200 x y : Vector, energy (ViscousTriadFlow.vectorFlow \u03bd t x-\n        ViscousTriadFlow.vectorFlow \u03bd t y) \u2264 K*energy (x-y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L96"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.kineticSize",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 103,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "def kineticSize (x : Vector) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L103"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.kineticSize_sq",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 105,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem kineticSize_sq (x : Vector) : (kineticSize x)^2=energy x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L105"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.no_uniform_size_factor",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 108,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem no_uniform_size_factor (\u03bd t L : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) (hL : 0 \u2264 L) :\n    \u00ac (\u2200 x y : Vector, kineticSize (ViscousTriadFlow.vectorFlow \u03bd t x-\n        ViscousTriadFlow.vectorFlow \u03bd t y) \u2264 L*kineticSize (x-y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L108"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ViscousTriadSeparation.expanding_pair_with_dissipation",
+      "file": "Foundation/ViscousTriadSeparation.lean",
+      "line": 120,
+      "source_sha256": "a5e8ef5d3d06b941b2d915bab9b905a9a5da976f62875f2843d481eda2de9c9d",
+      "declaration_header": "theorem expanding_pair_with_dissipation (\u03bd t : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    \u2203 x y : Vector,\n      energy (ViscousTriadFlow.vectorFlow \u03bd t x)<energy x \u2227\n      energy (ViscousTriadFlow.vectorFlow \u03bd t y)<energy y \u2227\n      energy (x-y)<energy (ViscousTriadFlow.vectorFlow \u03bd t x-\n        ViscousTriadFlow.vectorFlow \u03bd t y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ViscousTriadSeparation.lean#L120"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.shifted_sin_square_integral",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 14,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem shifted_sin_square_integral (s : \u211d) :\n    (\u222b t in (0 : \u211d)..2*Real.pi, (Real.sin (s+t))^2)=Real.pi",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L14"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.integrand",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 19,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "def integrand (x y : Vector) (s t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L19"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.integrand_intervalIntegrable",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 23,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem integrand_intervalIntegrable (x y : Vector) (s : \u211d) :\n    IntervalIntegrable (integrand x y s) volume 0 (2*Real.pi)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L23"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.integrand_decomp",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 32,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem integrand_decomp (x y : Vector) (s t : \u211d) :\n    integrand x y s t=y 0*integrand x ![1,0,0] s t+\n      y 1*integrand x ![0,1,0] s t+y 2*integrand x ![0,0,1] s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L32"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.third_integrand",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 37,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem third_integrand (x : Vector) (s t : \u211d) : integrand x ![0,0,1] s t=\n    4*x 1*(Real.sin t*Real.sin (s+t))+(4*x 0*Real.sin s)*Real.sin (s+t)+\n      8*x 2*(Real.sin (s+t))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L37"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.third_inner_integral",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 42,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem third_inner_integral (x : Vector) (s : \u211d) :\n    (\u222b t in (0 : \u211d)..2*Real.pi, integrand x ![0,0,1] s t)=\n      4*x 1*Real.pi*Real.cos s+8*x 2*Real.pi",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L42"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.inner_integral_formula",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 58,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem inner_integral_formula (x y : Vector) (s : \u211d) :\n    (\u222b t in (0 : \u211d)..2*Real.pi, integrand x y s t)=\n      (8*Real.pi*x 0*y 0)*(Real.sin s)^2+\n      (4*Real.pi*(x 2*y 1+x 1*y 2))*Real.cos s+\n      (4*Real.pi*x 1*y 1+8*Real.pi*x 2*y 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L58"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.physicalPair_formula",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 81,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem physicalPair_formula (x y : Vector) :\n    physicalPair x y=2*x 0*y 0+2*x 1*y 1+4*x 2*y 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L81"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.physicalPair3_formula",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 98,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem physicalPair3_formula (x y : Vector) :\n    physicalPair3 x y=2*x 0*y 0+2*x 1*y 1+4*x 2*y 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L98"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.physicalPair3_eq_kinetic",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 102,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem physicalPair3_eq_kinetic (x y : Vector) :\n    physicalPair3 x y=DictionaryTriadPotential.kineticPair x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L102"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.velocity_difference",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 106,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem velocity_difference (x y z : Vector) :\n    velocity (x 0) (x 1) (x 2) z-velocity (y 0) (y 1) (y 2) z=\n      velocity ((x-y) 0) ((x-y) 1) ((x-y) 2) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L106"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.physicalSeparation",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 112,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "def physicalSeparation (x y : Vector) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L112"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.physicalSeparation_eq",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 119,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem physicalSeparation_eq (x y : Vector) :\n    physicalSeparation x y=ViscousTriadFlow.energy (x-y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L119"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.same_third_physical",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 128,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem same_third_physical (\u03bd t : \u211d) (x y : Vector) (hc : x 2=y 2) :\n    physicalSeparation (ViscousTriadFlow.vectorFlow \u03bd t x) (ViscousTriadFlow.vectorFlow \u03bd t y)=\n      ViscousTriadFlow.damping (2*\u03bd) t*physicalSeparation x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L128"
+    },
+    {
+      "paper": "Section 9: actual viscous retained triad, explicit global flow, direct normalized torus Gram form diag(2,2,4), individual kinetic dissipation, exact same-third slice contraction, unrestricted-amplitude pair amplification and loss of the inviscid standard product Gaussian law. This is a finite projected ODE, not a closed six-mode full-fluid solution.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TriadPhysicalPairing.no_uniform_physical_factor",
+      "file": "Foundation/TriadPhysicalPairing.lean",
+      "line": 134,
+      "source_sha256": "0cf2cf41b10af55244f9cf6b6cbe590525cf9966c44225f29c9d66abd6371cf4",
+      "declaration_header": "theorem no_uniform_physical_factor (\u03bd t K : \u211d) (h\u03bd : 0 < \u03bd) (ht : 0 < t) :\n    \u00ac (\u2200 x y : Vector, physicalSeparation (ViscousTriadFlow.vectorFlow \u03bd t x)\n      (ViscousTriadFlow.vectorFlow \u03bd t y) \u2264 K*physicalSeparation x y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TriadPhysicalPairing.lean#L134"
     }
   ],
   "human_reorganization": [
@@ -1509,7 +2094,8 @@
     "The raw convolution vectors and complex i-polarization phase are computed before the Leray projection. The resulting retained nonlinear global rotation is proved directly; no preservation of six-mode support under full Euler is inferred.",
     "The derivative R=-d log(C-1/32)/dt along this retained ODE is an explicitly proved classical deduction, not a new named source theorem.",
     "The nonzero second-chaos vector field is tested against the original closed cylindrical derivative via Gaussian polynomial integration by parts and graph-core approximation. Exact squared distance 2+norm(Df)^2 also gives distance sqrt(2) to the gradient range closure; no maximal-domain replacement or full Koopman generator identification is made.",
-    "The actual dephasing formula is reproduced by conditioning and an explicitly proved Gaussian characteristic function. A conserved event with mass one half excludes event mixing as a human deduction; the source supplies the nondecaying centered coordinate and isometric Koopman action."
+    "The actual dephasing formula is reproduced by conditioning and an explicitly proved Gaussian characteristic function. A conserved event with mass one half excludes event mixing as a human deduction; the source supplies the nondecaying centered coordinate and isometric Koopman action.",
+    "Section 9 reconstructs the actual viscous retained Fourier drift a'=bc-nu*a, b'=-ac-nu*b, c'=-2nu*c and its exact damped state-dependent rotation. Direct finite torus integrals prove the physical Gram form diag(2,2,4), distinct from the earlier enstrophy weight. Every nonzero trajectory strictly loses kinetic energy for positive viscosity/time, but a prescribed half-turn phase difference yields arbitrarily large physical pair-distance amplification when all initial amplitudes are permitted. Equal third amplitudes instead give exact exp(-2nu*t) contraction in squared physical distance. The example neither refutes bounded-state estimates/local smooth dependence nor constructs a full-fluid trajectory. The evolved third Gaussian variance exp(-4nu*t) and centered second-Hermite mean exp(-4nu*t)-1 prove failure of inviscid Gaussian invariance. No external forcing or noise is present. Every proof is printed analytically; no new general dissipation/contraction or invariant-measure principle is claimed."
   ],
   "novelty": "Classical parity, projection and triad-phase mechanisms; exact combined diagnostic priority unresolved after bounded primary comparison."
 }

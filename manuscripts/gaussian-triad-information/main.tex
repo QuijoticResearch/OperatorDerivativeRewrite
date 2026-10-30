@@ -12,7 +12,7 @@
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \title{Energy statistics, signed transfer and Gaussian dynamics\protect\\in an exact finite triad}
 \author{Project Stardust}
-\date{Reviewed diagnostic draft, October 29, 2026}
+\date{Reviewed diagnostic draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -24,7 +24,9 @@ determines its square and hence its strictly positive conditional variance.
 Positive bounded changes of probability density preserve the entire joint
 law of energy and concentration while reversing mean signed transfer.
 Complete proofs distinguish equality of observed laws from equality of
-latent laws. We also derive the biased conditional means and a two-law prediction-risk identity as explicit classical consequences. The actual retained dynamics has a nonlinear Gaussian-preserving global flow, a nonzero divergence-free quadratic Gaussian drift orthogonal to every original closed gradient, and coordinate dephasing despite a conserved observable and unitary $L^2$ action. The value
+latent laws. We also derive the biased conditional means and a two-law prediction-risk identity as explicit classical consequences. The actual retained dynamics has a nonlinear Gaussian-preserving global flow, a nonzero divergence-free quadratic Gaussian drift orthogonal to every original closed gradient, and coordinate dephasing despite a conserved observable and unitary $L^2$ action. The viscous counterpart dissipates every trajectory while admitting
+unbounded pair amplification over all initial amplitudes, and loses
+the inviscid Gaussian law. The value
 is an exact diagnostic and formalization companion: phase dependence and
 symmetry-based information loss are classical, and priority for this
 particular package remains unresolved. No turbulent evolution, invariant
@@ -585,6 +587,136 @@ one correlation in~\eqref{eq:dephasing} is compatible with conservation
 of the whole $L^2$ norm. The composition-operator mechanism is
 classical Koopman theory~\cite{koopman}; the Gaussian rate is the
 ordinary Gaussian characteristic function, not a new mixing theorem.
+
+
+\section{Viscous dissipation without a uniform pair contraction}
+\label{sec:viscoustriad}
+The same retained system has an exact viscous counterpart. This is
+still the projected finite Fourier system, not a claim that the full
+fluid evolution remains supported on the six modes. Their Laplacian
+weights are $1,1,2$, so the actual retained equations are
+\begin{equation}\label{eq:viscousode}
+ \dot a=bc-\nu a,\qquad \dot b=-ac-\nu b,\qquad
+ \dot c=-2\nu c.
+\end{equation}
+Fix $\nu>0$ and put
+\[
+ \rho(t)=e^{-\nu t},\quad \eta(t)=e^{-2\nu t},\quad
+ \vartheta(t)=\frac{1-\eta(t)}{2\nu}.
+\]
+The complete global solution is
+\begin{equation}\label{eq:viscousflow}
+ \Phi_t^\nu(a,b,c)=
+ \bigl(\rho(t)[a\cos(\vartheta(t)c)+b\sin(\vartheta(t)c)],
+       \rho(t)[-a\sin(\vartheta(t)c)+b\cos(\vartheta(t)c)],
+       \eta(t)c\bigr).
+\end{equation}
+Indeed $\rho'=-\nu\rho$, $\eta'=-2\nu\eta$ and
+$\vartheta'=\eta$. Differentiating the first rotated coordinate
+gives its damping plus the second coordinate multiplied by the
+current $c(t)=\eta(t)c$; the second gives damping minus the first
+times $c(t)$. The last coordinate solves its scalar equation and
+the initial map is the identity. Local uniqueness for the polynomial
+vector field identifies this global formula with the solution.
+Also
+$\vartheta(s+t)=\vartheta(t)+\eta(t)\vartheta(s)$ and the
+exponential multiplication laws give
+$\Phi_{s+t}^\nu=\Phi_s^\nu\Phi_t^\nu$ directly.
+
+\subsection*{The actual physical metric}
+The relevant energy here is the kinetic one
+\[
+ \mathcal K(a,b,c)=2a^2+2b^2+4c^2,
+\]
+rather than the enstrophy-weighted $\mathcal E$ in Section 2.
+It equals the actual normalized torus integral
+$(2\pi)^{-3}\int_{[0,2\pi]^3}|u_{a,b,c}|^2$.
+To see this without an assumed Parseval identity, use the displayed
+velocity~\eqref{eq:velocity}. The two pure sine basis vectors have
+mean square two each; the third has two components and mean square
+four. Their cross integrals vanish: integrate
+$\sin x_1\sin(x_1+x_2)$ first in $x_2$, and
+$\sin x_2\sin(x_1+x_2)$ first in $x_1$; the remaining pair is
+pointwise orthogonal. All integrals concern continuous functions on
+a compact box, so ordinary Fubini applies. Bilinearity therefore gives
+the full physical Gram form
+\[
+ \langle u_x,u_y\rangle_{L^2(\mathbb T^3)}
+ =2x_1y_1+2x_2y_2+4x_3y_3.
+\]
+The coordinates in this display are numbered $1,2,3$.
+Linearity of the velocity family proves that the squared physical
+distance is exactly $\mathcal K(x-y)$.
+
+Rotation preserves the squared length of the first two coordinates.
+Consequently~\eqref{eq:viscousflow} gives the exact energy identity
+\begin{equation}\label{eq:viscousenergy}
+ \mathcal K(\Phi_t^\nu(a,b,c))
+ =2e^{-2\nu t}(a^2+b^2)+4e^{-4\nu t}c^2
+ \leq e^{-2\nu t}\mathcal K(a,b,c)\qquad(t\geq0).
+\end{equation}
+Every nonzero initial state has strictly smaller energy at every
+$t>0$. This decay toward zero does not imply contraction of
+distances between arbitrary pairs.
+
+\subsection*{Equal third amplitudes and an expanding pair}
+If $x$ and $y$ have the same third amplitude, their first two
+coordinates rotate by the same angle, and their evolved third
+coordinates remain equal. Thus the exact slice identity is
+\[
+ \mathcal K(\Phi_t^\nu x-\Phi_t^\nu y)
+       =e^{-2\nu t}\mathcal K(x-y).
+\]
+By contrast, fix any $\nu>0$ and $t>0$. Then $\vartheta(t)>0$.
+Set $d=\pi/\vartheta(t)$ and consider
+$x=(A,0,0)$, $y=(A,0,d)$. They initially differ only in the
+third amplitude. Their evolved first coordinates have opposite signs:
+\[
+ \Phi_t^\nu x=(\rho A,0,0),\qquad
+ \Phi_t^\nu y=(-\rho A,0,\eta d).
+\]
+Here $\rho=\rho(t)$ and $\eta=\eta(t)$. Therefore
+\begin{equation}\label{eq:triadamplification}
+ \mathcal K(x-y)=4d^2,\qquad
+ \mathcal K(\Phi_t^\nu x-\Phi_t^\nu y)
+                  =8\rho^2A^2+4\eta^2d^2.
+\end{equation}
+For any proposed finite real squared-distance factor $L$, choose
+$A=d(|L|+1)/\rho$. Dividing the two positive energies gives
+$2(|L|+1)^2+\eta^2>L$. No finite factor controls all initial
+pairs at this fixed positive time. In particular no global Lipschitz
+constant in the physical kinetic norm exists: a finite nonnegative
+norm constant would give a squared-distance factor by squaring.
+Taking $L=1$ supplies two states whose separate energies both strictly
+decrease by~\eqref{eq:viscousenergy}, while their mutual physical
+distance increases. These examples use unrestricted initial amplitudes;
+they do not refute estimates on a bounded state set or local smooth
+dependence on initial data.
+
+\subsection*{The inviscid Gaussian invariance also changes}
+The product standard Gaussian $\Gamma$ from Section~\ref{sec:retainedflow} is not invariant
+under this deterministic viscous flow. If the initial third coordinate
+$C$ is standard normal, its evolved second moment is
+\[
+ \E[(\eta(t)C)^2]=e^{-4\nu t}<1\qquad(t>0).
+\]
+Thus equality of the pushforward law with $\Gamma$ is impossible.
+Equivalently the initially centered $L^2(\Gamma)$ observable
+$h(a,b,c)=c^2-1$ has evolved mean $e^{-4\nu t}-1<0$.
+These expectations are legitimate finite Gaussian moments; the first
+two components in~\eqref{eq:viscousflow} are bounded in absolute
+value by $\rho(t)(|a|+|b|)$, so no missing integrability assumption
+is concealed. There is no noise or compensating forcing in
+\eqref{eq:viscousode}. The earlier invariant-Gaussian and unitary
+composition statements concern the inviscid flow and remain distinct.
+
+The original declarations are in
+\par\noindent\code{ViscousTriadFlow},
+\code{ViscousTriadSeparation} and \code{TriadPhysicalPairing}.
+They supply the actual finite ODE, exact energy identities, physical
+torus metric, and unrestricted-amplitude obstruction. None of these
+statements is a continuum Navier--Stokes stability, invariant-measure
+or regularity theorem.
 
 \section{Primary comparison and formal correspondence}
 Fourier triad transfer and phase dependence are established topics.
