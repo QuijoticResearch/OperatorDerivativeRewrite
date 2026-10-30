@@ -2937,3 +2937,8 @@ import Foundation.CubeRankOneComparison
 import Foundation.CubeFiniteGapComparison
 import Foundation.CubeFiniteStationaryGap
 import Foundation.PeriodicSU2FlatHolonomy
+import Foundation.PeriodicTemporalSlab
+import Foundation.PeriodicWilsonSlab
+import Foundation.PeriodicSlabAction
+import Foundation.PeriodicSlabGauge
+import Foundation.PeriodicSlabGround
