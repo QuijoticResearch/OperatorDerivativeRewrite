@@ -2886,3 +2886,5 @@ import Foundation.CubeTemporalRootHaar
 import Foundation.CubeRootGround
 import Foundation.CubeTemporalConfinement
 import Foundation.CubeHaarUpper
+import Foundation.SU2HaarLaplaceUpper
+import Foundation.CubeMatchedGround
