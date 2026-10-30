@@ -661,6 +661,42 @@ itself only uses the displayed positive atomic weights and quartic
 summability. We do not claim a separate Lean theorem for every atomic
 measure under that generalization.
 
+
+\subsection*{Exact comparison with the sequence-space power duality map}
+The atomic model has a direct classical coordinate interpretation.
+Define $U:L^4(\mu_\lambda)\to\ell^4$ by
+$(UF)_n=p_n^{1/4}F(n)$. The norm formula above proves it is an
+isometry. It is onto: for $x\in\ell^4$ take
+$F(n)=p_n^{-1/4}x_n$, whose weighted fourth-power sum is
+$\sum_n|x_n|^4$. Transporting a dual functional by composition with
+$U^{-1}$ is also isometric, since $U$ maps the two unit balls onto
+each other. For $x=UF$ and $z=UG$,
+\[
+ \A(F)(G)=\sum_n p_nF(n)^3G(n)=\sum_n x_n^3z_n.
+\]
+The last sum is absolutely convergent by H\"older. Thus our identity-source
+normal map is exactly the coordinate cube map
+$\mathcal J:\ell^4\to\ell^{4/3}$, $\mathcal J(x)_n=x_n^3$, under these
+isometries and the usual sequence-space dual pairing. This coordinate
+identification is a human explanation of the already proved atomic
+identities, not an additional named formal result.
+
+Li's primary preprint~\cite{LiDuality}, equation (6.1), studies
+the power duality map on $\ell^p$. Its $p=4$ case is exactly
+$\mathcal J$, rather than the normalized duality map of that paper.
+Theorem 6.1 states its Fr\'echet derivative; Theorem 6.4 gives zero
+covering constant at every source. The latter proof tests the diagonal
+derivative on coordinate vectors whose coefficients tend to zero.
+We checked that formula, the derivative statement, and the complete
+short covering-constant proof, not the full differentiability proof or
+the paper's other mappings. This is a precise antecedent for
+qualitative atomic degeneracy. A covering-constant conclusion is not
+by itself our fixed-datum sharp H\"older assertion; the explicit
+perturbation proof above supplies that assertion independently.
+No Poisson-specific novelty is claimed from rewriting this same power
+map with probability weights, and priority for the sharper package
+remains unresolved.
+
 \begin{corollary}\label{cor:directions}
 At the constant source $F=1$, every fixed finite-dimensional source
 subspace $E\subset L^4(\mu_\lambda)$ admits \eqref{eq:finite}. There
@@ -786,9 +822,10 @@ nonlinear analysis. The bounded preliminary literature check places
 them in that context and does not certify priority for the particular
 combination of atomic optimality and finite-direction regularity.
 This manuscript is a reviewed exposition of verified mathematics,
-with mathematical novelty explicitly unresolved. An external
-submission would require a more targeted comparison with the
-literature on inverse duality mappings and their local moduli.
+with mathematical novelty explicitly unresolved. The explicit sequence-space comparison above identifies the atomic
+normal map with a studied power duality map. It records a qualitative
+degeneracy antecedent without certifying priority for the sharp
+fixed-datum inverse modulus.
 
 \begin{thebibliography}{9}
 \bibitem{clarkson} J. A. Clarkson,
@@ -811,5 +848,9 @@ Section 10, inequalities for vectors, pages 71--73.
 PDF pages 7--8, Gaussian entropy inequality.
 \url{https://www.math.univ-toulouse.fr/~ledoux/Logsobwpause.pdf}.
 Statement comparison only; no full historical proof comparison claimed.
+\bibitem{LiDuality} J. Li,
+\emph{Differentiability and Covering Constant for Duality Mappings in lp},
+primary preprint, \href{https://arxiv.org/abs/2606.15515v1}{arXiv:2606.15515v1}
+(2026), equation (6.1), Theorems 6.1 and 6.4.
 \end{thebibliography}
 \end{document}
