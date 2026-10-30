@@ -2895,3 +2895,5 @@ import Foundation.CubeRelativeChart
 import Foundation.CubeLocalKernel
 import Foundation.CubeChartAction
 import Foundation.CubeKernelLimit
+import Foundation.SU2MatrixJetTransfer
+import Foundation.CubeMixedForm

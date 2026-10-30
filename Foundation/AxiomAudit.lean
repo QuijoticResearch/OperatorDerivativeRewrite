@@ -13513,3 +13513,16 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeKernelLimit.secondVariation_lower
 #print axioms OperatorDerivativeRewrite.Foundation.CubeKernelLimit.limit_integral_positive
 #print axioms OperatorDerivativeRewrite.Foundation.CubeKernelLimit.kernel_tendsto
+
+-- Explicit actual mixed root-conjugated quadratic form;1753.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2MatrixJetTransfer.trace_second
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.edgeVelocity
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.vertexVelocity
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.adjointVelocity
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.spatialCurl
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.temporalMix
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.mixedForm
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.secondVariation_eq
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.mixedForm_lower
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.limitDensity_eq
+#print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.kernel_tendsto
