@@ -1503,11 +1503,327 @@
       "source_sha256": "4d2d1d111810646d2352c546400c0f8a6c213abf963d0373c39587a64113a4ff",
       "declaration_header": "theorem sampler_density_limit (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) :\n    Tendsto (fun n => \u222b t : \u211d, \u222b \u03c9,\n      weighted levels \u03be m T hT q u (pathWeight k hk H hH n) (t,\u03c9)\n        \u2202probabilityPath k hk H hH n) atTop\n      (\ud835\udcdd (\u222b t : \u211d, u t \u2022 expectationField levels \u03be m k hk T H hT hH q t))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensitySamplers.lean#L31"
+    },
+    {
+      "paper": "Section 3 source strong continuity corresponding to the direct human proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFourierPathC0.coefficient_continuous",
+      "file": "Foundation/HigherHeatFourierPathC0.lean",
+      "line": 18,
+      "source_sha256": "b292a4c4fcafaf1cac191f80241acb5072256918868d76990a7faa9400f8dd52",
+      "declaration_header": "theorem coefficient_continuous (m : \u2115) (a : Coeff) :\n    Continuous (fun T => coefficientEvolution levels \u03be m T a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFourierPathC0.lean#L18"
+    },
+    {
+      "paper": "Section 3 source strong continuity corresponding to the direct human proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFourierPathC0.evolution_strong_continuous",
+      "file": "Foundation/HigherHeatFourierPathC0.lean",
+      "line": 53,
+      "source_sha256": "b292a4c4fcafaf1cac191f80241acb5072256918868d76990a7faa9400f8dd52",
+      "declaration_header": "theorem evolution_strong_continuous (m : \u2115) (hm : 0 < m) (q : TestSpace levels \u03be) :\n    Continuous (fun T => evolution levels \u03be m hm T q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFourierPathC0.lean#L53"
+    },
+    {
+      "paper": "Section 3 source strong continuity corresponding to the direct human proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFourierPathC0.evolution_tendsto_zero",
+      "file": "Foundation/HigherHeatFourierPathC0.lean",
+      "line": 59,
+      "source_sha256": "b292a4c4fcafaf1cac191f80241acb5072256918868d76990a7faa9400f8dd52",
+      "declaration_header": "theorem evolution_tendsto_zero (m : \u2115) (hm : 0 < m) (q : TestSpace levels \u03be) :\n    Tendsto (fun T => evolution levels \u03be m hm T q) (\ud835\udcdd 0) (\ud835\udcdd q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFourierPathC0.lean#L59"
+    },
+    {
+      "paper": "Section 3 source strong continuity corresponding to the direct human proof",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFourierPathC0.evolution_norm",
+      "file": "Foundation/HigherHeatFourierPathC0.lean",
+      "line": 91,
+      "source_sha256": "b292a4c4fcafaf1cac191f80241acb5072256918868d76990a7faa9400f8dd52",
+      "declaration_header": "theorem evolution_norm (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) :\n    \u2016evolution levels \u03be m hm T\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFourierPathC0.lean#L91"
+    },
+    {
+      "paper": "Section 11 actual continuous-direction character derivative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.frequency",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 48,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "def frequency (h : Path) (i : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L48"
+    },
+    {
+      "paper": "Section 11 actual continuous-direction character derivative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.character_along",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 51,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem character_along (h : Path) (i : \u2115) (t : \u211d) :\n    characterTest levels \u03be i (scalePath t h)=wave (frequency levels \u03be h i) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L51"
+    },
+    {
+      "paper": "Section 11 actual continuous-direction character derivative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.character_hasDerivAt",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 70,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem character_hasDerivAt (h : Path) (i : \u2115) :\n    HasDerivAt (fun t => characterTest levels \u03be i (scalePath t h))\n      (eigenvalue (frequency levels \u03be h i)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L70"
+    },
+    {
+      "paper": "Section 11 actual quotient directional graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.graph",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 32,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "def graph (h : Path) : Submodule \u2102 (TestSpace levels \u03be \u00d7 TestSpace levels \u03be)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L32"
+    },
+    {
+      "paper": "Section 11 actual quotient directional graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.graph_deriv",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 35,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem graph_deriv (h : Path) (z : TestSpace levels \u03be \u00d7 TestSpace levels \u03be)\n    (hz : z \u2208 graph levels \u03be h) :\n    HasDerivAt (fun t => along levels \u03be h t z.1) z.2 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L35"
+    },
+    {
+      "paper": "Section 11 actual quotient directional graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.graph_vertical_zero",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 41,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem graph_vertical_zero (h : Path) (z : TestSpace levels \u03be \u00d7 TestSpace levels \u03be)\n    (hz : z \u2208 graph levels \u03be h) (h0 : z.1=0) : z.2=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L41"
+    },
+    {
+      "paper": "Section 11 actual quotient directional graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.generator_mem_graph",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 53,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem generator_mem_graph (h : Path) (i : \u2115) :\n    (generator levels \u03be i, eigenvalue (frequency levels \u03be h i) \u2022 generator levels \u03be i) \u2208\n      graph levels \u03be h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L53"
+    },
+    {
+      "paper": "Section 11 actual quotient directional graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.domain_dense",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 74,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem domain_dense (h : Path) :\n    Dense ((operator levels \u03be h).domain : Set (TestSpace levels \u03be))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L74"
+    },
+    {
+      "paper": "Section 11 exact native directional domain and closed graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.operator_closed",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 46,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem operator_closed (h : Path) : (operator levels \u03be h).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L46"
+    },
+    {
+      "paper": "Section 11 exact native directional domain and closed graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.deriv_iff_graph",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 70,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem deriv_iff_graph (h : Path) (f g : TestSpace levels \u03be) :\n    HasDerivAt (fun t => along levels \u03be h t f) g 0 \u2194 (f,g) \u2208 (operator levels \u03be h).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L70"
+    },
+    {
+      "paper": "Section 11 exact native directional domain and closed graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.domain_iff_derivative",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 75,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem domain_iff_derivative (h : Path) (f : TestSpace levels \u03be) :\n    f \u2208 (operator levels \u03be h).domain \u2194 \u2203 g,\n      HasDerivAt (fun t => along levels \u03be h t f) g 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L75"
+    },
+    {
+      "paper": "Section 11 original real Banach transpose domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalAdjoint.realOperator_dense",
+      "file": "Foundation/FourierPathDirectionalAdjoint.lean",
+      "line": 23,
+      "source_sha256": "5df8adf699011cb32a6d7d1b9a4a4369902e76f1f82b3ff55dd81fb3cb955c58",
+      "declaration_header": "theorem realOperator_dense (h : Path) : DenseRange (realOperator levels \u03be h).domain.subtype",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalAdjoint.lean#L23"
+    },
+    {
+      "paper": "Section 11 original real Banach transpose domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalAdjoint.adjoint",
+      "file": "Foundation/FourierPathDirectionalAdjoint.lean",
+      "line": 36,
+      "source_sha256": "5df8adf699011cb32a6d7d1b9a4a4369902e76f1f82b3ff55dd81fb3cb955c58",
+      "declaration_header": "def adjoint (h : Path) :\n    StrongDual \u211d (TestSpace levels \u03be) \u2192\u2097.[\u211d] StrongDual \u211d (TestSpace levels \u03be)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalAdjoint.lean#L36"
+    },
+    {
+      "paper": "Section 11 original real Banach transpose domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalAdjoint.adjoint_domain_iff_transfer",
+      "file": "Foundation/FourierPathDirectionalAdjoint.lean",
+      "line": 59,
+      "source_sha256": "5df8adf699011cb32a6d7d1b9a4a4369902e76f1f82b3ff55dd81fb3cb955c58",
+      "declaration_header": "theorem adjoint_domain_iff_transfer (h : Path) (\u03c6 : StrongDual \u211d (TestSpace levels \u03be)) :\n    \u03c6 \u2208 (adjoint levels \u03be h).domain \u2194\n      \u2203 \u03c8 : StrongDual \u211d (TestSpace levels \u03be), \u2200 z \u2208 graph levels \u03be h, \u03c6 z.2=\u03c8 z.1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalAdjoint.lean#L59"
+    },
+    {
+      "paper": "Section 11 necessary actual spectral transfer bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTransferSymbols.expectation_generator",
+      "file": "Foundation/FourierPathTransferSymbols.lean",
+      "line": 19,
+      "source_sha256": "5ac5ba3cfce6e904de899d8b45848b320509bc8aacf9e8994058150159cb6c75",
+      "declaration_header": "theorem expectation_generator (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (i : \u2115) :\n    expectation levels \u03be m hm T hT (generator levels \u03be i)=multiplier levels \u03be m T i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTransferSymbols.lean#L19"
+    },
+    {
+      "paper": "Section 11 necessary actual spectral transfer bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTransferSymbols.expectation_derivativeTest",
+      "file": "Foundation/FourierPathTransferSymbols.lean",
+      "line": 33,
+      "source_sha256": "5ac5ba3cfce6e904de899d8b45848b320509bc8aacf9e8994058150159cb6c75",
+      "declaration_header": "theorem expectation_derivativeTest (h : Path) (m : \u2115) (hm : 0 < m)\n    (T : \u211d\u22650) (hT : 0 < T) (i : \u2115) :\n    expectation levels \u03be m hm T hT (derivativeTest levels \u03be h i)=\n      eigenvalue (frequency levels \u03be h i)*multiplier levels \u03be m T i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTransferSymbols.lean#L33"
+    },
+    {
+      "paper": "Section 11 necessary actual spectral transfer bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTransferSymbols.bound_symbols",
+      "file": "Foundation/FourierPathTransferSymbols.lean",
+      "line": 39,
+      "source_sha256": "5ac5ba3cfce6e904de899d8b45848b320509bc8aacf9e8994058150159cb6c75",
+      "declaration_header": "theorem bound_symbols (h : Path) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (C : \u211d) (hC : 0 \u2264 C)\n    (hb : \u2200 z \u2208 graph levels \u03be h, \u2016expectation levels \u03be m hm T hT z.2\u2016 \u2264 C*\u2016z.1\u2016) (i : \u2115) :\n    \u2016eigenvalue (frequency levels \u03be h i)*multiplier levels \u03be m T i\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTransferSymbols.lean#L39"
+    },
+    {
+      "paper": "Section 11 necessary actual spectral transfer bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTransferSymbols.continuous_transfer_bound",
+      "file": "Foundation/FourierPathTransferSymbols.lean",
+      "line": 48,
+      "source_sha256": "5ac5ba3cfce6e904de899d8b45848b320509bc8aacf9e8994058150159cb6c75",
+      "declaration_header": "theorem continuous_transfer_bound (h : Path) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (L : TestSpace levels \u03be \u2192L[\u211d] \u2102)\n    (hL : \u2200 z \u2208 graph levels \u03be h, expectation levels \u03be m hm T hT z.2=L z.1) :\n    \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200 z \u2208 graph levels \u03be h,\n      \u2016expectation levels \u03be m hm T hT z.2\u2016 \u2264 C*\u2016z.1\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTransferSymbols.lean#L48"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.rootEight",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 11,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "def rootEight (t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L11"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.direction",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 22,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "def direction : Path",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L22"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.levels",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 24,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "def levels (n : \u2115) : \u2115",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L24"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.frequencies",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 47,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "def frequencies (n : \u2115) : Grid (levels n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L47"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.directional_frequency",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 84,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "theorem directional_frequency (n : \u2115) :\n    frequency levels frequencies direction (n+1)=-(2:\u211d)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L84"
+    },
+    {
+      "paper": "Section 11 actual t-positive-part power-one-eighth direction and dyadic frequencies",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughDirection.quartic_rate",
+      "file": "Foundation/FourierPathRoughDirection.lean",
+      "line": 100,
+      "source_sha256": "460048040ec5a6670206df6dd70ddb5e0fd29db1c9f26b6af6cc83062a9d0c12",
+      "declaration_header": "theorem quartic_rate (n : \u2115) :\n    HigherHeatFourierPathDerivative.rate levels frequencies 2 (n+1)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughDirection.lean#L100"
+    },
+    {
+      "paper": "Section 11 genuine unbounded expectation transfer in fixed continuous direction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughTransferObstruction.expected_derivative_norm",
+      "file": "Foundation/FourierPathRoughTransferObstruction.lean",
+      "line": 24,
+      "source_sha256": "df2476ab48cca583c6f555afda9b53746c6e071bba1f7b6165cb825b03d585dd",
+      "declaration_header": "theorem expected_derivative_norm (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    \u2016expectation levels frequencies 2 (by norm_num) T hT\n      (derivativeTest levels frequencies direction (n+1))\u2016=(2:\u211d)^n*Real.exp (-(T:\u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughTransferObstruction.lean#L24"
+    },
+    {
+      "paper": "Section 11 genuine unbounded expectation transfer in fixed continuous direction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughTransferObstruction.no_bound",
+      "file": "Foundation/FourierPathRoughTransferObstruction.lean",
+      "line": 38,
+      "source_sha256": "df2476ab48cca583c6f555afda9b53746c6e071bba1f7b6165cb825b03d585dd",
+      "declaration_header": "theorem no_bound (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200 z \u2208 graph levels frequencies direction,\n      \u2016expectation levels frequencies 2 (by norm_num) T hT z.2\u2016 \u2264 C*\u2016z.1\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughTransferObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 11 genuine unbounded expectation transfer in fixed continuous direction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughTransferObstruction.no_continuous_transfer",
+      "file": "Foundation/FourierPathRoughTransferObstruction.lean",
+      "line": 47,
+      "source_sha256": "df2476ab48cca583c6f555afda9b53746c6e071bba1f7b6165cb825b03d585dd",
+      "declaration_header": "theorem no_continuous_transfer (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac \u2203 L : TestSpace levels frequencies \u2192L[\u211d] \u2102,\n      \u2200 z \u2208 graph levels frequencies direction,\n        expectation levels frequencies 2 (by norm_num) T hT z.2=L z.1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughTransferObstruction.lean#L47"
+    },
+    {
+      "paper": "Section 11 genuine unbounded expectation transfer in fixed continuous direction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughTransferObstruction.expected_derivative_imag",
+      "file": "Foundation/FourierPathRoughTransferObstruction.lean",
+      "line": 55,
+      "source_sha256": "df2476ab48cca583c6f555afda9b53746c6e071bba1f7b6165cb825b03d585dd",
+      "declaration_header": "theorem expected_derivative_imag (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    (expectation levels frequencies 2 (by norm_num) T hT\n      (derivativeTest levels frequencies direction (n+1))).im=\n      -(2:\u211d)^n*Real.exp (-(T:\u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughTransferObstruction.lean#L55"
+    },
+    {
+      "paper": "Section 11 genuine unbounded expectation transfer in fixed continuous direction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughTransferObstruction.no_real_dual_transfer",
+      "file": "Foundation/FourierPathRoughTransferObstruction.lean",
+      "line": 64,
+      "source_sha256": "df2476ab48cca583c6f555afda9b53746c6e071bba1f7b6165cb825b03d585dd",
+      "declaration_header": "theorem no_real_dual_transfer (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac \u2203 L : StrongDual \u211d (TestSpace levels frequencies),\n      \u2200 z \u2208 graph levels frequencies direction,\n        (expectation levels frequencies 2 (by norm_num) T hT z.2).im=L z.1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughTransferObstruction.lean#L64"
+    },
+    {
+      "paper": "Section 11 actual imaginary expectation excluded from original adjoint domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughAdjointObstruction.imaginaryExpectation",
+      "file": "Foundation/FourierPathRoughAdjointObstruction.lean",
+      "line": 10,
+      "source_sha256": "549ba9c1b6b56395e7ed6cfb2d171fbd717e68b84c14170a5eeda09badb662d8",
+      "declaration_header": "def imaginaryExpectation (T : \u211d\u22650) (hT : 0 < T) : StrongDual \u211d (TestSpace levels frequencies)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughAdjointObstruction.lean#L10"
+    },
+    {
+      "paper": "Section 11 actual imaginary expectation excluded from original adjoint domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathRoughAdjointObstruction.expectation_not_in_adjoint_domain",
+      "file": "Foundation/FourierPathRoughAdjointObstruction.lean",
+      "line": 16,
+      "source_sha256": "549ba9c1b6b56395e7ed6cfb2d171fbd717e68b84c14170a5eeda09badb662d8",
+      "declaration_header": "theorem expectation_not_in_adjoint_domain (T : \u211d\u22650) (hT : 0 < T) :\n    imaginaryExpectation T hT \u2209\n      (FourierPathDirectionalAdjoint.adjoint levels frequencies direction).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathRoughAdjointObstruction.lean#L16"
     }
   ],
   "human_reorganization": [
     "The direct all-order coefficient proof and bound C(n,p,H)=(n/(e*p*H))^(n/p), semigroup strong continuity, explicit cosine non-differentiability example, two-time sign/tail calibration and permutation symmetry are HUMAN reconstructions/deductions. The exact source bound is (1+n/H)^n at prescribed horizon H; its n composed gradients each use H/n. Uniqueness identifies the direct field with the formal normalized density. No arbitrary-spectrum algebra closure, finite-variation signed path law, adapted stochastic integral or new priority claim is inferred.",
-    "Sections 8\u20139 reconstruct the exact L^(p/(p-1)) controls and canonical Lp first-gradient field. The all-order Lp tower bound, compact-support compatibility with L1 towers and fixed-spectrum failure of any uniform gradient estimate in Lr for 1<=r<p/(p-1) are complete HUMAN deductions, not stronger named formal statements. Actual jointly measurable representatives, a path-uniform time majorant, genuine finite-weight product integrability/Fubini and paired sampler limit are supplied without random-control or common-law field convergence claims."
+    "Sections 8\u20139 reconstruct the exact L^(p/(p-1)) controls and canonical Lp first-gradient field. The all-order Lp tower bound, compact-support compatibility with L1 towers and fixed-spectrum failure of any uniform gradient estimate in Lr for 1<=r<p/(p-1) are complete HUMAN deductions, not stronger named formal statements. Actual jointly measurable representatives, a path-uniform time majorant, genuine finite-weight product integrability/Fubini and paired sampler limit are supplied without random-control or common-law field convergence claims.",
+    "Section 11 reconstructs the actual dense closed native directional generator and the real Banach-transpose input-norm criterion. The fixed direction h(t)=max(t,0)^(1/8) and quartic dyadic frequencies have rate one but directional frequency 2^n. The actual imaginary heat expectation lies outside its native transpose domain. Unboundedness of D_h S_H on the finite-character core and the local L^(4/3) exclusion are labelled HUMAN deductions. No claim that all smoothed inputs lie outside the native domain follows. HigherHeatFourierPathC0 also formally supplies the strong continuity reconstructed earlier."
   ],
-  "review_scope": "Thirty-eight named principal modules read fully. Additional imported foundations not exhaustively reread. Mathematical sources frozen."
+  "review_scope": "Forty-seven named principal modules read fully. Imported library proofs not exhaustively reread; mathematical sources remain frozen."
 }

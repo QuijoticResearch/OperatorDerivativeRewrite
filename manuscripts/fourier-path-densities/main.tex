@@ -16,7 +16,7 @@
 \date{October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini. A summable cosine example fails to be differentiable without smoothing. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -516,6 +516,108 @@ If $g$ were differentiable at zero, evenness would force $g'(0)=0$, contradictin
 
 For a single terminal character of integer frequency $j$, its quotient norm is exactly one, since its realized supremum norm and its one-coefficient bound are both one. Its unsmoothed control derivative in direction $u$ has norm $2\pi|j|$. Thus no uniform bounded first derivative on all these generators can hold at $H=0$. Positive heat suppresses these frequencies by $e^{-H(2\pi j)^p}$, exactly the mechanism of Lemma~\ref{lem:multiplier}.
 
+\section{A continuous rough direction outside expectation-transfer domains}\label{sec:rough}
+The preceding sharpness result varies bounded controls inside one
+spectrum. A distinct source example fixes one continuous direction
+and still defeats heat-damped expectation transfer. The natural
+directional operator must first be specified.
+
+For any fixed $h\in\X$, the maps $T_t=\tau_{th}$, $t\in\R$, form a
+strongly continuous isometric group on $\A$. Define
+\[
+ \operatorname{Dom}D_h=
+ \{q\in\A:\lim_{t\to0}(T_tq-q)/t\text{ exists in }\A\},
+ \qquad D_hq=\lim_{t\to0}(T_tq-q)/t.
+\]
+Finite character combinations lie in this domain and are dense.
+The source identifies this native domain with its actual quotient
+coefficient graph, rather than postulating derivative values on a
+larger completion.
+
+For completeness, $D_h$ is closed. For $q\in\operatorname{Dom}D_h$,
+the group law gives $\frac d{dt}T_tq=T_tD_hq$ and hence
+\[
+ T_tq-q=\int_0^t T_sD_hq\,ds.
+\]
+The derivative follows by applying $T_t$ to the defining difference
+quotient; its continuity follows from strong continuity on $D_hq$.
+The displayed identity is then the Banach-space fundamental theorem
+of calculus. If $q_j\to q$ and $D_hq_j\to v$, isometry permits passage
+to the limit under this finite-interval Bochner integral: the error
+is at most $|t|\norm{D_hq_j-v}$. Thus $T_tq-q=\int_0^t T_sv\,ds$.
+Dividing by $t$ and using strong continuity at zero gives $q\in
+\operatorname{Dom}D_h$ and $D_hq=v$. Density and closedness therefore
+refer to the original native differentiation graph.
+
+Regard $\A$ as real and let $\A'_{\R}$ be its continuous real dual.
+Its Banach transpose has the domain
+\[
+ \operatorname{Dom}D_h'=\{\phi\in\A'_{\R}:\exists\psi\in\A'_{\R},\
+       \phi(D_hq)=\psi(q)\ \forall q\in\operatorname{Dom}D_h\}.
+\]
+The value $\psi=D_h'\phi$ is unique by density. Domain membership is
+equivalent to an input-norm bound on $\phi D_h$ on the native domain:
+one implication is continuity of $\psi$; in the other, the bound gives
+a unique continuous extension from that dense domain. No graph norm
+is substituted for the input norm in this criterion.
+
+\begin{proposition}\label{prop:rough}
+There are a fixed countable dyadic spectrum and a fixed continuous
+direction $h$ such that, for quartic heat and every $H>0$,
+\begin{enumerate}
+ \item $D_hS_H$ has no bounded extension agreeing with its values on
+ the finite-character core;
+ \item no continuous real-linear $L:\A\to\C$ satisfies
+ $\E_H(D_hq)=Lq$ throughout $\operatorname{Dom}D_h$;
+ \item the continuous real functional $\phi_H=\operatorname{Im}\E_H$
+ is not in $\operatorname{Dom}D_h'$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Take $h(t)=(\max(t,0))^{1/8}$. At level $8n$, put
+$\delta_n=2^{-8n}$ and include the character
+\[
+ \chi_n(\omega)=\exp(-i2^{2n}\omega(\delta_n)),\qquad n\ge0.
+\]
+Its frequency vector has just the first nonzero entry
+$2^{2n}/(2\pi)$. The associated tail function is
+$\eta_n=2^{2n}\mathbf1_{(0,\delta_n]}$. For $p=4$,
+\[
+ \lambda_n=2^{8n}\delta_n=1,\qquad
+ 2^{2n}h(\delta_n)=2^n.
+\]
+Its generator $q_n$ has quotient norm one, and direct scalar
+differentiation gives
+\[
+ D_hq_n=-i2^nq_n,\qquad S_Hq_n=e^{-H}q_n,\qquad
+ \E_Hq_n=e^{-H}.
+\]
+Consequently $\norm{D_hS_Hq_n}=2^ne^{-H}\to\infty$, proving the first
+claim. Also $\E_H(D_hq_n)=-i2^ne^{-H}$, whose modulus is unbounded
+on these unit input tests. This rules out $L$ in the second claim.
+Its imaginary part is $-2^ne^{-H}$, so it cannot be the value of one
+bounded real functional $\psi$ on the $q_n$. The transpose-domain
+criterion proves the third claim.
+\end{proof}
+
+Every generator and its heat evolution in this proof lies in the
+native directional domain. Unboundedness on that core does not
+assert that every smoothed test lies outside the domain. The formal
+rough-transfer and rough-adjoint modules establish the actual second
+and third exclusions, with precisely the displayed dyadic spectrum.
+The first bounded-extension exclusion is an immediate human norm
+deduction from the same exact source formulas.
+
+This direction is continuous, but its derivative on $(0,1]$ is
+$\frac18t^{-7/8}$, whose $4/3$ power has divergent integral at zero.
+It therefore falls outside the local conjugate-exponent control
+condition. The example is compatible with all the positive theorems
+above. In particular strong continuity of translation in a continuous
+direction does not imply that every normalized heat expectation
+belongs to its transpose domain. A bounded functional and a densely
+defined closed derivative still require their actual transfer
+estimate.
+
 \section{Antecedents, formal correspondence and limits of the claim}
 Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.
 
@@ -537,6 +639,10 @@ The following source correspondence fixes the scope of the formal evidence. The 
 The conjugate-exponent all-order tower and its uniform exponent boundary are human deductions; the named formal declarations in that family give the native first derivative and its $L^p$ field. The joint representative and weighted Fubini bridge are formalized in \code{FourierPathDualJointDensity},
 \par\noindent\code{FourierPathDualDensityFubini} and
 \par\noindent\code{FourierPathDualDensitySamplers}.
+
+The fixed rough direction, native closed directional graph and transpose exclusions are supplied by \code{FourierPathRoughDirection},
+\par\noindent\code{FourierPathRoughTransferObstruction},
+\par\noindent\code{FourierPathRoughAdjointObstruction} and the directional-generator modules. The source also proves strong continuity in \code{HigherHeatFourierPathC0}; the direct proof in Section~\ref{sec:semigroup} is consistent with that declaration.
 
 The direct bound \eqref{eq:humanbound}, the explicit cosine obstruction, the two-time calibration, and the direct all-order coefficient proof are human reconstructions or deductions. The formal bound being cited is \eqref{eq:formalbound}; the stronger estimate is not attributed to a declaration that proves only the coarser bound. The source proof review is specific to the mapped modules, not a claim that all imported library proofs were reread.
 
