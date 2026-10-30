@@ -30,7 +30,7 @@ between raw Taylor channels. Continuous spatial weights yield a combined
 three-channel $C^4$ Taylor limit with correction $1/8$ times the
 fourth-derivative time integral, without global derivative bounds.
 A separate spatial-kernel concentration argument proves that a specific source-compensated grid has diverging $L^2$ norm even after projection onto the full actual IBM observable space.
-Nevertheless, fixed quadratic and bounded $C^2$ terminal tests admit strong clock-source contraction limits, with explicit capped-occupation corrections. A faithful quotient Banach domain also supports clock-$L^1$-valued limits of the original source contractions.
+Nevertheless, fixed quadratic and bounded $C^2$ finite-observation tests admit strong clock-source contraction limits, with explicit capped-occupation corrections. A faithful quotient Banach domain also supports clock-$L^1$-valued limits of the original source contractions.
 We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
 chain formula, uniform control over prefixes of one common grid,
 bounded random-horizon convergence for spatial one-forms, and an
@@ -1390,6 +1390,98 @@ classical Gaussian regression, Wick pairing, Brownian bracket control
 and bounded-coefficient continuity; priority for this specific IBM
 source-contraction package has not been established.
 
+
+
+\subsection{Finite observation ridges retain every mixed-time term}
+The bounded $C^2$ result extends to a function of any fixed finite
+linear combination of actual observations. Fix $m\geq1$, real
+coefficients $a_j$ and times $R_j\geq0$, and put
+\[
+ L_a=\sum_{j=1}^m a_jZ_{R_j},\qquad
+ k_a(B)=\sum_{j=1}^m a_jh_{R_j},\qquad
+ b_a(B)=\frac12\mathbb E_W\varphi''(X(k_a(B))).
+\]
+For $\varphi,\varphi',\varphi''$ bounded and $\varphi\in C^2$,
+these are actual source sections, $L_a=X(k_a(B))$ with clock fixed,
+and $|b_a|\leq\|\varphi''\|_\infty/2$. Define the finite sums
+\[
+ M_N^a=\sum_{j,\ell=1}^m a_j a_\ell M_N^{R_j,R_\ell},\qquad
+ M^a=\sum_{j,\ell=1}^m a_j a_\ell M^{R_j,R_\ell}.
+\]
+Then the exact identity and convergence are
+\begin{equation}\label{eq:ridgecontraction}
+ \mathbb E_W[S_N\varphi(L_a)]=b_aM_N^a
+          \longrightarrow b_aM^a\quad\hbox{in clock }L^2.
+\end{equation}
+To prove the identity, apply the same mixed Stein formula
+\eqref{eq:mixedStein} with $k=k_a(B)$ on every grid cell.
+The two overlaps with $k_a$ expand linearly. Hence the quadratic
+source test expands as
+\[
+ X(k_a)^2=\sum_{j,\ell}a_ja_\ell Z_{R_j}Z_{R_\ell},
+\]
+and \eqref{eq:quadraticsourcecontraction} identifies its contraction
+with $M_N^a$. The second-chaos coefficient is $b_a$, including its
+factor $1/2$, so this gives \eqref{eq:ridgecontraction}. For convergence,
+finite summation gives
+\[
+ \|M_N^a-M^a\|_2\leq\sum_{j,\ell}|a_ja_\ell|
+    \|M_N^{R_j,R_\ell}-M^{R_j,R_\ell}\|_2\to0.
+\]
+Multiplication by the same actual bounded $b_a$ proves the claim.
+Repeated times, negative or zero coefficients, and a cancelling
+direction $k_a(B)=0$ cause no division: the mixed Stein identity
+already includes zero directions. All off-diagonal terms in these
+sums are retained. Discarding them would change both the observation
+and its limiting occupation correction.
+\par\noindent\code{IBMFiniteRidgeObservation.firstChaos_sections}.
+\par\noindent\code{IBMFiniteRidgeQuadraticTesting.pairing_expand}.
+\par\noindent\code{IBMFiniteRidgeNativeReconstruction.source_native_actual}.
+\par\noindent\code{IBMFiniteRidgeNativeReconstruction.native_tendsto}.
+
+The original bounded test $\varphi(L_a)$ is observable. Taking clock
+expectations therefore proves convergence of
+$\langle I_N,\varphi(L_a)\rangle$ to $\mathbb E_B[b_aM^a]$.
+No membership in the original closed derivative domain or in the
+completed Banach domain constructed next is used.
+\par\noindent\code{IBMFiniteRidgeNativeReconstruction.intrinsic_pairing_tendsto}.
+
+There is a useful classical density consequence, which we state as
+a human deduction. The real linear span of the bounded Fourier
+ridges $\cos(\sum_j a_j Z_{R_j})$ and
+$\sin(\sum_j a_j Z_{R_j})$ is dense in $L^2(\mathcal O)$.
+Here is the full measure-theoretic argument. If an observable
+$v\in L^2$ is orthogonal to every such ridge, then $v\in L^1$.
+For each finite observation vector, push forward the finite positive
+measures $v_+\,dP$ and $v_-\,dP$. Their Fourier transforms agree at
+every real frequency by the cosine/sine pairings. Uniqueness of
+Fourier transforms of finite positive measures makes the two
+pushforwards equal. Thus $\int_A v\,dP=0$ for every finite cylinder
+event $A$. These events form a generating $\pi$-system for
+$\mathcal O$; the class of events with zero signed integral is a
+$\lambda$-system, since the total integral is zero and the signed
+measure has finite variation. The $\pi$--$\lambda$ theorem extends
+the equality to every observable event. Applying it to the signs of
+an observable representative of $v$ proves $v=0$ almost everywhere.
+The orthogonal complement of the ridge span is therefore zero.
+This uses the same finite positive weighted-law uniqueness mechanism
+recorded in \code{IBMFiniteWeightedLaws.finite_measure_eq_of_cos_sin};
+it assumes no Gaussian joint law for the IBM observations.
+
+In particular the pairings just proved converge on a dense set of
+bounded smooth observation tests, while the original sequence still
+has no full-observable weak limit. There is no contradiction:
+approximating an arbitrary $v$ by ridge combinations $v_j$ gives
+only
+\[
+ |\langle I_N,v-v_j\rangle|\leq\|I_N\|_2\|v-v_j\|_2,
+\]
+and the first factor diverges. Density supplies no estimate uniform
+in $N$, so it does not justify interchanging the approximation and
+grid limits. Nor does it identify a bounded extension of a limit
+functional or prove that no such extension exists. The full weak
+obstruction and the explicitly norm-controlled test domain below
+retain their separate meanings.
 
 \section{A faithful Banach domain for clock-valued source limits}
 The fixed-test limits just proved do not give convergence against every
