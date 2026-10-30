@@ -22,7 +22,7 @@
 \title{Observable martingales on Brownian-time paths:\\
 predictable energy, associativity and uniform reconstruction}
 \author{Project Stardust}
-\date{Reviewed editorial draft, revision 5, October 30, 2026}
+\date{Reviewed editorial draft, revision 6, October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
 On a constructed Brownian-time Brownian probability space, predictable
@@ -37,7 +37,9 @@ curves of observables uniformly on compact parameter sets, simultaneously
 over all causal horizons. Original native graph tests identify the
 family's scalar coefficients, with a quantitative graph-dual norm bound.
 A bounded two-source Gaussian recovery transfers
-this convergence to the original intrinsic divergence graph. A complete source-localization argument proves triviality of the entire initial right germ. The proofs
+this convergence to the original intrinsic divergence graph. A complete source-localization argument proves triviality of the entire initial right germ. A prescribed quadratic-clock martingale has a full deterministic
+isometric integral whose range is orthogonal to the observed path,
+by a simultaneous scenery-reflection argument. The proofs
 separate raw predictability, right-germ martingales and source-operator
 domains. These are classical integration and Hilbert-space mechanisms
 assembled as a formalization companion; they do not provide a temporal
@@ -649,6 +651,157 @@ Multiplying only its first component by one and its second by zero
 usually gives a nonzero output. Thus unrelated channelwise multipliers
 need not even descend to the quotient. This elementary example explains
 why diagonal energy bounds alone would not prove the theorem.
+
+
+\section{A prescribed quadratic driver has a proper deterministic range}
+\label{sec:deterministicrange}
+The countable-family construction below permits the terminal channels to
+vary. A distinct actual construction fixes just one quadratic clock
+channel. Its completed deterministic integral is isometric, yet misses
+the original observed path by an exact orthogonality identity. This gives
+a concrete limit on what one prescribed driver has proved.
+
+Set $Q_t=W_t^2-t$ and let $m_t=\E[Q_t\mid\mathcal F_t^Z]$.
+The independent scenery can be known initially without changing the
+clock Brownian martingale property of $Q$. The resulting enlarged clock
+filtration contains $\mathcal F_t^Z$. Two applications of the tower
+property therefore give $\E[m_t\mid\mathcal F_s^Z]=m_s$ for $s\leq t$.
+This is an actual observable martingale, rather than the process $Z$.
+Its right germ in the preceding spaces is
+\[
+ N_t=P_t m_T\qquad(T>t).
+\]
+This definition is independent of $T$: if $t<T\leq H$, then
+$P_tm_H=P_t\E[m_H\mid\mathcal F_T^Z]=P_tm_T$.
+It agrees with the source's $T=t+1$ definition. Since
+$P_t m_u=P_tQ_u$ for $u>t$ and $Q_u\to Q_t$ in $L^2$ as
+$u\downarrow t$, we also obtain
+\begin{equation}\label{eq:quadraticgerm}
+ N_t=P_tQ_t,\qquad P_sN_t=N_s\quad(s\leq t),\qquad
+ \norm{N_t}^2\leq2t^2.
+\end{equation}
+The same-time formula here is a labelled human projection-continuity
+deduction from the mapped horizon definition. To prove the middle
+identity, choose one horizon larger than $t$ and use $P_sP_t=P_s$.
+For right continuity near a fixed time, use the same larger horizon
+and decreasing-subspace projection convergence. At zero the displayed
+bound gives $N_0=0$ and strong right continuity. None of this identifies
+$N_t$ with the raw value $m_t$ at a positive time.
+
+The driver is nonzero for every $t>0$. All needed moments are integrable:
+conditioning on $W_t$ gives $\E[Z_t^8\mid W_t]=105|W_t|^4$.
+Similarly $\E[Z_t^4\mid W_t]=3W_t^2$, and Gaussian second and
+fourth moments give the exact source pairing
+\begin{equation}\label{eq:quadraticfourth}
+ \inner{N_t}{Z_t^4}=\inner{Q_t}{Z_t^4}
+ =3\E[(W_t^2-t)W_t^2]=6t^2>0.
+\end{equation}
+The first equality uses $Z_t^4\in L^2(\mathcal F_t^Z)$.
+Thus this is a genuine positive-energy driver, not a zero-integrator
+counterexample.
+
+\subsection*{The entire deterministic time domain and its adjoint}
+Put $e(t)=\norm{N_t}^2$. Projection and orthogonality give
+\[
+ \inner{N_s}{N_t}=e(\min(s,t)),\qquad
+ e(t)-e(s)=\norm{N_t-N_s}^2\quad(s\leq t).
+\]
+Consequently $e$ is increasing and right continuous, $e(0)=0$, and
+$e(T)\leq2T^2$. Its Stieltjes measure $\nu$ on $[0,\infty)$ has
+\[
+ \nu((s,t])=e(t)-e(s),\qquad \nu(\{0\})=0.
+\]
+For a finite real dictionary $(a_t)$ define
+\[
+ f_a=\sum_t a_t\one_{(0,t]},\qquad
+ J_0f_a=\sum_t a_tN_t.
+\]
+The common Gram kernel $e(\min(s,t))$ proves
+$\inner{J_0f_a}{J_0f_b}=\inner{f_a}{f_b}_{L^2(\nu)}$.
+It also proves representative independence: two dictionaries defining
+the same time class have the same output class.
+
+Here these prefixes are dense in the \emph{entire} $L^2(\nu)$.
+Indeed, if $f$ is orthogonal to all of them, then
+$\int_{[0,t]}f\,d\nu=0$ for every $t$. On $[0,T]$ the measure
+is finite and $f$ is integrable by Cauchy--Schwarz. The finite signed
+measure $f\nu$ restricted to this horizon vanishes on all prefixes,
+including the total horizon. The half-line pi-system generates its
+Borel sigma algebra, so finite-measure uniqueness makes it zero.
+Thus $f=0$ almost everywhere on $[0,T]$; integer horizons cover the
+whole half-line. The Hilbert orthogonal-complement criterion proves
+density. Isometric completion now gives the actual integral
+\begin{equation}\label{eq:detisometry}
+ J:L^2(\nu)\longrightarrow\HH,\qquad
+ J\one_{(s,t]}=N_t-N_s,\qquad \norm{Jf}=\norm f.
+\end{equation}
+Its range is closed: convergence of $Jf_n$ forces $f_n$ to be Cauchy.
+The bounded covariance adjoint $C=J^*$ satisfies $CJ=1$; hence
+$JC$ is the orthogonal range projection. Directly,
+\[
+ \inner{Jf}{F-JCF}=\inner{f}{CF}-\inner{f}{CJC F}=0,
+ \qquad
+ \norm F^2=\norm{CF}^2+\norm{F-JCF}^2.
+\]
+The notation $C$ denotes this bounded Hilbert adjoint, not an original
+Malliavin derivative. No derivative-domain identification is used.
+
+\subsection*{Scenery parity supplies an actual missing observable}
+Reflect all Gaussian scenery coordinates and leave the clock coordinates
+unchanged. This defines a measure-preserving involution $R$ of the joint
+source space. At each fixed spatial coordinate the constructed scenery
+changes sign almost surely. Intersect those events over a countable dense
+set and use continuity of both scenery paths: on one common event,
+\[
+ B_r(R\omega)=-B_r(\omega)\quad\hbox{for every }r\geq0,
+ \qquad Z_t(R\omega)=-Z_t(\omega)\quad\hbox{for every }t\geq0.
+\]
+This simultaneous step is needed to substitute the random clock time.
+Composition $Sf=f\circ R$ is an involutive $L^2$ isometry and is
+self-adjoint, since
+$\inner{Sf}{g}=\inner{Sf}{S^2g}=\inner f{Sg}$.
+
+Scenery reflection preserves each raw observation subspace \emph{as a
+space}; it does not fix every observed variable. A measurable functional
+of the past path becomes the same functional of its negative past path.
+Thus $S L^2(\mathcal F_t^Z)=L^2(\mathcal F_t^Z)$, and intersecting
+shows $S L^2(\mathcal G_t)=L^2(\mathcal G_t)$.
+If a closed subspace $K$ is invariant under the involution $S$, so is
+$K^\perp$, because $\inner{Sh}{k}=\inner h{Sk}=0$.
+The unique orthogonal decomposition therefore implies $SP_K=P_KS$.
+In particular $SQ_t=Q_t$ and~\eqref{eq:quadraticgerm} give $SN_t=N_t$.
+Every deterministic dictionary output is fixed by $S$, and continuity
+of $S$ passes this to all of $J L^2(\nu)$. By contrast $SZ_t=-Z_t$.
+Isometry then gives
+\[
+ \inner{Z_t}{Jf}=\inner{SZ_t}{SJf}
+ =-\inner{Z_t}{Jf}=0.
+\]
+Duality now proves $CZ_t=0$, $JCZ_t=0$ and residual $Z_t$.
+Consequently the exact formal error identity is
+\begin{equation}\label{eq:deterror}
+ \norm{Z_t-Jf}^2=\norm{Z_t}^2+\norm f^2
+ \qquad(t\geq0,\ f\in L^2(\nu)).
+\end{equation}
+The unique best deterministic input is zero. In particular $Z_1$,
+a genuine centered observable in its own raw past, is outside this
+completed integral range. Its nonzero norm follows also directly from
+$\E[Z_1^2]=\E|W_1|>0$. Centering follows from the same sign involution.
+
+The source proves the isometry, full deterministic domain, covariance
+adjoint, parity and error identity in
+\code{IBMRightGermFullDeterministicIntegral},
+\code{IBMRightGermCovarianceAdjoint},
+\code{IBMScenerySignSymmetry} and, separately,
+\par\noindent\code{IBMDeterministicRangeObstruction}.
+The projection-commutation and density arguments above spell out their
+classical Hilbert and measure mechanisms. This obstruction fixes the
+quadratic driver and permits only deterministic time coefficients.
+Random predictable coefficients need not be fixed by scenery reflection,
+so no random predictable representation theorem or its failure follows.
+Nor is the actual path $Z$ proposed as a martingale driver. The
+target-indexed and countable-channel constructions on either side of this
+section retain their separate hypotheses and are not contradicted.
 
 \section{A fixed countable stochastic family}
 The preceding target-indexed representation yields a fixed countable
