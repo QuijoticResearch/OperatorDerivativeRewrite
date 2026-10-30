@@ -16,7 +16,7 @@
 \date{October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. The full infinitesimal generator has an exact weighted-coefficient quotient graph, a bounded unit resolvent and a finite-character graph core. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. A jointly continuous backward heat character has no uniform-path Bochner time representative, separating scalar Fubini from Banach-valued integration. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. The full infinitesimal generator has an exact weighted-coefficient quotient graph, a bounded unit resolvent and a finite-character graph core. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini and strong $L^p$ convergence after path averaging. Deterministic stopping has an explicit dictionary obstruction and a contractive transport remedy. A summable cosine example fails to be differentiable without smoothing, and one fixed continuous rough direction excludes a heat expectation from its actual transpose domain. A jointly continuous backward heat character has no uniform-path Bochner time representative, separating scalar Fubini from Banach-valued integration. The entire terminal completion also has an actual signed backward-kernel pairing and exactly centered finite gains, with a partition-independent terminal telescope. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -1130,6 +1130,185 @@ control-derivative time densities remain in their original spaces.
 \par\noindent\code{MovingPathCharacterSeparation},
 \par\noindent\code{MovingPathCharacterMeasurability}: separable-range and almost-everywhere obstruction.
 \par\noindent\code{BackwardHeatMovingObstruction}: actual kernel, scalar product integrability and no uniform-path Bochner representative.
+
+\section{Completed terminal observables and actual signed backward gains}
+There is also an exact conditional pairing on the entire terminal
+Fourier completion. It is a finite signed-kernel theorem, rather
+than conditional probability under an infinite path law. This
+distinction permits a useful backward representation without
+contradicting the preceding variation and measurability obstructions.
+
+Specialize the dictionary to terminal characters
+\[
+ e_{\xi_j}(\omega)=e^{-2\pi i\xi_j\omega(1)},\qquad j\geq1,
+\]
+and the constant character. Denote the corresponding quotient by
+$\A_{\rm ter}$ and put
+\[
+ f_q(x)=\mathcal Jq(\ell_x),\qquad \ell_x(r)=xr.
+\]
+Each terminal character depends only on $\omega(1)$, so the entire
+completed realization also does: this follows from uniform
+convergence of every $\ell^1$ coefficient realization. In particular
+$f_q\in C_b(\R;\C)$ and $\norm{f_q}_\infty\leq\norm q$.
+Its coefficient representatives may be nonunique. The heat action
+multiplies the $\xi_j$ coefficient by
+$e^{-h(2\pi\xi_j)^p}$, consistently with the original Fourier
+normalization in \eqref{eq:char}.
+
+\begin{proposition}[Actual kernel on the completion]\label{prop:terminalkernel}
+For $h>0$, $x\in\R$ and $q\in\A_{\rm ter}$,
+\begin{equation}\label{eq:terminalkernel}
+ f_{S_hq}(x)=\int_\R k_{p,h}(y)f_q(x+y)\,dy,
+ \qquad |f_{S_hq}(x)|\leq\norm q.
+\end{equation}
+\end{proposition}
+\begin{proof}
+On a single character, its multiplicative translation identity
+and the exact kernel Fourier transform give
+\[
+ \int k_{p,h}(y)e^{-2\pi i\xi(x+y)}\,dy
+       =e^{-h(2\pi\xi)^p}e^{-2\pi i\xi x}.
+\]
+The constant has kernel integral one. For fixed $h$, the integral
+functional is continuous on the quotient: its absolute value is
+at most $\norm{k_{p,h}}_1\norm q$. The heat/evaluation
+functional is continuous with norm at most one. Equality on
+the dense finite-character span therefore proves equality on
+the completion. This proof is independent of a chosen
+coefficient representative. The last bound follows from the
+quotient heat contraction and evaluation bound, not positivity
+of the signed kernel or a contraction in the physical supremum norm.
+\end{proof}
+
+Let $(\Omega,\mu)$ be sigma-finite, let $r:\Omega\to\R$
+be measurable and integrable, and let $X:\Omega\to\R$ be
+measurable. Think of $r\,d\mu$ as an actual finite signed past
+law and $X$ as its past state. The fresh extension is the
+finite signed density
+\[
+ d\nu_h(w,y)=r(w)k_{p,h}(y)\,d\mu(w)\,dy.
+\]
+For a measurable complex past test $G$ which is bounded, all
+the integrals below are absolutely integrable against this
+displayed density. More explicitly their product absolute
+integral is bounded by
+\begin{equation}\label{eq:conditionalmajorant}
+ \norm q\,\norm{k_{p,h}}_1\int_\Omega|r(w)||G(w)|\,d\mu(w).
+\end{equation}
+Thus actual Fubini, followed by
+Proposition~\ref{prop:terminalkernel}, proves
+\begin{equation}\label{eq:completedconditional}
+ \int_{\Omega\times\R}G(w)f_q(X(w)+y)\,d\nu_h(w,y)
+ =\int_\Omega r(w)G(w)f_{S_hq}(X(w))\,d\mu(w).
+\end{equation}
+The left side is the integral under the original signed
+extension, not under its normalized absolute-density probability
+law. The density makes its meaning completely explicit.
+
+There is a simple HUMAN extension to an unbounded measurable
+$G$ satisfying $\int|r||G|\,d\mu<\infty$. Define $G_n=G$
+where $|G|\leq n$ and $G_n=nG/|G|$ elsewhere. These are bounded
+measurable tests, $G_n\to G$ and $|G_n|\leq|G|$.
+The majorant \eqref{eq:conditionalmajorant} is integrable for
+this $G$. Dominated convergence on the actual product density
+and on the past density passes \eqref{eq:completedconditional}
+to $G$. This extension is not a stronger named formal
+conditional-expectation theorem; it is a direct absolute-Fubini
+consequence with the proof and exact weighted-$L^1$ hypothesis.
+
+\subsection*{Backward fields and zero signed past pairing}
+Fix $H>0$ and $q\in\A_{\rm ter}$, and for $0\leq t\leq H$ set
+\[
+ u_q(t,x)=f_{S_{H-t}q}(x).
+\]
+Strong continuity of the quotient semigroup makes
+$t\mapsto\mathcal J(S_{H-t}q)$ continuous in uniform norm.
+Joint evaluation at $(t,x)$ is therefore continuous:
+\[
+ |u_q(t,x)-u_q(s,z)|
+ \leq\norm{\mathcal J(S_{H-t}q)-\mathcal J(S_{H-s}q)}_\infty
+             +|f_{S_{H-s}q}(x)-f_{S_{H-s}q}(z)|.
+\]
+The first term tends to zero as $t\to s$, and the second as
+$x\to z$. Also $|u_q(t,x)|\leq\norm q$,
+$u_q(H,x)=f_q(x)$ and
+$u_q(0,0)=\E_H(q)$, where $\E_H$ is the actual expectation
+functional of the terminal dictionary.
+
+For $0\leq s<t\leq H$ define the actual gain
+\[
+ g_{s,t}(x,y)=u_q(t,y)-u_q(s,x).
+\]
+It is bounded by $2\norm q$. Apply
+\eqref{eq:completedconditional} at fresh duration $t-s$ to
+the completed test $S_{H-t}q$. The semigroup identity gives
+$S_{t-s}S_{H-t}=S_{H-s}$. The other term is constant in the
+fresh increment, whose signed kernel mass is one. Subtracting
+the two actual integrals proves
+\begin{equation}\label{eq:completedgainzero}
+ \int_{\Omega\times\R}G(w)
+       g_{s,t}(X(w),X(w)+y)\,d\nu_{t-s}(w,y)=0.
+\end{equation}
+Its absolute integral is at most
+$2\norm q\norm{k_{p,t-s}}_1\int|r||G|$.
+For bounded past tests this is the named completed signed-gain
+theorem. For the weighted-$L^1$ tests it is the same printed
+human clipping/Fubini extension. For a genuine finite heat past,
+$r$ is the product of the original signed increment kernels
+and $X$ their sum; hence the identity applies directly, with
+the original cylindrical past intact. No positivity or
+unconditional Gaussian law of this past is assumed.
+
+\subsection*{Exact partition representation and its boundary}
+For every finite grid $0=t_0<t_1<\cdots<t_n=H$ and every
+real coordinate list $x_0=0,x_1,\ldots,x_n$, ordinary telescoping
+gives
+\begin{equation}\label{eq:completedtelescope}
+ \sum_{j=0}^{n-1}g_{t_j,t_{j+1}}(x_j,x_{j+1})
+       = f_q(x_n)-\E_H(q).
+\end{equation}
+There is no limit or unproved cancellation in this identity:
+every intermediate $u_q(t_j,x_j)$ occurs once with each sign.
+In particular it holds on every continuous zero-start path
+with $x_j=\omega(t_j)$. The gain sum is identical for any
+two grids with these same endpoints on that same path.
+Moreover $t\mapsto u_q(t,\omega(t))$ is continuous for every
+such path. Joint continuity follows from the preceding
+state continuity and continuous path evaluation, and the
+map from the compact-open path space to continuous curves
+is continuous. Thus these are genuine scalar path observables,
+rather than merely assigned finite Fourier coefficients.
+
+The telescope does not by itself produce a stochastic integral:
+it simply names the sum of actual increments of this specified
+backward observable. The zero-pairing statement
+\eqref{eq:completedgainzero} additionally gives its precise
+finite signed-past centering, but does not construct an infinite
+signed path law, a positive martingale filtration, an It\^o
+isometry or an arbitrary predictable-integrand completion.
+Nor does joint scalar continuity contradict the uniform-path
+Bochner obstruction in the preceding section: a fixed countable
+quotient norm, scalar product integration and the full
+$C_b(\X)$ norm are distinct spaces and topologies.
+
+All mechanisms here are classical Fourier convolution,
+completion, Fubini and telescoping. Nishioka's already compared
+primary higher-order calculus remains an antecedent, and no
+priority claim is added. The contribution of this section is
+the exact whole-completion domain and the explicitly realized
+signed past extension, with all integrability conditions.
+
+\par\noindent\code{FourierPathTerminalKernels.heat_kernel_representation}:
+original signed kernel on the entire terminal quotient.
+\par\noindent\code{FourierPathConditionalPairing.conditional_pairing}:
+actual bounded-test finite signed-past identity.
+\par\noindent\code{FourierPathConditionalPairing.backward_pairing}:
+semigroup-matched backward time identity.
+\par\noindent\code{FourierPathCompletedGainPairing.gain_pairing}:
+actual signed integrability and zero gain pairing.
+\par\noindent\code{FourierPathCompletedGains.terminal_representation}:
+exact telescope and its path specialization.
 
 \section{Antecedents, formal correspondence and limits of the claim}
 Nishioka's higher-order pseudoprocess calculus \cite{nishioka} already uses Fourier-measure test functionals and weak expectation notions. Its Fourier representations and moment conditions in Sections 1--3, and the higher-order calculus of Sections 5--6, are primary antecedents to the general functional mechanism. The present paper does not claim to originate higher-order heat path calculus. Its chosen countable atomic spectrum, quotient norm and bounded-control Bochner densities require their own domain statements; they are not silently identified with that paper's entire Fourier-measure test class.

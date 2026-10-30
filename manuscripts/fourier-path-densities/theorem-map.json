@@ -3141,6 +3141,402 @@
       "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
       "declaration_header": "theorem deriv_implies_graph (h : Path) (f g : TestSpace levels \u03be)\n    (hderiv : HasDerivAt (fun t => along levels \u03be h t f) g 0) : (f,g) \u2208 graph levels \u03be h",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L51"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.frequency",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 14,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def frequency (a : \u2115 \u2192 \u211d) : (i : \u2115) \u2192 Grid (terminalLevels i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L14"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.unitLine",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 16,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def unitLine : Path",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L16"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.line",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 18,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def line (x : \u211d) : Path",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L18"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.line_apply",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 20,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem line_apply (x s : \u211d) : (line x).val s = x * s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L20"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.line_continuous",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 22,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem line_continuous : Continuous line",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L22"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.atom",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 24,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem atom (a : \u2115 \u2192 \u211d) (i : \u2115) (path : Path) :\n    characterTest terminalLevels (frequency a) (i+1) path = phase (a i) (path.val 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L24"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.terminal_multiplier",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 39,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem terminal_multiplier (a : \u2115 \u2192 \u211d) (m : \u2115) (T : \u211d\u22650) (i : \u2115) :\n    multiplier terminalLevels (frequency a) m T (i+1) = HigherHeatL2.symbol m T (a i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L39"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.shiftedLine",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 50,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def shiftedLine (x : \u211d) (y : \u211d) : Path",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L50"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.shiftedLine_continuous",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 52,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem shiftedLine_continuous (x : \u211d) : Continuous (shiftedLine x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L52"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.kernelFunctional",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 55,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def kernelFunctional (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (x : \u211d) : TestSpace terminalLevels (frequency a) \u2192L[\u2102] \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L55"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.heatFunctional",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 62,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "def heatFunctional (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (x : \u211d) :\n    TestSpace terminalLevels (frequency a) \u2192L[\u2102] \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L62"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.kernel_eq_heat",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 68,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem kernel_eq_heat (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (x : \u211d) : kernelFunctional a m hm T hT x = heatFunctional a m hm T x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L68"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.heat_kernel_representation",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 95,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem heat_kernel_representation (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m)\n    (T : \u211d\u22650) (hT : 0 < T) (x : \u211d) (q : TestSpace terminalLevels (frequency a)) :\n    realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m hm T q)\n      (line x) =\n        \u222b y, (HigherHeatSignedLaws.realKernel m hm T hT y : \u2102) *\n          realize terminalLevels (frequency a) q (shiftedLine x y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L95"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.heat_signed_representation",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 104,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem heat_signed_representation (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m)\n    (T : \u211d\u22650) (hT : 0 < T) (x : \u211d) (q : TestSpace terminalLevels (frequency a)) :\n    realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m hm T q)\n      (line x) = \u222b\u1d5b y, realize terminalLevels (frequency a) q (shiftedLine x y)\n        \u2202<\u2022HigherHeatSignedLaws.law m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L104"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathTerminalKernels.kernel_integral_contraction",
+      "file": "Foundation/FourierPathTerminalKernels.lean",
+      "line": 118,
+      "source_sha256": "f5ccc7f65c71e328c70ccce683599bb88704e3c2c91fab92dba83597c6de4c13",
+      "declaration_header": "theorem kernel_integral_contraction (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m)\n    (T : \u211d\u22650) (hT : 0 < T) (x : \u211d) (q : TestSpace terminalLevels (frequency a)) :\n    \u2016\u222b y, (HigherHeatSignedLaws.realKernel m hm T hT y : \u2102) *\n      realize terminalLevels (frequency a) q (shiftedLine x y)\u2016 \u2264 \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathTerminalKernels.lean#L118"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.mode",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 14,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "def mode (a : \u2115 \u2192 \u211d) : \u2115 \u2192 \u211d | 0 => 0 | i+1 => a i\n\ntheorem atom_all (a : \u2115 \u2192 \u211d) (i : \u2115) (path : Path) :\n    characterTest terminalLevels (frequency a) i path = phase (mode a i) (path.val 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L14"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.atom_all",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 16,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "theorem atom_all (a : \u2115 \u2192 \u211d) (i : \u2115) (path : Path) :\n    characterTest terminalLevels (frequency a) i path = phase (mode a i) (path.val 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L16"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.multiplier_all",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 23,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "theorem multiplier_all (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (i : \u2115) :\n    multiplier terminalLevels (frequency a) m T i = HigherHeatL2.symbol m T (mode a i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L23"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.conditional_pairing",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 32,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "theorem conditional_pairing {\u03a9 : Type*} [MeasurableSpace \u03a9] (\u03bc : Measure \u03a9) [SigmaFinite \u03bc]\n    (\u03c1 : \u03a9 \u2192 \u211d) (h\u03c1m : Measurable \u03c1) (h\u03c1 : Integrable \u03c1 \u03bc)\n    (X : \u03a9 \u2192 \u211d) (hX : Measurable X) (G : \u03a9 \u2192 \u2102) (hG : Measurable G)\n    (C : \u211d) (hb : \u2200 w, \u2016G w\u2016 \u2264 C)\n    (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace terminalLevels (frequency a)) :\n    (\u222b\u1d5b v, G v.1 * realize terminalLevels (frequency a) q (line (X v.1 + v.2))\n      \u2202<\u2022extendedLaw \u03bc \u03c1 m hm T hT) =\n    \u222b w, (\u03c1 w : \u2102) * G w *\n      realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m hm T q)\n        (line (X w)) \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L32"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.backward_pairing",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 115,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "theorem backward_pairing {\u03a9 : Type*} [MeasurableSpace \u03a9] (\u03bc : Measure \u03a9) [SigmaFinite \u03bc]\n    (\u03c1 : \u03a9 \u2192 \u211d) (h\u03c1m : Measurable \u03c1) (h\u03c1 : Integrable \u03c1 \u03bc)\n    (X : \u03a9 \u2192 \u211d) (hX : Measurable X) (G : \u03a9 \u2192 \u2102) (hG : Measurable G)\n    (C : \u211d) (hb : \u2200 w, \u2016G w\u2016 \u2264 C) (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m)\n    (H s t : \u211d\u22650) (hst : s < t) (ht : t \u2264 H) (q : TestSpace terminalLevels (frequency a)) :\n    (\u222b\u1d5b v, G v.1 * realize terminalLevels (frequency a)\n      (evolution terminalLevels (frequency a) m hm (H-t) q) (line (X v.1 + v.2))\n      \u2202<\u2022extendedLaw \u03bc \u03c1 m hm (t-s) (tsub_pos_iff_lt.mpr hst)) =\n    \u222b w, (\u03c1 w : \u2102) * G w * realize terminalLevels (frequency a)\n      (evolution terminalLevels (frequency a) m hm (H-s) q) (line (X w)) \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L115"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathConditionalPairing.actual_increment_pairing",
+      "file": "Foundation/FourierPathConditionalPairing.lean",
+      "line": 130,
+      "source_sha256": "da3f1d0783485e71bbc4a2c199b0d98a503160b5828b2034208938df7af6cfba",
+      "declaration_header": "theorem actual_increment_pairing {\u03b9 : Type*} [Fintype \u03b9] (m : \u2115) (hm : 0 < m)\n    (times : \u03b9 \u2192 \u211d\u22650) (htimes : \u2200 i, 0 < times i)\n    (G : (\u03b9 \u2192 \u211d) \u2192 \u2102) (hG : Measurable G) (C : \u211d) (hb : \u2200 w, \u2016G w\u2016 \u2264 C)\n    (a : \u2115 \u2192 \u211d) (T : \u211d\u22650) (hT : 0 < T) (q : TestSpace terminalLevels (frequency a)) :\n    (\u222b\u1d5b v, G v.1 * realize terminalLevels (frequency a) q (line ((\u2211 i, v.1 i) + v.2))\n      \u2202<\u2022extendedLaw (Measure.pi (fun _ : \u03b9 => volume))\n        (HigherHeatSignedLaws.incrementDensity m hm times htimes) m hm T hT) =\n    \u222b w, (HigherHeatSignedLaws.incrementDensity m hm times htimes w : \u2102) * G w *\n      realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m hm T q)\n        (line (\u2211 i, w i)) \u2202Measure.pi (fun _ : \u03b9 => volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathConditionalPairing.lean#L130"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.state",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 15,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def state (t : \u211d\u22650) (x : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L15"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.state_continuous",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 19,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem state_continuous : Continuous (fun p : \u211d\u22650 \u00d7 \u211d => state a m hm H q p.1 p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L19"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.state_bound",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 27,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem state_bound (t : \u211d\u22650) (x : \u211d) : \u2016state a m hm H q t x\u2016 \u2264 \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L27"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.state_terminal",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 31,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem state_terminal (x : \u211d) :\n    state a m hm H q H x = realize terminalLevels (frequency a) q (line x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L31"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.state_initial",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 35,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem state_initial (hH : 0 < H) :\n    state a m hm H q 0 0 = expectation terminalLevels (frequency a) m hm H hH q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L35"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.curve_continuous",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 43,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem curve_continuous (path : Path) :\n    Continuous (fun t : \u211d\u22650 => state a m hm H q t (path.val (t : \u211d)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L43"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 51,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def process (path : Path) : C(\u211d\u22650, \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L51"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process_jointly_continuous",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 54,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem process_jointly_continuous :\n    Continuous (fun p : \u211d\u22650 \u00d7 Path => process a m hm H q p.2 p.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L54"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process_jointly_measurable",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 64,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem process_jointly_measurable :\n    Measurable (fun p : \u211d\u22650 \u00d7 Path => process a m hm H q p.2 p.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L64"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process_map_continuous",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 68,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem process_map_continuous : Continuous (process a m hm H q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L68"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process_map_measurable",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 73,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem process_map_measurable : Measurable (process a m hm H q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L73"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.curveLaw",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 76,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def curveLaw (\u03bc : Measure Path) : Measure C(\u211d\u22650, \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L76"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.sampledLaw",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 83,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def sampledLaw (k : \u2115) (hk : 0 < k) (K : \u211d\u22650) (hK : 0 < K) (n : \u2115) :\n    Measure C(\u211d\u22650, \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L83"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.process_bound",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 93,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem process_bound (path : Path) (t : \u211d\u22650) : \u2016process a m hm H q path t\u2016 \u2264 \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L93"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.gain",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 96,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def gain (s t : \u211d\u22650) (x y : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L96"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.gain_bound",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 98,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem gain_bound (s t : \u211d\u22650) (x y : \u211d) : \u2016gain a m hm H q s t x y\u2016 \u2264 2 * \u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L98"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.gainSum",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 101,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "def gainSum (grid : \u2115 \u2192 \u211d\u22650) (n : \u2115) (x : \u2115 \u2192 \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L101"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.gainSum_telescope",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 104,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem gainSum_telescope (grid : \u2115 \u2192 \u211d\u22650) (n : \u2115) (x : \u2115 \u2192 \u211d) :\n    gainSum a m hm H q grid n x =\n      state a m hm H q (grid n) (x n) - state a m hm H q (grid 0) (x 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L104"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.terminal_representation",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 109,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem terminal_representation (hH : 0 < H) (grid : \u2115 \u2192 \u211d\u22650) (n : \u2115)\n    (h0 : grid 0 = 0) (hn : grid n = H) (x : \u2115 \u2192 \u211d) (hx : x 0 = 0) :\n    gainSum a m hm H q grid n x = realize terminalLevels (frequency a) q (line (x n)) -\n      expectation terminalLevels (frequency a) m hm H hH q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L109"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.path_representation",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 115,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem path_representation (hH : 0 < H) (grid : \u2115 \u2192 \u211d\u22650) (n : \u2115)\n    (h0 : grid 0 = 0) (hn : grid n = H) (path : Path) :\n    gainSum a m hm H q grid n (fun j => path.val (grid j)) =\n      realize terminalLevels (frequency a) q (line (path.val H)) -\n        expectation terminalLevels (frequency a) m hm H hH q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L115"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGains.partition_independent",
+      "file": "Foundation/FourierPathCompletedGains.lean",
+      "line": 125,
+      "source_sha256": "e608dc37281c1f995eb13955ca5899af69e939cc0563874ad7c724ded7bd8109",
+      "declaration_header": "theorem partition_independent (hH : 0 < H) (grid other : \u2115 \u2192 \u211d\u22650) (n k : \u2115)\n    (h0 : grid 0 = 0) (hn : grid n = H) (h0' : other 0 = 0) (hk : other k = H) (path : Path) :\n    gainSum a m hm H q grid n (fun j => path.val (grid j)) =\n      gainSum a m hm H q other k (fun j => path.val (other j))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGains.lean#L125"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGainPairing.past_constant",
+      "file": "Foundation/FourierPathCompletedGainPairing.lean",
+      "line": 13,
+      "source_sha256": "0d0a290954656a16032f29bb9dd76a5089941e743080605e7028c84e186d5b0f",
+      "declaration_header": "theorem past_constant {\u03a9 : Type*} [MeasurableSpace \u03a9] (\u03bc : Measure \u03a9) [SigmaFinite \u03bc]\n    (\u03c1 : \u03a9 \u2192 \u211d) (h\u03c1m : Measurable \u03c1) (h\u03c1 : Integrable \u03c1 \u03bc)\n    (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (B : \u03a9 \u2192 \u2102) (hB : Measurable B) (C : \u211d) (hb : \u2200 w, \u2016B w\u2016 \u2264 C) :\n    (\u222b\u1d5b v, B v.1 \u2202<\u2022extendedLaw \u03bc \u03c1 m hm T hT) = \u222b w, (\u03c1 w : \u2102) * B w \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGainPairing.lean#L13"
+    },
+    {
+      "paper": "Section 15: actual kernel representation on the entire terminal quotient, bounded signed past Fubini identities, genuine full completed backward observables and exact finite-grid gains. Weighted total-variation L1 past extension is a separately labelled HUMAN clipping/absolute-Fubini consequence, not a stronger named formal conditional expectation.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathCompletedGainPairing.gain_pairing",
+      "file": "Foundation/FourierPathCompletedGainPairing.lean",
+      "line": 23,
+      "source_sha256": "0d0a290954656a16032f29bb9dd76a5089941e743080605e7028c84e186d5b0f",
+      "declaration_header": "theorem gain_pairing {\u03a9 : Type*} [MeasurableSpace \u03a9] (\u03bc : Measure \u03a9) [SigmaFinite \u03bc]\n    (\u03c1 : \u03a9 \u2192 \u211d) (h\u03c1m : Measurable \u03c1) (h\u03c1 : Integrable \u03c1 \u03bc)\n    (X : \u03a9 \u2192 \u211d) (hX : Measurable X) (G : \u03a9 \u2192 \u2102) (hG : Measurable G)\n    (C : \u211d) (hb : \u2200 w, \u2016G w\u2016 \u2264 C) (a : \u2115 \u2192 \u211d) (m : \u2115) (hm : 0 < m)\n    (H s t : \u211d\u22650) (hst : s < t) (ht : t \u2264 H) (q : TestSpace terminalLevels (frequency a)) :\n    (extendedLaw \u03bc \u03c1 m hm (t-s) (tsub_pos_iff_lt.mpr hst)).Integrable\n      (fun v => G v.1 * gain a m hm H q s t (X v.1) (X v.1 + v.2)) \u2227\n    (\u222b\u1d5b v, G v.1 * gain a m hm H q s t (X v.1) (X v.1 + v.2)\n      \u2202<\u2022extendedLaw \u03bc \u03c1 m hm (t-s) (tsub_pos_iff_lt.mpr hst)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathCompletedGainPairing.lean#L23"
     }
   ],
   "human_reorganization": [
@@ -3150,7 +3546,8 @@
     "Section 9.1 reconstructs genuine strong Lp convergence of the time density AFTER path averaging, from uniformly contractive finite sampler functionals. This yields convergence uniform over the unit ball of conjugate-exponent controls for a fixed test field; no common sampler-law raw-field convergence or operator-norm convergence on the whole test-space unit ball is claimed. Section 12 proves an actual terminal-dictionary stopping obstruction and the exact contractive change-of-dictionary remedy, retaining the common-node hypothesis of the formal dyadic specialization. These are deterministic maps, not conditional probability or optional stopping.",
     "The heat parameter H has an exact full infinitesimal generator distinct from the time-control derivatives. The generator graph consists exactly of quotient images of coefficient pairs a,b in l1 with b_i=-lambda_i a_i; domain membership requires existence of such a weighted representative, not a canonical or every-representative claim. A real supporting Hahn-Banach functional gives the actual contraction-tangent dissipativity bound. The original coefficient unit resolvent descends through the closed realization kernel, is bounded by one and characterizes the whole closed graph. The direct Laplace-integral descent is a classical HUMAN reorganization of that same named resolvent, not a new formal declaration. A resolvent comparison of any candidate tangent proves maximality on every norm-differentiable quotient vector. Simultaneous coefficient truncations prove the finite eigenpair graph core. No arbitrary quotient image is assumed closed, and no generator on a positive physical path law is identified.",
     "Section 14 reconstructs a zero-start polynomial path separating any two positive-time evaluation characters by exact uniform norm distance two. A simple-function separable-range argument excludes almost-everywhere strong measurability on Lebesgue (0,1), including every Bochner Lp representative. Multiplication by the continuous nonzero actual heat coefficient transfers the obstruction to the original backward heat character. Its scalar jointly continuous bounded product representative belongs to every scalar Lr for every fixed finite positive path measure. No all-dual weak measurability, membership in the fixed countable Fourier dictionary, positive signed path law or failure of the already constructed quotient time densities is inferred. Includes ordinary Gaussian heat. The classical Pettis necessary direction is proved directly, with a precise primary course-statement comparison and access limits.",
-    "Section 11 now proves rather than only states the reverse inclusion in the full native directional quotient graph. The actual direction is any fixed continuous zero-start h, not assumed to be a bounded-control primitive. A weighted coefficient representative gives the two-sided derivative by l1 dominated convergence. The coefficient unit resolvent a_i/(1-i beta_i) descends through the original relations: an explicit HUMAN Bochner Laplace integral proves kernel preservation. The resulting bounded quotient resolvent has graph (R_h q,R_h q-q). For any native derivative pair (q,v), the isometric-group equation on q-R_h(q-v) forces that difference to vanish, proving maximality and exact existential weighted representative domain. No unique or every-representative coefficient requirement is imposed. Graph closedness and simultaneous finite truncation give the full finite-character graph core, the latter explicitly HUMAN. This differs from the heat generator and does not assert heat smoothing along rough h or a physical-time path calculus. The original formal proof uses its verified dissipative graph bound for the same resolvent/kernel/maximality conclusions. Classical Engel\u2013Nagel Laplace-resolvent antecedent already inspected in the recorded primary passage; no new generation principle claimed."
+    "Section 11 now proves rather than only states the reverse inclusion in the full native directional quotient graph. The actual direction is any fixed continuous zero-start h, not assumed to be a bounded-control primitive. A weighted coefficient representative gives the two-sided derivative by l1 dominated convergence. The coefficient unit resolvent a_i/(1-i beta_i) descends through the original relations: an explicit HUMAN Bochner Laplace integral proves kernel preservation. The resulting bounded quotient resolvent has graph (R_h q,R_h q-q). For any native derivative pair (q,v), the isometric-group equation on q-R_h(q-v) forces that difference to vanish, proving maximality and exact existential weighted representative domain. No unique or every-representative coefficient requirement is imposed. Graph closedness and simultaneous finite truncation give the full finite-character graph core, the latter explicitly HUMAN. This differs from the heat generator and does not assert heat smoothing along rough h or a physical-time path calculus. The original formal proof uses its verified dissipative graph bound for the same resolvent/kernel/maximality conclusions. Classical Engel\u2013Nagel Laplace-resolvent antecedent already inspected in the recorded primary passage; no new generation principle claimed.",
+    "Section 15 proves actual signed-kernel representation and conditional past pairing for the entire terminal Fourier completion, with uniform quotient norm bounds, true joint continuity of the scalar backward field, actual signed gain integrability/centering and exact partition-independent terminal telescope. The full weighted-total-variation-L1 past extension is a HUMAN consequence proved by clipping and absolute product Fubini. Four principal modules read fully. No infinite signed law, positive martingale filtration, optional stopping, Ito isometry, physical supremum-norm contraction or arbitrary adapted integral follows. These are classical Fourier/Fubini/completion mechanisms; no new priority claim."
   ],
   "review_scope": "Candidate-specific full principal-module reviews are described in editorial status and revision history. Four moving-character principal modules and FourierPathFutureIntegral were additionally read fully; HigherHeatL2 symbol definition inspected for constants. Imported proofs not exhaustively reread; mathematical sources remain frozen."
 }
