@@ -3501,6 +3501,204 @@
       "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
       "declaration_header": "theorem cubic_defect_eq_integrated_adjoint (T : \u211d\u22650) :\n    cubicAdjoint T - conditionalLeibnizCandidate T =\n      (2 : \u211d) \u2022 scalarCurry (predictableAdjoint (integratedTerminal T) : TimeProbabilityL2)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L47"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 21,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "def boundedMultiplier (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) : Lp H 2 \u03bc \u2192L[\u211d] Lp H 2 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L21"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier_coeFn",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 49,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedMultiplier_coeFn (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) (u : Lp H 2 \u03bc) :\n    boundedMultiplier f hf u =\u1d50[\u03bc] fun \u03c9 \u21a6 f \u03c9 \u2022 u \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L49"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier_add",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 54,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedMultiplier_add (f g : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) (hg : MemLp g \u221e \u03bc) :\n    boundedMultiplier (H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L54"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier_mul",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 65,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedMultiplier_mul (f g : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) (hg : MemLp g \u221e \u03bc) :\n    boundedMultiplier (H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L65"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier_const",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 76,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedMultiplier_const (c : \u211d) :\n    boundedMultiplier (fun _ : \u03a9 \u21a6 c) (memLp_top_const c) =\n      c \u2022 ContinuousLinearMap.id \u211d (Lp H 2 \u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L76"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplier_symmetric",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 86,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedMultiplier_symmetric (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) (u v : Lp H 2 \u03bc) :\n    inner \u211d (boundedMultiplier f hf u) v = inner \u211d u (boundedMultiplier f hf v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L86"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 92,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "def IsDivergenceMultiplier (\u03b4 : Lp H 2 \u03bc \u2192\u2097.[\u211d] Lp \u211d 2 \u03bc) (f : \u03a9 \u2192 \u211d) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L92"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.isDivergenceMultiplier_const",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 101,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem isDivergenceMultiplier_const (c : \u211d) : IsDivergenceMultiplier \u03b4 (fun _ \u21a6 c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L101"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.add",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 115,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem IsDivergenceMultiplier.add {f g : \u03a9 \u2192 \u211d}\n    (hf : IsDivergenceMultiplier \u03b4 f) (hg : IsDivergenceMultiplier \u03b4 g) :\n    IsDivergenceMultiplier \u03b4 (f + g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L115"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.mul",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 135,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem IsDivergenceMultiplier.mul {f g : \u03a9 \u2192 \u211d}\n    (hf : IsDivergenceMultiplier \u03b4 f) (hg : IsDivergenceMultiplier \u03b4 g) :\n    IsDivergenceMultiplier \u03b4 (f * g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L135"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedMultiplierAlgebra",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 158,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "def boundedMultiplierAlgebra : Subalgebra \u211d (\u03a9 \u2192 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L158"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.isDivergenceMultiplier_bounded",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 166,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem isDivergenceMultiplier_bounded (A : Lp H 2 \u03bc \u2192L[\u211d] Lp \u211d 2 \u03bc)\n    (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) : IsDivergenceMultiplier (A.toPMap \u22a4) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L166"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.divergenceCommutator_unique",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 178,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem divergenceCommutator_unique (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc)\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc)))\n    (hdom : \u2200 u : \u03b4.domain, boundedMultiplier f hf (u : Lp H 2 \u03bc) \u2208 \u03b4.domain)\n    (R S : Lp H 2 \u03bc \u2192L[\u211d] Lp \u211d 2 \u03bc)\n    (hR : \u2200 u : \u03b4.domain, \u03b4 \u27e8boundedMultiplier f hf u, hdom u\u27e9 =\n      boundedMultiplier f hf (\u03b4 u) - R (u : Lp H 2 \u03bc))\n    (hS : \u2200 u : \u03b4.domain, \u03b4 \u27e8boundedMultiplier f hf u, hdom u\u27e9 =\n      boundedMultiplier f hf (\u03b4 u) - S (u : Lp H 2 \u03bc)) : R = S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L178"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.adjoin_le_boundedMultiplierAlgebra",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 196,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem adjoin_le_boundedMultiplierAlgebra (s : Set (\u03a9 \u2192 \u211d))\n    (hs : \u2200 f \u2208 s, IsDivergenceMultiplier \u03b4 f) :\n    Algebra.adjoin \u211d s \u2264 boundedMultiplierAlgebra \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L196"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.preserves_adjoint_domain",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 204,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem IsDivergenceMultiplier.preserves_adjoint_domain {f : \u03a9 \u2192 \u211d}\n    (hf : MemLp f \u221e \u03bc) (h : IsDivergenceMultiplier \u03b4 f)\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc))) (F : \u03b4.adjoint.domain) :\n    boundedMultiplier f hf (F : Lp \u211d 2 \u03bc) \u2208 \u03b4.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L204"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedToL2",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 227,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "def boundedToL2 (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) : Lp \u211d 2 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L227"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedToL2_coeFn",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 230,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedToL2_coeFn (f : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) :\n    boundedToL2 f hf =\u1d50[\u03bc] f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L230"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.boundedToL2_mul",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 234,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem boundedToL2_mul (f g : \u03a9 \u2192 \u211d) (hf : MemLp f \u221e \u03bc) (hg : MemLp g \u221e \u03bc) :\n    boundedToL2 (f * g) (mul_memLp hf hg) = boundedMultiplier f hf (boundedToL2 g hg)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L234"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.one_mem_adjoint_domain",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 242,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem one_mem_adjoint_domain\n    (hcenter : \u2200 u : \u03b4.domain, (\u222b \u03c9, (\u03b4 u : \u03a9 \u2192 \u211d) \u03c9 \u2202\u03bc) = 0) :\n    boundedToL2 (fun _ \u21a6 (1 : \u211d)) (memLp_top_const 1) \u2208 \u03b4.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L242"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.mem_adjoint_domain",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 259,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem IsDivergenceMultiplier.mem_adjoint_domain {f : \u03a9 \u2192 \u211d}\n    (hf : MemLp f \u221e \u03bc) (h : IsDivergenceMultiplier \u03b4 f)\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc)))\n    (hcenter : \u2200 u : \u03b4.domain, (\u222b \u03c9, (\u03b4 u : \u03a9 \u2192 \u211d) \u03c9 \u2202\u03bc) = 0) :\n    boundedToL2 f hf \u2208 \u03b4.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L259"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.multiplierAlgebra_product_mem_adjoint_domain",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 277,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem multiplierAlgebra_product_mem_adjoint_domain\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc)))\n    (hcenter : \u2200 u : \u03b4.domain, (\u222b \u03c9, (\u03b4 u : \u03a9 \u2192 \u211d) \u03c9 \u2202\u03bc) = 0)\n    (f g : boundedMultiplierAlgebra \u03b4) :\n    \u2203 hfg : MemLp ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) \u221e \u03bc,\n      boundedToL2 ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) hfg \u2208 \u03b4.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L277"
+    },
+    {
+      "paper": "Section 17 / Proposition 17.1: original densely defined divergence, bounded real multipliers preserving its domain and bounded commutator; unital algebra closure, commutator uniqueness, actual adjoint-domain invariance and centered finite-measure algebra product membership. Displayed adjoint equality, graph-norm estimate and chosen constant-generated non-density example are explicitly human deductions. No pointwise derivative product rule or graph density asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.generatedAlgebra_product_mem_adjoint_domain",
+      "file": "Foundation/MultiplierCore.lean",
+      "line": 290,
+      "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
+      "declaration_header": "theorem generatedAlgebra_product_mem_adjoint_domain\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc)))\n    (hcenter : \u2200 u : \u03b4.domain, (\u222b \u03c9, (\u03b4 u : \u03a9 \u2192 \u211d) \u03c9 \u2202\u03bc) = 0)\n    (s : Set (\u03a9 \u2192 \u211d)) (hs : \u2200 f \u2208 s, IsDivergenceMultiplier \u03b4 f)\n    (f g : Algebra.adjoin \u211d s) :\n    \u2203 hfg : MemLp ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) \u221e \u03bc,\n      boundedToL2 ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) hfg \u2208 \u03b4.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L290"
     }
   ],
   "human_reorganization": [
@@ -3520,7 +3718,8 @@
     "The conditional residual variance 4||U_RAP||^2+2||RAR||_HS^2 is a labelled human deduction: finite adapted Gaussian bases, vanishing third moments and strong L2/L1 completion. It is not a named formal conditional-variance theorem. The actual cross product 2G0G1 has zero conditional mean given G0 but conditional variance 4G0^2, hence is not independent of the observations.",
     "Section 14 reconstructs the original predictable L2 representation of M_T^2-E M_T^2 for M_t=(W_t^2-t)/2. The actual correction is 2(T-t)W_t and its terminal squared defect is T^4/3. The ordinary Ito formula retains its random quadratic variation and is not refuted. Exact naive/correction/cross energies 5*T^4/2, T^4/3, T^4/3, conditional covariance (T-t)W_t and the direct polynomial-localization proof are labelled HUMAN deductions; full conditional product expectation is not replaced by the product of conditional means. No projected-Malliavin representation on an unstated domain is asserted.",
     "Section 15 reconstructs the full Gaussian derivative of the original Brownian Ito integral on the independently specified predictable Sobolev graph. Finite-chaos bounded graph maps and Bochner dominated convergence prove equality with the actual adapted polynomial graph closure; no graph approximation is assumed in the theorem. The actual parameterized correction is an isometry only on its proved admissible range and is orthogonal to all embedded predictable fields. Exact derivative/graph energies and a mean-profile Poincare bound give deterministic-profile rigidity. The B_a times (B_b-B_a) step witness saturates the bound and retains correction energy a(b-a). This full source-field correction is distinguished from the preceding two predictable coefficient corrections, whose cross energy is nonzero. No converse characterization of all Ito targets, physical-time derivative or observed-IBM calculus is inferred.",
-    "Section 16 reconstructs a separate Brownian cubic obstruction for the bounded predictable adjoint K=I*, retaining its distinction from the unbounded Malliavin derivative. On F=W_T^2 and G=W_T, the actual conditional-product candidate is 3W_t^2+(T-t), whereas K(FG)=3W_t^2+3(T-t). Their deterministic error 2(T-t) has squared time-probability norm 4T^3/3; replacing by running 3W_t^2 instead gives 3T^3. All candidate and true fields are proved predictable L2 using genuine Gaussian fourth moments. The exact error is 2KJ_T, with J_T the original first-chaos ramp observable. Identification J_T=int_0^T W_s ds by a Bochner deterministic-source integral and bounded Ito-map interchange is explicitly a HUMAN reformulation; the terminal error identity IB=W_T^3-2J_T is likewise a HUMAN isometry consequence. No arbitrary multiplier-domain closure, general conditional derivation, bounded-C3 counterexample, physical-time IBM calculus or new product principle is inferred."
+    "Section 16 reconstructs a separate Brownian cubic obstruction for the bounded predictable adjoint K=I*, retaining its distinction from the unbounded Malliavin derivative. On F=W_T^2 and G=W_T, the actual conditional-product candidate is 3W_t^2+(T-t), whereas K(FG)=3W_t^2+3(T-t). Their deterministic error 2(T-t) has squared time-probability norm 4T^3/3; replacing by running 3W_t^2 instead gives 3T^3. All candidate and true fields are proved predictable L2 using genuine Gaussian fourth moments. The exact error is 2KJ_T, with J_T the original first-chaos ramp observable. Identification J_T=int_0^T W_s ds by a Bochner deterministic-source integral and bounded Ito-map interchange is explicitly a HUMAN reformulation; the terminal error identity IB=W_T^3-2J_T is likewise a HUMAN isometry consequence. No arbitrary multiplier-domain closure, general conditional derivation, bounded-C3 counterexample, physical-time IBM calculus or new product principle is inferred.",
+    "Section 17 reconstructs the standard bounded-commutator route to genuine product-domain membership for the actual densely defined divergence. Original-domain invariance and a bounded commutator imply adjoint-domain invariance by an explicit Riesz representer; constants, sums and products form an algebra, and centering on a finite measure puts every admissible function and generated algebra product in the actual adjoint domain. The explicit adjoint equality and graph-norm bound are human consequences of that representer proof. A supplied zero-operator Gaussian example shows why an arbitrarily chosen admissible generated algebra need not be graph dense; it does not claim that the full admissible algebra is non-dense. For bounded everywhere-defined divergences every bounded multiplier is admissible, so this criterion does not imply a Leibniz rule. No particular unbounded Gaussian divergence is claimed to have a dense multiplier core. Classical operator argument, no new principle or priority claim."
   ],
   "literature": [
     {

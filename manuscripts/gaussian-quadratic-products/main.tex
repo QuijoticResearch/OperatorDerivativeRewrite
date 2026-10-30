@@ -9,6 +9,7 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\E}{\mathbb E}
 \newcommand{\ind}{\mathbf1}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
 \newcommand{\R}{\mathbb R}
 \newcommand{\Hh}{\mathcal H}
 \newcommand{\HS}{\mathrm{HS}}
@@ -1312,6 +1313,98 @@ above. No new general product principle is claimed.
 \texttt{PredictableLeibnizIntegratedCorrection.integratedTerminal\_adjoint},
 \texttt{cubic\_defect\_eq\_integrated\_adjoint}.
 \par\endgroup
+
+\section{A positive product-domain criterion from bounded commutators}
+The preceding counterexample concerns an identity for a bounded predictable
+adjoint. A separate, standard Hilbert-adjoint argument gives a useful positive
+domain result, without assuming such an identity. Here the operator is supplied
+in advance; it is not defined by assigning a derivative to each multiplier.
+
+Let $\mu$ be a finite measure, $E=L^2(\mu;H)$ and $F=L^2(\mu;\R)$,
+where $H$ is a real Hilbert space. Let $\delta:D(\delta)\subset E\to F$
+be linear and densely defined. Closedness is not needed below.
+For a real essentially bounded function $f$, write $M_f^E,M_f^F$
+for multiplication on the two spaces. Both are bounded, self-adjoint,
+and have norm at most $\|f\|_\infty$.
+Call $f$ admissible if $M_f^E D(\delta)\subset D(\delta)$ and there
+is a bounded $R_f:E\to F$ such that
+\begin{equation}\label{eq:multcomm}
+ \delta M_f^E u=M_f^F\delta u-R_fu,\qquad u\in D(\delta).
+\end{equation}
+Density makes $R_f$ unique: two such bounded maps agree on the dense
+domain and hence everywhere.
+
+\begin{proposition}\label{prop:multadjoint}
+Admissible functions form a unital real algebra. For every admissible $f$,
+\[
+ M_f^F D(\delta^*)\subset D(\delta^*),\qquad
+ \delta^*M_f^Fv=M_f^E\delta^*v+R_f^*v.
+\]
+In particular, with graph norms $\|v\|_G=\|v\|+\|\delta^*v\|$,
+\[
+ \|M_f^Fv\|_G\leq
+ (\|f\|_\infty+\|R_f\|)\|v\|_G.
+\]
+If $\int\delta u\,d\mu=0$ for all $u\in D(\delta)$, every
+admissible $f$, and every finite algebraic combination of any admissible
+generating family, belongs to $D(\delta^*)$ as its genuine $L^2$ class.
+\end{proposition}
+\begin{proof}
+Constants satisfy \eqref{eq:multcomm} with zero commutator by linearity.
+Sums have commutator $R_f+R_g$. For products, domain invariance permits
+applying \eqref{eq:multcomm} first to $f$ at $M_g^Eu$, then to $g$:
+\[
+ \delta M_{fg}^Eu=M_{fg}^F\delta u
+       -(M_f^FR_g+R_fM_g^E)u.
+\]
+The displayed remainder is bounded. This proves algebra closure,
+including scalar multiples and negatives.
+
+For $v\in D(\delta^*)$ and $u\in D(\delta)$, self-adjointness of
+the real multipliers and \eqref{eq:multcomm} give
+\begin{align*}
+ \langle M_f^Fv,\delta u\rangle_F
+ &=\langle v,M_f^F\delta u\rangle_F\\
+ &=\langle v,\delta M_f^Eu+R_fu\rangle_F\\
+ &=\langle M_f^E\delta^*v+R_f^*v,u\rangle_E.
+\end{align*}
+This is the actual adjoint-domain representer criterion and proves
+the formula; no pointwise Leibniz rule has been inserted.
+The norm estimate follows by the triangle inequality and
+$\|R_f^*\|=\|R_f\|$.
+Since $\mu$ is finite, $1\in F$. Centering says exactly that
+$\langle1,\delta u\rangle_F=0$ on the domain, so
+$1\in D(\delta^*)$ and $\delta^*1=0$. The preceding formula applied
+to $1$ now yields $f=M_f^F1\in D(\delta^*)$ and
+$\delta^*f=R_f^*1$. Algebra closure proves the last assertion.
+\end{proof}
+
+The identity proved here contains the operator $R_f^*v$.
+It does not identify that term with the pointwise product
+$v\delta^*f$, even when $\delta^*f$ is defined. Nor does the algebra
+assertion imply graph density. For example, on a nontrivial Gaussian
+probability space take the densely defined zero operator $\delta=0$
+on all of $L^2$. The algebra generated only by the constant one is
+the constants. Its graph norm is the ordinary $L^2$ norm, and a centered
+unit Gaussian coordinate is orthogonal to it. The algebra therefore
+fails even ordinary $L^2$ density. This example concerns the chosen
+generated algebra, not the algebra of all admissible functions.
+
+For any bounded everywhere-defined $A:E\to F$, every bounded $f$ is
+admissible: take $R_f=M_f^FA-AM_f^E$. Consequently admissibility in
+that case cannot by itself establish a derivation rule for $A^*$.
+This explains why a positive product-domain criterion is consistent
+with the explicit failure in the preceding section.
+
+\par\noindent
+The source is \code{Foundation/MultiplierCore.lean}, read in full.
+Its \code{IsDivergenceMultiplier} specifies the original-domain
+condition, and \code{preserves_adjoint_domain} constructs the displayed
+representer. The explicit adjoint equality, graph-norm bound and
+constant-generated non-density example above are human deductions
+printed with their proofs. This is a classical bounded-commutator
+argument, not a new general operator principle or a claim that any
+particular unbounded Gaussian divergence admits a dense multiplier core.
 
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
