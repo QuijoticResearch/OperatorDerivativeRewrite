@@ -1,0 +1,514 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Brownian clock mixtures:\protect\\exact transforms, singular time evolution\protect\\and the limits of one-time information}
+\author{Project Stardust\\\small A classical formalization companion}
+\date{Reviewed editorial draft, October 30, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Two-sided Brownian motion evaluated at a signed Brownian clock and
+Brownian motion evaluated at its reflected clock have the same one-time
+Gaussian mixture laws. We reconstruct their exact characteristic
+functions, the boundary term in their fourth-order time equation,
+and the square-root cusp that prevents a finite initial time derivative
+at any nonzero Fourier frequency. The laws are genuine probabilities,
+but do not form a convolution semigroup. A separate covariance
+calculation proves the reflected-clock observation is not a martingale
+in its observed past. A hidden-clock local-time formula concerns the
+scenery average and does not transfer to the unaveraged observation.
+All proofs retain the standard Brownian variance convention and are
+matched to a frozen Lean library. The Brownian-time PDE mechanism is
+classical, with a direct primary comparison to Allouba and Zheng;
+no new PDE, fractional generator, full observed-filtration calculus,
+or priority claim is made.
+\end{abstract}
+
+\section{The two actual models and what is being compared}
+Let $W$ be a standard Brownian motion on $[0,\infty)$ and let $B$
+be an independent continuous two-sided Brownian scenery, normalized by
+\begin{equation}\label{eq:scenery}
+ \E B(r)=0,\qquad
+ \E B(r)B(q)=\frac{|r|+|q|-|r-q|}{2}.
+\end{equation}
+In particular $B(r)$ has variance $|r|$. On each half-line the
+scenery has the usual Brownian covariance, and the two halves have
+independent Gaussian finite-dimensional laws. Define
+\[
+ Z_t^-=B(W_t),\qquad Z_t^+=B(|W_t|).
+\]
+The superscripts label signed and reflected clocks; they are not
+positive and negative parts of a single random variable. Both
+processes are constructed on the product of the independent source
+spaces. Evaluation of continuous paths at a continuous random time
+gives continuous sample paths. Joint measurability follows from the
+jointly continuous evaluation map on continuous-path space and the
+measurability of the two source paths. Thus the expectations below
+refer to actual measurable compositions, not formal random times.
+
+We prove results about their common one-time law $\mu_t$, and state
+separately which assertions require the actual temporal coupling.
+Equality of one-time laws supplies neither equality of process laws
+nor equality of natural filtrations. The standard Brownian convention
+here is $\E W_t^2=t$, with spatial generator $\tfrac12\partial_x^2$.
+It differs from the variance-$2t$ convention used for the signed
+higher-heat kernels in another companion.
+
+The exact source construction is in \code{SignedIBMRealization}.
+Its conditional Gaussian theorem retains the entire fixed clock path;
+the one-time comparison is in \code{IBMOneTimeMixture}.
+No change to either model or its verified hypotheses is made here.
+
+\section{The common Gaussian mixture}
+Write $\gamma_v=N(0,v)$, including $\gamma_0=\delta_0$.
+The map $r\mapsto\gamma_{|r|}$ is a probability kernel.
+For example, for bounded continuous $f$, its integral is
+$\E f(\sqrt{|r|}G)$ with $G\sim N(0,1)$; dominated convergence
+gives continuity in $r$. The usual generating-class argument then
+gives measurability of the kernel on Borel sets. Define
+\begin{equation}\label{eq:mixture}
+ \mu_t(A)=\int_\R\gamma_{|r|}(A)\,\gamma_t(dr).
+\end{equation}
+This is a probability measure, since each conditional law has total
+mass one and the mixing law is a probability.
+
+\begin{theorem}\label{thm:law}
+For every fixed $t\geq0$, both $Z_t^-$ and $Z_t^+$ have law $\mu_t$.
+For every bounded Borel $f$,
+\begin{equation}\label{eq:expectation}
+ \E f(Z_t^-)=\E f(Z_t^+)
+ =\int_\R\int_\R f(x)\,\gamma_{|r|}(dx)\,\gamma_t(dr).
+\end{equation}
+The same formula holds for nonnegative Borel tests, with possibly
+infinite values, and for absolutely integrable tests.
+\end{theorem}
+\begin{proof}
+Fix the clock source. At its value $W_t=r$, the signed observation
+is the scenery coordinate $B(r)$, whose law is $N(0,|r|)$ by
+\eqref{eq:scenery}. The reflected observation is $B(|r|)$, with
+the same variance and law. Independence makes the scenery source
+measure unchanged when the clock is fixed. Apply Tonelli first to
+indicators of Borel sets. The resulting integral is exactly
+\eqref{eq:mixture}, proving the two pushforward identities. Simple
+approximation proves the nonnegative test formula. Applying it to
+the absolute value, and then to positive and negative parts or real
+and imaginary parts, proves every integrable version. In particular
+bounded tests are integrable under these probability laws.
+\end{proof}
+
+There is a concrete limitation to this comparison. At fixed signed
+outer times $1,-1$, the scenery covariance is zero, whereas at the
+reflected times $|1|,|-1|$ it is one. More generally, conditional on
+a clock path $w$, the signed two-time covariance is
+\[
+ \frac{|w(s)|+|w(t)|-|w(t)-w(s)|}{2},
+\]
+while the reflected covariance is $\min(|w(s)|,|w(t)|)$.
+The formulas follow directly from \eqref{eq:scenery}; the latter
+uses $a+b-|a-b|=2\min(a,b)$ for nonnegative $a,b$.
+These are conditional scenery statements, not a claimed identification
+of the unconditional two-time laws from one-dimensional marginals.
+
+\subsection*{Moments and a one-time scaling check}
+Let $G_1,G_2$ be independent standard normals on an auxiliary product
+space. The mixture construction gives the distributional identity
+\[
+ Z_t^\pm\ \stackrel{\rm law}=\ t^{1/4}\sqrt{|G_2|}\,G_1.
+\]
+Indeed $W_t\stackrel{\rm law}=\sqrt t\,G_2$, and conditional
+scenery variance is its absolute value. This identity is about each
+fixed time. No simultaneous pathwise equality with this auxiliary
+pair is asserted.
+Gaussian absolute moments are finite of every fixed positive order,
+so Tonelli proves integrability before any moment factorization.
+Using $\E|G|=\sqrt{2/\pi}$, $\E G^2=1$,
+$\E G^4=3$, and $\E G^8=105$ gives
+\begin{equation}\label{eq:moments}
+ \E Z_t^\pm=0,\qquad
+ \E(Z_t^\pm)^2=\sqrt{\frac{2t}{\pi}},\qquad
+ \E(Z_t^\pm)^4=3t,\qquad
+ \E(Z_t^\pm)^8=315t^2.
+\end{equation}
+For example the eighth moment is $105\E W_t^4=315t^2$;
+all conditional integrands are nonnegative. The normal moment values
+follow by integration by parts against $e^{-x^2/2}$, with boundary
+terms zero; the absolute first moment follows by integrating
+$x e^{-x^2/2}$ on the positive half-line. For $t>0$ the kurtosis is
+$3\pi/2>3$, so this nondegenerate one-time law is not Gaussian.
+The displayed global moment evaluations and this diagnostic are human
+consequences of the actual mixture; the formal actual quartic and
+eighth-integrability constructions are retained in the source map.
+
+\section{An exact transform and its boundary identity}
+Put $c=(2\pi)^{-1/2}$ and
+\[
+ L(b)=\E e^{-b|G|}=2c\int_0^\infty e^{-r^2/2-br}\,dr,
+ \qquad b\in\R.
+\]
+The integral is finite for every fixed $b$: completing the square
+leaves a translated Gaussian tail. In the physical applications
+below $b\geq0$, so $0<L(b)\leq1$ and $L(0)=1$.
+
+\begin{proposition}\label{prop:transform}
+For angular Fourier frequency $\xi\in\R$,
+\begin{equation}\label{eq:characteristic}
+ \widehat\mu_t(\xi):=\E e^{i\xi Z_t^\pm}
+ =L\left(\frac{\xi^2\sqrt t}{2}\right).
+\end{equation}
+For $b\geq0$,
+\begin{equation}\label{eq:boundary}
+ \E\{|G|e^{-b|G|}\}=2c-bL(b),\qquad
+ L'(b)=bL(b)-2c.
+\end{equation}
+The derivative at $b=0$ is an ordinary two-sided parameter derivative.
+\end{proposition}
+\begin{proof}
+Conditional on the clock, the characteristic function of the scenery
+normal is $e^{-\xi^2|W_t|/2}$. Its modulus is at most one, so Fubini
+is justified directly on the source probability product. Brownian
+scaling $|W_t|\stackrel{\rm law}=\sqrt t|G|$ gives
+\eqref{eq:characteristic}.
+
+For the boundary identity set $h_b(r)=e^{-r^2/2-br}$ on $r\geq0$.
+It has derivative $h_b'=-(r+b)h_b$, value $h_b(0)=1$, and limit
+zero at infinity. Both $h_b$ and $rh_b$ are integrable for $b\geq0$,
+by domination by a Gaussian and its first moment. Integration of the
+derivative on $[0,R]$ and then $R\to\infty$ yields
+\[
+ \int_0^\infty rh_b(r)\,dr
+       =1-b\int_0^\infty h_b(r)\,dr.
+\]
+Multiply by $2c$. This is the first formula in \eqref{eq:boundary}.
+Differentiating the probability integral for $L$ gives the negative
+of this moment. On a neighborhood inside $b>0$, the derivative
+integrands are dominated by $|G|$. Around zero, use instead
+$|G|e^{|G|}$ for $|b|\leq1$. This has finite Gaussian integral:
+its tail is a polynomial times $e^{-(|r|-1)^2/2}$ times a constant.
+These majorants justify differentiation, including at zero.
+\end{proof}
+
+Completing the square also gives the useful exact expression
+\[
+ L(b)=2c e^{b^2/2}\int_b^\infty e^{-v^2/2}\,dv.
+\]
+This identity is a human re-expression of the defining integral;
+it is not a separate mapped special-function implementation.
+For $b>0$, the integral representation proves the elementary upper
+bound $L(b)\leq2c/b$ by dropping $e^{-r^2/2}$ and integrating
+$e^{-br}$. The bound $L(b)\leq1$ remains preferable near zero.
+
+\section{The singular fourth-order time equation}
+For $a\geq0$ define $H_a(t)=L(a\sqrt t)$ for $t\geq0$.
+This is continuous at zero and is positive and at most one.
+For $t>0$, the chain rule and \eqref{eq:boundary} give
+\begin{equation}\label{eq:timeODE}
+ H_a'(t)=\frac{a^2}{2}H_a(t)-\frac{ac}{\sqrt t}.
+\end{equation}
+At $a=0$ this is the constant identity. At $a>0$ the formula follows
+from $\partial_t\sqrt t=1/(2\sqrt t)$ and
+$aL'(a\sqrt t)=a^2\sqrt t L(a\sqrt t)-2ac$.
+
+\begin{theorem}\label{thm:fourierODE}
+At every $t>0$ and every real frequency,
+\begin{equation}\label{eq:fourierODE}
+ \partial_t\widehat\mu_t(\xi)
+ =\frac{\xi^4}{8}\widehat\mu_t(\xi)
+       -\frac{\xi^2}{2\sqrt{2\pi t}}.
+\end{equation}
+Equivalently, for $T\geq0$,
+\begin{equation}\label{eq:integratedODE}
+ \widehat\mu_T(\xi)
+ =1+\frac{\xi^4}{8}\int_0^T\widehat\mu_s(\xi)\,ds
+       -\xi^2 c\sqrt T.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Substitute $a=\xi^2/2$ into \eqref{eq:timeODE} and use
+\eqref{eq:characteristic}. To integrate to zero, first apply the
+ordinary fundamental theorem on $[\varepsilon,T]$.
+The bounded characteristic function is integrable in time and
+$s^{-1/2}$ is integrable at zero. Letting $\varepsilon\downarrow0$
+and using $\widehat\mu_0(\xi)=1$ proves
+\eqref{eq:integratedODE}, since $\int_0^T s^{-1/2}ds=2\sqrt T$.
+The $T=0$ identity is immediate.
+\end{proof}
+
+The sign of the fourth-order term is positive in Fourier space.
+A stable biharmonic evolution instead has multiplier $e^{-t\xi^4}$.
+Here the negative source in \eqref{eq:fourierODE}, depending on the
+initial law, is indispensable. Omitting it does not preserve the actual
+probability characteristic function. In fact the derivative is strictly
+negative for $a>0$:
+\[
+ H_a'(t)=-\frac{a}{2\sqrt t}\E\{|G|e^{-a\sqrt t|G|}\}<0.
+\]
+Strictness follows because $|G|>0$ almost surely and the integrand is
+integrable and positive there. Thus the positive fourth-order term
+and the negative boundary term compensate in an exact probability
+identity; the fourth-order term by itself is not its Markov generator.
+
+\subsection*{A concrete spatial formulation with all interchanges checked}
+Let $\phi\in L^1([-R,R];\C)$ for finite $R\geq0$, extended by zero, and set
+\[
+ f(x)=\int_{-R}^R\phi(\xi)e^{i\xi x}\,d\xi,
+ \qquad u(t,x)=\E f(x+Z_t^\pm).
+\]
+Then $f$ is bounded and smooth, with every spatial derivative obtained
+by inserting $(i\xi)^k$ under the integral. In particular
+$\|f^{(k)}\|_\infty\leq R^k\|\phi\|_1$ for $k>0$.
+Fubini uses the integrable majorant $|\phi(\xi)|$ and gives
+\[
+ u(t,x)=\int_{-R}^R\phi(\xi)e^{i\xi x}
+                     \widehat\mu_t(\xi)\,d\xi.
+\]
+On a compact positive time interval $t\geq\delta>0$, the absolute
+time derivative of the multiplier is at most
+$R^4/8+R^2c/(2\sqrt\delta)$ by \eqref{eq:fourierODE}.
+This constant times $|\phi|$ dominates time difference quotients
+locally, and $R^4|\phi|$ dominates the fourth spatial derivative.
+Consequently dominated differentiation proves
+\begin{equation}\label{eq:PDE}
+ \partial_tu(t,x)=\tfrac18\partial_x^4u(t,x)
+                  +\frac{f''(x)}{\sqrt{8\pi t}},
+ \qquad u(0,x)=f(x).
+\end{equation}
+Indeed $(i\xi)^4=\xi^4$ and $(i\xi)^2=-\xi^2$, giving both
+the sign and the constant. Initial convergence is uniform in $x$:
+dominate $|\phi(\xi)|\,|\widehat\mu_t(\xi)-1|$ by $2|\phi|$.
+This compact-frequency spatial statement is an explicit human
+Fubini consequence of the formal characteristic equation. It is not
+an asserted general generator-domain theorem or a pathwise It\^o
+formula. Its PDE mechanism is the classical Brownian-time equation
+of Allouba--Zheng~\cite{az}, with the same Brownian normalization.
+
+\section{The square-root cusp and failure of convolution composition}
+The parameter derivative at zero yields
+\begin{equation}\label{eq:cusp}
+ \lim_{t\downarrow0}\frac{H_a(t)-1}{\sqrt t}=-2ca.
+\end{equation}
+This follows by substituting $b=a\sqrt t$ into the defining difference
+quotient of $L'(0)$; $a=0$ is constant. For $a>0$, the limit is
+strictly negative, so $H_a$ cannot have a finite right time derivative
+at zero. If it had derivative $d$, then
+$(H_a(t)-1)/\sqrt t=((H_a(t)-1)/t)\sqrt t\to0$,
+contradicting \eqref{eq:cusp}. The formal source also proves this by
+composing a hypothetical time derivative with $t=s^2$: the chain
+rule gives derivative zero, whereas $L(as)$ has derivative $-2ca$.
+Thus the cusp conclusion does not rest on a formal interchange of a
+singular derivative at the origin.
+
+\begin{proposition}\label{prop:nosemigroup}
+The probability family $\mu_t$ is not a convolution semigroup.
+In particular it cannot be the marginal family at zero of a process
+with stationary independent increments.
+\end{proposition}
+\begin{proof}
+Suppose $\mu_{s+t}=\mu_s*\mu_t$ for all nonnegative $s,t$.
+Convolution multiplies characteristic functions, so at $\xi=1$
+and $t=1$ we would have
+\[
+ H_{1/2}(s+1)=H_{1/2}(s)H_{1/2}(1),\qquad s\geq0.
+\]
+The last factor is strictly positive. Therefore
+$H_{1/2}(s)=H_{1/2}(s+1)/H_{1/2}(1)$ would have a finite
+right derivative at zero, since the numerator is differentiable at
+positive time one. This contradicts the cusp.
+For stationary independent increments starting at zero, the law at
+$s+t$ is the convolution of the law at $s$ with that of the
+independent length-$t$ increment, giving precisely the excluded law.
+\end{proof}
+
+There is a second explicit check using \eqref{eq:moments}.
+The centered law $\mu_1*\mu_1$ has second moment
+$2\sqrt{2/\pi}$, whereas $\mu_2$ has second moment $2/\sqrt\pi$.
+Both moments are finite, and independent centered summands add
+their variances, so the measures differ. This particular witness is
+a human deduction from the actual mixture moments; the formal
+convolution obstruction uses the preceding transform argument.
+Neither argument excludes a general nontranslation Markov model
+merely from its one-time marginals. Convolution composition and
+the full Markov property have different hypotheses.
+
+\section{A temporal obstruction requiring the actual reflected model}
+We now use $Z_t=Z_t^+$ on its original source product, rather than
+only the family $\mu_t$. All pairings are integrable by
+\eqref{eq:moments} and Cauchy--Schwarz. Conditional on the clock,
+\eqref{eq:scenery} at nonnegative times gives
+\[
+ \E_B\{Z_s(Z_t-Z_s)\}
+  =\min(|W_s|,|W_t|)-|W_s|
+  =-(|W_s|-|W_t|)_+.
+\]
+Fubini is justified by the original joint $L^2$ bounds. Hence
+\begin{equation}\label{eq:negative}
+ \E\{Z_s(Z_t-Z_s)\}
+      =-\E (|W_s|-|W_t|)_+.
+\end{equation}
+The nonnegative right-hand integrand is bounded by $|W_s|$, so is
+integrable. At $s=1,t=2$ its expectation is strictly positive.
+Indeed the event
+\[
+ 1<W_1<2,\qquad -1<W_2-W_1<-\tfrac12
+\]
+has positive probability: its two coordinates are independent
+nondegenerate standard normals, each interval has positive Gaussian
+mass, and the event probability is their positive product. On it
+$0<W_2<W_1$, so $(|W_1|-|W_2|)_+>0$.
+Thus \eqref{eq:negative} is strictly negative at those times.
+
+If $Z$ were a square-integrable martingale for its raw observed past,
+then $\E(Z_2-Z_1\mid\sigma(Z_r:r\leq1))=0$.
+Pair with the past-measurable $Z_1\in L^2$, or first with bounded
+truncations and pass by Cauchy--Schwarz, to get zero in
+\eqref{eq:negative}, a contradiction. More generally, every closed
+past subspace containing $Z_1$ fails to project $Z_2$ onto $Z_1$:
+the orthogonal projection identity paired with $Z_1$ would give
+that same zero. This is the exact actual temporal obstruction;
+it does not claim that the process has no other observed martingales,
+or that a Markov property is disproved by the martingale test alone.
+
+\section{A source mean has a hidden-clock local-time formula}
+The conditional scenery average of a Fourier cosine is
+\[
+ M_t(\xi)=\E_B\cos(\xi B(|W_t|))
+         =e^{-a|W_t|},\qquad a=\xi^2/2.
+\]
+This is an actual scalar function of the Brownian clock. Its ordinary
+Brownian filtration and the observed IBM filtration are not identified
+by the one-time mixture theorem.
+
+Use the symmetric local time convention fixed by Tanaka's formula
+\[
+ |W_t|=\int_0^t\operatorname{sgn}(W_s)\,dW_s+L_t^0,
+ \qquad \operatorname{sgn}(0)=0.
+\]
+The original constructed Brownian mass path is this $L^0$; its
+continuous Stieltjes measure is supported where $W_s=0$.
+Tanaka and that supported-mass construction are established in the
+sticky-clock companion~\cite{sticky}; here we use their stated
+classical Brownian identity.
+
+For $a\geq0$ a genuine global $C^2$ extension of $x\mapsto e^{-ax}$
+from the nonnegative half-line is
+\[
+ F_a(x)=\begin{cases} e^{ax}-2ax,&x<0,\\e^{-ax},&x\geq0.\end{cases}
+\]
+Its one-sided values and first derivatives agree at zero, with
+$F_a(0)=1$ and $F_a'(0)=-a$. Its second derivative is
+$a^2 e^{-a|x|}$ on both sides and continuously at zero.
+The derivative is bounded by $2a$ and the second derivative by
+$a^2$. Thus the ordinary $C^2$ semimartingale It\^o theorem applies
+to $F_a(|W|)$ on each finite horizon. The quadratic variation of
+$\int\operatorname{sgn}(W_s)dW_s$ is $t$: the zero set has
+Lebesgue measure zero almost surely, by
+$\E\int_0^T1_{\{W_s=0\}}ds=\int_0^T\Pp(W_s=0)ds=0$.
+The finite variation local time contributes no quadratic variation.
+The supported Stieltjes integral uses $F_a'(|W_s|)=-a$ when
+$dL_s^0\ne0$. It\^o therefore gives, at every fixed $T$ almost surely,
+\begin{equation}\label{eq:clockIto}
+ M_T(\xi)-1
+ =-a\int_0^T\operatorname{sgn}(W_s)e^{-a|W_s|}\,dW_s
+       -aL_T^0+\frac{a^2}{2}\int_0^T M_s(\xi)\,ds.
+\end{equation}
+The stochastic integrand is bounded by $a$ and predictable in the
+clock filtration, so its integral is square integrable with mean zero.
+The time integral is bounded by $T$. Tanaka implies
+$L_T^0=|W_T|-\int_0^T\operatorname{sgn}(W_s)dW_s\in L^2$,
+and $\E L_T^0=\E|W_T|=2c\sqrt T$.
+Taking expectations in \eqref{eq:clockIto} is consequently justified
+and gives exactly \eqref{eq:integratedODE}.
+
+The boundary term of the one-time PDE has a concrete hidden-clock
+origin. This does not make \eqref{eq:clockIto} an It\^o formula for
+the unaveraged $B(|W_t|)$ in its observed filtration. Its left side
+has already integrated out the scenery, and its stochastic integral
+is with respect to the original clock Brownian motion. The source
+theorem is almost sure for each fixed horizon; no simultaneous
+all-horizons version is claimed here.
+
+\section{Primary comparison and exact formal scope}
+Allouba and Zheng~\cite{az}, Theorem 0.1, equations (0.1)--(0.2),
+already give the Brownian-time initial-data source and fourth-order
+PDE. Their Section 1, first part of the proof, obtains the source
+by integrating the reflected clock density by parts twice. We read
+that theorem statement and the complete Brownian-time part of its
+proof on printed pages 2 and 4--5 of the primary preprint. We do
+not import the excursion-limit appendix, exit-time theorems or their
+separate half-derivative conditional generator. In particular the
+phrase ``half derivative'' there is not a license to assert a
+Caputo equation or an observed-past representation theorem here.
+
+The contributions of this companion are a readable reconstruction
+and an exact correspondence to verified source statements. The
+Gaussian mixture, Brownian-time PDE, normal moment tests, cusp and
+convolution test are classical mechanisms; no priority claim follows
+from their formalization or from grouping them in one paper.
+The compact-frequency PDE, integrated endpoint formula, explicit
+moment evaluations and particular second-moment convolution witness
+are labelled human consequences with proofs, not newly named Lean
+declarations. The primary literature already supplies a broader
+PDE setting than the compact-frequency illustration.
+
+The frozen baseline is
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+Principal source families, read in full, are
+\code{IBMOneTimeMixture} and \code{IBMOneTimeFourier}.
+\par\noindent
+The boundary and time calculations use
+\code{IBMGaussianLaplaceBoundary}.
+\par\noindent
+Their derivative chain is \code{IBMClockTransformDerivative} and
+\code{IBMClockTimeEvolution}.
+\par\noindent
+The exact final characteristic equation is in
+\code{IBMFourierTimeEquation}.
+\par\noindent
+The initial and convolution obstructions are in
+\code{IBMInitialCusp} and \code{IBMConvolutionObstruction}.
+\par\noindent
+The actual backtracking test is in \code{IBMClockBacktracking}.
+\par\noindent
+The past-projection consequence is in
+\code{IBMTemporalCovarianceObstruction}.
+\par\noindent
+The source-mean and damped reflection identities are in
+\code{IBMOneTimeSourceMeanIto}.
+\par\noindent
+The original $C^2$ extension is in \code{GaussianDampedReflectedIto}.
+
+The accompanying map gives exact declaration headers, source line
+links and byte hashes; the baseline receipt checks the existing full
+build and transitive axiom audit. The editorial work changes no
+mathematical source and runs no redundant Lean build.
+Nothing here completes intrinsic observed-filtration IBM calculus,
+constructs a Markov semigroup from $\mu_t$, establishes a full
+physical-time generator domain, or upgrades a one-time comparison
+to an equality of process laws. Those distinctions are mathematical
+hypotheses, not matters of notation.
+
+\begin{thebibliography}{9}
+\bibitem{az} H. Allouba and W. Zheng,
+Brownian-time processes: the PDE connection and the half-derivative
+generator, \emph{Ann. Probab.} \textbf{29} (2001), 1780--1795.
+Primary preprint arXiv:1005.3801v1, deposited 2010;
+manuscript dated January 2001.
+\url{https://arxiv.org/abs/1005.3801}.
+\bibitem{sticky} Project Stardust,
+\emph{Brownian sticky clocks: construction, holding time and causal
+recovery in the observed filtration}, reviewed editorial companion,
+\code{manuscripts/sticky-clock-recovery/}. The Brownian local-time
+and supported-mass construction is the prerequisite used in Section 7.
+\end{thebibliography}
+\end{document}

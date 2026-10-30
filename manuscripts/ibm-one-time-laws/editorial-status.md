@@ -1,0 +1,13 @@
+# Brownian clock mixtures — classical formalization companion
+
+REVIEWED_DRAFT. Eight pages, October 30, 2026. Frozen verified baseline `bab688bb6140cd6316c80680095a914ea0d346db`. No external release or submission. This focused companion is intentionally shorter than the preferred page range; no padding or novelty claim.
+
+Complete proofs reconstruct the actual signed/reflected one-time Gaussian mixture, exact characteristic and Gaussian boundary identity, positive-time fourth-order Fourier ODE with its singular initial-data source, and the initial square-root cusp and convolution obstruction. A separate actual coupling proof gives negative reflected-clock increment pairing and previous-value past-projection failure at times one and two. The hidden-clock local-time formula is explicitly for a scenery-averaged Fourier cosine, not the unaveraged observed process. Its global C2 extension and all integrability conditions are printed. The existing constructed Tanaka/supported-mass theorem is a stated prerequisite, with a precise companion citation.
+
+The one-time scaling/moment calculations, completed-square tail formula, integrated endpoint identity, compact-frequency spatial PDE and explicit second-moment convolution witness are labelled human consequences with proofs; no newly named Lean theorem is claimed. No full generator domain, spatial density smoothness, PDE uniqueness, fractional Caputo equation, general no-Markov conclusion, equality of process laws or completed intrinsic IBM calculus follows.
+
+113 exact source correspondences include complete declaration headers, line links and byte hashes. Fifteen principal modules were read fully; selected actual-moment declarations are mapped as supporting inputs, not a claim to review every import proof. The baseline approval and referenced full-build/54,943-declaration axiom-audit evidence hashes were checked. No redundant Lean build or mathematical-source edit.
+
+Allouba–Zheng Theorem 0.1 and the complete Brownian-time part of its primary Section 1 proof were directly compared; the PDE and boundary mechanism are classical. Excursion limits, exit theorems and their separate half-derivative conditional generator are outside the review/import scope. Detailed literature receipt retained. This is an expository formalization companion, not a newly discovered Brownian-time equation.
+
+Final two-pass compilation clean, references resolved and no overfull boxes. All eight final rendered pages inspected; pages 4–5 and 7–8 enlarged, compact-frequency nonnegative-radius hypothesis and exact companion title checked. Current source/PDF/build/visual and frozen source hashes verified.

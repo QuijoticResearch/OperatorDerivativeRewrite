@@ -1,0 +1,1059 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.path",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 12,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "def path : JointSample \u2192 C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L12"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.value",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 15,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "def value : \u211d\u22650 \u2192 JointSample \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L15"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.value_eq",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 18,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem value_eq (t : \u211d\u22650) (\u03c9 : JointSample) :\n    value t \u03c9 = sceneryPath \u03c9.1 (clockPath \u03c9.2 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L18"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.path_measurable",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 21,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem path_measurable : Measurable path",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L21"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.value_continuous",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 24,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem value_continuous (\u03c9 : JointSample) : Continuous (fun t => value t \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L24"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.value_jointly_measurable",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 27,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem value_jointly_measurable : Measurable (fun p : \u211d\u22650 \u00d7 JointSample => value p.1 p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L27"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.independent_sources",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 30,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem independent_sources :\n    IndepFun (fun \u03c9 : JointSample => sceneryPath \u03c9.1) (fun \u03c9 : JointSample => clockPath \u03c9.2)\n      jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L30"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.conditional_gaussian",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 34,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem conditional_gaussian (\u03c9 : SampleSpace) :\n    IsGaussianProcess (fun t \u03be => value t (\u03be,\u03c9)) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L34"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.conditional_covariance",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 38,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem conditional_covariance (s t : \u211d\u22650) (\u03c9 : SampleSpace) :\n    cov[(fun \u03be => value s (\u03be,\u03c9)), (fun \u03be => value t (\u03be,\u03c9)); gaussianProduct] =\n      (|clockPath \u03c9 s|+|clockPath \u03c9 t|-|clockPath \u03c9 t-clockPath \u03c9 s|)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L38"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.conditional_finite_dim_gaussian",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 45,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem conditional_finite_dim_gaussian (\u03c9 : SampleSpace) (I : Finset \u211d\u22650) :\n    HasGaussianLaw (fun \u03be => I.restrict (fun t => value t (\u03be,\u03c9))) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L45"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.opposite_outer_times_covariance",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 49,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem opposite_outer_times_covariance :\n    cov[(fun \u03c9 => sceneryPath \u03c9 (1:\u211d)),(fun \u03c9 => sceneryPath \u03c9 (-1:\u211d)); gaussianProduct] = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L49"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedIBMRealization.reflected_outer_times_covariance",
+      "file": "Foundation/SignedIBMRealization.lean",
+      "line": 53,
+      "source_sha256": "8ccef039cd1e8c51b56a5d7b5e12171f8bbe5a100e2a3da914c7861aa9dd7ff0",
+      "declaration_header": "theorem reflected_outer_times_covariance :\n    cov[(fun \u03c9 => sceneryPath \u03c9 |(1:\u211d)|),\n      (fun \u03c9 => sceneryPath \u03c9 |(-1:\u211d)|); gaussianProduct] = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedIBMRealization.lean#L53"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.gaussianKernel",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 14,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "def gaussianKernel : Kernel \u211d \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L14"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.gaussianKernel_apply",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 18,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem gaussianKernel_apply (r : \u211d) : gaussianKernel r=gaussianReal 0 \u2016r\u2016\u208a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L18"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.gaussianKernel_markov",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 20,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "instance gaussianKernel_markov : IsMarkovKernel gaussianKernel",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L20"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.mixture",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 23,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "def mixture (t : \u211d\u22650) : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L23"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.mixture_probability",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 25,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "instance mixture_probability (t : \u211d\u22650) : IsProbabilityMeasure (mixture t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L25"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.scenery_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 28,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem scenery_law (r : \u211d) :\n    HasLaw (fun \u03be : SampleSpace => sceneryPath \u03be r) (gaussianReal 0 \u2016r\u2016\u208a) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L28"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.clock_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 39,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem clock_law (t : \u211d\u22650) :\n    HasLaw (fun \u03c9 : SampleSpace => clockPath \u03c9 t) (gaussianReal 0 t) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L39"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.composition_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 43,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem composition_law (t : \u211d\u22650) (Y : JointSample \u2192 \u211d) (hY : Measurable Y)\n    (rfn : \u211d \u2192 \u211d)\n    (hvalue : \u2200 \u03be \u03c9 : SampleSpace, Y (\u03be,\u03c9)=sceneryPath \u03be (rfn (clockPath \u03c9 t)))\n    (hvariance : \u2200 r : \u211d, \u2016rfn r\u2016\u208a=\u2016r\u2016\u208a) : jointMeasure.map Y=mixture t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L43"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.signed_value_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 67,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem signed_value_law (t : \u211d\u22650) :\n    HasLaw (SignedIBMRealization.value t) (mixture t) jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L67"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.absolute_value_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 76,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem absolute_value_law (t : \u211d\u22650) :\n    HasLaw (IBMConstructedSources.ibmValue t) (mixture t) jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L76"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeMixture.same_one_time_law",
+      "file": "Foundation/IBMOneTimeMixture.lean",
+      "line": 88,
+      "source_sha256": "5569ecb7d290afa9cf9913deccffc9ef5b28c708262d113dc57a8a38b390be65",
+      "declaration_header": "theorem same_one_time_law (t : \u211d\u22650) :\n    jointMeasure.map (SignedIBMRealization.value t) =\n      jointMeasure.map (IBMConstructedSources.ibmValue t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeMixture.lean#L88"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.observable",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 12,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "def observable (u x : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L12"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.observable_continuous",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 14,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem observable_continuous (u : \u211d) : Continuous (observable u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L14"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.observable_norm",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 16,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem observable_norm (u x : \u211d) : \u2016observable u x\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L16"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.observable_integrable",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 20,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem observable_integrable (u : \u211d) (\u03bc : Measure \u211d) [IsFiniteMeasure \u03bc] :\n    Integrable (observable u) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L20"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.charFun_eq_observable",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 25,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem charFun_eq_observable (\u03bc : Measure \u211d) (u : \u211d) :\n    charFun \u03bc u=\u222b x, observable u x \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L25"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.clockTransform",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 29,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "def clockTransform (t : \u211d\u22650) (a : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L29"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.scenery_characteristic",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 31,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem scenery_characteristic (u r : \u211d) :\n    (\u222b \u03be : SampleSpace, observable u (sceneryPath \u03be r) \u2202gaussianProduct) =\n      (Real.exp (-(u^2/2)*|r|) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L31"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.mixture_characteristic",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 46,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem mixture_characteristic (t : \u211d\u22650) (u : \u211d) :\n    charFun (mixture t) u=(clockTransform t (u^2/2) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L46"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.signed_characteristic",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 71,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem signed_characteristic (t : \u211d\u22650) (u : \u211d) :\n    charFun (jointMeasure.map (SignedIBMRealization.value t)) u=\n      (clockTransform t (u^2/2) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L71"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeFourier.absolute_characteristic",
+      "file": "Foundation/IBMOneTimeFourier.lean",
+      "line": 76,
+      "source_sha256": "e0dfb54bf785185e6a01cbe055aa94493beadc31b3f8598b0c901f060b6e94d5",
+      "declaration_header": "theorem absolute_characteristic (t : \u211d\u22650) (u : \u211d) :\n    charFun (jointMeasure.map (IBMConstructedSources.ibmValue t)) u=\n      (clockTransform t (u^2/2) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeFourier.lean#L76"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 13,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "def tilt (b x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L13"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt_continuous",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 15,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem tilt_continuous (b : \u211d) : Continuous (tilt b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L15"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt_derivative",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 17,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem tilt_derivative (b x : \u211d) : HasDerivAt (tilt b) (-(x+b)*tilt b x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L17"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt_atTop",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 22,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem tilt_atTop (b : \u211d) : Tendsto (tilt b) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L22"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt_integrable",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 32,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem tilt_integrable (b : \u211d) (hb : 0 \u2264 b) : IntegrableOn (tilt b) (Ioi 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L32"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.tilt_derivative_nonpos",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 41,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem tilt_derivative_nonpos (b : \u211d) (hb : 0 \u2264 b) (x : \u211d) (hx : x \u2208 Ioi 0) :\n    -(x+b)*tilt b x \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L41"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.moment_integrable",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 46,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem moment_integrable (b : \u211d) (hb : 0 \u2264 b) :\n    IntegrableOn (fun x : \u211d => x*tilt b x) (Ioi 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L46"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.halfline_boundary",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 56,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem halfline_boundary (b : \u211d) (hb : 0 \u2264 b) :\n    (\u222b x in Ioi (0 : \u211d), x*tilt b x) = 1-b*(\u222b x in Ioi (0 : \u211d), tilt b x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L56"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.gaussianConstant",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 68,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "def gaussianConstant : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L68"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.folded_density",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 70,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem folded_density (f : \u211d \u2192 \u211d) :\n    (\u222b r : \u211d, f |r| \u2202gaussianReal 0 1) =\n      2*gaussianConstant*(\u222b r in Ioi (0 : \u211d), Real.exp (-r^2/2)*f r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L70"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.transform_halfline",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 84,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem transform_halfline (b : \u211d) :\n    clockTransform 1 b = 2*gaussianConstant*(\u222b x in Ioi (0 : \u211d), tilt b x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L84"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMGaussianLaplaceBoundary.gaussian_boundary_identity",
+      "file": "Foundation/IBMGaussianLaplaceBoundary.lean",
+      "line": 92,
+      "source_sha256": "a6a7e4ca12b9777d1d82f96c5e920c19a3ef5898666e637e21e852d0d0afaace",
+      "declaration_header": "theorem gaussian_boundary_identity (b : \u211d) (hb : 0 \u2264 b) :\n    (\u222b r : \u211d, |r| * Real.exp (-b*|r|) \u2202gaussianReal 0 1) =\n      2*gaussianConstant-b*clockTransform 1 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMGaussianLaplaceBoundary.lean#L92"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTransformDerivative.absolute_integrable",
+      "file": "Foundation/IBMClockTransformDerivative.lean",
+      "line": 11,
+      "source_sha256": "3039f549bc90ddab9ee731a0d6c8b10460bae97f401787554365562278c51dc8",
+      "declaration_header": "theorem absolute_integrable : Integrable (fun r : \u211d => |r|) (gaussianReal 0 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTransformDerivative.lean#L11"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTransformDerivative.transform_integrable",
+      "file": "Foundation/IBMClockTransformDerivative.lean",
+      "line": 15,
+      "source_sha256": "3039f549bc90ddab9ee731a0d6c8b10460bae97f401787554365562278c51dc8",
+      "declaration_header": "theorem transform_integrable (b : \u211d) (hb : 0 \u2264 b) :\n    Integrable (fun r : \u211d => Real.exp (-b*|r|)) (gaussianReal 0 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTransformDerivative.lean#L15"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTransformDerivative.parameter_derivative_integral",
+      "file": "Foundation/IBMClockTransformDerivative.lean",
+      "line": 22,
+      "source_sha256": "3039f549bc90ddab9ee731a0d6c8b10460bae97f401787554365562278c51dc8",
+      "declaration_header": "theorem parameter_derivative_integral (b : \u211d) (hb : 0 < b) :\n    HasDerivAt (clockTransform 1)\n      (\u222b r : \u211d, -|r| * Real.exp (-b*|r|) \u2202gaussianReal 0 1) b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTransformDerivative.lean#L22"
+    },
+    {
+      "paper": "Sections 1\u20133: actual signed/reflected model, one-time mixture, characteristic and Gaussian clock parameter boundary.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTransformDerivative.parameter_derivative",
+      "file": "Foundation/IBMClockTransformDerivative.lean",
+      "line": 53,
+      "source_sha256": "3039f549bc90ddab9ee731a0d6c8b10460bae97f401787554365562278c51dc8",
+      "declaration_header": "theorem parameter_derivative (b : \u211d) (hb : 0 < b) :\n    HasDerivAt (clockTransform 1) (b*clockTransform 1 b-2*gaussianConstant) b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTransformDerivative.lean#L53"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTimeEvolution.gaussian_scaling",
+      "file": "Foundation/IBMClockTimeEvolution.lean",
+      "line": 11,
+      "source_sha256": "5e95c4f8b9c91ee5d8441b22ac661ec940e1a1fde520b6e9c0b9bc905b50aced",
+      "declaration_header": "theorem gaussian_scaling (t : \u211d\u22650) :\n    (gaussianReal 0 1).map (fun r : \u211d => Real.sqrt t*r) = gaussianReal 0 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTimeEvolution.lean#L11"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTimeEvolution.transform_scaling",
+      "file": "Foundation/IBMClockTimeEvolution.lean",
+      "line": 20,
+      "source_sha256": "5e95c4f8b9c91ee5d8441b22ac661ec940e1a1fde520b6e9c0b9bc905b50aced",
+      "declaration_header": "theorem transform_scaling (t : \u211d\u22650) (a : \u211d) :\n    clockTransform t a = clockTransform 1 (a*Real.sqrt t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTimeEvolution.lean#L20"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTimeEvolution.timeTransform",
+      "file": "Foundation/IBMClockTimeEvolution.lean",
+      "line": 30,
+      "source_sha256": "5e95c4f8b9c91ee5d8441b22ac661ec940e1a1fde520b6e9c0b9bc905b50aced",
+      "declaration_header": "def timeTransform (a t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTimeEvolution.lean#L30"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTimeEvolution.timeTransform_eq",
+      "file": "Foundation/IBMClockTimeEvolution.lean",
+      "line": 32,
+      "source_sha256": "5e95c4f8b9c91ee5d8441b22ac661ec940e1a1fde520b6e9c0b9bc905b50aced",
+      "declaration_header": "theorem timeTransform_eq (a t : \u211d) (ht : 0 \u2264 t) :\n    timeTransform a t = clockTransform 1 (a*Real.sqrt t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTimeEvolution.lean#L32"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockTimeEvolution.time_derivative",
+      "file": "Foundation/IBMClockTimeEvolution.lean",
+      "line": 36,
+      "source_sha256": "5e95c4f8b9c91ee5d8441b22ac661ec940e1a1fde520b6e9c0b9bc905b50aced",
+      "declaration_header": "theorem time_derivative (a t : \u211d) (ha : 0 < a) (ht : 0 < t) :\n    HasDerivAt (timeTransform a)\n      (a^2/2*timeTransform a t-a*gaussianConstant/Real.sqrt t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockTimeEvolution.lean#L36"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.transform_zero_parameter",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 11,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "theorem transform_zero_parameter (t : \u211d\u22650) : clockTransform t 0=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L11"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.time_derivative_nonneg",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 14,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "theorem time_derivative_nonneg (a t : \u211d) (ha : 0 \u2264 a) (ht : 0 < t) :\n    HasDerivAt (timeTransform a)\n      (a^2/2*timeTransform a t-a*gaussianConstant/Real.sqrt t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L14"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.fourierLaw",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 26,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "def fourierLaw (u t : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L26"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.fourierLaw_eq",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 28,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "theorem fourierLaw_eq (u t : \u211d) :\n    fourierLaw u t=(timeTransform (u^2/2) t : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L28"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.fourier_derivative",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 32,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "theorem fourier_derivative (u t : \u211d) (ht : 0 < t) :\n    HasDerivAt (fourierLaw u)\n      (((u^4/8 : \u211d) : \u2102)*fourierLaw u t-\n        ((u^2/2*gaussianConstant/Real.sqrt t : \u211d) : \u2102)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L32"
+    },
+    {
+      "paper": "Section 4: exact positive-time scalar characteristic ODE with singular initial-data source, including zero frequency. Integrated-to-zero and compact-frequency spatial PDE are proved human consequences, not stronger formal generator-domain statements.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFourierTimeEquation.signed_characteristic_derivative",
+      "file": "Foundation/IBMFourierTimeEquation.lean",
+      "line": 43,
+      "source_sha256": "69d71f116d9cfd8ff5c30ae6e82d7ee9842b1e06775dcf7cd7e3846aa991a76a",
+      "declaration_header": "theorem signed_characteristic_derivative (u t : \u211d) (ht : 0 < t) :\n    HasDerivAt (fun s : \u211d =>\n      \u222b \u03c9, observable u (SignedIBMRealization.value s.toNNReal \u03c9) \u2202IBMSourceLaws.jointMeasure)\n      (((u^4/8 : \u211d) : \u2102)*fourierLaw u t-\n        ((u^2/2*gaussianConstant/Real.sqrt t : \u211d) : \u2102)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFourierTimeEquation.lean#L43"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialCusp.weighted_absolute_integrable",
+      "file": "Foundation/IBMInitialCusp.lean",
+      "line": 13,
+      "source_sha256": "816e0e4c26b0bad9574ebb24076de9d72fcb28e01b0245c60e48cfaefa7c5098",
+      "declaration_header": "theorem weighted_absolute_integrable :\n    Integrable (fun r : \u211d => |r| * Real.exp |r|) (gaussianReal 0 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialCusp.lean#L13"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialCusp.parameter_derivative_zero",
+      "file": "Foundation/IBMInitialCusp.lean",
+      "line": 21,
+      "source_sha256": "816e0e4c26b0bad9574ebb24076de9d72fcb28e01b0245c60e48cfaefa7c5098",
+      "declaration_header": "theorem parameter_derivative_zero :\n    HasDerivAt (clockTransform 1) (-2*gaussianConstant) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialCusp.lean#L21"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialCusp.square_time",
+      "file": "Foundation/IBMInitialCusp.lean",
+      "line": 57,
+      "source_sha256": "816e0e4c26b0bad9574ebb24076de9d72fcb28e01b0245c60e48cfaefa7c5098",
+      "declaration_header": "theorem square_time (a s : \u211d) (hs : 0 \u2264 s) :\n    timeTransform a (s^2) = clockTransform 1 (a*s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialCusp.lean#L57"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialCusp.no_initial_right_derivative",
+      "file": "Foundation/IBMInitialCusp.lean",
+      "line": 61,
+      "source_sha256": "816e0e4c26b0bad9574ebb24076de9d72fcb28e01b0245c60e48cfaefa7c5098",
+      "declaration_header": "theorem no_initial_right_derivative (a d : \u211d) (ha : a \u2260 0) :\n    \u00ac HasDerivWithinAt (timeTransform a) d (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialCusp.lean#L61"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConvolutionObstruction.transform_one_pos",
+      "file": "Foundation/IBMConvolutionObstruction.lean",
+      "line": 11,
+      "source_sha256": "b359f78df43e65cf60b52ac6a2c0b3e329afed2de9edc26cc3cc44913f7a23c2",
+      "declaration_header": "theorem transform_one_pos (a : \u211d) (ha : 0 \u2264 a) : 0 < timeTransform a 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConvolutionObstruction.lean#L11"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConvolutionObstruction.no_unit_shift_multiplication",
+      "file": "Foundation/IBMConvolutionObstruction.lean",
+      "line": 16,
+      "source_sha256": "b359f78df43e65cf60b52ac6a2c0b3e329afed2de9edc26cc3cc44913f7a23c2",
+      "declaration_header": "theorem no_unit_shift_multiplication (a : \u211d) (ha : 0 < a) :\n    \u00ac \u2200 s : \u211d, 0 \u2264 s \u2192\n      timeTransform a (s+1)=timeTransform a s*timeTransform a 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConvolutionObstruction.lean#L16"
+    },
+    {
+      "paper": "Section 5: true Gaussian parameter derivative at zero, square-time composition, no finite initial time derivative, no unit-shift multiplicativity and no convolution semigroup. Explicit second-moment witness is a human mixture consequence.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMConvolutionObstruction.not_convolution_semigroup",
+      "file": "Foundation/IBMConvolutionObstruction.lean",
+      "line": 34,
+      "source_sha256": "b359f78df43e65cf60b52ac6a2c0b3e329afed2de9edc26cc3cc44913f7a23c2",
+      "declaration_header": "theorem not_convolution_semigroup :\n    \u00ac \u2200 s t : \u211d\u22650, mixture (s+t)=mixture s \u2217 mixture t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMConvolutionObstruction.lean#L34"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.gaussian_interval_pos",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 13,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem gaussian_interval_pos (a b : \u211d) (hab : a < b) :\n    0 < gaussianReal 0 1 (Ioo a b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L13"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.witness",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 23,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "def witness : Set SampleSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L23"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.witness_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 26,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem witness_positive : 0 < gaussianProduct witness",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L26"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.witness_backtracks",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 49,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem witness_backtracks {\u03c9 : SampleSpace} (h : \u03c9 \u2208 witness) :\n    |process 2 \u03c9| < |process 1 \u03c9|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L49"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.backtracking_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 56,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem backtracking_positive :\n    0 < gaussianProduct {\u03c9 | |process 2 \u03c9| < |process 1 \u03c9|}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L56"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.actual_clock_backtracking_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 60,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem actual_clock_backtracking_positive :\n    0 < gaussianProduct {\u03c9 | |IBMConstructedSources.clockPath \u03c9 2| <\n      |IBMConstructedSources.clockPath \u03c9 1|}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L60"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.gap",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 15,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "def gap (s t : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.gap_nonneg",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 18,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem gap_nonneg (s t : \u211d\u22650) (\u03c9 : SampleSpace) : 0 \u2264 gap s t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L18"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.gap_integrable",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 20,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem gap_integrable (s t : \u211d\u22650) : Integrable (gap s t) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L20"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.expected_gap_positive",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 30,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem expected_gap_positive : 0 < \u222b \u03c9, gap 1 2 \u03c9 \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L30"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.scenery_pair_gap",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 38,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem scenery_pair_gap (a b : \u211d) (ha : 0 \u2264 a) (hb : 0 \u2264 b) :\n    inner \u211d (sourceScenery a) (sourceScenery b - sourceScenery a) = -max (a - b) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.actual_increment_pairing",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 59,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem actual_increment_pairing (s t : \u211d\u22650) :\n    inner \u211d (intrinsicCurve s) (intrinsicCurve t - intrinsicCurve s) =\n      -(\u222b \u03c9, gap s t \u03c9 \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L59"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.actual_increment_pairing_negative",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 75,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem actual_increment_pairing_negative :\n    inner \u211d (intrinsicCurve 1) (intrinsicCurve 2 - intrinsicCurve 1) < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L75"
+    },
+    {
+      "paper": "Section 6: actual reflected-clock coupling, positive clock-backtracking event at times one and two, exact negative increment pairing, exclusion of previous-value projection for any closed past containing the previous value. Not a no-martingales or generic no-Markov theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.past_projection_ne_previous",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 82,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem past_projection_ne_previous (V : Submodule \u211d JointL2) [CompleteSpace V]\n    (hp : (intrinsicCurve 1 : JointL2) \u2208 V) :\n    V.starProjection (intrinsicCurve 2 : JointL2) \u2260 (intrinsicCurve 1 : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L82"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 12,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "def extension (c x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L12"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.slope",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 15,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "def slope (c x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L15"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.curvature",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 18,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "def curvature (c x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L18"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_nonneg",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 20,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_nonneg (c : \u211d) {x : \u211d} (hx : 0 \u2264 x) :\n    extension c x = Real.exp (-c * x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L20"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_zero",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 23,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_zero (c : \u211d) : extension c 0 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L23"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.slope_zero",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 25,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem slope_zero (c : \u211d) : slope c 0 = -c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L25"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.slope_nonneg",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 27,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem slope_nonneg (c : \u211d) {x : \u211d} (hx : 0 \u2264 x) :\n    slope c x = -c * Real.exp (-c * x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L27"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_hasDerivAt",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 30,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_hasDerivAt (c x : \u211d) : HasDerivAt (extension c) (slope c x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L30"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.slope_hasDerivAt",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 66,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem slope_hasDerivAt (c x : \u211d) : HasDerivAt (slope c) (curvature c x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L66"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_deriv",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 102,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_deriv (c : \u211d) : deriv (extension c) = slope c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L102"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_second",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 105,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_second (c : \u211d) : deriv (deriv (extension c)) = curvature c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L105"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.extension_C2",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 109,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem extension_C2 (c : \u211d) : ContDiff \u211d 2 (extension c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L109"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.slope_bound",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 119,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem slope_bound {c : \u211d} (hc : 0 \u2264 c) (x : \u211d) : \u2016slope c x\u2016 \u2264 2 * c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L119"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.curvature_bound",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 133,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem curvature_bound {c : \u211d} (hc : 0 \u2264 c) (x : \u211d) : \u2016curvature c x\u2016 \u2264 c ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L133"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.running",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 140,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "def running (c : \u211d) (hc : 0 \u2264 c) (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L140"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.running_actual",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 144,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem running_actual (c : \u211d) (hc : 0 \u2264 c) (T : \u211d\u22650) :\n    (running c hc T : GaussianTimeProductL2.TimeProbabilityL2)\n      =\u1d50[GaussianTimeProductL2.timeProbability]\n      (PredictableRealL2.horizon T).indicator (fun z =>\n        -c * BrownianSignIntegral.signum (BrownianClockWeightedEnergy.sigma z) *\n          Real.exp (-c * |BrownianClockWeightedEnergy.sigma z|))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L144"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDampedReflectedIto.actual_ito",
+      "file": "Foundation/GaussianDampedReflectedIto.lean",
+      "line": 161,
+      "source_sha256": "bb1457c40de1baf8142ff8083cc5f8b958c58c325084e9d083abf7dad18d8925",
+      "declaration_header": "theorem actual_ito (c : \u211d) (hc : 0 \u2264 c) (T : \u211d\u22650) :\n    (fun Y => Real.exp (-c * |IBMConstructedSources.clockPath Y T|) - 1)\n      =\u1d50[gaussianProduct] fun Y => itoIntegral (running c hc T) Y -\n        c * BrownianMassContinuousLimit.limitPath Y T +\n        (c ^ 2 / 2) * \u222b s in (0 : \u211d)..(T : \u211d),\n          Real.exp (-c * |IBMConstructedSources.clockPath Y s.toNNReal|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDampedReflectedIto.lean#L161"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeSourceMeanIto.sourceMean",
+      "file": "Foundation/IBMOneTimeSourceMeanIto.lean",
+      "line": 16,
+      "source_sha256": "b24e40a0af3187018d56e02596cae41a2ba25db63a028ef19ae55c7c18a727e1",
+      "declaration_header": "def sourceMean (a : \u211d) (T : \u211d\u22650) (Y : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeSourceMeanIto.lean#L16"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeSourceMeanIto.sourceMean_actual",
+      "file": "Foundation/IBMOneTimeSourceMeanIto.lean",
+      "line": 19,
+      "source_sha256": "b24e40a0af3187018d56e02596cae41a2ba25db63a028ef19ae55c7c18a727e1",
+      "declaration_header": "theorem sourceMean_actual (a : \u211d) (T : \u211d\u22650) :\n    sourceMean a T =\u1d50[gaussianProduct] fun Y =>\n      Real.exp (-(a ^ 2 / 2) * |IBMConstructedSources.clockPath Y T|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeSourceMeanIto.lean#L19"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeSourceMeanIto.running",
+      "file": "Foundation/IBMOneTimeSourceMeanIto.lean",
+      "line": 47,
+      "source_sha256": "b24e40a0af3187018d56e02596cae41a2ba25db63a028ef19ae55c7c18a727e1",
+      "declaration_header": "def running (a : \u211d) (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeSourceMeanIto.lean#L47"
+    },
+    {
+      "paper": "Section 7: genuine global bounded-derivative C2 extension, actual hidden-clock predictable stochastic field, local-time supported term and source-averaged Fourier cosine identity, almost surely at each fixed horizon. No unaveraged observed-filtration Ito formula.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMOneTimeSourceMeanIto.sourceMean_ito",
+      "file": "Foundation/IBMOneTimeSourceMeanIto.lean",
+      "line": 50,
+      "source_sha256": "b24e40a0af3187018d56e02596cae41a2ba25db63a028ef19ae55c7c18a727e1",
+      "declaration_header": "theorem sourceMean_ito (a : \u211d) (T : \u211d\u22650) :\n    (fun Y => sourceMean a T Y - 1) =\u1d50[gaussianProduct] fun Y =>\n      itoIntegral (running a T) Y -\n        (a ^ 2 / 2) * BrownianMassContinuousLimit.limitPath Y T +\n        (a ^ 4 / 8) * \u222b s in (0 : \u211d)..(T : \u211d),\n          Real.exp (-(a ^ 2 / 2) * |IBMConstructedSources.clockPath Y s.toNNReal|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMOneTimeSourceMeanIto.lean#L50"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.sceneryDirection",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 17,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "def sceneryDirection (r : \u211d) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L17"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.sceneryDirection_norm_sq",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 20,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem sceneryDirection_norm_sq (r : \u211d) : \u2016sceneryDirection r\u2016 ^ 2 = |r|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L20"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.scenery_firstChaos_ae",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 25,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem scenery_firstChaos_ae (r : \u211d) :\n    (fun \u03c9 => sceneryPath \u03c9 r) =\u1d50[gaussianProduct] firstChaosEmbedding (sceneryDirection r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L25"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.scenery_memLp",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 29,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem scenery_memLp (r : \u211d) (p : \u211d\u22650\u221e) (hp : p \u2260 \u221e) :\n    MemLp (fun \u03c9 => sceneryPath \u03c9 r) p gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L29"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.scenery_fourth",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 34,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem scenery_fourth (r : \u211d) :\n    (\u222b \u03c9, (sceneryPath \u03c9 r) ^ 4 \u2202gaussianProduct) = 3 * r ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L34"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.scenery_eighth",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 39,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem scenery_eighth (r : \u211d) :\n    (\u222b \u03c9, (sceneryPath \u03c9 r) ^ 8 \u2202gaussianProduct) = 105 * r ^ 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L39"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.actual_conditional_fourth",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 46,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem actual_conditional_fourth (t : \u211d\u22650) (\u03c9 : SampleSpace) :\n    (\u222b \u03be, (ibmValue t (\u03be, \u03c9)) ^ 4 \u2202gaussianProduct) = 3 * (clockPath \u03c9 t) ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L46"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.actual_conditional_eighth",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 51,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem actual_conditional_eighth (t : \u211d\u22650) (\u03c9 : SampleSpace) :\n    (\u222b \u03be, (ibmValue t (\u03be, \u03c9)) ^ 8 \u2202gaussianProduct) = 105 * (clockPath \u03c9 t) ^ 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L51"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.actual_eighth_integrable",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 56,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem actual_eighth_integrable (t : \u211d\u22650) :\n    Integrable (fun \u03c9 => (ibmValue t \u03c9) ^ 8) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L56"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMActualQuarticMoment.fourth_memLp",
+      "file": "Foundation/IBMActualQuarticMoment.lean",
+      "line": 76,
+      "source_sha256": "67039fa3eab79d375d4602417edad30e8452cbad2c9a8af10d69884a20cc4e92",
+      "declaration_header": "theorem fourth_memLp (t : \u211d\u22650) :\n    MemLp (fun \u03c9 => (ibmValue t \u03c9) ^ 4) 2 IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualQuarticMoment.lean#L76"
+    },
+    {
+      "paper": "Section 2 moment support: actual scenery fourth/eighth and conditional moments, eighth integrability and actual quartic L2 construction. Displayed global moments and one-time distributional scaling are human consequences of the actual mixture, with proofs, not claimed new named declarations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSourceMoments.firstChaos_fourth",
+      "file": "Foundation/IBMSourceMoments.lean",
+      "line": 17,
+      "source_sha256": "cfe2ec892a97db01d55ecf46cbba666e6707a9b1f2b2487f722df1c48afc6ae2",
+      "declaration_header": "theorem firstChaos_fourth (h : CoefficientSpace) :\n    (\u222b \u03c9, (firstChaosEmbedding h \u03c9)^4 \u2202gaussianProduct) = 3 * (\u2016h\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSourceMoments.lean#L17"
+    }
+  ],
+  "human_reorganization": [
+    "One-time auxiliary-product scaling and the global second/fourth/eighth moments, with actual integrability, are explicit human Gaussian-mixture consequences. No process-level coupling or unconditional two-time identification inferred.",
+    "Completed-square Gaussian-tail expression and elementary transform upper bound are direct human integral calculations, not mapped special-function declarations.",
+    "Integrated endpoint Fourier ODE and compact-frequency spatial PDE are proved by ordinary finite-frequency Fubini and dominated differentiation. No general C0/PDE uniqueness, fractional generator, density regularity or Markov-domain claim.",
+    "The exact initial cusp is the scalar consequence of the mapped parameter derivative; the direct second-moment convolution witness is labelled human. Non-convolution composition does not exclude an arbitrary nontranslation Markov model.",
+    "The local-time prerequisite is the existing constructed Tanaka/supported-mass theorem exposed in the sticky-clock companion. Its corollary is reconstructed here via a genuine global C2 extension. Full import-proof review is not claimed."
+  ],
+  "principal_sources_read_fully": [
+    "SignedIBMRealization",
+    "IBMOneTimeMixture",
+    "IBMOneTimeFourier",
+    "IBMGaussianLaplaceBoundary",
+    "IBMClockTransformDerivative",
+    "IBMClockTimeEvolution",
+    "IBMFourierTimeEquation",
+    "IBMInitialCusp",
+    "IBMConvolutionObstruction",
+    "IBMClockBacktracking",
+    "IBMTemporalCovarianceObstruction",
+    "GaussianDampedReflectedIto",
+    "IBMOneTimeSourceMeanIto",
+    "IBMActualQuarticMoment",
+    "IBMSourceMoments"
+  ],
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/1005.3801",
+      "pdf": "https://arxiv.org/pdf/1005.3801",
+      "title": "Brownian-time processes: the PDE connection and the half-derivative generator",
+      "authors": "Hassan Allouba and Weian Zheng",
+      "publication": "Annals of Probability 29 (2001), 1780\u20131795; primary arXiv v1 deposited 2010, manuscript dated January 2001.",
+      "review": "Directly read primary introduction model, Theorem 0.1 and equations (0.1)\u2013(0.2), printed page 2/PDF index 1; complete Brownian-time first part of Section 1 proof, printed pages 4\u20135/PDF indices 3\u20134. Initial-data singular source and positive fourth-order term are classical. The excursion-limit appendix, exit-time theorems, general half-derivative conditional generator proof and arbitrary-generator domain claims are not imported.",
+      "priority": "CLASSICAL FORMALIZATION COMPANION; no new PDE, half-derivative or priority claim.",
+      "checked_utc": "2026-10-30T08:18:49.248327+00:00"
+    }
+  ],
+  "novelty": "Classical mechanisms explicitly credited; no research priority claimed."
+}
