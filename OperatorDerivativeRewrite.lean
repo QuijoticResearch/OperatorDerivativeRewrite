@@ -2942,3 +2942,8 @@ import Foundation.PeriodicWilsonSlab
 import Foundation.PeriodicSlabAction
 import Foundation.PeriodicSlabGauge
 import Foundation.PeriodicSlabGround
+import Foundation.SU2HolonomyTraceObstruction
+import Foundation.PeriodicSpatialHolonomy
+import Foundation.PeriodicLowActionBlock
+import Foundation.PeriodicGroundMass
+import Foundation.PeriodicHolonomyMass
