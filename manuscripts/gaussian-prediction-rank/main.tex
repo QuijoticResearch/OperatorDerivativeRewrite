@@ -39,7 +39,7 @@ fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
 correspondences; no priority claim is made.
 The same method controls terminal-aware Brownian bracket errors for bounded Borel weights. We also reconstruct the full joint source/sample recovery identity, compact recovery exactly at finite observed source dimension, and a positive-chaos compactness criterion. Infinite observed dimension has distance one from compact recovery approximants; even one-source compact recovery has divergent squared image energy.
-An accelerated Mehler limit retains full-past Markov kernels while
+The causal Brownian integrand has an exact chaos-dependent energy gap from minimum source-divergence recovery. An accelerated Mehler limit retains full-past Markov kernels while
 losing initial continuity and a dense right norm-generator domain.
 \end{abstract}
 
@@ -968,6 +968,157 @@ These are source/sample constraints at a fixed observation family.
 They do not by themselves identify an adapted physical-time stochastic
 integrand or a Clark--Ocone representation for a different observed process.
 
+
+\section{Causal It\^o representation and minimum source recovery}
+The joint source/sample projection above is not a projection onto
+causal integrands. There is an exact quantitative comparison with
+that different projection. Let $B$ be the actual positive-time
+Brownian channel in the source realization. Let $\mathcal P$ be the
+closed space of its raw-predictable real $L^2(dt\otimes P)$ fields,
+zero at negative times. Write
+\[
+ \iota:\mathcal P\longrightarrow\mathcal V,\qquad
+ \mathfrak I:\mathcal P\longrightarrow\mathcal G
+\]
+for the isometric embedding into original Gaussian source fields
+and the original Brownian It\^o isometry, respectively. Set
+$\pi=\iota^*$, so $\iota\pi$ is the orthogonal predictable-field
+projection. These symbols are separate from the earlier fixed-family
+conditional operators $Q,J$.
+
+For completeness the integral on a past step is
+$\mathfrak I(A\mathbf1_{(s,t]})=A(B_t-B_s)$, where $A\in L^2$
+is measurable in the raw Brownian past at $s$. Independent centered
+increments give its squared norm $(t-s)\E A^2$ and make disjoint
+ordered step increments orthogonal. The resulting isometry extends
+from predictable steps to their full $L^2$ completion. This completion
+is the actual predictable class space: predictable rectangles generate
+its sigma algebra, finite horizons exhaust positive time, and bounded
+simple-function density followed by $L^2$ approximation of Brownian
+past coefficients gives the claimed identification. It is not a
+definition of predictability by assigning an integral.
+
+The original Gaussian integration-by-parts identity on polynomial
+past steps, followed by closedness of $\delta$ and this isometry,
+gives
+\begin{equation}\label{eq:causaldivgraph}
+ \iota u\in D(\delta),\qquad\delta\iota u=\mathfrak Iu
+                  \quad(u\in\mathcal P).
+\end{equation}
+Testing this graph against every $f\in D(D)$ proves
+\begin{equation}\label{eq:causaladjoint}
+ \pi Df=\mathfrak I^*f.
+\end{equation}
+Indeed, both sides pair with $u$ as $\langle f,\mathfrak Iu\rangle$;
+the pairings are integrable by Cauchy--Schwarz. These identities
+concern the original closed graphs. The Brownian integral range is
+the centered Brownian-generated $L^2$ subspace, rather than every
+centered variable in a possibly larger ambient Gaussian space.
+The comparison below only needs $\mathfrak I^*\mathfrak I=I$,
+which follows from its isometry and does not require a range claim.
+
+Let $\Pi_\nabla$ be orthogonal projection onto the closed gradient
+range. Here closedness has an actual graph proof. The earlier
+recovery satisfies $R^*Df=f-\E f$ on $D(D)$. Thus $v\in\operatorname{ran}D$
+if and only if $(R^*v,v)$ lies in the closed graph of $D$.
+The forward implication follows by subtracting the constant from
+any potential, and the reverse is immediate. The right-hand condition
+is closed in $v$ because $R^*$ is bounded. Also
+$(\operatorname{ran}D)^\perp=\ker\delta$ by the adjoint-domain
+definition: annihilating all gradients is exactly being in $D(\delta)$
+with value zero.
+
+\begin{theorem}\label{thm:causalminimum}
+For every $u\in\mathcal P$, with $F=\mathfrak Iu$,
+\begin{align}
+ \Pi_\nabla\iota u&=RF,\qquad
+          \delta(\iota u-RF)=0,\label{eq:causalminimum}\\
+ \|u\|^2&=\|RF\|^2+\|\iota u-RF\|^2.\label{eq:causalpythagoras}
+\end{align}
+If $F$ belongs to the homogeneous Gaussian chaos of degree $q\geq1$,
+then
+\begin{equation}\label{eq:causalsector}
+ \|RF\|^2=\frac1q\|u\|^2,\qquad
+ \|\iota u-RF\|^2=\left(1-\frac1q\right)\|u\|^2,
+ \qquad\pi\Pi_\nabla\iota u=\frac1q u.
+\end{equation}
+In particular, for $q>1$ and $u\ne0$, the causal field is strictly
+larger in norm than the minimum divergence preimage.
+\end{theorem}
+\begin{proof}
+The variable $F$ is centered, by the step construction and closure.
+Equation~\eqref{eq:Rgraph} and \eqref{eq:causaldivgraph} show that
+$\iota u-RF\in\ker\delta$. The field $RF$ lies in the gradient
+range: it equals $D(N^{-1}F)$, with the actual graph justification
+given by its convergent chaos series. Orthogonality to $\ker\delta$
+therefore identifies $RF$ with $\Pi_\nabla\iota u$. Pythagoras
+and the isometry of $\iota$ give \eqref{eq:causalpythagoras}.
+
+On degree $q$, the already proved recovery-energy identity gives
+$\|RF\|^2=q^{-1}\|F\|^2=q^{-1}\|u\|^2$; subtracting gives the
+residual formula. Moreover $RF=D(N^{-1}F)$ and $N^{-1}F=F/q$,
+so \eqref{eq:causaladjoint} yields
+$\pi RF=q^{-1}\mathfrak I^*F=q^{-1}u$. This proves the last
+identity with its actual derivative-domain input. Strictness follows
+from $q^{-1}<1$ and $\|u\|>0$.
+\end{proof}
+Iterating the bounded operator $u\mapsto\pi\Pi_\nabla\iota u$
+on such a pure-chaos integrand gives exactly $q^{-k}u$ after $k$
+iterations, by induction. This is a labelled human consequence of
+the mapped one-step identity, not a new stochastic representation
+or a general convergence theorem for arbitrary alternating schemes.
+
+\subsection*{An actual quadratic witness}
+Take $T>0$ and $u_s=2B_s\mathbf1_{(0,T]}(s)$. This field is
+predictable and $\|u\|^2=4\int_0^T s\,ds=2T^2$.
+Its actual integral is $F=B_T^2-T$. To check this without presuming
+an It\^o formula, use the uniform partition $t_j=jT/n$. The step
+fields $2B_{t_j}$ converge to $u$ with squared $L^2(dt\otimes P)$
+error $2T^2/n$. Their integrals satisfy the algebraic identity
+\[
+ 2\sum_{j=0}^{n-1}B_{t_j}(B_{t_{j+1}}-B_{t_j})
+       =B_T^2-\sum_{j=0}^{n-1}(B_{t_{j+1}}-B_{t_j})^2.
+\]
+Independent Gaussian increments give mean $T$ and variance
+$2T^2/n$ for the last sum, since a centered normal of variance
+$T/n$ has fourth moment $3(T/n)^2$. Both limits are genuine $L^2$
+limits in the original Brownian space, proving the integral identity.
+
+The target is pure second chaos. Its gradient is
+$DF=2B_T\mathbf1_{(0,T]}$, so the minimum recovery and residual are
+\[
+ (RF)_s=B_T\mathbf1_{(0,T]}(s),\qquad
+ (\iota u-RF)_s=(2B_s-B_T)\mathbf1_{(0,T]}(s).
+\]
+Their squared norms are both $T^2$, whereas the causal field has
+squared norm $2T^2$. Directly,
+$\E(2B_s-B_T)^2=T$ and
+$\int_0^T\E[(2B_s-B_T)B_T]ds=\int_0^T(2s-T)ds=0$.
+The residual has zero original divergence. It is not a nonzero
+predictable field with zero It\^o integral: for $s<T$ the terminal
+factor $B_T$ is not measurable in the past, as its conditional
+variance is $T-s>0$. Predicting the minimum field instead gives
+$\E[B_T\mid\mathcal F_s^B]=B_s$, precisely half the causal
+coefficient. This actual witness is a human reconstruction of the
+mapped terminal-Wick degree-two energy identity.
+
+The principal mapped source is
+\par\noindent\code{GaussianItoSourceHodge},
+\par\noindent with the original domains and adjoint identity in
+\par\noindent\code{GaussianPredictableFull};
+\par\noindent\code{GaussianPredictableAdjoint};
+\par\noindent\code{GaussianBrownianPRP}.
+\par\noindent Gaussian Hodge decomposition is classical: Yang
+\cite{YangHodge}, Section 2, Theorem 2.1, recalls Shigekawa's
+stronger differential-form result. Maas--van Neerven
+\cite{MaasNeerven}, Theorems 6.6--6.7, already treat Clark--Ocone
+and its bounded extension in a substantially broader Banach-valued
+setting, with an augmented Brownian filtration. We retain the
+source's raw Brownian-generated classes and their exact scalar
+Hilbert identities. Neither comparison supplies an observed-IBM
+calculus or a representation on an arbitrary ambient filtration.
+No priority is claimed for these classical operator mechanisms.
+
 \section{A stationary factor need not decrease defect energy}
 The preceding source/sample identities use specific compatible Gaussian
 operators. General stationary observation factors require their own
@@ -1718,7 +1869,7 @@ Raw quartic conditional energies and cross-target residuals are in
 \code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
 The terminal bracket application is mapped to \code{GaussianTerminalBracketPrediction}, \code{GaussianTerminalWeightedBracket}, \code{GaussianTerminalBracketObstruction}, \code{GaussianTerminalBracketProducts} and \code{GaussianTerminalStrongBracket}. Its harmonic refinements are separately labelled human deductions. Exact declarations, original hypotheses, source hashes and human proof
-reorganizations accompany the manuscript. Sections 9--12 add the
+reorganizations accompany the manuscript. Sections 9--13 add the
 original joint source/sample recovery identity, the exact finite-source
 compactness classification and the positive-chaos block criterion. The
 combined finite-rank estimate and observed distance-one conclusion are
@@ -1780,5 +1931,7 @@ Journal of Stochastic Analysis (2011), article 762486.
 {Primary author publication record and abstract}; detailed bridge
 theorems not imported.
 \bibitem{LP} D. A. Levin and Y. Peres, \emph{Markov Chains and Mixing Times}, second edition, with contributions by E. L. Wilmer, Section 13.2, Lemma 13.6. Author-hosted PDF, \href{https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}{pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}.
+\bibitem{YangHodge} Y. Yang, \emph{It\^o--Wiener chaos and the Hodge decomposition on an abstract Wiener space}, \href{https://arxiv.org/pdf/1111.1295}{arXiv:1111.1295}, Section 2, Theorem 2.1 (Shigekawa).
+\bibitem{MaasNeerven} J. Maas and J. van Neerven, \emph{A Clark--Ocone formula in UMD Banach spaces}, \href{https://arxiv.org/pdf/0709.2021}{arXiv:0709.2021v2}, March 4, 2008, Theorems 6.6--6.7.
 \end{thebibliography}
 \end{document}
