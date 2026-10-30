@@ -735,6 +735,114 @@
       "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
       "declaration_header": "theorem stochastic_integration_by_parts (F : JointL2) (H : PredictableL2 F)\n    (f : jointDerivative.domain) :\n    inner \u211d (stochasticOutput F H) (f : IntrinsicSpace) =\n      inner \u211d (nativeField F H) (jointDerivative f)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L72"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.gaussian_interval_pos",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 13,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem gaussian_interval_pos (a b : \u211d) (hab : a < b) :\n    0 < gaussianReal 0 1 (Ioo a b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L13"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.witness_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 26,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem witness_positive : 0 < gaussianProduct witness",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L26"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.witness_backtracks",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 49,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem witness_backtracks {\u03c9 : SampleSpace} (h : \u03c9 \u2208 witness) :\n    |process 2 \u03c9| < |process 1 \u03c9|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L49"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.backtracking_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 56,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem backtracking_positive :\n    0 < gaussianProduct {\u03c9 | |process 2 \u03c9| < |process 1 \u03c9|}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L56"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockBacktracking.actual_clock_backtracking_positive",
+      "file": "Foundation/IBMClockBacktracking.lean",
+      "line": 60,
+      "source_sha256": "203ed2e6a86e5a825b0a541438def1d1853d68c2782ca4ee97e49310999a1662",
+      "declaration_header": "theorem actual_clock_backtracking_positive :\n    0 < gaussianProduct {\u03c9 | |IBMConstructedSources.clockPath \u03c9 2| <\n      |IBMConstructedSources.clockPath \u03c9 1|}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockBacktracking.lean#L60"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.gap_nonneg",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 18,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem gap_nonneg (s t : \u211d\u22650) (\u03c9 : SampleSpace) : 0 \u2264 gap s t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L18"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.gap_integrable",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 20,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem gap_integrable (s t : \u211d\u22650) : Integrable (gap s t) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L20"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.expected_gap_positive",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 30,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem expected_gap_positive : 0 < \u222b \u03c9, gap 1 2 \u03c9 \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L30"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.scenery_pair_gap",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 38,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem scenery_pair_gap (a b : \u211d) (ha : 0 \u2264 a) (hb : 0 \u2264 b) :\n    inner \u211d (sourceScenery a) (sourceScenery b - sourceScenery a) = -max (a - b) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.actual_increment_pairing",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 59,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem actual_increment_pairing (s t : \u211d\u22650) :\n    inner \u211d (intrinsicCurve s) (intrinsicCurve t - intrinsicCurve s) =\n      -(\u222b \u03c9, gap s t \u03c9 \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L59"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.actual_increment_pairing_negative",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 75,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem actual_increment_pairing_negative :\n    inner \u211d (intrinsicCurve 1) (intrinsicCurve 2 - intrinsicCurve 1) < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L75"
+    },
+    {
+      "paper": "Section 1 actual-path backtracking, negative increment covariance and failure of martingale projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTemporalCovarianceObstruction.past_projection_ne_previous",
+      "file": "Foundation/IBMTemporalCovarianceObstruction.lean",
+      "line": 82,
+      "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
+      "declaration_header": "theorem past_projection_ne_previous (V : Submodule \u211d JointL2) [CompleteSpace V]\n    (hp : (intrinsicCurve 1 : JointL2) \u2208 V) :\n    V.starProjection (intrinsicCurve 2 : JointL2) \u2260 (intrinsicCurve 1 : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L82"
     }
   ],
   "paper_sections": {
@@ -755,7 +863,9 @@
     "The countable family is chosen by Hilbert-basis existence and target-indexed closed-range representation. It is not an explicit causal-gradient coefficient formula or a predictable representation theorem for a prescribed single martingale.",
     "Section 7 uses the Hilbert norm on the ORIGINAL divergence graph, namely sqrt(||V||^2+||delta V||^2). The generalized derivative f maps a graph test to its L2 pairing with the original divergence value, so its norm is at most ||f|| without native-domain membership.",
     "The fixed tests are the existing bounded linear native recovery applied to the fixed stochastic basis outputs, with norm-squared at most two and exact divergences e_i. Coefficient evaluation, stochastic reconstruction and Parseval are exact source correspondences; the native derivative pairing is stated only for targets in its original domain.",
-    "The lower graph-dual norm bound ||f-P0f||/sqrt(3) is an explicitly proved HUMAN deduction: finite combinations of tests, not just individual norm bounds, are controlled by bounded linear recovery and basis orthogonality. The actual point-curve bound and nonzero coefficient at every positive time are human consequences of its exact variance and zero initial projection. No sharpness claim or additional formal declaration is made."
+    "The lower graph-dual norm bound ||f-P0f||/sqrt(3) is an explicitly proved HUMAN deduction: finite combinations of tests, not just individual norm bounds, are controlled by bounded linear recovery and basis orthogonality. The actual point-curve bound and nonzero coefficient at every positive time are human consequences of its exact variance and zero initial projection. No sharpness claim or additional formal declaration is made.",
+    "Section 1 now proves directly from the actual reflected-clock/scenery law that clock backtracking makes E[Z_s(Z_t-Z_s)] negative. The named formal negative-pairing and projection obstruction are at times one and two. The printed all-0<s<t extension uses an explicit positive independent-increment rectangle with nondegenerate Gaussian laws and is labelled human.",
+    "The closed covariance formula kappa(sqrt(s)+sqrt(t)-(sqrt(t+3s)+sqrt(t-s))/2) is an explicit human derivation from min(abs(Ws),abs(Wt)) and Gaussian absolute moments. The one-dimensional linear forecast at times one and two is computed from this covariance, not identified with any full sigma-algebra conditional expectation. Conditioning gives the fourth-moment obstruction to even marginal Gaussianity. These are classical illustrations, no new named source declaration or priority asserted."
   ],
   "literature": [
     {

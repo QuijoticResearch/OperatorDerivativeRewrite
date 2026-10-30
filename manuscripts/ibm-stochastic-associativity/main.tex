@@ -22,7 +22,7 @@
 \title{Observable martingales on Brownian-time paths:\\
 predictable energy, associativity and uniform reconstruction}
 \author{Project Stardust}
-\date{Reviewed editorial draft, revision 3, October 29, 2026}
+\date{Reviewed editorial draft, revision 4, October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
 On a constructed Brownian-time Brownian probability space, predictable
@@ -107,6 +107,74 @@ assumption on $Z$ enters any construction. Write
 \]
 We retain the whole initial germ in the statements, even where particular
 observables have zero initial projection.
+
+\subsection*{A direct obstruction to using the path as its own martingale}
+The distinction between $M^F$ and $Z$ can be checked against the actual
+joint law. Conditional on the full independent clock path,
+\[
+ \E[Z_sZ_t\mid W]=\min(|W_s|,|W_t|),\qquad
+ \E[Z_s(Z_t-Z_s)]=-\E[(|W_s|-|W_t|)_+].
+\]
+The products are integrable by Cauchy--Schwarz and
+$\E Z_t^2=\E|W_t|<\infty$, so conditioning is legitimate.
+For every $0<s<t$, the independent nondegenerate normals $W_s$ and
+$W_t-W_s$ assign positive probability to
+\[
+ W_s\in(1,2),\qquad W_t-W_s\in(-1/2,-1/4).
+\]
+On this event $W_t>0$ and $|W_s|-|W_t|>1/4$. Hence the second displayed
+expectation is strictly negative. At times one and two this is the
+mapped actual clock-backtracking and negative increment-pairing theorem.
+The argument for arbitrary positive $s<t$ is an explicit human extension
+using the same independent-increment event, not a stronger named formal
+declaration.
+\par\smallskip\begingroup\small\raggedright
+\noindent\code{IBMClockBacktracking}: \code{witness_positive},
+\code{actual_clock_backtracking_positive}.
+\par\noindent\code{IBMTemporalCovarianceObstruction}:
+\par\noindent\code{actual_increment_pairing},
+\code{actual_increment_pairing_negative},
+\par\noindent\code{past_projection_ne_previous}.
+\par\endgroup
+
+For any closed past subspace $V\subset L^2$ containing $Z_s$,
+$P_VZ_t=Z_s$ would imply $Z_t-Z_s\perp Z_s$, contradicting the strict
+pairing. In particular this applies to $L^2(\mathcal F_s^Z)$ and
+$L^2(\mathcal G_s)$: the actual path is not a martingale for either of
+these filtrations. This elementary obstruction does not depend on a
+choice of stochastic-integral convention.
+
+There is also a closed covariance formula for this reflected-clock law.
+For real $x,y$, $\bigl||x|-|y|\bigr|
+=|x+y|+|x-y|-|x|-|y|$. Since $W_s+W_t$ and $W_t-W_s$ have variances
+$t+3s$ and $t-s$, respectively, their first absolute Gaussian moments
+and $2\min(a,b)=a+b-|a-b|$ give, with $\kappa=\sqrt{2/\pi}$,
+\[
+ \E[Z_sZ_t]=\kappa\left(\sqrt s+\sqrt t
+             -\frac{\sqrt{t+3s}+\sqrt{t-s}}2\right)
+                    \quad(0<s<t).
+\]
+This scalar formula is a human consequence of the actual scenery
+covariance and Gaussian absolute moments, not a new process assumption.
+For example, projection onto the one-dimensional space spanned by $Z_1$
+is
+\[
+ P_{\operatorname{span}(Z_1)}Z_2
+   =\left(\frac12+\sqrt2-\frac{\sqrt5}{2}\right)Z_1\ne Z_1.
+\]
+The coefficient follows by division by $\E Z_1^2=\kappa$; it is below
+one because $(\sqrt5+1)/2>\sqrt2$, as squaring positive sides shows.
+Projection onto this one-dimensional linear span is not asserted to be
+conditional expectation on the full observed past, or even on
+$\sigma(Z_1)$. Indeed, conditioning on the clock gives $\E Z_1^4=3\E W_1^2=3$,
+whereas a centered Gaussian of variance $\E Z_1^2=\kappa$ has fourth
+moment $3\kappa^2=6/\pi<3$. Even this one marginal is not Gaussian.
+A Gaussian regression rule therefore cannot supply those nonlinear
+projections from covariance.
+These classical calculations explain why the original predictable energy
+measure below belongs to terminal-observable martingales rather than to
+uncorrected increments of $Z$; no new general martingale principle or
+priority for Brownian-time covariance is claimed.
 
 \section{The original predictable integral}
 We first specify the energy measure and integral to which later
