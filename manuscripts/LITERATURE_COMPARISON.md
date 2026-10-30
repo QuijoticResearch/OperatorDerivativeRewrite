@@ -28,7 +28,7 @@ Cantwell's [primary restricted-Euler article](https://doi.org/10.1063/1.858295) 
 
 ## Editorial consequence
 
-Keep all twenty-seven manuscripts labelled reviewed drafts. Treat the Gaussian prediction, Fourier positivity, complex-root and fluid notes as classical/formalization or diagnostic companions unless a precise independently checked new result is isolated. The arithmetic threshold, explicit moment boundaries, completed signed reconstruction and original Brownian-time domain/average results deserve focused further theorem-by-theorem priority comparison. Their current unresolved novelty labels are accurate. No external release or submission is authorized or performed.
+Keep all twenty-eight manuscripts labelled reviewed drafts. Treat the Gaussian prediction, Fourier positivity, complex-root and fluid notes as classical/formalization or diagnostic companions unless a precise independently checked new result is isolated. The arithmetic threshold, explicit moment boundaries, completed signed reconstruction and original Brownian-time domain/average results deserve focused further theorem-by-theorem priority comparison. Their current unresolved novelty labels are accurate. No external release or submission is authorized or performed.
 
 ## Poisson--Gaussian graph transport
 
@@ -169,3 +169,19 @@ Sticky boundary continuation: directly inspected Ayala–Carinci–Redig Appendi
 Mehler limit continuation: Lunardi–Pallara, Ornstein–Uhlenbeck semigroups in infinite dimension (2020), Section 3, https://doi.org/10.1098/rsta.2019.0620, directly inspected. The source distinguishes classical Mehler joint pointwise continuity from failure of supremum-norm strong continuity on Cb/BUC and discusses the mixed topology. The companion preserves those distinctions and proves its explicit accelerated projection-limit diagnostic directly. No new general limit or generator theorem is claimed. The underlying Mehler implementation retains its Douglas adaptation and Apache-2.0 notices.
 
 Geiss–Toivola, On fractional smoothness and Lp-approximation on the Gaussian space (2015), primary arXiv:1206.5415v2 PDF Section 2 Gaussian Sobolev construction and Definition 2.2 were checked for the IBM clock revision. Their scalar Gaussian gradient norm and real-interpolation Besov scale are classical antecedents; the paper does not substitute these for the separately proved scenery-valued closed spectral/native-domain bridge, identify all fine indices, or apply their stochastic-integral approximation theorem. HTML was unavailable; the primary PDF was accessible. Exact reflected-clock application priority remains unresolved.
+
+## Completed Fourier path controls: primary antecedents and exact domain
+
+[Nishioka (1985), original article](https://www.jstage.jst.go.jp/article/math1924/11/1/11_1_59/_article/-char/en), printed pages 61–66, 74–76 and 86–87, supplies the previously inspected Fourier-functional and higher-order calculus antecedents. The completed Fourier path paper uses its own countable-character quotient and native Bochner densities; equality with the full classical test domain is not assumed.
+
+[Chang–Johnson–Skoug (1986), original article](https://msp.org/pjm/1986/122-1/pjm-v122-n1-p02-s.pdf), introduction and Section 2, printed page 14, describes the finite-complex-measure/PWZ Banach algebra. [Mazzucchi–Nicola–Trapasso, v2 (2025)](https://arxiv.org/pdf/2403.20082), introduction and Section 3 Definition 3.1/formula (17), gives the Fresnel Fourier-measure context. These are established mechanisms. The selected quotient need not be an algebra; its damped heat functional is not identified with a quadratic oscillatory Fresnel functional or a larger Sjostrand domain. Priority remains unresolved.
+
+## Lognormal likelihood moments and physical white-noise inputs
+
+[Gulisashvili, v9 (2019)](https://arxiv.org/pdf/1808.00421), Definition 6.1, Theorem 6.11(i) and proof formula (6.23), printed pages 32–33, was inspected directly for the classical outside-[0,1] moment-explosion mechanism. The likelihood companion proves its frozen one-step proxy directly, without silently applying all continuous Volterra-model hypotheses. Its two-way entropy and root-distance consequences are labelled elementary human deductions.
+
+[Hairer, An Introduction to Stochastic PDEs, v2 (2023)](https://arxiv.org/pdf/0907.4178), Example 4.63 and formula (4.16), printed page 38, was inspected directly for isonormal covariance and ordinary L2 integrand inputs. The physical-kernel IBM extension uses that classical distinction: distribution-valued realization of noise does not extend the original deterministic input domain continuously to a Dirac mass. No whole-line global negative-Sobolev white-noise sample claim or new white-noise principle is inferred.
+
+## De Bruijn access recheck: comparison remains incomplete
+
+The institutional [Eindhoven publisher scan](https://pure.tue.nl/ws/files/1769368/597490.pdf) is now recognized as a 31-page PDF, but only its cover metadata was delivered as readable text. Screenshot requests returned references without inspectable page pixels. Direct retrieval returned HTTP 403; the alternate Delft institutional retrieval failed during TLS, and an indexed mirror returned 404. Access controls were not bypassed. No new theorem page was visually read, and no new de Bruijn hypothesis comparison, classical nonapplication proof or novelty conclusion is claimed. The earlier incomplete comparison remains open. The scan is not redistributed in the publication branch.
