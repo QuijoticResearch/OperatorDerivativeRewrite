@@ -2891,3 +2891,5 @@ import Foundation.CubeMatchedGround
 import Foundation.CubeGroundUnitary
 import Foundation.CubeHaarOperator
 import Foundation.CubeTemporalExterior
+import Foundation.CubeRelativeChart
+import Foundation.CubeLocalKernel
