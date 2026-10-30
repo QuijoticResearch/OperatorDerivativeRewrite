@@ -2965,3 +2965,4 @@ import Foundation.PeriodicWindingRate
 import Foundation.PeriodicGroundBridge
 import Foundation.PeriodicAugmentedBridge
 import Foundation.QuaternionTiltWard
+import Foundation.QuaternionTiltComparison
