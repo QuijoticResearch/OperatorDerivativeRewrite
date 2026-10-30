@@ -3699,6 +3699,519 @@
       "source_sha256": "3a1ad32128c777b949941e69c29b6b80d08500d659fc158f10c876e4c6441210",
       "declaration_header": "theorem generatedAlgebra_product_mem_adjoint_domain\n    (h\u03b4 : Dense (\u03b4.domain : Set (Lp H 2 \u03bc)))\n    (hcenter : \u2200 u : \u03b4.domain, (\u222b \u03c9, (\u03b4 u : \u03a9 \u2192 \u211d) \u03c9 \u2202\u03bc) = 0)\n    (s : Set (\u03a9 \u2192 \u211d)) (hs : \u2200 f \u2208 s, IsDivergenceMultiplier \u03b4 f)\n    (f g : Algebra.adjoin \u211d s) :\n    \u2203 hfg : MemLp ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) \u221e \u03bc,\n      boundedToL2 ((f : \u03a9 \u2192 \u211d) * (g : \u03a9 \u2192 \u211d)) hfg \u2208 \u03b4.adjoint.domain",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultiplierCore.lean#L290"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 12,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "def average (f : \u211d \u2192 \u211d) (e x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L12"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_eq_primitive",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 14,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_eq_primitive (f : \u211d \u2192 \u211d) (hf : Continuous f) (e x : \u211d) :\n    average f e x = (primitive 0 f (x+e) - primitive 0 f x) / e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L14"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_hasDerivAt",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 19,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_hasDerivAt (f : \u211d \u2192 \u211d) (hf : Continuous f) (e x : \u211d) :\n    HasDerivAt (average f e) ((f (x+e)-f x)/e) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L19"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_deriv",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 27,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_deriv (f : \u211d \u2192 \u211d) (hf : Continuous f) (e : \u211d) :\n    deriv (average f e) = fun x => (f (x+e)-f x)/e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L27"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_contDiff_succ",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 31,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_contDiff_succ (f : \u211d \u2192 \u211d) {n : \u2115} (hf : ContDiff \u211d n f) (e : \u211d) :\n    ContDiff \u211d (n+1) (average f e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L31"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.deriv_average_eq_average_deriv",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 39,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem deriv_average_eq_average_deriv (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 1 f) (e : \u211d) :\n    deriv (average f e) = average (deriv f) e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L39"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.deriv_contDiff_one",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 47,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem deriv_contDiff_one (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) : ContDiff \u211d 1 (deriv f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L47"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.second_average",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 50,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem second_average (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (e : \u211d) :\n    deriv (deriv (average f e)) = average (deriv (deriv f)) e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L50"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.third_average",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 55,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem third_average (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (e : \u211d) :\n    deriv (deriv (deriv (average f e))) =\n      fun x => (deriv (deriv f) (x+e)-deriv (deriv f) x)/e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L55"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_norm_le",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 62,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_norm_le (f : \u211d \u2192 \u211d) {e : \u211d} (he : 0 < e) (M : \u211d)\n    (hM : \u2200 x, \u2016f x\u2016 \u2264 M) (x : \u211d) : \u2016average f e x\u2016 \u2264 M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L62"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_third_bound",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 70,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_third_bound (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) {e : \u211d} (he : 0 < e)\n    (M : \u211d) (hM : \u2200 x, \u2016deriv (deriv f) x\u2016 \u2264 M) (x : \u211d) :\n    \u2016deriv (deriv (deriv (average f e))) x\u2016 \u2264 2*M/e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L70"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_tendsto",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 77,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_tendsto (f : \u211d \u2192 \u211d) (hf : Continuous f) (x : \u211d) :\n    Tendsto (fun e => average f e x) (\ud835\udcdd[>] 0) (\ud835\udcdd (f x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L77"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_deriv_tendsto",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 82,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_deriv_tendsto (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 1 f) (x : \u211d) :\n    Tendsto (fun e => deriv (average f e) x) (\ud835\udcdd[>] 0) (\ud835\udcdd (deriv f x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L82"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_second_tendsto",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 87,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_second_tendsto (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (x : \u211d) :\n    Tendsto (fun e => deriv (deriv (average f e)) x) (\ud835\udcdd[>] 0)\n      (\ud835\udcdd (deriv (deriv f) x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L87"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.average_error_le",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 93,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem average_error_le (f : \u211d \u2192 \u211d) {K : \u211d\u22650} (hf : LipschitzWith K f)\n    {e : \u211d} (he : 0 < e) (x : \u211d) : \u2016average f e x - f x\u2016 \u2264 K * e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L93"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.width",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 113,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "def width (n : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L113"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.width_pos",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 115,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem width_pos (n : \u2115) : 0 < width n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L115"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.width_tendsto",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 117,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem width_tendsto : Tendsto width atTop (\ud835\udcdd[>] 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L117"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.approximation_C3",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 123,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem approximation_C3 (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (n : \u2115) :\n    ContDiff \u211d 3 (average f (width n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L123"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.approximation_first_bound",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 126,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem approximation_first_bound (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (M : \u211d)\n    (hM : \u2200 x, \u2016deriv f x\u2016 \u2264 M) (n : \u2115) (x : \u211d) :\n    \u2016deriv (average f (width n)) x\u2016 \u2264 M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L126"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealSteklovApprox.approximation_second_bound",
+      "file": "Foundation/RealSteklovApprox.lean",
+      "line": 132,
+      "source_sha256": "ab761d2c01055e051bbc324367a9d0a4b8e88b604044f41c2e4c03bfff703513",
+      "declaration_header": "theorem approximation_second_bound (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 2 f) (M : \u211d)\n    (hM : \u2200 x, \u2016deriv (deriv f) x\u2016 \u2264 M) (n : \u2115) (x : \u211d) :\n    \u2016deriv (deriv (average f (width n))) x\u2016 \u2264 M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealSteklovApprox.lean#L132"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.functionLip",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 19,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def functionLip : LipschitzWith K0 f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L19"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.derivativeLip",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 22,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def derivativeLip : LipschitzWith K1 (deriv f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L22"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.second_continuous",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 26,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem second_continuous : Continuous (deriv (deriv f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L26"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureValue",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 30,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def curvatureValue (t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L30"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureValue_coeFn",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 33,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem curvatureValue_coeFn (t : \u211d\u22650) : curvatureValue f hf K1 h1 t =\u1d50[gaussianProduct]\n    fun \u03c9 => deriv (deriv f) (process t \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L33"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.smoothApprox",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 37,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def smoothApprox (n : \u2115) : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L37"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.smoothApprox_C3",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 40,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem smoothApprox_C3 (n : \u2115) : ContDiff \u211d 3 (smoothApprox f n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L40"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateFunctionLip",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 42,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def approximateFunctionLip (n : \u2115) : LipschitzWith K0 (smoothApprox f n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L42"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateDerivativeLip",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 47,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def approximateDerivativeLip (n : \u2115) : LipschitzWith K1 (deriv (smoothApprox f n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L47"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureLipConstant",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 53,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def curvatureLipConstant (n : \u2115) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L53"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateCurvatureLip",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 55,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "def approximateCurvatureLip (n : \u2115) :\n    LipschitzWith (curvatureLipConstant K1 n) (deriv (deriv (smoothApprox f n)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L55"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.terminal_tendsto",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 64,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem terminal_tendsto (t : \u211d\u22650) :\n    Tendsto (fun n => valueL2 (approximateFunctionLip f hf K0 h0 n) t) atTop\n      (\ud835\udcdd (valueL2 (functionLip f hf K0 h0) t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L64"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.stochastic_tendsto",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 75,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem stochastic_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => itoIntegral (integrand (approximateDerivativeLip f hf K1 h1 n) T)) atTop\n      (\ud835\udcdd (itoIntegral (integrand (derivativeLip f hf K1 h1) T)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L75"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvature_tendsto",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 86,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem curvature_tendsto (t : \u211d\u22650) :\n    Tendsto (fun n => valueL2 (approximateCurvatureLip f hf K1 h1 n) t) atTop\n      (\ud835\udcdd (curvatureValue f hf K1 h1 t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L86"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvature_integral_tendsto",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 96,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem curvature_integral_tendsto (T : \u211d\u22650) :\n    IntervalIntegrable (fun t : \u211d => curvatureValue f hf K1 h1 t.toNNReal) volume 0 T \u2227\n    Tendsto (fun n => \u222b t in 0..(T:\u211d), valueL2 (approximateCurvatureLip f hf K1 h1 n) t.toNNReal)\n      atTop (\ud835\udcdd (\u222b t in 0..(T:\u211d), curvatureValue f hf K1 h1 t.toNNReal))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L96"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.c2_ito",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 107,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem c2_ito (T : \u211d\u22650) :\n    valueL2 (functionLip f hf K0 h0) T - valueL2 (functionLip f hf K0 h0) 0 =\n      itoIntegral (integrand (derivativeLip f hf K1 h1) T) +\n        (1/2:\u211d) \u2022 (\u222b t in 0..(T:\u211d), curvatureValue f hf K1 h1 t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L107"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2Ito.c2_ito_ae",
+      "file": "Foundation/GaussianC2Ito.lean",
+      "line": 125,
+      "source_sha256": "06870eb265f9dc66af417391c892cbe366f4ffd843ff4f13ad5cba0c44f55d0e",
+      "declaration_header": "theorem c2_ito_ae (T : \u211d\u22650) :\n    (fun \u03c9 => f (process T \u03c9)-f 0) =\u1d50[gaussianProduct] fun \u03c9 =>\n      itoIntegral (integrand (derivativeLip f hf K1 h1) T) \u03c9 + (1/2:\u211d) *\n        ((\u222b t in 0..(T:\u211d), curvatureValue f hf K1 h1 t.toNNReal) : GaussianL2) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2Ito.lean#L125"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.drift",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 19,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "def drift (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L19"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.terminal_adjoint",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 21,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "theorem terminal_adjoint (T : \u211d\u22650) :\n    predictableAdjoint (valueL2 (functionLip f hf K0 h0) T) =\n      integrand (derivativeLip f hf K1 h1) T +\n        (1/2:\u211d) \u2022 predictableAdjoint (drift f hf K1 h1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L21"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.projection_difference",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 31,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "theorem projection_difference (T : \u211d\u22650) :\n    predictableAdjoint (valueL2 (functionLip f hf K0 h0) T) -\n      integrand (derivativeLip f hf K1 h1) T =\n        (1/2:\u211d) \u2022 predictableAdjoint (drift f hf K1 h1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L31"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.terminal_adjoint_eq_running_iff",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 40,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "theorem terminal_adjoint_eq_running_iff (T : \u211d\u22650) :\n    predictableAdjoint (valueL2 (functionLip f hf K0 h0) T) =\n      integrand (derivativeLip f hf K1 h1) T \u2194\n        predictableAdjoint (drift f hf K1 h1 T) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L40"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.compensated_projection",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 49,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "theorem compensated_projection (S T : \u211d\u22650) :\n    pastProjection S (valueL2 (functionLip f hf K0 h0) T - (1/2:\u211d) \u2022 drift f hf K1 h1 T) =\n      valueL2 (functionLip f hf K0 h0) (min S T) - (1/2:\u211d) \u2022 drift f hf K1 h1 (min S T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L49"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2OperatorCorrection.full_derivative_projection",
+      "file": "Foundation/GaussianC2OperatorCorrection.lean",
+      "line": 64,
+      "source_sha256": "054788ab8f8737c5815bd5c7e1787709feb74c96033a5f01f3978817fcdca400",
+      "declaration_header": "theorem full_derivative_projection (T : \u211d\u22650)\n    (hdom : valueL2 (functionLip f hf K0 h0) T \u2208 closedCylindricalDerivative.domain) :\n    predictableProjection (closedCylindricalDerivative \u27e8valueL2 (functionLip f hf K0 h0) T, hdom\u27e9) =\n      integrand (derivativeLip f hf K1 h1) T +\n        (1/2:\u211d) \u2022 predictableAdjoint (drift f hf K1 h1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2OperatorCorrection.lean#L64"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothProjectionDiagnostic.sin_bounded_C3",
+      "file": "Foundation/GaussianSmoothProjectionDiagnostic.lean",
+      "line": 17,
+      "source_sha256": "6620af7e0eeb8d9391ef890b934dd9ff343171e9002775da48f464fe72990f3e",
+      "declaration_header": "theorem sin_bounded_C3 : ContDiff \u211d 3 Real.sin \u2227\n    \u2200 n : \u2115, n \u2264 3 \u2192 \u2200 x : \u211d, \u2016iteratedDeriv n Real.sin x\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothProjectionDiagnostic.lean#L17"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothProjectionDiagnostic.sin_predictableAdjoint",
+      "file": "Foundation/GaussianSmoothProjectionDiagnostic.lean",
+      "line": 30,
+      "source_sha256": "6620af7e0eeb8d9391ef890b934dd9ff343171e9002775da48f464fe72990f3e",
+      "declaration_header": "theorem sin_predictableAdjoint (T : \u211d\u22650) :\n    predictableAdjoint (valueL2 Real.lipschitzWith_sin T) =\n      Real.exp (-((T:\u211d)/2)) \u2022 weightedField expHalf expHalf_contDiff.continuous\n        Real.lipschitzWith_cos T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothProjectionDiagnostic.lean#L30"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothProjectionDiagnostic.sin_predictableAdjoint_slices",
+      "file": "Foundation/GaussianSmoothProjectionDiagnostic.lean",
+      "line": 49,
+      "source_sha256": "6620af7e0eeb8d9391ef890b934dd9ff343171e9002775da48f464fe72990f3e",
+      "declaration_header": "theorem sin_predictableAdjoint_slices (T : \u211d\u22650) :\n    scalarCurry (predictableAdjoint (valueL2 Real.lipschitzWith_sin T) : TimeProbabilityL2)\n      =\u1d50[volume] (Ioc 0 (T:\u211d)).indicator\n        (fun t => (Real.exp (-((T:\u211d)/2)) * expHalf t) \u2022\n          valueL2 Real.lipschitzWith_cos t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothProjectionDiagnostic.lean#L49"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothProjectionDiagnostic.sin_projection_ne_running_derivative",
+      "file": "Foundation/GaussianSmoothProjectionDiagnostic.lean",
+      "line": 69,
+      "source_sha256": "6620af7e0eeb8d9391ef890b934dd9ff343171e9002775da48f464fe72990f3e",
+      "declaration_header": "theorem sin_projection_ne_running_derivative (T : \u211d\u22650) (hT : 0 < T) :\n    predictableAdjoint (valueL2 Real.lipschitzWith_sin T) \u2260\n      integrand Real.lipschitzWith_cos T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothProjectionDiagnostic.lean#L69"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.driftSum",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 19,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "def driftSum (h\u03c6 : LipschitzWith K \u03c6) (T : \u211d\u22650) (N : \u2115) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L19"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.driftSum_coeFn",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 23,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem driftSum_coeFn (h\u03c6 : LipschitzWith K \u03c6) (T : \u211d\u22650) (N : \u2115) :\n    driftSum h\u03c6 T N =\u1d50[gaussianProduct] fun \u03c9 => \u2211 i : Fin (N + 1),\n      ((uniformTime T N i.succ : \u211d) - uniformTime T N i.castSucc) *\n        \u03c6 (process (uniformTime T N i.castSucc) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L23"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.finite_taylor_identity",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 39,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem finite_taylor_identity (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 3 f)\n    {K0 K1 K2 : \u211d\u22650} (h0 : LipschitzWith K0 f)\n    (h1 : LipschitzWith K1 (deriv f)) (h2 : LipschitzWith K2 (deriv (deriv f)))\n    (M : \u211d) (hM : \u2200 x, \u2016iteratedDeriv 3 f x\u2016 \u2264 M) (T : \u211d\u22650) (N : \u2115) :\n    valueL2 h0 T - valueL2 h0 0 =\n      itoIntegral (predictableStep (valueL2 h1) (valueL2_past h1) T N) +\n        (1 / 2 : \u211d) \u2022 (GaussianLipschitzQuadraticVariation.error h2 T N + driftSum h2 T N) +\n        remainderSum f hf M hM T N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L39"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.ito_of_lipschitz_derivatives",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 83,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem ito_of_lipschitz_derivatives (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 3 f)\n    {K0 K1 K2 : \u211d\u22650} (h0 : LipschitzWith K0 f)\n    (h1 : LipschitzWith K1 (deriv f)) (h2 : LipschitzWith K2 (deriv (deriv f)))\n    (M : \u211d) (hM : \u2200 x, \u2016iteratedDeriv 3 f x\u2016 \u2264 M) (T : \u211d\u22650) :\n    valueL2 h0 T - valueL2 h0 0 = itoIntegral (integrand h1 T) +\n      (1 / 2 : \u211d) \u2022 (\u222b t in 0..(T : \u211d), valueL2 h2 t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L83"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.bounded_derivatives_ito",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 99,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem bounded_derivatives_ito (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 3 f)\n    (K0 K1 K2 : \u211d\u22650) (h0 : \u2200 x, \u2016deriv f x\u2016\u208a \u2264 K0)\n    (h1 : \u2200 x, \u2016deriv (deriv f) x\u2016\u208a \u2264 K1)\n    (h2 : \u2200 x, \u2016deriv (deriv (deriv f)) x\u2016\u208a \u2264 K2) (T : \u211d\u22650) :\n    \u2203 (l0 : LipschitzWith K0 f) (l1 : LipschitzWith K1 (deriv f))\n      (l2 : LipschitzWith K2 (deriv (deriv f))),\n      valueL2 l0 T - valueL2 l0 0 = itoIntegral (integrand l1 T) +\n        (1 / 2 : \u211d) \u2022 (\u222b t in 0..(T : \u211d), valueL2 l2 t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L99"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.valueL2_zero",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 122,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem valueL2_zero (h\u03c6 : LipschitzWith K \u03c6) : valueL2 h\u03c6 0 = \u03c6 0 \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L122"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.drift_integrable",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 129,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem drift_integrable (h\u03c6 : LipschitzWith K \u03c6) (T : \u211d\u22650) :\n    IntervalIntegrable (fun t : \u211d => valueL2 h\u03c6 t.toNNReal) volume 0 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L129"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.smooth_ito_ae",
+      "file": "Foundation/GaussianSmoothIto.lean",
+      "line": 135,
+      "source_sha256": "894882ce5953a32310f1273ac607b5f3e49f194d489ed9b280f897b9831f33ab",
+      "declaration_header": "theorem smooth_ito_ae (f : \u211d \u2192 \u211d) (hf : ContDiff \u211d 3 f)\n    {K0 K1 K2 : \u211d\u22650} (h0 : LipschitzWith K0 f)\n    (h1 : LipschitzWith K1 (deriv f)) (h2 : LipschitzWith K2 (deriv (deriv f)))\n    (M : \u211d) (hM : \u2200 x, \u2016iteratedDeriv 3 f x\u2016 \u2264 M) (T : \u211d\u22650) :\n    (fun \u03c9 => f (process T \u03c9) - f 0) =\u1d50[gaussianProduct] fun \u03c9 =>\n      itoIntegral (integrand h1 T) \u03c9 + (1 / 2 : \u211d) *\n        ((\u222b t in 0..(T : \u211d), valueL2 h2 t.toNNReal) : GaussianL2) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmoothIto.lean#L135"
+    },
+    {
+      "paper": "Section 18 / Proposition 18.1: genuine bounded-first-and-second-derivative C2 Brownian Ito through explicit one-sided Steklov averaging, independently constructed predictable field and Bochner-L2 curvature drift; smooth Taylor remainder and orthogonal centered-square error. Exact bounded terminal adjoint drift correction and criterion, compensated martingale. Bounded C-infinity sine witness has heat-damped adjoint, not running cosine. Explicit error-energy integral is labelled human deduction. The time-weighted theorem is used only for the deterministic exponential sine specialization, not asserted here for a general time-space function.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianC2TimeWeighted.time_weighted_ito",
+      "file": "Foundation/GaussianC2TimeWeighted.lean",
+      "line": 87,
+      "source_sha256": "3131f92baa09b093c2b6bf1fccd971682e27ca52be597351c7647eea96bdfc6d",
+      "declaration_header": "theorem time_weighted_ito (a : \u211d \u2192 \u211d) (ha : ContDiff \u211d 1 a) (T : \u211d\u22650) :\n    a T \u2022 valueL2 (functionLip f hf K0 h0) T - a 0 \u2022 valueL2 (functionLip f hf K0 h0) 0 =\n      itoIntegral (weightedField a ha.continuous (derivativeLip f hf K1 h1) T) +\n        (\u222b t in 0..(T : \u211d), deriv a t \u2022 valueL2 (functionLip f hf K0 h0) t.toNNReal) +\n        (1 / 2 : \u211d) \u2022 (\u222b t in 0..(T : \u211d), a t \u2022 curvatureValue f hf K1 h1 t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianC2TimeWeighted.lean#L87"
     }
   ],
   "human_reorganization": [
@@ -3719,7 +4232,8 @@
     "Section 14 reconstructs the original predictable L2 representation of M_T^2-E M_T^2 for M_t=(W_t^2-t)/2. The actual correction is 2(T-t)W_t and its terminal squared defect is T^4/3. The ordinary Ito formula retains its random quadratic variation and is not refuted. Exact naive/correction/cross energies 5*T^4/2, T^4/3, T^4/3, conditional covariance (T-t)W_t and the direct polynomial-localization proof are labelled HUMAN deductions; full conditional product expectation is not replaced by the product of conditional means. No projected-Malliavin representation on an unstated domain is asserted.",
     "Section 15 reconstructs the full Gaussian derivative of the original Brownian Ito integral on the independently specified predictable Sobolev graph. Finite-chaos bounded graph maps and Bochner dominated convergence prove equality with the actual adapted polynomial graph closure; no graph approximation is assumed in the theorem. The actual parameterized correction is an isometry only on its proved admissible range and is orthogonal to all embedded predictable fields. Exact derivative/graph energies and a mean-profile Poincare bound give deterministic-profile rigidity. The B_a times (B_b-B_a) step witness saturates the bound and retains correction energy a(b-a). This full source-field correction is distinguished from the preceding two predictable coefficient corrections, whose cross energy is nonzero. No converse characterization of all Ito targets, physical-time derivative or observed-IBM calculus is inferred.",
     "Section 16 reconstructs a separate Brownian cubic obstruction for the bounded predictable adjoint K=I*, retaining its distinction from the unbounded Malliavin derivative. On F=W_T^2 and G=W_T, the actual conditional-product candidate is 3W_t^2+(T-t), whereas K(FG)=3W_t^2+3(T-t). Their deterministic error 2(T-t) has squared time-probability norm 4T^3/3; replacing by running 3W_t^2 instead gives 3T^3. All candidate and true fields are proved predictable L2 using genuine Gaussian fourth moments. The exact error is 2KJ_T, with J_T the original first-chaos ramp observable. Identification J_T=int_0^T W_s ds by a Bochner deterministic-source integral and bounded Ito-map interchange is explicitly a HUMAN reformulation; the terminal error identity IB=W_T^3-2J_T is likewise a HUMAN isometry consequence. No arbitrary multiplier-domain closure, general conditional derivation, bounded-C3 counterexample, physical-time IBM calculus or new product principle is inferred.",
-    "Section 17 reconstructs the standard bounded-commutator route to genuine product-domain membership for the actual densely defined divergence. Original-domain invariance and a bounded commutator imply adjoint-domain invariance by an explicit Riesz representer; constants, sums and products form an algebra, and centering on a finite measure puts every admissible function and generated algebra product in the actual adjoint domain. The explicit adjoint equality and graph-norm bound are human consequences of that representer proof. A supplied zero-operator Gaussian example shows why an arbitrarily chosen admissible generated algebra need not be graph dense; it does not claim that the full admissible algebra is non-dense. For bounded everywhere-defined divergences every bounded multiplier is admissible, so this criterion does not imply a Leibniz rule. No particular unbounded Gaussian divergence is claimed to have a dense multiplier core. Classical operator argument, no new principle or priority claim."
+    "Section 17 reconstructs the standard bounded-commutator route to genuine product-domain membership for the actual densely defined divergence. Original-domain invariance and a bounded commutator imply adjoint-domain invariance by an explicit Riesz representer; constants, sums and products form an algebra, and centering on a finite measure puts every admissible function and generated algebra product in the actual adjoint domain. The explicit adjoint equality and graph-norm bound are human consequences of that representer proof. A supplied zero-operator Gaussian example shows why an arbitrarily chosen admissible generated algebra need not be graph dense; it does not claim that the full admissible algebra is non-dense. For bounded everywhere-defined divergences every bounded multiplier is admissible, so this criterion does not imply a Leibniz rule. No particular unbounded Gaussian divergence is claimed to have a dense multiplier core. Classical operator argument, no new principle or priority claim.",
+    "Section 18 reconstructs genuine C2 Brownian Ito with bounded actual first and second derivatives and no third derivative assumption on the original function. Explicit interval averages give C3 approximants; the smooth proof prints the L2 third-order remainder O(T sqrt(mesh)), centered quadratic error squared O(T mesh), predictable isometry limit and Bochner drift limit. Terminal, integrand and curvature convergences are checked separately before applying the bounded predictable adjoint. The exact formula K f(W_T)=running f-prime + (1/2) K drift, its necessary-and-sufficient equality criterion and actual compensated martingale are proved. A separate bounded C-infinity sine witness has K sin(W_T)=1_(0,T] exp(-(T-t)/2) cos(W_t), with an explicitly positive HUMAN error-energy integral. It refutes the terminal-adjoint/running-derivative substitution within the bounded smooth class, not the distinct conditional-product candidate of Section 16. Six principal sources read in full, including the full time-weighted source although only its exponential sine specialization is used. This is classical Ito calculus, not a novel principle, unproved full Malliavin-domain claim, general C1,2 approximation or intrinsic physical-time IBM theorem."
   ],
   "literature": [
     {

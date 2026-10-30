@@ -1406,6 +1406,137 @@ printed with their proofs. This is a classical bounded-commutator
 argument, not a new general operator principle or a claim that any
 particular unbounded Gaussian divergence admits a dense multiplier core.
 
+\section{Genuine $C^2$ drift correction and a bounded smooth witness}
+For the same Brownian motion and predictable isometry $I$, let $K=I^*$.
+Take $f\in C^2(\R)$ with $\|f'\|_\infty\leq L$ and
+$\|f''\|_\infty\leq M$. The function itself need not be bounded.
+Put
+\[
+ u_t=\ind_{(0,T]}(t)f'(W_t),\qquad
+ V_T=\int_0^T f''(W_s)\,ds\quad\hbox{in }L^2(\Omega).
+\]
+These are independently defined: $u$ is predictable and
+$\|u\|^2\leq L^2T$, while the drift integrand is strongly
+$L^2$ continuous and bounded by $M$, so $\|V_T\|_2\leq MT$.
+For the continuity assertion, $W_{s_n}\to W_s$ in probability;
+bounded continuity of $f''$ gives convergence in probability of the
+compositions and hence $L^2$ convergence, by the uniform bound.
+Also $f(W_T)\in L^2$ since $|f(x)|\leq |f(0)|+L|x|$.
+
+\begin{proposition}\label{prop:c2projection}
+In the actual terminal and predictable $L^2$ spaces,
+\begin{align*}
+ f(W_T)-f(0)&=Iu+\tfrac12V_T,\\
+ Kf(W_T)&=u+\tfrac12KV_T.
+\end{align*}
+Thus $Kf(W_T)=u$ holds exactly when $KV_T=0$.
+The compensated variables $f(W_t)-\tfrac12V_t$ form a martingale:
+for $s,t\geq0$ their conditional expectation at $s$ is
+$f(W_{s\wedge t})-\tfrac12V_{s\wedge t}$.
+\end{proposition}
+\begin{proof}
+Here is a direct regularization proof which requires no third derivative
+of $f$. For $\varepsilon>0$ set
+\[
+ f_\varepsilon(x)=\varepsilon^{-1}\int_x^{x+\varepsilon}f(y)\,dy.
+\]
+The fundamental theorem of calculus gives
+$f_\varepsilon'=\varepsilon^{-1}\int_x^{x+\varepsilon}f'(y)\,dy$,
+$f_\varepsilon''=\varepsilon^{-1}\int_x^{x+\varepsilon}f''(y)\,dy$, and
+\[
+ f_\varepsilon'''(x)=
+       \frac{f''(x+\varepsilon)-f''(x)}{\varepsilon}.
+\]
+Consequently $f_\varepsilon\in C^3$,
+$\|f_\varepsilon'\|_\infty\leq L$,
+$\|f_\varepsilon''\|_\infty\leq M$,
+$\|f_\varepsilon'''\|_\infty\leq2M/\varepsilon$,
+and $|f_\varepsilon-f|\leq L\varepsilon$.
+The first two derivatives converge pointwise to $f'$ and $f''$.
+
+For completeness, the required smooth It\^o identity follows from
+Taylor's formula on a uniform mesh of width $\Delta=T/N$.
+For any $g\in C^3$ with bounded first three derivatives, the sum of
+third-order remainders has $L^2$ norm at most
+\[
+ \frac{\|g'''\|_\infty}{6}
+       N\bigl(\E|W_\Delta|^6\bigr)^{1/2}
+ =\frac{\sqrt{15}}6\|g'''\|_\infty T\sqrt\Delta.
+\]
+The centered quadratic sum
+$\sum_j g''(W_{j\Delta})((\Delta W_j)^2-\Delta)$ has squared
+$L^2$ norm at most $2\|g''\|_\infty^2T\Delta$.
+Indeed distinct summands are orthogonal by conditioning on the later
+left endpoint, and each future centered squared increment has variance
+$2\Delta^2$. The left first-derivative sums converge by the It\^o
+isometry, since $g'$ is Lipschitz and
+$\E|W_s-W_{j\Delta}|^2=s-j\Delta$. The drift Riemann sums
+converge in Bochner $L^2$ by continuity of $g''(W_s)$ in that space.
+Summing Taylor's formula therefore proves the identity for
+$g=f_\varepsilon$, with $\varepsilon$ fixed while $N\to\infty$.
+
+Now let $\varepsilon\downarrow0$. The terminal convergence is
+uniform in $x$ with error at most $L\varepsilon$; it applies also
+at zero. Dominated convergence on $dt\,d\mathbb{P}$ gives convergence of
+$f_\varepsilon'(W_t)$ to $f'(W_t)$ in predictable $L^2$,
+using bound $2L$ for the difference. For the drift, the corresponding
+bound is $2M$, and
+\[
+ \left\|\int_0^T h_s\,ds\right\|_2^2
+ \leq T\int_0^T\|h_s\|_2^2\,ds
+\]
+gives convergence of the Bochner integrals.
+Continuity of $I$ proves the first identity. Apply the bounded map
+$K$, use $KIu=u$ and $K$ of constants equal to zero, to obtain the
+second. The criterion follows because $1/2\ne0$.
+At every time the first identity identifies the compensated variable
+with $f(0)+\int_0^t f'(W_r)\,dW_r$. The integrand is bounded, so
+these are genuine square-integrable martingale values; conditioning
+the stochastic integral proves the stated formula.
+\end{proof}
+
+A bounded smooth example makes the distinction strict within the
+bounded $C^3$ test class. Take $f(x)=\sin x$; the function and all
+its derivatives have absolute value at most one. Deterministic
+integration by parts applied to its It\^o formula gives
+\[
+ e^{T/2}\sin W_T=\int_0^T e^{t/2}\cos W_t\,dW_t.
+\]
+In detail, $d(\sin W_t)=\cos W_t\,dW_t-
+\tfrac12\sin W_t\,dt$, and differentiation of $e^{t/2}$ cancels
+that drift. All factors are bounded on a fixed finite horizon,
+which justifies the deterministic product rule and square integrals.
+Applying $K$ yields the exact field
+\[
+ (K\sin W_T)_t=\ind_{(0,T]}(t)e^{-(T-t)/2}\cos W_t.
+\]
+For $T>0$ this differs from the running derivative
+$\ind_{(0,T]}(t)\cos W_t$. Indeed its squared error is
+\[
+ \int_0^T(1-e^{-(T-t)/2})^2\frac{1+e^{-2t}}2\,dt>0.
+\]
+Here $\E\cos^2W_t=(1+\E\cos(2W_t))/2=(1+e^{-2t})/2$,
+by the Gaussian characteristic function. Strict positivity holds
+on every $0<t<T$. This energy formula is a human consequence of
+the exact formal sine field. It is a bounded smooth counterexample
+to the terminal-adjoint/running-derivative substitution; it is not
+a bounded smooth counterexample to the distinct conditional product
+candidate tested on polynomials in Section 16.
+
+\par\noindent
+The principal sources, each read completely, are
+\code{RealSteklovApprox} and \code{GaussianC2Ito}.
+
+\noindent The operator correction is in \code{GaussianC2OperatorCorrection}.
+
+\noindent The bounded witness is in \code{GaussianSmoothProjectionDiagnostic}.
+The smooth Taylor passage uses \code{GaussianSmoothIto}; the
+deterministic weighted identity is also proved in
+\code{GaussianC2TimeWeighted}. This is classical Brownian It\^o
+calculus and its exact bounded-adjoint interpretation. No additional
+Malliavin-domain membership, unrestricted time-space approximation,
+or physical-time IBM calculus is asserted.
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
