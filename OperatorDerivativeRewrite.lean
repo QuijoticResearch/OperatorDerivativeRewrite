@@ -2893,3 +2893,5 @@ import Foundation.CubeHaarOperator
 import Foundation.CubeTemporalExterior
 import Foundation.CubeRelativeChart
 import Foundation.CubeLocalKernel
+import Foundation.CubeChartAction
+import Foundation.CubeKernelLimit
