@@ -2917,3 +2917,5 @@ import Foundation.CubeGaussianKernelChannels
 import Foundation.CubeGaussianCoordinateMeasure
 import Foundation.SU2RootEuclideanMeasure
 import Foundation.CubeGaussianChannelGround
+import Foundation.CubeGaussianRootGround
+import Foundation.CubeGaussianGroundEigenvector
