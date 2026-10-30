@@ -2947,3 +2947,7 @@ import Foundation.PeriodicSpatialHolonomy
 import Foundation.PeriodicLowActionBlock
 import Foundation.PeriodicGroundMass
 import Foundation.PeriodicHolonomyMass
+import Foundation.PeriodicCenterSeam
+import Foundation.PeriodicGroundHarmonic
+import Foundation.PeriodicGroundSeamParity
+import Foundation.PeriodicCenteredHolonomy
