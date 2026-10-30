@@ -20,7 +20,7 @@ as a historical foundation overview; its old open-problem labels are not current
 
 ## Readable papers
 
-The [manuscript catalog](manuscripts/INDEX.md) groups thirty-one reviewed drafts (573 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review. The dated [catalog identity audit](manuscripts/CATALOG_IDENTITY_AUDIT_20261030T094524Z.json) verifies artifact and frozen-source correspondence across the then-current thirty drafts; it is a dated snapshot preceding the later revisions and the present thirty-first paper.
+The [manuscript catalog](manuscripts/INDEX.md) groups thirty-one reviewed drafts (576 pages) by mathematical subject. Every paper has complete human proofs, a compiled and visually inspected PDF, and exact Lean declaration/commit links in its theorem map. The [whole-library survey](manuscripts/LIBRARY_SURVEY.md) inventories all 2,795 frozen Foundation modules and distinguishes that module-level coverage from detailed paper-specific proof review. The dated [catalog identity audit](manuscripts/CATALOG_IDENTITY_AUDIT_20261030T094524Z.json) verifies artifact and frozen-source correspondence across the then-current thirty drafts; it is a dated snapshot preceding the later revisions and the present thirty-first paper.
 
 | Mathematical story | Readable papers |
 |---|---|

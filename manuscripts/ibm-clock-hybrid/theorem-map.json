@@ -1752,6 +1752,978 @@
       "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
       "declaration_header": "theorem intrinsic_source_divergence_value (u : sourceDerivative.adjoint.domain) :\n    intrinsicSource.adjoint \u27e8(u : FieldSpace), source_source_divergence_mem u\u27e9 =\n      IntrinsicSpace.orthogonalProjectionOnto (sourceDerivative.adjoint u)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L127"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.Tests",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 18,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "abbrev Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L18"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.weakDerivative",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 20,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "def weakDerivative : IntrinsicSpace \u2192L[\u211d] StrongDual \u211d Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L20"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.embed",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 23,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "def embed : JointFieldSpace \u2192L[\u211d] StrongDual \u211d Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L23"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.testOf",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 26,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "def testOf (v : jointDivergence.domain) : Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L26"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.weakDerivative_norm",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 29,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem weakDerivative_norm (f : IntrinsicSpace) : \u2016weakDerivative f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L29"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.original_graph",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 32,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem original_graph (f : jointDerivative.domain) :\n    embed (jointDerivative f) = weakDerivative (f : IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L32"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.embed_injective",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 36,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem embed_injective : Function.Injective embed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L36"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.representable_iff_domain",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 39,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem representable_iff_domain (f : IntrinsicSpace) :\n    (\u2203 V : JointFieldSpace, embed V = weakDerivative f) \u2194 f \u2208 jointDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L39"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.test_pairing",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 43,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem test_pairing (f : IntrinsicSpace) (v : jointDivergence.domain) :\n    weakDerivative f (testOf v) = inner \u211d f (jointDivergence v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L43"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.actual_pairing",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 46,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem actual_pairing (f : IntrinsicSpace) (X : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hX : (f : JointL2) =\u1d50[IBMSourceLaws.jointMeasure] X) (v : jointDivergence.domain) :\n    weakDerivative f (testOf v) =\n      \u222b \u03c9, X \u03c9 * ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9\n        \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L46"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.actual_pairing_integrable",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 57,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem actual_pairing_integrable (f : IntrinsicSpace) (X : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hX : (f : JointL2) =\u1d50[IBMSourceLaws.jointMeasure] X) (v : jointDivergence.domain) :\n    Integrable (fun \u03c9 => X \u03c9 * ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9)\n      IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L57"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.domain_approximation",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 66,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem domain_approximation (f : IntrinsicSpace) :\n    \u2203 u : \u2115 \u2192 jointDerivative.domain,\n      Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L66"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.graph_dual_limit",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 75,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem graph_dual_limit (f : IntrinsicSpace) (u : \u2115 \u2192 jointDerivative.domain)\n    (hu : Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd f)) :\n    Tendsto (fun n => embed (jointDerivative (u n))) atTop (\ud835\udcdd (weakDerivative f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L75"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.graph_dual_error",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 80,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem graph_dual_error (f : IntrinsicSpace) (u : jointDerivative.domain) :\n    \u2016embed (jointDerivative u) - weakDerivative f\u2016 \u2264 \u2016(u : IntrinsicSpace) - f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L80"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.pointDerivative",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 84,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "def pointDerivative (t : \u211d\u22650) : StrongDual \u211d Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L84"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.pointDerivative_continuous",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 86,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem pointDerivative_continuous : Continuous pointDerivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L86"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.pointDerivative_not_representable",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 89,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem pointDerivative_not_representable (t : \u211d\u22650) (ht : 0 < t) :\n    \u00ac \u2203 V : JointFieldSpace, embed V = pointDerivative t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L89"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.pointDerivative_ne_zero",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 95,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem pointDerivative_ne_zero (t : \u211d\u22650) (ht : 0 < t) : pointDerivative t \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L95"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.point_actual_pairing",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 99,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem point_actual_pairing (t : \u211d\u22650) (v : jointDivergence.domain) :\n    pointDerivative t (testOf v) =\n      \u222b \u03c9, IBMConstructedSources.ibmValue t \u03c9 *\n        ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9 \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L99"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.point_actual_integrable",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 105,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem point_actual_integrable (t : \u211d\u22650) (v : jointDivergence.domain) :\n    Integrable (fun \u03c9 => IBMConstructedSources.ibmValue t \u03c9 *\n      ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L105"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.point_graph_norm_escape",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 110,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem point_graph_norm_escape (t : \u211d\u22650) (ht : 0 < t)\n    (u : \u2115 \u2192 jointDerivative.domain)\n    (hu : Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd (intrinsicCurve t))) :\n    Tendsto (fun n => \u2016jointDerivative (u n)\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L110"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.ambient_pair_compatibility",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 123,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem ambient_pair_compatibility (g : IntrinsicSpace)\n    (a : IBMIntrinsicOperators.sourceDerivative.adjoint.domain)\n    (b : IBMIntrinsicOperators.clockDerivative.adjoint.domain) :\n    \u2203 hp : pairField a b \u2208 jointDivergence.domain,\n      weakDerivative g (testOf \u27e8pairField a b, hp\u27e9) =\n        inner \u211d (g : JointL2)\n          (IBMIntrinsicOperators.sourceDerivative.adjoint a +\n            IBMIntrinsicOperators.clockDerivative.adjoint b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L123"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.point_observable_graph_approximation",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 136,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem point_observable_graph_approximation (t : \u211d\u22650) (ht : 0 < t) :\n    \u2203 u : \u2115 \u2192 jointDerivative.domain,\n      Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd (intrinsicCurve t)) \u2227\n      Tendsto (fun n => embed (jointDerivative (u n))) atTop (\ud835\udcdd (pointDerivative t)) \u2227\n      Tendsto (fun n => \u2016jointDerivative (u n)\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L136"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.testField",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 22,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "abbrev testField : Tests \u2192L[\u211d] JointFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L22"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.testValue",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 25,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "abbrev testValue : Tests \u2192L[\u211d] IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L25"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.testField_injective",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 28,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem testField_injective : Function.Injective testField",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L28"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.asDomain",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 37,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "def asDomain (w : Tests) : jointDivergence.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L37"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.testOf_asDomain",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 41,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem testOf_asDomain (w : Tests) : testOf (asDomain w) = w",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L41"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.liftPoint",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 49,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "def liftPoint (w : Tests) : Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L49"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.liftPoint_field",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 51,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem liftPoint_field (w : Tests) :\n    testField (liftPoint f C hC hf hDf w) =\n      multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) (testField w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L51"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.liftLinear",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 55,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "def liftLinear : Tests \u2192\u2097[\u211d] Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L55"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.liftLinear_field",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 66,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem liftLinear_field (w : Tests) :\n    testField (liftLinear f C hC hf hDf w) =\n      multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) (testField w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L66"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.liftLinear_seqClosedGraph",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 70,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem liftLinear_seqClosedGraph :\n    \u2200 (u : \u2115 \u2192 Tests) (x y : Tests), Tendsto u atTop (\ud835\udcdd x) \u2192\n      Tendsto (liftLinear f C hC hf hDf \u2218 u) atTop (\ud835\udcdd y) \u2192\n        y = liftLinear f C hC hf hDf x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L70"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.graphMultiplier",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 84,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "def graphMultiplier : Tests \u2192L[\u211d] Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L84"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.graphMultiplier_field",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 87,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem graphMultiplier_field (w : Tests) :\n    testField (graphMultiplier f C hC hf hDf w) =\n      multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) (testField w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L87"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphMultiplier.graphMultiplier_testOf",
+      "file": "Foundation/IBMIntrinsicGraphMultiplier.lean",
+      "line": 91,
+      "source_sha256": "dc3e39feeab02ab9475f0d9d95674e0c80d6e10d56127cfcacede0d738769201",
+      "declaration_header": "theorem graphMultiplier_testOf (v : jointDivergence.domain) :\n    graphMultiplier f C hC hf hDf (testOf v) = weightedTest f C hC hf hDf v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphMultiplier.lean#L91"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 27,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "def dualMultiplier : StrongDual \u211d Tests \u2192L[\u211d] StrongDual \u211d Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L27"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier_apply",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 30,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem dualMultiplier_apply (F : StrongDual \u211d Tests) (w : Tests) :\n    dualMultiplier f C hC hf hDf F w = F (graphMultiplier f C hC hf hDf w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L30"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier_testOf",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 33,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem dualMultiplier_testOf (F : StrongDual \u211d Tests) (v : jointDivergence.domain) :\n    dualMultiplier f C hC hf hDf F (testOf v) = F (weightedTest f C hC hf hDf v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L33"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier_norm",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 37,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem dualMultiplier_norm (F : StrongDual \u211d Tests) :\n    \u2016dualMultiplier f C hC hf hDf F\u2016 \u2264 \u2016F\u2016 * \u2016graphMultiplier f C hC hf hDf\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L37"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier_embed",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 41,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem dualMultiplier_embed (V : JointFieldSpace) :\n    dualMultiplier f C hC hf hDf (embed V) =\n      embed (multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L41"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.correctionTest",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 50,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "def correctionTest : Tests \u2192L[\u211d] IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L50"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.correctionTest_actual",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 54,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem correctionTest_actual (v : jointDivergence.domain) :\n    correctionTest f C hC hf hDf (testOf v) =\n      IntrinsicSpace.orthogonalProjectionOnto\n        (IBMNativeContraction.correction (jointDerivative f) hDf v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L54"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.correctionFunctional",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 74,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "def correctionFunctional : IntrinsicSpace \u2192L[\u211d] StrongDual \u211d Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L74"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.correctionFunctional_actual",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 77,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem correctionFunctional_actual (g : IntrinsicSpace) (v : jointDivergence.domain) :\n    correctionFunctional f C hC hf hDf g (testOf v) =\n      inner \u211d (g : JointL2) (IBMNativeContraction.correction (jointDerivative f) hDf v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L77"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.full_dual_leibniz",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 85,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem full_dual_leibniz (g : IntrinsicSpace) :\n    weakDerivative (scalarMultiplier (f : IntrinsicSpace) (bounded_memLp f C hf) g) =\n      dualMultiplier f C hC hf hDf (weakDerivative g) +\n        correctionFunctional f C hC hf hDf g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L85"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.dualMultiplier_tendsto",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 106,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem dualMultiplier_tendsto {F : \u2115 \u2192 StrongDual \u211d Tests} {G : StrongDual \u211d Tests}\n    (hF : Tendsto F atTop (\ud835\udcdd G)) :\n    Tendsto (fun n => dualMultiplier f C hC hf hDf (F n)) atTop\n      (\ud835\udcdd (dualMultiplier f C hC hf hDf G))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L106"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.multiplied_gradients_limit",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 112,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem multiplied_gradients_limit (g : IntrinsicSpace) (u : \u2115 \u2192 jointDerivative.domain)\n    (hu : Tendsto (fun n => (u n : IntrinsicSpace)) atTop (\ud835\udcdd g)) :\n    Tendsto (fun n => embed (multiply ((f : IntrinsicSpace) : JointL2)\n      (bounded_memLp f C hf) (jointDerivative (u n)))) atTop\n      (\ud835\udcdd (dualMultiplier f C hC hf hDf (weakDerivative g)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L112"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.multiplied_gradients_error",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 120,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem multiplied_gradients_error (g : IntrinsicSpace) (u : jointDerivative.domain) :\n    \u2016embed (multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf)\n      (jointDerivative u)) - dualMultiplier f C hC hf hDf (weakDerivative g)\u2016 \u2264\n      \u2016(u : IntrinsicSpace) - g\u2016 * \u2016graphMultiplier f C hC hf hDf\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L120"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicDualMultiplier.point_correction_actual",
+      "file": "Foundation/IBMIntrinsicDualMultiplier.lean",
+      "line": 137,
+      "source_sha256": "5bfab0443954dfc1b13db9f36bcbaf76e5e00539cb505c4aed7667f172ff9c69",
+      "declaration_header": "theorem point_correction_actual (t : \u211d\u22650) (v : jointDivergence.domain) :\n    correctionFunctional f C hC hf hDf (intrinsicCurve t) (testOf v) =\n      \u222b \u03c9, IBMConstructedSources.ibmValue t \u03c9 *\n        IBMNativeContraction.correction (jointDerivative f) hDf v \u03c9\n          \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicDualMultiplier.lean#L137"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.vectorProduct",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 24,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "def vectorProduct : JointL2 \u2192L[\u211d] JointVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L24"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.vectorProduct_ae",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 52,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem vectorProduct_ae (g : JointL2) :\n    vectorProduct v hv g =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => g \u03c9 \u2022 v \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L52"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.vectorProduct_norm",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 57,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem vectorProduct_norm (g : JointL2) :\n    \u2016vectorProduct v hv g\u2016 \u2264 \u2016hv.toLp v\u2016 * \u2016g\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L57"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.vectorProduct_pairing",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 61,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem vectorProduct_pairing (g : JointL2) (u : JointVectorL2) :\n    inner \u211d (vectorProduct v hv g) u = inner \u211d g (contract v hv u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L61"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 72,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "def correctionField : JointL2 \u2192L[\u211d] JointFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L72"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField_coordinate",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 78,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionField_coordinate (g : JointL2) (i : Fin 2) :\n    coordinate i (correctionField V hV g i) = vectorProduct (coordinate i (V i)) (hV i) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L78"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField_ae",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 82,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionField_ae (g : JointL2) (i : Fin 2) :\n    coordinate i (correctionField V hV g i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => g \u03c9 \u2022 coordinate i (V i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L82"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField_channel_norm",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 88,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionField_channel_norm (g : JointL2) (i : Fin 2) :\n    \u2016correctionField V hV g i\u2016 \u2264 \u2016(hV i).toLp (coordinate i (V i))\u2016 * \u2016g\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L88"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField_bounded_agreement",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 93,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionField_bounded_agreement (g : JointL2)\n    (hg : MemLp (g : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    correctionField V hV g = multiply g hg V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L93"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.pointCorrection_actual_ae",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 101,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem pointCorrection_actual_ae (t : \u211d\u22650) (i : Fin 2) :\n    coordinate i (correctionField V hV (intrinsicCurve t : JointL2) i)\n      =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n        IBMConstructedSources.ibmValue t \u03c9 \u2022 coordinate i (V i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L101"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.pointCorrection_continuous",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 109,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem pointCorrection_continuous :\n    Continuous (fun t : \u211d\u22650 => correctionField V hV (intrinsicCurve t : JointL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L109"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionField_pairing",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 114,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionField_pairing (g : JointL2) (u : JointFieldSpace) :\n    inner \u211d (correctionField V hV g) u = inner \u211d g (correction V hV u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L114"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicCorrectionField.correctionFunctional_embed",
+      "file": "Foundation/IBMIntrinsicCorrectionField.lean",
+      "line": 132,
+      "source_sha256": "0fdf9470d5e1eb0508bd05b58f858a4527eccbea8f2a6fd6381be3faa909dcbf",
+      "declaration_header": "theorem correctionFunctional_embed (g : IntrinsicSpace) :\n    correctionFunctional f C hC hf hDf g =\n      embed (correctionField (jointDerivative f) hDf (g : JointL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicCorrectionField.lean#L132"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.scalarMultiplier",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 22,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "def scalarMultiplier (f : IntrinsicSpace)\n    (hf : MemLp ((f : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    IntrinsicSpace \u2192L[\u211d] IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L22"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.scalarMultiplier_symmetric",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 28,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem scalarMultiplier_symmetric (f : IntrinsicSpace)\n    (hf : MemLp ((f : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (g h : IntrinsicSpace) :\n    inner \u211d (scalarMultiplier f hf g) h = inner \u211d g (scalarMultiplier f hf h)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L28"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.scalarMultiplier_actual_ae",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 42,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem scalarMultiplier_actual_ae (f g : IntrinsicSpace)\n    (hf : MemLp ((f : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    ((scalarMultiplier f hf g : IntrinsicSpace) : JointL2)\n      =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => (f : JointL2) \u03c9 * (g : JointL2) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L42"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.weightedTest",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 64,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "def weightedTest (v : jointDivergence.domain) : Tests",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L64"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.weak_leibniz",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 68,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem weak_leibniz (g : IntrinsicSpace) (v : jointDivergence.domain) :\n    weakDerivative (scalarMultiplier (f : IntrinsicSpace) (bounded_memLp f C hf) g) (testOf v) =\n      weakDerivative g (weightedTest f C hC hf hDf v) +\n        inner \u211d (g : JointL2) (correction (jointDerivative f) hDf v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L68"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.point_product_actual_ae",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 100,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem point_product_actual_ae (t : \u211d\u22650) :\n    ((scalarMultiplier (f : IntrinsicSpace) (bounded_memLp f C hf) (intrinsicCurve t) :\n      IntrinsicSpace) : JointL2) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => (((f : IntrinsicSpace) : JointL2) \u03c9) * IBMConstructedSources.ibmValue t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L100"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.point_weak_leibniz",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 108,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem point_weak_leibniz (t : \u211d\u22650) (v : jointDivergence.domain) :\n    weakDerivative (scalarMultiplier (f : IntrinsicSpace) (bounded_memLp f C hf)\n      (intrinsicCurve t)) (testOf v) =\n      pointDerivative t (weightedTest f C hC hf hDf v) +\n        \u222b \u03c9, IBMConstructedSources.ibmValue t \u03c9 * correction (jointDerivative f) hDf v \u03c9\n          \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L108"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicWeakLeibniz.point_correction_integrable",
+      "file": "Foundation/IBMIntrinsicWeakLeibniz.lean",
+      "line": 125,
+      "source_sha256": "9b536500014562c07577672561210843bfd8603901b424527d2fff248657030d",
+      "declaration_header": "theorem point_correction_integrable (t : \u211d\u22650) (v : jointDivergence.domain) :\n    Integrable (fun \u03c9 => IBMConstructedSources.ibmValue t \u03c9 *\n      correction (jointDerivative f) hDf v \u03c9) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicWeakLeibniz.lean#L125"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.vectorSwap_involution",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 15,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem vectorSwap_involution (g : JointVectorL2) : vectorSwap (vectorSwap g) = g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L15"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.vectorSwapEquiv",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 22,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "def vectorSwapEquiv : JointVectorL2 \u2243\u2097\u1d62[\u211d] JointVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L22"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.coordinate",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 25,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "def coordinate (i : Fin 2) : FieldSpace \u2243\u2097\u1d62[\u211d] JointVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L25"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.coordinate_zero",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 30,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem coordinate_zero (g : FieldSpace) : coordinate 0 g = sourceField g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L30"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.coordinate_one",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 32,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem coordinate_one (g : FieldSpace) : coordinate 1 g = uncurryField g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L32"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.channelMultiplier",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 34,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "def channelMultiplier (i : Fin 2) (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) : FieldSpace \u2192L[\u211d] FieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L34"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.channel_coordinate",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 39,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem channel_coordinate (i : Fin 2) (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (g : FieldSpace) :\n    coordinate i (channelMultiplier i a ha g) = boundedMultiplier a ha (coordinate i g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L39"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.channel_ae",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 44,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem channel_ae (i : Fin 2) (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (g : FieldSpace) :\n    coordinate i (channelMultiplier i a ha g) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a \u03c9 \u2022 coordinate i g \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L44"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.channel_symmetric",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 51,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem channel_symmetric (i : Fin 2) (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (u v : FieldSpace) :\n    inner \u211d (channelMultiplier i a ha u) v = inner \u211d u (channelMultiplier i a ha v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L51"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.multiply",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 68,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "def multiply (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) : JointFieldSpace \u2192L[\u211d] JointFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L68"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.multiply_channel",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 74,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem multiply_channel (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (g : JointFieldSpace) (i : Fin 2) :\n    multiply a ha g i = channelMultiplier i a ha (g i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L74"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.multiply_ae",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 78,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem multiply_ae (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (g : JointFieldSpace) (i : Fin 2) :\n    coordinate i (multiply a ha g i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a \u03c9 \u2022 coordinate i (g i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L78"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.multiply_symmetric",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 83,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem multiply_symmetric (a : IBMSourceLaws.JointSample \u2192 \u211d)\n    (ha : MemLp a \u221e IBMSourceLaws.jointMeasure) (u v : JointFieldSpace) :\n    inner \u211d (multiply a ha u) v = inner \u211d u (multiply a ha v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L83"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeFieldMultiplier.multiply_add_ae",
+      "file": "Foundation/IBMNativeFieldMultiplier.lean",
+      "line": 91,
+      "source_sha256": "19139eddd7aa103b30cb33220555f17ddb030d77109048d9f13377f97954c7a6",
+      "declaration_header": "theorem multiply_add_ae (x y : IBMTimeAveragedObservable.JointL2)\n    (hx : MemLp (x : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (hy : MemLp (y : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (U V : JointFieldSpace) (i : Fin 2) :\n    coordinate i ((multiply x hx V + multiply y hy U) i)\n      =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n        x \u03c9 \u2022 coordinate i (V i) \u03c9+y \u03c9 \u2022 coordinate i (U i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeFieldMultiplier.lean#L91"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.contract",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 15,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "def contract (v : JointVectorL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointVectorL2) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L15"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.contract_ae",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 20,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem contract_ae (v : JointVectorL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointVectorL2) :\n    contract v hv u =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => inner \u211d (v \u03c9) (u \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L20"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.contract_norm",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 27,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem contract_norm (v : JointVectorL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointVectorL2) :\n    \u2016contract v hv u\u2016 \u2264 \u2016hv.toLp v\u2016 * \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L27"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.contract_pairing",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 32,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem contract_pairing (v : JointVectorL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointVectorL2) (g : JointL2)\n    (hg : MemLp (g : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    inner \u211d (contract v hv u) g = inner \u211d (boundedMultiplier g hg u) v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L32"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.correction",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 43,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "def correction (V : JointFieldSpace)\n    (hV : \u2200 i : Fin 2, MemLp (coordinate i (V i) : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointFieldSpace) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L43"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.correction_ae",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 49,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem correction_ae (V : JointFieldSpace)\n    (hV : \u2200 i : Fin 2, MemLp (coordinate i (V i) : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointFieldSpace) :\n    correction V hV u =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n      inner \u211d (coordinate 0 (V 0) \u03c9) (coordinate 0 (u 0) \u03c9) +\n      inner \u211d (coordinate 1 (V 1) \u03c9) (coordinate 1 (u 1) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L49"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.channel_pairing",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 57,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem channel_pairing (v u : FieldSpace) (i : Fin 2)\n    (hv : MemLp (coordinate i v : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (g : JointL2)\n    (hg : MemLp (g : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    inner \u211d (contract (coordinate i v) hv (coordinate i u)) g =\n      inner \u211d (channelMultiplier i g hg u) v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L57"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeContraction.correction_pairing",
+      "file": "Foundation/IBMNativeContraction.lean",
+      "line": 71,
+      "source_sha256": "4ee983a8bab1cf32b803c6d3f2f1d72bebf07a804fbeedbfa885527c04ce742c",
+      "declaration_header": "theorem correction_pairing (V : JointFieldSpace)\n    (hV : \u2200 i : Fin 2, MemLp (coordinate i (V i) : IBMSourceLaws.JointSample \u2192 CoefficientSpace)\n      \u221e IBMSourceLaws.jointMeasure) (u : JointFieldSpace) (g : JointL2)\n    (hg : MemLp (g : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    inner \u211d (correction V hV u) g = inner \u211d (multiply g hg u) V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeContraction.lean#L71"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.product_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 21,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem product_pairing (f g F z : JointL2)\n    (hf : MemLp (f : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (hF : F =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => f \u03c9*g \u03c9) :\n    inner \u211d z F = inner \u211d (boundedMultiplier f hf z) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L21"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.projection_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 33,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem projection_pairing (v : JointL2) (g : IntrinsicSpace) :\n    inner \u211d (IntrinsicSpace.orthogonalProjectionOnto v) g = inner \u211d v (g : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L33"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.output",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 37,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "def output (f : jointDerivative.domain)\n    (hf : MemLp (((f : IntrinsicSpace) : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d)\n      \u221e IBMSourceLaws.jointMeasure)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) : IntrinsicSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L37"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.PairingResult",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 47,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "def PairingResult (R : IntrinsicSpace) (v : JointFieldSpace)\n    (g : jointDerivative.domain) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L47"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.projected_sub_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 51,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem projected_sub_pairing (s c : JointL2) (g : IntrinsicSpace) (A B : \u211d)\n    (hs : inner \u211d s (g : JointL2) = A+B) (hc : inner \u211d c (g : JointL2) = B) :\n    inner \u211d (IntrinsicSpace.orthogonalProjectionOnto (s-c)) g = A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L51"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.bounded_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 59,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem bounded_pairing (f g : jointDerivative.domain) (C D : \u211d)\n    (hC : 0 \u2264 C) (hD : 0 \u2264 D)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 D)\n    (hDf : \u2200 i : Fin 2, MemLp (coordinate i (jointDerivative f i) :\n      IBMSourceLaws.JointSample \u2192 CoefficientSpace) \u221e IBMSourceLaws.jointMeasure)\n    (u : jointDivergence.domain) :\n    PairingResult (output f (bounded_memLp f C hf) hDf u)\n      (multiply ((f : IntrinsicSpace) : JointL2) (bounded_memLp f C hf) u) g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L59"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeightedDivergence.extend_pairing",
+      "file": "Foundation/IBMNativeWeightedDivergence.lean",
+      "line": 76,
+      "source_sha256": "0d666ad310c98c82c2071a8b7c013d983ae6f5e6f7e5b950493f629af57c0d4d",
+      "declaration_header": "theorem extend_pairing (R : IntrinsicSpace) (w : JointFieldSpace)\n    (h : \u2200 g : jointDerivative.domain, \u2200 C : \u211d, 0 \u2264 C \u2192\n      (\u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C) \u2192\n      PairingResult R w g) (g : jointDerivative.domain) : PairingResult R w g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeightedDivergence.lean#L76"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeBoundedGraphCore.identity_gradient_limit",
+      "file": "Foundation/IBMNativeBoundedGraphCore.lean",
+      "line": 14,
+      "source_sha256": "7f6a18db5d238ab43196f98d17cbee061f0337a2af3658b0ca7f4dfb8e9a7ad8",
+      "declaration_header": "theorem identity_gradient_limit (x : JointL2) (g : FieldSpace) (u : \u2115 \u2192 FieldSpace)\n    (hu : \u2200 n, uncurryField (u n) =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n      approximantDerivative (fun z => z) (fun _ => 1) n (x \u03c9) \u2022 uncurryField g \u03c9) :\n    Tendsto u atTop (\ud835\udcdd g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeBoundedGraphCore.lean#L14"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeBoundedGraphCore.field_limit",
+      "file": "Foundation/IBMNativeBoundedGraphCore.lean",
+      "line": 25,
+      "source_sha256": "7f6a18db5d238ab43196f98d17cbee061f0337a2af3658b0ca7f4dfb8e9a7ad8",
+      "declaration_header": "theorem field_limit (u : \u2115 \u2192 JointFieldSpace) (g : JointFieldSpace)\n    (h : \u2200 i : Fin 2, Tendsto (fun n => u n i) atTop (\ud835\udcdd (g i))) :\n    Tendsto u atTop (\ud835\udcdd g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeBoundedGraphCore.lean#L25"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeBoundedGraphCore.BoundedGraphResult",
+      "file": "Foundation/IBMNativeBoundedGraphCore.lean",
+      "line": 31,
+      "source_sha256": "7f6a18db5d238ab43196f98d17cbee061f0337a2af3658b0ca7f4dfb8e9a7ad8",
+      "declaration_header": "def BoundedGraphResult (f : jointDerivative.domain) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeBoundedGraphCore.lean#L31"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.bounded_memLp",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 18,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "theorem bounded_memLp (f : jointDerivative.domain) (C : \u211d)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C) :\n    MemLp (((f : IntrinsicSpace) : JointL2) : IBMSourceLaws.JointSample \u2192 \u211d)\n      \u221e IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L18"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.fields_eq",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 24,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "theorem fields_eq (x y : JointL2)\n    (hx : MemLp (x : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (hy : MemLp (y : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (U V W : JointFieldSpace)\n    (h : \u2200 i : Fin 2, coordinate i (W i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => x \u03c9 \u2022 coordinate i (V i) \u03c9+y \u03c9 \u2022 coordinate i (U i) \u03c9) :\n    W = multiply x hx V + multiply y hy U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L24"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.pairing_leibniz",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 37,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "theorem pairing_leibniz (x y : JointL2)\n    (hx : MemLp (x : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (hy : MemLp (y : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (u U V W : JointFieldSpace) (hW : W = multiply x hx V + multiply y hy U) :\n    inner \u211d u W = inner \u211d (multiply x hx u) V + inner \u211d (multiply y hy u) U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L37"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.LeibnizResult",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 49,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "def LeibnizResult (f g : jointDerivative.domain) (C D : \u211d)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 D) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L49"
+    },
+    {
+      "paper": "Section 13: original full intrinsic adjoint Hilbert graph, exact weak-derivative representability, bounded native coefficient with both native gradient channels essentially bounded, full-dual continuous multiplication and Leibniz correction as ordinary original joint L2 field. Explicit combined A+B graph bound is labelled HUMAN; no arbitrary bounded-coefficient or rough chain multiplication theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeProductOperators.WeakDivergenceResult",
+      "file": "Foundation/IBMNativeProductOperators.lean",
+      "line": 71,
+      "source_sha256": "f8f97972633c3dbb39bd44e79c119f9daf169c80412bc379713bcd9175a8e913",
+      "declaration_header": "def WeakDivergenceResult (f g : jointDerivative.domain) (C D : \u211d)\n    (hf : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((f : IntrinsicSpace) : JointL2) \u03c9)| \u2264 C)\n    (hg : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 D)\n    (u : jointDivergence.domain) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeProductOperators.lean#L71"
     }
   ],
   "human_reorganization": [
@@ -1766,7 +2738,8 @@
     "The original intrinsic derivative and Hilbert adjoint give constant-one Poincare and exact constant kernel. This certifies an upper Poincare constant, not its optimality or a physical-time gap. A genuine original closed-graph projection produces a mean-preserving resolvent with centered half contraction.",
     "The centered Poisson construction is the actual source fixed point u=Q(x+u), with original derivative and divergence product-domain membership, uniqueness, field/input norm bounds and global field minimality. The exact orthogonal minimum gap, bounded linearity of the solution and explicit value/gradient/divergence iteration bounds are labelled human consequences of the mapped weak identities and contraction. They impose no predictability constraint and identify no physical-time generator.",
     "Section 4 reconstructs the actual weak L1 chain for every original product-domain input u and C2 function with bounded first/second derivatives. Bounded native tests and products prove the integrable ambient density q=phi-prime(u)Au-phi-double-prime(u)e_u, its zero mean and weak pairing, without L4 gradients or observable energy assumptions. The exact iff phi(u) in Dom A iff E[q|full observations] in L2 is a labelled HUMAN application of the mapped conditional-adjoint criterion. The actual Poisson sine example stays weak absent this condition.",
-    "Section 12 gives a complete classical projected-adjoint core theorem with the actual source and observable domains. The graph-orthogonal-complement proof derives adjoint density, closability and bidual graph closure before proving B*=S and closure(B)=S*. Approximation requires strong convergence of integrands and PROJECTED outputs, not unprojected source divergences. Observable-domain density is independent; its exact annihilator test, projection-invariant sufficient condition and nonzero out-of-domain line obstruction are proved. Two diagonal ell2 examples are explicitly HUMAN coordinate illustrations: a zero/nondense restriction and a strictly smaller original projected-source-adjoint domain whose closure is the full bounded observable adjoint. The one-channel IBM specialization is a HUMAN consequence of the generic theorem and verified separate source/clock closedness and intrinsic density. No equality of initial domains, arbitrary conditioning-domain preservation, separately admissible JOINT-pair graph core, observed-past predictable representation or physical-time calculus is added."
+    "Section 12 gives a complete classical projected-adjoint core theorem with the actual source and observable domains. The graph-orthogonal-complement proof derives adjoint density, closability and bidual graph closure before proving B*=S and closure(B)=S*. Approximation requires strong convergence of integrands and PROJECTED outputs, not unprojected source divergences. Observable-domain density is independent; its exact annihilator test, projection-invariant sufficient condition and nonzero out-of-domain line obstruction are proved. Two diagonal ell2 examples are explicitly HUMAN coordinate illustrations: a zero/nondense restriction and a strictly smaller original projected-source-adjoint domain whose closure is the full bounded observable adjoint. The one-channel IBM specialization is a HUMAN consequence of the generic theorem and verified separate source/clock closedness and intrinsic density. No equality of initial domains, arbitrary conditioning-domain preservation, separately admissible JOINT-pair graph core, observed-past predictable representation or physical-time calculus is added.",
+    "Section 13 reconstructs continuous multiplication on the WHOLE intrinsic adjoint graph dual under bounded native value and bounded two-channel gradient hypotheses. It proves agreement with actual field multiplication, full-dual d(fg)=f dot dg+embed(gDf) for every observable g in L2, the actual ordinary L2 correction, quantitative convergence for ALL native value approximations, and original-point correction pairings. It preserves the full observable projection in the weighted divergence and original source-order identifications. The direct A+B graph norm bound is a printed HUMAN consequence of the established weighted formula, not a new named formal estimate. Ten principal modules read fully; no arbitrary bounded coefficient or phi-prime(rough-g) product, unsmoothed original point derivative, observed-past causality or physical-time calculus upgrade. Classical Nualart divergence/chain antecedent retained."
   ],
   "novelty": "Classical formalization companion; no external priority or observed-IBM predictable representation claim."
 }

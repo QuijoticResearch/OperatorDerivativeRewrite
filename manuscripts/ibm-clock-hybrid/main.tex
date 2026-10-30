@@ -36,7 +36,7 @@ projected-adjoint graph-core theorem retains independent observable-domain
 density, with explicit distinctions between closure, initial domains and
 separately admissible joint pairs. A sine observation has zero source mean but
 positive variance, so clock-mean representation alone cannot reconstruct IBM.
-This is an exposition of verified results and classical Gaussian mechanisms,
+A bounded native coefficient with bounded gradient also acts continuously on the full intrinsic adjoint graph dual, giving a Leibniz rule with an ordinary L2 correction for every rough observable. This is an exposition of verified results and classical Gaussian mechanisms,
 with no claim of completed physical-time IBM calculus or external novelty.
 \end{abstract}
 
@@ -1107,6 +1107,202 @@ primary lecture notes give the adjoint definition and complete
 closedness proof in Definition 2.1.8/Lemma 2.1.10~\cite{richard}.
 The full graph-orthogonal-complement argument needed here is supplied
 above; no new general adjoint principle is claimed.
+
+\section{Multiplication on the full intrinsic adjoint graph dual}
+The static product rules also identify a precise class of coefficients
+that can multiply a generalized derivative \emph{after} a graph-dual
+limit. This is stronger than forming each product before the limit,
+but its bounded native-gradient hypothesis is an additional requirement.
+Retain the original closed densely defined
+$D:\Dom D\subset\Hh\to\mathcal V$ and $\delta=D^*$ from Section 2.
+
+\subsection*{The actual full test graph}
+Use the Hilbert test space
+\[
+ \mathcal T=\{(V,\delta V):V\in\Dom\delta\},\qquad
+ \|(V,\delta V)\|_{\mathcal T}^2
+            =\|V\|_{\mathcal V}^2+\|\delta V\|_{\Hh}^2.
+\]
+It is complete because $\delta$ is closed. The field projection
+$(V,\delta V)\mapsto V$ is injective, and every member of
+$\mathcal T$ is a test from the entire original adjoint domain.
+Define continuous linear maps into its norm dual by
+\begin{align}
+ (dg)(V,\delta V)&=\langle g,\delta V\rangle_{\Hh},
+                         &&g\in\Hh,\label{eq:fullweakd}\\
+ (\iota U)(V,\delta V)&=\langle U,V\rangle_{\mathcal V},
+                         &&U\in\mathcal V.\label{eq:fullembed}
+\end{align}
+Cauchy--Schwarz gives $\|dg\|_{\mathcal T^*}\leq\|g\|_2$
+and $\|\iota U\|_{\mathcal T^*}\leq\|U\|_2$. Adjoint duality
+shows $\iota Dg=dg$ for $g\in\Dom D$. In particular, if
+$g_n\in\Dom D$ and $g_n\to g$ in $\Hh$, then
+\begin{equation}\label{eq:fullweakerror}
+ \|\iota Dg_n-dg\|_{\mathcal T^*}\leq\|g_n-g\|_2.
+\end{equation}
+Closedness of $D$ and the double-adjoint theorem give the exact
+representability boundary
+\begin{equation}\label{eq:fullrepresent}
+ dg=\iota U\text{ for some }U\in\mathcal V
+                \quad\Longleftrightarrow\quad g\in\Dom D.
+\end{equation}
+Indeed equality tested on every $V\in\Dom\delta$ says precisely
+that $g\in\Dom\delta^*$ with $\delta^*g=U$; and $\delta^*=D$.
+Conversely the original graph gives the representation.
+The embedding $\iota$ is injective because $\Dom\delta$ is
+dense in $\mathcal V$. This density is a consequence of the
+closed, densely defined original $D$, not a density assumption
+on a smaller selected set of fields.
+\lean{IBMIntrinsicGraphDual}{original_graph; graph_dual_error}
+\lean{IBMIntrinsicGraphDual}{embed_injective; representable_iff_domain}
+
+\subsection*{One bounded native multiplier}
+Fix $f\in\Dom D$ and finite $A,B\geq0$ such that, in the
+original joint coordinates,
+\begin{equation}\label{eq:fullmultclass}
+ |f(\omega)|\leq A,\qquad
+ \|Df(\omega)\|_{H_X\oplus H_Y}\leq B
+ \quad\text{almost surely}.
+\end{equation}
+The formal hypotheses give an essential bound on each of the
+two native coordinates; taking the square root of the sum of
+their squared bounds gives the displayed combined $B$.
+Both coordinates here use the original Fubini and source-swap
+isometries into the same joint sample order. Without that
+identification, a pointwise product in the scenery channel
+could put $f$ in the wrong source order.
+
+Section 2 already proves, for every original $V\in\Dom\delta$,
+\begin{equation}\label{eq:fullweighted}
+ fV\in\Dom\delta,\qquad
+ \delta(fV)=f\delta V-P\langle Df,V\rangle_{H_X\oplus H_Y}.
+\end{equation}
+The contraction is an actual $L^2$ scalar, since its pointwise
+absolute value is at most $B\|V(\omega)\|$. The projection $P$
+cannot be omitted: $Df$ and $V$ are ambient fields. The formula
+is proved first using bounded native scalar tests and the
+original strong product rule. Bounded graph approximation of
+every native scalar test passes its two inner products to the
+limit, yielding the equality on the entire adjoint domain.
+
+Define the graph multiplier
+\[
+ M_f(V,\delta V)=(fV,\delta(fV)).
+\]
+It is well-defined by \eqref{eq:fullweighted}. It is linear,
+since multiplication and the original adjoint are linear.
+The formal source proves its boundedness by the closed graph
+theorem on the actual complete test graph. There is also the
+following direct HUMAN bound. Projection contractivity gives
+\[
+ \|\delta(fV)\|_2\leq A\|\delta V\|_2+B\|V\|_2,
+ \qquad \|fV\|_2\leq A\|V\|_2.
+\]
+Minkowski's inequality in the two-component Euclidean norm
+therefore gives
+\begin{equation}\label{eq:graphmultbound}
+ \|M_f(V,\delta V)\|_{\mathcal T}
+ \leq A\sqrt{\|V\|_2^2+\|\delta V\|_2^2}+B\|V\|_2
+ \leq(A+B)\|(V,\delta V)\|_{\mathcal T}.
+\end{equation}
+This explicit numerical estimate is a printed consequence of
+the actual weighted formula, rather than an additional named
+formal operator-norm theorem.
+
+Precomposition now defines a bounded action on the \emph{whole}
+dual:
+\begin{equation}\label{eq:dualaction}
+ f\mathbin{\cdot}F:=F\circ M_f,\qquad F\in\mathcal T^*,
+ \qquad \|f\mathbin{\cdot}F\|\leq\|M_f\|\|F\|.
+\end{equation}
+It agrees with original field multiplication. In fact,
+\[
+ (f\mathbin{\cdot}\iota U)(V,\delta V)
+       =\langle U,fV\rangle=\langle fU,V\rangle,
+ \qquad f\mathbin{\cdot}\iota U=\iota(fU).
+\]
+Thus it is a continuous extension of the genuine native product,
+not a product assigned only to one approximation sequence.
+The definition uses the entire graph; no choice of a projected
+source-adjoint core is needed.
+\lean{IBMIntrinsicGraphMultiplier}{graphMultiplier_field; graphMultiplier_testOf}
+\lean{IBMIntrinsicDualMultiplier}{dualMultiplier_apply; dualMultiplier_embed}
+\lean{IBMIntrinsicDualMultiplier}{dualMultiplier_norm; dualMultiplier_tendsto}
+
+\begin{theorem}[Full-dual intrinsic Leibniz rule]\label{thm:fulldualproduct}
+Under \eqref{eq:fullmultclass}, every $g\in\Hh$, including
+unbounded $g$ outside $\Dom D$, satisfies
+\begin{equation}\label{eq:fulldualproduct}
+ d(fg)=f\mathbin{\cdot}dg+\iota(gDf)
+                  \quad\text{in }\mathcal T^*.
+\end{equation}
+The correction is an actual ordinary field in $\mathcal V$,
+with $\|gDf\|_2\leq B\|g\|_2$.
+For every $g_n\in\Dom D$ converging to $g$ in $\Hh$,
+\begin{equation}\label{eq:dualproductlimit}
+ \iota(fDg_n)\longrightarrow f\mathbin{\cdot}dg
+                      \quad\text{in }\mathcal T^*,
+ \qquad
+ \|\iota(fDg_n)-f\mathbin{\cdot}dg\|
+       \leq\|M_f\|\|g_n-g\|_2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The product $fg$ belongs to $\Hh$ because it is observable
+and square integrable. The pointwise product $gDf$ belongs
+to the ordinary field space by the bound in the statement.
+Its native channel realization is obtained by transporting
+each actual joint product back through the original channel
+isometry. For a full test $(V,\delta V)$, equations
+\eqref{eq:fullweakd}, \eqref{eq:fullweighted} and
+\eqref{eq:dualaction} yield
+\begin{align*}
+ d(fg)(V,\delta V)-(f\mathbin{\cdot}dg)(V,\delta V)
+ &=\langle fg,\delta V\rangle
+                        -\langle g,\delta(fV)\rangle\\
+ &=\langle g,P\langle Df,V\rangle\rangle.
+\end{align*}
+Since $g$ is observable, this last pairing equals
+$\E[g\langle Df,V\rangle]=\langle gDf,V\rangle$.
+All products are integrable by $L^2$ Cauchy--Schwarz; no
+boundedness of $g$ was used. This proves the full-dual
+identity. Apply the continuous action \eqref{eq:dualaction}
+to \eqref{eq:fullweakerror} and use its agreement with
+field multiplication to obtain \eqref{eq:dualproductlimit}.
+\end{proof}
+\lean{IBMIntrinsicDualMultiplier}{full_dual_leibniz; multiplied_gradients_limit}
+\lean{IBMIntrinsicDualMultiplier}{multiplied_gradients_error}
+\lean{IBMIntrinsicCorrectionField}{correctionField_ae; correctionField_pairing}
+\lean{IBMIntrinsicCorrectionField}{correctionFunctional_embed}
+
+For example $g=Z_t$ is an actual unbounded member of $\Hh$.
+The theorem gives the precise static equality
+\[
+ d(fZ_t)=f\mathbin{\cdot}dZ_t+\iota(Z_tDf).
+\]
+On a test $(V,\delta V)$ its correction is the actual joint
+integral $\E[Z_t\langle Df,V\rangle]$. Its absolute integral
+is at most $B\|Z_t\|_2\|V\|_2$.
+The ordinary correction field $Z_tDf$ depends continuously
+on $t$ in $\mathcal V$, by the original strong $L^2$
+continuity of $Z_t$ and the fixed bounded field $Df$.
+These observations do not assign a finite-energy original
+gradient to $Z_t$ or assert that $fZ_t$ is nonnative:
+the separate native-domain question for that product is
+exactly the representability criterion
+\eqref{eq:fullrepresent}.
+
+In particular this theorem does not license multiplying $dg$
+by an arbitrary bounded random coefficient, or by
+$\phi'(g)$ when $g$ is rough. Such a coefficient must itself
+satisfy the original native domain and bounded-gradient
+requirements used to construct $M_f$. Nor does a full
+observable graph-dual product become a causal physical-time
+IBM integral. This is a static extension of the classical
+weak product mechanism. The previously compared Gaussian
+divergence/chain rules in Nualart's notes remain its
+antecedents; no new general product principle or priority
+claim is made.
 
 \section{Classical context and precise remaining obligations}
 The Gaussian recovery $DN^{-1}$ on centered chaoses, Brownian predictable
