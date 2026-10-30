@@ -2896,6 +2896,105 @@
       "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
       "declaration_header": "theorem mean_not_positive_on_squares (T : \u211d\u22650) (hT : 0 < T) :\n    \u2203 F : Cylinder, mean 2 (by norm_num) T hT (core (F*F)) < 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L138"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousDensityDuality.softSign",
+      "file": "Foundation/ContinuousDensityDuality.lean",
+      "line": 12,
+      "source_sha256": "6e1bdf65cb892122bb43d16301a1be20c3ad2fc8fff4979e3f45f8bbc30a5fb6",
+      "declaration_header": "def softSign (f : \u03b1 \u2192 \u211d) (hf : Continuous f) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) : \u03b1 \u2192\u1d47 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousDensityDuality.lean#L12"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousDensityDuality.softSign_bound",
+      "file": "Foundation/ContinuousDensityDuality.lean",
+      "line": 19,
+      "source_sha256": "6e1bdf65cb892122bb43d16301a1be20c3ad2fc8fff4979e3f45f8bbc30a5fb6",
+      "declaration_header": "theorem softSign_bound (f : \u03b1 \u2192 \u211d) (hf : Continuous f) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) (x : \u03b1) :\n    \u2016softSign f hf \u03b5 h\u03b5 x\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousDensityDuality.lean#L19"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousDensityDuality.density_dual_approximation",
+      "file": "Foundation/ContinuousDensityDuality.lean",
+      "line": 25,
+      "source_sha256": "6e1bdf65cb892122bb43d16301a1be20c3ad2fc8fff4979e3f45f8bbc30a5fb6",
+      "declaration_header": "theorem density_dual_approximation (\u03bc : Measure \u03b1) (f : \u03b1 \u2192 \u211d) (hf : Continuous f)\n    (hi : Integrable f \u03bc) :\n    Tendsto (fun n : \u2115 => \u222b x, f x * softSign f hf (1/(n+1:\u211d)) (by positivity) x \u2202\u03bc)\n      atTop (\ud835\udcdd (\u222b x, \u2016f x\u2016 \u2202\u03bc))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousDensityDuality.lean#L25"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousDensityDuality.exists_norm_one_test",
+      "file": "Foundation/ContinuousDensityDuality.lean",
+      "line": 54,
+      "source_sha256": "6e1bdf65cb892122bb43d16301a1be20c3ad2fc8fff4979e3f45f8bbc30a5fb6",
+      "declaration_header": "theorem exists_norm_one_test (\u03bc : Measure \u03b1) (f : \u03b1 \u2192 \u211d) (hf : Continuous f)\n    (hi : Integrable f \u03bc) (C : \u211d) (hC : C < \u222b x, \u2016f x\u2016 \u2202\u03bc) :\n    \u2203 g : \u03b1 \u2192\u1d47 \u211d, (\u2200 x, \u2016g x\u2016 \u2264 1) \u2227 C < \u222b x, f x*g x \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousDensityDuality.lean#L54"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.incrementDensity_continuous",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 12,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem incrementDensity_continuous (m : \u2115) (hm : 0 < m) (n : \u2115)\n    (t : Fin n \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) : Continuous (incrementDensity m hm t ht)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L12"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.increment_norm_integral",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 18,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem increment_norm_integral (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    (\u222b x : Grid n, \u2016incrementDensity m hm (fun _ => duration T n)\n      (fun _ => duration_pos T hT n) x\u2016 \u2202Measure.pi (fun _ => volume)) =\n      (\u222b x : \u211d, \u2016realKernel m hm T hT x\u2016)^(gridSize n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L18"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.positionTest",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 28,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "def positionTest (n : \u2115) (g : Grid n \u2192\u1d47 \u211d) : Test n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L28"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.positionTest_cumulative",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 32,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem positionTest_cumulative (n : \u2115) (g : Grid n \u2192\u1d47 \u211d) (x : Grid n) :\n    positionTest n g (linearImage (cumulativeMatrix (gridSize n)) x)=g x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L32"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.positionTest_expectation",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 38,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem positionTest_expectation (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (n : \u2115) (g : Grid n \u2192\u1d47 \u211d) :\n    expectation m hm T hT n (positionTest n g)=\n      \u222b x : Grid n, incrementDensity m hm (fun _ => duration T n)\n        (fun _ => duration_pos T hT n) x*g x \u2202Measure.pi (fun _ => volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L38"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.unbounded_unit_cylinders",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 59,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem unbounded_unit_cylinders (m : \u2115) (hm : 2 \u2264 m) (T : \u211d\u22650) (hT : 0 < T) (R : \u211d) :\n    \u2203 F : cylinderAlgebra, \u2016F.val\u2016 \u2264 1 \u2227 R < algebraExpectation m (by omega) T hT F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L59"
+    },
+    {
+      "paper": "Section 12.2: continuous integrable real density soft signs f/(abs f+epsilon) approximate full absolute mass by dominated convergence. Actual higher-even-heat dyadic product density has variation A_p^(2^n) with A_p>1 for p>2. Composing continuous increment soft signs with actual path evaluations gives bounded continuous cylinder functions of sup norm at most one and arbitrarily large signed expectation. No uniform bound; exclusion of agreeing bounded functionals on larger sup-norm spaces is an explicit human restriction consequence. Distinct from compact-open unbounded-polynomial nonclosability and from finite signed path-law nonexistence; Gaussian order excluded.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUnboundedExpectation.no_uniform_bound",
+      "file": "Foundation/HigherHeatUnboundedExpectation.lean",
+      "line": 78,
+      "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
+      "declaration_header": "theorem no_uniform_bound (m : \u2115) (hm : 2 \u2264 m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac \u2203 C : \u211d, \u2200 F : cylinderAlgebra,\n      |algebraExpectation m (by omega) T hT F| \u2264 C*\u2016F.val\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L78"
     }
   ],
   "human_reorganization": [
@@ -2916,7 +3015,8 @@
     "The complete proof constructs a C1 extension through zero heat time, uses the absolutely continuous control clock, proves an integrable drift bound and applies the absolutely continuous fundamental theorem. The negative-argument extension is linear and is expressly not backward heat evolution. The angular Fourier constant includes 1/(2pi), matching source unit frequencies after rescaling.",
     "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed.",
     "Section 3 now reconstructs fourth-order propagation of actual Appell coordinate densities and their singular initial dual. The signed generator is minus the fourth derivative, the actual Appell parameter is -t, and complex distribution pairings have no conjugation. Positive-time L2 contraction, strong continuity and right derivative are proved from the actual Fourier multiplier. The extension to zero is in the pointwise Schwartz-evaluation topology exactly used by the source, with initial functional phi^(n)(0)/n! = (-1)^n delta_0^(n)/n!, and right observable generator -phi^(n+4)(0)/n!. The exact norm-square scaling C_n*t^(-(2n+1)/4), its divergence at zero and the compact-bump proof excluding an L2 initial representative are explicitly HUMAN Fourier/test consequences, not added Lean declarations. Generic static Appell primitive identities precede this fourth-order specialization. No positive law, chronological integral, all-order distribution extension theorem, bounded coordinate completion or stronger dual topology is inferred.",
-    "Section 4 now reconstructs an exact initial-time obstruction in the original factorial coefficient norm. For normalized first times s_n=2^-n and the one fixed terminal U=Y_1, the actual completed causal projections satisfy P_n U=Y_s_n and the empty-past projection is zero, yet every Y_s_n and U has coefficient norm one. This gives no strong convergence to the empty past and operator-distance lower bound one, despite uniformly bounded projections. Every continuous zero-start path evaluates Y_s_n to zero. The obstruction includes order two; the separate Brownian variance 2T s_n and resulting L2 convergence are explicitly a HUMAN norm comparison, not a whole-domain identification. Six principal modules read fully, including complete projection/empty/mean support. No contradiction to the already specified dual and Bochner reconstruction topologies, positive path law or novel general convergence principle is inferred."
+    "Section 4 now reconstructs an exact initial-time obstruction in the original factorial coefficient norm. For normalized first times s_n=2^-n and the one fixed terminal U=Y_1, the actual completed causal projections satisfy P_n U=Y_s_n and the empty-past projection is zero, yet every Y_s_n and U has coefficient norm one. This gives no strong convergence to the empty past and operator-distance lower bound one, despite uniformly bounded projections. Every continuous zero-start path evaluates Y_s_n to zero. The obstruction includes order two; the separate Brownian variance 2T s_n and resulting L2 convergence are explicitly a HUMAN norm comparison, not a whole-domain identification. Six principal modules read fully, including complete projection/empty/mean support. No contradiction to the already specified dual and Bochner reconstruction topologies, positive path law or novel general convergence principle is inferred.",
+    "Section 12.2 now reconstructs actual unbounded signed expectation on the SUP-NORM UNIT BALL of BOUNDED CONTINUOUS path cylinders for every fixed positive horizon and even order p>2. The continuous dyadic product density has absolute mass A_p^N, A_p>1; its continuous soft sign is bounded by one and approaches this absolute mass by dominated convergence. Composition with continuous successive path increments gives genuine bounded continuous cylinders with arbitrarily large mean. Excluding agreeing bounded linear functionals on the cylinder sup-norm closure or all bounded continuous paths is an explicit human restriction consequence, needing no countably additive measure representation. The factorial analytic completion, the separate compact-open polynomial nonclosability and the Gaussian p=2 case retain their distinct scope. Both principal source modules read fully. Classical total-variation mechanism, no new general theorem priority claimed."
   ],
   "literature": [
     {

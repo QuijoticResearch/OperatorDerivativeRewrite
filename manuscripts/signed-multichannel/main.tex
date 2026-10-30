@@ -1123,6 +1123,71 @@ it does not preclude generalized integration or the bounded
 test-dual construction proved above. The classical obstruction is
 also discussed in the primary introduction of~\cite{bcm}.
 
+\subsection{Unbounded means on continuous cylinder unit balls}
+The variation obstruction also has a direct functional form which does
+not presume a measure representation theorem. Fix $p=2m>2$ and $T>0$.
+Let $\mathcal C$ be the algebra of bounded continuous dyadic cylinder
+functions on continuous zero-start paths, with their path supremum
+norm. This is a different test class from the unbounded polynomial
+cylinders used to construct $\D$. Its finite signed expectation is
+well defined by the same actual increment laws and their refinement
+consistency. Then for every real $R$ there is $F\in\mathcal C$ with
+\begin{equation}\label{eq:continuousunit}
+ \|F\|_\infty\leq1,\qquad \E_TF>R.
+\end{equation}
+Consequently no bounded linear functional on this cylinder algebra,
+its sup-norm closure, or the whole bounded-continuous path space can
+agree with all these expectations.
+
+Here is a proof with actual continuous tests. On a grid of $N=2^n$
+increments of duration $h=T/N$, write
+$\rho_N(x)=\prod_{j=1}^Nk_h(x_j)$ on $\R^N$.
+This density is continuous and integrable, and
+\[
+ \int_{\R^N}|\rho_N(x)|\,dx=A_p^N,
+ \qquad A_p>1
+\]
+by the scaling and product calculation above. For $\varepsilon>0$
+the soft sign
+\[
+ g_\varepsilon(x)=
+       \frac{\rho_N(x)}{|\rho_N(x)|+\varepsilon}
+\]
+is continuous and bounded in absolute value by one, and
+\[
+ \int\rho_Ng_\varepsilon
+   =\int\frac{\rho_N^2}{|\rho_N|+\varepsilon}
+       \longrightarrow\int|\rho_N|=A_p^N.
+\]
+The integrand tends pointwise to $|\rho_N|$, including at its zeros,
+and is dominated by that integrable function, which proves the limit.
+Choose a dyadic $N$ with $A_p^N>R$ and then a sufficiently small
+$\varepsilon$ with the displayed integral greater than $R$.
+Compose $g_\varepsilon$ with the continuous map taking a path to
+its successive grid increments. The resulting $F$ is an actual
+bounded continuous cylinder with norm at most one. Its signed
+expectation is the displayed integral, proving
+\eqref{eq:continuousunit}. If a bounded agreeing functional had norm
+$C$, choose $R>C$ to contradict its unit-ball bound.
+
+This is a sup-norm obstruction on bounded continuous tests, distinct
+both from the finite-variation path-measure obstruction and from the
+later compact-open mean nonclosability example on unbounded
+polynomials. It does not contradict bounded reconstruction on the
+specified factorial domain. At Gaussian order $p=2$, $A_p=1$ and
+this growth argument does not apply.
+
+\par\noindent
+The soft-sign and native cylinder proofs are in
+\code{ContinuousDensityDuality}.
+\par\noindent
+The exact actual-path unit-ball theorem is
+\code{HigherHeatUnboundedExpectation.unbounded_unit_cylinders};
+its \code{no_uniform_bound} is the stated norm obstruction.
+Both source modules were read completely. This is the classical
+total-variation mechanism expressed directly on continuous tests;
+no new general functional-analysis principle is claimed.
+
 \subsection{Signed quartic cancellation versus absolute error}
 Take the biharmonic order $p=4$, so $c=-1$, and put $h=T/N$.
 For the actual law $\mu_N$ above define
@@ -1160,7 +1225,7 @@ $-24T$ under those probability laws nor an $L^2$ isometry can be
 read from~\eqref{eq:signedquarticerror}. The signed identity and the
 divergent variation error concern precisely the same native sums.
 
-\subsection{An $L^2$-small deterministic control with a fixed law}
+\subsection{An $L^2$-small deterministic control with a fixed law}\label{sec:fixed-law-control}
 The proper control scale can be tested before any completed observable
 calculus. If $a$ is constant on finitely many disjoint time intervals
 of lengths $h_j>0$, define its biharmonic signed integral law by the
@@ -1314,7 +1379,7 @@ obstructions use classical factorial and Fourier mechanisms; no
 new general extension principle is claimed.
 
 \subsection{A separate Schwartz observable identity for actual $L^p$ controls}
-The $L^2$ discontinuity test of Section 12.3 does not exclude a
+The $L^2$ discontinuity test of Section~\ref{sec:fixed-law-control} does not exclude a
 control theory in the correct power norm. The frozen library also
 constructs the following deterministic-control identity. It uses
 Schwartz terminal tests, separately from the factorial multitime
