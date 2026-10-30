@@ -2776,6 +2776,60 @@
       "source_sha256": "6bb2e8e6dc26dfdd9861a11a6c0ccd7ef3a7cf4aadf0dfe367cca348745756cf",
       "declaration_header": "theorem no_claimed_remainder_bound (C \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2203 t : \u211d\u22650, 0 < t \u2227 (t:\u211d) < \u03b4 \u2227 t \u2264 1 \u2227\n      C * (t:\u211d)^(min (4*H) (2*H+1)) < \u2016initialRemainder H hH0 hH1 t\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalUnifiedRemainderDiagnostic.lean#L48"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.energy_mono",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 18,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem energy_mono (hV : Monotone V) (x : E) : Monotone (fun t => energy V t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L18"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.inner_energy",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 26,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem inner_energy (t : \u211d\u22650) (x y : E) :\n    inner \u211d ((V t).starProjection x) y = (energy V t (x+y)-energy V t (x-y))/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L26"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.energy_measurable",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 34,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem energy_measurable (hV : Monotone V) (x : E) : Measurable (fun t => energy V t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L34"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.inner_measurable",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 37,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem inner_measurable (hV : Monotone V) (x y : E) :\n    Measurable (fun t => inner \u211d ((V t).starProjection x) y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L37"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.dist_measurable",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 42,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem dist_measurable (hV : Monotone V) (x y : E) :\n    Measurable (fun t => dist ((V t).starProjection x) y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L42"
+    },
+    {
+      "paper": "Section 15, Proposition 15.1: monotone-past projection measurability only; subsequent Bochner operator, right limits and Stieltjes measure are labelled HUMAN deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MonotoneHilbertProjection.stronglyMeasurable_projection",
+      "file": "Foundation/MonotoneHilbertProjection.lean",
+      "line": 54,
+      "source_sha256": "f4549b08f73a17c49747880e12e9370300683f6c19d375d1f087af0034b51e72",
+      "declaration_header": "theorem stronglyMeasurable_projection [SecondCountableTopology E] (hV : Monotone V) (x : E) :\n    StronglyMeasurable (fun t => (V t).starProjection x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MonotoneHilbertProjection.lean#L54"
     }
   ],
   "paper_sections": {
@@ -2820,7 +2874,8 @@
     "The exact right norm-derivative domain for the limiting Cb semigroup is the constants, with derivative zero and cosine jump norm 1+exp(-1/2). Mixed-topology and bounded-pointwise generators are not identified with that norm derivative.",
     "The real-indexed formal product process is restricted to nonnegative times in the printed proof. Independence against the whole raw past is proved via cylinders and the pi-lambda theorem. An explicit conditional distribution avoids invoking general disintegration on an uncountable product. Joint time/sample measurability is not assumed.",
     "The no-right-continuous-realization proof uses only the exact one-time laws and a countable decreasing time sequence, so survives every coordinatewise modification. The Mehler source adaptation credit to Michael R. Douglas and the repository Apache-2.0 notice are retained.",
-    "The added Section 3 diagnostic concerns exactly the scalar <Q_0 u_1,u_t-u_0>, which vanishes because the initial observed source span is zero. Its actual full-past forecast remainder has squared norm at least t^(2H)/4, excluding min(4H,2H+1) for every 0<H<1 and every proposed local big-O constant. The Brownian case distinguishes projection of a deterministic source direction from conditioning the random gradient field; no correctly formulated Ito/Taylor or Clark\u2013Ocone theorem is refuted."
+    "The added Section 3 diagnostic concerns exactly the scalar <Q_0 u_1,u_t-u_0>, which vanishes because the initial observed source span is zero. Its actual full-past forecast remainder has squared norm at least t^(2H)/4, excluding min(4H,2H+1) for every 0<H<1 and every proposed local big-O constant. The Brownian case distinguishes projection of a deterministic source direction from conditioning the random gradient field; no correctly formulated Ito/Taylor or Clark\u2013Ocone theorem is refuted.",
+    "Section 15 proves strong measurability of increasing past projections from monotone energies and real polarization, with the six exact frozen measurability correspondences fully read. The Bochner L2 fiber projection, strong right limits onto intersections of future subspaces, a common countable discontinuity set, and the finite Stieltjes energy measure after right enlargement are complete classical HUMAN deductions, not new named formal results. The shifted information-arrival example proves that the enlargement changes the past; neither original raw energy additivity, operator-norm continuity nor a physical-time stochastic integrator follows."
   ],
   "literature": [
     {

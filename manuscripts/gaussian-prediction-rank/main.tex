@@ -1421,6 +1421,146 @@ correspondences are
 \begin{center}\code{RawMartingaleEnergyMeasureObstruction}.\end{center}
 
 
+\section{Measurable past projections and the cost of right continuity}\label{sec:monotonepast}
+The raw-filtration obstruction does not prevent a different positive
+foundation theorem: increasing closed Hilbert pasts have strongly
+measurable projections, without a continuity assumption. Let $E$ be
+a real separable Hilbert space, let $(V_t)_{t\ge0}$ be increasing
+closed subspaces, and let $P_t$ be their orthogonal projections.
+The subspaces need not arise from a probability filtration.
+
+\begin{proposition}\label{prop:pastmeasurable}
+For every $x\in E$, $t\mapsto P_tx$ is strongly measurable. If
+$f\in L^2(\R_+;E)$, the formula
+\[
+ (\mathcal Pf)(t)=P_tf(t)
+\]
+defines a bounded orthogonal projection on this genuine Bochner
+$L^2$ space. Its range is exactly the fields satisfying
+$f(t)\in V_t$ for almost every $t$.
+\end{proposition}
+\begin{proof}
+If $s\le t$, nested orthogonal projections satisfy $P_sP_t=P_s$
+and $P_tP_s=P_s$. Consequently
+\[
+ e_x(t):=\|P_tx\|^2\ \text{is increasing},\qquad
+ \|P_tx-P_sx\|^2=e_x(t)-e_x(s).
+\]
+Real polarization and self-adjointness give
+\[
+ \langle P_tx,y\rangle
+   =\frac{e_{x+y}(t)-e_{x-y}(t)}4.
+\]
+Monotone real functions are Borel measurable, so every displayed
+scalar product is measurable. The identity
+$\|P_tx-y\|^2=e_x(t)+\|y\|^2-2\langle P_tx,y\rangle$ then shows
+measurability of inverse images of every ball. Balls centered in
+a countable dense subset with rational radii generate the Borel
+structure of $E$. Thus $t\mapsto P_tx$ is Borel, hence strongly
+measurable in the separable target. This is precisely the mechanism
+formalized in \code{MonotoneHilbertProjection}; no path continuity
+was inserted into the argument.
+
+For a strongly measurable $f$, take pointwise almost-everywhere
+simple-function approximations. Applying $P_t$ to each simple value
+gives a strongly measurable function by the first assertion.
+Contractivity implies convergence to $P_tf(t)$, so the latter is
+strongly measurable. It also gives
+$\int\|P_tf(t)\|^2dt\le\int\|f(t)\|^2dt$. Representatives equal
+almost everywhere give equal outputs almost everywhere, proving
+well-definedness on Bochner classes. Fiberwise idempotence gives
+$\mathcal P^2=\mathcal P$. For $f,g\in L^2$, pointwise
+self-adjointness and Cauchy--Schwarz justify integration to give
+$\langle\mathcal Pf,g\rangle=\langle f,\mathcal Pg\rangle$.
+It is therefore an orthogonal projection. Finally $P_tf(t)=f(t)$
+is equivalent to $f(t)\in V_t$ at each representative point, which
+identifies its range. The Bochner-field operator assertion is a
+complete human deduction from the mapped measurable projection
+theorem.
+\end{proof}
+
+This range condition is an almost-everywhere Hilbert-fiber
+condition. Without further probability and filtration hypotheses,
+it is not an assertion of samplewise predictability or of an
+every-time adapted representative. Nor does measurability imply
+continuity at time zero, as the preceding example shows.
+
+\subsection*{Strong right limits and their exact subspaces}
+Define
+\[
+ V_{t+}=\bigcap_{s>t}V_s,\qquad P_{t+}=P_{V_{t+}}.
+\]
+These subspaces are closed, increasing and contain $V_t$.
+For every $x$, $P_sx\to P_{t+}x$ strongly as $s\downarrow t$.
+To prove this, choose $s_n\downarrow t$ strictly. The increasing-
+projection norm identity makes $(P_{s_n}x)$ Cauchy, since its
+decreasing bounded energies converge. Its limit $y$ lies in every
+$V_s$ with $s>t$: eventually $s_n<s$, so $P_{s_n}x\in V_s$, and
+$V_s$ is closed. For $z\in V_{t+}$, every $x-P_{s_n}x$ is
+orthogonal to $z$, hence $x-y\perp V_{t+}$. Thus $y=P_{t+}x$.
+The same energy bound controls all intermediate $s$ between two
+sequence points, proving the full one-sided limit. Nestedness
+also gives
+\[
+ \|P_{t+}x-P_tx\|^2=\|P_{t+}x\|^2-\|P_tx\|^2.
+\]
+The right enlargement can therefore add an actual nonzero
+orthogonal component; it is not a notation change.
+
+Moreover $\bigcap_{s>t}V_{s+}=V_{t+}$. One inclusion follows from
+$V_{t+}\subset V_{s+}$ for $s>t$. For the other, given $r>t$ choose
+$s$ strictly between $t$ and $r$; then $V_{s+}\subset V_r$.
+Intersect over $r$. Applying the preceding decreasing-projection
+argument to $(V_{s+})$ shows that $t\mapsto P_{t+}x$ is right
+continuous for every $x$.
+
+There is a common countable exceptional set outside which the
+original $P_t$ is strongly continuous. Indeed, each increasing
+bounded energy $e_x$ has at most countably many discontinuities:
+on a compact interval the sum of jumps is bounded by $\|x\|^2$,
+so jumps larger than $1/k$ are finite; take a countable union over
+$k$ and compact intervals. At any continuity point, the nested
+norm identity gives continuity of $P_tx$. Take the union of these
+exceptional sets for a countable dense family $(x_j)$ in $E$.
+For any $x$, the estimate
+\[
+ \|P_sx-P_tx\|\le2\|x-x_j\|+\|P_sx_j-P_tx_j\|
+\]
+extends strong continuity to $x$ outside that same set. No
+operator-norm continuity is concluded. These right-limit and
+countability statements are classical human deductions, not new
+named declarations in the measurable-projection module.
+
+\subsection*{A positive energy measure after changing the past}
+For a fixed $x$, the function $F_x(t)=\|P_{t+}x\|^2$ is bounded,
+increasing and right continuous. Its usual Lebesgue--Stieltjes
+measure on $(0,\infty)$ satisfies
+\[
+ \mu_x((s,t])=F_x(t)-F_x(s),\qquad 0\le s<t.
+\]
+For clarity, extend $F_x$ constantly by $F_x(0)$ on negative times;
+the distribution-function construction then gives this finite
+positive measure with total mass at most $\|x\|^2-F_x(0)$ and no
+artificial atom at zero. The construction follows by assigning
+the displayed differences to half-open intervals: monotonicity
+gives positivity and finite additivity, right continuity gives
+continuity under decreasing endpoints, and the standard
+Carath\'eodory extension yields the Borel Stieltjes measure.
+
+This does not supply the same formula for $\|P_tx\|^2$ if the raw
+pasts are not right continuous. For an explicit shifted version of
+the preceding information-arrival example, take $E=\R$, $x=1$,
+$V_t=\{0\}$ for $t\le1$ and $V_t=\R$ for $t>1$.
+The raw interval assignment gives value one on every
+$(1,1+1/n]$, although those sets decrease to the empty set.
+It cannot be a finite Borel measure. In the enlarged family,
+$V_{1+}=\R$ and $F_x(t)=\mathbf1_{[1,\infty)}(t)$, so
+$\mu_x=\delta_1$. The measure is legitimate because information
+is now present at time one. The original raw past at time one was
+trivial. Thus the positive energy-measure construction records an
+enlargement of the subspaces, rather than proving the failed raw
+claim or completing a physical-time integrator on its old domain.
+
 \section{An accelerated Gaussian kernel limit with an initial jump}
 \label{sec:instantkernel}
 The preceding observation example retains information instantly. A
