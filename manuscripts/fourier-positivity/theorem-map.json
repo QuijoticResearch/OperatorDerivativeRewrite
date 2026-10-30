@@ -1377,6 +1377,96 @@
       "source_sha256": "e751e9375f4710c6f122836b22108a0a189a8b530e381609bd268ddf4b435407",
       "declaration_header": "theorem covariancePower_energy_nonneg (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (t : \u03b9 \u2192 \u211d) (k : \u2115) (c : \u03b9 \u2192 \u211d) :\n    0 \u2264 \u2211 i, \u2211 j, c i * c j * (covariance H (t i) (t j))^k",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCovarianceMatrices.lean#L42"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offsetSymbol",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 10,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "def offsetSymbol (k : Wave) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L10"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_kernel",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 12,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_kernel (k l : Wave) :\n    kernel offsetSymbol k l = 1 + (k 0 : \u211d)*(l 0 : \u211d) + (k 0 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L12"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_real_energy_nonnegative",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 17,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_real_energy_nonnegative {\u03b9 : Type} [Fintype \u03b9]\n    (k : \u03b9 \u2192 Wave) (c : \u03b9 \u2192 \u211d) :\n    0 \u2264 \u2211 i, \u2211 j, c i * c j * kernel offsetSymbol (k i) (k j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L17"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_complex_energy_nonnegative",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 55,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_complex_energy_nonnegative {\u03b9 : Type} [Fintype \u03b9]\n    (k : \u03b9 \u2192 Wave) (b : \u03b9 \u2192 \u2102) :\n    0 \u2264 (energy (fun i j => kernel offsetSymbol (k i) (k j)) b).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L55"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_gamma_real_nonnegative",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 63,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_gamma_real_nonnegative (f : Fourier) (x : Space) :\n    0 \u2264 (synthesis x (gammaIter offsetSymbol 1 f f)).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L63"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_symbol_not_even",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 75,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_symbol_not_even :\n    \u00ac \u2200 k : Wave, offsetSymbol (-k) = offsetSymbol k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L75"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.imaginaryWitness",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 81,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "def imaginaryWitness : Fourier",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L81"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_gamma_imaginary",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 85,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_gamma_imaginary :\n    (synthesis (0 : Space)\n      (gammaIter offsetSymbol 1 imaginaryWitness imaginaryWitness)).im = -1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L85"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_not_covariance",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 106,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_not_covariance : \u00ac CovarianceSymbol offsetSymbol",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L106"
+    },
+    {
+      "paper": "Section 4 asymmetric unnormalized example: psi(k)=2+k1^2+k1 has kernel 1+k1*l1+k1. All real finite energies equal S^2+T^2+ST>=0, hence real part of every complex first-Gamma test is nonnegative at every point. The two-frequency (1,i) energy is 4-i, so it is not a covariance symbol. Nonnegative integer-valued symbol and the normalization-to-negative-test calculation are explicit human finite-algebra consequences; no positive physical asymmetric evolution asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierGammaAsymmetry.offset_real_positive_not_covariance",
+      "file": "Foundation/FourierGammaAsymmetry.lean",
+      "line": 113,
+      "source_sha256": "3ca171c24a72794d8f91b7e7b6544c88d5af3e60af50ef2f0ecba039cb77bbfa",
+      "declaration_header": "theorem offset_real_positive_not_covariance :\n    (\u2200 f : Fourier, \u2200 x : Space,\n      0 \u2264 (synthesis x (gammaIter offsetSymbol 1 f f)).re) \u2227\n      \u00ac CovarianceSymbol offsetSymbol",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierGammaAsymmetry.lean#L113"
     }
   ],
   "classical_deductions_proved_in_paper": [
@@ -1397,6 +1487,7 @@
     "Section 16 constructs finite Euclidean Gram vectors and normalized Gaussian Wick polynomials directly. This is a human finite-coordinate realization of the same fractional covariance powers represented by actual fractional Gaussian directions in the source. Complex coefficients use the real Hilbert sum of real and imaginary parts, with factor 1/sqrt(q!).",
     "The actual Cauchy coefficient flow diag(exp(-t),exp(-2t)) does not diagonalize the generalized pair of Gamma forms. Its original generalized-eigenline-three component has exact rate four, not six, and this is not the circle-integrated Gamma energy.",
     "Complex two-mode coefficient ellipsoids use four-dimensional real Lebesgue volume. The block realification determinant squares; the exact original two-form volume ratio is three, not sqrt(3). The unchanged fixed-point volume under coordinate phases is a labelled human rotation argument, not an intersection-over-all-points or semigroup volume claim.",
-    "Section 16 reconstructs the original covariance matrices at exponents one and 3/2, their Hadamard squares and the actual coefficient witness (1,-1/8). Positivity does not imply Loewner ordering. The explicit ratio upper bound 20/(32-7sqrt(2)) is a human division of mapped exact energies. The subordination contradiction explicitly assumes kappa(1)=1 and the two-mode necessary inequality at 3/2; the paper establishes normalization only for the two-mode comparison, not for a full-domain curvature invariant."
+    "Section 16 reconstructs the original covariance matrices at exponents one and 3/2, their Hadamard squares and the actual coefficient witness (1,-1/8). Positivity does not imply Loewner ordering. The explicit ratio upper bound 20/(32-7sqrt(2)) is a human division of mapped exact energies. The subordination contradiction explicitly assumes kappa(1)=1 and the two-mode necessary inequality at 3/2; the paper establishes normalization only for the two-mode comparison, not for a full-domain curvature invariant.",
+    "Section 4 now gives the actual global asymmetric counterexample psi(k)=2+k1^2+k1. Its real finite kernel energy is S^2+T^2+ST=(T+S/2)^2+3S^2/4, proving nonnegative real parts for every complex Fourier first-Gamma test at every spatial point. The exact two-frequency kernel [[1,1],[2,3]] gives energy 4-i for (1,i), violating complex reality and covariance. Integer n(n+1)>=0 makes the symbol itself nonnegative; removing its constant gives psi0=k1^2+k1, whose normalized first-origin test 2+s is negative at s=-3. These last two elementary observations are labelled human consequences. This isolates normalization/reality hypotheses without asserting a physical positive asymmetric evolution or new covariance principle. FourierGammaAsymmetry read in full; supporting FourierGammaNormalization also read fully."
   ]
 }

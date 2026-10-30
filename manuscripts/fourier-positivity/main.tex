@@ -277,6 +277,57 @@ Thus the library's unnormalized complex criterion keeps reality
 as well as nonnegativity. The main theorem avoids this ambiguity
 by stating normalization and evenness at the outset.
 
+\subsection*{A nonnegative real symbol with positive real Gamma and nonreal energy}
+The unnormalized pitfall has a concrete global example. Set
+\[
+ \psi(k)=2+k_1^2+k_1,\qquad k\in\Z^3.
+\]
+It is a nonnegative real symbol: $n(n+1)\geq0$ for every integer $n$,
+so $\psi(k)\geq2$. It is not normalized and is not even.
+Its kernel is
+\[
+ K_\psi(k,l)=1+k_1l_1+k_1.
+\]
+For arbitrary finite real coefficients $c_i$, put
+$S=\sum_i c_i$ and $T=\sum_i c_i(k_i)_1$. Direct expansion gives
+\[
+ \sum_{i,j}c_ic_jK_\psi(k_i,k_j)
+ =S^2+T^2+ST=(T+S/2)^2+3S^2/4\geq0.
+\]
+For complex coefficients $b_i=\alpha_i+i\beta_i$, the real part of
+their energy is the sum of these two nonnegative real energies for
+$\alpha$ and $\beta$; the mixed terms are purely imaginary since
+the kernel is real. Apply this to
+$b_i=c_i e_{k_i}(x)$ in \eqref{eq:gammaenergy}. It proves
+\[
+ \operatorname{Re}\Gamma_1(f,f)(x)\geq0
+       \quad\hbox{for every finite Fourier }f\hbox{ and every }x.
+\]
+Nevertheless, at the two frequencies $0,e_1$ the kernel matrix is
+\[
+ \begin{pmatrix}1&1\\2&3\end{pmatrix}.
+\]
+Testing the coefficients $(1,i)$ at the spatial origin gives
+$\Gamma_1(1+ie_{e_1},1+ie_{e_1})(0)=4-i$.
+Thus the energy is not real and the symbol is not a covariance symbol,
+despite nonnegativity of every real-part Gamma test.
+
+Normalization is not harmless for this example. For
+$\psi_0=\psi-\psi(0)=k_1^2+k_1$, the first-origin formula above
+gives $\operatorname{Re}\Gamma_1(s+e_{e_1},s+e_{e_1})(0)=2+s$.
+At $s=-3$ it is negative. The exact normalization and complex reality
+hypotheses therefore cannot be replaced by nonnegativity of the
+symbol and of the unnormalized real-part tests. The normalization
+calculation is a human finite-algebra consequence of the printed
+formula, not a new named formal theorem.
+
+\par\noindent
+The complete asymmetric source is \code{FourierGammaAsymmetry}.
+Its actual all-polynomial real-part positivity and imaginary witness
+are distinct from the normalized odd-symbol diagnostic above. This
+is an explicit boundary example, not a new covariance principle or
+a positive physical evolution for an asymmetric symbol.
+
 \section{Finite Schoenberg positivity}
 We next pass from the infinitesimal symbol to finite-time
 multiplier matrices. This step is still a finite matrix argument.
