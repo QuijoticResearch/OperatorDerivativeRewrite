@@ -855,6 +855,51 @@
       "source_sha256": "1c03038a7ae14d36f1d2e51c32107e8aa81a52411999cabcdf3953c565ae0da6",
       "declaration_header": "theorem no_original_native_L2_limit (H : \u211d\u22650) (hH : 0 < H)\n    (v : IBMTimeAveragedObservable.IntrinsicSpace) :\n    \u00ac Tendsto (fun N : \u2115 => IBMJointIntrinsicDerivative.jointDivergence\n      (IBMRawGridCompensation.gridInput (H/(N+1)) (N+1))) atTop (\ud835\udcdd v)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGridEscape.lean#L78"
+    },
+    {
+      "paper": "Section 10.4: original projected native grid outputs have one full-observable L2 test with unbounded pairings, no finite weak limit and no strictly increasing weakly convergent subsequence. Source N+1 cells correspond to paper N>=1. No derivative-domain or bounded/smooth detecting test is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakObstruction.exists_unbounded_inner_of_norm_escape",
+      "file": "Foundation/IBMNativeWeakObstruction.lean",
+      "line": 12,
+      "source_sha256": "76ad566e24b53d5b832d35f572dd3a3294cca23634e5b2ccaa7b251b06630d28",
+      "declaration_header": "theorem exists_unbounded_inner_of_norm_escape {E : Type*} [NormedAddCommGroup E]\n    [InnerProductSpace \u211d E] [CompleteSpace E] (u : \u2115 \u2192 E)\n    (hu : Tendsto (fun N => \u2016u N\u2016) atTop atTop) :\n    \u2203 v : E, \u2200 C : \u211d, \u2203 N : \u2115, C < |inner \u211d (u N) v|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakObstruction.lean#L12"
+    },
+    {
+      "paper": "Section 10.4: original projected native grid outputs have one full-observable L2 test with unbounded pairings, no finite weak limit and no strictly increasing weakly convergent subsequence. Source N+1 cells correspond to paper N>=1. No derivative-domain or bounded/smooth detecting test is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakObstruction.exists_original_unbounded_observable",
+      "file": "Foundation/IBMNativeWeakObstruction.lean",
+      "line": 33,
+      "source_sha256": "76ad566e24b53d5b832d35f572dd3a3294cca23634e5b2ccaa7b251b06630d28",
+      "declaration_header": "theorem exists_original_unbounded_observable (T : \u211d\u22650) (hT : 0 < T) :\n    \u2203 v : IntrinsicSpace, \u2200 C : \u211d, \u2203 N : \u2115,\n      C < |inner \u211d (jointDivergence (gridInput (T/(N+1)) (N+1))) v|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakObstruction.lean#L33"
+    },
+    {
+      "paper": "Section 10.4: original projected native grid outputs have one full-observable L2 test with unbounded pairings, no finite weak limit and no strictly increasing weakly convergent subsequence. Source N+1 cells correspond to paper N>=1. No derivative-domain or bounded/smooth detecting test is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakObstruction.exists_original_nonconvergent_observable",
+      "file": "Foundation/IBMNativeWeakObstruction.lean",
+      "line": 38,
+      "source_sha256": "76ad566e24b53d5b832d35f572dd3a3294cca23634e5b2ccaa7b251b06630d28",
+      "declaration_header": "theorem exists_original_nonconvergent_observable (T : \u211d\u22650) (hT : 0 < T) :\n    \u2203 v : IntrinsicSpace, \u2200 c : \u211d, \u00ac Tendsto\n      (fun N : \u2115 => inner \u211d (jointDivergence (gridInput (T/(N+1)) (N+1))) v) atTop (\ud835\udcdd c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 10.4: original projected native grid outputs have one full-observable L2 test with unbounded pairings, no finite weak limit and no strictly increasing weakly convergent subsequence. Source N+1 cells correspond to paper N>=1. No derivative-domain or bounded/smooth detecting test is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakObstruction.no_original_weak_limit",
+      "file": "Foundation/IBMNativeWeakObstruction.lean",
+      "line": 49,
+      "source_sha256": "76ad566e24b53d5b832d35f572dd3a3294cca23634e5b2ccaa7b251b06630d28",
+      "declaration_header": "theorem no_original_weak_limit (T : \u211d\u22650) (hT : 0 < T) (w : IntrinsicSpace) :\n    \u00ac (\u2200 v : IntrinsicSpace, Tendsto\n      (fun N : \u2115 => inner \u211d (jointDivergence (gridInput (T/(N+1)) (N+1))) v) atTop\n        (\ud835\udcdd (inner \u211d w v)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakObstruction.lean#L49"
+    },
+    {
+      "paper": "Section 10.4: original projected native grid outputs have one full-observable L2 test with unbounded pairings, no finite weak limit and no strictly increasing weakly convergent subsequence. Source N+1 cells correspond to paper N>=1. No derivative-domain or bounded/smooth detecting test is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakObstruction.no_original_weak_subsequence",
+      "file": "Foundation/IBMNativeWeakObstruction.lean",
+      "line": 56,
+      "source_sha256": "76ad566e24b53d5b832d35f572dd3a3294cca23634e5b2ccaa7b251b06630d28",
+      "declaration_header": "theorem no_original_weak_subsequence (T : \u211d\u22650) (hT : 0 < T)\n    (\u03c6 : \u2115 \u2192 \u2115) (h\u03c6 : StrictMono \u03c6) (w : IntrinsicSpace) :\n    \u00ac (\u2200 v : IntrinsicSpace, Tendsto\n      (fun N : \u2115 => inner \u211d (jointDivergence (gridInput (T/(\u03c6 N+1)) (\u03c6 N+1))) v) atTop\n        (\ud835\udcdd (inner \u211d w v)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakObstruction.lean#L56"
     }
   ],
   "proof_reorganization": "Human proof uses the explicitly proved weaker direct Gaussian fourth-moment bound; no new named Lean proof of that shortcut is claimed. The full variation proof is now reconstructed separately, with exact Gaussian eighth moments, repeated-overlap occupation, triangular folded-Gaussian envelope, bounded-increment localization, reflected-crossing penalty and all uniform grids. The printed lower-tail consequence uses the same deterministic quartic/mesh inequality in a direct probability argument. No new formal declarations or almost-sure/weighted strengthening is claimed.",
@@ -874,6 +919,7 @@
     "The spatial nonnegative rectangle kernel has folded quadratic-variation mass, squared interval Gram energy and support in a shrinking band. The conditional Wick telescope gives energy identity and the bound q_N^2<=4 M eta (conditional scenery energy+ordinary clock QV). A bounded-energy subsequence, L1/a.e. extraction, clock continuity and nonnegative Fatou contradict its bounded expected energy. This reorganizes the formal truncated dominated-convergence proof.",
     "Discrete Tanaka crossing control and centered ordinary absolute increments give Var(C_N)<=9T/2 without an uncentered variation bound. Testing I_N against the observable R_N-E C_N gives exact a_N pairing and a_N^2<=||I_N||^2(a_N+Var C_N). Hence the projected original native output has diverging L2 norm. No probability divergence, rate, exclusion of all renormalizations, or completed physical-time Ito calculus is asserted.",
     "The source finite field has scenery component sum X(h_i)d_i and zero clock component. Fiberwise Gaussian adjointness and original observable restriction give the displayed test identity and the exact formal native-value projection. The independently printed actual conditional-expectation theorem requires no enlarged native domain.",
-    "The non-Gaussian marginal fourth-moment comparison is an elementary actual-law deduction used only to delimit Gaussian-process Wick-Riemann antecedents. Primary Liu introduction and Hypothesis 1.1 and Khoshnevisan-Lewis process/partition conventions were inspected; priority for this exact projected escape remains unresolved."
+    "The non-Gaussian marginal fourth-moment comparison is an elementary actual-law deduction used only to delimit Gaussian-process Wick-Riemann antecedents. Primary Liu introduction and Hypothesis 1.1 and Khoshnevisan-Lewis process/partition conventions were inspected; priority for this exact projected escape remains unresolved.",
+    "Section 10.4 upgrades the already proved original projected native norm escape to its named full-observable weak obstruction. The complete Baire closed-set proof reconstructs Banach--Steinhaus for Riesz pairing functionals: pointwise boundedness would imply a common norm bound. Thus a single intrinsic observable has unbounded pairings on the full grid sequence, and every prescribed strictly increasing subsequence separately admits a detecting observable, excluding weak convergence. No one test for all subsequences is claimed. The detector is only in the full observable L2 space; no original derivative-domain membership, smoothness or boundedness follows, so smaller graph-dual convergence and different prescriptions remain open. The spatial Simpson results are unchanged."
   ]
 }

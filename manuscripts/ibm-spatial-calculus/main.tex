@@ -14,7 +14,7 @@
 \title{Variation and spatial Simpson integration for reflected-clock\protect\\
 iterated Brownian motion}
 \author{Project Stardust}
-\date{Reviewed editorial draft, October 29, 2026}
+\date{Reviewed editorial draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -886,6 +886,64 @@ enlargement of that test domain. It supplies neither a completed
 physical-time integral nor a theorem against all possible
 renormalizations or higher-channel constructions.
 
+
+\subsection{Failure of weak reconstruction on the full observable space}
+The norm escape has a stronger consequence than absence of a strong
+limit. Let $E=L^2(\mathcal O)$, the real closed observable subspace
+of the actual scenery--clock probability space. For the same original
+projected native outputs $I_N\in E$ there exists a \emph{single}
+$v\in E$ such that
+\[
+ \sup_{N\ge1}|\langle I_N,v\rangle|=\infty.
+\]
+Thus those pairings converge to no finite scalar. Moreover no
+subsequence $I_{N_j}$ with strictly increasing indices converges
+weakly to any $w\in E$.
+
+Here is the complete functional-analytic step. If every $v\in E$
+had bounded pairings, the closed sets
+\[
+ A_k=\{v\in E:|\langle I_N,v\rangle|\le k
+                         \text{ for all }N\ge1\},\qquad k=1,2,\ldots,
+\]
+would cover $E$. It is a Hilbert space, hence complete. The Baire
+category theorem would give a ball $B(v_0,r)\subset A_k$ for some
+$k$ and $r>0$. For every $\|h\|\le1$, the two points
+$v_0\pm(r/2)h$ belong to that ball. Subtract their pairings and use
+the two bounds by $k$ to obtain
+\[
+ r|\langle I_N,h\rangle|\le2k\quad\text{for every }N.
+\]
+Taking the supremum over the unit ball gives
+$\|I_N\|\le2k/r$, contrary to Theorem~\ref{thm:nativeescape}.
+Negating the assumed pointwise boundedness produces the stated fixed
+observable. This is the classical Banach--Steinhaus mechanism
+\cite{BS}; its use introduces no new probabilistic assumption.
+
+For every prescribed strictly increasing sequence $N_j$, the same
+norm escape holds along $j$. Applying the argument to that subsequence
+gives a detecting observable $v_{(N_j)}$ with unbounded pairings.
+Weak convergence to any $w\in E$ would make every such pairing
+convergent, hence bounded, a contradiction. The detecting observable
+may depend on the subsequence; no one test detecting every possible
+subsequence is asserted.
+
+This is a full-observable $L^2$ weak-topology obstruction for exactly
+the original finite-field adjoint outputs identified above. The
+argument does not put its detecting observable in the original
+closed derivative domain, nor make it smooth or bounded. Convergence
+against a smaller graph-domain test class, a distributional topology,
+a different integrand norm or a different compensated prescription
+is not ruled out. In particular the spatial Simpson theorem and
+its actual pathwise primitive remain intact.
+\par\noindent\code{IBMNativeWeakObstruction}:
+\par\noindent\code{exists_original_unbounded_observable},
+\par\noindent\code{exists_original_nonconvergent_observable},
+\par\noindent\code{no_original_weak_limit},
+\code{no_original_weak_subsequence}.
+The source uses $N+1$ cells for indices $N\ge0$; the paper uses
+$N\ge1$ cells, which is only an index shift.
+
 \section{What this integration result means}
 The targets are genuine pathwise finite spatial or time integrals,
 and the approximations converge under the actual positive
@@ -1009,5 +1067,11 @@ On Simpson's rule and fractional Brownian motion with $H=1/10$,
 \emph{Riemann--Skorohod and Stratonovich integrals for Gaussian processes},
 primary author manuscript, introduction and Hypothesis 1.1.
 \href{https://files.blogs.baruch.cuny.edu/wp-content/blogs.dir/8996/files/2025/02/Skorohod-Riemann.pdf}{Author-hosted PDF}.
+\bibitem{BS} S. Banach and H. Steinhaus,
+\emph{Sur le principe de la condensation de singularit\'es},
+Fundamenta Mathematicae \textbf{9} (1927), 50--61.
+\url{https://doi.org/10.4064/fm-9-1-50-61}.
+Publisher abstract and bibliographic record inspected; original full-text
+retrieval was unsuccessful. The needed Baire argument is proved above.
 \end{thebibliography}
 \end{document}
