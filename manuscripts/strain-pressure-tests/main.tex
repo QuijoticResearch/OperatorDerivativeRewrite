@@ -183,6 +183,90 @@ three-dimensional field test establishes none of those dynamical
 hypotheses and does not contradict determining-mode results.
 No new general high/low interaction principle is claimed.
 
+\subsection*{What triadic support does and does not imply}
+For any two wavevectors $k,l$ and real cutoff $K$, the triangle
+inequality gives the valid implication
+\[
+ |k+l|>K\quad\Longrightarrow\quad
+ |k|>K/2\ \hbox{or}\ |l|>K/2.
+\]
+Indeed, if both input norms were at most $K/2$, their sum would have
+norm at most $K$. The word ``or'' cannot be replaced by ``and'',
+even for transverse inputs and a nonzero Leray-projected coefficient.
+For real vectors $a,b$ transverse to $k,l$ respectively, the
+symmetrized advection coefficient, with its common factor $i$ removed,
+is
+\[
+ C(k,l;a,b)=(l\cdot a)b+(k\cdot b)a.
+\]
+For $m\ne0$ write $P_m v=v-m(m\cdot v)/|m|^2$.
+At $k=(1,0,0)$, $l=(0,N,0)$, $a=e_2$, $b=e_3$, direct substitution
+gives
+\[
+ m=k+l=(1,N,0),\qquad P_m C=N e_3.
+\]
+For integers $N\geq4$, $|k|=1<N/2$ whereas $|m|>N$ and the
+coefficient is nonzero. Thus an output above cutoff $N$ need not have
+both inputs above half that cutoff. The preceding real sine field
+already realizes this interaction; this calculation identifies its
+transverse Fourier symbol explicitly.
+
+There is also no universal upper bound on the input/output frequency
+ratio. Take instead
+\[
+ k_N=(N,0,0),\qquad l_N=(1-N,1,0),\qquad m=(1,1,0).
+\]
+Both $e_2\perp k_N$ and $e_3\perp l_N$, and $e_3\perp m$.
+Since $l_N\cdot e_2=1$ and $k_N\cdot e_3=0$,
+\[
+ P_m C(k_N,l_N;e_2,e_3)=e_3\ne0.
+\]
+Moreover $|k_N|^2=N^2$, $|l_N|^2=(N-1)^2+1$, while $|m|^2=2$.
+Given $R\geq0$, choose an integer $N>2R+2$. Then
+$|k_N|>R|m|$ and $|l_N|>R|m|$: indeed $N^2>2R^2$ and
+$(N-1)^2+1>2R^2$. This proves the assertion with no assumption
+about a time evolution.
+
+For clarity, the same cancellation has an actual real field
+realization, not merely a formal symbol. On the normalized torus put
+\[
+ v_N(x,y,z)=e_2\cos(Nx)+e_3\cos((1-N)x+y).
+\]
+It is smooth, mean zero and divergence free. Its only input waves
+are $\pm k_N,\pm l_N$. Since its first component is zero and it is
+independent of $z$, direct differentiation gives
+\begin{align*}
+ (v_N\cdot\nabla)v_N
+ &=-e_3\cos(Nx)\sin((1-N)x+y)\\
+ &=-\tfrac12e_3\bigl[\sin(x+y)+\sin((1-2N)x+y)\bigr].
+\end{align*}
+This output is also divergence free, so Leray projection preserves
+it. For $N\geq4$, its Fourier coefficient at $m=(1,1,0)$ is
+$i e_3/4\ne0$ under the convention $e^{ik\cdot x}$.
+The two displayed output waves are distinct up to sign. Hence a
+low-output projection retaining $m$ detects this interaction, even
+though both input frequencies escape every fixed ball as $N\to\infty$.
+This field realization and its coefficient are human trigonometric
+consequences of the mapped symbol calculation, with their full proof
+given above; they are not additional named formal declarations.
+
+\par\noindent
+\code{DictionaryTriadLocalization}:
+\par\noindent\code{high_output_has_large_input},
+\par\noindent\code{low_high_arbitrary_cutoff},
+\par\noindent\code{cancellation_coefficient},
+\par\noindent\code{unbounded_input_ratio}.
+
+These are statements about possible nonzero Fourier coefficients.
+They do not measure energy flux, assert that separated-scale
+interactions dominate, or contradict locality estimates with
+regularity and filter hypotheses. Eyink's primary abstract
+\cite{EyinkLocal} specifically distinguishes dominance of local
+wavevector triads from the occurrence of nonlocal interactions and
+identifies the role of the filter. Only that abstract was inspected
+for this comparison; none of its flux estimates or proofs is used.
+No priority for the elementary triadic geometry is claimed.
+
 \section{A scalar norm reduction needs an upper frequency ratio}
 A separate algebraic check prevents reversing a spectral inequality.
 For positive real $A,B$ and $C\geq0$,
@@ -1367,5 +1451,11 @@ J. Fluid Mech. \textbf{238} (1992), 325--336, Section 5.
 \emph{A determining form for the 2D Navier--Stokes equations---the Fourier modes case},
 primary preprint arXiv:1208.5134 (2012), Section 1 and Definition 3.3.
 \url{https://arxiv.org/abs/1208.5134}.
+\bibitem{EyinkLocal} G. L. Eyink,
+\emph{The `Multifractal Model' of Turbulence and A Priori Estimates in
+Large-Eddy Simulation, I. Subgrid Flux and Locality of Energy Transfer},
+primary preprint (1996),
+\url{https://arxiv.org/abs/chao-dyn/9602018}.
+Abstract-level comparison only; no flux theorem imported.
 \end{thebibliography}
 \end{document}
