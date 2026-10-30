@@ -2921,3 +2921,8 @@ import Foundation.CubeGaussianRootGround
 import Foundation.CubeGaussianGroundEigenvector
 import Foundation.CubeLimitKernelSymmetry
 import Foundation.CubeGaussianSchurBound
+import Foundation.CubeGaussianSecondMoment
+import Foundation.CubeGaussianTripleMoment
+import Foundation.CubeGaussianRadialChannel
+import Foundation.CubeGaussianRadialRoot
+import Foundation.CubeGaussianRadialEigenvector
