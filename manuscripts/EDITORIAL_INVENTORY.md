@@ -22,7 +22,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-eight reviewed drafts total 418 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-eight reviewed drafts total 420 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -66,7 +66,7 @@ The nine-page moment companion also reconstructs a distinct singular cubic-squar
 
 The Gaussian quadratic companion now has ten pages, adding two-skew-factor tensor recovery, actual orthonormal-frame determinant law transport, exact moments and a fully derived classical Laplace density. Finite matrix tensor tests supplement the completed-source proof; they do not replace it.
 
-The nine-page Gaussian likelihood companion reconstructs the actual normalized delayed tilt, full-past law, precise L2 domains, quotient unitary, conditional projections and exact predictable energy. Complete classical deductions yield projection norm one despite arbitrarily small likelihood-root changes, with explicit running coefficient and exact energy split. This is a coherent domain/observation comparison, not a new Girsanov theorem.
+The eleven-page Gaussian likelihood companion reconstructs the actual normalized delayed tilt, full-past law, precise L2 domains, quotient unitary, conditional projections and exact predictable energy. Complete classical deductions yield projection norm one despite arbitrarily small likelihood-root changes, with explicit running coefficient and exact energy split. This is a coherent domain/observation comparison, not a new Girsanov theorem.
 
 The fourteen-page prediction companion also applies the actual Gaussian projection to terminal-aware Brownian bracket errors. Full-past generated-domain mean bounds, bounded-Borel strong convergence, later-row control and exact mean-two failure without observation constraints are reconstructed; harmonic refinements are labelled human deductions.
 

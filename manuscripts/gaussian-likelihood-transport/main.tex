@@ -17,7 +17,7 @@
 \date{October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Equivalent probability measures preserve null sets but need not preserve square-integrable domains. We reconstruct an explicit delayed Gaussian likelihood for which the terminal density is normalized despite failure of the Novikov exponential moment, and its square root belongs to the original $L^2$ space but not the tilted one. Multiplication by the square root is nevertheless a unitary between the correct spaces. The entire time-one past has the same law under both measures, while its transported Hilbert subspace differs from the original past subspace. We prove the correct conditional projection formula, an exact innovation energy $1-\sqrt{2/3}$ and agreement after the likelihood becomes observable. Further elementary deductions give the exact operator-norm distance one, an instability under arbitrarily small likelihood-root changes, and an explicit two-stage predictable coefficient. These deductions are distinguished from named formal declarations. The mechanisms are classical; no new change-of-measure or martingale representation theorem is claimed.
+Equivalent probability measures preserve null sets but need not preserve square-integrable domains. We reconstruct an explicit delayed Gaussian likelihood for which the terminal density is normalized despite failure of the Novikov exponential moment, and its square root belongs to the original $L^2$ space but not the tilted one. Multiplication by the square root is nevertheless a unitary between the correct spaces. The entire time-one past has the same law under both measures, while its transported Hilbert subspace differs from the original past subspace. We prove the correct conditional projection formula, an exact innovation energy $1-\sqrt{2/3}$ and agreement after the likelihood becomes observable. Further elementary deductions give the exact operator-norm distance one, an instability under arbitrarily small likelihood-root changes, and an explicit two-stage predictable coefficient. These deductions are distinguished from named formal declarations. A separate lognormal mixture has exact power-integrability interval $[0,1]$, yet finite relative entropies in both directions that can be arbitrarily small. These human entropy deductions retain the formal static moment boundary. The mechanisms are classical; no new change-of-measure or martingale representation theorem is claimed.
 \end{abstract}
 
 \section{Spaces and the precise comparison}
@@ -337,6 +337,171 @@ $\E\int_1^2h_t^2dt=\E(R-M_1)^2$, evaluated in Theorem~\ref{thm:energy}.
 
 The energy up to one is therefore $\sqrt{2/3}-4/5>0$. Uniqueness in the original predictable $L^2$ domain follows from the isometry: two coefficients with the same terminal integral have difference of zero $L^2(dt\otimes P)$ norm. This explicitly constructed coefficient agrees with the formally supplied unique predictable representer. We do not identify it with a projected Malliavin derivative without separately proving membership in that derivative's closed domain. Representation by the bounded adjoint of the It\^o isometry does not require such a membership claim.
 
+\section{A lognormal mixture: finite entropies without higher moments}\label{sec:lognormal}
+The square-integrable domain issue can be sharpened to a complete
+power-integrability boundary. This is a second likelihood example,
+distinct from \eqref{eq:XY}. Let $X,Y$ be independent standard
+Gaussians, fix $a>0$, $\varepsilon>0$, and set
+\[
+ \sigma=\varepsilon e^{aX},\qquad
+ S=\exp(\sigma Y-\sigma^2/2),\qquad dQ_*=S\,dP.
+\]
+The symbol $Q_*$ distinguishes this new measure from $Q$ in the
+preceding sections. All positive and negative powers of $\sigma$
+are integrable, by the Gaussian linear exponential formula. That
+fact does not imply any positive exponential moment of $\sigma^2$.
+
+\begin{lemma}\label{lem:doubleexp}
+For every $b,c>0$, $\E\exp(c e^{bX})=\infty$.
+\end{lemma}
+\begin{proof}
+For $x\ge0$, the exponential series gives $e^{bx}\ge b^3x^3/6$.
+Thus for $x\ge6/(cb^3)$ we have $ce^{bx}\ge x^2$. Multiplication by
+the Gaussian density gives
+\[
+ \phi(x)\exp(ce^{bx})
+ =(2\pi)^{-1/2}\exp(-x^2/2+ce^{bx})\ge(2\pi)^{-1/2}.
+\]
+The right half-line has infinite Lebesgue measure. Integration proves
+the claim, as an infinite nonnegative integral.
+\end{proof}
+
+\begin{theorem}\label{thm:lognormalpowers}
+The likelihood $S$ is strictly positive, $\E S=1$, and $Q_*\sim P$.
+For every real $r$,
+\begin{align}
+ \E_P S^r<\infty&\quad\Longleftrightarrow\quad0\le r\le1,
+       \label{eq:powerP}\\
+ \E_{Q_*}S^r<\infty&\quad\Longleftrightarrow\quad-1\le r\le0.
+       \label{eq:powerQ}
+\end{align}
+The endpoint moments in \eqref{eq:powerP} are both one. In
+particular $R_*:=\sqrt S$ belongs to $L^2(P)$ but to no positive
+$L^r(Q_*)$ space, including $L^1(Q_*)$.
+\end{theorem}
+\begin{proof}
+Conditioning on $X$ and using the Gaussian exponential integral in
+$Y$ gives, for every real $r$,
+\[
+ \E[S^r\mid X]=\exp\left(\tfrac12r(r-1)\varepsilon^2e^{2aX}\right).
+\]
+This identity is valid as a nonnegative integral; each conditional
+Gaussian integral is finite even when its integral over $X$ is
+infinite. If $0\le r\le1$, the displayed quantity is at most one.
+If $r<0$ or $r>1$, its positive coefficient and
+Lemma~\ref{lem:doubleexp}, with $b=2a$, give infinity. This proves
+\eqref{eq:powerP}, normalization at $r=1$ and strict positivity.
+Positivity of a normalized density proves equivalence of measures.
+The Radon--Nikodym integral identity for nonnegative functions gives
+$\E_{Q_*}S^r=\E_P S^{r+1}$, proving \eqref{eq:powerQ}. Substitution
+of $r/2>0$ in the latter proves the assertion about $R_*$, whereas
+$\E_P R_*^2=1$.
+\end{proof}
+
+The frozen \texttt{LognormalStockMoments} module formalizes the
+static Gaussian-product theorem at $\varepsilon=1$, including every
+real power, endpoint normalization and infinite higher nonnegative
+moments. The arbitrary positive scale and the tilted moment boundary
+above are complete human consequences of its displayed fiber
+calculation, not additional named formal claims. If $a=0$, the
+volatility is deterministic and every real power moment is finite;
+that case is excluded from the stated sharp boundary.
+
+Here $D(P\Vert Q_*)=\E_P\log(dP/dQ_*)$ and
+$D(Q_*\Vert P)=\E_{Q_*}\log(dQ_*/dP)$.
+
+\begin{proposition}\label{prop:finiteKL}
+For this example, both logarithmic densities are absolutely
+integrable in their respective entropy expressions, and
+\begin{equation}\label{eq:KL}
+ D(P\Vert Q_*)=D(Q_*\Vert P)
+       =\tfrac12\varepsilon^2e^{2a^2}<\infty.
+\end{equation}
+Also
+\begin{equation}\label{eq:rootclose}
+ \norm{R_*-1}_{L^2(P)}^2
+ =2\left(1-\E e^{-\sigma^2/8}\right)
+ \le\tfrac14\varepsilon^2e^{2a^2}.
+\end{equation}
+Thus both relative entropies and the squared-root distance tend to
+zero as $\varepsilon\downarrow0$, while every positive-scale
+likelihood still fails all $L^{1+\eta}(P)$ conditions with $\eta>0$.
+\end{proposition}
+\begin{proof}
+Under $P$, $\log S=\sigma Y-\sigma^2/2$, and
+$\E|\log S|\le\E\sigma\,\E|Y|+\frac12\E\sigma^2<\infty$.
+The Gaussian formula gives $\E\sigma^2=\varepsilon^2e^{2a^2}$.
+Its signed mean is $-\frac12\E\sigma^2$, proving the first entropy
+in \eqref{eq:KL}.
+
+Completion of the square in the conditional density gives
+$e^{\sigma y-\sigma^2/2}\phi(y)=\phi(y-\sigma)$.
+Consequently $X$ retains its original law under $Q_*$, and
+$G=Y-\sigma$ is a standard Gaussian independent of $X$ under that
+measure: the joint density after the change of variable $y=\sigma+g$
+is $\phi(x)\phi(g)$. Hence under $Q_*$,
+$\log S=\sigma G+\sigma^2/2$. The same absolute-integrability
+bound applies, and its mean is $\frac12\E\sigma^2$.
+This proves the second entropy, without differentiating a moment
+formula at the boundary of its integrability interval.
+
+The conditional square-root mean is
+$\E[R_*\mid X]=e^{-\sigma^2/8}$. Since $\E R_*^2=1$, expansion of
+the squared $L^2$ norm gives the equality in \eqref{eq:rootclose}.
+For $x\ge0$, $1-e^{-x}\le x$; applying this to $x=\sigma^2/8$
+gives the bound. The last assertion combines these limits with
+\eqref{eq:powerP}. All entropy and distance conclusions here are
+labelled human deductions.
+\end{proof}
+
+The half-density unitary remains exactly the one proved earlier:
+$f\mapsto R_*f$ maps $L^2(Q_*)$ isometrically and onto $L^2(P)$.
+Its value at the constant one is $R_*\in L^2(P)$. That conclusion
+does not place $R_*$ in $L^1(Q_*)$, which Theorem~\ref{thm:lognormalpowers}
+explicitly excludes. Finite entropy likewise does not supply a
+higher-power density bound, even with both entropy directions
+arbitrarily small.
+
+There is also a simple finite-horizon process interpretation, given
+as a human conditional-Gaussian construction. Take $X=W_1$,
+$Y=W_2-W_1$ and define
+\[
+ S_t=\begin{cases}
+ 1,&t\le1,\\
+ \exp\{\sigma(W_t-W_1)-\tfrac12\sigma^2(t-1)\},&1<t\le2.
+ \end{cases}
+\]
+The coefficient $\sigma\mathbf1_{(1,2]}$ is predictable, has finite
+expected squared time norm $\E\sigma^2$, and its ordinary It\^o
+integral is $\sigma(W_2-W_1)$. For $1\le s<t\le2$, conditioning on
+the full Brownian past at $s$ fixes $\sigma$ and $S_s$, while the
+fresh Gaussian increment cancels the additional exponential
+compensator. Thus $\E[S_t\mid\mathcal F_s]=S_s$. All terms are
+integrable, since conditioning first on $\mathcal F_1$ gives mean
+one. The same identity across time one follows by the tower
+property. In fact $S_t=\E[S_2\mid\mathcal F_t]$, so this is a true
+closed positive martingale on the finite horizon, not merely a
+local martingale inferred from an exponential formula.
+
+Nevertheless its Novikov expectation is
+$\E e^{\sigma^2/2}=\infty$, and at every $t>1$ the same fiber
+calculation, with variance factor $t-1>0$, excludes all moments
+above one. For any bounded $\mathcal F_1$-measurable variable $B$,
+$\E_{Q_*}B=\E_P[B\E(S_2\mid\mathcal F_1)]=\E_P B$.
+Thus the entire past is preserved despite the terminal domain
+failure. No general stochastic-volatility equation is solved here.
+
+Moment explosion with Gaussian volatility has substantial classical
+precedents. Gulisashvili \cite{gulisashvili}, Theorem 6.11(i), proves
+the corresponding outside-$[0,1]$ moment explosion for much broader
+uncorrelated Volterra models under a faster-than-linear volatility
+growth condition. His conditional formula (6.23) exhibits the same
+Gaussian mechanism. The frozen one-step proxy above is proved
+directly, and is not asserted to satisfy every hypothesis of that
+continuous-volatility theorem. Neither its moment obstruction nor
+the elementary entropy consequences constitute a new general
+martingality or stochastic-volatility principle.
+
 \section{Observable-time agreement and scope}
 For $t\ge2$, $R$ is $\F_t$-measurable. Theorem~\ref{thm:projection} therefore gives
 \[
@@ -355,5 +520,6 @@ The bounded comparison did not establish priority for the exact assembled numeri
 \begin{thebibliography}{9}
 \bibitem{allaart} P. Allaart, \emph{Math 6810 (Probability), Chapter 5 lecture notes}, University of North Texas, Fall 2012, dated February 19, 2013, Section 5.3 and Lemma 5.10. \url{https://itservices.cas.unt.edu/~allaart/6810/6810-notes-chap5.pdf}.
 \bibitem{ruf} J. Ruf, \emph{A new proof for the conditions of Novikov and Kazamaki}, Stochastic Processes and their Applications \textbf{123} (2013), 404--421; primary preprint \href{https://arxiv.org/abs/1111.5583}{arXiv:1111.5583}, introduction and Corollary 1.
+\bibitem{gulisashvili} A. Gulisashvili, \emph{Gaussian stochastic volatility models: scaling regimes, large deviations, and moment explosions}, primary preprint \href{https://arxiv.org/pdf/1808.00421}{arXiv:1808.00421}, version 9 (June 14, 2019), Theorem 6.11(i) and formula (6.23).
 \end{thebibliography}
 \end{document}
