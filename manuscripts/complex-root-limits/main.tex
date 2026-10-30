@@ -10,7 +10,7 @@
 \newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
 \newcommand{\E}{\mathbb E}\newcommand{\Pp}{\mathbb P}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Complex fourth-root approximations:\\analytic limits, positive source calculus and clock channels}
+\title{Complex-root approximations:\\analytic limits, positive source calculus and clock channels}
 \author{Project Stardust}
 \date{Reviewed editorial draft, October 29, 2026}
 \begin{document}
@@ -30,7 +30,7 @@ verified fourth-order results with elementary proofs and explicit
 constants. The analytic-versus-probabilistic distinction is established
 in prior work; this is a formalization companion, and no priority claim
 is made.
-The actual mark source separately has a positive Hermitian three-channel predictable calculus, full original-source $L^2$ reconstruction and a distinct Poisson clock channel. Complete proofs retain the difference between this source calculus and its analytic scaling target. A compact-frequency domain supports genuine integrable transitions, derivative limits and finite-process backward martingales. \end{abstract}
+The actual mark source separately has a positive Hermitian three-channel predictable calculus, full original-source $L^2$ reconstruction and a distinct Poisson clock channel. Complete proofs retain the difference between this source calculus and its analytic scaling target. A compact-frequency domain supports genuine integrable transitions, derivative limits and finite-process backward martingales. All positive even orders admit the corresponding analytic realization and locally uniform generator limit; an explicit fourth-moment bound proves probability escape at orders above two. \end{abstract}
 
 \section{Scope and main conclusions}
 Let $\varepsilon_j,\delta_j$ be mutually independent symmetric signs and set
@@ -1060,6 +1060,176 @@ Schwartz. These are classical compound-Poisson identities and
 domain diagnostics. Their finite positive martingales are not
 transferred to a signed heat path measure or to the heat-scaled
 sequence that lacks an ordinary weak limit.
+
+\section{Every positive even order on an explicit analytic domain}
+The frozen construction also covers $p=2m$, $m\geq1$, with a
+normalization different from the four diagonal marks above.
+Let $\zeta$ be uniform on the $p$th roots of unity and put
+\[
+ c_m=(-1)^{m+1},\quad \theta_m=e^{i\pi(m+1)/p},\quad
+ J_\varepsilon=\varepsilon\theta_m\zeta,\quad
+ \lambda_\varepsilon=p!\varepsilon^{-p},\qquad0<\varepsilon\leq1.
+\]
+Each mark now has modulus exactly $\varepsilon$; at $p=4$ the
+previous diagonal marks had modulus $\sqrt2|a|$. Let
+$Y_\varepsilon(t)$ be the actual sum of independent such marks up
+to an independent Poisson count of mean $\lambda_\varepsilon t$.
+This is equivalently the unit-rate renewal process evaluated at
+$\lambda_\varepsilon t$, on its fixed positive source space.
+
+Finite root orthogonality gives
+$\E J_\varepsilon^j=0$ for $1\leq j<p$ and
+$J_\varepsilon^p=\varepsilon^p c_m$ at every mark.
+All absolute exponential moments of $Y_\varepsilon(t)$ are finite,
+since its modulus is at most $\varepsilon N$ and
+$\E e^{b\varepsilon N}=\exp(\lambda_\varepsilon t(e^{b\varepsilon}-1))$.
+Define the normalized holomorphic symbol
+\[
+ s_\varepsilon(w)=\lambda_\varepsilon
+                        (\E e^{wJ_\varepsilon}-1).
+\]
+The Poisson mixture gives the actual integral identity
+$\E e^{wY_\varepsilon(t)}=e^{t s_\varepsilon(w)}$.
+Taylor's formula for the exponential, or its absolutely convergent
+series with the elementary tail bound, gives
+\begin{equation}\label{eq:alleventaylor}
+ |s_\varepsilon(w)-c_mw^p|
+       \leq p!\varepsilon |w|^{p+1}e^{|w|}.
+\end{equation}
+Indeed all terms below $p$ cancel and the $p$th term contributes
+$c_mw^p$. The remaining one-mark tail has modulus at most
+$(\varepsilon|w|)^{p+1}e^{\varepsilon|w|}$; multiplication by
+$p!\varepsilon^{-p}$ proves the bound. Thus
+$c_m(i\xi)^p=-\xi^p$ has the dissipative sign at every even order.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{HigherEvenRootInnovation.phase_power}, \code{lower_moment},
+\code{leading_moment}, \code{fourier_leading_moment}.\par\noindent
+\code{HigherEvenHeatTransformLimit.symbol_tendsto},
+\code{actual_transform_tendsto}.\par\endgroup
+
+\begin{proposition}\label{prop:allevenband}
+Fix $R\geq0$ and $\varphi\in L^1([-R,R])$, and retain the entire
+function $f_\varphi$ from Section 10. For $t>0$,
+\[
+ \E f_\varphi(Y_\varepsilon(t))\longrightarrow
+ \int_{-R}^R\varphi(\xi)e^{-t\xi^p}d\xi
+       =\int_\R f_\varphi(x)k_{m,t}(x)dx,
+\]
+where $k_{m,t}$ is the actual real Schwartz kernel with angular
+Fourier transform $e^{-t\xi^p}$. The finite jump generator satisfies
+\[
+ G_\varepsilon f(z):=\lambda_\varepsilon
+             \E[f(z+J_\varepsilon)-f(z)],\qquad
+ G_\varepsilon f_\varphi(z)\longrightarrow
+                       c_m f_\varphi^{(p)}(z).
+\]
+The generator convergence is locally uniform in the complex
+coordinate, with the explicit bound
+\[
+ \sup_{|z|\leq L}|G_\varepsilon f_\varphi(z)
+                  -c_m f_\varphi^{(p)}(z)|
+ \leq p!\varepsilon R^{p+1}e^{R+RL}\|\varphi\|_1
+ \quad(L\geq0).
+\]
+\end{proposition}
+\begin{proof}
+The finite-law exponential bound just proved, together with
+$|f_\varphi(z)|\leq\|\varphi\|_1e^{R|z|}$, justifies absolute
+Fubini for each $\varepsilon$. Hence the expectation is
+$\int\varphi(\xi)e^{t s_\varepsilon(i\xi)}d\xi$.
+For $|\xi|\leq R$, \eqref{eq:alleventaylor} implies
+\[
+ |s_\varepsilon(i\xi)|\leq M_{p,R}:=
+                  R^p+p!R^{p+1}e^R.
+\]
+Thus $|\varphi(\xi)|e^{tM_{p,R}}$ is an integrable bound independent
+of $\varepsilon\leq1$, and dominated convergence proves the limit.
+The signed-kernel equality uses the ordinary absolutely integrable
+product $f_\varphi k_{m,t}$. Specifically the frequency/space
+integrand is bounded in modulus by
+$|\varphi(\xi)||k_{m,t}(x)|$, which is integrable, so Fourier
+inversion of the kernel and Fubini give the equality. These are
+angular frequencies; no hidden $2\pi$ factor is added.
+
+Similarly finite mark averaging and frequency integration commute,
+giving
+\[
+ G_\varepsilon f_\varphi(z)=\int_{-R}^R
+   \varphi(\xi)s_\varepsilon(i\xi)e^{i\xi z}d\xi.
+\]
+Differentiating the compact-frequency integral $p$ times gives
+$f_\varphi^{(p)}(z)=\int\varphi(\xi)(i\xi)^pe^{i\xi z}d\xi$.
+Subtract and use \eqref{eq:alleventaylor} and
+$|e^{i\xi z}|\leq e^{R L}$ on $|z|\leq L$. Integration gives the
+stated uniform bound. This explicit local rate is a human
+consequence of the same symbol bound; the named formal generator
+limit is pointwise.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{HigherEvenBandHeatLimit.symbol_bound},
+\code{frequency_integral_tendsto}, \code{actual_expectation_tendsto}.
+\par\noindent\code{HigherEvenSignedRealization.kernel_pairing},
+\code{signed_law_pairing}, \code{actual_signed_law_limit}.\par\noindent
+\code{HigherEvenBandGenerator.generator_identity},
+\code{generator_tendsto}.\par\endgroup
+The formal sequence uses $\varepsilon_n=(n+1)^{-1}$ and the
+accelerated time $p!\varepsilon_n^{-p}t$. The proof above works
+for arbitrary positive $\varepsilon\downarrow0$ by the same
+explicit inequalities; this enlarged parameter statement is a
+labelled human deduction. At $m=1$ the kernel is the positive
+Gaussian heat kernel of variance $2t$. At $m>1$ its signed nature
+is not removed by the positive approximation law.
+
+\subsection*{Positive energy and an all-order escape deduction}
+Zero mark mean and independence give
+\[
+ \E|Y_\varepsilon(t)|^2=\lambda_\varepsilon t\varepsilon^2
+                   =tp!\varepsilon^{2-p}.
+\]
+For $p>2$ this diverges at every $t>0$, excluding an $L^2$ limit
+on the fixed renewal source. Divergent second moments alone would
+not exclude weak probability convergence. Here an additional
+fourth-moment calculation does so, as an elementary human
+deduction beyond that formal energy obstruction.
+
+For $p>2$, $\E J_\varepsilon^2=0$ and $|J_\varepsilon|=\varepsilon$.
+Expanding $|\sum_{j=1}^kJ_j|^4$, every term containing a singleton
+index has zero mean. The all-equal terms contribute $k\varepsilon^4$;
+the two pairings matching an unconjugated factor to a conjugated
+factor contribute $2k(k-1)\varepsilon^4$. The remaining pairing
+has expectation $|\E J_\varepsilon^2|^2=0$. Therefore the finite
+walk fourth moment is $(2k^2-k)\varepsilon^4$.
+Put $r=\lambda_\varepsilon t$. The Poisson mixture and
+$\E N^2=r^2+r$ yield
+\[
+ \E|Y_\varepsilon(t)|^4=(2r^2+r)\varepsilon^4
+              \leq3(\E|Y_\varepsilon(t)|^2)^2\quad(r\geq1).
+\]
+The elementary inequality of Lemma 3.2, applied to
+$|Y_\varepsilon(t)|^2$, now gives
+\[
+ P\{|Y_\varepsilon(t)|>
+       \sqrt{\E|Y_\varepsilon(t)|^2/2}\}\geq1/12.
+\]
+The displayed radius tends to infinity for $p>2$. Every fixed
+compact set therefore misses at least $1/12$ of the mass for all
+sufficiently small $\varepsilon$. The bounded-cutoff argument in
+the proof of Theorem 1.1 rules out weak convergence along any
+sequence $\varepsilon\to0$. This argument does not apply to
+$p=2$, where the energy remains $2t$ and the marks are real.
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{HigherEvenRenewalEnergy.process_energy},
+\code{scaled_norm_square}, \code{scaled_energy_unbounded},
+\code{no_scaled_L2_limit}.\par\endgroup
+The general root construction and restricted analytic limits have
+classical antecedents in Bonaccorsi--Mazzucchi~\cite{BM}.
+This section reconstructs exact signs, factorials, actual-law
+integrability and topology boundaries; it does not claim a new
+all-order heat approximation principle, unrestricted entire-test
+convergence or a limiting positive higher-heat path law.
 
 \section{Classical finite-state context}
 Discrete Fourier orthogonality, finite-state martingale representation

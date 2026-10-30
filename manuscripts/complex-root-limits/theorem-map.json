@@ -2772,6 +2772,429 @@
       "source_sha256": "631f9f2aab5ba50eacd67c19c8e876ff4e29863bfd067e8250bd1b7f58fdc240",
       "declaration_header": "theorem stochasticSum_martingale :\n    Martingale (stochasticSum a \u03b4 f H) filtration (law a \u03b4)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonStochasticSum.lean#L65"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.phase_norm",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 12,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem phase_norm (m : \u2115) : \u2016phase m\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L12"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.phase_power",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 14,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem phase_power (m : \u2115) [NeZero m] : (phase m)^(2*m) = (-1 : \u2102)^(m+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L14"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.lower_moment",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 26,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem lower_moment (m : \u2115) [NeZero m] (a : \u211d) (r : \u2115) (hr : 0 < r) (hm : r < 2*m) :\n    (\u222b k, (innovation m a k)^r \u2202probability (2*m)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L26"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.leading_moment",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 30,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem leading_moment (m : \u2115) [NeZero m] (a : \u211d) :\n    (\u222b k, (innovation m a k)^(2*m) \u2202probability (2*m)) =\n      (a : \u2102)^(2*m)*(-1 : \u2102)^(m+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L30"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.absolute_second",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 36,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem absolute_second (m : \u2115) [NeZero m] (a : \u211d) :\n    (\u222b k, \u2016innovation m a k\u2016^2 \u2202probability (2*m)) = a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L36"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.fourier_leading_moment",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 42,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem fourier_leading_moment (m : \u2115) [NeZero m] (a \u03be : \u211d) :\n    (\u222b k, (Complex.I*(\u03be : \u2102)*innovation m a k)^(2*m) \u2202probability (2*m)) =\n      -((a : \u2102)*(\u03be : \u2102))^(2*m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L42"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRootInnovation.not_real_valued",
+      "file": "Foundation/HigherEvenRootInnovation.lean",
+      "line": 58,
+      "source_sha256": "d4b3fc81d0dc8fc97dbce81746c553e80b49d2f3b30dffa24539fc159f03d9bb",
+      "declaration_header": "theorem not_real_valued (m : \u2115) [NeZero m] (hm : 1 < m) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2200 k : ZMod (2*m), (innovation m a k).im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRootInnovation.lean#L58"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicExponentialTaylor.expected_taylor",
+      "file": "Foundation/CyclicExponentialTaylor.lean",
+      "line": 13,
+      "source_sha256": "9b8721ef3dd1876db9591bc631f10938bea17d6de155b3dd8f23b6ad96aecf2d",
+      "declaration_header": "theorem expected_taylor (m : \u2115) [NeZero m] (a : \u211d) (w : \u2102) :\n    (\u222b k, (\u2211 j \u2208 Finset.range (2*m+1), (w*innovation m a k)^j/(Nat.factorial j : \u2102))\n      \u2202CyclicRootProbabilityNoise.probability (2*m)) = 1+leadingTerm m a w",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicExponentialTaylor.lean#L13"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicExponentialTaylor.remainder_bound",
+      "file": "Foundation/CyclicExponentialTaylor.lean",
+      "line": 33,
+      "source_sha256": "9b8721ef3dd1876db9591bc631f10938bea17d6de155b3dd8f23b6ad96aecf2d",
+      "declaration_header": "theorem remainder_bound (m : \u2115) [NeZero m] (a : \u211d) (w : \u2102) :\n    \u2016HigherEvenRenewalTransform.markTransform m a w-1-leadingTerm m a w\u2016 \u2264\n      (\u2016w\u2016*|a|)^(2*m+1)*Real.exp (\u2016w\u2016*|a|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicExponentialTaylor.lean#L33"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicExponentialTaylor.rate_leading",
+      "file": "Foundation/CyclicExponentialTaylor.lean",
+      "line": 57,
+      "source_sha256": "9b8721ef3dd1876db9591bc631f10938bea17d6de155b3dd8f23b6ad96aecf2d",
+      "declaration_header": "theorem rate_leading (m : \u2115) [NeZero m] (a : \u211d) (ha : a \u2260 0) (w : \u2102) :\n    (CyclicPolynomialKernel.rate m a : \u2102)*leadingTerm m a w = (-1 : \u2102)^(m+1)*w^(2*m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicExponentialTaylor.lean#L57"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicExponentialTaylor.normalized_error_bound",
+      "file": "Foundation/CyclicExponentialTaylor.lean",
+      "line": 65,
+      "source_sha256": "9b8721ef3dd1876db9591bc631f10938bea17d6de155b3dd8f23b6ad96aecf2d",
+      "declaration_header": "theorem normalized_error_bound (m : \u2115) [NeZero m] (a : \u211d) (ha : 0 < a) (ha1 : a \u2264 1) (w : \u2102) :\n    \u2016HigherEvenRenewalTransform.normalizedSymbol m a w-(-1 : \u2102)^(m+1)*w^(2*m)\u2016 \u2264\n      ((Nat.factorial (2*m) : \u211d)*\u2016w\u2016^(2*m+1)*Real.exp \u2016w\u2016)*a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicExponentialTaylor.lean#L65"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CyclicExponentialTaylor.generator_exponential",
+      "file": "Foundation/CyclicExponentialTaylor.lean",
+      "line": 89,
+      "source_sha256": "9b8721ef3dd1876db9591bc631f10938bea17d6de155b3dd8f23b6ad96aecf2d",
+      "declaration_header": "theorem generator_exponential (m : \u2115) [NeZero m] (a : \u211d) (w x : \u2102) :\n    CyclicPolynomialKernel.generator m a (fun y => Complex.exp (w*y)) x =\n      HigherEvenRenewalTransform.normalizedSymbol m a w*Complex.exp (w*x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CyclicExponentialTaylor.lean#L89"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalTransform.exponential_integrable",
+      "file": "Foundation/HigherEvenRenewalTransform.lean",
+      "line": 20,
+      "source_sha256": "e781c5abfcecf67608f658de4da2e0cf6226893360d7eed87ba5f738d9041648",
+      "declaration_header": "theorem exponential_integrable (m : \u2115) [NeZero m] (a : \u211d) (t : \u211d\u22650) (w : \u2102) :\n    Integrable (fun \u03c9 => Complex.exp (w*HigherEvenRenewalProcess.process m a t \u03c9))\n      (HigherEvenRenewalProcess.probability m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalTransform.lean#L20"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalTransform.process_transform",
+      "file": "Foundation/HigherEvenRenewalTransform.lean",
+      "line": 26,
+      "source_sha256": "e781c5abfcecf67608f658de4da2e0cf6226893360d7eed87ba5f738d9041648",
+      "declaration_header": "theorem process_transform (m : \u2115) [NeZero m] (a : \u211d) (t : \u211d\u22650) (w : \u2102) :\n    (\u222b \u03c9, Complex.exp (w*HigherEvenRenewalProcess.process m a t \u03c9)\n      \u2202HigherEvenRenewalProcess.probability m) = Complex.exp ((t : \u2102)*symbol m a w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalTransform.lean#L26"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalTransform.normalized_transform",
+      "file": "Foundation/HigherEvenRenewalTransform.lean",
+      "line": 34,
+      "source_sha256": "e781c5abfcecf67608f658de4da2e0cf6226893360d7eed87ba5f738d9041648",
+      "declaration_header": "theorem normalized_transform (m : \u2115) [NeZero m] (a : \u211d) (ha : a \u2260 0) (t : \u211d\u22650) (w : \u2102) :\n    (\u222b \u03c9, Complex.exp (w*HigherEvenRenewalProcess.process m a\n        (Real.toNNReal (CyclicPolynomialKernel.rate m a)*t : \u211d\u22650) \u03c9)\n      \u2202HigherEvenRenewalProcess.probability m) = Complex.exp ((t : \u2102)*normalizedSymbol m a w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalTransform.lean#L34"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.amplitude_pos",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 14,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem amplitude_pos (n : \u2115) : 0 < smallAmplitude n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L14"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.amplitude_le_one",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 18,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem amplitude_le_one (n : \u2115) : smallAmplitude n \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L18"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.amplitude_tendsto",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 24,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem amplitude_tendsto : Tendsto smallAmplitude atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L24"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.symbol_tendsto",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 30,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem symbol_tendsto (m : \u2115) [NeZero m] (w : \u2102) :\n    Tendsto (fun n => HigherEvenRenewalTransform.normalizedSymbol m (smallAmplitude n) w)\n      atTop (\ud835\udcdd ((-1 : \u2102)^(m+1)*w^(2*m)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L30"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.actual_transform_tendsto",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 41,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem actual_transform_tendsto (m : \u2115) [NeZero m] (t : \u211d\u22650) (w : \u2102) :\n    Tendsto (fun n => \u222b \u03c9, Complex.exp (w*HigherEvenRenewalProcess.process m\n      (smallAmplitude n) (acceleratedTime m n t) \u03c9)\n        \u2202HigherEvenRenewalProcess.probability m) atTop\n      (\ud835\udcdd (Complex.exp ((t : \u2102)*((-1 : \u2102)^(m+1)*w^(2*m)))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L41"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.fourier_exponent",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 52,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem fourier_exponent (m : \u2115) (\u03be : \u211d) :\n    (-1 : \u2102)^(m+1)*(Complex.I*(\u03be : \u2102))^(2*m) = -((\u03be : \u2102)^(2*m))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L52"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenHeatTransformLimit.actual_fourier_transform_tendsto",
+      "file": "Foundation/HigherEvenHeatTransformLimit.lean",
+      "line": 62,
+      "source_sha256": "7a5edb0e1378b318e840a47bab03b686dce7cc2b800cce0def7726cbed16410e",
+      "declaration_header": "theorem actual_fourier_transform_tendsto (m : \u2115) [NeZero m] (t : \u211d\u22650) (\u03be : \u211d) :\n    Tendsto (fun n => \u222b \u03c9, Complex.exp (Complex.I*((2*Real.pi*\u03be : \u211d) : \u2102)*\n      HigherEvenRenewalProcess.process m (smallAmplitude n) (acceleratedTime m n t) \u03c9)\n        \u2202HigherEvenRenewalProcess.probability m) atTop (\ud835\udcdd (HigherHeatL2.symbol m t \u03be))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenHeatTransformLimit.lean#L62"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.symbol_bound",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 18,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem symbol_bound (m : \u2115) [NeZero m] (n : \u2115) (R : \u211d\u22650) (\u03be : \u211d)\n    (h\u03be : |\u03be| \u2264 (R : \u211d)) :\n    \u2016HigherEvenRenewalTransform.normalizedSymbol m (smallAmplitude n) (Complex.I*(\u03be : \u2102))\u2016 \u2264\n      bound m R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L18"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.kernel_bound",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 48,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem kernel_bound (m : \u2115) [NeZero m] (n : \u2115) (t R : \u211d\u22650) (\u03be : \u211d)\n    (h\u03be : |\u03be| \u2264 (R : \u211d)) :\n    \u2016kernel m n t \u03be\u2016 \u2264 Real.exp ((t : \u211d)*bound m R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L48"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.kernel_tendsto",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 69,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem kernel_tendsto (m : \u2115) [NeZero m] (t : \u211d\u22650) (\u03be : \u211d) :\n    Tendsto (fun n => kernel m n t \u03be) atTop\n      (\ud835\udcdd ((Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L69"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.frequency_integral_tendsto",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 83,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem frequency_integral_tendsto (m : \u2115) [NeZero m] (t R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Tendsto (fun n => \u222b \u03be, \u03c6 \u03be*kernel m n t \u03be \u2202band R) atTop\n      (\ud835\udcdd (\u222b \u03be, \u03c6 \u03be*(Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L83"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.process_mean",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 97,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem process_mean (m : \u2115) [NeZero m] (a : \u211d) (t R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    (\u222b \u03c9, extension R \u03c6 (HigherEvenRenewalProcess.process m a t \u03c9)\n      \u2202HigherEvenRenewalProcess.probability m) =\n    \u222b \u03be, \u03c6 \u03be*Complex.exp ((t : \u2102)*HigherEvenRenewalTransform.symbol m a (Complex.I*(\u03be : \u2102)))\n      \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L97"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandHeatLimit.actual_expectation_tendsto",
+      "file": "Foundation/HigherEvenBandHeatLimit.lean",
+      "line": 107,
+      "source_sha256": "0c403286a2afb5acaa44043d8bc1402b41c7cd9d78b411c92c6222cd4bb42d3a",
+      "declaration_header": "theorem actual_expectation_tendsto (m : \u2115) [NeZero m] (t R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Tendsto (fun n => \u222b \u03c9, extension R \u03c6 (HigherEvenRenewalProcess.process m\n      (smallAmplitude n) (acceleratedTime m n t) \u03c9) \u2202HigherEvenRenewalProcess.probability m)\n      atTop (\ud835\udcdd (\u222b \u03be, \u03c6 \u03be*(Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u2102) \u2202band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandHeatLimit.lean#L107"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandGenerator.profile_integrable",
+      "file": "Foundation/HigherEvenBandGenerator.lean",
+      "line": 27,
+      "source_sha256": "c04bf07ceecf421b949b925296707cfff7f5f3d151692597668c531b1646f545",
+      "declaration_header": "theorem profile_integrable (m : \u2115) [NeZero m] (n : \u2115) (R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) : Integrable (profile m n \u03c6) (band R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandGenerator.lean#L27"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandGenerator.mark_frequency_integrable",
+      "file": "Foundation/HigherEvenBandGenerator.lean",
+      "line": 32,
+      "source_sha256": "c04bf07ceecf421b949b925296707cfff7f5f3d151692597668c531b1646f545",
+      "declaration_header": "theorem mark_frequency_integrable (m : \u2115) [NeZero m] (a : \u211d) (R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (x : \u2102) :\n    Integrable (fun p : ZMod (2*m) \u00d7 \u211d => \u03c6 p.2*Complex.exp\n      (Complex.I*(p.2 : \u2102)*(x+HigherEvenRootInnovation.innovation m a p.1)))\n      ((CyclicRootProbabilityNoise.probability (2*m)).prod (band R))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandGenerator.lean#L32"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandGenerator.generator_identity",
+      "file": "Foundation/HigherEvenBandGenerator.lean",
+      "line": 48,
+      "source_sha256": "c04bf07ceecf421b949b925296707cfff7f5f3d151692597668c531b1646f545",
+      "declaration_header": "theorem generator_identity (m : \u2115) [NeZero m] (n : \u2115) (R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (x : \u2102) :\n    CyclicPolynomialKernel.generator m (smallAmplitude n) (extension R \u03c6) x =\n      extension R (profile m n \u03c6) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandGenerator.lean#L48"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenBandGenerator.generator_tendsto",
+      "file": "Foundation/HigherEvenBandGenerator.lean",
+      "line": 74,
+      "source_sha256": "c04bf07ceecf421b949b925296707cfff7f5f3d151692597668c531b1646f545",
+      "declaration_header": "theorem generator_tendsto (m : \u2115) [NeZero m] (R : \u211d\u22650)\n    (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) (x : \u2102) :\n    Tendsto (fun n => CyclicPolynomialKernel.generator m (smallAmplitude n) (extension R \u03c6) x)\n      atTop (\ud835\udcdd ((-1 : \u2102)^(m+1)*iteratedDeriv (2*m) (extension R \u03c6) x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenBandGenerator.lean#L74"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.kernel_exponential",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 20,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem kernel_exponential (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be : \u211d) :\n    (\u222b x : \u211d, Complex.exp (Complex.I*(\u03be : \u2102)*(x : \u2102))*(realKernel m hm t ht x : \u2102)) =\n      (Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L20"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.kernel_frequency_integrable",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 30,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem kernel_frequency_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Integrable (fun p : \u211d \u00d7 \u211d => \u03c6 p.1*Complex.exp (Complex.I*(p.1 : \u2102)*(p.2 : \u2102))*\n      (realKernel m hm t ht p.2 : \u2102)) ((band R).prod volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L30"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.kernel_pairing",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 53,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem kernel_pairing (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    (\u222b x : \u211d, extension R \u03c6 (x : \u2102)*(realKernel m hm t ht x : \u2102)) =\n      \u222b \u03be, \u03c6 \u03be*(Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u2102) \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L53"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.kernel_extension_integrable",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 67,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem kernel_extension_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Integrable (fun x : \u211d => extension R \u03c6 (x : \u2102)*(realKernel m hm t ht x : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L67"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.real_extension_bound",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 73,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem real_extension_bound (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (x : \u211d) :\n    \u2016extension R \u03c6 (x : \u2102)\u2016 \u2264 \u222b \u03be, \u2016\u03c6 \u03be\u2016 \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L73"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.signed_law_pairing",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 81,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem signed_law_pairing (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    (\u222b\u1d5b x : \u211d, extension R \u03c6 (x : \u2102) \u2202<\u2022law m hm t ht) =\n      \u222b \u03be, \u03c6 \u03be*(Real.exp (-(t : \u211d)*\u03be^(2*m)) : \u2102) \u2202band R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L81"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.actual_expectation_tendsto",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 95,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem actual_expectation_tendsto (m : \u2115) [NeZero m] (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Tendsto (fun n => \u222b \u03c9, extension R \u03c6 (HigherEvenRenewalProcess.process m\n      (smallAmplitude n) (acceleratedTime m n t) \u03c9) \u2202HigherEvenRenewalProcess.probability m)\n      atTop (\ud835\udcdd (\u222b x : \u211d, extension R \u03c6 (x : \u2102)*\n        (realKernel m (NeZero.pos m) t ht x : \u2102)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L95"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenSignedRealization.actual_signed_law_limit",
+      "file": "Foundation/HigherEvenSignedRealization.lean",
+      "line": 104,
+      "source_sha256": "29ad43810fbd6fb32de1e4d91ca2eff52fbc7f466d106dd031672c45cfeba4a0",
+      "declaration_header": "theorem actual_signed_law_limit (m : \u2115) [NeZero m] (t : \u211d\u22650) (ht : 0 < t)\n    (R : \u211d\u22650) (\u03c6 : \u211d \u2192 \u2102) (h\u03c6 : Integrable \u03c6 (band R)) :\n    Tendsto (fun n => \u222b \u03c9, extension R \u03c6 (HigherEvenRenewalProcess.process m\n      (smallAmplitude n) (acceleratedTime m n t) \u03c9) \u2202HigherEvenRenewalProcess.probability m)\n      atTop (\ud835\udcdd (\u222b\u1d5b x : \u211d, extension R \u03c6 (x : \u2102) \u2202<\u2022law m (NeZero.pos m) t ht))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenSignedRealization.lean#L104"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.innovation_shift_energy",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 24,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem innovation_shift_energy (m : \u2115) [NeZero m] (a : \u211d) (x : \u2102) :\n    (\u222b k, \u2016x+HigherEvenRootInnovation.innovation m a k\u2016^2\n      \u2202CyclicRootProbabilityNoise.probability (2*m)) = \u2016x\u2016^2+a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L24"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.finite_energy",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 35,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem finite_energy (m : \u2115) [NeZero m] (a : \u211d) (n : \u2115) (x : \u2102) :\n    (\u222b \u03be, \u2016x+terminal (HigherEvenRootInnovation.innovation m a) n \u03be\u2016^2\n      \u2202finiteProbability (CyclicRootProbabilityNoise.probability (2*m)) n) = \u2016x\u2016^2+(n : \u211d)*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L35"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.process_energy",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 49,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem process_energy (m : \u2115) [NeZero m] (a : \u211d) (t : \u211d\u22650) :\n    (\u222b \u03c9, \u2016HigherEvenRenewalProcess.process m a t \u03c9\u2016^2 \u2202HigherEvenRenewalProcess.probability m) =\n      (t : \u211d)*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L49"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.variableL2_norm_square",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 64,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem variableL2_norm_square (m : \u2115) [NeZero m] (a : \u211d) (t : \u211d\u22650) :\n    \u2016HigherEvenRenewalProcess.variableL2 m a t\u2016^2 = (t : \u211d)*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L64"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.scaled_norm_square",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 83,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem scaled_norm_square (m : \u2115) [NeZero m] (n : \u2115) (t : \u211d\u22650) :\n    \u2016scaledVariable m n t\u2016^2 =\n      (t : \u211d)*(Nat.factorial (2*m) : \u211d)*((n : \u211d)+1)^(2*m-2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L83"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.scaled_energy_unbounded",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 97,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem scaled_energy_unbounded (m : \u2115) [NeZero m] (hm : 1 < m) (t : \u211d\u22650) (ht : 0 < (t : \u211d)) :\n    \u00ac \u2203 C : \u211d, \u2200 n : \u2115, \u2016scaledVariable m n t\u2016^2 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L97"
+    },
+    {
+      "paper": "Section 12 all-positive-even-order actual process normalization, band-test signed realization, finite generator and energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherEvenRenewalEnergy.no_scaled_L2_limit",
+      "file": "Foundation/HigherEvenRenewalEnergy.lean",
+      "line": 114,
+      "source_sha256": "09cdde63fed6b996f5ce0d67aee1f7293c07e8731428caef776669d98a57fa76",
+      "declaration_header": "theorem no_scaled_L2_limit (m : \u2115) [NeZero m] (hm : 1 < m) (t : \u211d\u22650) (ht : 0 < (t : \u211d)) :\n    \u00ac \u2203 Y : Lp \u2102 2 (HigherEvenRenewalProcess.probability m),\n      Tendsto (fun n : \u2115 => scaledVariable m n t) atTop (\ud835\udcdd Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherEvenRenewalEnergy.lean#L114"
     }
   ],
   "human_reorganization": [
@@ -2795,7 +3218,10 @@
     "The deterministic heat-scaled finite-walk lower bound diverges along even walk lengths by direct substitution into the mapped finite-word estimate; this specialization is a human consequence, not a separate named formal limit. Absolute divergence alone does not settle cancelling complex expectations. Poissonized Gaussian tests are already nonintegrable at each positive finite refinement; compact-frequency hypotheses cannot be dropped. This does not refute the restricted primary Fourier-data framework.",
     "Proposition 11.2 proves the all-continuous-time full-natural-filtration quartic martingale from the actual independent fresh compound increments and finite polynomial moments. The named native quartic martingale theorem is on the discrete coordinate grid; these scopes are explicitly distinguished. The fourth-power drift is +4 t a^4, with mark fourth moment -4 a^4.",
     "Bounded past-measurable coefficients give a square-integrable grid stochastic sum against the quartic martingale by the printed pull-out argument. This is a human polynomial-domain extension, not use of a bounded-test formal theorem with an unbounded test. No unbounded-coefficient or continuous-time integral completion is asserted.",
-    "The unbounded polynomial z^4 is excluded from the compact-frequency L1 function class by its real-axis growth, yet has all finite-clock moments and a genuine martingale correction. The entire real-Schwartz Gaussian test has the separately proved integrability failure. No finite positive martingale is transferred to a signed heat path law or an ordinary weak limit."
+    "The unbounded polynomial z^4 is excluded from the compact-frequency L1 function class by its real-axis growth, yet has all finite-clock moments and a genuine martingale correction. The entire real-Schwartz Gaussian test has the separately proved integrability failure. No finite positive martingale is transferred to a signed heat path law or an ordinary weak limit.",
+    "Section 12 uses p=2m, unit-modulus phase exp(i*pi*(m+1)/p), mark modulus epsilon, and accelerated rate p! epsilon^(-p). This differs from the earlier four diagonal marks of modulus sqrt(2)|a|. Taylor cancellation yields the actual dissipative multiplier, with explicit absolute-integrability and compact-frequency domination.",
+    "The named formal all-order limits use epsilon_n=1/(n+1) and give pointwise generator convergence. Arbitrary positive epsilon down to zero and the explicit locally uniform generator O(epsilon) bound are printed human deductions from the exact normalized Taylor estimate. No full Banach generator graph or unrestricted entire-test domain is asserted.",
+    "For every p>2, the printed human four-index pairing calculation gives finite walk fourth moment (2k^2-k)epsilon^4 and compound fourth moment (2r^2+r)epsilon^4. Together with the actual second moment and the existing positive probability inequality this proves a uniform 1/12 compact-escape obstruction. The named all-order formal obstruction is no L2 limit, not this additional weak-law deduction. The exceptional real p=2 case is retained."
   ],
   "literature": [
     {
