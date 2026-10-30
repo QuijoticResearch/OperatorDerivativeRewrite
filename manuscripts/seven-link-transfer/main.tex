@@ -1222,6 +1222,111 @@ not supply the missing theory, observable normalization, spectral
 identification or volume/spacing-uniform estimates. Nor does a
 failure of those proposed pieces refute the physical mass gap.
 
+
+\section{Two elementary clustering inferences that fail}
+The following two checks concern different models and are independent
+of the seven-link trial comparison. They identify missing hypotheses
+in stronger clustering arguments without supplying a continuum theory.
+
+\subsection*{Reflected positivity does not preserve translated norms}
+Consider the scalar kernel $C(u)=e^{-|u|}$ and its reflected
+positive-time kernel
+\[
+ K(s,t)=C(s+t)=e^{-s}e^{-t}\qquad(s,t\geq0).
+\]
+For every finite list of nonnegative times and real coefficients,
+\[
+ \sum_{i,j}c_i c_jK(t_i,t_j)
+     =\left(\sum_i c_i e^{-t_i}\right)^2\geq0.
+\]
+This proves reflection positivity at this scalar two-point level
+directly. The semidefinite norm of a formal positive-time test
+$v=\sum_i c_i e_{t_i}$ is
+$\|v\|_K=|\sum_i c_i e^{-t_i}|$. Quotienting its null space
+identifies the resulting real Hilbert space with $\R$.
+Translation by $a\geq0$, $T_a e_t=e_{t+a}$, is well defined on
+that quotient because
+\[
+ \|T_av\|_K=e^{-a}\|v\|_K.
+\]
+It is strictly contractive for every nonzero vector when $a>0$.
+In particular $K(a,a)=e^{-2a}<K(0,0)=1$. The Hilbert quotient
+and exact scalar action are human reformulations of the verified
+finite Gram identity, not a full field reconstruction.
+
+The distinction also appears in a mixed pairing. For $s>0,t\geq0$,
+\[
+ K(s,s+t)=e^{-(2s+t)}<e^{-t}=C(t).
+\]
+Simultaneously translating the arguments of the unreflected
+difference kernel $C(v-u)$ leaves it unchanged. Reflecting the
+first positive-time argument instead gives the sum $s+t$; the
+same translation now changes that sum by twice the shift.
+Thus stationarity of the difference kernel and positivity of the
+reflected Gram form do not justify an equality between these two
+pairings or a translated reflected-norm isometry.
+
+This agrees with the classical transfer interpretation: L\"uscher's
+primary introduction~\cite{Luscher}, equations (4)--(5), constructs
+the reflected inner product and identifies positive Euclidean time
+translation with $e^{-aH}$. We use that passage for context only,
+not as a full reconstruction theorem for this scalar example.
+No field axioms, vacuum, or Yang--Mills spectral conclusion are
+deduced from the rank-one kernel.
+
+\subsection*{A nonzero actual gauge covariance needs observable normalization}
+For a separate two-loop probability model, take product Haar law
+$\mu=dg\,dh$ on $\SU^2$, and set
+\[
+ f(A,B)=a(A),\quad g(A,B)=a(B),\quad x=fg,\qquad
+ d\mu_r=\frac{e^{rx}}{\int e^{rx}\,d\mu}\,d\mu.
+\]
+These functions and the tilted law are invariant under separate
+conjugation of the two loops, and $|f|,|g|,|x|\leq1$.
+Let $c(r)=\operatorname{Cov}_{\mu_r}(f,g)$.
+The Haar moments from Section 2 and independence give
+\[
+ \E_\mu f=\E_\mu g=\E_\mu x=0,\qquad
+ \E_\mu x^2=(\E a^2)^2=\frac1{16}.
+\]
+For bounded $u$, differentiation of the normalized exponential
+integrals gives
+\[
+ \left.\frac d{dr}\E_{\mu_r}u\right|_{r=0}
+   =\E_\mu(ux)-\E_\mu u\,\E_\mu x.
+\]
+This differentiation is justified on $|r|\leq1$ by the constant
+majorant $e\|u\|_\infty$, and the positive denominator has value
+one at zero. Applying the product rule to the covariance therefore
+gives $c(0)=0$ and $c'(0)=1/16$.
+Consequently every $\varepsilon>0$ contains some
+$0<r<\varepsilon$ with $c(r)>0$.
+
+Fix any such $r$ and any real $m,t$. There is no finite real $C$
+such that
+\begin{equation}\label{eq:scaled-cluster-impossible}
+ |\operatorname{Cov}_{\mu_r}(b f,g)|\leq C e^{-mt}
+                       \qquad\hbox{for every real }b.
+\end{equation}
+Indeed covariance is linear in $b$, so the left side is
+$|b|c(r)$. The case $b=0$ would force $D=Ce^{-mt}\geq0$;
+then $b=(D+1)/c(r)$ violates the bound by exactly one.
+This is an actual gauge-invariant finite-law witness, not an
+assumed positive covariance. It excludes only an observable-independent
+prefactor on an unnormalized class: bounds retaining observable
+norms or a fixed normalized class are not ruled out.
+It gives no statement about separation decay or a physical mass gap.
+Both mechanisms here are elementary classical obstructions, with
+their precise original models and quantifiers retained.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:} \code{YMReflectionPositiveShift},
+\code{YMObservableScaleObstruction} (file \code{YMOSClusterObstruction.lean}).
+\par\noindent
+\code{SU2CoupledLoopResponse.corr_hasDerivAt_zero},
+\code{positive_corr_near_zero}, \code{coupledLaw_gauge_invariant}.
+\par\endgroup
+
 \section{Provenance, classical context and remaining boundaries}
 Every formal source used here is frozen at the verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}

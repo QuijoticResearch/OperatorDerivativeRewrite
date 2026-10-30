@@ -2205,6 +2205,240 @@
       "source_sha256": "8eb2f54553a61f91a26bc4875adb878344a400b2016bc6d7c0a5fa68b1090514",
       "declaration_header": "theorem lower_sqrt_error_eventually_blocks_strictness (A ell c : \u211d)\n    (hA : 0 < A) (hc : 0 < c)\n    (error\u2081 error\u2082 : \u211d \u2192 \u211d)\n    (hlower : \u2200\u1da0 \u03b2 : \u211d in atTop,\n      c / Real.sqrt \u03b2 \u2264 error\u2081 \u03b2 + error\u2082 \u03b2) :\n    \u2200\u1da0 \u03b2 : \u211d in atTop,\n      1 \u2264 referenceFactor A ell \u03b2 + error\u2081 \u03b2 + error\u2082 \u03b2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMBlockErrorBudget.lean#L51"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.stationaryCov",
+      "file": "Foundation/YMReflectionPositiveShift.lean",
+      "line": 8,
+      "source_sha256": "85677fef5698b0d6127bc51ed72ad7c50d583afadb7d7587c9b3ad0da04dadaa",
+      "declaration_header": "def stationaryCov (u : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMReflectionPositiveShift.lean#L8"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflectedCov",
+      "file": "Foundation/YMReflectionPositiveShift.lean",
+      "line": 9,
+      "source_sha256": "85677fef5698b0d6127bc51ed72ad7c50d583afadb7d7587c9b3ad0da04dadaa",
+      "declaration_header": "def reflectedCov (s t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMReflectionPositiveShift.lean#L9"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_factor",
+      "file": "Foundation/YMReflectionPositiveShift.lean",
+      "line": 11,
+      "source_sha256": "85677fef5698b0d6127bc51ed72ad7c50d583afadb7d7587c9b3ad0da04dadaa",
+      "declaration_header": "theorem reflected_factor (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    reflectedCov s t = Real.exp (-s) * Real.exp (-t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMReflectionPositiveShift.lean#L11"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_psd",
+      "file": "Foundation/YMReflectionPositiveShift.lean",
+      "line": 16,
+      "source_sha256": "85677fef5698b0d6127bc51ed72ad7c50d583afadb7d7587c9b3ad0da04dadaa",
+      "declaration_header": "theorem reflected_psd (n : \u2115) (times c : Fin n \u2192 \u211d) (ht : \u2200 i, 0 \u2264 times i) :\n    0 \u2264 \u2211 i, \u2211 j, c i * c j * reflectedCov (times i) (times j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMReflectionPositiveShift.lean#L16"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_norm_strict",
+      "file": "Foundation/YMReflectionPositiveShift.lean",
+      "line": 30,
+      "source_sha256": "85677fef5698b0d6127bc51ed72ad7c50d583afadb7d7587c9b3ad0da04dadaa",
+      "declaration_header": "theorem reflected_norm_strict (t : \u211d) (ht : 0 < t) :\n    reflectedCov t t < reflectedCov 0 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMReflectionPositiveShift.lean#L30"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.scaledCov",
+      "file": "Foundation/YMOSClusterObstruction.lean",
+      "line": 9,
+      "source_sha256": "d493e984dd883fc050507cdadbf4cf11ca625f75d0a3d67bae9524113fb25fed",
+      "declaration_header": "def scaledCov (r s : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMOSClusterObstruction.lean#L9"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.scaledCov_eq",
+      "file": "Foundation/YMOSClusterObstruction.lean",
+      "line": 13,
+      "source_sha256": "d493e984dd883fc050507cdadbf4cf11ca625f75d0a3d67bae9524113fb25fed",
+      "declaration_header": "theorem scaledCov_eq (r s : \u211d) : scaledCov r s = s * corr r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMOSClusterObstruction.lean#L13"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.no_uniform_constant",
+      "file": "Foundation/YMOSClusterObstruction.lean",
+      "line": 22,
+      "source_sha256": "d493e984dd883fc050507cdadbf4cf11ca625f75d0a3d67bae9524113fb25fed",
+      "declaration_header": "theorem no_uniform_constant (r t m : \u211d) (hc : 0 < corr r) :\n    \u00ac \u2203 C : \u211d, \u2200 s : \u211d, |scaledCov r s| \u2264 C * Real.exp (-m*t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMOSClusterObstruction.lean#L22"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.arbitrarily_small_coupling_no_uniform_constant",
+      "file": "Foundation/YMOSClusterObstruction.lean",
+      "line": 36,
+      "source_sha256": "d493e984dd883fc050507cdadbf4cf11ca625f75d0a3d67bae9524113fb25fed",
+      "declaration_header": "theorem arbitrarily_small_coupling_no_uniform_constant (\u03b5 t m : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 r, 0 < r \u2227 r < \u03b5 \u2227\n      \u00ac \u2203 C : \u211d, \u2200 s : \u211d, |scaledCov r s| \u2264 C * Real.exp (-m*t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMOSClusterObstruction.lean#L36"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.reflected_vs_unreflected",
+      "file": "Foundation/YMOSClusterObstruction.lean",
+      "line": 43,
+      "source_sha256": "d493e984dd883fc050507cdadbf4cf11ca625f75d0a3d67bae9524113fb25fed",
+      "declaration_header": "theorem reflected_vs_unreflected (s t : \u211d) (hs : 0 < s) (ht : 0 \u2264 t) :\n    reflectedCov s (s+t) < stationaryCov t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMOSClusterObstruction.lean#L43"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.\u03bc",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 9,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def \u03bc : Measure (SU2 \u00d7 SU2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L9"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.F",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 10,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def F (p : SU2 \u00d7 SU2) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L10"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.G",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 11,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def G (p : SU2 \u00d7 SU2) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L11"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.X",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 12,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def X (p : SU2 \u00d7 SU2) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L12"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 14,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def corr (r : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L14"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 82,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def coupledLaw (r : \u211d) : Measure (SU2 \u00d7 SU2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L82"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_zero",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 84,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem coupledLaw_zero : coupledLaw 0 = \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L84"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_zero_actual_chain",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 87,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem coupledLaw_zero_actual_chain (A : SU2) :\n    coupledLaw 0 =\n      (SU2OneWordTransfer.transition law 0 A \u2297\u2098 SU2OneWordTransfer.transition law 0).map\n        (fun p : SU2 \u00d7 SU2 => (A * p.1, p.1 * p.2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L87"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_probability",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 95,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem coupledLaw_probability (r : \u211d) : IsProbabilityMeasure (coupledLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L95"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.X_biGauge",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 99,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem X_biGauge (g h : SU2) (p : SU2 \u00d7 SU2) :\n    X (g * p.1 * g\u207b\u00b9, h * p.2 * h\u207b\u00b9) = X p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L99"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.gaugeAction",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 103,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "def gaugeAction (g h : SU2) (p : SU2 \u00d7 SU2) : SU2 \u00d7 SU2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L103"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.\u03bc_gauge_invariant",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 110,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem \u03bc_gauge_invariant (g h : SU2) : \u03bc.map (gaugeAction g h) = \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L110"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_gauge_invariant",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 122,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem coupledLaw_gauge_invariant (g h : SU2) (r : \u211d) :\n    (coupledLaw r).map (gaugeAction g h) = coupledLaw r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L122"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_eq_covariance",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 140,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem corr_eq_covariance (r : \u211d) :\n    corr r = (\u222b p, X p \u2202coupledLaw r) -\n      (\u222b p, F p \u2202coupledLaw r) * (\u222b p, G p \u2202coupledLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L140"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_hasDerivAt_zero",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 148,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem corr_hasDerivAt_zero : HasDerivAt corr (1/16) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L148"
+    },
+    {
+      "paper": "Section 13: separate scalar reflected-positive rank-one kernel and actual two-loop SU2 exponential-tilt model. Reflected Gram positivity, strict translated norm decrease and reflected/unreflected pairing inequality; actual covariance derivative 1/16 yields positive correlations arbitrarily near zero and rules out an observable-independent prefactor under all real scalings. Not the seven-link law, normalized-class decay refutation, full OS reconstruction or physical mass-gap theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.positive_corr_near_zero",
+      "file": "Foundation/SU2CoupledLoopResponse.lean",
+      "line": 160,
+      "source_sha256": "4208d6518b499abc8e822f7ff5efaec8f72971bdd7ceb0826ff1db618330f4dc",
+      "declaration_header": "theorem positive_corr_near_zero (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 r, 0 < r \u2227 r < \u03b5 \u2227 0 < corr r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2CoupledLoopResponse.lean#L160"
     }
   ],
   "human_reorganization": [
@@ -2218,7 +2452,8 @@
     "Finite positive-minorization mixing is a classical human specialization of the earlier positive-kernel argument. No equally weighted seven-link SU2 theorem, volume-uniform regime, continuum physical spectrum or novel transfer principle follows. Exact finite-comparison priority remains unresolved.",
     "The elementary microscopic plaquette sum, unlike the earlier winding-supported probe, is centered separately in the actual uniform and ground-stationary laws. Its bare lag quotient is exactly 1/16; the weighted centered quotient is strictly larger, without claiming the score is a weighted eigenfunction or that its quotient equals the full gap.",
     "The formal cubic remainder certificate is reorganized by x=2+y into four strictly positive integer coefficients. The printed exact reduction rule and independent Euclidean polynomial division expose a complete rational sign certificate at the constructed positive root. All 1024 actual transfer contributions independently reconstruct the lag numerator. This concerns a fixed finite-model elementary-plaquette sum, not volume-uniform local correlation or continuum physics.",
-    "Section 12 separates finite transfer comparisons from conditional continuum/spectral bridges. Uniform amplitude and a fixed subunit geometric block factor force a zero correlation limit; positive raw covariance normalized to one cannot preserve bounded variance when the raw variance has a fixed positive lower bound. The exact reference exp(-ell/(A*beta)) tends to one, requires errors below ell/(A*beta) to close strictness, and its fixed positive inverse-square-root certificate eventually fails. An upper bound on the true error is explicitly not treated as a lower bound. Exact n and n*k powers preserve the changing block scale. Finite positive spectral measures with actual integrability at every integer Laplace time and an exponential upper bound have no mass strictly below the rate; endpoint mass is allowed. Reindexing block counts, physical-unit examples, the converse Laplace bound, the three-level Hamiltonian probe counterexample and dense-probe spectral-projection consequence are labelled HUMAN elementary/conditional deductions. No new continuum field, physical spectral resolution, renormalization theorem, all-probe gap or contradiction to a Yang\u2013Mills mass gap is claimed."
+    "Section 12 separates finite transfer comparisons from conditional continuum/spectral bridges. Uniform amplitude and a fixed subunit geometric block factor force a zero correlation limit; positive raw covariance normalized to one cannot preserve bounded variance when the raw variance has a fixed positive lower bound. The exact reference exp(-ell/(A*beta)) tends to one, requires errors below ell/(A*beta) to close strictness, and its fixed positive inverse-square-root certificate eventually fails. An upper bound on the true error is explicitly not treated as a lower bound. Exact n and n*k powers preserve the changing block scale. Finite positive spectral measures with actual integrability at every integer Laplace time and an exponential upper bound have no mass strictly below the rate; endpoint mass is allowed. Reindexing block counts, physical-unit examples, the converse Laplace bound, the three-level Hamiltonian probe counterexample and dense-probe spectral-projection consequence are labelled HUMAN elementary/conditional deductions. No new continuum field, physical spectral resolution, renormalization theorem, all-probe gap or contradiction to a Yang\u2013Mills mass gap is claimed.",
+    "Section 13 reconstructs two separate clustering inference counterexamples from the original library. K(s,t)=exp(-s-t) has nonnegative real finite reflected Gram forms, yet K(a,a)<K(0,0) for a>0 and K(s,s+t)<C(t) for s>0. Its one-dimensional quotient and exact translated contraction exp(-a) are explicitly HUMAN finite-Gram consequences; no complete field or OS axiom system is asserted. A separate actual SU2xSU2 Haar product tilted by exp(r*f*g), with half-trace probes, has c(0)=0 and c\u2032(0)=1/16. Bounded dominated differentiation gives positive connected covariance at arbitrarily small positive coupling before the homogeneous rescaling contradiction. Only a finite common prefactor over all unnormalized real observable scalings is excluded. Bounds depending on probe norms or fixed normalized classes, physical separation decay and the mass gap remain distinct. No elementary mechanism or original gauge model here is asserted novel."
   ],
   "literature": [
     {
@@ -2228,6 +2463,10 @@
     {
       "url": "https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf",
       "review": "Luscher primary DESY preprint checked for physical gauge-invariant Hilbert and transfer-matrix construction. No identification of the present finite Markov correlations with physical Schwinger functions is inferred."
+    },
+    {
+      "url": "https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf",
+      "review": "Primary Luescher DESY 76/54 introduction, reflection positivity and Hilbert-space quotient discussion, equations (4)\u2013(5), PDF index 3, extracted PDF text read. Euclidean translation is identified there with exp(-aH). This is context only, not a full reconstruction theorem imported for the scalar counterexample or a full-paper proof audit. Earlier bounded transfer comparison retained."
     }
   ],
   "novelty": "Classical positive-kernel and character mechanisms; priority for the exact optimized finite comparison unresolved. No physical mass-gap claim."
