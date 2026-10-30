@@ -30,6 +30,8 @@ scenery average and does not transfer to the unaveraged observation.
 For arbitrary fixed even nonnegative compact smoothing profiles, an exact
 Gaussian Stein decomposition recovers the original curvature boundary
 correction in ordinary clock $L^2$, independently of the profile.
+Completed Fourier source means also retain the original hidden-clock
+It\^o integral under explicit absolute and fourth-frequency summability.
 All proofs retain the standard Brownian variance convention and are
 matched to a frozen Lean library. The Brownian-time PDE mechanism is
 classical, with a direct primary comparison to Allouba and Zheng;
@@ -664,6 +666,141 @@ scenery/clock $L^2$ limit of the unaveraged curvature, convergence
 of an intrinsic predictable IBM integrand, or a physical-time
 It\^o formula for $g(a+Z_T^+)$. It recovers a precise original
 boundary correction with all of those other obligations kept distinct.
+
+
+\section{Completed Fourier means and the original integral}
+The single cosine formula in Section 7 extends to an infinite series
+without introducing a different stochastic integral. Let $b_k\in\R$
+and $c_k\geq0$, for $k\geq0$, satisfy
+\begin{equation}\label{eq:seriescost}
+ B_0=\sum_k|b_k|<\infty,\qquad
+ B_2=\sum_k|b_k|c_k^2<\infty.
+\end{equation}
+Then $B_1=\sum_k|b_k|c_k<\infty$, since $c\leq1+c^2$.
+Write
+\[
+ m(r)=\sum_k b_ke^{-c_kr}\quad(r\geq0),\qquad
+ A=\sum_k b_kc_k,\qquad M_t=m(|W_t|).
+\]
+The series defining $m$ and its first two right derivatives converge
+uniformly on the half-line. In particular $M$ is an actual bounded
+continuous clock process. No positivity of the coefficients is needed.
+
+\begin{theorem}\label{thm:completedmeans}
+Under \eqref{eq:seriescost}, for each fixed $T\geq0$, almost surely,
+\begin{align}\label{eq:completedito}
+ M_T-\sum_k b_k
+ &=\int_0^T U_s\,dW_s-A L_T^0
+   +\frac12\int_0^T\sum_k b_kc_k^2e^{-c_k|W_s|}\,ds,\\
+ U_s&=-\operatorname{sgn}(W_s)
+           \sum_k b_kc_ke^{-c_k|W_s|}.\notag
+\end{align}
+Here $U$ is predictable in the Brownian clock filtration and belongs
+to $L^2(ds\,d\Pp)$ on $[0,T]$. Its original finite sums
+\[
+ U_s^{(N)}=-\operatorname{sgn}(W_s)
+          \sum_{k<N}b_kc_ke^{-c_k|W_s|}
+\]
+converge to $U$ in that space, and their ordinary Brownian It\^o
+integrals converge to the displayed integral in terminal $L^2$.
+\end{theorem}
+\begin{proof}
+Use the global extensions $F_c$ of Section 7:
+$F_c(x)=e^{-cx}$ for $x\geq0$ and
+$F_c(x)=e^{cx}-2cx$ for $x<0$. They are $C^2$ with
+$F_c(0)=1$, $F_c'(0)=-c$,
+\[
+ |F_c'(x)|\leq2c,\qquad
+ F_c''(x)=c^2e^{-c|x|},\qquad |F_c''(x)|\leq c^2.
+\]
+At the origin the two first derivatives both equal $-c$ and the
+two second derivatives both equal $c^2$, so the gluing is genuinely
+$C^2$. On $[-R,R]$, $|F_c(x)|\leq1+2cR$. Thus
+$F=\sum_k b_kF_{c_k}$ converges locally uniformly, its first
+derivative series converges uniformly on all of $\R$ by $2B_1$,
+and its second derivative series converges uniformly by $B_2$.
+The fundamental theorem of calculus on each compact interval,
+applied successively to finite sums and their uniformly converging
+derivatives, proves $F\in C^2(\R)$ with these derivatives.
+Consequently $F(r)=m(r)$ for $r\geq0$, $F(0)=\sum b_k$,
+$F'(0)=-A$, and $F''(r)=\sum b_kc_k^2e^{-c_kr}$ there.
+\par\noindent\code{ReflectedDampingSeries.value_C2}.
+\par\noindent\code{ReflectedDampingSeries.first_uniform}.
+\par\noindent\code{ReflectedDampingSeries.second_uniform}.
+
+For completeness, the reflected It\^o step uses
+$G(x)=F(|x|)-F'(0)|x|$. Its two first derivatives at zero
+are zero, and its two second derivatives equal $F''(0)$;
+thus $G$ is $C^2$, with
+$G'(x)=\operatorname{sgn}(x)(F'(|x|)-F'(0))$ and
+$G''(x)=F''(|x|)$. These derivatives are bounded.
+Apply ordinary Brownian $C^2$ It\^o to $G(W)$, and add
+$F'(0)$ times Tanaka's formula. The martingale fields combine
+to $\operatorname{sgn}(W_s)F'(|W_s|)=U_s$ and the local-time
+term is $F'(0)L_T^0=-AL_T^0$. The drift is bounded by $B_2/2$,
+and $|U_s|\leq B_1$. This proves \eqref{eq:completedito} with
+all terms integrable. The value at $W_s=0$ is immaterial to
+the time--probability class, because that set has zero product
+measure. Predictability also follows directly: the clock is a
+continuous adapted process, and composition with a Borel function
+preserves predictable measurability.
+\par\noindent\code{GaussianReflectedC2Ito.reflected_ito_pathwise}.
+\par\noindent\code{ReflectedDampingSeriesIto.actual_ito}.
+\par\noindent\code{ReflectedDampingSeriesIto.running_actual}.
+
+Finally the pointwise tail bound gives the explicit estimates
+\begin{equation}\label{eq:nativetail}
+ \|U-U^{(N)}\|_{L^2(ds\,d\Pp)}
+ \leq\sqrt T\sum_{k\geq N}|b_k|c_k,
+ \qquad
+ \left\|\int_0^T(U_s-U_s^{(N)})\,dW_s\right\|_2
+ =\|U-U^{(N)}\|_{L^2(ds\,d\Pp)}.
+\end{equation}
+The second equality is the isometry of the original Brownian
+integral. Hence the native finite sums identify exactly that
+integral, with no separately defined limiting integral.
+\par\noindent\code{ReflectedDampingNativeIntegral.partial_tendsto}.
+\par\noindent\code{ReflectedDampingNativeIntegral.integral_tendsto}.
+\end{proof}
+The explicit tail estimate \eqref{eq:nativetail} is a human
+consequence of the mapped bounds and isometry; the convergence and
+identity of the completed predictable field are named formal results.
+The theorem asserts equality almost surely at each fixed horizon.
+It does not add a simultaneous all-horizon version theorem.
+
+An actual IBM source mean is included as follows. Let
+\[
+ f(x)=\sum_k w_k\cos(\beta_k+a_kx),\qquad
+ \sum_k|w_k|<\infty,\qquad \sum_k|w_k|a_k^4<\infty.
+\]
+The series is uniformly convergent, so $f$ is bounded and continuous.
+For every deterministic clock value $r$, Gaussian integration and
+the summable bound $|w_k|$ give
+\[
+ \E_B f(B(|r|))
+ =\sum_k w_k\cos\beta_k\,e^{-a_k^2|r|/2}.
+\]
+The sine terms vanish by the centered Gaussian symmetry. Uniform
+convergence and continuity give the same actual source mean at
+$r=W_t$; equivalently it is the conditional expectation over the
+independent scenery source with the clock fixed. Take
+$b_k=w_k\cos\beta_k$ and $c_k=a_k^2/2$. Then
+$\sum|b_k|\leq\sum|w_k|$ and
+$\sum|b_k|c_k^2\leq\frac14\sum|w_k|a_k^4$, so
+Theorem~\ref{thm:completedmeans} applies. In particular the
+local-time coefficient is
+$-\frac12\sum_k w_k\cos\beta_k\,a_k^2$, with the same
+normalization as the single-frequency case.
+\par\noindent\code{IBMFourierSourceMeanIto.mean_actual}.
+\par\noindent\code{IBMFourierSourceMeanIto.actual_ito}.
+
+This is a classical reflected It\^o argument with an explicit
+completion and an exact formal correspondence. Its summability
+conditions are sufficient, not claimed necessary or optimal.
+Neither $M_t$ nor its integrand is asserted measurable in the
+observed IBM past. Convergence in the original clock predictable
+space does not establish a representation theorem, stochastic
+integration theory or It\^o formula for the unaveraged $f(Z_t^+)$.
 
 \section{Primary comparison and exact formal scope}
 Allouba and Zheng~\cite{az}, Theorem 0.1, equations (0.1)--(0.2),
