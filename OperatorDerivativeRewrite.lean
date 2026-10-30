@@ -2956,3 +2956,5 @@ import Foundation.PeriodicSlabJoint
 import Foundation.PeriodicTemporalConcentration
 import Foundation.PeriodicLoopVariation
 import Foundation.PeriodicTransferVariation
+import Foundation.PeriodicCurvatureVariance
+import Foundation.PeriodicCurvatureTransfer
