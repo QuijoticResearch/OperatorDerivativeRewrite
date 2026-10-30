@@ -10,7 +10,7 @@
 \newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
 \newcommand{\E}{\mathbb E}\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Classical strip contraction\\for the actual quadratic Xi flow}
+\title{Classical strip contraction and an attained threshold\\for the actual quadratic Xi flow}
 \author{Project Stardust\\\small A classical formalization companion}
 \date{Reviewed editorial draft, October 30, 2026}
 \begin{document}\maketitle
@@ -32,6 +32,8 @@ integrability before passing to limits. These are classical de Bruijn
 mechanisms, already stated in broader form by Newman; no new strip bound,
 exact threshold, zero-time reality or Riemann-hypothesis result is claimed.
 Exact declarations and hypotheses are mapped to a frozen Lean library.
+The same actual flow has a finite attained all-real threshold; a complete
+four-point smoothing proof supplies the needed lower obstruction.
 \end{abstract}
 
 \section{The arithmetic flow and the conclusion}
@@ -475,7 +477,7 @@ by $e^{+tu^2}$. Numerical thresholds cannot be transferred between these
 conventions without rescaling both frequency and time. We use only the
 bound proved in the displayed normalization.
 
-This manuscript does not prove reality at $t=0$, an exact quadratic
+This manuscript does not prove reality at $t=0$, an exact numerical value of the quadratic
 threshold, a sharper arithmetic zero-free region, or any relation between
 a higher-even-order threshold and RH. It also proves neither simplicity
 of all positive-time zeros nor an unrestricted backward-heat operator on
@@ -483,6 +485,208 @@ an entire-function space. Local Hermite splitting and simple-root motion
 have their own verified hypotheses and are not needed here. These limits
 are mathematical scope statements, not unresolved steps in the proof of
 Theorem~\ref{thm:main}.
+
+
+\section{A finite attained threshold for the actual quadratic flow}
+\begin{theorem}\label{thm:finitethreshold}
+There is a finite real number $\Lambda\leq1/2$ such that
+\[
+ \{t\in\R: \text{every zero of }F_t\text{ is real}\}=[\Lambda,\infty).
+\]
+In particular the endpoint has only real zeros, and for every
+$t<\Lambda$ the actual $F_t$ has a nonreal zero.
+\end{theorem}
+This is the classical finite-threshold conclusion, not a new result.
+Newman's Theorem 3~\cite{Newman} proves its antecedent using his
+measure classification. We reconstruct instead the frozen library's
+actual Gaussian-smoothing and elementary four-point route. In this
+normalization $\Lambda$ is exactly the usual de Bruijn--Newman constant:
+Rodgers--Tao~\cite{RodgersTao} use precisely our kernel, time and Xi
+normalization in their equations (1)--(4). Their separate Theorem 1
+proves $\Lambda\geq0$. That deep external result is credited here;
+its proof is not reconstructed, formalized anew or used below.
+
+\subsection*{Upper-ray propagation and endpoint closedness}
+All the analytic hypotheses of Sections 2--4 hold with any fixed
+$F_a$ in place of $F_0$. If every zero of $F_a$ has
+$|\operatorname{Im}z|\leq b$, its actual divisor polynomials share
+that same strip and common Gaussian budget. Their finite polynomial
+heat contraction, actual Gaussian integral limit and vertical strip
+closure prove
+\[
+ F_{a+s}(z)=0\quad\Longrightarrow\quad
+ (\operatorname{Im}z)^2\leq\max(b^2-2s,0)\qquad(s\geq0).
+\]
+These are the same successive limits as before, now at the fixed
+starting time $a$; no semigroup on an unrestricted entire-function
+space is needed. Taking $b=0$ proves that once all zeros are real,
+they remain real at every later time. Thus the set $\mathcal R$
+displayed in Theorem~\ref{thm:finitethreshold} is an upper set,
+and Theorem~\ref{thm:main} makes it nonempty.
+
+It is also closed. Suppose $a_n\in\mathcal R$ and $a_n\to a$.
+For a fixed $n$, every divisor polynomial of $F_{a_n}$ is real rooted.
+Its modulus on each line $x+iy$ is nondecreasing for $y\geq0$, by
+the elementary real-root factor inequality used in Lemma 6.1.
+Passing through its compact limit gives
+\[
+ |F_{a_n}(x+iy_1)|\leq|F_{a_n}(x+iy_2)|
+ \qquad(0\leq y_1\leq y_2).
+\]
+Time continuity at the two fixed spatial points passes this inequality
+to $F_a$. If $F_a(x+iy)=0$ with $y>0$, every point $x+iv$,
+$0\leq v\leq y$, would be a zero. The identity theorem contradicts
+$F_a(0)>0$. Conjugation excludes a zero below the real axis.
+Hence $a\in\mathcal R$. What remains is to exclude
+$\mathcal R=\R$ by an actual negative-time obstruction.
+
+\begin{proposition}\label{prop:quadraticnegative}
+For some strictly negative $t$, the actual $F_t$ has a nonreal zero.
+No numerical time or particular zero is specified by this argument.
+\end{proposition}
+\subsection*{The elementary four-point inequality}
+For $c\geq0$ let $\ell_c(v)=\log(1+cv)$ on $v\geq0$, and define
+\[
+ D_c=2\log(1+c/2)-\log(1+c).
+\]
+For every $y\geq1$,
+\begin{equation}\label{eq:fourpointfactor}
+ \ell_c(y)\geq \ell_c(1)+(y-1)(\ell_c(2)-\ell_c(1))
+                         -2(y-1)^2D_c.
+\end{equation}
+To verify it, put $u=c/(1+c)$ and $v=y-1$. Both are nonnegative.
+The scalar inequality $\log(1+w)\geq w-w^2/2$ for $w\geq0$ follows
+by differentiating the difference, whose derivative is $w^2/(1+w)$.
+Furthermore
+\[
+ D_c=\log\frac{(1+c/2)^2}{1+c}
+ \geq1-\frac{1+c}{(1+c/2)^2}
+ =\left(\frac c{c+2}\right)^2,
+ \qquad u\leq\frac{2c}{c+2}.
+\]
+Here $\log r\geq1-r^{-1}$ for $r>0$ follows from
+$\log x\leq x-1$ applied to $x=r^{-1}$. Consequently $u^2\leq4D_c$.
+Now $\ell_c(y)-\ell_c(1)=\log(1+uv)$ and
+$\ell_c(2)-\ell_c(1)=\log(1+u)\leq u$. Therefore
+\[
+ \log(1+uv)\geq uv-\tfrac12u^2v^2
+                 \geq v\log(1+u)-2v^2D_c,
+\]
+which proves \eqref{eq:fourpointfactor}.
+
+It follows by summation that every profile
+$q(v)=A-Bv+\sum_j\alpha_j\log(1+c_jv)$, with $c_j,\alpha_j\geq0$,
+satisfies
+\begin{equation}\label{eq:fourpointprofile}
+ q(y)\geq q(1)+(y-1)(q(2)-q(1))
+       -2(y-1)^2\bigl(2q(1/2)-q(0)-q(1)\bigr),\qquad y\geq1.
+\end{equation}
+Constant and linear functions satisfy this with equality, so adding
+$A-Bv$ changes no curvature term. For a nonzero polynomial $P$ with
+all roots real and $P(0)\ne0$, its complete real-root factorization gives
+\[
+ \log|P(iC\sqrt v)|
+ =A_P+\frac12\sum_{r\in\operatorname{roots}(P)}
+                    \log\bigl(1+(C/r)^2v\bigr).
+\]
+All roots are counted with multiplicity; each is nonzero. Hence
+$A-Bv+\log|P(iC\sqrt v)|$ satisfies \eqref{eq:fourpointprofile}.
+If an entire $f$ in our growth class has only real zeros and $f(0)\ne0$,
+Section 3 gives such real-rooted approximants with the exact disk
+zeros and preserved origin. At every point on the imaginary axis
+$f$ is nonzero: a purely imaginary real zero must be zero itself.
+Thus continuity of $\log|\cdot|$ passes their inequalities to
+$A-Bv+\log|f(iC\sqrt v)|$ at the five fixed values
+$0,1/2,1,2,y$. This step needs no differentiation or infinite logarithm sum.
+
+\subsection*{An actual density smoothing identity}
+Let $F(x)=K(|x|)$ and $Y\sim N(0,2)$. This is a bounded, strictly
+positive continuous even function. For $\epsilon>0$ put
+$S_\epsilon(x)=\mathbb E F(x+\epsilon Y)$. These are genuine positive
+integrals. Bounded dominated convergence gives
+$S_\epsilon(x)\to F(x)$ as $\epsilon\downarrow0$.
+The Gaussian variance is exactly $2\epsilon^2$. Pairing the two
+half-lines and completing the square gives
+\begin{equation}\label{eq:quadraticdensityheat}
+ S_\epsilon(x)=\frac{1}{\sqrt\pi\epsilon}
+ e^{-x^2/(4\epsilon^2)}
+ F_{-1/(4\epsilon^2)}\left(\frac{ix}{2\epsilon^2}\right).
+\end{equation}
+Indeed its full-line density is
+$(2\sqrt\pi\epsilon)^{-1}e^{-(u-x)^2/(4\epsilon^2)}$.
+The sum at $u$ and $-u$, on $u\geq0$, equals
+\[
+ (\sqrt\pi\epsilon)^{-1}e^{-x^2/(4\epsilon^2)}
+ e^{-u^2/(4\epsilon^2)}\cosh(ux/(2\epsilon^2)).
+\]
+Multiplying by $K(u)$ and using $\cos(iw)=\cosh w$ proves the formula.
+The bounded-density Gaussian integral is absolutely integrable;
+the half-line cosh integral is absolutely integrable by theta decay.
+In particular the rightmost transform value is strictly positive real,
+so every logarithm used below is legitimate.
+
+\begin{proof}[Proof of Proposition~\ref{prop:quadraticnegative}]
+Suppose instead that $F_t$ has only real zeros for every $t<0$.
+For each $\epsilon>0$ take $f=F_{-1/(4\epsilon^2)}$ in the preceding
+polynomial-limit inequality. Taking logarithms in
+\eqref{eq:quadraticdensityheat} shows that
+$q_\epsilon(v)=\log S_\epsilon(\sqrt v)$ is exactly one such profile
+with
+\[
+ A=\log(1/(\sqrt\pi\epsilon)),\qquad
+ B=1/(4\epsilon^2),\qquad C=1/(2\epsilon^2).
+\]
+Consequently \eqref{eq:fourpointprofile} holds for $q_\epsilon$.
+Fix $y\geq1$ and send $\epsilon\downarrow0$. Positivity of $F$ and
+continuity of the real logarithm imply convergence at all five required
+points. Thus the same inequality holds for
+$q(v)=\log K(\sqrt v)$.
+
+Its right side is one fixed quadratic polynomial $p(y)=ay^2+by+c$.
+For $y\geq1$,
+$p(y)\geq-(|a|+|b|+|c|)y^2$. Put $L=|a|+|b|+|c|$.
+Then $\log K(x)\geq-Lx^4$ for every $x\geq1$, equivalently
+\[
+ e^{Lx^4}K(x)\geq1\qquad(x\geq1).
+\]
+But the actual theta estimate $K(x)\leq C e^{9x-\pi e^{4x}/2}$
+gives $e^{Lx^4}K(x)\to0$: the exponential $e^{4x}$ dominates the
+fixed polynomial $Lx^4+9x$. This contradiction proves that at least
+one of the strictly negative quadratic times has a nonreal zero.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:finitethreshold}]
+Let $\tau<0$ and a nonreal zero of $F_\tau$ be supplied by the
+proposition. Every $r\in\mathcal R$ must satisfy $r>\tau$:
+otherwise upper-set propagation would put $\tau$ in $\mathcal R$.
+Thus $\mathcal R$ is nonempty and bounded below. Its infimum
+$\Lambda$ is a finite real number. Choose $r_n\in\mathcal R$ with
+$\Lambda\leq r_n<\Lambda+1/n$ for $n\geq1$, using the defining
+infimum property. Closedness gives $\Lambda\in\mathcal R$;
+upper propagation then proves $\mathcal R=[\Lambda,\infty)$.
+Because $1/2\in\mathcal R$, one has $\Lambda\leq1/2$.
+For $t<\Lambda$, nonmembership means exactly that an actual
+nonreal zero exists. These statements include the endpoint and
+make no assumption about the simplicity of its zeros.
+\end{proof}
+
+The named formal endpoint is
+\par\noindent\code{RiemannQuadraticFiniteThreshold.real_zeros_iff},
+with the finite lower-bound obstruction in that same module and the
+smoothing identity in \code{RiemannQuadraticDensityHeat}.
+The proof here first produces a strictly negative nonreal time; the
+formal route first excludes all-realness at every real time and then
+uses its attained threshold to produce such a negative time.
+This explicitly labelled human reordering proves the same conclusions.
+
+By the exact Xi normalization, $\Lambda\leq0$ is the standard
+threshold formulation of RH. This paper proves neither that bound nor
+the numerical value of $\Lambda$. The separate published lower bound
+$\Lambda\geq0$ is not an open sign question in the literature and
+is not a consequence of the elementary proof above. The bound $1/2$
+is retained solely as the classical bound reconstructed here, without
+claiming it is the best available bound. No quartic or sixth-order
+threshold is identified with $\Lambda$.
 
 \section{Formal correspondence, primary comparison and verification}
 The map supplied with this paper records exact declarations, source
@@ -555,5 +759,10 @@ Original full-text comparison remains incomplete.
 \emph{Complex Analysis}, Harvard Math 213a course notes, 2023,
 Theorems 3.15 and 3.18, printed pp.~80--82.
 \url{https://people.math.harvard.edu/~ctm/home/text/class/harvard/213a/23/html/home/course/course.pdf}.
+\bibitem{RodgersTao} B. Rodgers and T. Tao,
+\emph{The de Bruijn--Newman constant is non-negative},
+author manuscript v5, July 3, 2021, equations (1)--(4) and Theorem 1,
+printed pp.~2--3. \url{https://arxiv.org/abs/1801.05914}.
+The external nonnegativity proof is not reproduced here.
 \end{thebibliography}
 \end{document}

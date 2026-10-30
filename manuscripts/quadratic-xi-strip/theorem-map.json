@@ -2106,12 +2106,535 @@
       "source_sha256": "2c63ed7cb77666da265dc9974ded5844a7baaa0096a3274c55e355239c3c30d0",
       "declaration_header": "def transport (p : \u2115) (a : \u211d) : Polynomial \u211d \u2192\u2097[\u211d] Polynomial \u211d",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderPolynomialTransport.lean#L11"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_quadratic_lower",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 9,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem log_quadratic_lower (w : \u211d) (hw : 0 \u2264 w) :\n    w-w^2/2 \u2264 log (1+w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L9"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_gap_bound",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 17,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem log_gap_bound (c : \u211d) (hc : 0 \u2264 c) :\n    (c/(1+c))^2 \u2264 4*(2*log (1+c/2)-log (1+c))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L17"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.log_factor_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 35,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem log_factor_four_point (c y : \u211d) (hc : 0 \u2264 c) (hy : 1 \u2264 y) :\n    log (1+c) + (y-1)*(log (1+2*c)-log (1+c)) -\n      2*(y-1)^2*(2*log (1+c/2)-log (1+c)) \u2264 log (1+c*y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L35"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.finite_log_profile_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 60,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem finite_log_profile_four_point (L : Multiset \u211d)\n    (hL : \u2200 c \u2208 L, 0 \u2264 c) (A B alpha y : \u211d) (ha : 0 \u2264 alpha) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L60"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_linear_log",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 77,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem imaginary_linear_log (a C y : \u211d) (ha : a \u2260 0) (hy : 0 \u2264 y) :\n    log \u2016Complex.I*((C*sqrt y : \u211d):\u2102)-(a:\u2102)\u2016 =\n      log |a| + log (1+(C/a)^2*y)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L77"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_factor_ne_zero",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 96,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem imaginary_factor_ne_zero (r : \u2102) (hr : r.re \u2260 0) (x : \u211d) :\n    Complex.I*(x:\u2102)-r \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L96"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.imaginary_rootProduct_ne_zero",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 106,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem imaginary_rootProduct_ne_zero (L : Multiset \u2102)\n    (hL : \u2200 r \u2208 L, r.re \u2260 0) (x : \u211d) :\n    SymmetricPolynomialStrip.rootProduct L (Complex.I*(x:\u2102)) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L106"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.rootProduct_log_profile",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 116,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem rootProduct_log_profile (L : Multiset \u2102)\n    (hL : \u2200 r \u2208 L, r.im = 0 \u2227 r.re \u2260 0) (C y : \u211d) (hy : 0 \u2264 y) :\n    log \u2016SymmetricPolynomialStrip.rootProduct L (Complex.I*((C*sqrt y:\u211d):\u2102))\u2016 =\n      (L.map (fun r => log |r.re|)).sum +\n        (1/2:\u211d)*(L.map (fun r => log (1+(C/r.re)^2*y))).sum",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L116"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.polynomial_log_profile",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 141,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem polynomial_log_profile (P : \u2102[X]) (h0 : P.eval 0 \u2260 0)\n    (hreal : \u2200 r : \u2102, P.eval r = 0 \u2192 r.im = 0) (C : \u211d) :\n    \u2203 A : \u211d, \u2203 L : Multiset \u211d, (\u2200 c \u2208 L, 0 \u2264 c) \u2227\n      \u2200 y : \u211d, 0 \u2264 y \u2192 log \u2016P.eval (Complex.I*((C*sqrt y:\u211d):\u2102))\u2016 =\n        A+(1/2:\u211d)*(L.map (fun c => log (1+c*y))).sum",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L141"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.polynomial_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 169,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem polynomial_four_point (P : \u2102[X]) (h0 : P.eval 0 \u2260 0)\n    (hreal : \u2200 r : \u2102, P.eval r = 0 \u2192 r.im = 0) (A B C y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L169"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NewmanFourPointBound.actual_flow_four_point",
+      "file": "Foundation/NewmanFourPointBound.lean",
+      "line": 180,
+      "source_sha256": "d2dd3e9243b7c3fe9c7402be62f49c9109ee80f965721405901de772a64673e9",
+      "declaration_header": "theorem actual_flow_four_point (m : \u2115) (t : \u211d)\n    (hreal : \u2200 z : \u2102, RiemannEvenFlow.flow m t z = 0 \u2192 z.im = 0)\n    (A B C y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NewmanFourPointBound.lean#L180"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 10,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "def evenDensity (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L10"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_continuous",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 12,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem evenDensity_continuous : Continuous evenDensity",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L12"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_pos",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 17,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem evenDensity_pos (x : \u211d) : 0 < evenDensity x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L17"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.evenDensity_bounded",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 19,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem evenDensity_bounded : \u2203 C : \u211d, 0 < C \u2227 \u2200 x : \u211d, |evenDensity x| \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L19"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 28,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "def smoothing (epsilon x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L28"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_integrable",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 31,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem smoothing_integrable (epsilon x : \u211d) :\n    Integrable (fun y : \u211d => evenDensity (x+epsilon*y)) (RiemannQuadraticGaussian.law 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L31"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_limit",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 39,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem smoothing_limit (epsilon : \u2115 \u2192 \u211d) (he : Tendsto epsilon atTop (\ud835\udcdd 0)) (x : \u211d) :\n    Tendsto (fun n => smoothing (epsilon n) x) atTop (\ud835\udcdd (evenDensity x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L39"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_pos",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 54,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem smoothing_pos (epsilon x : \u211d) : 0 < smoothing epsilon x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L54"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensitySmoothing.smoothing_distribution",
+      "file": "Foundation/RiemannQuadraticDensitySmoothing.lean",
+      "line": 65,
+      "source_sha256": "4c29d137945caaac41cef26236653cb4186eafac78647e0602e255ba1c341817",
+      "declaration_header": "theorem smoothing_distribution (epsilon x : \u211d) :\n    smoothing epsilon x = \u222b u : \u211d, evenDensity u\n      \u2202gaussianReal x (\u27e8epsilon^2,sq_nonneg epsilon\u27e9*2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensitySmoothing.lean#L65"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_density_integrable",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 13,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem pdf_density_integrable (v : \u211d\u22650) (x : \u211d) :\n    Integrable (fun u : \u211d => gaussianPDFReal x v u*evenDensity u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L13"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_reflection",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 19,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem pdf_reflection (v : \u211d\u22650) (x u : \u211d) :\n    gaussianPDFReal x v (-u) = gaussianPDFReal (-x) v u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L19"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.even_density_gaussian_halfLine",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 25,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem even_density_gaussian_halfLine (v : \u211d\u22650) (x : \u211d) (hv : v \u2260 0) :\n    (\u222b u : \u211d, evenDensity u \u2202gaussianReal x v) =\n      \u222b u : \u211d, (gaussianPDFReal x v u+gaussianPDFReal (-x) v u)*kernel u \u2202halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L25"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.completed_square_cosh",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 50,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem completed_square_cosh (s x u : \u211d) :\n    exp (-s*(u-x)^2)+exp (-s*(u+x)^2) =\n      2*exp (-s*x^2)*exp (-s*u^2)*cosh ((2*s*x)*u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L50"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.pdf_pair_heat",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 58,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem pdf_pair_heat (v : \u211d\u22650) (x u : \u211d) :\n    (gaussianPDFReal x v u+gaussianPDFReal (-x) v u)*kernel u =\n      (2*(sqrt (2*Real.pi*(v:\u211d)))\u207b\u00b9*exp (-(2*(v:\u211d))\u207b\u00b9*x^2))*\n        (RiemannEvenDomain.weighted 1 0 (-(2*(v:\u211d))\u207b\u00b9) 0 u*cosh ((2*(2*(v:\u211d))\u207b\u00b9*x)*u))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L58"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.imaginary_integrand",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 69,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem imaginary_integrand (t y u : \u211d) :\n    (RiemannEvenDomain.weighted 1 0 t 0 u:\u2102)*Complex.cos ((u:\u2102)*(Complex.I*(y:\u2102))) =\n      ((RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y):\u211d):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L69"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.imaginary_integrable",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 75,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem imaginary_integrable (t y : \u211d) :\n    Integrable (fun u : \u211d => RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y)) halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L75"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.flow_imaginary_integral",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 80,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem flow_imaginary_integral (t y : \u211d) :\n    RiemannEvenFlow.flow 1 t (Complex.I*(y:\u2102)) =\n      ((\u222b u : \u211d, RiemannEvenDomain.weighted 1 0 t 0 u*cosh (u*y) \u2202halfLine):\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L80"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.gaussian_heat_identity",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 87,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem gaussian_heat_identity (v : \u211d\u22650) (hv : v \u2260 0) (x : \u211d) :\n    Complex.ofReal (\u222b u : \u211d, evenDensity u \u2202gaussianReal x v) =\n      ((2*(sqrt (2*Real.pi*(v:\u211d)))\u207b\u00b9*exp (-(2*(v:\u211d))\u207b\u00b9*x^2):\u211d):\u2102)*\n        RiemannEvenFlow.flow 1 (-(2*(v:\u211d))\u207b\u00b9) (Complex.I*((2*(2*(v:\u211d))\u207b\u00b9*x:\u211d):\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L87"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.smoothing_log_heat",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 99,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem smoothing_log_heat (epsilon : \u211d) (hne : epsilon \u2260 0) (x : \u211d) :\n    let v : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L99"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticDensityHeat.smoothing_four_point",
+      "file": "Foundation/RiemannQuadraticDensityHeat.lean",
+      "line": 132,
+      "source_sha256": "ef9d38decbf3656100a057e421e90016644b5089c63422cc49bda6801f81e375",
+      "declaration_header": "theorem smoothing_four_point\n    (hall : \u2200 t : \u211d, \u2200 z : \u2102, RiemannEvenFlow.flow 1 t z = 0 \u2192 z.im = 0)\n    (epsilon : \u211d) (hne : epsilon \u2260 0) (y : \u211d) (hy : 1 \u2264 y) :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticDensityHeat.lean#L132"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.upper_vertical_bound",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 10,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem upper_vertical_bound (m : \u2115) (t : \u211d)\n    (hreal : \u2200 z : \u2102, flow m t z = 0 \u2192 z.im = 0)\n    (x a b : \u211d) (ha : 0 \u2264 a) (hab : a \u2264 b) :\n    \u2016flow m t ((x:\u2102)+I*a)\u2016 \u2264 \u2016flow m t ((x:\u2102)+I*b)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L10"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.reality_of_time_sequence",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 26,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem reality_of_time_sequence (m : \u2115) (s : \u2115 \u2192 \u211d) (t : \u211d)\n    (hs : Tendsto s atTop (\ud835\udcdd t))\n    (hreal : \u2200 n, \u2200 z : \u2102, flow m (s n) z = 0 \u2192 z.im = 0)\n    (z : \u2102) (hz : flow m t z = 0) : z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L26"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.realTimes",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 45,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "def realTimes (m : \u2115) : Set \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L45"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.isClosed_realTimes",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 47,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem isClosed_realTimes (m : \u2115) : IsClosed (realTimes m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L47"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_upper",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 52,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_upper (t u : \u211d) (htu : t \u2264 u) (ht : t \u2208 realTimes 1) :\n    u \u2208 realTimes 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L52"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_nonempty",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 55,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_nonempty : (realTimes 1).Nonempty",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L55"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_infimum_mem",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 58,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_infimum_mem (hb : BddBelow (realTimes 1)) :\n    sInf (realTimes 1) \u2208 realTimes 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L58"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_eq_Ici",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 62,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_eq_Ici (hb : BddBelow (realTimes 1)) :\n    realTimes 1 = Ici (sInf (realTimes 1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L62"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_nonreal_before",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 69,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_nonreal_before (hb : BddBelow (realTimes 1))\n    (t : \u211d) (ht : t < sInf (realTimes 1)) :\n    \u2203 z : \u2102, flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L69"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_dichotomy",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 77,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_dichotomy : realTimes 1 = univ \u2228\n    \u2203 A : \u211d, A \u2264 1/2 \u2227 realTimes 1 = Ici A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L77"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenRealityClosed.quadratic_bddBelow_iff_nonreal_exists",
+      "file": "Foundation/RiemannEvenRealityClosed.lean",
+      "line": 88,
+      "source_sha256": "4d3ef779ba9db10ecbe5dd4cd241a5c31ddcac20cd061d68f0b1e6e40c9614b7",
+      "declaration_header": "theorem quadratic_bddBelow_iff_nonreal_exists : BddBelow (realTimes 1) \u2194\n    \u2203 (t : \u211d) (z : \u2102), flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenRealityClosed.lean#L88"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.quadratic_polynomial_lower",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 11,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem quadratic_polynomial_lower (a b c y : \u211d) (hy : 1 \u2264 y) :\n    -(|a|+|b|+|c|)*y^2 \u2264 a*y^2+b*y+c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L11"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.density_four_point_failure",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 19,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem density_four_point_failure :\n    let q : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L19"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.not_all_real_times",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 74,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem not_all_real_times :\n    \u00ac (\u2200 t : \u211d, \u2200 z : \u2102, flow 1 t z = 0 \u2192 z.im = 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L74"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.nonreal_zero_exists",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 93,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem nonreal_zero_exists : \u2203 (t : \u211d) (z : \u2102), flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L93"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.real_times_bddBelow",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 96,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem real_times_bddBelow : BddBelow (realTimes 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L96"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.threshold",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 99,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "def threshold : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L99"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.real_times_eq_Ici",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 101,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem real_times_eq_Ici : realTimes 1 = Ici threshold",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L101"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.real_zeros_iff",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 104,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem real_zeros_iff (t : \u211d) :\n    (\u2200 z : \u2102, flow 1 t z = 0 \u2192 z.im = 0) \u2194 threshold \u2264 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L104"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.nonreal_zeros_iff",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 110,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem nonreal_zeros_iff (t : \u211d) :\n    (\u2203 z : \u2102, flow 1 t z = 0 \u2227 z.im \u2260 0) \u2194 t < threshold",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L110"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.threshold_le_half",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 115,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem threshold_le_half : threshold \u2264 1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L115"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.negative_time_nonreal_exists",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 118,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem negative_time_nonreal_exists :\n    \u2203 t : \u211d, t < 0 \u2227 \u2203 z : \u2102, flow 1 t z = 0 \u2227 z.im \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L118"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.zero_time_reality_iff",
+      "file": "Foundation/RiemannQuadraticFiniteThreshold.lean",
+      "line": 128,
+      "source_sha256": "2de7b191da83906e017faf5d9f9594134dc0ea85e12b09a0604351cf72fe3685",
+      "declaration_header": "theorem zero_time_reality_iff :\n    (\u2200 z : \u2102, flow 1 0 z = 0 \u2192 z.im = 0) \u2194 threshold \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticFiniteThreshold.lean#L128"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticStripEvolution.strip_from_time",
+      "file": "Foundation/RiemannQuadraticStripEvolution.lean",
+      "line": 10,
+      "source_sha256": "c6dcfd68daf375bd50b8f50ec65f8b7e680079252d8e92cd50eb03f38801671d",
+      "declaration_header": "theorem strip_from_time (t b : \u211d)\n    (hstrip : \u2200 z : \u2102,flow 1 t z=0 \u2192 |z.im|\u2264b)\n    (s : \u211d\u22650) (z : \u2102) (hz : flow 1 (t+(s:\u211d)) z=0) :\n    z.im^2\u2264max (b^2-2*(s:\u211d)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticStripEvolution.lean#L10"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticStripEvolution.strip_between_times",
+      "file": "Foundation/RiemannQuadraticStripEvolution.lean",
+      "line": 51,
+      "source_sha256": "c6dcfd68daf375bd50b8f50ec65f8b7e680079252d8e92cd50eb03f38801671d",
+      "declaration_header": "theorem strip_between_times (t u b : \u211d) (htu : t\u2264u)\n    (hstrip : \u2200 z : \u2102,flow 1 t z=0 \u2192 |z.im|\u2264b)\n    (z : \u2102) (hz : flow 1 u z=0) : z.im^2\u2264max (b^2-2*(u-t)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticStripEvolution.lean#L51"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticStripEvolution.real_after_strip_wait",
+      "file": "Foundation/RiemannQuadraticStripEvolution.lean",
+      "line": 59,
+      "source_sha256": "c6dcfd68daf375bd50b8f50ec65f8b7e680079252d8e92cd50eb03f38801671d",
+      "declaration_header": "theorem real_after_strip_wait (t u b : \u211d)\n    (hstrip : \u2200 z : \u2102,flow 1 t z=0 \u2192 |z.im|\u2264b)\n    (htu : t+b^2/2\u2264u) (z : \u2102) (hz : flow 1 u z=0) : z.im=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticStripEvolution.lean#L59"
+    },
+    {
+      "paper": "Section 8: actual quadratic finite attained threshold. Arbitrary-time strip propagation, closed reality set, positive bounded density Gaussian smoothing with exact variance, elementary finite-log-factor four-point inequality, negative-time nonreal obstruction and finite closed upper ray. Conditional external 7/8 statements are excluded from this map.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticStripEvolution.once_real_always_real",
+      "file": "Foundation/RiemannQuadraticStripEvolution.lean",
+      "line": 67,
+      "source_sha256": "c6dcfd68daf375bd50b8f50ec65f8b7e680079252d8e92cd50eb03f38801671d",
+      "declaration_header": "theorem once_real_always_real (t u : \u211d) (htu : t\u2264u)\n    (hreal : \u2200 z : \u2102,flow 1 t z=0 \u2192 z.im=0) (z : \u2102) (hz : flow 1 u z=0) : z.im=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticStripEvolution.lean#L67"
     }
   ],
   "human_reorganization": [
     "The classical Hadamard/Jensen factorization presentation in Section 3 is a human classical reorganization of the actual divisor-polynomial conclusion. The source annular inverse-square convergence and tail proof is separately mapped; no new Lean declaration or all-import proof review is claimed.",
     "The finite-dimensional nilpotent-operator Euler estimate is a human classical presentation of the mapped factorial/Hasse-jet fixed-degree limit. The limit over divisor degree uses a separate common Gaussian budget; these two limits are not interchanged.",
     "All declarations retain their full original hypotheses. Some support statements are general in the even order or Gaussian affine shift; the paper uses only the explicitly stated quadratic specializations.",
-    "The main strip contraction has an explicit classical antecedent, Newman 1976 Theorem 1 crediting de Bruijn. It is not a new analytic bound, a simplicity theorem, RH, an exact quadratic threshold, or a consequence of a claimed 7/8 zero-free region."
+    "The main strip contraction has an explicit classical antecedent, Newman 1976 Theorem 1 crediting de Bruijn. It is not a new analytic bound, a simplicity theorem, RH, an exact quadratic threshold, or a consequence of a claimed 7/8 zero-free region.",
+    "Section 8 reconstructs the named finite attained quadratic threshold Lambda<=1/2 with realTimes=[Lambda,infinity), actual nonreal zeros at every time below Lambda, and endpoint reality. Upper-set propagation repeats the justified Gaussian-budget proof at any fixed starting time. Closedness is proved by inherited vertical modulus inequalities and actual time continuity. A complete elementary logarithmic four-point inequality passes through real-rooted divisor polynomials; exact variance-2epsilon^2 Gaussian density smoothing transfers it to log K(sqrt(y)), contradicting the actual theta decay. The human proof directly produces a negative-time obstruction before taking the infimum; the formal proof first excludes all-realness at every time, takes its attained infimum and then obtains a negative time. This is an explicit reordering of the same conclusions. The finite-threshold theorem is classical in Newman 1976 Theorem 3. Rodgers--Tao 2021 v5 uses exactly the same kernel/Xi/time normalization and proves the separate known lower bound Lambda>=0; that deep proof is not reconstructed or claimed in the frozen chain. No exact numerical value, RH proof, all-zero simplicity or cross-order threshold identification is established here."
   ]
 }
