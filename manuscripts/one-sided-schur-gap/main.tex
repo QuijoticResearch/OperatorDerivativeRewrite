@@ -20,7 +20,7 @@ matrix without changing its curvature range. Eliminating those interior
 variables produces a boundary Schur form whose kernel is exactly the
 46-dimensional boundary-gradient space. On its 34-dimensional orthogonal
 complement we prove a computer-assisted rational lower bound $0.69639$ and
-give an exact nonzero Rayleigh witness strictly below $0.6964$. Complete
+give an exact nonzero Rayleigh witness strictly below $0.6964$. An integer physical interior field lies strictly below every physical boundary quotient. Complete
 geometric and linear-algebra arguments identify the physical norm, cycle
 compression and residual certificate. The finite arithmetic is supplied as
 explicit integer tables with an independent standard-library checker.
@@ -413,6 +413,53 @@ No assertion that the witness is an exact eigenvector or minimizer is made.
 The compactness statement introducing $\lambda_*$ is a classical human
 rephrasing of the mapped quadratic-form bounds, not a new formal declaration.
 
+\subsection*{The interior energy lies strictly below the boundary gap}
+The same cell gives a concrete warning against transferring the boundary
+constant to its interior Gram operator. Use the source order of the 32
+interior edges in \texttt{certificate-data.json}, and set
+\begin{align*}
+ u={}&(201,-67,-67,-67,76,32,32,76,32,32,20,4,\\
+ &76,32,32,20,4,20,4,8,-136,-136,-136,-12,\\
+ &-12,-12,-12,-4,-12,-12,-4,-4)^T.
+\end{align*}
+The only nonzero entries of the interior gauge vector $g$ are its four
+origin-star entries, all with the same sign. The first four entries of
+$u$ sum to zero. Thus $u\perp g$, so this is an actual nonzero physical
+interior field, rather than a gauge direction masquerading as a low mode.
+Multiplication by the geometric integer incidence matrix $A$ and summation
+of squares give
+\[
+ \|u\|^2=135052,\qquad \|Au\|^2=93840,\qquad
+ \frac{\|Au\|^2}{\|u\|^2}=\frac{23460}{33763}
+          <\frac{69639}{100000}.
+\]
+These are exact integer computations, reproduced by the independent
+checker after rebuilding every incidence row from the plaquette geometry.
+For the strict inequality, cross multiplication has positive denominators
+and difference
+\[
+ 69639\cdot33763-23460\cdot100000=5221557>0.
+\]
+Combining this test with Theorem~\ref{thm:gap} proves, for every nonzero
+physical boundary field $\eta$,
+\[
+ \frac{\|Au\|^2}{\|u\|^2}
+ <\frac{69639}{100000}
+ \leq\frac{\eta^TS\eta}{\|\eta\|^2}.
+\]
+In particular, the least physical interior Rayleigh quotient is strictly
+below the least physical boundary Schur quotient. Its existence follows
+from continuity on the finite-dimensional unit sphere in $g^\perp$;
+this witness need not minimize it. The conclusion compares exactly the
+unweighted Euclidean norms and incidence operators specified here. It
+neither identifies their spectra nor contradicts Schur minimization,
+which optimizes the interior completion for a prescribed boundary field.
+It excludes transplanting this boundary lower constant to all physical
+interior fields of the same cell. No universal comparison across other
+cells, normalizations or volumes follows.
+\lean{OneSidedGapComparison}{integer_norm; integer_pairing; integer_curvature; integer_energy}
+\lean{OneSidedGapComparison}{u_orthogonal; u_energy; u_rayleigh; boundary_comparison}
+
 \section{What the finite arithmetic checks}\label{sec:checks}
 This theorem is computer assisted at its finite integer-certificate stage.
 The geometric exactness, gauge pin, completed square, norm identification
@@ -421,7 +468,7 @@ remaining finite input is fully specified by
 \texttt{certificate-data.json} and checked by \texttt{verify\_certificate.py}.
 The JSON contains ordinary integer arrays and their original source hashes.
 Its SHA-256 digest, using UTF-8 text with LF newlines, is
-\begin{quote}\small\texttt{b1a7d776078753d95a18c451f4536b6cc4aeea2b12142fedaf8e66b972d01078}.\end{quote}
+\begin{quote}\small\texttt{558100557eed029f7a6097e1b905f3de046d8e69c8aa1d5d2b566f8beb7cff9d}.\end{quote}
 It includes the interior and boundary edge coordinates, source face
 coordinates, boundary endpoint indices, chord indices, $A,B,C_b,X,R,H,Q,T$,
 $s,w,V$ and $z_*$. Directions and array indices are zero based.

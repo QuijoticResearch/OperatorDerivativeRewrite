@@ -66,6 +66,17 @@ quotient=F(energy_num,D*norm)
 assert quotient==F(729067245,1046910149)
 assert F(69639,100000)<=quotient<F(1741,2500)
 checks.append('nonzero physical witness brackets rational gap below rounded 0.6964')
+# A distinct physical interior witness; reuse the independently rebuilt A rows.
+u=[201,-67,-67,-67,76,32,32,76,32,32,20,4,76,32,32,20,4,20,4,8,-136,-136,-136,-12,-12,-12,-12,-4,-12,-12,-4,-4]
+g=[int(v==(0,0,0,0)) for v,i in I]
+assert sum(x*y for x,y in zip(u,g))==0
+unorm=sum(x*x for x in u);curl=[sum(row[i]*u[i] for i in range(32)) for row in A]
+uenergy=sum(x*x for x in curl)
+assert (unorm,uenergy)==(135052,93840)
+assert F(uenergy,unorm)==F(23460,33763)<F(69639,100000)
+assert 69639*33763-23460*100000==5221557
+checks.append('physical interior witness is gauge orthogonal, with exact quotient 23460/33763 below every physical boundary quotient')
+
 def tshift(v,i):return tuple((x+int(j==i))%4 for j,x in enumerate(v))
 def potential(v):return int(v[0] in (1,2))
 def grad(v,i):return potential(tshift(v,i))-potential(v)
