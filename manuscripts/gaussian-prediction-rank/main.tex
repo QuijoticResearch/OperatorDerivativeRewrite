@@ -39,7 +39,7 @@ fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
 correspondences; no priority claim is made.
 The same method controls terminal-aware Brownian bracket errors for bounded Borel weights. We also reconstruct the full joint source/sample recovery identity, compact recovery exactly at finite observed source dimension, and a positive-chaos compactness criterion. Infinite observed dimension has distance one from compact recovery approximants; even one-source compact recovery has divergent squared image energy.
-The causal Brownian integrand has an exact chaos-dependent energy gap from minimum source-divergence recovery. An accelerated Mehler limit retains full-past Markov kernels while
+The causal Brownian integrand has an exact chaos-dependent energy gap from minimum source-divergence recovery. Alternating causal and gradient projections extract first chaos at the exact operator-norm rate $2^{-k}$. An accelerated Mehler limit retains full-past Markov kernels while
 losing initial continuity and a dense right norm-generator domain.
 \end{abstract}
 
@@ -1315,6 +1315,115 @@ Hilbert identities. Neither comparison supplies an observed-IBM
 calculus or a representation on an arbitrary ambient filtration.
 No priority is claimed for these classical operator mechanisms.
 
+
+\section{Uniform alternating projection and its exact rate}
+The pure-chaos calculation also determines the iteration on the
+whole original predictable space. Keep the notation $\mathcal P$,
+$\iota$, $\pi=\iota^*$, $\mathfrak I$, $\Pi_\nabla$ and $N^{-1}$
+from the preceding section. Define bounded operators on $\mathcal P$
+by
+\[
+ A=\pi\Pi_\nabla\iota,\qquad
+ Q=\mathfrak I^*P_1\mathfrak I,
+\]
+where $P_q$ is projection onto terminal Gaussian chaos of degree $q$.
+The isometry $\mathfrak I$ maps $\mathcal P$ onto centered
+Brownian-generated $L^2$; it is not onto an arbitrary larger ambient
+space. Each $P_q$ preserves this generated subspace, as does
+$N^{-1}$ by its convergent chaos series. Thus the original Brownian
+representation and \eqref{eq:causalminimum} give
+\begin{equation}\label{eq:altintertwine}
+ \mathfrak I A u=N^{-1}\mathfrak Iu,\qquad
+ \mathfrak I Qu=P_1\mathfrak Iu.
+\end{equation}
+Indeed $Au=\pi R(\mathfrak Iu)
+=\mathfrak I^*N^{-1}\mathfrak Iu$ by the already justified
+projected-derivative identity. Applying $\mathfrak I$ recovers the
+centered Brownian-generated target. The second equality follows
+by the same representation on the first-chaos target. It also shows
+that $Q$ is an orthogonal projection: $Q^2=Q$ and $Q^*=Q$.
+\par\noindent\code{GaussianItoAlternatingProjection.integral_alternating}.
+\par\noindent\code{GaussianItoAlternatingProjection.integral_firstChaos}.
+
+\begin{theorem}\label{thm:alternating}
+For every integer $k\geq0$ and every $u\in\mathcal P$,
+\begin{equation}\label{eq:alterror}
+ \|A^ku-Qu\|\leq2^{-k}\|u\|.
+\end{equation}
+In particular $A^k\to Q$ in operator norm. The named formal result
+gives this upper bound; the explicit quadratic witness above gives
+the human sharpening
+\begin{equation}\label{eq:altsharp}
+ \|A^k-Q\|=2^{-k}\qquad(k\geq0).
+\end{equation}
+The predictable and gradient orthogonal projections on the full
+vector-field space do not commute.
+\end{theorem}
+\begin{proof}
+Put $F=\mathfrak Iu$ and decompose
+$F=\sum_{q\geq1}F_q$, $F_q=P_qF$, in actual $L^2$.
+There is no degree-zero term because $F$ is centered. The bounded
+operator $N^{-1}$ acts as $q^{-1}$ on degree $q\geq1$ and
+annihilates constants. Boundedness permits applying it to the
+convergent series; orthogonality and induction give
+\[
+ \mathfrak I(A^ku-Qu)=\sum_{q\geq2}q^{-k}F_q,
+ \qquad
+ \|A^ku-Qu\|^2=\sum_{q\geq2}q^{-2k}\|F_q\|^2.
+\]
+This includes $k=0$, using $A^0=I$. Since $q\geq2$,
+the sum is at most $2^{-2k}\|F\|^2=2^{-2k}\|u\|^2$.
+Taking square roots and then the supremum on the unit ball proves
+\eqref{eq:alterror} and operator-norm convergence.
+\par\noindent\code{GaussianPotentialIteration.iterate_first_error}.
+\par\noindent\code{GaussianItoAlternatingProjection.iterate_opNorm_error}.
+\par\noindent\code{GaussianItoAlternatingProjection.alternating_operator_tendsto}.
+
+For sharpness take the nonzero quadratic witness
+$u_s=2B_s\mathbf1_{(0,T]}(s)$, $T>0$, of the preceding
+section. Its terminal target is pure second chaos, so
+$Au=u/2$ and $Qu=0$. Therefore
+$\|(A^k-Q)u\|=2^{-k}\|u\|$ for every $k\geq0$,
+which gives the reverse operator-norm inequality in
+\eqref{eq:altsharp}. This is a human deduction using that actual
+witness, rather than a newly named Lean equality.
+
+To see noncommutation, let $P=\iota\pi$ be the orthogonal
+projection onto embedded predictable fields and write
+$G=\Pi_\nabla$. If $PG=GP$, then for every $u\in\mathcal P$,
+$PG\iota u=G\iota u$, because $P\iota u=\iota u$.
+It follows that $\iota Au=G\iota u$, and hence
+$\iota A^2u=G\iota Au=G^2\iota u=G\iota u=\iota Au$.
+Injectivity of $\iota$ would give $A^2=A$.
+The same quadratic witness instead has $A^2u=u/4\ne u/2=Au$.
+Thus the two genuine projections fail to commute.
+\par\noindent\code{GaussianItoAlternatingProjection.hodge_predictable_noncommutation}.
+\end{proof}
+
+The fixed fields of $A$ are exactly $Q\mathcal P$, by taking
+the limit in $A^ku=u$. Their embeddings are exactly the
+intersection of predictable and gradient fields. To verify the
+nontrivial inclusion, if $Au=u$, then
+$\langle G\iota u,\iota u\rangle=\|u\|^2$ and the
+orthogonal projection identity gives
+$\|(I-G)\iota u\|^2=0$; hence $G\iota u=\iota u$.
+The reverse inclusion is immediate. These intersection and sharp
+norm identifications are labelled human consequences with the
+proofs above. This is an iteration in the original Gaussian Hilbert
+spaces, not a new observed-process representation or a convergence
+theorem for changing subspaces or arbitrary projection schemes.
+
+Alternating projection convergence is classical. Badea--Grivaux--
+M\"uller~\cite{BGM}, Introduction 1A--1B, recalls the strong
+two-subspace theorem and the general angle-dependent norm rate.
+Here the actual Gaussian chaos identity computes the entire
+compressed iteration and its particular rate directly. We compared
+those introductory statements, not their later dichotomy proofs;
+the primary paper works in complex Hilbert spaces. The proof here
+is in the displayed real Gaussian spaces and requires no transfer
+of that general theorem. No priority claim for the specific Gaussian
+specialization is established by this bounded comparison.
+
 \section{A stationary factor need not decrease defect energy}
 The preceding source/sample identities use specific compatible Gaussian
 operators. General stationary observation factors require their own
@@ -2065,7 +2174,7 @@ Raw quartic conditional energies and cross-target residuals are in
 \code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
 The terminal bracket application is mapped to \code{GaussianTerminalBracketPrediction}, \code{GaussianTerminalWeightedBracket}, \code{GaussianTerminalBracketObstruction}, \code{GaussianTerminalBracketProducts} and \code{GaussianTerminalStrongBracket}. Its harmonic refinements are separately labelled human deductions. Exact declarations, original hypotheses, source hashes and human proof
-reorganizations accompany the manuscript. Sections 9--13 add the
+reorganizations accompany the manuscript. Sections 9--14 add the
 original joint source/sample recovery identity, the exact finite-source
 compactness classification and the positive-chaos block criterion. The
 combined finite-rank estimate and observed distance-one conclusion are
@@ -2129,5 +2238,9 @@ theorems not imported.
 \bibitem{LP} D. A. Levin and Y. Peres, \emph{Markov Chains and Mixing Times}, second edition, with contributions by E. L. Wilmer, Section 13.2, Lemma 13.6. Author-hosted PDF, \href{https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}{pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}.
 \bibitem{YangHodge} Y. Yang, \emph{It\^o--Wiener chaos and the Hodge decomposition on an abstract Wiener space}, \href{https://arxiv.org/pdf/1111.1295}{arXiv:1111.1295}, Section 2, Theorem 2.1 (Shigekawa).
 \bibitem{MaasNeerven} J. Maas and J. van Neerven, \emph{A Clark--Ocone formula in UMD Banach spaces}, \href{https://arxiv.org/pdf/0709.2021}{arXiv:0709.2021v2}, March 4, 2008, Theorems 6.6--6.7.
+\bibitem{BGM} C. Badea, S. Grivaux and V. M\"uller,
+\emph{The rate of convergence in the method of alternating projections},
+\href{https://arxiv.org/pdf/1006.2047}{arXiv:1006.2047v1} (2010),
+Introduction 1A--1B, printed pages 1--2.
 \end{thebibliography}
 \end{document}
