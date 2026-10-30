@@ -1135,6 +1135,122 @@ for an arbitrary proposed output. These topology and testing
 obstructions use classical factorial and Fourier mechanisms; no
 new general extension principle is claimed.
 
+\subsection{A separate Schwartz observable identity for actual $L^p$ controls}
+The $L^2$ discontinuity test of Section 12.3 does not exclude a
+control theory in the correct power norm. The frozen library also
+constructs the following deterministic-control identity. It uses
+Schwartz terminal tests, separately from the factorial multitime
+completion in Theorem 1.1; no inclusion of these domains is assumed.
+Fix $T\geq0$, $p=2m$, $c=(-1)^{m+1}$ and a real
+$u\in L^p([0,T])$. Set
+\[
+ A_u(t)=\int_0^t|u(s)|^pds\quad(0\leq t\leq T),\qquad
+ \nu_{u,t}=\begin{cases}k_{A_u(t)}(x)\,dx,&A_u(t)>0,\\
+                         \delta_0,&A_u(t)=0.
+             \end{cases}
+\]
+These are actual finite signed measures of mass one. The clock is
+continuous, nondecreasing and absolutely continuous, with derivative
+$|u(t)|^p$ almost everywhere. Its definition is unchanged when $u$
+is replaced by an equal almost-everywhere representative.
+For $f\in\mathcal S(\R,\mathbb C)$ write
+$\mathsf E_u(t)f=\int f\,d\nu_{u,t}$, an actual signed integral.
+
+\begin{proposition}\label{prop:lpclock}
+For every such $u,f$ the scalar curve $t\mapsto\mathsf E_u(t)f$
+is absolutely continuous and satisfies
+\[
+ \mathsf E_u(T)f-f(0)
+   =\int_0^T|u(t)|^p c\,\mathsf E_u(t)f^{(p)}\,dt.
+\]
+The drift is absolutely integrable, bounded in modulus by
+$M_f|u(t)|^p$, where in angular frequencies
+\[
+ M_f=\frac1{2\pi}\int_\R |\xi|^p|\widehat f(\xi)|\,d\xi<\infty.
+\]
+The derivative identity holds almost everywhere, including times
+of zero accumulated clock.
+\end{proposition}
+\begin{proof}
+Schwartz Fourier inversion and the actual kernel transform give,
+for $r\geq0$ including $r=0$,
+\[
+ F_f(r)=\frac1{2\pi}\int_\R\widehat f(\xi)e^{-r\xi^p}d\xi,
+ \qquad \mathsf E_u(t)f=F_f(A_u(t)).
+\]
+For $r>0$ the signed-kernel equality is justified by absolute
+Fubini, since $f$ is bounded, the kernel is integrable and
+$\widehat f\in L^1$. At $r=0$ Fourier inversion gives $F_f(0)=f(0)$,
+agreeing with $\delta_0$. Differentiating under the frequency
+integral gives a continuous right derivative at zero and an
+ordinary continuous derivative for $r>0$:
+\[
+ F_f'(r)=-\frac1{2\pi}\int\xi^p\widehat f(\xi)e^{-r\xi^p}d\xi
+              =cF_{f^{(p)}}(r),\qquad |F_f'(r)|\leq M_f.
+\]
+Domination uses $|\xi|^p|\widehat f(\xi)|$, valid for every
+$r\geq0$; the sign follows from $c(i\xi)^p=-\xi^p$.
+Extend $F_f$ to negative arguments by
+$F_f(r)=f(0)+rF_f'(0)$ for $r<0$. This is a genuine $C^1$ function
+on $\R$, with derivative bounded by $M_f$, agreeing with the
+heat expectation for nonnegative arguments. It is an auxiliary
+linear extension, not backward heat evolution.
+
+The extended function is globally Lipschitz. Composition with the
+absolutely continuous clock is absolutely continuous; the chain
+rule at almost every clock differentiability point gives
+\[
+ \frac{d}{dt}\mathsf E_u(t)f
+     =|u(t)|^p c\,\mathsf E_u(t)f^{(p)}.
+\]
+The $C^1$ extension makes this chain rule valid also where the
+clock equals zero. The derivative bound gives an integrable
+majorant $M_f|u(t)|^p$. Applying the absolutely continuous
+fundamental theorem of calculus proves the integrated identity.
+\end{proof}
+\par\smallskip\begingroup\small\raggedright
+\noindent\textit{Source correspondence:}
+\code{HigherHeatLpControls.power_integrable},
+\code{clock_integral}, \code{marginal_mass};
+\code{HigherHeatLpTimeChange.time_continuous}, \code{time_monotone}.
+\par\noindent\code{HigherHeatObservableEndpoint.extension_hasDerivAt};
+\code{HigherHeatLpEndpointIto.expectation_eq_mean},
+\code{observable_ito}.\par\noindent
+\code{HigherHeatLpAbsoluteContinuity.expectation_ac};
+\code{HigherHeatLpIntegratedIto.drift_integrable},
+\code{integrated_ito}.\par\endgroup
+The native control space is $L^p(\R)$; a control on $[0,T]$ is
+extended by zero. The source Fourier convention is unit frequency;
+the substitution $\xi=2\pi\eta$ gives exactly the displayed angular
+constant $M_f$. No extra factorial or variance factor enters its
+generator $c\partial^p$.
+
+There is also a useful quantitative continuity statement, printed
+here as an elementary human deduction. For $u,v\in L^p([0,T])$,
+\[
+ \sup_{0\leq t\leq T}|\mathsf E_u(t)f-\mathsf E_v(t)f|
+ \leq M_fp(\|u\|_p+\|v\|_p)^{p-1}\|u-v\|_p.
+\]
+Indeed the Lipschitz bound reduces the left side to
+$M_f\int_0^T||u|^p-|v|^p|$. The real mean value theorem gives
+$|a^p-b^p|\leq p(a+b)^{p-1}|a-b|$ for $a,b\geq0$.
+Use $||u|-|v||\leq|u-v|$, H\"older with exponents
+$p/(p-1)$ and $p$, and the $L^p$ triangle inequality to obtain the
+claimed estimate. This proves convergence of the signed Schwartz
+observable curves when the controls converge in $L^p$.
+
+For the earlier biharmonic spikes $a_n$, one has
+$\|a_n\|_4^4=1$, while $\|a_n\|_2\to0$. They therefore do not
+converge to zero in the control norm used here, and their fixed
+fourth-power clock is consistent with this continuity theorem.
+This is a deterministic absolutely continuous clock and a scalar
+signed expectation identity. It supplies no probability path law,
+random signed-clock composition, arbitrary predictable control
+integral, or extension of the factorial multichannel coefficients
+to all Schwartz observables. The semigroup and chain-rule
+mechanisms are classical; no new stochastic integration principle
+is claimed.
+
 \section{Verified source and literature boundary}
 The mathematical source is the frozen Git commit
 \begin{center}\small\ttfamily

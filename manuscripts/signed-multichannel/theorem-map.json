@@ -1456,6 +1456,285 @@
       "source_sha256": "f30ad4b5d7c1b363ce004806ed04753cc2ecfa04249e743021f04f5e493f69e9",
       "declaration_header": "theorem transition_evolve (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (f : \ud835\udce2(\u211d,\u2102)) (x : \u211d) : transition m hm t ht f x=evolve m hm t f x",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzTransition.lean#L45"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.power_integrable",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 36,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem power_integrable (m : \u2115) [Fact (0 < m)] (u : Control m) :\n    Integrable (fun s : \u211d => \u2016u s\u2016 ^ (2*m))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L36"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.clock_integral",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 42,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem clock_integral (m : \u2115) [h : Fact (0 < m)] (u : Control m) :\n    (clock m u : \u211d) = \u222b s : \u211d, \u2016u s\u2016 ^ (2*m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L42"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.marginal_mass",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 61,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem marginal_mass (m : \u2115) [h : Fact (0 < m)] (u : Control m) : marginal m u Set.univ = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L61"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.marginal_fourier",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 64,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem marginal_fourier (m : \u2115) [h : Fact (0 < m)] (u : Control m) (\u03be : \u211d) :\n    (\u222b\u1d5b y, HigherHeatCylinderFourier.phase \u03be y \u2202<\u2022marginal m u) =\n      HigherHeatL2.symbol m (clock m u) \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L64"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.observable_continuous",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 68,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem observable_continuous (m : \u2115) [h : Fact (0 < m)] (a : \u2115 \u2192 \u211d)\n    (q : TestSpace terminalLevels (frequency a)) (x : \u211d) :\n    Continuous (fun u : Control m =>\n      realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m h.out (clock m u) q)\n        (line x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L68"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpControls.marginal_operator",
+      "file": "Foundation/HigherHeatLpControls.lean",
+      "line": 78,
+      "source_sha256": "1d12f3730d5aea35fcfae913bd6023058bbfab23d19aa6112ea612342e8c6030",
+      "declaration_header": "theorem marginal_operator (m : \u2115) [h : Fact (0 < m)] (a : \u2115 \u2192 \u211d) (u : Control m)\n    (q : TestSpace terminalLevels (frequency a)) (x : \u211d) :\n    realize terminalLevels (frequency a) (evolution terminalLevels (frequency a) m h.out (clock m u) q)\n      (line x) = \u222b\u1d5b y, realize terminalLevels (frequency a) q (shiftedLine x y) \u2202<\u2022marginal m u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpControls.lean#L78"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.restricted_clock",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 18,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem restricted_clock (m : \u2115) [h : Fact (0 < m)] (u : Control m) (s t : \u211d) :\n    (clock m (restricted m u s t) : \u211d) = \u222b x in Ioc s t, \u2016u x\u2016 ^ (2*m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L18"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.time_eq_clock",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 33,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem time_eq_clock (m : \u2115) [Fact (0 < m)] (u : Control m) (t : \u211d\u22650) :\n    time m u t = clock m (restricted m u 0 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L33"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.time_zero",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 38,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem time_zero (m : \u2115) [Fact (0 < m)] (u : Control m) : time m u 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L38"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.time_continuous",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 43,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem time_continuous (m : \u2115) [Fact (0 < m)] (u : Control m) :\n    Continuous (time m u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L43"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.time_monotone",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 48,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem time_monotone (m : \u2115) [Fact (0 < m)] (u : Control m) : Monotone (time m u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L48"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.time_increment",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 56,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem time_increment (m : \u2115) [Fact (0 < m)] (u : Control m)\n    (s t : \u211d\u22650) (hst : s \u2264 t) :\n    time m u t - time m u s = clock m (restricted m u s t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L56"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpTimeChange.increment_law",
+      "file": "Foundation/HigherHeatLpTimeChange.lean",
+      "line": 70,
+      "source_sha256": "00675402318c87ec31edb3fa3460e007a299ac7f7f1977e185312bcb71cce26a",
+      "declaration_header": "theorem increment_law (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (s t : \u211d\u22650) (hst : s \u2264 t) :\n    marginal m (restricted m u s t) =\n      HigherHeatStepIntegralRealization.heatLaw m h.out (time m u t - time m u s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpTimeChange.lean#L70"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatObservableEndpoint.mean_zero",
+      "file": "Foundation/HigherHeatObservableEndpoint.lean",
+      "line": 13,
+      "source_sha256": "f17d031f20c498cf1a8cecc3da1903d9d7ad6e4c128f145250bb8c64500f477b",
+      "declaration_header": "theorem mean_zero (m : \u2115) (f : \ud835\udce2(\u211d, \u2102)) : mean m 0 f = f 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatObservableEndpoint.lean#L13"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatObservableEndpoint.extension_eq_mean",
+      "file": "Foundation/HigherHeatObservableEndpoint.lean",
+      "line": 33,
+      "source_sha256": "f17d031f20c498cf1a8cecc3da1903d9d7ad6e4c128f145250bb8c64500f477b",
+      "declaration_header": "theorem extension_eq_mean (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d, \u2102)) (t : \u211d) (ht : 0 \u2264 t) :\n    extension m f t = mean m t.toNNReal f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatObservableEndpoint.lean#L33"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatObservableEndpoint.extension_hasDerivAt",
+      "file": "Foundation/HigherHeatObservableEndpoint.lean",
+      "line": 38,
+      "source_sha256": "f17d031f20c498cf1a8cecc3da1903d9d7ad6e4c128f145250bb8c64500f477b",
+      "declaration_header": "theorem extension_hasDerivAt (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d, \u2102)) (t : \u211d) :\n    HasDerivAt (extension m f) (mean m t.toNNReal (differential m f)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatObservableEndpoint.lean#L38"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpEndpointIto.heatLaw_mean",
+      "file": "Foundation/HigherHeatLpEndpointIto.lean",
+      "line": 13,
+      "source_sha256": "4de70b90c5ce211f1b637a595c889e432a3decde9809e5a8c850fa4a4e4ea65c",
+      "declaration_header": "theorem heatLaw_mean (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d, \u2102)) :\n    (\u222b\u1d5b y, f y \u2202<\u2022HigherHeatStepIntegralRealization.heatLaw m hm T) = mean m T f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpEndpointIto.lean#L13"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpEndpointIto.expectation_eq_mean",
+      "file": "Foundation/HigherHeatLpEndpointIto.lean",
+      "line": 24,
+      "source_sha256": "4de70b90c5ce211f1b637a595c889e432a3decde9809e5a8c850fa4a4e4ea65c",
+      "declaration_header": "theorem expectation_eq_mean (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) (t : \u211d) (ht : 0 \u2264 t) :\n    expectation m u f t = mean m (primitive m u t).toNNReal f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpEndpointIto.lean#L24"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpEndpointIto.expectation_eq_extension",
+      "file": "Foundation/HigherHeatLpEndpointIto.lean",
+      "line": 36,
+      "source_sha256": "4de70b90c5ce211f1b637a595c889e432a3decde9809e5a8c850fa4a4e4ea65c",
+      "declaration_header": "theorem expectation_eq_extension (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) (t : \u211d) (ht : 0 \u2264 t) :\n    expectation m u f t = extension m f (primitive m u t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpEndpointIto.lean#L36"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpEndpointIto.observable_generator",
+      "file": "Foundation/HigherHeatLpEndpointIto.lean",
+      "line": 44,
+      "source_sha256": "4de70b90c5ce211f1b637a595c889e432a3decde9809e5a8c850fa4a4e4ea65c",
+      "declaration_header": "theorem observable_generator (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) : \u2200\u1d50 t, 0 < t \u2192\n      HasDerivAt (expectation m u f)\n        ((\u2016u t\u2016^(2*m) : \u2102) * expectation m u (differential m f) t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpEndpointIto.lean#L44"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpEndpointIto.observable_ito",
+      "file": "Foundation/HigherHeatLpEndpointIto.lean",
+      "line": 57,
+      "source_sha256": "4de70b90c5ce211f1b637a595c889e432a3decde9809e5a8c850fa4a4e4ea65c",
+      "declaration_header": "theorem observable_ito (m : \u2115) [h : Fact (0 < m)] (u : Control m) (f : \ud835\udce2(\u211d, \u2102)) :\n    \u2200\u1d50 t, 0 < t \u2192 HasDerivAt (expectation m u f)\n      ((\u2016u t\u2016^(2*m) : \u2102) * (-1 : \u2102)^(m+1) *\n        expectation m u (jet (2*m) f) t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpEndpointIto.lean#L57"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpAbsoluteContinuity.extension_lipschitz",
+      "file": "Foundation/HigherHeatLpAbsoluteContinuity.lean",
+      "line": 17,
+      "source_sha256": "58f1fcf461ee34149909dce758f3b9851ad211744d145ae5b6914dffd81fcf2d",
+      "declaration_header": "theorem extension_lipschitz (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d, \u2102)) :\n    LipschitzWith (bound m f) (extension m f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpAbsoluteContinuity.lean#L17"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpAbsoluteContinuity.primitive_ac",
+      "file": "Foundation/HigherHeatLpAbsoluteContinuity.lean",
+      "line": 25,
+      "source_sha256": "58f1fcf461ee34149909dce758f3b9851ad211744d145ae5b6914dffd81fcf2d",
+      "declaration_header": "theorem primitive_ac (m : \u2115) [Fact (0 < m)] (u : Control m) (T : \u211d) (hT : 0 \u2264 T) :\n    AbsolutelyContinuousOnInterval (primitive m u) 0 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpAbsoluteContinuity.lean#L25"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpAbsoluteContinuity.expectation_ac",
+      "file": "Foundation/HigherHeatLpAbsoluteContinuity.lean",
+      "line": 30,
+      "source_sha256": "58f1fcf461ee34149909dce758f3b9851ad211744d145ae5b6914dffd81fcf2d",
+      "declaration_header": "theorem expectation_ac (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) (T : \u211d) (hT : 0 \u2264 T) :\n    AbsolutelyContinuousOnInterval (expectation m u f) 0 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpAbsoluteContinuity.lean#L30"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpIntegratedIto.drift_integrable",
+      "file": "Foundation/HigherHeatLpIntegratedIto.lean",
+      "line": 16,
+      "source_sha256": "42e4d556ed0fa0e82a482e35029871ac04ffa9795782ec8e604454d0ef7f712c",
+      "declaration_header": "theorem drift_integrable (m : \u2115) [h : Fact (0 < m)] (u : Control m) (f : \ud835\udce2(\u211d, \u2102)) :\n    Integrable (driftExtension m u f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpIntegratedIto.lean#L16"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpIntegratedIto.drift_eq_actual",
+      "file": "Foundation/HigherHeatLpIntegratedIto.lean",
+      "line": 40,
+      "source_sha256": "42e4d556ed0fa0e82a482e35029871ac04ffa9795782ec8e604454d0ef7f712c",
+      "declaration_header": "theorem drift_eq_actual (m : \u2115) [Fact (0 < m)] (u : Control m) (f : \ud835\udce2(\u211d, \u2102))\n    (t : \u211d) (ht : 0 \u2264 t) : driftExtension m u f t =\n      (\u2016u t\u2016^(2*m) : \u2102) * expectation m u (differential m f) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpIntegratedIto.lean#L40"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpIntegratedIto.integrated_generator",
+      "file": "Foundation/HigherHeatLpIntegratedIto.lean",
+      "line": 45,
+      "source_sha256": "42e4d556ed0fa0e82a482e35029871ac04ffa9795782ec8e604454d0ef7f712c",
+      "declaration_header": "theorem integrated_generator (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) (T : \u211d) (hT : 0 \u2264 T) :\n    expectation m u f T - f 0 =\n      \u222b t in (0 : \u211d)..T, (\u2016u t\u2016^(2*m) : \u2102) * expectation m u (differential m f) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpIntegratedIto.lean#L45"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatLpIntegratedIto.integrated_ito",
+      "file": "Foundation/HigherHeatLpIntegratedIto.lean",
+      "line": 68,
+      "source_sha256": "42e4d556ed0fa0e82a482e35029871ac04ffa9795782ec8e604454d0ef7f712c",
+      "declaration_header": "theorem integrated_ito (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (f : \ud835\udce2(\u211d, \u2102)) (T : \u211d) (hT : 0 \u2264 T) :\n    expectation m u f T - f 0 =\n      \u222b t in (0 : \u211d)..T, (\u2016u t\u2016^(2*m) : \u2102) * (-1 : \u2102)^(m+1) *\n        expectation m u (jet (2*m) f) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatLpIntegratedIto.lean#L68"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzCalculus.mean_eq_kernel",
+      "file": "Foundation/HigherHeatSchwartzCalculus.lean",
+      "line": 76,
+      "source_sha256": "0ec003b4ab33a0b21c341e0511357f5c80726b41f9cfa1a6de5b1fef5a343b0f",
+      "declaration_header": "theorem mean_eq_kernel (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (f : \ud835\udce2(\u211d,\u2102)) :\n    mean m T f=\u222b x : \u211d, f x*(realKernel m hm T hT x:\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzCalculus.lean#L76"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzCalculus.mean_eq_signed_integral",
+      "file": "Foundation/HigherHeatSchwartzCalculus.lean",
+      "line": 88,
+      "source_sha256": "0ec003b4ab33a0b21c341e0511357f5c80726b41f9cfa1a6de5b1fef5a343b0f",
+      "declaration_header": "theorem mean_eq_signed_integral (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (f : \ud835\udce2(\u211d,\u2102)) : mean m T f=\u222b\u1d5b x, f x \u2202<\u2022law m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzCalculus.lean#L88"
+    },
+    {
+      "paper": "Section 12.7 separate actual deterministic Lp-control signed Schwartz expectation, endpoint and integrated observable identity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzCalculus.mean_bound",
+      "file": "Foundation/HigherHeatSchwartzCalculus.lean",
+      "line": 97,
+      "source_sha256": "0ec003b4ab33a0b21c341e0511357f5c80726b41f9cfa1a6de5b1fef5a343b0f",
+      "declaration_header": "theorem mean_bound (m : \u2115) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    \u2016mean m T f\u2016 \u2264 \u222b \u03be : \u211d, \u2016\ud835\udcd5 f \u03be\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzCalculus.lean#L97"
     }
   ],
   "human_reorganization": [
@@ -1471,7 +1750,10 @@
     "Section 12.5 realizes normalized-time terminal cylinders on actual zero-start continuous real paths. The physical terminal moments are at horizon T. The normalized polynomial sequence converges uniformly on every compact subset of path space but its signed means remain exactly one, proving no closed partial-operator extension in that input topology.",
     "The compact-open obstruction also holds at p=2 for the positive Gaussian heat law with variance 2T, so it is expressly not presented as a probability-law obstruction. It does not concern uniformly bounded tests or convergence in the stronger factorial analytic norm.",
     "Section 12.6 uses the actual nonzero odd Schwartz function x exp(-x^2) against all even zero-start heat marginals. All starts at one fixed positive time do separate by nonvanishing Fourier multiplier. Angular frequency is kept consistent with the paper, while source multiplier formulas use unit frequency 2pi. No bounded inverse or completed-pairing injectivity claim follows.",
-    "Proposition 4.2 is a printed elementary human deduction from the faithful factorial realization and the explicitly defined weighted Fourier-measure class. The polynomial x lies only in the former; all real cosine frequencies lie in the latter, whereas their faithful factorial realization exists exactly for absolute frequency below one, with norm 1/(1-frequency^2). No new Lean declaration, multivariate quotient obstruction, topology equivalence or novelty is asserted."
+    "Proposition 4.2 is a printed elementary human deduction from the faithful factorial realization and the explicitly defined weighted Fourier-measure class. The polynomial x lies only in the former; all real cosine frequencies lie in the latter, whereas their faithful factorial realization exists exactly for absolute frequency below one, with norm 1/(1-frequency^2). No new Lean declaration, multivariate quotient obstruction, topology equivalence or novelty is asserted.",
+    "Section 12.7 is a separate Schwartz-terminal scalar expectation theorem for deterministic real L^p controls, p=2m. Actual finite signed measures at accumulated clock A>0 and delta_0 at A=0 are retained. The original factorial multitime completion is not enlarged.",
+    "The complete proof constructs a C1 extension through zero heat time, uses the absolutely continuous control clock, proves an integrable drift bound and applies the absolutely continuous fundamental theorem. The negative-argument extension is linear and is expressly not backward heat evolution. The angular Fourier constant includes 1/(2pi), matching source unit frequencies after rescaling.",
+    "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed."
   ],
   "literature": [
     {
