@@ -38,7 +38,10 @@ The projection and Hermite mechanisms are classical, and the two
 fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
 correspondences; no priority claim is made.
-The same method controls terminal-aware Brownian bracket errors for bounded Borel weights. We also reconstruct the full joint source/sample recovery identity, compact recovery exactly at finite observed source dimension, and a positive-chaos compactness criterion. Infinite observed dimension has distance one from compact recovery approximants; even one-source compact recovery has divergent squared image energy. \end{abstract}
+The same method controls terminal-aware Brownian bracket errors for bounded Borel weights. We also reconstruct the full joint source/sample recovery identity, compact recovery exactly at finite observed source dimension, and a positive-chaos compactness criterion. Infinite observed dimension has distance one from compact recovery approximants; even one-source compact recovery has divergent squared image energy.
+An accelerated Mehler limit retains full-past Markov kernels while
+losing initial continuity and a dense right norm-generator domain.
+\end{abstract}
 
 \section{Setting and main prediction formula}
 Let $X:\Hh\to L^2(\Omega,P)$ be an isonormal real Gaussian family on a
@@ -1360,6 +1363,148 @@ The continuity-from-above proof is elementary; the actual source
 correspondences are
 \begin{center}\code{RawMartingaleEnergyMeasureObstruction}.\end{center}
 
+
+\section{An accelerated Gaussian kernel limit with an initial jump}
+\label{sec:instantkernel}
+The preceding observation example retains information instantly. A
+separate, equally classical limit example loses all state information
+instantly. It concerns genuine Gaussian Markov kernels rather than
+conditional projection onto a nested observation family.
+Let $\gamma=N(0,1)$ and, for $u\geq0$, define
+\[
+ K_u(x,\cdot)=\operatorname{Law}
+ \bigl(e^{-u}x+\sqrt{1-e^{-2u}}Z\bigr),\qquad Z\sim\gamma.
+\]
+The displayed affine map is jointly Borel in $(x,Z)$, so it defines
+a measurable probability kernel. Its action preserves $C_b(\R)$
+and contracts the supremum norm. For the first assertion, if
+$x_j\to x$ then the affine argument converges pointwise in $Z$;
+bounded convergence applies to each $f\in C_b(\R)$. The contraction
+bound follows by integrating $|f|\leq\|f\|_\infty$.
+
+Two successive transitions, with independent normals $Z_1,Z_2$, give
+\[
+ e^{-(u+v)}x+e^{-v}\sqrt{1-e^{-2u}}Z_1
+                      +\sqrt{1-e^{-2v}}Z_2.
+\]
+The last two terms form a centered normal of variance
+$e^{-2v}(1-e^{-2u})+1-e^{-2v}=1-e^{-2(u+v)}$.
+Thus $K_{u+v}=K_uK_v$, with $K_0(x,\cdot)=\delta_x$.
+Starting from an independent standard normal $x$ instead gives
+variance $e^{-2u}+1-e^{-2u}=1$, proving invariance of $\gamma$.
+Fubini is justified for bounded observables throughout. These are
+ordinary Mehler kernels; no new kernel construction is claimed.
+
+Set $r_n=n+1$ and $K_t^{(n)}=K_{r_nt}$ for $t\geq0$.
+At fixed $n,x$ the row is weakly continuous in $t$: the affine
+argument is continuous and bounded continuous tests admit dominated
+convergence. For every fixed $x,t$, on the other hand,
+\begin{equation}\label{eq:refreshlimit}
+ K_t^{(n)}(x,\cdot)\ \Longrightarrow\ J_t(x,\cdot),\qquad
+ J_t(x,\cdot)=\begin{cases}\delta_x,&t=0,\\\gamma,&t>0.\end{cases}
+\end{equation}
+At positive $t$ the two affine coefficients converge to zero and one,
+respectively. A common $Z$ then proves the weak convergence by
+bounded convergence. At zero all rows are exactly $\delta_x$.
+The limit still obeys the kernel semigroup law: if either time is
+zero use the identity kernel; if both are positive both compositions
+are the constant kernel $\gamma$. It also preserves $\gamma$.
+These algebraic properties have not supplied continuity in time.
+
+\begin{proposition}\label{prop:refreshgenerator}
+On the Banach space $C_b(\R)$ with its supremum norm, put
+\[S_tf(x)=\int f(y)J_t(x,dy).\]
+The norm-continuity domain at zero and
+the right norm-derivative domain are both precisely the constant
+functions. On that domain the derivative is zero. In particular
+this right-derivative domain is closed and is not dense.
+For the bounded test $f(x)=\cos x$,
+\[
+ \|S_tf-f\|_\infty=1+e^{-1/2}\qquad(t>0).
+\]
+\end{proposition}
+\begin{proof}
+Let $Pf=(\int f\,d\gamma)\mathbf1$. Then $P$ is a bounded
+idempotent and $S_0=I$, $S_t=P$ for positive $t$.
+For $t>0$ the norm difference from $f$ is the fixed number
+$\|Pf-f\|_\infty$. It tends to zero exactly when $Pf=f$,
+which is equivalent to $f$ being constant. Similarly the difference
+quotient is $(Pf-f)/t$. A finite norm limit forces $Pf=f$ and
+then that quotient vanishes. The constants are closed under uniform
+limits and form a proper subspace, so are not dense. Finally the
+Gaussian characteristic function gives $P\cos=e^{-1/2}$.
+The bound $|e^{-1/2}-\cos x|\leq1+e^{-1/2}$ is attained at
+$x=\pi$, proving the exact norm.
+\end{proof}
+Even pointwise temporal continuity fails at $x=0$, since
+$S_0\cos(0)=1$ and $S_t\cos(0)=e^{-1/2}$ for positive $t$.
+The approximating-row continuity above is weak row continuity,
+not strong continuity on the full supremum-norm space $C_b$.
+Classical Mehler semigroups themselves require this topological
+care; see Lunardi--Pallara \cite{LunardiPallara}, Section 3.
+The right norm derivative just computed is not a mixed-topology
+or bounded-pointwise generator.
+
+\subsection*{A full-past Markov realization without continuous paths}
+There nevertheless is an actual coordinate probability realization.
+On $\Omega=\R^{[0,\infty)}$ with its product sigma algebra take
+\[
+ P_x=\delta_x\ \text{at coordinate }0
+           \quad\otimes\quad\bigotimes_{t>0}\gamma,
+ \qquad Z_t(\omega)=\omega(t).
+\]
+Here the arbitrary product probability theorem is the standard
+existence input. Evaluation coordinates are measurable. Finite
+restrictions have the prescribed independent product laws, so
+$Z_0=x$ almost surely and $Z_t\sim\gamma$ for $t>0$.
+For $0\leq s<t$, $Z_t$ is independent of the entire raw past
+$\mathcal H_s=\sigma(Z_r:0\leq r\leq s)$, not merely of each
+individual past coordinate. To see this, independence first holds
+against finite-coordinate cylinder events by the product law.
+Those cylinders are a pi-system generating $\mathcal H_s$; the
+class of past events satisfying the independence identity is a
+lambda-system. The pi-lambda theorem proves the claim.
+Consequently, for every bounded Borel $f$,
+\[
+ \E_x[f(Z_t)\mid\mathcal H_s]=\int f\,d\gamma
+       =\int f(y)J_{t-s}(Z_s,dy)\qquad(s<t).
+\]
+For $s=t$ this follows from adaptedness and $J_0=I$.
+Thus the full-past Markov identity holds despite the temporal jump.
+There is also an explicit conditional distribution given the whole
+past path. If $p\in\R^{[0,s]}$, set
+$Q_{s,t}(p,\cdot)=\gamma$ for $t>s$ and
+$Q_{s,s}(p,\cdot)=\delta_{p(s)}$.
+This is a measurable kernel, since evaluation at $s$ is measurable.
+For $t>s$ the joint law of the past path and $Z_t$ is the product
+of the past law and $\gamma$, by the same cylinder argument.
+For $t=s$ the future coordinate is its past evaluation.
+These identities prove the conditional-distribution claim directly,
+without a general disintegration theorem on an uncountable product.
+The source uses real-indexed coordinates; restricting its past to
+$[0,s]$ gives the version here by the same independence proof.
+
+No realization with these one-time laws can have almost surely
+right-continuous paths at zero. Indeed take $t_j=1/j$.
+For a fixed start $x$, choose $\epsilon>0$ such that
+$\gamma(\{y:|y-x|>\epsilon\})>0$; any finite $\epsilon>0$
+works for a nondegenerate Gaussian. Then in every realization
+\[
+ P_x(|Z_{t_j}-x|>\epsilon)
+   =\gamma(\{y:|y-x|>\epsilon\})>0
+\]
+for every $j$. Thus convergence to $x$ in probability fails.
+Almost sure right continuity with $Z_0=x$ would imply almost sure,
+hence in-probability, convergence on this countable sequence, a
+contradiction. A coordinatewise modification preserves these laws,
+so cannot repair the obstruction. The product construction asserts
+coordinate measurability and the stated full-past laws; joint
+measurability in time and sample is not assumed. A valid kernel
+semigroup, a Markov conditional law and weak row limits are therefore
+insufficient by themselves for a continuous-path limit or a dense
+strong-generator domain. These are classical diagnostic mechanisms,
+not a new general semigroup convergence theorem.
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -1399,12 +1544,21 @@ The methods and central structure are classical. This is a consolidated
 formalization companion with explicit domain and regularity diagnostics;
 novelty remains unresolved. It neither completes the paused Bakry/fBM
 campaign nor proves new curvature, temporal stochastic integration or
-neural-network performance claims. Full baseline verification evidence
+neural-network performance claims. The Mehler implementation retains the Michael R. Douglas adaptation
+credit and Apache-2.0 notice in its original source; see
+\code{LICENSES/Apache-2.0.txt} and \code{MATHEMATICAL_AUDIT.md}.
+Full baseline verification evidence
 was hash-checked without repeating a research build.
 \par\endgroup
 
 \clearpage
 \begin{thebibliography}{9}
+\bibitem{LunardiPallara} A. Lunardi and D. Pallara,
+\emph{Ornstein--Uhlenbeck semigroups in infinite dimension},
+Philosophical Transactions A \textbf{378} (2020), article 20190620,
+Section 3. \href{https://doi.org/10.1098/rsta.2019.0620}
+{doi:10.1098/rsta.2019.0620}.
+
 \bibitem{BaudoinRecovery} F. Baudoin, \emph{Lecture 34: The Wiener chaos expansion},
 primary author lecture, November 4, 2012.
 \href{https://fabricebaudoin.blog/2012/11/04/lecture-34-the-wiener-chaos-expansion/}{Author lecture}.

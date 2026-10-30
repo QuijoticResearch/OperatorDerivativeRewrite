@@ -2299,6 +2299,438 @@
       "source_sha256": "306ca1c541c3a5662b5806ea2f688b37e6778d57176b9a432927e40a7862e4b3",
       "declaration_header": "theorem fiber_variance_minimum (b : \u211d) :\n    96 \u2264 \u222b z : \u211d, (fiberCentered b z)^2 \u2202GaussianCore.\u03b3",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianShiftedQuarticVariance.lean#L144"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehlerKernel.affine_joint_measurable",
+      "file": "Foundation/GaussianMehlerKernel.lean",
+      "line": 19,
+      "source_sha256": "a80c111d451b41f31463dfba88f02f21f348b05f179dcf7065582ee15e419d81",
+      "declaration_header": "theorem affine_joint_measurable (t : \u211d) :\n    Measurable (fun p : \u211d \u00d7 \u211d => affine t p.1 p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehlerKernel.lean#L19"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehlerKernel.kernel_zero",
+      "file": "Foundation/GaussianMehlerKernel.lean",
+      "line": 43,
+      "source_sha256": "a80c111d451b41f31463dfba88f02f21f348b05f179dcf7065582ee15e419d81",
+      "declaration_header": "theorem kernel_zero : kernel 0 = Kernel.id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehlerKernel.lean#L43"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehlerKernel.kernel_compose",
+      "file": "Foundation/GaussianMehlerKernel.lean",
+      "line": 51,
+      "source_sha256": "a80c111d451b41f31463dfba88f02f21f348b05f179dcf7065582ee15e419d81",
+      "declaration_header": "theorem kernel_compose (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    kernel (s+t) = kernel t \u2218\u2096 kernel s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehlerKernel.lean#L51"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehlerKernel.kernel_invariant",
+      "file": "Foundation/GaussianMehlerKernel.lean",
+      "line": 62,
+      "source_sha256": "a80c111d451b41f31463dfba88f02f21f348b05f179dcf7065582ee15e419d81",
+      "declaration_header": "theorem kernel_invariant (t : \u211d) (ht : 0 \u2264 t) : kernel t \u2218\u2098 \u03b3 = \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehlerKernel.lean#L62"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianMehlerKernel.time_continuous",
+      "file": "Foundation/GaussianMehlerKernel.lean",
+      "line": 70,
+      "source_sha256": "a80c111d451b41f31463dfba88f02f21f348b05f179dcf7065582ee15e419d81",
+      "declaration_header": "theorem time_continuous {f : \u211d \u2192 \u211d} (hf : Continuous f)\n    {M : \u211d} (hM : \u2200 y, \u2016f y\u2016 \u2264 M) (x : \u211d) :\n    Continuous (fun t => \u222b y, f y \u2202kernel t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianMehlerKernel.lean#L70"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.accelerated_zero",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 19,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem accelerated_zero (n : \u2115) : acceleratedKernel n 0 = Kernel.id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L19"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.accelerated_compose",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 22,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem accelerated_compose (n : \u2115) (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    acceleratedKernel n (s+t) = acceleratedKernel n t \u2218\u2096 acceleratedKernel n s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L22"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.accelerated_invariant",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 28,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem accelerated_invariant (n : \u2115) (t : \u211d) (ht : 0 \u2264 t) : acceleratedKernel n t \u2218\u2098 \u03b3 = \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L28"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.limit_zero",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 37,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem limit_zero : limitKernel 0 = Kernel.id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L37"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.limit_positive",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 39,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem limit_positive (t : \u211d) (ht : 0 < t) : limitKernel t = Kernel.const \u211d \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L39"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.limit_compose",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 42,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem limit_compose (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    limitKernel (s+t) = limitKernel t \u2218\u2096 limitKernel s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L42"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.limit_invariant",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 54,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem limit_invariant (t : \u211d) : limitKernel t \u2218\u2098 \u03b3 = \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L54"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.accelerated_integral_limit",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 64,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem accelerated_integral_limit (t : \u211d) (ht : 0 \u2264 t) (x : \u211d)\n    (f : \u211d \u2192\u1d47 \u211d) :\n    Tendsto (fun n => \u222b y, f y \u2202acceleratedKernel n t x) atTop\n      (\ud835\udcdd (\u222b y, f y \u2202limitKernel t x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L64"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.weak_row_limit",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 83,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem weak_row_limit (t : \u211d) (ht : 0 \u2264 t) (x : \u211d) :\n    Tendsto (fun n => acceleratedRow n t x) atTop (\ud835\udcdd (limitRow t x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L83"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.accelerated_row_time_continuous",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 89,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem accelerated_row_time_continuous (n : \u2115) (x : \u211d) :\n    Continuous (fun t => acceleratedRow n t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L89"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianAcceleratedKernelLimit.limit_row_not_right_continuous",
+      "file": "Foundation/GaussianAcceleratedKernelLimit.lean",
+      "line": 126,
+      "source_sha256": "306567ef2b7c63dd76f4d518a8baf3ca13ca1c00348c6ea5d7e8f9d1a6e22ccc",
+      "declaration_header": "theorem limit_row_not_right_continuous :\n    \u00ac ContinuousWithinAt (fun t => limitRow t 0) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianAcceleratedKernelLimit.lean#L126"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.equilibrium_contractive",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 32,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem equilibrium_contractive (f : \u211d \u2192\u1d47 \u211d) : \u2016equilibrium f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L32"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.equilibrium_idempotent",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 37,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem equilibrium_idempotent : equilibrium.comp equilibrium = equilibrium",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L37"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.evolution_integral",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 43,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem evolution_integral (t : \u211d) (f : \u211d \u2192\u1d47 \u211d) (x : \u211d) :\n    evolution t f x = \u222b y, f y \u2202limitKernel t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L43"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.evolution_compose",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 50,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem evolution_compose (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    evolution (s+t) = (evolution t).comp (evolution s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L50"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.fixed_iff_constant",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 57,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem fixed_iff_constant (f : \u211d \u2192\u1d47 \u211d) :\n    equilibrium f = f \u2194 \u2203 c : \u211d, f = BoundedContinuousFunction.const \u211d c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L57"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.continuous_iff_constant",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 66,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem continuous_iff_constant (f : \u211d \u2192\u1d47 \u211d) :\n    ContinuousWithinAt (fun t => evolution t f) (Ici 0) 0 \u2194\n      \u2203 c : \u211d, f = BoundedContinuousFunction.const \u211d c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L66"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.derivative_iff_constant",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 71,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem derivative_iff_constant (f v : \u211d \u2192\u1d47 \u211d) :\n    HasDerivWithinAt (fun t => evolution t f) v (Ici 0) 0 \u2194\n      (\u2203 c : \u211d, f = BoundedContinuousFunction.const \u211d c) \u2227 v = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L71"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.cosine_jump_norm",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 84,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem cosine_jump_norm (t : \u211d) (ht : 0 < t) :\n    \u2016evolution t cosine - cosine\u2016 = 1 + Real.exp (-(1 : \u211d)/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L84"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.generator_domain_not_dense",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 109,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem generator_domain_not_dense :\n    \u00ac Dense {f : \u211d \u2192\u1d47 \u211d |\n      DifferentiableWithinAt \u211d (fun t => evolution t f) (Ici 0) 0}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L109"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelGeneratorObstruction.not_strongly_continuous",
+      "file": "Foundation/GaussianKernelGeneratorObstruction.lean",
+      "line": 114,
+      "source_sha256": "05ec11ba8ffcc4c6d1f43808916b898878e26942714d53396617ba9ccd86f8a5",
+      "declaration_header": "theorem not_strongly_continuous :\n    \u00ac \u2200 f : \u211d \u2192\u1d47 \u211d, ContinuousWithinAt (fun t => evolution t f) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelGeneratorObstruction.lean#L114"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.process_measurable",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 24,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem process_measurable (t : \u211d) : Measurable (process t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L24"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.process_law",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 26,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem process_law (x t : \u211d) : HasLaw (process t) (limitKernel t x) (pathMeasure x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L26"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.process_independent",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 29,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem process_independent (x : \u211d) : iIndepFun process (pathMeasure x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L29"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.finite_restriction_law",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 32,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem finite_restriction_law (x : \u211d) (s : Finset \u211d) :\n    (pathMeasure x).map s.restrict = Measure.pi (fun t : s => limitKernel t x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L32"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.ordered_pair_kernel_law",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 46,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem ordered_pair_kernel_law (x s t : \u211d) (hs : 0 \u2264 s) (hst : s < t) :\n    (pathMeasure x).map (fun \u03c9 => (process s \u03c9, process t \u03c9)) =\n      (limitKernel s x) \u2297\u2098 limitKernel (t-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L46"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.initial_value",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 52,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem initial_value (x : \u211d) : process 0 =\u1d50[pathMeasure x] fun _ => x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L52"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.no_right_continuous_paths",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 55,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem no_right_continuous_paths (x : \u211d) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202pathMeasure x, ContinuousWithinAt (fun t => process t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L55"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousProductProcess.no_right_continuous_modification",
+      "file": "Foundation/GaussianInstantaneousProductProcess.lean",
+      "line": 60,
+      "source_sha256": "02249706075dcb0e7760fcf22ec6afa82c8d650ac329ccf3c8d466e57e0cb566",
+      "declaration_header": "theorem no_right_continuous_modification (x : \u211d) (Y : \u211d \u2192 PathSpace \u2192 \u211d)\n    (hmod : \u2200 t, Y t =\u1d50[pathMeasure x] process t) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202pathMeasure x, ContinuousWithinAt (fun t => Y t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousProductProcess.lean#L60"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousMarkov.future_independent",
+      "file": "Foundation/GaussianInstantaneousMarkov.lean",
+      "line": 18,
+      "source_sha256": "33348268ad2a1e81f03fa215116fe062d39b2316d9b4f35266da938f3b0fc5b5",
+      "declaration_header": "theorem future_independent (x s t : \u211d) (hst : s < t) :\n    Indep (MeasurableSpace.comap (process t) inferInstance) (history s) (pathMeasure x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousMarkov.lean#L18"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousMarkov.markov_condExp",
+      "file": "Foundation/GaussianInstantaneousMarkov.lean",
+      "line": 43,
+      "source_sha256": "33348268ad2a1e81f03fa215116fe062d39b2316d9b4f35266da938f3b0fc5b5",
+      "declaration_header": "theorem markov_condExp (x s t : \u211d) (hs : 0 \u2264 s) (hst : s \u2264 t)\n    (f : \u211d \u2192 \u211d) (hf : Measurable f) {M : \u211d} (hM : \u2200 y, \u2016f y\u2016 \u2264 M) :\n    (pathMeasure x)[fun \u03c9 => f (process t \u03c9) | history s] =\u1d50[pathMeasure x]\n      fun \u03c9 => \u222b y, f y \u2202limitKernel (t-s) (process s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousMarkov.lean#L43"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousMarkov.boundedContinuous_markov",
+      "file": "Foundation/GaussianInstantaneousMarkov.lean",
+      "line": 62,
+      "source_sha256": "33348268ad2a1e81f03fa215116fe062d39b2316d9b4f35266da938f3b0fc5b5",
+      "declaration_header": "theorem boundedContinuous_markov (x s t : \u211d) (hs : 0 \u2264 s) (hst : s \u2264 t)\n    (f : BoundedContinuousFunction \u211d \u211d) :\n    (pathMeasure x)[fun \u03c9 => f (process t \u03c9) | history s] =\u1d50[pathMeasure x]\n      fun \u03c9 => \u222b y, f y \u2202limitKernel (t-s) (process s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousMarkov.lean#L62"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousMarkov.indicator_markov",
+      "file": "Foundation/GaussianInstantaneousMarkov.lean",
+      "line": 68,
+      "source_sha256": "33348268ad2a1e81f03fa215116fe062d39b2316d9b4f35266da938f3b0fc5b5",
+      "declaration_header": "theorem indicator_markov (x s t : \u211d) (hs : 0 \u2264 s) (hst : s \u2264 t)\n    (A : Set \u211d) (hA : MeasurableSet A) :\n    (pathMeasure x)[fun \u03c9 => A.indicator (fun _ => (1 : \u211d)) (process t \u03c9) | history s]\n      =\u1d50[pathMeasure x] fun \u03c9 => (limitKernel (t-s) (process s \u03c9)).real A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousMarkov.lean#L68"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousConditionalLaw.past_measurable",
+      "file": "Foundation/GaussianInstantaneousConditionalLaw.lean",
+      "line": 14,
+      "source_sha256": "eca4665ca140f53671860bac0b18ba09717efea55ef42267d71251408ff141a6",
+      "declaration_header": "theorem past_measurable (s : \u211d) : Measurable (past s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousConditionalLaw.lean#L14"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousConditionalLaw.history_eq_comap",
+      "file": "Foundation/GaussianInstantaneousConditionalLaw.lean",
+      "line": 19,
+      "source_sha256": "eca4665ca140f53671860bac0b18ba09717efea55ef42267d71251408ff141a6",
+      "declaration_header": "theorem history_eq_comap (s : \u211d) :\n    history s = MeasurableSpace.comap (past s) inferInstance",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousConditionalLaw.lean#L19"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousConditionalLaw.future_past_independent",
+      "file": "Foundation/GaussianInstantaneousConditionalLaw.lean",
+      "line": 24,
+      "source_sha256": "eca4665ca140f53671860bac0b18ba09717efea55ef42267d71251408ff141a6",
+      "declaration_header": "theorem future_past_independent (x s t : \u211d) (hst : s < t) :\n    IndepFun (process t) (past s) (pathMeasure x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousConditionalLaw.lean#L24"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousConditionalLaw.conditionalKernel_positive",
+      "file": "Foundation/GaussianInstantaneousConditionalLaw.lean",
+      "line": 35,
+      "source_sha256": "eca4665ca140f53671860bac0b18ba09717efea55ef42267d71251408ff141a6",
+      "declaration_header": "theorem conditionalKernel_positive (s t : \u211d) (hst : s < t) :\n    conditionalKernel s t = Kernel.const (Iic s \u2192 \u211d) \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousConditionalLaw.lean#L35"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInstantaneousConditionalLaw.conditional_distribution",
+      "file": "Foundation/GaussianInstantaneousConditionalLaw.lean",
+      "line": 40,
+      "source_sha256": "eca4665ca140f53671860bac0b18ba09717efea55ef42267d71251408ff141a6",
+      "declaration_header": "theorem conditional_distribution (x s t : \u211d) (hs : 0 \u2264 s) (hst : s < t) :\n    HasCondDistrib (process t) (past s) (conditionalKernel s t) (pathMeasure x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInstantaneousConditionalLaw.lean#L40"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelPathObstruction.positive_row_law",
+      "file": "Foundation/GaussianKernelPathObstruction.lean",
+      "line": 15,
+      "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
+      "declaration_header": "theorem positive_row_law (X : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc)\n    (t : \u211d) (ht : 0 < t) : HasLaw (X t) \u03b3 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelPathObstruction.zero_row_ae",
+      "file": "Foundation/GaussianKernelPathObstruction.lean",
+      "line": 21,
+      "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
+      "declaration_header": "theorem zero_row_ae (X : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc) :\n    X 0 =\u1d50[\u03bc] fun _ => x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L21"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelPathObstruction.no_in_measure_initial",
+      "file": "Foundation/GaussianKernelPathObstruction.lean",
+      "line": 28,
+      "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
+      "declaration_header": "theorem no_in_measure_initial (X : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc) :\n    \u00ac TendstoInMeasure \u03bc (fun n => X (smallTime n)) atTop (fun _ => x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L28"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelPathObstruction.no_right_continuous_paths",
+      "file": "Foundation/GaussianKernelPathObstruction.lean",
+      "line": 34,
+      "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
+      "declaration_header": "theorem no_right_continuous_paths (X : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202\u03bc, ContinuousWithinAt (fun t => X t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L34"
+    },
+    {
+      "paper": "Section 15 actual accelerated Mehler row limit, instantaneous generator domain, full-past product Markov law and initial path obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianKernelPathObstruction.no_right_continuous_modification",
+      "file": "Foundation/GaussianKernelPathObstruction.lean",
+      "line": 40,
+      "source_sha256": "84883c49d1442270ab7c94d1bd9b950e08f81f6b5c3995b93934c68d365d911f",
+      "declaration_header": "theorem no_right_continuous_modification (X Y : \u211d \u2192 \u03a9 \u2192 \u211d) (x : \u211d)\n    (hlaw : \u2200 t, 0 \u2264 t \u2192 HasLaw (X t) (limitKernel t x) \u03bc)\n    (hmod : \u2200 t, Y t =\u1d50[\u03bc] X t) :\n    \u00ac \u2200\u1d50 \u03c9 \u2202\u03bc, ContinuousWithinAt (fun t => Y t \u03c9) (Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianKernelPathObstruction.lean#L40"
     }
   ],
   "paper_sections": {
@@ -2338,7 +2770,11 @@
     "Section 14 continues the same actual raw-observation martingale: all origin-increment energies equal one, contradicting continuity from above for intervals (0,1/(n+1)]. No globally finite measure assumption is required, and an atom at zero cannot repair those half-open interval values. This is not a claim against energy-measure constructions under additional regularity.",
     "The classical reversible Dirichlet-form context was checked in an indexed primary author-PDF excerpt, Section 13.2 and Lemma 13.6 of Levin\u2013Peres. Direct full-PDF retrieval timed out; no detailed unseen factor theorem or novelty comparison is imported. The printed arguments are complete.",
     "Section 6 extends the existing single-target and negative cross-covariance proof with the full finite-block Gaussian variance and retained variance, normalized by 24^2. Total diagonal variances, rather than boundary diagonals alone, weight the retained second-chaos covariance. Expanding total=boundary+residual yields all three nonnegative retained-variance terms. This is Gaussian reference algebra, not interacting entropy or a uniform block theorem.",
-    "The shifted scalar centered fourth power has variance 16*b^6*r+168*b^4*r^2+384*b^2*r^3+96*r^4. The nondegenerate Gaussian residual has a unique zero-shift minimum; r=0 remains deterministic with zero variance at all shifts. A labelled human application of the existing full Gaussian orthogonal split gives the actual full-observation conditional variance; the mapped literal fiber statements concern the one-coordinate Gaussian measure."
+    "The shifted scalar centered fourth power has variance 16*b^6*r+168*b^4*r^2+384*b^2*r^3+96*r^4. The nondegenerate Gaussian residual has a unique zero-shift minimum; r=0 remains deterministic with zero variance at all shifts. A labelled human application of the existing full Gaussian orthogonal split gives the actual full-observation conditional variance; the mapped literal fiber statements concern the one-coordinate Gaussian measure.",
+    "Section 15 reconstructs actual Mehler Markov kernels by a common independent normal, proves weak row continuity at each finite acceleration and weak row convergence to the identity-at-zero/constant-positive-time kernel. This is not supremum-norm strong continuity of the approximants on Cb.",
+    "The exact right norm-derivative domain for the limiting Cb semigroup is the constants, with derivative zero and cosine jump norm 1+exp(-1/2). Mixed-topology and bounded-pointwise generators are not identified with that norm derivative.",
+    "The real-indexed formal product process is restricted to nonnegative times in the printed proof. Independence against the whole raw past is proved via cylinders and the pi-lambda theorem. An explicit conditional distribution avoids invoking general disintegration on an uncountable product. Joint time/sample measurability is not assumed.",
+    "The no-right-continuous-realization proof uses only the exact one-time laws and a countable decreasing time sequence, so survives every coordinatewise modification. The Mehler source adaptation credit to Michael R. Douglas and the repository Apache-2.0 notice are retained."
   ],
   "literature": [
     {
