@@ -378,6 +378,852 @@
       "type_or_definition_header": "theorem quadrature_polynomial_error (k : \u2115) (hk : k \u2264 2)\n    (hchecks : \u2200 j < 160, cellCheck j=true) :\n    |realQuadrature 4 k (632083/10000)-totalPolynomial k| \u2264 (16/10^15 : \u211d)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticGridAssembly.lean#L46",
       "paper": "4: exact arithmetic certificate"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.zeroCount",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 12,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "def zeroCount (R : \u211d) : \u2124",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L12"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.zero_order_finite",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 17,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem zero_order_finite (z : \u2102) :\n    meromorphicOrderAt f z \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L17"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.zeros_in_closedBall_finite",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 27,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem zeros_in_closedBall_finite (R : \u211d) :\n    (closedBall (0 : \u2102) R \u2229 f \u207b\u00b9' {0}).Finite",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L27"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.zeroCount_nonneg",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 35,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem zeroCount_nonneg (R : \u211d) : 0 \u2264 zeroCount f R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L35"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.zeroCount_subquadratic_bound",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 39,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem zeroCount_subquadratic_bound\n    (hgrowth : \u2203 C : \u211d, 0 < C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    \u2203 K : \u211d, 0 < K \u2227 \u2200 R : \u211d, 1 \u2264 R \u2192\n      (zeroCount f R : \u211d) \u2264 K * (R * Real.sqrt R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L39"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.normalized_zeroCount_tendsto_zero",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 93,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem normalized_zeroCount_tendsto_zero\n    (hgrowth : \u2203 C : \u211d, 0 < C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    Tendsto (fun R : \u211d => (zeroCount f R : \u211d) / R^2) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L93"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.weighted_zero_mass_bound",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 114,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem weighted_zero_mass_bound (R : \u211d) (hR : 0 < R) :\n    0 \u2264 (\u2211\u1da0 z : \u2102, (divisor f (closedBall 0 R) z : \u211d) * \u2016z\u2016^2 / R^4) \u2227\n    (\u2211\u1da0 z : \u2102, (divisor f (closedBall 0 R) z : \u211d) * \u2016z\u2016^2 / R^4) \u2264\n      (zeroCount f R : \u211d) / R^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L114"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EntireSubquadraticZeroCounting.weighted_zero_mass_tendsto_zero",
+      "file": "Foundation/EntireSubquadraticZeroCounting.lean",
+      "line": 153,
+      "source_sha256": "774ad132d51fb61c0fb5d77874a95e93fbf14b94206477400af06a5f0dd90164",
+      "type_or_definition_header": "theorem weighted_zero_mass_tendsto_zero\n    (hgrowth : \u2203 C : \u211d, 0 < C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    Tendsto (fun R : \u211d =>\n      \u2211\u1da0 z : \u2102, (divisor f (closedBall 0 R) z : \u211d) * \u2016z\u2016^2 / R^4)\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EntireSubquadraticZeroCounting.lean#L153"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_norm_at_origin",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 17,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_norm_at_origin (R : \u211d) (hR : 0 < R) (a : \u2102) (ha : a \u2260 0) :\n    \u2016canonicalFactor R a 0\u2016 = R/\u2016a\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L17"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_product_boundary_norm",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 25,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_product_boundary_norm (R : \u211d) (z : \u2102) (hz : z \u2208 sphere (0 : \u2102) R) :\n    \u2016\u220f\u1da0 a : \u2102, canonicalFactor R a z ^ (divisor f (ball 0 R) a)\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L25"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_product_origin_norm_ge_one",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 43,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_product_origin_norm_ge_one (R : \u211d) (hR : 0 < R) :\n    1 \u2264 \u2016\u220f\u1da0 a : \u2102, canonicalFactor R a 0 ^ (divisor f (ball 0 R) a)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L43"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.remainder_boundary_norm",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 69,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem remainder_boundary_norm (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102)\n    (D : ECanonicalDecomp f h R)\n    (hne : \u2200 z \u2208 sphere (0 : \u2102) R, f z \u2260 0) :\n    \u2200 z \u2208 sphere (0 : \u2102) R, \u2016h z\u2016 = \u2016f z\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L69"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.remainder_origin_norm_lower",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 78,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem remainder_origin_norm_lower (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102)\n    (D : ECanonicalDecomp f h R)\n    (hboundary : divisor f (sphere 0 R) = 0) : \u2016f 0\u2016 \u2264 \u2016h 0\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L78"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.remainder_norm_bound",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 87,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem remainder_norm_bound (C : \u211d)\n    (hgrowth : \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016))\n    (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102) (D : ECanonicalDecomp f h R)\n    (hne : \u2200 z \u2208 sphere (0 : \u2102) R, f z \u2260 0) :\n    \u2200 z \u2208 closedBall (0 : \u2102) R, \u2016h z\u2016 \u2264 C*Real.exp (R*Real.sqrt R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L87"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.sphere_zero_free_of_boundary_divisor_zero",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 104,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem sphere_zero_free_of_boundary_divisor_zero (R : \u211d)\n    (hboundary : divisor f (sphere 0 R) = 0) :\n    \u2200 z \u2208 sphere (0 : \u2102) R, f z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L104"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.exists_normalized_remainder_real_part_bound",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 115,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem exists_normalized_remainder_real_part_bound\n    (hgrowth : \u2203 C : \u211d, 0<C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    \u2203 A : \u211d, 0 \u2264 A \u2227 \u2200 R : \u211d, 1 \u2264 R \u2192 \u2200 r : \u211d, 2*R < r \u2192 r < 2*R+1 \u2192\n      \u2200 h g : \u2102 \u2192 \u2102, ECanonicalDecomp f h r \u2192\n        divisor f (sphere 0 r) = 0 \u2192\n        (\u2200 z \u2208 ball (0 : \u2102) r, Complex.exp (g z) = h z/h 0) \u2192\n        \u2200 z \u2208 ball (0 : \u2102) (2*R), (g z).re \u2264 A+6*(R*Real.sqrt R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L115"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.exists_locally_uniform_remainders",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 169,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem exists_locally_uniform_remainders\n    (hgrowth : \u2203 C : \u211d, 0<C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    \u2203 A : \u211d, 0 \u2264 A \u2227 \u2203 r : \u211d \u2192 \u211d, \u2203 h g : \u211d \u2192 \u2102 \u2192 \u2102,\n      (\u2200 R : \u211d, 1 \u2264 R \u2192 2*R < r R \u2227 r R < 2*R+1 \u2227\n        divisor f (sphere 0 (r R)) = 0 \u2227\n        ECanonicalDecomp f (h R) (r R) \u2227\n        DifferentiableOn \u2102 (g R) (ball 0 (r R)) \u2227 g R 0 = 0 \u2227 deriv (g R) 0 = 0 \u2227\n        (\u2200 z \u2208 ball (0 : \u2102) (r R), HasDerivAt (g R) (deriv (h R) z / h R z) z) \u2227\n        (\u2200 z \u2208 ball (0 : \u2102) (r R), Complex.exp (g R z) = h R z / h R 0) \u2227\n        \u2200 z \u2208 ball (0 : \u2102) (2*R), (g R z).re \u2264 A+6*(R*Real.sqrt R)) \u2227\n      TendstoLocallyUniformly g (fun _ => 0) atTop \u2227\n      TendstoLocallyUniformly (fun R z => Complex.exp (g R z)) (fun _ => 1) atTop \u2227\n      TendstoLocallyUniformly (fun R z => h R z / h R 0) (fun _ => 1) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L169"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.inverseZeroProduct",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 230,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "def inverseZeroProduct (R : \u211d) : \u2102 \u2192 \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L230"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_reciprocal_eq",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 234,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_reciprocal_eq (R : \u211d) (a z : \u2102) :\n    (canonicalFactor R a z)\u207b\u00b9 = (R : \u2102)*(z-a)/((R : \u2102)^2-conj a*z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L234"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_numerator_ne_zero",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 239,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_numerator_ne_zero (R : \u211d) (a z : \u2102)\n    (ha : a \u2208 ball (0 : \u2102) R) (hz : z \u2208 closedBall (0 : \u2102) R) :\n    (R : \u2102)^2-conj a*z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L239"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.canonical_reciprocal_analytic",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 254,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem canonical_reciprocal_analytic (R : \u211d) (a : \u2102) (ha : a \u2208 ball (0 : \u2102) R) :\n    AnalyticOnNhd \u2102 (fun z => (canonicalFactor R a z)\u207b\u00b9) (closedBall 0 R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L254"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.inverseZeroProduct_apply",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 264,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem inverseZeroProduct_apply (R : \u211d) (z : \u2102) :\n    inverseZeroProduct f R z =\n      \u220f\u1da0 a : \u2102, canonicalFactor R a z ^ (-divisor f (ball 0 R) a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L264"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.inverseZeroProduct_analytic",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 279,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem inverseZeroProduct_analytic (R : \u211d) :\n    AnalyticOnNhd \u2102 (inverseZeroProduct f R) (closedBall 0 R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L279"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.reconstruction",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 298,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem reconstruction (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102)\n    (D : ECanonicalDecomp f h R)\n    (hboundary : divisor f (sphere 0 R) = 0) :\n    \u2200 z \u2208 closedBall (0 : \u2102) R, f z = inverseZeroProduct f R z * h z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L298"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.inverseZeroProduct_origin_ne_zero",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 321,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem inverseZeroProduct_origin_ne_zero (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102)\n    (D : ECanonicalDecomp f h R)\n    (hboundary : divisor f (sphere 0 R) = 0) : inverseZeroProduct f R 0 \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L321"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.normalized_reconstruction",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 329,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem normalized_reconstruction (R : \u211d) (hR : 0 < R) (h : \u2102 \u2192 \u2102)\n    (D : ECanonicalDecomp f h R)\n    (hboundary : divisor f (sphere 0 R) = 0) :\n    \u2200 z \u2208 closedBall (0 : \u2102) R, f z / f 0 =\n      (inverseZeroProduct f R z / inverseZeroProduct f R 0) * (h z/h 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L329"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireCanonicalApproximation.exists_product_approximation",
+      "file": "Foundation/EvenEntireCanonicalApproximation.lean",
+      "line": 349,
+      "source_sha256": "34c6cbd870b234594a0a37f87a7a710748bf6c369a03a4964eda378c5a87d9e5",
+      "type_or_definition_header": "theorem exists_product_approximation\n    (hgrowth : \u2203 C : \u211d, 0<C \u2227 \u2200 z : \u2102, \u2016f z\u2016 \u2264 C*Real.exp (\u2016z\u2016*Real.sqrt \u2016z\u2016)) :\n    \u2203 r : \u211d \u2192 \u211d, \u2203 h : \u211d \u2192 \u2102 \u2192 \u2102,\n      (\u2200 R : \u211d, 1 \u2264 R \u2192 2*R < r R \u2227 r R < 2*R+1 \u2227\n        ECanonicalDecomp f (h R) (r R) \u2227\n        divisor f (sphere 0 (r R)) = 0 \u2227\n        inverseZeroProduct f (r R) 0 \u2260 0 \u2227\n        \u2200 z \u2208 closedBall (0 : \u2102) (r R),\n          f z = inverseZeroProduct f (r R) z * h R z) \u2227\n      TendstoLocallyUniformly\n        (fun R z => inverseZeroProduct f (r R) z / inverseZeroProduct f (r R) 0)\n        (fun z => f z / f 0) atTop \u2227\n      TendstoLocallyUniformly\n        (fun R z => f 0 * (inverseZeroProduct f (r R) z / inverseZeroProduct f (r R) 0))\n        f atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireCanonicalApproximation.lean#L349"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.positiveHalf",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 16,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def positiveHalf (a : \u2102) : Prop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L16"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.positiveHalf_neg",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 18,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem positiveHalf_neg (a : \u2102) (ha : a\u22600) : positiveHalf (-a) \u2194 \u00acpositiveHalf a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L18"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.opposite_finite_product",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 39,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem opposite_finite_product {M : Type*} [CommMonoid M] (S : Finset \u2102) (F : \u2102 \u2192 M)\n    (hneg : \u2200 a\u2208S, -a\u2208S) (hzero : \u2200 a\u2208S, a\u22600) :\n    (\u220f a\u2208S, F a)=\u220f a\u2208S with positiveHalf a, F a*F (-a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L39"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.zeroSupport",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 68,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def zeroSupport (R : \u211d) : Finset \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L68"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.mem_zeroSupport",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 72,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem mem_zeroSupport (R : \u211d) (a : \u2102) :\n    a\u2208zeroSupport f hf R \u2194 divisor f (ball 0 R) a\u22600",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L72"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.zeroSupport_mem_ball",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 76,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem zeroSupport_mem_ball (R : \u211d) (a : \u2102) (haS : a\u2208zeroSupport f hf R) :\n    a\u2208ball (0:\u2102) R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L76"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.zeroSupport_ne_zero",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 81,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem zeroSupport_ne_zero (R : \u211d) (a : \u2102) (haS : a\u2208zeroSupport f hf R) : a\u22600",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L81"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.zeroSupport_neg",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 87,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem zeroSupport_neg (R : \u211d) (a : \u2102) :\n    -a\u2208zeroSupport f hf R \u2194 a\u2208zeroSupport f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L87"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.halfZeroSupport",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 91,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def halfZeroSupport (R : \u211d) : Finset \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L91"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 93,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def numeratorPoly (R : \u211d) : \u2102[X]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L93"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominatorProduct",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 97,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def denominatorProduct (R : \u211d) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L97"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_eval",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 101,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_eval (R : \u211d) (z : \u2102) :\n    (numeratorPoly f hf R).eval z=\n      \u220f a\u2208halfZeroSupport f hf R, (1-z^2/a^2)^(divisor f (ball 0 R) a).toNat",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L101"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_origin",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 109,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_origin (R : \u211d) : (numeratorPoly f hf R).eval 0=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L109"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_even",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 112,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_even (R : \u211d) (z : \u2102) :\n    (numeratorPoly f hf R).eval (-z)=(numeratorPoly f hf R).eval z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L112"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.inverseZeroProduct_finset",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 116,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem inverseZeroProduct_finset (R : \u211d) (z : \u2102) :\n    inverseZeroProduct f R z=\u220f a\u2208zeroSupport f hf R,\n      (canonicalFactor R a z)\u207b\u00b9^(divisor f (ball 0 R) a).toNat",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L116"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.inverseZeroProduct_pairs",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 137,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem inverseZeroProduct_pairs (R : \u211d) (z : \u2102) :\n    inverseZeroProduct f R z=\u220f a\u2208halfZeroSupport f hf R,\n      ((canonicalFactor R a z)\u207b\u00b9*(canonicalFactor R (-a) z)\u207b\u00b9)^\n        (divisor f (ball 0 R) a).toNat",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L137"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominatorProduct_ne_zero",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 150,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem denominatorProduct_ne_zero (R : \u211d) (hR : 0<R) (z : \u2102)\n    (hz : z\u2208closedBall (0:\u2102) R) : denominatorProduct f hf R z\u22600",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L150"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numerator_reconstruction",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 158,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numerator_reconstruction (R : \u211d) (hR : 0<R) (z : \u2102)\n    (hz : z\u2208closedBall (0:\u2102) R) :\n    (numeratorPoly f hf R).eval z=denominatorProduct f hf R z*\n      (inverseZeroProduct f R z/inverseZeroProduct f R 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L158"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.open_closed_divisor_eq",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 177,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem open_closed_divisor_eq (R : \u211d) (a : \u2102) (ha : a \u2208 ball (0 : \u2102) R) :\n    divisor f (ball 0 R) a = divisor f (closedBall 0 R) a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L177"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.half_weighted_mass_le",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 183,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem half_weighted_mass_le (R : \u211d) (hR : 0 < R) :\n    (\u2211 a \u2208 halfZeroSupport f hf R,\n      ((divisor f (ball 0 R) a).toNat : \u211d)*\u2016a\u2016^2/R^4) \u2264\n      \u2211\u1da0 a : \u2102, (divisor f (closedBall 0 R) a : \u211d)*\u2016a\u2016^2/R^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L183"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominator_error_bound",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 226,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem denominator_error_bound (R : \u211d) (hR : 0 < R)\n    (z : \u2102) :\n    \u2016denominatorProduct f hf R z-1\u2016 \u2264\n      Real.exp (\u2016z\u2016^2*(\u2211\u1da0 a : \u2102,\n        (divisor f (closedBall 0 R) a : \u211d)*\u2016a\u2016^2/R^4))-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L226"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominator_uniform_on_closedBall",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 253,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem denominator_uniform_on_closedBall \n    (\u03c1 : \u211d) (h\u03c1 : 0 \u2264 \u03c1) :\n    TendstoUniformlyOn (fun R z => denominatorProduct f hf R z) (fun _ => 1)\n      atTop (closedBall (0 : \u2102) \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L253"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominator_locally_uniform",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 279,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem denominator_locally_uniform \n    :\n    TendstoLocallyUniformly (fun R z => denominatorProduct f hf R z) (fun _ => 1) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L279"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.denominator_locally_uniform_along",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 288,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem denominator_locally_uniform_along {\u03b9 : Type*} {p : Filter \u03b9}\n    (r : \u03b9 \u2192 \u211d) (hr : Tendsto r p atTop) :\n    TendstoLocallyUniformly (fun i z => denominatorProduct f hf (r i) z) (fun _ => 1) p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L288"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.exists_polynomial_approximation",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 297,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem exists_polynomial_approximation :\n    \u2203 r : \u211d \u2192 \u211d, Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d, 1\u2264R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      TendstoLocallyUniformly\n        (fun R z => f 0*(numeratorPoly f hf (r R)).eval z) f atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L297"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.deriv_conj_of_real",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 338,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem deriv_conj_of_real (F : \u2102 \u2192 \u2102) (hF : \u2200 z : \u2102,F (conj z)=conj (F z))\n    (z : \u2102) : deriv F (conj z)=conj (deriv F z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L338"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.iteratedDeriv_conj",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 348,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem iteratedDeriv_conj (n : \u2115) (z : \u2102) :\n    iteratedDeriv n f (conj z)=conj (iteratedDeriv n f z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L348"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.order_conj",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 356,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem order_conj (z : \u2102) : meromorphicOrderAt f (conj z)=meromorphicOrderAt f z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L356"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.ball_divisor_conj",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 367,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem ball_divisor_conj (R : \u211d) (z : \u2102) :\n    divisor f (ball 0 R) (conj z)=divisor f (ball 0 R) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L367"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.zeroSupport_conj",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 381,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem zeroSupport_conj (R : \u211d) (z : \u2102) :\n    conj z\u2208zeroSupport f hf R \u2194 z\u2208zeroSupport f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L381"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_unpaired",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 386,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_unpaired (R : \u211d) :\n    (\u220f a\u2208zeroSupport f hf R,(1-C (1/a)*X)^(divisor f (ball 0 R) a).toNat)=\n      numeratorPoly f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L386"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_conj",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 404,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_conj (R : \u211d) :\n    (numeratorPoly f hf R).map (starRingEnd \u2102)=numeratorPoly f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L404"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.realPolynomial",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 419,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "def realPolynomial (P : \u2102[X]) : \u211d[X]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L419"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.realPolynomial_coeff",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 422,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem realPolynomial_coeff (P : \u2102[X]) (n : \u2115) :\n    (realPolynomial P).coeff n=(P.coeff n).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L422"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.realPolynomial_map",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 431,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem realPolynomial_map (P : \u2102[X]) (hP : P.map (starRingEnd \u2102)=P) :\n    (realPolynomial P).map (algebraMap \u211d \u2102)=P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L431"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_real",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 441,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_real (R : \u211d) :\n    (realPolynomial (numeratorPoly f hf R)).map (algebraMap \u211d \u2102)=numeratorPoly f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L441"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.mem_zeroSupport_iff",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 447,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem mem_zeroSupport_iff (R : \u211d) (z : \u2102) :\n    z\u2208zeroSupport f hf R \u2194 z\u2208ball (0:\u2102) R \u2227 f z=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L447"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.numeratorPoly_zero_iff",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 458,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem numeratorPoly_zero_iff (R : \u211d) (z : \u2102) :\n    (numeratorPoly f hf R).eval z=0 \u2194 z\u2208ball (0:\u2102) R \u2227 f z=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L458"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntirePolynomialApproximation.exists_real_polynomial_approximation",
+      "file": "Foundation/EvenEntirePolynomialApproximation.lean",
+      "line": 501,
+      "source_sha256": "265bf6b6061133a61d86f376986ac348394c183428910eee3008f9a439b942a6",
+      "type_or_definition_header": "theorem exists_real_polynomial_approximation :\n    \u2203 r : \u211d \u2192 \u211d, \u2203 P : \u2115 \u2192 \u211d[X],\n      Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d, 1\u2264R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      (\u2200 n : \u2115, \u2200 z : \u2102, ((P n).map (algebraMap \u211d \u2102)).eval z=0 \u2194\n        z\u2208ball (0:\u2102) (r ((n:\u211d)+1)) \u2227 f z=0) \u2227\n      (\u2200 n : \u2115, ((P n).map (algebraMap \u211d \u2102)).eval 0=f 0) \u2227\n      (\u2200 n : \u2115, \u2200 z : \u2102, ((P n).map (algebraMap \u211d \u2102)).eval (-z)=\n        ((P n).map (algebraMap \u211d \u2102)).eval z) \u2227\n      TendstoLocallyUniformly (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) f atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntirePolynomialApproximation.lean#L501"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.second_product",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 15,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem second_product (P Q : \u2102[X]) :\n    (P*Q).derivative.derivative.eval 0=\n      P.derivative.derivative.eval 0*Q.eval 0+\n      2*P.derivative.eval 0*Q.derivative.eval 0+\n      P.eval 0*Q.derivative.derivative.eval 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L15"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.power_origin_jets",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 23,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem power_origin_jets (P : \u2102[X]) (h0 : P.eval 0=1)\n    (h1 : P.derivative.eval 0=0) (n : \u2115) :\n    (P^n).eval 0=1 \u2227 (P^n).derivative.eval 0=0 \u2227\n      (P^n).derivative.derivative.eval 0=(n:\u2102)*P.derivative.derivative.eval 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L23"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.product_origin_jets",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 39,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem product_origin_jets {\u03b9 : Type*} (S : Finset \u03b9) (P : \u03b9 \u2192 \u2102[X])\n    (h0 : \u2200 a\u2208S,(P a).eval 0=1) (h1 : \u2200 a\u2208S,(P a).derivative.eval 0=0) :\n    (\u220f a\u2208S,P a).eval 0=1 \u2227 (\u220f a\u2208S,P a).derivative.eval 0=0 \u2227\n      (\u220f a\u2208S,P a).derivative.derivative.eval 0=\n        \u2211 a\u2208S,(P a).derivative.derivative.eval 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L39"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.paired_factor_jets",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 59,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem paired_factor_jets (c : \u2102) (n : \u2115) :\n    ((1-C c*X^2)^n).eval 0=1 \u2227\n      ((1-C c*X^2)^n).derivative.eval 0=0 \u2227\n      ((1-C c*X^2)^n).derivative.derivative.eval 0= -2*(n:\u2102)*c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L59"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.inverseSquareSum",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 73,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "def inverseSquareSum (R : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L73"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.numerator_second_origin",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 76,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem numerator_second_origin (R : \u211d) :\n    (numeratorPoly f hf R).derivative.derivative.eval 0= -2*inverseSquareSum f hf R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L76"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.exists_inverseSquareSum_limit",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 94,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem exists_inverseSquareSum_limit :\n    \u2203 r : \u211d \u2192 \u211d, Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d,1\u2264R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      TendstoLocallyUniformly (fun R z => f 0*(numeratorPoly f hf (r R)).eval z) f atTop \u2227\n      Tendsto (fun R => inverseSquareSum f hf (r R)) atTop\n        (\ud835\udcdd (-deriv (deriv f) 0/(2*f 0)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L94"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.inverse_square_real_lower",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 137,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem inverse_square_real_lower (a : \u2102) (ha : a\u22600)\n    (hcone : 2*|a.im|\u2264\u2016a\u2016) : \u2016(1/a^2:\u2102)\u2016\u22642*(1/a^2:\u2102).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L137"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.weighted_inverse_square_cone",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 153,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem weighted_inverse_square_cone (a : \u2102) (ha : a\u22600)\n    (hcone : 2*|a.im|\u2264\u2016a\u2016) (n : \u2115) :\n    \u2016(n:\u2102)/a^2\u2016\u22642*((n:\u2102)/a^2).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L153"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.finite_inverse_square_tail_bound",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 166,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem finite_inverse_square_tail_bound (S : Finset \u2102) (n : \u2102 \u2192 \u2115)\n    (hzero : \u2200 a\u2208S,a\u22600) (hcone : \u2200 a\u2208S,2*|a.im|\u2264\u2016a\u2016) :\n    (\u2211 a\u2208S,\u2016(n a:\u2102)/a^2\u2016)\u22642*(\u2211 a\u2208S,(n a:\u2102)/a^2).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L166"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.ball_divisor_eq_of_mem",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 175,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem ball_divisor_eq_of_mem (R S : \u211d) (a : \u2102)\n    (haR : a\u2208ball (0:\u2102) R) (haS : a\u2208ball (0:\u2102) S) :\n    divisor f (ball 0 R) a=divisor f (ball 0 S) a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L175"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.halfZeroSupport_mono",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 181,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem halfZeroSupport_mono (R S : \u211d) (hRS : R\u2264S) :\n    halfZeroSupport f hf R \u2286 halfZeroSupport f hf S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L181"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.inverseSquareSum_difference",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 191,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem inverseSquareSum_difference (R S : \u211d) (hRS : R\u2264S) :\n    inverseSquareSum f hf S-inverseSquareSum f hf R=\n      \u2211 a\u2208halfZeroSupport f hf S\\halfZeroSupport f hf R,\n        ((divisor f (ball 0 S) a).toNat:\u2102)/a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L191"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.actual_inverse_square_tail_bound",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 209,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem actual_inverse_square_tail_bound (R S b : \u211d) (hRS : R\u2264S) (hRb : 2*b\u2264R)\n    (hstrip : \u2200 z : \u2102,f z=0 \u2192 |z.im|\u2264b) :\n    (\u2211 a\u2208halfZeroSupport f hf S\\halfZeroSupport f hf R,\n      \u2016((divisor f (ball 0 S) a).toNat:\u2102)/a^2\u2016)\u2264\n      2*(inverseSquareSum f hf S-inverseSquareSum f hf R).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L209"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.exists_absolute_inverse_square_tails",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 231,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem exists_absolute_inverse_square_tails (b : \u211d)\n    (hstrip : \u2200 z : \u2102,f z=0 \u2192 |z.im|\u2264b) :\n    \u2203 r : \u211d \u2192 \u211d, Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d,1\u2264R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      TendstoLocallyUniformly (fun R z => f 0*(numeratorPoly f hf (r R)).eval z) f atTop \u2227\n      Tendsto (fun R => inverseSquareSum f hf (r R)) atTop\n        (\ud835\udcdd (-deriv (deriv f) 0/(2*f 0))) \u2227\n      \u2200 \u03b5 : \u211d, 0 < \u03b5 \u2192 \u2203 N : \u211d, \u2200 i j : \u211d, N \u2264 i \u2192 N \u2264 j \u2192 r i \u2264 r j \u2192\n        (\u2211 a\u2208halfZeroSupport f hf (r j)\\halfZeroSupport f hf (r i),\n          \u2016((divisor f (ball 0 (r j)) a).toNat:\u2102)/a^2\u2016)<\u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L231"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.paired_product_norm_bound",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 266,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem paired_product_norm_bound (S : Finset \u2102) (n : \u2102 \u2192 \u2115) (z : \u2102) :\n    \u2016\u220f a\u2208S,(1-z^2/a^2)^(n a)\u2016\u2264\n      Real.exp (\u2016z\u2016^2*(\u2211 a\u2208S,\u2016(n a:\u2102)/a^2\u2016))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L266"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireInverseSquareTails.exists_gaussian_product_tails",
+      "file": "Foundation/EvenEntireInverseSquareTails.lean",
+      "line": 287,
+      "source_sha256": "32216ee8173424026c280b6b70c2b103de3d37b301dd1b3fe2b8292cd9ab270a",
+      "type_or_definition_header": "theorem exists_gaussian_product_tails (b : \u211d)\n    (hstrip : \u2200 z : \u2102,f z=0 \u2192 |z.im|\u2264b) :\n    \u2203 r : \u211d \u2192 \u211d, Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d,1\u2264R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      TendstoLocallyUniformly (fun R z => f 0*(numeratorPoly f hf (r R)).eval z) f atTop \u2227\n      Tendsto (fun R => inverseSquareSum f hf (r R)) atTop\n        (\ud835\udcdd (-deriv (deriv f) 0/(2*f 0))) \u2227\n      \u2200 \u03b5 : \u211d, 0 < \u03b5 \u2192 \u2203 N : \u211d, \u2200 i j : \u211d, N \u2264 i \u2192 N \u2264 j \u2192 r i \u2264 r j \u2192\n        \u2200 z : \u2102, \u2016\u220f a\u2208halfZeroSupport f hf (r j)\\halfZeroSupport f hf (r i),\n          (1-z^2/a^2)^(divisor f (ball 0 (r j)) a).toNat\u2016\u2264Real.exp (\u03b5*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireInverseSquareTails.lean#L287"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.quadratic_factor_gaussian_bound",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 16,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem quadratic_factor_gaussian_bound (c z : \u2102) (\u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u20161-c*z^2\u2016 \u2264 (1+\u2016c\u2016/\u03b4)*Real.exp (\u03b4*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L16"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.finite_product_subset_gaussian_budget",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 27,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem finite_product_subset_gaussian_budget (S : Finset \u2102) (n : \u2102 \u2192 \u2115)\n    (c : \u2102 \u2192 \u2102) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 C : \u211d,0 < C \u2227 \u2200 T : Finset \u2102,T\u2286S \u2192 \u2200 z : \u2102,\n      \u2016\u220f a\u2208T,(1-c a*z^2)^(n a)\u2016 \u2264 C*Real.exp (\u03b5*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L27"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.common_weight_product",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 71,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem common_weight_product (R S : \u211d) (hRS : R \u2264 S) (z : \u2102) :\n    (\u220f a\u2208halfZeroSupport f hf R,\n      (1-z^2/a^2)^(divisor f (ball 0 S) a).toNat)=(numeratorPoly f hf R).eval z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L71"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.numerator_eval_factorization",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 80,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem numerator_eval_factorization (R S : \u211d) (hRS : R \u2264 S) (z : \u2102) :\n    (numeratorPoly f hf S).eval z=(numeratorPoly f hf R).eval z*\n      (\u220f a\u2208halfZeroSupport f hf S\\halfZeroSupport f hf R,\n        (1-z^2/a^2)^(divisor f (ball 0 S) a).toNat)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L80"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.bounded_radius_gaussian_budget",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 91,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem bounded_radius_gaussian_budget (B \u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 C : \u211d,0 < C \u2227 \u2200 R : \u211d,R \u2264 B \u2192 \u2200 z : \u2102,\n      \u2016(numeratorPoly f hf R).eval z\u2016 \u2264 C*Real.exp (\u03b5*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L91"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.exists_uniform_gaussian_budget",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 114,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem exists_uniform_gaussian_budget (b : \u211d)\n    (hstrip : \u2200 z : \u2102,f z=0 \u2192 |z.im| \u2264 b) :\n    \u2203 r : \u211d \u2192 \u211d,Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d,1 \u2264 R \u2192 2*R < r R \u2227 r R < 2*R+1) \u2227\n      TendstoLocallyUniformly (fun R z => f 0*(numeratorPoly f hf (r R)).eval z) f atTop \u2227\n      \u2200 \u03b5 : \u211d,0 < \u03b5 \u2192 \u2203 C : \u211d,0 < C \u2227 \u2200 R : \u211d,1 \u2264 R \u2192 \u2200 z : \u2102,\n        \u2016f 0*(numeratorPoly f hf (r R)).eval z\u2016 \u2264 C*Real.exp (\u03b5*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L114"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.shifted_norm_square",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 161,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem shifted_norm_square (z c : \u2102) (y : \u211d) :\n    \u2016z+c*(y:\u2102)\u2016^2 \u2264 2*\u2016z\u2016^2+2*\u2016c\u2016^2*\u2016y\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L161"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.exists_gaussian_majorant",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 168,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem exists_gaussian_majorant (\u03bc : Measure \u211d) [IsGaussian \u03bc] (F : \u2115 \u2192 \u2102 \u2192 \u2102)\n    (hbudget : \u2200 \u03b5 : \u211d,0<\u03b5 \u2192 \u2203 C : \u211d,0<C \u2227 \u2200 n : \u2115,\u2200 w : \u2102,\n      \u2016F n w\u2016 \u2264 C*Real.exp (\u03b5*\u2016w\u2016^2)) (z c : \u2102) :\n    \u2203 g : \u211d \u2192 \u211d,Integrable g \u03bc \u2227 \u2200 n : \u2115,\u2200 y : \u211d,\u2016F n (z+c*(y:\u2102))\u2016 \u2264 g y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L168"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.gaussian_integral_limit",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 191,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem gaussian_integral_limit (\u03bc : Measure \u211d) [IsGaussian \u03bc]\n    (F : \u2115 \u2192 \u2102 \u2192 \u2102) (f : \u2102 \u2192 \u2102) (hF : \u2200 n,Continuous (F n)) (hcont : Continuous f)\n    (hlim : TendstoLocallyUniformly F f atTop)\n    (hbudget : \u2200 \u03b5 : \u211d,0<\u03b5 \u2192 \u2203 C : \u211d,0<C \u2227 \u2200 n : \u2115,\u2200 w : \u2102,\n      \u2016F n w\u2016 \u2264 C*Real.exp (\u03b5*\u2016w\u2016^2)) (z c : \u2102) :\n    (\u2200 n : \u2115,Integrable (fun y : \u211d => F n (z+c*(y:\u2102))) \u03bc) \u2227\n      Integrable (fun y : \u211d => f (z+c*(y:\u2102))) \u03bc \u2227\n      Tendsto (fun n => \u222b y : \u211d,F n (z+c*(y:\u2102)) \u2202\u03bc) atTop\n        (\ud835\udcdd (\u222b y : \u211d,f (z+c*(y:\u2102)) \u2202\u03bc))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L191"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.exists_real_polynomials_with_gaussian_budget",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 223,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem exists_real_polynomials_with_gaussian_budget (b : \u211d)\n    (hstrip : \u2200 z : \u2102,f z=0 \u2192 |z.im| \u2264 b) :\n    \u2203 r : \u211d \u2192 \u211d, \u2203 P : \u2115 \u2192 \u211d[X], Tendsto r atTop atTop \u2227\n      (\u2200 R : \u211d,1 \u2264 R \u2192 2*R<r R \u2227 r R<2*R+1) \u2227\n      (\u2200 n : \u2115,\u2200 z : \u2102,((P n).map (algebraMap \u211d \u2102)).eval z=0 \u2194\n        z\u2208ball (0:\u2102) (r ((n:\u211d)+1)) \u2227 f z=0) \u2227\n      (\u2200 n : \u2115,((P n).map (algebraMap \u211d \u2102)).eval 0=f 0) \u2227\n      (\u2200 n : \u2115,\u2200 z : \u2102,((P n).map (algebraMap \u211d \u2102)).eval (-z)=\n        ((P n).map (algebraMap \u211d \u2102)).eval z) \u2227\n      TendstoLocallyUniformly (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) f atTop \u2227\n      \u2200 \u03b5 : \u211d,0<\u03b5 \u2192 \u2203 C : \u211d,0<C \u2227 \u2200 n : \u2115,\u2200 z : \u2102,\n        \u2016((P n).map (algebraMap \u211d \u2102)).eval z\u2016 \u2264 C*Real.exp (\u03b5*\u2016z\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L223"
+    },
+    {
+      "paper": "Section 11: complete complex divisor polynomial approximation, inverse-square annular tails, common Gaussian budget and fixed-affine Gaussian L1 convergence. Human compact-parameter strengthening and normalized polynomial counterexample are not named formal claims.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.EvenEntireGaussianBudget.gaussian_L1_limit",
+      "file": "Foundation/EvenEntireGaussianBudget.lean",
+      "line": 275,
+      "source_sha256": "0cee543f36f791a02d016a25ef19e31918c2bd7a6c4181e92ddb9d23b98d1465",
+      "type_or_definition_header": "theorem gaussian_L1_limit (\u03bc : Measure \u211d) [IsGaussian \u03bc]\n    (F : \u2115 \u2192 \u2102 \u2192 \u2102) (f : \u2102 \u2192 \u2102) (hF : \u2200 n,Continuous (F n)) (hcont : Continuous f)\n    (hlim : TendstoLocallyUniformly F f atTop)\n    (hbudget : \u2200 \u03b5 : \u211d,0<\u03b5 \u2192 \u2203 C : \u211d,0<C \u2227 \u2200 n : \u2115,\u2200 w : \u2102,\n      \u2016F n w\u2016 \u2264 C*Real.exp (\u03b5*\u2016w\u2016^2)) (z c : \u2102) :\n    Tendsto (fun n => \u222b y : \u211d,\u2016F n (z+c*(y:\u2102))-f (z+c*(y:\u2102))\u2016 \u2202\u03bc)\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/EvenEntireGaussianBudget.lean#L275"
     }
   ],
   "human_proof_reorganization": {
@@ -388,7 +1234,8 @@
     "transition_far_saddles_and_common_center_coverage": "Sections 8\u20139",
     "attainment_confinement_and_multiple_endpoint_zero": "Sections 9\u201310",
     "method": "Human regrouping with unspecified uniform constants, not a claim of new named Lean lemmas for every intermediate estimate.",
-    "remaining_editorial_limits": "Independent referee review, attribution and novelty determination remain outstanding; reviewed draft is not submission-ready."
+    "remaining_editorial_limits": "Independent referee review, attribution and novelty determination remain outstanding; reviewed draft is not submission-ready.",
+    "general_divisor_gaussian_comparison": "Section 11 extends the fully printed finite-disk argument to complete divisor products retaining all complex, imaginary-axis and multiple zeros. A fixed zero strip, retained exactly as the formal hypothesis, yields absolute inverse-square annular tails and a common arbitrarily small quadratic budget for all approximants; actual Gaussian affine L1/integral convergence follows by domination. Local uniformity over compact affine parameter sets and Q_n=1+z^(2n)/(2n-1)!! are explicit classical HUMAN deductions. Gaussian quadratic smoothing does not identify or propagate the growing quartic flow. Five principal source modules fully read and mapped; no new general factorization or heat theorem is claimed."
   },
   "certificate_scope": "The verifier re-sums all 160x3 endpoint pairs and checks exact rational budgets and the Laguerre margin. It does not rerun the Lean interval engine. The baseline evidence covers the exact finite inclusions."
 }

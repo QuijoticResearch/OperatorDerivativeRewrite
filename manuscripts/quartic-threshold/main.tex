@@ -34,7 +34,10 @@ multiplicity at least two. All zeros are eventually real and
 simple. The meaning of eventual start is kept separate from
 pointwise-in-time reality, and no quadratic threshold or
 Riemann-hypothesis implication is asserted. The final statements
-are mapped to a frozen Lean development; their novelty remains
+are mapped to a frozen Lean development. A separate general divisor-product
+argument retains complex zeros and supplies a common Gaussian integration
+budget under an explicit zero-strip hypothesis; it gives no quartic
+propagation theorem. Their novelty remains
 unresolved.
 \end{abstract}
 
@@ -1213,6 +1216,174 @@ simplicity was already proved in
 Proposition~\ref{prop:eventual}.
 \end{proof}
 
+
+\section{Complete divisor polynomials and Gaussian integration}
+The polynomial construction used above has a broader classical domain.
+Keeping its exact zeros also clarifies what approximation alone can and
+cannot justify. Throughout this section let $f$ be an even entire function,
+real on the real axis, with $f(0)\ne0$ and
+\begin{equation}\label{eq:generalbudgetgrowth}
+ |f(z)|\leq C e^{|z|^{3/2}}\qquad(z\in\C).
+\end{equation}
+Real on the real axis implies $f(\overline z)=\overline{f(z)}$ by the
+identity theorem. No reality or simplicity of its zeros is assumed.
+For each $R>0$, choose one representative $a$ of every pair $\{a,-a\}$
+of zeros in $|a|<R$, and retain its multiplicity $m_a$. Define
+\[
+ N_R(z)=\prod_{\{a,-a\},\ |a|<R}(1-z^2/a^2)^{m_a}.
+\]
+This is the complete disk divisor product, not a product that discards
+imaginary-axis or nonreal zeros. The choice within each pair has no effect.
+
+\begin{proposition}\label{prop:generaldivisor}
+There are zero-free boundary radii $R_n\in(2n+2,2n+3)$ such that the
+real even polynomials $P_n=f(0)N_{R_n}$ converge locally uniformly to $f$.
+They satisfy $P_n(0)=f(0)$, and their zeros, with multiplicity, are exactly
+the zeros of $f$ in $|z|<R_n$. In particular, real coefficients do not
+mean that the polynomials split over $\R$.
+\end{proposition}
+\begin{proof}
+There are only countably many excluded zero moduli. In the proof of
+Lemma~\ref{lem:polynomial}, the finite disk factorization, even normalized
+logarithm and double-zero Schwarz estimate use evenness and
+\eqref{eq:generalbudgetgrowth}, with no real-zero assumption. The same
+Jensen argument gives $n_f(R)=O(1+R^{3/2})$ for the total number of zeros,
+including all complex zeros and multiplicities. The paired denominator
+error on $|z|\leq r$ is therefore at most
+\[
+ \exp\!\left(\frac{n_f(R)r^2}{2R^2}\right)-1\longrightarrow0.
+\]
+Together with $h_R/h_R(0)\to1$, the exact reconstruction in that proof gives
+$f(0)N_R\to f$ along the chosen radii. Every factor has roots exactly
+$a,-a$, with the stated multiplicity, so there are no omitted or added
+roots. Conjugation permutes the complete zero multiset, hence fixes every
+coefficient of $N_R$; those coefficients are real. Its value at zero is
+one. These observations prove every assertion.
+\end{proof}
+The result is a concrete classical factorization consequence, consistent
+with Hadamard theory; McMullen's primary course notes state that theory
+as Theorem 3.15 and illustrate cancellation of opposite exponential
+factors in Theorem 3.18~\cite{mcmullen}. Our preceding disk argument
+provides its needed proof here. The corresponding frozen modules are
+\code{EvenEntireCanonicalApproximation} and
+\code{EvenEntirePolynomialApproximation}.
+
+\subsection*{A common quadratic budget, with an explicit zero strip}
+Suppose additionally that every zero satisfies $|\Ima a|\leq b$ for a
+fixed $b\geq0$. This hypothesis is retained in the named formal budget
+theorem. Write
+\[
+ S_n=\sum_{\{a,-a\},\ |a|<R_n}\frac{m_a}{a^2}.
+\]
+Differentiating the finite product at zero gives
+$P_n''(0)=-2f(0)S_n$. Cauchy's integral formula on any fixed circle
+passes the compact-uniform limit through two derivatives. Thus
+\begin{equation}\label{eq:inversezerosum}
+ S_n\longrightarrow -\frac{f''(0)}{2f(0)}.
+\end{equation}
+If $|a|\geq2b$, then $2|\Ima a|\leq|a|$, and direct computation yields
+\[
+ |a^{-2}|\leq2\Rea(a^{-2}),\qquad
+ \Rea(a^{-2})=\frac{(\Rea a)^2-(\Ima a)^2}{|a|^4}.
+\]
+Indeed the numerator is $|a|^2-2(\Ima a)^2\geq |a|^2/2$.
+For $j\geq i$ and $R_i\geq2b$, this gives the absolute annular estimate
+\begin{equation}\label{eq:absoluteannulus}
+ \sum_{R_i\leq|a|<R_j}\frac{m_a}{|a|^2}
+ \leq2\Rea(S_j-S_i)\longrightarrow0
+ \quad\hbox{uniformly as }i,j\to\infty.
+\end{equation}
+Here and below sums use one member of each opposite pair. Our chosen
+radii are strictly increasing. Formula~\eqref{eq:inversezerosum} makes
+the right side small; the cone inequality also proves its nonnegativity.
+
+\begin{theorem}\label{thm:uniformbudget}
+For every $\epsilon>0$ there is $C_\epsilon<\infty$ such that
+\[
+ |P_n(z)|\leq C_\epsilon e^{\epsilon|z|^2}
+ \qquad\hbox{for every }n\geq0\hbox{ and }z\in\C.
+\]
+The constant is common to all complete divisor approximants, although
+it may depend on $f$ and $\epsilon$.
+\end{theorem}
+\begin{proof}
+Choose $i$ so large that every later annulus in
+\eqref{eq:absoluteannulus} has sum at most $\epsilon/2$.
+Since $|1-w|\leq e^{|w|}$, its product has modulus at most
+$\exp(\epsilon|z|^2/2)$. The fixed inner polynomial has a bound
+$C e^{\epsilon|z|^2/2}$: each of its finitely many factors satisfies
+\[
+ |1-cz^2|\leq (1+|c|/\delta)e^{\delta|z|^2},\qquad\delta>0.
+\]
+To see this, use $1+|c||z|^2\leq
+(1+|c|/\delta)(1+\delta|z|^2)$ and $1+x\leq e^x$.
+Allocate $\delta=(\epsilon/2)/(1+M)$, where $M$ is the total inner
+pair multiplicity. Multiplying its factors proves the inner bound.
+Factor $P_n$ into inner and annular products for $n\geq i$, including
+its fixed factor $f(0)$. The two budgets add to $\epsilon$.
+Each of the finitely many earlier polynomials has its own such bound;
+taking their maximum completes the proof for all $n$.
+\end{proof}
+These are the actual mechanisms in the two frozen modules:
+\par\noindent\code{EvenEntireInverseSquareTails};
+\par\noindent\code{EvenEntireGaussianBudget}.
+\par\noindent The strip is a hypothesis about this
+entire function's zeros; it is not an assumption that they are real.
+
+\subsection*{What now passes through an actual Gaussian integral}
+Let $Y$ have any fixed real Gaussian probability law, possibly degenerate,
+and fix $z,c\in\C$. Then
+\begin{equation}\label{eq:gaussdivisorlimit}
+ \mathbb E|P_n(z+cY)-f(z+cY)|\longrightarrow0,
+ \qquad
+ \mathbb E P_n(z+cY)\longrightarrow\mathbb E f(z+cY).
+\end{equation}
+All these random variables are genuinely integrable. For a direct proof,
+choose $a>0$ with $\mathbb E e^{aY^2}<\infty$, available for every real
+Gaussian law (and immediate for a constant law). Choose
+$\epsilon=a/(4(1+|c|^2))$. The inequality
+$|z+cy|^2\leq2|z|^2+2|c|^2y^2$ gives the common majorant
+\[
+ |P_n(z+cy)|\leq C_\epsilon e^{2\epsilon|z|^2}e^{ay^2}.
+\]
+The same bound holds for $f$ by pointwise convergence. Twice this
+integrable majorant controls the difference, so dominated convergence
+proves both limits. This is the fixed-affine Gaussian $L^1$ conclusion
+actually mapped in \code{gaussian_L1_limit}; it does not invoke a
+formal interchange of an unbounded series of differential operators.
+
+For clarity, a further classical \emph{human deduction} is local
+uniformity in the affine parameters: if $|z|\leq A$, $|c|\leq B$, choose
+$\epsilon=a/(4(1+B^2))$ once. For each fixed $y$, local uniformity of
+$P_n\to f$ gives uniform convergence over that compact parameter set,
+because its affine images lie in $|w|\leq A+B|y|$. The supremum of the
+continuous error over the compact parameter set is measurable in $y$
+(for example use a countable dense subset). The same common majorant
+and dominated convergence show that the supremum of the expected
+absolute errors tends to zero. This strengthens only the parameter
+quantifiers of \eqref{eq:gaussdivisorlimit}, not the class of clocks.
+
+Compact-uniform convergence alone would be insufficient. A precise
+human counterexample for standard $Y$ is
+\[
+ Q_n(z)=1+\frac{z^{2n}}{(2n-1)!!},\qquad n\geq1.
+\]
+Since $(2n-1)!!\geq n!$, on $|z|\leq A$ its added term is at most
+$A^{2n}/n!\to0$ (the ratio tends to zero). Hence $Q_n\to1$ locally
+uniformly, with $Q_n(0)=1$, evenness and real coefficients. Nevertheless
+$\mathbb E Q_n(Y)=2$ for every $n$, whereas $\mathbb E1=1$; the expected
+absolute error is exactly one. These are not asserted to be complete
+divisor products of a common function or to have a fixed zero strip.
+Their role is to disprove an interchange based solely on compact convergence.
+
+Finally, a Gaussian affine average is a quadratic smoothing operation.
+Even when $c$ is complex and the polynomial average can be written as a
+finite differential sum, the proof above is an integral domination proof.
+It neither identifies a growing quartic deformation with Gaussian
+smoothing nor propagates real zeros under that quartic deformation.
+The attained threshold and every limitation of the preceding sections
+therefore retain exactly their original scope.
+
 \section{Formal correspondence and limits of the conclusion}
 The mathematical baseline is the frozen verified commit
 \begin{center}\small\ttfamily
@@ -1279,5 +1450,9 @@ Fourier transforms with only real zeros,
 \bibitem{dlmf} NIST Digital Library of Mathematical Functions,
 \S20.7(viii), equation 20.7.32, modular theta identity.
 \url{https://dlmf.nist.gov/20.7.E32}.
+\bibitem{mcmullen} C. McMullen,
+\emph{Advanced Complex Analysis}, Harvard Math 213a course notes,
+November 30, 2023, Theorems 3.15 and 3.18, printed pages 80--82.
+\url{https://people.math.harvard.edu/~ctm/home/text/class/harvard/213a/23/html/home/course/course.pdf}.
 \end{thebibliography}
 \end{document}
