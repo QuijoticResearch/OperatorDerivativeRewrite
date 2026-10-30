@@ -2933,3 +2933,6 @@ import Foundation.CubeGaussianSquareChannel
 import Foundation.CubeGaussianSquareRoot
 import Foundation.CubeNormalizedKernelSquare
 import Foundation.CubeLimitComplementGap
+import Foundation.CubeRankOneComparison
+import Foundation.CubeFiniteGapComparison
+import Foundation.CubeFiniteStationaryGap
