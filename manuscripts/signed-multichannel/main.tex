@@ -441,6 +441,52 @@ in another space or quotient. No arithmetic zero conclusion or
 threshold relation follows from this comparison. The coefficient
 growth mechanism is elementary; no novelty is claimed for it.
 
+\subsection{A concrete comparison with Fourier-measure tests}
+Let $\mathcal A$ denote the faithful real function range in (15),
+with its coefficient norm $\sum_n|u_n|$. Let $\mathcal F$ be the
+real-valued functions representable as
+\[
+ f(x)=\int_\R e^{i\xi x}\,d\mu(\xi),\qquad
+ \int_\R(1+|\xi|)^k\,d|\mu|(\xi)<\infty
+ \quad\hbox{for every integer }k\geq0,
+\]
+where $\mu$ is a complex measure. This is the one-coordinate
+Fourier-measure test class used in Nishioka's construction
+\cite[Section 2]{nishioka}, restricted here to real-valued outputs.
+These statements compare actual functions on the whole real line.
+
+\begin{proposition}
+Neither $\mathcal A$ nor $\mathcal F$ contains the other. More
+precisely, $x\mapsto x$ belongs to $\mathcal A\setminus\mathcal F$,
+and $x\mapsto\cos(\xi x)$ belongs to $\mathcal F$ for every real
+$\xi$, but belongs to $\mathcal A$ exactly when $|\xi|<1$.
+In the latter case its coefficient norm is $(1-\xi^2)^{-1}$.
+\end{proposition}
+\begin{proof}
+The sequence $u_1=1$, $u_n=0$ otherwise realizes the polynomial
+$x$ and has norm one. Every function in $\mathcal F$ is bounded
+by $|\mu|(\R)$, directly from the integral and $|e^{i\xi x}|=1$.
+Thus the unbounded polynomial is not in $\mathcal F$.
+For any fixed $\xi$, the finite atomic measure
+$(\delta_\xi+\delta_{-\xi})/2$ has every required weighted moment
+and represents $\cos(\xi x)$. Its derivatives at zero are zero
+in odd orders and $(-1)^j\xi^{2j}$ in order $2j$.
+Faithful derivative recovery therefore forces these exact
+coefficients for any realization in $\mathcal A$.
+Their absolute sum is $\sum_{j\geq0}|\xi|^{2j}$, finite exactly
+when $|\xi|<1$, with the claimed sum. When finite, the resulting
+factorial series is the ordinary cosine series, proving sufficiency
+as well as necessity.
+\end{proof}
+The frequency threshold belongs to this fixed coefficient norm;
+it is not invariant under a rescaling of that norm. This elementary
+comparison rules out either identity inclusion for these faithful
+one-coordinate function spaces. It does not rule out other
+multivariate presentations, quotient representations or bounded
+maps on smaller common domains. In particular it neither identifies
+the two weak reconstruction topologies nor proves priority for the
+completed multichannel theorem.
+
 \section{The product pairing and its signed character}
 Ordinary multiplication does not have norm at most the product
 of the norms in \eqref{eq:norm}. Instead define on polynomials
@@ -1159,9 +1205,9 @@ Thus neither the lower channels, their test-functional
 interpretation nor that differential correspondence is claimed new.
 His weighted Fourier-measure test spaces and Lemma 3.4 continuity
 estimates differ from the present factorial coefficient completion.
-The comparison still requires explicit embeddings or obstructions
-between these domains and their reconstruction topologies;
-different definitions alone establish no priority.
+Section 4.1 proves explicit one-coordinate noninclusions;
+comparison of the multitime completions and reconstruction
+topologies remains open. No priority follows from these differences.
 Hochberg's full text was not retrieved, so its direct comparison
 remains pending.
 The cited time-change paper is a primary contemporary reference
