@@ -13,7 +13,7 @@
 \title{Finite gauge transfer comparisons:\\
 seven-link $\mathrm{SU}(2)$ and a homogeneous $\mathbf Z_2$ torus}
 \author{Project Stardust}
-\date{Reviewed finite-model draft, October 29, 2026}
+\date{Reviewed finite-model draft, October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -32,10 +32,12 @@ Every fixed number of Markov steps fails to give a parameter-uniform
 subunit covariance factor, even after arbitrary random gauge actions.
 At each fixed coupling, a separate positive minorization gives geometric
 mixing. We also exhibit the loss of the trial's centering symmetry when
-both spatial plaquettes are weighted. All statements concern this
-finite model; no homogeneous four-dimensional transfer or physical
+both spatial plaquettes are weighted. These comparisons concern finite models;
+no homogeneous four-dimensional transfer or physical
 mass-gap conclusion is inferred. Classical positive-kernel and character
-methods are credited; priority for the exact comparison is unresolved. A separate microscopic homogeneous $\mathbf Z_2$ torus has sharp bare gap $3/4$, but stationary weighted gap at most $39/64$, with a constructed positive algebraic ground function.
+methods are credited; priority for the exact comparison is unresolved. A separate microscopic homogeneous $\mathbf Z_2$ torus has sharp bare gap $3/4$, but stationary weighted gap at most $39/64$, with a constructed positive algebraic ground function. Separate
+conditional scaling and positive Laplace-measure arguments expose the
+normalization and spectral hypotheses needed beyond finite transfers.
 \end{abstract}
 
 \section{The model and the quantified conclusions}
@@ -1047,6 +1049,179 @@ inferred from it.
 \par\endgroup
 
 
+
+\section{Physical scaling and the exact positive spectral bridge}
+\label{sec:scalingspectral}
+The finite comparisons above have no lattice-spacing parameter.
+The following separate conditional results explain what additional
+information a scaling argument must retain. They assert nothing about
+the existence of a particular continuum Yang--Mills measure.
+
+\subsection*{Uniform block decay can force a zero physical limit}
+Suppose a real connected-correlation sequence satisfies
+\begin{equation}\label{eq:blockdecayscaling}
+ |c_n|\leq Cq^n,\qquad C\geq0,\quad0\leq q<1.
+\end{equation}
+Then $c_n\to0$, since $q^n\to0$ and its positive and negative
+envelopes both tend to zero. Consequently this sequence cannot also
+converge to a nonzero real limit. The same argument works if the
+exponent is an integer block count $N_j\to\infty$: composition of
+the geometric limit gives $Cq^{N_j}\to0$. This reindexing is an
+elementary human consequence of the mapped sequential theorem.
+
+For example, if a positive fixed physical separation is represented
+by a growing number of lattice blocks as the spacing tends to zero,
+a spacing-independent $q<1$ and amplitude $C$ force the corresponding
+unrenormalized correlations to vanish. This conclusion depends on
+both uniformities. It is not a conclusion that every possible field
+normalization has zero correlations, or that the finite theorem
+already provides either of the uniform hypotheses.
+
+There is also an exact obstruction to one proposed normalization.
+Suppose $c_n>0$ and the variance of one raw centered observable is
+$v_n\geq v>0$. Multiplying both observables by $c_n^{-1/2}$ makes
+their cross covariance one, and makes that observable's variance
+$v_n/c_n$. These variances cannot have a finite common upper bound:
+if $v_n/c_n\leq M$, positivity gives
+$0<v\leq v_n\leq Mc_n\to0$, a contradiction.
+The lower bound on the raw variance is essential to this argument;
+it does not rule out normalizations whose raw variances also vanish.
+\par\noindent\code{YMContinuumCorrelationScaling}:
+\par\noindent\code{uniform_block_bound_forces_zero},
+\par\noindent\code{no_nonzero_limit_with_uniform_block_bound},
+\par\noindent\code{no_uniform_variance_after_unit_covariance}.
+
+For comparison of units, if a single step has physical length
+$a>0$ and contraction $0<q_a<1$, its exponential decay rate in
+physical units is $-\log(q_a)/a$. A fixed $q_a=q<1$ gives an
+unbounded rate as $a\downarrow0$, consistently with the zero-limit
+conclusion above under the uniform amplitude bound. A finite rate
+$M>0$ instead has the illustrative scaling $q_a=e^{-Ma}\to1$;
+then $q_a^{N_a}=e^{-MaN_a}\to e^{-Mr}$ whenever $aN_a\to r$.
+These are human arithmetic illustrations of units, not constructed
+lattice families or renormalization theorems for our finite model.
+
+
+\subsection*{An exact weak-coupling error budget and its block scale}
+A separate reference expression from the audited manuscripts is
+\[
+ r_\beta=\exp\left(-\frac{\ell}{A\beta}\right),
+             \qquad A,\ell,\beta>0.
+\]
+It is strictly below one for each $\beta$, but tends to one as
+$\beta\to\infty$. Thus no fixed $q<1$ bounds it for all positive
+$\beta$. Adding nonnegative error terms does not restore such a
+uniform bound. This is a statement about the displayed reference
+factor, which has not been identified with an optimal contraction
+of a continuum physical transfer operator.
+
+The amount of available room below one is at most inverse coupling.
+The elementary inequality $e^{-x}\geq1-x$ gives
+\[
+ 1-r_\beta\leq\frac{\ell}{A\beta},\qquad
+ r_\beta+e_1+e_2<1
+       \ \Longrightarrow\ \beta(e_1+e_2)<\frac{\ell}{A}.
+\tag{\ref{eq:blockdecayscaling}$'$}\label{eq:referencebudget}
+\]
+For example, the proposed certified factor
+$r_\beta+c/\sqrt\beta$, with fixed $c>0$, is at least one for
+all sufficiently large $\beta$. Otherwise the necessary inequality
+above would give $c\sqrt\beta<\ell/A$, contradicting divergence
+of its left side. The same conclusion holds for an actual error
+sum proved to be eventually at least $c/\sqrt\beta$.
+An upper bound of order $\beta^{-1/2}$ alone does not establish
+that lower bound on the true error; failure of that proposed upper
+certificate is not failure of all possible contraction estimates.
+
+Nor does $r_\beta\to1$ rule out decay over a changing number of
+steps. For integers $n\geq1$, $k\geq0$, exact exponential arithmetic
+gives
+\[
+ r_n^n=e^{-\ell/A},\qquad
+ r_n^{nk}=e^{-(\ell/A)k}.
+\]
+Consequently for every sequence of positive integers $n(k)$,
+$r_{n(k)}^{n(k)k}\to0$ as $k\to\infty$. These exact identities
+separate a degenerating single-step estimate from its block scale.
+They concern the reference expression itself; no accumulation bound
+for other errors or identification with a physical length is supplied.
+\par\noindent\code{YMBlockRateDegeneration}:
+\par\noindent\code{referenceFactor_tendsto_one}, \code{referenceFactor_macro_steps},
+\par\noindent\code{referenceFactor_varying_macro_decay}.
+\par\noindent\code{YMBlockErrorBudget}:
+\par\noindent\code{strict_factor_requires_inverse_coupling_error},
+\par\noindent\code{fixed_sqrt_error_eventually_blocks_strictness}.
+
+\subsection*{Exponential Laplace decay excludes low positive spectral mass}
+Let $\mu$ be a finite positive Borel measure on $\R$. It is a
+positive measure, even though its variable is allowed to range over
+all real energies. Assume for every integer $n\geq0$ that
+\[
+ L(n)=\int_\R e^{-n\lambda}\,d\mu(\lambda)<\infty,
+ \qquad L(n)\leq Ce^{-mn},
+\]
+where $m,C\in\R$. These are actual integrability and upper-bound
+hypotheses. They imply
+\begin{equation}\label{eq:laplacespectralgap}
+ \mu(( -\infty,m))=0.
+\end{equation}
+Indeed, fix $b<m$. For $\lambda<b$ and $n\geq0$ we have
+$e^{-n\lambda}\geq e^{-nb}$, hence positivity yields
+\[
+ e^{-nb}\mu(( -\infty,b))\leq L(n),\qquad
+ 0\leq\mu(( -\infty,b))\leq C e^{-(m-b)n}.
+\]
+Taking $n\to\infty$ gives zero mass below $b$.
+Finally
+$(-\infty,m)=\bigcup_{k\geq1}(-\infty,m-1/k)$,
+so countable subadditivity gives \eqref{eq:laplacespectralgap}.
+Mass at the endpoint $m$ is not excluded. Only integer Laplace
+times were required. No cancellation argument for signed spectral
+weights is being used.
+
+Conversely, if \eqref{eq:laplacespectralgap} holds for this positive
+finite measure, then for every real $t\geq0$ the integrand is
+$\mu$-almost everywhere at most $e^{-mt}$, so it is integrable and
+\[
+ 0\leq\int e^{-t\lambda}\,d\mu(\lambda)
+       \leq\mu(\R)e^{-mt}.
+\]
+This last converse is a labelled human elementary consequence;
+the named formal bridge proves the exclusion direction with its
+explicit integral hypotheses.
+\par\noindent\code{YMSpectralLaplaceBridge}:
+\par\noindent\code{interval_lower}, \code{no_mass_below}, \code{no_mass_below_gap}.
+
+To apply the bridge to a physical Hamiltonian, one must first have
+its positive spectral measure and identify the correlation with the
+displayed Laplace integral. A decay bound for one probe then controls
+that probe's measure. It does not automatically give an operator-wide
+lower spectral bound. An explicit human finite-dimensional example is
+\[
+ H=\operatorname{diag}(0,1,2)\text{ on }\R^3,\qquad
+ \Omega=e_0,\quad f=e_2.
+\]
+The centered probe $f\perp\Omega$ has
+$\langle f,e^{-tH}f\rangle=e^{-2t}$ and spectral measure $\delta_2$,
+yet $e_1\perp\Omega$ has energy one. Thus this probe alone cannot
+establish a lower spectral bound of two on the centered sector.
+For a specified self-adjoint Hamiltonian with a spectral resolution,
+one possible closing hypothesis is the same exclusion below $m$
+for a dense set of centered vectors. Each corresponding spectral
+projection then annihilates that dense set, and its boundedness
+makes it zero on the whole centered sector. This is a conditional
+human spectral-theorem consequence, not a construction of such a
+Hamiltonian, spectral resolution or dense physical probe family.
+
+Jaffe--Witten's official problem formulation requires a nontrivial
+four-dimensional quantum theory as well as a positive gap; its
+preceding definition distinguishes the vacuum from positive-energy
+spectrum and requires a finite mass~\cite{JW}. Our elementary bounds
+above isolate two necessary pieces of a proposed argument. They do
+not supply the missing theory, observable normalization, spectral
+identification or volume/spacing-uniform estimates. Nor does a
+failure of those proposed pieces refute the physical mass gap.
+
 \section{Provenance, classical context and remaining boundaries}
 Every formal source used here is frozen at the verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -1102,5 +1277,11 @@ Physics \textbf{54} (1977), 283--292.
 \href{https://doi.org/10.1007/BF01614090}{doi:10.1007/BF01614090}.
 \href{https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf}
 {Primary DESY preprint}.
+
+\bibitem{JW} A. Jaffe and E. Witten,
+\emph{Quantum Yang--Mills theory}, official Clay Mathematics Institute
+problem description, Section 4, printed page 6.
+\href{https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf}{Primary problem statement}.
+Definition comparison only.
 \end{thebibliography}
 \end{document}
