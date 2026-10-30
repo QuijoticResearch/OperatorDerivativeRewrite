@@ -16,7 +16,7 @@
 \date{October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. A summable cosine example fails to be differentiable without smoothing. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
+Fix a countable family of dyadic path characters and complete their coefficient space using an $\ell^1$ quotient. Higher-even-order heat multipliers define normalized continuous expectation functionals and contraction semigroups on this realized Banach space. For every positive smoothing horizon, the orbit under bounded time controls is genuinely Fr\'echet smooth. Every derivative has a unique Banach-valued Bochner time density, rather than merely a formal distributional kernel. We reconstruct the finite signed-sampler limit, the descent through representation relations, all-order density uniqueness and the scalar realization theorem. An elementary Fourier estimate gives a separately labelled human bound $(n/(epH))^{n/p}$ for the order-$n$ density when the heat order is $p$. Conjugate-exponent controls have canonical $L^p$ time densities and an explicit uniform exponent boundary. A jointly measurable time/path representative justifies weighted Fubini. A summable cosine example fails to be differentiable without smoothing. The general Fourier-functional mechanism is classical; comparison with higher-order pseudoprocess and Fresnel literature is explicit. No finite-variation path measure or arbitrary adapted stochastic integral is constructed.
 \end{abstract}
 
 \section{The realized domain and the main statement}
@@ -135,7 +135,7 @@ For each fixed $r$, uniform convergence of the character series allows integrati
 If $Ja=0$, every finite integral on the left vanishes. The limiting scalar series is consequently zero. It annihilates $K$, so descends to $\A$. Its coefficient bound is $\norm a_1$; taking the infimum over all representatives gives $|\E_H q|\le\norm q_{\A}$. The constant character represents $\mathbf1\in\A$ with norm one: its coefficient norm is one and its realized supremum norm is one. Its expectation is one, proving the reverse norm inequality. Finite character combinations are dense in the quotient, since finitely supported sequences are dense in $\ell^1$.
 \end{proof}
 
-\section{Translations, heat evolution and the quotient relations}
+\section{Translations, heat evolution and the quotient relations}\label{sec:semigroup}
 On coefficients define $T_h a=(a_i\chi_i(h))_i$. It is an invertible isometry with inverse $T_{-h}$, and
 \[
  J(T_h a)(\omega)=Ja(\omega+h).
@@ -285,6 +285,217 @@ Apply Proposition~\ref{prop:expect}, with order $2k$ and horizon $G$, to the sin
 
 The theorem is pointwise in the chosen controls and derivative order. Its scalar limiting multilinear map has the bound from Theorem~\ref{thm:main}, since $\norm{\E^{(2k)}_G}=1$. It makes no claim that the weighted densities themselves converge in $L^1$ under one common probability measure as $r$ varies. The finite sampler laws change with $r$.
 
+\section{Conjugate-exponent controls and a sharp uniform boundary}\label{sec:dual}
+There is a natural larger local class of controls. Put $q_p=p/(p-1)$ and
+$V=L^{q_p}(\R;\R)$. This notation distinguishes the control exponent
+$q_p$ from the test element $q\in\A$. Every $u\in V$ is locally
+integrable and defines the same primitive $h_u(t)=\int_0^tu$. H\"older
+gives the explicit estimate
+\[
+ |h_u(t)-h_u(s)|\le\norm u_{q_p}|t-s|^{1/p},\qquad s,t\in\R.
+\]
+Thus $h_u$ is a continuous path. Local absolute continuity also gives
+$h'_u=u$ almost everywhere, so this direction map is injective on the
+whole real-line control space. These paths need not be Lipschitz. For
+example $u(t)=t^{-a}\mathbf1_{(0,1]}(t)$ belongs to $V$ whenever
+$0<a<1/q_p$, but is not essentially bounded; its primitive on $[0,1]$
+is $t^{1-a}/(1-a)$ and is not Lipschitz at zero.
+
+For a Banach space $B$, now define $B^{[0]}=B$ and
+$B^{[n+1]}=L^p(\R;B^{[n]})$. These are different spaces from the
+iterated $L^1$ towers of the main theorem. H\"older defines bounded
+pairings by controls in $V$ at every level, with the same product
+norm bound. They separate the towers: all finite-measure indicator
+controls belong to $V$, and the local Bochner separation proof of
+Lemma~\ref{lem:separate} applies. At its first step an $L^p$ field is
+integrable on every finite-measure set by H\"older; global $L^1$
+integrability is not required for that argument.
+
+\begin{proposition}\label{prop:dual}
+For every $H>0$ and $q\in\A$, the orbit $u\mapsto\tau_{h_u}S_Hq$ is
+$C^\infty$ on $V$. Its order-$n$ derivative has a unique time density
+$D^{[p]}_{n,H}q\in\A^{[n]}$, with
+\[
+ \norm{D^{[p]}_{n,H}q}\le C_{n,p,H}\norm q_{\A}.
+\]
+The explicit coefficient formula is \eqref{eq:fieldcoeff}, now summed
+in the iterated $L^p$ space. The native first derivative and its $L^p$
+density are formalized in the frozen sources. This all-order $L^p$
+tower statement and the sharper constant are human deductions.
+\end{proposition}
+\begin{proof}
+The phase \eqref{eq:phase} remains valid for locally integrable controls.
+Its key bound is now the exact H\"older inequality
+\[
+ |b_i(u)|\le\norm{\eta_i}_p\norm u_{q_p}
+          =\lambda_i^{1/p}\norm u_{q_p}.
+\]
+This substitutes directly for \eqref{eq:coercive} in the Taylor proof
+of Proposition~\ref{prop:smooth}. The remainder bounds at orders
+$n$ and $n+1$ are identical with the $V$ norm in place of the
+$L^\infty$ norm. They prove actual all-order Fr\'echet differentiability
+in this Banach topology, not merely directional differentiability.
+
+The iterated $L^p$ norm of the $i$th simple tensor in
+\eqref{eq:fieldcoeff} is exactly
+$|a_i|e^{-H\lambda_i}\norm{\eta_i}_p^n$.
+The sum of these norms is at most $C_{n,p,H}\norm a_1$.
+Completeness therefore gives a genuine Bochner field. Contracting it
+gives the native tensor; for a coefficient relation in $K$ the tensor
+is zero in $\A$ because the quotient orbit is identically zero.
+Separation of these $L^p$ towers annihilates the relation at the field
+level. Hence the field descends, and taking the infimum over
+representatives proves the bound. The same separation proves
+uniqueness. Scalar realization and application of every bounded
+linear functional follow by Bochner lifting as before.
+\end{proof}
+
+The source's first-gradient norm estimate is $1+H^{-1}$. Its actual
+closed directional graph, native Fr\'echet identity and uniquely
+representing $L^p$ field occur in \code{FourierPathDualFrechet} and
+\code{FourierPathDualTimeGradient}. Proposition~\ref{prop:dual}
+identifies the latter field with the direct formula by uniqueness.
+It does not attribute an all-order $L^p$ tower theorem to those
+first-order declarations.
+
+The bounded-control and conjugate-exponent densities are compatible.
+They vanish off $[0,1]^n$, and there the continuous embedding of
+iterated $L^p$ into iterated $L^1$ has norm at most one, by H\"older on
+a set of measure one at every level. Truncating any $L^\infty$ control
+to $[0,1]$ puts it in $V$ without changing any character phase.
+The embedded field and $D_{n,H}q$ have the same bounded-control
+pairings; uniqueness in the $L^1$ tower makes them equal. This uses
+compact time support, not an invalid global inclusion between
+$L^\infty(\R)$ and $L^{q_p}(\R)$.
+
+\begin{proposition}\label{prop:exponentboundary}
+The exponent $q_p$ is a sharp lower boundary for a uniform
+first-gradient bound over arbitrary allowed spectra. More precisely,
+there is a single admissible countable spectrum such that, for every
+$1\le r<q_p$ and every fixed $H>0$, no finite constant $B$ can bound
+\[
+ \norm{D[\,u\mapsto\tau_{h_u}S_Hq\,](0)[u]}
+       \le B\norm q_{\A}\norm u_r
+\]
+even just for its single-character tests and bounded step controls.
+\end{proposition}
+\begin{proof}
+For $N=2^j$, include the character with its only nonzero observation
+coefficient at $1/N$, chosen so that its tail field is
+$\eta_N=N^{1/p}\mathbf1_{(0,1/N]}$. This is an allowed dyadic
+character: take the coefficient $N^{1/p}/(2\pi)$ at that first node
+and zero at all the other nodes. It has $\lambda_N=1$. Its generator
+$q_N=Qe_N$ has quotient norm exactly one, by the same realized-supremum and one-coefficient argument used below for
+terminal characters. Take
+$u_N=N^{1/r}\mathbf1_{(0,1/N]}$, which has $L^r$ norm one and is a
+bounded step control. The generator derivative equals
+\[
+ -i e^{-H}b_N(u_N)q_N,
+ \qquad b_N(u_N)=N^{1/p+1/r-1}.
+\]
+Its norm tends to infinity because $r<q_p$ makes the exponent
+positive. This contradicts any proposed $B$.
+\end{proof}
+
+Here the single spectrum is fixed and contains all the dyadic spikes.
+The result does not say that every individual spectrum or test fails
+at smaller control exponents, or that every such orbit lacks a
+derivative. It rules out the stated bounded uniform theorem and is a
+human sharpness deduction from the character formula. All controls
+used in the obstruction are bounded, so their individual derivatives
+already exist by Theorem~\ref{thm:main}.
+
+\section{Joint time/path representatives and justified Fubini}\label{sec:joint}
+An almost-everywhere time field evaluated separately at each path does
+not by itself establish joint measurability. The source supplies this
+missing bridge for the first $L^p$ density. Let
+$g=D^{[p]}_{1,H}q\in L^p(\R;\A)$ and choose a strongly measurable
+representative $\widetilde g:\R\to\A$, equal to $g$ almost
+everywhere. It can be chosen zero off $[0,1]$. Define
+\[
+ j_q(s,\omega)=\mathcal J(\widetilde g(s))(\omega).
+\]
+The quotient $\A$ is separable, since it is a quotient of countable
+$\ell^1$. The path space $\X$ is Polish for the compact-open
+topology: $C(\R,\R)$ is complete and separable for a usual uniform-on-
+compacts metric, and $\omega(0)=0$ is a closed condition.
+
+\begin{lemma}\label{lem:joint}
+The function $j_q$ is jointly measurable for the product Borel
+structure, continuous in $\omega$ at every fixed $s$, and satisfies
+\[
+ |j_q(s,\omega)|\le\norm{\widetilde g(s)}_{\A}.
+\]
+For every $\omega\in\X$ and $u\in V$,
+\begin{equation}\label{eq:jointcontract}
+ \int u(s)j_q(s,\omega)\,ds
+ =\mathcal J\big(DF_q(0)[u]\big)(\omega).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The evaluation map $(a,\omega)\mapsto\mathcal Ja(\omega)$ is jointly
+continuous. Indeed, at $(a_0,\omega_0)$ its difference from
+$\mathcal Ja_0(\omega_0)$ is bounded by
+$\norm{a-a_0}_{\A}+|\mathcal Ja_0(\omega)-\mathcal Ja_0(\omega_0)|$.
+Composing this continuous map with the measurable map
+$(s,\omega)\mapsto(\widetilde g(s),\omega)$ proves joint
+measurability. The stated spaces have their Borel structures; a
+strongly measurable representative is Borel measurable, and their
+second-countable structures ensure the product Borel identification.
+The pointwise bound and path continuity follow from contractivity of
+$\mathcal J$ and its values in $C_b(\X)$.
+
+For fixed $\omega$, bounded evaluation commutes with the Bochner
+integral of $u\widetilde g$, which is integrable by H\"older.
+The defining density contraction is $DF_q(0)[u]$, proving
+\eqref{eq:jointcontract}. The exceptional time set is that of a single
+$\A$-valued representative. In particular the argument does not take
+an uncountable intersection of path-specific null sets.
+\end{proof}
+
+\begin{proposition}\label{prop:fubini}
+Let $\mu$ be an s-finite Borel measure on $\X$ and let real $w\in
+L^1(\mu)$. For every $u\in V$, the function
+$w(\omega)u(s)j_q(s,\omega)$ is absolutely integrable under
+$ds\,d\mu(\omega)$, and
+\begin{align*}
+ &\int\!\int w(\omega)u(s)j_q(s,\omega)\,d\mu(\omega)\,ds\\
+ &=\int w(\omega)\mathcal J(DF_q(0)[u])(\omega)\,d\mu(\omega).
+\end{align*}
+Its product $L^1$ norm is at most
+$\norm w_{L^1(\mu)}\norm u_{q_p}\norm g_{L^p(\R;\A)}$.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:joint} provides joint measurability and the product
+majorant
+$|w(\omega)||u(s)|\norm{\widetilde g(s)}_{\A}$.
+Its integral is at most the asserted bound by Tonelli and H\"older.
+Fubini therefore applies to the actual integrable function.
+Exchange the two integrals and apply \eqref{eq:jointcontract} for each
+path to obtain the identity. This establishes the necessary product
+integrability before any exchange.
+\end{proof}
+
+Take $\mu=P^{(2k)}_{r,G}$ and $w=w^{(2k)}_{r,G}$. The bound is finite
+at every level, although its weight factor $M_{2k}^{2^r}$ can diverge.
+The proposition identifies the double time/path integral with the
+weighted expectation of the single completed derivative test.
+Proposition~\ref{prop:expect} then gives the limit
+\[
+ \lim_{r\to\infty}\int\!\int
+ w^{(2k)}_{r,G}(\omega)u(s)j_q(s,\omega)
+ \,dP^{(2k)}_{r,G}(\omega)\,ds
+ =\int u(s)\, (\E^{(2k)}_G g)(s)\,ds.
+\]
+The field on the right is the Bochner $L^p$ lift of the expectation
+functional applied to $g$. Its pairing equals
+$\E^{(2k)}_G(DF_q(0)[u])$. The source establishes exactly this first-
+density sampler limit, not convergence of the unpaired joint fields
+under a common probability measure. Arbitrary random controls
+$u(s,\omega)$ are not admitted merely because deterministic controls
+can be paired. Their products and limits require additional domains
+and estimates.
+
 \section{Two concrete domain and normalization checks}
 \subsection{A two-time character and an invisible constant control}
 Take the times $1/2,1$ with frequencies $1,-1/2$. Then $\eta$ is $\pi$ on $(0,1/2]$ and $-\pi$ on $(1/2,1]$, and $\lambda=\pi^p$. For the constant control $u=\mathbf1_{(0,1]}$, $b(u)=0$. This character is unchanged by the linear direction $h_u(t)=t$ on $[0,1]$, although its heat multiplier is strictly less than one for $H>0$.
@@ -312,7 +523,7 @@ Chang, Johnson and Skoug \cite{cjs}, Section 2, describe a classical Banach alge
 
 Mazzucchi, Nicola and Trapasso \cite{mnt}, Section 3 and its Parseval formula, give modern primary context for Fresnel functionals on Fourier transforms of finite complex measures. Their quadratic oscillatory multiplier has modulus one; our multiplier is the real damping $e^{-H\lambda_i}$. No Sj\"ostrand-class extension or inclusion between their full infinite-dimensional domain and $\A$ is deduced. The sources establish that a Fourier-functional construction, despite failure of an ambient path measure, is an established idea. A complete priority determination for the precise quotient and density package remains unresolved.
 
-The following source correspondence fixes the scope of the formal evidence. The normalization, finite-sampler, translation and density constructions are reconstructed above; the semigroup strong-continuity argument in Section 3 is a human dominated-convergence deduction. All files are under \code{Foundation/} at frozen commit \code{bab688bb6140cd6316c80680095a914ea0d346db}; exact declarations, line numbers and source hashes are supplied separately in \code{theorem-map.json}.
+The following source correspondence fixes the scope of the formal evidence. The normalization, finite-sampler, translation and density constructions are reconstructed above; the semigroup strong-continuity argument in Section~\ref{sec:semigroup} is a human dominated-convergence deduction. All files are under \code{Foundation/} at frozen commit \code{bab688bb6140cd6316c80680095a914ea0d346db}; exact declarations, line numbers and source hashes are supplied separately in \code{theorem-map.json}.
 \begin{itemize}
  \item \code{HigherHeatFourierBanach}: closed-kernel quotient, completeness, bounded injective realization, norm-one expectation and dense finite generators. \code{HigherHeatMixedFourierPaths}: character bounds, completed series limits and representation independence.
  \item \code{HigherHeatWeightedPaths}: actual signed density over the absolute-density probability sampler, its exact first and absolute moments, and finite-level integrability. \par\noindent\code{HigherHeatFourierPathSemigroup}: multiplier kernel preservation and contraction semigroup.
@@ -323,6 +534,10 @@ The following source correspondence fixes the scope of the formal evidence. The 
 \par\noindent\code{FourierPathTimeTensorIdentity} and
 \par\noindent\code{FourierPathTimeTensorRealization}: composed densities, total-horizon normalization, uniqueness, scalar realization and the weighted density limit. \code{FourierPathHessianRealization} gives the unequal-horizon two-time specialization.
 \end{itemize}
+The conjugate-exponent all-order tower and its uniform exponent boundary are human deductions; the named formal declarations in that family give the native first derivative and its $L^p$ field. The joint representative and weighted Fubini bridge are formalized in \code{FourierPathDualJointDensity},
+\par\noindent\code{FourierPathDualDensityFubini} and
+\par\noindent\code{FourierPathDualDensitySamplers}.
+
 The direct bound \eqref{eq:humanbound}, the explicit cosine obstruction, the two-time calibration, and the direct all-order coefficient proof are human reconstructions or deductions. The formal bound being cited is \eqref{eq:formalbound}; the stronger estimate is not attributed to a declaration that proves only the coarser bound. The source proof review is specific to the mapped modules, not a claim that all imported library proofs were reread.
 
 For $p>2$, the one-time signed kernel changes sign and $M_p>1$. Finite-grid variation then grows as $M_p^{2^r}$, obstructing a finite-variation path measure with all these marginals. The separate signed multichannel companion reconstructs that classical obstruction in detail. The growth is compatible with Proposition~\ref{prop:expect}, whose bound exploits individual Fourier characters. It does not become a probability law through the positive finite samplers of \eqref{eq:weights}. At $p=2$ the Gaussian case has $M_2=1$, while all control-density assertions above remain valid.

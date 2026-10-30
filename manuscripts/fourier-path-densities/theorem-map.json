@@ -1008,10 +1008,506 @@
       "source_sha256": "6121477d37ebdc5fa52ccdd7d78e4deb6cda83319c7d1faa303473f7f6f0492d",
       "declaration_header": "theorem weighted_hessian_limit (m k : \u2115) (hm : 0 < m) (hk : 0 < k)\n    (S T H : \u211d\u22650) (hS : 0 < S) (hT : 0 < T) (hH : 0 < H)\n    (q : TestSpace levels \u03be) (u v : Control) :\n    Tendsto (fun n => \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022\n      realize levels \u03be (hessian levels \u03be m hm S T hS hT q u v) \u03c9 \u2202probabilityPath k hk H hH n)\n      atTop (\ud835\udcdd (\u222b t, u t \u2022 (\u222b s, v s \u2022 scalarField levels \u03be\n        (expectation levels \u03be k hk H hH) m hm S T hS hT q t s)))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathHessianRealization.lean#L77"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.exponent",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 14,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "def exponent (m : \u2115) : \u211d\u22650\u221e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L14"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.control_complete",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 24,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "theorem control_complete (m : \u2115) [Fact (0 < m)] : CompleteSpace (Control m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L24"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.primitive_continuous",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 34,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "theorem primitive_continuous (m : \u2115) [Fact (0 < m)] (u : Control m) :\n    Continuous (primitive m u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L34"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.direction_ae_derivative",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 47,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "theorem direction_ae_derivative (m : \u2115) [Fact (0 < m)] (u : Control m) :\n    \u2200\u1d50 s, HasDerivAt (fun t => (direction m u).val t) (u s) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L47"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.direction_injective",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 52,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "theorem direction_injective (m : \u2115) [Fact (0 < m)] : Function.Injective (direction m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L52"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualControls.pairing_bound",
+      "file": "Foundation/FourierPathDualControls.lean",
+      "line": 67,
+      "source_sha256": "250531da7df794be88b3889d1e31b619b6f09a7291045061adb11ed2ff5c9d1f",
+      "declaration_header": "theorem pairing_bound (m : \u2115) [Fact (0 < m)] (u : Control m)\n    (b : HigherHeatLpControls.Control m) : |pairing m u b| \u2264 \u2016u\u2016 * \u2016b\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualControls.lean#L67"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.pairing_integral",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 18,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem pairing_integral (m : \u2115) [Fact (0 < m)] (u : FourierPathDualControls.Control m)\n    (f : Field E m) : pairing E m u f = \u222b s, u s \u2022 f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L18"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.pairing_bound",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 22,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem pairing_bound (m : \u2115) [Fact (0 < m)] (u : FourierPathDualControls.Control m)\n    (f : Field E m) : \u2016pairing E m u f\u2016 \u2264 \u2016u\u2016*\u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L22"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.pairing_indicator",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 33,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem pairing_indicator (m : \u2115) [Fact (0 < m)] (s : Set \u211d) (hs : MeasurableSet s)\n    (h\u03bcs : volume s \u2260 \u221e) (f : Field E m) :\n    pairing E m (indicatorConstLp (exponent m) hs h\u03bcs (1 : \u211d)) f = \u222b t in s, f t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L33"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.annihilator_zero",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 44,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem annihilator_zero (m : \u2115) [Fact (0 < m)] (f : Field E m)\n    (hf : \u2200 u : FourierPathDualControls.Control m, pairing E m u f = 0) : f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L44"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.pairing_injective",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 55,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem pairing_injective (m : \u2115) [Fact (0 < m)] : Function.Injective (pairing E m).flip",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L55"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BochnerDualControlPairing.pairing_compLp",
+      "file": "Foundation/BochnerDualControlPairing.lean",
+      "line": 64,
+      "source_sha256": "2b9d021d70f18f7315bdf08539795c995c0abdfdeef7e3a899326843f8fcb8eb",
+      "declaration_header": "theorem pairing_compLp (m : \u2115) [Fact (0 < m)] (L : E \u2192L[\u211d] F)\n    (u : FourierPathDualControls.Control m) (f : Field E m) :\n    pairing F m u (L.compLpL (power m) volume f) = L (pairing E m u f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BochnerDualControlPairing.lean#L64"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGrid.step_clock",
+      "file": "Foundation/FourierPathDualGrid.lean",
+      "line": 40,
+      "source_sha256": "c1d8a02202538202cf6f3bf53668ddd1d7b9eba7e9db63f3fda8e604fa109de6",
+      "declaration_header": "theorem step_clock (m : \u2115) [Fact (0 < m)] (N : \u2115) (hN : 0 < N) (b : Fin N \u2192 \u211d) :\n    (clock m (step m N b) : \u211d) = (\u2211 j, (b j)^(2*m))/(N : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGrid.lean#L40"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGrid.direction_pairing",
+      "file": "Foundation/FourierPathDualGrid.lean",
+      "line": 56,
+      "source_sha256": "c1d8a02202538202cf6f3bf53668ddd1d7b9eba7e9db63f3fda8e604fa109de6",
+      "declaration_header": "theorem direction_pairing (m : \u2115) [Fact (0 < m)] (u : FourierPathDualControls.Control m)\n    (N : \u2115) (hN : 0 < N) (b : Fin N \u2192 \u211d) :\n    FourierPathDualControls.pairing m u (step m N b) =\n      \u2211 j, b j * FourierPathDyadicDirections.increment (FourierPathDualControls.direction m u) N j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGrid.lean#L56"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualStepPairing.pairing_step",
+      "file": "Foundation/FourierPathDualStepPairing.lean",
+      "line": 13,
+      "source_sha256": "db9138852282ab39591ba613d71c870d5121501a52bbe0244acc0ad6c3a435a2",
+      "declaration_header": "theorem pairing_step (m : \u2115) [Fact (0 < m)] (u : Control m) (s : \u03b9 \u2192 Set \u211d)\n    (hs : \u2200 i, MeasurableSet (s i)) (hf : \u2200 i, volume (s i) \u2260 \u221e) (c : \u03b9 \u2192 \u211d) :\n    pairing m u (control m s hs hf c) = \u2211 i, c i * \u222b x in s i, u x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualStepPairing.lean#L13"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualStepPairing.step_pairing_bound",
+      "file": "Foundation/FourierPathDualStepPairing.lean",
+      "line": 35,
+      "source_sha256": "db9138852282ab39591ba613d71c870d5121501a52bbe0244acc0ad6c3a435a2",
+      "declaration_header": "theorem step_pairing_bound (m : \u2115) [Fact (0 < m)] (u : Control m) (s : \u03b9 \u2192 Set \u211d)\n    (hs : \u2200 i, MeasurableSet (s i)) (hf : \u2200 i, volume (s i) \u2260 \u221e) (c : \u03b9 \u2192 \u211d) :\n    |\u2211 i, c i * \u222b x in s i, u x| \u2264 \u2016u\u2016 * \u2016control m s hs hf c\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualStepPairing.lean#L35"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDamping.tail_clock",
+      "file": "Foundation/FourierPathDualDamping.lean",
+      "line": 17,
+      "source_sha256": "88404c52599e88181e26d8c6adc6f4e762e166d03044f576e909cdb1eb187c84",
+      "declaration_header": "theorem tail_clock (m : \u2115) [Fact (0 < m)] (i : \u2115) :\n    (HigherHeatLpControls.clock m (step m (gridSize (spectrumLevels levels i)) (tail levels \u03be i)) : \u211d) =\n      rate levels \u03be m i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDamping.lean#L17"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDamping.frequencyMap_apply",
+      "file": "Foundation/FourierPathDualDamping.lean",
+      "line": 26,
+      "source_sha256": "88404c52599e88181e26d8c6adc6f4e762e166d03044f576e909cdb1eb187c84",
+      "declaration_header": "theorem frequencyMap_apply (m : \u2115) [Fact (0 < m)] (i : \u2115) (u : Control m) :\n    frequencyMap levels \u03be m i u = frequency levels \u03be (direction m u) i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDamping.lean#L26"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDamping.damped_frequency_bound",
+      "file": "Foundation/FourierPathDualDamping.lean",
+      "line": 44,
+      "source_sha256": "88404c52599e88181e26d8c6adc6f4e762e166d03044f576e909cdb1eb187c84",
+      "declaration_header": "theorem damped_frequency_bound (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (T : \u211d\u22650) (hT : 0 < T) (i : \u2115) :\n    \u2016eigenvalue (frequency levels \u03be (direction m u) i) * multiplier levels \u03be m T i\u2016 \u2264\n      \u2016u\u2016 * (1 + (T : \u211d)\u207b\u00b9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDamping.lean#L44"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDamping.smoothing_domain",
+      "file": "Foundation/FourierPathDualDamping.lean",
+      "line": 97,
+      "source_sha256": "88404c52599e88181e26d8c6adc6f4e762e166d03044f576e909cdb1eb187c84",
+      "declaration_header": "theorem smoothing_domain (m : \u2115) [h : Fact (0 < m)] (u : Control m)\n    (T : \u211d\u22650) (hT : 0 < T) (q : TestSpace levels \u03be) :\n    evolution levels \u03be m h.out T q \u2208\n      (FourierPathDirectionalOperator.operator levels \u03be (direction m u)).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDamping.lean#L97"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradientSeries.family_bound",
+      "file": "Foundation/FourierPathDualGradientSeries.lean",
+      "line": 53,
+      "source_sha256": "3dc55c37dd2d5606ece13d9a2b3cafee747d3932862cc7d327a3fbc700eff1d0",
+      "declaration_header": "theorem family_bound (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016family levels \u03be m T hT\u2016 \u2264 1+(T : \u211d)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradientSeries.lean#L53"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradientSeries.family_graph",
+      "file": "Foundation/FourierPathDualGradientSeries.lean",
+      "line": 95,
+      "source_sha256": "3dc55c37dd2d5606ece13d9a2b3cafee747d3932862cc7d327a3fbc700eff1d0",
+      "declaration_header": "theorem family_graph (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (a : Coeff) (u : Control m) :\n    (coefficientEvolution levels \u03be m T a, family levels \u03be m T hT a u) \u2208\n      coefficientGraph levels \u03be (direction m u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradientSeries.lean#L95"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradientSeries.family_preserves_kernel",
+      "file": "Foundation/FourierPathDualGradientSeries.lean",
+      "line": 104,
+      "source_sha256": "3dc55c37dd2d5606ece13d9a2b3cafee747d3932862cc7d327a3fbc700eff1d0",
+      "declaration_header": "theorem family_preserves_kernel (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (a : Coeff) (ha : a \u2208 kernel levels \u03be) (u : Control m) :\n    family levels \u03be m T hT a u \u2208 kernel levels \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradientSeries.lean#L104"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradient.gradient_bound",
+      "file": "Foundation/FourierPathDualGradient.lean",
+      "line": 57,
+      "source_sha256": "9be1c66b0d53a682fe36b5f21604c8c4343b63299bfe57cd7e706c262c64d7b0",
+      "declaration_header": "theorem gradient_bound (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) : \u2016gradient levels \u03be m T hT q\u2016 \u2264 (1+(T : \u211d)\u207b\u00b9)*\u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradient.lean#L57"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradient.bilinear_bound",
+      "file": "Foundation/FourierPathDualGradient.lean",
+      "line": 74,
+      "source_sha256": "9be1c66b0d53a682fe36b5f21604c8c4343b63299bfe57cd7e706c262c64d7b0",
+      "declaration_header": "theorem bilinear_bound (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) :\n    \u2016gradient levels \u03be m T hT q u\u2016 \u2264 (1+(T : \u211d)\u207b\u00b9)*\u2016q\u2016*\u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradient.lean#L74"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualGradient.gradient_graph",
+      "file": "Foundation/FourierPathDualGradient.lean",
+      "line": 79,
+      "source_sha256": "9be1c66b0d53a682fe36b5f21604c8c4343b63299bfe57cd7e706c262c64d7b0",
+      "declaration_header": "theorem gradient_graph (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) :\n    (evolution levels \u03be m h.out T q, gradient levels \u03be m T hT q u) \u2208\n      graph levels \u03be (direction m u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualGradient.lean#L79"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualFrechetSeries.coefficient_orbit_hasFDerivAt",
+      "file": "Foundation/FourierPathDualFrechetSeries.lean",
+      "line": 88,
+      "source_sha256": "77f41a54a89a1762b044b193d4daf990dd40382192b246fc0ce38d397eead1eb",
+      "declaration_header": "theorem coefficient_orbit_hasFDerivAt (a : Coeff)\n    (T : \u211d\u22650) (hT : 0 < T) (u : Control m) :\n    HasFDerivAt (fun v => diagonal levels \u03be (direction m v) (coefficientEvolution levels \u03be m T a))\n      (family levels \u03be m T hT (diagonal levels \u03be (direction m u) a)) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualFrechetSeries.lean#L88"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualFrechet.orbit_hasFDerivAt",
+      "file": "Foundation/FourierPathDualFrechet.lean",
+      "line": 14,
+      "source_sha256": "9aafa90c823cd2692cc12dc626854191ddd3a33fe501ca6ebb6c50ed25d0bc0b",
+      "declaration_header": "theorem orbit_hasFDerivAt (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) :\n    HasFDerivAt (fun v => translation levels \u03be (direction m v) (evolution levels \u03be m h.out T q))\n      (gradient levels \u03be m T hT (translation levels \u03be (direction m u) q)) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualFrechet.lean#L14"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualFrechet.realized_hasFDerivAt",
+      "file": "Foundation/FourierPathDualFrechet.lean",
+      "line": 45,
+      "source_sha256": "9aafa90c823cd2692cc12dc626854191ddd3a33fe501ca6ebb6c50ed25d0bc0b",
+      "declaration_header": "theorem realized_hasFDerivAt (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (\u03c9 : Path) (u : Control m) :\n    HasFDerivAt (fun v => realize levels \u03be (evolution levels \u03be m h.out T q)\n      (addPath (direction m v) \u03c9))\n      ((((BoundedContinuousFunction.evalCLM \u2102 \u03c9).comp (realize levels \u03be)).restrictScalars \u211d).comp\n        (gradient levels \u03be m T hT (translation levels \u03be (direction m u) q))) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualFrechet.lean#L45"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualFrechet.expectation_hasFDerivAt",
+      "file": "Foundation/FourierPathDualFrechet.lean",
+      "line": 58,
+      "source_sha256": "9aafa90c823cd2692cc12dc626854191ddd3a33fe501ca6ebb6c50ed25d0bc0b",
+      "declaration_header": "theorem expectation_hasFDerivAt (m : \u2115) [h : Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) :\n    HasFDerivAt (fun v => expectation levels \u03be k hk H hH\n      (translation levels \u03be (direction m v) (evolution levels \u03be m h.out T q)))\n      (((expectation levels \u03be k hk H hH).restrictScalars \u211d).comp\n        (gradient levels \u03be m T hT (translation levels \u03be (direction m u) q))) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualFrechet.lean#L58"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeAtoms.field",
+      "file": "Foundation/FourierPathDualTimeAtoms.lean",
+      "line": 24,
+      "source_sha256": "3bd724d1cd0e69ba151113615feaf88c351f42eb5b6d1752fddc85c8e15d0fa7",
+      "declaration_header": "def field (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (i : \u2115) : BochnerDualControlPairing.Field Coeff m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeAtoms.lean#L24"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeAtoms.field_bound",
+      "file": "Foundation/FourierPathDualTimeAtoms.lean",
+      "line": 29,
+      "source_sha256": "3bd724d1cd0e69ba151113615feaf88c351f42eb5b6d1752fddc85c8e15d0fa7",
+      "declaration_header": "theorem field_bound (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) (i : \u2115) :\n    \u2016field levels \u03be m T i\u2016 \u2264 1+(T : \u211d)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeAtoms.lean#L29"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeAtoms.field_pairing",
+      "file": "Foundation/FourierPathDualTimeAtoms.lean",
+      "line": 65,
+      "source_sha256": "3bd724d1cd0e69ba151113615feaf88c351f42eb5b6d1752fddc85c8e15d0fa7",
+      "declaration_header": "theorem field_pairing (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (i : \u2115)\n    (u : FourierPathDualControls.Control m) :\n    BochnerDualControlPairing.pairing Coeff m u (field levels \u03be m T i) =\n      FourierPathDualGradientSeries.atom levels \u03be m T i u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeAtoms.lean#L65"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeSeries.series_bound",
+      "file": "Foundation/FourierPathDualTimeSeries.lean",
+      "line": 26,
+      "source_sha256": "b889e4718d34b85a0777af51943bdd17be0b4beab0b8807d276c30d793905f50",
+      "declaration_header": "theorem series_bound (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016series levels \u03be m T hT\u2016 \u2264 1+(T : \u211d)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeSeries.lean#L26"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeSeries.fields_summable",
+      "file": "Foundation/FourierPathDualTimeSeries.lean",
+      "line": 36,
+      "source_sha256": "b889e4718d34b85a0777af51943bdd17be0b4beab0b8807d276c30d793905f50",
+      "declaration_header": "theorem fields_summable (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) (a : Coeff) :\n    Summable (fun i => a i \u2022 field levels \u03be m T i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeSeries.lean#L36"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeSeries.series_pairing",
+      "file": "Foundation/FourierPathDualTimeSeries.lean",
+      "line": 42,
+      "source_sha256": "b889e4718d34b85a0777af51943bdd17be0b4beab0b8807d276c30d793905f50",
+      "declaration_header": "theorem series_pairing (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (a : Coeff) (u : Control m) :\n    BochnerDualControlPairing.pairing Coeff m u (series levels \u03be m T hT a) =\n      FourierPathDualGradientSeries.family levels \u03be m T hT a u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeSeries.lean#L42"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.kernel_le_field",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 46,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem kernel_le_field (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) :\n    kernel levels \u03be \u2264 (coefficientField levels \u03be m T hT).ker",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L46"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.timeGradient_bound",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 60,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem timeGradient_bound (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T) (q : TestSpace levels \u03be) :\n    \u2016timeGradient levels \u03be m T hT q\u2016 \u2264 (1+(T:\u211d)\u207b\u00b9)*\u2016q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L60"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.timeGradient_pairing",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 78,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem timeGradient_pairing (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) :\n    pairing (TestSpace levels \u03be) m u (timeGradient levels \u03be m T hT q) =\n      gradient levels \u03be m T hT q u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L78"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.timeGradient_unique",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 92,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem timeGradient_unique (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (f : BochnerDualControlPairing.Field (TestSpace levels \u03be) m)\n    (hf : \u2200 u : Control m, pairing (TestSpace levels \u03be) m u f = gradient levels \u03be m T hT q u) :\n    f = timeGradient levels \u03be m T hT q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L92"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.orbit_density_derivative",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 100,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem orbit_density_derivative (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) :\n    HasFDerivAt (fun v => HigherHeatFourierTranslations.translation levels \u03be (direction m v)\n      (HigherHeatFourierPathSemigroup.evolution levels \u03be m h.out T q))\n      ((pairing (TestSpace levels \u03be) m).flip (timeGradient levels \u03be m T hT\n        (HigherHeatFourierTranslations.translation levels \u03be (direction m u) q))) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L100"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.realized_density_derivative",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 128,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem realized_density_derivative (m : \u2115) [h : Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (\u03c9 : HigherHeatContinuousCylinders.Path) (u : Control m) :\n    HasFDerivAt (fun v => realize levels \u03be\n      (HigherHeatFourierPathSemigroup.evolution levels \u03be m h.out T q)\n      (HigherHeatFourierTranslations.addPath (direction m v) \u03c9))\n      ((pairing \u2102 m).flip (realizedField levels \u03be m T hT\n        (HigherHeatFourierTranslations.translation levels \u03be (direction m u) q) \u03c9)) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L128"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualTimeGradient.expectation_density_derivative",
+      "file": "Foundation/FourierPathDualTimeGradient.lean",
+      "line": 157,
+      "source_sha256": "b1dd9e072fdeaf64ecd6edde49aa8f4d9a044e6f3e30280ecc014b85a6cc2fbc",
+      "declaration_header": "theorem expectation_density_derivative (m : \u2115) [h : Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) :\n    HasFDerivAt (fun v => expectation levels \u03be k hk H hH\n      (HigherHeatFourierTranslations.translation levels \u03be (direction m v)\n        (HigherHeatFourierPathSemigroup.evolution levels \u03be m h.out T q)))\n      ((pairing \u2102 m).flip (expectationField levels \u03be m k hk T H hT hH\n        (HigherHeatFourierTranslations.translation levels \u03be (direction m u) q))) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualTimeGradient.lean#L157"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.representative_stronglyMeasurable",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 20,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem representative_stronglyMeasurable (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) : StronglyMeasurable (representative levels \u03be m T hT q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L20"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.representative_ae",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 24,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem representative_ae (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) :\n    (timeGradient levels \u03be m T hT q : \u211d \u2192 TestSpace levels \u03be) =\u1d50[volume]\n      representative levels \u03be m T hT q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L24"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.joint_measurable",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 34,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem joint_measurable (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) : Measurable (joint levels \u03be m T hT q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L34"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.joint_section_ae",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 50,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem joint_section_ae (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (\u03c9 : Path) :\n    (realizedField levels \u03be m T hT q \u03c9 : \u211d \u2192 \u2102) =\u1d50[volume]\n      fun t => joint levels \u03be m T hT q (t,\u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L50"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.joint_bound",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 59,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem joint_bound (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (z : \u211d \u00d7 Path) :\n    \u2016joint levels \u03be m T hT q z\u2016 \u2264 \u2016representative levels \u03be m T hT q z.1\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L59"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.joint_memLp",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 64,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem joint_memLp (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (\u03bc : Measure Path) [IsFiniteMeasure \u03bc] :\n    MemLp (joint levels \u03be m T hT q) (HigherHeatLpControls.power m) (volume.prod \u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L64"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualJointDensity.joint_contraction",
+      "file": "Foundation/FourierPathDualJointDensity.lean",
+      "line": 73,
+      "source_sha256": "59d1e0592cd42d6beaa856ba1012c0f2f359c997bb2d495da9be85e608e5b436",
+      "declaration_header": "theorem joint_contraction (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (\u03c9 : Path) (u : Control m) :\n    (\u222b t : \u211d, u t \u2022 joint levels \u03be m T hT q (t,\u03c9)) =\n      realize levels \u03be (FourierPathDualGradient.gradient levels \u03be m T hT q u) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualJointDensity.lean#L73"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDensityFubini.weighted_integrable",
+      "file": "Foundation/FourierPathDualDensityFubini.lean",
+      "line": 18,
+      "source_sha256": "01ea9b6e855217ed32eb3032787d6cdb7eebaad41873b5f6c01ee45c9357b08d",
+      "declaration_header": "theorem weighted_integrable (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) (\u03bc : Measure Path) [SFinite \u03bc]\n    (w : Path \u2192 \u211d) (hw : Integrable w \u03bc) :\n    Integrable (weighted levels \u03be m T hT q u w) (volume.prod \u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensityFubini.lean#L18"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDensityFubini.weighted_fubini",
+      "file": "Foundation/FourierPathDualDensityFubini.lean",
+      "line": 41,
+      "source_sha256": "01ea9b6e855217ed32eb3032787d6cdb7eebaad41873b5f6c01ee45c9357b08d",
+      "declaration_header": "theorem weighted_fubini (m : \u2115) [Fact (0 < m)] (T : \u211d\u22650) (hT : 0 < T)\n    (q : TestSpace levels \u03be) (u : Control m) (\u03bc : Measure Path) [SFinite \u03bc]\n    (w : Path \u2192 \u211d) (hw : Integrable w \u03bc) :\n    (\u222b t : \u211d, \u222b \u03c9, weighted levels \u03be m T hT q u w (t,\u03c9) \u2202\u03bc) =\n      \u222b \u03c9, w \u03c9 \u2022 realize levels \u03be (FourierPathDualGradient.gradient levels \u03be m T hT q u) \u03c9 \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensityFubini.lean#L41"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDensitySamplers.sampler_joint_integrable",
+      "file": "Foundation/FourierPathDualDensitySamplers.lean",
+      "line": 14,
+      "source_sha256": "4d2d1d111810646d2352c546400c0f8a6c213abf963d0373c39587a64113a4ff",
+      "declaration_header": "theorem sampler_joint_integrable (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) (n : \u2115) :\n    Integrable (weighted levels \u03be m T hT q u (pathWeight k hk H hH n))\n      (volume.prod (probabilityPath k hk H hH n))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensitySamplers.lean#L14"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDensitySamplers.sampler_fubini",
+      "file": "Foundation/FourierPathDualDensitySamplers.lean",
+      "line": 21,
+      "source_sha256": "4d2d1d111810646d2352c546400c0f8a6c213abf963d0373c39587a64113a4ff",
+      "declaration_header": "theorem sampler_fubini (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) (n : \u2115) :\n    (\u222b t : \u211d, \u222b \u03c9, weighted levels \u03be m T hT q u (pathWeight k hk H hH n) (t,\u03c9)\n      \u2202probabilityPath k hk H hH n) =\n      \u222b \u03c9, pathWeight k hk H hH n \u03c9 \u2022\n        realize levels \u03be (FourierPathDualGradient.gradient levels \u03be m T hT q u) \u03c9\n          \u2202probabilityPath k hk H hH n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensitySamplers.lean#L21"
+    },
+    {
+      "paper": "Sections 8\u20139 conjugate-exponent first native density and actual joint time/path Fubini; higher-order Lp statement and exponent sharpness are human deductions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDualDensitySamplers.sampler_density_limit",
+      "file": "Foundation/FourierPathDualDensitySamplers.lean",
+      "line": 31,
+      "source_sha256": "4d2d1d111810646d2352c546400c0f8a6c213abf963d0373c39587a64113a4ff",
+      "declaration_header": "theorem sampler_density_limit (m : \u2115) [Fact (0 < m)] (k : \u2115) (hk : 0 < k)\n    (T H : \u211d\u22650) (hT : 0 < T) (hH : 0 < H) (q : TestSpace levels \u03be) (u : Control m) :\n    Tendsto (fun n => \u222b t : \u211d, \u222b \u03c9,\n      weighted levels \u03be m T hT q u (pathWeight k hk H hH n) (t,\u03c9)\n        \u2202probabilityPath k hk H hH n) atTop\n      (\ud835\udcdd (\u222b t : \u211d, u t \u2022 expectationField levels \u03be m k hk T H hT hH q t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDualDensitySamplers.lean#L31"
     }
   ],
   "human_reorganization": [
-    "The direct all-order coefficient proof and bound C(n,p,H)=(n/(e*p*H))^(n/p), semigroup strong continuity, explicit cosine non-differentiability example, two-time sign/tail calibration and permutation symmetry are HUMAN reconstructions/deductions. The exact source bound is (1+n/H)^n at prescribed horizon H; its n composed gradients each use H/n. Uniqueness identifies the direct field with the formal normalized density. No arbitrary-spectrum algebra closure, finite-variation signed path law, adapted stochastic integral or new priority claim is inferred."
+    "The direct all-order coefficient proof and bound C(n,p,H)=(n/(e*p*H))^(n/p), semigroup strong continuity, explicit cosine non-differentiability example, two-time sign/tail calibration and permutation symmetry are HUMAN reconstructions/deductions. The exact source bound is (1+n/H)^n at prescribed horizon H; its n composed gradients each use H/n. Uniqueness identifies the direct field with the formal normalized density. No arbitrary-spectrum algebra closure, finite-variation signed path law, adapted stochastic integral or new priority claim is inferred.",
+    "Sections 8\u20139 reconstruct the exact L^(p/(p-1)) controls and canonical Lp first-gradient field. The all-order Lp tower bound, compact-support compatibility with L1 towers and fixed-spectrum failure of any uniform gradient estimate in Lr for 1<=r<p/(p-1) are complete HUMAN deductions, not stronger named formal statements. Actual jointly measurable representatives, a path-uniform time majorant, genuine finite-weight product integrability/Fubini and paired sampler limit are supplied without random-control or common-law field convergence claims."
   ],
-  "review_scope": "Twenty-three named principal modules read fully; imported library not exhaustively reread. No mathematical source edited."
+  "review_scope": "Thirty-eight named principal modules read fully. Additional imported foundations not exhaustively reread. Mathematical sources frozen."
 }
