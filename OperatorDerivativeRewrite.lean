@@ -2960,3 +2960,4 @@ import Foundation.PeriodicCurvatureVariance
 import Foundation.PeriodicCurvatureTransfer
 import Foundation.PeriodicCurvatureWeighted
 import Foundation.PeriodicQuarticCurvature
+import Foundation.PeriodicPolynomialGround
