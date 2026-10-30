@@ -499,6 +499,61 @@ uniformly in the norm bound. This gives a bounded map into
 $L^\infty(\lambda;\D)$.
 
 
+\subsection*{A genuine initial-time gap in the coefficient norm}
+Bounded causal projections do not supply strong continuity at time zero
+in this particular completion. Write $s_n=2^{-n}$ and let $P_n$ be the
+completed signed projection onto the first cell of the level-$n$ grid;
+its physical cutoff is $Ts_n$. Let $P_0^{\rm empty}u=(\E_Tu)1$,
+where the superscript distinguishes the empty past from the level-zero
+first-cell projection. All these maps are bounded by $e^T$.
+For the single fixed terminal cylinder $U=Y_1$, we have
+\begin{equation}\label{eq:initialgap}
+ P_nU=Y_{s_n},\qquad P_0^{\rm empty}U=0,\qquad
+ \norm{(P_n-P_0^{\rm empty})U}_{\D}=1,\qquad \norm U_{\D}=1.
+\end{equation}
+Here and below polynomial cylinders are identified with their
+canonical embeddings into $\D$.
+
+Every identity has an elementary finite-law proof. On the level-$n$
+grid the terminal position is the sum of all increments. The projection
+retains the first increment and integrates the others. Each future
+increment has signed first moment zero by \eqref{eq:moments}, and
+all its polynomial pairings are integrable, so the result is the first
+position $Y_{s_n}$. The empty projection integrates the terminal
+linear position to zero. The coefficient norm \eqref{eq:norm} of
+any one position variable is exactly $1!\cdot1=1$, independent of
+its time label. Refinement retains that label and is isometric.
+Thus the identities persist in the completed operators, whose values
+on core cylinders agree with the original projections.
+
+It follows from \eqref{eq:initialgap} that $P_nU$ does not converge
+to the empty-past value in $\D$. In particular $P_n$ fails to converge
+strongly to $P_0^{\rm empty}$, and the operator norm obeys
+\[
+ \norm{P_n-P_0^{\rm empty}}\geq1.
+\]
+Nevertheless, for every fixed continuous zero-start path $\omega$,
+$Y_{s_n}(\omega)=\omega(s_n)\to0$. This is pointwise path evaluation,
+not convergence in the factorial coefficient norm. The same gap holds
+at order $p=2$; it is not a failure caused only by signed laws.
+Under the separate Brownian realization with generator $\partial_x^2$,
+the first-position law has second moment $2Ts_n$, so its actual
+Brownian $L^2$ norm tends to zero as well. That last norm comparison
+is a human consequence of the variance convention and does not identify
+the whole coefficient completion with Brownian $L^2$.
+
+\par\noindent
+The coefficient-norm proof is in \code{HigherHeatAnalyticTimeObstruction}.
+
+\noindent The projection gap is in \code{HigherHeatCausalTimeObstruction}.
+
+\noindent The terminal formula is in \code{HigherHeatTerminalPositions}.
+
+\noindent The empty-past extension is in \code{HigherHeatCompletedEmptyPast}.
+This is a precise topology obstruction for these operators, not an
+obstruction to the native multichannel reconstruction proved below,
+whose limits have their separately stated dual and Bochner topologies.
+
 \subsection*{An actual arithmetic transform outside the one-coordinate realization}
 The domain restriction can be tested on another verified family in the
 same library. In one position coordinate, the norm

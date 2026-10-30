@@ -2194,6 +2194,708 @@
       "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
       "declaration_header": "theorem mean_continuous (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d,\u2102)) :\n    Continuous (fun t : \u211d\u22650 => HigherHeatSchwartzCalculus.mean m t f)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L85"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.position_core_norm",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 14,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem position_core_norm (n : \u2115) (i : Fin (size n)) : \u2016core (positionCylinder n i)\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L14"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.firstIndex",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 23,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "def firstIndex (n : \u2115) : Fin (size n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L23"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.firstPosition",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 25,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "def firstPosition (n : \u2115) : Cylinder",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L25"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.first_time",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 27,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem first_time (n : \u2115) :\n    HigherHeatContinuousCylinders.sampleTime n (firstIndex n) = (1/2 : \u211d)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L27"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.first_time_tendsto",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 32,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem first_time_tendsto :\n    Tendsto (fun n => HigherHeatContinuousCylinders.sampleTime n (firstIndex n)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L32"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.first_path_tendsto",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 37,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem first_path_tendsto (\u03c9 : Path) :\n    Tendsto (fun n => HigherHeatPolynomialPathDomain.realize (firstPosition n) \u03c9) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L37"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.first_core_norm",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 45,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem first_core_norm (n : \u2115) : \u2016core (firstPosition n)\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L45"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAnalyticTimeObstruction.first_core_not_tendsto_zero",
+      "file": "Foundation/HigherHeatAnalyticTimeObstruction.lean",
+      "line": 48,
+      "source_sha256": "910b6619a49140e1eb02a62e02a1c44c092fb45f77e0bccbe9bdd0a1ed3f7ed1",
+      "declaration_header": "theorem first_core_not_tendsto_zero : \u00ac Tendsto (fun n => core (firstPosition n)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAnalyticTimeObstruction.lean#L48"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.algebraic_terminal",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 17,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem algebraic_terminal (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (n : \u2115) (r : Fin (size n)) :\n    dyadicProjection m hm T hT n (r.val+1) terminalCylinder = positionCylinder n r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L17"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.completed_terminal",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 25,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem completed_terminal (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (n : \u2115) (r : Fin (size n)) :\n    completed m hm T hT n r (core terminalCylinder) = core (positionCylinder n r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L25"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.mean_terminal_zero",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 30,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem mean_terminal_zero (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    HigherHeatCompletedSignedMean.mean m hm T hT (core terminalCylinder) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L30"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.empty_terminal_zero",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 44,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem empty_terminal_zero (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    emptyProjection m hm T hT (core terminalCylinder) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L44"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.earlyProjection",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 48,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "def earlyProjection (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) : Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L48"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.earlyProjection_terminal",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 51,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem earlyProjection_terminal (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    earlyProjection m hm T hT n (core terminalCylinder) = core (firstPosition n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L51"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.earlyProjection_norm",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 55,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem earlyProjection_norm (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    \u2016earlyProjection m hm T hT n\u2016 \u2264 Real.exp (T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L55"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.actual_path_tendsto",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 58,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem actual_path_tendsto (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (\u03c9 : Path) :\n    Tendsto (fun n => HigherHeatPolynomialPathDomain.realize\n      (dyadicProjection m hm T hT n ((firstIndex n).val+1) terminalCylinder) \u03c9) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L58"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.terminal_gap",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 64,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem terminal_gap (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    \u2016(earlyProjection m hm T hT n - emptyProjection m hm T hT) (core terminalCylinder)\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L64"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.not_tendsto_on_terminal",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 69,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem not_tendsto_on_terminal (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac Tendsto (fun n => earlyProjection m hm T hT n (core terminalCylinder)) atTop\n      (\ud835\udcdd (emptyProjection m hm T hT (core terminalCylinder)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L69"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.no_strong_convergence",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 76,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem no_strong_convergence (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac (\u2200 u : Domain, Tendsto (fun n => earlyProjection m hm T hT n u) atTop\n      (\ud835\udcdd (emptyProjection m hm T hT u)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L76"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.terminal_core_norm",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 82,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem terminal_core_norm : \u2016core terminalCylinder\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L82"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.operator_gap",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 86,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem operator_gap (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    1 \u2264 \u2016earlyProjection m hm T hT n - emptyProjection m hm T hT\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L86"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCausalTimeObstruction.norm_gap_not_tendsto_zero",
+      "file": "Foundation/HigherHeatCausalTimeObstruction.lean",
+      "line": 95,
+      "source_sha256": "bed62ec45794c7a4ade9e160ccee7544c94094284848a0d821e9a6de65500220",
+      "declaration_header": "theorem norm_gap_not_tendsto_zero (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac Tendsto (fun n => \u2016earlyProjection m hm T hT n - emptyProjection m hm T hT\u2016) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCausalTimeObstruction.lean#L95"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.lastIndex",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 12,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "def lastIndex (n : \u2115) : Fin (size n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L12"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.lastIndex_count",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 15,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem lastIndex_count (n : \u2115) : (lastIndex n).val+1 = size n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L15"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.lastIndex_step",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 20,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem lastIndex_step (n : \u2115) : oddIndex (lastIndex n) = lastIndex (n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L20"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.positionPolynomial_last",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 27,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem positionPolynomial_last (n : \u2115) :\n    positionPolynomial n (lastIndex n) = (terminal : Test n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L27"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.positionCylinder_last",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 38,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem positionCylinder_last (n : \u2115) : positionCylinder n (lastIndex n) = terminalCylinder",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L38"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.terminal_on_grid",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 43,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem terminal_on_grid (n : \u2115) : terminalCylinder = cylinderOf n (terminal : Test n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L43"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatTerminalPositions.localProjection_terminal",
+      "file": "Foundation/HigherHeatTerminalPositions.lean",
+      "line": 46,
+      "source_sha256": "0f50a545d7894b4bd2f4263de85d24d96deb86f2f918996816c1a0de38b62cf3",
+      "declaration_header": "theorem localProjection_terminal (n m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (r : Fin (size n)) :\n    HigherHeatDyadicConditioning.localProjection m T n\n      (HigherHeatDyadicConditioning.initialPast n (r.val+1)) (terminal : Test n) =\n        positionPolynomial n r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatTerminalPositions.lean#L46"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.empty_base",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 12,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem empty_base (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (b : \u2115) (F : Cylinder) :\n    dyadicProjection m hm T hT 0 0 F = dyadicProjection m hm T hT b 0 F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L12"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.core_empty_bound",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 21,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem core_empty_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (F : Cylinder) :\n    \u2016core (dyadicProjection m hm T hT 0 0 F)\u2016 \u2264 Real.exp (T:\u211d) * \u2016core F\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L21"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 33,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "def emptyProjection (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) : Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L33"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_core",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 36,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_core (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (F : Cylinder) :\n    emptyProjection m hm T hT (core F) = core (dyadicProjection m hm T hT 0 0 F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L36"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_bound",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 40,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (u : Domain) :\n    \u2016emptyProjection m hm T hT u\u2016 \u2264 Real.exp (T:\u211d) * \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L40"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_norm",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 44,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_norm (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016emptyProjection m hm T hT\u2016 \u2264 Real.exp (T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L44"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_unique",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 48,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_unique (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (L : Domain \u2192L[\u211d] Domain)\n    (hL : \u2200 F, L (core F) = core (dyadicProjection m hm T hT 0 0 F)) :\n    L = emptyProjection m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L48"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_idempotent",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 57,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_idempotent (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    (emptyProjection m hm T hT).comp (emptyProjection m hm T hT) = emptyProjection m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L57"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_left",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 65,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_left (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    (emptyProjection m hm T hT).comp (completed m hm T hT b r) = emptyProjection m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L65"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedEmptyPast.emptyProjection_right",
+      "file": "Foundation/HigherHeatCompletedEmptyPast.lean",
+      "line": 75,
+      "source_sha256": "9a2cb77722f5623042bda3cabb385db1fbaf63eaa2fec1ea5bfdb860ad15842b",
+      "declaration_header": "theorem emptyProjection_right (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    (completed m hm T hT b r).comp (emptyProjection m hm T hT) = emptyProjection m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedEmptyPast.lean#L75"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.cutCount",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 15,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "def cutCount (b : \u2115) (r : Fin (size b)) (n : \u2115) : \u2115",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L15"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.cutCount_pos",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 17,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem cutCount_pos (b : \u2115) (r : Fin (size b)) (n : \u2115) : 0 < cutCount b r n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L17"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.cutCount_le",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 20,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem cutCount_le (b : \u2115) (r : Fin (size b)) (n : \u2115) (hn : b \u2264 n) :\n    cutCount b r n \u2264 size n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L20"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.endpoint",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 26,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "def endpoint (b : \u2115) (r : Fin (size b)) (n : \u2115) (hn : b \u2264 n) : Fin (size n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L26"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.endpoint_count",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 32,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem endpoint_count (b : \u2115) (r : Fin (size b)) (n : \u2115) (hn : b \u2264 n) :\n    (endpoint b r n hn).val+1 = cutCount b r n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L32"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.core_bound",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 38,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem core_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (F : Cylinder) :\n    \u2016core (dyadicProjection m hm T hT b (r.val+1) F)\u2016 \u2264 Real.exp (T:\u211d) * \u2016core F\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L38"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 49,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "def completed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) : Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L49"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_core",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 53,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_core (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (F : Cylinder) :\n    completed m hm T hT b r (core F) = core (dyadicProjection m hm T hT b (r.val+1) F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L53"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_bound",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 58,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (u : Domain) :\n    \u2016completed m hm T hT b r u\u2016 \u2264 Real.exp (T:\u211d) * \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L58"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_norm",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 63,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_norm (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) : \u2016completed m hm T hT b r\u2016 \u2264 Real.exp (T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L63"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_unique",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 67,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_unique (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (L : Domain \u2192L[\u211d] Domain)\n    (hL : \u2200 F, L (core F) = core (dyadicProjection m hm T hT b (r.val+1) F)) :\n    L = completed m hm T hT b r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L67"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_tower",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 76,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_tower (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r s : Fin (size b)) :\n    (completed m hm T hT b r).comp (completed m hm T hT b s) =\n      completed m hm T hT b (min r s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L76"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_idempotent",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 90,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_idempotent (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    (completed m hm T hT b r).comp (completed m hm T hT b r) = completed m hm T hT b r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L90"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_refinement",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 95,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_refinement (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    completed m hm T hT b r = completed m hm T hT (b+1) (oldEmbedding b r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L95"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.pastSpace",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 107,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "def pastSpace (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) : Submodule \u211d Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L107"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.mem_pastSpace",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 111,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem mem_pastSpace (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (u : Domain) :\n    u \u2208 pastSpace m hm T hT b r \u2194 completed m hm T hT b r u = u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L111"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.pastSpace_closed",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 117,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem pastSpace_closed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) : IsClosed (pastSpace m hm T hT b r : Set Domain)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L117"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.completed_fixed",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 121,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem completed_fixed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) (u : Domain) :\n    completed m hm T hT b r (completed m hm T hT b r u) = completed m hm T hT b r u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L121"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.range_eq_pastSpace",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 126,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem range_eq_pastSpace (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    Set.range (completed m hm T hT b r) = (pastSpace m hm T hT b r : Set Domain)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L126"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.range_closed",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 136,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem range_closed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) : IsClosed (Set.range (completed m hm T hT b r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L136"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedCausalProjection.closure_projected_core",
+      "file": "Foundation/HigherHeatCompletedCausalProjection.lean",
+      "line": 141,
+      "source_sha256": "f8f66af7d56e66283de68ce3f8d5789c6d4ae8b85bc47df37c6b778584735a7b",
+      "declaration_header": "theorem closure_projected_core (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    closure (Set.range (fun F => completed m hm T hT b r (core F))) =\n      Set.range (completed m hm T hT b r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedCausalProjection.lean#L141"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.coefficient",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 14,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "def coefficient : Domain \u2192L[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L14"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.coefficient_bound",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 17,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem coefficient_bound (u : Domain) : |coefficient u| \u2264 \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L17"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.coefficient_core",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 21,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem coefficient_core (n : \u2115) (P : Test n) :\n    coefficient (core (cylinderOf n P)) = MvPolynomial.eval (fun _ => 0) P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L21"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 35,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "def mean (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) : Domain \u2192L[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L35"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_bound",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 38,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (u : Domain) :\n    |mean m hm T hT u| \u2264 Real.exp (T:\u211d) * \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L38"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_norm",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 42,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_norm (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016mean m hm T hT\u2016 \u2264 Real.exp (T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L42"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_core_complex",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 46,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_core_complex (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (F : Cylinder) :\n    (mean m hm T hT (core F) : \u2102) = cylindricalExpectation m hm T hT F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L46"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_core_real",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 60,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_core_real (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (F : Cylinder) :\n    mean m hm T hT (core F) = (cylindricalExpectation m hm T hT F).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L60"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_one",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 64,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_one (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    mean m hm T hT (core 1) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L64"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_unique",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 69,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_unique (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (L : Domain \u2192L[\u211d] \u211d) (hL : \u2200 F, (L (core F):\u2102) = cylindricalExpectation m hm T hT F) :\n    L = mean m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L69"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_projection",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 78,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_projection (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (b : \u2115) (r : Fin (size b)) :\n    (mean m hm T hT).comp (completed m hm T hT b r) = mean m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L78"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_emptyProjection",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 83,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_emptyProjection (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    (mean m hm T hT).comp (emptyProjection m hm T hT) = mean m hm T hT",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L83"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.core_C",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 87,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem core_C (n : \u2115) (c : \u211d) :\n    core (cylinderOf n (MvPolynomial.C c)) = c \u2022 core (1:Cylinder)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L87"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.empty_conditioning_constant",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 91,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem empty_conditioning_constant {\u03b9 : Type*} [Fintype \u03b9]\n    (p : \u2115) (a : \u03b9 \u2192 \u211d) (P : MvPolynomial \u03b9 \u211d) :\n    conditioning p a \u2205 P =\n      MvPolynomial.C (MvPolynomial.eval (fun _ => 0) (conditioning p a \u2205 P))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L91"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.emptyProjection_rankOne",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 102,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem emptyProjection_rankOne (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    emptyProjection m hm T hT =\n      ((ContinuousLinearMap.id \u211d \u211d).smulRight (core (1:Cylinder))).comp (mean m hm T hT)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L102"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.emptyProjection_apply",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 129,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem emptyProjection_apply (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (u : Domain) :\n    emptyProjection m hm T hT u = mean m hm T hT u \u2022 core (1:Cylinder)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L129"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_biharmonic_fourth",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 133,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_biharmonic_fourth (T : \u211d\u22650) (hT : 0 < T) :\n    mean 2 (by norm_num) T hT (core (terminalCylinder^4)) = -24*(T:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L133"
+    },
+    {
+      "paper": "Section 4 initial-time coefficient-norm obstruction: actual dyadic terminal projection equals first position, empty past is mean times one, position and terminal coefficient norms equal one, first normalized time tends to zero, every continuous zero-start path evaluates to zero, but completed early projections have exact unit terminal gap and operator gap at least one. Covers every positive even order, including Gaussian order two. Brownian L2 variance comparison is explicitly a human consequence; no general embedding or stronger reconstruction failure is asserted.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCompletedSignedMean.mean_not_positive_on_squares",
+      "file": "Foundation/HigherHeatCompletedSignedMean.lean",
+      "line": 138,
+      "source_sha256": "32f5ad424e979c147def3e71655c1f869f6c2bf05352d2d95c2d4007f43eb80d",
+      "declaration_header": "theorem mean_not_positive_on_squares (T : \u211d\u22650) (hT : 0 < T) :\n    \u2203 F : Cylinder, mean 2 (by norm_num) T hT (core (F*F)) < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCompletedSignedMean.lean#L138"
     }
   ],
   "human_reorganization": [
@@ -2213,7 +2915,8 @@
     "Section 12.7 is a separate Schwartz-terminal scalar expectation theorem for deterministic real L^p controls, p=2m. Actual finite signed measures at accumulated clock A>0 and delta_0 at A=0 are retained. The original factorial multitime completion is not enlarged.",
     "The complete proof constructs a C1 extension through zero heat time, uses the absolutely continuous control clock, proves an integrable drift bound and applies the absolutely continuous fundamental theorem. The negative-argument extension is linear and is expressly not backward heat evolution. The angular Fourier constant includes 1/(2pi), matching source unit frequencies after rescaling.",
     "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed.",
-    "Section 3 now reconstructs fourth-order propagation of actual Appell coordinate densities and their singular initial dual. The signed generator is minus the fourth derivative, the actual Appell parameter is -t, and complex distribution pairings have no conjugation. Positive-time L2 contraction, strong continuity and right derivative are proved from the actual Fourier multiplier. The extension to zero is in the pointwise Schwartz-evaluation topology exactly used by the source, with initial functional phi^(n)(0)/n! = (-1)^n delta_0^(n)/n!, and right observable generator -phi^(n+4)(0)/n!. The exact norm-square scaling C_n*t^(-(2n+1)/4), its divergence at zero and the compact-bump proof excluding an L2 initial representative are explicitly HUMAN Fourier/test consequences, not added Lean declarations. Generic static Appell primitive identities precede this fourth-order specialization. No positive law, chronological integral, all-order distribution extension theorem, bounded coordinate completion or stronger dual topology is inferred."
+    "Section 3 now reconstructs fourth-order propagation of actual Appell coordinate densities and their singular initial dual. The signed generator is minus the fourth derivative, the actual Appell parameter is -t, and complex distribution pairings have no conjugation. Positive-time L2 contraction, strong continuity and right derivative are proved from the actual Fourier multiplier. The extension to zero is in the pointwise Schwartz-evaluation topology exactly used by the source, with initial functional phi^(n)(0)/n! = (-1)^n delta_0^(n)/n!, and right observable generator -phi^(n+4)(0)/n!. The exact norm-square scaling C_n*t^(-(2n+1)/4), its divergence at zero and the compact-bump proof excluding an L2 initial representative are explicitly HUMAN Fourier/test consequences, not added Lean declarations. Generic static Appell primitive identities precede this fourth-order specialization. No positive law, chronological integral, all-order distribution extension theorem, bounded coordinate completion or stronger dual topology is inferred.",
+    "Section 4 now reconstructs an exact initial-time obstruction in the original factorial coefficient norm. For normalized first times s_n=2^-n and the one fixed terminal U=Y_1, the actual completed causal projections satisfy P_n U=Y_s_n and the empty-past projection is zero, yet every Y_s_n and U has coefficient norm one. This gives no strong convergence to the empty past and operator-distance lower bound one, despite uniformly bounded projections. Every continuous zero-start path evaluates Y_s_n to zero. The obstruction includes order two; the separate Brownian variance 2T s_n and resulting L2 convergence are explicitly a HUMAN norm comparison, not a whole-domain identification. Six principal modules read fully, including complete projection/empty/mean support. No contradiction to the already specified dual and Bochner reconstruction topologies, positive path law or novel general convergence principle is inferred."
   ],
   "literature": [
     {
