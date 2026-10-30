@@ -2628,6 +2628,186 @@
       "source_sha256": "c6dcfd68daf375bd50b8f50ec65f8b7e680079252d8e92cd50eb03f38801671d",
       "declaration_header": "theorem once_real_always_real (t u : \u211d) (htu : t\u2264u)\n    (hreal : \u2200 z : \u2102,flow 1 t z=0 \u2192 z.im=0) (z : \u2102) (hz : flow 1 u z=0) : z.im=0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticStripEvolution.lean#L67"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.rootPolynomial",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 15,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "def rootPolynomial (S : Finset \u2102) : \u2102[X]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L15"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.eval_rootPolynomial",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 17,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem eval_rootPolynomial (S : Finset \u2102) (z : \u2102) :\n    (rootPolynomial S).eval z=\u220f b \u2208 S, (z-b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L17"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.logarithmic_product",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 21,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem logarithmic_product (S : Finset \u2102) (z : \u2102) (hz : z \u2209 S) :\n    (rootPolynomial S).derivative.eval z/(rootPolynomial S).eval z=\n      \u2211 b \u2208 S, (z-b)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L21"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.root_derivative_ratio",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 38,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem root_derivative_ratio (S : Finset \u2102) (a : \u2102) (ha : a \u2208 S) :\n    (rootPolynomial S).derivative.derivative.eval a/(rootPolynomial S).derivative.eval a=\n      2*\u2211 b \u2208 S.erase a, (a-b)\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L38"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.root_derivative_ne_zero",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 51,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem root_derivative_ne_zero (S : Finset \u2102) (a : \u2102) (ha : a \u2208 S) :\n    (rootPolynomial S).derivative.eval a \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L51"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.inverse_difference_im_nonpos",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 63,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem inverse_difference_im_nonpos (a b : \u2102) (hb : b.im \u2264 a.im) :\n    ((a-b)\u207b\u00b9).im \u2264 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L63"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.conjugate_interaction",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 68,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem conjugate_interaction (a : \u2102) (ha : 0<a.im) :\n    (2*((a-conj a)\u207b\u00b9)).im= -1/a.im",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L68"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.uppermost_interaction",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 77,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem uppermost_interaction (S : Finset \u2102) (a : \u2102)\n    (ha : 0<a.im) (hc : conj a \u2208 S) (hmax : \u2200 b \u2208 S, b.im \u2264 a.im) :\n    (2*\u2211 b \u2208 S.erase a, (a-b)\u207b\u00b9).im \u2264 -1/a.im",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L77"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.uppermost_polynomial_ratio",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 96,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem uppermost_polynomial_ratio (S : Finset \u2102) (a : \u2102) (ha : a \u2208 S)\n    (hi : 0<a.im) (hc : conj a \u2208 S) (hmax : \u2200 b \u2208 S, b.im \u2264 a.im) :\n    ((rootPolynomial S).derivative.derivative.eval a/\n      (rootPolynomial S).derivative.eval a).im \u2264 -1/a.im",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L96"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.heat_factor_velocity",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 103,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem heat_factor_velocity (P Q : \u211d \u2192 \u2102[X]) (r : \u211d \u2192 \u2102)\n    (t : \u211d) (v qdot : \u2102)\n    (hfactor : \u2200 s, P s=(X-C (r s))*Q s)\n    (hr : HasDerivAt r v t)\n    (hq : HasDerivAt (fun s => (Q s).eval (r t)) qdot t)\n    (hheat : HasDerivAt (fun s => (P s).eval (r t))\n      (-(P t).derivative.derivative.eval (r t)) t)\n    (hsimple : (P t).derivative.eval (r t) \u2260 0) :\n    v=(P t).derivative.derivative.eval (r t)/(P t).derivative.eval (r t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L103"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.squared_height_derivative",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 128,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem squared_height_derivative (r : \u211d \u2192 \u2102) (t : \u211d) (v : \u2102)\n    (hr : HasDerivAt r v t) (hi : 0<(r t).im) (hv : v.im \u2264 -1/(r t).im) :\n    HasDerivAt (fun s => (r s).im^2) (2*(r t).im*v.im) t \u2227\n      2*(r t).im*v.im \u2264 -2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L128"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.squared_height_barrier",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 138,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem squared_height_barrier (y v : \u211d \u2192 \u211d) (s t : \u211d) (hst : s \u2264 t)\n    (hy : \u2200 u \u2208 Icc s t, 0<y u)\n    (hd : \u2200 u \u2208 Icc s t, HasDerivAt y (v u) u)\n    (hv : \u2200 u \u2208 Icc s t, v u \u2264 -1/y u) :\n    y t^2 \u2264 y s^2-2*(t-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L138"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.polynomial_branch_strip_bound",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 162,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem polynomial_branch_strip_bound (S : \u211d \u2192 Finset \u2102) (r v : \u211d \u2192 \u2102)\n    (s t : \u211d) (hst : s \u2264 t)\n    (hr : \u2200 u \u2208 Icc s t, HasDerivAt r (v u) u)\n    (hroot : \u2200 u \u2208 Icc s t, r u \u2208 S u)\n    (hi : \u2200 u \u2208 Icc s t, 0<(r u).im)\n    (hc : \u2200 u \u2208 Icc s t, conj (r u) \u2208 S u)\n    (hmax : \u2200 u \u2208 Icc s t, \u2200 b \u2208 S u, b.im \u2264 (r u).im)\n    (hvelocity : \u2200 u \u2208 Icc s t, v u=\n      (rootPolynomial (S u)).derivative.derivative.eval (r u)/\n        (rootPolynomial (S u)).derivative.eval (r u)) :\n    (r t).im^2 \u2264 (r s).im^2-2*(t-s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L162"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.interior_root_counterexample",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 181,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem interior_root_counterexample :\n    let p : \u2102[X]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L181"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardHeight",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 190,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "def upwardHeight (t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L190"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardHeight_hasDerivAt",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 193,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem upwardHeight_hasDerivAt : HasDerivAt upwardHeight (1/3) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L193"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardPolynomial",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 208,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "def upwardPolynomial (t : \u211d) : \u2102[X]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L208"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardPolynomial_root",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 211,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem upwardPolynomial_root (t : \u211d) (hD : 0 \u2264 9-80*t+96*t^2)\n    (hx : 0 \u2264 (5-12*t-Real.sqrt (9-80*t+96*t^2))/2) :\n    (upwardPolynomial t).eval (I*(upwardHeight t : \u2102))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L211"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardPolynomial_heat",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 231,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem upwardPolynomial_heat (t : \u211d) (z : \u2102) :\n    HasDerivAt (fun s : \u211d => (upwardPolynomial s).eval z)\n      (-(upwardPolynomial t).derivative.derivative.eval z) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L231"
+    },
+    {
+      "paper": "Section 7: finite distinct-root interaction, explicitly conditional differentiable uppermost-branch barrier, and the actual quartic polynomial backward-heat branch with positive interior height derivative. These are finite polynomial statements, not actual arithmetic Xi root motion or a collision-free infinite root system.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuadraticRootMotion.upwardPolynomial_actual_branch",
+      "file": "Foundation/RiemannQuadraticRootMotion.lean",
+      "line": 239,
+      "source_sha256": "57ae031188f14408df63fcc7483e336bf0b40f5c409872e9b03a1f3532ded695",
+      "declaration_header": "theorem upwardPolynomial_actual_branch :\n    \u2200\u1da0 t : \u211d in \ud835\udcdd 0,\n      (upwardPolynomial t).eval (I*(upwardHeight t : \u2102))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuadraticRootMotion.lean#L239"
     }
   ],
   "human_reorganization": [
@@ -2635,6 +2815,7 @@
     "The finite-dimensional nilpotent-operator Euler estimate is a human classical presentation of the mapped factorial/Hasse-jet fixed-degree limit. The limit over divisor degree uses a separate common Gaussian budget; these two limits are not interchanged.",
     "All declarations retain their full original hypotheses. Some support statements are general in the even order or Gaussian affine shift; the paper uses only the explicitly stated quadratic specializations.",
     "The main strip contraction has an explicit classical antecedent, Newman 1976 Theorem 1 crediting de Bruijn. It is not a new analytic bound, a simplicity theorem, RH, an exact quadratic threshold, or a consequence of a claimed 7/8 zero-free region.",
-    "Section 8 reconstructs the named finite attained quadratic threshold Lambda<=1/2 with realTimes=[Lambda,infinity), actual nonreal zeros at every time below Lambda, and endpoint reality. Upper-set propagation repeats the justified Gaussian-budget proof at any fixed starting time. Closedness is proved by inherited vertical modulus inequalities and actual time continuity. A complete elementary logarithmic four-point inequality passes through real-rooted divisor polynomials; exact variance-2epsilon^2 Gaussian density smoothing transfers it to log K(sqrt(y)), contradicting the actual theta decay. The human proof directly produces a negative-time obstruction before taking the infimum; the formal proof first excludes all-realness at every time, takes its attained infimum and then obtains a negative time. This is an explicit reordering of the same conclusions. The finite-threshold theorem is classical in Newman 1976 Theorem 3. Rodgers--Tao 2021 v5 uses exactly the same kernel/Xi/time normalization and proves the separate known lower bound Lambda>=0; that deep proof is not reconstructed or claimed in the frozen chain. No exact numerical value, RH proof, all-zero simplicity or cross-order threshold identification is established here."
+    "Section 8 reconstructs the named finite attained quadratic threshold Lambda<=1/2 with realTimes=[Lambda,infinity), actual nonreal zeros at every time below Lambda, and endpoint reality. Upper-set propagation repeats the justified Gaussian-budget proof at any fixed starting time. Closedness is proved by inherited vertical modulus inequalities and actual time continuity. A complete elementary logarithmic four-point inequality passes through real-rooted divisor polynomials; exact variance-2epsilon^2 Gaussian density smoothing transfers it to log K(sqrt(y)), contradicting the actual theta decay. The human proof directly produces a negative-time obstruction before taking the infimum; the formal proof first excludes all-realness at every time, takes its attained infimum and then obtains a negative time. This is an explicit reordering of the same conclusions. The finite-threshold theorem is classical in Newman 1976 Theorem 3. Rodgers--Tao 2021 v5 uses exactly the same kernel/Xi/time normalization and proves the separate known lower bound Lambda>=0; that deep proof is not reconstructed or claimed in the frozen chain. No exact numerical value, RH proof, all-zero simplicity or cross-order threshold identification is established here.",
+    "Section 7 adds the complete finite-root interaction and conditional uppermost-branch height barrier. All finite roots are distinct where the interaction sum is invoked; branch differentiability and persistence of the uppermost hypothesis on the interval are explicit. The source factor-velocity assumptions are retained in the map, while the human proof uses coefficientwise differentiation and the elementary root chain rule. A genuine real-coefficient quartic backward-heat polynomial has an actual nearby imaginary branch y(0)=1, y'(0)=1/3 moving upward inside the initial height-two strip. This refutes universal individual-height monotonicity for arbitrary finite polynomial heat, while neither contradicting global strip contraction nor realizing an arithmetic Xi zero. No uncontrolled infinite root sum or collision-free global labeling is asserted."
   ]
 }

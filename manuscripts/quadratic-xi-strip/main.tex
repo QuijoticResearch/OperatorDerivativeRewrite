@@ -487,6 +487,82 @@ are mathematical scope statements, not unresolved steps in the proof of
 Theorem~\ref{thm:main}.
 
 
+
+\subsection*{A finite-root barrier and why its uppermost hypothesis matters}
+The product proof does not assert that every individual complex root
+moves toward the real axis. The following exact finite-polynomial
+calculation makes that distinction concrete.
+Let $P_t$ be a coefficientwise differentiable family satisfying
+$\partial_tP_t=-P_t''$, and let $r(t)$ be a differentiable simple
+zero branch. Differentiating $P_t(r(t))=0$ gives
+\[
+ r'(t)=\frac{P_t''(r(t))}{P_t'(r(t))}.
+\]
+At a time when all roots are distinct, write $P_t(z)=(z-a)Q(z)$
+up to a nonzero scalar, with $a=r(t)$. Then
+$P_t'(a)=Q(a)$ and $P_t''(a)=2Q'(a)$, after including that same
+scalar in $Q$. Finite logarithmic differentiation yields
+\[
+ r'(t)=2\sum_{b\ne a}\frac1{a-b}.
+\]
+Assume the coefficients are real, $y=\operatorname{Im}a>0$, and
+$a$ is uppermost: $\operatorname{Im}b\leq y$ for every other root.
+Each summand has nonpositive imaginary part, since
+\[
+ \operatorname{Im}\frac1{a-b}
+ =-\frac{y-\operatorname{Im}b}{|a-b|^2}\leq0.
+\]
+The conjugate root contributes
+$\operatorname{Im}(2/(a-\overline a))=-1/y$.
+Consequently $y'(t)\leq-1/y(t)$ and
+$(y(t)^2)'\leq-2$. If the differentiable branch and these hypotheses
+persist throughout $[a_0,a_1]$, the ordinary mean-value inequality
+applied to $y(t)^2+2t$ gives
+\[
+ y(a_1)^2\leq y(a_0)^2-2(a_1-a_0).
+\]
+This is a conditional finite-branch statement. It does not supply a
+global differentiable labeling through collisions, and our strip proof
+did not require one.
+
+The uppermost condition cannot be dropped even for an actual polynomial
+heat solution with real coefficients. Define
+\begin{equation}\label{eq:upwardquartic}
+ P_t(z)=z^4+(5-12t)z^2+4-10t+12t^2.
+\end{equation}
+Its time derivative is $-12z^2-10+24t=-P_t''(z)$, and
+$P_0=(z^2+1)(z^2+4)$ has four distinct roots $\pm i,\pm2i$.
+At $a=i$, direct differentiation gives
+\[
+ P_0'(i)=6i,\quad P_0''(i)=-2,\quad
+ \frac{P_0''(i)}{P_0'(i)}=\frac i3.
+\]
+This positive imaginary velocity belongs to a genuine nearby branch,
+not merely to a proposed infinitesimal motion. Put
+\[
+ D(t)=9-80t+96t^2,\quad
+ v(t)=\frac{5-12t-\sqrt{D(t)}}2,\quad y(t)=\sqrt{v(t)}.
+\]
+At zero $D=9$ and $v=1$, so both square roots are defined and smooth
+on a real neighborhood of zero. The quadratic formula gives
+$v(t)^2-(5-12t)v(t)+4-10t+12t^2=0$; hence
+$P_t(iy(t))=0$ throughout that neighborhood. Also
+\[
+ v'(0)=\frac{-12+40/3}{2}=\frac23,
+ \qquad y(0)=1,\qquad y'(0)=\frac13.
+\]
+The positive derivative implies $y(t)>1$ for sufficiently small
+positive $t$. Thus an interior root height increases. Initially the
+uppermost height is two, so this example neither violates the global
+strip contraction nor realizes any arithmetic Xi zero.
+
+These exact finite-product, conditional barrier and actual quartic
+branch statements are mapped in \code{RiemannQuadraticRootMotion}.
+Its factor-velocity theorem retains explicit factor differentiability;
+the finite coefficient chain-rule presentation above is the corresponding
+human reorganization. No statement here extends finite root interaction
+sums to an uncontrolled infinite Xi sum.
+
 \section{A finite attained threshold for the actual quadratic flow}
 \begin{theorem}\label{thm:finitethreshold}
 There is a finite real number $\Lambda\leq1/2$ such that
