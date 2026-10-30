@@ -1017,6 +1017,960 @@
       "source_sha256": "cfe2ec892a97db01d55ecf46cbba666e6707a9b1f2b2487f722df1c48afc6ae2",
       "declaration_header": "theorem firstChaos_fourth (h : CoefficientSpace) :\n    (\u222b \u03c9, (firstChaosEmbedding h \u03c9)^4 \u2202gaussianProduct) = 3 * (\u2016h\u2016^2)^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSourceMoments.lean#L17"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.exists_window",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 14,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem exists_window {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (hmass : (\u222b u, \u03c1 u) = 1) (x : \u211d) :\n    \u2203 R : \u211d, |x| < R \u2227 (\u222b u in Icc (-R) R, \u03c1 (-u)) = 1 \u2227\n      \u2200 y, wholeLineScenery \u03c1 y = offsetScenery (-R) R y \u03c1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L14"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.variance_C2",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 39,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem variance_C2 {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) :\n    ContDiff \u211d 2 (wholeLineVariance \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L39"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.variance_second",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 47,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem variance_second {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hmass : (\u222b u, \u03c1 u) = 1) (x : \u211d) :\n    deriv (deriv (wholeLineVariance \u03c1)) x = 2*\u03c1 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L47"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.variance_first_window",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 59,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem variance_first_window {\u03c1 : \u211d \u2192 \u211d} {R x : \u211d} (h\u03c1 : Continuous \u03c1)\n    (hx : |x| < R) (hm : (\u222b u in Icc (-R) R, \u03c1 (-u)) = 1)\n    (he : \u2200 y, wholeLineScenery \u03c1 y = offsetScenery (-R) R y \u03c1) :\n    deriv (wholeLineVariance \u03c1) x = 1-2*(\u222b u in -R..-x, \u03c1 (-u))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L59"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.slope_bound",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 71,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem slope_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 u, 0 \u2264 \u03c1 u) (hmass : (\u222b u, \u03c1 u) = 1) (x : \u211d) :\n    \u2016deriv (wholeLineVariance \u03c1) x\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L71"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.slope_positive_bulk",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 91,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem slope_positive_bulk {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hmass : (\u222b u, \u03c1 u) = 1) {B x : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 B) (hx : B < x) : deriv (wholeLineVariance \u03c1) x = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L91"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactVarianceGeometry.slope_negative_bulk",
+      "file": "Foundation/IBMCompactVarianceGeometry.lean",
+      "line": 106,
+      "source_sha256": "df70fb1eb7e89c0a0ddedf0ccae950f1f043d1cd8500c1e0acfc24c4109817aa",
+      "declaration_header": "theorem slope_negative_bulk {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hmass : (\u222b u, \u03c1 u) = 1) {B x : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 B) (hx : x < -B) : deriv (wholeLineVariance \u03c1) x = -1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactVarianceGeometry.lean#L106"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 14,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "def dilate (\u03c1 : \u211d \u2192 \u211d) (\u03b5 x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L14"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_nonneg",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 16,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_nonneg {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : \u2200 x, 0 \u2264 \u03c1 x) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5)\n    (x : \u211d) : 0 \u2264 dilate \u03c1 \u03b5 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L16"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_even",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 19,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_even {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : \u2200 x, \u03c1 (-x) = \u03c1 x) (\u03b5 x : \u211d) :\n    dilate \u03c1 \u03b5 (-x) = dilate \u03c1 \u03b5 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L19"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_contDiff",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 22,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_contDiff {\u03c1 : \u211d \u2192 \u211d} {k : WithTop \u2115\u221e} (h\u03c1 : ContDiff \u211d k \u03c1)\n    (\u03b5 : \u211d) : ContDiff \u211d k (dilate \u03c1 \u03b5)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L22"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_compact",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 26,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_compact {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : HasCompactSupport \u03c1) {\u03b5 : \u211d}\n    (h\u03b5 : \u03b5 \u2260 0) : HasCompactSupport (dilate \u03c1 \u03b5)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L26"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_integral",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 37,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_integral (\u03c1 : \u211d \u2192 \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) :\n    (\u222b x, dilate \u03c1 \u03b5 x) = \u222b x, \u03c1 x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L37"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.dilate_support",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 44,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem dilate_support {\u03c1 : \u211d \u2192 \u211d} {R \u03b5 : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (h\u03b5 : 0 < \u03b5) {z : \u211d}\n    (hz : dilate \u03c1 \u03b5 z \u2260 0) : |z| \u2264 \u03b5 * R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L44"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.shifted_support",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 51,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem shifted_support {\u03c1 : \u211d \u2192 \u211d} {R \u03b5 : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (h\u03b5 : 0 < \u03b5) (x r : \u211d)\n    (hr : r \u2209 Set.Icc (x - \u03b5 * R) (x + \u03b5 * R)) : dilate \u03c1 \u03b5 (x-r) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L51"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.shifted_mass",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 58,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem shifted_mass {\u03c1 : \u211d \u2192 \u211d} {R \u03b5 : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (h\u03b5 : 0 < \u03b5) (x : \u211d)\n    (hmass : (\u222b z, \u03c1 z) = 1) :\n    (\u222b r in Set.Icc (x - \u03b5 * R) (x + \u03b5 * R), dilate \u03c1 \u03b5 (x-r)) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L58"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.scenery_error",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 67,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem scenery_error {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1)\n    {R \u03b5 : \u211d} (hR : 0 \u2264 R) (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R)\n    (h\u03b5 : 0 < \u03b5) (x : \u211d) :\n    \u2016wholeLineScenery (dilate \u03c1 \u03b5) x - sourceScenery x\u2016^2 \u2264 \u03b5 * R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L67"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.scenery_tendsto",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 81,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem scenery_tendsto {\u03b9 : Type*} {l : Filter \u03b9} {\u03b5 : \u03b9 \u2192 \u211d}\n    (h\u03b5 : \u2200 i, 0 < \u03b5 i) (hlim : Tendsto \u03b5 l (\ud835\udcdd 0))\n    {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : Continuous \u03c1) (hc : HasCompactSupport \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (x : \u211d) :\n    Tendsto (fun i => wholeLineScenery (dilate \u03c1 (\u03b5 i)) x) l (\ud835\udcdd (sourceScenery x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L81"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedMollifier.scenery_closedDerivative_graph",
+      "file": "Foundation/IBMDilatedMollifier.lean",
+      "line": 105,
+      "source_sha256": "08ade9fe6b79bafbb5f3464f4db049c67a592affb57a5446c796138c04d862ce",
+      "declaration_header": "theorem scenery_closedDerivative_graph {\u03c1 : \u211d \u2192 \u211d} {R \u03b5 : \u211d}\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (h\u03b5 : 0 < \u03b5) (x : \u211d) :\n    (wholeLineScenery (dilate \u03c1 \u03b5) x,\n      Lp.const 2 gaussianProduct\n        (kernelCoefficient (x-\u03b5*R) (x+\u03b5*R) x (dilate \u03c1 \u03b5))) \u2208\n      closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedMollifier.lean#L105"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.jet",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 12,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "def jet (g : SchwartzMap \u211d \u211d) : \u2115 \u2192 SchwartzMap \u211d \u211d\n  | 0 => g\n  | k+1 => SchwartzMap.derivCLM \u211d \u211d (jet g k)\n\ndef shiftedJet (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L12"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shiftedJet",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 16,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "def shiftedJet (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L16"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shiftedJet_smooth",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 18,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shiftedJet_smooth (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) :\n    ContDiff \u211d 2 (shiftedJet g a k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L18"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shiftedJet_deriv",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 22,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shiftedJet_deriv (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) :\n    deriv (shiftedJet g a k) = shiftedJet g a (k+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L22"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shiftedJet_bound",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 30,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shiftedJet_bound (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) (x : \u211d) :\n    \u2016shiftedJet g a k x\u2016 \u2264 SchwartzMap.seminorm \u211d 0 0 (jet g k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L30"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shiftedJet_lipschitz",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 34,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shiftedJet_lipschitz (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115) :\n    LipschitzWith (Real.toNNReal (SchwartzMap.seminorm \u211d 0 1 (jet g k)))\n      (shiftedJet g a k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L34"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shifted_first",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 46,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shifted_first (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115)\n    (u v : CoefficientSpace) :\n    (\u222b \u03c9, firstChaosEmbedding v \u03c9 * shiftedJet g a k (firstChaosEmbedding u \u03c9)\n      \u2202gaussianProduct) =\n      inner \u211d u v * \u222b \u03c9, shiftedJet g a (k+1) (firstChaosEmbedding u \u03c9)\n        \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L46"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.shifted_second",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 58,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem shifted_second (g : SchwartzMap \u211d \u211d) (a : \u211d) (k : \u2115)\n    (u v : CoefficientSpace) :\n    (\u222b \u03c9, (firstChaosEmbedding v \u03c9)^2 * shiftedJet g a k (firstChaosEmbedding u \u03c9)\n      \u2202gaussianProduct) =\n      \u2016v\u2016^2 * (\u222b \u03c9, shiftedJet g a k (firstChaosEmbedding u \u03c9) \u2202gaussianProduct) +\n      (inner \u211d u v)^2 * \u222b \u03c9, shiftedJet g a (k+2) (firstChaosEmbedding u \u03c9)\n        \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L58"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.correction",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 74,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "def correction (g : SchwartzMap \u211d \u211d) (a : \u211d) (u v w : CoefficientSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L74"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.correction_integrable",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 78,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem correction_integrable (g : SchwartzMap \u211d \u211d) (a : \u211d)\n    (u v w : CoefficientSpace) :\n    Integrable (fun \u03c9 =>\n      shiftedJet g a 2 (firstChaosEmbedding u \u03c9) * (firstChaosEmbedding v \u03c9)^2 +\n      shiftedJet g a 1 (firstChaosEmbedding u \u03c9) * firstChaosEmbedding w \u03c9)\n      gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L78"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCorrectionStein.correction_identity",
+      "file": "Foundation/IBMCorrectionStein.lean",
+      "line": 99,
+      "source_sha256": "b4060fcf428738effcbf029b9e8ba3f7a510d46ca348ebe1ec9a0cf7886a609f",
+      "declaration_header": "theorem correction_identity (g : SchwartzMap \u211d \u211d) (a : \u211d)\n    (u v w : CoefficientSpace) :\n    correction g a u v w =\n      (\u2016v\u2016^2 + inner \u211d u w) *\n        (\u222b \u03c9, shiftedJet g a 2 (firstChaosEmbedding u \u03c9) \u2202gaussianProduct) +\n      (inner \u211d u v)^2 *\n        (\u222b \u03c9, shiftedJet g a 4 (firstChaosEmbedding u \u03c9) \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCorrectionStein.lean#L99"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.coefficient",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 16,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "def coefficient (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L16"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.coefficient_embedding",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 19,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem coefficient_embedding (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    firstChaosEmbedding (coefficient \u03c1 r) = wholeLineScenery \u03c1 r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L19"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.coefficient_hasDerivAt",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 27,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem coefficient_hasDerivAt {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 1 \u03c1) (r : \u211d) :\n    HasDerivAt (coefficient \u03c1) (coefficient (deriv \u03c1) r) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L27"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.coefficient_continuous",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 33,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem coefficient_continuous {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 1 \u03c1) : Continuous (coefficient \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L33"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.spatial",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 37,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "def spatial (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L37"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.slope",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 40,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "def slope (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L40"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.curvature",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 43,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "def curvature (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L43"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.spatial_ae",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 48,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem spatial_ae (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    spatial g a \u03c1 r =\u1d50[gaussianProduct] fun \u03c9 => shiftedJet g a 0 (wholeLineScenery \u03c1 r \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L48"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.spatial_hasDerivAt",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 52,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem spatial_hasDerivAt (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 1 \u03c1) (r : \u211d) :\n    HasDerivAt (spatial g a \u03c1) (slope g a \u03c1 r) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L52"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.slope_hasDerivAt",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 57,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem slope_hasDerivAt (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (r : \u211d) :\n    HasDerivAt (slope g a \u03c1) (curvature g a \u03c1 r) r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L57"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.curvature_continuous",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 66,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem curvature_continuous (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 3 \u03c1) : Continuous (curvature g a \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L66"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.spatial_C2",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 74,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem spatial_C2 (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 3 \u03c1) : ContDiff \u211d 2 (spatial g a \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L74"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.derivative_coefficient_norm",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 87,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem derivative_coefficient_norm {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 1 \u03c1) (r : \u211d) :\n    \u2016coefficient (deriv \u03c1) r\u2016 = (eLpNorm \u03c1 2 volume).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L87"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.slope_bound",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 97,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem slope_bound (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) :\n    \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200 r, \u2016slope g a \u03c1 r\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L97"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.curvature_bound",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 107,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem curvature_bound (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) :\n    \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200 r, \u2016curvature g a \u03c1 r\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L107"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactKernelSchwartz.spatial_tendsto",
+      "file": "Foundation/IBMCompactKernelSchwartz.lean",
+      "line": 121,
+      "source_sha256": "a88bec570fce25143fad2fe0eb8f13a775cf1226db3c81b2d29f8983ca4fa7ae",
+      "declaration_header": "theorem spatial_tendsto {\u03b9 : Type*} {l : Filter \u03b9} {\u03b5 : \u03b9 \u2192 \u211d}\n    (h\u03b5 : \u2200 i, 0 < \u03b5 i) (hlim : Tendsto \u03b5 l (\ud835\udcdd 0))\n    {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : Continuous \u03c1) (hc : HasCompactSupport \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1)\n    (g : SchwartzMap \u211d \u211d) (a x : \u211d) :\n    Tendsto (fun i => spatial g a (IBMDilatedMollifier.dilate \u03c1 (\u03b5 i)) x) l\n      (\ud835\udcdd (observable g a 0 (IBMQuarticPrimitiveLimit.baseCoefficient x)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactKernelSchwartz.lean#L121"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.exists_curvature_bound",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 16,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "theorem exists_curvature_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : Continuous \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) :\n    \u2203 K : \u211d\u22650, \u2200 x, \u2016deriv (deriv (wholeLineVariance \u03c1)) x\u2016\u208a \u2264 K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L16"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.curvatureBound",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 28,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "def curvatureBound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : Continuous \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L28"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.curvature_bound",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 32,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "theorem curvature_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : Continuous \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (x : \u211d) :\n    \u2016deriv (deriv (wholeLineVariance \u03c1)) x\u2016\u208a \u2264 curvatureBound hc h\u03c1 hmass",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L32"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.derivativeLip",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 37,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "def derivativeLip {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) :\n    LipschitzWith (curvatureBound hc h\u03c1.continuous hmass) (deriv (wholeLineVariance \u03c1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L37"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.field",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 43,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "def field {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L43"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.curvatureValue",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 47,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "def curvatureValue {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L47"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.clockMass",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 52,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "def clockMass {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L52"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.clockMass_identity",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 56,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "theorem clockMass_identity {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x) (hmass : (\u222b x, \u03c1 x) = 1) (T : \u211d\u22650) :\n    clockMass hc h\u03c1 hmass T = valueL2 (variance_lipschitz hc h\u03c1 hpos hmass) T-\n      wholeLineVariance \u03c1 0 \u2022 gaussianOne-itoIntegral (field hc h\u03c1 hmass T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L56"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.clockMass_ae",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 71,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "theorem clockMass_ae {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (T : \u211d\u22650) :\n    clockMass hc h\u03c1 hmass T =\u1d50[gaussianProduct] fun \u03c9 =>\n      \u222b t in 0..(T : \u211d), \u03c1 (IBMConstructedSources.clockPath \u03c9 t.toNNReal)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L71"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactClockMass.clockMass_reflected_ae",
+      "file": "Foundation/IBMCompactClockMass.lean",
+      "line": 102,
+      "source_sha256": "f9a1d80b4788bced0c9b84865c8b8d714ce16ad259f0228508ab7ae5193b0e26",
+      "declaration_header": "theorem clockMass_reflected_ae {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    clockMass hc h\u03c1 hmass T =\u1d50[gaussianProduct] fun \u03c9 =>\n      \u222b t in 0..(T : \u211d), \u03c1 |IBMConstructedSources.clockPath \u03c9 t.toNNReal|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactClockMass.lean#L102"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedClockMassLimit.clockMass_sequence_tendsto",
+      "file": "Foundation/IBMDilatedClockMassLimit.lean",
+      "line": 16,
+      "source_sha256": "a6fe00f7464f9fee731d914c445d6f523b42ba9b0793845622e404d665c3394a",
+      "declaration_header": "theorem clockMass_sequence_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x) (hmass : (\u222b x, \u03c1 x) = 1)\n    {\u03b5 : \u2115 \u2192 \u211d} (h\u03b5 : \u2200 n, 0 < \u03b5 n) (hlim : Tendsto \u03b5 atTop (\ud835\udcdd 0)) (T : \u211d\u22650) :\n    Tendsto (fun n => clockMass (dilate_compact hc (h\u03b5 n).ne') (dilate_contDiff h\u03c1 (\u03b5 n))\n      ((dilate_integral \u03c1 (h\u03b5 n)).trans hmass) T) atTop (\ud835\udcdd (BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedClockMassLimit.lean#L16"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedClockMassLimit.clockMass_continuum_tendsto",
+      "file": "Foundation/IBMDilatedClockMassLimit.lean",
+      "line": 91,
+      "source_sha256": "a6fe00f7464f9fee731d914c445d6f523b42ba9b0793845622e404d665c3394a",
+      "declaration_header": "theorem clockMass_continuum_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x) (hmass : (\u222b x, \u03c1 x) = 1) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} => clockMass (dilate_compact hc \u03b5.property.ne')\n      (dilate_contDiff h\u03c1 \u03b5.val) ((dilate_integral \u03c1 \u03b5.property).trans hmass) T)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0)) (\ud835\udcdd (BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedClockMassLimit.lean#L91"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedClockMassLimit.reflected_pathIntegral_memLp",
+      "file": "Foundation/IBMDilatedClockMassLimit.lean",
+      "line": 101,
+      "source_sha256": "a6fe00f7464f9fee731d914c445d6f523b42ba9b0793845622e404d665c3394a",
+      "declaration_header": "theorem reflected_pathIntegral_memLp {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    MemLp (fun \u03c9 => \u222b t in 0..(T : \u211d),\n      \u03c1 |IBMConstructedSources.clockPath \u03c9 t.toNNReal|) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedClockMassLimit.lean#L101"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMDilatedClockMassLimit.reflected_pathIntegral_continuum_tendsto",
+      "file": "Foundation/IBMDilatedClockMassLimit.lean",
+      "line": 109,
+      "source_sha256": "a6fe00f7464f9fee731d914c445d6f523b42ba9b0793845622e404d665c3394a",
+      "declaration_header": "theorem reflected_pathIntegral_continuum_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x) (hmass : (\u222b x, \u03c1 x) = 1)\n    (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} =>\n      (reflected_pathIntegral_memLp (dilate_compact hc \u03b5.property.ne') (dilate_contDiff h\u03c1 \u03b5.val)\n        ((dilate_integral \u03c1 \u03b5.property).trans hmass) (dilate_even heven \u03b5.val) T).toLp _)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0)) (\ud835\udcdd (BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMDilatedClockMassLimit.lean#L109"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.centeredClass",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 15,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "def centeredClass (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L15"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 18,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "def sourceAverage (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L18"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.centeredClass_ae",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 20,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem centeredClass_ae (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    centeredClass h\u03c6 \u03c1 r =\u1d50[gaussianProduct] fun \u03c9 => \u03c6 (wholeLineScenery \u03c1 r \u03c9)-\u03c6 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L20"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage_eq_integral",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 24,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem sourceAverage_eq_integral (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    sourceAverage h\u03c6 \u03c1 r = \u222b \u03c9, \u03c6 (wholeLineScenery \u03c1 r \u03c9) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L24"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage_continuous",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 31,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem sourceAverage_continuous {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 1 \u03c1) :\n    Continuous (sourceAverage h\u03c6 \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L31"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage_error",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 39,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem sourceAverage_error (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    \u2016sourceAverage h\u03c6 \u03c1 r-\u03c6 0\u2016 \u2264 (K : \u211d)*\u2016wholeLineScenery \u03c1 r\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L39"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage_bound",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 49,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem sourceAverage_bound {M : \u211d} (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    \u2016sourceAverage h\u03c6 \u03c1 r\u2016 \u2264 M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L49"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.variance_zero_le",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 55,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem variance_zero_le {\u03c1 : \u211d \u2192 \u211d} (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {R : \u211d} (hR : 0 \u2264 R)\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) : wholeLineVariance \u03c1 0 \u2264 R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L55"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactSourceAverage.sourceAverage_layer_error",
+      "file": "Foundation/IBMCompactSourceAverage.lean",
+      "line": 69,
+      "source_sha256": "5420dc3cfa57078d864f6a161bfb60bcd74080ee77acef1340e15534c8112f8b",
+      "declaration_header": "theorem sourceAverage_layer_error {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {R : \u211d} (hR : 0 \u2264 R)\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (r : \u211d) (hr : |r| \u2264 R) :\n    \u2016sourceAverage h\u03c6 \u03c1 r-\u03c6 0\u2016 \u2264 (K : \u211d)*Real.sqrt (2*R)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactSourceAverage.lean#L69"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorPath",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 14,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "def errorPath (\u03c1 : \u211d \u2192 \u211d) (T : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L14"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.error_integrand_continuous",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 18,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem error_integrand_continuous {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (\u03c9 : SampleSpace) :\n    Continuous (fun t : \u211d => \u03c1 |clockPath \u03c9 t.toNNReal| *\n      (sourceAverage h\u03c6 \u03c1 |clockPath \u03c9 t.toNNReal|-\u03c6 0))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L18"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorPath_stronglyMeasurable",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 26,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem errorPath_stronglyMeasurable {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (T : \u211d\u22650) : StronglyMeasurable (errorPath h\u03c6 \u03c1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L26"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weighted_error_bound",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 39,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem weighted_error_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {R : \u211d} (hR : 0 \u2264 R)\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (r : \u211d) :\n    \u2016\u03c1 |r| * (sourceAverage h\u03c6 \u03c1 |r|-\u03c6 0)\u2016 \u2264 (K : \u211d)*Real.sqrt (2*R)*\u03c1 |r|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L39"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorPath_bound",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 50,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem errorPath_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {R : \u211d} (hR : 0 \u2264 R)\n    (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (T : \u211d\u22650) (\u03c9 : SampleSpace) :\n    \u2016errorPath h\u03c6 \u03c1 T \u03c9\u2016 \u2264 (K : \u211d)*Real.sqrt (2*R)*\n      (\u222b t in 0..(T : \u211d), \u03c1 |clockPath \u03c9 t.toNNReal|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L50"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorPath_memLp",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 62,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem errorPath_memLp {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1)\n    (heven : \u2200 z, \u03c1 (-z) = \u03c1 z) (T : \u211d\u22650) : MemLp (errorPath h\u03c6 \u03c1 T) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L62"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorClass",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 77,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "def errorClass {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z)\n    (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L77"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorClass_norm",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 81,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem errorClass_norm {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z)\n    {R : \u211d} (hR : 0 \u2264 R) (hs : \u2200 z, \u03c1 z \u2260 0 \u2192 |z| \u2264 R) (T : \u211d\u22650) :\n    \u2016errorClass h\u03c6 hc h\u03c1 hpos hmass heven T\u2016 \u2264\n      (K : \u211d)*Real.sqrt (2*R)*\u2016clockMass hc h\u03c1 hmass T\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L81"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weightedPath",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 94,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "def weightedPath (\u03c1 : \u211d \u2192 \u211d) (T : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L94"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weightedPath_decomposition",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 97,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem weightedPath_decomposition {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (T : \u211d\u22650) (\u03c9 : SampleSpace) :\n    weightedPath h\u03c6 \u03c1 T \u03c9 = \u03c6 0*(\u222b t in 0..(T : \u211d), \u03c1 |clockPath \u03c9 t.toNNReal|)+errorPath h\u03c6 \u03c1 T \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L97"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weightedClass",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 116,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "def weightedClass {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z)\n    (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L116"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weightedClass_ae",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 120,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem weightedClass_ae {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z) (T : \u211d\u22650) :\n    weightedClass h\u03c6 hc h\u03c1 hpos hmass heven T =\u1d50[gaussianProduct] weightedPath h\u03c6 \u03c1 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L120"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.errorClass_continuum_tendsto",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 129,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem errorClass_continuum_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} => errorClass h\u03c6 (dilate_compact hc \u03b5.property.ne')\n      (dilate_contDiff h\u03c1 \u03b5.val) (dilate_nonneg hpos \u03b5.property)\n      ((dilate_integral \u03c1 \u03b5.property).trans hmass) (dilate_even heven \u03b5.val) T)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0)) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L129"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactWeightedBoundary.weightedClass_continuum_tendsto",
+      "file": "Foundation/IBMCompactWeightedBoundary.lean",
+      "line": 153,
+      "source_sha256": "1c169b9e47ab3e378a17efdf50a0badeacad14457d4d073216759f6c8e27daeb",
+      "declaration_header": "theorem weightedClass_continuum_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (heven : \u2200 z, \u03c1 (-z) = \u03c1 z) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} => weightedClass h\u03c6 (dilate_compact hc \u03b5.property.ne')\n      (dilate_contDiff h\u03c1 \u03b5.val) (dilate_nonneg hpos \u03b5.property)\n      ((dilate_integral \u03c1 \u03b5.property).trans hmass) (dilate_even heven \u03b5.val) T)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0)) (\ud835\udcdd (\u03c6 0 \u2022 BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactWeightedBoundary.lean#L153"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.slopeFactor",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 14,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "def slopeFactor (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L14"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.residual",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 15,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "def residual (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L15"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.residual_continuous",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 17,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem residual_continuous {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) :\n    Continuous (residual h\u03c6 \u03c1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L17"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.slopeFactor_bound",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 22,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem slopeFactor_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) (r : \u211d) : \u2016slopeFactor \u03c1 r\u2016 \u2264 1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L22"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.residual_bound",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 30,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem residual_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {M : \u211d} (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (r : \u211d) :\n    \u2016residual h\u03c6 \u03c1 r\u2016 \u2264 M/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L30"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.residual_tendsto_nonzero",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 37,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem residual_tendsto_nonzero {\u03b9 : Type*} {l : Filter \u03b9} {\u03b5 : \u03b9 \u2192 \u211d}\n    (h\u03b5 : \u2200 i, 0 < \u03b5 i) (hlim : Tendsto \u03b5 l (\ud835\udcdd 0)) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1) (hmass : (\u222b z, \u03c1 z) = 1)\n    {M : \u211d} (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (r : \u211d) (hr : r \u2260 0) :\n    Tendsto (fun i => residual h\u03c6 (dilate \u03c1 (\u03b5 i)) r) l (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L37"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.pathIntegral",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 56,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "def pathIntegral (\u03c1 : \u211d \u2192 \u211d) (T : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L56"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.integrand_continuous",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 59,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem integrand_continuous {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (\u03c9 : SampleSpace) : Continuous (fun t : \u211d => residual h\u03c6 \u03c1 |clockPath \u03c9 t.toNNReal|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L59"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.pathIntegral_stronglyMeasurable",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 64,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem pathIntegral_stronglyMeasurable {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1)\n    (h\u03c1 : ContDiff \u211d 2 \u03c1) (T : \u211d\u22650) : StronglyMeasurable (pathIntegral h\u03c6 \u03c1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L64"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.pathIntegral_bound",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 75,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem pathIntegral_bound {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : Continuous \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {M : \u211d}\n    (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (T : \u211d\u22650) (\u03c9 : SampleSpace) : \u2016pathIntegral h\u03c6 \u03c1 T \u03c9\u2016 \u2264 (M/4)*T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L75"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.pathIntegral_memLp",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 82,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem pathIntegral_memLp {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {M : \u211d}\n    (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (T : \u211d\u22650) : MemLp (pathIntegral h\u03c6 \u03c1 T) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L82"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.integralClass",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 88,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "def integralClass {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {M : \u211d}\n    (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L88"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactBoundaryRemainder.integralClass_continuum_tendsto",
+      "file": "Foundation/IBMCompactBoundaryRemainder.lean",
+      "line": 93,
+      "source_sha256": "4ab62ec74162b3b1100893144254316d3fde4f62bddc30643ce06c5f70f5a273",
+      "declaration_header": "theorem integralClass_continuum_tendsto {\u03c1 : \u211d \u2192 \u211d} (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1)\n    (hpos : \u2200 z, 0 \u2264 \u03c1 z) (hmass : (\u222b z, \u03c1 z) = 1) {M : \u211d}\n    (hM : \u2200 x, \u2016\u03c6 x\u2016 \u2264 M) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} => integralClass h\u03c6 (dilate_compact hc \u03b5.property.ne')\n      (dilate_contDiff h\u03c1 \u03b5.val) (dilate_nonneg hpos \u03b5.property)\n      ((dilate_integral \u03c1 \u03b5.property).trans hmass) hM T)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0)) (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactBoundaryRemainder.lean#L93"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalResidual",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 14,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "def originalResidual (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L14"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalResidual_literal",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 18,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalResidual_literal (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d) (r : \u211d) :\n    originalResidual g a \u03c1 r =\n      (\u222b \u03c9, shiftedJet g a 2 (wholeLineScenery \u03c1 r \u03c9)*(wholeLineScenery (deriv \u03c1) r \u03c9)^2+\n        shiftedJet g a 1 (wholeLineScenery \u03c1 r \u03c9)*wholeLineScenery (deriv (deriv \u03c1)) r \u03c9\n        \u2202gaussianProduct)-(1/4 : \u211d)*\u222b \u03c9, shiftedJet g a 4 (wholeLineScenery \u03c1 r \u03c9) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L18"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalResidual_identity",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 27,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalResidual_identity (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1) (r : \u211d) :\n    originalResidual g a \u03c1 r = \u03c1 r*sourceAverage (shiftedJet_lipschitz g a 2) \u03c1 r+\n      IBMCompactBoundaryRemainder.residual (shiftedJet_lipschitz g a 4) \u03c1 r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L27"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalPathIntegral",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 44,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "def originalPathIntegral (g : SchwartzMap \u211d \u211d) (a : \u211d) (\u03c1 : \u211d \u2192 \u211d)\n    (T : \u211d\u22650) (\u03c9 : SampleSpace) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L44"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalPathIntegral_decomposition",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 48,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalPathIntegral_decomposition (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hmass : (\u222b x, \u03c1 x) = 1)\n    (T : \u211d\u22650) (\u03c9 : SampleSpace) :\n    originalPathIntegral g a \u03c1 T \u03c9 =\n      IBMCompactWeightedBoundary.weightedPath (shiftedJet_lipschitz g a 2) \u03c1 T \u03c9+\n        IBMCompactBoundaryRemainder.pathIntegral (shiftedJet_lipschitz g a 4) \u03c1 T \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L48"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalClass",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 64,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "def originalClass (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x)\n    (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L64"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalClass_ae",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 71,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalClass_ae (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x)\n    (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    originalClass g a hc h\u03c1 hpos hmass heven T =\u1d50[gaussianProduct] originalPathIntegral g a \u03c1 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L71"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalPathIntegral_memLp",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 85,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalPathIntegral_memLp (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x)\n    (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    MemLp (originalPathIntegral g a \u03c1 T) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L85"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalClass_continuum_tendsto",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 92,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalClass_continuum_tendsto (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x)\n    (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} => originalClass g a (dilate_compact hc \u03b5.property.ne')\n      (dilate_contDiff h\u03c1 \u03b5.val) (dilate_nonneg hpos \u03b5.property)\n      ((dilate_integral \u03c1 \u03b5.property).trans hmass) (dilate_even heven \u03b5.val) T)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0))\n      (\ud835\udcdd (jet g 2 a \u2022 BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L92"
+    },
+    {
+      "paper": "Section 8 actual original Gaussian-averaged curvature residual, fixed nonnegative even compact C2 profile, every positive shrinking width, ordinary clock L2 limit g-second(a) times Tanaka mass. Human variance-integral and uniform mass-norm calculations labelled.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompactOriginalBoundary.originalPathIntegral_continuum_tendsto",
+      "file": "Foundation/IBMCompactOriginalBoundary.lean",
+      "line": 108,
+      "source_sha256": "09f7b88d052b9131ec3683a9c179a1228d94246086cd12cc1b62bb3cfe6d51b6",
+      "declaration_header": "theorem originalPathIntegral_continuum_tendsto (g : SchwartzMap \u211d \u211d) (a : \u211d) {\u03c1 : \u211d \u2192 \u211d}\n    (hc : HasCompactSupport \u03c1) (h\u03c1 : ContDiff \u211d 2 \u03c1) (hpos : \u2200 x, 0 \u2264 \u03c1 x)\n    (hmass : (\u222b x, \u03c1 x) = 1) (heven : \u2200 x, \u03c1 (-x) = \u03c1 x) (T : \u211d\u22650) :\n    Tendsto (fun \u03b5 : {x : \u211d // 0 < x} =>\n      (originalPathIntegral_memLp g a (dilate_compact hc \u03b5.property.ne')\n        (dilate_contDiff h\u03c1 \u03b5.val) (dilate_nonneg hpos \u03b5.property)\n        ((dilate_integral \u03c1 \u03b5.property).trans hmass) (dilate_even heven \u03b5.val) T).toLp _)\n      (comap (fun \u03b5 : {x : \u211d // 0 < x} => \u03b5.val) (\ud835\udcdd 0))\n      (\ud835\udcdd (jet g 2 a \u2022 BrownianTanakaResidual.mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompactOriginalBoundary.lean#L108"
     }
   ],
   "human_reorganization": [
@@ -1024,7 +1978,8 @@
     "Completed-square Gaussian-tail expression and elementary transform upper bound are direct human integral calculations, not mapped special-function declarations.",
     "Integrated endpoint Fourier ODE and compact-frequency spatial PDE are proved by ordinary finite-frequency Fubini and dominated differentiation. No general C0/PDE uniqueness, fractional generator, density regularity or Markov-domain claim.",
     "The exact initial cusp is the scalar consequence of the mapped parameter derivative; the direct second-moment convolution witness is labelled human. Non-convolution composition does not exclude an arbitrary nontranslation Markov model.",
-    "The local-time prerequisite is the existing constructed Tanaka/supported-mass theorem exposed in the sticky-clock companion. Its corollary is reconstructed here via a genuine global C2 extension. Full import-proof review is not claimed."
+    "The local-time prerequisite is the existing constructed Tanaka/supported-mass theorem exposed in the sticky-clock companion. Its corollary is reconstructed here via a genuine global C2 extension. Full import-proof review is not claimed.",
+    "Section 8 now reconstructs the literal original-curvature boundary limit for every fixed even nonnegative compact C2 unit-mass profile and real Schwartz g. The actual source Gaussian Bochner convolution has variance v(r)=integral rho(u)|r-u| minus one-half integral rho(u)rho(w)|u-w|; v-second=2rho, abs(v-prime)<=1 and the original coupling error squared<=epsilon R. Gaussian Stein gives the literal residual E[g-second(a+S)(S-prime)^2+g-prime(a+S)S-second] minus one-quarter E g-fourth(a+S) exactly rho E g-second + ((v-prime)^2-1)/4 E g-fourth. Actual even reflected clock occupation equals the unreflected mass and converges in ordinary clock L2 to LT0 for the whole positive-width filter. The weighted term converges to g-second(a)LT0; the bounded slope residual vanishes by zero clock occupation and dominated convergence. Uniform norm(Mepsilon)<=2sqrt(T) is a labelled human consequence of the exact Ito identity and slope bound. All ten principal mapped modules read fully, with full human proofs. This is scenery-averaged, at fixed horizon and fixed profile; no uniformity over variable uncontrolled profiles, unaveraged joint curvature L2 limit, intrinsic predictable integrand or full IBM Ito claim. Classical Gaussian Stein/Tanaka mechanisms are credited; bounded literature searches did not establish priority of the precise regularization package."
   ],
   "principal_sources_read_fully": [
     "SignedIBMRealization",

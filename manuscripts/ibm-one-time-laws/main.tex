@@ -27,6 +27,9 @@ but do not form a convolution semigroup. A separate covariance
 calculation proves the reflected-clock observation is not a martingale
 in its observed past. A hidden-clock local-time formula concerns the
 scenery average and does not transfer to the unaveraged observation.
+For arbitrary fixed even nonnegative compact smoothing profiles, an exact
+Gaussian Stein decomposition recovers the original curvature boundary
+correction in ordinary clock $L^2$, independently of the profile.
 All proofs retain the standard Brownian variance convention and are
 matched to a frozen Lean library. The Brownian-time PDE mechanism is
 classical, with a direct primary comparison to Allouba and Zheng;
@@ -435,6 +438,232 @@ has already integrated out the scenery, and its stochastic integral
 is with respect to the original clock Brownian motion. The source
 theorem is almost sure for each fixed horizon; no simultaneous
 all-horizons version is claimed here.
+
+\section{A profile-independent boundary correction in ordinary clock $L^2$}
+The boundary in the preceding formula can also be recovered from the
+literal curvature of spatially smoothed scenery. We identify the
+residual in the original smoothing and prove convergence in ordinary
+clock $L^2$. Averaging over scenery remains essential throughout
+this section.
+
+Fix a real Schwartz function $g$, a shift $a\in\R$, and an even,
+nonnegative $C^2$ function $\rho$ of compact support with
+$\int_\R\rho=1$. Choose $R>0$ with support in $[-R,R]$. For every
+$\varepsilon>0$ set
+\[
+ \rho_\varepsilon(u)=\varepsilon^{-1}\rho(u/\varepsilon),\qquad
+ S_\varepsilon(r)=\int_\R\rho_\varepsilon(u)B(r-u)\,du,
+ \qquad v_\varepsilon(r)=\E_B S_\varepsilon(r)^2.
+\]
+The integral defining $S_\varepsilon$ is a Bochner integral in the
+original scenery $L^2$. Compact support and continuity of
+$r\mapsto B(r)$ in that Hilbert norm prove its integrability.
+The result is a centered Gaussian variable: Riemann sums are
+Gaussian and converge in $L^2$, hence their characteristic
+functions converge to that of the centered Gaussian with the
+limiting variance. Derivatives in $r$ are obtained by moving them
+to the compact $C^2$ kernel. Write $S_\varepsilon'$ and
+$S_\varepsilon''$ for these genuine Gaussian $L^2$ derivatives.
+At each fixed $r$, their joint Gaussian moments of every finite
+order exist.
+
+\subsection*{The variance curvature is the original kernel}
+The covariance \eqref{eq:scenery} and two applications of Fubini give
+\begin{equation}\label{eq:smoothedvariance}
+ v_\varepsilon(r)=\int\rho_\varepsilon(u)|r-u|\,du
+ -\tfrac12\iint\rho_\varepsilon(u)\rho_\varepsilon(w)|u-w|\,du\,dw.
+\end{equation}
+All variables $u,w$ range over compact supports; the covariance
+is bounded there for a fixed $r$, so the Fubini steps are absolute.
+The second term is independent of $r$. Splitting the first
+integral at $u=r$ and applying the fundamental theorem of calculus
+gives
+\begin{equation}\label{eq:variancecurvature}
+ v_\varepsilon'(r)=2\int_{-\infty}^r\rho_\varepsilon(u)\,du-1,
+ \qquad v_\varepsilon''(r)=2\rho_\varepsilon(r).
+\end{equation}
+Thus $|v_\varepsilon'|\leq1$, $v_\varepsilon'$ equals the sign of
+$r$ when $|r|>\varepsilon R$, and $v_\varepsilon$ is even.
+The curvature is twice the original profile, rather than its
+square or self-convolution.
+
+Jensen's inequality in the scenery Hilbert space gives the
+uniform original-coupling estimate
+\begin{equation}\label{eq:sceneryapprox}
+ \E_B|S_\varepsilon(r)-B(r)|^2
+ \leq\int\rho_\varepsilon(u)\E_B|B(r-u)-B(r)|^2du
+ =\int\rho_\varepsilon(u)|u|du\leq\varepsilon R.
+\end{equation}
+In particular $v_\varepsilon(0)\leq\varepsilon R$. The slope
+bound yields $v_\varepsilon(r)\leq2\varepsilon R$ when
+$|r|\leq\varepsilon R$. Also \eqref{eq:smoothedvariance} gives
+$|v_\varepsilon(r)-|r||\leq2\varepsilon R$ for every $r$:
+the first-term error is at most $\varepsilon R$ and the absolute
+second term at most $\varepsilon R$.
+\par\noindent\code{IBMCompactVarianceGeometry.variance_second}.
+\par\noindent\code{IBMCompactVarianceGeometry.slope_bound}.
+\par\noindent\code{IBMDilatedMollifier.scenery_error}.
+
+\subsection*{The literal Gaussian correction and its exact decomposition}
+Define the scalar source-curvature residual
+\begin{align}\label{eq:originalresidual}
+ C_\varepsilon(r)
+ &=\E_B\left[g''(a+S_\varepsilon(r))(S_\varepsilon'(r))^2
+            +g'(a+S_\varepsilon(r))S_\varepsilon''(r)\right]
+       -\tfrac14\E_B g^{(4)}(a+S_\varepsilon(r)).
+\end{align}
+These are actual integrals against the original scenery law.
+Bounded Schwartz derivatives and finite Gaussian second moments
+give absolute integrability of both terms inside the expectation.
+No conditional projection of a singular limiting field defines them.
+
+For any centered jointly Gaussian triple $(X,Y,V)$ and a smooth
+function with the bounded derivatives needed below, Gaussian
+integration by parts gives
+\begin{align*}
+ \E[Y^2h(X)]&=(\E Y^2)\E h(X)+(\E XY)^2\E h''(X),\\
+ \E[Vh(X)]&=(\E XV)\E h'(X).
+\end{align*}
+For completeness, realize the triple as linear forms in a finite
+standard Gaussian vector $\xi$. The elementary identity
+$\E[\xi_jF(\xi)]=\E[\partial_jF(\xi)]$ gives the second formula
+once. Apply it first to $Yh(X)$ and then to $h'(X)$ for the first
+formula. Gaussian moments dominate every term. The argument
+uses no inverse covariance matrix and includes degenerate triples.
+
+Apply these identities with $X=S_\varepsilon$, $Y=S_\varepsilon'$
+and $V=S_\varepsilon''$. Hilbert-space differentiation gives
+\[
+ v_\varepsilon'=2\E_B(S_\varepsilon S_\varepsilon'),\qquad
+ v_\varepsilon''=2\E_B\bigl[(S_\varepsilon')^2+
+                                      S_\varepsilon S_\varepsilon''\bigr].
+\]
+Using \eqref{eq:variancecurvature}, the literal residual is exactly
+\begin{equation}\label{eq:residualdecomp}
+ C_\varepsilon(r)=\rho_\varepsilon(r)A_{2,\varepsilon}(r)
+       +\frac{(v_\varepsilon'(r))^2-1}{4}A_{4,\varepsilon}(r),
+ \qquad A_{j,\varepsilon}(r)=\E_B g^{(j)}(a+S_\varepsilon(r)).
+\end{equation}
+The constants $1/4$ and $2$ come from the displayed actual
+covariance derivatives. They are not adjusted to fit a desired limit.
+\par\noindent\code{IBMCorrectionStein.correction_identity}.
+\par\noindent\code{IBMCompactOriginalBoundary.originalResidual_literal}.
+\par\noindent\code{IBMCompactOriginalBoundary.originalResidual_identity}.
+
+\subsection*{Constructing the occupation mass and its ordinary $L^2$ limit}
+Let $L_T^0$ denote the symmetric Tanaka local time of the original
+clock, with the normalization already used above,
+\[
+ L_T^0=|W_T|-\int_0^T\operatorname{sgn}(W_s)\,dW_s.
+\]
+Evenness of $\rho$ makes the literal reflected occupation mass
+\[
+ M_\varepsilon(T)=\int_0^T\rho_\varepsilon(|W_s|)ds
+                =\int_0^T\rho_\varepsilon(W_s)ds.
+\]
+Ordinary $C^2$ It\^o calculus applied to $v_\varepsilon(W)$ and
+\eqref{eq:variancecurvature} gives, for each fixed $T$,
+\begin{equation}\label{eq:massito}
+ M_\varepsilon(T)=v_\varepsilon(W_T)-v_\varepsilon(0)
+                   -\int_0^Tv_\varepsilon'(W_s)\,dW_s.
+\end{equation}
+The derivatives are bounded at each fixed width, and
+$|v_\varepsilon(W_T)-v_\varepsilon(0)|\leq|W_T|$.
+Thus every term is in clock $L^2$, and the triangle inequality
+and It\^o isometry give the useful human bound
+\begin{equation}\label{eq:massbound}
+ \|M_\varepsilon(T)\|_2\leq2\sqrt T.
+\end{equation}
+
+The endpoint difference in \eqref{eq:massito} tends to $|W_T|$
+in $L^2$, by the uniform variance estimate above. For every
+$s>0$, $\Pp(W_s=0)=0$ by its Gaussian density; Tonelli therefore
+gives zero $ds\,d\Pp$ measure to $W_s=0$ on $[0,T]$.
+At every nonzero value, $v_\varepsilon'$ tends to the sign,
+and both are bounded by one. Dominated convergence in
+$L^2(ds\,d\Pp)$ and It\^o isometry prove
+\begin{equation}\label{eq:masslimit}
+ M_\varepsilon(T)\longrightarrow L_T^0
+                    \quad\hbox{in clock }L^2\quad(\varepsilon\downarrow0).
+\end{equation}
+This constructs the needed mass limit without assuming a spatial
+local-time density or a pathwise occupation formula. It holds
+through all positive widths, not only a selected sequence.
+One may verify this last assertion along every positive sequence
+converging to zero, which characterizes this limit in a metric space.
+\par\noindent\code{IBMCompactClockMass.clockMass_identity}.
+\par\noindent\code{IBMCompactClockMass.clockMass_reflected_ae}.
+\par\noindent\code{IBMDilatedClockMassLimit.reflected_pathIntegral_continuum_tendsto}.
+
+\begin{theorem}[Original boundary correction]\label{thm:boundaryprofile}
+For every fixed $T\geq0$ and every fixed profile satisfying the
+stated hypotheses, the literal original-law random functional
+\[
+ H_\varepsilon(T)=\int_0^TC_\varepsilon(|W_s|)\,ds
+\]
+belongs to clock $L^2$ and satisfies
+\begin{equation}\label{eq:boundarylimit}
+ H_\varepsilon(T)\longrightarrow g''(a)L_T^0
+        \quad\hbox{in ordinary clock }L^2
+                         \quad(\varepsilon\downarrow0).
+\end{equation}
+The limit is independent of the fixed admissible profile.
+\end{theorem}
+\begin{proof}
+Put $K=\|g'''\|_\infty$ and $N=\|g^{(4)}\|_\infty$.
+On the support of $\rho_\varepsilon(r)$, the variance bound and
+Cauchy--Schwarz give
+\[
+ |A_{2,\varepsilon}(r)-g''(a)|
+       \leq K\E_B|S_\varepsilon(r)|\leq K\sqrt{2\varepsilon R}.
+\]
+Since $\rho_\varepsilon\geq0$, the first term of
+\eqref{eq:residualdecomp}, integrated along the reflected clock,
+differs from $g''(a)M_\varepsilon(T)$ by at most
+$K\sqrt{2\varepsilon R}\,M_\varepsilon(T)$ pointwise.
+Its $L^2$ error is at most
+$K\sqrt{2\varepsilon R}\,\|M_\varepsilon(T)\|_2$, which tends
+to zero by \eqref{eq:massbound}. Each such weighted integral
+is in $L^2$ by this estimate and the mass identity.
+
+The second residual term is bounded in absolute value by $N/4$.
+It tends to zero for every nonzero $r$; in fact it vanishes
+when $|r|>\varepsilon R$. It is a continuous function of $r$,
+as follows from continuity of the Gaussian $L^2$ scenery curve
+and the Lipschitz property of $g^{(4)}$. Composition with the
+continuous clock is jointly measurable. The zero-occupation
+fact above and dominated convergence on the finite product
+measure $ds\,d\Pp$ show its time integral tends to zero in
+clock $L^2$: Cauchy--Schwarz bounds the squared integral by
+$T$ times the integral of its square. It is also in $L^2$
+at each width, since its absolute time integral is at most $NT/4$.
+Combine the two terms and \eqref{eq:masslimit} to obtain
+\eqref{eq:boundarylimit}. The case $T=0$ is immediate.
+\end{proof}
+\par\noindent\code{IBMCompactSourceAverage.sourceAverage_layer_error}.
+\par\noindent\code{IBMCompactWeightedBoundary.weightedClass_continuum_tendsto}.
+\par\noindent\code{IBMCompactBoundaryRemainder.integralClass_continuum_tendsto}.
+\par\noindent\code{IBMCompactOriginalBoundary.originalPathIntegral_continuum_tendsto}.
+
+The original residual, the whole positive-width limit and its ordinary
+clock $L^2$ topology are exactly the mapped theorem's scope. The
+explicit uniform estimate \eqref{eq:massbound} is a human
+consequence of the displayed actual It\^o identity and slope bound.
+The profile is fixed while its width shrinks: no uniformity over
+varying profiles with uncontrolled support radii is asserted.
+Evenness is used to replace $W$ by $|W|$ in the occupation mass;
+positivity supplies the weighted error and slope bounds.
+
+There is no extra factor $1/2$ in \eqref{eq:masslimit}: the
+reflected integral equals the full even-kernel integral. If the
+curvature appears with the usual It\^o prefactor $1/2$, the
+residual contribution is consequently $g''(a)L_T^0/2$.
+The subtraction in \eqref{eq:originalresidual} concerns a
+\emph{scenery expectation}. This theorem does not prove a joint
+scenery/clock $L^2$ limit of the unaveraged curvature, convergence
+of an intrinsic predictable IBM integrand, or a physical-time
+It\^o formula for $g(a+Z_T^+)$. It recovers a precise original
+boundary correction with all of those other obligations kept distinct.
 
 \section{Primary comparison and exact formal scope}
 Allouba and Zheng~\cite{az}, Theorem 0.1, equations (0.1)--(0.2),
