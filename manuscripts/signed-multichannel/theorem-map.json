@@ -1735,13 +1735,40 @@
       "source_sha256": "0ec003b4ab33a0b21c341e0511357f5c80726b41f9cfa1a6de5b1fef5a343b0f",
       "declaration_header": "theorem mean_bound (m : \u2115) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    \u2016mean m T f\u2016 \u2264 \u222b \u03be : \u211d, \u2016\ud835\udcd5 f \u03be\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzCalculus.lean#L97"
+    },
+    {
+      "paper": "Section 12.4: formal collective lower-channel terminal-test obstruction; source index r=q-1, final channel necessity only for the displayed centered terminal power.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMultichannelSharpness.lower_channel_terminal_zero",
+      "file": "Foundation/HigherHeatMultichannelSharpness.lean",
+      "line": 13,
+      "source_sha256": "b3cf3e58e5447a23e446f26a08028af737828463bd3a1299d834316a59c2ed86",
+      "declaration_header": "theorem lower_channel_terminal_zero (m : \u2115) (T : \u211d\u22650) (r : \u2115) (hr : r+2 < 2*m)\n    (A : Field timeMeasure) : channel m T r A (core terminalCylinder) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMultichannelSharpness.lean#L13"
+    },
+    {
+      "paper": "Section 12.4: formal collective lower-channel terminal-test obstruction; source index r=q-1, final channel necessity only for the displayed centered terminal power.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMultichannelSharpness.all_lower_channels_insufficient",
+      "file": "Foundation/HigherHeatMultichannelSharpness.lean",
+      "line": 23,
+      "source_sha256": "b3cf3e58e5447a23e446f26a08028af737828463bd3a1299d834316a59c2ed86",
+      "declaration_header": "theorem all_lower_channels_insufficient (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (A : Fin (2*m-2) \u2192 Field timeMeasure) :\n    (\u2211 r : Fin (2*m-2), channel m T r.val (A r)) \u2260\n      pairing m hm T hT (core (terminalCylinder^(2*m-1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMultichannelSharpness.lean#L23"
+    },
+    {
+      "paper": "Section 12.4: formal collective lower-channel terminal-test obstruction; source index r=q-1, final channel necessity only for the displayed centered terminal power.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatMultichannelSharpness.witness_mean_zero",
+      "file": "Foundation/HigherHeatMultichannelSharpness.lean",
+      "line": 40,
+      "source_sha256": "b3cf3e58e5447a23e446f26a08028af737828463bd3a1299d834316a59c2ed86",
+      "declaration_header": "theorem witness_mean_zero (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    HigherHeatCompletedSignedMean.mean m hm T hT (core (terminalCylinder^(2*m-1))) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMultichannelSharpness.lean#L40"
     }
   ],
   "human_reorganization": [
     "The fixed-horizon finite-variation path-law obstruction is proved directly from exact kernel scaling and variation contraction. The named formal path-law result uses arbitrarily many fixed-step increments and increasing horizons; these are not conflated.",
     "The signed quartic square cancellation is not an L2 norm limit: its actual absolute-variation error diverges. Normalized variation probabilities still have pointwise distance at least 24T from the proposed negative limit.",
     "The explicit L2-small deterministic spike has constant fourth-power clock. Angular-frequency value exp(-1) corresponds to the formal 2pi-frequency convention after rescaling; no continuity claim on the stronger factorial domain is refuted.",
-    "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The named source proves first-channel range failure; no general channel minimality or synthesis injectivity is inferred.",
+    "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The frozen HigherHeatMultichannelSharpness source additionally proves collective failure of all lower channels. No general channel minimality or synthesis injectivity is inferred.",
     "Section 3 gives the elementary factorial-series reconstruction of the faithful one-coordinate realization. Every derivative at zero is an ell1 coefficient. Actual integer-order arithmetic theta moments have the lower bound d*4^n from the fixed positive interval [2,3], so they cannot be realized in this coefficient domain. The actual real/complex derivative bridge and nonmembership theorem are mapped. This does not assert nonrepresentability in every multivariate quotient, injectivity of the completed product pairing, a failure of the scoped signed reconstruction, or a zero/threshold/RH implication. The coefficient-growth test is elementary and is not claimed novel.",
     "Section 3 reconstructs the finite Appell algebra using explicitly formal coefficient generating functions, not an unproved integral of an exponential series. Leading pairings expose full polynomial nondegeneracy, uniqueness of x/(pa) as the higher-order polynomial Stein weight, and failure of a polynomial representative for coordinate one or first derivative when p>2. The Gaussian p=2 case is retained as an exception.",
     "Actual derivatives of the real Schwartz heat kernel divided by factorials give absolutely polynomial-integrable Lebesgue density duals. No L2 score or bounded completed coordinate map is inferred. The impossibility of rho_1=W*k for polynomial W is a labelled elementary consequence of the mapped first-order obstruction.",
