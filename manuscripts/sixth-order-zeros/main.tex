@@ -76,6 +76,56 @@ is entire, even, conjugation compatible, and nonzero since
 $F_t(0)>0$. All contour integrals below are ordinary
 absolutely convergent integrals when their parameters are fixed.
 
+\subsection*{The exact evolution sign}
+The growing tilt must be distinguished from a stable higher-heat
+evolution. For any fixed integer $m\geq1$ define
+\[
+ F_{m,t}(z)=\int_0^\infty e^{tu^{2m}}K(u)\cos(zu)\,du.
+\]
+For every nonnegative integer $k$, differentiation under the integral
+gives
+\begin{equation}\label{eq:evenevolution}
+ \partial_t\partial_z^kF_{m,t}(z)
+       =(-1)^m\partial_z^{k+2m}F_{m,t}(z).
+\end{equation}
+To justify both differentiations, fix a compact time interval and a
+compact set of $z$. Choose $A\geq |t|+1$ and $B\geq |\operatorname{Im}z|$
+uniformly there. Every required derivative is bounded in absolute value
+by a constant times
+\[
+ (1+u^{k+2m})\exp(Au^{2m}+Bu+9u-\tfrac\pi2e^{4u}),\qquad u\geq0.
+\]
+This is integrable: the double exponential dominates every displayed
+fixed polynomial and linear exponent at infinity, and the function is
+bounded on compact intervals. The same bound controls difference
+quotients locally through their integral derivative formula.
+Dominated differentiation therefore applies. Finally
+$\partial_z^{2m}\cos(zu)=(-1)^mu^{2m}\cos(zu)$,
+which proves \eqref{eq:evenevolution}, including all mixed derivatives.
+The constants are for a fixed order and fixed derivative count.
+
+In particular the actual transform in Theorem~\ref{thm:main} satisfies
+$\partial_tF_t=-\partial_z^6F_t$.
+Under the angular Fourier convention $e^{iuz}$, a stable order-$2m$
+multiplier is $e^{-su^{2m}}$, whose spatial generator is
+$(-1)^{m+1}\partial_z^{2m}$. Its sign is opposite to
+\eqref{eq:evenevolution}. Within the actual integral, replacing $t$
+by $t-s$ inserts precisely that decaying factor; increasing $t$
+inserts the growing factor instead. This is an identity of the stated
+transforms, not a claim about a common completed operator domain.
+Consequently contraction, positivity or stochastic interpretation
+cannot be transferred to the increasing-$t$ deformation from the
+stable multiplier merely by naming the differential order.
+
+\par\noindent
+The full source \code{RiemannEvenEvolution} proves the actual cosine
+identity, mixed jet differentiation and
+\code{even_order_heat_equation}; its
+\code{sixth_order_heat_equation} is the displayed sixth-order
+specialization. This elementary evolution identity makes no new
+priority claim and supplies no reality propagation in the time
+direction omitted by a higher-order zero theorem.
+
 \section{The theta strip and the sixth-order slope}
 The kernel has an even holomorphic continuation to
 \[

@@ -567,6 +567,123 @@
       "source_sha256": "6b99886caca5a36098a7416955b4b45b198ee0905a20febacf30884978e2edd2",
       "declaration_header": "theorem escaping_polynomial_no_zero_in_window (t : \u211d) (ht : 0 < t) (z : \u2102) (hz : \u2016z\u2016 \u2264 t/2) :\n    z^2+(t : \u2102)^2 \u2260 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenWindowZeros.lean#L135"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.jet_iteratedDeriv",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 12,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem jet_iteratedDeriv (m k n : \u2115) (t : \u211d) :\n    iteratedDeriv n (jet m k t)=jet m (k+n) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L12"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.integrand_time_hasDerivAt",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 27,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem integrand_time_hasDerivAt (m k : \u2115) (t u : \u211d) (z : \u2102) :\n    HasDerivAt (fun s : \u211d => integrand m k s z u)\n      ((-1 : \u2102)^m*integrand m (k+2*m) t z u) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L27"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.jet_time_hasDerivAt",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 42,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem jet_time_hasDerivAt (m k : \u2115) (t\u2080 : \u211d) (z : \u2102) :\n    HasDerivAt (fun t : \u211d => jet m k t z) ((-1 : \u2102)^m*jet m (k+2*m) t\u2080 z) t\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L42"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.symmetricJet",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 63,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "def symmetricJet (m k : \u2115) (t : \u211d) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L63"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.symmetricJet_zero",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 66,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem symmetricJet_zero (m : \u2115) (t : \u211d) : symmetricJet m 0 t = flow m t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L66"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.symmetricJet_hasDerivAt",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 70,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem symmetricJet_hasDerivAt (m k : \u2115) (t : \u211d) (z : \u2102) :\n    HasDerivAt (symmetricJet m k t) (symmetricJet m (k+1) t z) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L70"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.flow_iteratedDeriv",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 79,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem flow_iteratedDeriv (m n : \u2115) (t : \u211d) :\n    iteratedDeriv n (flow m t) = symmetricJet m n t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L79"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.even_order_heat_equation",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 88,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem even_order_heat_equation (m : \u2115) (t : \u211d) (z : \u2102) :\n    HasDerivAt (fun s : \u211d => flow m s z)\n      ((-1 : \u2102)^m*iteratedDeriv (2*m) (flow m t) z) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L88"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.sixth_order_heat_equation",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 105,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem sixth_order_heat_equation (t : \u211d) (z : \u2102) :\n    HasDerivAt (fun s : \u211d => flow 3 s z) (-iteratedDeriv 6 (flow 3 t) z) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L105"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.cosine_integrand",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 111,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem cosine_integrand (m : \u2115) (t u : \u211d) (z : \u2102) :\n    (integrand m 0 t z u+integrand m 0 t (-z) u)/2 =\n      (weighted m 0 t 0 u : \u2102)*Complex.cos ((u : \u2102)*z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L111"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.cosine_integrable",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 119,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem cosine_integrable (m : \u2115) (t : \u211d) (z : \u2102) :\n    Integrable (fun u : \u211d => (weighted m 0 t 0 u : \u2102)*Complex.cos ((u : \u2102)*z)) halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L119"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.flow_eq_cosine_integral",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 124,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem flow_eq_cosine_integral (m : \u2115) (t : \u211d) (z : \u2102) :\n    flow m t z = \u222b u, (weighted m 0 t 0 u : \u2102)*Complex.cos ((u : \u2102)*z) \u2202halfLine",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L124"
+    },
+    {
+      "paper": "Section 1 evolution-sign subsection: actual integer-even cosine integral and its mixed spatial/time differentiation. Growing tilt has time derivative (-1)^m times the 2m-th spatial derivative, and sixth order has minus sixth spatial derivative. Stable decaying Fourier multiplier has the opposite sign. The actual t-to-t-s reweighting is an integral identity, not an asserted common completed operator domain or a reality-propagation theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannEvenEvolution.flow_even",
+      "file": "Foundation/RiemannEvenEvolution.lean",
+      "line": 132,
+      "source_sha256": "d8968b60f4a25ffe67fcd5747e0276302a99d775a3a72a4bb3508fb2fd326740",
+      "declaration_header": "theorem flow_even (m : \u2115) (t : \u211d) (z : \u2102) : flow m t (-z) = flow m t z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannEvenEvolution.lean#L132"
     }
   ],
   "human_reorganization": [
@@ -578,7 +695,8 @@
     "The actual peak/mass ratio is obtained by a Taylor interval of radius exp(-2u), using the already proved full kernel derivative asymptotics. This replaces the source explicit square-root curvature budget while retaining the original integral.",
     "The left tail uses monotonicity and a final interval of radius r<=1/2, plus a separately bounded physical compact prefix. The right tail, growing exponential weight and radius exp(-u/2) are all estimated before asserting cosine approximation.",
     "The local cosine mechanism is reconstructed via exact complex sine/cosine bounds, Cauchy derivative control and injectivity against a constant derivative. Conjugate zeros coincide; a merely asymptotic real-part estimate is not substituted for exact reality.",
-    "For every fixed m,R, the late time may depend on both. General expanding-window/compact-disk reality is not global reality at one common time. Escaping polynomial roots refute that logical inference only and are not arithmetic-flow examples."
+    "For every fixed m,R, the late time may depend on both. General expanding-window/compact-disk reality is not global reality at one common time. Escaping polynomial roots refute that logical inference only and are not arithmetic-flow examples.",
+    "Section 1 now prints the exact actual growing arithmetic evolution sign for every fixed integer-even order: partial_t partial_z^k F_m,t = (-1)^m partial_z^(k+2m) F_m,t. The double-exponential actual-kernel majorant justifies both differentiations locally uniformly in time and complex frequency. In particular the sixth-order transform satisfies partial_t F=-partial_z^6 F. The stable decaying angular-Fourier multiplier has the opposite generator sign. Replacing t by t-s inserts that decaying factor inside the actual integral; this gives no common completed domain, positive path law, contraction transfer or unproved reality propagation. RiemannEvenEvolution read in full. Classical differentiation identity, no priority claim."
   ],
   "scope_limits": [
     "Existential eventual time only",
