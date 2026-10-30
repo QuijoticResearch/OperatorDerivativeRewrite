@@ -1014,6 +1014,97 @@ Every original-domain value approximation has divergent
 clock energy, although its embedded derivatives converge
 in a weaker, precisely defined norm.
 
+\subsection*{Nonlinear composition in the full adjoint-graph dual}
+The same topology permits a precise nonlinear limit without a
+pointwise product of a random coefficient and a distribution.
+Return to the actual ambient clock derivative $D_W$ on the original
+joint probability space. Use its $L^2$ field space and the full
+graph-test space $\mathcal G=D(D_W^*)$ with the norm above.
+Let $\phi\in C^1(\R)$ satisfy
+\[
+ |\phi(x)|\leq A,\qquad |\phi'(x)|\leq L\quad(x\in\R),
+ \qquad \phi'\ \hbox{continuous},
+\]
+with finite $A,L\geq0$. For every $f\in L^2$ define
+$d_W(\phi(f))$ directly by \eqref{eq:dualdefinition}.
+The composition is an actual $L^2$ class because the joint law is
+a probability measure. If $u_n\in D(D_W)$ and $u_n\to f$ in
+$L^2$, the original closed Gaussian chain rule gives
+\[
+ \phi(u_n)\in D(D_W),\qquad
+ D_W\phi(u_n)=\phi'(u_n)D_Wu_n.
+\]
+The product on the right is formed in the genuine original
+field $L^2$ space at each finite $n$, since $\phi'$ is bounded.
+The chain rule follows by approximating in the Gaussian graph
+core, selecting an almost-everywhere convergent value subsequence,
+and passing the gradients to the limit. More explicitly, if
+$u_j\to u$ and $D_Wu_j\to V$ in their $L^2$ spaces, then
+\[
+ \|\phi'(u_j)D_Wu_j-\phi'(u)V\|_2
+ \leq L\|D_Wu_j-V\|_2
+       +\|(\phi'(u_j)-\phi'(u))V\|_2\longrightarrow0.
+\]
+For the second term, continuity of $\phi'$ gives convergence
+almost everywhere along the selected subsequence and the square
+is dominated by $4L^2|V|^2$. The value convergence follows from
+the mean-value bound $|\phi(x)-\phi(y)|\leq L|x-y|$.
+Closedness then retains the original derivative graph. This is
+the classical Gaussian Sobolev chain rule, applied in actual
+product sections; no independent measurable choice of section
+derivatives is required.
+
+Apply \eqref{eq:error} to $\phi(u_n)$ and $\phi(f)$. We obtain the
+quantitative full-dual convergence
+\begin{equation}\label{eq:weaknonlinear}
+ \|j(\phi'(u_n)D_Wu_n)-d_W(\phi(f))\|_{\mathcal G^*}
+ \leq L\|u_n-f\|_2\longrightarrow0.
+\end{equation}
+The limit is independent of the approximating sequence. On every
+$v\in D(D_W^*)$, its literal stochastic pairing is
+\[
+ d_W(\phi(f))(v)=\E[\phi(f)D_W^*v].
+\]
+This integral is absolutely integrable by Cauchy--Schwarz.
+For two values $f,g\in L^2$, the same argument gives
+\[
+ \|d_W(\phi(f))-d_W(\phi(g))\|_{\mathcal G^*}
+                  \leq L\|f-g\|_2.
+\]
+No assertion that $\phi'(f)d_Wf$ is a defined graph-dual product
+is needed for either formula. In particular boundedness of a
+coefficient alone does not say that multiplication preserves
+$D(D_W^*)$ with its graph norm.
+
+For a concrete actual-process consequence choose $f=Z_T$,
+$\phi(x)=\sin x$, and any original-domain approximation
+$u_n\to Z_T$ in $L^2$. Such approximations exist by density;
+the constructed spatial mollifications are one example.
+Then \eqref{eq:weaknonlinear} holds with $L=1$ and field
+$\cos(u_n)D_Wu_n$. Nevertheless
+\begin{equation}\label{eq:sinefieldescape}
+ \|\cos(u_n)D_Wu_n\|_2\longrightarrow\infty.
+\end{equation}
+Indeed $\sin u_n\to\sin Z_T$ in $L^2$, and
+Theorem~\ref{thm:bounded} places $\sin Z_T$ outside $D(D_W)$
+for every $T>0$. Proposition~\ref{prop:escape}, applied to
+the native values $\sin u_n$, proves \eqref{eq:sinefieldescape}.
+Thus the same genuine fields converge after embedding in
+$\mathcal G^*$ while their original norms diverge. The limiting
+functional is nonzero and has no original $L^2$ field
+representative by Proposition~\ref{prop:represent}.
+This explicit sine escape is a human combination of the mapped
+chain rule, domain obstruction and escape theorem, rather than
+a separate named formal assertion. None of these statements
+constructs an observed-filtration time integral or a pointwise
+multiplication rule for arbitrary graph-dual distributions.
+
+\par\noindent\code{GaussianClosedChainRule.bounded_product_chain_graph}.
+\par\noindent\code{IBMClockWeakChain.chain_graph}.
+\par\noindent\code{IBMClockWeakChain.chain_dual_error}.
+\par\noindent\code{IBMClockWeakChain.chain_dual_limit}.
+\par\noindent\code{IBMClockWeakChain.actual_pairing}.
+
 \section{Physical spatial kernels and the white-noise domain boundary}\label{sec:physical}
 The negative norm in the preceding section is an adjoint-graph norm.
 There is also a separate, actual physical-space $H^{-1}(\R)$

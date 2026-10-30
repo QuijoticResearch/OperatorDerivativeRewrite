@@ -1719,6 +1719,384 @@
       "source_sha256": "c2bd50cb3474dd4e68f91678ef595ba8d18cb5087a66edb60ba3fcb139e6512e",
       "declaration_header": "theorem kernel_zero_of_far (n : \u2115) (r : \u211d) (hr : (IBMMollifier.bump n).rOut \u2264 |r|) :\n    IBMMollifier.kernel n r = 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSpatial.lean#L28"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.TestFunction",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 17,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "structure TestFunction",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L17"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.continuous_value",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 27,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem continuous_value (\u03c6 : TestFunction) : Continuous \u03c6.value",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L27"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.slopeBound_nonneg",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 30,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem slopeBound_nonneg (\u03c6 : TestFunction) : 0 \u2264 \u03c6.slopeBound",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L30"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.value_lipschitz",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 33,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem value_lipschitz (\u03c6 : TestFunction) :\n    LipschitzWith \u27e8\u03c6.slopeBound, slopeBound_nonneg \u03c6\u27e9 \u03c6.value",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L33"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.value",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 41,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "def value (\u03c6 : TestFunction) (f : JointL2) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L41"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.value_ae",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 46,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem value_ae (\u03c6 : TestFunction) (f : JointL2) :\n    value \u03c6 f =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => \u03c6.value (f \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L46"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.slopeField",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 50,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "def slopeField (\u03c6 : TestFunction) (f : JointL2)\n    (g : IBMIntrinsicChainRule.JointVectorL2) : IBMIntrinsicChainRule.JointVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L50"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.slopeField_ae",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 57,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem slopeField_ae (\u03c6 : TestFunction) (f : JointL2)\n    (g : IBMIntrinsicChainRule.JointVectorL2) :\n    slopeField \u03c6 f g =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => \u03c6.slope (f \u03c9) \u2022 g \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L57"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.chainField",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 62,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "def chainField (\u03c6 : TestFunction) (f : JointL2) (V : FieldSpace) : FieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L62"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.weakDerivative",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 66,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "def weakDerivative (\u03c6 : TestFunction) (f : JointL2) : StrongDual \u211d (Tests Clock clock_dense)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L66"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.value_error",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 69,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem value_error (\u03c6 : TestFunction) (f q : JointL2) :\n    \u2016value \u03c6 f - value \u03c6 q\u2016 \u2264 \u03c6.slopeBound * \u2016f - q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L69"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.value_L2_lipschitz",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 77,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem value_L2_lipschitz (\u03c6 : TestFunction) :\n    LipschitzWith \u27e8\u03c6.slopeBound, slopeBound_nonneg \u03c6\u27e9 (value \u03c6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L77"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.weakDerivative_continuous",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 81,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem weakDerivative_continuous (\u03c6 : TestFunction) : Continuous (weakDerivative \u03c6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L81"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.chain_graph",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 85,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem chain_graph (\u03c6 : TestFunction) (f : JointL2) (V : FieldSpace)\n    (hg : (clockUnitary f, V) \u2208 Clock.graph) :\n    (clockUnitary (value \u03c6 f), chainField \u03c6 f V) \u2208 Clock.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L85"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.chain_dual_error",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 104,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem chain_dual_error (\u03c6 : TestFunction) (f q : JointL2) (V : FieldSpace)\n    (hg : (clockUnitary f, V) \u2208 Clock.graph) :\n    \u2016embed Clock clock_dense (chainField \u03c6 f V) - weakDerivative \u03c6 q\u2016 \u2264\n      \u03c6.slopeBound * \u2016f - q\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L104"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.chain_dual_limit",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 114,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem chain_dual_limit (\u03c6 : TestFunction) (u : \u2115 \u2192 JointL2) (V : \u2115 \u2192 FieldSpace)\n    (hg : \u2200 n, (clockUnitary (u n), V n) \u2208 Clock.graph) (f : JointL2)\n    (hu : Tendsto u atTop (\ud835\udcdd f)) :\n    Tendsto (fun n => embed Clock clock_dense (chainField \u03c6 (u n) (V n))) atTop\n      (\ud835\udcdd (weakDerivative \u03c6 f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L114"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.actual_pairing",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 124,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem actual_pairing (\u03c6 : TestFunction) (f : JointL2)\n    (X : IBMSourceLaws.JointSample \u2192 \u211d) (hX : f =\u1d50[IBMSourceLaws.jointMeasure] X)\n    (v : Clock.adjoint.domain) :\n    weakDerivative \u03c6 f (testOf Clock clock_dense v) =\n      \u222b \u03c9, \u03c6.value (X \u03c9) * (clockUnitary.symm (Clock.adjoint v)) \u03c9\n        \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L124"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockWeakChain.actual_pairing_integrable",
+      "file": "Foundation/IBMClockWeakChain.lean",
+      "line": 138,
+      "source_sha256": "5b9a71c0e54380a7ffd6c0eb5e5659e0c3ce5d7f9da7ff63ae0ef624d116ae76",
+      "declaration_header": "theorem actual_pairing_integrable (\u03c6 : TestFunction) (f : JointL2)\n    (X : IBMSourceLaws.JointSample \u2192 \u211d) (hX : f =\u1d50[IBMSourceLaws.jointMeasure] X)\n    (v : Clock.adjoint.domain) :\n    Integrable (fun \u03c9 => \u03c6.value (X \u03c9) * (clockUnitary.symm (Clock.adjoint v)) \u03c9)\n      IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockWeakChain.lean#L138"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.Clock",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 16,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "abbrev Clock",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L16"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_closed",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 18,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_closed : Clock.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L18"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_dense",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 22,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_dense : Dense (Clock.domain : Set (Lp GaussianL2 2 gaussianProduct))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L22"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.point",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 26,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "def point (t : \u211d\u22650) : Lp GaussianL2 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L26"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.pointDerivative",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 29,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "def pointDerivative (t : \u211d\u22650) : StrongDual \u211d (Tests Clock clock_dense)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L29"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_gradient_norm_escape",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 32,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_gradient_norm_escape (t : \u211d\u22650) (ht : 0 < t) :\n    Tendsto (fun n => \u2016IBMFirstSourceClockGraph.clockGradient n t\u2016) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L32"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_gradient_dual_limit",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 40,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_gradient_dual_limit (t : \u211d\u22650) (ht : 0 < t) :\n    Tendsto (fun n => embed Clock clock_dense (IBMFirstSourceClockGraph.clockGradient n t))\n      atTop (\ud835\udcdd (pointDerivative t))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L40"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_gradient_dual_error",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 48,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_gradient_dual_error (n : \u2115) (t : \u211d\u22650) (ht : 0 < t) :\n    \u2016embed Clock clock_dense (IBMFirstSourceClockGraph.clockGradient n t) - pointDerivative t\u2016 \u2264\n      \u2016IBMRandomTimeHilbert.randomMollifiedL2 n t - IBMRandomTimeHilbert.randomSourceL2 t\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L48"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.clock_gradient_dual_radius",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 59,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem clock_gradient_dual_radius (n : \u2115) (t : \u211d\u22650) (ht : 0 < t) :\n    \u2016embed Clock clock_dense (IBMFirstSourceClockGraph.clockGradient n t) - pointDerivative t\u2016 \u2264\n      Real.sqrt (IBMMollifier.bump n).rOut",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L59"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.pointDerivative_not_L2",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 64,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem pointDerivative_not_L2 (t : \u211d\u22650) (ht : 0 < t) :\n    \u00ac \u2203 V : Lp GaussianVectorL2 2 gaussianProduct, embed Clock clock_dense V = pointDerivative t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L64"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.pointDerivative_apply_test",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 70,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem pointDerivative_apply_test (t : \u211d\u22650) (v : Clock.adjoint.domain) :\n    pointDerivative t (testOf Clock clock_dense v) = inner \u211d (point t) (Clock.adjoint v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L70"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.actual_stochastic_pairing",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 75,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem actual_stochastic_pairing (t : \u211d\u22650) (v : Clock.adjoint.domain) :\n    pointDerivative t (testOf Clock clock_dense v) =\n      \u222b \u03c9, IBMConstructedSources.ibmValue t \u03c9 *\n        (IBMIntrinsicOperators.clockUnitary.symm (Clock.adjoint v)) \u03c9\n        \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L75"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.actual_pairing_integrable",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 91,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem actual_pairing_integrable (t : \u211d\u22650) (v : Clock.adjoint.domain) :\n    Integrable (fun \u03c9 => IBMConstructedSources.ibmValue t \u03c9 *\n      (IBMIntrinsicOperators.clockUnitary.symm (Clock.adjoint v)) \u03c9)\n      IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L91"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.pointDerivative_continuous",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 101,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem pointDerivative_continuous : Continuous pointDerivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L101"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGraphDualLimit.pointDerivative_ne_zero",
+      "file": "Foundation/IBMClockGraphDualLimit.lean",
+      "line": 105,
+      "source_sha256": "8330531616b4adf86ace88f21b0e35d5318f1e8d2b69aad6174eccd57b2437b0",
+      "declaration_header": "theorem pointDerivative_ne_zero (t : \u211d\u22650) (ht : 0 < t) : pointDerivative t \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGraphDualLimit.lean#L105"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier_memLp",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 16,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem multiplier_memLp (a : SampleSpace \u2192 \u211d) (ha : AEStronglyMeasurable a gaussianProduct)\n    (B : \u211d) (hb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a \u03c9\u2016 \u2264 B) (g : GaussianVectorL2) :\n    MemLp (fun \u03c9 => a \u03c9 \u2022 g \u03c9) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L16"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 21,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "def multiplier (a : SampleSpace \u2192 \u211d) (ha : AEStronglyMeasurable a gaussianProduct)\n    (B : \u211d) (hb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a \u03c9\u2016 \u2264 B) (g : GaussianVectorL2) : GaussianVectorL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L21"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier_ae",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 25,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem multiplier_ae (a : SampleSpace \u2192 \u211d) (ha : AEStronglyMeasurable a gaussianProduct)\n    (B : \u211d) (hb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a \u03c9\u2016 \u2264 B) (g : GaussianVectorL2) :\n    multiplier a ha B hb g =\u1d50[gaussianProduct] fun \u03c9 => a \u03c9 \u2022 g \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L25"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier_sub_bound",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 30,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem multiplier_sub_bound (a : SampleSpace \u2192 \u211d)\n    (ha : AEStronglyMeasurable a gaussianProduct) (B : \u211d)\n    (hb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a \u03c9\u2016 \u2264 B) (g h : GaussianVectorL2) :\n    \u2016multiplier a ha B hb g - multiplier a ha B hb h\u2016 \u2264 B * \u2016g - h\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L30"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier_tendsto_fixed",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 41,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem multiplier_tendsto_fixed (a : \u2115 \u2192 SampleSpace \u2192 \u211d) (b : SampleSpace \u2192 \u211d)\n    (ha : \u2200 n, AEStronglyMeasurable (a n) gaussianProduct)\n    (hb : AEStronglyMeasurable b gaussianProduct) (B : \u211d) (hB : 0 \u2264 B)\n    (hba : \u2200 n, \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a n \u03c9\u2016 \u2264 B)\n    (hbb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016b \u03c9\u2016 \u2264 B)\n    (ht : \u2200\u1d50 \u03c9 \u2202gaussianProduct, Tendsto (fun n => a n \u03c9) atTop (\ud835\udcdd (b \u03c9)))\n    (g : GaussianVectorL2) :\n    Tendsto (fun n => multiplier (a n) (ha n) B (hba n) g) atTop\n      (\ud835\udcdd (multiplier b hb B hbb g))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L41"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.multiplier_tendsto",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 65,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem multiplier_tendsto (a : \u2115 \u2192 SampleSpace \u2192 \u211d) (b : SampleSpace \u2192 \u211d)\n    (ha : \u2200 n, AEStronglyMeasurable (a n) gaussianProduct)\n    (hb : AEStronglyMeasurable b gaussianProduct) (B : \u211d) (hB : 0 \u2264 B)\n    (hba : \u2200 n, \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016a n \u03c9\u2016 \u2264 B)\n    (hbb : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2016b \u03c9\u2016 \u2264 B)\n    (ht : \u2200\u1d50 \u03c9 \u2202gaussianProduct, Tendsto (fun n => a n \u03c9) atTop (\ud835\udcdd (b \u03c9)))\n    (g : \u2115 \u2192 GaussianVectorL2) (h : GaussianVectorL2) (hg : Tendsto g atTop (\ud835\udcdd h)) :\n    Tendsto (fun n => multiplier (a n) (ha n) B (hba n) (g n)) atTop\n      (\ud835\udcdd (multiplier b hb B hbb h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L65"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.core_graph_sequence",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 88,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem core_graph_sequence (f : GaussianL2) (g : GaussianVectorL2)\n    (hfg : (f, g) \u2208 closedCylindricalDerivative.graph) :\n    \u2203 u : \u2115 \u2192 polynomialCylindricalDomain,\n      Tendsto (fun n => ((u n : GaussianL2), polynomialDerivative (u n))) atTop (\ud835\udcdd (f, g))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L88"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.bounded_closed_chain_graph",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 107,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem bounded_closed_chain_graph (f : GaussianL2) (g : GaussianVectorL2)\n    (hfg : (f, g) \u2208 closedCylindricalDerivative.graph)\n    (\u03c6 d\u03c6 : \u211d \u2192 \u211d) (hd : \u2200 x, HasDerivAt \u03c6 (d\u03c6 x) x) (hc : Continuous d\u03c6)\n    (A B : \u211d) (hA : \u2200 x, \u2016\u03c6 x\u2016 \u2264 A) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B) :\n    \u2203 F : GaussianL2, \u2203 G : GaussianVectorL2,\n      (F, G) \u2208 closedCylindricalDerivative.graph \u2227\n      F =\u1d50[gaussianProduct] (fun \u03c9 => \u03c6 (f \u03c9)) \u2227\n      G =\u1d50[gaussianProduct] (fun \u03c9 => d\u03c6 (f \u03c9) \u2022 g \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L107"
+    },
+    {
+      "paper": "Section 10 nonlinear full-clock graph-dual chain; sine field-norm escape is an explicit human combination.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianClosedChainRule.bounded_product_chain_graph",
+      "file": "Foundation/GaussianClosedChainRule.lean",
+      "line": 171,
+      "source_sha256": "fd12d99ef6955ab6c56bc46c91a6a22219478f5e47035c366dc6bf34f9902da2",
+      "declaration_header": "theorem bounded_product_chain_graph\n    (f : Lp \u211d 2 (gaussianProduct.prod gaussianProduct))\n    (g : Lp CoefficientSpace 2 (gaussianProduct.prod gaussianProduct))\n    (hfg : (ProductL2Curry.curry gaussianProduct gaussianProduct f,\n      ProductL2Curry.curry gaussianProduct gaussianProduct g) \u2208\n        (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph)\n    (\u03c6 d\u03c6 : \u211d \u2192 \u211d) (hd : \u2200 x, HasDerivAt \u03c6 (d\u03c6 x) x) (hc : Continuous d\u03c6)\n    (A B : \u211d) (hA : \u2200 x, \u2016\u03c6 x\u2016 \u2264 A) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B) :\n    \u2203 F : Lp \u211d 2 (gaussianProduct.prod gaussianProduct),\n    \u2203 G : Lp CoefficientSpace 2 (gaussianProduct.prod gaussianProduct),\n      (ProductL2Curry.curry gaussianProduct gaussianProduct F,\n        ProductL2Curry.curry gaussianProduct gaussianProduct G) \u2208\n          (BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative).graph \u2227\n      F =\u1d50[gaussianProduct.prod gaussianProduct] (fun \u03c9 => \u03c6 (f \u03c9)) \u2227\n      G =\u1d50[gaussianProduct.prod gaussianProduct] (fun \u03c9 => d\u03c6 (f \u03c9) \u2022 g \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClosedChainRule.lean#L171"
     }
   ],
   "human_reorganization": [
@@ -1738,7 +2116,8 @@
     "The future scenery increment B2-B1 has positive pairing with the actual clock average at every positive time, by its overlap min(abs(WT),2)-min(abs(WT),1) and a strictly positive Gaussian tail. This rules out the necessary local scenery measurability. Taking T=S/2 transfers the raw-past exclusion to the closed right-past intersection. The constructed T is existential, not arbitrary.",
     "The all-large-real-order uniform distance is the exact source conclusion. The explicit estimate norm(B_(-2beta)ZT-Pi0ZT)<=3^(-beta) norm(ZT) is an added human Parseval/parity consequence of already proved odd-clock-sector vanishing. The source proves the strong limit by dominated convergence. The half-distance follows by orthogonal best approximation and the triangle inequality; native membership follows from the sharp beta>1/4 threshold.",
     "No failure is asserted for every small positive smoothing order, every observation time, full all-time intrinsic observability or preservation of the native clock derivative by causal projection. Native differentiability does not supply time-specific adaptedness; none of these results completes physical-time calculus.",
-    "Section 11 reconstructs the original scenery isometry on actual physical Lebesgue L2 kernels, fixed by all oriented Brownian indicators. It gives strong Bochner L2(clock;L2physical) and L2(clock;H^-1physical) mollifier/Dirac limits with exact anchored spatial derivative delta0-delta_r. The original white-noise images of shrinking unit-mass profiles escape in Gaussian L2 and admit no even nonlinear H^-1 extension continuous at delta0. The uniform kernel error sqrt(epsilon_n), induced H^-1 error and explicit norm lower bound sqrt(n+1)/2 are labelled HUMAN deductions. Physical spatial differentiation, clock Bessel regularity and the adjoint-graph dual are different operators/topologies; none supplies observed-filtration physical-time calculus."
+    "Section 11 reconstructs the original scenery isometry on actual physical Lebesgue L2 kernels, fixed by all oriented Brownian indicators. It gives strong Bochner L2(clock;L2physical) and L2(clock;H^-1physical) mollifier/Dirac limits with exact anchored spatial derivative delta0-delta_r. The original white-noise images of shrinking unit-mass profiles escape in Gaussian L2 and admit no even nonlinear H^-1 extension continuous at delta0. The uniform kernel error sqrt(epsilon_n), induced H^-1 error and explicit norm lower bound sqrt(n+1)/2 are labelled HUMAN deductions. Physical spatial differentiation, clock Bessel regularity and the adjoint-graph dual are different operators/topologies; none supplies observed-filtration physical-time calculus.",
+    "Section 10 now reconstructs nonlinear composition in the FULL original clock adjoint-graph dual. For bounded C1 phi with continuous bounded slope L, native approximants un->f satisfy norm[j(phi-prime(un)Dun)-d(phi(f))]<=L norm(un-f). All products are genuine finite-n original L2 fields; the limit is defined by E[phi(f)Dstar v] on every full adjoint-domain test, never as an unproved pointwise product phi-prime(f)df. Gaussian graph-core chain passage and bounded-multiplier dominated convergence are printed. For phi=sin and f=ZT, the existing positive-time sine-domain exclusion plus native escape proves norm(cos(un)Dun)->infinity for EVERY native L2 value approximation, despite full graph-dual convergence to a nonzero nonrepresentable functional. This concrete last consequence is labelled human theorem combination. IBMClockWeakChain, IBMClockGraphDualLimit and GaussianClosedChainRule read fully. No causal physical-time calculus or multiplier rule on arbitrary graph duals is inferred."
   ],
   "literature": [
     {
