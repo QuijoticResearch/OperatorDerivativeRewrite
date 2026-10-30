@@ -13526,3 +13526,35 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.mixedForm_lower
 #print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.limitDensity_eq
 #print axioms OperatorDerivativeRewrite.Foundation.CubeMixedForm.kernel_tendsto
+
+-- Actual root adjoint, attained Schur minimum and Gaussian integration;1754.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2RootAdjoint.rotate
+#print axioms OperatorDerivativeRewrite.Foundation.SU2RootAdjoint.generator_rotate
+#print axioms OperatorDerivativeRewrite.Foundation.SU2RootAdjoint.rotate_add
+#print axioms OperatorDerivativeRewrite.Foundation.SU2RootAdjoint.rotate_smul
+#print axioms OperatorDerivativeRewrite.Foundation.SU2RootAdjoint.rotate_sizeSq
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.frameField
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.rotatedField
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.gaugeField
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.difference
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.spatialCost
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.effective
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.remainder
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.mixedForm_frames
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.completed_square
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.effective_lower
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.center
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.center_anchor
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.minimum_attained
+#print axioms OperatorDerivativeRewrite.Foundation.CubeRootSchur.effective_nonnegative
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporalForm
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporalConstant
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.shifted_form
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporalForm_eq
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporalForm_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporal_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.temporalConstant_positive
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.fixed_root_integral
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.fixed_root_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.root_weight_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSchurIntegral.kernel_tendsto
