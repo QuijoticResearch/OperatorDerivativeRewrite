@@ -22,7 +22,7 @@
 \title{Observable martingales on Brownian-time paths:\\
 predictable energy, associativity and uniform reconstruction}
 \author{Project Stardust}
-\date{Reviewed editorial draft, revision 2, October 29, 2026}
+\date{Reviewed editorial draft, revision 3, October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
 On a constructed Brownian-time Brownian probability space, predictable
@@ -34,7 +34,9 @@ pass through their null quotient and completion, and identify every common
 bounded predictable action with the original output-channel integral.
 A fixed countable family of actual integrals reconstructs continuous
 curves of observables uniformly on compact parameter sets, simultaneously
-over all causal horizons. A bounded two-source Gaussian recovery transfers
+over all causal horizons. Original native graph tests identify the
+family's scalar coefficients, with a quantitative graph-dual norm bound.
+A bounded two-source Gaussian recovery transfers
 this convergence to the original intrinsic divergence graph. The proofs
 separate raw predictability, right-germ martingales and source-operator
 domains. These are classical integration and Hilbert-space mechanisms
@@ -659,6 +661,111 @@ constant retained in the formal source. Combine it with the uniform
 input error and contractivity of every $S_r$. Both field values and
 their original divergences converge in the stated norms.
 \end{proof}
+
+
+\section{Fixed stochastic coefficients as native graph tests}
+\label{sec:graphtests}
+The fixed channels also identify every reconstruction coefficient by
+an original adjoint-graph test. Let
+\[
+ \mathcal T=\{(V,\delta_{\OO}V):V\in\Dom\delta_{\OO}\}
+       \subset\mathcal V\oplus\OO,
+ \quad \norm{(V,g)}_{\mathcal T}^2=\norm V^2+\norm g^2.
+\]
+Closedness of the original adjoint makes this a Hilbert space. For
+any $f\in\OO$ define the continuous functional
+\[
+ (\mathrm d f)(V,\delta_{\OO}V)=\inner f{\delta_{\OO}V}.
+\]
+Cauchy--Schwarz gives $\norm{\mathrm d f}_{\mathcal T^*}\leq\norm f$.
+If $f\in\Dom D_{\OO}$, original adjointness identifies it with
+$V\mapsto\inner{D_{\OO}f}V$ on these graph tests. The functional
+exists for every $f$; this is not an extension of the native derivative
+domain.
+
+Use the already constructed bounded linear recovery $\mathfrak R$
+of \eqref{eq:recovery}. For the fixed basis $e_i$ in \eqref{eq:basis},
+set $V_i=\mathfrak R e_i$ and $\tau_i=(V_i,e_i)\in\mathcal T$.
+Equation~\eqref{eq:native} gives
+\[
+ \delta_{\OO}V_i=e_i,\qquad \norm{V_i}^2\leq2,
+ \qquad \norm{\tau_i}_{\mathcal T}\leq\sqrt3.
+\]
+These are actual original-divergence domain elements, constructed
+from the fixed predictable integral outputs, rather than arbitrary
+formal test symbols.
+
+\begin{proposition}\label{prop:graphcoefficients}
+For every $f\in\OO$,
+\[
+ c_i(f)=(\mathrm d f)(\tau_i),\qquad
+ f-P_0f=\sum_{i\in I}I_{e_i}\bigl((\mathrm d f)(\tau_i)h_i\bigr),
+ \qquad
+ \sum_i |(\mathrm d f)(\tau_i)|^2=\norm{f-P_0f}^2.
+\]
+The stochastic series converges in the original observable $L^2$.
+For $f\in\Dom D_{\OO}$ its coefficient can equivalently be written
+$\inner{V_i}{D_{\OO}f}$. For arbitrary $f$ the graph-functional
+formula is the one asserted.
+\end{proposition}
+\begin{proof}
+By the definition and $\delta_{\OO}V_i=e_i$,
+$(\mathrm d f)(\tau_i)=\inner f{e_i}=c_i(f)$.
+Substitute this equality in the fixed-channel reconstruction and
+Parseval identities \eqref{eq:parseval}. Each integral is linear
+in its scalar coefficient and satisfies $I_{e_i}h_i=e_i$,
+so these are exactly the same convergent Hilbert series, with the
+same squared coefficient energy. For native-domain $f$, apply the
+original adjoint relation \eqref{eq:adjoint} to $V_i$.
+\end{proof}
+
+There is also a useful quantitative human consequence of these same
+constructions. For every $f\in\OO$,
+\begin{equation}\label{eq:weaklower}
+ \frac{\norm{f-P_0f}}{\sqrt3}
+       \leq\norm{\mathrm d f}_{\mathcal T^*}\leq\norm f.
+\end{equation}
+To prove the lower bound, take finitely supported real coefficients
+$\eta=(\eta_i)$ and $e_\eta=\sum_i\eta_ie_i$. Linearity and the
+recovery estimate on the centered observable $e_\eta$ give
+\[
+ \tau_\eta:=\sum_i\eta_i\tau_i
+       =(\mathfrak R e_\eta,e_\eta),\qquad
+ \norm{\tau_\eta}_{\mathcal T}^2
+       \leq3\norm{e_\eta}^2=3\sum_i\eta_i^2.
+\]
+Thus
+$|\sum_i\eta_i c_i(f)|\leq\sqrt3\norm{\mathrm d f}\norm\eta_{\ell^2}$.
+For a finite set $A$ choose $\eta_i=c_i(f)$ on $A$ and zero
+elsewhere. Dividing by the finite coefficient norm when it is
+nonzero gives
+$(\sum_{i\in A}|c_i(f)|^2)^{1/2}\leq\sqrt3\norm{\mathrm d f}$;
+the zero case is immediate. Taking increasing finite sets and
+Parseval proves \eqref{eq:weaklower}. Individual bounds on
+$\norm{V_i}$ alone would not justify this step; the bounded linear
+recovery on their \emph{combinations} is what provides it.
+
+For the actual point curve, the already proved $P_0Z_t=0$ and
+Brownian conditioning give
+$\norm{Z_t}^2=\E|W_t|=\sqrt{2t/\pi}$. Therefore
+\[
+ \frac1{\sqrt3}(2t/\pi)^{1/4}
+ \leq\norm{\mathrm d Z_t}_{\mathcal T^*}
+ \leq(2t/\pi)^{1/4}\qquad(t>0).
+\]
+At least one fixed coefficient of $Z_t$ is nonzero for every positive
+$t$, since otherwise Parseval would make $Z_t=0$ in $L^2$.
+These bounds are labelled human consequences, not newly named
+formal theorems or sharp constants.
+
+The graph tests are static source fields; the scalar coefficients
+pair the whole target with their divergences. Their stochastic
+integrands remain the already constructed target-indexed channels,
+not a new physical-time conditional-gradient formula. In particular
+\eqref{eq:weaklower} does not put the rough point target in
+$\Dom D_{\OO}$, supply a common prescribed Brownian driver or prove
+observed-filtration predictable representation. It quantifies the
+existing generalized derivative using exact native tests.
 
 \section{Scope, antecedents and formal correspondence}
 The change-of-energy and associativity mechanisms belong to classical

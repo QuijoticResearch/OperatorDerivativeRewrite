@@ -528,6 +528,213 @@
       "source_sha256": "b675a05e23f6e65a788cf94db98a4314d2a4395ce058870d884a6aaf07836b79",
       "declaration_header": "theorem transfer_bound (z : Completed F) : \u2016transfer F z\u2016^2 \u2264 2*\u2016z\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedNativeCalculus.lean#L41"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.nativeTest_value",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 25,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem nativeTest_value (i : basisSet) : jointDivergence (nativeTest i) = terminal i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L25"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.nativeTest_norm",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 30,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem nativeTest_norm (i : basisSet) : \u2016(nativeTest i : JointFieldSpace)\u2016^2 \u2264 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L30"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.coefficient_generalized",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 34,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem coefficient_generalized (f : IntrinsicSpace) (i : basisSet) :\n    coefficient f i = weakDerivative f (testOf (nativeTest i))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L34"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.coefficient_native",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 43,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem coefficient_native (f : jointDerivative.domain) (i : basisSet) :\n    coefficient (f : IntrinsicSpace) i = inner \u211d (nativeTest i : JointFieldSpace) (jointDerivative f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L43"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.generalized_stochastic_reconstruction",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 51,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem generalized_stochastic_reconstruction (f : IntrinsicSpace) :\n    HasSum (fun i : basisSet => integral (terminal i : JointL2)\n      (weakDerivative f (testOf (nativeTest i)) \u2022 integrand i))\n      ((f : JointL2)-channelClass (f : JointL2) 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L51"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.native_stochastic_reconstruction",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 57,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem native_stochastic_reconstruction (f : jointDerivative.domain) :\n    HasSum (fun i : basisSet => integral (terminal i : JointL2)\n      (inner \u211d (nativeTest i : JointFieldSpace) (jointDerivative f) \u2022 integrand i))\n      (((f : IntrinsicSpace) : JointL2)-channelClass ((f : IntrinsicSpace) : JointL2) 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L57"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.generalized_energy",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 63,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem generalized_energy (f : IntrinsicSpace) :\n    HasSum (fun i : basisSet => (weakDerivative f (testOf (nativeTest i)))^2) (\u2016remainder f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L63"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.observed_reconstruction",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 67,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem observed_reconstruction (t : \u211d\u22650) :\n    HasSum (fun i : basisSet => integral (terminal i : JointL2)\n      (weakDerivative (intrinsicCurve t) (testOf (nativeTest i)) \u2022 integrand i))\n      (intrinsicCurve t : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L67"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedNativeReconstruction.observed_one_nonzero_coefficient",
+      "file": "Foundation/IBMFixedNativeReconstruction.lean",
+      "line": 75,
+      "source_sha256": "a1b2f75048081cb9083fa22429032d789f898bb662f9187fe1476453a8dc3c21",
+      "declaration_header": "theorem observed_one_nonzero_coefficient :\n    \u2203 i : basisSet, weakDerivative (intrinsicCurve 1) (testOf (nativeTest i)) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedNativeReconstruction.lean#L75"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.weakDerivative_norm",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 29,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem weakDerivative_norm (f : IntrinsicSpace) : \u2016weakDerivative f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L29"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.original_graph",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 32,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem original_graph (f : jointDerivative.domain) :\n    embed (jointDerivative f) = weakDerivative (f : IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L32"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.test_pairing",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 43,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem test_pairing (f : IntrinsicSpace) (v : jointDivergence.domain) :\n    weakDerivative f (testOf v) = inner \u211d f (jointDivergence v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L43"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.actual_pairing",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 46,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem actual_pairing (f : IntrinsicSpace) (X : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hX : (f : JointL2) =\u1d50[IBMSourceLaws.jointMeasure] X) (v : jointDivergence.domain) :\n    weakDerivative f (testOf v) =\n      \u222b \u03c9, X \u03c9 * ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9\n        \u2202IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L46"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicGraphDual.actual_pairing_integrable",
+      "file": "Foundation/IBMIntrinsicGraphDual.lean",
+      "line": 57,
+      "source_sha256": "e72479b132b317f26929451de13f686f5c6fc3a621b1a1291ec13868c2ed24b3",
+      "declaration_header": "theorem actual_pairing_integrable (f : IntrinsicSpace) (X : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hX : (f : JointL2) =\u1d50[IBMSourceLaws.jointMeasure] X) (v : jointDivergence.domain) :\n    Integrable (fun \u03c9 => X \u03c9 * ((jointDivergence v : IntrinsicSpace) : JointL2) \u03c9)\n      IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicGraphDual.lean#L57"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.test_graph",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 25,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem test_graph (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E)) (w : Tests T hd) :\n    (field T hd w, value T hd w) \u2208 T.adjoint.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L25"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.derivative_apply",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 39,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem derivative_apply (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E))\n    (f : E) (w : Tests T hd) : derivative T hd f w = inner \u211d f (value T hd w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L39"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.derivative_original_test",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 45,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem derivative_original_test (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E))\n    (f : E) (v : T.adjoint.domain) :\n    derivative T hd f (testOf T hd v) = inner \u211d f (T.adjoint v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L45"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.derivative_norm_le",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 49,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem derivative_norm_le (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E)) (f : E) :\n    \u2016derivative T hd f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L49"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.graph_agreement",
+      "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
+      "line": 67,
+      "source_sha256": "f6c862ba23655efe8f19b6eac30bb31342ff85155be1854da51d7ec86db70107",
+      "declaration_header": "theorem graph_agreement (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E))\n    {u : E} {V : F} (hu : (u, V) \u2208 T.graph) : embed T hd V = derivative T hd u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L67"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.nativeField_mem",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 60,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem nativeField_mem (F : JointL2) (H : PredictableL2 F) :\n    nativeField F H \u2208 jointDivergence.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L60"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.native_divergence",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 64,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem native_divergence (F : JointL2) (H : PredictableL2 F) :\n    jointDivergence \u27e8nativeField F H, nativeField_mem F H\u27e9 = stochasticOutput F H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L64"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.nativeField_bound",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 68,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem nativeField_bound (F : JointL2) (H : PredictableL2 F) :\n    \u2016nativeField F H\u2016 ^ 2 \u2264 2 * \u2016H\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L68"
+    },
+    {
+      "paper": "Section 7 fixed-channel coefficients as original divergence-graph derivative tests",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.stochastic_integration_by_parts",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 72,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem stochastic_integration_by_parts (F : JointL2) (H : PredictableL2 F)\n    (f : jointDerivative.domain) :\n    inner \u211d (stochasticOutput F H) (f : IntrinsicSpace) =\n      inner \u211d (nativeField F H) (jointDerivative f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L72"
     }
   ],
   "paper_sections": {
@@ -545,7 +752,10 @@
     "The zero initial projection of each actual process coordinate is reconstructed through clock-conditioned stopped-scenery prediction; the formal proof uses bounded clipped-past factorization and shrinking forecasts.",
     "The joint intrinsic derivative density is an established frozen finite-average-core foundation, mapped via jointDerivative_dense. The paper does not rebuild that core construction or infer differentiability of point observations.",
     "Gaussian source recovery is reconstructed by finite Hermite chaos and closed adjoint graphs, then lifted fiberwise on the two original independent source factors. The retained graph constant three follows from the verified squared-field bound two.",
-    "The countable family is chosen by Hilbert-basis existence and target-indexed closed-range representation. It is not an explicit causal-gradient coefficient formula or a predictable representation theorem for a prescribed single martingale."
+    "The countable family is chosen by Hilbert-basis existence and target-indexed closed-range representation. It is not an explicit causal-gradient coefficient formula or a predictable representation theorem for a prescribed single martingale.",
+    "Section 7 uses the Hilbert norm on the ORIGINAL divergence graph, namely sqrt(||V||^2+||delta V||^2). The generalized derivative f maps a graph test to its L2 pairing with the original divergence value, so its norm is at most ||f|| without native-domain membership.",
+    "The fixed tests are the existing bounded linear native recovery applied to the fixed stochastic basis outputs, with norm-squared at most two and exact divergences e_i. Coefficient evaluation, stochastic reconstruction and Parseval are exact source correspondences; the native derivative pairing is stated only for targets in its original domain.",
+    "The lower graph-dual norm bound ||f-P0f||/sqrt(3) is an explicitly proved HUMAN deduction: finite combinations of tests, not just individual norm bounds, are controlled by bounded linear recovery and basis orthogonality. The actual point-curve bound and nonzero coefficient at every positive time are human consequences of its exact variance and zero initial projection. No sharpness claim or additional formal declaration is made."
   ],
   "literature": [
     {
