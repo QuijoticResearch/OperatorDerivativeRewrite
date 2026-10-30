@@ -33,7 +33,9 @@ through actual signed polynomial sums. The pairing is indefinite;
 no positive path-space measure or stochastic isometry is asserted.
 Static Appell reconstruction, unique higher-order polynomial Stein weight,
 missing first polynomial coordinate dual and actual Schwartz-density duals
-are proved separately from the chronological formula.
+are proved separately from the chronological formula. In fourth order,
+these dual densities propagate in $L^2$ at positive time and extend
+to derivative-of-Dirac functionals at zero in the pointwise Schwartz-test topology.
 We distinguish canonical coefficient uniqueness from uniqueness of channel synthesis. Exact variation/path-law, quartic-error, deterministic $L^2$-input and terminal-channel obstructions delimit stronger interpretations. A normalized
 polynomial sequence also proves nonclosability of the mean in compact-open
 path topology, including the Gaussian case; zero-start and all-start
@@ -274,6 +276,7 @@ This statement excludes polynomial weights only. It supplies no
 $L^2(|k_\tau|\,dx)$ score bound, bounded completion of all coordinate
 maps, positive covariance or probability interpretation.
 
+
 Finally define the centered polynomial primitive by
 \[
  \mathcal I P=\sum_n\frac{c_n(P)}{n+1}H_{n+1}.
@@ -299,6 +302,127 @@ proofs below.
 \code{PureOrderAppellExpansion}, \code{PureOrderAppellPairing},
 \code{PureOrderSteinUniqueness}, \code{PureOrderAppellPrimitive},
 \code{PureOrderAppellTail}, \code{HigherHeatAppellDuals}.
+\par\endgroup
+
+\subsection*{Fourth-order propagation and the singular initial dual}
+Here specialize to $p=4$, so the generator is $-\partial_x^4$
+and the Appell parameter at time $t>0$ is $a=-t$.
+Write $k_t$ for this kernel and
+$\rho_{n,t}=(-1)^n\partial_x^n k_t/n!$.
+Let $S_t$ be the Fourier multiplier $e^{-t\xi^4}$ on
+Lebesgue $L^2(\R)$, or on Schwartz functions when appropriate.
+The Fourier normalization is the angular one fixed in Section 1;
+the formal sources instead use $2\pi$ frequency, with the same
+physical operator. All distribution pairings below are complex
+linear, without conjugating the test function.
+
+\begin{proposition}\label{prop:dualpropagation}
+For $s\geq0$, $T>0$ and $n\geq0$,
+\[
+ S_s\rho_{n,T}=\rho_{n,T+s},\qquad
+ \norm{\rho_{n,T+s}}_2\leq\norm{\rho_{n,T}}_2.
+\]
+The map $s\mapsto\rho_{n,T+s}$ is continuous in $L^2$ and
+its right derivative at $s=0$ is $-\partial_x^4\rho_{n,T}$.
+There is also a continuous extension to $t=0$ as tempered
+distributions with the topology of pointwise evaluation on
+Schwartz tests:
+\begin{equation}\label{eq:dualinitial}
+ R_{n,t}(\varphi)=\frac1{n!}\int_\R k_t(x)\varphi^{(n)}(x)\,dx
+ \quad(t>0),\qquad
+ R_{n,0}(\varphi)=\frac{\varphi^{(n)}(0)}{n!}.
+\end{equation}
+For positive time, $R_{n,t}$ is the distribution of the actual
+Schwartz density $\rho_{n,t}$. For every fixed Schwartz test,
+including the right derivative at zero,
+\begin{equation}\label{eq:dualgenerator}
+ \frac{d}{dt}R_{n,t}(\varphi)
+   =-\frac1{n!}\int k_t(x)\varphi^{(n+4)}(x)\,dx
+ \quad(t>0),\qquad
+ R'_{n,0+}(\varphi)=-\frac{\varphi^{(n+4)}(0)}{n!}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Fourier transformation sends $\partial_x^n$ to multiplication
+by $(i\xi)^n$. It therefore commutes with $S_s$, and multiplying
+$e^{-s\xi^4}$ and $e^{-T\xi^4}$ gives the first identity.
+Plancherel and $|e^{-s\xi^4}|\leq1$ give the contraction.
+For each fixed $T$, the Fourier transform of $\rho_{n,T}$ is
+a polynomial times $e^{-T\xi^4}$. Dominated convergence proves
+strong continuity, using $4|\widehat\rho_{n,T}|^2$ as a squared
+majorant. For the right derivative use
+\[
+ \left|\frac{e^{-s\xi^4}-1}{s}\right|\leq\xi^4\quad(s>0).
+\]
+The squared majorant $\xi^8|\widehat\rho_{n,T}|^2$ is integrable,
+and the multiplier limit is $-\xi^4$. This identifies the derivative.
+
+Repeated integration by parts gives
+$\int\varphi\rho_{n,t}=\int k_t\varphi^{(n)}/n!$, with no boundary
+terms because both functions are Schwartz. For any Schwartz $g$,
+Fourier inversion and evenness of the multiplier give
+\[
+ \int k_t g=\frac1{2\pi}\int e^{-t\xi^4}\widehat g(\xi)\,d\xi
+   \longrightarrow g(0).
+\]
+The integrable majorant is $|\widehat g|$, independently of $t$.
+This proves continuity of every evaluation in
+\eqref{eq:dualinitial}. Each evaluation at zero is a continuous
+Schwartz functional, as follows from the defining derivative
+seminorms. Thus the extension has exactly the asserted
+pointwise distribution topology. No stronger dual topology
+is required here.
+
+Finally the difference quotients of the last Fourier integral
+are dominated by $\xi^4|\widehat g(\xi)|$ at zero and at any
+positive time. Differentiating gives the mean of $-g^{(4)}$.
+Take $g=\varphi^{(n)}$ and divide by $n!$ to obtain
+\eqref{eq:dualgenerator}, with the displayed signs.
+\end{proof}
+
+The initial functional is $(-1)^n\delta_0^{(n)}/n!$, since a
+distributional derivative acts by $\delta_0^{(n)}(\varphi)
+=(-1)^n\varphi^{(n)}(0)$. It is not an initial $L^2$ density.
+For clarity, the following quantitative consequence is a human
+Fourier calculation, rather than an additional mapped Lean theorem.
+Plancherel in angular frequency gives
+\begin{equation}\label{eq:duall2scaling}
+ \norm{\rho_{n,t}}_2^2
+ =\frac1{2\pi(n!)^2}\int_\R \xi^{2n}e^{-2t\xi^4}\,d\xi
+ =C_n t^{-(2n+1)/4},\qquad
+ C_n=\frac1{2\pi(n!)^2}\int_\R y^{2n}e^{-2y^4}\,dy>0.
+\end{equation}
+The change of variables is $y=t^{1/4}\xi$; the last integral is
+finite by exponential decay and positive on an interval avoiding
+zero. Hence these densities have unbounded $L^2$ norm as
+$t\downarrow0$, although every Schwartz evaluation converges.
+One can also see directly why the endpoint cannot be represented
+by an $L^2$ function: choose a smooth compactly supported $\psi$
+with $\psi^{(n)}(0)\ne0$ and put
+$\psi_\varepsilon(x)=\varepsilon^n\psi(x/\varepsilon)$.
+Its $n$th derivative at zero is fixed, whereas
+$\norm{\psi_\varepsilon}_2=\varepsilon^{n+1/2}\norm\psi_2\to0$,
+contradicting the Cauchy--Schwarz bound for such a representation.
+
+This is deterministic evolution of coordinate densities and
+test functionals. It does not give bounded coordinate maps on
+the completed cylinder domain, a positive path law, or a
+chronological stochastic integral. The underlying fourth-order
+Fourier fundamental solution is classical; for instance,
+D'Ovidio~\cite{dovidio}, equations (4.1)--(4.2), gives this
+equation and its inverse Fourier kernel. We use neither that
+paper's subsequent multiplication assertions nor its
+fractional time-change results. No novelty is claimed for
+derivative propagation or the scaling calculation.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:}
+\code{QuarticDualSemigroup.density_evolve},
+\code{density_l2_contraction}, \code{density_l2_continuous},
+\code{density_right_generator}.
+\par\noindent
+\code{QuarticDualDistributions.realized_apply},
+\code{realized_continuous}, \code{realized_observable_generator}.
 \par\endgroup
 
 \section{The common factorial domain}\label{sec:domain}
@@ -1346,6 +1470,10 @@ walks on the complex plane, arXiv:1603.05437 (2016).
 Higher-order fractional equations and related time-changed
 pseudo-processes, arXiv:2402.13691v2 (2024).
 \url{https://arxiv.org/abs/2402.13691}.
+\bibitem{dovidio} M. D'Ovidio,
+On the fractional counterpart of the higher-order equations,
+arXiv:1106.1906v1 (2011), equations (4.1)--(4.2).
+\url{https://arxiv.org/abs/1106.1906}.
 \bibitem{hile} G. N. Hile and A. Stanoyevitch,
 \emph{Heat Polynomial Generalizations}, author-hosted primary manuscript,
 Sections 3--4, exponential generating functions.

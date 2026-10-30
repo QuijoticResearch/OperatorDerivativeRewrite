@@ -1762,6 +1762,438 @@
       "source_sha256": "b3cf3e58e5447a23e446f26a08028af737828463bd3a1299d834316a59c2ed86",
       "declaration_header": "theorem witness_mean_zero (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    HigherHeatCompletedSignedMean.mean m hm T hT (core (terminalCylinder^(2*m-1))) = 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatMultichannelSharpness.lean#L40"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.no_polynomial_dual_one",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 11,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "theorem no_polynomial_dual_one (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 Q : Polynomial \u211d, \u2200 n : \u2115,\n      pairing 4 a (appell a n) Q = if n=1 then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L11"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.coordinate_one_not_polynomial_pairing",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 23,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "theorem coordinate_one_not_polynomial_pairing (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 Q : Polynomial \u211d, \u2200 P : Polynomial \u211d,\n      pairing 4 a P Q = coordinate a 1 P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L23"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.density",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 31,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "def density (t : \u211d\u22650) (ht : 0 < t) (n : \u2115) : \ud835\udce2(\u211d,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L31"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.density_polynomial_integrable",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 35,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "theorem density_polynomial_integrable (t : \u211d\u22650) (ht : 0 < t) (n : \u2115)\n    (P : Polynomial \u211d) : Integrable (fun x : \u211d => ((P.eval x:\u211d):\u2102)*density t ht n x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L35"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.density_coordinate",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 39,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "theorem density_coordinate (t : \u211d\u22650) (ht : 0 < t) (n : \u2115) (P : Polynomial \u211d) :\n    (\u222b x : \u211d, ((P.eval x:\u211d):\u2102)*density t ht n x) =\n      (((basis (-(t:\u211d))).repr P n : \u211d):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L39"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticAppellDualDensity.density_biorthogonal",
+      "file": "Foundation/QuarticAppellDualDensity.lean",
+      "line": 62,
+      "source_sha256": "4627e7bc37fdc1860540891bb2ee43a3d2bb3196944af7205411079c5c154e55",
+      "declaration_header": "theorem density_biorthogonal (t : \u211d\u22650) (ht : 0 < t) (n k : \u2115) :\n    (\u222b x : \u211d, (((appell (-(t:\u211d)) k).eval x:\u211d):\u2102)*density t ht n x) =\n      if k=n then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticAppellDualDensity.lean#L62"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.evolve_jet",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 12,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem evolve_jet (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) :\n    evolve m hm t (jet n f) = jet n (evolve m hm t f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L12"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.density_evolve",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 20,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem density_evolve (s T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    evolve 2 (by norm_num) s (density T hT n) = density (s+T) (by positivity) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L20"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.density_l2_evolve",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 25,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem density_l2_evolve (s T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    HigherHeatL2.evolution 2 s ((density T hT n).toLp 2 volume) =\n      (density (s+T) (by positivity) n).toLp 2 volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L25"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.density_l2_contraction",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 30,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem density_l2_contraction (s T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    \u2016(density (s+T) (by positivity) n).toLp 2 volume\u2016 \u2264\n      \u2016(density T hT n).toLp 2 volume\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L30"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.density_l2_continuous",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 36,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem density_l2_continuous (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    Continuous (fun s : \u211d\u22650 => (density (s+T) (by positivity) n).toLp 2 volume)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L36"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualSemigroup.density_right_generator",
+      "file": "Foundation/QuarticDualSemigroup.lean",
+      "line": 45,
+      "source_sha256": "a83cdec57bbe0fc17f910c463db48db1c7e6e81e8328aa9f7bdc027c3371a1fd",
+      "declaration_header": "theorem density_right_generator (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    HasDerivWithinAt (fun s : \u211d =>\n      (density (s.toNNReal+T) (by positivity) n).toLp 2 volume)\n      ((differential 2 (density T hT n)).toLp 2 volume) (Set.Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualSemigroup.lean#L45"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.jetCLM",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 13,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "def jetCLM : \u2115 \u2192 \ud835\udce2(\u211d,\u2102) \u2192L[\u2102] \ud835\udce2(\u211d,\u2102)\n  | 0 => ContinuousLinearMap.id \u2102 _\n  | n+1 => (SchwartzMap.derivCLM \u2102 \u2102).comp (jetCLM n)\n\ntheorem jetCLM_apply (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) : jetCLM n f = jet n f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L13"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.jetCLM_apply",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 17,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem jetCLM_apply (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) : jetCLM n f = jet n f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L17"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.initial",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 22,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "def initial (n : \u2115) : \ud835\udce2'(\u211d,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L22"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.initial_apply",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 26,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem initial_apply (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) :\n    initial n f = jet n f 0 / (n.factorial:\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L26"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.density_test",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 32,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem density_test (t : \u211d\u22650) (ht : 0 < t) (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) :\n    (density t ht n : \ud835\udce2'(\u211d,\u2102)) f = mean 2 t (jet n f) / (n.factorial:\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L32"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 65,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "def realized (n : \u2115) (t : \u211d\u22650) : \ud835\udce2'(\u211d,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L65"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized_apply",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 68,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem realized_apply (n : \u2115) (t : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    realized n t f = mean 2 t (jet n f) / (n.factorial:\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L68"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized_initial",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 76,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem realized_initial (n : \u2115) : realized n 0 = initial n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L76"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized_positive",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 78,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem realized_positive (n : \u2115) (t : \u211d\u22650) (ht : 0 < t) :\n    realized n t = (density t ht n : \ud835\udce2'(\u211d,\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L78"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized_continuous",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 81,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem realized_continuous (n : \u2115) : Continuous (realized n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L81"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.QuarticDualDistributions.realized_observable_generator",
+      "file": "Foundation/QuarticDualDistributions.lean",
+      "line": 87,
+      "source_sha256": "0b12583dfb5f613db57e4707b3091c4aa79782620bdd1e971f005ce4501929c0",
+      "declaration_header": "theorem realized_observable_generator (n : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (T : \u211d) (hT : 0 \u2264 T) :\n    HasDerivWithinAt (fun t : \u211d => realized n t.toNNReal f)\n      (mean 2 T.toNNReal (differential 2 (jet n f)) / (n.factorial:\u2102)) (Set.Ici 0) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/QuarticDualDistributions.lean#L87"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.differenceIntegrand",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 12,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "def differenceIntegrand (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (t \u03be : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L12"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.mean_zero",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 15,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem mean_zero (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) : mean m 0 f=f 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L15"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.initial_dirac",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 19,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem initial_dirac (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) : mean m 0 f=\u222b x : \u211d, f x \u2202Measure.dirac 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L19"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.difference_measurable",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 22,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem difference_measurable (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (t : \u211d) :\n    Measurable (differenceIntegrand m f t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L22"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.difference_bound",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 28,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem difference_bound (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (t \u03be : \u211d) :\n    \u2016differenceIntegrand m f t \u03be\u2016 \u2264 \u2016spectral m f \u03be\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L28"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.difference_tendsto",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 34,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem difference_tendsto (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (\u03be : \u211d) :\n    Tendsto (fun t : \u211d => differenceIntegrand m f t \u03be) (\ud835\udcdd[Set.Ioi 0] 0) (\ud835\udcdd (spectral m f \u03be))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L34"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.difference_integral_tendsto",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 40,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem difference_integral_tendsto (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) :\n    Tendsto (fun t : \u211d => \u222b \u03be : \u211d, differenceIntegrand m f t \u03be)\n      (\ud835\udcdd[Set.Ioi 0] 0) (\ud835\udcdd (\u222b \u03be : \u211d, spectral m f \u03be))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L40"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.difference_integral_identification",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 48,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem difference_integral_identification (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (t : \u211d) :\n    (\u222b \u03be : \u211d, differenceIntegrand m f t \u03be)=t\u207b\u00b9 \u2022 (mean m t.toNNReal f-mean m 0 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L48"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.initial_hasDerivWithinAt",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 66,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem initial_hasDerivWithinAt (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) :\n    HasDerivWithinAt (fun t : \u211d => mean m t.toNNReal f) (differential m f 0) (Set.Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L66"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.observable_hasDerivWithinAt",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 89,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem observable_hasDerivWithinAt (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (T : \u211d) (hT : 0 \u2264 T) :\n    HasDerivWithinAt (fun t : \u211d => mean m t.toNNReal f)\n      (mean m T.toNNReal (differential m f)) (Set.Ici 0) T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L89"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatInitialObservable.integrated_observable_ito",
+      "file": "Foundation/HigherHeatInitialObservable.lean",
+      "line": 99,
+      "source_sha256": "1a10931e5c5d5aed48d5fd7d514a7bba23f95d741330abce5d0374cd3fb829f4",
+      "declaration_header": "theorem integrated_observable_ito (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d,\u2102)) (T : \u211d\u22650) :\n    (\u222b t in (0:\u211d)..(T:\u211d), mean m t.toNNReal (differential m f))=mean m T f-f 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatInitialObservable.lean#L99"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.integrand",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 10,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "def integrand (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (p : \u211d\u22650 \u00d7 \u211d) (\u03be : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L10"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.integrand_bound",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 13,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem integrand_bound (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (p : \u211d\u22650 \u00d7 \u211d) (\u03be : \u211d) :\n    \u2016integrand m f p \u03be\u2016 \u2264 \u2016\ud835\udcd5 f \u03be\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L13"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.integrand_measurable",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 18,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem integrand_measurable (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (p : \u211d\u22650 \u00d7 \u211d) :\n    Measurable (integrand m f p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L18"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.integrand_parameter_continuous",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 24,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem integrand_parameter_continuous (m : \u2115) (f : \ud835\udce2(\u211d,\u2102)) (\u03be : \u211d) :\n    Continuous (fun p : \u211d\u22650 \u00d7 \u211d => integrand m f p \u03be)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L24"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.evolve_eq_integral",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 29,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem evolve_eq_integral (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d,\u2102)) (p : \u211d\u22650 \u00d7 \u211d) :\n    evolve m hm p.1 f p.2=\u222b \u03be : \u211d, integrand m f p \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L29"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.evolve_joint_continuous",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 39,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem evolve_joint_continuous (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d,\u2102)) :\n    Continuous (fun p : \u211d\u22650 \u00d7 \u211d => evolve m hm p.1 f p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L39"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.backward_joint_continuous",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 52,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem backward_joint_continuous (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    Continuous (fun p : \u211d\u22650 \u00d7 \u211d => backward m hm T p.1 f p.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L52"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 57,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "def pathObservable (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) (\u03c9 : C(\u211d\u22650,\u211d)) : C(\u211d\u22650,\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L57"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable_continuous",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 61,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem pathObservable_continuous (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    Continuous (pathObservable m hm T f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L61"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable_measurable",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 67,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem pathObservable_measurable (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) :\n    Measurable (pathObservable m hm T f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L67"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable_terminal",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 70,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem pathObservable_terminal (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102)) (\u03c9 : C(\u211d\u22650,\u211d)) :\n    pathObservable m hm T f \u03c9 T=f (\u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L70"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable_initial",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 75,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem pathObservable_initial (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (f : \ud835\udce2(\u211d,\u2102)) (\u03c9 : C(\u211d\u22650,\u211d)) (h\u03c9 : \u03c9 0=0) :\n    pathObservable m hm T f \u03c9 0=HigherHeatSchwartzCalculus.mean m T f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L75"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.pathObservable_bound",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 81,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem pathObservable_bound (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (f : \ud835\udce2(\u211d,\u2102))\n    (\u03c9 : C(\u211d\u22650,\u211d)) (t : \u211d\u22650) :\n    \u2016pathObservable m hm T f \u03c9 t\u2016 \u2264 \u222b \u03be : \u211d, \u2016\ud835\udcd5 f \u03be\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L81"
+    },
+    {
+      "paper": "Section 3, Proposition 3.1: actual fourth-order coordinate-density evolution, positive-time Lebesgue L2 contraction/continuity/right generator and pointwise Schwartz-test tempered-distribution extension through zero. Only fourth order is asserted for this proposition; no strong dual topology, L2 initial density or bounded completed coordinate maps.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSchwartzContinuity.mean_continuous",
+      "file": "Foundation/HigherHeatSchwartzContinuity.lean",
+      "line": 85,
+      "source_sha256": "ec04a9dff2fbc285df149a1249d6b32c1835d75298dac9231a7cffa4601257d4",
+      "declaration_header": "theorem mean_continuous (m : \u2115) (hm : 0 < m) (f : \ud835\udce2(\u211d,\u2102)) :\n    Continuous (fun t : \u211d\u22650 => HigherHeatSchwartzCalculus.mean m t f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSchwartzContinuity.lean#L85"
     }
   ],
   "human_reorganization": [
@@ -1780,7 +2212,8 @@
     "Proposition 4.2 is a printed elementary human deduction from the faithful factorial realization and the explicitly defined weighted Fourier-measure class. The polynomial x lies only in the former; all real cosine frequencies lie in the latter, whereas their faithful factorial realization exists exactly for absolute frequency below one, with norm 1/(1-frequency^2). No new Lean declaration, multivariate quotient obstruction, topology equivalence or novelty is asserted.",
     "Section 12.7 is a separate Schwartz-terminal scalar expectation theorem for deterministic real L^p controls, p=2m. Actual finite signed measures at accumulated clock A>0 and delta_0 at A=0 are retained. The original factorial multitime completion is not enlarged.",
     "The complete proof constructs a C1 extension through zero heat time, uses the absolutely continuous control clock, proves an integrable drift bound and applies the absolutely continuous fundamental theorem. The negative-argument extension is linear and is expressly not backward heat evolution. The angular Fourier constant includes 1/(2pi), matching source unit frequencies after rescaling.",
-    "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed."
+    "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed.",
+    "Section 3 now reconstructs fourth-order propagation of actual Appell coordinate densities and their singular initial dual. The signed generator is minus the fourth derivative, the actual Appell parameter is -t, and complex distribution pairings have no conjugation. Positive-time L2 contraction, strong continuity and right derivative are proved from the actual Fourier multiplier. The extension to zero is in the pointwise Schwartz-evaluation topology exactly used by the source, with initial functional phi^(n)(0)/n! = (-1)^n delta_0^(n)/n!, and right observable generator -phi^(n+4)(0)/n!. The exact norm-square scaling C_n*t^(-(2n+1)/4), its divergence at zero and the compact-bump proof excluding an L2 initial representative are explicitly HUMAN Fourier/test consequences, not added Lean declarations. Generic static Appell primitive identities precede this fourth-order specialization. No positive law, chronological integral, all-order distribution extension theorem, bounded coordinate completion or stronger dual topology is inferred."
   ],
   "literature": [
     {
@@ -1790,6 +2223,10 @@
     {
       "url": "https://doi.org/10.4099/math1924.11.59",
       "review": "Primary Nishioka 1985 comparison: Sections 2\u20133, Theorem 5.3, Remark 5.4 and Theorem 6.9 inspected. See manuscript Section 13 for scope and unresolved topology comparison."
+    },
+    {
+      "url": "https://arxiv.org/abs/1106.1906",
+      "review": "Primary v1 PDF printed page 5 / PDF index 4, equations (4.1)\u2013(4.2) directly inspected for the classical higher-order equation and inverse Fourier kernel. Subsequent multiplication assertions, fractional time-change results and full-paper proof verification are not used. No derivative-propagation or scaling novelty claimed."
     }
   ]
 }
