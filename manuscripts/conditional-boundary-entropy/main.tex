@@ -699,6 +699,90 @@ proposed distance scale until related independently to an actual
 lattice spacing. The source labels that scale as proposed; no physical
 mass gap follows by renaming a transition count.
 
+\section{A retained test imposes an exact smoothing-error budget}
+The retained-variable obstruction also has a norm formulation,
+which must be kept separate from relative entropy. Suppose
+$F$ is a real vector space, $G$ a normed space, and
+$D:F\to G$ is linear. Use the fixed seminorm $p(f)=\|Df\|$.
+Let $T,R:F\to F$ be two maps and suppose, for a particular
+$f$ with $p(f)>0$,
+\[
+ p(Rf)\leq q p(f),\qquad p(Tf-Rf)\leq\varepsilon p(f).
+\]
+Linearity of $D$ and the triangle inequality give
+\[
+ p(Tf)\leq(q+\varepsilon)p(f).
+\]
+If $Tf=f$, then necessarily
+\begin{equation}\label{eq:errorfloor}
+ \varepsilon\geq1-q.
+\end{equation}
+More directly, $Df=D(Rf)+D(Tf-Rf)$ gives
+\[
+ p(Tf-Rf)\geq(1-q)p(f).
+\]
+Thus a contraction of the reference map cannot be transferred to
+the retained update with a smaller error budget on this test.
+If the test is only approximately retained,
+$p(f-Tf)\leq\delta p(f)$, the same decomposition gives instead
+\begin{equation}\label{eq:approxbudget}
+ 1\leq q+\varepsilon+\delta.
+\end{equation}
+No linearity or Markov property of $T,R$ was used. Every term
+must be measured in the same displayed seminorm; an estimate
+in another norm does not meet these hypotheses automatically.
+\lean{BoundarySmoothingObstruction}{transfer_budget; fixed_error_lower}
+\lean{BoundarySmoothingObstruction}{fixed_error_floor; approximate_fixed_budget}
+
+For an actual conditional update, a boundary-only test is exactly
+retained: if each $\nu_x$ is a probability measure, then
+\[
+ (Tf)(x)=\int f(x)\,\nu_x(dy)=f(x).
+\]
+This normalization fact supplies the premise of
+\eqref{eq:errorfloor} whenever the chosen boundary test and
+seminorm are defined. It is independent of the entropy chain
+rule. The following Gaussian calculation shows that the floor
+can be attained exactly.
+
+Let $\gamma$ be standard normal probability on $\R$, and condition
+the product law $\gamma(dx)\gamma(dy)$ on its first coordinate.
+The test $f(x,y)=x$ is smooth, centered and in $L^2$; it is
+unchanged by the actual conditional expectation. On boundary
+functions define, where finite,
+\[
+ p(g)=\left(\int |g'(x)|^2\gamma(dx)\right)^{1/2}.
+\]
+All functions used below are linear, so this is an actual
+finite gradient norm. The original two-coordinate gradient of
+$f$ is $(1,0)$ and has the same norm one. For $t\geq0$ let
+\[
+ (R_tg)(x)=\int g\left(e^{-t}x+\sqrt{1-e^{-2t}}\,y\right)\gamma(dy).
+\]
+On the boundary test $g(x)=x$, integrability and $\int y\,d\gamma=0$
+give directly
+\[
+ R_tg=e^{-t}g,\quad p(g)=1,\quad p(R_tg)=e^{-t},
+ \quad p(Tg-R_tg)=1-e^{-t}.
+\]
+Thus the actual conditional update and the Mehler evolution
+differ by exactly the error required in
+\eqref{eq:errorfloor}; their two coefficients add to one.
+For $t>0$, no comparison with $q=e^{-t}$ and
+$\varepsilon<1-e^{-t}$ is possible on this test. Adding a
+nonnegative further loss $\eta$ cannot make
+$q+\varepsilon+\eta<1$ valid.
+\lean{DictionaryConditionalContraction}{coordinate_condexp; retained_gradient_equality}
+\lean{DictionaryConditionalContraction}{no_strict_reference_contraction; mehler_coordinate}
+\lean{BoundarySmoothingObstruction}{mehlerDifference_gradient; mehler_gradient_budget_exact}
+
+This is a classical conditional-expectation/Mehler distinction
+and an elementary triangle-inequality obstruction. It does not
+identify the Gaussian example with an SU(2) lattice kernel, or
+provide an entropy rate from a gradient bound. The finite SU(2)
+stationary entropy obstruction and the replacement-kernel
+mixing results above retain their separate references and proofs.
+
 \section{Interpretation and comparison with heat-bath mixing}
 Conditional expectation and the entropy chain rule are classical. This
 paper makes no novelty claim for the obstruction that an exactly retained

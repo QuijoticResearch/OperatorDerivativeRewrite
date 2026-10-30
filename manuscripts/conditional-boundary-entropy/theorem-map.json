@@ -832,6 +832,303 @@
       "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
       "declaration_header": "theorem zero_trace_wilson_mismatch : \u2200\u1da0 \u03b2 : \u211d in atTop,\n    \u2203 C : SU2, halfTrace C = 0 \u2227 loopKernel \u03b2 C = law \u2227\n      SU2OneWordTransfer.transition law \u03b2 C\u207b\u00b9 \u2260 law",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L340"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.retainedKernel",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 10,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "def retainedKernel {X Y : Type*} [MeasurableSpace Y]\n    (\u03bd : X \u2192 Measure Y) (f : X \u2192 \u211d) (x : X) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L10"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.retainedKernel_eq",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 13,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem retainedKernel_eq {X Y : Type*} [MeasurableSpace Y]\n    (\u03bd : X \u2192 Measure Y) (h\u03bd : \u2200 x, IsProbabilityMeasure (\u03bd x)) (f : X \u2192 \u211d) :\n    retainedKernel \u03bd f=f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L13"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.transfer_budget",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 25,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem transfer_budget (D : F \u2192\u2097[\u211d] G) (T R : F \u2192 F) (f : F) (q \u03b5 : \u211d)\n    (hR : \u2016D (R f)\u2016 \u2264 q*\u2016D f\u2016) (herror : \u2016D (T f-R f)\u2016 \u2264 \u03b5*\u2016D f\u2016) :\n    \u2016D (T f)\u2016 \u2264 (q+\u03b5)*\u2016D f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L25"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.fixed_error_lower",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 35,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem fixed_error_lower (D : F \u2192\u2097[\u211d] G) (T R : F \u2192 F) (f : F) (q : \u211d)\n    (hfix : T f=f) (hR : \u2016D (R f)\u2016 \u2264 q*\u2016D f\u2016) :\n    (1-q)*\u2016D f\u2016 \u2264 \u2016D (T f-R f)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L35"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.fixed_error_floor",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 43,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem fixed_error_floor (D : F \u2192\u2097[\u211d] G) (T R : F \u2192 F) (f : F) (q \u03b5 : \u211d)\n    (hf : D f \u2260 0) (hfix : T f=f) (hR : \u2016D (R f)\u2016 \u2264 q*\u2016D f\u2016)\n    (herror : \u2016D (T f-R f)\u2016 \u2264 \u03b5*\u2016D f\u2016) : 1-q \u2264 \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L43"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.no_strict_error_budget",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 50,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem no_strict_error_budget (D : F \u2192\u2097[\u211d] G) (T R : F \u2192 F) (f : F) (q \u03b5 \u03b7 : \u211d)\n    (hf : D f \u2260 0) (hfix : T f=f) (hR : \u2016D (R f)\u2016 \u2264 q*\u2016D f\u2016)\n    (h\u03b7 : 0 \u2264 \u03b7) (hbudget : q+\u03b5+\u03b7 < 1) :\n    \u00ac \u2016D (T f-R f)\u2016 \u2264 \u03b5*\u2016D f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L50"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.approximate_fixed_budget",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 59,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem approximate_fixed_budget (D : F \u2192\u2097[\u211d] G) (T R : F \u2192 F) (f : F) (q \u03b5 \u03b4 : \u211d)\n    (hf : D f \u2260 0) (hR : \u2016D (R f)\u2016 \u2264 q*\u2016D f\u2016)\n    (herror : \u2016D (T f-R f)\u2016 \u2264 \u03b5*\u2016D f\u2016)\n    (hfix : \u2016D (f-T f)\u2016 \u2264 \u03b4*\u2016D f\u2016) : 1 \u2264 q+\u03b5+\u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L59"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.mehlerDifference",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 71,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "def mehlerDifference (t : \u211d) (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L71"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.mehlerDifference_formula",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 73,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem mehlerDifference_formula (t : \u211d) :\n    mehlerDifference t=fun x : \u211d => (1-Real.exp (-t))*x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L73"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.mehlerDifference_gradient",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 81,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem mehlerDifference_gradient (t : \u211d) (ht : 0 \u2264 t) :\n    DictionaryConditionalContraction.lowGradientNorm (mehlerDifference t)=1-Real.exp (-t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L81"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.mehler_gradient_budget_exact",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 90,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem mehler_gradient_budget_exact (t : \u211d) (ht : 0 \u2264 t) :\n    DictionaryConditionalContraction.lowGradientNorm (GaussianMehler.mehler t id)+\n      DictionaryConditionalContraction.lowGradientNorm (mehlerDifference t)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L90"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundarySmoothingObstruction.mehler_difference_positive",
+      "file": "Foundation/BoundarySmoothingObstruction.lean",
+      "line": 96,
+      "source_sha256": "807fb98986cdc8d1182a5f3ae8fdacadffbf94e43ce7e1cf8fb53d63918e833f",
+      "declaration_header": "theorem mehler_difference_positive (t : \u211d) (ht : 0 < t) :\n    0 < DictionaryConditionalContraction.lowGradientNorm (mehlerDifference t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundarySmoothingObstruction.lean#L96"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.\u03b3",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 12,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "abbrev \u03b3 : Measure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L12"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.\u03bc",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 13,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "abbrev \u03bc : Measure (\u211d \u00d7 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L13"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.observed",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 15,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "abbrev observed : MeasurableSpace (\u211d \u00d7 \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L15"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.observed_le",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 18,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem observed_le : observed \u2264 (inferInstance : MeasurableSpace (\u211d \u00d7 \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L18"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.reference",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 21,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "def reference (F : \u211d \u00d7 \u211d \u2192 \u211d) (x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L21"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.reference_retained",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 23,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem reference_retained (f : \u211d \u2192 \u211d) :\n    reference (fun z => f z.1) = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L23"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.retained_condexp",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 28,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem retained_condexp {f : \u211d \u2192 \u211d} (hf : Measurable f) (hi : Integrable f \u03b3) :\n    \u03bc[(fun z => f z.1) | observed] = fun z => f z.1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L28"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.coordinate_integrable",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 35,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem coordinate_integrable : Integrable (fun z : \u211d \u00d7 \u211d => z.1) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L35"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.coordinate_condexp",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 39,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem coordinate_condexp : \u03bc[Prod.fst | observed] = Prod.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L39"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.coordinate_centered",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 44,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem coordinate_centered : (\u222b z : \u211d \u00d7 \u211d, z.1 \u2202\u03bc) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L44"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.lowGradientNorm",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 49,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "def lowGradientNorm (f : \u211d \u2192 \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L49"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.fullGradientNorm",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 52,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "def fullGradientNorm (F : \u211d \u00d7 \u211d \u2192 \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L52"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.retained_derivative",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 56,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem retained_derivative (f : \u211d \u2192 \u211d) (x : \u211d) :\n    deriv (reference (fun z => f z.1)) x = deriv f x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L56"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.retained_gradient_equality",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 61,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem retained_gradient_equality (f : \u211d \u2192 \u211d)\n    (hi : Integrable (fun x => (deriv f x)^2) \u03b3) :\n    lowGradientNorm (reference (fun z => f z.1)) =\n      fullGradientNorm (fun z => f z.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L61"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.coordinate_lowGradientNorm",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 71,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem coordinate_lowGradientNorm : lowGradientNorm (reference Prod.fst) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L71"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.coordinate_fullGradientNorm",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 76,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem coordinate_fullGradientNorm : fullGradientNorm Prod.fst = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L76"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.no_strict_reference_contraction",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 80,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem no_strict_reference_contraction (q : \u211d) (hq : q < 1) :\n    \u00ac lowGradientNorm (reference Prod.fst) \u2264 q * fullGradientNorm Prod.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L80"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.no_positive_time_reference_contraction",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 85,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem no_positive_time_reference_contraction (\u03bd K t : \u211d)\n    (h\u03bd : 0 < \u03bd) (hK : K \u2260 0) (ht : 0 < t) :\n    \u00ac lowGradientNorm (reference Prod.fst) \u2264\n      Real.exp (-\u03bd*K^2*t) * fullGradientNorm Prod.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L85"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.mehler_coordinate",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 95,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem mehler_coordinate (t : \u211d) :\n    GaussianMehler.mehler t id = fun x => Real.exp (-t)*x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L95"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.mehler_coordinate_gradient",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 107,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem mehler_coordinate_gradient (t : \u211d) :\n    lowGradientNorm (GaussianMehler.mehler t id) = Real.exp (-t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L107"
+    },
+    {
+      "paper": "Section 10 retained-test fixed-seminorm error budget and exact actual Gaussian/Mehler coordinate witness.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.DictionaryConditionalContraction.mehler_coordinate_strict",
+      "file": "Foundation/DictionaryConditionalContraction.lean",
+      "line": 112,
+      "source_sha256": "783fc97ceadcdddf6f3f60dafa4e10cd8d18b5b88e834de8d9e5878fa89979f8",
+      "declaration_header": "theorem mehler_coordinate_strict (t : \u211d) (ht : 0 < t) :\n    lowGradientNorm (GaussianMehler.mehler t id) < lowGradientNorm id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/DictionaryConditionalContraction.lean#L112"
     }
   ],
   "human_reorganization": [
@@ -843,7 +1140,8 @@
     "Section 9 gives complete density and Tonelli proofs of actual P_r squared Haar minorization through a zero-trace band, with coefficient m(B_delta)*exp(-(1+3delta)r). Halving yields a genuine residual, all measurable powers and the explicit count of pairs.",
     "Convergence in total variation to the already constructed stationary law and uniqueness are labelled human consequences of the oscillation estimate, not new mapped formal theorems. The reset reference is Haar, not the stationary tilted law, so no invariant residual or entropy-reference transfer is inferred.",
     "At a zero-trace current state the trace-product loop row is exactly Haar. The mapped Wilson mismatch is eventual at large coupling; the printed all-r-positive mismatch is a labelled human symmetry/strict positivity proof using the nonempty Haar-supported neighborhood of the identity. The Wilson argument retains the inverse boundary convention and actual relative-holonomy tilt.",
-    "Near-exponent-one rate uses delta=eta/3 and a positive eta-dependent band prefactor. No endpoint optimality, coupling-uniform rate, physical-spacing identification or continuum mass gap is claimed."
+    "Near-exponent-one rate uses delta=eta/3 and a positive eta-dependent band prefactor. No endpoint optimality, coupling-uniform rate, physical-spacing identification or continuum mass gap is claimed.",
+    "Section 10 now gives the quantitative fixed-test obstruction in one common linear seminorm: Tf=f and p(Rf)<=q p(f) force p(Tf-Rf)>=(1-q)p(f); approximate fixedness gives 1<=q+epsilon+delta. The actual normalized interior kernel fixes every boundary-only test. For independent standard Gaussian coordinates, actual conditioning fixes the smooth centered L2 coordinate; actual Mehler evolution sends x to exp(-t)x and its gradient error is exactly 1-exp(-t), saturating the floor. BoundarySmoothingObstruction and DictionaryConditionalContraction read fully. Complete human proofs are printed. This elementary classical norm mechanism is distinguished from the entropy identity, the finite SU2 kernels, and physical lattice/continuum claims; no new general principle or priority is asserted."
   ],
   "novelty": "Classical formalization companion; no new heat-bath obstruction, strict data-processing phenomenon or mass-gap claim."
 }
