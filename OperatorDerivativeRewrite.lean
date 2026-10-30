@@ -2884,3 +2884,5 @@ import Foundation.CubePolynomialGround
 import Foundation.CubeLogWindow
 import Foundation.CubeTemporalRootHaar
 import Foundation.CubeRootGround
+import Foundation.CubeTemporalConfinement
+import Foundation.CubeHaarUpper
