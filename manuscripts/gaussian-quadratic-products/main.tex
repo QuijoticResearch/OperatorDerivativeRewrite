@@ -16,7 +16,7 @@
 \title{Completed Gaussian quadratic products:\protect\\
 sharp fourth moments and contraction tests}
 \author{Project Stardust\\\small A companion to a frozen verified library}
-\date{October 29, 2026}
+\date{October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -39,7 +39,7 @@ has a sharper lower fourth-moment coefficient of nine, and an explicit
 anticommuting pair delimits incomplete independence tests.
 Full second-chaos prediction compresses both completed matrix coordinates;
 its exact error retains the mixed observed/unobserved block.
-Classical quadratic-form theory is credited throughout;
+On the original predictable Sobolev domain, the full derivative of an actual Brownian integral retains an orthogonal sensitivity correction with exact energy and a deterministic-profile rigidity criterion. Classical quadratic-form and Gaussian calculus theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
 
@@ -1019,6 +1019,178 @@ unstated operator domain. Every identity in this section is
 classical Brownian/Hermite calculus, reconstructed to fix its exact
 source normalization and native predictable scope.
 
+
+\section{Full predictable Sobolev sensitivity and its orthogonal correction}
+The nonorthogonal predictable correction in the preceding square formula
+must be distinguished from a different, orthogonal correction in the
+\emph{full Gaussian derivative} of an It\^o integral. Here the domain
+can be specified independently of an approximation scheme.
+Let $D$ be the original closed Gaussian gradient, $\delta=D^*$,
+and $B$ its positive Brownian channel with raw natural filtration.
+Let $\mathcal P$ be the actual predictable $L^2(ds\otimes P)$
+class space, with zero extension to negative time. The Brownian
+integral $\mathfrak I:\mathcal P\to L^2(P)$ and the embedding
+$\iota:\mathcal P\to L^2(P;\Hh)$ are isometries. Define the
+independent field derivative $\mathbf D$ by its genuine fiber graph:
+\[
+ u\in D(\mathbf D)\quad\Longleftrightarrow\quad
+ u_s\in D(D)\ \text{for a.e. }s,\qquad
+ \int_{\R}\|Du_s\|_{L^2(P;\Hh)}^2ds<\infty.
+\]
+Joint strongly measurable representatives and the original Bochner
+$L^2$ identifications are part of this graph definition. Thus
+$\mathbf Du\in L^2(ds\otimes P;\Hh)$ is a source derivative,
+not differentiation in the physical time $s$.
+
+\begin{theorem}\label{thm:fullsensitivity}
+If $u\in\mathcal P\cap D(\mathbf D)$ and $v=\mathbf Du$, then
+$\mathfrak Iu\in D(D)$ and there is an actual parameterized
+Brownian integral $Kv$ such that
+\begin{align}
+ D(\mathfrak Iu)&=\iota u+Kv,\qquad \|Kv\|=\|v\|,
+                     \label{eq:fullsensitivity}\\
+ \langle Kv,\iota w\rangle&=0\quad(w\in\mathcal P),
+                     \label{eq:sensitivityorth}\\
+ \|D(\mathfrak Iu)\|^2&=\|u\|^2+\|v\|^2,\qquad
+ \|\mathfrak Iu\|^2+\|D(\mathfrak Iu)\|^2
+                      =2\|u\|^2+\|v\|^2.
+                     \label{eq:sensitivityenergy}
+\end{align}
+If $a(s)=\E u_s$, then $a$ is a genuine deterministic $L^2$ time
+profile and
+\begin{equation}\label{eq:sensitivityrigidity}
+ \|u-a\|_{L^2(ds\otimes P)}
+       \leq\|D(\mathfrak Iu)-\iota u\|=\|v\|.
+\end{equation}
+In particular $D(\mathfrak Iu)=\iota u$ holds exactly when $u$
+is one deterministic time profile as an $L^2$ class.
+\end{theorem}
+
+\begin{proof}
+We first justify the adapted graph core, rather than assume it in
+the hypothesis. A polynomial past step has the form
+$u_s=A\mathbf1_{(b,c]}(s)$, where $A$ is a polynomial in finitely
+many $B_{r_j}$ with $r_j\leq b$. Its field derivative is
+$\mathbf D u_s=(DA)\mathbf1_{(b,c]}(s)$. Let $\mathcal C$ be
+the closure of finite sums of these pairs in the product of the
+value and derivative $L^2$ spaces. Closedness of $\mathbf D$
+and the predictable value subspace gives one inclusion into the
+independent domain above.
+
+For the reverse inclusion, write $P_q$ for homogeneous Gaussian
+chaos projections. The map $f\mapsto(P_qf,DP_qf)$ is bounded from
+scalar $L^2$ to the derivative graph: $\|DP_qf\|^2=q\|P_qf\|^2$.
+It preserves polynomial Brownian pasts, by their finite Hermite
+expansions. Approximate any predictable $u$ in value $L^2$ by
+polynomial past steps. Applying this bounded map fiberwise shows
+$(P_qu,DP_qu)\in\mathcal C$ for each fixed $q$; the derivative
+bound makes this a genuine graph convergence. Finite sums in $q$
+also lie in $\mathcal C$.
+
+For $u\in D(\mathbf D)$ the chaos truncations of its fibers converge
+both in value and derivative. Orthogonality bounds their norms
+by $\|u_s\|_2$ and $\|Du_s\|_2$, respectively. These squared
+bounds are integrable in $s$ by the independent graph hypothesis.
+Bochner dominated convergence therefore gives convergence in both
+product norms. Closedness of $\mathcal C$ proves that $(u,v)$ lies
+in that adapted polynomial graph closure. The required value
+approximation uses the actual predictable rectangles and Brownian
+past polynomial density; it is the same $L^2$ step completion
+underlying the original integral, not a graph-density assumption.
+
+On a polynomial past step ordinary cylindrical differentiation gives
+\[
+ D\{A(B_c-B_b)\}=A\mathbf1_{(b,c]}+(B_c-B_b)DA.
+\]
+Every coordinate of $DA$ is supported at derivative times $r\leq b$.
+For fixed $r$, the field in integration time is predictable, so the
+second term is exactly its Brownian integral. More generally, define
+this construction first on finite sums of such derivative-time
+families. The parameterized It\^o isometry gives
+\[
+ \int_{\R}\E\left|\int_0^\infty v(r,s)\,dB_s\right|^2dr
+       =\int_{\R}\int_0^\infty\E|v(r,s)|^2\,ds\,dr.
+\]
+Tonelli applies to the nonnegative energies. The time-coordinate
+embedding is isometric, so its range is closed in the original
+coefficient-valued product space. All polynomial-step derivatives
+belong to that range, and the preceding graph approximation puts
+the actual $v$ there as well. Consequently the displayed integral
+extends by its isometry to $Kv$ with exactly $\|Kv\|=\|v\|$.
+This does not assert a lossless correction on arbitrary ambient
+coefficient fields outside this proved admissible range.
+
+For the graph approximants, the two-term derivative formula is
+already proved. Their integrals converge by the It\^o isometry,
+the embedded value fields converge by $\iota$, and the corrections
+converge by $K$. Closedness of the original $D$ proves
+\eqref{eq:fullsensitivity} for the independent domain.
+
+Let $\pi=\iota^*$. Original Gaussian adjointness, tested on every
+predictable field, gives $\pi Df=\mathfrak I^*f$ for $f\in D(D)$.
+Also $\mathfrak I^*\mathfrak I=I$ and $\pi\iota=I$ by their
+isometries. Apply $\pi$ to \eqref{eq:fullsensitivity} to obtain
+$u=u+\pi Kv$, hence $\pi Kv=0$. This proves
+\eqref{eq:sensitivityorth}. Pythagoras and the integral isometry
+give both equalities in \eqref{eq:sensitivityenergy}.
+
+Finally the Bochner mean projection gives $a(s)=\E u_s$;
+Jensen's inequality proves $\int|a(s)|^2ds\leq\|u\|^2$.
+Gaussian Poincar\'e on almost every original fiber yields
+$\|u_s-a(s)\|_2^2\leq\|Du_s\|_2^2$.
+Integration proves \eqref{eq:sensitivityrigidity}.
+If the sensitivity vanishes, its exact norm forces $v=0$,
+and that inequality forces $u=a$. Conversely a deterministic
+profile has original field derivative zero: finite deterministic
+time-step approximations have zero source gradients, and closedness
+passes this fact to their $L^2$ limit. Formula
+\eqref{eq:fullsensitivity} then gives the claimed equality.
+\end{proof}
+
+\subsection*{A sharp past-step example and the distinction between corrections}
+For $0<a<b$ take $u_s=B_a\mathbf1_{(a,b]}(s)$. This is already
+in the polynomial graph core, and
+\[
+ \mathfrak Iu=B_a(B_b-B_a),\qquad
+ (\mathbf Du)(r,s)=\mathbf1_{(0,a]}(r)\mathbf1_{(a,b]}(s).
+\]
+The exact derivative field is
+\[
+ D_r(\mathfrak Iu)=B_a\mathbf1_{(a,b]}(r)
+                   +(B_b-B_a)\mathbf1_{(0,a]}(r).
+\]
+The correction has squared norm $a(b-a)>0$ and is supported before
+the integration interval. Its conditional expectation in the past
+at $r\leq a$ is zero by independent increments, so it is orthogonal
+to every predictable field, also directly. Both the value-field
+energy and field-derivative energy equal $a(b-a)$.
+Since $\E u_s=0$, the quantitative estimate
+\eqref{eq:sensitivityrigidity} is an equality here. Dropping the
+correction would change the original closed derivative, whose value
+is single valued.
+
+The preceding section's $h_t$ and $c_t=2(T-t)W_t$ are instead two
+\emph{predictable scalar integrands}; their nonzero cross energy
+was computed in their common integrand space. Here $Kv$ is a full
+source field orthogonal to the embedded predictable subspace.
+The word ``correction'' does not identify these different objects,
+and no orthogonality may be transferred between them.
+
+The complete independent-domain and exact-energy sources are
+\par\noindent\texttt{GaussianPredictableChaosCore};
+\par\noindent\texttt{GaussianSensitivityIntegral};
+\par\noindent\texttt{GaussianSensitivityCore};
+\par\noindent\texttt{GaussianSensitivityGeometry};
+\par\noindent\texttt{GaussianQuantitativeRigidity}.
+\par\noindent Hairer's primary notes~\cite{HairerSensitivity},
+Proposition 5.22 and equation (5.20), already state and prove the
+classical derivative-of-It\^o-integral formula under its predictable
+Sobolev hypothesis. The present proof reconstructs the original
+independent graph core, lossless parameterized correction and exact
+orthogonal energies. It makes no novelty claim and does not infer
+physical-time differentiability, a derivative-domain converse for
+all integrands, or an observed-IBM stochastic calculus.
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -1096,5 +1268,6 @@ correlated normal random variables}, primary preprint arXiv:2106.02897v2
 \emph{Wiener-chaos approach to optimal prediction}, primary preprint
 arXiv:1411.3032v3 (2018), Section 2, printed page 5.
 \url{https://arxiv.org/abs/1411.3032}.
+\bibitem{HairerSensitivity} M. Hairer, \emph{Advanced Stochastic Analysis}, author notes dated May 19, 2026, Proposition 5.22 and equation (5.20), printed page 51. \url{https://hairer.org/notes/StochasticAnalysisCourse.pdf}.
 \end{thebibliography}
 \end{document}
