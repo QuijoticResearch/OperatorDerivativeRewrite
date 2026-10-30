@@ -1184,6 +1184,339 @@
       "source_sha256": "f4f59b247b64bb1713560fd7d6ddbc128ed6a3ff6fa0415d17982fbf54403279",
       "declaration_header": "theorem actual_brownian_square_forecast_energy :\n    \u2016conditionalProjection (fun _ : Unit => brownianDirection 0 1+brownianDirection 1 1)\n      ((wick (brownianDirection 0 1) 2 : GaussianL2)+(wick (brownianDirection 1 1) 2 : GaussianL2))\u2016^2=2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SPDEWickPrediction.lean#L115"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 13,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "def kernel (\u03b2 : \u211d) (t : \u211d\u22650) : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L13"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_measurable",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 16,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_measurable (\u03b2 : \u211d) (t : \u211d\u22650) : Measurable (kernel \u03b2 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L16"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_sq",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 19,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_sq (\u03b2 : \u211d) (t : \u211d\u22650) :\n    (fun s => kernel \u03b2 t s ^ 2) =\n      (Ioc 0 (t : \u211d)).indicator (fun s => ((t : \u211d) - s) ^ (2 * \u03b2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L19"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.power_intervalIntegrable",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 29,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem power_intervalIntegrable (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    IntervalIntegrable (fun s => ((t : \u211d) - s) ^ (2 * \u03b2)) volume 0 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L29"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_sq_integrable",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 35,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_sq_integrable (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    Integrable (fun s => kernel \u03b2 t s ^ 2) volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L35"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_memLp",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 41,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_memLp (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    MemLp (kernel \u03b2 t) 2 volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L41"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_energy",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 46,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_energy (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    \u222b s, kernel \u03b2 t s ^ 2 = (t : \u211d) ^ (2 * \u03b2 + 1) / (2 * \u03b2 + 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L46"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 55,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "def vector (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L55"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector_coeFn",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 58,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem vector_coeFn (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    vector \u03b2 h\u03b2 t =\u1d50[volume] kernel \u03b2 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L58"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector_norm_sq",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 61,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem vector_norm_sq (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    \u2016vector \u03b2 h\u03b2 t\u2016 ^ 2 = (t : \u211d) ^ (2 * \u03b2 + 1) / (2 * \u03b2 + 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L61"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector_support",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 68,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem vector_support (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    \u2200\u1d50 s \u2202(volume : Measure \u211d), s \u2209 Ioc 0 (t : \u211d) \u2192 vector \u03b2 h\u03b2 t s = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L68"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.profile",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 73,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "def profile (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) : positiveProfiles",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L73"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 76,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "def value (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L76"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_law",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 79,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_law (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    gaussianProduct.map (value \u03b2 h\u03b2 t) = gaussianReal 0\n      \u27e8(t : \u211d) ^ (2 * \u03b2 + 1) / (2 * \u03b2 + 1),\n        by rw [\u2190 vector_norm_sq \u03b2 h\u03b2 t]; positivity\u27e9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L79"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_derivative",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 86,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_derivative (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (t : \u211d\u22650) :\n    (value \u03b2 h\u03b2 t, GaussianContinuousRigidity.fieldEmbedding\n      (GaussianTimeProductL2.productTensor (vector \u03b2 h\u03b2 t) gaussianOne)) \u2208\n        closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L86"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector_zero",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 92,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem vector_zero (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) : vector \u03b2 h\u03b2 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L92"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.vector_exponent_zero",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 97,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem vector_exponent_zero (t : \u211d\u22650) : vector 0 (by norm_num) t = timeVector t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L97"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_isGaussianProcess",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 103,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_isGaussianProcess (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) :\n    IsGaussianProcess (fun t \u03c9 => value \u03b2 h\u03b2 t \u03c9) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L103"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.kernel_pair_integrable",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 107,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem kernel_pair_integrable (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (s t : \u211d\u22650) :\n    Integrable (fun r => kernel \u03b2 s r * kernel \u03b2 t r) volume",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L107"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_covariance",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 111,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_covariance (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) (s t : \u211d\u22650) :\n    cov[value \u03b2 h\u03b2 s, value \u03b2 h\u03b2 t; gaussianProduct] =\n      \u222b r, kernel \u03b2 s r * kernel \u03b2 t r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L111"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_zero",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 119,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_zero (\u03b2 : \u211d) (h\u03b2 : -1 / 2 < \u03b2) : value \u03b2 h\u03b2 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L119"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_exponent_zero",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 124,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem value_exponent_zero (t : \u211d\u22650) :\n    value 0 (by norm_num) t = GaussianTimeProcess.wienerL2 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L124"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.normalizedVector",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 132,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "def normalizedVector (H : \u211d) (hH : 0 < H) (t : \u211d\u22650) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L132"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.normalizedVector_norm_sq",
+      "file": "Foundation/GaussianPowerVolterra.lean",
+      "line": 135,
+      "source_sha256": "d93950e23a5535a2f1f3f1f6df8bb1c1f598871f45cd045abe76f8020f9fcedf",
+      "declaration_header": "theorem normalizedVector_norm_sq (H : \u211d) (hH : 0 < H) (t : \u211d\u22650) :\n    \u2016normalizedVector H hH t\u2016 ^ 2 = (t : \u211d) ^ (2 * H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPowerVolterra.lean#L135"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.power_kernel_memLp_iff",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 15,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem power_kernel_memLp_iff (\u03b2 : \u211d) (t : \u211d\u22650) (ht : 0 < t) :\n    MemLp (kernel \u03b2 t) 2 volume \u2194 -1/2 < \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L15"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.response",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 30,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "def response (\u03b1 : \u211d) (t : \u211d\u22650) : \u211d \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L30"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.response_memLp_iff",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 33,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem response_memLp_iff (\u03b1 : \u211d) (h\u03b1 : 0 < \u03b1) (t : \u211d\u22650) (ht : 0 < t) :\n    MemLp (response \u03b1 t) 2 volume \u2194 1/2 < \u03b1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L33"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.responseVector",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 48,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "def responseVector (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) : TimeHilbert",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L48"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.responseVector_coeFn",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 51,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem responseVector_coeFn (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) :\n    responseVector \u03b1 h\u03b1 t =\u1d50[volume] response \u03b1 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L51"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.responseVector_norm_sq",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 57,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem responseVector_norm_sq (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) :\n    \u2016responseVector \u03b1 h\u03b1 t\u2016^2 =\n      (t : \u211d)^(2*\u03b1-1) / ((Real.Gamma \u03b1)^2 * (2*\u03b1-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L57"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.stochasticResponse",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 65,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "def stochasticResponse (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L65"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.stochasticResponse_norm_sq",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 68,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem stochasticResponse_norm_sq (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) :\n    \u2016stochasticResponse \u03b1 h\u03b1 t\u2016^2 =\n      (t : \u211d)^(2*\u03b1-1) / ((Real.Gamma \u03b1)^2 * (2*\u03b1-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L68"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.stochasticResponse_derivative",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 73,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem stochasticResponse_derivative (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) (t : \u211d\u22650) :\n    (stochasticResponse \u03b1 h\u03b1 t, GaussianContinuousRigidity.fieldEmbedding\n      (GaussianTimeProductL2.productTensor (responseVector \u03b1 h\u03b1 t) gaussianOne)) \u2208\n        closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L73"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.stochasticResponse_zero",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 79,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem stochasticResponse_zero (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1) :\n    stochasticResponse \u03b1 h\u03b1 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L79"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingKernel.stochasticResponse_order_one",
+      "file": "Foundation/FractionalForcingKernel.lean",
+      "line": 83,
+      "source_sha256": "d75073aca51ab51858989eee76e67f1aac632b511700b490c654691444451a0b",
+      "declaration_header": "theorem stochasticResponse_order_one (t : \u211d\u22650) :\n    stochasticResponse 1 (by norm_num) t = GaussianTimeProcess.wienerL2 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingKernel.lean#L83"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingObstruction.no_higher_initial_power_bound",
+      "file": "Foundation/FractionalForcingObstruction.lean",
+      "line": 14,
+      "source_sha256": "06c4393c0cd1224084b69a8a0bb6e544680350e6a73bc14557660336ead7d18f",
+      "declaration_header": "theorem no_higher_initial_power_bound (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1)\n    (p : \u211d) (hp : 2*\u03b1-1 < p) (C \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2203 t : \u211d\u22650, 0 < t \u2227 (t : \u211d) < \u03b4 \u2227 t \u2264 1 \u2227\n      C * (t : \u211d)^p < \u2016stochasticResponse \u03b1 h\u03b1 t - stochasticResponse \u03b1 h\u03b1 0\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingObstruction.lean#L14"
+    },
+    {
+      "paper": "Section 11: actual one-mode fractional time kernel, sharp positive-time L2 threshold, Gaussian-source derivative, initial variance exponent and normalized power-kernel covariance. No stochastic evolution resolvent or standard fBM identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalForcingObstruction.no_initial_brownian_variance_bound",
+      "file": "Foundation/FractionalForcingObstruction.lean",
+      "line": 46,
+      "source_sha256": "06c4393c0cd1224084b69a8a0bb6e544680350e6a73bc14557660336ead7d18f",
+      "declaration_header": "theorem no_initial_brownian_variance_bound (\u03b1 : \u211d) (h\u03b1 : 1/2 < \u03b1)\n    (h\u03b11 : \u03b1 < 1) (C \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) :\n    \u2203 t : \u211d\u22650, 0 < t \u2227 (t : \u211d) < \u03b4 \u2227 t \u2264 1 \u2227\n      C * (t : \u211d) < \u2016stochasticResponse \u03b1 h\u03b1 t - stochasticResponse \u03b1 h\u03b1 0\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalForcingObstruction.lean#L46"
     }
   ],
   "paper_sections": {
@@ -1209,7 +1542,8 @@
     "The actual normalized fractional directions exclude time zero. The compact positive-time interval calculation using the mean value theorem and the exact normalized covariance proves matching squared increment exponent 2H as a labelled human deduction. No optimal sample-path exponent, Hermite-process identification or Markov generator follows.",
     "Section 7.1 proves the actual completed-observation conditional Wick formula by orthogonal Gaussian splitting, full generated-sigma-algebra independence and locally dominated L2 differentiation. The projected variance is used in its Wick subtraction.",
     "Countable predicted sums converge through the bounded conditional projection of the original orthogonal series. The displayed finite double Gram sums converge in squared norm; no absolute infinite double-sum or preserved mode orthogonality is assumed. The inverse-degree recovery energy is a human consequence of the same homogeneous-chaos spectral identity already printed.",
-    "The two-mode sum/difference calibration shows why deleting projected Gram cross terms fails. The actual two Brownian unit-time quadratic modes have predicted sum energy two. These are classical exact observation identities, not nonlinear SPDE or independence claims."
+    "The two-mode sum/difference calibration shows why deleting projected Gram cross terms fails. The actual two Brownian unit-time quadratic modes have predicted sum energy two. These are classical exact observation identities, not nonlinear SPDE or independence claims.",
+    "Section 11 separates the one-mode temporal threshold alpha>1/2 from the infinite-mode reciprocal-rate trace condition. The actual zero-generator Riemann-Liouville response has exact variance t^(2 alpha-1)/(Gamma(alpha)^2(2 alpha-1)), original Gaussian-source derivative and sharp initial variance exponent. Explicit cutoff-energy divergence at and below alpha=1/2 and the covariance asymptotic distinguishing unit-variance Liouville motion from standard fBM for H unequal to 1/2 are labelled classical human deductions. Neither a Mittag-Leffler resolvent, physical-time derivative nor a new stochastic PDE solution is asserted."
   ],
   "literature": [
     {
