@@ -2906,3 +2906,5 @@ import Foundation.CubeChordOperator
 import Foundation.CubeBoundaryExterior
 import Foundation.CubeBoundaryChartMeasure
 import Foundation.CubeBoundaryChartL2
+import Foundation.CubeBoundaryChartInverse
+import Foundation.CubeChartCompressedKernel
