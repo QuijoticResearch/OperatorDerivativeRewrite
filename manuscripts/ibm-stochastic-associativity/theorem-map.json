@@ -843,6 +843,753 @@
       "source_sha256": "a24dd3ffe1cb2fc4ba80b59327bdb89dfb3ba458ddc9ff10c619e208f5049a33",
       "declaration_header": "theorem past_projection_ne_previous (V : Submodule \u211d JointL2) [CompleteSpace V]\n    (hp : (intrinsicCurve 1 : JointL2) \u2208 V) :\n    V.starProjection (intrinsicCurve 2 : JointL2) \u2260 (intrinsicCurve 1 : JointL2)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTemporalCovarianceObstruction.lean#L82"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.clock_section",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 17,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem clock_section {\u03b1 \u03b2 : Type*} [m\u03b1 : MeasurableSpace \u03b1] [m\u03b2 : MeasurableSpace \u03b2]\n    (\u03bc : Measure \u03b1) (\u03bd : Measure \u03b2) [IsProbabilityMeasure \u03bc] [IsProbabilityMeasure \u03bd]\n    (n : MeasurableSpace \u03b2) (H : \u03b1 \u00d7 \u03b2 \u2192 \u211d) (g : \u03b2 \u2192 \u211d)\n    (hH : AEStronglyMeasurable[m\u03b1.prod n] H (@Measure.prod \u03b1 \u03b2 m\u03b1 m\u03b2 \u03bc \u03bd))\n    (he : H =\u1d50[@Measure.prod \u03b1 \u03b2 m\u03b1 m\u03b2 \u03bc \u03bd] fun p => g p.2) : AEStronglyMeasurable[n] g \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L17"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.actual_past_raw",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 32,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem actual_past_raw (T : \u211d\u22650) (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMNaturalFiltrationObstruction.past T) :\n    AEStronglyMeasurable[IBMClockInitialEnlargement.rawEnlargement T] G\n      IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L32"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.germ_clock_past",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 59,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem germ_clock_past (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) (T : \u211d\u22650) (hT : 0 < T) :\n    IBMGlobalVacuum.factorMean (IBMIntrinsicOperators.sourceUnitary G) \u2208\n      GaussianConditionalIto.pastL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L59"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.germ_constant",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 77,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem germ_constant (G : JointL2) (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) :\n    \u2203 c : \u211d, G =\u1d50[IBMSourceLaws.jointMeasure] fun _ => c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L77"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.initial_projection_zero",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 95,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem initial_projection_zero (F : JointL2)\n    (hF : (\u222b \u03c9, F \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0) :\n    (IBMIntrinsicRightGerm.rightPast 0).starProjection F = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L95"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMInitialGermTriviality.initial_projection_expectation",
+      "file": "Foundation/IBMInitialGermTriviality.lean",
+      "line": 124,
+      "source_sha256": "2b192fd510cbaf90ff3e300ca2caf3efdb7a77a5bacfe74b2915f0f92f05a4a6",
+      "declaration_header": "theorem initial_projection_expectation (F : JointL2) :\n    (IBMIntrinsicRightGerm.rightPast 0).starProjection F =\n      (\u222b \u03c9, F \u03c9 \u2202IBMSourceLaws.jointMeasure) \u2022 IBMGlobalVacuum.one",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMInitialGermTriviality.lean#L124"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.source_prediction_all",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 54,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem source_prediction_all (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0)) (u : CoefficientSpace) :\n    Tendsto (fun n => sourceProjection (history (\u03b4 n)) u) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L54"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.gaussian_prediction_all",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 65,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem gaussian_prediction_all (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0)) (F : GaussianL2) :\n    Tendsto (fun n => conditionalProjection (history (\u03b4 n)) F) atTop\n      (\ud835\udcdd (meanProjection F))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L65"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.joint_prediction_all",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 71,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem joint_prediction_all (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0))\n    (F : IBMTimeAveragedObservable.JointL2) :\n    Tendsto (fun n => IBMJointSceneryForecast.forecast (\u03b4 n) F) atTop\n      (\ud835\udcdd (IBMNativeSourceRecovery.sourceVacuum F))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L71"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.initial_channel_eq_vacuum",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 80,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem initial_channel_eq_vacuum (F : IBMTimeAveragedObservable.JointL2) :\n    IBMObservedTerminalMartingale.channelClass F 0 =\n      IBMObservedTerminalMartingale.channelClass (IBMNativeSourceRecovery.sourceVacuum F) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L80"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.sourceVacuum_inner",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 93,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem sourceVacuum_inner (F G : IBMTimeAveragedObservable.JointL2) :\n    inner \u211d (IBMNativeSourceRecovery.sourceVacuum F) G =\n      inner \u211d F (IBMNativeSourceRecovery.sourceVacuum G)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L93"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.germ_sourceVacuum_fixed",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 110,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem germ_sourceVacuum_fixed (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) :\n    IBMNativeSourceRecovery.sourceVacuum G = G",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L110"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.germ_clock_tensor",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 127,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem germ_clock_tensor (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) :\n    IBMIntrinsicOperators.clockUnitary G = BochnerClosedOperator.tensor gaussianProduct gaussianOne\n      (IBMGlobalVacuum.factorMean (IBMIntrinsicOperators.sourceUnitary G))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L127"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.germ_joint_tensor",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 150,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem germ_joint_tensor (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) :\n    G = ProductL2Curry.productTensor gaussianProduct gaussianProduct gaussianOne\n      (IBMGlobalVacuum.factorMean (IBMIntrinsicOperators.sourceUnitary G))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L150"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryUniversalPrediction.germ_clock_actual",
+      "file": "Foundation/IBMSceneryUniversalPrediction.lean",
+      "line": 158,
+      "source_sha256": "a3fe747f31a86bf853bf0cfef58300e4742a828c4f4eb23ea8962edff7dd8619",
+      "declaration_header": "theorem germ_clock_actual (G : IBMTimeAveragedObservable.JointL2)\n    (hG : G \u2208 IBMIntrinsicRightGerm.rightPast 0) :\n    G =\u1d50[IBMSourceLaws.jointMeasure] fun p =>\n      IBMGlobalVacuum.factorMean (IBMIntrinsicOperators.sourceUnitary G) p.2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryUniversalPrediction.lean#L158"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.direction",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 16,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "def direction (r : \u211d\u22650) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L16"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.history",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 17,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "def history (\u03b4 r : \u211d\u22650) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L17"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.history_actual",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 19,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem history_actual (\u03b4 r : \u211d\u22650) :\n    firstChaosEmbedding (history \u03b4 r) =\u1d50[gaussianProduct]\n      fun X => IBMConstructedSources.sceneryPath X (min r \u03b4 : \u211d\u22650)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L19"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.direction_inner",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 27,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem direction_inner (r s : \u211d\u22650) :\n    inner \u211d (direction r) (direction s) = min (r : \u211d) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L27"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.source_prediction",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 32,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem source_prediction (\u03b4 r : \u211d\u22650) :\n    sourceProjection (history \u03b4) (direction r) = direction (min r \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L32"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.source_prediction_tendsto",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 42,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem source_prediction_tendsto (r : \u211d\u22650) (\u03b4 : \u2115 \u2192 \u211d\u22650)\n    (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => sourceProjection (history (\u03b4 n)) (direction r)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L42"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.finite_ridge_prediction_tendsto",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 57,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem finite_ridge_prediction_tendsto {J : Type*} [Fintype J]\n    (b : J \u2192 \u211d) (r : J \u2192 \u211d\u22650) (\u03b4 : \u2115 \u2192 \u211d\u22650) (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => sourceProjection (history (\u03b4 n)) (\u2211 j, b j \u2022 direction (r j)))\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L57"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.nonlinear_finite_ridge_tendsto",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 65,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem nonlinear_finite_ridge_tendsto {J : Type*} [Fintype J]\n    (b : J \u2192 \u211d) (r : J \u2192 \u211d\u22650) (\u03b4 : \u2115 \u2192 \u211d\u22650) (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0))\n    (F : GaussianL2) (hF : F \u2208 singleGenerated (\u2211 j, b j \u2022 direction (r j))) :\n    Tendsto (fun n => conditionalProjection (history (\u03b4 n)) F) atTop\n      (\ud835\udcdd ((\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 gaussianOne))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L65"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMSceneryGaussianGerm.persistent_finite_ridge_constant",
+      "file": "Foundation/IBMSceneryGaussianGerm.lean",
+      "line": 73,
+      "source_sha256": "862ab621543530e896d2991bbc700765db2af11b5fdac1bfe803a15bdc027050",
+      "declaration_header": "theorem persistent_finite_ridge_constant {J : Type*} [Fintype J]\n    (b : J \u2192 \u211d) (r : J \u2192 \u211d\u22650) (\u03b4 : \u2115 \u2192 \u211d\u22650) (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0))\n    (F : GaussianL2) (hF : F \u2208 singleGenerated (\u2211 j, b j \u2022 direction (r j)))\n    (hp : \u2200 n, F \u2208 generated (history (\u03b4 n))) :\n    F = (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMSceneryGaussianGerm.lean#L73"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInitialEnlargement.rawEnlargement",
+      "file": "Foundation/IBMClockInitialEnlargement.lean",
+      "line": 15,
+      "source_sha256": "389a7ccd2d284eb7b7e5e521a47a7a5a914d7a1ea49f52b04d6fa9622bc9c338",
+      "declaration_header": "def rawEnlargement : Filtration \u211d\u22650\n    (inferInstance : MeasurableSpace IBMSourceLaws.JointSample) where\n  seq t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInitialEnlargement.lean#L15"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockInitialEnlargement.ibm_raw_aestronglyMeasurable",
+      "file": "Foundation/IBMClockInitialEnlargement.lean",
+      "line": 58,
+      "source_sha256": "389a7ccd2d284eb7b7e5e521a47a7a5a914d7a1ea49f52b04d6fa9622bc9c338",
+      "declaration_header": "theorem ibm_raw_aestronglyMeasurable (t : \u211d\u22650) :\n    AEStronglyMeasurable[rawEnlargement t] (ibmValue t) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockInitialEnlargement.lean#L58"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGermLocalization.clock_zero_ae",
+      "file": "Foundation/IBMClockGermLocalization.lean",
+      "line": 12,
+      "source_sha256": "d1b29c1760c9427a377e70a7c1e97b01989b3d5902065313df6ebf02f2510bf8",
+      "declaration_header": "theorem clock_zero_ae : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, clockPath \u03c9.2 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGermLocalization.lean#L12"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGermLocalization.clock_uniformly_small",
+      "file": "Foundation/IBMClockGermLocalization.lean",
+      "line": 17,
+      "source_sha256": "d1b29c1760c9427a377e70a7c1e97b01989b3d5902065313df6ebf02f2510bf8",
+      "declaration_header": "theorem clock_uniformly_small (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0)) :\n    \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, \u2200\u1da0 n in atTop,\n      \u2200 r \u2264 \u03c4 n, |clockPath \u03c9.2 r| \u2264 (\u03b4 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGermLocalization.lean#L17"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGermLocalization.eventually_past_agreement",
+      "file": "Foundation/IBMClockGermLocalization.lean",
+      "line": 36,
+      "source_sha256": "d1b29c1760c9427a377e70a7c1e97b01989b3d5902065313df6ebf02f2510bf8",
+      "declaration_header": "theorem eventually_past_agreement (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0)) :\n    \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, \u2200\u1da0 n in atTop,\n      \u2200 r \u2264 \u03c4 n, actualValue \u03b4 r \u03c9 = ibmValue r \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGermLocalization.lean#L36"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGermLocalization.past_functional_eventually_eq",
+      "file": "Foundation/IBMClockGermLocalization.lean",
+      "line": 44,
+      "source_sha256": "d1b29c1760c9427a377e70a7c1e97b01989b3d5902065313df6ebf02f2510bf8",
+      "declaration_header": "theorem past_functional_eventually_eq (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0))\n    (g : (n : \u2115) \u2192 (Iic (\u03c4 n) \u2192 \u211d) \u2192 \u211d) :\n    \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, \u2200\u1da0 n in atTop,\n      GaussianPredictableStep.pastCoefficient (actualValue \u03b4) (\u03c4 n) (g n) \u03c9 =\n        GaussianPredictableStep.pastCoefficient ibmValue (\u03c4 n) (g n) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGermLocalization.lean#L44"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockGermLocalization.past_functional_tendsto",
+      "file": "Foundation/IBMClockGermLocalization.lean",
+      "line": 54,
+      "source_sha256": "d1b29c1760c9427a377e70a7c1e97b01989b3d5902065313df6ebf02f2510bf8",
+      "declaration_header": "theorem past_functional_tendsto (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0))\n    (g : (n : \u2115) \u2192 (Iic (\u03c4 n) \u2192 \u211d) \u2192 \u211d) (f : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hf : \u2200 n, GaussianPredictableStep.pastCoefficient ibmValue (\u03c4 n) (g n)\n      =\u1d50[IBMSourceLaws.jointMeasure] f) :\n    \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, Tendsto\n      (fun n => GaussianPredictableStep.pastCoefficient (actualValue \u03b4) (\u03c4 n) (g n) \u03c9)\n        atTop (\ud835\udcdd (f \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockGermLocalization.lean#L54"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.clamp",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 13,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "def clamp (C x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L13"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.clamp_measurable",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 15,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem clamp_measurable (C : \u211d) : Measurable (clamp C)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L15"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.clamp_bound",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 18,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem clamp_bound {C : \u211d} (hC : 0 \u2264 C) (x : \u211d) : |clamp C x| \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L18"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.clamp_eq",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 22,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem clamp_eq {C x : \u211d} (hx : |x| \u2264 C) : clamp C x = x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L22"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.exists_bounded_past_factor",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 26,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem exists_bounded_past_factor (s : \u211d\u22650) (f : JointL2) (hf : f \u2208 past s)\n    (C : \u211d) (hC : 0 \u2264 C) (hb : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |f \u03c9| \u2264 C) :\n    \u2203 g : (Iic s \u2192 \u211d) \u2192 \u211d, Measurable g \u2227 (\u2200 p, |g p| \u2264 C) \u2227\n      GaussianPredictableStep.pastCoefficient ibmValue s g =\u1d50[IBMSourceLaws.jointMeasure] f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L26"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.bounded_germ_factors",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 41,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem bounded_germ_factors (f : JointL2) (hf : f \u2208 rightPast 0)\n    (C : \u211d) (hC : 0 \u2264 C) (hb : \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |f \u03c9| \u2264 C)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : \u2200 n, 0 < \u03c4 n) :\n    \u2203 g : (n : \u2115) \u2192 (Iic (\u03c4 n) \u2192 \u211d) \u2192 \u211d,\n      (\u2200 n, Measurable (g n)) \u2227 (\u2200 n p, |g n p| \u2264 C) \u2227\n      (\u2200 n, GaussianPredictableStep.pastCoefficient ibmValue (\u03c4 n) (g n)\n        =\u1d50[IBMSourceLaws.jointMeasure] f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L41"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMBoundedGermFactors.localized_pairing_tendsto",
+      "file": "Foundation/IBMBoundedGermFactors.lean",
+      "line": 52,
+      "source_sha256": "e54b51b8036751cf263e5bd6ba8c00080f0884a925954062332425c6bbd0d106",
+      "declaration_header": "theorem localized_pairing_tendsto (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4)\n    (\u03c4 : \u2115 \u2192 \u211d\u22650) (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0))\n    (g : (n : \u2115) \u2192 (Iic (\u03c4 n) \u2192 \u211d) \u2192 \u211d) (hg : \u2200 n, Measurable (g n))\n    (C : \u211d) (hb : \u2200 n p, |g n p| \u2264 C) (f : IBMSourceLaws.JointSample \u2192 \u211d)\n    (hf : \u2200 n, GaussianPredictableStep.pastCoefficient ibmValue (\u03c4 n) (g n)\n      =\u1d50[IBMSourceLaws.jointMeasure] f)\n    (A : IBMSourceLaws.JointSample \u2192 \u211d) (hA : Integrable A IBMSourceLaws.jointMeasure) :\n    Tendsto (fun n => \u222b \u03c9, A \u03c9 * GaussianPredictableStep.pastCoefficient\n      (actualValue \u03b4) (\u03c4 n) (g n) \u03c9 \u2202IBMSourceLaws.jointMeasure)\n      atTop (\ud835\udcdd (\u222b \u03c9, A \u03c9 * f \u03c9 \u2202IBMSourceLaws.jointMeasure))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMBoundedGermFactors.lean#L52"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.clippedClass",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 22,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "def clippedClass : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L22"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.clipped_actual",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 27,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem clipped_actual : clippedClass \u03b4 s g hg C hb =\u1d50[IBMSourceLaws.jointMeasure]\n    GaussianPredictableStep.pastCoefficient (actualValue \u03b4) s g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L27"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.source_sections",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 30,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem source_sections (F : JointL2) : \u2200\u1d50 Y \u2202gaussianProduct,\n    sourceUnitary F Y =\u1d50[gaussianProduct] fun X => F (X,Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L30"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.clipped_fixed",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 38,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem clipped_fixed : IBMJointSceneryForecast.forecast \u03b4 (clippedClass \u03b4 s g hg C hb) =\n    clippedClass \u03b4 s g hg C hb",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L38"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.bounded_germ_fixed",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 48,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem bounded_germ_fixed (h\u03b4 : 0 < \u03b4) (F : JointL2)\n    (hF : F \u2208 rightPast 0) (C : \u211d) (hC : 0 \u2264 C)\n    (hb : \u2200\u1d50 p \u2202IBMSourceLaws.jointMeasure, |F p| \u2264 C) :\n    IBMJointSceneryForecast.forecast \u03b4 F = F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L48"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.bounded_germ_pairing",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 77,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem bounded_germ_pairing (h\u03b4 : 0 < \u03b4) (F G : JointL2)\n    (hG : G \u2208 rightPast 0) (C : \u211d) (hC : 0 \u2264 C)\n    (hb : \u2200\u1d50 p \u2202IBMSourceLaws.jointMeasure, |G p| \u2264 C) :\n    inner \u211d F G = inner \u211d (IBMJointSceneryForecast.forecast \u03b4 F) G",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L77"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointForecastGerm.bounded_germ_limit_pairing",
+      "file": "Foundation/IBMJointForecastGerm.lean",
+      "line": 84,
+      "source_sha256": "8f7eab57a5ceb6a61f9e0f157e051f9f81a3c81858daea6f8a39a3d9af25b5a2",
+      "declaration_header": "theorem bounded_germ_limit_pairing (F : JointL2)\n    (\u03b4 : \u2115 \u2192 \u211d\u22650) (h\u03b4 : \u2200 n, 0 < \u03b4 n)\n    (ht : Tendsto (fun n => IBMJointSceneryForecast.forecast (\u03b4 n) F) atTop\n      (\ud835\udcdd (sourceMean F))) (G : JointL2) (hG : G \u2208 rightPast 0)\n    (C : \u211d) (hC : 0 \u2264 C) (hb : \u2200\u1d50 p \u2202IBMSourceLaws.jointMeasure, |G p| \u2264 C) :\n    inner \u211d F G = inner \u211d (sourceMean F) G",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointForecastGerm.lean#L84"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GeneratedFamilyModification.preimage_ae",
+      "file": "Foundation/GeneratedFamilyModification.lean",
+      "line": 16,
+      "source_sha256": "1a9710d18b4eaec29870f7423e07c53953e7f6028121c7bed85e86f93c29a19b",
+      "declaration_header": "theorem preimage_ae (S : Set (I \u2192 \u211d)) (hS : MeasurableSet S) :\n    \u2200\u1d50 \u03c9 \u2202\u03bc, X \u03c9 \u2208 S \u2194 Y \u03c9 \u2208 S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GeneratedFamilyModification.lean#L16"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GeneratedFamilyModification.functional_ae",
+      "file": "Foundation/GeneratedFamilyModification.lean",
+      "line": 35,
+      "source_sha256": "1a9710d18b4eaec29870f7423e07c53953e7f6028121c7bed85e86f93c29a19b",
+      "declaration_header": "theorem functional_ae (g : (I \u2192 \u211d) \u2192 \u211d) (hg : Measurable g) :\n    (fun \u03c9 => g (X \u03c9)) =\u1d50[\u03bc] fun \u03c9 => g (Y \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GeneratedFamilyModification.lean#L35"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GeneratedFamilyModification.aestronglyMeasurable_transfer",
+      "file": "Foundation/GeneratedFamilyModification.lean",
+      "line": 42,
+      "source_sha256": "1a9710d18b4eaec29870f7423e07c53953e7f6028121c7bed85e86f93c29a19b",
+      "declaration_header": "theorem aestronglyMeasurable_transfer {F : \u03a9 \u2192 \u211d}\n    (hF : AEStronglyMeasurable[MeasurableSpace.comap X inferInstance] F \u03bc) :\n    AEStronglyMeasurable[MeasurableSpace.comap Y inferInstance] F \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GeneratedFamilyModification.lean#L42"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GeneratedFamilyModification.lpMeas_eq",
+      "file": "Foundation/GeneratedFamilyModification.lean",
+      "line": 52,
+      "source_sha256": "1a9710d18b4eaec29870f7423e07c53953e7f6028121c7bed85e86f93c29a19b",
+      "declaration_header": "theorem lpMeas_eq : lpMeas \u211d \u211d (MeasurableSpace.comap X inferInstance) 2 \u03bc =\n    lpMeas \u211d \u211d (MeasurableSpace.comap Y inferInstance) 2 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GeneratedFamilyModification.lean#L52"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmallTimeCutoff.cut_small_tendsto",
+      "file": "Foundation/GaussianSmallTimeCutoff.lean",
+      "line": 13,
+      "source_sha256": "89678aa0ebd1e0bf6f25e77ad15149afd19de55260410c45298194db3d61c808",
+      "declaration_header": "theorem cut_small_tendsto (U : TimeProbabilityL2) (\u03c4 : \u2115 \u2192 \u211d\u22650)\n    (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => cut (\u03c4 n) U) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmallTimeCutoff.lean#L13"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmallTimeCutoff.pastProjection_small_tendsto",
+      "file": "Foundation/GaussianSmallTimeCutoff.lean",
+      "line": 42,
+      "source_sha256": "89678aa0ebd1e0bf6f25e77ad15149afd19de55260410c45298194db3d61c808",
+      "declaration_header": "theorem pastProjection_small_tendsto (F : GaussianL2)\n    (hb : F \u2208 GaussianBrownianGeneratedSpace.brownianL2) (\u03c4 : \u2115 \u2192 \u211d\u22650)\n    (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => pastProjection (\u03c4 n) F) atTop\n      (\ud835\udcdd ((\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 InfiniteGaussian.gaussianOne))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmallTimeCutoff.lean#L42"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSmallTimeCutoff.constant_of_shrinking_pasts",
+      "file": "Foundation/GaussianSmallTimeCutoff.lean",
+      "line": 62,
+      "source_sha256": "89678aa0ebd1e0bf6f25e77ad15149afd19de55260410c45298194db3d61c808",
+      "declaration_header": "theorem constant_of_shrinking_pasts (F : GaussianL2) (\u03c4 : \u2115 \u2192 \u211d\u22650)\n    (h\u03c4 : Tendsto \u03c4 atTop (\ud835\udcdd 0)) (hF : \u2200 n, F \u2208 pastL2 (\u03c4 n)) :\n    F = (\u222b \u03c9, F \u03c9 \u2202gaussianProduct) \u2022 InfiniteGaussian.gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSmallTimeCutoff.lean#L62"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationTotal.finiteDirection",
+      "file": "Foundation/GaussianSingleObservationTotal.lean",
+      "line": 15,
+      "source_sha256": "e7a660265a670286b94817172c220a24de10e17bf1173e8cddd4862492653129",
+      "declaration_header": "def finiteDirection (s : Finset \u2115) (L : (s \u2192 \u211d) \u2192L[\u211d] \u211d) : CoefficientSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationTotal.lean#L15"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationTotal.finiteDirection_actual",
+      "file": "Foundation/GaussianSingleObservationTotal.lean",
+      "line": 18,
+      "source_sha256": "e7a660265a670286b94817172c220a24de10e17bf1173e8cddd4862492653129",
+      "declaration_header": "theorem finiteDirection_actual (s : Finset \u2115) (L : (s \u2192 \u211d) \u2192L[\u211d] \u211d) :\n    firstChaosEmbedding (finiteDirection s L) =\u1d50[gaussianProduct]\n      fun \u03c9 => L (finiteProjection s \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationTotal.lean#L18"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationTotal.finite_power_mem_single",
+      "file": "Foundation/GaussianSingleObservationTotal.lean",
+      "line": 44,
+      "source_sha256": "e7a660265a670286b94817172c220a24de10e17bf1173e8cddd4862492653129",
+      "declaration_header": "theorem finite_power_mem_single (s : Finset \u2115) (L : (s \u2192 \u211d) \u2192L[\u211d] \u211d) (n : \u2115) :\n    finitePullback s (productPolynomialL2 (linearPowerPolynomial L n)) \u2208\n      singleGenerated (finiteDirection s L)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationTotal.lean#L44"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationTotal.closed_submodule_eq_top",
+      "file": "Foundation/GaussianSingleObservationTotal.lean",
+      "line": 70,
+      "source_sha256": "e7a660265a670286b94817172c220a24de10e17bf1173e8cddd4862492653129",
+      "declaration_header": "theorem closed_submodule_eq_top (M : Submodule \u211d GaussianL2)\n    (hM : IsClosed (M : Set GaussianL2))\n    (hu : \u2200 u : CoefficientSpace, singleGenerated u \u2264 M) : M = \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationTotal.lean#L70"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationTotal.prediction_all",
+      "file": "Foundation/GaussianSingleObservationTotal.lean",
+      "line": 110,
+      "source_sha256": "e7a660265a670286b94817172c220a24de10e17bf1173e8cddd4862492653129",
+      "declaration_header": "theorem prediction_all {I : Type*} (h : \u2115 \u2192 I \u2192 CoefficientSpace)\n    (hu : \u2200 u : CoefficientSpace, Tendsto\n      (fun n => GaussianWickConditionalProjection.sourceProjection (h n) u) atTop (\ud835\udcdd 0))\n    (F : GaussianL2) :\n    Tendsto (fun n => conditionalProjection (h n) F) atTop\n      (\ud835\udcdd (GaussianVanishingPrediction.meanProjection F))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationTotal.lean#L110"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.spatial",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 15,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "def spatial (\u03b4 : \u211d\u22650) : GaussianL2 \u2192L[\u211d] GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L15"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 18,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "def field (\u03b4 : \u211d\u22650) : ScalarFieldSpace \u2192L[\u211d] ScalarFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L18"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 21,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "def forecast (\u03b4 : \u211d\u22650) (F : JointL2) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L21"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.vacuumField",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 24,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "def vacuumField : ScalarFieldSpace \u2192L[\u211d] ScalarFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L24"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.sourceMean",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 27,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "def sourceMean (F : JointL2) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L27"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field_sections",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 30,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem field_sections (\u03b4 : \u211d\u22650) (f : ScalarFieldSpace) :\n    field \u03b4 f =\u1d50[gaussianProduct] fun Y =>\n      (condExpL2 \u211d \u211d (IBMSpatialSceneryForecast.history.le \u03b4) (f Y) : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L30"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field_norm_le",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 36,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem field_norm_le (\u03b4 : \u211d\u22650) (f : ScalarFieldSpace) : \u2016field \u03b4 f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L36"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_norm_le",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 43,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_norm_le (\u03b4 : \u211d\u22650) (F : JointL2) : \u2016forecast \u03b4 F\u2016 \u2264 \u2016F\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L43"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.vacuum_sections",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 46,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem vacuum_sections (f : ScalarFieldSpace) :\n    vacuumField f =\u1d50[gaussianProduct] fun Y => meanProjection (f Y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L46"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field_tendsto",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 50,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem field_tendsto (\u03b4 : \u2115 \u2192 \u211d\u22650) (f : ScalarFieldSpace)\n    (ht : \u2200\u1d50 Y \u2202gaussianProduct, Tendsto (fun n => spatial (\u03b4 n) (f Y)) atTop\n      (\ud835\udcdd (meanProjection (f Y)))) :\n    Tendsto (fun n => field (\u03b4 n) f) atTop (\ud835\udcdd (vacuumField f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L50"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_tendsto",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 71,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_tendsto (\u03b4 : \u2115 \u2192 \u211d\u22650) (F : JointL2)\n    (ht : \u2200\u1d50 Y \u2202gaussianProduct, Tendsto (fun n => spatial (\u03b4 n) (sourceUnitary F Y))\n      atTop (\ud835\udcdd (meanProjection (sourceUnitary F Y)))) :\n    Tendsto (fun n => forecast (\u03b4 n) F) atTop (\ud835\udcdd (sourceMean F))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L71"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.ridge_direction",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 79,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem ridge_direction (Y : SampleSpace) : IBMFiniteRidgeObservation.direction a r Y =\n    \u2211 i, a i \u2022 IBMSceneryGaussianGerm.direction\n      \u27e8|GaussianTimeProcess.process (r i) Y|,abs_nonneg _\u27e9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L79"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.ridge_forecast_tendsto",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 91,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem ridge_forecast_tendsto {\u03c6 : \u211d \u2192 \u211d} (hc : Continuous \u03c6) {A : \u211d}\n    (hA : \u2200 x, \u2016\u03c6 x\u2016 \u2264 A) (\u03b4 : \u2115 \u2192 \u211d\u22650) (h\u03b4 : Tendsto \u03b4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => forecast (\u03b4 n) (IBMFiniteRidgeObservation.jointClass a r hc hA))\n      atTop (\ud835\udcdd (sourceMean (IBMFiniteRidgeObservation.jointClass a r hc hA)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L91"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field_fixed_iff",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 113,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem field_fixed_iff (\u03b4 : \u211d\u22650) (f : ScalarFieldSpace) : field \u03b4 f = f \u2194\n    \u2200\u1d50 Y \u2202gaussianProduct,\n      AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4] (f Y) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L113"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_fixed_iff",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 129,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_fixed_iff (\u03b4 : \u211d\u22650) (F : JointL2) : forecast \u03b4 F = F \u2194\n    \u2200\u1d50 Y \u2202gaussianProduct, AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4]\n      (sourceUnitary F Y) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L129"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.field_inner",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 140,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem field_inner (\u03b4 : \u211d\u22650) (f g : ScalarFieldSpace) :\n    inner \u211d (field \u03b4 f) g = inner \u211d f (field \u03b4 g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L140"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_inner",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 151,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_inner (\u03b4 : \u211d\u22650) (F G : JointL2) :\n    inner \u211d (forecast \u03b4 F) G = inner \u211d F (forecast \u03b4 G)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L151"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_pairing",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 158,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_pairing (\u03b4 : \u211d\u22650) (F G : JointL2)\n    (hG : \u2200\u1d50 Y \u2202gaussianProduct, AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4]\n      (sourceUnitary G Y) gaussianProduct) :\n    inner \u211d F G = inner \u211d (forecast \u03b4 F) G",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L158"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.forecast_continuous",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 165,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem forecast_continuous (\u03b4 : \u211d\u22650) : Continuous (forecast \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L165"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointSceneryForecast.sourceMean_eq_sourceVacuum",
+      "file": "Foundation/IBMJointSceneryForecast.lean",
+      "line": 168,
+      "source_sha256": "24067f4d207f978e82af6f7a763866c4806f301be5073977e705927d3524c10b",
+      "declaration_header": "theorem sourceMean_eq_sourceVacuum (F : JointL2) :\n    sourceMean F = IBMNativeSourceRecovery.sourceVacuum F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointSceneryForecast.lean#L168"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.setIntegral_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 14,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem setIntegral_zero (t : \u211d\u22650) (A : Set IBMSourceLaws.JointSample)\n    (hA : MeasurableSet[germFiltration 0] A) :\n    (\u222b \u03c9 in A, ibmValue t \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L14"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.initial_condExp_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 41,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem initial_condExp_zero (t : \u211d\u22650) :\n    IBMSourceLaws.jointMeasure[ibmValue t | germFiltration 0]\n      =\u1d50[IBMSourceLaws.jointMeasure] (fun _ => (0 : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L41"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.initial_channel_ae_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 59,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem initial_channel_ae_zero (t : \u211d\u22650) :\n    channel (observed t) 0 =\u1d50[IBMSourceLaws.jointMeasure] (fun _ => (0 : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L59"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.initial_raw_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 65,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem initial_raw_zero (t : \u211d\u22650) :\n    IBMRawObservedMartingale.rawClass (observed t) 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L65"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.raw_prediction_tendsto_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 71,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem raw_prediction_tendsto_zero (t : \u211d\u22650) (\u03c4 : \u2115 \u2192 \u211d\u22650)\n    (h\u03c4 : Antitone \u03c4) (ht : \u2200 n, 0 < \u03c4 n) (hlim : Tendsto \u03c4 atTop (\ud835\udcdd 0)) :\n    Tendsto (fun n => IBMRawObservedMartingale.rawClass (observed t) (\u03c4 n)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L71"
+    },
+    {
+      "paper": "Section 1 whole initial germ: Gaussian small-past contraction, universal scenery forecasts, bounded measurable-functional localization, clock-only factorization and product sections; time-zero conditional projection equals expectation in the actual IBM model. Supporting exact declarations are distinguished from the reorganized human proof.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.terminal_energy_mass",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 77,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem terminal_energy_mass (t : \u211d\u22650) :\n    IBMTerminalEnergyMeasure.energyMeasure (observed t) (Ioc 0 t) =\n      ENNReal.ofReal (\u2016observed t\u2016 ^ 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L77"
     }
   ],
   "paper_sections": {
@@ -865,7 +1612,8 @@
     "The fixed tests are the existing bounded linear native recovery applied to the fixed stochastic basis outputs, with norm-squared at most two and exact divergences e_i. Coefficient evaluation, stochastic reconstruction and Parseval are exact source correspondences; the native derivative pairing is stated only for targets in its original domain.",
     "The lower graph-dual norm bound ||f-P0f||/sqrt(3) is an explicitly proved HUMAN deduction: finite combinations of tests, not just individual norm bounds, are controlled by bounded linear recovery and basis orthogonality. The actual point-curve bound and nonzero coefficient at every positive time are human consequences of its exact variance and zero initial projection. No sharpness claim or additional formal declaration is made.",
     "Section 1 now proves directly from the actual reflected-clock/scenery law that clock backtracking makes E[Z_s(Z_t-Z_s)] negative. The named formal negative-pairing and projection obstruction are at times one and two. The printed all-0<s<t extension uses an explicit positive independent-increment rectangle with nondegenerate Gaussian laws and is labelled human.",
-    "The closed covariance formula kappa(sqrt(s)+sqrt(t)-(sqrt(t+3s)+sqrt(t-s))/2) is an explicit human derivation from min(abs(Ws),abs(Wt)) and Gaussian absolute moments. The one-dimensional linear forecast at times one and two is computed from this covariance, not identified with any full sigma-algebra conditional expectation. Conditioning gives the fourth-moment obstruction to even marginal Gaussianity. These are classical illustrations, no new named source declaration or priority asserted."
+    "The closed covariance formula kappa(sqrt(s)+sqrt(t)-(sqrt(t+3s)+sqrt(t-s))/2) is an explicit human derivation from min(abs(Ws),abs(Wt)) and Gaussian absolute moments. The one-dimensional linear forecast at times one and two is computed from this covariance, not identified with any full sigma-algebra conditional expectation. Conditioning gives the fourth-moment obstruction to even marginal Gaussianity. These are classical illustrations, no new named source declaration or priority asserted.",
+    "The whole initial right germ is now proved trivial in the actual reflected-clock Brownian path model. The complete human proof first proves all-Gaussian small-past projection decay, lifts it through the independent clock tensor factor, localizes each bounded measurable past functional by clipped scenery, and removes the remaining clock dependence using a product section for each shrinking clock past. The modification lemma is applied per measurable functional, without intersecting uncountably many null events. Bounded truncation handles general L2 germ classes. The original time-zero projection is expectation for every joint L2 target; the centered observable domain therefore has zero initial channel. This theorem does not identify raw and right-germ pasts at positive times and supplies no temporal Ito or prescribed-driver representation theorem. Classical Gaussian density, Brownian zero-one and product-measure mechanisms are credited; the source proof is reorganized, not extended."
   ],
   "literature": [
     {

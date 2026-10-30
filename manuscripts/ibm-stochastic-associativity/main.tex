@@ -22,7 +22,7 @@
 \title{Observable martingales on Brownian-time paths:\\
 predictable energy, associativity and uniform reconstruction}
 \author{Project Stardust}
-\date{Reviewed editorial draft, revision 4, October 29, 2026}
+\date{Reviewed editorial draft, revision 5, October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
 On a constructed Brownian-time Brownian probability space, predictable
@@ -37,7 +37,7 @@ curves of observables uniformly on compact parameter sets, simultaneously
 over all causal horizons. Original native graph tests identify the
 family's scalar coefficients, with a quantitative graph-dual norm bound.
 A bounded two-source Gaussian recovery transfers
-this convergence to the original intrinsic divergence graph. The proofs
+this convergence to the original intrinsic divergence graph. A complete source-localization argument proves triviality of the entire initial right germ. The proofs
 separate raw predictability, right-germ martingales and source-operator
 domains. These are classical integration and Hilbert-space mechanisms
 assembled as a formalization companion; they do not provide a temporal
@@ -105,8 +105,9 @@ assumption on $Z$ enters any construction. Write
 \[
  G_0=P_0,\qquad \OO_0=\OO\cap\ker G_0.
 \]
-We retain the whole initial germ in the statements, even where particular
-observables have zero initial projection.
+We initially retain the whole initial germ in the statements.
+Theorem~\ref{thm:initialgerm} below proves that it consists exactly of
+constants for this actual process.
 
 \subsection*{A direct obstruction to using the path as its own martingale}
 The distinction between $M^F$ and $Z$ can be checked against the actual
@@ -175,6 +176,149 @@ These classical calculations explain why the original predictable energy
 measure below belongs to terminal-observable martingales rather than to
 uncorrected increments of $Z$; no new general martingale principle or
 priority for Brownian-time covariance is claimed.
+
+
+\subsection*{The entire initial right germ is trivial}
+For the actual reflected-clock model there is a stronger conclusion
+than zero initial prediction of individual coordinates.
+\begin{theorem}\label{thm:initialgerm}
+Every $G\in\bigcap_{t>0}L^2(\mathcal F_t^Z)$ is constant almost
+surely. Consequently, on the entire original joint space $\HH$,
+\begin{equation}\label{eq:wholeinitial}
+ P_0F=(\E F)\one,\qquad
+ \OO_0=\{f\in\OO:\E f=0\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+We first record two precise Gaussian and measurability facts needed
+to pass from source coordinates to the actual observed process.
+For one Brownian source let $\mathcal B_\delta$ be the sigma algebra
+of its coordinates up to $\delta>0$. Its Gaussian linear projection
+is restriction of the time profile to $(0,\delta]$. For every fixed
+profile $h\in L^2(\R)$,
+$\norm{h\one_{(0,\delta]}}_2\to0$ as $\delta\downarrow0$,
+by absolute continuity of its squared integral. For any additional
+orthogonal source directions the same projection is zero.
+Gaussian independence gives the conditional monic Wick identity
+\[
+ \E[W_q(X(h))\mid\mathcal B_\delta]
+       =W_q(X(h\one_{(0,\delta]})),\qquad
+ \norm{W_q(X(h\one_{(0,\delta]}))}_2^2
+       =q!\norm{h\one_{(0,\delta]}}_2^{2q}.
+\]
+Here $W_q(X(h))$ is defined by the coefficient of $z^q/q!$ in
+$\exp(zX(h)-z^2\norm h^2/2)$. Thus positive-degree conditional terms tend to zero. Pure Wick
+powers span a dense subspace of Gaussian $L^2$: polarization gives
+mixed homogeneous products, finite-dimensional product Hermite
+bases are complete, and Gaussian cylinders generate the source
+sigma algebra. Conditional contractions therefore imply
+\begin{equation}\label{eq:shrinkingGaussian}
+ \E[H\mid\mathcal B_\delta]\longrightarrow(\E H)\one
+                     \quad\text{in source }L^2.
+\end{equation}
+This argument retains the full source space, rather than restricting
+to one nonlinear ridge. By tensor-product density and conditional
+contractivity, the scenery-only version on the joint source space
+satisfies
+\begin{equation}\label{eq:sceneryvacuum}
+ Q_\delta F:=\E[F\mid\mathcal B_\delta^B\vee\mathcal A^W]
+      \longrightarrow\E[F\mid\mathcal A^W]\quad\text{in }\HH.
+\end{equation}
+Here $\mathcal A^W$ is the whole clock source sigma algebra.
+Indeed the claim follows first for $F=H(B)L(W)$ from
+\eqref{eq:shrinkingGaussian}, then for finite tensor sums and their
+$L^2$ limits. All conditional operators have norm at most one.
+
+Coordinatewise almost-sure modifications preserve every real
+measurable functional of a possibly uncountable family. To justify
+this fact, the collection of product-measurable events whose
+pullbacks agree modulo null sets is a sigma algebra: it contains
+finite-coordinate cylinders, is closed under complements, and
+under countable unions by a countable union of null sets. It is
+therefore the whole product sigma algebra. Apply this to inverse
+images of $(q,\infty)$ for rational $q$ under a real measurable
+functional. Agreement of all these tests gives agreement of the
+functional itself almost surely. This is a per-functional argument;
+it does not intersect null events over uncountably many times.
+Doob--Dynkin factorization of a raw observed-past representative
+may consequently be transferred to the corresponding Gaussian
+coordinate versions without altering its $L^2$ class.
+
+Now assume first that $G$ belongs to the initial germ and
+$|G|\leq M$ almost surely. Choose $t_n\downarrow0$ strictly
+positive. For each $n$, raw-past measurability gives a Borel
+functional $\Phi_n$ of $(Z_s)_{0\leq s\leq t_n}$ equal to $G$
+almost surely. Composing with the clamp to $[-M,M]$ makes it
+bounded everywhere without changing this equality. Fix $\delta>0$
+and clip the spatial argument, defining the actual process
+\[
+ Z_s^\delta=B_{\min(|W_s|,\delta)}.
+\]
+Its full path is measurable with respect to scenery up to $\delta$
+and the whole clock source. Continuity of the actual clock at zero
+and $W_0=0$ give one probability-one event on which eventually
+$\sup_{s\leq t_n}|W_s|\leq\delta$. Hence, on this event,
+$Z_s^\delta=Z_s$ simultaneously for every $s\leq t_n$ when $n$
+is sufficiently large. Taking also the countable intersection of
+the events $\Phi_n(Z)=G$ yields
+\[
+ \Phi_n((Z_s^\delta)_{s\leq t_n})\longrightarrow G
+                        \quad\text{almost surely and in }\HH.
+\]
+The $L^2$ limit follows by the uniform bound $M$ on a probability
+space. The clipped classes lie in the closed measurable subspace
+for $\mathcal B_\delta^B\vee\mathcal A^W$; coordinate versions
+are identified by the per-functional argument above. Thus
+$Q_\delta G=G$ for every $\delta>0$. Letting $\delta\downarrow0$
+in \eqref{eq:sceneryvacuum} proves that $G$ is clock-only.
+For an unbounded $L^2$ germ class, all bounded clamps remain germ
+classes and converge in $L^2$. The clock-only subspace is closed,
+so the same conclusion follows. Write $G(B,W)=g(W)$ almost surely.
+
+It remains to remove the clock information; scenery elimination
+alone is not germ triviality. For each fixed $T>0$, the observed
+past is measurable modulo null sets with respect to the full
+scenery source and the raw Gaussian clock past up to $T$.
+Indeed each $Z_s$, $s\leq T$, has such a version by actual scenery
+path evaluation at the Gaussian clock coordinate. Transfer of a
+real whole-past functional follows from the modification lemma.
+Thus there exists a representative $H_T(B,W)$, measurable for
+that product sigma algebra, equal to $g(W)$ almost everywhere.
+Product Fubini gives a scenery point $B_*$ such that
+$H_T(B_*,W)=g(W)$ for almost every clock sample. The section
+$H_T(B_*,\cdot)$ is clock-past measurable, so $g$ belongs to its
+clock-past $L^2$ subspace. The choice of section may depend on $T$;
+only membership of the same $L^2$ class is asserted.
+
+Apply this for the countable sequence $T=t_n$. The clock version
+of \eqref{eq:shrinkingGaussian} forces $g=(\E g)\one$,
+since each of its clock-past conditional projections equals $g$.
+Therefore $G$ is constant. Conversely constants lie in every past.
+Orthogonal projection onto that one-dimensional constant space is
+expectation, proving \eqref{eq:wholeinitial} for all joint $L^2$
+inputs and then the stated description of $\OO_0$.
+\end{proof}
+
+This is a source-localization proof for the actual process, rather
+than an application of a Markov theorem to $Z$. The Brownian
+zero--one mechanism is classical; M\"orters--Peres~\cite{MortersPeres},
+Theorem 2.7, gives Blumenthal's law for Brownian motion. Its Markov
+argument is not imported as a Markov property of the Brownian-time
+path. Priority for the specific formal source reconstruction remains
+unresolved. The proof gives no equality of the raw and right-germ
+pasts at positive times, and does not turn $Z$ into a martingale.
+
+The full conclusion is mapped to
+\par\noindent\code{IBMInitialGermTriviality},
+\par\noindent with the localization and removal of all scenery
+information in
+\par\noindent\code{IBMClockGermLocalization};
+\par\noindent\code{IBMBoundedGermFactors};
+\par\noindent\code{IBMSceneryUniversalPrediction}.
+\par\noindent The coordinate-modification argument is
+\par\noindent\code{GeneratedFamilyModification}.
+\par\noindent These distinguish the earlier coordinate-only
+zero-prediction statement from the proved whole-germ theorem.
 
 \section{The original predictable integral}
 We first specify the energy measure and integral to which later
@@ -550,8 +694,9 @@ $J$. Define the finite actual output
  U_{A,r}(f)=\sum_{i\in A}I_{e_i}
      (\one_{(0,r]}c_i(f)h_i)=JS_rQ_A(f).
 \end{equation}
-Also $JS_rL(f)=P_rf-P_0f$. Since the entire initial germ is subtracted,
-this identity holds without replacing $P_0f$ by a scalar mean.
+Also $JS_rL(f)=P_rf-P_0f$. The identity first retains the initial
+germ; Theorem~\ref{thm:initialgerm} identifies $P_0f$ with the
+scalar mean for this actual model.
 
 \begin{theorem}[Uniform reconstruction]\label{thm:uniform}
 Let $u:X\to\OO$ be norm continuous on a topological space $X$,
@@ -623,13 +768,15 @@ Brownian maximal bounds and scaling give
 $\E R_\epsilon\to0$. The initial right-germ subspace lies inside
 every $L^2(\mathcal F_\epsilon^Z)$, so its projection of $Z_t$ has
 norm at most $(\E R_\epsilon)^{1/2}$ for every $\epsilon>0$ and
-is zero. This does not claim that all initial-germ observables are
-constant. Theorem~\ref{thm:uniform} with $r=t$ now proves the first
+is zero. This coordinate estimate alone would not establish whole-germ
+triviality; that stronger conclusion is proved independently in
+Theorem~\ref{thm:initialgerm}. Theorem~\ref{thm:uniform} with $r=t$ now proves the first
 assertion. Finally,
 $\norm{\varphi(Z_t)-\varphi(Z_s)}\leq
 \norm{\varphi'}_\infty\norm{Z_t-Z_s}$, and the transformed
 observable belongs to the raw past at $t$. Apply the same theorem;
-its initial projection remains in the formula.
+its initial projection equals the deterministic mean by
+Theorem~\ref{thm:initialgerm}.
 \end{proof}
 
 \section{Recovery in the original intrinsic divergence graph}
@@ -901,5 +1048,6 @@ no. 1 (1977), 1--56, especially Sections E and F.
 Section 5.1, Proposition 5.4, p. 145.
 \href{https://jurrivhleon.github.io/notes/stochastic_analysis.pdf}{Author's notes},
 accessed October 29, 2026.
+\bibitem{MortersPeres} P. M\"orters and Y. Peres, \emph{Brownian Motion}, draft May 25, 2008, Theorem 2.7 and its proof, printed page 45. \href{https://www.stat.berkeley.edu/users/aldous/205B/bmbook.pdf}{Primary book draft}.
 \end{thebibliography}
 \end{document}
