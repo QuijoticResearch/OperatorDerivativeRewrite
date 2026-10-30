@@ -1371,6 +1371,105 @@ contradict a pressure identity proved under valid periodic or
 vanishing-flux hypotheses, and do not supply an induced repaired
 Navier--Stokes pressure.
 
+
+\section{A critical norm bound does not prevent concentration}
+The preceding diagnostics distinguish exact algebra from estimates that
+need additional hypotheses. There is a separate limit-passage test:
+bounded cubic energy and pointwise convergence do not suffice to pass
+cubic integrals to a limit. Here is an actual fixed probability-space
+example, followed by the quantitative higher-norm repair. This is a
+measure-theoretic calibration, not a constructed fluid trajectory.
+
+Give $(0,1]$ Lebesgue probability measure. For $n\geq0$ set
+$h_n=n+1$, $w_n=h_n^{-3}$ and
+\[
+ f_n(x)=h_n\mathbf1_{(0,w_n]}(x).
+\]
+Every fixed $x>0$ eventually lies outside the support, so $f_n(x)\to0$.
+For every positive integer $q$, direct integration gives
+\begin{equation}\label{eq:spikepowers}
+ \int_0^1 |f_n|^q=h_n^{q-3}.
+\end{equation}
+In particular $\|f_n\|_3=1$ for all $n$, while
+$\int|f_n|^4=h_n\to\infty$. Thus the actual $L^3$ classes do not converge
+to zero. There is no integrable function dominating all the cubic
+powers: if $|f_n|^3\leq g$ almost everywhere for every $n$, take the
+countable intersection of these full-measure sets and apply dominated
+convergence to $|f_n|^3$. Its integrals would tend to zero, contradicting
+their constant value one.
+\par\noindent\code{CriticalLpSpike.power_integral}.
+\par\noindent\code{CriticalLpSpike.not_L3_tendsto_zero}.
+\par\noindent\code{CriticalLpSpike.no_integrable_cubic_dominator}.
+
+More precisely, the cubic powers are not uniformly integrable. Uniform
+absolute continuity of their integrals would require that for each
+$\varepsilon>0$ a single $\delta>0$ make
+$\int_E|f_n|^3<\varepsilon$ for every $n$ whenever $|E|<\delta$.
+But $E_n=(0,w_n]$ has measure tending to zero and cubic integral one.
+Equivalently, for any level $K$, choosing $h_n^3>K$ leaves all of that
+cubic integral in the tail $\{|f_n|^3>K\}$. A uniform bound on the total
+cubic integral supplies neither condition.
+\par\noindent\code{CriticalLpSpike.not_uniformIntegrable}.
+
+\begin{proposition}[Quantitative higher-norm repair]
+Let $(\Omega,\mu)$ have finite measure, let $1\leq p<q<\infty$, and let
+$F_n$ be almost everywhere strongly measurable maps into a normed space.
+Suppose $\sup_n\|F_n\|_q\leq C<\infty$ and $F_n\to F$ almost everywhere.
+Then $F\in L^p(\mu)$ and $\|F_n-F\|_p\to0$. For every measurable $E$,
+\begin{equation}\label{eq:restrictedhigher}
+ \|\mathbf1_E F_n\|_p
+ \leq C\mu(E)^{1/p-1/q}.
+\end{equation}
+For $p=3,q=4$ the exponent on the right is $1/12$.
+\end{proposition}
+\begin{proof}
+H\"older's inequality with exponents $q/p$ and $q/(q-p)$ gives
+$\int_E\|F_n\|^p\leq C^p\mu(E)^{1-p/q}$, proving
+\eqref{eq:restrictedhigher}. Fatou's lemma first gives
+$\int\|F\|^q\leq C^q$; finite measure then puts $F$ in $L^p$.
+For a direct proof of convergence, write $D_n=F_n-F$.
+The triangle inequality in $L^q$ gives $\|D_n\|_q\leq2C$.
+For a fixed $a>0$, the sets $E_{n,a}=\{\|D_n\|>a\}$ have measures
+tending to zero: their indicators tend to zero almost everywhere and
+are bounded by the integrable constant one. Splitting the integral,
+\[
+ \|D_n\|_p^p
+ \leq a^p\mu(\Omega)+(2C)^p\mu(E_{n,a})^{1-p/q}.
+\]
+For each fixed $a$ the second term tends to zero. Taking the upper limit
+and then $a\downarrow0$ proves the result. This also handles $C=0$.
+\end{proof}
+\par\noindent\code{HigherLpUniformIntegrability.restricted_higher_bound}.
+\par\noindent\code{HigherLpUniformIntegrability.finite_higher_ae_Lp_convergence}.
+\par\noindent\code{HigherLpUniformIntegrability.higher_bound_ae_toLp_convergence}.
+The last mapped statement records convergence of the genuine $L^p$
+equivalence classes, not just representative seminorms. The source
+obtains the conclusion through Mathlib's Vitali theorem; the proof above
+unpacks it with a direct splitting estimate. For the spike family, the
+exact fourth moments already show why a uniform $L^4$ repair is
+unavailable.
+
+For scalar real data, strong $L^3$ convergence additionally justifies
+passing signed cubic integrals: the elementary factorization and
+H\"older inequality imply
+\[
+ \|f_n^3-f^3\|_1
+ \leq\|f_n-f\|_3
+ \bigl(\|f_n\|_3^2+\|f_n\|_3\|f\|_3+\|f\|_3^2\bigr).
+\]
+This final inequality is a human consequence, not a new named formal
+declaration. It explains exactly what the higher-norm hypothesis buys
+for cubic quantities. It does not make that hypothesis necessary:
+uniform integrability is weaker, and other compactness hypotheses may
+also apply. No $L^4$ estimate for an actual velocity, pressure or
+Navier--Stokes solution is supplied here.
+
+The concentration example and the repair are classical measure theory.
+Mathlib's primary documentation identifies the imported convergence
+principle as Vitali's theorem~\cite{MathlibUI}; its displayed definitions
+and convergence statements were checked. This section claims no new
+compactness theorem or priority for the spike construction.
+
 \section{Formal correspondence and contribution status}
 \begingroup\raggedright
 Every formal result is frozen at commit
@@ -1457,5 +1556,10 @@ Large-Eddy Simulation, I. Subgrid Flux and Locality of Energy Transfer},
 primary preprint (1996),
 \url{https://arxiv.org/abs/chao-dyn/9602018}.
 Abstract-level comparison only; no flux theorem imported.
+\bibitem{MathlibUI} The Mathlib community,
+\emph{Uniform integrability}, primary library documentation,
+definitions \texttt{UnifIntegrable}, \texttt{UniformIntegrable} and
+theorems for almost everywhere and in-measure $L^p$ convergence.
+\url{https://leanprover-community.github.io/mathlib4_docs/Mathlib/MeasureTheory/Function/UniformIntegrable.html}.
 \end{thebibliography}
 \end{document}
