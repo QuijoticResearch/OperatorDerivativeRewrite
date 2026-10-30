@@ -854,6 +854,45 @@ $J_h(\xi)J_h(\eta)-C_h(\xi,\eta)$.
 \par\noindent\code{HigherHeatFourierCovariance.kernel_product}.
 \par\noindent\code{HigherHeatFourierCovariance.centered_product_zero}.
 
+\paragraph{The actual unbounded past domain.}
+Boundedness of the past coefficient is sufficient but unnecessary.
+Let $q$ be a measurable integrable real past density relative to
+a sigma-finite measure $\mu$, and let $G$ be measurable with
+\[
+ \int|G(y)|\,|q(y)|\,d\mu(y)<\infty.
+\]
+For any measurable $W$ with $\int|W(z)||k_h(z)|\,dz<\infty$,
+Tonelli for the nonnegative absolute integrand gives
+\[
+ \int\!\!\int|G(y)W(z)q(y)k_h(z)|\,d\mu(y)\,dz
+ =\left(\int|G||q|\,d\mu\right)
+    \left(\int|W||k_h|\,dz\right)<\infty.
+\]
+Consequently signed integration and ordinary Fubini give
+\[
+ \int\!\!\int G(y)W(z)q(y)k_h(z)\,d\mu(y)\,dz
+ =\left(\int Gq\,d\mu\right)\left(\int Wk_h\,dz\right).
+\]
+This applies to $W=J_h(\xi)$, to $J_h(\xi)J_h(\eta)$ and
+to its centered product. Their absolute bounds are $2$, $4$ and
+at most $6$, respectively, because $|C_h|\leq2$.
+Thus the preceding zero-gain and covariance identities hold for
+these unbounded past coefficients on the actual total-variation
+$L^1$ domain, without an $L^2$ hypothesis or a positive isometry.
+For example the absolute integral of a gain is at most
+$2\|G\|_{L^1(|q|d\mu)}\|k_h\|_1$.
+For a real signed density, the variation of $q\,d\mu$ is
+exactly $|q|d\mu$, by its positive and negative parts; this
+identifies the displayed domain with genuine signed integrability.
+These are sufficient product-domain conditions, not a maximality
+claim in degenerate cases such as the zero-frequency innovation.
+\par\noindent\code{SignedAbsoluteIntegration.signed_integrable_iff}.
+\par\noindent\code{HigherHeatIntegrableGains.separable_integral}.
+\par\noindent\code{HigherHeatIntegrableGains.predictable_gain_zero}.
+\par\noindent\code{HigherHeatIntegrableGains.predictable_pairing}.
+\par\noindent\code{HigherHeatIntegrableGains.compensated_product_zero}.
+
+
 For a fixed terminal horizon $T$, let
 \[
  Z_t^\xi(x)=b_{T-t}(\xi)e_\xi(x),\qquad 0\leq t\leq T.
@@ -1407,6 +1446,32 @@ unit-frequency witness is $e^{-(2\pi)^4}$ rather than $e^{-1}$.
 We use the angular-frequency convention fixed at the start of this
 paper. These are the same physical signed laws at correspondingly
 rescaled frequencies, with the same strict failure of continuity.
+
+
+The exact deterministic step law is also identifiable, including its
+zero-clock case. For step lengths $h_j>0$, coefficients $a_j$ and
+$A=\sum_jh_j|a_j|^p$, let $\nu_a$ be the pushforward of the
+actual signed increment law by $\sum_j a_jY_j$. Its Fourier
+transform is $e^{-A\xi^p}$. Uniqueness of Fourier transforms of
+finite signed Borel measures therefore gives
+\[
+ \nu_a(dx)=k_A(x)\,dx\quad(A>0),\qquad
+ \nu_a=\delta_0\quad(A=0).
+\]
+Every polynomial moment is absolutely integrable against the
+variation: before pushforward this follows by expanding a finite
+polynomial in the increments and using their Schwartz densities.
+For $p>2$ and $A>0$, the second signed moment is zero by
+\eqref{eq:moments}, while $\nu_a\ne\delta_0$, since its Fourier
+transform at any nonzero frequency is strictly below one. At
+$p=4$ its fourth signed moment is $-24A$.
+Thus a nontrivial deterministic integral law can have zero signed
+square mean; that quantity cannot serve as a positive norm.
+These statements concern actual finite signed laws, and add no
+random-integrand or path-space realization.
+\par\noindent\code{HigherHeatStepIntegralRealization.integralLaw_eq_heatLaw}.
+\par\noindent\code{HigherHeatIntegralSecondMoment.integral_second_degeneracy}.
+\par\noindent\code{HigherHeatIntegralSecondMoment.biharmonic_integral_fourth}.
 
 \subsection{The last complementary derivative channel is essential}
 Return to the analytic completion and assume $p>2$. Let $X$ be the

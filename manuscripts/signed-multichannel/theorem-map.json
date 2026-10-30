@@ -3886,6 +3886,375 @@
       "source_sha256": "aafa4b59956113bf725efea20f574b6b49019d771d7a1af40fd451ac947ac3fe",
       "declaration_header": "theorem finite_product_rule (m : \u2115) (T : \u211d\u22650) (grid : \u2115 \u2192 \u211d\u22650) (n : \u2115)\n    (hg : Monotone grid) (hT : grid n \u2264 T) (\u03be \u03b7 : \u211d) (x : \u2115 \u2192 \u211d) :\n    backwardProduct m T (grid n) \u03be \u03b7 (x n)-backwardProduct m T (grid 0) \u03be \u03b7 (x 0)=\n      (\u2211 j \u2208 Finset.range n,\n        martingaleStep m T (grid j) (grid (j+1)) \u03be \u03b7 (x j) (x (j+1)-x j))+\n      (\u2211 j \u2208 Finset.range n, compensator m T (grid j) (grid (j+1)) \u03be \u03b7 (x j))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFourierProduct.lean#L112"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedAbsoluteIntegration.absoluteDensity",
+      "file": "Foundation/SignedAbsoluteIntegration.lean",
+      "line": 10,
+      "source_sha256": "d4e9efdb73765432e63b0d05c7b2a341c48020d7975ac75bf1a9bb85eb93a0c6",
+      "declaration_header": "def absoluteDensity (f : \u03a9 \u2192 \u211d) : Measure \u03a9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedAbsoluteIntegration.lean#L10"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedAbsoluteIntegration.variation_density",
+      "file": "Foundation/SignedAbsoluteIntegration.lean",
+      "line": 13,
+      "source_sha256": "d4e9efdb73765432e63b0d05c7b2a341c48020d7975ac75bf1a9bb85eb93a0c6",
+      "declaration_header": "theorem variation_density (f : \u03a9 \u2192 \u211d) (hf : Integrable f \u03bc) :\n    (\u03bc.withDensity\u1d65 f).variation=absoluteDensity \u03bc f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedAbsoluteIntegration.lean#L13"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedAbsoluteIntegration.signed_integrable_iff",
+      "file": "Foundation/SignedAbsoluteIntegration.lean",
+      "line": 18,
+      "source_sha256": "d4e9efdb73765432e63b0d05c7b2a341c48020d7975ac75bf1a9bb85eb93a0c6",
+      "declaration_header": "theorem signed_integrable_iff (f : \u03a9 \u2192 \u211d) (hf : Integrable f \u03bc) (g : \u03a9 \u2192 \u2102) :\n    (\u03bc.withDensity\u1d65 f).Integrable g \u2194 Integrable g (absoluteDensity \u03bc f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedAbsoluteIntegration.lean#L18"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedAbsoluteIntegration.integral_density",
+      "file": "Foundation/SignedAbsoluteIntegration.lean",
+      "line": 22,
+      "source_sha256": "d4e9efdb73765432e63b0d05c7b2a341c48020d7975ac75bf1a9bb85eb93a0c6",
+      "declaration_header": "theorem integral_density (f : \u03a9 \u2192 \u211d) (hf : Integrable f \u03bc) (hfm : Measurable f)\n    (g : \u03a9 \u2192 \u2102) (hi : Integrable g (absoluteDensity \u03bc f)) :\n    (\u222b\u1d5b x, g x \u2202<\u2022\u03bc.withDensity\u1d65 f)=(\u222b x, f x \u2022 g x \u2202\u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedAbsoluteIntegration.lean#L22"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedAbsoluteIntegration.absolute_integrable_iff",
+      "file": "Foundation/SignedAbsoluteIntegration.lean",
+      "line": 62,
+      "source_sha256": "d4e9efdb73765432e63b0d05c7b2a341c48020d7975ac75bf1a9bb85eb93a0c6",
+      "declaration_header": "theorem absolute_integrable_iff (f : \u03a9 \u2192 \u211d) (hfm : Measurable f) (g : \u03a9 \u2192 \u2102) :\n    Integrable g (absoluteDensity \u03bc f) \u2194 Integrable (fun x => |f x| \u2022 g x) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedAbsoluteIntegration.lean#L62"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.separable_absolute_integrable",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 14,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem separable_absolute_integrable (past : \u03a9 \u2192 \u211d) (hp : Measurable past)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past))\n    (W : \u211d \u2192 \u2102) (hiW : Integrable W (absoluteDensity volume (realKernel m hm t ht))) :\n    Integrable (fun w : \u03a9 \u00d7 \u211d => G w.1*W w.2)\n      (absoluteDensity (\u03bc.prod volume) (fun w => past w.1*realKernel m hm t ht w.2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L14"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.separable_signed_integrable",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 32,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem separable_signed_integrable (past : \u03a9 \u2192 \u211d) (hp : Measurable past) (hi : Integrable past \u03bc)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past))\n    (W : \u211d \u2192 \u2102) (hiW : Integrable W (absoluteDensity volume (realKernel m hm t ht))) :\n    (extendedLaw \u03bc past m hm t ht).Integrable (fun w => G w.1*W w.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L32"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.separable_integral",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 41,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem separable_integral (past : \u03a9 \u2192 \u211d) (hp : Measurable past) (hi : Integrable past \u03bc)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past))\n    (W : \u211d \u2192 \u2102) (hiW : Integrable W (absoluteDensity volume (realKernel m hm t ht))) :\n    (\u222b\u1d5b w, G w.1*W w.2 \u2202<\u2022extendedLaw \u03bc past m hm t ht)=\n      (\u222b w, (past w:\u2102)*G w \u2202\u03bc)*(\u222b z : \u211d, W z*(realKernel m hm t ht z:\u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L41"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.kernel_absolute_finite",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 60,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem kernel_absolute_finite (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    IsFiniteMeasure (absoluteDensity volume (realKernel m hm t ht))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L60"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.innovation_absolute_integrable",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 65,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem innovation_absolute_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be : \u211d) :\n    Integrable (innovation m t \u03be) (absoluteDensity volume (realKernel m hm t ht))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L65"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.predictable_gain_zero",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 71,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem predictable_gain_zero (past : \u03a9 \u2192 \u211d) (hp : Measurable past) (hi : Integrable past \u03bc)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be : \u211d)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past)) :\n    (\u222b\u1d5b w, G w.1*innovation m t \u03be w.2 \u2202<\u2022extendedLaw \u03bc past m hm t ht)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L71"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.product_absolute_integrable",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 78,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem product_absolute_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be \u03b7 : \u211d) :\n    Integrable (fun z => innovation m t \u03be z*innovation m t \u03b7 z)\n      (absoluteDensity volume (realKernel m hm t ht))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L78"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.predictable_pairing",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 86,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem predictable_pairing (past : \u03a9 \u2192 \u211d) (hp : Measurable past) (hi : Integrable past \u03bc)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be \u03b7 : \u211d)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past)) :\n    (\u222b\u1d5b w, G w.1*(innovation m t \u03be w.2*innovation m t \u03b7 w.2)\n      \u2202<\u2022extendedLaw \u03bc past m hm t ht)=\n      (\u222b w, (past w:\u2102)*G w \u2202\u03bc)*HigherHeatFourierCovariance.covariance m t \u03be \u03b7",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L86"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.compensated_absolute_integrable",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 95,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem compensated_absolute_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be \u03b7 : \u211d) :\n    Integrable (fun z => innovation m t \u03be z*innovation m t \u03b7 z-\n      HigherHeatFourierCovariance.covariance m t \u03be \u03b7)\n      (absoluteDensity volume (realKernel m hm t ht))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L95"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegrableGains.compensated_product_zero",
+      "file": "Foundation/HigherHeatIntegrableGains.lean",
+      "line": 102,
+      "source_sha256": "33b1b0cac33b29a4e060f259996c5846d69ca3dba3e4108a24a622357beae072",
+      "declaration_header": "theorem compensated_product_zero (past : \u03a9 \u2192 \u211d) (hp : Measurable past) (hi : Integrable past \u03bc)\n    (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (\u03be \u03b7 : \u211d)\n    (G : \u03a9 \u2192 \u2102) (hiG : Integrable G (absoluteDensity \u03bc past)) :\n    (\u222b\u1d5b w, G w.1*(innovation m t \u03be w.2*innovation m t \u03b7 w.2-\n      HigherHeatFourierCovariance.covariance m t \u03be \u03b7) \u2202<\u2022extendedLaw \u03bc past m hm t ht)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegrableGains.lean#L102"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralMap",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 13,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "def integralMap (u : \u03b9 \u2192 \u211d) (x : \u03b9 \u2192 \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L13"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralMap_measurable",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 15,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem integralMap_measurable (u : \u03b9 \u2192 \u211d) : Measurable (integralMap u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L15"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralLaw",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 19,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "def integralLaw (m : \u2115) (hm : 0 < m) (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i)\n    (u : \u03b9 \u2192 \u211d) : SignedMeasure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L19"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralLaw_mass",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 22,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem integralLaw_mass (m : \u2115) (hm : 0 < m) (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i)\n    (u : \u03b9 \u2192 \u211d) : integralLaw m hm t ht u Set.univ = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L22"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralLaw_fourier",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 27,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem integralLaw_fourier (m : \u2115) (hm : 0 < m) (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i)\n    (u : \u03b9 \u2192 \u211d) (\u03be : \u211d) :\n    (\u222b\u1d5b y, phase \u03be y \u2202<\u2022integralLaw m hm t ht u) =\n      \u220f i, HigherHeatL2.symbol m (t i) (\u03be * u i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L27"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.effectiveTime",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 62,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "def effectiveTime (m : \u2115) (t : \u03b9 \u2192 \u211d\u22650) (u : \u03b9 \u2192 \u211d) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L62"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.symbol_sum",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 65,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem symbol_sum (m : \u2115) (t : \u03b9 \u2192 \u211d\u22650) (\u03be : \u211d) :\n    HigherHeatL2.symbol m (\u2211 i, t i) \u03be = \u220f i, HigherHeatL2.symbol m (t i) \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L65"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.symbol_control_scaling",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 75,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem symbol_control_scaling (m : \u2115) (t : \u211d\u22650) (u \u03be : \u211d) :\n    HigherHeatL2.symbol m (t * \u2016u\u2016\u208a ^ (2*m)) \u03be = HigherHeatL2.symbol m t (\u03be * u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L75"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralLaws.integralLaw_clock",
+      "file": "Foundation/HigherHeatStepIntegralLaws.lean",
+      "line": 83,
+      "source_sha256": "5be4f807098330bbc4a5b588d722faa98681e58580337e71173faccc740be43e",
+      "declaration_header": "theorem integralLaw_clock (m : \u2115) (hm : 0 < m) (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i)\n    (u : \u03b9 \u2192 \u211d) (\u03be : \u211d) :\n    (\u222b\u1d5b y, phase \u03be y \u2202<\u2022integralLaw m hm t ht u) =\n      HigherHeatL2.symbol m (effectiveTime m t u) \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralLaws.lean#L83"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.zeroLaw",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 12,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "def zeroLaw : SignedMeasure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L12"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.zeroLaw_fourier",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 14,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem zeroLaw_fourier (\u03be : \u211d) : (\u222b\u1d5b y, phase \u03be y \u2202<\u2022zeroLaw) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L14"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.heatLaw",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 18,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "def heatLaw (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) : SignedMeasure \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L18"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.heatLaw_fourier",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 21,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem heatLaw_fourier (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (\u03be : \u211d) :\n    (\u222b\u1d5b y, phase \u03be y \u2202<\u2022heatLaw m hm T) = HigherHeatL2.symbol m T \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L21"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.heatLaw_mass",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 30,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem heatLaw_mass (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) : heatLaw m hm T Set.univ = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L30"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.integralLaw_eq_heatLaw",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 36,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem integralLaw_eq_heatLaw {\u03b9 : Type*} [Fintype \u03b9] (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) (u : \u03b9 \u2192 \u211d) :\n    integralLaw m hm t ht u = heatLaw m hm (effectiveTime m t u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L36"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.law_eq_of_clock",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 43,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem law_eq_of_clock {\u03b9 \u03ba : Type*} [Fintype \u03b9] [Fintype \u03ba] (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) (u : \u03b9 \u2192 \u211d)\n    (s : \u03ba \u2192 \u211d\u22650) (hs : \u2200 i, 0 < s i) (v : \u03ba \u2192 \u211d)\n    (h : effectiveTime m t u = effectiveTime m s v) :\n    integralLaw m hm t ht u = integralLaw m hm s hs v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L43"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatStepIntegralRealization.zero_control_law",
+      "file": "Foundation/HigherHeatStepIntegralRealization.lean",
+      "line": 50,
+      "source_sha256": "34ec3fe53f8a1081d98c96ab1a0f4b9c12b06370f048384b3ae306b2098fc3aa",
+      "declaration_header": "theorem zero_control_law {\u03b9 : Type*} [Fintype \u03b9] (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) : integralLaw m hm t ht (fun _ => 0) = zeroLaw",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatStepIntegralRealization.lean#L50"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegralSecondMoment.heat_second_integrable",
+      "file": "Foundation/HigherHeatIntegralSecondMoment.lean",
+      "line": 12,
+      "source_sha256": "21fb13399bd2464d6910364ff42dcdd2d8b2cbe7346c3d12e0ecb616bb5acf65",
+      "declaration_header": "theorem heat_second_integrable (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) :\n    (heatLaw m hm T).Integrable (fun y : \u211d => (y : \u2102)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegralSecondMoment.lean#L12"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegralSecondMoment.heat_second_zero",
+      "file": "Foundation/HigherHeatIntegralSecondMoment.lean",
+      "line": 24,
+      "source_sha256": "21fb13399bd2464d6910364ff42dcdd2d8b2cbe7346c3d12e0ecb616bb5acf65",
+      "declaration_header": "theorem heat_second_zero (m : \u2115) (hm : 2 \u2264 m) (T : \u211d\u22650) :\n    (\u222b\u1d5b y : \u211d, (y : \u2102)^2 \u2202<\u2022heatLaw m (by omega) T) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegralSecondMoment.lean#L24"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegralSecondMoment.heat_not_dirac",
+      "file": "Foundation/HigherHeatIntegralSecondMoment.lean",
+      "line": 34,
+      "source_sha256": "21fb13399bd2464d6910364ff42dcdd2d8b2cbe7346c3d12e0ecb616bb5acf65",
+      "declaration_header": "theorem heat_not_dirac (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    heatLaw m hm T \u2260 zeroLaw",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegralSecondMoment.lean#L34"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegralSecondMoment.integral_second_degeneracy",
+      "file": "Foundation/HigherHeatIntegralSecondMoment.lean",
+      "line": 46,
+      "source_sha256": "21fb13399bd2464d6910364ff42dcdd2d8b2cbe7346c3d12e0ecb616bb5acf65",
+      "declaration_header": "theorem integral_second_degeneracy {\u03b9 : Type*} [Fintype \u03b9] (m : \u2115) (hm : 2 \u2264 m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) (u : \u03b9 \u2192 \u211d) (hA : 0 < effectiveTime m t u) :\n    (integralLaw m (by omega) t ht u).Integrable (fun y : \u211d => (y : \u2102)^2) \u2227\n    (\u222b\u1d5b y : \u211d, (y : \u2102)^2 \u2202<\u2022integralLaw m (by omega) t ht u) = 0 \u2227\n    integralLaw m (by omega) t ht u \u2260 zeroLaw",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegralSecondMoment.lean#L46"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatIntegralSecondMoment.biharmonic_integral_fourth",
+      "file": "Foundation/HigherHeatIntegralSecondMoment.lean",
+      "line": 55,
+      "source_sha256": "21fb13399bd2464d6910364ff42dcdd2d8b2cbe7346c3d12e0ecb616bb5acf65",
+      "declaration_header": "theorem biharmonic_integral_fourth {\u03b9 : Type*} [Fintype \u03b9] (t : \u03b9 \u2192 \u211d\u22650)\n    (ht : \u2200 i, 0 < t i) (u : \u03b9 \u2192 \u211d) :\n    (\u222b\u1d5b y : \u211d, (y : \u2102)^4 \u2202<\u2022integralLaw 2 (by norm_num) t ht u) =\n      -24 * (effectiveTime 2 t u : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatIntegralSecondMoment.lean#L55"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedHeatFourierUniqueness.positive_ext",
+      "file": "Foundation/SignedHeatFourierUniqueness.lean",
+      "line": 11,
+      "source_sha256": "c35b044c0e49f9e9a9bd504ce294bd0594c206dea930b2766a920c90e1a9cf00",
+      "declaration_header": "theorem positive_ext (P Q : Measure \u211d) [IsFiniteMeasure P] [IsFiniteMeasure Q]\n    (h : \u2200 \u03be, (\u222b x, phase \u03be x \u2202P) = \u222b x, phase \u03be x \u2202Q) : P = Q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedHeatFourierUniqueness.lean#L11"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedHeatFourierUniqueness.jordan_integral",
+      "file": "Foundation/SignedHeatFourierUniqueness.lean",
+      "line": 25,
+      "source_sha256": "c35b044c0e49f9e9a9bd504ce294bd0594c206dea930b2766a920c90e1a9cf00",
+      "declaration_header": "theorem jordan_integral (\u03bc : SignedMeasure \u211d) (\u03be : \u211d) :\n    (\u222b\u1d5b x, phase \u03be x \u2202<\u2022\u03bc) =\n      (\u222b x, phase \u03be x \u2202\u03bc.toJordanDecomposition.posPart) -\n        \u222b x, phase \u03be x \u2202\u03bc.toJordanDecomposition.negPart",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedHeatFourierUniqueness.lean#L25"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedHeatFourierUniqueness.eq_zero",
+      "file": "Foundation/SignedHeatFourierUniqueness.lean",
+      "line": 36,
+      "source_sha256": "c35b044c0e49f9e9a9bd504ce294bd0594c206dea930b2766a920c90e1a9cf00",
+      "declaration_header": "theorem eq_zero (\u03bc : SignedMeasure \u211d) (h : \u2200 \u03be, (\u222b\u1d5b x, phase \u03be x \u2202<\u2022\u03bc) = 0) : \u03bc = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedHeatFourierUniqueness.lean#L36"
+    },
+    {
+      "paper": "Sections 7 and 12.4 actual signed total-variation L1 gain domain, absolute separable-product Fubini, zero gains and compensated pairings, finite deterministic step-law equality with the heat law including zero clock, and nontrivial laws with zero signed second moment.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SignedHeatFourierUniqueness.ext",
+      "file": "Foundation/SignedHeatFourierUniqueness.lean",
+      "line": 46,
+      "source_sha256": "c35b044c0e49f9e9a9bd504ce294bd0594c206dea930b2766a920c90e1a9cf00",
+      "declaration_header": "theorem ext (\u03bc \u03bd : SignedMeasure \u211d)\n    (h : \u2200 \u03be, (\u222b\u1d5b x, phase \u03be x \u2202<\u2022\u03bc) = \u222b\u1d5b x, phase \u03be x \u2202<\u2022\u03bd) : \u03bc = \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SignedHeatFourierUniqueness.lean#L46"
     }
   ],
   "human_reorganization": [
@@ -3910,7 +4279,8 @@
     "Section 12.2 now reconstructs actual unbounded signed expectation on the SUP-NORM UNIT BALL of BOUNDED CONTINUOUS path cylinders for every fixed positive horizon and even order p>2. The continuous dyadic product density has absolute mass A_p^N, A_p>1; its continuous soft sign is bounded by one and approaches this absolute mass by dominated convergence. Composition with continuous successive path increments gives genuine bounded continuous cylinders with arbitrarily large mean. Excluding agreeing bounded linear functionals on the cylinder sup-norm closure or all bounded continuous paths is an explicit human restriction consequence, needing no countably additive measure representation. The factorial analytic completion, the separate compact-open polynomial nonclosability and the Gaussian p=2 case retain their distinct scope. Both principal source modules read fully. Classical total-variation mechanism, no new general theorem priority claimed.",
     "Section 5 now makes two exact algebraic limitations explicit. For a fixed dyadic coordinate Y, Pn=Y^n/n! has factorial norm one while YPn has norm n+1; therefore multiplication by Y has no bounded linear extension and ordinary multiplication has no bounded bilinear extension agreeing on all polynomial pairs. The actual contractive damped product B(P,Q)=P(Y/2)Q(Y/2) is commutative but not associative: B(B(1,1),Y)=Y/2 whereas B(1,B(1,Y))=Y/4, with norm difference 1/4. Both obstructions are direct human finite-core consequences, not new named Lean declarations. The signed pairing uses B once with horizon correction and does not require associativity. HigherHeatCommonDampedProduct, HigherHeatCylinderDilation and MultivariateFactorialDampedProduct read fully; source-map witnesses retain the actual completion, refinement and norm bounds. No Banach-algebra structure or new priority claim is inferred.",
     "The primary Cinque-Orsingher v2 comparison now records Section 3.1 equations (3.4)-(3.7) and Definition 3.1(vii) with the convergence qualification. Their explicitly algebraic pseudo-measure is not an ordinary signed measure; its opening infinite absolute-integral setting differs from our finite one-time Schwartz variation, whose obstruction comes from refinement. No refutation of that different framework, positive probability-filtration inference, or extension of our reconstruction to signed random clocks follows. Definition 1.1 and Theorem 2.1 statement also inspected; full composition proofs not independently audited. Exact access/scope receipt saved. Hochberg original full mathematical text remains unavailable after bounded direct DOI/canonical/legacy Project Euclid extraction attempts; no access control was bypassed and no full-text comparison claimed.",
-    "Section 7 now gives the exact finite signed Fourier product correction. In angular frequency, J=e^(-i xi z)-exp(-h xi^p) has zero actual signed mean and bilinear covariance C=exp(-h(xi+eta)^p)-exp(-h xi^p)exp(-h eta^p). Bounded finite-past coefficients and L1 signed densities justify Fubini. For backward damped characters the product increment is exactly a_t J(xi+eta)+a_t C; the ordinary two gains plus centered innovation product combine into the first term. The finite-grid sum telescopes and its compensated gain has zero signed expectation. Pointwise character partition independence supplies no path probability law. C/h tends xi^p+eta^p-(xi+eta)^p. At order four the exact quartic polynomial cannot equal c xi eta, as shown by (1,1) and (2,2); at order two the bilinear rate agrees with variance-two Brownian normalization. Formal source unit frequency is converted via angular xi=2pi zeta. No conjugate covariance positivity, signed isometry, positive quadratic variation, continuous-time stochastic product limit, new factorial-domain extension or priority is asserted. All six principal modules read fully; only the opening kernel/phase passages of HigherHeatCylinderFourier were additionally inspected."
+    "Section 7 now gives the exact finite signed Fourier product correction. In angular frequency, J=e^(-i xi z)-exp(-h xi^p) has zero actual signed mean and bilinear covariance C=exp(-h(xi+eta)^p)-exp(-h xi^p)exp(-h eta^p). Bounded finite-past coefficients and L1 signed densities justify Fubini. For backward damped characters the product increment is exactly a_t J(xi+eta)+a_t C; the ordinary two gains plus centered innovation product combine into the first term. The finite-grid sum telescopes and its compensated gain has zero signed expectation. Pointwise character partition independence supplies no path probability law. C/h tends xi^p+eta^p-(xi+eta)^p. At order four the exact quartic polynomial cannot equal c xi eta, as shown by (1,1) and (2,2); at order two the bilinear rate agrees with variance-two Brownian normalization. Formal source unit frequency is converted via angular xi=2pi zeta. No conjugate covariance positivity, signed isometry, positive quadratic variation, continuous-time stochastic product limit, new factorial-domain extension or priority is asserted. All six principal modules read fully; only the opening kernel/phase passages of HigherHeatCylinderFourier were additionally inspected.",
+    "Section 7 now removes the unnecessary boundedness assumption on finite-past coefficients using the precise total-variation L1 hypothesis integral abs(G)abs(q)<infinity. Tonelli computes absolute product integrability, and signed-density integration plus ordinary Fubini proves exact separable factorization. Innovations, products and compensated products have explicit absolute bounds 2, 4 and 6; zero gain and covariance identities therefore extend to these unbounded past coefficients without L2, maximality or isometry claims. Section 12.4 identifies every actual deterministic step-integral law as the higher-heat law at A=sum h abs(a)^p, including delta-zero when A=0. Finite signed Fourier uniqueness and absolute polynomial integrability are explicit. At p>2 and A>0 the law is non-Dirac despite signed second moment zero; at p=4 its fourth signed moment is -24A. No path-space or random-integrand law is inferred. All six additional principal modules read fully, including the Jordan-decomposition argument for finite signed Fourier uniqueness. HigherHeatCylinderPathLimit was also read fully as supporting survey: eventual exactness on fixed cylinders and no finite signed weak limit along cofinal refinements are already covered by the manuscript's classical finite-variation obstruction and do not warrant a duplicate paper. Earlier page and map counts are historical."
   ],
   "literature": [
     {
