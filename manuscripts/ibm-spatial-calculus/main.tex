@@ -30,6 +30,7 @@ between raw Taylor channels. Continuous spatial weights yield a combined
 three-channel $C^4$ Taylor limit with correction $1/8$ times the
 fourth-derivative time integral, without global derivative bounds.
 A separate spatial-kernel concentration argument proves that a specific source-compensated grid has diverging $L^2$ norm even after projection onto the full actual IBM observable space.
+Nevertheless, fixed quadratic and bounded $C^2$ terminal tests admit strong clock-source contraction limits, with explicit capped-occupation corrections.
 We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
 chain formula, uniform control over prefixes of one common grid,
 bounded random-horizon convergence for spatial one-forms, and an
@@ -1102,6 +1103,292 @@ its actual pathwise primitive remain intact.
 \code{no_original_weak_subsequence}.
 The source uses $N+1$ cells for indices $N\ge0$; the paper uses
 $N\ge1$ cells, which is only an index shift.
+
+
+\section{Strong source contractions without a full observable limit}
+The preceding obstruction concerns the full outputs $I_N$. Certain
+fixed tests nevertheless have strong limits after averaging only over
+the scenery. We reconstruct these limits for actual quadratic
+observations and bounded $C^2$ terminal tests. Throughout this section
+the horizon is $T>0$, there are $N\geq1$ cells, $h=T/N$, and
+$t_i=ih$. Write $\mathbb E_W$ and $\mathbb E_B$ for the two source
+expectations. Observation times $R,S\geq0$ are fixed and may lie inside
+or outside $[0,T]$.
+
+\subsection{One common observation may anticipate the clock grid}
+We first need a weighted Brownian bracket estimate that does not assume
+predictability of the weights. For bounded Borel functions
+$\phi_i:\R^2\to\R$, $|\phi_i|\leq1$, let
+\[
+ D_i=(B_{t_{i+1}}-B_{t_i})^2-h,\qquad
+ a_i=\phi_i(B_{t_i},B_R),\qquad E_N=\sum_{i<N}D_i a_i.
+\]
+Then the exact source bound is
+\begin{equation}\label{eq:oneobsbracket}
+ \mathbb E_B E_N^2\leq \frac{12T^2}{N}+\frac{16T^2}{\sqrt N}.
+\end{equation}
+The functions may vary with the cell and with $N$, and the same bound
+even permits a different common observation time $R=R(N)$ for each grid.
+It is not a theorem for arbitrary functions of the entire future path.
+
+Here is a direct proof. For $s<t\leq R$, jointly Gaussian regression
+onto $\mathcal F_s^B\vee\sigma(B_R)$ gives
+\begin{equation}\label{eq:bridgecenteredsquare}
+ \mathbb E_B[(B_t-B_s)^2-(t-s)\mid\mathcal F_s^B,B_R]
+ =\left(\frac{t-s}{R-s}\right)^2
+       \bigl((B_R-B_s)^2-(R-s)\bigr).
+\end{equation}
+Indeed $B_t-B_s$ is the sum of
+$(t-s)(B_R-B_s)/(R-s)$ and a centered Gaussian residual independent
+of the conditioning variables, of variance
+$(t-s)-(t-s)^2/(R-s)$. Expanding the square proves the formula.
+Its $L^2$ norm is $\sqrt2(t-s)^2/(R-s)$, at most twice that ratio.
+If $R\leq s$, the corresponding conditional mean is zero by independent
+increments. These statements use the actual clock and its original
+Gaussian coupling.
+\par\noindent\code{GaussianTerminalBracketPrediction.conditional_square_actual}.
+\par\noindent\code{GaussianInteriorClockBracket.past_conditional_square}.
+
+For each $j$ set $A_j=\sum_{i<j}D_i a_i a_j$. This is measurable with
+respect to $\mathcal F_{t_j}^B\vee\sigma(B_R)$, lies in $L^2$, and has
+norm at most $2T$, because $\|D_i\|_2=\sqrt2h\leq2h$.
+The finite expansion is therefore legitimate:
+\[
+ \mathbb E_B E_N^2=\sum_i\|D_i a_i\|_2^2
+                         +2\sum_j\mathbb E_B[D_j A_j].
+\]
+The diagonal sum is at most $4T^2/N$. Put
+$m=\min(N,\lfloor R/h\rfloor)$. For $j<m$, the cell ends before $R$
+and $R-t_j\geq h(m-j)$. Conditioning as in
+\eqref{eq:bridgecenteredsquare} bounds the absolute row pairing by
+$4T^2/(N(m-j))$. For $j>m$ it is zero; the possible row $j=m<N$
+is bounded by $4T^2/N$ using Cauchy--Schwarz alone.
+Finally $\sum_{k=1}^m k^{-1}\leq2\sqrt m\leq2\sqrt N$.
+For example $k^{-1}\leq2(\sqrt k-\sqrt{k-1})$, so this bound telescopes.
+Summing the rows proves \eqref{eq:oneobsbracket}, including $R=0$.
+\par\noindent\code{GaussianAllObservationBracket.error_norm_sq_bound}.
+\par\noindent\code{GaussianAllObservationBracket.varying_error_tendsto}.
+
+\subsection{Capped random levels and a genuine mixed bracket}
+For a nonnegative radius $r$ put $c_r(x)=\min(|x|,r)$. Define
+\begin{align*}
+ Q_N^{R,S}&=\sum_{i<N}
+   [c_{|B_R|}(B_{t_{i+1}})-c_{|B_R|}(B_{t_i})]
+   [c_{|B_S|}(B_{t_{i+1}})-c_{|B_S|}(B_{t_i})],\\
+ O^{R,S}&=\int_0^T
+   \mathbf1_{\{|B_t|<\min(|B_R|,|B_S|)\}}\,dt.
+\end{align*}
+These are actual functions of the original clock. We will prove
+\begin{equation}\label{eq:mixedcappedlimit}
+ Q_N^{R,S}\longrightarrow O^{R,S}\quad\hbox{in }L^2(\mathbb P_B).
+\end{equation}
+Random radii here are not asserted to be stopping times.
+
+First consider $R=S$. For each fixed $t\ne R$,
+$\mathbb P_B(|B_t|=|B_R|)=0$: the event implies $B_t-B_R=0$ or
+$B_t+B_R=0$, each a nondegenerate Gaussian equality. The single time
+$t=R$ has zero Lebesgue measure. Fubini thus proves that the random
+boundary $|B_t|=|B_R|$ has zero time occupation almost surely.
+The origin $B_t=0$ also has zero time occupation by the same argument.
+Continuity of each clock path now implies convergence of the bounded
+left-node Riemann samples of
+$\mathbf1_{\{|B_t|<|B_R|\}}$ to its time integral, and vanishing of
+samples of shrinking bands about either boundary. To justify this
+last statement, represent the sums by step functions on the cells.
+At every time outside the null boundary their left nodes tend to that
+time and the band indicators eventually vanish. Dominated convergence
+first in time and then in clock probability proves the assertions in
+$L^2$, since all sample sums lie between zero and $T$.
+\par\noindent\code{IBMAllObservationBoundary.distance_positive_all_windows}.
+
+Equation~\eqref{eq:oneobsbracket} allows replacement of $h$ by
+$(\Delta B_i)^2$ in all those sums, including bands whose widths vary
+with $N$. Away from an origin band, a cap boundary band, and increments
+larger than a width $\delta$, the elementary identity
+\[
+ [c_r(y)-c_r(x)]^2=\mathbf1_{\{|x|<r\}}(y-x)^2
+\]
+holds: $x,y$ have the same sign and lie on the same side of the cap.
+Always both quantities lie between zero and $(y-x)^2$. Consequently
+their absolute difference is bounded by $(y-x)^2$ times
+\[
+ \mathbf1_{\{|x|\leq\delta\}}+
+ \mathbf1_{\{||x|-r|\leq\delta\}}+
+ \mathbf1_{\{|y-x|>\delta\}}.
+\]
+The first two grid sums vanish in $L^1$ by the band argument.
+For the last one, the actual Gaussian fourth moment gives
+\[
+ \mathbb E_B\sum_i(\Delta B_i)^2
+                   \mathbf1_{\{|\Delta B_i|>\delta\}}
+ \leq\delta^{-2}\sum_i\mathbb E_B(\Delta B_i)^4
+ =\frac{3T^2}{N\delta^2}.
+\]
+Take $\delta=N^{-1/4}$. We have proved the capped square limit in
+$L^1$, for every observation time $R$.
+\par\noindent\code{IBMClippedClockCrossing.crossing_bound}.
+\par\noindent\code{IBMClippedClockTail.mean_bound}.
+\par\noindent\code{IBMAllObservationLimits.actual_absolute_error_tendsto_all}.
+
+For two radii, select the capped square sum corresponding to the
+smaller of $|B_R|,|B_S|$. Its error relative to $O^{R,S}$ is bounded
+by the sum of the two individual absolute errors; no independence of
+that selector is needed. On one cell the mixed product equals the
+selected square unless the cell crosses the smaller cap. In particular
+the difference vanishes whenever $|y-x|\leq\delta$ and both
+$||x|-|B_R||,||x|-|B_S||$ exceed $\delta$. Its absolute value is always
+at most $2(y-x)^2$. The same two band bounds and large-increment bound
+therefore show $Q_N^{R,S}\to O^{R,S}$ in $L^1$.
+This comparison uses only one-observation estimates separately, not
+an unjustified estimate for a weight depending on two observations.
+\par\noindent\code{IBMClippedClockCovariation.mixedError_crossing_bound}.
+\par\noindent\code{IBMMixedClockSelection.mixed_absolute_error_tendsto}.
+
+For the promised $L^2$ upgrade put $U_N=\sum_i(\Delta B_i)^2$.
+Both caps are $1$-Lipschitz, so $|Q_N^{R,S}|\leq U_N$, whereas
+$0\leq O^{R,S}\leq T$. For real $|x|\leq u$ and $|y|\leq T$,
+\[
+ (x-y)^2\leq4T|x-y|+(u-T)^2.
+\]
+Indeed, with $d=|x-y|\leq u+T$, use
+$2d^2\leq2(u+T)d$ and
+$(d-(u-T))^2\geq0$ to obtain the inequality. Thus
+\begin{equation}\label{eq:mixedL2repair}
+ \|Q_N^{R,S}-O^{R,S}\|_2^2
+ \leq4T\|Q_N^{R,S}-O^{R,S}\|_1+\frac{2T^2}{N},
+\end{equation}
+where the last term is the exact variance of ordinary Brownian
+quadratic variation. This proves \eqref{eq:mixedcappedlimit}.
+\par\noindent\code{IBMMixedClockStrongL2.mixed_error_bound}.
+\par\noindent\code{IBMMixedClockStrongL2.mixedL2_tendsto}.
+
+\subsection{Actual quadratic observations select a finite clock limit}
+Retain the same compensated source grid $S_N$ as before. Conditionally
+on the clock, Gaussian integration of a centered product gives
+\[
+ \mathbb E_W[(X(d_i)X(h_i)-\langle d_i,h_i\rangle)Z_RZ_S]
+ =\langle d_i,h_R\rangle\langle h_i,h_S\rangle
+  +\langle d_i,h_S\rangle\langle h_i,h_R\rangle.
+\]
+This is the two nonconstant pairings in the fourth Gaussian moment;
+the constant pairing cancels the subtracted covariance. Since
+$\langle h_i,h_R\rangle=\min(|B_{t_i}|,|B_R|)$, the elementary finite
+product telescope yields the exact identity
+\begin{equation}\label{eq:quadraticsourcecontraction}
+ \mathbb E_W[S_N Z_RZ_S]=M_N^{R,S}
+ :=c_{|B_R|}(B_T)c_{|B_S|}(B_T)-Q_N^{R,S}.
+\end{equation}
+All finite products are integrable by Gaussian moments of the clock
+and scenery. The endpoint product is in clock $L^2$, since it is
+bounded in absolute value by $|B_T|^2$. It follows that
+\begin{equation}\label{eq:quadraticclocklimit}
+ M_N^{R,S}\longrightarrow
+ M^{R,S}:=c_{|B_R|}(B_T)c_{|B_S|}(B_T)-O^{R,S}
+       \quad\hbox{in clock }L^2.
+\end{equation}
+For any original clock coefficient $a\in L^2(\mathbb P_B)$,
+\[
+ \mathbb E_B|a(M_N^{R,S}-M^{R,S})|
+ \leq\|a\|_2\|M_N^{R,S}-M^{R,S}\|_2\longrightarrow0.
+\]
+This is an actual weighted $L^1$ conclusion, even for unbounded $a$.
+\par\noindent\code{IBMRawGridMixedObservable.source_mixed_test}.
+\par\noindent\code{IBMActualQuadraticL2Reconstruction.native_tendsto}.
+\par\noindent\code{IBMActualQuadraticL2Reconstruction.weighted_absolute_tendsto}.
+
+The test $Z_RZ_S$ is observable and in joint $L^2$. Hence the orthogonal
+projection defining $I_N$ may be removed in this pairing, giving
+\[
+ \langle I_N,Z_RZ_S\rangle
+   =\mathbb E_B M_N^{R,S}\longrightarrow\mathbb E_B M^{R,S}.
+\]
+This removal is legitimate only inside the pairing with the observable
+test. It does not identify the random variable $M_N^{R,S}$ with $I_N$,
+nor assert that arbitrary clock weights are observable.
+Finite linear combinations of these quadratic tests follow by
+linearity and finite summation, without any completed-test-space
+membership assumption for the individual observation products.
+\par\noindent\code{IBMMixedClockLimit.nativeMixedPairing_tendsto}.
+\par\noindent\code{IBMActualQuadraticRandomReconstruction.finite_family_tendsto}.
+
+\subsection{Bounded $C^2$ tests and the actual second-jet coefficient}
+Let $\varphi\in C^2(\R)$ with $\varphi,\varphi',\varphi''$ bounded.
+For the same fixed observation time $R$ define the actual coefficient
+\[
+ b_\varphi(B)=\frac12\mathbb E_W[\varphi''(Z_R)\mid B],
+ \qquad |b_\varphi|\leq\tfrac12\|\varphi''\|_\infty.
+\]
+Here the notation means integration over the independent scenery with
+the clock fixed; it is a genuine bounded clock $L^2$ class. There is
+no assigned intrinsic derivative of $\varphi(Z_R)$ in this definition.
+
+For deterministic Gaussian directions $d,h,k$, two scalar Gaussian
+integrations by parts give
+\begin{equation}\label{eq:mixedStein}
+ \mathbb E_W[(X(d)X(h)-\langle d,h\rangle)\varphi(X(k))]
+ =\langle d,k\rangle\langle h,k\rangle
+                   \mathbb E_W\varphi''(X(k)).
+\end{equation}
+For completeness, when $k\ne0$ decompose $d,h$ into their projections
+onto $k$ and orthogonal residuals. The residuals are independent of
+$X(k)$; their covariance cancels the residual part of
+$\langle d,h\rangle$. The remaining term is
+\[
+ \frac{\langle d,k\rangle\langle h,k\rangle}{\|k\|^4}
+ \mathbb E_W[(X(k)^2-\|k\|^2)\varphi(X(k))].
+\]
+Integrate twice against the scalar Gaussian density. Boundary terms
+vanish because the function and its first derivative are bounded,
+and the result is $\|k\|^4\mathbb E_W\varphi''(X(k))$.
+All terms are integrable by the same bounds. If $k=0$, both sides
+of \eqref{eq:mixedStein} vanish directly.
+This also identifies the source second-chaos projection of
+$\varphi(X(k))$ as
+$\tfrac12\mathbb E_W\varphi''(X(k))(X(k)^2-\|k\|^2)$:
+testing against every centered square verifies the identity, and
+polarization makes their span dense in the second chaos.
+\par\noindent\code{IBMFirstChaosMixedStein.second_centered_mixed}.
+\par\noindent\code{IBMBoundedC2SecondProjection.projection_two}.
+
+Apply \eqref{eq:mixedStein} conditionally with $k=h_R$ and sum over
+the finite grid. The scalar square telescope has the factor two, so
+the exact source contraction is
+\begin{equation}\label{eq:C2sourcecontraction}
+ \mathbb E_W[S_N\varphi(Z_R)]
+       =b_\varphi M_N^{R,R}.
+\end{equation}
+Consequently it converges in the original clock $L^2$ to
+$b_\varphi M^{R,R}$, with error at most
+$\tfrac12\|\varphi''\|_\infty\|M_N^{R,R}-M^{R,R}\|_2$.
+This multiplication is justified by a bounded actual coefficient,
+not by an assumed product rule for a distribution. Since the terminal
+test is bounded and observable, it also proves
+\[
+ \langle I_N,\varphi(Z_R)\rangle
+       \longrightarrow\mathbb E_B[b_\varphi M^{R,R}].
+\]
+\par\noindent\code{IBMBoundedC2NativeReconstruction.native_actual}.
+\par\noindent\code{IBMBoundedC2NativeReconstruction.native_tendsto}.
+\par\noindent\code{IBMBoundedC2NativeReconstruction.intrinsic_pairing_tendsto}.
+
+As human evaluations of the coefficient, for
+$\varphi(x)=\cos(\xi x)$ one has
+$b_\varphi=-\xi^2 e^{-\xi^2|B_R|/2}/2$; for
+$\varphi(x)=\sin(\xi x)$ it is zero. The latter also follows directly
+from scenery reflection: $S_N$ is even and the sine test is odd.
+Thus good source-test convergence does not put the terminal test in
+the native clock derivative domain; the earlier sine-domain
+obstruction in the clock-domain companion remains in force.
+
+The convergent families above are fixed tests or their explicitly
+controlled finite combinations. They do not include every observable
+$L^2$ test: the Baire argument above supplies tests with unbounded
+pairings for precisely this same sequence. No full-output weak limit,
+commutation of observable and chaos projections, observed-filtration
+integral, or physical-time It\^o formula follows. The proof uses
+classical Gaussian regression, Wick pairing, Brownian bracket control
+and bounded-coefficient continuity; priority for this specific IBM
+source-contraction package has not been established.
 
 \section{What this integration result means}
 The targets are genuine pathwise finite spatial or time integrals,
