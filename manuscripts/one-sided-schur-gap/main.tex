@@ -28,7 +28,9 @@ A separate periodic coarsening has incompatible raw gauge averaging and distinct
 which invertibility and stability conclusions transfer. An actual sparse Wilson Hessian has a linear error despite quadratic loss in its scalar Schur complement. We then reconstruct exact nonlinear tests: a two-axis Haar parity, a
 three-axis full 32-link variance difference, and a separate conditional
 large-coupling obstruction to a quadratic boundary budget. A valid linear
-budget remains. These finite results establish no multiscale or continuum
+budget remains. Exact nonlinear Haar pinning, a global link-defect bound
+and a normalized full-cell concentration theorem connect the same pin to
+the actual positive Hessian at identity. These finite results establish no multiscale or continuum
 mass gap; Schur elimination and the Haar integration mechanisms are classical.
 \end{abstract}
 
@@ -1304,30 +1306,214 @@ the frozen source; their formulation priority remains unresolved. None
 of these finite results supplies scale or volume uniformity, a continuum
 construction, or a physical spectral mass gap.
 
-\section{Provenance, significance and remaining uniformity questions}
+
+\section{Exact Haar pinning and full-cell vacuum concentration}\label{sec:pinnedgibbs}
+The linear pin used above has a genuine nonlinear counterpart. Let
+$e_*=(0,0)$ be the pole edge, let $E_*=E_I\setminus\{e_*\}$,
+and put $\mathcal Y=SU(2)^{E_*}$, with product normalized Haar
+probability $\nu$. Thus $|E_*|=31$. Write $\operatorname{fill}(V,y)$
+for the interior field whose pole is $V$ and whose other links are
+$y$. For fixed boundary links $b$, denote the full 72-face action
+by $\mathcal A_b$.
+
+A gauge equal to $V$ at the origin and identity at every other vertex
+left multiplies all four outgoing origin links by $V$. It fixes all
+other links, including boundary links. Each face word is conjugated
+at its base vertex, so its real trace is unchanged. On the 31 free
+links let $R_V$ left multiply precisely the other three origin links.
+Then
+\[
+ \mathcal A_b(\operatorname{fill}(V,R_Vy))
+       =\mathcal A_b(\operatorname{fill}(I,y)).
+\]
+The map $R_V$ preserves $\nu$ by coordinatewise Haar invariance.
+Split the 32-link product integral into its pole and free coordinates.
+Changing variables by $R_V$ in each free-coordinate integral gives
+\begin{equation}\label{eq:exacthaarpin}
+ \int_{SU(2)^{32}} e^{-\beta\mathcal A_b(U)}dU
+ =\int_{\mathcal Y}e^{-\beta\mathcal A_b(\operatorname{fill}(I,y))}d\nu(y).
+\end{equation}
+This holds for every real $\beta$ and every fixed boundary $b$.
+Indeed the action is continuous between zero and 144, so the
+integrands are positive, bounded and integrable; Fubini and the
+changes of variables are justified. The integrated pole has Haar
+mass one. This equality of partitions does not identify untransformed
+coordinate observables in the two ensembles.
+\lean{FourCubePinnedHaar}{rootLeft_preserving; fullAction_fillPole; conditional_pole_integral}
+\lean{FourCubePinnedHaar}{partition_eq_pinned; pinnedPartition_positive}
+
+For concentration we now fix \emph{identity boundary}. Define
+\[
+ S(y)=\mathcal A_1(\operatorname{fill}(I,y)),\quad
+ d(U)=1-\tfrac12\operatorname{Re}\operatorname{Tr}U,\quad
+ Z_\beta=\int e^{-\beta S}d\nu,\quad
+ d\mu_\beta=Z_\beta^{-1}e^{-\beta S}d\nu.
+\]
+The action is the sum of the 24 inner-face defects and 48 ribbon
+link defects, with multiplicities retained. It is nonnegative,
+continuous, at most 144 and zero at the identity configuration.
+The normalizer is strictly positive, so $\mu_\beta$ is an actual
+probability law, not an unnormalized Boltzmann expression.
+
+\begin{lemma}\label{lem:globalpin}
+For every free link $e$ and configuration $y$,
+\[
+ d(y_e)\leq3S(y),\qquad S(y)=0\ \Longleftrightarrow\ y=I.
+\]
+\end{lemma}
+\begin{proof}
+Under the unit-quaternion model $SU(2)\cong S^3$,
+$\|U-I\|^2=2d(U)$, so $d\geq0$ and $d(U)=0$ exactly at $I$.
+Multiplicativity of quaternion norm and the telescoping identity for
+$ABC-I$ give
+\[
+ \|ABC-I\|\leq\|A-I\|+\|B-I\|+\|C-I\|.
+\]
+Squaring and using $(a+b+c)^2\leq3(a^2+b^2+c^2)$ gives
+$d(ABC)\leq3(d(A)+d(B)+d(C))$. Also $d(U^{-1})=d(U)$.
+
+Every interior edge away from the origin belongs to a ribbon:
+its base has a nonzero coordinate other than its own edge direction.
+That ribbon contributes precisely its link defect to $S$, so
+$d(y_e)\leq S$ for these links. For a remaining origin link
+$y_c$ in direction $j\ne0$, use the inner square based at the origin
+in directions $0,j$. The pole link is identity, so its face word is
+\[
+ Q=y_a y_b^{-1}y_c^{-1},\qquad
+ a=(e_0,j),\quad b=(e_j,0),\quad c=(0,j).
+\]
+Hence $y_c=Q^{-1}y_a y_b^{-1}$.
+The two distinct shifted edges $a,b$ each occur in a ribbon; choose
+one such ribbon for each. They are distinct because their interior
+edges are distinct. The sum of their defects is at most the total
+ribbon energy, and $d(Q)$ is at most the total inner-face energy.
+The triple-product inequality therefore gives $d(y_c)\leq3S$.
+This covers every free edge. If $S=0$, every free-link defect is
+zero, hence every free link is identity. The converse follows by
+substituting identity into every word.
+\end{proof}
+\lean{FourCubePinnedCoercivity}{defect_zero_iff; defect_triple; off_origin_bound}
+\lean{FourCubePinnedCoercivity}{pinned_coordinate_bound; pinnedAction_zero_iff; global_energy_barrier}
+
+\begin{theorem}\label{thm:pinnedconcentration}
+Let $\epsilon>0$, and set
+\[
+ m_\epsilon=\nu(\{y:S(y)<\epsilon/6\})>0.
+\]
+For every $\beta\geq0$,
+\begin{equation}\label{eq:fullpintail}
+ \mu_\beta\{y:\max_{e\in E_*}d(y_e)\geq\epsilon\}
+ \leq\frac{31}{m_\epsilon}e^{-\beta\epsilon/6}.
+\end{equation}
+Thus all 31 pinned links simultaneously approach identity in
+probability as $\beta\to\infty$. Moreover $\mu_\beta$ converges
+weakly to the identity point mass on the fixed compact space
+$\mathcal Y$; this last implication is a human deduction.
+\end{theorem}
+\begin{proof}
+The strict sublevel set in $m_\epsilon$ is a nonempty open set,
+since $S$ is continuous and $S(I)=0$. Product Haar measure gives
+positive mass to every such set. For completeness, a nonempty open
+set in a compact group contains a translate of a nonempty identity
+neighborhood. Finitely many translates of that neighborhood cover
+the group. If its Haar mass were zero, invariance and this finite
+cover would give total mass zero. The argument applies to the
+finite product group, proving $m_\epsilon>0$.
+
+On that sublevel set $e^{-\beta S}\geq e^{-\beta\epsilon/6}$,
+so
+\[
+ Z_\beta\geq m_\epsilon e^{-\beta\epsilon/6}.
+\]
+On a fixed link tail $d(y_e)\geq\epsilon$,
+Lemma~\ref{lem:globalpin} gives $S\geq\epsilon/3$.
+Its unnormalized integral is therefore at most
+$e^{-\beta\epsilon/3}\nu(\{d(y_e)\geq\epsilon\})
+\leq e^{-\beta\epsilon/3}$.
+Dividing by the proved lower normalizer bound gives
+$\mu_\beta\{d(y_e)\geq\epsilon\}\leq
+m_\epsilon^{-1}e^{-\beta\epsilon/6}$.
+The union bound over 31 links proves \eqref{eq:fullpintail}.
+For every fixed $\epsilon$ the right side tends to zero.
+
+Finally $d(U)=\tfrac12\|U-I\|^2$ shows that for every neighborhood
+$O$ of the identity configuration, some positive $\epsilon$ has
+$\{\max_e d(y_e)<\epsilon\}\subset O$.
+For continuous $f$ on the compact space $\mathcal Y$ and $\eta>0$,
+choose $O$ so that $|f(y)-f(I)|<\eta$ on $O$. Then
+\[
+ \left|\int f\,d\mu_\beta-f(I)\right|
+ \leq\eta+2\|f\|_\infty\mu_\beta(O^c).
+\]
+The tail estimate makes the second term vanish; letting $\eta$
+decrease to zero proves weak convergence.
+\end{proof}
+\lean{FourCubePinnedConcentration}{lowMass_positive; normalizer_lower; gibbs_coordinate_tail_bound}
+\lean{FourCubePinnedConcentration}{gibbs_configuration_tail_bound; gibbs_configuration_good_tendsto_one}
+
+The same pin also identifies the full local Hessian, without a
+Gaussian approximation to the integral. In the generators $T_a$
+used above let $A(v)=\sum_{a=0}^2v_aT_a$, so
+$-2\operatorname{Re}\operatorname{Tr}(A(v)A(w))=v\cdot w$.
+For a free-link velocity $V=(V_e)\in(\R^3)^{31}$ set
+$y_e(t)=\exp(tA(V_e))$, extending $V$ by zero on the pole and
+boundary. The finite matrix exponentials and products are $C^2$.
+For each oriented face, the first-order Lie-algebra sum is
+$A(\operatorname{curl}V)$. Expanding the four exponentials through
+second order and using $\operatorname{Tr}(AB)=\operatorname{Tr}(BA)$
+gives its defect
+$t^2|\operatorname{curl}V|^2/8+o(t^2)$.
+Indeed the real trace of the quadratic coefficient is
+$\tfrac12\operatorname{Re}\operatorname{Tr}((\sum A_i)^2)$;
+the linear trace is zero. Each ribbon similarly contributes
+$t^2|V_e|^2/8+o(t^2)$. Summing all 72 terms, and using
+\eqref{eq:intenergy} and $C=L^TL$, proves
+\[
+ \left.\frac{d^2}{dt^2}S(y(t))\right|_{t=0}
+ =\frac14\sum_{a=0}^2(V^a)^TCV^a>0\quad(V\ne0).
+\]
+The same expression is the diagonal of the actual Fr\'echet Hessian
+of $V\mapsto S((\exp A(V_e))_e)$ at zero: composition with the
+line $tV$ computes that diagonal for this $C^2$ map. Positivity
+uses the already proved positive-definite pinned incidence Gram
+matrix. This local Hessian and the global concentration estimate
+are different statements; neither supplies a uniform Gaussian
+approximation, a partition asymptotic or a closed evolution generator.
+\lean{FourCubePinnedSecondVariation}{pinned_first_zero; pinned_second_gram; pinned_second_positive}
+\lean{FourCubePinnedHessian}{coordinateAction_contDiff; hessian_diagonal_gram; hessian_positive}
+
+All constants concern this fixed cap cell and identity boundary.
+In particular the sublevel mass $m_\epsilon$ has not been bounded
+uniformly over volumes, boundary data or lattice scales. Compact
+Gibbs concentration and Haar gauge changes are classical mechanisms;
+the finite geometry and factors are reconstructed here without a
+priority claim. This does not identify the different conditional
+large-coupling ensemble above, or establish a physical spectral gap.
+
+\section{Provenance and remaining uniformity questions}
 The frozen source is commit
 \begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
-Exact declarations and original source hashes accompany the paper. The
-baseline build and axiom-audit evidence hashes were checked; no new Lean
-build or modification of research sources is claimed. In addition to the
-nine retained certificate checks, \texttt{verify\_haar.py} passes 21 exact
-finite checks: ribbon incidence and trace classes, rational unit-quaternion
-72-face actions, residual replacement, vertex-center cancellation,
-second-moment contractions and the five-staple squared radius. It uses
-unbounded integers and rational arithmetic. The additional checker \texttt{verify\_sparse.py} passes 20 exact checks of all sparse face words, direction energies, rational-unit quaternion second jets and Schur identities. The checker \texttt{verify\_periodic\_lifts.py} adds 16 exact checks over every periodic edge and plaquette, including both attained lift costs and the exact feasible step. Real-angle differentiation,
-Haar cap concentration and asymptotic conclusions rest on the full
-printed proofs, not on sampled numerical integration.
+The theorem map records exact declarations, original source hashes and
+human reorganizations. The original full-build and axiom-audit evidence
+hashes were checked; publication work changes no mathematical source and
+runs no competing Lean research build.
 
-The contributions are reproducible finite estimates and diagnostic
-counterexamples, with classical mechanisms credited above. Priority for
-the geometry, narrow rational bracket and exact boundary witnesses remains
-unresolved. Neither the linear boundary complement nor a conditional
-one-link kernel is substituted for the full nonlinear gauge problem.
-There is no varying lattice spacing, block size or volume here. A physical
-mass-gap theorem still requires a continuum quantum-field construction,
-identified physical correlations or spectrum, compatible gauge conditions
-and scale- and volume-uniform estimates. None of those requirements is
-discharged by the finite gap or by the response obstructions.
+Four independent standard-library checkers retain 66 exact groups:
+nine certificate checks rebuild the geometry, all integer Gram/residual
+identities and the witness quotient; 21 Haar checks enumerate actual
+ribbons and rational quaternion actions; 20 sparse checks test all
+face words, second jets and Schur identities; and 16 periodic checks
+traverse the fine lattice and verify the two attained lift costs and
+feasible step. Their integers and fractions involve no floating
+arithmetic. The checker files and exact certificate data accompany the
+paper. Differentiation, Haar integrals, normalizer lower bounds and
+asymptotic claims rely on the printed proofs, not sampled integration.
+
+All results retain their stated ensembles, metrics and boundary conditions.
+Sublevel masses have no claimed uniform control over volume or boundary
+data. No varying lattice scale, continuum construction or physical
+spectral identification is supplied. The general mechanisms are classical;
+priority for the exact finite geometry and witnesses remains unresolved.
 
 \begin{thebibliography}{9}\small
 \bibitem{creutz80} M. Creutz, \emph{Monte Carlo study of quantized

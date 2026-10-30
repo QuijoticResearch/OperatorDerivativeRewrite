@@ -2953,6 +2953,375 @@
       "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
       "declaration_header": "theorem optimal_step : fineSize (residual j).val / fineEnergy (residual j).val =\n    (1/5 : \u211d)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L85"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.rootLeft_preserving",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 29,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem rootLeft_preserving (V : SU2) :\n    MeasurePreserving (rootLeft V) pinnedHaar pinnedHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L29"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.fillPole_rootLeft",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 41,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem fillPole_rootLeft (V : SU2) (y : PinnedState) :\n    fillPole V (rootLeft V y)=interiorGauge (rootGauge V) (fillPole 1 y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L41"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.fullAction_root",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 61,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem fullAction_root (V : SU2) (b : Boundary \u2192 SU2) (s : InteriorState) :\n    FourCubeBoundaryCubic.fullAction (fill b (interiorGauge (rootGauge V) s))=\n      FourCubeBoundaryCubic.fullAction (fill b s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L61"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.fullAction_fillPole",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 71,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem fullAction_fillPole (V : SU2) (b : Boundary \u2192 SU2) (y : PinnedState) :\n    FourCubeBoundaryCubic.fullAction (fill b (fillPole V (rootLeft V y)))=\n      FourCubeBoundaryCubic.fullAction (fill b (fillPole 1 y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L71"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.conditional_pole_integral",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 103,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem conditional_pole_integral (\u03b2 : \u211d) (b : Boundary \u2192 SU2) (V : SU2) :\n    (\u222b y,weight \u03b2 b (fillPole V y) \u2202pinnedHaar)=pinnedPartition \u03b2 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L103"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.partition_eq_pinned",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 141,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem partition_eq_pinned (\u03b2 : \u211d) (b : Boundary \u2192 SU2) :\n    partition \u03b2 b=pinnedPartition \u03b2 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L141"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHaar.pinnedPartition_positive",
+      "file": "Foundation/FourCubePinnedHaar.lean",
+      "line": 186,
+      "source_sha256": "0d2ea84c15c50f9a75c3e5fa8a732d3cde90720e6d7e4c66b78129e1064fad44",
+      "declaration_header": "theorem pinnedPartition_positive (\u03b2 : \u211d) (b : Boundary \u2192 SU2) :\n    0<pinnedPartition \u03b2 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHaar.lean#L186"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.defect_nonneg",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 16,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem defect_nonneg (U : SU2) : 0 \u2264 defect U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L16"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.defect_inv",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 23,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem defect_inv (U : SU2) : defect U\u207b\u00b9=defect U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L23"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.defect_zero_iff",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 35,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem defect_zero_iff (U : SU2) : defect U=0 \u2194 U=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L35"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.defect_triple",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 51,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem defect_triple (A B C : SU2) :\n    defect (A*B*C) \u2264 3*(defect A+defect B+defect C)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L51"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.vacuum_decomposition",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 90,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem vacuum_decomposition (s : InteriorState) :\n    vacuumAction s=internalAction s+ribbonEnergy s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L90"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.off_origin_bound",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 133,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem off_origin_bound (s : InteriorState) (e : Interior) (he : e.val.1\u2260origin) :\n    defect (s e) \u2264 vacuumAction s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L133"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.pinned_link_bound",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 179,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem pinned_link_bound (s : InteriorState) (hs : s pole=1) (e : Interior) :\n    defect (s e) \u2264 3*vacuumAction s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L179"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.pinned_coordinate_bound",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 200,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem pinned_coordinate_bound (y : PinnedState) (e : Free) :\n    defect (y e) \u2264 3*pinnedAction y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L200"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.pinnedAction_zero_iff",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 212,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem pinnedAction_zero_iff (y : PinnedState) : pinnedAction y=0 \u2194 y=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L212"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.global_energy_barrier",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 234,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem global_energy_barrier (y : PinnedState) (e : Free) (\u03b5 : \u211d)\n    (he : \u03b5 \u2264 defect (y e)) : \u03b5/3 \u2264 pinnedAction y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L234"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedCoercivity.boltzmann_tail_bound",
+      "file": "Foundation/FourCubePinnedCoercivity.lean",
+      "line": 268,
+      "source_sha256": "bb48e5f79a3fe61cd9c6290d495db56166db284787ed75e6b72f9cc7529ca77c",
+      "declaration_header": "theorem boltzmann_tail_bound (\u03b2 \u03b5 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (e : Free) :\n    (\u222b y in {y : PinnedState | \u03b5 \u2264 defect (y e)},Real.exp (-\u03b2*pinnedAction y) \u2202pinnedHaar)\n      \u2264 Real.exp (-\u03b2*(\u03b5/3))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedCoercivity.lean#L268"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.pinnedAction_continuous",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 42,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem pinnedAction_continuous : Continuous pinnedAction",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L42"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.normalizer_positive",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 73,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem normalizer_positive (\u03b2 : \u211d) : 0<normalizer \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L73"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.normalizer_integral",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 75,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem normalizer_integral (\u03b2 : \u211d) :\n    normalizer \u03b2=\u222b y,Real.exp (-\u03b2*pinnedAction y) \u2202pinnedHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L75"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_integral",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 89,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_integral (\u03b2 : \u211d) (f : PinnedState \u2192 \u211d) :\n    (\u222b y,f y \u2202gibbs \u03b2)=(\u222b y,f y*Real.exp (-\u03b2*pinnedAction y) \u2202pinnedHaar)/normalizer \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L89"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.lowEnergy_open",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 107,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem lowEnergy_open (\u03b4 : \u211d) : IsOpen (lowEnergy \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L107"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.lowMass_positive",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 110,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem lowMass_positive (\u03b4 : \u211d) (h\u03b4 : 0<\u03b4) : 0<lowMass \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L110"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.normalizer_lower",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 119,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem normalizer_lower (\u03b4 \u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) :\n    lowMass \u03b4*Real.exp (-\u03b2*\u03b4) \u2264 normalizer \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L119"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_coordinate_tail_mass",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 145,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_coordinate_tail_mass (\u03b2 : \u211d) (e : Free) (\u03b5 : \u211d) :\n    (gibbs \u03b2).real (coordinateTail e \u03b5)=\n      (\u222b y in coordinateTail e \u03b5,Real.exp (-\u03b2*pinnedAction y) \u2202pinnedHaar)/normalizer \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L145"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_coordinate_tail_bound",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 162,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_coordinate_tail_bound (\u03b2 \u03b5 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (h\u03b5 : 0<\u03b5) (e : Free) :\n    (gibbs \u03b2).real (coordinateTail e \u03b5) \u2264 Real.exp (-\u03b2*(\u03b5/6))/lowMass (\u03b5/6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L162"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_coordinate_tail_tendsto_zero",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 191,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_coordinate_tail_tendsto_zero (\u03b5 : \u211d) (h\u03b5 : 0<\u03b5) (e : Free) :\n    Tendsto (fun \u03b2 : \u211d => (gibbs \u03b2).real (coordinateTail e \u03b5)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L191"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_configuration_tail_bound",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 203,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_configuration_tail_bound (\u03b2 \u03b5 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (h\u03b5 : 0<\u03b5) :\n    (gibbs \u03b2).real (configurationTail \u03b5) \u2264\n      31*(Real.exp (-\u03b2*(\u03b5/6))/lowMass (\u03b5/6))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L203"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_configuration_tail_tendsto_zero",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 216,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_configuration_tail_tendsto_zero (\u03b5 : \u211d) (h\u03b5 : 0<\u03b5) :\n    Tendsto (fun \u03b2 : \u211d => (gibbs \u03b2).real (configurationTail \u03b5)) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L216"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedConcentration.gibbs_configuration_good_tendsto_one",
+      "file": "Foundation/FourCubePinnedConcentration.lean",
+      "line": 226,
+      "source_sha256": "97fa74a5c9df3c78c65740344b323b029f9128b730982577773c5f4c7397aebd",
+      "declaration_header": "theorem gibbs_configuration_good_tendsto_one (\u03b5 : \u211d) (h\u03b5 : 0<\u03b5) :\n    Tendsto (fun \u03b2 : \u211d => (gibbs \u03b2).real (configurationTail \u03b5)\u1d9c) atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedConcentration.lean#L226"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedSecondVariation.face_second_zero",
+      "file": "Foundation/FourCubePinnedSecondVariation.lean",
+      "line": 141,
+      "source_sha256": "652ab4a87ece14aa5c9f1c5e1b18e416e50b492a7b15273b25ecb917e708ba59",
+      "declaration_header": "theorem face_second_zero (W : Velocity) (p : FaceData) :\n    faceSecond W p 0=lengthSq (faceSum W p)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedSecondVariation.lean#L141"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedSecondVariation.ray_second_incidence",
+      "file": "Foundation/FourCubePinnedSecondVariation.lean",
+      "line": 185,
+      "source_sha256": "652ab4a87ece14aa5c9f1c5e1b18e416e50b492a7b15273b25ecb917e708ba59",
+      "declaration_header": "theorem ray_second_incidence (W : Velocity) :\n    deriv (deriv (ray W)) 0=(\u2211 a : Fin 3,realEnergy (extend (fun k => W k a)))/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedSecondVariation.lean#L185"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedSecondVariation.pinned_first_zero",
+      "file": "Foundation/FourCubePinnedSecondVariation.lean",
+      "line": 232,
+      "source_sha256": "652ab4a87ece14aa5c9f1c5e1b18e416e50b492a7b15273b25ecb917e708ba59",
+      "declaration_header": "theorem pinned_first_zero (V : PinnedVelocity) : deriv (pinnedRay V) 0=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedSecondVariation.lean#L232"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedSecondVariation.pinned_second_gram",
+      "file": "Foundation/FourCubePinnedSecondVariation.lean",
+      "line": 235,
+      "source_sha256": "652ab4a87ece14aa5c9f1c5e1b18e416e50b492a7b15273b25ecb917e708ba59",
+      "declaration_header": "theorem pinned_second_gram (V : PinnedVelocity) :\n    deriv (deriv (pinnedRay V)) 0=\n      (\u2211 a : Fin 3, dotProduct (fun e => V e a)\n        (OneSidedPinnedInterior.localGram.mulVec (fun e => V e a)))/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedSecondVariation.lean#L235"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedSecondVariation.pinned_second_positive",
+      "file": "Foundation/FourCubePinnedSecondVariation.lean",
+      "line": 245,
+      "source_sha256": "652ab4a87ece14aa5c9f1c5e1b18e416e50b492a7b15273b25ecb917e708ba59",
+      "declaration_header": "theorem pinned_second_positive (V : PinnedVelocity) (hV : V \u2260 0) :\n    0 < deriv (deriv (pinnedRay V)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedSecondVariation.lean#L245"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHessian.coordinateAction_contDiff",
+      "file": "Foundation/FourCubePinnedHessian.lean",
+      "line": 66,
+      "source_sha256": "60cad4d7c00e46fe2f92af1ff4b6ac96e231a664d797927ee834484ad636b864",
+      "declaration_header": "theorem coordinateAction_contDiff : ContDiff \u211d 2 coordinateAction",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHessian.lean#L66"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHessian.coordinateAction_line",
+      "file": "Foundation/FourCubePinnedHessian.lean",
+      "line": 79,
+      "source_sha256": "60cad4d7c00e46fe2f92af1ff4b6ac96e231a664d797927ee834484ad636b864",
+      "declaration_header": "theorem coordinateAction_line (V : PinnedVelocity) : coordinateAction \u2218 line V=pinnedRay V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHessian.lean#L79"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHessian.hessian_diagonal_ray",
+      "file": "Foundation/FourCubePinnedHessian.lean",
+      "line": 89,
+      "source_sha256": "60cad4d7c00e46fe2f92af1ff4b6ac96e231a664d797927ee834484ad636b864",
+      "declaration_header": "theorem hessian_diagonal_ray (V : PinnedVelocity) :\n    iteratedFDeriv \u211d 2 coordinateAction 0 (fun _ : Fin 2 => V)=\n      deriv (deriv (pinnedRay V)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHessian.lean#L89"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHessian.hessian_diagonal_gram",
+      "file": "Foundation/FourCubePinnedHessian.lean",
+      "line": 102,
+      "source_sha256": "60cad4d7c00e46fe2f92af1ff4b6ac96e231a664d797927ee834484ad636b864",
+      "declaration_header": "theorem hessian_diagonal_gram (V : PinnedVelocity) :\n    iteratedFDeriv \u211d 2 coordinateAction 0 (fun _ : Fin 2 => V)=\n      (\u2211 a : Fin 3,dotProduct (fun e => V e a)\n        (OneSidedPinnedInterior.localGram.mulVec (fun e => V e a)))/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHessian.lean#L102"
+    },
+    {
+      "paper": "Section 17 exact nonlinear Haar pin, global identity-boundary link barrier, normalized full-cell concentration and actual pinned Hessian",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubePinnedHessian.hessian_positive",
+      "file": "Foundation/FourCubePinnedHessian.lean",
+      "line": 108,
+      "source_sha256": "60cad4d7c00e46fe2f92af1ff4b6ac96e231a664d797927ee834484ad636b864",
+      "declaration_header": "theorem hessian_positive (V : PinnedVelocity) (hV : V \u2260 0) :\n    0 < iteratedFDeriv \u211d 2 coordinateAction 0 (fun _ : Fin 2 => V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubePinnedHessian.lean#L108"
     }
   ],
   "human_reorganization": [
@@ -2973,7 +3342,11 @@
     "Section 11 reconstructs the complete varying-interior solved Schur comparison, retaining the linear nonzero-coupling term and the operator-perturbation term. Coercivity directly controls actual interior solutions; finite dimension supplies their existence. The printed infinite-dimensional statement retains supplied solutions. Uniqueness from the attained coercive square and the scalar interior-only linear-loss specialization are labelled elementary human deductions. No unproved Wilson operator-norm or volume-uniform estimate is imported.",
     "Section 10 reconstructs the actual periodic side-four-to-side-two boundary average and its normalized adjoint. An explicit fine gradient has coarse curl four, so the raw formula descends to no set map on gradient quotients. The physical fine space removes the entire closed-field kernel, including harmonic fields.",
     "The planar a,p formulas and full curl/Gram identities are human reconstructions of the frozen integer field certificates. Their independence of the other two coordinates gives exact multiplicity sixteen. Physical membership is proved directly from Gram images, not from a false periodic closed-equals-gradient assertion.",
-    "For the single specified actual coarse field, two orthogonal residual identities prove attained unique norm and curl-energy minima without importing general coarse inverse existence. Exact fine norm/energy costs and the unrestricted norm cost remain distinct. The constrained gradient is for E/2; its optimal one-fifth feasible line step reaches this witness energy minimizer exactly. No general one-step method or scale/volume-uniform theorem follows."
+    "For the single specified actual coarse field, two orthogonal residual identities prove attained unique norm and curl-energy minima without importing general coarse inverse existence. Exact fine norm/energy costs and the unrestricted norm cost remain distinct. The constrained gradient is for E/2; its optimal one-fifth feasible line step reaches this witness energy minimizer exactly. No general one-step method or scale/volume-uniform theorem follows.",
+    "Section 17 proves exact removal of the root gauge Haar coordinate with factor one, for arbitrary fixed boundary and real beta. Equality of the partitions does not identify untransformed coordinate observables.",
+    "At identity boundary the actual 72-face action has global coordinate defect bound d(y_e)<=3S and unique pinned zero. A positive strict-sublevel Haar mass supplies the needed lower partition bound, so the normalized union tail is 31 exp(-beta epsilon/6)/m_epsilon. No uniform control of m_epsilon across boundary, size or scale is supplied.",
+    "Weak convergence of the fixed compact 31-link pinned Gibbs measures to the identity point mass is a labelled human deduction from the full-configuration tail bound, proved with continuous tests. It is not the different one-link conditional ensemble or a continuum limit.",
+    "The full logarithmic parametrization is C2 and its actual Hessian diagonal is one quarter of the sum of three copies of the positive pinned incidence Gram form. The proof expands all oriented face words and ribbons and uses cyclicity of trace. This is not a global Gaussian approximation or partition asymptotic."
   ],
   "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim."
 }
