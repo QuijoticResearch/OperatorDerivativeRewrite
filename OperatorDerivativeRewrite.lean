@@ -2910,3 +2910,5 @@ import Foundation.CubeBoundaryChartInverse
 import Foundation.CubeChartCompressedKernel
 import Foundation.CubeKernelOperatorBound
 import Foundation.CubeCompressedNormLimit
+import Foundation.CubeFullCompressionError
+import Foundation.CubeGroundNormLimit
