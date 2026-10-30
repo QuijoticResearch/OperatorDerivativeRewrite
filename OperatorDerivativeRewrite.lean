@@ -2914,3 +2914,6 @@ import Foundation.CubeFullCompressionError
 import Foundation.CubeGroundNormLimit
 import Foundation.CubeGaussianModes
 import Foundation.CubeGaussianKernelChannels
+import Foundation.CubeGaussianCoordinateMeasure
+import Foundation.SU2RootEuclideanMeasure
+import Foundation.CubeGaussianChannelGround
