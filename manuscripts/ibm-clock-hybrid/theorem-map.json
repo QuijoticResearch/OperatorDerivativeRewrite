@@ -1248,6 +1248,510 @@
       "source_sha256": "af14141cb69a8c5f3c97c074ee451de12b26edd9a4ce34347038a3297aa41bd8",
       "declaration_header": "theorem poisson_sine_weak (x : IBMIntrinsicPoisson.centered) :\n    WeakChainResult (IBMIntrinsicPoisson.solutionElement x) (x : IntrinsicSpace)\n      Real.sin Real.cos (fun z => -Real.sin z)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakGeneratorChain.lean#L85"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative",
+      "file": "Foundation/ObservableRestriction.lean",
+      "line": 13,
+      "source_sha256": "2b18d2ab3f773755ee17c8db5b5591aafe967143c2996aef2daa2137ceb8de5b",
+      "declaration_header": "def derivative (A : H \u2192\u2097.[\u211d] E) (V : Submodule \u211d H) : V \u2192\u2097.[\u211d] E",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableRestriction.lean#L13"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_domain",
+      "file": "Foundation/ObservableRestriction.lean",
+      "line": 29,
+      "source_sha256": "2b18d2ab3f773755ee17c8db5b5591aafe967143c2996aef2daa2137ceb8de5b",
+      "declaration_header": "theorem derivative_domain (A : H \u2192\u2097.[\u211d] E) (V : Submodule \u211d H) (f : V) :\n    f \u2208 (derivative A V).domain \u2194 (f : H) \u2208 A.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableRestriction.lean#L29"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_graph",
+      "file": "Foundation/ObservableRestriction.lean",
+      "line": 33,
+      "source_sha256": "2b18d2ab3f773755ee17c8db5b5591aafe967143c2996aef2daa2137ceb8de5b",
+      "declaration_header": "theorem derivative_graph (A : H \u2192\u2097.[\u211d] E) (V : Submodule \u211d H)\n    (f : V) (g : E) :\n    (f, g) \u2208 (derivative A V).graph \u2194 ((f : H), g) \u2208 A.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableRestriction.lean#L33"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_isClosed",
+      "file": "Foundation/ObservableRestriction.lean",
+      "line": 51,
+      "source_sha256": "2b18d2ab3f773755ee17c8db5b5591aafe967143c2996aef2daa2137ceb8de5b",
+      "declaration_header": "theorem derivative_isClosed (A : H \u2192\u2097.[\u211d] E) (V : Submodule \u211d H)\n    (hA : A.IsClosed) : (derivative A V).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableRestriction.lean#L51"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.projectedSourceDivergence",
+      "file": "Foundation/ObservableProjectedDivergence.lean",
+      "line": 17,
+      "source_sha256": "0146fd945f82d3a246ddf82238cea988160d6df13ffa764f79563c2f77ec1746",
+      "declaration_header": "def projectedSourceDivergence (u : A.adjoint.domain) : V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergence.lean#L17"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.projected_pairing",
+      "file": "Foundation/ObservableProjectedDivergence.lean",
+      "line": 22,
+      "source_sha256": "0146fd945f82d3a246ddf82238cea988160d6df13ffa764f79563c2f77ec1746",
+      "declaration_header": "theorem projected_pairing\n    (hA : Dense (A.domain : Set H))\n    (u : A.adjoint.domain) (f : (derivative A V).domain) :\n    inner \u211d (projectedSourceDivergence A V u) (f : V) =\n      inner \u211d (u : E) (derivative A V f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergence.lean#L22"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.source_divergence_mem",
+      "file": "Foundation/ObservableProjectedDivergence.lean",
+      "line": 40,
+      "source_sha256": "0146fd945f82d3a246ddf82238cea988160d6df13ffa764f79563c2f77ec1746",
+      "declaration_header": "theorem source_divergence_mem\n    (hA : Dense (A.domain : Set H))\n    (hD : Dense ((derivative A V).domain : Set V))\n    (u : A.adjoint.domain) :\n    (u : E) \u2208 (derivative A V).adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergence.lean#L40"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.divergence_source_value",
+      "file": "Foundation/ObservableProjectedDivergence.lean",
+      "line": 51,
+      "source_sha256": "0146fd945f82d3a246ddf82238cea988160d6df13ffa764f79563c2f77ec1746",
+      "declaration_header": "theorem divergence_source_value\n    (hA : Dense (A.domain : Set H))\n    (hD : Dense ((derivative A V).domain : Set V))\n    (u : A.adjoint.domain) :\n    (derivative A V).adjoint\n      \u27e8(u : E), source_divergence_mem A V hA hD u\u27e9 =\n      projectedSourceDivergence A V u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergence.lean#L51"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceClosure.projectedOperator",
+      "file": "Foundation/ObservableProjectedDivergenceClosure.lean",
+      "line": 16,
+      "source_sha256": "f7af480c44509c34d72897ae387dd4e202b48966f5cbe160d865da5ce0ac699b",
+      "declaration_header": "def projectedOperator : E \u2192\u2097.[\u211d] V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceClosure.lean#L16"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceClosure.projectedOperator_le_adjoint",
+      "file": "Foundation/ObservableProjectedDivergenceClosure.lean",
+      "line": 33,
+      "source_sha256": "f7af480c44509c34d72897ae387dd4e202b48966f5cbe160d865da5ce0ac699b",
+      "declaration_header": "theorem projectedOperator_le_adjoint\n    (hA : Dense (A.domain : Set H))\n    (hD : Dense ((derivative A V).domain : Set V)) :\n    projectedOperator A V \u2264 (derivative A V).adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceClosure.lean#L33"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceClosure.projectedOperator_closable",
+      "file": "Foundation/ObservableProjectedDivergenceClosure.lean",
+      "line": 49,
+      "source_sha256": "f7af480c44509c34d72897ae387dd4e202b48966f5cbe160d865da5ce0ac699b",
+      "declaration_header": "theorem projectedOperator_closable\n    (hA : Dense (A.domain : Set H))\n    (hD : Dense ((derivative A V).domain : Set V)) :\n    (projectedOperator A V).IsClosable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceClosure.lean#L49"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceClosure.projectedOperator_closure_le_adjoint",
+      "file": "Foundation/ObservableProjectedDivergenceClosure.lean",
+      "line": 58,
+      "source_sha256": "f7af480c44509c34d72897ae387dd4e202b48966f5cbe160d865da5ce0ac699b",
+      "declaration_header": "theorem projectedOperator_closure_le_adjoint\n    (hA : Dense (A.domain : Set H))\n    (hD : Dense ((derivative A V).domain : Set V)) :\n    (projectedOperator A V).closure \u2264 (derivative A V).adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceClosure.lean#L58"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceCore.graph_closure_sequence",
+      "file": "Foundation/ObservableProjectedDivergenceCore.lean",
+      "line": 36,
+      "source_sha256": "74709112afb104cf5943e7f8b746a5d67a084ce1ae9894cd7406ab550c9f6b04",
+      "declaration_header": "theorem graph_closure_sequence {F : Type*} [NormedAddCommGroup F] [NormedSpace \u211d F]\n    (T : E \u2192\u2097.[\u211d] F) (hc : T.IsClosable) (u : E) (v : F)\n    (h : (u, v) \u2208 T.closure.graph) :\n    \u2203 f : \u2115 \u2192 T.domain,\n      Tendsto (fun n => (f n : E)) atTop (\ud835\udcdd u) \u2227\n      Tendsto (fun n => T (f n)) atTop (\ud835\udcdd v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceCore.lean#L36"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceCore.projected_adjoint_eq_restriction",
+      "file": "Foundation/ObservableProjectedDivergenceCore.lean",
+      "line": 52,
+      "source_sha256": "74709112afb104cf5943e7f8b746a5d67a084ce1ae9894cd7406ab550c9f6b04",
+      "declaration_header": "theorem projected_adjoint_eq_restriction\n    (hc : A.IsClosed) (hd : Dense (A.domain : Set H)) :\n    (projectedOperator A V).adjoint = derivative A V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceCore.lean#L52"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceCore.projected_closure_eq_adjoint",
+      "file": "Foundation/ObservableProjectedDivergenceCore.lean",
+      "line": 95,
+      "source_sha256": "74709112afb104cf5943e7f8b746a5d67a084ce1ae9894cd7406ab550c9f6b04",
+      "declaration_header": "theorem projected_closure_eq_adjoint\n    (hc : A.IsClosed) (hd : Dense (A.domain : Set H))\n    (hv : Dense ((derivative A V).domain : Set V)) :\n    (projectedOperator A V).closure = (derivative A V).adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableProjectedDivergenceCore.lean#L95"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableDensityCriterion.derivative_dense_iff_annihilator_zero",
+      "file": "Foundation/ObservableDensityCriterion.lean",
+      "line": 17,
+      "source_sha256": "53448ca73a19bf4c15940775460754b7b5ec40ef90b72e0009d6bbcceb3d5091",
+      "declaration_header": "theorem derivative_dense_iff_annihilator_zero :\n    Dense ((derivative A V).domain : Set V) \u2194\n      \u2200 g : V, (\u2200 f : (derivative A V).domain,\n        inner \u211d g (f : V) = 0) \u2192 g = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableDensityCriterion.lean#L17"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableCoreDensity.derivative_dense_of_projection_invariant",
+      "file": "Foundation/ObservableCoreDensity.lean",
+      "line": 17,
+      "source_sha256": "a8ccda4e2418e4533bb22a8544edf6bf694959c4bce424683efbb2d3f0116fb1",
+      "declaration_header": "theorem derivative_dense_of_projection_invariant\n    (A : H \u2192\u2097.[\u211d] E) (V : Submodule \u211d H) [CompleteSpace V]\n    (hA : Dense (A.domain : Set H))\n    (hstable : \u2200 x \u2208 A.domain, ((V.orthogonalProjectionOnto x : V) : H) \u2208 A.domain) :\n    Dense ((derivative A V).domain : Set V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableCoreDensity.lean#L17"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.span_outside_domain",
+      "file": "Foundation/ObservableDensityObstruction.lean",
+      "line": 15,
+      "source_sha256": "69fe5be57b36d85bc4157b84dbbc4f79b7bcf3ad1b2e89dc8ab415d458edaefe",
+      "declaration_header": "theorem span_outside_domain (A : H \u2192\u2097.[\u211d] E) (v : H)\n    (hv : v \u2209 A.domain) :\n    A.domain \u2293 (\u211d \u2219 v) = \u22a5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableDensityObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.restricted_line_domain_bot",
+      "file": "Foundation/ObservableDensityObstruction.lean",
+      "line": 30,
+      "source_sha256": "69fe5be57b36d85bc4157b84dbbc4f79b7bcf3ad1b2e89dc8ab415d458edaefe",
+      "declaration_header": "theorem restricted_line_domain_bot (A : H \u2192\u2097.[\u211d] E) (v : H)\n    (hv : v \u2209 A.domain) :\n    (derivative A (\u211d \u2219 v)).domain = \u22a5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableDensityObstruction.lean#L30"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.restricted_line_not_dense",
+      "file": "Foundation/ObservableDensityObstruction.lean",
+      "line": 46,
+      "source_sha256": "69fe5be57b36d85bc4157b84dbbc4f79b7bcf3ad1b2e89dc8ab415d458edaefe",
+      "declaration_header": "theorem restricted_line_not_dense (A : H \u2192\u2097.[\u211d] E) (v : H)\n    (hv : v \u2209 A.domain) :\n    \u00ac Dense ((derivative A (\u211d \u2219 v)).domain : Set (\u211d \u2219 v))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableDensityObstruction.lean#L46"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.exists_nondense_restriction_of_proper_domain",
+      "file": "Foundation/ObservableDensityObstruction.lean",
+      "line": 67,
+      "source_sha256": "69fe5be57b36d85bc4157b84dbbc4f79b7bcf3ad1b2e89dc8ab415d458edaefe",
+      "declaration_header": "theorem exists_nondense_restriction_of_proper_domain\n    (A : H \u2192\u2097.[\u211d] E)\n    (_hDense : Dense (A.domain : Set H))\n    (hproper : A.domain \u2260 \u22a4) :\n    \u2203 V : Submodule \u211d H, V \u2260 \u22a5 \u2227\n      \u00ac Dense ((derivative A V).domain : Set V)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ObservableDensityObstruction.lean#L67"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closed_adjoint_dense",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 11,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closed_adjoint_dense (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed)\n    (hd : Dense (T.domain : Set E)) : Dense (T.adjoint.domain : Set F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L11"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closable_adjoint_dense",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 44,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closable_adjoint_dense (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosable)\n    (hd : Dense (T.domain : Set E)) : Dense (T.adjoint.domain : Set F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L44"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closable_of_adjoint_dense",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 50,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closable_of_adjoint_dense (T : E \u2192\u2097.[\u211d] F)\n    (hd : Dense (T.domain : Set E)) (ha : Dense (T.adjoint.domain : Set F)) : T.IsClosable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L50"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closable_iff_adjoint_dense",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 55,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closable_iff_adjoint_dense (T : E \u2192\u2097.[\u211d] F) (hd : Dense (T.domain : Set E)) :\n    T.IsClosable \u2194 Dense (T.adjoint.domain : Set F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L55"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closed_bidual",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 59,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closed_bidual (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed)\n    (hd : Dense (T.domain : Set E)) : T.adjoint.adjoint=T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L59"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HilbertAdjointDomainDensity.closable_bidual",
+      "file": "Foundation/HilbertAdjointDomainDensity.lean",
+      "line": 63,
+      "source_sha256": "6af1959450d30920dda948aa51c8d49aae0f147e2419ffe34eb47f819f387a3b",
+      "declaration_header": "theorem closable_bidual (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosable)\n    (hd : Dense (T.domain : Set E)) : T.adjoint.adjoint=T.closure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HilbertAdjointDomainDensity.lean#L63"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.FieldSpace",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 17,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "abbrev FieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L17"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.ScalarFieldSpace",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 18,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "abbrev ScalarFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L18"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.swapEquiv",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 24,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def swapEquiv : JointL2 \u2243\u2097\u1d62[\u211d] JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L24"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clockUnitary",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 29,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def clockUnitary : JointL2 \u2243\u2097\u1d62[\u211d] ScalarFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L29"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.sourceUnitary",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 32,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def sourceUnitary : JointL2 \u2243\u2097\u1d62[\u211d] ScalarFieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L32"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clockDerivative",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 34,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def clockDerivative : JointL2 \u2192\u2097.[\u211d] FieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L34"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.sourceDerivative",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 37,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def sourceDerivative : JointL2 \u2192\u2097.[\u211d] FieldSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L37"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clockDerivative_domain",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 40,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clockDerivative_domain : clockDerivative.domain = clockDomain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L40"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.sourceDerivative_domain",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 42,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem sourceDerivative_domain : sourceDerivative.domain = sourceDomain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L42"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clockDerivative_closed",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 44,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clockDerivative_closed : clockDerivative.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L44"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.sourceDerivative_closed",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 48,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem sourceDerivative_closed : sourceDerivative.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L48"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.partialDerivative_dense",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 52,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem partialDerivative_dense : Dense (partialDerivative.domain : Set ScalarFieldSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L52"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clockDerivative_dense",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 55,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clockDerivative_dense : Dense (clockDerivative.domain : Set JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L55"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.sourceDerivative_dense",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 58,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem sourceDerivative_dense : Dense (sourceDerivative.domain : Set JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L58"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicClock",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 61,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def intrinsicClock",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L61"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicSource",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 62,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "def intrinsicSource",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L62"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.restriction_dense_of_core",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 64,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem restriction_dense_of_core (A : JointL2 \u2192\u2097.[\u211d] FieldSpace)\n    (hA : \u2200 f \u2208 intrinsicCore, f \u2208 A.domain) :\n    Dense ((ObservableRestriction.derivative A IntrinsicSpace).domain : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L64"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicClock_dense",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 77,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsicClock_dense : Dense (intrinsicClock.domain : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L77"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicSource_dense",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 83,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsicSource_dense : Dense (intrinsicSource.domain : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L83"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicClock_closed",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 89,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsicClock_closed : intrinsicClock.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L89"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsicSource_closed",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 92,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsicSource_closed : intrinsicSource.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L92"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clock_adjoint_domain",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 96,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clock_adjoint_domain : clockDerivative.adjoint.domain = partialDerivative.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L96"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.source_adjoint_domain",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 99,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem source_adjoint_domain : sourceDerivative.adjoint.domain = partialDerivative.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L99"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clock_adjoint_apply",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 102,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clock_adjoint_apply (u : FieldSpace) (hu : u \u2208 clockDerivative.adjoint.domain)\n    (hp : u \u2208 partialDerivative.adjoint.domain) :\n    clockDerivative.adjoint \u27e8u, hu\u27e9 = clockUnitary.symm (partialDerivative.adjoint \u27e8u, hp\u27e9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L102"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.source_adjoint_apply",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 107,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem source_adjoint_apply (u : FieldSpace) (hu : u \u2208 sourceDerivative.adjoint.domain)\n    (hp : u \u2208 partialDerivative.adjoint.domain) :\n    sourceDerivative.adjoint \u27e8u, hu\u27e9 = sourceUnitary.symm (partialDerivative.adjoint \u27e8u, hp\u27e9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L107"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.clock_source_divergence_mem",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 114,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem clock_source_divergence_mem (u : clockDerivative.adjoint.domain) :\n    (u : FieldSpace) \u2208 intrinsicClock.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L114"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.source_source_divergence_mem",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 118,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem source_source_divergence_mem (u : sourceDerivative.adjoint.domain) :\n    (u : FieldSpace) \u2208 intrinsicSource.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L118"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsic_clock_divergence_value",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 122,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsic_clock_divergence_value (u : clockDerivative.adjoint.domain) :\n    intrinsicClock.adjoint \u27e8(u : FieldSpace), clock_source_divergence_mem u\u27e9 =\n      IntrinsicSpace.orthogonalProjectionOnto (clockDerivative.adjoint u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L122"
+    },
+    {
+      "paper": "Section 12 / Theorem 12.1: actual pullback restriction S of a closed densely defined source A; B=P_V A* on the original source-adjoint domain. B*=S, and closure(B)=S* only under independent observable-domain density. Strong approximation retains the projected output only. Exact density test, projection-invariant sufficient criterion and out-of-domain line obstruction. The actual IBM one-channel specialization uses the separately proved source/clock closedness and density; no core for separately admissible joint pairs is inferred.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMIntrinsicOperators.intrinsic_source_divergence_value",
+      "file": "Foundation/IBMIntrinsicOperators.lean",
+      "line": 127,
+      "source_sha256": "431619d6de2af7e9746f8aac4ed881131c1fc7043d70cd8057480406731fa4a2",
+      "declaration_header": "theorem intrinsic_source_divergence_value (u : sourceDerivative.adjoint.domain) :\n    intrinsicSource.adjoint \u27e8(u : FieldSpace), source_source_divergence_mem u\u27e9 =\n      IntrinsicSpace.orthogonalProjectionOnto (sourceDerivative.adjoint u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMIntrinsicOperators.lean#L127"
     }
   ],
   "human_reorganization": [
@@ -1261,7 +1765,8 @@
     "Section 4 uses the one-factor centered recovery bound and conditional-expectation orthogonality to improve the actual source-first static pair norm to the centered input norm. The named source contraction uses clock-first ordering; the factor-swapped bound for this displayed pair is explicitly proved as a human deduction. It also improves the actual hidden-clock Fourier hybrid preimage norm in Section 10, using both clock isometries. No uniqueness of that hybrid pair is inferred.",
     "The original intrinsic derivative and Hilbert adjoint give constant-one Poincare and exact constant kernel. This certifies an upper Poincare constant, not its optimality or a physical-time gap. A genuine original closed-graph projection produces a mean-preserving resolvent with centered half contraction.",
     "The centered Poisson construction is the actual source fixed point u=Q(x+u), with original derivative and divergence product-domain membership, uniqueness, field/input norm bounds and global field minimality. The exact orthogonal minimum gap, bounded linearity of the solution and explicit value/gradient/divergence iteration bounds are labelled human consequences of the mapped weak identities and contraction. They impose no predictability constraint and identify no physical-time generator.",
-    "Section 4 reconstructs the actual weak L1 chain for every original product-domain input u and C2 function with bounded first/second derivatives. Bounded native tests and products prove the integrable ambient density q=phi-prime(u)Au-phi-double-prime(u)e_u, its zero mean and weak pairing, without L4 gradients or observable energy assumptions. The exact iff phi(u) in Dom A iff E[q|full observations] in L2 is a labelled HUMAN application of the mapped conditional-adjoint criterion. The actual Poisson sine example stays weak absent this condition."
+    "Section 4 reconstructs the actual weak L1 chain for every original product-domain input u and C2 function with bounded first/second derivatives. Bounded native tests and products prove the integrable ambient density q=phi-prime(u)Au-phi-double-prime(u)e_u, its zero mean and weak pairing, without L4 gradients or observable energy assumptions. The exact iff phi(u) in Dom A iff E[q|full observations] in L2 is a labelled HUMAN application of the mapped conditional-adjoint criterion. The actual Poisson sine example stays weak absent this condition.",
+    "Section 12 gives a complete classical projected-adjoint core theorem with the actual source and observable domains. The graph-orthogonal-complement proof derives adjoint density, closability and bidual graph closure before proving B*=S and closure(B)=S*. Approximation requires strong convergence of integrands and PROJECTED outputs, not unprojected source divergences. Observable-domain density is independent; its exact annihilator test, projection-invariant sufficient condition and nonzero out-of-domain line obstruction are proved. Two diagonal ell2 examples are explicitly HUMAN coordinate illustrations: a zero/nondense restriction and a strictly smaller original projected-source-adjoint domain whose closure is the full bounded observable adjoint. The one-channel IBM specialization is a HUMAN consequence of the generic theorem and verified separate source/clock closedness and intrinsic density. No equality of initial domains, arbitrary conditioning-domain preservation, separately admissible JOINT-pair graph core, observed-past predictable representation or physical-time calculus is added."
   ],
   "novelty": "Classical formalization companion; no external priority or observed-IBM predictable representation claim."
 }

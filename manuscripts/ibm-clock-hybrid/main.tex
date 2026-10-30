@@ -14,7 +14,7 @@
 \texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\smallskip}
 \title{Clock regularity and hybrid reconstruction\\for reflected-clock iterated Brownian motion}
 \author{Project Stardust}
-\date{October 29, 2026}
+\date{October 30, 2026}
 \begin{document}\maketitle
 \begin{abstract}
 Let $Z_t=X_{|Y_t|}$ for independent Brownian motions $X,Y$.
@@ -31,7 +31,10 @@ strong graph approximation, including their zero levels. Complete proofs
 separate ambient adjoints, observable projection, hidden-clock predictability
 and observed-process causality. Original-domain multipliers and an exact
 conditional-L1 criterion for the native adjoint are proved, retaining the
-full observation projection and all bounded-test hypotheses. A sine observation has zero source mean but
+full observation projection and all bounded-test hypotheses. A complete
+projected-adjoint graph-core theorem retains independent observable-domain
+density, with explicit distinctions between closure, initial domains and
+separately admissible joint pairs. A sine observation has zero source mean but
 positive variance, so clock-mean representation alone cannot reconstruct IBM.
 This is an exposition of verified results and classical Gaussian mechanisms,
 with no claim of completed physical-time IBM calculus or external novelty.
@@ -946,6 +949,165 @@ domain of the operator being adjointed. The paper's claim of complete
 reconstruction is therefore a claim about an original adjoint output, not
 point-observation differentiability.
 
+
+\section{When projected source adjoints form a full graph core}
+\label{sec:observablecore}
+The projected-adjoint inclusion in Section 1 has a precise general
+closure theorem. This is classical Hilbert operator theory, and its
+density hypotheses must be checked separately for an observable
+restriction. We give its proof to distinguish graph closure from
+equality of the initially assigned domains.
+
+Let $H,E$ be real Hilbert spaces, let $A:\Dom A\subset H\to E$
+be densely defined and closed, and let $V\subset H$ be a closed
+linear subspace with orthogonal projection $P_V:H\to V$.
+Define the actual pullback restriction and projected source adjoint by
+\[
+ S:\Dom S=V\cap\Dom A\longrightarrow E,\quad Sf=Af,
+ \qquad B:\Dom B=\Dom A^*\longrightarrow V,\quad Bu=P_VA^*u.
+\]
+The norm and topology on $V$ are inherited from $H$. The graph
+of $S$ is closed: its image under $(f,g)\mapsto(f,g)\in H\oplus E$
+is the intersection of the graph of $A$ with $V\oplus E$.
+Closedness alone says nothing about density of $\Dom S$ in $V$.
+
+\begin{theorem}\label{thm:observablecore}
+The source-adjoint domain $\Dom A^*$ is dense in $E$, and
+$B^*=S$. If in addition $\Dom S$ is dense in $V$, then $B$ is
+closable and
+\[
+ \overline B=S^*.
+\]
+Equivalently, for every $u\in\Dom S^*$ there are
+$u_n\in\Dom A^*$ such that
+\begin{equation}\label{eq:projectedcorelimit}
+ u_n\longrightarrow u\text{ in }E,\qquad
+ P_VA^*u_n\longrightarrow S^*u\text{ in }V.
+\end{equation}
+No convergence of the unprojected $A^*u_n$ is required or concluded.
+\end{theorem}
+\begin{proof}
+We first supply the Hilbert graph facts used in the argument.
+For any densely defined $T:H\to E$, direct evaluation of the
+product inner product gives
+\[
+ \operatorname{graph}(T)^\perp
+   =\{(-T^*y,y):y\in\Dom T^*\}.
+\]
+Indeed $(x,y)$ belongs to the left side exactly when
+$\langle x,f\rangle+\langle y,Tf\rangle=0$ for all
+$f\in\Dom T$, which is the adjoint-domain condition
+$y\in\Dom T^*$ and $x=-T^*y$.
+If $T$ is closable and $y\perp\Dom T^*$, this identity implies
+$(0,y)\in\operatorname{graph}(T)^{\perp\perp}
+=\overline{\operatorname{graph}(T)}$. The graph closure has no
+nonzero vertical vector by closability, so $y=0$. Thus $\Dom T^*$
+is dense. Conversely, if that domain is dense, the same graph
+identity excludes every nonzero vertical vector from the graph
+closure, making it the graph of a closed operator. Applying the
+identity twice then shows
+$\operatorname{graph}(T^{**})=\overline{\operatorname{graph}(T)}$:
+a pair $(f,g)$ is in this closure exactly when
+$\langle g,y\rangle=\langle f,T^*y\rangle$ for all
+$y\in\Dom T^*$, the defining condition for $T^{**}f=g$.
+This also proves $A^{**}=A$ and density of $\Dom A^*$, since
+$A$ is closed and densely defined. Adjoint graphs themselves are
+closed by passing their defining inner-product identities to limits.
+
+Hence $B$ is densely defined. If $f\in\Dom B^*\subset V$ with
+$B^*f=g\in E$, then for every $u\in\Dom A^*$,
+\[
+ \langle g,u\rangle_E=\langle f,P_VA^*u\rangle_V
+                       =\langle f,A^*u\rangle_H.
+\]
+The last identity uses $f\in V$. It puts $f$ in $\Dom A^{**}$
+with $A^{**}f=g$. Therefore $f\in V\cap\Dom A=\Dom S$ and
+$Sf=g$. Conversely any $f\in\Dom S$ satisfies these pairings
+by the source adjoint identity, so it belongs to $\Dom B^*$ and
+$B^*f=Sf$. This proves $B^*=S$ as actual partial operators.
+
+If $\Dom S$ is dense, so is $\Dom B^*$; the graph facts just
+proved make $B$ closable and give
+$\overline B=B^{**}=S^*$. Finally closure in the metric product
+$E\oplus V$ is sequential. For each graph point $(u,S^*u)$,
+choose a point of $\operatorname{graph}B$ at distance less than
+$1/n$, $n\geq1$. Its two coordinates give
+\eqref{eq:projectedcorelimit}. Conversely any such limit is in the
+closed graph of $S^*$, so this is precisely its whole graph.
+\end{proof}
+\lean{ObservableProjectedDivergenceCore}{projected_adjoint_eq_restriction; projected_closure_eq_adjoint}
+\lean{ObservableProjectedDivergenceCore}{graph_closure_sequence}
+\lean{HilbertAdjointDomainDensity}{closed_adjoint_dense; closable_iff_adjoint_dense; closed_bidual; closable_bidual}
+
+\subsection*{Density is an independent hypothesis}
+For a given $V$, density is equivalent to the elementary exact test
+\[
+ g\in V,\quad\langle g,f\rangle=0\ (f\in V\cap\Dom A)
+       \quad\Longrightarrow\quad g=0.
+\]
+This is the orthogonal-annihilator characterization of closure of a
+linear subspace. A sufficient condition is
+$P_V(\Dom A)\subset\Dom A$: approximating any $v\in V$ by
+$x_n\in\Dom A$ then gives $P_Vx_n\to v$ in the restricted domain.
+It is an additional condition, not a consequence of source density.
+If $v\notin\Dom A$, then
+$\operatorname{span}\{v\}\cap\Dom A=\{0\}$, because any
+nonzero scalar multiple in the domain could be divided by that
+scalar. Thus a proper dense source domain can have a zero,+nondense restriction to a nonzero closed line.
+\lean{ObservableDensityCriterion}{derivative_dense_iff_annihilator_zero}
+\lean{ObservableCoreDensity}{derivative_dense_of_projection_invariant}
+\lean{ObservableDensityObstruction}{restricted_line_domain_bot; restricted_line_not_dense}
+
+Here are two explicit human Hilbert illustrations. On real $\ell^2$
+indexed by $n\geq1$, take
+\[
+ (Ax)_n=nx_n,\qquad \Dom A=\{x:\sum_{n\geq1}n^2x_n^2<\infty\}.
+\]
+Finite sequences prove density. If $x^{(j)}\to x$ and
+$Ax^{(j)}\to y$ in $\ell^2$, coordinate continuity gives
+$y_n=nx_n$, proving closedness. Testing an adjoint representer
+against each coordinate vector gives $A^*=A$ on exactly this
+domain; conversely Cauchy--Schwarz proves the required pairings
+for every member of it. The vector $v_n=1/n$ lies in $\ell^2$
+and outside $\Dom A$, so its line realizes the nondense case above.
+
+Instead let $V=\operatorname{span}\{e_1\}$. Now $S$ is the identity
+inclusion of this line into $\ell^2$, and $S^*u=u_1e_1$ is
+defined on all of $\ell^2$. The initially projected source adjoint
+has the identical formula $Bu=u_1e_1$, but only on $\Dom A$.
+This is a strictly smaller domain. Coordinate truncations converge
+to every $u\in\ell^2$ and have projected outputs $u_1e_1$,
+so its graph closure is exactly the stated whole-domain $S^*$.
+These examples are direct human coordinate consequences; no
+additional named formal example or new spectral result is claimed.
+
+\subsection*{Application boundaries for the IBM operators}
+The theorem applies separately to an original closed densely defined
+source derivative and a closed observable subspace whose restricted
+domain has been proved dense. In the notation of this paper, taking
+the scenery source or clock source and the full IBM observable
+subspace gives the corresponding one-channel projected-adjoint core,
+using the separate intrinsic density results. This is a human
+specialization of the generic theorem, and is not a statement that
+conditioning preserves an arbitrary source derivative domain.
+
+For the joint operator of Section 1 there is a further distinction.
+The generic source adjoint of $f\mapsto(D_Xf,D_Yf)$ is tested against
+the intersection of the two source domains. This definition does
+not identify its entire domain with
+$\Dom\delta_X\times\Dom\delta_Y$. Therefore the generic closure
+theorem alone does not prove that the separately admissible pairs
+in Lemma~\ref{lem:project} form a core for the full joint intrinsic
+adjoint. Neither dropping its observable projection nor replacing
+its fields by observed-past predictable fields is justified by
+\eqref{eq:projectedcorelimit}.
+
+These are classical adjoint and graph-closure mechanisms. Richard's
+primary lecture notes give the adjoint definition and complete
+closedness proof in Definition 2.1.8/Lemma 2.1.10~\cite{richard}.
+The full graph-orthogonal-complement argument needed here is supplied
+above; no new general adjoint principle is claimed.
+
 \section{Classical context and precise remaining obligations}
 The Gaussian recovery $DN^{-1}$ on centered chaoses, Brownian predictable
 representation and the projected-derivative mechanism are classical.
@@ -978,7 +1140,6 @@ Simpson identities and native-grid weak-limit obstructions retain their own
 domains and topologies; no transfer to arbitrary partitions, nonsmooth
 physical-time formulas or a predictable representation property is asserted.
 
-\clearpage
 \begin{thebibliography}{9}
 \bibitem{ocone} D. Ocone, \emph{Malliavin's calculus and stochastic integral
 representations of functionals of diffusion processes}, Stochastics
@@ -993,5 +1154,10 @@ verified source commit identified in Section~1. The accompanying
 \emph{Malliavin Calculus and Normal Approximations}, primary author notes,
 Propositions 5.2 and 5.4, equation (30), printed pages 39--41.
 \url{https://nualart.ku.edu/sites/nualart/files/documents/updated/Course_Malliavin_Calculus_accessible.pdf}.
+
+\bibitem{richard} S. Richard, \emph{Unbounded operators}, Chapter 2,
+primary Nagoya University course notes, 2016, Definition 2.1.8 and
+Lemma 2.1.10, printed pages 21--22, adjoint definition/closedness only.
+\url{https://www.math.nagoya-u.ac.jp/~richard/teaching/s2016/H_chapter_2.pdf}.
 \end{thebibliography}
 \end{document}
