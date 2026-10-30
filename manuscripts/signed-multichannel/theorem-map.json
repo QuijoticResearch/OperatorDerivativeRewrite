@@ -2995,6 +2995,366 @@
       "source_sha256": "e193875f558f0eb908775dd65eed52cacd982e5b075dff041e27edea9c115d3a",
       "declaration_header": "theorem no_uniform_bound (m : \u2115) (hm : 2 \u2264 m) (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac \u2203 C : \u211d, \u2200 F : cylinderAlgebra,\n      |algebraExpectation m (by omega) T hT F| \u2264 C*\u2016F.val\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUnboundedExpectation.lean#L78"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.embedding_damped_same_grid",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 13,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem embedding_damped_same_grid (n : \u2115) (P Q : Test n) :\n    dampedProduct (embedding (cylinderOf n P)) (embedding (cylinderOf n Q)) =\n      embedding (dilation (1/2) (cylinderOf n P * cylinderOf n Q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L13"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.embedding_damped_core",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 25,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem embedding_damped_core (F G : Cylinder) :\n    dampedProduct (embedding F) (embedding G) = embedding (dilation (1/2) (F*G))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L25"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.mem_commonClosure",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 35,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem mem_commonClosure (u v : Domain) : dampedProduct u.val v.val \u2208 commonClosure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L35"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.rightProduct",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 46,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "def rightProduct (u : Domain) : Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L46"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.rightProduct_apply",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 49,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem rightProduct_apply (u v : Domain) : (rightProduct u v).val = dampedProduct u.val v.val",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L49"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.rightProduct_norm",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 51,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem rightProduct_norm (u : Domain) : \u2016rightProduct u\u2016 \u2264 \u2016u\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L51"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.productLinear",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 56,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "def productLinear : Domain \u2192\u2097[\u211d] Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L56"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.product",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 71,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "def product : Domain \u2192L[\u211d] Domain \u2192L[\u211d] Domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L71"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.product_apply",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 77,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem product_apply (u v : Domain) : (product u v).val = dampedProduct u.val v.val",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L77"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.product_bound",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 79,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem product_bound (u v : Domain) : \u2016product u v\u2016 \u2264 \u2016u\u2016*\u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L79"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.product_core",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 82,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem product_core (F G : Cylinder) : product (core F) (core G) = core (dilation (1/2) (F*G))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L82"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCommonDampedProduct.product_comm",
+      "file": "Foundation/HigherHeatCommonDampedProduct.lean",
+      "line": 86,
+      "source_sha256": "5ffdae853429a66ce468cbd12dee69a887b9b64d6c6723e5376bd47917d27254",
+      "declaration_header": "theorem product_comm (u v : Domain) : product u v = product v u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCommonDampedProduct.lean#L86"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.dilation_pullback",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 11,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem dilation_pullback {\u03b9 \u03ba : Type*} [Fintype \u03b9] [Fintype \u03ba] (c : \u211d) (f : \u03b9 \u2192 \u03ba)\n    (P : MvPolynomial \u03ba \u211d) :\n    polynomialSubstitution id (fun _ => c) (HigherHeatPolynomialRefinement.pullback f P) =\n      HigherHeatPolynomialRefinement.pullback f (polynomialSubstitution id (fun _ => c) P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L11"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.gridDilation",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 25,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "def gridDilation (c : \u211d) (n : \u2115) : Test n \u2192\u2090[\u211d] Test n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L25"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.gridDilation_step",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 27,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem gridDilation_step (c : \u211d) (n : \u2115) (P : Test n) :\n    gridDilation c (n+1) (step n P) = step n (gridDilation c n P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L27"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.gridDilation_transfer",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 31,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem gridDilation_transfer (c : \u211d) (i j : \u2115) (h : i \u2264 j) (P : Test i) :\n    gridDilation c j (transfer i j h P) = transfer i j h (gridDilation c i P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L31"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.dilation",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 37,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "def dilation (c : \u211d) : Cylinder \u2192\u2090[\u211d] Cylinder",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L37"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.dilation_core",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 45,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem dilation_core (c : \u211d) (n : \u2115) (P : Test n) :\n    dilation c (cylinderOf n P) = cylinderOf n (gridDilation c n P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L45"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.coordinates_dilation",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 48,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem coordinates_dilation (c : \u211d) (n : \u2115) (P : Test n) :\n    coordinates n (gridDilation c n P) = gridDilation c n (coordinates n P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L48"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatCylinderDilation.inverse_dilation",
+      "file": "Foundation/HigherHeatCylinderDilation.lean",
+      "line": 59,
+      "source_sha256": "eac79c69c4fd19b13f4953b5b767821fdc1b4e32362ca4e47654d3669fdaaf03",
+      "declaration_header": "theorem inverse_dilation (c : \u211d) (n : \u2115) (P : Test n) :\n    (coordinates n).symm (gridDilation c n P) = gridDilation c n ((coordinates n).symm P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatCylinderDilation.lean#L59"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.mix",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 12,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "def mix (a b : \u2115) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L12"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.mix_nonneg",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 15,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem mix_nonneg (a b : \u2115) : 0 \u2264 mix a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L15"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.mix_le_one",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 18,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem mix_le_one (a b : \u2115) : mix a b \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L18"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.mix_factorial",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 23,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem mix_factorial (a b : \u2115) :\n    mix a b * ((a.factorial:\u211d)*(b.factorial:\u211d)) = ((a+b).factorial:\u211d)/(2:\u211d)^(a+b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L23"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.pairAtom",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 31,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "def pairAtom (d e : \u03b9 \u2192\u2080 \u2115) : H \u03b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L31"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.pairAtom_bound",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 33,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem pairAtom_bound (d e : \u03b9 \u2192\u2080 \u2115) : \u2016pairAtom d e\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L33"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.rightAtom",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 38,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "def rightAtom (d : \u03b9 \u2192\u2080 \u2115) : H \u03b9 \u2192L[\u211d] H \u03b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L38"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.rightAtom_bound",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 41,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem rightAtom_bound (d : \u03b9 \u2192\u2080 \u2115) : \u2016rightAtom d\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L41"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 44,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "def dampedProduct : H \u03b9 \u2192L[\u211d] H \u03b9 \u2192L[\u211d] H \u03b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L44"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_norm",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 47,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_norm : \u2016dampedProduct (\u03b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L47"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_single",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 50,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_single (d e : \u03b9 \u2192\u2080 \u2115) (c h : \u211d) :\n    dampedProduct (lp.single 1 d c) (lp.single 1 e h) = (c*h) \u2022 pairAtom d e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L50"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_bound",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 57,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_bound (u v : H \u03b9) : \u2016dampedProduct u v\u2016 \u2264 \u2016u\u2016*\u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L57"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.weight_const",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 63,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem weight_const (c : \u211d) (d : \u03b9 \u2192\u2080 \u2115) : weight (fun _ => c) d = c^d.degree",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L63"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dilation_monomial",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 68,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dilation_monomial (c : \u211d) (d : \u03b9 \u2192\u2080 \u2115) (a : \u211d) :\n    polynomialSubstitution id (fun _ => c) (MvPolynomial.monomial d a) =\n      MvPolynomial.monomial d (a*c^d.degree)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L68"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_monomials",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 74,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_monomials (d e : \u03b9 \u2192\u2080 \u2115) (c h : \u211d) :\n    dampedProduct (polynomial (MvPolynomial.monomial d c)) (polynomial (MvPolynomial.monomial e h)) =\n      polynomial (polynomialSubstitution id (fun _ => (1/2:\u211d))\n        (MvPolynomial.monomial d c * MvPolynomial.monomial e h))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L74"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_polynomial",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 89,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_polynomial (P Q : MvPolynomial \u03b9 \u211d) :\n    dampedProduct (polynomial P) (polynomial Q) =\n      polynomial (polynomialSubstitution id (fun _ => (1/2:\u211d)) (P*Q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L89"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_unique",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 107,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_unique (L : H \u03b9 \u2192L[\u211d] H \u03b9 \u2192L[\u211d] H \u03b9)\n    (hL : \u2200 P Q, L (polynomial P) (polynomial Q) =\n      polynomial (polynomialSubstitution id (fun _ => (1/2:\u211d)) (P*Q))) : L = dampedProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L107"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_comm",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 118,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_comm (u v : H \u03b9) : dampedProduct u v = dampedProduct v u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L118"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dilation_rename",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 127,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dilation_rename {\u03ba : Type*} (f : \u03b9 \u2192 \u03ba) (c : \u211d) (P : MvPolynomial \u03b9 \u211d) :\n    polynomialSubstitution id (fun _ => c) (MvPolynomial.rename f P) =\n      MvPolynomial.rename f (polynomialSubstitution id (fun _ => c) P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L127"
+    },
+    {
+      "paper": "Section 5 actual contractive damped bilinear product on the common completion; ordinary multiplier unboundedness and nonassociativity are labelled human core calculations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MultivariateFactorialDampedProduct.dampedProduct_rename",
+      "file": "Foundation/MultivariateFactorialDampedProduct.lean",
+      "line": 137,
+      "source_sha256": "53f635c7f3d541c65773a39159d4377a8999de7c39f6816d0c2676f78dcb76aa",
+      "declaration_header": "theorem dampedProduct_rename {\u03ba : Type*} [DecidableEq \u03ba] (e : \u03b9 \u21aa \u03ba) (u v : H \u03b9) :\n    dampedProduct (MultivariateFactorialRenaming.renameOperator e u)\n      (MultivariateFactorialRenaming.renameOperator e v) =\n        MultivariateFactorialRenaming.renameOperator e (dampedProduct u v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MultivariateFactorialDampedProduct.lean#L137"
     }
   ],
   "human_reorganization": [
@@ -3016,7 +3376,8 @@
     "The explicit uniform-in-time observable continuity estimate M_f p (norm(u)+norm(v))^(p-1) norm(u-v) is an elementary human mean-value/Holder deduction. The earlier biharmonic spikes have fixed L4 norm one, so their L2 discontinuity does not refute this Lp result. No predictable random-control integral, signed random clock or positive path law is claimed.",
     "Section 3 now reconstructs fourth-order propagation of actual Appell coordinate densities and their singular initial dual. The signed generator is minus the fourth derivative, the actual Appell parameter is -t, and complex distribution pairings have no conjugation. Positive-time L2 contraction, strong continuity and right derivative are proved from the actual Fourier multiplier. The extension to zero is in the pointwise Schwartz-evaluation topology exactly used by the source, with initial functional phi^(n)(0)/n! = (-1)^n delta_0^(n)/n!, and right observable generator -phi^(n+4)(0)/n!. The exact norm-square scaling C_n*t^(-(2n+1)/4), its divergence at zero and the compact-bump proof excluding an L2 initial representative are explicitly HUMAN Fourier/test consequences, not added Lean declarations. Generic static Appell primitive identities precede this fourth-order specialization. No positive law, chronological integral, all-order distribution extension theorem, bounded coordinate completion or stronger dual topology is inferred.",
     "Section 4 now reconstructs an exact initial-time obstruction in the original factorial coefficient norm. For normalized first times s_n=2^-n and the one fixed terminal U=Y_1, the actual completed causal projections satisfy P_n U=Y_s_n and the empty-past projection is zero, yet every Y_s_n and U has coefficient norm one. This gives no strong convergence to the empty past and operator-distance lower bound one, despite uniformly bounded projections. Every continuous zero-start path evaluates Y_s_n to zero. The obstruction includes order two; the separate Brownian variance 2T s_n and resulting L2 convergence are explicitly a HUMAN norm comparison, not a whole-domain identification. Six principal modules read fully, including complete projection/empty/mean support. No contradiction to the already specified dual and Bochner reconstruction topologies, positive path law or novel general convergence principle is inferred.",
-    "Section 12.2 now reconstructs actual unbounded signed expectation on the SUP-NORM UNIT BALL of BOUNDED CONTINUOUS path cylinders for every fixed positive horizon and even order p>2. The continuous dyadic product density has absolute mass A_p^N, A_p>1; its continuous soft sign is bounded by one and approaches this absolute mass by dominated convergence. Composition with continuous successive path increments gives genuine bounded continuous cylinders with arbitrarily large mean. Excluding agreeing bounded linear functionals on the cylinder sup-norm closure or all bounded continuous paths is an explicit human restriction consequence, needing no countably additive measure representation. The factorial analytic completion, the separate compact-open polynomial nonclosability and the Gaussian p=2 case retain their distinct scope. Both principal source modules read fully. Classical total-variation mechanism, no new general theorem priority claimed."
+    "Section 12.2 now reconstructs actual unbounded signed expectation on the SUP-NORM UNIT BALL of BOUNDED CONTINUOUS path cylinders for every fixed positive horizon and even order p>2. The continuous dyadic product density has absolute mass A_p^N, A_p>1; its continuous soft sign is bounded by one and approaches this absolute mass by dominated convergence. Composition with continuous successive path increments gives genuine bounded continuous cylinders with arbitrarily large mean. Excluding agreeing bounded linear functionals on the cylinder sup-norm closure or all bounded continuous paths is an explicit human restriction consequence, needing no countably additive measure representation. The factorial analytic completion, the separate compact-open polynomial nonclosability and the Gaussian p=2 case retain their distinct scope. Both principal source modules read fully. Classical total-variation mechanism, no new general theorem priority claimed.",
+    "Section 5 now makes two exact algebraic limitations explicit. For a fixed dyadic coordinate Y, Pn=Y^n/n! has factorial norm one while YPn has norm n+1; therefore multiplication by Y has no bounded linear extension and ordinary multiplication has no bounded bilinear extension agreeing on all polynomial pairs. The actual contractive damped product B(P,Q)=P(Y/2)Q(Y/2) is commutative but not associative: B(B(1,1),Y)=Y/2 whereas B(1,B(1,Y))=Y/4, with norm difference 1/4. Both obstructions are direct human finite-core consequences, not new named Lean declarations. The signed pairing uses B once with horizon correction and does not require associativity. HigherHeatCommonDampedProduct, HigherHeatCylinderDilation and MultivariateFactorialDampedProduct read fully; source-map witnesses retain the actual completion, refinement and norm bounds. No Banach-algebra structure or new priority claim is inferred."
   ],
   "literature": [
     {
