@@ -2988,6 +2988,609 @@
       "source_sha256": "8d8ba63557470e37d7c1691b5c38183657f28d7e5fab8c62ee0d3749b0473b63",
       "declaration_header": "theorem concrete_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => testC0 \u03ba (changedPath \u03ba \u03c9 t)-testC0 \u03ba 0-\n      \u222b s in 0..(t : \u211d), generatorC0 \u03ba (changedPath \u03ba \u03c9 s.toNNReal))\n      (augmentedPhysicalPast \u03ba) gaussianProduct",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyVanishingGeneratorPair.lean#L70"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.pathSigma_le",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 20,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem pathSigma_le : pathSigma \u2264 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L20"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.approximation_measurable",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 23,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem approximation_measurable (n : \u2115) :\n    Measurable[pathSigma] (BrownianSmoothMassPath.path n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L23"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.limit_raw_measurable",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 39,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem limit_raw_measurable :\n    AEStronglyMeasurable[pathSigma] limitPath gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L39"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.exists_path_functional",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 48,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem exists_path_functional : \u2203 F : C(\u211d\u22650, \u211d) \u2192 C(\u211d\u22650, \u211d),\n    Measurable F \u2227 limitPath =\u1d50[gaussianProduct] (fun \u03c9 => F (clockPath \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L48"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.functional",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 54,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "def functional : C(\u211d\u22650, \u211d) \u2192 C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L54"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.functional_measurable",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 56,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem functional_measurable : Measurable functional",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L56"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.functional_agrees",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 59,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem functional_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    functional (clockPath \u03c9) = limitPath \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L59"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassPathFunctional.mass_agrees",
+      "file": "Foundation/BrownianMassPathFunctional.lean",
+      "line": 63,
+      "source_sha256": "116d47624f1e574ff26729df56958e359f2ce65d9eb1c4880a00a5b056452699",
+      "declaration_header": "theorem mass_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 t : \u211d\u22650,\n    BrownianRandomMassClock.mass \u03c9 t = (functional (clockPath \u03c9) t).toNNReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassPathFunctional.lean#L63"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.monotone_set_measurable",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 15,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem monotone_set_measurable : MeasurableSet {p : C(\u211d\u22650, \u211d) | Monotone p}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L15"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.cumulativePath",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 20,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "def cumulativePath (p : C(\u211d\u22650, \u211d)) : C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L20"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.cumulative_measurable",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 25,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem cumulative_measurable : Measurable cumulativePath",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L25"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.cumulative_monotone",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 30,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem cumulative_monotone (p : C(\u211d\u22650, \u211d)) : Monotone (cumulativePath p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L30"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 37,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "def mass (p : C(\u211d\u22650, \u211d)) (t : \u211d\u22650) : \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L37"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass_continuous",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 40,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem mass_continuous (p : C(\u211d\u22650, \u211d)) : Continuous (mass p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L40"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass_monotone",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 43,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem mass_monotone (p : C(\u211d\u22650, \u211d)) : Monotone (mass p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L43"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass_zero",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 46,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem mass_zero (p : C(\u211d\u22650, \u211d)) : mass p 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L46"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass_coordinate_measurable",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 48,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem mass_coordinate_measurable (t : \u211d\u22650) : Measurable (fun p => mass p t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L48"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.inverse",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 52,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "def inverse (\u03ba : \u211d\u22650) (p : C(\u211d\u22650, \u211d)) : \u211d\u22650 \u2192 \u211d\u22650",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L52"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.inverse_continuous",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 56,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem inverse_continuous (\u03ba : \u211d\u22650) (p : C(\u211d\u22650, \u211d)) : Continuous (inverse \u03ba p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L56"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.inverse_coordinate_measurable",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 59,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem inverse_coordinate_measurable (\u03ba t : \u211d\u22650) :\n    Measurable (fun p => inverse \u03ba p t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L59"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.inversePath",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 72,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "def inversePath (\u03ba : \u211d\u22650) (p : C(\u211d\u22650, \u211d)) : C(\u211d\u22650, \u211d\u22650)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L72"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.stickyPath",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 75,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "def stickyPath (\u03ba : \u211d\u22650) (p : C(\u211d\u22650, \u211d)) : C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L75"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.stickyPath_measurable",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 78,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem stickyPath_measurable (\u03ba : \u211d\u22650) : Measurable (stickyPath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L78"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.mass_agrees",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 84,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem mass_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    mass (clockPath \u03c9) = BrownianRandomMassClock.mass \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L84"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.inverse_agrees",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 93,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem inverse_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba : \u211d\u22650,\n    inverse \u03ba (clockPath \u03c9) = BrownianMassRandomTimeChange.inverse \u03ba \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L93"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.stickyPath_agrees",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 99,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem stickyPath_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba : \u211d\u22650,\n    stickyPath \u03ba (clockPath \u03c9) = BrownianMassRandomTimeChange.changedPath \u03ba \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L99"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathRealization.stickyPath_law",
+      "file": "Foundation/StickyWienerPathRealization.lean",
+      "line": 107,
+      "source_sha256": "30544b887dba0150cc0d179c065436e3e27229874c7bcd33b197ba5d7c597bfa",
+      "declaration_header": "theorem stickyPath_law (\u03ba : \u211d\u22650) :\n    (gaussianProduct.map clockPath).map (stickyPath \u03ba) =\n      gaussianProduct.map (BrownianMassRandomTimeChange.changedPath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathRealization.lean#L107"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.observedSpace_le",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 20,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem observedSpace_le (\u03ba : \u211d\u22650) :\n    observedSpace \u03ba \u2264 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L20"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.changedPath_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 27,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem changedPath_observed (\u03ba : \u211d\u22650) : Measurable[observedAug \u03ba] (changedPath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L27"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.inverse_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 31,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem inverse_observed (\u03ba T : \u211d\u22650) :\n    Measurable[observedAug \u03ba] (fun \u03c9 => inverse \u03ba \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L31"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.forward_lt_iff",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 41,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem forward_lt_iff (\u03ba s b : \u211d\u22650) (\u03c9 : SampleSpace) :\n    forward \u03ba \u03c9 s < b \u2194 s < inverse \u03ba \u03c9 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L41"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.forward_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 46,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem forward_observed (\u03ba s : \u211d\u22650) :\n    Measurable[observedAug \u03ba] (fun \u03c9 => forward \u03ba \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L46"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.brownian_coordinate_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 57,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem brownian_coordinate_observed (\u03ba s : \u211d\u22650) :\n    Measurable[observedAug \u03ba] (fun \u03c9 => clockPath \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L57"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.brownian_path_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 64,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem brownian_path_observed (\u03ba : \u211d\u22650) : Measurable[observedAug \u03ba] clockPath",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L64"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.brownian_space_le",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 68,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem brownian_space_le (\u03ba : \u211d\u22650) :\n    MeasurableSpace.comap clockPath inferInstance \u2264 observedAug \u03ba",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L68"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyBrownianRecovery.brownian_condExp_observed",
+      "file": "Foundation/StickyBrownianRecovery.lean",
+      "line": 72,
+      "source_sha256": "3dc880606a9d90899dbc3443332ac2724a4e68fac503baece394f10ae197b6af",
+      "declaration_header": "theorem brownian_condExp_observed (\u03ba s : \u211d\u22650) :\n    gaussianProduct[fun \u03c9 => clockPath \u03c9 s | observedSpace \u03ba] =\u1d50[gaussianProduct]\n      (fun \u03c9 => clockPath \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyBrownianRecovery.lean#L72"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AmbientNullVersions.stronglyMeasurable_raw_version",
+      "file": "Foundation/AmbientNullVersions.lean",
+      "line": 14,
+      "source_sha256": "5da45155c784f53f3fa298850281224c41fd46bb4858b1080606dd6ab91a4c30",
+      "declaration_header": "theorem stronglyMeasurable_raw_version (f : \u03a9 \u2192 E)\n    (hf : StronglyMeasurable[AmbientNullAugmentation.augment m \u03bc] f) :\n    AEStronglyMeasurable[m] f \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AmbientNullVersions.lean#L14"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AmbientNullVersions.exists_raw_factor",
+      "file": "Foundation/AmbientNullVersions.lean",
+      "line": 38,
+      "source_sha256": "5da45155c784f53f3fa298850281224c41fd46bb4858b1080606dd6ab91a4c30",
+      "declaration_header": "theorem exists_raw_factor {Y : Type*} [MeasurableSpace Y]\n    (X : \u03a9 \u2192 Y) (f : \u03a9 \u2192 E)\n    (hf : StronglyMeasurable[AmbientNullAugmentation.augment\n      (MeasurableSpace.comap X inferInstance) \u03bc] f) :\n    \u2203 F : Y \u2192 E, StronglyMeasurable F \u2227 f =\u1d50[\u03bc] (fun \u03c9 => F (X \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AmbientNullVersions.lean#L38"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.exists_recovery",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 17,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem exists_recovery (\u03ba : \u211d\u22650) : \u2203 R : C(\u211d\u22650, \u211d) \u2192 C(\u211d\u22650, \u211d),\n    Measurable R \u2227 (fun \u03c9 => R (changedPath \u03ba \u03c9)) =\u1d50[gaussianProduct] clockPath",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L17"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.recovery",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 25,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "def recovery (\u03ba : \u211d\u22650) : C(\u211d\u22650, \u211d) \u2192 C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L25"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.recovery_measurable",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 28,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem recovery_measurable (\u03ba : \u211d\u22650) : Measurable (recovery \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L28"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.recovery_agrees",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 31,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem recovery_agrees (\u03ba : \u211d\u22650) :\n    (fun \u03c9 => recovery \u03ba (changedPath \u03ba \u03c9)) =\u1d50[gaussianProduct] clockPath",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L31"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.wienerLaw",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 35,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "def wienerLaw : Measure C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L35"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.stickyLaw",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 37,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "def stickyLaw (\u03ba : \u211d\u22650) : Measure C(\u211d\u22650, \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L37"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.sticky_preserving",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 39,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem sticky_preserving (\u03ba : \u211d\u22650) :\n    MeasurePreserving (stickyPath \u03ba) wienerLaw (stickyLaw \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L39"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.recovery_preserving",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 43,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem recovery_preserving (\u03ba : \u211d\u22650) :\n    MeasurePreserving (recovery \u03ba) (stickyLaw \u03ba) wienerLaw",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L43"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.left_inverse_ae",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 49,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem left_inverse_ae (\u03ba : \u211d\u22650) : \u2200\u1d50 p \u2202wienerLaw,\n    recovery \u03ba (stickyPath \u03ba p) = p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L49"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerPathEquivalence.right_inverse_ae",
+      "file": "Foundation/StickyWienerPathEquivalence.lean",
+      "line": 57,
+      "source_sha256": "3eae327ac568e8ecb733728ee16c7fca7c981802cce1c7987805f991bc49d3fb",
+      "declaration_header": "theorem right_inverse_ae (\u03ba : \u211d\u22650) : \u2200\u1d50 p \u2202stickyLaw \u03ba,\n    stickyPath \u03ba (recovery \u03ba p) = p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerPathEquivalence.lean#L57"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.WienerL2",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 14,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "abbrev WienerL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L14"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.StickyL2",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 15,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "abbrev StickyL2 (\u03ba : \u211d\u22650)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L15"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.toWiener",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 17,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "def toWiener (\u03ba : \u211d\u22650) : StickyL2 \u03ba \u2192\u2097\u1d62[\u211d] WienerL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L17"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.fromWiener",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 20,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "def fromWiener (\u03ba : \u211d\u22650) : WienerL2 \u2192\u2097\u1d62[\u211d] StickyL2 \u03ba",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L20"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.to_from",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 23,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "theorem to_from (\u03ba : \u211d\u22650) (f : WienerL2) :\n    toWiener \u03ba (fromWiener \u03ba f) = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L23"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.from_to",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 34,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "theorem from_to (\u03ba : \u211d\u22650) (f : StickyL2 \u03ba) :\n    fromWiener \u03ba (toWiener \u03ba f) = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L34"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.equivalence",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 45,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "def equivalence (\u03ba : \u211d\u22650) : StickyL2 \u03ba \u2243\u2097\u1d62[\u211d] WienerL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L45"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.equivalence_apply",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 48,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "theorem equivalence_apply (\u03ba : \u211d\u22650) (f : StickyL2 \u03ba) :\n    equivalence \u03ba f = toWiener \u03ba f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L48"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyWienerL2Equivalence.equivalence_symm_apply",
+      "file": "Foundation/StickyWienerL2Equivalence.lean",
+      "line": 51,
+      "source_sha256": "a9d4e21ce45d084dbd384aa44494c4513592c6912dc53f6ac7862ec96dd58933",
+      "declaration_header": "theorem equivalence_symm_apply (\u03ba : \u211d\u22650) (f : WienerL2) :\n    (equivalence \u03ba).symm f = fromWiener \u03ba f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyWienerL2Equivalence.lean#L51"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 21,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "def pullback (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X) : K\u2081 \u2192\u2097.[\u211d] X",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L21"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.mem_pullback_graph",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 45,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem mem_pullback_graph (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (u : K\u2081) (x : X) : (u, x) \u2208 (pullback U T).graph \u2194 (U u, x) \u2208 T.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L45"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_dense_domain",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 60,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_dense_domain (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) : Dense ((pullback U T).domain : Set K\u2081)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L60"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_dense_domain_iff",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 64,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_dense_domain_iff (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X) :\n    Dense ((pullback U T).domain : Set K\u2081) \u2194 Dense (T.domain : Set K\u2082)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L64"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_isClosed",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 76,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_isClosed (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : T.IsClosed) : (pullback U T).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L76"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_isClosed_iff",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 87,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_isClosed_iff (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X) :\n    (pullback U T).IsClosed \u2194 T.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L87"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.mem_pullback_adjoint_domain",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 104,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem mem_pullback_adjoint_domain (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) (f : X) :\n    f \u2208 (pullback U T).adjoint.domain \u2194 f \u2208 T.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L104"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_domain",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 123,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_adjoint_domain (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) : (pullback U T).adjoint.domain = T.adjoint.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L123"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_apply",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 129,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_adjoint_apply (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) (f : X)\n    (hf : f \u2208 (pullback U T).adjoint.domain) (hfT : f \u2208 T.adjoint.domain) :\n    (pullback U T).adjoint \u27e8f, hf\u27e9 = U.symm (T.adjoint \u27e8f, hfT\u27e9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L129"
+    },
+    {
+      "paper": "Section 14: actual Borel sticky/Wiener whole-path maps, raw versions after ambient-null augmentation, pushforward laws, almost-sure two-sided inverse identities, onto real L2 isometry, and exact input-unitary pullback/adjoint domains and values. Fixed kappa throughout; no exceptional-path inverse or physical-filtration/generator identification.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_eq",
+      "file": "Foundation/AdjointUnitaryTransport.lean",
+      "line": 139,
+      "source_sha256": "214585f792dce43c814c89ed741261911dcd246b147747bed3fd98f00a155a34",
+      "declaration_header": "theorem pullback_adjoint_eq (U : K\u2081 \u2243\u2097\u1d62[\u211d] K\u2082) (T : K\u2082 \u2192\u2097.[\u211d] X)\n    (hT : Dense (T.domain : Set K\u2082)) :\n    (pullback U T).adjoint = U.symm.toLinearEquiv.toLinearMap.compPMap T.adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AdjointUnitaryTransport.lean#L139"
     }
   ],
   "human_reorganization": [
@@ -3002,7 +3605,8 @@
     "Section 12 proves the complete Hermite conditional identity with dominated differentiation and bounded sampling. The observed-past Hermite theorem is already mapped in the source. Operational time cannot be replaced by physical time even for the second Hermite polynomial.",
     "The boundary martingale source has augmented physical-past filtration. The printed observed-past extension is a human deduction from prefix Riemann-sum measurability and shrinking the filtration. The factor 2*kappa*g(0) is derived using the exact original Tanaka and half-Laplacian conventions, including kappa=0 without division.",
     "The radius boundary test has linear growth and a derivative jump. Its martingale identity is not a C0 closed-generator domain identification or martingale-problem uniqueness theorem. The nonsticky Gaussian terminal-law pairing obstruction does not classify invariant measures.",
-    "Section 13 reconstructs the actual C0 sticky differential relation, boundary slope maximum principle, uniform resolvent uniqueness/stability and a genuine dense closable graph for kappa>0. Smooth compact tests constant near zero are uniformly dense but have generator value zero there. The explicit vanishing pair F=(1+kappa/4)sqrt(1+x^2)-(1+kappa/2)sqrt(4+x^2)+(kappa/4)|x| has G(0)=1/4 and the exact sticky slope jump, so every flat-test output remains at uniform distance at least 1/4. This excludes a graph-core identification, including in any closed extension containing that pair. Value density and closure give no resolvent range, all-start transition generator or uniqueness theorem. The fixed gap itself also holds at kappa=0, while the named closability estimate retains kappa>0."
+    "Section 13 reconstructs the actual C0 sticky differential relation, boundary slope maximum principle, uniform resolvent uniqueness/stability and a genuine dense closable graph for kappa>0. Smooth compact tests constant near zero are uniformly dense but have generator value zero there. The explicit vanishing pair F=(1+kappa/4)sqrt(1+x^2)-(1+kappa/2)sqrt(4+x^2)+(kappa/4)|x| has G(0)=1/4 and the exact sticky slope jump, so every flat-test output remains at uniform distance at least 1/4. This excludes a graph-core identification, including in any closed extension containing that pair. Value density and closure give no resolvent range, all-start transition generator or uniqueness theorem. The fixed gap itself also holds at kappa=0, while the named closability estimate retains kappa>0.",
+    "Section 14 adds the actual whole-path Borel equivalence and complete operator-domain transport. A fixed smooth-mass subsequence produces a raw Borel continuous-path functional; a monotonicity replacement gives an everywhere defined clock and path map agreeing with the actual construction. Full observed-path recovery plus a countable raw-version/factorization argument gives a Borel inverse modulo the respective path laws. Both pushforward measures and almost-sure inverse directions are proved before composing L2 classes. The resulting real L2 map is onto, preserving norms and means. For supplied dense T into a fixed Hilbert codomain, the transported domain is exactly U^-1 D(T); density and closedness are equivalent, and D((TU)^*)=D(T^*) with value U^-1 T^*. Graph-core transport is explicitly a HUMAN graph-norm consequence. The printed raw factorization and Cauchy-set totalization reorganize the existing version lemmas without claiming new formal definitions. No equality of the laws in the same coordinates, physical-time filtrations, prescribed SDE drivers, physical generators, or all-start transition families is inferred."
   ],
   "literature": [
     {
@@ -3016,6 +3620,10 @@
     {
       "url": "https://arxiv.org/abs/math/0702542",
       "review": "Primary Howitt--Warren 2007 preprint, p2 equations 1\u20132: classical Brownian coupling with coincidence bracket and local time. Relevant antecedent only; no source-mapped identification of the present joint bracket or a full stochastic flow is inferred."
+    },
+    {
+      "url": "https://arxiv.org/abs/1210.1075",
+      "review": "Primary Bass v3 PDF: Section 2 equations (2.3)\u2013(2.4), printed pages 6\u20137, and opening three paragraphs of Theorem 5.2 proof, printed page 16 / PDF index 15, through the Borel F,G path-recovery discussion, directly read. This explicitly precedes the whole-path recovery principle. The subsequent Knight/weak-uniqueness proof and non-strong-solution proof are not imported or claimed fully audited. No new recovery or unitary-transport principle claimed."
     }
   ],
   "novelty": "Classical formalization companion; no new sticky process or local-time mechanism claimed."

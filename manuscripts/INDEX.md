@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-nine drafts, 502 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts. Page counts below match the current hash-linked PDF receipts; any paper-specific novelty remains uncertified, and classical antecedents are credited in the manuscripts. The quadratic Xi strip bound is explicitly classical.
+Twenty-nine drafts, 504 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts. Page counts below match the current hash-linked PDF receipts; any paper-specific novelty remains uncertified, and classical antecedents are credited in the manuscripts. The quadratic Xi strip bound is explicitly classical.
 
 ### Arithmetic entire functions
 
@@ -57,7 +57,7 @@ Twenty-nine drafts, 502 pages, all based on frozen verified commit `bab688bb6140
 
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
-| Brownian sticky clocks: construction, holding time and causal recovery in the observed filtration | [PDF](sticky-clock-recovery/main.pdf) · [LaTeX](sticky-clock-recovery/main.tex) · [theorem map](sticky-clock-recovery/theorem-map.json) · [editorial status](sticky-clock-recovery/editorial-status.md) | 16 pages. Actual inverse-clock construction, holding, causal recovery, Brownian pair increments and observed boundary martingales. A dense closable C0 relation has uniformly dense flat tests with a fixed 1/4 graph-approximation gap to an explicit admissible pair. Resolvent range, all-start generator and flow identification remain separate. |
+| Brownian sticky clocks: construction, holding time and causal recovery in the observed filtration | [PDF](sticky-clock-recovery/main.pdf) · [LaTeX](sticky-clock-recovery/main.tex) · [theorem map](sticky-clock-recovery/theorem-map.json) · [editorial status](sticky-clock-recovery/editorial-status.md) | 18 pages. Whole-path Borel recovery in both directions gives an onto L2 isometry and exact supplied operator/adjoint-domain transport, with no physical-filtration or generator identification. Actual inverse-clock construction, holding, causal recovery, Brownian pair increments and observed boundary martingales. A dense closable C0 relation has uniformly dense flat tests with a fixed 1/4 graph-approximation gap to an explicit admissible pair. Resolvent range, all-start generator and flow identification remain separate. |
 
 ### Finite gauge-invariant transfers
 

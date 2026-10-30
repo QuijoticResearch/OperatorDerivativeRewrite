@@ -19,7 +19,7 @@
 \title{Brownian sticky clocks: construction, holding time\protect\\
 and causal recovery in the observed filtration}
 \author{Project Stardust\\\small A companion to a frozen verified library}
-\date{October 29, 2026}
+\date{October 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -44,6 +44,9 @@ Operational-time Hermite and explicit sticky boundary martingales are
 proved in the observed filtration, with the derivative-jump factor fixed.
 An explicit vanishing boundary pair has generator value $1/4$ at zero,
 showing that uniformly dense flat smooth tests are not a graph core.
+Borel maps recover the complete Wiener and sticky paths from one another
+almost surely, yielding an onto whole-path $L^2$ isometry and exact
+transport of supplied closed operator and adjoint domains.
 \end{abstract}
 
 \section{The construction and its precise conclusions}
@@ -900,7 +903,7 @@ This is a pairing obstruction, not a classification of invariant
 measures or a closed generator theorem.
 
 
-\section{A dense value domain with a fixed graph-norm gap}
+\section{A dense value domain with a fixed graph-norm gap}\label{sec:graphgap}
 The distinction between martingale tests and a closed-generator core can
 be made quantitative. We work in the real Banach space $C_0(\R)$ with
 its uniform norm. Fix $\kappa>0$. Call a pair $(F,G)\in C_0(\R)^2$
@@ -1037,6 +1040,174 @@ right-hand sides. In particular it does not identify the generator of
 an all-start transition semigroup or prove uniqueness of a martingale
 problem. Those are precisely the separate obligations preserved below.
 
+
+\section{Whole-path recovery and exact Hilbert-space transport}
+Fix $\kappa\geq0$ throughout this section. Put
+$\mathcal P=C([0,\infty),\R)$ with its compact-open Polish topology,
+let $\mathsf W$ be the law of $B$ on $\mathcal P$, and let
+$\mathsf Q_\kappa$ be the law of the actual $X^\kappa$ constructed
+above. There are Borel maps $S_\kappa,R_\kappa:\mathcal P\to\mathcal P$
+such that
+\begin{equation}\label{eq:pathisomorphism}
+ (S_\kappa)_*\mathsf W=\mathsf Q_\kappa,\quad
+ (R_\kappa)_*\mathsf Q_\kappa=\mathsf W,\quad
+ R_\kappa S_\kappa=\operatorname{id}\ \mathsf W\text{-a.e.},\quad
+ S_\kappa R_\kappa=\operatorname{id}\ \mathsf Q_\kappa\text{-a.e.}
+\end{equation}
+This assertion concerns complete trajectories, rather than equality
+of measures on the same path coordinates or equality of physical-time
+filtrations. We give the measurable construction and its consequences.
+
+\subsection*{A total Borel construction and an almost-sure inverse}
+The smooth mass approximations from Section 2 depend only on the
+Brownian path: they are integrals of continuous functions of $p(s)$.
+Their maps into $\mathcal P$ are Borel, because evaluation at each
+rational terminal time is Borel and these evaluations generate the
+path-space Borel sigma field. Choose the fixed subsequence already
+used to construct the continuous mass. In a complete metric for
+compact-open convergence, the set on which the corresponding sequence
+of paths is Cauchy is Borel: write the Cauchy condition using only
+countably many metric inequalities. Define $F(p)$ as its limit there
+and the zero path elsewhere. Pointwise limits of measurable maps
+on a measurable set are measurable, so $F$ is Borel and
+$F(B)=L$ almost surely as \emph{paths}, not only at separately
+fixed times.
+
+To define a clock on every path, replace $F(p)$ by zero whenever
+it is not nondecreasing, and call the resulting continuous path
+$\overline F(p)$. The test for being nondecreasing is Borel, since
+it suffices to compare rational times. Set
+\[
+ \ell_p(s)=\overline F(p)(s)-\overline F(p)(0),\quad
+ a_p(s)=s+\kappa\ell_p(s),\quad c_p=a_p^{-1},\quad
+ S_\kappa(p)(t)=p(c_p(t)).
+\]
+For every $p$, $\ell_p$ is continuous, nonnegative, nondecreasing
+and zero at zero. Thus $a_p$ is a continuous strictly increasing
+map onto $[0,\infty)$ and has a continuous inverse.
+For each $t,b\geq0$,
+\[
+ \{p:c_p(t)<b\}=\{p:t<b+\kappa\ell_p(b)\}.
+\]
+This proves coordinate measurability of $c_p(t)$. Continuous path
+evaluation then proves that $S_\kappa$ is Borel into $\mathcal P$.
+On the full-measure event where $F(B)=L$, this construction agrees
+with the original clock, hence
+\begin{equation}\label{eq:pathforwardactual}
+ S_\kappa(B)=X^\kappa\quad\hbox{almost surely as paths}.
+\end{equation}
+The formal totalization uses the same monotonicity replacement and
+nonnegative clock; choices of the raw version of $F$ outside its
+agreement event have no effect on this equality.
+
+For the inverse, the earlier occupation identity recovers
+$C_\kappa(t)$ measurably from the full observed path. Its inverse
+$A_\kappa(s)$ is likewise measurable: the event
+$\{A_\kappa(s)<b\}$ is $\{s<C_\kappa(b)\}$.
+Consequently every $B_s=X^\kappa_{A_\kappa(s)}$ is measurable
+with respect to the ambient-null augmentation of
+$\sigma(X^\kappa)$. Rational evaluations and continuity give the
+same statement for the entire path $B$.
+
+Here is the version step that turns this augmented measurability
+into a Borel path map. A strongly measurable function with values
+in a complete separable metric space has a sequence of measurable
+simple approximants converging to it. Each event in the ambient-null
+augmentation of $\sigma(X^\kappa)$ agrees almost surely with an
+event in $\sigma(X^\kappa)$. Replace the finitely many defining
+events in every simple approximant by these raw events. There is
+one null set outside which all countably many replacements agree.
+The limit of the replaced approximants, totalized by a fixed value
+where necessary, is a raw $\sigma(X^\kappa)$-measurable version of
+$B$. Each such simple approximant factors through $X^\kappa$:
+its defining events are preimages of Borel path sets, and overlaps
+can be made disjoint in a fixed finite order. Take their pointwise
+limit on the Borel convergence set in $\mathcal P$, and zero
+elsewhere. Completeness gives a Borel map $R_\kappa$ with
+\begin{equation}\label{eq:pathinverseactual}
+ R_\kappa(X^\kappa)=B\quad\hbox{almost surely as paths}.
+\end{equation}
+This argument uses countably many approximants, not an uncountable
+intersection of coordinatewise null events.
+
+Equations \eqref{eq:pathforwardactual}--\eqref{eq:pathinverseactual}
+immediately give both pushforward laws in \eqref{eq:pathisomorphism}.
+Composing them on their common agreement event gives
+$R_\kappa(S_\kappa(B))=B$ and
+$S_\kappa(R_\kappa(X^\kappa))=X^\kappa$.
+Pushing these equalities to their respective path laws proves both
+almost-sure inverse identities. No assertion that the maps are
+inverses at every exceptional path is needed.
+
+This recovery principle is already explicit in Bass~\cite{Bass},
+the opening paragraphs of the proof of Theorem 5.2 (preprint
+printed page 16): the operational Brownian path and the time-changed
+path are related by Borel maps in both directions. Our proof records
+the actual version and totalization used in the frozen construction.
+We do not use the remainder of that theorem's weak-uniqueness
+argument to identify the present physical-time martingale problem.
+No new path-recovery principle is claimed.
+
+\subsection*{Pullback isometry and the full transported adjoint domain}
+Define real Hilbert spaces
+$H_W=L^2(\mathsf W;\R)$ and $H_Q=L^2(\mathsf Q_\kappa;\R)$.
+The maps
+\[
+ U:H_Q\longrightarrow H_W,\quad Uf=f\circ S_\kappa,
+ \qquad V:H_W\longrightarrow H_Q,\quad Vg=g\circ R_\kappa
+\]
+are well defined on almost-everywhere equivalence classes. Indeed
+each pushforward identity preserves null sets and gives equality
+of the two squared integrals. Hence they are linear isometries;
+the inverse identities in \eqref{eq:pathisomorphism} give
+$UV=I$ and $VU=I$. In particular $U$ is onto, rather than just
+an isometric embedding. The same pushforwards preserve means.
+
+Let $E$ be a real Hilbert space and let
+$T:D(T)\subset H_W\to E$ be a densely defined linear operator.
+Its pullback has the \emph{whole} inverse-image domain
+\[
+ D(T_Q)=U^{-1}D(T),\qquad T_Qf=T(Uf).
+\]
+Density is preserved in both directions because $U$ is a
+homeomorphism. Its graph is the inverse image of the graph of $T$
+under the homeomorphism $(f,e)\mapsto(Uf,e)$; thus closedness is
+also equivalent in both directions. More precisely, for the
+Hilbert adjoints,
+\begin{equation}\label{eq:transportadjoint}
+ D(T_Q^*)=D(T^*)\subset E,\qquad T_Q^*e=U^{-1}T^*e.
+\end{equation}
+To prove both domain inclusions, recall that $e\in D(T^*)$ means
+there is $h\in H_W$ with
+$\langle e,Tg\rangle_E=\langle h,g\rangle_{H_W}$ for every
+$g\in D(T)$. Substituting $g=Uf$ gives the representing vector
+$U^{-1}h$ for $T_Q^*$, and conversely every $g\in D(T)$ is
+$Uf$ for some $f\in D(T_Q)$. This proves the domain equality;
+density makes the representing vectors unique and proves the
+value formula. The codomain $E$ is unchanged in this input
+transport, which is why its adjoint domain is literally the same
+subset of $E$.
+
+As a human graph-norm reformulation, if $\mathcal C$ is a core
+for a closed $T$, then $U^{-1}\mathcal C$ is a core for $T_Q$:
+graph approximation of $Uf$ pulls back to graph approximation of
+$f$, since both the input and output errors have exactly the same
+norm. This defines a transported closed calculus once an original
+operator is supplied. It does not identify $T_Q$ with the sticky
+physical generator or a physical-time derivative. Nor does an
+isometry of complete path spaces identify their time-indexed
+filtrations, transition semigroups, or a prescribed SDE driver.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:} \code{StickyWienerPathRealization},
+\code{StickyBrownianRecovery}, \code{AmbientNullVersions}.
+\par\noindent
+\code{StickyWienerPathEquivalence}, \code{StickyWienerL2Equivalence}.
+\par\noindent
+\code{AdjointUnitaryTransport.mem\_pullback\_adjoint\_domain},
+\code{pullback\_adjoint\_eq}.
+\par\endgroup
+
 \section{What is established and what remains separate}
 Clock recovery uses the observed prefix, not a terminal coordinate.
 It does not construct a strong solution with a prescribed physical-time
@@ -1044,7 +1215,7 @@ Brownian driver. Bass's sticky SDE \cite{Bass} distinguishes weak
 existence and uniqueness from strong existence; the operational
 representation \eqref{eq:clocks} does not identify that driver filtration.
 
-The preceding section reconstructs the densely defined closable
+Section~\ref{sec:graphgap} reconstructs the densely defined closable
 continuous-function generator relation, its maximum-principle bound,
 and the explicit flat-test graph gap. Its range condition and closed-semigroup identification are
 not supplied by those results. The boundary martingales in
