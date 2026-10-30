@@ -94,12 +94,13 @@ For any varying observation families with $v>0$ and $v\to0$,
 \end{theorem}
 
 The exact nonlinear prediction mechanism is established Gaussian
-theory. McElroy and Das~\cite{MD} give Hermite-based nonlinear prediction
-formulas for Gaussian transformations with finite data. Here the
-Hilbert projection describes arbitrary observation families and makes
-the $L^2$ completion and rank remainder explicit. This is a
-formalization exposition, not a claim to have discovered nonlinear
-Gaussian prediction.
+theory. McElroy and Das~\cite{MD}, Theorem 2.1, already give the
+Hermite predictor and its exact mean-square error, including infinite
+observation samples. Their normalized coefficients agree with the
+present formulas as explained in the final comparison. Our Hilbert
+notation and explicit rank remainder provide a formalization
+exposition; neither the prediction formula nor infinite-past
+conditioning is claimed as a new principle.
 
 \section{Completeness and the conditional Wick identity}
 \begin{lemma}\label{lem:hermite}
@@ -2186,10 +2187,26 @@ the printed proofs. The elementary noncompactness
 of the full potential is a classical deduction from its exact first-chaos
 identity, not a newly named formal theorem.
 
-McElroy--Das's primary introduction describes the Hermite predictor and
-mean-square-error mechanism for finite data; access to its complete
-main-theorem text was incomplete, so no detailed theorem-number priority
-comparison is claimed. Sottinen--Viitasaari's accessible primary paper,
+A fresh primary indexed-text comparison now includes McElroy--Das
+Theorem 2.1, equations (6)--(7), and its surrounding observation
+assumptions. Their standardized Gaussian target has residual variance
+$V$ and orthonormal Hermite coefficients $J_n$. In our notation
+$v=1-V$ and $J_n=\sqrt{n!}\,a_n$, so their error formula becomes
+\[
+ \E|f-\E[f\mid\mathcal A]|^2
+       =\sum_{n\geq1}n!a_n^2(1-v^n),
+\]
+exactly the complement of (3). Their predictor formula is the same
+conditional Hermite expansion: apply the Gaussian residual generating
+function in Lemma 2.2 and change from normalized to monic Hermite
+polynomials. Their discussion explicitly includes finite,
+semi-infinite and bi-infinite observation samples, with invertibly
+transformed Gaussian observations. Infinite-past conditioning is
+therefore not a distinction establishing priority. This updates the
+earlier introduction-only access record. The indexed primary theorem
+was retrieved; publisher PDF requests returned 403 and the journal
+PDF fetch timed out, so their full appendix proof was not reviewed.
+Sottinen--Viitasaari's accessible primary paper,
 Theorem 3.1 and Proposition 3.2, gives the conditional law and the two
 small-past covariance asymptotics. Our proof retains a weaker explicit
 uniform lower constant and does not assert a new fractional exponent.
