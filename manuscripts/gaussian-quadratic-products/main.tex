@@ -8,6 +8,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\E}{\mathbb E}
+\newcommand{\ind}{\mathbf1}
 \newcommand{\R}{\mathbb R}
 \newcommand{\Hh}{\mathcal H}
 \newcommand{\HS}{\mathrm{HS}}
@@ -39,7 +40,9 @@ has a sharper lower fourth-moment coefficient of nine, and an explicit
 anticommuting pair delimits incomplete independence tests.
 Full second-chaos prediction compresses both completed matrix coordinates;
 its exact error retains the mixed observed/unobserved block.
-On the original predictable Sobolev domain, the full derivative of an actual Brownian integral retains an orthogonal sensitivity correction with exact energy and a deterministic-profile rigidity criterion. Classical quadratic-form and Gaussian calculus theory is credited throughout;
+On the original predictable Sobolev domain, the full derivative of an actual Brownian integral retains an orthogonal sensitivity correction with exact energy and a deterministic-profile rigidity criterion. A cubic Brownian witness also disproves a conditional product rule for
+the bounded predictable adjoint, with an exact integrated-Brownian correction.
+Classical quadratic-form and Gaussian calculus theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
 
@@ -1191,6 +1194,125 @@ orthogonal energies. It makes no novelty claim and does not infer
 physical-time differentiability, a derivative-domain converse for
 all integrands, or an observed-IBM stochastic calculus.
 
+
+\section{The bounded predictable adjoint is not a conditional derivation}
+Let $W$ be the same original Brownian source and fix $T\geq0$.
+Write $Iu=\int_0^T u_t\,dW_t$ on its actual predictable
+$L^2(dt\,d\mathbb P)$ space and $K=I^*$ for the Hilbert adjoint.
+The isometry of $I$ gives $\|K\|\leq1$ and $KIu=u$.
+Constants are orthogonal to the range of $I$, so $Kc=0$.
+These are bounded Hilbert operators; $K$ is distinct from the
+unbounded Malliavin derivative $D$. Throughout this section every
+displayed time field is restricted to $(0,T]$ and zero elsewhere.
+
+\begin{proposition}\label{prop:conditionalleibniz}
+For $F=W_T^2$ and $G=W_T$, put
+\[
+ B_t=\E(F\mid\mathcal F_t)(KG)_t
+       +\E(G\mid\mathcal F_t)(KF)_t\qquad(0<t\leq T).
+\]
+All products here define genuine predictable $L^2$ fields. Their
+exact values are
+\begin{align}\label{eq:cubicleibniz}
+ (KG)_t&=1,&(KF)_t&=2W_t,\\
+ (K(FG))_t&=3W_t^2+3(T-t),& B_t&=3W_t^2+(T-t).
+\end{align}
+In particular
+\begin{equation}\label{eq:cubicleibniznorm}
+ (K(FG))_t-B_t=2(T-t),\qquad
+ \|K(FG)-B\|_{L^2(dt\,d\mathbb P)}^2=\frac43T^3.
+\end{equation}
+It is also different from the running spatial derivative $3W_t^2$:
+the corresponding squared error is $3T^3$.
+\end{proposition}
+\begin{proof}
+The elementary polynomial It\^o identities give
+\[
+ W_T=I1,\qquad W_T^2=T+I(2W).
+\]
+For the cubic, apply It\^o to
+$g(t,x)=x^3+3(T-t)x$. Its time derivative is $-3x$ and half its
+second space derivative is $3x$, so the drift cancels exactly.
+At the two endpoints $g(T,W_T)=W_T^3$ and $g(0,0)=0$, hence
+\[
+ W_T^3=I\big(3W_t^2+3(T-t)\big).
+\]
+Gaussian moments show that all these integrands are square
+integrable: in particular $\E W_t^4=3t^2$ and the deterministic
+terms are bounded on the finite horizon. Thus the identities hold
+for the original isometric integral, and applying $K$ proves the
+three asserted representers.
+
+Independence of the centered future increment $W_T-W_t$ gives
+\[
+ \E(W_T\mid\mathcal F_t)=W_t,\qquad
+ \E(W_T^2\mid\mathcal F_t)=W_t^2+(T-t).
+\]
+Substitute these and the first two representers into $B_t$.
+This gives its asserted value and verifies its predictable
+$L^2$ membership directly, without assuming closure of arbitrary
+operator domains under products. Subtract the fields and integrate:
+$\int_0^T4(T-t)^2dt=4T^3/3$ and
+$\int_0^T9(T-t)^2dt=3T^3$.
+\end{proof}
+
+The missing field has an exact original observable source. Define
+the Bochner $L^2(\mathbb P)$ time integral
+\[
+ J_T=\int_0^T W_s\,ds.
+\]
+It exists because $s\mapsto W_s$ is continuous in $L^2$ and
+$\|W_s\|_2=\sqrt{s}$. In the deterministic source
+$L^2(0,T)$, the map $s\mapsto\ind_{(0,s]}$ is continuous with
+distance $\sqrt{|s-r|}$. Its Bochner integral is the ramp
+$h_T(t)=T-t$ on $(0,T]$. To check this equality, pair against
+any $q\in L^2(0,T)$ and interchange the two finite integrals;
+absolute integrability follows from
+$\int_0^T\int_0^s|q(t)|\,dt\,ds
+\leq T\sqrt T\|q\|_2$.
+The deterministic It\^o map is bounded linear, so it commutes
+with this Bochner integral. Since it sends $\ind_{(0,s]}$ to
+$W_s$, this proves
+\begin{equation}\label{eq:rampcorrection}
+ J_T=\int_0^T(T-t)\,dW_t,\qquad KJ_T=h_T,\qquad
+ K(W_T^3)-B=2KJ_T.
+\end{equation}
+The source constructs $J_T$ as the isonormal image of this exact
+ramp. The Bochner time-integral identification above is a human
+reformulation with its integrability justification included.
+As another human consequence of the existing It\^o isometry,
+\[
+ I B=W_T^3-2J_T,\qquad
+ \|W_T^3-I B\|_2^2=4\|J_T\|_2^2=\frac43T^3.
+\]
+Thus the field error is a nonzero terminal reconstruction error as
+well whenever $T>0$.
+
+The polynomial example does not refute a theorem restricted to
+bounded $C^3$ tests; those are different hypotheses. It excludes
+the displayed conditional product rule even on Brownian
+polynomials with every finite moment. The ordinary Malliavin
+Leibniz rule is unaffected: its terminal factors are multiplied
+before conditional projection. Here those factors were separately
+conditioned and multiplied, which loses a future-increment term.
+Hairer~\cite{HairerSensitivity}, Exercise 5.23, states the classical
+conditional-derivative representer on a fixed Wiener chaos.
+We use that statement only as antecedent context; the finite
+polynomial representers and both errors have been proved directly
+above. No new general product principle is claimed.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:}
+\texttt{GaussianCubicDiagnostic.cubic\_predictableAdjoint},
+\texttt{cubic\_projection\_difference\_norm\_sq}.
+\par\noindent
+\texttt{PredictableLeibnizCounterexample.candidate\_conditional\_slices},
+\texttt{conditional\_leibniz\_defect\_norm\_sq}.
+\par\noindent
+\texttt{PredictableLeibnizIntegratedCorrection.integratedTerminal\_adjoint},
+\texttt{cubic\_defect\_eq\_integrated\_adjoint}.
+\par\endgroup
+
 \section{Scope and formal correspondence}
 All sources are frozen at the verified commit
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
@@ -1268,6 +1390,6 @@ correlated normal random variables}, primary preprint arXiv:2106.02897v2
 \emph{Wiener-chaos approach to optimal prediction}, primary preprint
 arXiv:1411.3032v3 (2018), Section 2, printed page 5.
 \url{https://arxiv.org/abs/1411.3032}.
-\bibitem{HairerSensitivity} M. Hairer, \emph{Advanced Stochastic Analysis}, author notes dated May 19, 2026, Proposition 5.22 and equation (5.20), printed page 51. \url{https://hairer.org/notes/StochasticAnalysisCourse.pdf}.
+\bibitem{HairerSensitivity} M. Hairer, \emph{Advanced Stochastic Analysis}, author notes dated May 19, 2026, Proposition 5.22, equation (5.20), and Exercise 5.23, printed page 51. \url{https://hairer.org/notes/StochasticAnalysisCourse.pdf}.
 \end{thebibliography}
 \end{document}

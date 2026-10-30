@@ -3240,6 +3240,267 @@
       "source_sha256": "7712a12c58b043b592fd754b9d6bf5f84ff973aed46eb865a03a4319feeaed39",
       "declaration_header": "theorem incrementProduct_X_not_originalField_graph (a b : \u211d\u22650)\n    (ha : 0 < a) (hab : a < b) :\n    (incrementProductL2 (fun _ : Unit => a) (X ()) a b,\n      scalarTensor (incrementDirection a b) (pastCoefficient (fun _ : Unit => a) (X ())))\n      \u2209 closedCylindricalDerivative.graph",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTimeSensitivity.lean#L189"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.value_three",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 16,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem value_three (x t : \u211d) : value 3 x t = x ^ 3 - 3 * t * x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L16"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_expansion",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 21,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_expansion (T : \u211d\u22650) :\n    polynomialValue T (Polynomial.X ^ 3) = (brownianCore T 3 : GaussianL2) +\n      (3 * (T : \u211d)) \u2022 (brownianCore T 1 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L21"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubicIntegrand",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 34,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "def cubicIntegrand (T : \u211d\u22650) : fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L34"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.integral_cubicIntegrand",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 37,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem integral_cubicIntegrand (T : \u211d\u22650) :\n    itoIntegral (cubicIntegrand T) = polynomialValue T (Polynomial.X ^ 3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L37"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_predictableAdjoint",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 43,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_predictableAdjoint (T : \u211d\u22650) :\n    predictableAdjoint (polynomialValue T (Polynomial.X ^ 3)) = cubicIntegrand T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L43"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubicIntegrand_slices",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 47,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubicIntegrand_slices (T : \u211d\u22650) :\n    scalarCurry (cubicIntegrand T : TimeProbabilityL2) =\u1d50[volume]\n      (Ioc 0 (T : \u211d)).indicator (fun x =>\n        (3 : \u211d) \u2022 (brownianCore x.toNNReal 2 : GaussianL2) + (3 * (T : \u211d)) \u2022 gaussianOne)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L47"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_spatial_value",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 68,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_spatial_value (t : \u211d\u22650) :\n    valueL2 t (MvPolynomial.pderiv 1 (spatialPolynomial (Polynomial.X ^ 3))) =\n      (3 : \u211d) \u2022 (brownianCore t 2 : GaussianL2) + (3 * (t : \u211d)) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L68"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_projection_difference_slices",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 86,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_projection_difference_slices (T : \u211d\u22650) :\n    scalarCurry (predictableAdjoint (polynomialValue T (Polynomial.X ^ 3)) : TimeProbabilityL2) -\n      spatialField T (spatialPolynomial (Polynomial.X ^ 3)) =\u1d50[volume]\n      (Ioc 0 (T : \u211d)).indicator (fun x => (3 * ((T : \u211d) - x)) \u2022 gaussianOne)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L86"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_projection_difference_norm_sq",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 103,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_projection_difference_norm_sq (T : \u211d\u22650) :\n    \u2016scalarCurry (predictableAdjoint (polynomialValue T (Polynomial.X ^ 3)) : TimeProbabilityL2) -\n      spatialField T (spatialPolynomial (Polynomial.X ^ 3))\u2016 ^ 2 = 3 * (T : \u211d) ^ 3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L103"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCubicDiagnostic.cubic_projection_ne_running_derivative",
+      "file": "Foundation/GaussianCubicDiagnostic.lean",
+      "line": 129,
+      "source_sha256": "6e9488c358baf4dceab5e93b8348699fd5867fcd567d6d224e03c81607855b09",
+      "declaration_header": "theorem cubic_projection_ne_running_derivative (T : \u211d\u22650) (hT : 0 < T) :\n    scalarCurry (predictableAdjoint (polynomialValue T (Polynomial.X ^ 3)) : TimeProbabilityL2) \u2260\n      spatialField T (spatialPolynomial (Polynomial.X ^ 3))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCubicDiagnostic.lean#L129"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.predictableAdjoint_norm_le_one",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 18,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem predictableAdjoint_norm_le_one : \u2016predictableAdjoint\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L18"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.square_expansion",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 22,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem square_expansion (T : \u211d\u22650) : polynomialValue T (Polynomial.X^2) =\n    (brownianCore T 2 : GaussianL2) + (T : \u211d) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L22"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.conditional_square",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 32,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem conditional_square (S T : \u211d\u22650) (hST : S \u2264 T) :\n    pastProjection S (polynomialValue T (Polynomial.X^2)) =\n      polynomialValue S (Polynomial.X^2) + ((T : \u211d)-S) \u2022 gaussianOne",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L32"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.predictableAdjoint_square",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 42,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem predictableAdjoint_square (T : \u211d\u22650) :\n    predictableAdjoint (polynomialValue T (Polynomial.X^2)) = (2 : \u211d) \u2022 hermiteIntegrand 1 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L42"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.linear_expansion",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 48,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem linear_expansion (T : \u211d\u22650) : polynomialValue T Polynomial.X = (brownianCore T 1 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L48"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.conditional_linear",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 54,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem conditional_linear (S T : \u211d\u22650) (hST : S \u2264 T) :\n    pastProjection S (polynomialValue T Polynomial.X) = polynomialValue S Polynomial.X",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L54"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.predictableAdjoint_linear",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 58,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem predictableAdjoint_linear (T : \u211d\u22650) :\n    predictableAdjoint (polynomialValue T Polynomial.X) = hermiteIntegrand 0 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L58"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.cubicAdjoint",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 64,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "def cubicAdjoint (T : \u211d\u22650) : Lp GaussianL2 2 (volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L64"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.cubicSpatial",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 67,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "def cubicSpatial (T : \u211d\u22650) : Lp GaussianL2 2 (volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L67"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.conditionalLeibnizCandidate",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 71,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "def conditionalLeibnizCandidate (T : \u211d\u22650) : Lp GaussianL2 2 (volume : Measure \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L71"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.candidate_slices",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 74,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem candidate_slices (T : \u211d\u22650) :\n    conditionalLeibnizCandidate T =\u1d50[volume] (Ioc 0 (T : \u211d)).indicator (fun x =>\n      (3 : \u211d) \u2022 (GaussianTimeSpaceHermite.brownianCore x.toNNReal 2 : GaussianL2) +\n        ((T : \u211d) + 2*x) \u2022 gaussianOne)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L74"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.candidate_conditional_slices",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 96,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem candidate_conditional_slices (T : \u211d\u22650) :\n    conditionalLeibnizCandidate T =\u1d50[volume] (Ioc 0 (T : \u211d)).indicator (fun x =>\n      pastProjection x.toNNReal (polynomialValue T (Polynomial.X^2)) +\n        (2 : \u211d) \u2022 polynomialValue x.toNNReal (Polynomial.X^2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L96"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.conditional_leibniz_defect_norm_sq",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 112,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem conditional_leibniz_defect_norm_sq (T : \u211d\u22650) :\n    \u2016cubicAdjoint T - conditionalLeibnizCandidate T\u2016^2 = (4/3 : \u211d) * (T : \u211d)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L112"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizCounterexample.conditional_leibniz_fails_at_one",
+      "file": "Foundation/PredictableLeibnizCounterexample.lean",
+      "line": 123,
+      "source_sha256": "3ceeea6787f10ecab63a794da22c4363349f5699db571e76db4968019a66fa3d",
+      "declaration_header": "theorem conditional_leibniz_fails_at_one : cubicAdjoint 1 \u2260 conditionalLeibnizCandidate 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizCounterexample.lean#L123"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizIntegratedCorrection.integratedTerminal",
+      "file": "Foundation/PredictableLeibnizIntegratedCorrection.lean",
+      "line": 19,
+      "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
+      "declaration_header": "def integratedTerminal (T : \u211d\u22650) : GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L19"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizIntegratedCorrection.integratedProfile_predictable",
+      "file": "Foundation/PredictableLeibnizIntegratedCorrection.lean",
+      "line": 22,
+      "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
+      "declaration_header": "theorem integratedProfile_predictable (T : \u211d\u22650) :\n    productTensor (integratedVector T) gaussianOne \u2208 fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L22"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizIntegratedCorrection.integratedTerminal_adjoint",
+      "file": "Foundation/PredictableLeibnizIntegratedCorrection.lean",
+      "line": 30,
+      "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
+      "declaration_header": "theorem integratedTerminal_adjoint (T : \u211d\u22650) :\n    predictableAdjoint (integratedTerminal T) =\n      \u27e8productTensor (integratedVector T) gaussianOne, integratedProfile_predictable T\u27e9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L30"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizIntegratedCorrection.integratedTerminal_adjoint_slices",
+      "file": "Foundation/PredictableLeibnizIntegratedCorrection.lean",
+      "line": 36,
+      "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
+      "declaration_header": "theorem integratedTerminal_adjoint_slices (T : \u211d\u22650) :\n    scalarCurry (predictableAdjoint (integratedTerminal T) : TimeProbabilityL2) =\u1d50[volume]\n      (Ioc 0 (T : \u211d)).indicator (fun x => ((T : \u211d)-x) \u2022 gaussianOne)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L36"
+    },
+    {
+      "paper": "Section 16 / Proposition 16.1: bounded original predictable adjoint K=I*, actual terminal Brownian square/linear/cubic representers, actual conditional product candidate, deterministic field defect 2(T-t) with squared norm 4T^3/3, running-spatial defect 3(T-t) with squared norm 3T^3, and exact twice-integrated-ramp adjoint correction. Polynomial all-finite-moment tests, not a bounded-C3 counterexample or a general operator-domain product theorem.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PredictableLeibnizIntegratedCorrection.cubic_defect_eq_integrated_adjoint",
+      "file": "Foundation/PredictableLeibnizIntegratedCorrection.lean",
+      "line": 47,
+      "source_sha256": "3bb2462aee306fed0f2522514058e6e3e69bf684fc74f4186b7b3a2768df689a",
+      "declaration_header": "theorem cubic_defect_eq_integrated_adjoint (T : \u211d\u22650) :\n    cubicAdjoint T - conditionalLeibnizCandidate T =\n      (2 : \u211d) \u2022 scalarCurry (predictableAdjoint (integratedTerminal T) : TimeProbabilityL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PredictableLeibnizIntegratedCorrection.lean#L47"
     }
   ],
   "human_reorganization": [
@@ -3258,7 +3519,8 @@
     "The exact nonlinear least-prediction error, block split 4||RAP||_HS^2+2||RAR||_HS^2, and zero-error iff A=PAP are human Hilbert-space consequences.",
     "The conditional residual variance 4||U_RAP||^2+2||RAR||_HS^2 is a labelled human deduction: finite adapted Gaussian bases, vanishing third moments and strong L2/L1 completion. It is not a named formal conditional-variance theorem. The actual cross product 2G0G1 has zero conditional mean given G0 but conditional variance 4G0^2, hence is not independent of the observations.",
     "Section 14 reconstructs the original predictable L2 representation of M_T^2-E M_T^2 for M_t=(W_t^2-t)/2. The actual correction is 2(T-t)W_t and its terminal squared defect is T^4/3. The ordinary Ito formula retains its random quadratic variation and is not refuted. Exact naive/correction/cross energies 5*T^4/2, T^4/3, T^4/3, conditional covariance (T-t)W_t and the direct polynomial-localization proof are labelled HUMAN deductions; full conditional product expectation is not replaced by the product of conditional means. No projected-Malliavin representation on an unstated domain is asserted.",
-    "Section 15 reconstructs the full Gaussian derivative of the original Brownian Ito integral on the independently specified predictable Sobolev graph. Finite-chaos bounded graph maps and Bochner dominated convergence prove equality with the actual adapted polynomial graph closure; no graph approximation is assumed in the theorem. The actual parameterized correction is an isometry only on its proved admissible range and is orthogonal to all embedded predictable fields. Exact derivative/graph energies and a mean-profile Poincare bound give deterministic-profile rigidity. The B_a times (B_b-B_a) step witness saturates the bound and retains correction energy a(b-a). This full source-field correction is distinguished from the preceding two predictable coefficient corrections, whose cross energy is nonzero. No converse characterization of all Ito targets, physical-time derivative or observed-IBM calculus is inferred."
+    "Section 15 reconstructs the full Gaussian derivative of the original Brownian Ito integral on the independently specified predictable Sobolev graph. Finite-chaos bounded graph maps and Bochner dominated convergence prove equality with the actual adapted polynomial graph closure; no graph approximation is assumed in the theorem. The actual parameterized correction is an isometry only on its proved admissible range and is orthogonal to all embedded predictable fields. Exact derivative/graph energies and a mean-profile Poincare bound give deterministic-profile rigidity. The B_a times (B_b-B_a) step witness saturates the bound and retains correction energy a(b-a). This full source-field correction is distinguished from the preceding two predictable coefficient corrections, whose cross energy is nonzero. No converse characterization of all Ito targets, physical-time derivative or observed-IBM calculus is inferred.",
+    "Section 16 reconstructs a separate Brownian cubic obstruction for the bounded predictable adjoint K=I*, retaining its distinction from the unbounded Malliavin derivative. On F=W_T^2 and G=W_T, the actual conditional-product candidate is 3W_t^2+(T-t), whereas K(FG)=3W_t^2+3(T-t). Their deterministic error 2(T-t) has squared time-probability norm 4T^3/3; replacing by running 3W_t^2 instead gives 3T^3. All candidate and true fields are proved predictable L2 using genuine Gaussian fourth moments. The exact error is 2KJ_T, with J_T the original first-chaos ramp observable. Identification J_T=int_0^T W_s ds by a Bochner deterministic-source integral and bounded Ito-map interchange is explicitly a HUMAN reformulation; the terminal error identity IB=W_T^3-2J_T is likewise a HUMAN isometry consequence. No arbitrary multiplier-domain closure, general conditional derivation, bounded-C3 counterexample, physical-time IBM calculus or new product principle is inferred."
   ],
   "literature": [
     {
@@ -3272,6 +3534,10 @@
     {
       "url": "https://arxiv.org/pdf/2106.02897",
       "review": "Gaunt primary preprint v2, Section 2.7, pages 9\u201310: actual central moments and kurtosis inspected, number of product summands one matches the new companion formulas. Classical antecedent, no novelty claim."
+    },
+    {
+      "url": "https://www.hairer.org/notes/StochasticAnalysisCourse.pdf",
+      "review": "Primary author notes dated May 19, 2026: Exercise 5.23, printed page 51 / PDF index 50, directly inspected for the classical fixed-chaos conditional-Malliavin-derivative representer. It is an exercise statement, not a supplied proof audited here. The manuscript proves the needed polynomial cases directly by Ito and isometry. Earlier Proposition 5.22 comparison retained. No novelty claim for these Gaussian mechanisms."
     }
   ],
   "novelty": "Classical formalization companion; no new quadratic independence criterion or fourth-moment phenomenon claimed."
