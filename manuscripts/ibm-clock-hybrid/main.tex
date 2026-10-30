@@ -499,6 +499,74 @@ bounds are labelled human consequences of the same source variational
 identities; the source directly records solution uniqueness, minimality,
 norm bounds and value-iterate convergence.
 
+\subsection*{A weak chain identity on the whole native energy domain}
+Write $A=\delta D$ with its actual product domain. For $u\in\Dom A$,
+let $y=Au\in\Hh$ and let
+\[
+ e_u(\omega)=\|D_Xu(\omega)\|^2+\|D_Yu(\omega)\|^2.
+\]
+This is a well-defined almost-everywhere nonnegative $L^1$ density,
+with $\E e_u=\|Du\|_2^2$. Its square integrability or full-observation
+measurability is not assumed. Let $\phi\in C^2(\R)$ have bounded first
+and second derivatives. The original closed Gaussian chain rule,
+restricted to observable inputs, gives
+\[
+ \phi(u),\ \phi'(u)\in\Dom D,\qquad
+ D\phi(u)=\phi'(u)Du,\quad D\phi'(u)=\phi''(u)Du.
+\]
+Indeed $|\phi(u)|\leq|\phi(0)|+\|\phi'\|_\infty|u|$ ensures its $L^2$
+value, and both chain limits are justified by bounded derivatives and
+original graph closure, as in Section 2. All these values are observable
+functions of $u$. Define the ambient density
+\[
+ q=\phi'(u)y-\phi''(u)e_u\in L^1.
+\]
+The first term is in $L^2$ and the second is in $L^1$, so this assertion
+uses no unproved fourth-moment bound on $Du$.
+For every bounded $v\in\Dom D$, the bounded product rule puts
+$\phi'(u)v$ in the original domain. Test the original equation
+$\delta Du=y$ against this product and expand its derivative:
+\[
+ \langle D\phi(u),Dv\rangle
+ =\E[vy\phi'(u)]-\E[v\phi''(u)e_u]=\E[vq].
+\]
+Every term is integrable because $v,\phi',\phi''$ are bounded and the
+stated value and energy densities are integrable. Taking $v=1$ proves
+$\E q=0$. This is a genuine weak $L^1$ chain identity throughout
+$\Dom A$, not an assumption that $\phi(u)$ lies in $\Dom A$.
+\lean{IBMNativeGeneratorChain}{energyDensity_integrable; energyDensity_integral}
+\lean{IBMNativeWeakL1Divergence}{weakDensity_integrable; weakDensity_mean_zero;
+weak_pairing}
+\lean{IBMNativeWeakGeneratorChain}{nonlinear_weak_chain; poisson_sine_weak}
+
+The exact strong-domain criterion is supplied by
+Theorem~\ref{thm:conditionaladjoint}. Apply it to the actual $L^2$ field
+$D\phi(u)$ and the just-proved bounded-test density $q$. With
+$C=\E[\,\cdot\mid\sigma(Z_t:t\geq0)]$ as in Section 2,
+\[
+ \phi(u)\in\Dom A\quad\Longleftrightarrow\quad Cq\in L^2,
+ \qquad A\phi(u)=Cq\quad\hbox{when this holds}.
+\]
+This exact criterion is a human application of the mapped general
+conditional-adjoint theorem, not a stronger named chain declaration.
+For example $e_u\in L^2$ suffices, since it makes $q\in L^2$ and $C$
+is a contraction, but it is not inserted as an automatic property of
+all generator-domain inputs. The conditional density, rather than its
+unprojected ambient representative, determines the original adjoint.
+
+For the actual centered Poisson solution above and $\phi=\sin$ the
+unconditional weak density is explicitly
+\[
+ q=(\cos u)x+(\sin u)e_u,\qquad\E q=0,
+ \qquad\langle D\sin u,Dv\rangle=\E[vq]
+       \quad(v\in\Dom D\hbox{ bounded}).
+\]
+Whenever $x\ne0$, its potential is nonconstant, since $Du=0$ would force
+$\delta Du=x=0$. Thus this identity applies to actual nonconstant
+original-domain potentials, not merely a formally postulated operator.
+It retains its weak-test scope unless the displayed conditional $L^2$
+criterion is separately satisfied.
+
 All statements retain the original restricted observable derivative and
 its Hilbert adjoint. The positive operator here has domain
 $\{u\in\Dom D:Du\in\Dom\delta\}$ and value $\delta Du$.

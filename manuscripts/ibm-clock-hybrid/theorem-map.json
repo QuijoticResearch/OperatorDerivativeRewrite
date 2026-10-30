@@ -1086,6 +1086,168 @@
       "source_sha256": "7ec402b136e9032bfdabae8a57b35da38e113aab070d78f0cba51461741e2ed6",
       "declaration_header": "theorem resolvent_contraction (T : E \u2192\u2097.[\u211d] F) (hT : T.IsClosed) (x : E) :\n    \u2016resolvent T hT x\u2016 \u2264 \u2016x\u2016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorEnergyResolvent.lean#L81"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.energyDensity_eq",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 21,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem energyDensity_eq (f : jointDerivative.domain) (\u03c9 : IBMSourceLaws.JointSample) :\n    energyDensity f \u03c9 = \u2016coordinate 0 (jointDerivative f 0) \u03c9\u2016^2 +\n      \u2016coordinate 1 (jointDerivative f 1) \u03c9\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L21"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.energyDensity_integrable",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 26,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem energyDensity_integrable (f : jointDerivative.domain) :\n    Integrable (energyDensity f) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L26"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.energyDensity_integral",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 33,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem energyDensity_integral (f : jointDerivative.domain) :\n    (\u222b \u03c9, energyDensity f \u03c9 \u2202IBMSourceLaws.jointMeasure) = \u2016jointDerivative f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L33"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.chain_coordinates",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 50,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem chain_coordinates (f F : jointDerivative.domain) (a : \u211d \u2192 \u211d)\n    (hc : uncurryField (jointDerivative F 1) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 uncurryField (jointDerivative f 1) \u03c9)\n    (hs : sourceField (jointDerivative F 0) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 sourceField (jointDerivative f 0) \u03c9)\n    (i : Fin 2) :\n    coordinate i (jointDerivative F i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 coordinate i (jointDerivative f i) \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L50"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.chain_multiply",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 71,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem chain_multiply (f F : jointDerivative.domain) (g : JointL2) (a : \u211d \u2192 \u211d)\n    (hg : g =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9))\n    (hb : MemLp (g : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (hF : \u2200 i : Fin 2, coordinate i (jointDerivative F i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 coordinate i (jointDerivative f i) \u03c9) :\n    jointDerivative F = multiply g hb (jointDerivative f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L71"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.chain_pairing",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 82,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem chain_pairing (f g : jointDerivative.domain) (a : \u211d \u2192 \u211d)\n    (hg : \u2200 i : Fin 2, coordinate i (jointDerivative g i) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) \u2022 coordinate i (jointDerivative f i) \u03c9) :\n    pairingFunction (jointDerivative g) (jointDerivative f) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9) * energyDensity f \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L82"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGeneratorChain.composition_bound",
+      "file": "Foundation/IBMNativeGeneratorChain.lean",
+      "line": 100,
+      "source_sha256": "58bcfe1eee48d778c32d4afafd8f8b8fb0d5d134fc0f35795f9c834e86b94fab",
+      "declaration_header": "theorem composition_bound (f g : jointDerivative.domain) (a : \u211d \u2192 \u211d) (B : \u211d)\n    (hg : ((g : IntrinsicSpace) : JointL2) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => a (((f : IntrinsicSpace) : JointL2) \u03c9)) (hB : \u2200 x, \u2016a x\u2016 \u2264 B) :\n    \u2200\u1d50 \u03c9 \u2202IBMSourceLaws.jointMeasure, |(((g : IntrinsicSpace) : JointL2) \u03c9)| \u2264 B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGeneratorChain.lean#L100"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.product_integrable",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 18,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem product_integrable (a b : JointL2) :\n    Integrable (fun \u03c9 => a \u03c9 * b \u03c9) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L18"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.pairing_integrable",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 25,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem pairing_integrable (V U : JointFieldSpace) :\n    Integrable (pairingFunction V U) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L25"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.product_mean",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 30,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem product_mean (a b : JointL2) :\n    (\u222b \u03c9, a \u03c9 * b \u03c9 \u2202IBMSourceLaws.jointMeasure) = inner \u211d a b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L30"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.pairing_mean",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 38,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem pairing_mean (V U : JointFieldSpace) :\n    (\u222b \u03c9, pairingFunction V U \u03c9 \u2202IBMSourceLaws.jointMeasure) = inner \u211d V U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L38"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.bounded_times_integrable",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 46,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem bounded_times_integrable (v : JointL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure)\n    (q : IBMSourceLaws.JointSample \u2192 \u211d) (hq : Integrable q IBMSourceLaws.jointMeasure) :\n    Integrable (fun \u03c9 => v \u03c9 * q \u03c9) IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L46"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.pairing_integral",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 52,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem pairing_integral (V U : JointFieldSpace) (v : JointL2)\n    (hv : MemLp (v : IBMSourceLaws.JointSample \u2192 \u211d) \u221e IBMSourceLaws.jointMeasure) :\n    (\u222b \u03c9, v \u03c9 * pairingFunction V U \u03c9 \u2202IBMSourceLaws.jointMeasure) =\n      inner \u211d (multiply v hv U) V",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L52"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakL1Divergence.weakDensity_mean_zero",
+      "file": "Foundation/IBMNativeWeakL1Divergence.lean",
+      "line": 90,
+      "source_sha256": "3c1af5fe2a6de2bc8d224a0eee900fa9418b65f10707e6fe9b087dac345d125c",
+      "declaration_header": "theorem weakDensity_mean_zero (g : jointDerivative.domain) (u : jointDivergence.domain) :\n    (\u222b \u03c9, weakDensity g u \u03c9 \u2202IBMSourceLaws.jointMeasure) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakL1Divergence.lean#L90"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakGeneratorChain.density_ae",
+      "file": "Foundation/IBMNativeWeakGeneratorChain.lean",
+      "line": 36,
+      "source_sha256": "af14141cb69a8c5f3c97c074ee451de12b26edd9a4ce34347038a3297aa41bd8",
+      "declaration_header": "theorem density_ae (f g : jointDerivative.domain) (u : jointDivergence.domain)\n    (y : IntrinsicSpace) (d\u03c6 dd\u03c6 : \u211d \u2192 \u211d) (hy : jointDivergence u = y)\n    (hg : ((g : IntrinsicSpace) : JointL2) =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => d\u03c6 (((f : IntrinsicSpace) : JointL2) \u03c9))\n    (hp : pairingFunction (jointDerivative g) u =\u1d50[IBMSourceLaws.jointMeasure]\n      fun \u03c9 => dd\u03c6 (((f : IntrinsicSpace) : JointL2) \u03c9) * energyDensity f \u03c9) :\n    weakDensity g u =\u1d50[IBMSourceLaws.jointMeasure] density f y d\u03c6 dd\u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakGeneratorChain.lean#L36"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakGeneratorChain.from_chain_results",
+      "file": "Foundation/IBMNativeWeakGeneratorChain.lean",
+      "line": 47,
+      "source_sha256": "af14141cb69a8c5f3c97c074ee451de12b26edd9a4ce34347038a3297aa41bd8",
+      "declaration_header": "theorem from_chain_results (f : jointDerivative.domain) (y : IntrinsicSpace)\n    (hy : (jointDerivative f,y) \u2208 jointDivergence.graph)\n    (\u03c6 d\u03c6 dd\u03c6 : \u211d \u2192 \u211d) (B C : \u211d) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B)\n    (hchain : IBMIntrinsicUnboundedChain.ChainResult f \u03c6 d\u03c6 B)\n    (hdchain : IBMIntrinsicUnboundedChain.ChainResult f d\u03c6 dd\u03c6 C) :\n    WeakChainResult f y \u03c6 d\u03c6 dd\u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakGeneratorChain.lean#L47"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakGeneratorChain.nonlinear_weak_chain",
+      "file": "Foundation/IBMNativeWeakGeneratorChain.lean",
+      "line": 75,
+      "source_sha256": "af14141cb69a8c5f3c97c074ee451de12b26edd9a4ce34347038a3297aa41bd8",
+      "declaration_header": "theorem nonlinear_weak_chain (f : jointDerivative.domain) (y : IntrinsicSpace)\n    (hy : (jointDerivative f,y) \u2208 jointDivergence.graph)\n    (\u03c6 d\u03c6 dd\u03c6 : \u211d \u2192 \u211d) (hd : \u2200 x, HasDerivAt \u03c6 (d\u03c6 x) x)\n    (hdd : \u2200 x, HasDerivAt d\u03c6 (dd\u03c6 x) x) (hc : Continuous d\u03c6) (hcc : Continuous dd\u03c6)\n    (B C : \u211d) (hB : \u2200 x, \u2016d\u03c6 x\u2016 \u2264 B) (hC : \u2200 x, \u2016dd\u03c6 x\u2016 \u2264 C) :\n    WeakChainResult f y \u03c6 d\u03c6 dd\u03c6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakGeneratorChain.lean#L75"
+    },
+    {
+      "paper": "Section 4 entire original energy-domain weak L1 chain and conditional strong-domain criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeWeakGeneratorChain.poisson_sine_weak",
+      "file": "Foundation/IBMNativeWeakGeneratorChain.lean",
+      "line": 85,
+      "source_sha256": "af14141cb69a8c5f3c97c074ee451de12b26edd9a4ce34347038a3297aa41bd8",
+      "declaration_header": "theorem poisson_sine_weak (x : IBMIntrinsicPoisson.centered) :\n    WeakChainResult (IBMIntrinsicPoisson.solutionElement x) (x : IntrinsicSpace)\n      Real.sin Real.cos (fun z => -Real.sin z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeWeakGeneratorChain.lean#L85"
     }
   ],
   "human_reorganization": [
@@ -1098,7 +1260,8 @@
     "Bounded coefficient products have weak density f*delta(U)-<Df,U>. Exact conditional-L2 membership is retained. Essentially bounded combined derivatives suffice for every original-domain product and every adjoint field. Combined constants A,B in the printed norm bounds are elementary human estimates; mapped source hypotheses bound two derivative coordinates separately. None of these static full-observation results establishes observed-past causality or physical-time Ito calculus.",
     "Section 4 uses the one-factor centered recovery bound and conditional-expectation orthogonality to improve the actual source-first static pair norm to the centered input norm. The named source contraction uses clock-first ordering; the factor-swapped bound for this displayed pair is explicitly proved as a human deduction. It also improves the actual hidden-clock Fourier hybrid preimage norm in Section 10, using both clock isometries. No uniqueness of that hybrid pair is inferred.",
     "The original intrinsic derivative and Hilbert adjoint give constant-one Poincare and exact constant kernel. This certifies an upper Poincare constant, not its optimality or a physical-time gap. A genuine original closed-graph projection produces a mean-preserving resolvent with centered half contraction.",
-    "The centered Poisson construction is the actual source fixed point u=Q(x+u), with original derivative and divergence product-domain membership, uniqueness, field/input norm bounds and global field minimality. The exact orthogonal minimum gap, bounded linearity of the solution and explicit value/gradient/divergence iteration bounds are labelled human consequences of the mapped weak identities and contraction. They impose no predictability constraint and identify no physical-time generator."
+    "The centered Poisson construction is the actual source fixed point u=Q(x+u), with original derivative and divergence product-domain membership, uniqueness, field/input norm bounds and global field minimality. The exact orthogonal minimum gap, bounded linearity of the solution and explicit value/gradient/divergence iteration bounds are labelled human consequences of the mapped weak identities and contraction. They impose no predictability constraint and identify no physical-time generator.",
+    "Section 4 reconstructs the actual weak L1 chain for every original product-domain input u and C2 function with bounded first/second derivatives. Bounded native tests and products prove the integrable ambient density q=phi-prime(u)Au-phi-double-prime(u)e_u, its zero mean and weak pairing, without L4 gradients or observable energy assumptions. The exact iff phi(u) in Dom A iff E[q|full observations] in L2 is a labelled HUMAN application of the mapped conditional-adjoint criterion. The actual Poisson sine example stays weak absent this condition."
   ],
   "novelty": "Classical formalization companion; no external priority or observed-IBM predictable representation claim."
 }
