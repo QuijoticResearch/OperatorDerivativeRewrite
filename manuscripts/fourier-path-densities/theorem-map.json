@@ -2826,6 +2826,321 @@
       "source_sha256": "a896e221415683195616e6ec021283fff42580939cb3742679454fcc4b57a97d",
       "declaration_header": "theorem scalar_product_memLp (m : \u2115) (p : \u211d\u22650\u221e) (\u03bc : Measure Path) [IsFiniteMeasure \u03bc] :\n    MemLp (fun z : \u211d \u00d7 Path => backward m z.1 z.2) p (intervalMeasure.prod \u03bc)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BackwardHeatMovingObstruction.lean#L59"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.wave",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 14,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "def wave (w t : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L14"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.eigenvalue",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 16,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "def eigenvalue (w : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L16"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.eigenvalue_norm",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 18,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem eigenvalue_norm (w : \u211d) : \u2016eigenvalue w\u2016=\u2016w\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L18"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.wave_zero",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 21,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem wave_zero (w : \u211d) : wave w 0=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L21"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.wave_hasDerivAt",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 23,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem wave_hasDerivAt (w : \u211d) : HasDerivAt (wave w) (eigenvalue w) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L23"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.quotient",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 30,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "def quotient (w t : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L30"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.quotient_bound",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 32,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem quotient_bound (w t : \u211d) : \u2016quotient w t\u2016 \u2264 \u2016w\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L32"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.quotient_tendsto",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 41,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem quotient_tendsto (w : \u211d) :\n    Tendsto (quotient w) (\ud835\udcdd[\u2260] 0) (\ud835\udcdd (eigenvalue w))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L41"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalCharacters.character_quotient_bound",
+      "file": "Foundation/FourierPathDirectionalCharacters.lean",
+      "line": 75,
+      "source_sha256": "5e1a747519d9c6b26cb9231a2a4bcbf48add9b2793bb171ffe50af4c17d9d414",
+      "declaration_header": "theorem character_quotient_bound (h : Path) (i : \u2115) (t : \u211d) :\n    \u2016t\u207b\u00b9 \u2022 (characterTest levels \u03be i (scalePath t h)-1)\u2016 \u2264\n      \u2016eigenvalue (frequency levels \u03be h i)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalCharacters.lean#L75"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalSeries.coefficient_quotient_tendsto",
+      "file": "Foundation/FourierPathDirectionalSeries.lean",
+      "line": 14,
+      "source_sha256": "4887650ca2d1807d9be1eeb546431c023077714a8e4306eedf73559f4dd7cdd9",
+      "declaration_header": "theorem coefficient_quotient_tendsto (h : Path) (a b : Coeff)\n    (hab : \u2200 i, b i=a i*eigenvalue (frequency levels \u03be h i)) :\n    Tendsto (fun t : \u211d => t\u207b\u00b9 \u2022 (diagonal levels \u03be (scalePath t h) a-a))\n      (\ud835\udcdd[\u2260] 0) (\ud835\udcdd b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalSeries.lean#L14"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalSeries.along_hasDerivAt",
+      "file": "Foundation/FourierPathDirectionalSeries.lean",
+      "line": 45,
+      "source_sha256": "4887650ca2d1807d9be1eeb546431c023077714a8e4306eedf73559f4dd7cdd9",
+      "declaration_header": "theorem along_hasDerivAt (h : Path) (a b : Coeff)\n    (hab : \u2200 i, b i=a i*eigenvalue (frequency levels \u03be h i)) :\n    HasDerivAt (fun t => along levels \u03be h t ((kernel levels \u03be).mkQ a))\n      ((kernel levels \u03be).mkQ b) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalSeries.lean#L45"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalSeries.realized_hasDerivAt",
+      "file": "Foundation/FourierPathDirectionalSeries.lean",
+      "line": 58,
+      "source_sha256": "4887650ca2d1807d9be1eeb546431c023077714a8e4306eedf73559f4dd7cdd9",
+      "declaration_header": "theorem realized_hasDerivAt (h \u03c9 : Path) (a b : Coeff)\n    (hab : \u2200 i, b i=a i*eigenvalue (frequency levels \u03be h i)) :\n    HasDerivAt (fun t => realize levels \u03be ((kernel levels \u03be).mkQ a) (addPath (scalePath t h) \u03c9))\n      (realize levels \u03be ((kernel levels \u03be).mkQ b) \u03c9) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalSeries.lean#L58"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.coefficientGraph",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 16,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "def coefficientGraph (h : Path) : Submodule \u2102 (Coeff \u00d7 Coeff)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L16"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.quotientPair",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 28,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "def quotientPair : (Coeff \u00d7 Coeff) \u2192L[\u2102] (TestSpace levels \u03be \u00d7 TestSpace levels \u03be)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L28"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.operator",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 47,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "def operator (h : Path) : TestSpace levels \u03be \u2192\u2097.[\u2102] TestSpace levels \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L47"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.operator_graph",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 50,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem operator_graph (h : Path) : (operator levels \u03be h).graph=graph levels \u03be h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L50"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.operator_deriv",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 86,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem operator_deriv (h : Path) (q : (operator levels \u03be h).domain) :\n    HasDerivAt (fun t => along levels \u03be h t (q:TestSpace levels \u03be))\n      (operator levels \u03be h q) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L86"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalOperator.graph_bound",
+      "file": "Foundation/FourierPathDirectionalOperator.lean",
+      "line": 93,
+      "source_sha256": "98e9d7edf8012acb7316d608813738d88e3bc67869b04cf90b98422103c88794",
+      "declaration_header": "theorem graph_bound (h : Path) (c : \u211d) (hc : 0 < c)\n    (z : TestSpace levels \u03be \u00d7 TestSpace levels \u03be) (hz : z \u2208 graph levels \u03be h) :\n    c*\u2016z.1\u2016 \u2264 \u2016c \u2022 z.1-z.2\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalOperator.lean#L93"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.weight",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 10,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "def weight (w : \u211d) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L10"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.denominator_norm",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 12,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem denominator_norm (w : \u211d) : 1 \u2264 \u20161-eigenvalue w\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L12"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.denominator_ne_zero",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 15,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem denominator_ne_zero (w : \u211d) : 1-eigenvalue w \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L15"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.weight_bound",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 21,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem weight_bound (w : \u211d) : \u2016weight w\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L21"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.weight_relation",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 25,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem weight_relation (w : \u211d) : weight w-1=weight w*eigenvalue w",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L25"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.coefficientResolvent",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 32,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "def coefficientResolvent (h : Path) : Coeff \u2192L[\u2102] Coeff",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L32"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.coefficientResolvent_graph",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 36,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem coefficientResolvent_graph (h : Path) (a : Coeff) :\n    (coefficientResolvent levels \u03be h a, coefficientResolvent levels \u03be h a-a) \u2208\n      coefficientGraph levels \u03be h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L36"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.coefficientResolvent_preserves_kernel",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 46,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem coefficientResolvent_preserves_kernel (h : Path) (a : Coeff)\n    (ha : a \u2208 kernel levels \u03be) : coefficientResolvent levels \u03be h a \u2208 kernel levels \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L46"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.resolvent_kernel",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 57,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem resolvent_kernel (h : Path) :\n    kernel levels \u03be \u2264 (((kernel levels \u03be).mkQL).comp (coefficientResolvent levels \u03be h)).ker",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L57"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.resolvent",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 64,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "def resolvent (h : Path) : TestSpace levels \u03be \u2192L[\u2102] TestSpace levels \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L64"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.resolvent_mk",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 68,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem resolvent_mk (h : Path) (a : Coeff) :\n    resolvent levels \u03be h ((kernel levels \u03be).mkQ a)=\n      (kernel levels \u03be).mkQ (coefficientResolvent levels \u03be h a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L68"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.resolvent_graph",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 72,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem resolvent_graph (h : Path) (f : TestSpace levels \u03be) :\n    (resolvent levels \u03be h f, resolvent levels \u03be h f-f) \u2208 graph levels \u03be h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L72"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalResolvent.resolvent_bound",
+      "file": "Foundation/FourierPathDirectionalResolvent.lean",
+      "line": 78,
+      "source_sha256": "53747e8c313432c946a4ea3e844e2348d289e2cd10567e9d48960b50dddc7f70",
+      "declaration_header": "theorem resolvent_bound (h : Path) (f : TestSpace levels \u03be) : \u2016resolvent levels \u03be h f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalResolvent.lean#L78"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.resolvent_left_inverse",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 14,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem resolvent_left_inverse (h : Path) (z : TestSpace levels \u03be \u00d7 TestSpace levels \u03be)\n    (hz : z \u2208 graph levels \u03be h) : z.1=resolvent levels \u03be h (z.1-z.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L14"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.graph_iff_resolvent",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 27,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem graph_iff_resolvent (h : Path) (x v : TestSpace levels \u03be) :\n    (x,v) \u2208 graph levels \u03be h \u2194 x=resolvent levels \u03be h (x-v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L27"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.graph_closed",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 36,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem graph_closed (h : Path) :\n    IsClosed (graph levels \u03be h : Set (TestSpace levels \u03be \u00d7 TestSpace levels \u03be))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L36"
+    },
+    {
+      "paper": "Section 11, exact directional coefficient domain: genuine two-sided derivative for every continuous zero-start direction, full weighted l1 quotient graph in both directions, original unit resolvent, relation preservation and complete native domain equivalence. Directional frequency beta_i=-2pi sum xi_ij*h(t_ij), eigenvalue i*beta_i, distinct from nonnegative heat lambda_i. Finite graph-core truncation and Laplace kernel-descent argument are labelled HUMAN reformulations.",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourierPathDirectionalFullGenerator.deriv_implies_graph",
+      "file": "Foundation/FourierPathDirectionalFullGenerator.lean",
+      "line": 51,
+      "source_sha256": "f5417c1f8477cb57b85cad13befca43f17fd079786812473eaccc6c0f1cf0373",
+      "declaration_header": "theorem deriv_implies_graph (h : Path) (f g : TestSpace levels \u03be)\n    (hderiv : HasDerivAt (fun t => along levels \u03be h t f) g 0) : (f,g) \u2208 graph levels \u03be h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourierPathDirectionalFullGenerator.lean#L51"
     }
   ],
   "human_reorganization": [
@@ -2834,7 +3149,8 @@
     "Section 11 reconstructs the actual dense closed native directional generator and the real Banach-transpose input-norm criterion. The fixed direction h(t)=max(t,0)^(1/8) and quartic dyadic frequencies have rate one but directional frequency 2^n. The actual imaginary heat expectation lies outside its native transpose domain. Unboundedness of D_h S_H on the finite-character core and the local L^(4/3) exclusion are labelled HUMAN deductions. No claim that all smoothed inputs lie outside the native domain follows. HigherHeatFourierPathC0 also formally supplies the strong continuity reconstructed earlier.",
     "Section 9.1 reconstructs genuine strong Lp convergence of the time density AFTER path averaging, from uniformly contractive finite sampler functionals. This yields convergence uniform over the unit ball of conjugate-exponent controls for a fixed test field; no common sampler-law raw-field convergence or operator-norm convergence on the whole test-space unit ball is claimed. Section 12 proves an actual terminal-dictionary stopping obstruction and the exact contractive change-of-dictionary remedy, retaining the common-node hypothesis of the formal dyadic specialization. These are deterministic maps, not conditional probability or optional stopping.",
     "The heat parameter H has an exact full infinitesimal generator distinct from the time-control derivatives. The generator graph consists exactly of quotient images of coefficient pairs a,b in l1 with b_i=-lambda_i a_i; domain membership requires existence of such a weighted representative, not a canonical or every-representative claim. A real supporting Hahn-Banach functional gives the actual contraction-tangent dissipativity bound. The original coefficient unit resolvent descends through the closed realization kernel, is bounded by one and characterizes the whole closed graph. The direct Laplace-integral descent is a classical HUMAN reorganization of that same named resolvent, not a new formal declaration. A resolvent comparison of any candidate tangent proves maximality on every norm-differentiable quotient vector. Simultaneous coefficient truncations prove the finite eigenpair graph core. No arbitrary quotient image is assumed closed, and no generator on a positive physical path law is identified.",
-    "Section 14 reconstructs a zero-start polynomial path separating any two positive-time evaluation characters by exact uniform norm distance two. A simple-function separable-range argument excludes almost-everywhere strong measurability on Lebesgue (0,1), including every Bochner Lp representative. Multiplication by the continuous nonzero actual heat coefficient transfers the obstruction to the original backward heat character. Its scalar jointly continuous bounded product representative belongs to every scalar Lr for every fixed finite positive path measure. No all-dual weak measurability, membership in the fixed countable Fourier dictionary, positive signed path law or failure of the already constructed quotient time densities is inferred. Includes ordinary Gaussian heat. The classical Pettis necessary direction is proved directly, with a precise primary course-statement comparison and access limits."
+    "Section 14 reconstructs a zero-start polynomial path separating any two positive-time evaluation characters by exact uniform norm distance two. A simple-function separable-range argument excludes almost-everywhere strong measurability on Lebesgue (0,1), including every Bochner Lp representative. Multiplication by the continuous nonzero actual heat coefficient transfers the obstruction to the original backward heat character. Its scalar jointly continuous bounded product representative belongs to every scalar Lr for every fixed finite positive path measure. No all-dual weak measurability, membership in the fixed countable Fourier dictionary, positive signed path law or failure of the already constructed quotient time densities is inferred. Includes ordinary Gaussian heat. The classical Pettis necessary direction is proved directly, with a precise primary course-statement comparison and access limits.",
+    "Section 11 now proves rather than only states the reverse inclusion in the full native directional quotient graph. The actual direction is any fixed continuous zero-start h, not assumed to be a bounded-control primitive. A weighted coefficient representative gives the two-sided derivative by l1 dominated convergence. The coefficient unit resolvent a_i/(1-i beta_i) descends through the original relations: an explicit HUMAN Bochner Laplace integral proves kernel preservation. The resulting bounded quotient resolvent has graph (R_h q,R_h q-q). For any native derivative pair (q,v), the isometric-group equation on q-R_h(q-v) forces that difference to vanish, proving maximality and exact existential weighted representative domain. No unique or every-representative coefficient requirement is imposed. Graph closedness and simultaneous finite truncation give the full finite-character graph core, the latter explicitly HUMAN. This differs from the heat generator and does not assert heat smoothing along rough h or a physical-time path calculus. The original formal proof uses its verified dissipative graph bound for the same resolvent/kernel/maximality conclusions. Classical Engel\u2013Nagel Laplace-resolvent antecedent already inspected in the recorded primary passage; no new generation principle claimed."
   ],
   "review_scope": "Candidate-specific full principal-module reviews are described in editorial status and revision history. Four moving-character principal modules and FourierPathFutureIntegral were additionally read fully; HigherHeatL2 symbol definition inspected for constants. Imported proofs not exhaustively reread; mathematical sources remain frozen."
 }

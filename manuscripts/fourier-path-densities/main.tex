@@ -614,6 +614,120 @@ Dividing by $t$ and using strong continuity at zero gives $q\in
 \operatorname{Dom}D_h$ and $D_hq=v$. Density and closedness therefore
 refer to the original native differentiation graph.
 
+
+\subsection*{The exact coefficient domain, including the reverse inclusion}
+Here is the full quotient identification just used. For the fixed
+continuous direction $h$, put
+\[
+ \beta_i=-2\pi\sum_j\xi_{ij}h(t_{ij}),\qquad d_i=i\beta_i,
+ \qquad \chi_i(th)=e^{it\beta_i}.
+\]
+Thus $d_i$ is the directional eigenvalue; it is unrelated to the
+nonnegative heat rate $\lambda_i$.
+The precise statement is
+\begin{equation}\label{eq:directional-full-graph}
+ \operatorname{Graph}(D_h)=
+ \{(Qa,Qb):a,b\in\ell^1,\ b_i=d_i a_i\ \text{for every }i\}.
+\end{equation}
+In particular domain membership requires the existence of a
+representative $a$ with $Qa=q$ and $(\beta_i a_i)\in\ell^1$.
+It does not require this condition for every representation of $q$,
+nor does it identify arbitrary coefficients uniquely in the quotient.
+
+One inclusion follows directly by dominated convergence in $\ell^1$:
+if $b_i=d_i a_i$, then
+\[
+ \left|a_i\frac{e^{it\beta_i}-1}{t}\right|\leq|b_i|,
+ \qquad
+ a_i\frac{e^{it\beta_i}-1}{t}\longrightarrow b_i.
+\]
+For $t\ne0$, the first estimate is the elementary chord bound
+$|e^{ix}-1|\leq|x|$. The difference from $b_i$ is dominated by
+$2|b_i|$, summable independently of $t$. Applying the bounded
+quotient map gives the native two-sided derivative with value $Qb$.
+
+For the converse, the coefficient multiplier
+\[
+ (\mathcal R_h a)_i=\frac{a_i}{1-d_i}
+\]
+is bounded on $\ell^1$, with norm at most one since
+$|1-i\beta_i|\geq1$. It also satisfies
+$d_i(\mathcal R_h a)_i=(\mathcal R_h a)_i-a_i$.
+Its descent through $K$ is essential. A human Laplace-integral
+presentation gives that step without choosing an inverse of the
+realization. Define
+$\Delta_s a=(e^{is\beta_i}a_i)_i$. This is strongly continuous
+in $\ell^1$ by dominated convergence and has constant norm
+$\|a\|_1$. Therefore
+\[
+ \mathcal R_h a=\int_0^\infty e^{-s}\Delta_s a\,ds,
+ \qquad
+ Q\mathcal R_h a=\int_0^\infty e^{-s}T_sQa\,ds.
+\]
+The first integral is Bochner integrable with norm majorant
+$e^{-s}\|a\|_1$. Evaluation of each coefficient reduces it to
+$\int_0^\infty e^{-(1-i\beta_i)s}ds=(1-i\beta_i)^{-1}$.
+The second equality follows because $Q$ is bounded and
+$Q\Delta_s=T_sQ$. If $a\in K$, its right-hand side vanishes;
+hence $\mathcal R_h a\in K$. We consequently obtain a
+well-defined bounded operator
+\begin{equation}\label{eq:directional-resolvent}
+ R_hQa=Q\mathcal R_h a,\qquad \|R_h\|\leq1,
+ \qquad (R_hq,R_hq-q)\in\operatorname{Graph}(D_h).
+\end{equation}
+The norm bound follows by taking the infimum over all coefficient
+representatives, or directly by isometry of $T_s$ in the integral.
+
+Now suppose $q$ has native derivative $v$. Put
+$x=R_h(q-v)$ and $y=q-x$. The already proved inclusion and
+\eqref{eq:directional-resolvent} give
+$D_hx=x-(q-v)$, so $D_hy=y$.
+The group law gives $\frac d{ds}T_sy=T_sD_hy=T_sy$.
+Thus $e^{-s}T_sy$ has zero derivative and is constant for
+$s\geq0$. It follows that $T_sy=e^s y$; isometry at any
+$s>0$ forces $y=0$. Hence $q=R_h(q-v)$.
+Choose a coefficient representative $a$ of $q-v$ and put
+$c=\mathcal R_h a$. Then $Qc=q$ and
+$Q((d_i c_i)_i)=Q(c-a)=q-(q-v)=v$.
+Both coefficient sequences are in $\ell^1$, which proves the
+reverse inclusion in \eqref{eq:directional-full-graph}.
+
+This also gives the resolvent characterization of the complete
+graph:
+\[
+ (q,v)\in\operatorname{Graph}(D_h)
+       \quad\Longleftrightarrow\quad q=R_h(q-v).
+\]
+It is a closed set by continuity of $R_h$, consistently with the
+native closedness proof above. Finally, truncate both sequences in
+any pair on the right of \eqref{eq:directional-full-graph} to the
+same finite index sets. They converge in their respective
+$\ell^1$ norms, so their quotient values converge in both graph
+components. The finite-character span is therefore a genuine
+graph core, not merely a dense value domain. This last graph-core
+formulation is a human tail consequence; the source maps the
+exact native graph and resolvent identities.
+
+The Laplace-resolvent mechanism is classical, as in the
+Engel--Nagel comparison below for the heat generator. The formal
+directional proof obtains kernel descent and the reverse inclusion
+through its dissipative graph bound; the displayed integral and
+isometric-group argument reorganize that mechanism. No heat
+smoothing, bounded-control restriction on $h$, or physical-time
+path derivative is inferred from this purely directional graph.
+
+\par\noindent\begingroup\small\raggedright
+\textit{Source correspondence:}
+\code{FourierPathDirectionalSeries.coefficient_quotient_tendsto},
+\code{along_hasDerivAt}.
+\par\noindent
+\code{FourierPathDirectionalResolvent.resolvent_graph},
+\code{resolvent_bound}.
+\par\noindent
+\code{FourierPathDirectionalFullGenerator.deriv_iff_graph},
+\code{domain_iff_derivative}, \code{graph_iff_resolvent}.
+\par\endgroup
+
 Regard $\A$ as real and let $\A'_{\R}$ be its continuous real dual.
 Its Banach transpose has the domain
 \[
