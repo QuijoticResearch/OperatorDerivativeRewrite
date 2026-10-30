@@ -173,7 +173,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPointClockDomainObstruction.lean#L91"
     },
     {
-      "paper": "9: regularized clock gradients",
+      "paper": "10: regularized clock gradients",
       "declaration": "OperatorDerivativeRewrite.Foundation.IBMPointClockDomainObstruction.mollified_clock_gradients_no_limit",
       "file": "Foundation/IBMPointClockDomainObstruction.lean",
       "line": 100,
@@ -236,7 +236,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMActualSineDomainObstruction.lean#L120"
     },
     {
-      "paper": "9: bounded graph-dual map",
+      "paper": "10: bounded graph-dual map",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.derivative_norm_le",
       "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
       "line": 49,
@@ -245,7 +245,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L49"
     },
     {
-      "paper": "9: original graph agreement",
+      "paper": "10: original graph agreement",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.graph_agreement",
       "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
       "line": 67,
@@ -254,7 +254,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L67"
     },
     {
-      "paper": "9: exact representability",
+      "paper": "10: exact representability",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.representable_iff_domain",
       "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
       "line": 75,
@@ -263,7 +263,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L75"
     },
     {
-      "paper": "9: injective field embedding",
+      "paper": "10: injective field embedding",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.embed_injective",
       "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
       "line": 89,
@@ -272,7 +272,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L89"
     },
     {
-      "paper": "9: graph-dual error",
+      "paper": "10: graph-dual error",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorGraphDualDerivative.graph_error_bound",
       "file": "Foundation/ClosedOperatorGraphDualDerivative.lean",
       "line": 112,
@@ -281,7 +281,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ClosedOperatorGraphDualDerivative.lean#L112"
     },
     {
-      "paper": "9: full output-norm escape",
+      "paper": "10: full output-norm escape",
       "declaration": "OperatorDerivativeRewrite.Foundation.ClosedOperatorEscapeEnergy.output_norm_tendsto_atTop",
       "file": "Foundation/ClosedOperatorEscapeEnergy.lean",
       "line": 46,
@@ -945,6 +945,393 @@
       "source_sha256": "663bd430984f61adee285db2c0c32e2eecb532f2ff777b06cf9073712e07105d",
       "declaration_header": "theorem native_graph_truncation_tendsto (u : Field) (v : VectorSpace)\n    (huv : (u,v) \u2208 clockDerivative.graph) :\n    Tendsto (fun N => ((truncation N).compLpL 2 gaussianProduct u,\n      (gradientTruncation N).compLpL 2 gaussianProduct u)) atTop (\ud835\udcdd (u,v))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianClockNativeDomain.lean#L165"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.confined_measurable",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 21,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem confined_measurable (\u03b4 T : \u211d\u22650) : MeasurableSet (confined \u03b4 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L21"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.past_sections_confined",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 40,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem past_sections_confined (\u03b4 T : \u211d\u22650) (F : JointL2) (hF : F \u2208 past T) :\n    \u2200\u1d50 Y \u2202gaussianProduct, Y \u2208 confined \u03b4 T \u2192\n      AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4] (sourceUnitary F Y) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L40"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.exists_positive_confined_time",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 55,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem exists_positive_confined_time (\u03b4 : \u211d\u22650) (h\u03b4 : 0 < \u03b4) :\n    \u2203 T : \u211d\u22650, 0 < T \u2227 gaussianProduct (confined \u03b4 T) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L55"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.source_only_past_requires_history",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 75,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem source_only_past_requires_history (\u03b4 T : \u211d\u22650) (K : GaussianL2)\n    (hp : jointRealization (Lp.const 2 gaussianProduct K) \u2208 past T)\n    (hE : gaussianProduct (confined \u03b4 T) \u2260 0) :\n    AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4] K gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L75"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.future_scenery_not_history",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 90,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem future_scenery_not_history (\u03b4 r : \u211d\u22650) (h\u03b4r : \u03b4 < r) :\n    \u00ac AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4]\n      (IBMContinuousScenery.sourceScenery r) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L90"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.future_scenery_not_past",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 106,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem future_scenery_not_past (\u03b4 r T : \u211d\u22650) (h\u03b4r : \u03b4 < r)\n    (hE : gaussianProduct (confined \u03b4 T) \u2260 0) :\n    jointRealization (Lp.const 2 gaussianProduct (IBMContinuousScenery.sourceScenery r)) \u2209 past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L106"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMLocalPastRestriction.exists_actual_hidden_scenery",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 112,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem exists_actual_hidden_scenery : \u2203 T : \u211d\u22650, 0 < T \u2227\n    jointRealization (Lp.const 2 gaussianProduct (IBMContinuousScenery.sourceScenery 2)) \u2209 past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L112"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.clock_vacuum_const",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 131,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem clock_vacuum_const (f : Field) : project 0 f = Lp.const 2 gaussianProduct (contract gaussianOne f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L131"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.overlap_bounds",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 145,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem overlap_bounds (\u03b4 : \u211d\u22650) (x : \u211d) : 0 \u2264 overlap \u03b4 x \u2227 overlap \u03b4 x \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L145"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.vacuumSource_pairing",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 156,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem vacuumSource_pairing (\u03b4 T : \u211d\u22650) :\n    inner \u211d (futureSource \u03b4) (vacuumSource T) =\n      \u222b Y, overlap \u03b4 (GaussianTimeProcess.process T Y) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L156"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.clock_tail_positive",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 170,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem clock_tail_positive (T : \u211d\u22650) (hT : 0 < T) (a : \u211d) :\n    gaussianProduct {Y | a < GaussianTimeProcess.process T Y} \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L170"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.overlap_integrable",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 182,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem overlap_integrable (\u03b4 T : \u211d\u22650) :\n    Integrable (fun Y => overlap \u03b4 (GaussianTimeProcess.process T Y)) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L182"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.vacuumSource_pairing_positive",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 192,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem vacuumSource_pairing_positive (\u03b4 T : \u211d\u22650) (hT : 0 < T) :\n    0 < inner \u211d (futureSource \u03b4) (vacuumSource T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L192"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.futureSource_projection_zero",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 207,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem futureSource_projection_zero (\u03b4 : \u211d\u22650) :\n    GaussianConditionalGraph.conditionalProjection (IBMSceneryGaussianGerm.history \u03b4) (futureSource \u03b4) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L207"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.vacuumSource_not_history",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 218,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem vacuumSource_not_history (\u03b4 T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac AEStronglyMeasurable[IBMSpatialSceneryForecast.history \u03b4] (vacuumSource T) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L218"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.actual_vacuum_not_past_at",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 234,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem actual_vacuum_not_past_at (\u03b4 T S : \u211d\u22650) (hT : 0 < T)\n    (hE : gaussianProduct (IBMLocalPastRestriction.confined \u03b4 S) \u2260 0) :\n    jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMNaturalFiltrationObstruction.past S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L234"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.exists_actual_past_projection_failure",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 242,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem exists_actual_past_projection_failure : \u2203 T : \u211d\u22650, 0 < T \u2227\n    jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMNaturalFiltrationObstruction.past T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L242"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.exists_actual_right_past_projection_failure",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 247,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem exists_actual_right_past_projection_failure : \u2203 T : \u211d\u22650, 0 < T \u2227\n    jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMIntrinsicRightGerm.rightPast T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L247"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.vacuum_in_native_clock_domain",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 256,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem vacuum_in_native_clock_domain (f : Field) :\n    jointRealization (project 0 f) \u2208 IBMIntrinsicOperators.clockDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L256"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockVacuumPast.exists_actual_adapted_clock_projection_failure",
+      "file": "Foundation/IBMClockVacuumPast.lean",
+      "line": 261,
+      "source_sha256": "002d07715159727d370b864860c690c6bb11e4b4ef8d4dac6af5a42fbc1b05f2",
+      "declaration_header": "theorem exists_actual_adapted_clock_projection_failure : \u2203 T : \u211d\u22650, 0 < T \u2227\n    jointRealization (randomSourceL2 T) \u2208 IBMIntrinsicRightGerm.rightPast T \u2227\n    jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMIntrinsicRightGerm.rightPast T \u2227\n    jointRealization (project 0 (randomSourceL2 T)) \u2208 IBMIntrinsicOperators.clockDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockVacuumPast.lean#L261"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_projection",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 20,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_projection (\u03b2 : \u211d\u22650) (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) :\n    project n (smooth \u03b2 T hT) = (((n:\u211d)+1)\u207b\u00b9)^(\u03b2:\u211d) \u2022 project n (randomSourceL2 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L20"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_error_projection",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 32,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_error_projection (\u03b2 : \u211d\u22650) (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) :\n    project n (smooth \u03b2 T hT-project 0 (randomSourceL2 T)) =\n      if n=0 then 0 else (((n:\u211d)+1)\u207b\u00b9)^(\u03b2:\u211d) \u2022 project n (randomSourceL2 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L32"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_error_bound",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 40,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_error_bound (\u03b2 : \u211d\u22650) (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016project n (smooth \u03b2 T hT-project 0 (randomSourceL2 T))\u2016^2 \u2264\n      \u2016project n (randomSourceL2 T)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L40"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_error_sector_tendsto",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 53,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_error_sector_tendsto (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun \u03b2 => \u2016project n (smooth \u03b2 T hT-project 0 (randomSourceL2 T))\u2016^2)\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L53"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_tendsto_vacuum",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 73,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_tendsto_vacuum (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun \u03b2 => smooth \u03b2 T hT) atTop (\ud835\udcdd (project 0 (randomSourceL2 T)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L73"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.joint_smooth_tendsto_vacuum",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 87,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem joint_smooth_tendsto_vacuum (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun \u03b2 => jointRealization (smooth \u03b2 T hT)) atTop\n      (\ud835\udcdd (jointRealization (project 0 (randomSourceL2 T))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L87"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_eventually_not_rightPast",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 92,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_eventually_not_rightPast (T : \u211d\u22650) (hT : 0 < T)\n    (hp : jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMIntrinsicRightGerm.rightPast T) :\n    \u2200\u1da0 \u03b2 in atTop, jointRealization (smooth \u03b2 T hT) \u2209 IBMIntrinsicRightGerm.rightPast T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L92"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_native_clock_domain",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 99,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_native_clock_domain (\u03b2 : \u211d\u22650) (hN : 1 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) :\n    jointRealization (smooth \u03b2 T hT) \u2208 IBMIntrinsicOperators.clockDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L99"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.exists_actual_eventual_smoothing_failure",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 105,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem exists_actual_eventual_smoothing_failure : \u2203 (T : \u211d\u22650) (hT : 0 < T) (\u03b2\u2080 : \u211d\u22650),\n    jointRealization (randomSourceL2 T) \u2208 IBMIntrinsicRightGerm.rightPast T \u2227\n    \u2200 \u03b2 \u2265 \u03b2\u2080, jointRealization (smooth \u03b2 T hT) \u2209 IBMIntrinsicRightGerm.rightPast T \u2227\n      jointRealization (smooth \u03b2 T hT) \u2208 IBMIntrinsicOperators.clockDerivative.domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L105"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_zero",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 116,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_zero (T : \u211d\u22650) (hT : 0 < T) : smooth 0 T hT = randomSourceL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L116"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.smooth_native_iff",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 123,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem smooth_native_iff (\u03b2 : \u211d\u22650) (T : \u211d\u22650) (hT : 0 < T) :\n    jointRealization (smooth \u03b2 T hT) \u2208 IBMIntrinsicOperators.clockDerivative.domain \u2194 1/4 < (\u03b2:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L123"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.causal_smooth_tendsto",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 127,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem causal_smooth_tendsto (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun \u03b2 => (IBMIntrinsicRightGerm.rightPast T).starProjection\n      (jointRealization (smooth \u03b2 T hT))) atTop\n      (\ud835\udcdd ((IBMIntrinsicRightGerm.rightPast T).starProjection\n        (jointRealization (project 0 (randomSourceL2 T)))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L127"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.positive_causal_error",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 135,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem positive_causal_error (T : \u211d\u22650) (hT : 0 < T)\n    (hp : jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMIntrinsicRightGerm.rightPast T) :\n    \u2203 c : \u211d, 0 < c \u2227 \u2200\u1da0 \u03b2 in atTop,\n      c \u2264 \u2016jointRealization (smooth \u03b2 T hT)-(IBMIntrinsicRightGerm.rightPast T).starProjection\n        (jointRealization (smooth \u03b2 T hT))\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L135"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.positive_distance_from_all_adapted",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 164,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem positive_distance_from_all_adapted (T : \u211d\u22650) (hT : 0 < T)\n    (hp : jointRealization (project 0 (randomSourceL2 T)) \u2209 IBMIntrinsicRightGerm.rightPast T) :\n    \u2203 c : \u211d, 0 < c \u2227 \u2200\u1da0 \u03b2 in atTop, \u2200 G \u2208 IBMIntrinsicRightGerm.rightPast T,\n      c \u2264 \u2016jointRealization (smooth \u03b2 T hT)-G\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L164"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockSmoothingPast.exists_actual_uniform_smoothing_obstruction",
+      "file": "Foundation/IBMClockSmoothingPast.lean",
+      "line": 173,
+      "source_sha256": "70e1cd6b7f4e26407460f236a0e9be78e8f1ca1c1fa15be9a36a934c24b8d321",
+      "declaration_header": "theorem exists_actual_uniform_smoothing_obstruction :\n    \u2203 (T : \u211d\u22650) (hT : 0 < T) (B : \u211d\u22650) (c : \u211d), 0 < c \u2227\n      jointRealization (randomSourceL2 T) \u2208 IBMIntrinsicRightGerm.rightPast T \u2227\n      \u2200 \u03b2 \u2265 B, jointRealization (smooth \u03b2 T hT) \u2208 IBMIntrinsicOperators.clockDerivative.domain \u2227\n        \u2200 G \u2208 IBMIntrinsicRightGerm.rightPast T, c \u2264 \u2016jointRealization (smooth \u03b2 T hT)-G\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockSmoothingPast.lean#L173"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.clockUnitary_jointRealization",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 17,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem clockUnitary_jointRealization (f : Field) :\n    IBMIntrinsicOperators.clockUnitary (IBMTimeAveragedObservable.jointRealization f) =\n      ProductL2Curry.flip gaussianProduct gaussianProduct f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L17"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.joint_clock_domain",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 21,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem joint_clock_domain (f : Field) :\n    IBMTimeAveragedObservable.jointRealization f \u2208 IBMIntrinsicOperators.clockDerivative.domain \u2194\n      f \u2208 (bessel 1).domain",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L21"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.joint_clock_energy",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 29,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem joint_clock_energy (f : Field) (hf : f \u2208 (bessel 1).domain) :\n    \u2016bessel 1 \u27e8f,hf\u27e9\u2016^2 = \u2016IBMTimeAveragedObservable.jointRealization f\u2016^2+\n      \u2016IBMIntrinsicOperators.clockDerivative \u27e8IBMTimeAveragedObservable.jointRealization f,\n        (joint_clock_domain f).2 hf\u27e9\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L29"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.actual_native_smoothing_threshold",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 47,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem actual_native_smoothing_threshold (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) :\n    IBMTimeAveragedObservable.jointRealization (regularizedEndpoint \u03b2 h\u03b2 T hT)\n      \u2208 IBMIntrinsicOperators.clockDerivative.domain \u2194 1/4 < \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L47"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.regularized_gradient_graph",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 67,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem regularized_gradient_graph (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) (hb : 1/4 < \u03b2) :\n    (IBMTimeAveragedObservable.jointRealization (regularizedEndpoint \u03b2 h\u03b2 T hT),\n      regularizedGradient \u03b2 h\u03b2 T hT hb) \u2208 IBMIntrinsicOperators.clockDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L67"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.regularized_gradient_energy",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 73,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem regularized_gradient_energy (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) (hb : 1/4 < \u03b2) :\n    \u2016bessel 1 \u27e8regularizedEndpoint \u03b2 h\u03b2 T hT,\n      (joint_clock_domain _).1 ((actual_native_smoothing_threshold \u03b2 h\u03b2 T hT).2 hb)\u27e9\u2016^2 =\n      \u2016IBMTimeAveragedObservable.jointRealization (regularizedEndpoint \u03b2 h\u03b2 T hT)\u2016^2+\n        \u2016regularizedGradient \u03b2 h\u03b2 T hT hb\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L73"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.regularized_ibp",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 80,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem regularized_ibp (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) (hb : 1/4 < \u03b2)\n    (u : IBMIntrinsicOperators.clockDerivative.adjoint.domain) :\n    inner \u211d (regularizedGradient \u03b2 h\u03b2 T hT hb) (u:IBMIntrinsicOperators.FieldSpace) =\n      inner \u211d (IBMTimeAveragedObservable.jointRealization (regularizedEndpoint \u03b2 h\u03b2 T hT))\n        (IBMIntrinsicOperators.clockDerivative.adjoint u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L80"
+    },
+    {
+      "paper": "9: actual fixed-time right-past obstruction under all sufficiently large real Bessel smoothing orders",
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMClockNativeSmoothing.regularized_graph_approximation",
+      "file": "Foundation/IBMClockNativeSmoothing.lean",
+      "line": 96,
+      "source_sha256": "07341d8cb0fc784959c7a82a51c3bfb28f9109690398c96966b9d33127f480ed",
+      "declaration_header": "theorem regularized_graph_approximation (\u03b2 : \u211d) (h\u03b2 : 0 \u2264 \u03b2) (T : \u211d\u22650) (hT : 0 < T) (hb : 1/4 < \u03b2) :\n    Tendsto (fun N =>\n      ((GaussianNumberSectors.truncation N).compLpL 2 gaussianProduct\n          (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT)),\n        (GaussianNumberSectors.gradientTruncation N).compLpL 2 gaussianProduct\n          (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT))))\n      atTop (\ud835\udcdd (ProductL2Curry.flip gaussianProduct gaussianProduct (regularizedEndpoint \u03b2 h\u03b2 T hT),\n        regularizedGradient \u03b2 h\u03b2 T hT hb))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMClockNativeSmoothing.lean#L96"
     }
   ],
   "human_reorganization": [
@@ -959,7 +1346,11 @@
     "Section 8 proves positive subcritical summability by a geometric-sum/Bernoulli lower bound for each mode integral and nonnegative Tonelli exchange. Negative exponents use Parseval; the previously proved critical divergence supplies the exact converse. No coefficient asymptotic or Tauberian assumption is inserted.",
     "The complete original clock projections retain all scenery. The spectral multiplier is constructed by an actual orthogonal series with exact maximal domain, closed coordinate graph, graph-core truncations and a full Hilbert-adjoint proof. Finite sector truncation does not assert finite-dimensional sectors.",
     "The composition law keeps the input in its first operator domain; cancellation of unbounded multipliers does not enlarge that domain. The smoothing beta>1/4 threshold includes failure at equality.",
-    "The native first-clock domain bridge uses the actual isometric probability-factor flip, scalar Hermite derivative energy and strong finite-gradient convergence in scenery fibers. The displayed finite-gradient difference identity is a human orthogonality regrouping of those same native sector graphs. No original derivative domain is changed or physical observation-time calculus inferred."
+    "The native first-clock domain bridge uses the actual isometric probability-factor flip, scalar Hermite derivative energy and strong finite-gradient convergence in scenery fibers. The displayed finite-gradient difference identity is a human orthogonality regrouping of those same native sector graphs. No original derivative domain is changed or physical observation-time calculus inferred.",
+    "Section 9 reconstructs actual clock-vacuum failure of completed observed right-past membership. Positive confinement of the clock at one small horizon follows from path continuity at zero and a countable union, not an imported unproved small-ball estimate. A source-only past functional must be scenery-history measurable on that positive confinement event; Fubini and continuous-path Doob-Dynkin factorization make the representative and exceptional-set argument explicit. The source uses measurable past coefficients and fixed-clock sections.",
+    "The future scenery increment B2-B1 has positive pairing with the actual clock average at every positive time, by its overlap min(abs(WT),2)-min(abs(WT),1) and a strictly positive Gaussian tail. This rules out the necessary local scenery measurability. Taking T=S/2 transfers the raw-past exclusion to the closed right-past intersection. The constructed T is existential, not arbitrary.",
+    "The all-large-real-order uniform distance is the exact source conclusion. The explicit estimate norm(B_(-2beta)ZT-Pi0ZT)<=3^(-beta) norm(ZT) is an added human Parseval/parity consequence of already proved odd-clock-sector vanishing. The source proves the strong limit by dominated convergence. The half-distance follows by orthogonal best approximation and the triangle inequality; native membership follows from the sharp beta>1/4 threshold.",
+    "No failure is asserted for every small positive smoothing order, every observation time, full all-time intrinsic observability or preservation of the native clock derivative by causal projection. Native differentiability does not supply time-specific adaptedness; none of these results completes physical-time calculus."
   ],
   "literature": [
     {

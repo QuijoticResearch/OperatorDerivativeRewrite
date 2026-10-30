@@ -35,7 +35,9 @@ weighted integral-energy cutoff. The actual endpoint belongs to the
 closed clock Bessel domain of order $s$ exactly when $s<1/2$. An exact
 bridge identifies the first Bessel domain with the original clock
 derivative domain; smoothing by order $2\beta$ reaches that domain
-exactly when $\beta>1/4$.
+exactly when $\beta>1/4$. At some positive observation time, all sufficiently
+large real smoothing orders nevertheless stay a uniform positive
+$L^2$ distance from every observed right-past variable.
 For a closed densely defined Hilbert operator, strong
 value approximation of a point outside its domain forces
 all derivative norms to escape to infinity, while the
@@ -804,6 +806,126 @@ particular Hilbert spectral domain above. The source-valued extension,
 its original operator bridge and the endpoint calculation were proved
 here explicitly; priority for this reflected-clock application remains
 unresolved.
+
+\section{Native smoothing can stay away from the observed right past}
+The preceding native-domain theorem has a separate causal limitation.
+Let $\mathcal F_u^Z=\sigma(Z_r:0\leq r\leq u)$ and, inside $E$, set
+\[
+ \mathcal A_T=\bigcap_{u>T}L^2(\mathcal F_u^Z).
+\]
+Each past subspace is closed; completing its sigma algebra does not
+change its $L^2$ classes. Thus $\mathcal A_T$ is the completed observed
+right-past subspace used in the frozen construction. In particular
+$Z_T\in\mathcal A_T$. Denote its orthogonal projection by $P_T$.
+The following obstruction concerns this time-specific subspace, rather
+than the sigma algebra of all future observations.
+
+\begin{theorem}\label{thm:smoothingpast}
+There exist $T>0$, $b\geq1$ and $d>0$ such that, for every real
+$\beta\geq b$, the smoothed actual endpoint
+$S_\beta=\mathcal B_{-2\beta}Z_T$ belongs to the original native clock
+derivative domain and
+\[
+ \inf_{G\in\mathcal A_T}\|S_\beta-G\|_E\geq d/2>0.
+\]
+Thus native Gaussian clock differentiability, even at arbitrarily large
+smoothing orders, does not imply observed right-past measurability.
+\end{theorem}
+\begin{proof}
+The clock-vacuum component is the scenery-only variable
+\[
+ V_T=\Pi_0^W Z_T=\E_W[B_{|W_T|}],
+\]
+where the expectation integrates the independent clock and retains the
+full scenery. This is a genuine Bochner $L^2(\mathbb P_B)$ integral by
+Cauchy--Schwarz. Projection onto clock chaos zero is precisely averaging
+that probability factor; its extension to the joint space is constant
+in the clock. Hence $V_T\in D(D_W)$ and $D_WV_T=0$.
+
+Let $\mathcal H_1=\sigma(B_r:0\leq r\leq1)$ and $Y=B_2-B_1$.
+The centered $Y$ is independent of $\mathcal H_1$. The actual Brownian
+scenery covariance, integrated over the clock, gives
+\[
+ \E[YV_T]=\E_W[\min(|W_T|,2)-\min(|W_T|,1)]>0
+                                  \quad(T>0).
+\]
+The integrand lies in $[0,1]$ and equals one whenever $W_T>2$, an event
+of positive probability for every nondegenerate Gaussian clock value.
+The pairing is legitimate by the $L^2$ bounds. Consequently $V_T$ is
+not $\mathcal H_1$-measurable: otherwise independence and centering
+would force this pairing to vanish.
+
+We now localize the actual observed history. Continuity of $W$ and
+$W_0=0$ imply that
+\[
+ A_N=\{\sup_{0\leq r\leq1/N}|W_r|\leq1\},\qquad N\geq1,
+\]
+increase to a full-probability event. Their measurability follows by
+taking the supremum over rational times in the compact interval.
+Choose $N$ with $\mathbb P_W(A_N)>0$, set $S=1/N$ and $T=S/2$.
+On $A_N$, every observed $Z_r$, $r\leq S$, uses only scenery on $[0,1]$.
+More precisely, if a scenery-only $K\in L^2(\mathbb P_B)$ had a
+representative measurable with respect to the completed $\mathcal F_S^Z$,
+choose a raw-past representative and factor it measurably through
+$Z|_{[0,S]}$. Such a factorization is available because the continuous
+observed path takes values in the standard Borel space $C([0,S])$ and
+its evaluations generate that past sigma algebra. Fubini shows that
+for almost every fixed clock path this representative equals $K$ for
+almost every scenery path. Pick one such clock in the positive-probability
+event $A_N$. Its entire observed history is a measurable function of
+$B|_{[0,1]}$, so the same factorization makes $K$ $\mathcal H_1$-measurable,
+up to completion. This proves the required source-only restriction and
+also handles exceptional-set changes of representatives.
+
+Applying the restriction to $K=V_T$ contradicts the positive future
+pairing above. Thus $V_T\notin L^2(\mathcal F_S^Z)$.
+As $S>T$, $\mathcal A_T\subset L^2(\mathcal F_S^Z)$, and therefore
+$V_T\notin\mathcal A_T$. Since this is a closed subspace,
+\[
+ d=\|V_T-P_TV_T\|_E>0.
+\]
+Finally, the spectral multiplier formula gives
+\[
+ \|S_\beta-V_T\|_E^2
+   =\sum_{n\geq1}(1+n)^{-2\beta}E_n(T)
+   \leq3^{-2\beta}\|Z_T\|_E^2.
+\]
+The last bound uses the already proved vanishing of every odd sector;
+all surviving indices in this sum are at least two. Thus
+$S_\beta\to V_T$ strongly. For every $G\in\mathcal A_T$, the projection
+best-approximation property and the triangle inequality yield
+\[
+ \|S_\beta-G\|_E\geq d-\|S_\beta-V_T\|_E
+                  \geq d-3^{-\beta}\|Z_T\|_E.
+\]
+Choose $b\geq1$ so that $3^{-b}\|Z_T\|_E\leq d/2$.
+This proves the uniform distance for every real $\beta\geq b$;
+the strict native threshold $\beta>1/4$ already proved gives the native
+derivative domain simultaneously.
+\end{proof}
+\par\noindent\code{IBMClockVacuumPast}, namespace \code{IBMLocalPastRestriction}:
+\par\noindent\code{past_sections_confined}, \code{source_only_past_requires_history},
+\par\noindent\code{exists_positive_confined_time}.
+\par\noindent\code{IBMClockVacuumPast}:
+\par\noindent\code{clock_vacuum_const}, \code{vacuumSource_pairing_positive},
+\par\noindent\code{vacuumSource_not_history},
+\par\noindent\code{exists_actual_adapted_clock_projection_failure}.
+\par\noindent\code{IBMClockSmoothingPast}:
+\par\noindent\code{smooth_tendsto_vacuum}, \code{smooth_native_iff},
+\par\noindent\code{positive_distance_from_all_adapted},
+\par\noindent\code{exists_actual_uniform_smoothing_obstruction}.
+
+The proof reorganizes the source's measurable past-coefficient and
+section argument using continuous observed paths. Its displayed
+$3^{-\beta}$ convergence rate is an elementary human consequence of
+odd-sector vanishing and Parseval; the mapped convergence theorem uses
+dominated convergence without claiming this rate. The time $T$ is
+existential, not asserted arbitrary, and $b,d$ are not numerically
+estimated. No conclusion is drawn for every small positive smoothing
+order, for preservation of the derivative domain by $P_T$, or for
+membership in the full all-time intrinsic observable space. The result
+is an actual fixed-time causal obstruction, not a completion of
+physical-time stochastic calculus or a new abstract smoothing principle.
 
 \section{Graph-dual derivatives and escape of the original field norm}
 We give the closed-operator argument separately to
