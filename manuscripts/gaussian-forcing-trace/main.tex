@@ -31,7 +31,9 @@ compact divergence recovery. We also prove that the linear-rate deterministic sy
 but has infinite stochastic trace. Wick-centered observables can converge
 when the corresponding raw sums fail; their exact Brownian prediction
 and increment energies distinguish initial Hermite scaling from
-positive-time roughness. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
+positive-time roughness. Normalized Wick metric bounds retain the
+positive-correlation hypothesis; fractional positive-time exponents and
+the antipodal obstruction are proved explicitly. These conclusions concern distinct operators. The trace and Gaussian mechanisms are
 classical; the paper consolidates frozen verified constructions and
 explicit counterexamples without claiming new stochastic PDE theory.
 \end{abstract}
@@ -741,6 +743,101 @@ identifies a physical-time generator, curvature operator or
 scale-independent estimate. The underlying Wick and Gaussian
 mechanisms are classical, with \cite{Baudoin} providing the
 previously credited chaos context.
+
+
+\section{Wick metric transfer and its antipodal boundary}\label{sec:wickmetric}
+Covariance powers also give an exact metric calculation. Retain the
+monic Wick convention of \eqref{eq:wickgen} and put
+$V_q(h)=\mathcal W_q(h)/\sqrt{q!}$, for an integer $q\geq1$.
+The mixed Wick moment identity already proved gives
+\begin{equation}\label{eq:wickdistance}
+ \|V_q(h)-V_q(k)\|_2^2
+ =\|h\|^{2q}+\|k\|^{2q}-2\langle h,k\rangle^q.
+\end{equation}
+This identity follows by expanding the squared norm and applying the
+same pairing formula to each of the three terms; it holds for all
+source directions, with no equal-variance assumption.
+
+\begin{proposition}\label{prop:wickmetric}
+If $\|h\|=\|k\|=1$ and $0\leq\rho:=\langle h,k\rangle\leq1$, then
+\[
+ \|h-k\|^2\leq\|V_q(h)-V_q(k)\|_2^2\leq q\|h-k\|^2.
+\]
+At degree two and equal squared norm $v$, the exact formula is
+\[
+ \|V_2(h)-V_2(k)\|_2^2
+   =(v+\langle h,k\rangle)\|h-k\|^2.
+\]
+In particular $V_2(h)=V_2(-h)$ as $L^2$ classes, so the global
+map is not injective when the source space is nonzero.
+\end{proposition}
+\begin{proof}
+For unit directions, \eqref{eq:wickdistance} is $2(1-\rho^q)$,
+whereas $\|h-k\|^2=2(1-\rho)$. Since
+\[
+ 1-\rho^q=(1-\rho)\sum_{j=0}^{q-1}\rho^j,
+ \qquad 1\leq\sum_{j=0}^{q-1}\rho^j\leq q,
+\]
+the bounds follow, including $\rho=1$. For equal squared norm $v$,
+the degree-two formula is
+$2(v^2-\langle h,k\rangle^2)
+ =(v+\langle h,k\rangle)(2v-2\langle h,k\rangle)$.
+Taking $k=-h$ makes this norm zero. If $h\ne0$, its source distance
+from $-h$ is $2\|h\|>0$, proving noninjectivity. More generally,
+\eqref{eq:wickdistance} gives this antipodal identification at every
+even degree. Consequently no positive global lower metric constant
+on the full unit sphere follows from the positive-correlation bounds.
+\end{proof}
+
+Here is a precise fractional application, with a labelled additional
+human asymptotic deduction. For $0<H<1$, let $h_t$ be the actual
+fractional Gaussian directions with
+\[
+ \langle h_s,h_t\rangle
+ =\tfrac12(s^{2H}+t^{2H}-|t-s|^{2H}),\qquad \|h_t\|=t^H.
+\]
+For $t>0$ define $u_t=t^{-H}h_t$. These are unit directions. Their
+inner products are nonnegative: for $0\leq s\leq t$,
+$(t-s)^{2H}\leq t^{2H}$, so the covariance is nonnegative.
+Cauchy--Schwarz gives the upper bound one. The proposition therefore
+applies to the normalized fractional coordinates $V_q(u_t)$.
+It does not apply at zero by assigning a value to $0^{-H}h_0$.
+
+For clarity the exact positive-time roughness can be read from these
+formulas, without a regularity theorem for sample paths. Fix
+$0<a<b<\infty$. For $a\leq s<t\leq b$ and $d=t-s$,
+\begin{equation}\label{eq:fractionalunitmetric}
+ \|u_t-u_s\|^2
+ =\frac{d^{2H}-(t^H-s^H)^2}{s^Ht^H}.
+\end{equation}
+Indeed expansion of the normalized covariance gives this equality.
+The mean-value theorem bounds $|t^H-s^H|\leq Ld$ with
+$L=Ha^{H-1}$. Choose $d_0>0$ so that
+$L^2d_0^{2-2H}\leq1/2$, possible since $H<1$.
+For $0<d\leq d_0$, \eqref{eq:fractionalunitmetric} and the proposition
+give the full two-sided bounds
+\[
+ \frac{d^{2H}}{2b^{2H}}
+ \leq\|u_t-u_s\|^2
+ \leq\|V_q(u_t)-V_q(u_s)\|_2^2
+ \leq q\|u_t-u_s\|^2
+ \leq\frac{q\,d^{2H}}{a^{2H}}.
+\]
+In particular every fixed degree has the same local mean-square
+increment exponent $2H$ on positive-time compact intervals. An upper
+bound of order $d^\beta$ with $\beta>2H$ cannot hold uniformly there:
+fix $s\in(a,b)$, take $t=s+d$ and divide the positive lower bound
+by $d^\beta$. It diverges as $d\downarrow0$.
+
+The source maps the normalized fractional metric comparison; the
+last compact-interval exponent calculation is the human deduction
+just proved. Normalization changes the process and excludes time
+zero. This is a statement about $L^2$ increments, not an optimal
+sample-path H\"older theorem. Pointwise Wick polynomials of one
+fractional Gaussian family are not identified with a separately
+constructed Hermite process, nor with a positive Markov generator.
+The calculation uses the classical Wick pairing mechanism credited
+above, without a new covariance or roughness principle claim.
 
 \section{Formal correspondence and prior theory}
 \begingroup\raggedright

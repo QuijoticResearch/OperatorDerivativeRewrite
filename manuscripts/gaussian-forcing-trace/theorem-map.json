@@ -932,6 +932,114 @@
       "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
       "declaration_header": "theorem generalized_eigenpair {n : \u2115} (k l : \u2115) (hk : 0 < k) (hl : 0 < l) (j : Fin n) :\n    differenceVector j \u2260 0 \u2227\n      covariance n k *\u1d65 differenceVector j =\n        comparisonRatio k l j.val \u2022 (covariance n l *\u1d65 differenceVector j)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L110"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickContinuity.wick_continuous",
+      "file": "Foundation/GaussianWickContinuity.lean",
+      "line": 23,
+      "source_sha256": "b495135329cd380bc3e34a3eb7e15a23fc4d98d9612004f429d9617b447ef364",
+      "declaration_header": "theorem wick_continuous (n : \u2115) : Continuous (fun h : CoefficientSpace => (wick h n : GaussianL2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickContinuity.lean#L23"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.wick_two_norm_sq",
+      "file": "Foundation/GaussianQuadraticGeometry.lean",
+      "line": 13,
+      "source_sha256": "53fd1a4a1fe26faac6bf4d6b6e9e18408633a84b9532ab4121e23fc2235463c7",
+      "declaration_header": "theorem wick_two_norm_sq (h : CoefficientSpace) :\n    \u2016(wick h 2 : GaussianL2)\u2016^2 = 2*(\u2016h\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticGeometry.lean#L13"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.wick_two_distance_sq",
+      "file": "Foundation/GaussianQuadraticGeometry.lean",
+      "line": 18,
+      "source_sha256": "53fd1a4a1fe26faac6bf4d6b6e9e18408633a84b9532ab4121e23fc2235463c7",
+      "declaration_header": "theorem wick_two_distance_sq (h k : CoefficientSpace) :\n    \u2016(wick h 2 : GaussianL2)-(wick k 2 : GaussianL2)\u2016^2 =\n      2*((\u2016h\u2016^2)^2+(\u2016k\u2016^2)^2-2*(inner \u211d h k)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticGeometry.lean#L18"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.fixed_variance_distance_sq",
+      "file": "Foundation/GaussianQuadraticGeometry.lean",
+      "line": 26,
+      "source_sha256": "53fd1a4a1fe26faac6bf4d6b6e9e18408633a84b9532ab4121e23fc2235463c7",
+      "declaration_header": "theorem fixed_variance_distance_sq (h k : CoefficientSpace) (v : \u211d)\n    (hh : \u2016h\u2016^2=v) (hk : \u2016k\u2016^2=v) :\n    \u2016(wick h 2 : GaussianL2)-(wick k 2 : GaussianL2)\u2016^2 =\n      2*(v+inner \u211d h k)*\u2016h-k\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticGeometry.lean#L26"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.positive_correlation_distance_bounds",
+      "file": "Foundation/GaussianQuadraticGeometry.lean",
+      "line": 33,
+      "source_sha256": "53fd1a4a1fe26faac6bf4d6b6e9e18408633a84b9532ab4121e23fc2235463c7",
+      "declaration_header": "theorem positive_correlation_distance_bounds (h k : CoefficientSpace) (v : \u211d)\n    (hh : \u2016h\u2016^2=v) (hk : \u2016k\u2016^2=v) (hc : 0 \u2264 inner \u211d h k) :\n    2*v*\u2016h-k\u2016^2 \u2264 \u2016(wick h 2 : GaussianL2)-(wick k 2 : GaussianL2)\u2016^2 \u2227\n      \u2016(wick h 2 : GaussianL2)-(wick k 2 : GaussianL2)\u2016^2 \u2264 4*v*\u2016h-k\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticGeometry.lean#L33"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.wick_two_antipodal",
+      "file": "Foundation/GaussianQuadraticGeometry.lean",
+      "line": 47,
+      "source_sha256": "53fd1a4a1fe26faac6bf4d6b6e9e18408633a84b9532ab4121e23fc2235463c7",
+      "declaration_header": "theorem wick_two_antipodal (h : CoefficientSpace) :\n    (wick h 2 : GaussianL2) = (wick (-h) 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticGeometry.lean#L47"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.unit_positive_correlation_bounds",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 30,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem unit_positive_correlation_bounds (h k : CoefficientSpace) (hh : \u2016h\u2016=1) (hk : \u2016k\u2016=1)\n    (hc : 0 \u2264 inner \u211d h k) (n : \u2115) :\n    ((n+1).factorial : \u211d)*\u2016h-k\u2016^2 \u2264\n        \u2016(wick h (n+1) : GaussianL2)-(wick k (n+1) : GaussianL2)\u2016^2 \u2227\n      \u2016(wick h (n+1) : GaussianL2)-(wick k (n+1) : GaussianL2)\u2016^2 \u2264\n        (n+1 : \u211d)*((n+1).factorial : \u211d)*\u2016h-k\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L30"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.fractional_direction_norm_pos",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 52,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem fractional_direction_norm_pos (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (t : \u211d\u22650) (ht : 0 < t) : 0 < \u2016FractionalGaussianProcess.direction H hH0 hH1 t\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L52"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.unitDirection_norm",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 60,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem unitDirection_norm (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (t : \u211d\u22650) (ht : 0 < t) : \u2016unitDirection H hH0 hH1 t\u2016=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L60"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.fractional_covariance_nonneg",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 66,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem fractional_covariance_nonneg (H : \u211d) (hH0 : 0 < H) (s t : \u211d\u22650) :\n    0 \u2264 FractionalSpectralGeometry.covariance H s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L66"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.fractional_unit_correlation_nonneg",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 82,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem fractional_unit_correlation_nonneg (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1) (s t : \u211d\u22650) :\n    0 \u2264 inner \u211d (unitDirection H hH0 hH1 s) (unitDirection H hH0 hH1 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L82"
+    },
+    {
+      "paper": "Section 10 Wick metric, positive-correlation and normalized fractional comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.fractional_unit_wick_bounds",
+      "file": "Foundation/GaussianWickMetricTransfer.lean",
+      "line": 89,
+      "source_sha256": "433cc987fb67d583c479ed98a5ea1232fbc6ed670bbbc3dbcec33470befb3d31",
+      "declaration_header": "theorem fractional_unit_wick_bounds (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (s t : \u211d\u22650) (hs : 0 < s) (ht : 0 < t) (n : \u2115) :\n    ((n+1).factorial : \u211d)*\u2016unitDirection H hH0 hH1 s-unitDirection H hH0 hH1 t\u2016^2 \u2264\n        \u2016(wick (unitDirection H hH0 hH1 s) (n+1) : GaussianL2)-\n          (wick (unitDirection H hH0 hH1 t) (n+1) : GaussianL2)\u2016^2 \u2227\n      \u2016(wick (unitDirection H hH0 hH1 s) (n+1) : GaussianL2)-\n          (wick (unitDirection H hH0 hH1 t) (n+1) : GaussianL2)\u2016^2 \u2264\n        (n+1 : \u211d)*((n+1).factorial : \u211d)*\n          \u2016unitDirection H hH0 hH1 s-unitDirection H hH0 hH1 t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickMetricTransfer.lean#L89"
     }
   ],
   "paper_sections": {
@@ -952,7 +1060,9 @@
     "Section 9 realizes integer entrywise covariance powers by normalized actual Wick polynomials. Positive semidefiniteness follows directly from a genuine finite L2 energy. Fractional Wick Gram identities are not interpreted as a fractional-time generator or as activation of the queued Hermite-process campaign.",
     "Actual independent modal Brownian motions give a normalized degree-q Wick martingale and a Gaussian deterministic time-change with the same min(s,t)^q covariance. At q=2 their fourth moments are 15t^4 and 3t^4; the Wick increment has conditional second moment 2h B_s^2+h^2, also after conditioning on its own past, while the Gaussian time-change has independent increments. These complete classical law/conditional-variance computations are labelled human deductions, not new formal theorem names.",
     "Finite Brownian entrywise covariance-power matrices factor as L diag((j+1)^k-j^k) L-transpose. Actual difference vectors give generalized eigenvalues d_k(j)/d_l(j), including 7/3 rather than 7. Congruence gives the printed sharp Loewner comparisons as explicit human classical deductions. Ordinary matrix powers remain different.",
-    "The existing primary Baudoin chaos context is retained. No new Gaussian covariance theorem, temporal generator, independence principle, curvature correspondence, SPDE existence or scale-uniform estimate is claimed."
+    "The existing primary Baudoin chaos context is retained. No new Gaussian covariance theorem, temporal generator, independence principle, curvature correspondence, SPDE existence or scale-uniform estimate is claimed.",
+    "Section 10 divides the monic Wick fields by sqrt(q!) and therefore divides the source squared metric bounds by q!. The positive-correlation and unit-source assumptions are explicit; equal-variance quadratic folding is not a global embedding.",
+    "The actual normalized fractional directions exclude time zero. The compact positive-time interval calculation using the mean value theorem and the exact normalized covariance proves matching squared increment exponent 2H as a labelled human deduction. No optimal sample-path exponent, Hermite-process identification or Markov generator follows."
   ],
   "literature": [
     {
