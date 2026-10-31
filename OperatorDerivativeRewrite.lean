@@ -3004,3 +3004,5 @@ import Foundation.PeriodicTemporalQuadratic
 import Foundation.PeriodicAnchoredCovariantGaussian
 
 import Foundation.PeriodicAnchoredHaarLimit
+
+import Foundation.PeriodicRootHaarControl
