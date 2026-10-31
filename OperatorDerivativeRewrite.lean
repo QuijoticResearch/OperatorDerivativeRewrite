@@ -2998,3 +2998,5 @@ import Foundation.PeriodicFlatBackgroundHessian
 import Foundation.PeriodicChargedFourier
 
 import Foundation.PeriodicChargedSynthesis
+
+import Foundation.PeriodicTemporalQuadratic
