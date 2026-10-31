@@ -60475,3 +60475,53 @@ Authenticated source integrity against1832 covers3033 recursive Foundation/root 
 Another directly related possibility is to construct the positive occupation/potential measure sum_n nu_n using the proved summability, identify its bounded-observable integrals with the actual high resolvent, and use that to make the Schur correction a genuine first-return/potential construction. Such identifications remain OPEN and should be pursued only if they advance an actual low/center-even estimate, not broad process infrastructure. The existing trajectory theorem can supply a path law when necessary, but is not evidence that its Wilson specialization/cylinder/exit statements are already proved.
 
 The actual local/center-even relative variance and mesoscopic moments, low spectral geometry, coupling-dependent physical distance normalization, volume-uniform/infinite-volume/continuum gates and a positive physical mass gap remain OPEN. Preserve the scaled local mixed-moment and quartic centered center-even obstructions and the restricted-cap Poincare counterexample. This is a classical killed-Markov/Hilbert mechanism concretely verified for the actual fixed192-link periodic Wilson construction, not an external novelty or Millennium claim. No campaign transition or publication/manuscript/visibility change; the indefinite goal remains active.
+
+
+## Checkpoint1834 — actual logarithmic-cutoff low mass and sharp reversible comparison (2026-10-31)
+
+Focused Yang–Mills ACTIVE; previous goal turn PROGRESS. Checkpoint1833 `99cebba4129373afb41964affae625fbe17f993c` is CLOSED: guarded sync17:57:07.458412UTC, independent exact BOTH-main/research/HEAD/clean-tree/PUBLIC check17:57:29.515905UTC, terminal17:57:29.623965UTC. This continuation began13:58:47.5194458 EDT. No new goal/agent, campaign/queue/visibility/resource/toolchain change, reflection admission or publication work. Preserve all original sources, prior obstructions and the October27 reflection reservation.
+
+**The proposed stationary-mass consequence is now a verified actual-model theorem.** `Foundation/PeriodicHighMassAnchor.lean` proves at beta>=16777216, for EVERY actual GroundData g,
+
+    mu{beta*S>K*} <= 2/3,
+    mu{beta*S<=K*} >= 1/3,
+    K*=log(2 B0/c0).
+
+Here mu is the ORIGINAL stationary Wilson law and K* is EXACTLY `PeriodicHighActionSchur.threshold`, the cutoff used by the proved high compression/resolvent and killed-excursion results. No new normalization, proxy measure, free kernel or unidentified gauge quotient enters the proof. This resolves the candidate recorded at1833; it is no longer an assumed low-region mass premise.
+
+**The bridge is the actual joint law and BOTH marginals.** `one_step_event` promotes/reuses the independently verified1833 proof that q_1, the actual one-step killed mass, equals edgeLaw(g)(A product A), for every real beta and cutoff K. Native high representatives, the proved actual compression, the original P pairing and AE identities from both measure-preserving marginals are retained. `edge_lower` proves for EVERY measurable actual-state set A,
+
+    2 mu(A)-1 <= edgeLaw(g)(A product A).
+
+The proof uses the actual left/right pushforward equalities on E=fst-preimage(A) and F=snd-preimage(A), the finite real inclusion-exclusion identity for E union F and E intersection F, and edgeLaw(g)(E union F)<=1. No positive-semidefinite-spectrum assumption is used. Combining this lower bound with1833's q_1<=(1/2)mu(A) gives `high_mass`; taking the EXACT complement of strict high support gives `low_mass`. Ties beta*S=K* belong to low. Every probability/finite-measure witness is supplied from the already constructed actual stationary/transition laws.
+
+**The cutoff is genuinely different from the earlier coarse half-mass cutoff.** `PeriodicLowActionStationaryMass.low_action_mass` proves mass>=1/2 below8*(ratioConstant+1). It does NOT prove half mass below K*. An independent Lean test now proves the exact ordering
+
+    K* <= 8*(PeriodicGaugeSaturatedGround.ratioConstant+1).
+
+It uses R0=B0/c0>0, ratioConstant=B0*2^288/c0>=R0, and log(2 R0)<=2 R0-1. Thus the new result gives positive native low mass at the logarithmic operator cutoff, with probability1/3; it must not be reported as half mass there. Another independent test proves this exact low set is nonempty by its positive native probability. No connectivity, local Poincare inequality, even-sector mixing rate or ground-law mesoscopic moment estimate follows from nonempty/positive mass alone.
+
+**The mass argument is sharp under its stated generic data.** The nested `TwoState` namespace gives explicit finite matrix certificates, not a purported Wilson example:
+
+    weights=(2/3,1/3),    transition=[[1/2,1/2],[1,0]],
+    joint(i,j)=weights(i)*transition(i,j).
+
+`stochastic` proves strictly positive normalized weights and nonnegative transition rows of sum1. `stationary` proves the joint table is nonnegative, symmetric/detailed-balanced, and has the weights as BOTH marginals. Thus this is certified finite stochastic/reversible data. `normSq` and `form` are the exact weighted squared norm and quadratic form. `contraction_identity` and `contractive` prove, for every finite vector f,
+
+    normSq(f)-normSq(Pf)=(1/6)*(f0-f1)^2 >=0.
+
+For high={0}, `high_exact` proves high mass2/3, q_1=(1/2)*(2/3), scalar high output x/2, its weighted squared-norm ratio1/4, and quadratic ratio1/2. Hence the one-dimensional high compression has the stated factor1/2 while the stationary high mass attains2/3. These are explicit finite matrix/joint-table and weighted-quadratic certificates; no separate Lean probability-measure/kernel realization of this comparison chain is claimed or needed for the scalar sharpness test. It is NOT an actual SU(2) Wilson model and does NOT prove that the Wilson bound itself is optimal.
+
+`negative_mode` proves normSq([1,-2])=2 and form([1,-2])=-1. An independent test also verifies its weighted mean is0. Thus even after removing constants, reversible stochastic contraction does not automatically imply a positive quadratic form. The comparison blocks silently strengthening the current argument by an unproved PSD premise. A stronger bound for the ACTUAL Wilson kernel could still be obtained from additional structure; this model is not a Wilson counterexample to such a future theorem.
+
+**Five independent tests.** They verify actual nonempty low support at the fully expanded logarithmic threshold; the consequence sum_n q_n<=4/3 for the genuine1833 finite surviving measures; failure of every proposed generic upper mass bound c<2/3 while retaining the same high coefficient and certified contraction in the finite comparison; a centered nonzero negative quadratic vector; and the exact ordering against the old moment-based cutoff. The summed-mass4/3 consequence is independently Lean checked, not introduced as an extra named Foundation declaration. No test repair was required.
+
+**Verification.** All155 source lines,10 public proofs/5 definitions/3 private actual-law instances, all15 unabridged final public types and all independent source were reviewed. COMPLETE transitive audit covers62319 safe Foundation declarations, permitting ONLY propext/Classical.choice/Quot.sound. Two scratch logs preserve an obsolete matrix import-path spelling and residual True-conjunction normalization after ring arithmetic; the correct PINNED Mathlib module path and an ordinary ring_nf/trivial proof repair them. No library/toolchain version changed and no mathematical hypothesis was weakened. No sorry/new axiom/native_decide, raised limits, unsafe reducibility override, suppressed verification error or compiler/trust/resource change.
+
+Full7252-job root build 51.69636080000055s; complete transitive audit plus all15 final types 51.503929600003175s; five independent Lean examples 32.64283040000009s; persisted Foundation/AxiomAudit.lean 61.261944400001084s. All terminal0.
+
+Authenticated source integrity against1833 covers3034 recursive Foundation/root Lean files. Only the new actual low-mass/sharp-comparison module, root import and AxiomAudit differ. Every older mathematical source,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources remains read-only and uncommitted. Evidence: `.lake/stardust-1834-{build,audit,checks,axiom-ledger}*`,15 public names (including the exact nested TwoState namespace), independent source, review.json and working-checkpoint.json. This entry is precommit: five explicit paths, exact approval, guarded BOTH public backups and independent exact-ref checks remain required. Remote success is not presumed.
+
+**Next mathematically distinct route.** The new low mass is an anchor, not a gap theorem. Investigate whether the ACTUAL physical Wilson transfer has a positive quadratic form using the existing Gaussian likelihood-root/Gram machinery. The read-only reuse audit found scalar `GaussianLikelihoodRootOverlap.overlap_integral(a,b)=exp(-(a-b)^2/8)` and unit root norms, and `FiniteSchoenberg.entrywise_exp_psd` for finite matrices. A possible transfer is to represent the finite-link kinetic factor exp(-beta*distance^2/2) as a Hilbert Gram kernel via finite Gaussian root features, then prove the actual bounded physical pairing is nonnegative using a Bochner feature integral and existing gauge/kinetic identities. This is ONLY a proposed route; finite matrix PSD and a scalar overlap do not already prove the actual Haar/native integral theorem, multidimensional feature map or gauge bridge. `YMReflectionPositiveShift` concerns a different toy covariance and cannot supply Wilson positivity. If actual PSD on the centered physical indicator is established, q_1>=mu(A)^2 would potentially improve high mass to1/2; do not assume it.
+
+Alternatively, the proved sum_n q_n may support an actual positive occupation/potential measure and its high-resolvent identification, but that is still open and should serve a specific low/center-even estimate rather than broad infrastructure. The existing global low winding obstruction, scaled local mixed-moment obstruction, quartic centered center-even tail and restricted-cap Poincare counterexample remain intact. Actual center-even relative variance/mesoscopic moments, low spectral geometry, physical distance scaling, volume-uniform/infinite-volume/continuum gates and a positive physical mass gap remain OPEN. No external novelty claim, campaign transition, original-manuscript edit, publication maintenance or repository-visibility change; the indefinite goal remains active.

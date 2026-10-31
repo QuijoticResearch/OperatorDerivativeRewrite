@@ -16156,3 +16156,20 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.mass_le_initial
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.geometric_mass
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.total_surviving_mass
+
+-- Checkpoint1834: low mass at the actual high resolvent cutoff and reversible sharpness.
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.one_step_event
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.edge_lower
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.high_mass
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.low_mass
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.weights
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.transition
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.joint
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.normSq
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.form
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.stochastic
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.stationary
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.contraction_identity
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.contractive
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.high_exact
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighMassAnchor.TwoState.negative_mode
