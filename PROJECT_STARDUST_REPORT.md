@@ -60733,3 +60733,30 @@ The constant is coarse, depends on this cell and amplitude ball, and is NOT prov
 **Verification.** All265 source lines,11 public proofs/2 definitions/2 private proofs and all13 final compiled types reviewed. COMPLETE7263-job build passed31.6448374s; COMPLETE62552-safe-declaration transitive audit with13 types passed49.7506718s, only propext/Classical.choice/Quot.sound. Four independent checks and complete persisted AxiomAudit close separately with exact timing receipts. Authenticated1840 source-integrity checks preserve3041 recursive Foundation/root files, every older mathematical source, three original configs,113 archive originals,21 YM originals/20 hashes and both numerical tools. No ResearchSources/manuscript/PDF/editorial changes. Exact commit approval and guarded BOTH-PUBLIC remote verification remain closure gates; this pre-commit record does not presume remote success. See .lake/stardust-1841-* and the1841 follow-up in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md.
 
 Checkpoint1841 local closure: all four independent checks passed in35.3464254s; complete persisted AxiomAudit passed in61.9361447s. All265 source lines/13 final public types reviewed and authenticated integrity passed. Exact commit approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1842 — actual Wilson common-Haar derivative and bounded measurable laws
+
+`Foundation/FourCubeHaarHalfDensity.lean` constructs the ACTUAL normalized
+all32-link Wilson square-root Haar density, proves its strong C(S) and common
+Haar-L2 boundary derivative (one-half density times the actual native score),
+and proves tangent energy equals one-quarter native score energy. It transfers
+1841's uniform thermal middle-response bound to a common square-root-distance
+Lipschitz estimate and then to ALL bounded measurable conditional tests,
+including measurable-event probabilities. Endpoints have the same x,z and vary
+y within a fixed thermal amplitude ball; beta=1/t^2. The constant and one
+punctured neighborhood are uniform over that ball. This is actual native-law
+regularity, not an output-norm completion or Gaussian-Gram substitution.
+
+Limits: fixed cell, one source direction, no small global contraction constant,
+no stationary-transfer identification, full-boundary/volume/scale uniformity or
+mass gap. Strong differentiation holds in the common Haar space, not arbitrary
+changing-measure native-L2 inputs. Normalized laws still lose partition factors;
+actual multiblock gluing must retain them. The existing positive thermal cubic
+and all previous obstructions remain. See the exact theorem domains and transfer
+exclusions in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md. No novelty claim.
+The current focused Yang–Mills objective and existing indefinite goal remain
+active; no campaign, publication, model, source archive or verification policy
+is changed. Full verification results and exact backup status follow below.
+
+Checkpoint1842 local closure: all five independent checks passed in31.3344702s; complete persisted AxiomAudit passed in54.4799511s. All300 source lines/20 final public types reviewed and authenticated integrity passed. Exact commit approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.

@@ -370,3 +370,103 @@ laws via their actual square-root Haar densities. Any such half-density/Fisher
 or Hellinger bridge must be constructed explicitly; the old Gaussian Gram map
 remains nonisometric, and scalar calibration still prevents recovering absolute
 coarse free energy from normalized-law distances alone.
+
+
+## Follow-up1842: actual Wilson square-root densities and measurable-law comparison
+
+The common-space step is now proved in `Foundation/FourCubeHaarHalfDensity.lean`.
+Let mu_(beta,a) be the EXISTING normalized Wilson conditional probability law
+on all32 interior SU2 links, S_a its unchanged action, Z_(beta,a) its actual
+partition, and nu the original product Haar probability measure. Define
+
+    r_(beta,a)(s) = exp((-beta*S_a(s)-log Z_(beta,a))/2).
+
+`law_root_density` proves mu = nu.withDensity(r^2), not only equality of a
+selected family of test pairings. `weighted_core_inner` identifies the actual
+native inner product with multiplication by r in Haar L2 on the explicitly
+stated continuous core. `rootClass_norm_square` proves ||r||_L2(nu)^2=1.
+No extension to a surjective full-native unitary or generator intertwining is
+asserted. This construction uses the actual Wilson density; it does not reuse
+the previously disproved Gaussian Gram map as if it were isometric.
+
+`root_hasDerivAt` and `rootClass_hasDerivAt` prove strong derivatives in C(S)
+and the common Haar L2 space respectively, along a+h*u at h=0:
+
+    D_u r = (1/2)*r*sigma_u,
+    ||D_u r||_L2(nu)^2 = (1/4)*||sigma_u||_L2(mu)^2.
+
+Here sigma_u is1839's actual centered Wilson score. The independent variance
+check combines the identity with nativeScore_norm_square to obtain precisely
+(beta^2/4)*Var_mu(D_u S), including the factor1/4. This is a boundary-parameter
+derivative at fixed beta, not a clock derivative or differentiation of every
+arbitrary native-L2 representative. No IBM law or observed filtration appears.
+The reusable ingredient is genuine Hilbert/core and closed-span geometry, not
+an unjustified transfer of IBM reconstruction or Gaussian-Poisson products.
+
+`amplitude_root_hasDerivAt` gives the strong derivative at every middle
+amplitude y of r_(1/t^2,(t*x,t*y,t*z)), with tangent in direction t*e_y.
+Using1841's actual uniform thermal score bound and the Banach mean-value theorem,
+`uniform_root_distance` proves: for each fixed R0 there is K>0 and ONE punctured
+neighborhood of t=0 such that simultaneously for both endpoints in the ball,
+
+    ||r_(1/t^2,(t*x,t*y2,t*z))-r_(1/t^2,(t*x,t*y1,t*z))||_L2(nu)
+        <= K*abs(y2-y1),
+    x^2+yj^2+z^2 <= R0  (j=1,2).
+
+This is the raw square-root-density distance; the conventionally normalized
+Hellinger distance is this quantity divided by sqrt(2). The bound concerns the
+full configuration laws, not an asserted physical gauge-quotient metric. The
+other two amplitudes x,z are held fixed between endpoints. Negative t and both
+orderings of y1,y2 are included; no segment is assumed to leave the ball.
+
+`density_l1_bound` proves the actual density estimate
+
+    integral_nu abs(r_a^2-r_b^2) <= 2*||r_a-r_b||_L2(nu).
+
+`bounded_test_difference` applies to EVERY measurable real test f with the
+explicit pointwise bound abs(f)<=M and M>=0. Actual weighted integrability is
+proved before subtracting the Bochner integrals. `law_integral_root` is the
+underlying measure integral identity; its unrestricted function signature is
+not a claim that every function is integrable. `uniform_bounded_tests` combines
+the estimates to give one common thermal Lipschitz bound for ALL measurable
+abs(f)<=1, including probability-event indicators. This strengthens the former
+continuous-test-only conclusion and compares the original conditional laws.
+
+The independent event test obtains a common delta>0 such that abs(y2-y1)<=delta
+implies abs(mu_y2(A)-mu_y1(A))<=1/2 for every measurable event A. This is LOCAL
+closeness of rows in this restricted family, not a global Dobrushin coefficient,
+a constructed coupling, or an iterate contraction. The proof uses indicators,
+not a silently assumed density theorem for an invariant or physical sector.
+Additional checks identify actual measurable-event measures, zero-beta Haar
+vacuum and zero tangent, and normalization blindness of log partitions.
+
+Exact remaining multiblock bottleneck:
+
+- The constants are fixed-cell and need not be small; no volume- or scale-
+  uniform contraction matrix follows. Only middle boundary motion in the
+  existing three-angle family is controlled, not the full boundary field.
+- No identification of these response operators or square-root Gram pairings
+  with the actual stationary spatial transfer operator P is supplied. Positive
+  Gram geometry alone would not prove such an identification.
+- Observables depending on the boundary retain1839's direct derivative term.
+- Conditional normalization loses scalar partition information. The existing
+  FourCubeScalarCalibration theorems permit boundary-dependent scalar changes
+  of comparison weights that leave normalized laws identical while changing
+  coarse free energy. The new distances and all normalized scores cannot
+  recover that missing factor. The independent exp(1) check only illustrates
+  ABSOLUTE free-energy ambiguity; a constant alone is not evidence of a mixed
+  boundary-coupling obstruction. Original Wilson actions are never redefined.
+- The known positive nonlinear thermal cubic and unscaled Hessian obstructions
+  remain. Bounded rescaled first response is compatible with them. No mass-gap,
+  continuum-limit, infinite-volume or RH statement is made.
+
+This is a valid concrete cross-domain operator-calculus connection to actual
+Wilson laws, assembled from classical density, Fisher, Cauchy-Schwarz and
+mean-value ingredients with the verified nonlinear cell estimates. No novelty
+claim is made. The signed pseudoprocess causal calculus, IBM output-norm
+reconstruction, Gaussian-Poisson duality and higher-order signed semigroups do
+not supply the absent physical domain/range, conditional-law, positivity or
+scale-uniform hypotheses. Their exact exclusions in the original audit remain.
+Stop adding regularity infrastructure merely to expand the library: a next
+substantive step must test actual gluing/partition and full-boundary scale
+control or establish a corresponding obstruction, retaining normalization.
