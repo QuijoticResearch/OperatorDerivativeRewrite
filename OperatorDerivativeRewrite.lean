@@ -3024,3 +3024,5 @@ import Foundation.PeriodicLowActionStationaryMass
 import Foundation.PeriodicPhysicalDirichlet
 
 import Foundation.PeriodicLocalEnergy
+
+import Foundation.PeriodicLocalEnergyObstruction
