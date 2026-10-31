@@ -2983,3 +2983,4 @@ import Foundation.PeriodicQuarticKernelBlock
 import Foundation.PeriodicQuarticNativeObstruction
 import Foundation.PeriodicQuarticCenterEven
 import Foundation.PeriodicQuarticCenteredObstruction
+import Foundation.PeriodicQuarticFiniteRankObstruction
