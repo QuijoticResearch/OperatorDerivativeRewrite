@@ -6975,3 +6975,52 @@ The low-action spectral geometry, cross-block control, mesoscopic center-even mo
 Full7247-job root build 52.971447399999306s; COMPLETE transitive audit plus final types 65.1220730999994s; eight independent Lean examples 35.72264449999784s; persisted Foundation/AxiomAudit.lean 59.708751900005154s. All terminal0.
 
 Source integrity against the authenticated1828 manifest covers3029 recursive Foundation/root Lean files. ONLY the new high-action L2 module/root import/AxiomAudit differ. All older mathematics,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources is read-only and uncommitted. Evidence includes `.lake/stardust-1829-{build,audit,checks,axiom-ledger}-time.json`, full logs, twelve public names, review.json, independent source and working-checkpoint.json. This entry is precommit: five explicit paths, exact approval, guarded BOTH public backups and independent exact-ref checks remain closure obligations; remote success is not presumed. Preserve unrelated files, master/publication branches and the indefinite active goal.
+
+
+## Checkpoint1830 — actual Schur elimination and native near1-mode localization (2026-10-31)
+
+Focused Yang–Mills ACTIVE; previous goal turn PROGRESS. Checkpoint1829 `f24523e480fbfa4f5b380c3cca6dfe2d1d6b6122` is CLOSED: guarded sync terminal0 at16:36:24.178458UTC and independent exact BOTH-main/research/HEAD/clean-tree/PUBLIC check16:36:32.227949UTC; terminal receipt16:36:37.276923UTC. This continuation began at12:36:46.8420304 EDT. No new goal/agent/campaign, queue/visibility/resource/toolchain change, reflection admission or publication work. Preserve the October27 reflection reservation and all manuscript histories.
+
+**The actual nonlinear stationary operator is retained.** `Foundation/PeriodicHighActionSchur.lean` defines K*=log(2 B0/c0), H=1829's exact `completed g K*`, L=H-orthogonal in the ORIGINAL `StateL2 g`, A=proj_L P inj_L, and B=proj_H P inj_L. `native_decomposition` proves every ambient native L2 vector is x+y with x in L and y in H. No identification of H with a separately defined gauge quotient or hard-indicator range is assumed. The low complement is exactly this orthogonal complement; it is not asserted to consist precisely of low-action supported functions. Everything uses the verified actual ground g and P=`PeriodicSlabL2.operator g`, not the finite loop surrogate, linear Hodge model, free kinetic operator, or a conjectural continuum construction.
+
+At beta>=16777216,1829 supplies the actual unique two-sided R=(I_H-C)^(-1), ||R||<=2, C=proj_H P inj_H. The new lemmas expose the exact inverse equations they need rather than importing existence as an axiom. The first independent test supplies R from1829 and instantiates the complete native construction. `resolvent_symmetric` proves R symmetric from the self-adjoint high block; `schur_symmetric` proves symmetry of the genuine bounded low operator
+
+    S = I_L - A - B* R B.
+
+The harmonic lift is the continuous linear map Jx=x+inj_H R Bx. `schur_pairing` is the exact native bilinear identity, not a scalar analogy. These are classical Hilbert/Schur techniques concretely instantiated for the actual finite periodic Wilson stationary law, with no external novelty claim.
+
+**Exact energy minimization, with the mixed loss retained.** Writing E(v)=<v,v>-<Pv,v>, `completed_square` proves
+
+    E(x+y) = <Sx,x> + E(inj_H(y-R Bx)).
+
+`high_coercivity` gives E(inj_H z)>=(1/2)||z||^2, so `variational_remainder` proves the quantitative lower bound with exactly this remainder. `harmonic_energy` gives E(Jx)=<Sx,x>; `schur_nonnegative` proves this is nonnegative by the actual contraction of P, without assuming nonnegative spectrum for P. `unique_minimizer` proves y=R Bx is the UNIQUE high vector attaining that energy. `coupling_cost` and `schur_energy_bounds` establish
+
+    0 <= <Rb,b> <= 2||b||^2,
+    E(x)-2||Bx||^2 <= <Sx,x> <= E(x).
+
+The B* R B term is subtracted and cannot simply be discarded in a lower bound. The earlier `CoerciveSchurStability` and `SchurGaussianInnovation` sources were reviewed for reuse; their finite/scalar or Gaussian prediction formulations do not instantiate the actual ambient Wilson blocks automatically. Existing projection/adjoint APIs, native contraction, symmetry, high completion and Neumann inverse are reused directly. No broad new gauge or generic stochastic infrastructure is introduced.
+
+**A full-original-operator spectral reduction.** For v=x+y in this exact split, Q=proj_H, `high_residual` and `residual_identity` prove
+
+    Q(v-Pv) = (I_H-C)y-Bx,
+    y-RBx = R Q(v-Pv).
+
+Therefore `residual_control` gives ||y-RBx||<=2||v-Pv||. An independent test combines native decomposition with the ambient norm to prove, for EVERY actual native v, existence of an actual inverse R and low x with
+
+    ||v-Jx|| <= 2||v-Pv||.
+
+This is a genuine necessary localization statement for any near1 approximate eigenvector of the ORIGINAL stationary transfer operator. A norm1 vector with residual epsilon lies within2epsilon of the low harmonic manifold. It does not assert that such a nonconstant approximate eigenvector exists, that H is invariant under P, that projected C^n equals P^n, or that iteration corresponds to a physical distance scale. It resolves the high-component elimination prerequisite and isolates the actual low Schur estimate as the bottleneck.
+
+**The actual vacuum survives; global positivity does not follow.** `zero_energy_lift` proves any original zero-energy x+y has y=RBx and <Sx,x>=0. A separate independent test constructs the genuine native constant V=1 with ||V||^2=1 and E(V)=0, decomposes it using `native_decomposition`, and proves there exists NONZERO x in L with <Sx,x>=0 and Jx=V. Thus no positive lower bound delta||x||^2 on ALL L can follow. The independently formalized statement is a nonzero zero-quadratic-energy direction for the symmetric nonnegative S; no stronger unreviewed kernel theorem is silently substituted. A centered spectral estimate must remove the actual vacuum and use the native norm/variance after harmonic lifting. Centering x alone is not assumed to center Jx.
+
+**Five independent Lean tests plus one typed inverse helper.** They check: existence and instantiation from the already constructed actual R, symmetry and quantitative remainder; ambient harmonic approximation against the full P residual for arbitrary native vectors; the nonzero low vacuum zero-energy obstruction; recovery of the original high-only residual bound through this different Schur argument; and the actual Schur loss bounds/unique high minimizer. These tests use the true native space and stationary law, not an abstract finite-matrix fixture or a bound on repeatedly projected iterates. The explicit helper pins the native closed-domain type before destructuring1829's let-bound existential, avoiding mismatched implicit subtype/module instances without changing any mathematical hypothesis.
+
+**Verification, failures and limits.** All259 source lines,16 public proofs/5 definitions/2 type abbreviations/5 private proofs, all23 unabridged final public types and all independent source were reviewed. Complete transitive axiom audit covers62252 safe Foundation declarations, accepting ONLY propext/Classical.choice/Quot.sound. No sorry/new axiom/native_decide, unsafe reducibility override, changed compiler/trust/resource settings or raised limits. Five scratch failure logs preserve projection completeness inference, real-inner orientation, inverse/CLM coercions, opaque definition and rewrite/elaboration repairs. The initial targeted build also exposed a default-heartbeat isDefEq timeout in a sequence of general rewrites; explicit native projection identities and a single simp-only linearity normalization repair it at DEFAULT limits. Two independent-test failure logs preserve let-domain subtype inference and native coercion normalization repairs. These are compiler/API issues, not mathematical counterexamples; nothing is suppressed.
+
+Targeted4562-job build 31.812529800001357s. Full7248-job root build 30.855580100003863s; complete transitive audit plus all23 types 54.92161209999904s; five independent examples plus typed helper 37.103759500001615s; persisted Foundation/AxiomAudit.lean 64.79930350000359s. All terminal0.
+
+Authenticated source integrity against1829 covers3030 recursive Foundation/root sources: only the new actual Schur module, root import and AxiomAudit differ. Every older mathematical source,3 pinned configurations,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. Original ResearchSources remains read-only and uncommitted. Evidence includes `.lake/stardust-1830-{target,build,audit,checks,axiom-ledger}*`,23 public names, review.json, independent test source and working-checkpoint.json. This entry is precommit: five explicit paths, exact approval, guarded BOTH public backups and independent exact-ref checks remain closure obligations; no remote success is presumed.
+
+**Next concrete research question.** Test quantitative spectral control of this ACTUAL S after the vacuum is accounted for, using the correct pulled-back native variance/norm of Jx and the actual cross coupling B. Do not replace the missing low-action estimate with the restricted-cap Poincare statement already disproved in1827 or use full E(x) coercivity to discard the Schur subtraction. Seek a native nonconstant near1 vector from the preserved center-even winding/flat-field and mesoscopic moment machinery, or a genuine low Schur coercivity theorem with explicit coupling dependence. The above residual estimate controls where a possible slow mode lives; it does not provide its variance or rate. Keep the existing local-energy counterexample and full high-sector bounds together.
+
+Low spectral geometry, centered Schur/variance estimates, mesoscopic center-even moments, coupling-dependent physical iteration scale, volume-uniform estimates, infinite-volume/continuum existence and a positive physical mass gap remain OPEN. No campaign transition, publication maintenance, manuscript change or Millennium conclusion is made. Preserve the indefinite goal, unrelated files, master/publication branches and user-controlled PUBLIC repository visibility.

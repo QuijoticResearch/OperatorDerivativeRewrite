@@ -3030,3 +3030,5 @@ import Foundation.PeriodicLocalEnergyObstruction
 import Foundation.PeriodicHighActionControl
 
 import Foundation.PeriodicHighActionL2
+
+import Foundation.PeriodicHighActionSchur
