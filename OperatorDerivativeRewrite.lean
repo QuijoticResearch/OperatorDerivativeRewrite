@@ -3019,3 +3019,6 @@ import Foundation.SU2CapConvolutionLower
 import Foundation.PeriodicKineticCapLower
 
 import Foundation.PeriodicLocalGroundHarnack
+
+import Foundation.PeriodicLowActionStationaryMass
+import Foundation.PeriodicPhysicalDirichlet
