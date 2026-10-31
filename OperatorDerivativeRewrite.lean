@@ -3040,3 +3040,5 @@ import Foundation.PeriodicHighActionKernel
 import Foundation.PeriodicHighExcursion
 
 import Foundation.PeriodicHighMassAnchor
+
+import Foundation.PeriodicGaussianTransferGram
