@@ -2996,3 +2996,5 @@ import Foundation.PeriodicEvenWindingVariation
 import Foundation.PeriodicEvenWindingCriterion
 import Foundation.PeriodicFlatBackgroundHessian
 import Foundation.PeriodicChargedFourier
+
+import Foundation.PeriodicChargedSynthesis
