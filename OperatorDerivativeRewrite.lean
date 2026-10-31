@@ -3044,3 +3044,5 @@ import Foundation.PeriodicHighMassAnchor
 import Foundation.PeriodicGaussianTransferGram
 
 import Foundation.PeriodicPositiveMassAnchor
+
+import Foundation.PeriodicLogActionMoment
