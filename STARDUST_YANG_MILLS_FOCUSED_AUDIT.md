@@ -7516,3 +7516,29 @@ active; no queue, publication, configuration or verification-policy change.
 Final verification gates and exact two-branch backup follow separately.
 
 Checkpoint1844 local closure: full7266-job build passed in26.8935683s; complete62668-declaration transitive axiom audit plus all19 final public types passed in42.2864472s; all six independent checks passed in29.8747366s; complete persisted AxiomAudit passed in53.5880387s. All136 source lines/15 proofs/4 definitions/1 private proof and final types reviewed; authenticated source/config/archive integrity passed. Initial target composition/distance and independent spacing failure logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1845 — exact Schur/cubic boundary truncation fails global coercivity
+
+Foundation/FourCubeCubicStability.lean defines the candidate boundary comparison
+V_t=effectiveEnergy/2+t*harmonicCubic using the EXISTING actual Schur and harmonic
+cubic declarations. It proves the exact diagonal V_t(r,r,r)=a*r^2+t*c*r^3,
+a=effectiveEnergy(1,1,1)/2>=0, c=31877443263/69438734552>0. Every fixed t>0 has
+arbitrarily negative diagonal values, no global lower bound and no finite
+pointwise Gaussian majorant. This concerns boundary amplitudes, not the existing
+interior-chart Y envelopes at fixed amplitudes or the unchanged compact Wilson
+weight. A measure-zero ray does NOT establish full3D nonintegrability here.
+Nor is a full actual free-energy Taylor expansion or normalized kernel claimed.
+
+The quartic DIAGONAL comparison V_t+d*t^2*r^4 is nonnegative for every r iff
+c^2<=4*a*d (d,t>0). Independent evaluation gives an extra nonzero zero at the
+threshold and a negative witness below it. Fixed-amplitude t->0 convergence to
+the Schur quadratic coexists with the far-field obstruction; exact cell action
+nonnegativity and thermal/ray sign parity are checked. No actual quartic remainder
+or full-space stability, convexity, normalization or mass gap follows.
+The full theorem-domain audit and open gluing/remainder obligations are recorded
+in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md. Focused Yang–Mills and the
+indefinite goal remain active. No queue, publication, archive or verification-
+configuration change. Final gates and exact two-branch backup follow separately.
+
+Checkpoint1845 local closure: full7267-job build passed in27.0028994s; complete62682-declaration transitive axiom audit plus all10 final public types passed in41.8524791s; all six independent checks passed in27.2015682s; complete persisted AxiomAudit passed in52.2685921s. All117 source lines/7 proofs/3 definitions and final types reviewed; authenticated source/config/archive integrity passed. Initial unsupported positivity-tactic failure log preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.

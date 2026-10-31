@@ -634,3 +634,82 @@ unjustified volume-uniform inference and identifies what the next scale-transfer
 estimate must count or retain. Avoid more replicas solely for declaration count;
 next investigate an actual connected-block cancellation/local norm or retain
 the cubic in the coarse interaction with an independently justified remainder.
+
+
+## Follow-up1845: domain and stability obstruction to exponentiating the cubic
+
+`Foundation/FourCubeCubicStability.lean` tests a specific candidate needed after
+1844: retaining the existing harmonic cubic in a coarse boundary Gaussian
+potential. It defines the COMPARISON
+
+    V_t(x,y,z)=effectiveEnergy(x,y,z)/2+t*harmonicCubic(x,y,z).
+
+Both terms are existing verified declarations: the actual pinned Schur boundary
+quadratic from FourCubeMovingSchurLimit and the harmonic cubic whose amplitude
+is c*x*y*z, c=31877443263/69438734552>0. This does NOT assert a complete global
+or even full first-order Taylor expansion of the actual free energy. The prior
+leading limit and odd first-order coefficient do not alone identify every even
+first-order remainder. V_t is not substituted for the exact compact Wilson action.
+
+`effective_diagonal` proves, using the actual boundary-component scaling and
+Schur matrix form rather than an assumed rotational symmetry,
+
+    effectiveEnergy(r,r,r)=r^2*effectiveEnergy(1,1,1).
+
+Set a=effectiveEnergy(1,1,1)/2. `quadratic_nonneg` proves a>=0; a>0 is NOT
+introduced as an assumption or silently concluded. `truncation_diagonal` gives
+V_t(r,r,r)=a*r^2+t*c*r^3 exactly. For EVERY fixed t>0, `ray_unbounded_below`
+constructs negative amplitudes with V_t below ANY prescribed real threshold.
+Consequently `no_global_lower_bound` excludes a finite global lower bound on
+this boundary comparison potential, and `no_gaussian_ray_envelope` excludes
+
+    exp(-V_t(r,r,r)) <= C*exp(-alpha*r^2)  for every real r
+
+for ANY finite C>=0 and alpha>=0. An independent restriction test excludes the
+corresponding full-three-boundary-amplitude Gaussian majorant as well.
+This prevents importing a theorem whose ORIGINAL hypothesis is this pointwise
+coercive/Gaussian envelope. It is not a proof that every alternative technique fails.
+
+Important domain distinction: x,y,z here are EXTERNAL BOUNDARY AMPLITUDES.
+The existing FourCubeOddEnvelope/FourCubeFullOddEnvelope dominate the EXACT
+interior-chart nonlinear weights in Y with fixed boundary amplitudes. They do
+not justify globally exponentiating this cubic truncation over all boundary
+amplitudes. A ray is Lebesgue-null in the full3D space: none of the new results
+claims full3D nonintegrability from that ray or identifies a normalized kernel.
+That stronger statement requires a positive-measure/conditional-integral proof.
+
+The local and global conclusions coexist. The independent fixed-r test proves
+V_t(r,r,r)->a*r^2 as t->0. Bad amplitudes grow on the order1/t in the explicit
+witness, outside the fixed-amplitude regime of that limit. The independent
+comparison also retains the nonnegative EXACT cell action at the corresponding
+physical angles t*r. Thus there is no negative-action claim about compact SU2
+Yang–Mills, and no uniform far-field expansion is smuggled into the proof.
+
+`stabilizedRay(d,t,r)=V_t(r,r,r)+d*t^2*r^4` is another explicit comparison.
+`quartic_ray_stability` gives the SHARP DIAGONAL criterion for d>0 and t>0:
+
+    stabilizedRay(d,t,r)>=0 for all r    iff    c^2<=4*a*d.
+
+The proof uses the exact completed square
+
+    4*d*(a+t*c*r+d*t^2*r^2)=(2*d*t*r+c)^2+4*a*d-c^2.
+
+Independent rational-value verification at r=-c/(2*d*t) gives
+
+    stabilizedRay = c^2*(4*a*d-c^2)/(16*d^3*t^2).
+
+Thus the threshold has a NONZERO additional zero, while a subcritical coefficient
+has an explicit negative witness. Nonnegativity is not strict quadratic coercivity,
+convexity or a spectral-gap estimate. Parity under (t,r)->(-t,-r) is also checked.
+No actual Wilson quartic remainder has been identified with d here; the diagonal
+criterion does not establish stability on all boundary directions or integrability.
+No claim that such a stabilizer completes Yang–Mills or the multiblock argument.
+
+This is classical polynomial stability instantiated with the exact verified
+Schur/cubic data, not a novelty claim. It closes the naive unrestricted Gaussian-
+majorant route for the cubic truncation while preserving local/cutoff approaches.
+A substantive next result must control an ACTUAL remainder/cutoff on its stated
+gluing domain or justify the full positive-measure normalization claim, rather
+than infer probability-kernel validity from a formal cubic jet or signed calculus.
+The existing coupled-block, gauge, partition, winding, volume and continuum
+obligations remain OPEN. No new campaign, original source or publication change.

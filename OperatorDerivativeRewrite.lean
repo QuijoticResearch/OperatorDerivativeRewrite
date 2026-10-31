@@ -3060,3 +3060,5 @@ import Foundation.FourCubeHaarHalfDensity
 import Foundation.FourCubeGaugeCalibration
 
 import Foundation.FourCubeReplicatedInteraction
+
+import Foundation.FourCubeCubicStability
