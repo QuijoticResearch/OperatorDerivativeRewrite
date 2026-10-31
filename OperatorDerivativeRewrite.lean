@@ -3006,3 +3006,5 @@ import Foundation.PeriodicAnchoredCovariantGaussian
 import Foundation.PeriodicAnchoredHaarLimit
 
 import Foundation.PeriodicRootHaarControl
+
+import Foundation.PeriodicNoncentralHaarUpper
