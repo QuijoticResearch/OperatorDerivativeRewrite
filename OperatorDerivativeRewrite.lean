@@ -2988,3 +2988,4 @@ import Foundation.SU2QuarticValleyNonintegrable
 import Foundation.PeriodicConstantQuarticJet
 import Foundation.PeriodicConstantRootLimit
 import Foundation.PeriodicRelativeGaugeGaussian
+import Foundation.PeriodicRelativeGaugeTails
