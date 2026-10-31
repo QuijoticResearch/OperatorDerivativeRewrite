@@ -16,6 +16,10 @@ proves vanishing cap/standard square-root-density affinity at identity boundary.
 Historical proofs remain valid on their precise domains; their native bounds
 must not be silently promoted to the standard-box or periodic stationary law.
 
+Checkpoint1847 below supplies a DIRECT standard-box native response bound,
+retaining the interior penalty and the actual96-dimensional normalizer. This
+is an explicitly proved construction, not promotion of the cap-native bound.
+
 ## Conclusion
 
 There is useful reusable operator geometry, but no audited theorem identified
@@ -827,3 +831,126 @@ identify the two cubic coefficients, or manufacture a transfer from the new
 negative result. This is classical density/asymptotic comparison instantiated
 on the exact models, not a claim of mathematical novelty. The focused campaign
 and all original sources and verification requirements remain unchanged.
+
+
+## Follow-up1847: direct native calculus and thermal response in the STANDARD box
+
+`Foundation/FourCubeStandardResponse.lean` realizes the constructive route left
+open by1846. Its `law(beta,a)` is DEFINITIONALLY the existing actual standard
+864-face Dirichlet probability law with all32 links free and boundary
+angles(a0,a1,a2). It is not the72-face cap law, a Gaussian reference law or an
+output-completion norm. The previous vanishing cap/box affinity remains valid.
+
+Exact model data: let E_a=S_cap,a+D, with the same nonconstant48-term interior
+penalty D from1846, and let B(a) be the existing exterior source scalar.
+`energy_apply` proves E_a equals FourCubeCompletedHaar.completedAction.
+`energy_bounds` reuses the actual0<=E_a<=240 estimate. `diagonal` is constructed
+as a continuous observable on the common full32 Haar space. `weight` is the
+old continuous cap weight MULTIPLIED by the fixed-in-a factor exp(-beta*D).
+It satisfies `weight_apply`: W=exp(-beta*E_a). The penalty is never canceled
+from the measure or compared by a beta-uniform inverse-density bound.
+
+`partition_eq_completed` identifies Z_a with the ACTUAL completed partition.
+The STANDARD partition is exp(-beta*B(a))*Z_a, NOT Z_a itself. The source scalar
+cancels only from normalized conditional laws; it must still be retained in a
+coarse boundary free energy/gluing weight. `law_density` and `law_integral`
+prove equality with the original standard probability law, using the already
+verified exact normalized-density identity. This is the missing measure bridge,
+not an identification by similar notation or shared state dimension.
+
+Let D_u=fderiv(S_cap)(a)[u], a continuous observable already constructed in1839.
+Since D is fixed in a, `weight_hasDerivAt` reuses the genuine old Banach weight
+derivative multiplied by exp(-beta*D). The Haar CLM and positive partition
+quotient give `expectation_hasDerivAt` and `native_derivative`:
+
+    d_h E_std,a+h*u[f] at0 = -beta*Cov_std,a(f,D_u)
+                          = <sigma_std,u,f>_L2(mu_std,a),
+    sigma_std,u=-beta*(D_u-E_std,a D_u).
+
+These derivatives are proved for EVERY real beta and a,u in R^3 on the stated
+CONTINUOUS test core. The response `nativeResponse` is a bounded CLM on the
+ENTIRE ORIGINAL L2(mu_std,a), with
+
+    ||R_std,u||=||sigma_std,u||,
+    ||sigma_std,u||^2=beta^2*Var_std,a(D_u).
+
+The mean and variance are under the actual STANDARD law, not the cap law.
+Derivative extension to arbitrary L2 representatives along changing measures,
+a full closed spatial gradient/adjoint, or a stationary transfer identification
+is not asserted. Centering removes an added boundary scalar derivative, but
+not D from the measure. The independent scalar-centering test checks this
+algebra with the genuine completed-law expectation for every real scalar k.
+
+The quantitative argument is re-proved in the correct model:
+
+1. `energy_comparison` proves on EVERY full32 configuration
+
+       E_a <=3*E_0+3*boundaryCost(a),
+       E_0/3-boundaryCost(a) <= E_a.
+
+   This uses the exact full-state cap inequalities PLUS D>=0, retaining D
+   on both sides. It does not insert the pinned31 measure. `partition_upper`
+   and `partition_lower` integrate these inequalities over the actual full32
+   Haar measure. `reference_partition` identifies the zero-source partition
+   with1846's standard boxZ, because B(0)=0.
+2. `exponential_partition` proves the genuine standard-law identity
+
+       E_std exp((2/3)*beta*E_a)=Z_(beta/3,a)/Z_(beta,a).
+
+   `scaled_action_mean` bounds beta E_std E_a by3/2 of that actual exponential
+   moment. `moving_exponential_bound` applies the verified thermal boundary
+   budget beta*boundaryCost<=216*R and obtains exp(720*R)*Q_96(t), where
+
+       Q_96(t)=boxZ((1/9)/t^2)/boxZ(3/t^2).
+
+   `partitionRatio_tendsto` uses ONLY the actual96-dimensional completed-box
+   asymptotic, with the finite positive factors L_d*(sqrt(a))^(-96).
+   No cap93 normalizer or cap-law L2 field is substituted. Consequently
+   `uniform_scaled_action` bounds beta E_std E_a on one common punctured
+   neighborhood for ALL amplitudes x^2+y^2+z^2<=R.
+3. `middle_gradient_bound` transfers the original pointwise SU2 identity
+   (D_y S_cap)^2<=2*S_cap to <=2*E_a using D>=0. It is an exact configuration-
+   wise inequality and so can be integrated under the CORRECT law. Variance
+   <=second moment then yields `middle_thermal_score_bound` on that native
+   space, with velocity t*e_y at beta=1/t^2.
+4. `uniform_middle_response` proves for every R there is C_R>0 and ONE common
+   punctured neighborhood of t=0 such that, simultaneously on the amplitude ball,
+
+       ||R_std,(1/t^2,(t*x,t*y,t*z),t*e_y)||^2 <= C_R.
+
+   `amplitude_derivative` identifies this with the actual middle-amplitude
+   derivative of standard conditional expectations on continuous f. The
+   independent all-native test gives |R_std(v)|<=K_R||v|| for EVERY original
+   standard-law L2 input, with a common K_R, not only continuous vectors.
+
+Independent verification includes the raw STANDARD864-face weight/partition
+quotient derivative using existing actual integrable weights, full action
+E_a+B(a), zero response on constants, exact scalar centering, every native input,
+coexistence with cap/box affinity->0, and the actual Haar/zero-score beta0 case.
+The public probability instance is explicitly type-checked in that test output
+in addition to44 canonical public declaration checks and the transitive audit.
+One test needed only namespace qualification of its partition symbol; its failed
+log is preserved. Initial source elaboration repairs concerned definition
+unfolding, beta-reduction under a lambda and positivity-proof layout. No resource
+increase, weakened hypothesis, new axiom or original mathematical change.
+
+Limits and interpretation: this is a concrete positive operator-calculus reuse
+on the ACTUAL standard lattice cell after the cap-measure shortcut failed.
+It does not undo that failure; the new proof works by retaining the correct
+weight and re-establishing its native moment bounds. C_R is coarse and fixed-
+cell dependent, is not proved <1 and has no volume-uniform interpretation.
+Only the middle source in the existing three-angle boundary family is uniformly
+controlled. All three amplitude VALUES vary on the ball, but no uniform bound
+for every boundary-link direction is claimed. The thermal angle t is not a
+physical time/distance scale. A boundary-dependent observable needs its direct
+derivative as well; that moving-observable theorem has not been transferred here.
+Connected multiblock gluing, boundary marginal partition weights including B,
+physical-sector invariant dynamics, scale/volume-uniform coercivity, infinite-
+volume/continuum limits and a positive physical mass gap remain OPEN.
+No novelty assertion or unrelated stochastic/gauge infrastructure is introduced.
+
+Next test: use this now-correct native object to address an actual coupling or
+partition-weighted boundary question, without merely duplicating the cap's
+entire regularity library. A gluing estimate must retain the standard partition
+and actual spatial incidence. No Hilbert norm, signed semigroup or output-range
+completion can replace that missing physical comparison.

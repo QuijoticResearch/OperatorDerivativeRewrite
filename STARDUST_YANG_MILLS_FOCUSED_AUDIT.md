@@ -7577,3 +7577,36 @@ goal remain active. No queue, publication, archive or verification-policy change
 Final gates and exact audited two-branch backup follow separately.
 
 Checkpoint1846 local closure: full7268-job build passed in29.4406122s; complete62749-declaration transitive axiom audit plus all37 final public types passed in45.2217889s; all seven independent checks passed in27.2445024s; complete persisted AxiomAudit passed in53.4637254s. All224 source lines/25 proofs/12 definitions/2 private proofs and final types reviewed; authenticated source/config/archive integrity passed. Initial elaboration, redundant test-tactic and copied audit-helper hash failures preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1847 — direct actual STANDARD-box native thermal response
+
+Foundation/FourCubeStandardResponse.lean now constructs the response DIRECTLY
+in the existing standard864-face Dirichlet conditional law, with all32 links
+free. Its continuous completed weight retains D(s); the source-only B(a) cancels
+from normalized laws by the exact existing identity. The proof partition is the
+ACTUAL COMPLETED partition; the standard partition remains exp(-beta*B)*Z and
+must retain B in coarse gluing. No cap/standard law identification is assumed.
+
+For all real beta,a,u, actual continuous-test expectation derivatives equal
+-beta*Cov_std(f,D_u S_cap), represented by the centered score in the ORIGINAL
+standard-law L2. Exact norm and variance identities are proved. Full32 completed
+energy comparisons retain D>=0 and use the actual96-dimensional box normalizer
+to bound beta E_std E_completed uniformly on thermal amplitude balls. The exact
+SU2 middle derivative inequality then gives uniform_middle_response: one common
+punctured neighborhood and C_R>0 with ||R_std,(1/t^2,t*(x,y,z),t*e_y)||^2<=C_R
+for ALL x^2+y^2+z^2<=R. amplitude_derivative identifies the actual derivative.
+This positive connection coexists with1846's affinity->0; no inverse-density
+perturbation or cap93 constants are used.
+
+The all-native functional estimate is distinct from arbitrary-L2 changing-law
+differentiability. Constants are coarse/fixed-cell and not proved below1; other
+boundary directions, connected multiblock gluing including partition weights B,
+stationary-transfer identification, physical distance, scale/volume uniformity
+and mass gap remain open. Exact domains, raw standard-weight independent tests
+and source-model distinctions are recorded in the multiblock reuse audit.
+Focused Yang–Mills and the indefinite goal remain active. No queue, publication,
+archive or verification-configuration change. Final gates and exact two-branch
+backup follow separately.
+
+Checkpoint1847 local closure: full7269-job build passed in27.8759712s; complete62842-declaration transitive axiom audit plus44 canonical final public types passed in44.4003068s; all seven independent checks and the explicit public probability-instance type passed in27.8107916s; complete persisted AxiomAudit passed in51.1328693s. All417 source lines,29 public proofs/14 definitions/1 abbreviation/1 probability instance/3 private proofs and all45 public types reviewed. Authenticated source/config/archive integrity passed; failed elaboration and test-qualification logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. Focused Yang–Mills and the existing indefinite goal remain active.
