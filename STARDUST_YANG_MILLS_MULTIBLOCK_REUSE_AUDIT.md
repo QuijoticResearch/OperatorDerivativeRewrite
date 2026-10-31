@@ -124,3 +124,87 @@ expand classical finite-volume estimates or build unrelated stochastic machinery
 All existing campaign priorities, original manuscripts and publication roles are
 preserved. Verification and exact two-branch backup evidence are recorded in the
 research ledgers and ignored checkpoint receipts.
+
+
+## Follow-up1839: actual native conditional score and nonlinear Hessian bridge
+
+The proposed score bridge above is now realized in
+`Foundation/FourCubeConditionalScore.lean` on the EXISTING three-axis boundary
+family, integrating ALL32 interior links against their actual normalized
+product-Haar Wilson Gibbs density. This is not an arbitrary-boundary theorem,
+a one-link restriction, or identification with the periodic stationary law.
+For every real beta and parameters a,u in R^3, let
+
+    D_u = fderiv(action)(a)[u],
+    sigma_u = -beta*(D_u - E_a D_u),
+    R_u(v) = <sigma_u,v>_{L2(mu_a)}.
+
+The source is bounded by1 after dividing the action by144, so the existing
+bounded exponential-tilt law supplies a genuine probability measure. Its
+integrals are identified with the exact all32-link partition and expectation,
+not a formal expectation symbol. The weight differentiates in the Banach
+algebra of continuous observables on the fixed compact Haar state space.
+There is no moving integration cutoff and no missing boundary flux term.
+
+Exact declarations include:
+
+- `expectation_hasDerivAt`, `native_derivative`, `nativeResponse_core`:
+  directional differentiation of ACTUAL conditional expectations for continuous
+  observables, and agreement with the bounded functional R_u on native L2.
+- `moving_expectation_hasDerivAt`: a sup-norm differentiable observable family
+  retains its DIRECT derivative E_a F'(0) as well as its score channel.
+- `nativeResponse_norm`, `nativeScore_norm_square`, `native_bound_variance_iff`:
+  the sharp ORIGINAL native norm criterion
+
+      ||R_u||^2 = ||sigma_u||_2^2 = beta^2 Var_mu_a(D_u),
+      |R_u(v)| <= C ||v||_2 for all native v
+          iff beta^2 Var_mu_a(D_u) <= C^2       (C>=0).
+
+  This is an exact criterion, NOT an established uniform bound. The score
+  itself supplies an attaining test when nonzero. No induced covariance norm
+  substitutes for the original L2 norm. No density theorem is silently used
+  to claim a larger differentiability domain.
+- `potential_mixed_covariance`, `actual_mixed_response`:
+  the ordered integrated mixed derivative is
+
+      d_v d_u F = beta E_a[D_v D_u action]
+                  - beta^2 Cov_mu_a(D_u,D_v).
+
+  The second variation is the actual derivative of the existing smooth action.
+  No derivative interchange is assumed. `potential_eq_actual` identifies the
+  unnormalized log partition with the pre-existing normalized boundary free
+  energy up to a boundary-independent constant.
+- `score_self_response`, `actual_diagonal_hessian`:
+
+      d_u^2 F = beta E_a[D_u^2 action] - ||sigma_u||_2^2.
+
+  The NEGATIVE score-energy correction is exact. Retaining only the quadratic
+  geometry or importing an independent Gaussian completion would omit a real
+  term unless another theorem established its cancellation or control.
+
+This is classical score/fluctuation geometry instantiated and verified on the
+actual nonlinear cell, rather than a novelty claim. It is the concrete positive
+operator connection missing at1838; it does not undo the1838 nonisometric-Gram
+obstruction. The previous report's proposed first-derivative bridge is now
+proved on the stated continuous core. Uniform spatial/scale/volume estimates
+remain OPEN, as does a physical mass gap.
+
+Precise limits: R_u is a bounded functional on all native L2, agreeing with the
+proved derivative on continuous tests. Differentiation for every arbitrary L2
+representative along changing measures, a full closed boundary gradient and
+adjoint, all boundary-link directions, a global conditional kernel for a larger
+lattice, uniform physical-subspace frame bounds, and infinite-volume/continuum
+limits are not established here. The sharp norm above is for the FULL native
+L2 test space; the score is not asserted to lie in a specified physical
+invariant sector. Fixed-coupling finiteness does not prove a uniform bound in
+beta. Existing full-integral thermal Hessian/cubic obstructions remain intact.
+
+Next substantive test: use the actual response/second-variation decomposition
+to assess a physically scaled score-covariance estimate, retaining the existing
+thermal nonlinear interaction. Check exact correspondence to the existing
+mixed-Hessian direction convention before using those obstructions. Do not
+infer score blow-up solely from Hessian blow-up: the direct second-variation
+term also depends on beta and boundary data. Do not replace uniform estimates
+with further formal identities or classical auxiliary infrastructure.
+
+Next physical-domain test (UNPROVED): before demanding a full-native score bound, examine the score projected onto the relevant gauge-invariant observable space. At identity boundary, color-odd first source derivatives may cancel against invariant tests under the existing global SU2 conjugation/quarter-turn symmetries. Check this on the actual all32 law and stated boundary directions; do not assume the cancellation or infer a physical obstruction from an unprojected score norm. This is a concrete candidate for reuse of Hilbert residual/projection geometry, not a new campaign.

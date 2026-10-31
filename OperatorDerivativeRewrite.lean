@@ -3048,3 +3048,5 @@ import Foundation.PeriodicPositiveMassAnchor
 import Foundation.PeriodicLogActionMoment
 
 import Foundation.PeriodicGaussianTransportObstruction
+
+import Foundation.FourCubeConditionalScore
