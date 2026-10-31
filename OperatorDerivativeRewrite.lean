@@ -2978,3 +2978,4 @@ import Foundation.PeriodicGroundHaarScale
 import Foundation.PeriodicGaugeSaturatedGround
 import Foundation.PeriodicFlatLocusQuarticObstruction
 import Foundation.SU2TwoAxisStabilizerHaar
+import Foundation.PeriodicQuarticGaugeOverlap
