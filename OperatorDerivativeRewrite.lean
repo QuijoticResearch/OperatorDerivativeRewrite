@@ -3000,3 +3000,5 @@ import Foundation.PeriodicChargedFourier
 import Foundation.PeriodicChargedSynthesis
 
 import Foundation.PeriodicTemporalQuadratic
+
+import Foundation.PeriodicAnchoredCovariantGaussian
