@@ -2993,3 +2993,4 @@ import Foundation.PeriodicFullHaarGaussianLimit
 import Foundation.PeriodicVacuumNormalizationObstruction
 import Foundation.PeriodicBoundaryHaarReduction
 import Foundation.PeriodicEvenWindingVariation
+import Foundation.PeriodicEvenWindingCriterion
