@@ -3068,3 +3068,5 @@ import Foundation.FourCubeDirichletAffinity
 import Foundation.FourCubeStandardResponse
 
 import Foundation.FourCubeSpatialConditioning
+
+import Foundation.PeriodicCancellingBoundaryResponse

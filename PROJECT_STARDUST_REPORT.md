@@ -60926,3 +60926,35 @@ All public types, full build, transitive axiom, independent checks, integrity, e
 commit and BOTH public backup gates must close before this checkpoint is certified.
 
 Checkpoint1848 local closure: full7270-job build passed in31.3190449s; complete62907-declaration transitive axiom audit plus ALL51 final public types (including3 instances) passed in55.8840558s; seven independent mathematical checks passed in32.6162782s; complete persisted AxiomAudit passed in59.0448171s. All286 lines,28 public proofs/15 definitions/5 abbreviations/3 public instances/3 private proofs and51 public types reviewed. Authenticated3048-source/config/archive integrity passed. Failed parser/API/elaboration and independent-test type-qualification logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref checks follow separately. Focused Yang–Mills and the existing indefinite goal remain active.
+
+
+## Checkpoint1849 — actual cancelling lattice exterior, physical unit-probe response escape
+
+Previous goal turn was PROGRESS:1848 fully verified and both PUBLIC backups
+closed at4f17d53969d4fecf8914a49771947153b5d86e0c. Focused Yang–Mills remains ACTIVE.
+No campaign/queue/publication-role/visibility change; no reflection admitted.
+
+PeriodicCancellingBoundaryResponse realizes cancelling staples in the ACTUAL
+augmented two-Wilson-slab middle law: four incident spatial staples are two I
+and two minusI, with both temporal fields retained. The exact actual conditional
+section is a half-trace tilt at2*beta*sin(h), Haar at h=0 for every beta.
+A COMPLETE gauge-invariant spatial plaquette supplies a centered unit ORIGINAL
+conditional-L2 probe. Its actual expectation derivative is beta, hence1/t
+under beta=1/t^2 and the stated scalar boundary path h=t*a. The unboundedness
+holds in every positive thermal window. This excludes an all-exterior bound
+for THIS one-link response, not good-corridor bounds, whole-block averaging,
+stationary-sector gaps or the mass gap. The probability/weight of neighborhoods
+of this rough rest is not established. Detailed exact domains and declarations
+are recorded in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md.
+
+This reuses the verified bounded stochastic tilt derivative and actual periodic
+link disintegration, rather than assuming independent Wilson staples or a
+Gaussian product/chaos transport. Failed parser/type/chain-rule and resource
+elaborations are preserved; source proofs were repaired without raising default
+recursion/heartbeat limits, changing hypotheses or compiler/trust settings.
+Full build, transitive axiom/type/proof review, eight independent mathematical
+checks, source/config/archive integrity, exact commit and guarded BOTH public
+backup gates must finish before checkpoint certification. Original manuscripts
+and every older Lean development remain preserved.
+
+Checkpoint1849 local closure: full7271-job build passed in47.5472054s; complete62962-declaration transitive axiom audit plus ALL31 final public types passed in48.2359503s; eight independent checks passed in30.2570869s; complete persisted AxiomAudit passed in61.2768403s. All274 source lines,19 public proofs/12 definitions/6 private proofs and31 public types reviewed. Checks include actual augmented conditional-kernel type, centered MemLp unit ORIGINAL conditional probe, RAW whole-Wilson-density ratio derivative, arbitrary-gauge invariance, beta100/velocity0.1 response10, arbitrarily small unbounded thermal windows and beta0 Haar. Authenticated3049-source/config/archive integrity passed. Failed source and one independent function-notation elaboration logs preserved; no increased resource limit, changed hypotheses or weakened verification. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.

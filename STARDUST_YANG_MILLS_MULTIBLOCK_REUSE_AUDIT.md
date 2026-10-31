@@ -1031,3 +1031,79 @@ declarations. These are different coverage measures: no claim of a new manual
 proof review of every historical declaration is made. The new full conditioning
 proof and explicit counterexample serve the original multiblock question;
 no further general stochastic infrastructure is needed to state the obstruction.
+
+
+## Follow-up1849: actual six-staple cancellation and divergent physical conditional response
+
+Previous goal turn: PROGRESS. Checkpoint1848 closed at4f17d53969d4fecf8914a49771947153b5d86e0c
+with complete verification and both PUBLIC backup refs independently checked.
+The new `PeriodicCancellingBoundaryResponse` tests a genuine physical observable
+at a valid rough exterior, rather than repeating the flat raw-link obstruction.
+
+The domain is the EXISTING actual periodic augmented middle law: the product
+of TWO complete Wilson slab weights, with all middle spatial and both temporal
+link fields. `PeriodicLinkDisintegration.split_augmented_conditional` already
+proves its actual one-link disintegration; its rest marginal is partition-weighted.
+The new `actual_kernel_section` identifies the constructed response law with
+one explicit section of THAT conditional kernel. This is not a postulated
+independent-staple law, a cap surrogate, the whole32-link Dirichlet conditional,
+or the unrestricted stationary transfer operator.
+
+The selected middle spatial edge is(0,0). An explicit actual spatial field puts
+minusI on orientation1 edges with coordinate0 equal to1 and I elsewhere.
+`incident_exact` kernel-checks the FOUR incident spatial plaquettes.
+`spatial_minus` and `spatial_plus` prove that their actual three-link staples
+are two minusI and two I. `spatial_change_zero` retains the ENTIRE spatial action
+and proves that its selected-link dependence cancels. Neither spatial plaquettes
+nor either temporal staple are omitted.
+
+Set the upper spatial field equal on every edge to axis(0,pi/2-h), the lower
+to its inverse, and both temporal Haar fields to identity in the frozen rest.
+`temporal_pair_trace` gives the exact remaining exponent2*beta*sin(h)*halfTrace(A).
+`central_change` and `density_factor` retain both actual Wilson weights and
+all boundary-only factors; `prefactor_positive` justifies cancellation ONLY
+when normalizing the one-link section. `law_eq_tilt` identifies the actual
+normalized section with the existing bounded half-trace tilt at parameter
+2*beta*sin(h). At h=0 it is exactly Haar for EVERY real beta.
+
+The probe is NOT an open-link trace asserted to be endpoint invariant.
+`observable` is the half-trace of one COMPLETE actual middle spatial plaquette;
+`observable_gauge` proves invariance under arbitrary middle-slice vertex gauges.
+Its section with the stated fixed exterior is halfTrace(A). Let
+
+    f(A)=2*observable(update(flux,edge,A)),
+    M_beta(h)=integral f d responseLaw(beta,h).
+
+`physical_probe_unit` proves integral f^2=1 at h=0. The independent domain
+check also proves MemLp f 2 and integral f=0 in the ACTUAL conditional section.
+`expectation_derivative` reuses the existing bounded stochastic tilt calculus:
+for EVERY bounded measurable test g,
+
+    d/dh integral g d responseLaw(beta,h)|h=0
+       =2*beta*integral g(A)*halfTrace(A) dHaar.
+
+`physical_derivative` therefore gives M_beta'(0)=beta. Under the explicitly
+stated scalar thermal boundary path h=t*a, beta=1/t^2,
+`thermal_derivative` gives d/da M_(1/t^2)(t*a)|a=0=1/t, for every nonzero real t.
+`unbounded_thermal_response` supplies witnesses in EVERY positive t-window,
+exceeding ANY prescribed real C. There is no beta-uniform bound for this
+all-exterior one-link response in this parameterization, even on a centered
+unit native-L2 gauge-invariant plaquette probe. No unrelated input-boundary
+metric or physical distance is silently identified with this scalar parameter.
+
+This is a concrete application of the existing probability/response calculus
+to the actual4D lattice building block and a sharper large-field gate than the
+old abstract cancelling staple pair. It is NOT an external novelty claim.
+It does NOT refute a good-corridor estimate: the spatial exterior is rough.
+It does NOT show that this exact frozen rest has positive marginal probability,
+or bound neighborhoods of it, nor prove a divergent full32-link/averaged
+response or a physical spectral obstruction. The actual rest marginal,
+large-field probability, averaging/cancellation over other links, connected
+block gluing and scale/volume-uniform physical estimates remain OPEN.
+A full-block or mass-gap conclusion cannot be substituted for this one-link result.
+
+Do not repeat generic completion or finite normalization work next. A substantive
+next test must address the actual marginal weight of the bad region or a proved
+reduction to a controlled gauge-invariant corridor, keeping all hypotheses and
+partition weights. Preserve the previous uniform standard three-source estimate;
+its good-family domain is compatible with this different rough-rest obstruction.
