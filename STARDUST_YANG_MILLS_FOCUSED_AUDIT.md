@@ -7542,3 +7542,38 @@ indefinite goal remain active. No queue, publication, archive or verification-
 configuration change. Final gates and exact two-branch backup follow separately.
 
 Checkpoint1845 local closure: full7267-job build passed in27.0028994s; complete62682-declaration transitive axiom audit plus all10 final public types passed in41.8524791s; all six independent checks passed in27.2015682s; complete persisted AxiomAudit passed in52.2685921s. All117 source lines/7 proofs/3 definitions and final types reviewed; authenticated source/config/archive integrity passed. Initial unsupported positivity-tactic failure log preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1846 — cap versus standard Dirichlet laws: exact bridge and zero affinity
+
+The geometric audit clarifies that the1839–1845 native-law construction uses
+FourCubeIntegratedCubic.cellAction: the actual embedded72-face cap subcomplex,
+not the completed864-face standard Dirichlet box. Existing exact face transport
+and full_angle_identity retain48 interior penalties D(s) PLUS an exterior scalar
+B. Only B cancels from normalized conditional laws. All old mathematical results
+remain valid on their exact domains; no original source or theorem is changed.
+
+Foundation/FourCubeDirichletAffinity.lean proves at identity boundary the actual
+full32 normalized density relation rho_box=(Z_cap/Z_box)*exp(-beta*D)*rho_cap,
+with both original probability measures identified via their square-root Haar
+densities. The verified cap partition scales as abs(t)^93; the actual completed
+standard partition scales as abs(t)^96, including off-cutoff control. Their
+ratio divided by abs(t)^3 tends to a strictly positive constant. The genuine
+common-Haar affinity A(beta) has A(beta)^2<=Z_box(beta/2)^2/(Z_cap(beta)*Z_box(beta));
+the RHS tends to0 at beta=1/t^2. Both affinity and its square tend to0. Finite
+nonnegative-beta affinity remains positive and is1 at beta0.
+
+This rules out treating the completion as a small unchanged-law perturbation,
+not all density-corrected unitaries or a direct native standard-box estimate.
+The statement concerns FULL configuration densities at identity boundary, not
+physical-sector spectral gaps, arbitrary-boundary/volume uniformity, connected
+gluing, the periodic stationary operator or a mass gap. New independent checks
+include D(identity)=0 versus pole-spike value6 and the distinct existing cap/
+standard cubic coefficients. See STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md
+for the authoritative current-model clarification and exact theorem limits.
+Next use the actual96-dimensional standard-box normalization and retained D,
+not untransported cap-native constants. Focused Yang–Mills and the indefinite
+goal remain active. No queue, publication, archive or verification-policy change.
+Final gates and exact audited two-branch backup follow separately.
+
+Checkpoint1846 local closure: full7268-job build passed in29.4406122s; complete62749-declaration transitive axiom audit plus all37 final public types passed in45.2217889s; all seven independent checks passed in27.2445024s; complete persisted AxiomAudit passed in53.4637254s. All224 source lines/25 proofs/12 definitions/2 private proofs and final types reviewed; authenticated source/config/archive integrity passed. Initial elaboration, redundant test-tactic and copied audit-helper hash failures preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.

@@ -4,6 +4,18 @@ October 31, 2026; checkpoint1838. Research audit, not publication maintenance.
 Baseline: fully audited and both-remote-verified checkpoint1837,
 `c83631b6cafb11c862a801c0b547c9ec7bbbbc94`.
 
+
+## Current model distinction — checkpoint1846
+
+In follow-ups1839–1845, the law built from FourCubeIntegratedCubic.cellAction
+is the72-face cap model with all32 interior links integrated. It is an actual
+embedded Wilson plaquette subcomplex, NOT the full864-face standard Dirichlet
+box. The exact completion adds48 interior-dependent terms and an exterior
+scalar. Only the latter cancels from normalized laws. Checkpoint1846 below
+proves vanishing cap/standard square-root-density affinity at identity boundary.
+Historical proofs remain valid on their precise domains; their native bounds
+must not be silently promoted to the standard-box or periodic stationary law.
+
 ## Conclusion
 
 There is useful reusable operator geometry, but no audited theorem identified
@@ -713,3 +725,105 @@ gluing domain or justify the full positive-measure normalization claim, rather
 than infer probability-kernel validity from a formal cubic jet or signed calculus.
 The existing coupled-block, gauge, partition, winding, volume and continuum
 obligations remain OPEN. No new campaign, original source or publication change.
+
+
+## Follow-up1846: exact cap-to-Dirichlet bridge and vanishing measure affinity
+
+The geometry audit identifies the missing non-scalar completion explicitly.
+FourCubeNativeTransport.native_faces_subset embeds the72-face cap action into
+the864-face standard nearest-neighbor Dirichlet box. FourCubeCoreIncident.
+retained_eq_core identifies120 faces touching the32 integrated links:72 native
+plus48 negative-side faces. FourCubeExteriorSources.full_angle_identity proves
+
+    S_box(x,y,z;s)=S_cap(x,y,z;s)+D(s)+B(x,y,z),
+    D(s)=sum_e multiplicity(e)*defect(s_e),
+    B=3*(1-cos x)+4*(1-cos y)+3*(1-cos z).
+
+The source-only B cancels from a normalized conditional law; D does NOT. All32
+links stay free. The negative component alone is not coercive on every link;
+FourCubeNegativeCompletion.negative_spike_no_control remains authoritative.
+Its pole multiplicity is3, and the new independent test gives D(identity)=0,
+D(pole-spike(axis0(pi)))=6. Thus removing D is not an allowed scalar calibration.
+This is a theorem-level scope correction/clarification, not a change to any
+verified result or to an original manuscript. The native response, projection,
+thermal law comparison, replica and Schur-cubic statements of1839–1845 refer
+to their72-face cap source unless explicitly stated otherwise. The separate
+CompletedHaar/standard864-face results remain preserved, with their DIFFERENT
+verified cubic coefficient1784975/2750517 rather than31877443263/69438734552.
+
+`Foundation/FourCubeDirichletAffinity.lean` now constructs the EXACT comparison
+on the common full32 product-Haar state space at IDENTITY boundary. Let
+S=S_cap(0,0,0), A=S_box(0,0,0)=S+D, and Z_c,Z_d their actual Haar partitions.
+`capZ_eq_partition` and `capZ_integral` identify the full32 cap integral with
+the existing exact31-link gauge-reduced normalizer. No Gaussian law is substituted.
+`boxZ_integral`, `boxZ_eq_completed`, `action_completion`, and `relative_weight`
+identify the standard box, completed box and nonconstant reweighting. Actual
+normalized densities are
+
+    rho_d=(Z_c/Z_d)*exp(-beta*D)*rho_c.
+
+This identity is independently checked pointwise; both original probability
+measures are retained. `capRoot`, `boxRoot` are their POSITIVE square-root Haar
+densities. `root_squares`, `cap_law_density` and `box_law_density` identify the
+actual measures, not merely selected observable pairings. Their common-Haar
+square-root affinity is
+
+    A(beta)=integral sqrt(rho_c)*sqrt(rho_d) dHaar
+           =J(beta)/(sqrt(Z_c(beta))*sqrt(Z_d(beta))),
+    J(beta)=integral exp(-beta*(S+A)/2) dHaar.
+
+`half_integrable` proves genuine integrability for beta>=0 from the actual
+nonnegative actions; `half_le_box` proves J(beta)<=Z_d(beta/2). The latter uses
+S>=0 and does not identify the two laws or assume a small perturbation. Thus
+
+    A(beta)^2 <= Z_d(beta/2)^2/(Z_c(beta)*Z_d(beta)).
+
+`cap_asymptotic` reuses FourCubeHaarPartitionAsymptotic.
+actual_normalizer_asymptotic: Z_c(1/t^2)/abs(t)^93 -> L_c>0.
+`box_asymptotic` reuses FourCubeFullHaarAsymptotic.full_partition_limit(0,0,0),
+INCLUDING its already proved off-cutoff control: Z_d(1/t^2)/abs(t)^96 -> L_d>0.
+`box_scaled_asymptotic` derives the positive-coupling-rescaling version for
+every a>0 via t/sqrt(a), with the exact factor (sqrt(a))^(-96).
+`relative_partition_limit` proves
+
+    [Z_d(1/t^2)/Z_c(1/t^2)]/abs(t)^3 -> L_d/L_c>0.
+
+The dimension gap is an actual normalized-Haar consequence of the exact
+completion, not dimension counting asserted as an axiom. `affinityUpper_tendsto`
+combines these estimates: the displayed squared-affinity upper bound is
+abs(t)^3 times a function with a finite positive limit. Finally
+`affinity_square_tendsto` and `affinity_tendsto` prove
+
+    A(1/t^2)^2 ->0,    A(1/t^2)->0       as t->0 through t!=0.
+
+These are affinities of the ACTUAL cap and standard-box probability laws at
+identity boundary, not their Gaussian approximations. No leading coefficient
+for A itself is claimed: only the stated upper bound and zero limit are proved.
+The independent checks verify interior nonconstancy, both original probability
+laws, exact normalized reweighting, strictly POSITIVE affinity at each finite
+beta>=0, affinity1 at beta0, the independent partition-ratio zero limit, and
+inequality of the two pre-existing nonlinear coefficients. No finite-coupling
+mutual-singularity claim follows from a vanishing limiting affinity.
+
+Consequences and limits: this closes a near-identical-measure/unchanged-native-
+space shortcut from the cap estimates to the completed standard Dirichlet box.
+The overlap can vanish even at identity boundary. It does NOT preclude a true
+density-corrected unitary at each fixed coupling, a direct native calculus on
+the standard box, or uniform bounds proved by a DIFFERENT argument. It does
+not establish nonuniformity of every native response constant. The affinity
+uses full configuration densities, not a projection onto a physical local-gauge
+sector; no physical-sector spectral conclusion, mass-gap obstruction, connected
+multiblock gluing or periodic stationary-transfer identification is inferred.
+No arbitrary-boundary or volume-uniform affinity theorem is proved.
+
+Next constructive route: instantiate the actual standard-box calculus directly,
+retaining D and its96-dimensional reference normalizer. Since D is boundary-
+independent and nonnegative while B is a boundary scalar, centering the source
+derivative may remove B without dropping D from the measure. Test the actual
+moment/partition-comparison proof rather than a deteriorating inverse-density
+bound. Every needed full32 action comparison and common thermal neighborhood
+must be proved for THIS model. Do not reuse the cap's93-dimensional constants,
+identify the two cubic coefficients, or manufacture a transfer from the new
+negative result. This is classical density/asymptotic comparison instantiated
+on the exact models, not a claim of mathematical novelty. The focused campaign
+and all original sources and verification requirements remain unchanged.
