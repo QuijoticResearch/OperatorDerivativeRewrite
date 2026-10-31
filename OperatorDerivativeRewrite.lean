@@ -2984,3 +2984,4 @@ import Foundation.PeriodicQuarticNativeObstruction
 import Foundation.PeriodicQuarticCenterEven
 import Foundation.PeriodicQuarticCenteredObstruction
 import Foundation.PeriodicQuarticFiniteRankObstruction
+import Foundation.SU2QuarticValleyNonintegrable
