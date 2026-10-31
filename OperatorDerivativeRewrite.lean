@@ -2976,3 +2976,4 @@ import Foundation.PeriodicPlaquetteScaleObstruction
 import Foundation.PeriodicPlaquetteSeamSelection
 import Foundation.PeriodicGroundHaarScale
 import Foundation.PeriodicGaugeSaturatedGround
+import Foundation.PeriodicFlatLocusQuarticObstruction
