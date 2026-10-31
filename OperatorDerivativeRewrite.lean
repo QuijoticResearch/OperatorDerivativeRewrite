@@ -2989,3 +2989,4 @@ import Foundation.PeriodicConstantQuarticJet
 import Foundation.PeriodicConstantRootLimit
 import Foundation.PeriodicRelativeGaugeGaussian
 import Foundation.PeriodicRelativeGaugeTails
+import Foundation.PeriodicFullHaarGaussianLimit
