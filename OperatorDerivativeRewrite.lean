@@ -3026,3 +3026,5 @@ import Foundation.PeriodicPhysicalDirichlet
 import Foundation.PeriodicLocalEnergy
 
 import Foundation.PeriodicLocalEnergyObstruction
+
+import Foundation.PeriodicHighActionControl

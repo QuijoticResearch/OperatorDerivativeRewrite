@@ -60187,3 +60187,49 @@ This rules out completing1826's local-energy route by a global variance inequali
 Full7245-job root build 51.94282329999987s; COMPLETE transitive audit plus final types 50.52854169999773s; seven independent Lean examples 31.96756540000206s; persisted Foundation/AxiomAudit.lean 61.24745869999606s. All terminal0.
 
 The authenticated1826 source manifest covers3027 recursive Foundation/root Lean files. ONLY the new obstruction module/root import/AxiomAudit differ; all older mathematical sources,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources is unmodified and uncommitted. Evidence: `.lake/stardust-1827-{build,audit,checks,axiom-ledger}-time.json`, full logs, public names, review.json, independent source and working-checkpoint.json. This ledger is precommit: five explicit paths, exact approval, guarded BOTH public backup and independent exact-ref checks remain closure obligations; no remote success is presumed. Preserve unrelated drafts, master/publication branches and the indefinite active goal.
+
+
+## Checkpoint1828 — actual high-action physical-core control and cutoff dissipation (2026-10-31)
+
+Focused Yang–Mills ACTIVE; previous goal turn PROGRESS. Checkpoint1827 `6cc26d7672a8bb5e2a7ce6e867024bd5c3008767` is CLOSED: guarded sync terminal0 at15:25:18.328450UTC and independent exact BOTH-main/research/HEAD/clean-tree/PUBLIC check15:25:54.963458UTC. `.lake/stardust-1827-terminal.json` preserves closure. No agent, campaign/queue/visibility/resource/toolchain change, reflection admission or publication work. ResearchSources and the stale October27 reflection reservation are preserved.
+
+**The full operator controls a high-action bounded core.** `Foundation/PeriodicHighActionControl.lean` proves the actual spectral-form route proposed after1827's cutoff obstruction. Let B0=`PeriodicGroundHaarScale.upperConstant`, c0=`PeriodicGaugeSaturatedGround.eigenLowerConstant`, R0=B0/c0>0 and P the ACTUAL native stationary Hilbert operator of any constructed GroundData. For beta>=16777216, any bounded measurable real pointwise gauge-invariant native L2 representative f with f(U)=0 whenever beta*S(U)<=K satisfies `native_high_action_bound`:
+
+    | <P f,f>_mu | <= R0*exp(-K)*||f||_mu^2.
+
+K may be any real number. `native_high_action_coercivity` gives
+
+    (1-R0*exp(-K))*||f||_mu^2 <= <(I-P)f,f>_mu.
+
+At the FIXED threshold K*=log(2*R0), `native_high_action_half` proves one-half coercivity, uniformly in beta and the chosen positive normalization/ground on this FIXED192-link cell. This is a theorem about the actual stationary operator on its stated bounded supported physical core. It is NOT a global spectral gap, a bound on ||P f||, a completed high-action compression norm, or a physically normalized decay rate. P can send a supported input into the low-action region; mixed blocks remain.
+
+**Actual pairing, domains and normalization.** `native_kinetic_pairing` holds for beta>=0 on the same bounded physical native core without support assumptions:
+
+    <P f,f>_mu = z/(lambda*Z) integral_U integral_V
+      kappa(U,V)*[w(U)*f(U)]*[w(V)*f(V)] dHaar(V)dHaar(U),
+
+z=laplace(beta)^192, w=exp(-beta*S/2)*psi, and mu=psi^2/Z is the ACTUAL stationary probability. It reuses `operator_toLp`, the actual ground stationary pairing and integrated physical-sector factorization. The gauge-averaged kernel is never replaced pointwise. Physicality of the probe is explicit; signs and centering of f are unrestricted. Joint product-Haar integrability is proved from actual kinetic bounds and bounded probes, retaining z. The actual kinetic density is symmetric, nonnegative and has BOTH Haar marginals one. Integrated Young inequality therefore gives |integral kappa*h(U)*h(V)|<=integral h^2 on the precise bounded measurable Haar domain. Pointwise positivity alone is not treated as positive-definite quadratic positivity.
+
+On the stated support M(U)^2<=exp(-K), yielding a raw native bound with coefficient (z/lambda)*exp(-K). The actual Z and L2 norm conversion remain until cancellation. The existing matching lower principal bound and actual single-link Haar Laplace estimate give z/lambda<=R0. The source reuse audit explicitly found `PeriodicGaugeSaturatedGround.eigenvalue_matching_lower` and `eigenvalue_half_ratio` ALREADY verified before1828; the earlier self-Harnack principal-power lead was not pursued as a duplicate theorem. A private scalar normalization proof reuses those declarations; no new eigenvalue asymptotic or manuscript claim is asserted.
+
+**The actual cutoff is not a slow trial in this regime.** For1827's F(U)=max(0,beta*S(U)-(2*K+27648)), K>=0, if beta>=16777216 and K*<=2*K+27648, `cutoff_full_coercivity` proves
+
+    (1/2)*||F||_mu^2 <= <(I-P)F,F>_mu.
+
+`cutoff_variance_coercivity` strengthens the interpretation with the actual stationary variance:
+
+    (1/2)*Var_mu(F) <= <(I-P)F,F>_mu.
+
+Whenever128*beta>2*K+27648,1827 also gives Var_mu(F)>0. Thus the restricted local functional can be exactly zero while FULL native dissipation is strictly positive and bounded below in variance units. The counterexample to restricted Poincare remains valid, but supplies no near1 trial for the original operator. These statements require the explicit large-beta and threshold hypotheses; no new claim is made for the earlier beta256 example. A separate independent existence check verifies that the large-beta, threshold and positive-variance conditions are jointly satisfiable.
+
+**Independent tests.** Six Lean examples check: the exact kinetic pairing for an actual signed winding observable; failure of unrestricted global one-half coercivity on the actual constant vacuum (so the support hypothesis cannot be omitted); admissibility and native one-half coercivity of a genuine gauge-invariant high-action indicator; the sharper exp[-(2*K+27648)] native quadratic bound for the explicit cutoff; actual strictly positive full dissipation together with zero restricted local energy for the same cutoff; and nonvacuity of all key scalar hypotheses. The indicator uses an ACTION level set, which is physical, rather than an unphysical configuration cap. These are actual native-domain and obstruction tests, not a substitute free-kernel or finite-loop calculation.
+
+**Remaining obligations and strongest reuse route.** This proof uses established positive-kernel ground-transform/contraction mechanisms on the actual periodic Wilson slice, not an external novelty claim. Constants are cell-dependent; no volume-uniform or continuum inference follows. The immediate completion obligation is to extend supported-core control through genuine native L2 truncation limits. `BochnerL2Dominated.tendsto_of_ae_norm_bound` already handles arbitrary measure spaces; bounded scalar truncation (hard cutoffs suffice on this measurable core) preserves pointwise physicality and zero support, and should permit the limit with the already continuous native operator. Each measurability, native MemLp, countable representative, domination and convergence premise still needs verification. The closed physical high-action domain/projection and its operator compression are NOT yet constructed or identified here. Do not promote a quadratic core bound to a completed norm theorem without those steps.
+
+After that, test actual variational/Schur elimination with retained mixed losses. `CoerciveSchurStability` is a potential generic Hilbert reuse; `PeriodicEnergySchur` is a finite linear coarse compliance operator and cannot stand in for the actual nonlinear stationary transfer. Low-action global spectral geometry, cross-block control, mesoscopic center-even moments/relative variance, coupling-dependent physically justified iteration, volume-uniform limits, continuum/infinite-volume existence and the physical mass gap remain open. The detailed next route is `.lake/stardust-1828-route.md`. The campaign remains focused Yang–Mills; no unrelated branch is opened.
+
+**Verification.** All295 final source lines,6 public proofs/8 private proofs, all6 complete public types and all independent source were reviewed. The complete transitive audit covers62170 safe Foundation declarations and accepts only propext/Classical.choice/Quot.sound. No new axiom, sorry, native_decide, changed theorem meaning, raised limits, suppressed diagnostics, toolchain or resource change. Four scratch failure logs preserve explicit Pi-function norm/power notation, integral argument inference, trace-to-defect equality, lexical spacing, physical-probe function spelling and scalar rewrite repairs. These changed elaboration only, not mathematical domains. The first independent-test pass required the correct QuaternionSU2Representation namespace for halfTrace_bound; its failure log is preserved. Existing diagnostics remain visible.
+
+Full7246-job root build 68.09524699999747s; COMPLETE transitive audit plus final types 90.78793260000384s; six independent Lean examples 33.2209984000001s; persisted Foundation/AxiomAudit.lean 58.18716139999742s. All terminal0.
+
+The authenticated1827 source manifest covers3028 recursive Foundation/root Lean files. ONLY the new high-action module/root import/AxiomAudit differ. All older mathematical sources,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources is read-only/uncommitted. Evidence includes `.lake/stardust-1828-{build,audit,checks,axiom-ledger}-time.json`, full logs, public names, review.json, independent source and working-checkpoint.json. This entry is precommit: five explicit paths, exact approval, guarded BOTH public backup and independent exact-ref checks remain closure obligations; remote success is not presumed. Preserve unrelated work, master/publication branches and the indefinite active research goal.
