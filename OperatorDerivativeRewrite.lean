@@ -2990,3 +2990,4 @@ import Foundation.PeriodicConstantRootLimit
 import Foundation.PeriodicRelativeGaugeGaussian
 import Foundation.PeriodicRelativeGaugeTails
 import Foundation.PeriodicFullHaarGaussianLimit
+import Foundation.PeriodicVacuumNormalizationObstruction
