@@ -550,3 +550,87 @@ obstruction. Do not repeat it using an IBM completion, Gaussian-Poisson norm
 transfer or signed semigroup. A productive next step must use additional actual
 Wilson action/partition or ground-eigenfunction information to control genuine
 scale transfer, rather than produce more normalized local regularity lemmas.
+
+
+## Follow-up1844: actual disjoint Wilson copies expose nonuniform accumulation
+
+`Foundation/FourCubeReplicatedInteraction.lean` tests the multiblock inference
+on ACTUAL positive Wilson weights rather than a signed-noise or Gaussian
+surrogate. Fix the existing three-angle boundary family and integrate all32
+interior links of EACH of m disjoint copies against their product Haar measure:
+
+    Z_m(beta,x,y,z)=integral product_(i<m) W(beta,x,y,z;s_i) dHaar^m.
+
+`product_weight_integrable` proves genuine product integrability.
+`productPartition_eq` uses Mathlib's finite-product Fubini theorem and the
+existing continuous weight to prove Z_m=Z^m; `productPartition_pos` retains
+strict positivity, including the empty product. Independence is justified
+ONLY for these disjoint copies, conditional on the common assigned external
+parameters. There is no identification with connected neighboring blocks,
+shared-edge integration, or the actual stationary transfer operator.
+
+Let R_m(beta,t) be the existing generic eight-corner multiplicative ratio
+applied to Z_m. `product_log_ratio` proves the exact all-coupling identity
+
+    log R_m(beta,t)=-m*cornerSum(F(beta),t),
+
+where F is precisely FourCubeThermalMixedDifference.freeEnergy, whose verified
+coefficient is c=31877443263/69438734552>0. The boundary-INDEPENDENT reference
+normalizer cancels in the corner sum; no boundary-dependent partition scalar
+is discarded. This is NOT the different CompletedHaar boundary family's
+coefficient1784975/2750517, despite reusing its GENERIC ratio algebra.
+
+Writing T(t)=cornerSum(F(1/t^2),t)/(8*t), the already proved limit T(t)->c gives
+
+    log R_m(1/t^2,t)=-8*m*t*T(t).
+
+`fixed_volume_ratio_limit` proves R_m(1/t^2,t)->1 for EVERY fixed finite m.
+Thus unscaled third-derivative divergence is not evidence that this one-cell
+finite thermal interaction stays large. Its eight-corner log ratio is O(t).
+But set t_n=1/(n+1), m_n=n+1, beta_n=(n+1)^2. Then
+`replicated_log_identity`, `replicated_log_limit` and `replicated_ratio_limit`
+prove, on the actual disjoint-copy Haar integrals,
+
+    log R_(m_n)(beta_n,t_n)=-8*T(t_n) -> -8*c,
+    R_(m_n)(beta_n,t_n) -> exp(-8*c) < 1.
+
+`replicated_not_tendsto_one` and `not_uniform_in_volume` formalize the exact
+failure of uniform convergence to1 over the block count, despite convergence
+for every fixed count. The topology is ordinary uniform convergence of these
+REAL scalar ratios, not an operator norm, total variation or path-space metric.
+The independent positive-separation test supplies delta>0 with
+abs(R_(m_n)-1)>delta eventually. No numerical approximation supports the proof.
+
+`pairwise_counterterm_limit` proves the same nonunit limit after arbitrary
+n-dependent positive factors exp(A_n(x,y)+B_n(y,z)+C_n(z,x)); the original exact
+corner cancellation applies pointwise without smoothness or boundedness
+assumptions. A genuinely THREE-source counterterm is different:1843 already
+showed it can change the coefficient. Such a comparison is not a redefinition
+of the original fixed Wilson model and must not be silently inserted here.
+
+The six independent checks cover the empty actual integral, zero-beta Haar
+normalization for all m, the precise unchanged cellAction exponential in every
+copy, doubling of the scaled log coefficient for TWO copies, a positive
+diagonal ratio separation and exact pairwise cancellation before any limit.
+Initial target failures concerned function composition and distance symmetry;
+one independent test needed spacing between < and absolute value. Failed logs
+are preserved; no resource limit, theorem domain, trust setting or original
+source was changed to make checks pass.
+
+Interpretation: a principle inferring uniform-in-volume global interaction
+smallness from fixed-volume/local smallness is false even on this disjoint
+positive Wilson subclass. The nonlinear correction already accumulates at
+block count m~sqrt(beta). This is a BLOCK-COUNT statement, not a physical
+spatial distance or temporal iteration theorem. It does not establish a
+connected-lattice spectral obstruction, nonvanishing total-variation distance,
+a lower bound on a physical mass gap or its impossibility. It also does not
+exclude estimates in a per-cell, weighted-local or appropriately renormalized
+norm: dividing log R_m by m changes the question. A connected multiblock proof
+could exploit additional geometric cancellations, but must actually prove them.
+
+This is a concrete, classical product/limit consequence of the existing verified
+nonlinear Wilson coefficient, not a novelty assertion. It rules out one
+unjustified volume-uniform inference and identifies what the next scale-transfer
+estimate must count or retain. Avoid more replicas solely for declaration count;
+next investigate an actual connected-block cancellation/local norm or retain
+the cubic in the coarse interaction with an independently justified remainder.

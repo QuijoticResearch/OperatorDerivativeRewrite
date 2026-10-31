@@ -60786,3 +60786,30 @@ The focused Yang–Mills campaign remains active; no campaign, publication, arch
 model, toolchain or verification-policy change. Final gates and backup follow.
 
 Checkpoint1843 local closure: full7265-job build passed in27.1699174s; complete62630-declaration transitive axiom audit plus all20 final public types passed in42.6757597s; all six independent checks passed in31.0262279s; complete persisted AxiomAudit passed in64.2504349s. All123 source lines/12 proofs/8 definitions and final types reviewed; authenticated source/config/archive integrity passed. Initial failed limit-expression elaboration log preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1844 — exact Wilson tensorization and a nonuniform volume limit
+
+Foundation/FourCubeReplicatedInteraction.lean integrates the unchanged actual
+all32-interior-link weights on m disjoint copies, proves integrability and
+Z_m=Z^m, and retains the precise normalized free energy and its coefficient
+c=31877443263/69438734552. The eight-corner partition ratio obeys
+log R_m(1/t^2,t)=-8*m*t*T(t), T(t)->c. Every FIXED finite m has R_m->1.
+Yet for t_n=1/(n+1), m_n=n+1, beta_n=(n+1)^2 the ratio tends to exp(-8*c)<1.
+not_uniform_in_volume proves exact failure of uniform convergence over m.
+Arbitrary n-dependent PAIRWISE boundary factors leave this limiting ratio intact.
+
+This is actual disjoint-copy Haar integration, not connected multiblock gluing,
+a temporal stationary transfer, signed pseudoprocess composition or Gaussian
+approximation. It shows that local thermal smallness alone supplies no uniform
+GLOBAL corner-interaction bound: the cubic accumulates at count~sqrt(beta).
+No total-variation/operator/spectral or physical-distance conclusion follows;
+per-cell or weighted-local norms may behave differently. The existing1843
+THREE-source calibration comparison is distinct from pairwise counterterms.
+All standard Wilson results and original manuscripts remain unchanged.
+See STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md for exact hypotheses and limits.
+The focused Yang–Mills campaign and existing indefinite research goal remain
+active; no queue, publication, configuration or verification-policy change.
+Final verification gates and exact two-branch backup follow separately.
+
+Checkpoint1844 local closure: full7266-job build passed in26.8935683s; complete62668-declaration transitive axiom audit plus all19 final public types passed in42.2864472s; all six independent checks passed in29.8747366s; complete persisted AxiomAudit passed in53.5880387s. All136 source lines/15 proofs/4 definitions/1 private proof and final types reviewed; authenticated source/config/archive integrity passed. Initial target composition/distance and independent spacing failure logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.

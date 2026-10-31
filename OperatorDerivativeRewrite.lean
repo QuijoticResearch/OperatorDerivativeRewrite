@@ -3058,3 +3058,5 @@ import Foundation.FourCubeThermalScore
 import Foundation.FourCubeHaarHalfDensity
 
 import Foundation.FourCubeGaugeCalibration
+
+import Foundation.FourCubeReplicatedInteraction
