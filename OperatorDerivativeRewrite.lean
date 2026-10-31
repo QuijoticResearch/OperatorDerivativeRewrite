@@ -3046,3 +3046,5 @@ import Foundation.PeriodicGaussianTransferGram
 import Foundation.PeriodicPositiveMassAnchor
 
 import Foundation.PeriodicLogActionMoment
+
+import Foundation.PeriodicGaussianTransportObstruction
