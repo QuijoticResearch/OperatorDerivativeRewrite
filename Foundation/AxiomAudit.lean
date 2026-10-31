@@ -16117,3 +16117,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionSchur.residual_control
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionSchur.native_decomposition
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionSchur.zero_energy_lift
+
+-- Checkpoint1831: actual pulled-back variance and Schur winding obstruction.
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicSchurWindingObstruction.native_variance
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicSchurWindingObstruction.harmonic_approximation
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicSchurWindingObstruction.variance_trial
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicSchurWindingObstruction.eventual_winding_trial
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicSchurWindingObstruction.no_uniform_variance_gap

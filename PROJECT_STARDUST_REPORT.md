@@ -60321,3 +60321,55 @@ Authenticated source integrity against1829 covers3030 recursive Foundation/root 
 **Next concrete research question.** Test quantitative spectral control of this ACTUAL S after the vacuum is accounted for, using the correct pulled-back native variance/norm of Jx and the actual cross coupling B. Do not replace the missing low-action estimate with the restricted-cap Poincare statement already disproved in1827 or use full E(x) coercivity to discard the Schur subtraction. Seek a native nonconstant near1 vector from the preserved center-even winding/flat-field and mesoscopic moment machinery, or a genuine low Schur coercivity theorem with explicit coupling dependence. The above residual estimate controls where a possible slow mode lives; it does not provide its variance or rate. Keep the existing local-energy counterexample and full high-sector bounds together.
 
 Low spectral geometry, centered Schur/variance estimates, mesoscopic center-even moments, coupling-dependent physical iteration scale, volume-uniform estimates, infinite-volume/continuum existence and a positive physical mass gap remain OPEN. No campaign transition, publication maintenance, manuscript change or Millennium conclusion is made. Preserve the indefinite goal, unrelated files, master/publication branches and user-controlled PUBLIC repository visibility.
+
+
+## Checkpoint1831 — nonconstant actual low Schur obstruction, with pulled-back native variance (2026-10-31)
+
+Focused Yang–Mills ACTIVE; previous goal turn PROGRESS. Checkpoint1830 `f365b39649580e0fa2b3dad085573af8d2c42510` is CLOSED: guarded sync16:56:05.594395UTC, independent exact BOTH-main/research/HEAD/clean-tree/PUBLIC verification16:56:15.908142UTC and terminal receipt16:56:16.020444UTC. This continuation began12:56:28.4541110 EDT. No new goal/agent, campaign/queue/visibility/toolchain/resource change, reflection admission or publication work. Preserve all original sources and the outstanding October27 reflection reservation.
+
+**The concrete question was the vacuum-quotiented Schur bottleneck.**1830 showed the constant vacuum gives a nonzero low zero-energy direction, so positivity on ALL low vectors cannot hold. That alone did not decide coercivity relative to the native variance of the harmonic lift, which annihilates constants. `Foundation/PeriodicSchurWindingObstruction.lean` now disproves a coupling-UNIFORM positive lower bound even relative to this correct variance on the FULL low domain. The countervailing modes are the already verified GLOBAL center-sensitive winding trials, transported through the ACTUAL stationary Wilson Schur reduction. This does not settle the different local, center-even glueball sector.
+
+Keep the exact1830 definitions: actual native P, H=`completed g K*`, L=H-orthogonal, C=proj_H P inj_H, B=proj_H P inj_L, actual R=(I_H-C)^(-1) with BOTH inverse equations and norm<=2, S=I_L-A-B* R B, Jx=x+inj_H R Bx. No pointwise replacement of the gauge-averaged kernel, hard-indicator identification of H, omission of the mixed Schur correction, new existence axiom or continuum object enters this proof. Every R satisfying the actual two-sided equations and the established bound is covered;1829 supplies such an R at beta>=16777216.
+
+**Native variance and quantitative stability.** `native_variance` proves, for EVERY actual native L2 F,
+
+    Var_mu(F) = ||F||_mu^2 - (integral F dmu)^2.
+
+This is the existing ProbabilityTheory.variance under the actual stationary probability law, not a newly defined surrogate. The private helpers reuse `BochnerL2Dominated.norm_sq_integral`, `FiniteMeasureL2Integration.square_integral_le`, actual Lp AE subtraction and finite-measure integrability. Thus (mean F)^2<=||F||^2 and means subtract correctly for native classes. If N has native norm1 and mean0, and ||N-F||<=1/4, triangle inequality gives ||F||>=3/4 while the actual mean of F has square<=1/16. Hence Var_mu(F)>=1/2. No centering of a low vector x, or of Jx, is silently assumed.
+
+`harmonic_approximation` proves, for the SAME x obtained from the actual orthogonal decomposition of any native N,
+
+    ||N-Jx|| <= 2||N-PN||,
+    0 <= <Sx,x> <= E_P(N).
+
+It retains the quantitative variational remainder and full original-operator residual from1830. A private lemma reuses `PeriodicTransferVariation.operator_residual` and `PeriodicWindingRate.native_dirichlet` to obtain ||N-PN||^2<=2E_P(N). Therefore, if N is a centered unit native trial and E_P(N)<=epsilon<=1/128, the harmonic approximation is within1/4. `variance_trial` concludes
+
+    Var_mu(Jx) >= 1/2,    0 <= <Sx,x> <= epsilon.
+
+No boundedness, smoothness or arbitrary pointwise representative hypothesis is imposed on N; its native L2 domain and actual mean are explicit. The source trials below have verified pointwise physical representatives. No additional unproved pointwise gauge-representative property for the output x or Jx is asserted.
+
+**Actual winding mechanism, not a vacuum artifact.** The theorem-level reuse is exact: `PeriodicWindingRate.eventual_normalized_dirichlet` supplies actual native centered unit N with E_P(N)<=1536 times the actual joint energy. `PeriodicEnergyRate.logarithmic_energy_bound` bounds that joint energy by
+
+    r(beta) = (385 log(beta)+offset+1)/beta,
+
+and `PeriodicEnergyRate.rate_tendsto_zero` proves r(beta)->0. The new `eventual_winding_trial` applies the variance transfer when r(beta)<1/196608 and beta>=16777216. For every sufficiently large beta, EVERY actual ground g and EVERY admissible actual inverse R, it proves existence of x in L with
+
+    Var_mu(Jx)>=1/2,
+    0<=<Sx,x><=1536 r(beta),
+    <Sx,x><=3072 r(beta) Var_mu(Jx).
+
+The eventual threshold is proved; no practical numerical coupling threshold is claimed from these coarse cell-dependent constants. An independent test divides by the rigorously positive variance and verifies the actual Schur Rayleigh quotient is between0 and3072 r(beta). Another test proves Jx is unequal to EVERY native constant class, not just the constant vacuum1. Thus this obstruction survives removing constants through the pulled-back native variance.
+
+`no_uniform_variance_gap` makes the failed route precise: for every fixed delta>0, eventually at every beta and every actual g/R, it is FALSE that delta Var_mu(Jx)<=<Sx,x> for every x in L. This excludes a coupling-independent positive lower bound on the FULL low-domain Schur problem in native lattice-step normalization. It neither excludes a coupling-dependent bound nor supplies a physical lattice-spacing/iteration clock. It is a new verified transfer of the EXISTING global winding obstruction to the actual low Schur problem, not a claim that the old winding slow-clock result itself was newly discovered. `PeriodicWindingRate.eventual_iteration_budget` and `logarithmic_clock_no_uniform_contraction` already established the original global iteration obstruction and remain unchanged.
+
+**Four independent examples plus a typed inverse helper.** They test actual inverse existence at sufficiently large beta, avoiding a vacuous implication; the DIVIDED positive-variance Rayleigh bound; failure of the concrete proposed delta=1/1000 full-low variance bound for a constructed native inverse; exclusion of EVERY actual native constant; and the boundary implication that any hypothetical centered unit fixed N yields positive-variance Jx with exactly zero Schur energy, with that fixed-vector hypothesis explicit and no unproved ergodicity claim. The first example combines existence and the ratio check, so there are four examples total. All test source and the typed helper were reviewed. No test repair was required.
+
+**Verification and source integrity.** All137 final source lines,5 public proofs/5 private proofs/1 actual probability instance and all5 unabridged final public types were reviewed. COMPLETE transitive audit covers62258 safe Foundation declarations, permitting only propext/Classical.choice/Quot.sound. The single scratch failure log preserves a squared residual orientation normalization issue: adding the squared norm-symmetry equality repaired the arithmetic at DEFAULT limits. No mathematical hypothesis changed. No sorry/new axiom/native_decide, raised heartbeat/recursion, unsafe reducibility override, error suppression or changed compiler/trust/resource setting.
+
+Full7249-job root build 49.58079960000032s; complete transitive audit plus all5 final types 54.79048589999729s; four independent Lean examples plus typed helper 37.550679699998s; persisted Foundation/AxiomAudit.lean 60.520256699994206s. All terminal0.
+
+Authenticated source-integrity comparison with1830 covers3031 recursive Foundation/root Lean files. Only the new actual Schur winding module/root import/AxiomAudit differ. Every older mathematical source,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources stays read-only and uncommitted. Evidence: `.lake/stardust-1831-{build,audit,checks,axiom-ledger}*`,5 public names, review.json, independent source and working-checkpoint.json. This entry is precommit; five explicit paths, exact approval, guarded BOTH public backups and independent exact-ref checks remain required. Do not presume remote success.
+
+**Next substantive bottleneck.** The route “eliminate high action, remove the vacuum, then obtain a uniform bound on the ENTIRE low domain” fails by the above actual nonconstant winding trials. Any mass-gap-related positive approach needs a correctly justified observable sector and physical normalization, not just another global Schur estimate. Revisit the precise center-even hypotheses in `PeriodicEvenWindingCriterion.normalized_scale_criterion`: positive c with c*secondMoment<=Var(evenWinding), plus 8*ratioConstant/beta^2<=eta^2*secondMoment. The latter gives a small normalized residual only if eta is small; the finite-beta strictly positive variance floor does not prove those uniform relative/moment bounds. `PeriodicEvenWindingVariation.native_residual_scale` and the weighted Cauchy reduction remain available. Audit the strongest existing mesoscopic/flat-field/moment obstructions before attempting a new proof; do not repeat a failed packet or restricted-cap Poincare argument.
+
+The current source modes are global and center-sensitive. A conclusion about local center-even observables, volume-uniform bounds, infinite-volume/continuum Yang–Mills existence or a positive physical mass gap is NOT established. The high-sector completion and Schur reduction remain useful and all counterexamples remain preserved. No external novelty claim, campaign transition, publication/manuscript change or repository-visibility change is made; the indefinite goal stays active.
