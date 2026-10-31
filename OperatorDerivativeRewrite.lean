@@ -2971,3 +2971,4 @@ import Foundation.PeriodicLinkStaples
 import Foundation.PeriodicLinkDisintegration
 import Foundation.PeriodicPlaquetteVarianceLower
 import Foundation.PeriodicMixedMomentObstruction
+import Foundation.PeriodicPlaquetteNoise
