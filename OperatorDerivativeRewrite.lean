@@ -3050,3 +3050,5 @@ import Foundation.PeriodicLogActionMoment
 import Foundation.PeriodicGaussianTransportObstruction
 
 import Foundation.FourCubeConditionalScore
+
+import Foundation.FourCubeInvariantScore

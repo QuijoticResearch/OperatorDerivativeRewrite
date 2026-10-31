@@ -208,3 +208,78 @@ term also depends on beta and boundary data. Do not replace uniform estimates
 with further formal identities or classical auxiliary infrastructure.
 
 Next physical-domain test (UNPROVED): before demanding a full-native score bound, examine the score projected onto the relevant gauge-invariant observable space. At identity boundary, color-odd first source derivatives may cancel against invariant tests under the existing global SU2 conjugation/quarter-turn symmetries. Check this on the actual all32 law and stated boundary directions; do not assume the cancellation or infer a physical obstruction from an unprojected score norm. This is a concrete candidate for reuse of Hilbert residual/projection geometry, not a new campaign.
+
+
+## Follow-up1840: actual invariant score projection at identity boundary
+
+`Foundation/FourCubeInvariantScore.lean` resolves the symmetry candidate saved
+at1839. For the actual all32-link conditional Gibbs family and EVERY real beta,
+EVERY direction u in the existing three-source parameter space has
+
+    Pi_H sigma_u(beta,0) = 0,
+    R_u(beta,0)|_H = 0.
+
+Here H is defined EXACTLY as the native L2 closure of the image of continuous
+functions invariant under simultaneous global SU2 conjugation of the interior
+links. It is not assumed to equal a full measurable invariant space or the
+physical local-gauge sector. The proof does not claim a nonzero raw score norm.
+For a continuous core test f with the stated invariance, the actual derivative
+of E_{t u}[f] at t=0 is zero (`invariant_native_derivative`).
+
+Exact mechanisms and declarations:
+
+- `boundary_turn`, `fill_turn`, `action_turn`, `weight_turn` prove the
+  quarter-turn transformation for the ACTUAL three-source boundary fill.
+  No unproved identification with the older two-source construction is used.
+- `weighted_turn`, `expectation_turn` use genuine product-Haar preservation,
+  the existing actual action, and its normalized partition. They flip TWO
+  parameter signs and keep the quarter-turn axis parameter fixed.
+- `odd_response_zero` proves cancellation on an odd source plane;
+  `coordinate_response_zero` covers each source coordinate. The actual smooth
+  expectation's Frechet derivative and the existing finite-coordinate
+  expansion extend it to arbitrary directions (`invariant_response_zero`).
+- `invariantCore`, `invariantSpace`, `invariantSpace_le_kernel` specify the
+  exact domain and extend the proved bounded response by continuity to its
+  explicit closure. No missing density theorem is supplied as an assumption.
+- `score_orthogonal`, `projected_score_zero` instantiate genuine Hilbert
+  orthogonal-projection geometry on this native Wilson space. This is a valid
+  reuse of the abstract geometry behind IBM conditional reconstruction; no
+  IBM probability law, filtration, martingale, range-surjectivity theorem or
+  Gaussian representation is transferred.
+
+The independent checks include a nonconstant globally invariant continuous
+trace observable (values1 and-1 on two actual states), zero actual derivative,
+the ENTIRE restricted native response operator being zero on H, the actual
+pair-flip expectation identity, invariance of xyz under those pair flips, and
+coexistence with the existing POSITIVE full-interior thermal cubic limit
+`FourCubeThermalMixedDifference.actual_scaled_third_difference_limit`.
+The trace test is deliberately called globally invariant, not locally gauge
+invariant; the existing endpoint-gauge obstruction to an open-link trace is
+preserved. Thus H is not silently promoted to a physical-sector identification.
+
+This is classical symmetry/selection geometry newly instantiated on the exact
+conditional operator, not a novelty claim or a mass-gap proof. It refines the
+quantitative target: an unprojected full-native score norm need not be the norm
+relevant to invariant observations at the identity boundary. It does NOT say
+that the raw score grows, vanishes, or has strictly larger norm; none of those
+extra statements is proved here. First-order projected cancellation also does
+not remove higher-order nonlinear interaction: simultaneous TWO-sign symmetry
+permits xyz, and the previously verified nonzero thermal cubic remains.
+
+Limits and next question: cancellation is at identity boundary for this
+three-source family. Uniformity over beta at that ONE base point is not a
+uniform boundary, scale-transfer or volume estimate. The functional R is a
+BOUNDARY-VARIATION response, not the temporal stationary transfer P; no spectral
+gap or zero Dirichlet energy follows. The actual changing-measure derivative
+is proved on the continuous invariant core, while the bounded functional
+vanishes on its specified closure. No arbitrary-L2 differentiability extension
+or equality with a full physical gauge space is claimed. A boundary-dependent
+observable F(t) still has the DIRECT derivative E[F'(0)] from1839's moving
+formula, even when its base test is invariant and the score term cancels.
+
+The next substantive problem is the surviving response away from identity in
+physically justified boundary/observable domains and thermal normalization,
+including moving Wilson observables and nonlinear mean second variations.
+Reuse the known full-integral cubic/Hessian obstructions; do not infer a
+physical obstruction from a raw, unprojected norm or a contraction theorem from
+an isolated-base-point symmetry. No campaign transition or new gauge library.
