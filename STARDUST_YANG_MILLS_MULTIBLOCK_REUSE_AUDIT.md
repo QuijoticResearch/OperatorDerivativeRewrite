@@ -954,3 +954,80 @@ partition-weighted boundary question, without merely duplicating the cap's
 entire regularity library. A gluing estimate must retain the standard partition
 and actual spatial incidence. No Hilbert norm, signed semigroup or output-range
 completion can replace that missing physical comparison.
+
+
+## Follow-up1848: actual spatial conditioning, and the arbitrary-exterior obstruction
+
+`Foundation/FourCubeSpatialConditioning.lean` supplies a precise geometric
+bridge to genuine finite spatial Wilson conditioning. The field has ONLY
+nearest-neighbor edges whose orientation coordinate is less than3, with all864
+admitted nonwrapping plaquettes retained. The old32-link interior is embedded
+injectively; the exterior is the ENTIRE complement of that core among valid
+edges. No invalid totalized outgoing edges are integrated. `indexEquiv`, `join`
+and `join_preserving` split the actual field into exterior/core coordinates and
+prove preservation of product Haar. This is independence of the PRIOR only,
+not independence of interacting Gibbs blocks.
+
+For every real coupling beta, `full_law_identification` identifies the pushforward
+of the constructed joint law with the independently defined full Wilson density
+`exp(-beta*action)/partition` on full-field Haar. All864 terms enter that action;
+measurability, integrability and strict partition positivity are proved.
+`actual_factorization`, `actual_conditional`, and `exterior_marginal` instantiate
+the EXISTING `ExponentialJointDisintegration` theorems on this actual geometry.
+The exterior marginal is partition-WEIGHTED Haar. It is not declared to be Haar
+or a product of independent Wilson-block marginals. This is classical finite
+Gibbs disintegration with a newly verified exact interface, not a novelty claim
+or a substitute for quantitative multiblock control.
+
+`source_join`, `source_action`, and `source_kernel` identify the former three-source
+864-face standard law as the section of this genuine spatial conditional kernel
+at one explicit exterior `sourceExterior b`. In particular, the checkpoint1847
+native response theorem is genuinely a response on a specified family of these
+sections. It remains a family theorem, NOT an arbitrary-exterior, almost-everywhere,
+volume-uniform or stationary-transfer theorem. The72-face cap is NOT substituted.
+Exterior-only action terms remain in the full partition and exterior marginal;
+normalizing a conditional section is not permission to delete them in gluing.
+
+A decisive obstruction is verified IN THIS SAME MODEL. `join_constant`,
+`constant_flat`, `constant_action_zero` and `no_exterior_uniform_pin` prove that
+for every interior edge i and every real C, the assertion
+
+    forall exterior A, core s,
+      defect(s_i) <= C * action(join(A,s))
+
+is FALSE. Set every actual valid link to q=axis(0,pi): every ordered plaquette
+is q*q*q^-1*q^-1=1, so the full action is0, while each core defect is2.
+This is an explicit nontrivial flat configuration, not an omitted-plaquette
+counterexample. It rules out extending the old identity-pinned raw-link
+coercivity to arbitrary exteriors. It does NOT disprove a gauge-relative bound,
+a score-variance estimate, contraction on physical observables or a mass gap.
+The earlier `LargerDirichletGaugeObstruction` already gives a distinct stronger
+scale-warning: at216 core links even IDENTITY frozen exterior permits interior
+gauge flat modes. Both obstructions must survive any proposed scale-transfer
+argument; neither is a physical-sector spectral obstruction.
+
+Together with the full-library theorem audit and checkpoints1838–1847, the
+answer remains: reusable adjoint/residual geometry and actual conditional
+interfaces exist, but no audited pseudoprocess, IBM, Gaussian–Poisson,
+closed-span or higher-semigroup theorem supplies uniform nonlinear multiblock
+coercivity in the original Wilson norms. The original hypotheses block those
+promotions: signed analytic-dual topology is not native probability L2;
+IBM output-norm completion does not prove an independent input frame bound;
+Gaussian–Poisson chaos isometry does not preserve products; the actual Wilson
+Gram feature is not a unitary; higher powers do not create low-spectrum control.
+Do not manufacture a cross-domain mass-gap transfer from these constructions.
+The next substantive route requires a gauge-invariant or explicitly gauge-relative
+arbitrary-exterior estimate with compatible partition weights and connected gluing,
+not further normalization identities or declaration expansion. No continuum,
+infinite-volume, gap, or novel mathematical discovery is asserted here.
+
+
+Audit coverage update1848: the authenticated source manifest now covers3048
+recursive Foundation/root Lean files. The original3036-file declaration/header/
+import/hash census is retained; the subsequently added modules were
+examined individually through their exact checkpoint proof/type reviews.
+The current complete transitive audit checks62907 compiled safe Foundation
+declarations. These are different coverage measures: no claim of a new manual
+proof review of every historical declaration is made. The new full conditioning
+proof and explicit counterexample serve the original multiblock question;
+no further general stochastic infrastructure is needed to state the obstruction.

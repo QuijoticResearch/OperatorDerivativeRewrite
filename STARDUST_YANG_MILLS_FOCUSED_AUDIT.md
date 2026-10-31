@@ -7610,3 +7610,22 @@ archive or verification-configuration change. Final gates and exact two-branch
 backup follow separately.
 
 Checkpoint1847 local closure: full7269-job build passed in27.8759712s; complete62842-declaration transitive axiom audit plus44 canonical final public types passed in44.4003068s; all seven independent checks and the explicit public probability-instance type passed in27.8107916s; complete persisted AxiomAudit passed in51.1328693s. All417 source lines,29 public proofs/14 definitions/1 abbreviation/1 probability instance/3 private proofs and all45 public types reviewed. Authenticated source/config/archive integrity passed; failed elaboration and test-qualification logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. Focused Yang–Mills and the existing indefinite goal remain active.
+
+
+### Checkpoint1848 — exact actual spatial kernel; arbitrary-exterior pin obstruction
+
+The new FourCubeSpatialConditioning module joins the entire valid-edge exterior
+and actual32-link core by an exact measurable Haar-preserving equivalence. The
+full864-face Wilson probability density is identified with the joint law; the
+existing exponential disintegration now supplies its ACTUAL spatial conditional
+with partition-weighted exterior marginal. The prior three-source standard law
+is one explicit section. A full flat constant SU(2) field has action0 and core
+defect2, disproving every arbitrary-exterior extension of raw-link identity pinning.
+No gauge-invariant gap, native arbitrary-exterior response bound or connected
+scale transfer is inferred. This is a classical conditioning interface and an
+explicit proof-route obstruction, not a new mass-gap estimate. Detailed hypotheses
+and cross-domain rejection criteria remain in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md.
+All public types, full build, transitive axiom, independent checks, integrity, exact
+commit and BOTH public backup gates must close before this checkpoint is certified.
+
+Checkpoint1848 local closure: full7270-job build passed in31.3190449s; complete62907-declaration transitive axiom audit plus ALL51 final public types (including3 instances) passed in55.8840558s; seven independent mathematical checks passed in32.6162782s; complete persisted AxiomAudit passed in59.0448171s. All286 lines,28 public proofs/15 definitions/5 abbreviations/3 public instances/3 private proofs and51 public types reviewed. Authenticated3048-source/config/archive integrity passed. Failed parser/API/elaboration and independent-test type-qualification logs preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref checks follow separately. Focused Yang–Mills and the existing indefinite goal remain active.
