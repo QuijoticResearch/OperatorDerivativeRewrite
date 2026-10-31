@@ -3012,3 +3012,5 @@ import Foundation.PeriodicNoncentralHaarUpper
 import Foundation.PeriodicNoncentralHaarLower
 
 import Foundation.PeriodicPhysicalKineticReduction
+
+import Foundation.PeriodicDressedGroundComparison
