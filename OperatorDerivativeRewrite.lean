@@ -3042,3 +3042,5 @@ import Foundation.PeriodicHighExcursion
 import Foundation.PeriodicHighMassAnchor
 
 import Foundation.PeriodicGaussianTransferGram
+
+import Foundation.PeriodicPositiveMassAnchor
