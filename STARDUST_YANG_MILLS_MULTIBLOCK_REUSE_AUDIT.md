@@ -283,3 +283,90 @@ including moving Wilson observables and nonlinear mean second variations.
 Reuse the known full-integral cubic/Hessian obstructions; do not infer a
 physical obstruction from a raw, unprojected norm or a contraction theorem from
 an isolated-base-point symmetry. No campaign transition or new gauge library.
+
+
+## Follow-up1841: uniform native response on the thermal boundary scale
+
+`Foundation/FourCubeThermalScore.lean` gives a quantitative positive transfer
+beyond the identity-boundary cancellation. Write beta=1/t^2,
+a_t=(t*x,t*y,t*z), e_y=the existing middle boundary direction, and let R be
+1839's native response functional. For each fixed amplitude ball
+x^2+y^2+z^2<=R0 there is a finite C_R0>0 and ONE punctured neighborhood of t=0
+such that, simultaneously for all those amplitudes,
+
+    ||R_(1/t^2,a_t,t e_y)||^2 <= C_R0.
+
+`uniform_middle_response` is in the ORIGINAL L2(mu_(1/t^2,a_t)) operator norm,
+not an output-induced completion or a supremum-only assertion. The common
+neighborhood permits amplitudes depending on t within the stated ball.
+`amplitude_derivative` identifies the functional with the actual derivative at
+h=0 of E_(1/t^2,(t*x,t*(y+h),t*z))[f], for each continuous observable f.
+The bounded functional is defined for every native L2 input; changing-measure
+differentiation of every arbitrary L2 representative is not assumed.
+
+The proof retains the nonlinear action and exact normalizers:
+
+1. `exponential_partition` proves the actual all32-law identity
+
+       E_(beta,a) exp((2/3)*beta*S_a)=Z_(beta/3,a)/Z_(beta,a).
+
+   `scaled_action_mean` bounds beta E S by3/2 times this actual exponential
+   moment. Continuous observables give genuine native integrability.
+2. `moving_exponential_bound` uses the existing boundary action comparison,
+   beta*boundaryCost<=216*R0, and the verified equality between the full32
+   partition and the pole-reduced reference partition. It obtains
+
+       E exp((2/3)*beta*S_a) <= exp(720*R0)*Q(t),
+       Q(t)=Z_ref((1/9)/t^2)/Z_ref(3/t^2).
+
+   `partitionRatio_tendsto` proves that Q has the finite positive limit
+   (sqrt(1/9)^(-93))/(sqrt(3)^(-93)) using the EXISTING verified reference
+   Gaussian partition asymptotics. No reference-law L2 identity replaces the
+   actual native expectation. `uniform_scaled_action` yields a common bound
+   on beta E_mu S over the amplitude ball.
+3. `one_axis_control` proves the exact SU2 trace derivative bound through the
+   genuine unit-quaternion representation and circle identity. Noncommutative
+   products are only cyclically rotated inside the trace, not commuted as group
+   elements. `ribbon_defect_le_action` places the chosen ribbon defect below
+   the FULL nonnegative action. The exact residual-action identity then gives
+
+       (D_y S_a(s))^2 <= 2*S_a(s)
+
+   for EVERY interior configuration s, with all32 links arbitrary. This is
+   NOT the older one-retained-link restriction with the other31 links fixed.
+   Only the middle boundary source changes one ribbon; no factor2 estimate for
+   the two cap-source directions is silently asserted.
+4. `middle_thermal_score_bound` combines this pointwise inequality, genuine
+   native integration, Var(D)<=E(D^2), and1839's exact score energy to prove
+
+       ||sigma_(1/t^2,a_t,t e_y)||^2 <= 2*beta*E_mu S_a.
+
+   Together with ||R||=||sigma|| this proves the uniform response estimate.
+
+Independent checks cover the exact cosine trace derivative, direct actual-law
+exponential integral, a common bound |R(v)|<=K||v|| for ALL original-native
+inputs, and coexistence with the existing nonzero all-interior thermal cubic
+limit. Thus bounded rescaled first response does not erase nonlinear boundary
+interaction or contradict the unscaled Hessian obstructions.
+
+Limits: C_R0 is coarse and fixed-cell dependent; neither C_R0<1 nor a
+volume-uniform bound is proved. The power93 and the comparison factors are
+specific to the verified reference cell. The boundary scale t=beta^(-1/2) is
+justified by that Gaussian thermal analysis, not identified with physical
+spatial distance or time. Only the middle source direction in the existing
+three-axis family is covered; arbitrary boundary fields, all source channels,
+block composition, infinite-volume/continuum limits and a physical mass gap
+remain OPEN. A boundary-dependent observable still has the direct derivative
+term from1839. Partition factors must also be retained: the existing
+FourCubeScalarCalibration counterexamples already show that identical
+normalized conditional laws do not determine free energy.
+
+This is an actual operator-calculus/partition-asymptotic connection, assembled
+from classical ingredients and existing verified cell machinery, with no claim
+of mathematical novelty. It supplies regularity at the thermal normalization;
+it does not settle multiblock coercivity. A concrete next test is whether it
+controls genuine common-space distances between nearby boundary-conditioned
+laws via their actual square-root Haar densities. Any such half-density/Fisher
+or Hellinger bridge must be constructed explicitly; the old Gaussian Gram map
+remains nonisometric, and scalar calibration still prevents recovering absolute
+coarse free energy from normalized-law distances alone.

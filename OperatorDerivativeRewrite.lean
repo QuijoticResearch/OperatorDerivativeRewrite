@@ -3052,3 +3052,5 @@ import Foundation.PeriodicGaussianTransportObstruction
 import Foundation.FourCubeConditionalScore
 
 import Foundation.FourCubeInvariantScore
+
+import Foundation.FourCubeThermalScore
