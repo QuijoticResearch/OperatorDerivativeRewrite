@@ -2987,3 +2987,4 @@ import Foundation.PeriodicQuarticFiniteRankObstruction
 import Foundation.SU2QuarticValleyNonintegrable
 import Foundation.PeriodicConstantQuarticJet
 import Foundation.PeriodicConstantRootLimit
+import Foundation.PeriodicRelativeGaugeGaussian
