@@ -3022,3 +3022,5 @@ import Foundation.PeriodicLocalGroundHarnack
 
 import Foundation.PeriodicLowActionStationaryMass
 import Foundation.PeriodicPhysicalDirichlet
+
+import Foundation.PeriodicLocalEnergy

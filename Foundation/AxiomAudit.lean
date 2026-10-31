@@ -16052,3 +16052,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicPhysicalDirichlet.native_fixed_gauge_dirichlet
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicPhysicalDirichlet.kinetic_energy_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicPhysicalDirichlet.native_kinetic_dirichlet
+
+-- Checkpoint1826: native local energy domination on actual low-action anchors.
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicLocalEnergy.capIncrement
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicLocalEnergy.localConstant
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicLocalEnergy.localConstant_pos
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicLocalEnergy.capIncrement_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicLocalEnergy.native_local_lower
