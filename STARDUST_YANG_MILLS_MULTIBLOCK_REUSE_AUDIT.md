@@ -1290,3 +1290,104 @@ The Gaussian factorization does not remove this mismatch. No low-action nonlinea
 multiblock coercivity, full connected gluing, scale/volume-uniform estimate,
 continuum-limit construction, full Yang–Mills existence or physical mass gap has
 been proved. No external novelty claim is made. No source manuscript was changed.
+
+
+## Checkpoint1852 — actual joint conditional response and high-channel score suppression
+
+Previous goal turn classified PROGRESS: checkpoint1851 changed verified Lean,
+completed all gates and both backups. Authoritative CLOSED receipt records
+5254cf3ade36d9950e2922de1be2c40d59151b9c at2026-10-31T23:41:05.320457Z,
+with independent BOTH PUBLIC refs at23:41:02.139481Z. This continuation preserves
+the focused Yang–Mills campaign, queue, manuscripts and publication separation.
+
+`Foundation/PeriodicJointHighResponse.lean` resolves a precise PART of the
+conditional-realization bottleneck using the actual stationary augmented ONE-slab
+joint law `PeriodicSlabJoint.tripleLaw g` on q=((U,V),a). `middle_preserving`
+proves that V has the ORIGINAL stationary Wilson law mu, using the existing
+true pair marginal and stationary right marginal. No product-Haar replacement,
+endpoint substitution or independent spatial blocks are used.
+
+Let H_K be1851's EXISTING original-norm completed physical high-action space.
+`highEmbedding` J_K pulls F in H_K back along V under this genuine joint law.
+It is a proved isometry, so `realization` Q_K=J_K^* exists on ALL actual joint L2
+and satisfies `realization_pairing` for ALL native F in H_K and ALL joint Z:
+
+    <Q_K Z,F> = integral F(V)*Z(U,V,a) d tripleLaw_g.
+
+`realization_eq_projection` identifies Q_K with orthogonal projection onto H_K
+AFTER the full actual middle conditional adjoint. Thus no gauge invariance of
+an arbitrary source Z is assumed or invented. The physical projection is explicit.
+This is the conditional-adjoint strategy audited in IBM, now instantiated on the
+actual Wilson law and ORIGINAL native norm. It does not claim that an arbitrary
+source is already a full physical field. `residual_pairing` preserves the genuine
+orthogonal residual Z-J_K Q_K Z, and `realization_contraction` gives ||Q_K Z||<=||Z||.
+The existing Hilbert representation theorem supplies the exact Pythagorean split;
+no output-norm completion or new representation axiom is introduced.
+
+`gaussianResponse` is the actual bounded map G_K=A_K Q_K into1851's Gaussian L2.
+For beta>=16777216, `gaussianResponse_bound` gives
+
+    ||G_K Z||^2 <= R0*exp(-K)*||Z||_joint^2.
+
+For a genuinely bounded joint field supported on V in1850's cancelling event B,
+`supported_norm` proves ||Z||_joint^2<=C^2*mu(B), using the actual middle pushforward.
+Combining this with the true stationary bad-event tail and native high smoothing,
+`supported_gaussianResponse` proves
+
+    ||G_beta Z||^2 <= (R0*exp(-beta))^2*C^2,
+    R0=PeriodicGroundHaarScale.upperConstant /
+       PeriodicGaugeSaturatedGround.eigenLowerConstant.
+
+These are TWO justified suppressions: actual bounded-input probability cost and
+actual positive transfer smoothing. The old normalized supported-indicator
+counterexample remains valid: its C grows like mu(B)^(-1/2), so the bounded-score
+hypothesis cannot be dropped. This is only the projected high response channel;
+there is no estimate here on the omitted low/nonphysical residual.
+
+### Concrete normalized Wilson action perturbation, with frozen ground
+
+To avoid an empty arbitrary-density adapter, define X(q)=-halfAction(U,V,a)/768,
+where the existing full periodic slab halfAction includes BOTH spatial halves
+and EVERY temporal plaquette. `actionSource_measurable` and `actionSource_bound`
+verify its actual domain and |X|<=1. `frozenTilt` is the genuine normalized
+exponential tilt of tripleLaw_g by exp(tX). `reweighted_jointWeight` proves the
+POINTWISE identity
+
+    jointWeight_g(q)*exp(tX(q))
+      = weight_(beta+t/768)(U,V,a)*g(U)*g(V).
+
+`frozenTilt_integral` then identifies its actual reference-Haar integral ratio,
+retaining the new denominator. The two ground factors are FROZEN at g; this is
+NOT the stationary family with a newly varying ground eigenfunction at beta+t/768.
+No differentiability of that eigenfunction or replacement GroundData is assumed.
+
+The actual normalized score is X-E_joint X. `score_memLp` constructs it in the
+ORIGINAL joint L2 and `score_bound` gives the sufficient bound2. On the stated
+bounded native observable core, `frozenTilt_derivative` proves that the actual
+law derivative is <Q_K score,F>; the covariance/normalizer term is retained.
+Q_K extends this response pairing continuously in the ORIGINAL native norm to
+all H_K. The derivative theorem itself is asserted on its displayed bounded
+representative core, not silently on every observable under changing laws.
+`badScoreField` is the true B-supported part of this score, and
+`badScore_gaussian_bound` gives squared Gaussian response <=4*(R0 exp(-beta))^2.
+The parameter t shifts beta by t/768; rescaling to beta+t costs the corresponding
+factor768 in the derivative. This score is a coupling-weight perturbation with
+frozen ground, NOT an already identified arbitrary exterior-boundary-path score.
+
+### Exact remaining mathematical obligations
+
+The conditional projection and high-channel estimate are genuine actual-law
+connections, but do not complete physical multiblock calculus. An actual
+boundary-path score still needs its own differentiation/normalizer proof and
+beta-dependent native bound. The two-step endpoint/rest source is different from
+this one-slab stationary joint and must not be renamed or substituted. Full
+stationary coupling differentiation additionally varies the ground eigenfunction.
+The omitted low/nonphysical response, connected nonlinear gluing, changing-volume
+constants, physical scale transfer and continuum limits remain unproved. No mass
+gap, new Yang–Mills existence construction or external novelty is claimed.
+
+All277 source lines and final public types require full checkpoint gates before
+closure. Failed initial elaborations are retained. Explicit positive constants
+and local irreducibility prevent premature expansion of large finite sums;
+no resource/compiler/trust limit is raised, no old theorem weakened, no original
+manuscript or publication artifact changed, and no research queue changed.
