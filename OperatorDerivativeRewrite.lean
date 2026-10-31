@@ -3014,3 +3014,6 @@ import Foundation.PeriodicNoncentralHaarLower
 import Foundation.PeriodicPhysicalKineticReduction
 
 import Foundation.PeriodicDressedGroundComparison
+
+import Foundation.SU2CapConvolutionLower
+import Foundation.PeriodicKineticCapLower
