@@ -2979,3 +2979,4 @@ import Foundation.PeriodicGaugeSaturatedGround
 import Foundation.PeriodicFlatLocusQuarticObstruction
 import Foundation.SU2TwoAxisStabilizerHaar
 import Foundation.PeriodicQuarticGaugeOverlap
+import Foundation.PeriodicQuarticKernelBlock
