@@ -470,3 +470,83 @@ scale-uniform hypotheses. Their exact exclusions in the original audit remain.
 Stop adding regularity infrastructure merely to expand the library: a next
 substantive step must test actual gluing/partition and full-boundary scale
 control or establish a corresponding obstruction, retaining normalization.
+
+
+## Follow-up1843: gauge-invariant boundary calibration changes the cubic invisibly
+
+`Foundation/FourCubeGaugeCalibration.lean` sharpens the normalization obstruction
+from an absolute constant to a genuine nonlinear, gauge-invariant boundary
+interaction at the SAME thermal order as the verified all32-link Wilson cubic.
+The standard Wilson action, laws and coefficient c=31877443263/69438734552>0
+are unchanged. These are explicit COMPARISON weights, not alternative values
+of the original fixed-action partition or a counterexample to Yang–Mills.
+
+Use the existing actual closed six-boundary-link Wilson loop
+
+    Phi(b)=halfTrace(word(b,chosen)*word(b,partner)^(-1)).
+
+`boundaryLoop_gauge` reuses FourCubeIntegratedCubic.pair_trace_gauge: Phi is
+invariant under ALL actual48 vertex gauge transformations of boundary data.
+It is not an open-link trace declared physical. On the existing three-angle
+boundary family, `loop_formula` proves
+
+    Phi(x,y,z)=cos(x)cos(y)cos(z)-sin(x)sin(y)sin(z).
+
+For every real beta,q and every parameter a, define the comparison weight
+W_q(beta,a,s)=exp(q*beta*Phi(a))*W(beta,a,s). The factor is scalar in the
+interior state s, and positive. `comparisonPartition_eq` and its positivity
+retain the actual product-Haar integral, giving Z_q=exp(q*beta*Phi)*Z.
+`normalized_density_eq` identifies the comparison density with the SQUARE of
+1842's actual Haar root. `comparisonLaw_eq` then proves equality of the actual
+measures for EVERY beta,q,a, not selected test equality or an asymptotic claim.
+Thus all normalized interior observations, normalized-law distances and any
+already justified derivatives of this identical law family cannot distinguish q.
+
+However `comparisonPotential_eq` proves -log Z_q=-log Z-q*beta*Phi.
+`coarsePotential` retains the EXISTING boundary-independent reference normalizer;
+`coarsePotential_eq` identifies it with the original normalized free energy
+F(beta,x,y,z)-q*beta*Phi(x,y,z). Thus the reference normalization does not remove
+the boundary effect. `corner_loop` proves the exact eight-corner identity
+
+    cornerSum(Phi,t)=-8*sin(t)^3.
+
+Writing T(t)=cornerSum(F(1/t^2),t)/(8*t), whose original verified limit is c,
+`thermalResponse_eq` and `thermalResponse_limit` prove
+
+    T_q(t)=T(t)+q*(sin(t)/t)^3,      T_q(t) -> c+q.
+
+The equality also holds at t=0 under the stated Lean real-division convention;
+the limiting statement is on the punctured two-sided neighborhood. The proof
+uses the already verified ACTUAL nonlinear Wilson thermal limit and the real
+sine derivative, with no Taylor approximation, derivative interchange, numerical
+fit or new existence hypothesis. `prescribed_limit` states the sharp conclusion:
+for ANY L in R, q=L-c yields the IDENTICAL entire conditional family and limiting
+thermal cubic L. In particular q=-c cancels this comparison cubic while the
+unchanged standard Wilson coefficient stays strictly positive.
+
+The independent checks test all-vertex gauge invariance of the exponential
+factor, genuine comparison probability measures and identical integral tests,
+zero comparison versus positive standard coefficient, explicit loop values1/-1,
+a unit limiting cubic shift, and an additional nonseparability consequence.
+The latter rules out Phi(x,y,z)=A(x,y)+B(y,z)+C(z,x) for ANY real functions A,B,C:
+all such pairwise sums have zero eight-corner difference, while Phi has value
+-8 at t=pi/2. Thus this obstruction concerns genuine three-source interaction,
+not merely an absolute constant or lower-order boundary normalization.
+
+Precise interpretation and stopping point: no method using ONLY the normalized
+interior law family (including its score/adjoint/closed-span reconstruction or
+Hellinger regularity) can recover this boundary scalar interaction across the
+comparison class. Gauge invariance and normalized-law equality alone do not
+supply the missing partition calibration. This is not a no-go theorem for the
+original fixed Wilson action, for all possible multiblock estimates, or for a
+physical mass gap. It does not construct a changed full boundary-Haar joint law,
+continuum theory or spatial transfer operator. Actual gluing must separately
+retain/estimate the original partition factors and respect the known source-
+incidence restrictions; the three raw sources are not silently reinterpreted
+as two independent transfer endpoints. No novelty claim is made.
+
+This closes the specific normalized-law-only route with a concrete verified
+obstruction. Do not repeat it using an IBM completion, Gaussian-Poisson norm
+transfer or signed semigroup. A productive next step must use additional actual
+Wilson action/partition or ground-eigenfunction information to control genuine
+scale transfer, rather than produce more normalized local regularity lemmas.

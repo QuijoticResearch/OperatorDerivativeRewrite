@@ -60760,3 +60760,29 @@ active; no campaign, publication, model, source archive or verification policy
 is changed. Full verification results and exact backup status follow below.
 
 Checkpoint1842 local closure: all five independent checks passed in31.3344702s; complete persisted AxiomAudit passed in54.4799511s. All300 source lines/20 final public types reviewed and authenticated integrity passed. Exact commit approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
+
+
+### Checkpoint1843 — normalized-law blindness to a gauge-invariant thermal cubic
+
+Foundation/FourCubeGaugeCalibration.lean proves a sharper multiblock obstruction
+than a constant normalization shift. Reuse the actual six-boundary-link loop
+Phi, invariant under all48 vertex gauges. Its three-angle value is cos(x)cos(y)
+cos(z)-sin(x)sin(y)sin(z). Comparison weights exp(q*beta*Phi)*W preserve EVERY
+actual normalized all32-interior Wilson law for ALL beta and boundary parameters.
+Their actual Haar partitions acquire that scalar factor; the reference-normalized
+coarse free energy changes by -q*beta*Phi. Its exact thermal eight-corner response
+is T_q(t)=T(t)+q*(sin(t)/t)^3, so its limit is c+q. prescribed_limit yields any
+real L with the IDENTICAL normalized conditional family. Standard Wilson action,
+its original positive c and all previous estimates remain unchanged.
+
+This is a comparison-class obstruction to recovering coarse boundary interaction
+from normalized interior laws alone, not a counterexample to the fixed Wilson
+model or to a mass gap. The loop cannot be expressed as a sum of pairwise source
+functions (independent corner test at pi/2). No arbitrary Gaussian/IBM/signed-
+calculus transfer repairs missing partition information. No full changed joint
+boundary law or stationary-transfer identity is asserted. Exact theorem domains,
+classical ingredients and limits are in STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md.
+The focused Yang–Mills campaign remains active; no campaign, publication, archive,
+model, toolchain or verification-policy change. Final gates and backup follow.
+
+Checkpoint1843 local closure: full7265-job build passed in27.1699174s; complete62630-declaration transitive axiom audit plus all20 final public types passed in42.6757597s; all six independent checks passed in31.0262279s; complete persisted AxiomAudit passed in64.2504349s. All123 source lines/12 proofs/8 definitions and final types reviewed; authenticated source/config/archive integrity passed. Initial failed limit-expression elaboration log preserved; no resource increase or domain weakening. Exact approval and BOTH public remote-ref verification follow separately. The existing indefinite goal and focused Yang–Mills campaign remain active.
