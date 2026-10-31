@@ -2994,3 +2994,4 @@ import Foundation.PeriodicVacuumNormalizationObstruction
 import Foundation.PeriodicBoundaryHaarReduction
 import Foundation.PeriodicEvenWindingVariation
 import Foundation.PeriodicEvenWindingCriterion
+import Foundation.PeriodicFlatBackgroundHessian
