@@ -1107,3 +1107,93 @@ next test must address the actual marginal weight of the bad region or a proved
 reduction to a controlled gauge-invariant corridor, keeping all hypotheses and
 partition weights. Preserve the previous uniform standard three-source estimate;
 its good-family domain is compatible with this different rough-rest obstruction.
+
+
+## Follow-up1850: open genuine rest neighborhoods, positive mass and stationary suppression
+
+Previous goal turn was PROGRESS:1849's actual six-staple response obstruction
+closed at58fc7d96d3689d4d1abf35744cb7a09a7b5613bb with both PUBLIC refs verified.
+The new `PeriodicCancellingRestTail` directly tests whether that configuration
+is confined to a negligible exact point, and whether existing ACTUAL stationary
+estimates can suppress a neighborhood. It does not rebuild the tail or bridge
+averaging theorems.
+
+Let T(V) be the sum of the half-traces of the two DISTINCT actual selected
+spatial plaquettes minusFace(false) and plusFace(false) from1849. Define
+
+    B = { V | forall A in SU2, T(update(V,edge,A)) < 1 }.
+
+`bad_open` uses compactness of the SU2 replacement fiber and closed projection
+to prove B OPEN. This universal replacement condition is essential: the event
+must depend only on the FROZEN REST. `bad_update` proves exact independence
+from the selected link. `pair_gauge`, `bad_gauge`, and `bad_gauge_iff` prove
+actual vertex-gauge invariance, not just simultaneous color conjugation.
+`minus_section` and the existing positive section give T(update(flux,edge,A))=0
+for EVERY A, so the complete cancelling fiber is contained in B.
+`bad_action` retains the full actual spatial action; the two nonnegative
+plaquette defects alone sum to2-T(V)>1. Thus EVERY state in B has action>1.
+
+Let R be the subset of the actual rest space whose baseField belongs to B.
+`restBad_open`, `restBad_measurable`, and `restBad_contains` prove that R is a
+genuine open neighborhood of1849's explicit frozen rest, not just a collection
+of zero-measure configurations. It depends on the middle spatial rest and
+allows arbitrary temporal rest fields.
+
+`rest_probability_eq_bridge` proves, for EVERY real finite beta and actual
+endpoint fields U,W,
+
+    marginal_(beta,U,W)(R) = bridgeLaw_(beta,U,W)(B).
+
+The left measure is EXACTLY `PeriodicLinkDisintegration.marginal`, obtained
+from the actual augmented two-Wilson-slab law and reweighted by its actual
+section partition. The proof uses `actual_rest_marginal`, the explicit Haar
+split and `PeriodicAugmentedBridge.projection_preserving`. No rest-Haar law,
+independent endpoint law, cap law or spatial Gibbs substitute is introduced.
+`bridge_bad_positive` and `rest_bad_positive` prove that BOTH probabilities
+are STRICTLY POSITIVE at every finite coupling and every endpoint pair.
+They use the actual positive bridge weight, its finite positive normalizer,
+open-positive product Haar and integrable indicators.
+
+`averaged_bridge_identity` applies the EXISTING exact theorem
+`PeriodicGroundBridge.stationary_bridge_average` to the bounded indicator of B.
+For every actual GroundData g at beta>=16777216, `averaged_rest_bound` then gives
+
+    integral_U integral_W marginal_(beta,U,W)(R)
+        d((g.transition composed g.transition)(U))(W) d(g.stationary)(U)
+      <= R0 * exp(-beta),
+
+    R0 = PeriodicGroundHaarScale.upperConstant /
+         PeriodicGaugeSaturatedGround.eigenLowerConstant.
+
+`stationary_bad_bound` reuses `PeriodicPositiveMassAnchor.exponential_tail`
+at K=beta after proving B subset {beta < beta*spatialAction}. The estimate is
+uniform over the displayed finite-cell GroundData and the stated coupling range.
+It is a STATIONARY-WEIGHTED two-step endpoint average. It is NOT a bound uniform
+in fixed endpoints U,W, not a product average, not derivative-weighted, and not
+uniform in volume, block scale or physical continuum distance. The constants
+are the existing fixed-cell constants. The old pointwise derivative1/t theorem
+coexists with this positive but exponentially suppressed averaged probability.
+
+The independent native-domain check also tests a crucial failed implication:
+positive probability p=marginal(R) allows the supported vector
+f=1_R/sqrt(p), with MemLp f 2, integral f^2=1 and1_R*f=f. Therefore small mass
+ALONE does not contract the event cutoff on all ORIGINAL native L2 inputs.
+An operator estimate needs additional kernel/score/domain control; do not infer
+one by multiplying a pointwise derivative from ONE rest by its neighborhood's
+probability. The verified high-action TRANSFER compression uses genuine kernel
+positivity and a physical supported domain, which is additional information.
+
+Implementation note: importing the stationary tail supplied a different
+SpatialVertex equality-decider instance from the one used in1849's link update.
+A PRIVATE reducible abbreviation selects the original finite-Pi decider as a
+LOCAL instance in this module only. No old declaration, global instance, theorem
+meaning, toolchain, trust setting or compiler resource limit is changed. Failed
+instance/matching, projection, indicator and finite-sum elaborations are retained.
+This is a concrete classical compact-fiber/conditional-measure transfer and a
+precise limit on its operator consequences, not an external novelty or mass-gap claim.
+
+Next substantive work should investigate a genuine operator/domain connection
+between actual conditional scores/adjoints and the supported high-action transfer
+estimate. Do not repeat finite normalization, generic output completion or
+additional unweighted tail moments. Low-action nonlinear multiblock coercivity,
+connected gluing and scale/volume-uniform physical estimates remain OPEN.

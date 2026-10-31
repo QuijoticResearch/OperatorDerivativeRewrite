@@ -60958,3 +60958,35 @@ backup gates must finish before checkpoint certification. Original manuscripts
 and every older Lean development remain preserved.
 
 Checkpoint1849 local closure: full7271-job build passed in47.5472054s; complete62962-declaration transitive axiom audit plus ALL31 final public types passed in48.2359503s; eight independent checks passed in30.2570869s; complete persisted AxiomAudit passed in61.2768403s. All274 source lines,19 public proofs/12 definitions/6 private proofs and31 public types reviewed. Checks include actual augmented conditional-kernel type, centered MemLp unit ORIGINAL conditional probe, RAW whole-Wilson-density ratio derivative, arbitrary-gauge invariance, beta100/velocity0.1 response10, arbitrarily small unbounded thermal windows and beta0 Haar. Authenticated3049-source/config/archive integrity passed. Failed source and one independent function-notation elaboration logs preserved; no increased resource limit, changed hypotheses or weakened verification. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.
+
+
+## Checkpoint1850 — genuine open cancelling-rest region and actual averaged suppression
+
+Previous goal turn was PROGRESS:1849 fully verified and both PUBLIC backups
+closed at58fc7d96d3689d4d1abf35744cb7a09a7b5613bb. Focused Yang–Mills remains active;
+no queue/publication/visibility change or reflection admission.
+
+PeriodicCancellingRestTail constructs a gauge-invariant OPEN neighborhood B of
+the full cancelling selected-link fiber, defined by a two-plaquette trace bound
+for EVERY selected-link replacement. Hence membership depends only on the rest.
+The actual rest event R is open, measurable and contains1849's exact rest.
+Full spatial action is>1 throughout B. The actual PARTITION-WEIGHTED rest
+probability equals the actual middle-bridge probability, and is strictly
+positive for EVERY finite beta and endpoint pair. Existing native stationary
+high-action tails and genuine stationary bridge averaging prove that its TRUE
+stationary-weighted two-step endpoint average is<=R0 exp(-beta), beta>=16777216,
+with the original fixed-cell constants. No fixed-endpoint or derivative-weighted
+bound, volume uniformity, global operator contraction or mass gap follows.
+
+The independent check additionally constructs a normalized native-L2 indicator
+supported on R, testing why small probability alone cannot shrink all native
+inputs. The precise operator/adjoint/high-compression bridge remains unresolved.
+Detailed theorem names, domains and failed inferences are recorded in
+STARDUST_YANG_MILLS_MULTIBLOCK_REUSE_AUDIT.md. All old Lean/manuscript sources
+are preserved. A private LOCAL finite-Pi equality decider aligns update terms
+across imports; no global instance, source theorem, resource limit or trust
+setting changed. Failed elaboration logs retained. Full build, transitive
+axiom/type/proof review, eight independent checks, source/config/archive
+integrity, exact commit and BOTH public backups must close before certification.
+
+Checkpoint1850 local closure: full7272-job build passed in30.4541647s; complete63011-declaration transitive axiom audit plus ALL24 final public types passed in47.5553984s; eight independent checks passed in32.1394425s; complete persisted AxiomAudit passed in59.5974498s. All292 source lines,21 public proofs/3 definitions/7 private proofs/1 private second-countability instance/1 private LOCAL finite-Pi-decider abbreviation and24 public types reviewed. Checks cover an actual open rest neighborhood, arbitrary temporal rest fields, full gauge-orbit membership, true rest pushforward of augmented Wilson law, disjoint low-action corridor, coexistence with thermal derivative escape, positive actual probability and a normalized supported native-L2 vector. Authenticated3050-source/config/archive integrity passed. Failed elaborations preserved; no source theorem, global instance, resource/trust/compiler setting or verification gate weakened. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.
