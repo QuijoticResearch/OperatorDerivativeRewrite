@@ -3036,3 +3036,5 @@ import Foundation.PeriodicHighActionSchur
 import Foundation.PeriodicSchurWindingObstruction
 
 import Foundation.PeriodicHighActionKernel
+
+import Foundation.PeriodicHighExcursion

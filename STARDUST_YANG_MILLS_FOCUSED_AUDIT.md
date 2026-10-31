@@ -7117,3 +7117,64 @@ Authenticated source integrity against1831 covers3032 recursive Foundation/root 
 **Next concrete quantitative test, not a new library campaign.** This domain bridge permits testing whether the proven ||C||<=1/2 at K* translates to a genuine finite-time high-excursion survival bound. On the physical core, repeated C should correspond to repeated ACTUAL transfers with a high indicator inserted at EVERY intermediate time, not P^n. Test the native/kernel identification and whether the actual stationary all-high nested integrals obey a geometric bound and a bounded summed excursion weight. Reuse the existing Neumann/operator-norm results, and construct any required finite-cylinder identity explicitly before giving it a probabilistic interpretation. Such a bound would concern consecutive high excursions in original lattice steps; it would not establish a continuum physical clock or remove the1831 nonconstant low-winding obstruction. Do not build an unrelated path-space foundation or claim a hitting process from a formal geometric series alone.
 
 Actual local/center-even relative variance and mesoscopic moment control, meaningful low-sector spectral estimates, coupling-dependent physical normalization, volume-uniform/infinite-volume/continuum gates and a positive physical mass gap remain OPEN. Preserve the existing scaled local mixed-moment obstruction, centered center-even quartic-tail obstruction and cap-Poincare counterexample, with their exact domains. The new domain/kernel connection is a classical mechanism correctly instantiated for the actual finite-periodic Wilson law, not an external novelty claim or a campaign transition.
+
+
+## Checkpoint1833 — genuine killed Wilson measures and geometric high-excursion mass (2026-10-31)
+
+Focused Yang–Mills ACTIVE; previous goal turn PROGRESS. Checkpoint1832 `7ba25af248d5de640479f6c721a17cde7b3e50a1` is CLOSED: guarded sync17:25:25.978889UTC, independent exact BOTH-main/research/HEAD/clean-tree/PUBLIC verification17:25:40.849474UTC and terminal17:25:40.958254UTC. This continuation began13:26:26.3253030 EDT. No new goal/agent/campaign, queue/visibility/resource/toolchain change, reflection admission or publication work. Original ResearchSources and the October27 reflection reservation remain preserved.
+
+**A quantitative estimate on genuine constructed measures.** `Foundation/PeriodicHighExcursion.lean` realizes the actual high compression through restricted transition kernels and obtains geometric decay for their surviving masses. This goes beyond naming an abstract norm as a probability. Let mu=g.stationary and T=g.transition be the ALREADY constructed genuine stationary Wilson law and Markov kernel, A={U: beta*S(U)>K}. Define
+
+    k_A(U,dV) = T(U,dV) restricted to A,
+    nu_n = k_A^n composed with mu restricted to A.
+
+`killed` is a genuine measurable kernel obtained through `Kernel.restrict`; `survivingLaw` is a genuine positive measure on the existing State space, obtained through the actual kernel-composition monoid and `Measure` composition. At n=0, the initial law is mu restricted to A, without normalization. At every one of the n subsequent transitions the destination is restricted to A. These are finite killed endpoint measures; the unrestricted P^n is never substituted.
+
+`power_mass_le` proves k_A^n(U,univ)<=1 in ENNREAL for EVERY n, starting state U, real beta/K and actual g. Induction uses the actual Chapman–Kolmogorov lintegral identity and the genuine Markov normalization, without a spectral assumption. This also constructs a finite-kernel bound1 for every power. Together with the finite initial measure, it verifies finiteness of every nu_n; real mass casts are not masking an infinite measure.
+
+**Exact kernel, native domain and chronological cutoff identification.** Define
+
+    f_n(U) = 1_A(U) * (k_A^n(U,univ)).toReal.
+
+`survival_zero` gives f_0=1_A. `survival_succ` proves f_(n+1)=1_A T f_n as an exact real integral identity, using finite kernel composition and the indicator/restricted-integral theorem. The construction retains the original ground-transformed transition, including its ground/eigenvalue normalization. Measurability, 0<=f_n<=1, pointwise gauge invariance and pointwise high support are proved. `highVector` is the actual native class F_n=[f_n] in the defined physical completed high domain. The1832 exact compression/core theorem proves
+
+    F_(n+1)=C F_n,    F_n=C^n F_0,
+
+through `compression_step` and `native_powers`. This is an identification of C^n with ACTUAL killed-kernel evolution, with a cutoff at EVERY intermediate step. It is not C^n=P^n. None of these finite-law/domain identities requires the large-coupling threshold or a replacement gauge-quotient realization.
+
+`mass_identity`, `mass_pairing` and `initial_norm` prove
+
+    q_n := nu_n.real(univ) = integral f_n dmu = <C^n F_0,F_0>,
+    ||F_0||^2 = mu.real(A).
+
+The pairings are on the original completed native L2 space and agree with the original stationary Hilbert operator where used. `mass_le_initial` gives q_n<=mu.real(A) for every real beta/K; positivity is actual measure positivity. This bridges a concrete stochastic kernel construction to the already verified operator calculus, rather than introducing a free or signed surrogate.
+
+**Coupling-uniform consecutive-high estimate at the exact cutoff.** At K*=log(2 B0/c0) and beta>=16777216, the proved ||C||<=1/2 gives `geometric_mass`:
+
+    0 <= q_n <= (1/2)^n * mu.real(A).
+
+`total_surviving_mass` proves the REAL series is Summable and
+
+    sum_(n>=0) q_n <= 2 * mu.real(A).
+
+This controls actual consecutive high restrictions in the original discrete Wilson-kernel steps. It does not give decay of unrestricted correlations, a return-frequency bound after re-entry, uniform behavior from every individual starting state, or a continuum physical-time normalization. An independent test verifies the normalized tail q_n/mu(A)<=(1/2)^n and normalized summed mass<=2 ONLY when the actual starting high mass is strictly positive. No division by zero or pathwise exit time is inserted.
+
+The norm proof explicitly covers a zero high sector. A generic norm_pow_le invocation required an unjustified NormOneClass on the endomorphism algebra. The repaired proof instead inducts from the valid general bound ||I_H||<=1, uses fully typed CLM multiplication and preserves ||C^n||<=(1/2)^n without adding Nontrivial H or changing any mathematical premise. No nonnegative-spectrum assumption is used: positivity of q_n comes from the actual finite measures, while the absolute operator norm controls their size.
+
+**Independent tests, including a real stationary event.** Five Lean examples verify: (1) every constructed nu_n has real mass in[0,1] for all real coupling/cutoff, together with the separately proved finite-kernel/finite-law witnesses; (2) beta=K=0 gives the actual ZERO surviving measure for every n, checking ties are low; (3) for EVERY nonnegative beta, K=-1 gives q_n=1 at every n, so the geometric claim cannot be transferred to an arbitrary cutoff, even at large beta; (4) the normalized tail and summed-mass bounds with explicit positive denominator; (5) at one actual transition,
+
+    q_1 = edgeLaw(g).real(A product A).
+
+The last test uses actual left/right measure-preserving marginals, native representative AE identities,1832 compression agreement and `PeriodicSlabL2.operator_pairing`; product-indicator membership cases finish the actual event identity. Thus it independently checks both endpoints and the original stationary edge-law normalization. The finite nu_n for general n are constructed above; a complete infinite Wilson path law, an all-n cylinder equality on that path law and an exit-time random variable have NOT been formalized here. Do not describe the summed mass as an established random-variable expectation before those hypotheses are verified. Existing Mathlib Ionescu–Tulcea/heat-chain recipes remain available if that extension serves the research question.
+
+**Audit and preserved failures.** All241 final source lines,12 public proofs/5 definitions/7 private proofs/5 private instances, all17 unabridged final public types and every independent source line were reviewed. COMPLETE transitive audit covers62294 safe Foundation declarations; only propext/Classical.choice/Quot.sound. Five scratch failure logs preserve explicit ENNReal/set/measure typing, kernel versus coerced-function power inference, finite-kernel instances, CLM application parentheses/native representative normalization, the inappropriate NormOneClass dependency and fully typed norm multiplication. Five independent-test failure logs preserve a non-ASCII identifier typo, an explicit highVector-toLp unfolding, AE composition normalization and product-indicator rewriting. A direct membership-case proof establishes the same intended event identity; no hypothesis is weakened. The final successful untimed probe is retained separately, followed by the canonical timed independent/axiom-ledger gate. No sorry/new axiom/native_decide, raised limits, unsafe reducibility override, altered compiler/trust/resource setting or weakened checker. Proof/verification failure diagnostics are retained.
+
+Full7251-job root build 47.825150899996515s; complete transitive audit plus all17 final types 62.85554969999794s; five independent Lean examples 31.53233459999319s; persisted Foundation/AxiomAudit.lean 79.30854200000613s. All terminal0.
+
+Authenticated source integrity against1832 covers3033 recursive Foundation/root Lean files: only the new actual high-excursion module/root import/AxiomAudit differ. Every older mathematical source,3 pinned configs,113 baseline originals,21 Yang–Mills originals/20 distinct hashes and both numerical research tools are unchanged. ResearchSources stays read-only and uncommitted. Evidence: `.lake/stardust-1833-{build,audit,checks,axiom-ledger}*`,17 public names, independent source, review.json and working-checkpoint.json. This entry is precommit; five explicit paths, exact approval, guarded BOTH public backups and independent exact-ref checks remain closure obligations. No remote success is presumed.
+
+**Consequences and next questions.**1831 showed genuine nonconstant global LOW winding slow modes survive Schur elimination. The present fast consecutive-HIGH bound is consistent with that obstruction and identifies a different mechanism; it does not recover a full gap. A concrete next candidate is to combine the newly checked q_1=edgeLaw(A product A) with the TWO actual stationary marginals and q_1<=(1/2)mu(A). The elementary Bonferroni calculation suggests mu(A)<=2/3 and low mass>=1/3 at K*. This is a candidate, NOT yet a Lean theorem. It could improve the threshold in the earlier coarse low-mass estimate; do not assume the old half-mass threshold equals K*. Test the exact statement and sharpness before use.
+
+Another directly related possibility is to construct the positive occupation/potential measure sum_n nu_n using the proved summability, identify its bounded-observable integrals with the actual high resolvent, and use that to make the Schur correction a genuine first-return/potential construction. Such identifications remain OPEN and should be pursued only if they advance an actual low/center-even estimate, not broad process infrastructure. The existing trajectory theorem can supply a path law when necessary, but is not evidence that its Wilson specialization/cylinder/exit statements are already proved.
+
+The actual local/center-even relative variance and mesoscopic moments, low spectral geometry, coupling-dependent physical distance normalization, volume-uniform/infinite-volume/continuum gates and a positive physical mass gap remain OPEN. Preserve the scaled local mixed-moment and quartic centered center-even obstructions and the restricted-cap Poincare counterexample. This is a classical killed-Markov/Hilbert mechanism concretely verified for the actual fixed192-link periodic Wilson construction, not an external novelty or Millennium claim. No campaign transition or publication/manuscript/visibility change; the indefinite goal remains active.

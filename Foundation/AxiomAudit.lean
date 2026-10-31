@@ -16137,3 +16137,22 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionKernel.compression_nonnegative
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionKernel.cut_even
 #print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighActionKernel.killed_even
+
+-- Checkpoint1833: genuine finite killed Wilson laws and geometric excursion mass.
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.region
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.killed
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.power_mass_le
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.survivingLaw
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.survival
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.survival_zero
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.survival_succ
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.survival_bounds
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.highVector
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.compression_step
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.native_powers
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.mass_identity
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.mass_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.initial_norm
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.mass_le_initial
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.geometric_mass
+#print axioms OperatorDerivativeRewrite.Foundation.PeriodicHighExcursion.total_surviving_mass
