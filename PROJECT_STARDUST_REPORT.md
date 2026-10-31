@@ -60990,3 +60990,98 @@ axiom/type/proof review, eight independent checks, source/config/archive
 integrity, exact commit and BOTH public backups must close before certification.
 
 Checkpoint1850 local closure: full7272-job build passed in30.4541647s; complete63011-declaration transitive axiom audit plus ALL24 final public types passed in47.5553984s; eight independent checks passed in32.1394425s; complete persisted AxiomAudit passed in59.5974498s. All292 source lines,21 public proofs/3 definitions/7 private proofs/1 private second-countability instance/1 private LOCAL finite-Pi-decider abbreviation and24 public types reviewed. Checks cover an actual open rest neighborhood, arbitrary temporal rest fields, full gauge-orbit membership, true rest pushforward of augmented Wilson law, disjoint low-action corridor, coexistence with thermal derivative escape, positive actual probability and a normalized supported native-L2 vector. Authenticated3050-source/config/archive integrity passed. Failed elaborations preserved; no source theorem, global instance, resource/trust/compiler setting or verification gate weakened. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.
+
+
+## Checkpoint1851 — actual native Gaussian analysis and compressed Wilson factorization
+
+Baseline1850 is CLOSED at8f18a8b557b692674829a42c6262f1d4ada1989e,
+with independently verified BOTH public refs at2026-10-31T23:11:52.826862Z.
+The focused Yang–Mills campaign stays active; no queue or publication change.
+
+`Foundation/PeriodicNativeGaussianAnalysis.lean` supplies a concrete positive
+cross-domain result that does NOT require a false unitary assumption. Let mu
+be the ORIGINAL actual periodic stationary Wilson law for GroundData g, P its
+ORIGINAL stationary transfer, Phi_beta its existing Gaussian coherent feature,
+and H_K the EXISTING closure of represented measurable, pointwise gauge-invariant
+native L2 functions vanishing AE on {beta*S <= K}. The closure uses the original
+StateL2 norm, not a newly invented output norm. For beta>=0 define
+
+    A f = (g.value*g.normalizer)^(-1/2)
+          * integral dressed_g(U)*f(U)*Phi_beta(U) dHaar(U).
+
+`feature_integrable` and `haar_gram_L1` extend the Gaussian vector integral and
+exact Haar Gram formula from bounded scalars to Haar L1. `dressed_integrable`
+proves the needed L1 condition for EVERY measurable original native L2 f.
+`native_pairing` verifies the actual transfer/edge-law pairing on that native
+domain. `native_gram_L2` uses the ORIGINAL ground pairing, actual gauge reduction
+and normalizers; pointwise full vertex-gauge invariance is an essential hypothesis.
+No boundedness hypothesis remains in this raw native Gram theorem.
+
+`analysis_norm_square`, `analysis_contraction` and `analysis_ae_eq` give
+
+    ||A f||^2 = <P f,f>,     ||A f|| <= ||f||_mu,
+    f = h mu-AE  ==>  A f = A h
+
+on the stated physical raw domain. `coreAnalysis` is a genuine linear map on
+native equivalence classes; `coreAnalysis_of_representative` checks agreement
+with EVERY admissible representative. `completedAnalysis` extends it to the
+existing H_K by its native bound and dense inclusion. `completedAnalysis_core`
+and `completedAnalysis_gram` preserve the exact formula on ALL of H_K, including
+limits not supplied with pointwise representatives. `completedAnalysis_pairing`
+and `completedAnalysis_adjoint_comp` prove the actual operator identity
+
+    A_K^* A_K = PeriodicHighActionL2.compression g K,
+
+where compression is the actual orthogonal compression of P in StateL2.
+This is NOT identity reconstruction. The topology is original native L2 to
+finite-product Gaussian L2; continuity gives norm convergence for every native
+convergent sequence. For K=-1 and beta>=0 the raw action-support condition is
+vacuous; this does not identify the closure with all AE-invariant representatives
+without an additional density theorem.
+
+For beta>=16777216, `completedAnalysis_high_bound` and
+`completedAnalysis_norm_square` reuse the verified native high-sector theorem:
+
+    ||A_K||^2 <= R0*exp(-K),
+    R0 = PeriodicGroundHaarScale.upperConstant /
+         PeriodicGaugeSaturatedGround.eigenLowerConstant.
+
+`bad_analysis_bound` and `bad_gaussian_pairing_bound` specialize to actual physical
+inputs supported in1850's gauge-invariant cancelling-rest event B. Their Gaussian
+norm squared is <=R0*exp(-beta)*||f||_mu^2; pairing with ANY Gaussian Z costs
+||Z||^2. This is a true native operator bound using P and its positive Gram form,
+not the false inference from small event probability alone. The earlier supported
+unit-indicator counterexample to that inference remains preserved.
+
+### Hypotheses audit and remaining bottleneck
+
+This positive result is compatible with `PeriodicGaussianTransportObstruction`:
+the actual unit physical plaquette has strict loss of Gaussian norm. The new map
+is a contraction and factorization, not a unitary transport of Malliavin operators.
+No product, derivative, causal projection, adjoint graph or conditional-score
+intertwiner is smuggled into its construction. Gaussian–Poisson coefficient
+isometries still fail ordinary products. IBM conditional/native reconstruction
+still needs an actual Wilson score realization and the ORIGINAL norm/graph bound;
+IBM output-span completion does not supply either. Higher-order signed-heat
+reconstruction acts in its analytic test dual with nested causal cuts; interacting
+spatial Wilson complements do not satisfy those hypotheses. Taking powers of a
+semigroup does not repair the missing low-frequency coercivity or physical scale.
+
+The full-library syntactic declaration/import/header/hash index was refreshed
+for ALL3050 Foundation sources (3049 root-reachable; AxiomAudit separate), plus
+the root in the3051-file source-integrity manifest. This indexing is NOT a new
+manual proof review of all declarations. Candidate original theorem types and
+constructions were examined selectively; the earlier exact reuse table remains
+valid, with this positive factorization added. Full transitive axiom audit and
+all31 new public types remain separate mandatory verification gates.
+
+Precise NEXT bottleneck: identify an actual boundary/rest response or adjoint
+field as a physical native input in the stated H_K domain, with its beta-dependent
+score bound and the relevant pairing. The rest variable includes temporal fields
+and endpoint conditioning, whereas H_K is a middle-field stationary space.
+The Gaussian factorization does not remove this mismatch. No low-action nonlinear
+multiblock coercivity, full connected gluing, scale/volume-uniform estimate,
+continuum-limit construction, full Yang–Mills existence or physical mass gap has
+been proved. No external novelty claim is made. No source manuscript was changed.
+
+Checkpoint1851 local closure: full7273-job build passed in29.8719605s; complete63068-declaration transitive axiom audit plus ALL31 final public types passed in52.7477864s; eight independent checks passed in32.8652235s; complete persisted AxiomAudit passed in63.9801611s. All405 source lines,23 public proofs/8 definitions or abbreviations/3 private proofs/2 private definitions and31 public types reviewed. Independent checks cover unbounded measurable native-L2 Gram domains, original AE quotient, actual raw representative agreement through completion, native-to-Gaussian norm convergence, true adjoint pairing, whole-completion high-sector norm, arbitrary Gaussian dual input and preserved quantitative physical norm loss. Authenticated3051-source/config/archive integrity passed; all3050 Foundation source signatures/imports/headers/hashes reindexed. Failed elaborations preserved; no resource/trust/compiler setting or verification gate weakened. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.

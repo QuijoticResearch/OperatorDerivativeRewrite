@@ -3072,3 +3072,5 @@ import Foundation.FourCubeSpatialConditioning
 import Foundation.PeriodicCancellingBoundaryResponse
 
 import Foundation.PeriodicCancellingRestTail
+
+import Foundation.PeriodicNativeGaussianAnalysis
