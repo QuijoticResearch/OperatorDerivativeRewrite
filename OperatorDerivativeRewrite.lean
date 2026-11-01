@@ -3092,3 +3092,5 @@ import Foundation.PeriodicPhysicalBridgeScore
 import Foundation.PeriodicWindingEndpointResponse
 
 import Foundation.PeriodicPhysicalFisherWitness
+
+import Foundation.PeriodicEndpointTangentDescent

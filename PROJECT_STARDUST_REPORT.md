@@ -61938,3 +61938,122 @@ Checkpoint1860 local closure: complete7282-job build passed in28.5356526s; compl
 Checkpoint1860 pre-commit correction: the staged Git whitespace gate rejected ONE extra blank line at EOF in the new leaf; no commit was created. Only that final newline sequence was removed (507->506 lines), preserving every theorem/proof byte otherwise. The prior locally successful verification attempt is retained above and in ignored pre-eof logs/review. ALL final Lean build/audit/type/independent/persisted-ledger/source gates are being rerun against the corrected exact bytes; no check or compiler setting is weakened.
 
 Checkpoint1860 local closure: complete7282-job build passed in33.3812027s; complete63520-declaration transitive axiom audit plus ALL27 public types passed in50.8838215s; thirteen independent Lean checks passed in30.0276916s; complete persisted AxiomAudit passed in55.2813105s. All506 source lines,19 public proofs/8 definitions/26 private proofs and27 full public types reviewed. All3059 Foundation sources reindexed for signatures/imports/headers/hashes, not manual full-proof review. Authenticated3060-source/config/archive integrity passed: all older mathematics,3 configurations,113 archive originals,21 YM originals and two numerical tools unchanged. Independent positive-kernel frozen-test/moving-normalizer diagnostic passed separately in0.0010867s; no finite-grid-to-Haar inference. Earlier lexer/Pi-function elaboration failures retained. The initial closure keyword scan matched axiom ONLY in a doc comment; a nested-comment-aware code-token check now passes, with the full canonical axiom audit unchanged; no compiler/resource/trust/toolchain changes. No publication, queue, goal or reflection change. Exact approval and BOTH PUBLIC remote checks follow separately.
+
+## Checkpoint1861 — actual conditional-law equality does not transport a fixed-axis score
+
+November1,2026 (America/New_York); continuation of the focused Yang–Mills
+whole-library multiblock audit, not a new campaign. Baseline1860:
+`1be9476a44aa9f50a4eaecb4c4ce9e7cc7961bec`, fully verified and BOTH PUBLIC refs
+independently matched. October31 is a review milestone only. No reflection
+session, publication maintenance, source-manuscript change or queue change.
+
+### Concrete original-domain result
+
+`Foundation/PeriodicEndpointTangentDescent.lean` proves the following for the
+ACTUAL side-four periodic4D Wilson two-step middle bridge, not a surrogate:
+
+* `law_endpoint_gauge`: independent arbitrary vertex-gauge transformations of
+  the TWO endpoints leave the entire normalized middle measure unchanged.
+  This is pointwise equality of the original bridge weights, hence includes
+  its partition function; it is not a conditional independence assumption.
+* `witness_law`: the1860 endpoint pair `(U0,W0)` has EXACTLY the same original
+  middle law as `(U0,U0)`, because `W0=field(flip,U0)` is gauge related to U0.
+* `witness_energy` and `witness_scores_distinct`: for beta>=0 and the actual
+  SU(2) coefficient alpha_beta!=0, the off-representative fixed-axis physical
+  score has strictly positive squared norm in that SAME diagonal base law,
+  whereas the diagonal fixed-axis score is zero almost everywhere. Thus the
+  two actual L2 classes differ, not merely their pointwise representatives.
+* `no_fixed_axis_endpoint_descent`: the specified coherent-axis score cannot
+  be invariant under independent endpoint gauge changes with the axis held
+  fixed. `eventual_no_fixed_axis_descent` proves this on a large-beta tail.
+* `no_law_only_score`: there is no assignment from the base middle MEASURE
+  alone to a measurable-function representative satisfying all these score
+  identities even modulo the corresponding native null sets. The theorem
+  allows an arbitrary assignment F, without assuming regularity of F.
+* `curve_law`, `curve_expectation`, `curve_derivative` and
+  `transported_physical_derivative` give the positive repair: transform the
+  ENTIRE endpoint paths, preserving their tangent motion. The actual law,
+  fixed-observable expectation and ALREADY PROVED derivative then agree.
+  Arbitrary time-dependent gauge choices are allowed because the laws agree
+  at every time; no differentiability of those choices is claimed or needed.
+  This does not prove a derivative exists when the original one is absent.
+
+Interpretation: conditioning/adjoint reconstruction acts on a specified law
+AND variation. Equality of base measures does not identify the derivative
+of two different curves through that law. After gauge reduction the1860
+positive witness has common endpoint motion; the1858 zero witness has
+opposite endpoint motion. There is no contradiction with either theorem,
+no failure of middle-variable gauge invariance, and no assertion that a
+properly transported tangent calculus is impossible. This explicitly rejects
+using the1860 scalar witness as a representative-independent boundary frame.
+
+### Reuse decisions retained and sharpened
+
+The whole3060-file Foundation index was refreshed for source hashes, imports,
+headers and syntactic declarations;3059 modules are root reachable and the
+persisted AxiomAudit is separate. This is NOT manual proof review of every
+library theorem. Exact original compiled types, existing provenance, complete
+transitive axiom auditing and selective domain/proof review are separate gates.
+
+1. IBM conditional realization supplies a genuinely useful conditional-adjoint
+   strategy, now realized by `PeriodicPhysicalBridgeScore.physical_pairing`,
+   `physical_derivative` and `fisher_decomposition` under the ORIGINAL Wilson
+   laws. The exact auxiliary-minus-physical Fisher residual remains; neither
+   projection nor IBM closed-span completion supplies a positive lower bound.
+   The new endpoint theorem identifies a further tangent-domain obstruction
+   even after nonzero conditional physical energy has been proved.
+2. Signed higher-heat Clark–Ocone still requires its analytic test completion,
+   all channels, causal nested cuts and its proved dual topology. Interacting
+   noncommutative Wilson blocks supply neither independent linear increments
+   nor the required derivative/projection/synthesis intertwiner. No transfer
+   of that theorem or of a signed norm into Wilson probability L2 is asserted.
+3. Gaussian–Poisson coefficient isometries fail to preserve ordinary products
+   by the existing first-chaos square counterexample. The actual Wilson Gram
+   feature map also fails native isometry (`PeriodicGaussianTransportObstruction`).
+   Neither is a unitary closed-operator transport for nonlinear Wilson words.
+4. Closed-span integration and orthogonal residual theorems transfer as Hilbert
+   geometry once their maps and native domains are identified. Completing an
+   output span does not prove input coercivity, endpoint tangent covariance,
+   physical locality, or scale-uniform closed range.
+5. `PeriodicSchurWindingObstruction.eventual_winding_trial` and
+   `no_uniform_variance_gap` ALREADY prove the actual native low-Schur winding
+   obstruction, with the SAME harmonic lift's positive stationary variance,
+   conditional only on the stated genuine high inverse and its norm bound.
+   `PeriodicWindingRate.eventual_iteration_budget` and `slow_clock_persistence`
+   already constrain coupling-dependent iteration. The tempting new AM–GM /
+   kinetic-concentration route would duplicate an established actual stationary
+   obstruction; it was inspected and not pursued. Do not replace these by a
+   claim that only a bare finite-loop kinetic obstruction is known.
+6. These are fixed side-four lattice results, including global center-sensitive
+   winding trials. They do not settle a local glueball sector, all block sizes,
+   infinite volume, lattice-spacing renormalization or continuum physical mass.
+   Higher powers/semigroups cannot supply the missing low-frequency control by
+   notation alone. The corrected native winding trial of1859 has Rayleigh
+   quotient tending ZERO although its bare kinetic coefficient tends ONE;
+   retain that separate failed-transfer result as well.
+
+### Decisive remaining question
+
+Construct or refute a covariant FAMILY of actual local endpoint tangent scores
+and test its lower frame bound on the appropriate physical residual domain,
+keeping endpoint fibres and the true Wilson normalizers. A single prescribed
+axis, a scalar stationary average (Ward zero), a Gaussian Gram feature or an
+output completion does not establish it. Positivity at one endpoint pair also
+does not prove a positive-measure stationary endpoint-energy result without the
+needed joint measurability/regularity argument. No such uniform multiblock,
+scale-transfer, continuum or mass-gap theorem is claimed here. No external
+existence construction is assumed. No novelty claim is made.
+
+The new142-line source has11 public proofs/types and one private elementary
+identity; no public definitions, local instances, resource overrides or new
+foundational library. The initial targeted build failed only because a guessed
+identity lemma name did not exist; an explicit pointwise group identity repaired
+it, without changing mathematical hypotheses or Lean settings. Thirteen
+independent original-domain tests include beta-zero necessity, same-law/different
+score AE failure, transported full curves and the same bounded frozen probe's
+zero versus positive derivatives. Complete final gate timings and exact commit/
+remote receipts follow separately; no pending push is called remotely verified.
+
+Checkpoint1861 independent-test repair: the initial beta-zero test failed because norm_num had already simplified |score|<=0 to score=0. Replaced the redundant absolute-value conversion with the existing equality. Preserved initial test source/log/timing under .lake/stardust-1861-initial-checks*; no Foundation, root, canonical audit input or theorem statement changed. All thirteen checks were rerun, followed by the complete persisted AxiomAudit.
+
+Checkpoint1861 local closure: complete7283-job build passed in44.8229330s; complete63531-declaration standard-only transitive axiom audit plus ALL11 unabridged public types passed in49.0314852s; thirteen independent original-domain Lean checks passed in29.8858612s; complete persisted AxiomAudit passed in57.6011315s. All142 source lines,11 public proofs/types and one private pointwise identity reviewed. No public definitions/instances or compiler/resource/trust changes. All3060 Foundation signatures/imports/headers/hashes refreshed;3059 root reachable and AxiomAudit separate. Authenticated3061-source/config/archive integrity passed: all older mathematics,3 configurations,113 archive originals,21 YM originals and two numerical tools unchanged. No numerical grid or surrogate used as proof. Initial nonexistent-lemma-name elaboration failure repaired by explicit pointwise group proof. No publication, queue, goal or reflection changes. Exact approval and BOTH PUBLIC remote checks follow separately.
