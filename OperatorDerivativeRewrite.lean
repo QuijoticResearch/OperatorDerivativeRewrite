@@ -3135,3 +3135,5 @@ import Foundation.StochasticCauchyGaussianNormalization
 import Foundation.StochasticCauchyBoundaryConstraint
 
 import Foundation.StochasticCauchyBrownianRealization
+
+import Foundation.StochasticCauchyParameterizedObstruction
