@@ -62313,3 +62313,154 @@ config/original integrity and exact guarded BOTH-ref backup gates are retained.
 Final timings, exact approval and independently verified remote receipts follow.
 
 Checkpoint1863 local closure: complete7285-job build passed in45.8025225s; complete63576-declaration standard-only transitive axiom audit plus ALL19 unabridged public types passed in52.1823185s; thirteen independent original-domain Lean checks passed in30.4574835s; complete persisted AxiomAudit passed in57.9217149s. All528 final source lines,16 public proofs/3 public definitions/18 private proofs/3 private definitions and19 full types reviewed. No instances or resource/compiler/trust changes. All3062 Foundation signatures/imports/headers/hashes refreshed;3061 root reachable and AxiomAudit separate. Authenticated3063-source/config/archive integrity passed: all older mathematics,3 configurations,113 archive originals,21 YM originals and two numerical tools unchanged. Separate finite positive trigonometric-tilt diagnostic passed in0.0000591s; all conditional first scores zero but second responses nonzero, and omitted curvature/normalization give incorrect values. This diagnostic is not actual Wilson/Haar evidence or a Lean premise. Development elaboration failures retained in target logs; explicit pointwise/Pi/one-time rotation repairs preserve default resources. The second physical channel's nonvanishing on the original exchange-null path and the separate identity-endpoint candidate remain OPEN. No publication, queue, goal or reflection change. Exact approval and BOTH PUBLIC remote verification follow separately.
+
+## Checkpoint1864 — a genuine physical second channel beyond a zero first score
+
+November1,2026; focused Yang–Mills remains ACTIVE. Previous turn was verified
+progress at1863, `75e3d160343b04874877939f54e6b53de3ef7f8b`, independently
+matched on BOTH PUBLIC backup refs. The clean actual worktree, current
+instructions and permanent build configuration were rechecked. No reflection,
+publication, queue, repository-visibility or resource/toolchain change.
+ResearchSources is preserved without modification or commitment.
+
+### Concrete actual-Wilson result
+
+`Foundation/PeriodicIdentitySecondWitness.lean` constructs an explicit actual
+middle-field winding probe on a new gauge-compensated endpoint curve. Let
+W be the constant field with every edge equal to the existing SU(2) flip, and
+let U(h)=left(h,1). The prescribed right endpoint is right(h,W). The theorem
+`right_compensator` proves EXACTLY
+
+    right(h,W) = gaugeAction(constant axis0(h/2), W).
+
+Thus the actual right kernel K_beta(V,right(h,W))=K_beta(V,W) at every h;
+this endpoint derivative is not discarded or set to zero by assumption.
+The left constant-axis field has spatial action zero, and its winding trace
+is cos(4h). These statements concern actual periodic spatial fields and the
+full original Wilson kernel, not a loop surrogate.
+
+Define C_beta(V)=exp(beta*S(V)/2), alpha=the actual single-link coefficient,
+L_beta=laplace(beta)^192, and the FIXED physical test
+
+    f_beta(V) = C_beta(V)*(firstWinding(V)-alpha^4)/K_beta(V,W).
+
+`probe_measurable`, `probe_gauge`, `probe_bound`, `probe_mean_zero` prove that
+this is measurable, invariant under every middle vertex gauge, bounded by
+2*exp(960*|beta|), and centered under the ORIGINAL bridge(beta,1,W), beta>=0.
+The denominator is the BASE actual kernel; f_beta is not moved with h.
+The test is nonlocal and beta dependent. No beta-uniform or local-probe claim.
+
+The actual mass identity and the already verified ANY-endpoint kernel winding
+moment give an exact full-curve factorization:
+
+    F(h) = E_bridge(left(h,1),right(h,W))[f_beta]
+         = G(h)*alpha^4*(cos(4h)-1),
+    G(h) = E_same_actual_bridge[C_beta(V)/K_beta(V,W)]
+         = L_beta/Z_beta(left(h,1),right(h,W)).
+
+The spatial counterweight belongs to the observable; the law is NEVER replaced
+by bare kinetic, Haar, stationary ground-square or independent noise. The
+actual moving partition Z remains. First and second differentiability of G
+come from the verified1863 physical calculus; differentiability at every
+parameter follows by translating the actual endpoint group curves using the
+existing axis-addition identity. No new single-kernel differentiation or
+independent process construction was needed.
+
+`probe_second_derivative` proves the actual derivative-of-derivative identity
+
+    F''(0) = -16*L_beta*alpha^4/Z_beta(1,W).
+
+Both the trigonometric factor and its first derivative vanish at0. This is why
+the other product/normalizer derivative terms cancel; normalization is not
+silently frozen. `second_pairing` identifies this EXACT value with
+E_original_middle[f_beta*physicalSecond(beta,1,W)] by derivative uniqueness
+against the actual physical second channel constructed in1863.
+
+For beta>=0 and alpha!=0 this pairing is strictly negative, so
+`physical_energy_positive` proves
+
+    E_bridge(beta,1,W)[physicalSecond(beta,1,W)^2] > 0.
+
+`eventual_physical_energy` establishes the coefficient condition on a proved
+large-beta tail using the existing alpha_beta->1 theorem. No explicit threshold
+or all-positive-beta coefficient theorem is assumed. Beta0 is a genuine zero
+response, independently checked.
+
+On this SAME endpoint pair and prescribed curve, `law_even` proves exact
+normalized middle-law evenness, and `first_energy_zero` proves
+
+    E_bridge(beta,1,W)[physicalScore(beta,1,W)^2] = 0
+
+for EVERY real beta. Independent checks establish the first score is zero AE
+and the second score is nonzero in the ORIGINAL middle L2 quotient. This is
+a genuine higher-channel physical effect, not positive auxiliary information
+mistaken for physical information. It rejects the inference that vanishing
+first conditional score makes all higher conditional channels vanish.
+
+### Domain and scope discipline
+
+This curve is DISTINCT from1862's explicit non-gauge exchange-null direction
+at U0, and DISTINCT from the both-moving identity/identity curve in the
+unverified -32*L*alpha^4/Z candidate recorded in1863. The new -16 formula does
+not prove that older formula, does not prove it false, and does not settle the
+original U0 direction. It is a rigorously justified new route using a pure-
+gauge right compensator, not a relabeling of those targets. Both remain open.
+
+The positive result is a fixed side-four4D, conditional middle-L2 statement at
+specified endpoints. It is not a lower frame, complete multichannel Clark–Ocone
+reconstruction, local-sector estimate, stationary endpoint-averaged positivity,
+multiblock spatial coercivity, scale/volume-uniform control or continuum mass
+gap. A single nonlocal bounded test cannot supply those conclusions. The SAME
+new probe also has integrable ZERO stationary first-score Ward pairing under
+every actual ground law, checked independently. Existing native/Schur winding,
+iteration, Gaussian-isometry and Gaussian–Poisson product obstructions remain.
+No novelty claim or external existence assumption is introduced.
+
+The useful cross-domain mechanism is now instantiated rather than analogized:
+retain the actual conditional law and its derivative coefficients, compensate
+a gauge endpoint by an exact group identity, choose an admissible bounded dual
+test, and retain the genuinely new second channel. Signed higher-heat causal
+reconstruction is not imported into Wilson probability L2. Neither completion
+of an output span nor a higher semigroup supplies the missing input coercivity.
+
+### Reuse, verification and next obligation
+
+Only `PeriodicWindingEndpointResponse.axis_add` was exposed from private to
+public for genuine reuse in winding and translated-curve differentiation.
+An authenticated byte check restores that single keyword and reproduces the
+exact preceding source hash: every statement, proof byte and original line
+ending is unchanged. Four initially exposed generic trace helpers became
+unnecessary after the compensator route was found and were restored to their
+EXACT authenticated1863 bytes before final builds. No older proof is rewritten.
+
+The new448-line leaf has38 public types (31 proofs,7 definitions),11 private
+proofs and one private definition, no instances and no resource/trust overrides.
+The complete type review includes those38 PLUS the unchanged exposed axis_add
+statement (39 total). Fourteen independent Lean checks cover actual flatness,
+explicit right gauge orbit, negative-beta right-kernel identity, admissible
+probe/gauge/bound/centering, exact second response and physical pairing, zero
+first energy and AE class, positive second energy and actual L2 nonzero class,
+the common large-beta tail, stationary Ward coexistence and beta0 necessity.
+
+Separate SU(2)2x2 matrix checks validate the compensating conjugation to error
+below1.39e-16. Scalar moving-normalizer tests have NONZERO normalizer first
+slope and agree with -16*L*alpha^4/Z(0) to error below7.91e-8. These are only
+independent algebra/bookkeeping diagnostics, not Wilson/Haar approximations
+or Lean premises. Initial development failures were explicit function/Pi
+rewrites, scalar atom unfolding, translation-composition inference, local-let
+simplification and normalization of the negative response; no mathematical
+hypothesis or resource limit was weakened. Target logs retain those failures.
+
+All3063 Foundation sources were reread for syntactic signatures/imports/headers/
+hashes;3062 root reachable and AxiomAudit separate. This is not manual review
+of every old proof. Complete full build, standard-only transitive axiom audit,
+ALL39 public types, fourteen tests, persisted AxiomAudit, authenticated source/
+config/archive integrity and exact BOTH-ref guarded backup gates remain.
+
+Next: return to the ORIGINAL1862 non-gauge exchange-null direction and identify
+whether its actual second conditional channel is nonzero or what residual
+survives. Retain the distinct original both-moving identity candidate as open.
+Do not replace either obligation with this successful compensator witness,
+construct a broad gauge library, or declare full multiblock control achieved.
+
+Checkpoint1864 local closure: complete7286-job build passed in52.5401425s; complete63640-declaration standard-only transitive axiom audit plus ALL39 unabridged public types (38 new leaf, one unchanged exposed axis_add) passed in49.5869909s; fourteen independent original-domain Lean checks passed in31.0077925s; complete persisted AxiomAudit passed in57.3273234s. All448 final leaf lines,31 public proofs/7 definitions/11 private proofs/one private definition and every public type reviewed. Necessary axis_add exposure is exactly one private-keyword removal with every older statement/proof/line-ending byte preserved; unused trace-helper changes restored to authenticated baseline. No instances or resource/compiler/trust changes. All3063 Foundation signatures/imports/headers/hashes refreshed;3062 root reachable and AxiomAudit separate. Authenticated3064-source/config/archive integrity passed, including3 configurations,113 archive originals,21 YM originals and two numerical tools. Independent SU2-matrix and scalar moving-normalizer diagnostics passed in0.0095789s; no Wilson/Haar numerical inference or numerical Lean premise. Development failures retained in logs and repaired by explicit pointwise/Pi/composition/local-let/scalar-sign arguments with default resources. The original1862 exchange-null direction and both-moving identity -32 candidate remain OPEN. No publication, queue, goal or reflection change. Exact approval and BOTH PUBLIC-ref verification follow separately.

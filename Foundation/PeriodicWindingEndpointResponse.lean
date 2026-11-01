@@ -55,7 +55,7 @@ theorem bridge_law (β h : ℝ) :
   unfold PeriodicGroundBridge.law
   rw [he]
 
-private theorem axis_add (s t : ℝ) :
+theorem axis_add (s t : ℝ) :
     SU2JointPlaquetteCubic.axis 0 s * SU2JointPlaquetteCubic.axis 0 t =
       SU2JointPlaquetteCubic.axis 0 (s+t) := by
   unfold SU2JointPlaquetteCubic.axis
