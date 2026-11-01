@@ -3113,3 +3113,5 @@ import Foundation.PeriodicNativeSecondChannel
 import Foundation.WilsonSignedPairingObstruction
 
 import Foundation.PeriodicSpatialRowDependence
+
+import Foundation.PeriodicSpatialInfluenceObstruction
