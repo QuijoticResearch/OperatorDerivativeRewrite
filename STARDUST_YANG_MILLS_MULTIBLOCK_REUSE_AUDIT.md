@@ -1391,3 +1391,129 @@ closure. Failed initial elaborations are retained. Explicit positive constants
 and local irreducibility prevent premature expansion of large finite sums;
 no resource/compiler/trust limit is raised, no old theorem weakened, no original
 manuscript or publication artifact changed, and no research queue changed.
+
+
+## Checkpoint1853 — genuine endpoint derivative and derivative-weighted bad-event suppression
+
+Previous goal turn classified PROGRESS:1852 changed authoritative verified Lean,
+completed all gates and both backups. Its CLOSED receipt records
+2788a7e62a5eb654b988624d5e59c78a080d4c24 at2026-10-31T23:58:31.931507Z,
+with independent BOTH PUBLIC refs at23:58:28.823107Z. Focused Yang–Mills remains
+active. This checkpoint addresses the actual endpoint-score bottleneck rather
+than adding another arbitrary-density projection adapter.
+
+`Foundation/PeriodicEndpointScore.lean` works on the original
+`PeriodicAugmentedBridge.law beta U W`, retaining all192 middle spatial links,
+all middle spatial plaquettes and BOTH64-variable temporal fields. U and W are
+arbitrary actual periodic spatial-slice endpoint states. The direction is the
+specific coherent axis-zero rotation of ALL endpoint spatial links,
+
+    L_h U(e) = axis(0,h)*U(e),
+    R_h W(e) = W(e)*axis(0,-h).
+
+No commuting-background, gauge fixing, cap replacement or near-flat assumption
+is used. This is an actual two-slab boundary variation, not1852's frozen-ground
+coupling tilt. It does not cover arbitrary independent exterior-link directions.
+
+Let C(U,W;q) be the sum of all384 temporal plaquette half-traces, and set
+D(U,W;q)=C(L_(pi/2) U,R_(pi/2) W;q). `traceSum_rotation` proves EXACTLY
+
+    C(L_h U,R_h W;q) = cos(h)*C(U,W;q) + sin(h)*D(U,W;q).
+
+Both C and D are actual SU2 Wilson trace sums, with absolute value<=384.
+`central_trace` keeps the central spatial action S(V): the central energy is
+S(V)+384-C. `central_weight_rotation` and `rotated_integral` prove the actual
+normalized-law identity for ALL real beta,h and arbitrary endpoints:
+
+    E_(beta,L_h U,R_h W)[f]
+      = E_(beta,U,W)[f*exp(phi_h)] / E_(beta,U,W)[exp(phi_h)],
+    phi_h=beta*((cos(h)-1)*C+sin(h)*D).
+
+The denominator is retained. Only endpoint spatial scalars cancel inside the
+normalized conditional law. The middle spatial action NEVER cancels. These
+scalars still matter for the original partition/coarse free energy; no change
+to full unnormalized gluing weights is licensed. The earlier cap/standard-box
+singular-affinity and free-energy calibration obstructions remain intact.
+
+### Actual derivative and original native domain
+
+`phase_bound` and `phaseSlope_bound` give the valid fixed-beta domination
+|phi_h|<=1152*|beta| and |d_h phi_h|<=768*|beta|. The source measurability and
+all differentiation-under-integral hypotheses are proved. On the displayed
+bounded measurable observable core, `expectation_hasDerivAt` and
+`expectation_score` establish the actual endpoint derivative
+
+    d_h E_(beta,L_h U,R_h W)[f] at h=0 = E_(beta,U,W)[f*sigma],
+    sigma=beta*(D-E_(beta,U,W)[D]).
+
+The subtraction is the ACTUAL conditional normalizer response. `score_bound`
+proves |sigma|<=768*|beta|, uniformly in U,W and all augmented configurations;
+`score_memLp` constructs sigma in the ORIGINAL endpoint-conditioned L2 law.
+The derivative theorem is on its stated bounded measurable core; no unproved
+whole-L2 changing-law differentiation or closed spatial gradient is asserted.
+An independent test applies it to an actual gauge-invariant spatial plaquette,
+and another proves E[sigma]=0 by differentiating the constant observable.
+The source itself is not asserted pointwise gauge-invariant under a fixed axis
+frame. No source/nonphysical component is silently renamed a physical field.
+
+### Derivative-weighted rare-event estimate, with valid endpoint averaging
+
+Use1850's actual gauge-invariant link-independent cancelling event B(V), which
+forces S(V)>1. Define E_beta(U,W)=E_(beta,U,W)[1_B(V)*sigma^2].
+`badEnergy_native` constructs an actual original-law L2 field AE equal to
+1_B*sigma, with norm squared EXACTLY E_beta. `badEnergy_bound` proves
+
+    E_beta(U,W) <= (768*|beta|)^2 * bridge_(beta,U,W)(B).
+
+`badEnergy_measurable` proves JOINT endpoint measurability using the actual
+fixed-reference integrals and full normalizer. Both inner and outer integrals
+are proved integrable before averaging. The stationary endpoint distribution
+is the TRUE mu_g(dU)*P_g^2(U,dW), not an independent Haar/product replacement.
+For beta>=16777216 and EVERY actual GroundData g, `averaged_badEnergy` gives
+
+    integral E_beta(U,W) dP_g^2(U)(W) dmu_g(U)
+       <= (768*|beta|)^2 * R0 * exp(-beta),
+    R0=PeriodicGroundHaarScale.upperConstant /
+       PeriodicGaugeSaturatedGround.eigenLowerConstant.
+
+This reuses the exact stationary bridge-average identity and previously verified
+native high-action probability tail. `averaged_badEnergy_tendsto` proves that
+the left side tends to zero as beta tends to infinity for EVERY choice of
+verified ground data g(beta). No regularity or derivative of that choice is
+assumed or taken. Thus an actual boundary-score cost, rather than only unweighted
+probability, is exponentially suppressed in this averaged bad channel.
+
+The old rough-rest thermal derivative1/t theorem is preserved. It concerns a
+fixed rest conditional, whereas this theorem averages an actual squared score
+under the stated stationary endpoint weights. No fixed-endpoint exponential
+probability bound, sup-rest contraction or arbitrary native-L2 rare-event bound
+is inferred. The old normalized-supported-indicator counterexample remains valid.
+
+### Independent tests, exact limitations and next bottleneck
+
+Ten independent Lean checks test arbitrary temporal fields/noncommuting endpoints,
+actual normalization, a physical plaquette derivative, score centering, zero
+coupling, true native norm with bridge mass, joint measurability, correct two-step
+weights, the constructed ground family, and coexistence with the earlier unbounded
+point response. A separate seeded quaternion calculation uses two random endpoint
+pairs,48 full reference configurations each and three couplings0.05,0.4,1.3.
+It includes BOTH endpoint spatial halves, full middle action and both temporal
+fields, with stable log-weight normalization. Maximum trace-rotation error was
+8.882e-15; full log-density-ratio error3.038e-13; six direct full-weight finite-
+difference responses agreed with covariance derivatives to4.517e-10. These are
+FINITE empirical corroborations of algebra/sign/normalization, not a proof of
+Haar integrals, the stationary endpoint law or strong-coupling asymptotics.
+Evidence: .lake/stardust-1853-numeric.py and .json, seed9701853.
+
+Next substantive bridge: relate this actual global endpoint score to the score
+of the actual conditional link/rest kernel, retaining the rest-marginal response.
+Conditional centering and its L2 variance comparison should be proved for that
+TRUE disintegration; do not assume differentiating conditional kernels commutes
+without the row-normalizer proof. Full-good-region response, low-sector coercivity,
+connected nonlinear multiblock gluing, arbitrary boundary directions, scale/volume
+uniformity and continuum limits remain OPEN. Constants here count the fixed
+side-four spatial cell. No physical mass gap, new existence axiom or external
+novelty claim is made. No campaign/queue, original manuscript or publication
+artifact is changed. All compiler/resource/trust settings stay at their defaults;
+explicit measurable coordinate maps/local irreducibility repair elaboration
+without raising limits. Failed proof attempts remain preserved.
