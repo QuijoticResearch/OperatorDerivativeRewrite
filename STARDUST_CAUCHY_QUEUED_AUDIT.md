@@ -1,3 +1,28 @@
+# Authoritative priority amendment — November 1, 2026: A(2)/RH immediately after Cauchy
+
+The user explicitly moved A(2)/RH to immediately after Cauchy is done.
+Current order: Cauchy (ACTIVE) -> A(2)/RH revisit -> iterated/time-changed
+pseudoprocess calculus -> fractional diffusion -> black noise -> AI mathematics
+-> Generalized Cauchy and Stable-Process Calculus -> Hermite-process calculus
+-> cumulative saved backlog.
+
+Finish Cauchy at its mathematically justified, fully audited, committed and
+BOTH-branch-backed stopping checkpoint before starting A(2)/RH. A(2)/RH is
+QUEUED, not active. After its verified stopping checkpoint, begin iterated
+pseudoprocess calculus; fractional diffusion follows that campaign's verified
+stopping checkpoint. Preserve the other campaigns' relative order and statuses.
+Yang–Mills and Bakry remain paused/incomplete; this does not reactivate IBM.
+
+This amendment supersedes earlier scheduling text placing iterated pseudoprocess
+calculus between Cauchy and A(2)/RH, or fractional diffusion immediately after
+A(2)/RH. Earlier dated instructions and checkpoint records below remain historical
+where inconsistent; their mathematical research briefs are preserved. No change
+to mathematical objectives, verification, manuscript preservation, publication
+role separation, Git safeguards or exact audited two-branch backups. No arbitrary
+expiration date; repository visibility remains exclusively user-controlled.
+
+---
+
 # Cauchy campaign ACTIVE — November 1, 2026
 
 Activated by the user's explicit "move onto the next objective" at fully audited,
