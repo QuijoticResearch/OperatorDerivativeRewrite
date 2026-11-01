@@ -3100,3 +3100,5 @@ import Foundation.PeriodicBridgeExchangeObstruction
 import Foundation.PeriodicEndpointSecondResponse
 
 import Foundation.PeriodicIdentitySecondWitness
+
+import Foundation.PeriodicTemporalCycleMoment

@@ -9167,3 +9167,94 @@ Do not replace either obligation with this successful compensator witness,
 construct a broad gauge library, or declare full multiblock control achieved.
 
 Checkpoint1864 local closure: complete7286-job build passed in52.5401425s; complete63640-declaration standard-only transitive axiom audit plus ALL39 unabridged public types (38 new leaf, one unchanged exposed axis_add) passed in49.5869909s; fourteen independent original-domain Lean checks passed in31.0077925s; complete persisted AxiomAudit passed in57.3273234s. All448 final leaf lines,31 public proofs/7 definitions/11 private proofs/one private definition and every public type reviewed. Necessary axis_add exposure is exactly one private-keyword removal with every older statement/proof/line-ending byte preserved; unused trace-helper changes restored to authenticated baseline. No instances or resource/compiler/trust changes. All3063 Foundation signatures/imports/headers/hashes refreshed;3062 root reachable and AxiomAudit separate. Authenticated3064-source/config/archive integrity passed, including3 configurations,113 archive originals,21 YM originals and two numerical tools. Independent SU2-matrix and scalar moving-normalizer diagnostics passed in0.0095789s; no Wilson/Haar numerical inference or numerical Lean premise. Development failures retained in logs and repaired by explicit pointwise/Pi/composition/local-let/scalar-sign arguments with default resources. The original1862 exchange-null direction and both-moving identity -32 candidate remain OPEN. No publication, queue, goal or reflection change. Exact approval and BOTH PUBLIC-ref verification follow separately.
+
+## Checkpoint1865 — actual Haar winding coefficients, not a Gibbs-law replacement
+
+November1,2026. Continue the original1862 exchange-null boundary direction;
+1864's verified gauge-compensated curve remains separate. Baseline is fully
+closed1864, `bb2cde9ccc5c7c85849703916076ffe950107f4b`.
+
+**Exact reuse.** `SU2SharedPlaquetteProjection.sharedProduct_mean` contracts TWO
+SU(2) traces sharing the SAME Haar variable. Three such contractions, with cyclic
+trace/conjugation identities and the existing bounded product-Haar Fubini theorem,
+give the new `PeriodicTemporalCycleMoment.pinned_cycle_moment` and `quad_integral`:
+for arbitrary four external links A,B,C,D, the four-vertex cycle moment is
+`halfTrace(A*B*C*D)/64`. This is not the product of four independent LINK means.
+`select_preserving` proves that the four distinct vertices of a real periodic
+winding row have precisely this marginal under the ORIGINAL64-vertex reference
+Haar law. `actual_winding_moment` integrates the actual `temporalWord` product,
+including all other60 vertices. This reuses existing SU(2) and finite conditional
+integration machinery without transporting a Gaussian or signed law.
+
+**Original boundary and a concrete coefficient.** The endpoint is still the1862
+quarter-turn field `PeriodicEndpointFibreWitness.leftEndpoint`; `orbit h` is its
+original coherent left-axis motion. Direction1 links of this endpoint remain
+identity before motion. A direction1 center seam in the other endpoint changes
+EACH winding-row trace product's sign exactly once: `twisted_value` is pointwise,
+`twisted_winding_moment` is its actual-Haar integral. There are16 transverse rows.
+Their identity-versus-seam difference is `cos(4*h)/32` per row, hence exactly
+`cos(4*h)/2` in total, with second derivative `-8` at0. These statements are
+`row_difference`, `winding_sector`, `winding_sector_second`. The source explicitly
+calls this an ISOLATED winding sector. It does NOT assert that it equals the full
+kernel's fourth coefficient or the physical second score.
+
+**Independent attempts to disprove or isolate the signal.** Raw importance
+sampling used1million full64-vertex S3-Haar configurations at beta=.1,.15,.2,.25;
+all signs were statistically inconclusive. No finite gauge grid or MCMC
+approximation was substituted. A separate4million-configuration experiment used
+exact bipartite center antithetics and analytic second-moment controls. Its
+scaled physical-curvature-difference candidates were about-12.31 at beta=.025
+and-14.15 at beta=.2, with replica standard errors about4.08 and3.99; samples at
+different beta are correlated. They are compatible with a candidate-16 but are
+NOT certified intervals, nonvanishing proofs, or Lean premises. Matrix orientation
+was checked against the original192-link implementation (max error4.18e-14).
+The full-graph second-moment control and curvature-to-physical-score bridges also
+require their own formal justification before this diagnostic becomes a theorem.
+
+An exact integer diagnostic enumerated240 simple4-cycles:192 plaquettes and48
+windings. Independent edge-pair incidence enumeration checked all36864 ordered
+edge pairs: the384 ordered quartic tuples with even incidence at EVERY vertex
+and odd direction1 seam incidence are EXACTLY the24 permutations of each of the16
+straight winding rows. This finite graph check takes about.016s and does not
+rely on Monte Carlo. It is still an external certificate, NOT a Lean proof.
+Integer block-trace differences1024 and-16384 agree with this route, but the
+suggested matched-Gaussian fourth-moment correction-210 was NOT formally
+identified with actual Haar moments and must not be promoted to a Wilson theorem.
+A direct vertex-parity route avoids that unverified Gaussian detour entirely.
+
+**Precise remaining bottleneck.** Prove Haar cancellation of all odd-incidence
+quartic products using actual vertex-center symmetry; formally classify the
+remaining seam-odd tuples; combine the24 orderings with the verified16-row
+moment; then prove the bounded exponential/logarithmic Taylor remainder with
+actual moving spatial factors and normalizer. Finally identify the pointwise
+second-log-kernel contrast with the original physical second score and prove the
+continuity/full-support step needed for native positive energy. The candidate
+small-beta scaled physical contrast is-16, but it is UNPROVED here. Large-beta
+behavior, endpoint-averaged lower frames and scale-uniform contraction remain
+separate obligations. No first-score squaring or surrogate Gibbs law is used.
+
+**Whole-library verdict retained.** Conditional expectation/adjoint and closed
+range results transfer only after proving actual Wilson law, domain and range
+hypotheses. The existing Gaussian feature map is not a unitary; signed
+pseudoprocess reconstruction is not positive conditional probability; IBM's
+clock/scenery laws are not Wilson laws. None supplies the missing nonlinear
+multiblock lower frame or continuum/infinite-volume bound. Existing actual
+stationary/Schur winding obstructions are retained, not relabeled as new. This
+checkpoint provides a genuine actual-graph Haar coefficient connection, not a
+Yang–Mills mass-gap claim or a completed multichannel reconstruction.
+
+**Verification scope.** New leaf `Foundation/PeriodicTemporalCycleMoment.lean`
+has281 lines,22 public types (12 proofs,9 definitions,1 abbreviation) and8 private
+proofs. Old `prepend` and `head_integral` are exposed by removing ONLY their
+private keywords; all older statements, proofs and line-ending bytes are
+preserved. These are the only old mathematical-source changes. Defaults,
+toolchain, trust and verification gates remain unchanged. Development failures
+included reducibility/DecidableEq rewriting and a default heartbeat failure;
+explicit generic winding expansion and finite coordinate substitutions repaired
+them without raising resource limits. Independent checks exercise arbitrary
+external links, actual full marginal, pointwise seam sign, original endpoint,
+16-row cardinality, sign reversal at pi/4 and exact sector curvature. All full
+gates, exact approval and two PUBLIC backup checks are required before closure.
+No publication, original-manuscript, queue, goal or reflection changes.
+
+Checkpoint1865 local closure: complete7287-job build passed in48.2663567s; complete63685-declaration standard-only transitive axiom audit plus ALL24 unabridged public types (22 new leaf, unchanged exposed prepend/head_integral) passed in50.2730707s; twelve independent original-domain Lean checks passed in29.1743165s; complete persisted AxiomAudit passed in60.0066113s. All281 final leaf lines,12 public proofs/9 definitions/1 abbreviation/8 private proofs and every public type reviewed. Independent harness first failed due to unqualified gaugeHaar becoming an implicit measure and redundant closing tactics; repaired with explicit ORIGINAL PeriodicWilsonSlab.gaugeHaar and no mathematical-source changes. Two necessary helper exposures preserve every old statement/proof/line-ending byte; no other older mathematical source changed. Full3064-source Foundation signatures/imports/headers/hash index refreshed,3063 root reachable and AxiomAudit separate; authenticated3065-source/config/archive integrity passed (3 configs,113 archive originals,21 YM originals,two numeric tools). All four numerical/exact finite diagnostics recorded as EXPLORATORY or external arithmetic, not Lean premises. Actual full quartic/Taylor/physical-score identification remains OPEN. No resource/compiler/trust, publication, original manuscript, queue, goal or reflection change. Exact approval and guarded BOTH PUBLIC-ref checks follow separately.

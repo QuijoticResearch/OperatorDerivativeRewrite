@@ -235,9 +235,9 @@ private theorem select_cycle_preserving (β : ℝ) :
   simp only [(measurePreserving_eval (fun _ : SpatialEdge => SU2WilsonConvolution.increment β) _).map_eq] at hm
   exact ⟨measurable_pi_iff.mpr (fun _ => measurable_pi_apply _), hm⟩
 
-private def prepend {n : ℕ} (A : SU2) (X : Fin n → SU2) : Fin (n+1) → SU2 := Fin.cons A X
+def prepend {n : ℕ} (A : SU2) (X : Fin n → SU2) : Fin (n+1) → SU2 := Fin.cons A X
 
-private theorem head_integral (ν : Measure SU2) [IsProbabilityMeasure ν] (n : ℕ)
+theorem head_integral (ν : Measure SU2) [IsProbabilityMeasure ν] (n : ℕ)
     (F : (Fin (n+1) → SU2) → ℝ) (hF : Measurable F) (hb : ∀ X, |F X| ≤ 1) :
     (∫ X, F X ∂Measure.pi (fun _ => ν)) =
       ∫ A, ∫ X : Fin n → SU2, F (prepend A X) ∂Measure.pi (fun _ => ν) ∂ν := by
