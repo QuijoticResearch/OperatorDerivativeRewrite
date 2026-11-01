@@ -1,5 +1,12 @@
 # Yang–Mills multiblock: cross-domain theorem audit
 
+Current1858: actual endpoint-retaining physical conditional score and original-law
+Fisher residual are verified. The chosen diagonal endpoint bridge is EXACTLY EVEN,
+so ALL bounded middle responses vanish there. A finite non-Haar grid produces a
+false positive diagonal signal; reject that numerical shortcut. Off-diagonal
+physical nontriviality and uniform nonlinear multiblock coercivity remain open.
+All3057 Foundation sources reindexed; see1858 below and preserved earlier audit.
+
 Strengthening1857: the actual Ward-null source has STRICTLY POSITIVE native norm
 for every nonzero coupling. A normalized actual joint source is a unit null vector
 for the specified physical/Gaussian map; every positive lower frame bound fails.
@@ -1814,3 +1821,99 @@ norm. Do not return to the annihilated middle-only scalar-image mechanism.
 Focused Yang--Mills and the indefinite goal remain active; no queue/role change,
 reflection session or publication work. All original manuscripts, older proofs,
 configuration/compiler/resource/trust settings and histories remain preserved.
+
+
+## Checkpoint1858 — actual endpoint-retaining physical conditional reconstruction
+
+Previous goal turn: PROGRESS. Checkpoint1857 closed at
+53cdac426d9ad74f86648131e987def83c53b04a with all gates and both exact PUBLIC
+refs. Focused Yang--Mills remains active. No publication work, queue change,
+reflection session, original-source modification or compiler-setting change.
+
+The current library audit was refreshed over ALL3057 Foundation Lean sources:
+syntactic declaration signatures, imports, headers and SHA256 hashes,3056
+root-reachable modules and separately checked Foundation/AxiomAudit.lean.
+Including the root, source-integrity scope is3058 files. The index is ignored
+local evidence .lake/stardust-1858-library-index.json. This is not a manual
+proof review of every declaration; candidate original proofs and compiled
+public types were reviewed selectively, and complete transitive axiom audits
+remain mandatory. Historical1838/1851 coverage counts describe their own times.
+
+New Foundation/PeriodicPhysicalBridgeScore.lean constructs an ACTUAL conditional
+score phi_beta(U,W,V), retaining BOTH endpoints and integrating only temporal
+a,b against density w_beta(U,V,a) w_beta(V,W,b), normalized by
+K_beta(U,V) K_beta(V,W). auxiliary_integral proves this formula, with a genuine
+positive probability at each fixed U,W,V and every real beta. physicalScore is
+measurable, bounded by768|beta|, and in the original endpoint-conditioned middle
+L2. It is not placed silently in the stationary L2 or in an output completion.
+physicalScore_gauge proves its FULL middle vertex-gauge invariance with endpoints
+fixed: the actual temporal substitution is (a,b)->(a*g,g^-1*b), Haar-preserving.
+No invariance of a fixed endpoint direction is assumed.
+
+physical_pairing proves, for every bounded measurable fixed middle observable f,
+  E_aug[f(V) sigma_beta(U,W,V,a,b)] = E_bridge[f(V) phi_beta(U,W,V)].
+physical_derivative identifies this with the derivative at h=0 of the ACTUAL
+normalized middle bridge under (left h U,right h W). Both temporal and middle
+normalizers and the spatial action are retained. This is the concrete valid
+Wilson realization of the conditional-dual strategy suggested by the IBM
+library; IBM-specific clocks, natural filtrations and constants are not reused.
+It is a bounded-core derivative identity with native L2 score, not an unproved
+closed derivative/adjoint graph or unbounded-test differentiation theorem.
+
+fisher_decomposition proves the ORIGINAL-law exact residual identity
+  E_aug sigma^2 = E_bridge phi^2 + E_aug (sigma-phi(V))^2.
+The frozen admissible gauge-invariant observable f(V)=phi_beta(U,W,V) therefore
+has derivative E_bridge phi^2. Strict positivity of THAT physical energy still
+requires a separate proof; positivity of augmented energy does not establish it.
+This is the relevant transfer from conditional reconstruction and orthogonal
+residual geometry, without a fabricated isometry or lower frame bound.
+
+A SHARP actual-boundary obstruction is now proved: kernel_left_right plus the
+actual kernel symmetry imply diagonal_law_even,
+  bridge_beta(left h U,right h U)=bridge_beta(left(-h)U,right(-h)U)
+for EVERY real beta,h and EVERY U. diagonal_pairing_zero cancels the response
+for ALL bounded measurable middle observables, without a gauge-invariance
+hypothesis on the observable. diagonal_physical_energy_zero and
+diagonal_physical_zero show phi_beta(U,U)
+has zero native middle energy and is zero almost everywhere under its actual
+bridge. This is pointwise boundary conditioning, not1856's stationary Ward
+averaging. It excludes using THIS coherent endpoint direction as a uniformly
+positive physical response at all boundary pairs. It does not exclude a
+nonzero off-diagonal/covariant response, another direction, a positive transfer
+spectral gap, or another multiblock scheme.
+
+Independent checks use original domains, normalization, negative and zero beta,
+full middle gauge invariance, the actual derivative, diagonal cancellation,
+Fisher contraction, and preservation of the prior native unit-null obstruction.
+The finite-Wilson conditional calculation .lake/stardust-1858-numeric.py uses
+seed9701858,5 spatial states and5 temporal gauge samples, beta=.005,.01,.02.
+It checks normalized disintegration, Fisher residual, and finite-difference
+response (error<=8.38e-12). Crucially this finite grid is NOT Haar/gauge invariant:
+at generic diagonal endpoints it gives apparent physical energy0.0027895208612,
+where the rigorous Haar theorem is ZERO. This is a diagnosed quadrature artifact,
+not a physical counterexample or evidence of off-diagonal actual-Haar positivity.
+
+The cross-domain verdict remains precise. Signed higher-heat reconstruction
+needs its analytic test-dual, linear independent increments and nested causal
+cuts; these hypotheses do not hold for nonlinear interacting SU(2) spatial
+blocks. Higher Fourier-multiplier semigroups do not supply an actual Wilson
+operator intertwiner or repair low-frequency coercivity. Gaussian--Poisson
+chaos norm transfer fails to preserve ordinary products by its existing exact
+first-chaos counterexample. Closed-span stochastic integration and IBM output
+completion reconstruct only their proved range in their proved output norm;
+they cannot supply a missing original-input lower frame. In the actual native
+Wilson map,1856/1857 already give a nonzero unit null source, decisively ruling
+out that whole-domain isometry/lower-frame shortcut. Abstract Schur/residual
+geometry and actual conditional adjoints DO transfer once the Wilson law and
+domains are explicitly identified, as above and in PeriodicHighActionSchur.
+None of these theorems supplies the missing uniform nonlinear spatial gluing,
+coercivity or continuum/infinite-volume scale transfer.
+
+Next mathematical bottleneck: identify a genuinely nonzero actual physical
+response at suitable OFF-DIAGONAL endpoint fibres/covariant directions, or prove
+an additional precise cancellation. Retain the normalized conditional score,
+its native domains and residual; do not substitute the positive auxiliary
+energy, the annihilated stationary scalar image, or non-Haar finite-grid signals.
+Any useful multiblock consequence still requires the true nonlinear spatial
+coupling law and coupling/scale/volume-uniform estimates, not further output
+completion. No full Yang--Mills mass-gap, continuum, or external novelty claim.
