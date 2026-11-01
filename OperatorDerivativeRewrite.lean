@@ -3127,3 +3127,5 @@ import Foundation.PeriodicPlaquetteSpanFrame
 import Foundation.PeriodicCubeFiberObstruction
 
 import Foundation.PeriodicCubeConditionalGram
+
+import Foundation.PeriodicFlatCheckerboardObstruction
