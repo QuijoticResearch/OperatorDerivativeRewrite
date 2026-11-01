@@ -62994,3 +62994,42 @@ The concrete obstruction is the larger unsigned incidence kernel. A positive ful
 **Verification and failed approaches preserved.** All330 final lines,22 public proofs/eight definitions, sixteen private proofs/one private face-translation equivalence/one private finite-decider abbreviation, and ALL30 unabridged public types reviewed. No new instances, axioms, placeholders, compiler/resource/toolchain changes or older mathematical-source edits. Seven targeted-development logs retained. A direct all-face sum certificate hit the default recursion limit and was replaced by a translation cancellation proof. Exact sorted-face projections, typed Bool and quaternion arithmetic, and proof-state normalization repaired elaboration. Two constructor-name linter recursion issues were repaired by smaller term proofs and an unnamed unused membership hypothesis, NOT by disabling a linter or raising limits. The first independent harness exposed the duplicate flat-plaquette lemma through a namespace ambiguity; its log/time were preserved, the duplicate removed, and full build/audit repeated on final sources. Nine independent Lean tests check all-flat/nonzero coefficient norm, arbitrary matrix/link cancellation, vanishing axes with mixed derivative-1, orthogonal noncommuting axes, compatibility with the old positive cube estimate, actual physical domains, literal normalized conditional centered integrals, old physical norm-loss comparison, and impossibility of ANY global local-defect repair.768 full original-state single-link matrix probes,128 two-link identities and32 axis identities have discrepancies below5e-16; these are diagnostics only, never Lean premises. All original manuscripts and older verified work are preserved.
 
 Local closure1878: complete7302-job root build 46.9201884s; complete64375-declaration standard-only transitive axiom audit plus ALL30 unabridged types 61.5798058s; nine independent Lean checks 38.2922361s; complete persisted AxiomAudit 63.0816553s, all PASS. All3078 Foundation signature/import/header/hash entries refreshed (3077 root reachable plus separately compiled AxiomAudit), unchanged authenticated entries reused, NOT a fresh manual review of every old proof. Authenticated3079-source snapshot preserves ALL prior mathematics,3 configurations,113 inventoried archive originals,21 YM originals and both original numerical tools. No publication/manuscript, campaign/goal/queue/reflection/automation or repository-visibility changes. Exact approval and guarded BOTH PUBLIC backup verification follow separately.
+
+## Checkpoint1879 - user-directed transition to the Cauchy operator audit
+
+On November1,2026 the user instructed "move onto the next objective". The saved
+queue puts Cauchy immediately after Yang–Mills. Activate the original-source
+mathematical audit of ResearchSources/cauchy/stochastic_cauchy_operator_v4.tex;
+Yang–Mills is PAUSED/INCOMPLETE at fully audited and BOTH-public-backed1878,
+e22d29172e5540e26e1439b0a17d650060f54095. Preserve every proof and open obligation
+in STARDUST_YANG_MILLS_PAUSE.md. No active proof or verification was interrupted;
+no mass gap, continuum existence, or completed full multiblock calculus is claimed.
+Bakry remains paused/incomplete and IBM remains deferred. All subsequent queue
+priorities, no-expiration policy and verification/backup gates remain intact.
+
+AGENTS.md, STARDUST_CAMPAIGN_QUEUE.md, RESEARCH_CAMPAIGN_STATE.md, the Cauchy brief
+and both Yang–Mills ledgers now have explicit current scheduling amendments;
+older checkpoint records remain historical. Cauchy -> iterated pseudoprocess ->
+A(2)/RH -> fractional diffusion -> black noise -> AI -> generalized Cauchy/stable
+-> Hermite -> cumulative saved backlog. No new research goal, campaign outside
+the queue, automation, publication agent or repository-visibility change.
+
+The read-only Cauchy source hash3154d5c35ac6c1a1c984847cda8f94d953e29ae783f4f4536933f8c973033e8c,
+50050 bytes, matches1292. The title is The Stochastic Cauchy Operator: Operator
+Factorization Meets Complex Analysis. This is a complex-Gaussian projection
+paper, distinct from the later stable-process campaign. Title/abstract/theorem
+labels and the construction/decomposition/idempotence sections were inspected
+selectively, not every proof. STARDUST_CAUCHY_AUDIT.md records the first exact
+reuse audit. The idempotence proof invokes unprojected D(delta(u))=u from
+isometry; existing GaussianPredictableAdjoint and GaussianPredictableDomainGap
+results instead distinguish the bounded predictable adjoint/projected derivative
+and the full derivative's actual domain. This is the first central repair target,
+not a claim that the entire complex manuscript is resolved. The existing complex
+extension of a real Brownian integral is not automatically a circular two-source
+complex Brownian construction. Projection normalization, range identification,
+fBM corrections and conformal assertions remain unverified pending their exact
+audits. No new Lean theorem or mathematical-source edit is made at transition.
+Publication drafting, compilation, PDF and editorial duties remain excluded.
+
+
+Transition1879 closure: fresh complete7302-job root build 13.6100226s and complete64375-declaration standard-only transitive axiom audit 58.5783210s PASS. Mathematical source hashes are IDENTICAL to the fully verified1878 checkpoint (all3079 Foundation/root files), so its complete persisted AxiomAudit, nine independent Lean checks and30 full type/proof reviews are reused on exact unchanged inputs; zero new Lean declarations or theorem types. All historical instruction/ledger bodies preserved,3configs/113archive/21YM/1Cauchy originals and both original numerical tools unchanged. Ten instruction/research-ledger/inventory files only. Exact Git receipt and BOTH public backup verification follow separately.

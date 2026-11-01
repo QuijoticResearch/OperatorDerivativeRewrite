@@ -1,3 +1,14 @@
+# Focused Yang–Mills PAUSED — user-directed transition, November 1, 2026
+
+PAUSED/INCOMPLETE at fully audited and BOTH-public-backed checkpoint1878,
+`e22d29172e5540e26e1439b0a17d650060f54095`. Cauchy is now ACTIVE under
+`STARDUST_CAUCHY_QUEUED_AUDIT.md`. Preserve all results and unresolved obligations
+in this ledger and `STARDUST_YANG_MILLS_PAUSE.md`; no physical mass gap or
+continuum construction has been completed. Do not continue Yang–Mills while Cauchy is active unless the user
+reprioritizes it. All earlier ACTIVE labels below are historical after this amendment.
+
+---
+
 # Yang–Mills multiblock: cross-domain theorem audit
 
 Current1878: global all-spatial-plaquette checkerboard gives a FLAT-field coefficient-floor obstruction. F is nonconstant, bounded192, gauge invariant/center-even, coefficient norm192, yet ALL192 actual normalized one-link row variances vanish at V=1 for every beta/endpoints/temporal fields while ALL original plaquette defects are0. Exact arbitrary-SU2 two-link section=ht(AB)-ht(A)-ht(B)+1, central witness4 and mixed derivative-1. Thus1877 cube near-flat bound cannot extend to the full coefficient family via a plaquette-defect error. Higher mixed channels survive; averaged/native physical frame and mass gap are NOT ruled out. Existing cube/pair positive results and every prior obstruction remain. See1878 below.

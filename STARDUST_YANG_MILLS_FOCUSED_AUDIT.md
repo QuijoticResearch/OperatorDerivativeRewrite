@@ -1,3 +1,14 @@
+# Focused Yang–Mills PAUSED — user-directed transition, November 1, 2026
+
+PAUSED/INCOMPLETE at fully audited and BOTH-public-backed checkpoint1878,
+`e22d29172e5540e26e1439b0a17d650060f54095`. Cauchy is now ACTIVE under
+`STARDUST_CAUCHY_QUEUED_AUDIT.md`. Preserve all results and unresolved obligations
+in this ledger and `STARDUST_YANG_MILLS_PAUSE.md`; no physical mass gap or
+continuum construction has been completed. Do not continue Yang–Mills while Cauchy is active unless the user
+reprioritizes it. All earlier ACTIVE labels below are historical after this amendment.
+
+---
+
 # Project Stardust — focused Yang–Mills audit, first proof checkpoint
 
 Status: ACTIVE. Bakry–Émery Objective 2 is PAUSED, not completed; see `STARDUST_BAKRY_OBJECTIVE2_PAUSE.md`. This is a selective theorem audit and a concrete obstruction to one proposed transfer estimate. It is not a construction of four-dimensional Yang–Mills theory or a proof of a physical mass gap.

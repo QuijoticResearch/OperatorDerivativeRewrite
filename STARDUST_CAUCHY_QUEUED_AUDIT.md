@@ -1,3 +1,23 @@
+# Cauchy campaign ACTIVE — November 1, 2026
+
+Activated by the user's explicit "move onto the next objective" at fully audited,
+BOTH-public-backed Yang–Mills checkpoint1878 (`e22d29172e5540e26e1439b0a17d650060f54095`).
+This supersedes the historical QUEUED/not-started wording and scheduling
+prerequisites below, including earlier IBM/Bakry completion gates. It does NOT
+claim those campaigns are complete. Yang–Mills and Bakry remain paused/incomplete.
+The saved mathematical audit scope, manuscript-integrity and every verification
+gate below remain binding. Current research-source inventory and first theorem
+reuse audit: `STARDUST_CAUCHY_SOURCE_INVENTORY.json` and `STARDUST_CAUCHY_AUDIT.md`.
+The primary researcher analyzes original source claims for mathematical repair;
+publication drafting, compilation, draft maintenance and editorial work remain
+outside its role. All original manuscript bytes are read-only. The repository is
+PUBLIC by user decision; preserve exact guarded BOTH-branch backups and never
+change visibility. Cauchy -> iterated pseudoprocess -> A(2)/RH -> fractional
+diffusion -> black noise -> AI -> generalized Cauchy/stable -> Hermite -> backlog.
+No other campaign is activated, and no new goal or automation is created.
+
+---
+
 **Git visibility amendment (October 27, 2026):** The designated repository is
 PUBLIC by the user's decision. Follow AGENTS.md and STARDUST_SYNC.md for exact
 audited two-branch backup; never change visibility. Earlier PRIVATE wording in

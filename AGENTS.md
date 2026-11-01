@@ -1,3 +1,44 @@
+# Authoritative transition — November 1, 2026: Cauchy ACTIVE
+
+The user explicitly instructed: "move onto the next objective". The saved queue
+places the Cauchy manuscript audit immediately after focused Yang–Mills.
+Transition at fully verified checkpoint1878,
+`e22d29172e5540e26e1439b0a17d650060f54095`, independently verified on BOTH
+authorized PUBLIC backup branches at2026-11-01T11:18:02Z. No proof or verification
+cycle was interrupted. Yang–Mills is PAUSED/INCOMPLETE, not a mass-gap solution;
+preserve `STARDUST_YANG_MILLS_PAUSE.md`, all proofs, ledgers and open routes.
+
+ACTIVE: the original-source mathematical audit and Lean repair of
+`ResearchSources/cauchy/stochastic_cauchy_operator_v4.tex` under
+`STARDUST_CAUCHY_QUEUED_AUDIT.md`. This source concerns the complex-Gaussian
+stochastic Cauchy projection operator. Begin with exact theorem/domain reuse,
+independent claim tests and corrected operator statements; preserve every source
+byte. Do not confuse it with the separately queued Cauchy/stable-process campaign.
+Publication/manuscript-production and editorial responsibilities remain with the
+publication agent; this activation authorizes the saved research-source claim
+analysis, not publication drafting, PDF work or README maintenance.
+
+Scheduling order: Cauchy (ACTIVE) -> iterated/time-changed pseudoprocess calculus
+-> A(2)/RH revisit -> fractional diffusion -> black noise -> AI mathematics
+-> Generalized Cauchy and Stable-Process Calculus -> Hermite-process calculus
+-> cumulative saved backlog. Preserve all other deferred campaign statuses and
+priorities. Bakry Objectives1/2 and IBM remain incomplete/deferred or paused;
+this instruction does NOT reactivate them. Keep Yang–Mills paused during
+Cauchy; Bakry still requires a new user instruction. The current Cauchy source audit and return point
+are in `STARDUST_CAUCHY_AUDIT.md`.
+
+This header controls current scheduling and supersedes older Yang–Mills/IBM/Bakry
+ACTIVE labels. Conflicting prerequisites are superseded ONLY for this explicit
+Cauchy activation; later campaign scope and stopping gates remain. Historical
+checkpoint records are not rewritten. No mathematical result or verification
+standard changes. No expiration date;
+October31 remains review-only. Keep full Lean builds, complete transitive axiom
+and theorem-type/proof reviews, independent checks, source-integrity checks,
+research ledgers, exact Git receipts and guarded BOTH-branch backups. Repository
+visibility is exclusively user-controlled and remains PUBLIC. Never change it.
+
+---
+
 # Authoritative role separation - October 29, 2026
 
 Effective immediately, the primary Stardust researcher is relieved of all
