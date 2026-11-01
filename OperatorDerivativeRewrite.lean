@@ -3181,3 +3181,5 @@ import Foundation.StochasticCauchyExponentialInput
 import Foundation.StochasticCauchyExponentialReconstruction
 
 import Foundation.StochasticCauchyStoppedClockObstruction
+
+import Foundation.StochasticCauchyGaussianStein
