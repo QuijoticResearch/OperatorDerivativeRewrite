@@ -3139,3 +3139,5 @@ import Foundation.StochasticCauchyBrownianRealization
 import Foundation.StochasticCauchyParameterizedObstruction
 
 import Foundation.StochasticCauchyJointPastIntegral
+
+import Foundation.StochasticCauchyPhysicalInput
