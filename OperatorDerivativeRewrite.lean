@@ -3125,3 +3125,5 @@ import Foundation.PeriodicBridgeInnovation
 import Foundation.PeriodicPlaquetteSpanFrame
 
 import Foundation.PeriodicCubeFiberObstruction
+
+import Foundation.PeriodicCubeConditionalGram
