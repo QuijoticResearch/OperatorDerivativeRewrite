@@ -3094,3 +3094,5 @@ import Foundation.PeriodicWindingEndpointResponse
 import Foundation.PeriodicPhysicalFisherWitness
 
 import Foundation.PeriodicEndpointTangentDescent
+
+import Foundation.PeriodicBridgeExchangeObstruction

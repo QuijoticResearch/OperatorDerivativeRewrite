@@ -62057,3 +62057,116 @@ remote receipts follow separately; no pending push is called remotely verified.
 Checkpoint1861 independent-test repair: the initial beta-zero test failed because norm_num had already simplified |score|<=0 to score=0. Replaced the redundant absolute-value conversion with the existing equality. Preserved initial test source/log/timing under .lake/stardust-1861-initial-checks*; no Foundation, root, canonical audit input or theorem statement changed. All thirteen checks were rerun, followed by the complete persisted AxiomAudit.
 
 Checkpoint1861 local closure: complete7283-job build passed in44.8229330s; complete63531-declaration standard-only transitive axiom audit plus ALL11 unabridged public types passed in49.0314852s; thirteen independent original-domain Lean checks passed in29.8858612s; complete persisted AxiomAudit passed in57.6011315s. All142 source lines,11 public proofs/types and one private pointwise identity reviewed. No public definitions/instances or compiler/resource/trust changes. All3060 Foundation signatures/imports/headers/hashes refreshed;3059 root reachable and AxiomAudit separate. Authenticated3061-source/config/archive integrity passed: all older mathematics,3 configurations,113 archive originals,21 YM originals and two numerical tools unchanged. No numerical grid or surrogate used as proof. Initial nonexistent-lemma-name elaboration failure repaired by explicit pointwise group proof. No publication, queue, goal or reflection changes. Exact approval and BOTH PUBLIC remote checks follow separately.
+
+## Checkpoint1862 — physical exchange-null boundary directions beyond gauge
+
+November1,2026. Focused Yang–Mills remains ACTIVE. Baseline1861,
+`edd95d19751f616addc07a283e83f9f627b23ddc`, fully audited and independently
+verified on BOTH PUBLIC backup refs. Previous turn was verified progress.
+The sandboxed initial Git status could not recognize the worktree; an authorized
+read-only unsandboxed Git check confirmed the clean actual worktree and exact
+baseline. No Git configuration, branch or repository visibility was changed.
+October31 remains a review milestone, not a stopping date. No reflection session
+was admitted and no publication files or original manuscripts were touched.
+
+### The actual first-order obstruction
+
+`Foundation/PeriodicBridgeExchangeObstruction.lean` proves exchange symmetry
+of the full normalized two-sided periodic Wilson middle law using the actual
+symmetric kernels, INCLUDING both endpoint spatial factors and normalizers.
+`law_swap` is exact for every real beta and every pair of original states.
+Consequently, for ANY path X(h), the actual law with endpoints X(h),X(-h) is
+even in h (`opposite_law_even`). No smoothness of X or independent-increment
+representation is assumed. `opposite_derivative_zero` proves that every fixed
+middle test's derivative along this family, IF it exists at0, must be zero.
+
+This is not only a gauge direction or the previous fixed-axis representative
+problem. Define the actual endpoint path X(h)=right(-h,U0), and the PHYSICAL
+boundary signal B(U,W)=firstWinding(U)-firstWinding(W). Its independent-endpoint
+gauge invariance is proved by the actual SU(2) winding trace theorem.
+`path_zero` identifies X(0)=U0; the existing exact four-link winding result gives
+
+    B(X(h),X(-h)) = 2*sin(4*h),
+    deriv_h B(X(h),X(-h)) at0 = 8.
+
+`path_not_gauge` proves X(h) and X(-h) are NOT gauge equivalent whenever
+0<h<pi/4. Thus a gauge-invariant scalar boundary coordinate changes to first
+order. No differential-geometric quotient or tangent Hilbert norm is silently
+introduced; these are exact original-state, gauge-invariance and scalar
+HasDerivAt statements.
+
+`coherent_law` identifies this whole family with the earlier actual coherent
+diagonal endpoint family by the established kernel gauge identity.
+`actual_derivative_zero` therefore supplies EXISTENCE and value0 of the
+first derivative for EVERY fixed bounded measurable middle observable, using
+the existing actual Wilson bounded-core differentiation theorem. It does not
+infer differentiability from evenness. All real beta are allowed, including0
+and negative beta. The original middle integrals and normalizers are retained.
+
+`no_positive_signal_budget` rules out EVERY c>0 in the pointwise estimate
+
+    c * |deriv_h B(X(h),X(-h)) at0|^2
+       <= actual middle E[physicalScore(beta,U0,U0)^2] = 0.
+
+The left side is64*c>0. This is a concrete obstruction to first-order boundary
+coercivity on a domain that removes ONLY gauge-null directions. Even a family
+of all fixed middle tests has zero directional response here. Transporting
+endpoint tangent curves fixes the1861 representative error, but cannot repair
+this genuine exchange-null direction of the actual conditional observation.
+
+### Exact scope, and what remains viable
+
+This does NOT refute a frame bound after quotienting by the FULL observation
+kernel, a lower bound on another specified physical residual domain, a closed
+span of realizable middle observables, an endpoint-retaining augmented
+representation, an endpoint-averaged estimate or higher-order response. The
+diagonal pair may have zero measure under the stationary endpoint distribution;
+no positive-measure or averaged obstruction is claimed. The direction cannot
+be discarded as PURE GAUGE, but an observation-kernel quotient can discard it
+with an explicitly smaller target. Do not equate those two quotients.
+
+It does not refute all multichannel reconstruction. In particular, adding
+second or higher derivatives is a different problem requiring actual Wilson
+derivative identities, domains and convergence, not automatic transfer of the
+signed higher-heat calculus. A separate positive symmetric circle-kernel check
+K(x,y)=1+rho*cos(x-y) illustrates the limitation: opposite endpoint first
+responses vanish, but the normalized expectation of cos(V) has second derivative
+rho*(-1+3*rho^2/2)/(1+rho^2/2)^2, with either sign for the tested rho values.
+4096-point numerical checks at rho=.2,.6,.9 have zero central first difference
+and second-derivative errors below1.37e-7. This is ONLY a diagnostic against the
+false inference 'first-order blind implies all orders blind'; it is NOT Wilson,
+SU(2) Haar,4D or continuum evidence and is not used in a Lean proof.
+
+This sharpens the IBM conditional-adjoint/closed-span reuse decision: the
+actual conditioning projection and its observation kernel must be identified,
+not replaced by a gauge quotient or an output completion. Gaussian–Poisson
+coefficient transfer, signed causal reconstruction and bare higher-semigroup
+powers still supply no missing native lower bound. The previously verified
+actual stationary/Schur winding and iteration obstructions remain intact.
+No new classical finite-volume estimate or broad gauge infrastructure is added.
+
+### Verification scope and next decisive test
+
+The new137-line source has12 public proofs and3 definitions,15 full public
+types, no private proofs/definitions/instances and no compiler/resource/trust
+changes. The first targeted build passed; the final base-point identity and
+formatting were added before full verification. Thirteen independent Lean
+tests include negative-beta law exchange, arbitrary nonsmooth opposite paths
+with conditional derivative hypotheses, actual bounded-core existence, exact
+non-gauge separation at pi/8, physical derivative8, the fixed frozen probe's
+zero middle derivative and coexistence with1860's positive off-representative
+response. The complete3061-file Foundation index was refreshed for signatures,
+imports, headers and hashes;3060 are root reachable and AxiomAudit is separate.
+This is not a new manual review of every old proof. Complete builds, standard-
+only transitive axiom audits, all15 new theorem types, persisted AxiomAudit,
+source/config/archive integrity and exact guarded BOTH-ref backups remain gates.
+
+Next: test whether an actual second-order conditional channel detects the
+exchange-null physical direction, or identify the exact additional residual
+that survives. Keep endpoints, true Wilson law and covariant curves; do not
+claim reconstruction or a frame from a single higher response. No uniform
+multiblock/scale/infinite-volume/continuum mass-gap theorem is asserted.
+
+Checkpoint1862 gate repair: the first complete build exposed only an unqualified M2 type in the newly added base-point identity. Qualified it as SU2TraceHessianModel.M2; preserved the failed source/build log/timing/index under .lake/stardust-1862-pre-M2-*. No theorem statement, mathematical hypothesis, older module or resource setting changed. Full gates rerun on the final source.
+
+Checkpoint1862 local closure: complete7284-job build passed in45.1302166s; complete63547-declaration standard-only transitive axiom audit plus ALL15 unabridged public types passed in47.5487650s; thirteen independent original-domain Lean checks passed in30.9652975s; complete persisted AxiomAudit passed in55.8883543s. All137 final source lines,12 proofs/3 definitions/15 full types reviewed, with no private declarations or resource/compiler/trust changes. All3061 Foundation signatures/imports/headers/hashes refreshed;3060 root reachable and AxiomAudit separate. Authenticated3062-source/config/archive integrity passed: all older mathematics,3 configurations,113 archive originals,21 YM originals and two numerical tools unchanged. Separate positive symmetric circle-kernel diagnostic passed in0.0049076s, with zero first responses and nonzero second responses of either sign; it is not Wilson/Haar/4D evidence and no numerical result is a Lean premise. Qualified-matrix-type elaboration failure preserved and repaired before these full gates. No publication, queue, goal or reflection change. Exact approval and BOTH PUBLIC remote verification follow separately.
