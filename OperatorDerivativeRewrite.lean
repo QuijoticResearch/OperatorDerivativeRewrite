@@ -3151,3 +3151,5 @@ import Foundation.StochasticCauchyCommonInputBridge
 import Foundation.StochasticCauchyPastReconstruction
 
 import Foundation.StochasticCauchyMalliavinBridge
+
+import Foundation.StochasticCauchyCovarianceObstruction
