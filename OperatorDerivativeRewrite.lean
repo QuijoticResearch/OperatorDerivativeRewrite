@@ -3149,3 +3149,5 @@ import Foundation.StochasticCauchyTensorReconstruction
 import Foundation.StochasticCauchyCommonInputBridge
 
 import Foundation.StochasticCauchyPastReconstruction
+
+import Foundation.StochasticCauchyMalliavinBridge
