@@ -8232,3 +8232,83 @@ Originals, all prior Lean results, source integrity, configurations, compiler,
 resource/trust settings and publication histories are preserved; no reflection.
 
 Checkpoint1856 local closure: complete7278-job build passed in28.9441953s; full63338-declaration transitive axiom audit plus ALL35 final public types passed in50.4518201s; eleven independent Lean checks passed in40.2794456s; complete persisted AxiomAudit passed in60.4022118s. All328 lines,27 public proofs/8 definitions/3 private proofs and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.3804843s. Authenticated3056-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
+
+## Checkpoint1857 — an ACTUAL nonzero native source in the Ward-null channel
+
+Previous goal turn: PROGRESS;1856 closed at9c049029f51d46df2710114a3b0510b54ea6102c
+with all gates and both exact PUBLIC refs. Continue focused Yang--Mills. This turn
+tests whether the zero physical image merely arose from a zero source; it did not.
+
+Foundation/PeriodicEndpointFibreWitness.lean constructs explicit endpoints U0,W0:
+identity fields with the selected boundary link replaced by axis0(-pi/2) and
+axis0(pi/2), respectively. Middle configurations are the existing flux field with
+that link replaced by A, both temporal fields identity. point_bad puts EVERY such
+configuration in the actual gauge-invariant B event; its spatial action is >1.
+Reusing1854's exact local temporal-score identity, direction_separation proves D
+changes by -4 between A=1 and A=minusOne. score_separation is consequently -4 beta,
+with the true conditional mean canceled exactly, not assumed to be zero.
+
+For EVERY real beta!=0, badEnergy_positive proves strictly positive score energy
+under the ACTUAL normalized two-slab Wilson bridge at U0,W0. Continuity of the
+original score in the augmented configuration, openness of B, positive product
+Haar mass and positive full Wilson density convert the separated points into
+positive measure. This is an actual Haar theorem, not a finite-grid extrapolation.
+The bounded measurable FROZEN augmented observable f_beta=1_B sigma_beta(U0,W0,.)
+has a genuine endpoint-curve derivative equal to that positive badEnergy, by
+frozenObservable_derivative. The observable depends on beta but is fixed while
+h varies. It is NOT asserted to be a gauge-invariant middle-only observable.
+Thus this does not settle the open physical full-block fibre-response problem.
+
+badEnergy_continuous proves joint endpoint continuity. The event B is fixed and
+its boundary need not have zero measure: the continuous numerator is integrated
+against the fixed RESTRICTED reference measure. The normalizer and centered mean
+are retained. haar_ac_endpoint proves the needed REVERSE absolute continuity:
+product endpoint Haar << actual stationary TWO-step endpoint law. It uses actual
+positive stationary density and positive transition densities, preserved under
+composition. No beta-uniform density comparison, continuity/differentiation of
+ground data, or independent endpoint substitution is made.
+
+Positivity on an open endpoint neighborhood then gives native_joint_positive:
+for every verified GroundData g and every real beta!=0, the original native
+joint badScoreField has STRICTLY POSITIVE squared norm. Its exact1855 norm equals
+the true averaged combined link/rest energy, with all prior identities preserved.
+Together with1856's Ward theorem, native_unit_null constructs, for beta>=0 and
+beta!=0 and every K, an ACTUAL unit joint-L2 vector annihilated by BOTH Q_high and
+A_high Q_high. no_positive_lower_frame rules out EVERY c>0 satisfying
+  c ||Z||^2 <= ||A_high Q_high Z||^2 for all Z in the ORIGINAL actual joint L2.
+actual_strict_norm_loss supplies the concrete unnormalized score witness.
+
+This is a decisive obstruction to using THIS physical/Gaussian map as an isometry,
+unitary transport or original-norm reconstruction of actual boundary-score sources.
+It is not an impossibility theorem for all calculi, a theorem that the stationary
+transfer lacks a gap, or a claim against a properly restricted/covariant domain.
+The actual source norm is positive, while its physical scalar projection is zero.
+Changing to an output-span quotient cannot manufacture the missing native bound.
+No volume/scale-uniform multiblock coercivity or continuum result is established.
+
+Twelve independent Lean checks test rough-event support and action, actual score
+separation, positive frozen-observable derivative, the necessary zero-coupling
+exception, continuity without a null-boundary hypothesis, reverse AC direction,
+negative-coupling native positivity, constructed-ground unit null vectors, failed
+isometry and lower-frame hypotheses, and preservation of the old energy identity.
+Independent seed9701857 finite full-Wilson/Perron quadrature uses7 spatial states
+and9 temporal fields, including the explicit flux-link witness section contained
+in B. It checks exact direction separation -4, positive finite conditional/native
+energy, frozen-observable finite-difference responses (error<=2.03e-14), and zero
+physical first moments in the symmetry-closed grid. These computations are only
+corroboration; actual Haar/native positivity is proved separately in Lean.
+
+Next: retain physical boundary fibres/covariant directions. A concrete direct
+reuse test is the TRUE selected-link conditional at this witness: compare its
+coherent endpoint curve with the existing responseLaw beta h and physicalMean
+of PeriodicCancellingBoundaryResponse. The two temporal staples appear swapped,
+so equality of the NORMALIZED actual kernels may transfer its physical unit-probe
+slope beta. This is a PLAN, not a new1857 theorem. Endpoints differ away from the
+selected link; prove row-scalar cancellation with the true row normalizer first.
+A fixed-rest result must not be promoted to the full-block or stationary operator
+norm. Do not return to the annihilated middle-only scalar-image mechanism.
+Focused Yang--Mills and the indefinite goal remain active; no queue/role change,
+reflection session or publication work. All original manuscripts, older proofs,
+configuration/compiler/resource/trust settings and histories remain preserved.
+
+Checkpoint1857 local closure: complete7279-job build passed in29.4525617s; full63362-declaration transitive axiom audit plus ALL19 final public types passed in50.5830530s; twelve independent Lean checks passed in30.5743190s; complete persisted AxiomAudit passed in59.1372421s. All346 lines,15 public proofs/4 definitions/10 private proofs/1 private local abbreviation/1 private topology instance and19 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in2.0806770s. Authenticated3057-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
