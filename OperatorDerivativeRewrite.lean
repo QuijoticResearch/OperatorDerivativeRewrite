@@ -3161,3 +3161,5 @@ import Foundation.StochasticCauchyFractionalDivergence
 import Foundation.StochasticCauchyFractionalConditioning
 
 import Foundation.StochasticCauchyCausalRotation
+
+import Foundation.StochasticCauchyAnalyticPowers
