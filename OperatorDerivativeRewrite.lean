@@ -3191,3 +3191,5 @@ import Foundation.StochasticCauchyPolynomialInput
 import Foundation.StochasticCauchyPolynomialReconstruction
 
 import Foundation.StochasticCauchyPolynomialSums
+
+import Foundation.StochasticCauchyContinuousPolynomials
