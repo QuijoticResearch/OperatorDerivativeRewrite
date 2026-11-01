@@ -3175,3 +3175,5 @@ import Foundation.StochasticCauchyAsymptoticGrowth
 import Foundation.StochasticCauchyExponential
 
 import Foundation.StochasticCauchyExponentialPrediction
+
+import Foundation.StochasticCauchyExponentialInput
