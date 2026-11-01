@@ -3115,3 +3115,5 @@ import Foundation.WilsonSignedPairingObstruction
 import Foundation.PeriodicSpatialRowDependence
 
 import Foundation.PeriodicSpatialInfluenceObstruction
+
+import Foundation.PeriodicNativeCompression
