@@ -3106,3 +3106,6 @@ import Foundation.PeriodicTemporalCycleMoment
 import Foundation.PeriodicTemporalParity
 
 import Foundation.PeriodicTemporalLaplaceContrast
+
+import Foundation.PeriodicConditionalCurvatureIdentification
+import Foundation.PeriodicNativeSecondChannel
