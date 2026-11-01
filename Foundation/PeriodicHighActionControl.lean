@@ -179,7 +179,7 @@ private theorem native_high_action_raw {β : ℝ} (hb : 0 ≤ β) (g : GroundDat
   convert hs using 1; field_simp [g.value_pos.ne',g.normalizer_pos.ne']
 
 
-private theorem relative_normalization {β : ℝ} (hb : 16777216 ≤ β) (g : GroundData β) :
+theorem relative_normalization {β : ℝ} (hb : 16777216 ≤ β) (g : GroundData β) :
     laplace β^192/g.value ≤ PeriodicGroundHaarScale.upperConstant/PeriodicGaugeSaturatedGround.eigenLowerConstant := by
   have hp : 0 < β := by linarith
   let t : ℝ := 1/Real.sqrt β

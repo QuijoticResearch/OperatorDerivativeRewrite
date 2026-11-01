@@ -1,5 +1,13 @@
 # Yang–Mills multiblock: cross-domain theorem audit
 
+Current1859: exact full192-link kinetic winding transfer has been connected to
+the actual stationary Wilson operator with all spatial/ground factors retained.
+Its corrected physical input has native Rayleigh quotient <=(R0/D)exp(-beta),
+D>0, and tends to ZERO although the bare kinetic factor tends to ONE. This is a
+verified original-norm obstruction to this proposed slow-mode transfer, not a
+mass-gap result. Actual off-diagonal TWO-sided physical Fisher positivity remains
+open; see1859 below. Earlier records and obstructions are preserved.
+
 Current1858: actual endpoint-retaining physical conditional score and original-law
 Fisher residual are verified. The chosen diagonal endpoint bridge is EXACTLY EVEN,
 so ALL bounded middle responses vanish there. A finite non-Haar grid produces a
@@ -1917,3 +1925,110 @@ energy, the annihilated stationary scalar image, or non-Haar finite-grid signals
 Any useful multiblock consequence still requires the true nonlinear spatial
 coupling law and coupling/scale/volume-uniform estimates, not further output
 completion. No full Yang--Mills mass-gap, continuum, or external novelty claim.
+
+
+## Checkpoint1859 — exact physical winding transfer and a native-norm obstruction
+
+Previous goal turn: PROGRESS. Checkpoint1858 closed at
+ ddaf69ddabff19ad92290672b55b0ac3c62f6aa6 with complete verification and BOTH
+PUBLIC backup refs. The focused Yang--Mills campaign and indefinite goal remain
+active. This checkpoint tests a specific route past the scalar Ward cancellation;
+it does not open another campaign or claim to complete the multiblock problem.
+
+Foundation/PeriodicWindingEndpointResponse.lean retains the actual side-four
+periodic4D Wilson slab and the original native stationary law. endpoint_flip
+proves that1857's explicit U0,W0 are related by constant transverse SU(2) gauge
+conjugation. Their prescribed endpoint tangents transform with OPPOSITE signs.
+bridge_square and bridge_law prove the actual normalized off-diagonal bridge
+along the coherent curve is the normalized square of K_beta(X_h,V), where
+X_h=right(-h)U0. In the equivalent diagonal description BOTH endpoints move in
+the SAME direction. This does not invoke1858's opposite-direction diagonal
+cancellation. winding_curve proves the genuine gauge-invariant length-four
+winding trace W(X_h)=sin(4h); its endpoint tangent is nonzero.
+
+The missing product-domain connection was proved, not assumed. noise_density
+identifies the actual192-link independent Wilson-increment law with its full
+product Haar density. kinetic_noise identifies the original kinetic integral
+with multiplication by that law. The four winding edges are explicitly distinct;
+their marginal law and bounded Fubini are proved before applying the existing
+SU2WilsonConvolution.loop4_average. noise_winding and kinetic_winding consequently
+prove the actual kinetic factor alpha(beta)^4 for W, where alpha is the original
+single-link halfTrace mean. This is genuine direct theorem reuse on verified
+domains, not replacement of physical links by independent occurrences.
+
+Write m_beta(U)=exp(-beta*S(U)/2), L_beta=laplace(beta)^192, and let g,lambda_g,Z_g
+be ANY actual positive ground, its eigenvalue and stationary normalizer.
+The spatially corrected observable is
+  weightedWinding_beta(V)=exp(beta*S(V)/2)*W(V),
+and the ORIGINAL native input is
+  F_beta,g(V)=weightedWinding_beta(V)/g(V).
+It is measurable, gauge invariant, centered under the actual stationary measure,
+and in that stationary L2, with explicit bound exp(192|beta|)/g.lower. The norm
+and its coupling dependence are not changed to an output-completion norm.
+
+kernel_winding, native_transition_winding and native_operator_winding give exact
+full-kernel, actual transition and existing-Hilbert-operator identities:
+  P_beta,g F_beta,g(U) =
+    L_beta*m_beta(U)*alpha(beta)^4*W(U)/(lambda_g*g(U)).
+The Hilbert statement respects ORIGINAL native AE classes. Spatial factors,
+eigenvalue, actual ground and normalizer are retained. This is NOT a native
+winding eigenfunction theorem. eventual_native_response proves a positive ACTUAL
+transition response at X_(pi/8) for sufficiently large coupling and every ground.
+This is not positivity of the different TWO-sided physical bridge score phi.
+
+The native norm audit is DECISIVE for this particular proposed spectral route.
+native_input_energy and native_correlation prove
+  ||F_beta,g||^2 = [integral exp(beta*S)*W^2 dHaar]/Z_g,
+  <P_beta,g F_beta,g,F_beta,g> =
+    [L_beta*alpha(beta)^4/(lambda_g*Z_g)]*integral W^2 dHaar.
+nativeRayleigh_hilbert identifies the quotient with the ACTUAL stationary Hilbert
+operator, not just a formal integral ratio. roughWindingMass_positive constructs
+D=integral 1_B W^2 dHaar>0 in the existing actual cancelling event B, using its
+open Haar support and W(flux)=1. weightedMass_lower proves the native denominator
+is at least exp(beta)*D before dividing by Z_g. For beta>=16777216,
+  0 <= nativeRayleigh_g <= (R0/D)*exp(-beta),
+  R0=PeriodicGroundHaarScale.upperConstant/
+      PeriodicGaugeSaturatedGround.eigenLowerConstant.
+nativeRayleigh_tendsto proves convergence to ZERO for EVERY choice of actual
+ground family; no continuity or derivative of that choice is assumed. Meanwhile
+the existing alpha(beta)^4 tends to ONE. Thus the naive identification of the
+kinetic factor with this corrected input's native Rayleigh quotient fails by an
+asymptotic difference of1. The counterweight needed for exact transfer has a real
+exponential ORIGINAL-norm cost. Gaussian/Hilbert transport or output completion
+cannot silently erase it. This excludes this candidate family as an approximate
+unit-eigenvalue/slow-mode argument; it excludes neither other physical slow modes
+nor a Yang--Mills mass gap, and supplies no continuum or volume-uniform theorem.
+
+To reuse rather than duplicate the existing normalization proof,
+PeriodicHighActionControl.relative_normalization was changed from PRIVATE to
+PUBLIC. Its statement and complete proof bytes are unchanged; the sole source
+difference is deletion of the word private. This API exposure required rebuilding
+its actual downstream modules. It is not a build optimization or a new spectral
+hypothesis. All compiler/resource/trust settings and pinned versions are retained.
+
+Independent Lean checks cover the actual full bridge, winding derivative sign,
+negative-coupling positive product law, zero-coupling kinetic exception, original
+native L2/gauge/centering/norm positivity, true transition/Hilbert formulas,
+all-ground uniform bound, and separation between the kinetic and native limits.
+The separate seed9701859 finite-Q8 Wilson RING computation checks the four-link
+word integral, actual Perron/native corrected response and Rayleigh formula at
+beta=.2,1,2,4,8, plus direct quaternion winding curves. At beta8, its kinetic
+factor is about.991988 while its native quotient is about2.25069e-7. It is ONLY
+finite-group/ring bookkeeping corroboration, not the4D Haar model, a continuum
+approximation or evidence replacing Lean. Continuous-Haar decay is proved above.
+
+Remaining central obligation: prove or disprove NONZERO physical conditional
+Fisher energy at a justified off-diagonal endpoint fibre. The present actual
+native transition response does not settle that two-sided question. A concrete
+next test is the bounded gauge-invariant FROZEN middle observable
+  f_beta(V)=weightedWinding_beta(V)/K_beta(U0,V).
+At h=0, the exact kernel-square identity and kernel_winding make its bridge mean
+zero. To obtain a positive derivative, prove the required differentiated
+kernel-square identity under the ORIGINAL Haar integrals, with the true moving
+normalizer, and the reduced single-kernel winding moment. That differentiation
+and resulting phi positivity are NOT1859 results. Preserve1858's exact diagonal
+cancellation and reject non-Haar finite-grid positive artifacts. No empty frame,
+new completion, bare-kinetic native eigenvalue, or full multiblock coercivity is
+licensed. Nonlinear spatial gluing and coupling/scale/volume-uniform control are
+still unresolved. All original manuscripts and unrelated proofs are preserved;
+no publication work, reflection admission, queue change or new research goal.

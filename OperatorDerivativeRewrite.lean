@@ -3088,3 +3088,5 @@ import Foundation.PeriodicEndpointWard
 import Foundation.PeriodicEndpointFibreWitness
 
 import Foundation.PeriodicPhysicalBridgeScore
+
+import Foundation.PeriodicWindingEndpointResponse
