@@ -3133,3 +3133,5 @@ import Foundation.PeriodicFlatCheckerboardObstruction
 import Foundation.StochasticCauchyGaussianNormalization
 
 import Foundation.StochasticCauchyBoundaryConstraint
+
+import Foundation.StochasticCauchyBrownianRealization
