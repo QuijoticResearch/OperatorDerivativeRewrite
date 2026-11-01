@@ -3102,3 +3102,5 @@ import Foundation.PeriodicEndpointSecondResponse
 import Foundation.PeriodicIdentitySecondWitness
 
 import Foundation.PeriodicTemporalCycleMoment
+
+import Foundation.PeriodicTemporalParity

@@ -1,5 +1,12 @@
 # Yang–Mills multiblock: cross-domain theorem audit
 
+Current1866: the FULL fourth temporal-Haar moment contrast on the original1862
+quarter-turn orbit is proved:12*cos(4h), second derivative-192. Actual vertex-center
+selection/classification eliminates all other quartic edge tuples; all complete
+moments below order4 are seam-invariant for arbitrary external states. The
+normalized log-kernel/physical-second bridge and candidate scaled contrast-16
+remain OPEN. No native lower frame or scale/mass-gap result. See1866 below.
+
 Current1865: exact original-Haar winding-cycle moment and center-seam sign are
 verified on the actual64-vertex192-link graph; isolated16-row difference is
 cos(4h)/2, curvature-8. Full quartic parity assembly/Taylor normalization and
@@ -2813,3 +2820,102 @@ gates, exact approval and two PUBLIC backup checks are required before closure.
 No publication, original-manuscript, queue, goal or reflection changes.
 
 Checkpoint1865 local closure: complete7287-job build passed in48.2663567s; complete63685-declaration standard-only transitive axiom audit plus ALL24 unabridged public types (22 new leaf, unchanged exposed prepend/head_integral) passed in50.2730707s; twelve independent original-domain Lean checks passed in29.1743165s; complete persisted AxiomAudit passed in60.0066113s. All281 final leaf lines,12 public proofs/9 definitions/1 abbreviation/8 private proofs and every public type reviewed. Independent harness first failed due to unqualified gaugeHaar becoming an implicit measure and redundant closing tactics; repaired with explicit ORIGINAL PeriodicWilsonSlab.gaugeHaar and no mathematical-source changes. Two necessary helper exposures preserve every old statement/proof/line-ending byte; no other older mathematical source changed. Full3064-source Foundation signatures/imports/headers/hash index refreshed,3063 root reachable and AxiomAudit separate; authenticated3065-source/config/archive integrity passed (3 configs,113 archive originals,21 YM originals,two numeric tools). All four numerical/exact finite diagnostics recorded as EXPLORATORY or external arithmetic, not Lean premises. Actual full quartic/Taylor/physical-score identification remains OPEN. No resource/compiler/trust, publication, original manuscript, queue, goal or reflection change. Exact approval and guarded BOTH PUBLIC-ref checks follow separately.
+
+## Checkpoint1866 — complete quartic temporal-Haar winding contrast
+
+November1,2026, following fully closed1865 `50eafcb45d89de9ff4490ed9d838226488a7c465`.
+Focused Yang–Mills remains active on the ORIGINAL1862 exchange-null direction.
+This checkpoint resolves1865's formal parity/classification and FULL fourth
+reference-Haar moment assembly. The normalized physical-score bridge remains open.
+
+**Actual center-character projection.** `PeriodicTemporalParity.transform_preserving`
+proves left multiplication by arbitrary vertex-dependent central signs preserves
+the ORIGINAL64-vertex gauge Haar law. `trace_transform`, `product_transform` and
+`moment_selection` retain the actual temporal Wilson words with arbitrary
+external states U,V. If the summed endpoint incidence on ANY chosen vertex set
+is odd modulo2, `odd_moment_zero` gives exact zero Haar moment. No independence
+of LINK traces, Gaussian replacement, Gibbs-factor omission inside a claimed
+Gibbs expectation, or signed-to-probability identification is assumed.
+
+**Topology forces minimal order four.** Prefix cuts of coordinate1 have boundary
+parity equal to a chosen layer crossing parity plus the seam crossing parity.
+`cut_parity`, `nonzero_odd_seam_layers` and `nonzero_odd_seam_min_order` prove a
+nonzero seam-odd n-link moment needs at least one crossing in each of the four
+layers and n>=4. `trace_twist`/`moment_twist` give the pointwise/integrated center
+seam sign. Consequently `power_moment_twist_low_order` proves equality of the
+COMPLETE temporal trace-sum moments of degrees0,1,2,3 for ANY external U,V and
+its direction1 seam twist. The sum is over all192 original spatial links.
+This is a reference-Haar coefficient statement, not equality of Gibbs laws.
+
+**Every surviving quartic term is identified.** At n=4, `quartic_layer_count`
+and `quartic_parallel` force one direction1 edge per layer and no transverse
+edge. Single-vertex parity then forces the transverse row coordinates to agree
+(`ordered_row_nonzero`). A proved layer permutation removes the ordering
+assumption. `quartic_winding_support` gives an exact winding row and permutation
+for EVERY nonzero seam-odd quartic moment, for arbitrary U,V. Repeated-edge,
+plaquette and mixed-row contributions cannot survive this contrast.
+`encode_injective` and the finite-support summation theorem establish
+`full_quartic_reduction` for all external U,V. The384=16*24 parametrization is
+proved in Lean; the earlier external bitmask enumeration is not a premise.
+
+**Full coefficient on the original boundary.** Let
+
+    C(U,V,a) = sum over all192 edges of halfTrace(temporalWord(U,V,a,e)),
+    M_n(U,V) = integral C(U,V,a)^n d(actual vertex Haar)(a),
+    U_h = left(h, PeriodicEndpointFibreWitness.leftEndpoint),
+    T = PeriodicCenterSeam.flip(1,identity).
+
+Reusing1865's actual coupled cycle contractions yields the FULL identity
+
+    M_4(U_h,identity) - M_4(U_h,T) = 12*cos(4*h).
+
+This is `full_quartic_orbit`; `full_quartic_second` proves its genuine second
+h-derivative is-192 at0. The former isolated16-row value cos(4h)/2 now includes
+all24 orderings and all discarded terms have actually been eliminated. The
+original quarter-turn exceptional direction0 edge is preserved; it is not
+replaced by the identity endpoint or1864's different compensated curve.
+
+**What is NOT resolved.** No beta-derivative of the full kernel, logarithmic
+partition response or native physical second-score positivity is inferred merely
+from this moment calculation. Need a differentiated bounded exponential/log
+Taylor remainder, retain/cancel the actual spatial factors and normalizer by
+proof, identify the result with the EXISTING auxiliary-integral physicalSecond,
+and justify native continuity/full support before positive L2 energy. The
+candidate small-beta scaled physical contrast-16 remains UNPROVED. No large-beta,
+endpoint-averaged, local, scale/volume/continuum coercivity or mass-gap result.
+1864's separate verified physical second-channel positivity is retained.
+
+**Theorem reuse audit for the next bridge.** `IBMFourthTaylor.remainder_bound`
+is a genuine generic order-four Taylor estimate but requires ContDiff5 and a
+GLOBAL fifth-derivative bound on the real line. A real exponential does not
+satisfy that global bound, so it cannot be instantiated directly here. The
+pointwise `Complex.norm_exp_sub_sum_le_norm_mul_exp`, already used by the
+pseudoprocess-side `CyclicExponentialTaylor.remainder_bound`, supplies a valid
+entire-exponential estimate. The cyclic innovation law itself is not a Wilson
+law and its moment theorem does NOT transfer. Any use here must prove the
+original-Haar measurable/integrable bounds (|C|<=192), matching lower moments,
+and the differentiated remainder/normalization requirements. This is a precise
+possible analytic-estimate reuse, not an established physical-score theorem.
+
+**Independent checks and scope.** Fourteen Lean checks test the original Haar
+map, arbitrary-state parity cancellation, complete second/third moment equality,
+degree-three vanishing, unordered actual quartic support, mixed-row vanishing,
+384 parametrizations, full contrast/sign reversal at pi/4, actual original
+quarter-turn orbit, second derivative-192 and the nonzero degree-zero exception.
+Independent integer edge-pair and block-trace diagnostics again give384 winding
+tuples and the candidate moment values12/-192, consistent with the now independent
+Lean proof. The unproved matched-Gaussian correction route is still not adopted;
+the signed physical contrast-16 remains only a target. No Monte Carlo inference
+or external arithmetic certificate enters Lean.
+
+The new leaf has535 lines,57 public types (38 proofs,18 definitions,1 abbreviation)
+and13 private proofs, with no new instances. Every development resource failure
+was repaired structurally: finite explicit binary cases and separated group
+identities, explicit finite-index goals, and a GENERIC finite-support summation
+lemma instead of unfolding the huge edge-tuple enumeration. No heartbeat,
+recursion, trust, compiler or toolchain setting was raised or changed. Every
+older mathematical-source byte is preserved. All full verification, source
+integrity, exact commit and BOTH PUBLIC backup gates remain required. No source
+manuscript, publication, campaign queue, goal or reflection changes.
+
+Checkpoint1866 local closure: complete7288-job build passed in47.6089046s; complete63773-declaration standard-only transitive axiom audit plus ALL57 unabridged public types passed in46.0308199s; fourteen independent original-domain Lean checks passed in29.7785628s; complete persisted AxiomAudit passed in58.6702126s. All535 final source lines,38 public proofs/18 definitions/one abbreviation/13 private proofs and all57 types reviewed. Authenticated3066-source snapshot and ALL old mathematical-source bytes preserved;3 configs,113 archive originals,21 YM originals and two original numerical tools unchanged. All3065 Foundation signatures/imports/headers/hashes refreshed;3064 root reachable and AxiomAudit separate. Independent parity/integer diagnostics agree with384 winding tuples and full moment12/curvature-192 but do not enter Lean. Resource/recursion failures were repaired structurally at unchanged defaults; all new proof inputs passed the final gates. Full fourth temporal-Haar assembly is now PROVED; normalized physical-score/Taylor/native positive-energy bridge and candidate-16 remain OPEN. No source manuscript, publication, queue, goal or reflection changes. Exact approval and BOTH PUBLIC-ref checks follow separately.
