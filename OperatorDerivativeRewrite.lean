@@ -3141,3 +3141,5 @@ import Foundation.StochasticCauchyParameterizedObstruction
 import Foundation.StochasticCauchyJointPastIntegral
 
 import Foundation.StochasticCauchyPhysicalInput
+
+import Foundation.StochasticCauchyComplexChannels
