@@ -3165,3 +3165,5 @@ import Foundation.StochasticCauchyCausalRotation
 import Foundation.StochasticCauchyAnalyticPowers
 
 import Foundation.StochasticCauchyPolynomials
+
+import Foundation.StochasticCauchyMeanResidual
