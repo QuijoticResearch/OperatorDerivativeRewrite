@@ -8158,3 +8158,77 @@ No external novelty claim. All old Lean/source archives/configuration/compiler,
 resource/trust settings, manuscripts, drafts, queue and publication histories preserved.
 
 Checkpoint1855 local closure: complete7277-job build passed in30.6181853s; full63275-declaration transitive axiom audit plus ALL35 final public types passed in51.2058020s; eleven independent Lean checks passed in32.5479070s; complete persisted AxiomAudit passed in60.1936569s. All360 lines,20 public proofs/12 definitions or abbreviations/3 public probability instances/4 private proofs and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.2014307s. Authenticated3055-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
+
+## Checkpoint1856 — exact Ward obstruction: the proposed scalar high channel is ZERO
+
+Previous goal turn: PROGRESS.1855 closed at31bd59a76c209d01a2d3010b5c8ba4e0794f260f
+with complete gates and both exact PUBLIC backup refs. Its nontriviality question
+is now resolved rigorously, not deferred in favor of more high-sector estimates.
+
+Foundation/PeriodicEndpointWard.lean proves actual global SU2 conjugation preserves
+the original two-slab weights, conditional normalizer, augmented Haar reference,
+stationary TWO-step endpoint measure and full stationary augmented joint law.
+Existing PeriodicSlabGauge, PeriodicGaugeSaturatedGround and actual1855 bridge
+machinery provide the measure/domain inputs. SU2QuadraticWilsonChannel supplies
+an actual unit-quaternion transverse half-turn. flip_axis reverses the WHOLE
+axis-zero curve. direction_odd and score_odd prove exact reversal of1853's actual
+endpoint score, INCLUDING its actual normalized conditional mean. The existing
+B event is gauge invariant, so badScore_odd reverses that actual cut score too.
+No independent endpoint law, Gaussian product identity, asymptotic proxy or
+unverified existence assumption is used.
+
+physical_score_pairing and physical_bad_pairing establish BOTH integrability and
+ZERO actual joint pairing with EVERY original stationary-L2 test f admitting the
+stated pointwise gauge invariance. Boundedness is not assumed. Actual L2 pullback
+and Holder integrability are proved before parity cancellation. The actual joint
+measure-preserving equivalence permits the change of variables, not just a formal
+invariance slogan. A continuous native pairing then extends cancellation from
+PeriodicHighActionL2.represented to its ORIGINAL closed completion. It does not
+identify completed with represented or choose a common null set over all gauges.
+
+The decisive exact declarations are
+  bad_realization_zero: Q_high sigma_B=0 for EVERY real beta and threshold K;
+  bad_gaussian_zero: A_high Q_high sigma_B=0 whenever beta>=0, for EVERY K.
+Thus1855's Gaussian-image estimate is valid but this PARTICULAR physical channel
+has IDENTICALLY ZERO SIGNAL. It is not a mechanism for a mass gap or multiblock
+coercivity. No further effort should strengthen that channel's decaying image bound.
+The full-score pairing theorem is also zero on the stated native physical domain;
+a separate completed full-score-field operator identity is not asserted here.
+
+This does NOT assert sigma_B=0 as a joint field, a zero native score norm, vanishing
+fixed-endpoint conditional response, zero response-operator norm, or impossibility
+of all cross-domain transfers. Score energy is EVEN under the same transformation.
+All1853--1855 exact native energy, conditional link/rest identities and bounds
+remain valid. The problem is that scalar endpoint averaging followed by projection
+onto middle-only physical observables loses the gauge-odd boundary direction.
+An actual fixed-boundary response family and its norm cannot be replaced by that
+averaged first moment. No continuum, volume/scale-uniform or physical gap claim.
+
+Eleven independent Lean checks instantiate a physical closed plaquette, unbounded
+native-domain integrability, actual original-measure transport, closure projection,
+residual preservation and the old exact energy identity. They also prove the
+conditional plaquette response changes sign BETWEEN conjugated endpoint pairs,
+and the score square is even; they do not infer zero at fixed endpoints.
+A separate seed9701856 finite Wilson/Perron diagnostic uses7 spatial configurations
+closed under the transverse conjugation and9 temporal configurations closed under
+both conjugation and inversion. At three couplings, physical stationary pairings
+are <=1.60e-17 in absolute value, while finite joint energies are positive and
+fixed-endpoint responses reach0.031876. Direction-odd error <=2.36e-14. This is
+FINITE numerical corroboration only, NOT a proof of actual-Haar nonzero energy or
+fixed-endpoint response. Its extra cutoff is S>1, not the actual B event. The exact
+actual-Haar cancellation is supplied by Lean. No external novelty claim is made.
+
+Next substantive route: retain endpoint-dependent response FIBRES or correctly
+gauge-covariant boundary directions, and control original physical/fibre norms.
+A squared fibre response is even and is not killed by this first-order Ward test;
+nontriviality and correct original-domain estimates must still be proved. Any
+second-order/Casimir route must explicitly retain all channels and normalization.
+Do not replace conditional operator norms by an average that cancels signs, infer
+coercivity from a small Gaussian image, or repeat the annihilated scalar mechanism.
+Revisit the actual full standard four-dimensional multiblock geometry only through
+a concrete boundary-response question; low/good-sector nonlinear gluing and
+scale/volume/continuum obligations remain OPEN. No queue or campaign change.
+Originals, all prior Lean results, source integrity, configurations, compiler,
+resource/trust settings and publication histories are preserved; no reflection.
+
+Checkpoint1856 local closure: complete7278-job build passed in28.9441953s; full63338-declaration transitive axiom audit plus ALL35 final public types passed in50.4518201s; eleven independent Lean checks passed in40.2794456s; complete persisted AxiomAudit passed in60.4022118s. All328 lines,27 public proofs/8 definitions/3 private proofs and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.3804843s. Authenticated3056-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.

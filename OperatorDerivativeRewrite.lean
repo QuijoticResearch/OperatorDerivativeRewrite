@@ -3082,3 +3082,5 @@ import Foundation.PeriodicEndpointScore
 import Foundation.PeriodicConditionalEndpointScore
 
 import Foundation.PeriodicStationaryEndpointResponse
+
+import Foundation.PeriodicEndpointWard
