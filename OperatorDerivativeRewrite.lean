@@ -3167,3 +3167,5 @@ import Foundation.StochasticCauchyAnalyticPowers
 import Foundation.StochasticCauchyPolynomials
 
 import Foundation.StochasticCauchyMeanResidual
+
+import Foundation.StochasticCauchyEntireGrowth
