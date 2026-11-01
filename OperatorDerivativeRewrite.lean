@@ -3121,3 +3121,5 @@ import Foundation.PeriodicNativeCompression
 import Foundation.PeriodicGaugeCompression
 
 import Foundation.PeriodicBridgeInnovation
+
+import Foundation.PeriodicPlaquetteSpanFrame
