@@ -3131,3 +3131,5 @@ import Foundation.PeriodicCubeConditionalGram
 import Foundation.PeriodicFlatCheckerboardObstruction
 
 import Foundation.StochasticCauchyGaussianNormalization
+
+import Foundation.StochasticCauchyBoundaryConstraint
