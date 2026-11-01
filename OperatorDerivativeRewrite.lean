@@ -3163,3 +3163,5 @@ import Foundation.StochasticCauchyFractionalConditioning
 import Foundation.StochasticCauchyCausalRotation
 
 import Foundation.StochasticCauchyAnalyticPowers
+
+import Foundation.StochasticCauchyPolynomials
