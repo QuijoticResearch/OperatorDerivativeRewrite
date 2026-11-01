@@ -3117,3 +3117,5 @@ import Foundation.PeriodicSpatialRowDependence
 import Foundation.PeriodicSpatialInfluenceObstruction
 
 import Foundation.PeriodicNativeCompression
+
+import Foundation.PeriodicGaugeCompression
