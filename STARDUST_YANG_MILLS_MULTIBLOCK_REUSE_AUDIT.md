@@ -1,5 +1,15 @@
 # Yang–Mills multiblock: cross-domain theorem audit
 
+Current1860: the actual TWO-sided physical Fisher nontriviality obligation is
+resolved at the explicit gauge-related endpoint representatives and fixed curve.
+A bounded gauge-invariant middle-only FROZEN probe has exact derivative
+8 L_beta m_beta(U0) alpha_beta^4/Z_beta(U0,W0), positive when beta>=0 and
+alpha_beta!=0, hence on a proved large-beta tail. Both Haar differentiations and
+the true moving normalizer are verified. The probe is nonlocal/beta-dependent;
+no local or endpoint-covariant frame or scale-uniform estimate follows. Stationary
+Ward-zero, opposite-direction diagonal cancellation, and native Rayleigh decay
+remain valid. See1860 below; historical open-obligation records are preserved.
+
 Current1859: exact full192-link kinetic winding transfer has been connected to
 the actual stationary Wilson operator with all spatial/ground factors retained.
 Its corrected physical input has native Rayleigh quotient <=(R0/D)exp(-beta),
@@ -2032,3 +2042,119 @@ new completion, bare-kinetic native eigenvalue, or full multiblock coercivity is
 licensed. Nonlinear spatial gluing and coupling/scale/volume-uniform control are
 still unresolved. All original manuscripts and unrelated proofs are preserved;
 no publication work, reflection admission, queue change or new research goal.
+
+
+## Checkpoint1860 — a genuine physical conditional Fisher witness
+
+Previous goal turn: PROGRESS. Checkpoint1859 closed at
+54be28082fefb231ee456930d9c140bf2532666b with all verification and BOTH PUBLIC
+remote refs. Focused Yang--Mills and the indefinite goal remain active. The
+fixed-fibre physical nontriviality obligation left open in1857--1859 is now
+resolved for the explicit endpoint representatives and prescribed curve below.
+This is not completion of the nonlinear multiblock or mass-gap problem.
+
+Foundation/PeriodicPhysicalFisherWitness.lean reuses the actual full periodic
+side-four4D Wilson kernel,1859's exact kernel-square reduction and physical
+winding moment,1858's actual normalized conditional score, SU2 axis matrix jets,
+and Mathlib dominated-local differentiation under Haar integrals. All middle
+spatial links and continuous temporal Haar variables remain in their original
+laws. No signed pseudoprocess or independent-noise probability is substituted.
+
+Let U0,W0 be1857's explicit identity fields with the selected link replaced by
+axis0(-pi/2), axis0(pi/2). They are DISTINCT but GAUGE-RELATED representatives;
+no off-diagonal claim on the endpoint gauge quotient is intended. Along the
+specified (left h U0,right h W0) curve,1859 identifies the full bridge with the
+normalized square of one moving kernel. After gauge reduction BOTH endpoints
+move together; the winding trace changes as sin(4h), so this is a genuine
+physical direction. It differs from1858's opposite-direction diagonal curve,
+whose first response remains exactly zero. The fixed-axis tangent prescription
+is not asserted to define a gauge-covariant frame over all endpoint classes.
+
+Write m_beta(U)=exp(-beta*S(U)/2), L_beta=laplace(beta)^192,
+alpha_beta=SU2WilsonConvolution.coefficient beta, and Z_beta(U0,W0) for the TRUE
+middle bridge normalizer. Define the FROZEN physical middle observable
+  f_beta(V)=exp(beta*S(V)/2)*W(V)/K_beta(U0,V),
+where W is the genuine gauge-invariant length-four winding trace. frozen_measurable,
+frozen_gauge and frozen_bound prove its actual admissibility, with
+|f_beta|<=exp(960|beta|). The denominator is at the BASE endpoint and never moves
+with h. The probe is middle-only and gauge invariant, but NONLOCAL: its reciprocal
+full kernel and spatial counterweight are retained. No coupling/volume-uniform
+probe norm, local-support, or continuum domain is inferred from boundedness.
+
+The reduced kernel H_h(V)=K_beta(left h U0,V)/m_beta(left h U0) is constructed by
+integrating exp[-beta*(S(V)/2+temporalAction(left h U0,V,a))] over actual temporal
+Haar. Only the ENDPOINT spatial scalar is removed; the middle action remains.
+reduced_derivative proves actual pointwise h differentiation after this first
+Haar integral, with global fixed-beta envelopes exp(768|beta|) and
+exp(768|beta|)*384|beta|. Measurability, integrability and domination are explicit.
+Private linear_derivative and square_derivative repeat the justified dominated
+argument over the ORIGINAL middle Haar measure for bounded FIXED observables.
+These are scalar HasDerivAt results, not an unproved operator-norm derivative or
+an extension to arbitrary unbounded tests. No compiler/resource/trust changes.
+
+linear_moment and its justified differentiation give
+  integral H_h(V)*exp(beta*S(V)/2)*W(V) dHaar = L_beta*alpha_beta^4*sin(4h),
+  integral H'_0(V)*exp(beta*S(V)/2)*W(V) dHaar =4 L_beta alpha_beta^4.
+normalizer_reduced proves the actual moving normalizer is m_beta(left h U0)^2
+ times integral H_h^2; squareMass_positive proves positivity from the ORIGINAL
+bridge normalizer. expectation_reduced retains BOTH moving integrals. The frozen
+base mean is zero, established before using it to cancel the derivative of the
+denominator. frozen_derivative proves the actual signed response identity
+  d/dh E_bridge(left h U0,right h W0)[f_beta] at0
+    =8 L_beta*m_beta(U0)*alpha_beta^4 / Z_beta(U0,W0).
+The factor8 includes both kernel derivatives and the winding tangent4. Replacing
+the fixed test denominator by a moving one would change this calculation.
+
+score_pairing identifies that derivative with
+  E_bridge(U0,W0)[f_beta(V)*phi_beta(U0,W0,V)],
+using1858's original bounded-core physical_derivative and derivative uniqueness.
+For beta>=0 and alpha_beta!=0, frozen_slope_positive proves strict positive
+response; physical_energy_positive proves
+  E_bridge(U0,W0)[phi_beta(U0,W0,V)^2] >0.
+The proof uses original native L2/integrability and the zero-energy AE criterion,
+not two separated point configurations or positive augmented/auxiliary energy.
+eventual_physical_energy discharges the coefficient hypothesis on a sufficiently
+large-beta tail using the EXISTING alpha_beta->1 theorem. No explicit threshold
+for alpha_beta!=0 and no positivity theorem for EVERY beta>0 is added. At beta0,
+the response is zero as required. This closes actual fixed-fibre physical
+nontriviality, with all full-kernel, normalization and fixed-observable obligations.
+
+Independent Lean checks include the first-Haar derivative at arbitrary h/negative
+beta, true moving normalizer, positive actual square mass, frozen middle-only
+bounded/measurable/gauge core, original bridge centering, exact signed derivative,
+zero-coupling exception, original score pairing, nonzero ORIGINAL L2 quotient,
+and persistence of BOTH older obstructions. In particular the SAME frozen probe
+has integrable ZERO stationary Ward pairing for EVERY actual ground, by direct
+reuse of PeriodicEndpointWard.physical_score_pairing with a verified native L2
+bound. Positive fibre energy does not turn a signed stationary first moment into
+a norm.1858's equal-endpoint opposite-direction Fisher energy remains zero, and
+1859's different corrected native trial Rayleigh quotient still tends to zero.
+
+A separate256-point positive-kernel diagnostic tests frozen-observable versus
+moving-test differentiation with a genuinely moving normalizer. Its amplitude
+H_h(theta)=1+.1*sin(h)+a*cos(theta-4h), a=.1,.3,.7, is positive. The frozen test
+sin(theta)/H_0 has derivative4a/(1+a^2/2); changing it to sin(theta)/H_h gives HALF
+that slope. The normalizer slope is.2 and is retained. Fixed-test finite-difference
+errors are<=2.95e-10. This is bookkeeping corroboration ONLY, not a Wilson/Haar
+approximation or evidence replacing the actual continuous-Haar Lean theorem.
+
+What remains open is materially stronger: positivity on the cancelling B cut,
+positive stationary ENDPOINT-RETAINING energy on a positive-measure endpoint set,
+local boundary-direction estimates, endpoint-covariant multichannel frames,
+native norm comparison, nonlinear spatial gluing, and coupling/scale/volume-
+uniform bounds. No lower frame follows from one nonzero direction. The current
+probe is nonlocal and beta-dependent. No continuum or infinite-volume mass gap,
+full pseudoprocess/Gaussian calculus transport, or external novelty claim is made.
+
+Next research bottleneck should test the norm/frame geometry before broadening
+positive examples. The existing opposite-direction diagonal bridge is even,
+while its gauge-invariant boundary winding difference may have NONZERO tangent.
+If verified, this would show an actual physical boundary-difference direction
+invisible to the first middle score, ruling out a naive full endpoint-difference
+Fisher lower bound without confusing it with a pure gauge direction. Then examine
+whether the second variation/direct curvature term survives, rather than erasing
+it or substituting Gaussian Schur covariance. These are next questions, NOT1860
+theorems. A local selected-link variant of the positive witness is another direct
+candidate only if it serves a concrete multiblock estimate; avoid a broad library.
+Preserve all actual negative results, manuscripts, queue/role separation and
+Git/source/audit requirements. No publication work or reflection session admitted.
