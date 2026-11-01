@@ -1,3 +1,38 @@
+# Authoritative queue extension — November 1, 2026: stochastic quantization Yang–Mills LAST
+
+Append **Stochastic Quantization Route to 4D Continuum Yang–Mills** to the END
+of the entire existing research queue, after every currently saved campaign
+and backlog item. Full user-provided mission and safeguards are preserved in
+`STARDUST_STOCHASTIC_QUANTIZATION_YANG_MILLS_QUEUED_RESEARCH.md`.
+Status: QUEUED, NOT ACTIVE. Do not begin until all preceding campaigns are
+complete at their justified verified stopping checkpoints or the user explicitly
+reprioritizes. This is a separate future campaign; the earlier Yang–Mills work
+remains paused/incomplete and its stopping/multiblock audits must be preserved.
+
+Current order: Cauchy (ACTIVE) -> A(2)/RH revisit -> iterated/time-changed
+pseudoprocess calculus -> fractional diffusion -> black noise -> AI mathematics
+-> Generalized Cauchy and Stable-Process Calculus -> Hermite-process calculus
+-> all previously saved cumulative backlog -> stochastic quantization Yang–Mills.
+Preserve all preceding relative priorities, statuses, return points and gates.
+
+The new campaign begins with a bounded literature/feasibility and exact
+theorem-transfer audit, then targets a genuine stochastic-quantization theorem
+on the actual Wilson system and a physical gauge-invariant correlation bridge.
+Lower-dimensional constructions, finite-lattice invariant measures and mixing
+in stochastic time do not establish 4D continuum existence or a physical mass
+gap. Require exact gauge, measure, domain, topology, renormalization, scale/volume
+uniformity and reconstruction hypotheses; preserve failed routes/obstructions.
+No new mathematical claim is made by scheduling this investigation.
+
+No change to Cauchy's active proof, A(2)'s immediate-next priority, mathematical
+results, pinned Lean/Mathlib, complete verification/audit/type/proof/independent
+checks, original-source preservation, publication-role separation, Git or
+guarded exact two-branch backup requirements. Never change repository visibility.
+Earlier dated queue text and checkpoint records remain historical; this header
+adds only the new final campaign. No arbitrary expiration date.
+
+---
+
 # Authoritative priority amendment — November 1, 2026: A(2)/RH immediately after Cauchy
 
 The user explicitly moved A(2)/RH to immediately after Cauchy is done.
