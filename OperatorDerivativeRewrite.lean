@@ -3104,3 +3104,5 @@ import Foundation.PeriodicIdentitySecondWitness
 import Foundation.PeriodicTemporalCycleMoment
 
 import Foundation.PeriodicTemporalParity
+
+import Foundation.PeriodicTemporalLaplaceContrast

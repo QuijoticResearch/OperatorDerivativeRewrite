@@ -1,5 +1,13 @@
 # Yang–Mills multiblock: cross-domain theorem audit
 
+Current1867: actual Wilson KERNEL sign separation and genuine negative
+log-ratio boundary curvature somewhere on the original quarter-turn orbit are
+proved for all sufficiently small nonzero beta. Full exponential and BOTH
+derivative remainders, actual Haar domains, spatial factors and temporal
+quotient normalizations retained. The two-sided physicalSecond identification
+and native positive-energy bridge remain OPEN; h=0 coefficient-16 unproved.
+No multiblock lower frame or scale/mass-gap result. See1867 below.
+
 Current1866: the FULL fourth temporal-Haar moment contrast on the original1862
 quarter-turn orbit is proved:12*cos(4h), second derivative-192. Actual vertex-center
 selection/classification eliminates all other quartic edge tuples; all complete
@@ -2919,3 +2927,111 @@ integrity, exact commit and BOTH PUBLIC backup gates remain required. No source
 manuscript, publication, campaign queue, goal or reflection changes.
 
 Checkpoint1866 local closure: complete7288-job build passed in47.6089046s; complete63773-declaration standard-only transitive axiom audit plus ALL57 unabridged public types passed in46.0308199s; fourteen independent original-domain Lean checks passed in29.7785628s; complete persisted AxiomAudit passed in58.6702126s. All535 final source lines,38 public proofs/18 definitions/one abbreviation/13 private proofs and all57 types reviewed. Authenticated3066-source snapshot and ALL old mathematical-source bytes preserved;3 configs,113 archive originals,21 YM originals and two original numerical tools unchanged. All3065 Foundation signatures/imports/headers/hashes refreshed;3064 root reachable and AxiomAudit separate. Independent parity/integer diagnostics agree with384 winding tuples and full moment12/curvature-192 but do not enter Lean. Resource/recursion failures were repaired structurally at unchanged defaults; all new proof inputs passed the final gates. Full fourth temporal-Haar assembly is now PROVED; normalized physical-score/Taylor/native positive-energy bridge and candidate-16 remain OPEN. No source manuscript, publication, queue, goal or reflection changes. Exact approval and BOTH PUBLIC-ref checks follow separately.
+
+## Checkpoint1867 — actual Wilson kernel separation and negative log-ratio curvature
+
+November1,2026. Continue Focused Yang–Mills from fully closed1866,
+`41c917840bb567160da230e8d87c010550e4a59e`. No campaign transition.
+
+**New actual-kernel result.** Write U_h=left(h,original quarter-turn endpoint),
+T=direction1 center seam at identity, and
+
+    F_beta(h)=log K_beta(U_h,identity)-log K_beta(U_h,T).
+
+For every sufficiently small NONZERO real beta, F_beta(0)>0 and
+F_beta(pi/4)<0, F_beta(-pi/4)<0. Moreover there exists
+`t in (-pi/4,pi/4)` with genuine `F_beta''(t)<0`.
+`eventual_kernel_sign_pattern`, `eventual_log_sign_pattern`,
+`orbitLog_second`, `eventual_negative_log_curvature` prove these statements.
+This is the ACTUAL periodic Wilson kernel, with its actual coupled temporal
+Haar integration. The parameter t may depend on beta and is NOT asserted to0.
+The regime is small beta, not a high-beta/continuum or volume-uniform statement.
+
+**How the full moment becomes an exponential estimate.**
+`PeriodicTemporalLaplaceContrast.trace_bound` bounds the full192-link temporal
+trace C by192. `weighted_taylor_bound` applies to every bounded MEASURABLE real
+f under the ORIGINAL64-vertex gauge Haar probability. It uses the actual entire
+exponential remainder (the same generic analytic estimate used in the cyclic
+pseudoprocess library), not the cyclic law or an IBM law. For Taylor terms k<n,
+its error is bounded by `M*(192*abs(beta))^n*exp(192*abs(beta))` when abs(f)<=M.
+The previous full Haar moment contrast12cos(4h) and vanishing lower contrasts
+therefore give the rigorous UNIFORM-h actual Laplace partition estimate
+
+    abs(J_beta(U_h,identity)-J_beta(U_h,T)-(beta^4/2)*cos(4h))
+      <=2*(192*abs(beta))^5*exp(192*abs(beta)).
+
+This is `partition_contrast_bound`; no Monte Carlo or unproved moment matching
+is used. A common punctured beta-neighborhood gives actual kernel separation
+for ALL h with cos(4h)>=1/2 (`eventual_kernel_separation`). Reversed inequalities
+at the opposite-sign cosine points give the three-point sign pattern.
+
+**Every spatial factor and temporal denominator is retained.** The exact
+`kernel_factor` is
+
+    K_beta(U,V)=exp(-beta*(S(U)/2+S(V)/2+192))*J_beta(U,V).
+
+`kernel_contrast_bound` keeps that prefactor. `prefactor_twist` proves the
+spatial action of V and its center twist agrees; `kernel_log_contrast` then
+proves cancellation in the LOG RATIO. The original varying spatial action of
+U_h is not simply dropped. K itself is not being called a ground-normalized
+stationary Markov kernel. The positive single-temporal partition J is the
+normalization in the conditional temporal cumulants below.
+
+**Derivative control, not differentiation of a uniform error.**
+`trace_rotation` is proved for the SINGLE192-link actual trace, using the
+existing SU2AxisMatrixJets matrix identity. It is not substituted from the
+public384-link augmented trace theorem. Its companion D is a shifted actual
+trace, so abs(C),abs(D)<=192. `partition_derivative` and
+`partition_second_derivative` prove the genuine first and second boundary
+HasDerivAt identities by dominated differentiation under original Haar:
+
+    J' = integral exp(beta*C)*beta*D,
+    J''= integral exp(beta*C)*((beta*D)^2-beta*C).
+
+The acceleration MINUS beta*C is retained. Separate weighted remainder bounds
+are proved for both jets: `firstJet_taylor_bound` and `secondJet_taylor_bound`.
+Thus no uniform scalar error is differentiated without justification.
+`logSlope_derivative` and `kernel_log_second` then retain the exact quotient
+curvature `J''/J-(J'/J)^2`. The existing standard mean-value theorem is applied
+THREE times, with verified global differentiability of F and F', to obtain the
+strict negative curvature at an interior point from its three-point sign pattern.
+This bypasses calculating the exact small-beta curvature coefficient at h=0.
+It is classical analysis applied to the actual operator, not a novelty claim.
+
+**What remains OPEN.** The negative curvature is a contrast of actual
+single-kernel conditional-temporal cumulants. It has NOT been identified with
+the existing TWO-sided middle-law `PeriodicEndpointSecondResponse.physicalSecond`.
+Next prove the exact bridge, translating the entire coherent endpoint curve to
+U_t with axis_add and retaining both middle normalization derivatives until
+cancellation is justified. Native middle-law continuity/full support is still
+needed before promoting pointwise separation to positive native L2 energy.
+The original fixed-h0 scaled candidate-16 remains unproved, although its exact
+coefficient is no longer necessary for the existential-curvature route. Do not
+replace physicalSecond by the newly defined single-kernel logCurvature.
+No complete reconstruction, pointwise lower frame, endpoint-averaged estimate,
+spatial multiblock contraction, scale/volume limit, continuum gap or RH claim.
+1864's separate compensated physical second-score result remains distinct.
+
+**Independent checks and integrity.** Fourteen Lean checks cover arbitrary
+external fields/real beta (including negative beta), all spatial prefactors,
+actual first/second HasDerivAt and logarithmic kernel identities, both jet
+remainders, the true three-point sign and interior second derivative, and the
+zero-beta exceptions for curvature, log contrast and the old physicalSecond.
+A separate90-case actual2x2 SU2 matrix diagnostic checks the192-link rotation,
+first/second pointwise exponential jets, spatial prefactors and three envelopes.
+Max errors are4.80e-14 (rotation),5.53e-12/2.13e-8 (relative first/second finite
+stencils),1.49e-15 (weight factor). These are POINTWISE checks, not Haar/Gibbs
+sampling, a kernel approximation, or numerical premises in Lean.
+
+New leaf682 lines:60 public types,43 public proofs,17 definitions,10 private
+proofs, no new instances. Every older mathematical-source byte is preserved.
+Proof repairs use explicit measurable sums, Pi evaluations, weighted integrable
+remainders and quotient/denominator equalities; no resource/compiler/trust or
+toolchain setting changed. An incomplete development-log tail caused an early
+progress update to overstate two proof statuses; this was explicitly corrected
+before any verification/commit claim. Final gates use only the complete final
+source. No original manuscript, publication, queue, goal or reflection changes.
+All full build/axiom/type/proof/independent/source/exact-commit/BOTH PUBLIC
+backup gates remain mandatory.
+
+Checkpoint1867 local closure: complete7289-job build passed in29.6093222s; complete63856-declaration standard-only transitive axiom audit plus ALL60 unabridged public types passed in48.1524533s; fourteen independent original-domain Lean checks passed in31.7130917s; complete persisted AxiomAudit passed in57.3772024s. All682 final source lines,43 public proofs/17 definitions/10 private proofs and every public type reviewed. Independent harness initially failed only on multiplication associativity in its displayed remainder, repaired without changing mathematical sources; the failed log is preserved. Ninety independent actual SU2 matrix/density/factor diagnostics passed in0.0658168s, with no Haar/Gibbs/kernel approximation or numerical Lean premise. Authenticated3067-source snapshot passes; ALL old math-source bytes,3 configurations,113 archive originals,21 YM originals and two original numerical tools unchanged. All3066 Foundation signatures/imports/headers/hashes refreshed;3065 root reachable and AxiomAudit separate. No resource/compiler/trust, publication/manuscript, goal/queue/reflection change. Actual existential negative log-kernel curvature is PROVED; two-sided physicalSecond/native L2 and original fixed-h0 coefficient-16 remain OPEN. Exact approval and guarded BOTH PUBLIC-ref checks follow separately.
