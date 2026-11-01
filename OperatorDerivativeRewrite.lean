@@ -3183,3 +3183,5 @@ import Foundation.StochasticCauchyExponentialReconstruction
 import Foundation.StochasticCauchyStoppedClockObstruction
 
 import Foundation.StochasticCauchyGaussianStein
+
+import Foundation.StochasticCauchyPolynomialPrediction
