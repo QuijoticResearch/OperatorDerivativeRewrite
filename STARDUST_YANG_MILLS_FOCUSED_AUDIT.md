@@ -8085,3 +8085,76 @@ All compiler/trust/resource settings, older math, source archives, publication a
 queue and active focused Yang--Mills goal are preserved. No reflection was admitted.
 
 Checkpoint1854 local closure: complete7276-job build passed in28.7200183s; full63209-declaration transitive axiom audit plus ALL35 final public types passed in49.4625092s; twelve independent Lean checks passed in31.6094258s; complete persisted AxiomAudit passed in61.0775298s. All669 lines,28 public proofs/7 definitions/8 private proofs/1 local abbreviation and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.7695308s. Authenticated3054-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
+
+## Checkpoint1855 — actual stationary TWO-slab endpoint-score realization
+
+Previous goal turn: PROGRESS;1854 closed at5329d2c2d557141777d334d07705b851b5dd1052
+with all complete gates and both exact PUBLIC remote refs. Focused Yang--Mills
+continues; no goal completion, queue change, reflection session or publication work.
+
+Foundation/PeriodicStationaryEndpointResponse.lean constructs a genuine positive
+joint measure on (U,W,V,a,b). Its endpoint law is EXACTLY mu_g(dU) P_g^2(U,dW),
+not independent endpoints. Its augmented conditional is EXACTLY the old normalized
+Wilson bridge for those endpoints, retaining BOTH temporal fields and the middle
+spatial action. bridgeKernel_apply, endpoint_preserving, integral_formula and
+middle_preserving identify the actual conditional, endpoint and stationary middle
+laws. The integral formula holds for every INTEGRABLE joint observable. There is
+no new existence axiom; existing constructed GroundData supplies the ground.
+
+The algebraic density_cancellation verifies that multiplying the stationary,
+TWO-step endpoint and normalized bridge factors leaves
+  w_beta(U,V,a) w_beta(V,W,b) g(U) g(W)/(lambda^2 Z).
+This is a POINTWISE density-factor identity; no separate new full product-Haar
+integral theorem is asserted. It explains why1852's one-slab lambda Z formula
+cannot be substituted. No ground-data family is differentiated.
+
+The actual middle-preserving map yields an isometric pullback of the ORIGINAL
+stationary L2. Its adjoint, followed by the existing physical high projection,
+defines realization. realization_pairing and realization_eq_projection identify
+its true joint weak pairing and original native domain; realization_contraction
+and residual_pairing retain the entire orthogonal residual. No independent-noise
+law, causal PRP, arbitrary Hilbert identification, or output-norm substitution
+is used. Existing HilbertRepresentation and completedAnalysis do the operator work.
+
+The concrete score is EXACTLY1853's endpoint derivative, now jointly measurable
+and L2 under the new actual stationary joint law. badScore_norm proves that the
+native joint norm squared of its B-supported part equals the TRUE stationary
+TWO-step average of badLinkEnergy+badRestEnergy from1854. Thus both actual
+conditional response channels are retained. actual_bad_gaussian_bound composes
+this genuine score realization with1851's native high-sector Gaussian analysis:
+for beta>=2^24,
+  || A_high Q_high sigma_B ||^2 <= (R0 exp(-beta))^2 (768 |beta|)^2.
+One suppression comes from the native score energy; the other from high compression.
+The native Q_high itself is a contraction. A_high is NOT an isometry or coercive
+inverse; a small Gaussian image alone does NOT prove a small original native
+response. The low component, joint orthogonal residual and remaining event are
+not reconstructed away. This is a mathematically valid operator transfer for an
+ACTUAL endpoint score, not the frozen one-slab perturbation used in1852.
+
+Independent Lean checks test correct endpoint/bridge laws, the two ground factors,
+physical plaquette stationarity, pullback isometry for unbounded native L2 fields,
+old/new energy equality, exact residual norm decomposition, a genuine normalized
+bridge derivative on a B-cut physical plaquette, the old native-energy bound,
+Gaussian high bound and actual-score weak pairing with arbitrary physical high F.
+Independent seeded quaternion/Perron quadrature (9701855) uses7 spatial states,
+5 inversion-closed temporal fields and3 couplings, full slab energies, the true
+finite eigenvector and BOTH ground factors. Total/joint marginal errors <=4.45e-15;
+pointwise factorization error <=2.78e-17; cutoff energy equals its endpoint-average
+calculation. Replacing lambda^2 Z by the one-slab denominator gives wrong masses
+0.84133,0.50583,0.05796. These are finite numerical diagnostics only: not a Haar
+convergence theorem, actual bad-event probability, strong-coupling rate or mass gap.
+The finite cutoff is an arbitrary middle-grid set, not the continuum event B.
+
+Limitations and next bottleneck: fixed side-four two-slab cell and specified coherent
+axis-zero endpoint direction; no arbitrary independent 4D exterior derivatives,
+volume/scale uniformity, nonlinear connected gluing, continuum limit or gap.
+The pointwise rough-rest thermal escape and all earlier native obstructions remain.
+A precise possible next test is whether the EXISTING completed physical high space
+retains AE support on the full high-action region. If proved, actual native high
+score realization could be controlled by its full high-region cut, beyond the
+specific B event; no such equality is asserted here. Prioritize actual native
+good/low-sector response or a decisive obstruction next, not more empty adapters.
+No external novelty claim. All old Lean/source archives/configuration/compiler,
+resource/trust settings, manuscripts, drafts, queue and publication histories preserved.
+
+Checkpoint1855 local closure: complete7277-job build passed in30.6181853s; full63275-declaration transitive axiom audit plus ALL35 final public types passed in51.2058020s; eleven independent Lean checks passed in32.5479070s; complete persisted AxiomAudit passed in60.1936569s. All360 lines,20 public proofs/12 definitions or abbreviations/3 public probability instances/4 private proofs and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.2014307s. Authenticated3055-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
