@@ -3179,3 +3179,5 @@ import Foundation.StochasticCauchyExponentialPrediction
 import Foundation.StochasticCauchyExponentialInput
 
 import Foundation.StochasticCauchyExponentialReconstruction
+
+import Foundation.StochasticCauchyStoppedClockObstruction
