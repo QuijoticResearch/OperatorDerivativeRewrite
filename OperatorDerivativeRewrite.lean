@@ -3171,3 +3171,5 @@ import Foundation.StochasticCauchyMeanResidual
 import Foundation.StochasticCauchyEntireGrowth
 
 import Foundation.StochasticCauchyAsymptoticGrowth
+
+import Foundation.StochasticCauchyExponential
