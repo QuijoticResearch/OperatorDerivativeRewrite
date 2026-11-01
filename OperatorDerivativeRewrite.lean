@@ -3119,3 +3119,5 @@ import Foundation.PeriodicSpatialInfluenceObstruction
 import Foundation.PeriodicNativeCompression
 
 import Foundation.PeriodicGaugeCompression
+
+import Foundation.PeriodicBridgeInnovation
