@@ -1517,3 +1517,67 @@ novelty claim is made. No campaign/queue, original manuscript or publication
 artifact is changed. All compiler/resource/trust settings stay at their defaults;
 explicit measurable coordinate maps/local irreducibility repair elaboration
 without raising limits. Failed proof attempts remain preserved.
+
+## Checkpoint1854 — actual conditional Wilson response, with the rest channel retained
+
+Continuation after fully closed1853 (09c42f57a2bca576f4727eeed9bfecbc26b5c610).
+Foundation/PeriodicConditionalEndpointScore.lean instantiates conditional reconstruction
+on the genuine augmented TWO-slab Wilson law, using the existing selected-spatial-link
+measurable equivalence, TRUE partition-weighted rest marginal and conditional kernel.
+No independent Haar rest law, signed pseudo-law, IBM filtration, or Gaussian unitary
+is substituted. All middle spatial plaquettes and both temporal fields remain.
+
+Exact theorem-level bridge: source is the actual endpoint score pulled through split;
+restScore is its true conditional mean; linkInnovation = source-restScore. Theorems
+kernel_expectation_score and marginal_expectation_score identify BOTH fields as
+actual derivatives of the corresponding rotated laws on bounded measurable fixed
+observables. rotated_kernel_integral proves the genuine nonlinear sine/cosine tilt
+with its ROW normalizer before differentiation, rather than replacing it by an
+affine tangent. direction_difference and linkInnovation_local reduce the centered
+link term to precisely TWO local temporal traces, giving |linkInnovation|<=4|beta|
+without the full-slice counting factor. All row/joint/rest L2 domains are established.
+
+joint_expectation_reconstruction gives the actual endpoint derivative of any bounded
+measurable joint observable F as
+  E_rest E_link[F linkInnovation] + E_rest[(E_link F) restScore].
+The second term is part of the theorem; no predictable representation, causal
+filtration, or vanishing physical rest response is inferred. This reconstructs a
+directional RESPONSE, not every observable or a full Clark--Ocone calculus.
+row_fisher and cut_fisher prove original-norm Pythagorean identities, including ANY
+measurable rest cutoff. badEnergy_split identifies the old true bad-event energy
+with badLinkEnergy+badRestEnergy. averaged_bad_sum and averaged_bad_sum_tendsto
+transfer1853's derivative-weighted bound to this COMBINED energy under the actual
+stationary TWO-step endpoint weights: for beta>=2^24, it is at most
+(768|beta|)^2 R0 exp(-beta), and tends to zero for every verified ground-data family.
+No differentiation of ground data is used. Joint endpoint measurability is proved
+for the combined energy; separate endpoint measurability/outer integrals of the two
+components are not silently asserted.
+
+Independent checks include the actual physical closed plaquette, row normalization,
+mean-zero innovation, native domains, rest-score self-pairing, full/cut Fisher splits,
+correct endpoint weights, nonnegative component energies and the two-term response.
+A seeded quaternion calculation (9701854) tests8 rest rows x16 link points at three
+couplings with full Wilson energies, both endpoint halves and genuine finite positive
+quadrature disintegration. Nine finite-difference responses agree within6.506e-10;
+reconstruction error <=3.47e-18 and Fisher error <=1.39e-17. The rest term is nonzero
+in that FINITE quadrature; this is NOT a nonzero theorem for actual Haar integrals.
+Evidence .lake/stardust-1854-numeric.py/.json is corroboration only.
+
+Limitations: fixed side-four cell and specified coherent axis-zero endpoint rotation;
+no arbitrary independent block-boundary directions, whole-native changing-law closed
+derivative, multi-link causal reconstruction, good/low-sector contraction, connected
+nonlinear gluing, scale/volume uniformity, continuum limit or mass gap. The old
+fixed-rough-rest thermal1/t escape and native rare-event counterexamples survive.
+Small probability alone still does not contract arbitrary native L2. Spatial-rest
+conditioning is different from auxiliary-noise conditioning at fixed full spatial
+fields. No signed-process, Gaussian--Poisson product, or semigroup hypothesis is
+relaxed. No external novelty claim is made.
+
+Next concrete bottleneck: connect the actual stationary TWO-slab joint score to the
+native physical high-sector Gaussian contraction, or control the good/low rest
+sector. The1852 ONE-slab joint is insufficient. A prospective two-slab density must
+retain both Wilson weights and g(U)g(W)/(lambda^2 Z), with true middle marginal and
+endpoint conditional laws proved before composing adjoints. This remains a proposed
+route, not an established intertwiner or scale theorem. Avoid empty abstract adapters.
+All compiler/trust/resource settings, older math, source archives, publication artifacts,
+queue and active focused Yang--Mills goal are preserved. No reflection was admitted.

@@ -3078,3 +3078,5 @@ import Foundation.PeriodicNativeGaussianAnalysis
 import Foundation.PeriodicJointHighResponse
 
 import Foundation.PeriodicEndpointScore
+
+import Foundation.PeriodicConditionalEndpointScore

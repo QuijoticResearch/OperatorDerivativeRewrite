@@ -61316,3 +61316,69 @@ explicit measurable coordinate maps/local irreducibility repair elaboration
 without raising limits. Failed proof attempts remain preserved.
 
 Checkpoint1853 local closure: full7275-job build passed in30.0729125s; complete63163-declaration transitive axiom audit plus ALL33 final public types passed in51.3081205s; ten independent Lean checks passed in30.5329626s; complete persisted AxiomAudit passed in59.9749642s. All525 source lines,23 public proofs/10 definitions or abbreviations/8 private proofs and33 public types reviewed. Independent seeded quaternion geometry and six full-weight finite-difference checks also passed in0.6131644s; they remain numerical corroboration only. Authenticated3053-source/config/archive integrity passed. All old math, three configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations retained; explicit local proof structure fixes inference without changing resource/compiler/trust settings. Exact approval and BOTH PUBLIC ref checks follow separately; focused Yang–Mills and existing goal remain active.
+
+## Checkpoint1854 — actual conditional Wilson response, with the rest channel retained
+
+Continuation after fully closed1853 (09c42f57a2bca576f4727eeed9bfecbc26b5c610).
+Foundation/PeriodicConditionalEndpointScore.lean instantiates conditional reconstruction
+on the genuine augmented TWO-slab Wilson law, using the existing selected-spatial-link
+measurable equivalence, TRUE partition-weighted rest marginal and conditional kernel.
+No independent Haar rest law, signed pseudo-law, IBM filtration, or Gaussian unitary
+is substituted. All middle spatial plaquettes and both temporal fields remain.
+
+Exact theorem-level bridge: source is the actual endpoint score pulled through split;
+restScore is its true conditional mean; linkInnovation = source-restScore. Theorems
+kernel_expectation_score and marginal_expectation_score identify BOTH fields as
+actual derivatives of the corresponding rotated laws on bounded measurable fixed
+observables. rotated_kernel_integral proves the genuine nonlinear sine/cosine tilt
+with its ROW normalizer before differentiation, rather than replacing it by an
+affine tangent. direction_difference and linkInnovation_local reduce the centered
+link term to precisely TWO local temporal traces, giving |linkInnovation|<=4|beta|
+without the full-slice counting factor. All row/joint/rest L2 domains are established.
+
+joint_expectation_reconstruction gives the actual endpoint derivative of any bounded
+measurable joint observable F as
+  E_rest E_link[F linkInnovation] + E_rest[(E_link F) restScore].
+The second term is part of the theorem; no predictable representation, causal
+filtration, or vanishing physical rest response is inferred. This reconstructs a
+directional RESPONSE, not every observable or a full Clark--Ocone calculus.
+row_fisher and cut_fisher prove original-norm Pythagorean identities, including ANY
+measurable rest cutoff. badEnergy_split identifies the old true bad-event energy
+with badLinkEnergy+badRestEnergy. averaged_bad_sum and averaged_bad_sum_tendsto
+transfer1853's derivative-weighted bound to this COMBINED energy under the actual
+stationary TWO-step endpoint weights: for beta>=2^24, it is at most
+(768|beta|)^2 R0 exp(-beta), and tends to zero for every verified ground-data family.
+No differentiation of ground data is used. Joint endpoint measurability is proved
+for the combined energy; separate endpoint measurability/outer integrals of the two
+components are not silently asserted.
+
+Independent checks include the actual physical closed plaquette, row normalization,
+mean-zero innovation, native domains, rest-score self-pairing, full/cut Fisher splits,
+correct endpoint weights, nonnegative component energies and the two-term response.
+A seeded quaternion calculation (9701854) tests8 rest rows x16 link points at three
+couplings with full Wilson energies, both endpoint halves and genuine finite positive
+quadrature disintegration. Nine finite-difference responses agree within6.506e-10;
+reconstruction error <=3.47e-18 and Fisher error <=1.39e-17. The rest term is nonzero
+in that FINITE quadrature; this is NOT a nonzero theorem for actual Haar integrals.
+Evidence .lake/stardust-1854-numeric.py/.json is corroboration only.
+
+Limitations: fixed side-four cell and specified coherent axis-zero endpoint rotation;
+no arbitrary independent block-boundary directions, whole-native changing-law closed
+derivative, multi-link causal reconstruction, good/low-sector contraction, connected
+nonlinear gluing, scale/volume uniformity, continuum limit or mass gap. The old
+fixed-rough-rest thermal1/t escape and native rare-event counterexamples survive.
+Small probability alone still does not contract arbitrary native L2. Spatial-rest
+conditioning is different from auxiliary-noise conditioning at fixed full spatial
+fields. No signed-process, Gaussian--Poisson product, or semigroup hypothesis is
+relaxed. No external novelty claim is made.
+
+Next concrete bottleneck: connect the actual stationary TWO-slab joint score to the
+native physical high-sector Gaussian contraction, or control the good/low rest
+sector. The1852 ONE-slab joint is insufficient. A prospective two-slab density must
+retain both Wilson weights and g(U)g(W)/(lambda^2 Z), with true middle marginal and
+endpoint conditional laws proved before composing adjoints. This remains a proposed
+route, not an established intertwiner or scale theorem. Avoid empty abstract adapters.
+All compiler/trust/resource settings, older math, source archives, publication artifacts,
+queue and active focused Yang--Mills goal are preserved. No reflection was admitted.
+
+Checkpoint1854 local closure: complete7276-job build passed in28.7200183s; full63209-declaration transitive axiom audit plus ALL35 final public types passed in49.4625092s; twelve independent Lean checks passed in31.6094258s; complete persisted AxiomAudit passed in61.0775298s. All669 lines,28 public proofs/7 definitions/8 private proofs/1 local abbreviation and35 full theorem types reviewed. Numeric finite-quadrature corroboration passed separately in0.7695308s. Authenticated3054-source/config/archive integrity passed. All older math,3 configurations,113 authenticated archive originals,21 YM originals and two existing numerical tools preserved. Failed elaborations and test-only syntax failures retained; no compiler/resource/trust changes. Exact approval and BOTH PUBLIC remote-ref checks follow separately. Goal and focused Yang--Mills remain active.
