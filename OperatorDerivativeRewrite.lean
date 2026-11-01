@@ -3185,3 +3185,5 @@ import Foundation.StochasticCauchyStoppedClockObstruction
 import Foundation.StochasticCauchyGaussianStein
 
 import Foundation.StochasticCauchyPolynomialPrediction
+
+import Foundation.StochasticCauchyPolynomialInput

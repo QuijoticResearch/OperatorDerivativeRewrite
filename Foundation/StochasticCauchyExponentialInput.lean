@@ -232,6 +232,27 @@ private theorem stepCurve_tendsto (v : ℝ≥0 → JointL2) (hv : Continuous v) 
   · filter_upwards [ae_all_iff.mpr hF,running_ae v hv T,hm] with r hf hvv hr
     simpa only [hf,hvv] using stepCurve_limit v hv T r hr
 
+/-- Reuse of the existing generic grid convergence in the ORIGINAL native
+domain. The hypothesis specifies actual physical time sections of actual
+native steps; no predictable-space density or surrogate integral is assumed. -/
+theorem running_native_of_steps (v : ℝ≥0 → JointL2) (hv : Continuous v) (T : ℝ≥0)
+    (F : ℕ → Input T)
+    (hF : ∀ N, timeSections T (fieldEmbedding T (F N)) =ᵐ[timeLaw T]
+      fun r => ∑ i : Fin (N + 1),
+        (Ioc (uniformTime T N i.castSucc : ℝ) (uniformTime T N i.succ : ℝ)).indicator
+          (fun _ => v (uniformTime T N i.castSucc)) r) :
+    ∃ u : Input T, timeSections T (fieldEmbedding T u) = running v hv T ∧
+      Tendsto F atTop (𝓝 u) := by
+  let J := (timeSections T).comp (fieldEmbedding T)
+  have ht := stepCurve_tendsto v hv T (fun N => timeSections T (fieldEmbedding T (F N))) hF
+  have hc : IsClosed (Set.range J) := J.isometry.isClosedEmbedding.isClosed_range
+  obtain ⟨u, hu⟩ := hc.mem_of_tendsto ht (Eventually.of_forall fun N => ⟨F N, rfl⟩)
+  refine ⟨u, hu, ?_⟩
+  apply J.isometry.isEmbedding.tendsto_nhds_iff.mpr
+  change Tendsto (fun N => J (F N)) atTop (𝓝 (J u))
+  rw [hu]
+  exact ht
+
 def component (b : Bool) : ℝ≥0 → JointL2 := if b then imagCurve else realCurve
 theorem component_continuous (b : Bool) : Continuous (component b) := by
   cases b
