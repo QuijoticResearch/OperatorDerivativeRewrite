@@ -3157,3 +3157,5 @@ import Foundation.StochasticCauchyCovarianceObstruction
 import Foundation.StochasticCauchyHolomorphicObstruction
 
 import Foundation.StochasticCauchyFractionalDivergence
+
+import Foundation.StochasticCauchyFractionalConditioning
