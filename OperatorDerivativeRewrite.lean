@@ -3111,3 +3111,5 @@ import Foundation.PeriodicConditionalCurvatureIdentification
 import Foundation.PeriodicNativeSecondChannel
 
 import Foundation.WilsonSignedPairingObstruction
+
+import Foundation.PeriodicSpatialRowDependence
