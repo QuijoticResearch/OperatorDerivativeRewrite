@@ -64,7 +64,7 @@ theorem centered_past_tensor_overlap (T : ℝ≥0) (F G : GaussianL2)
     exact (second_tensor T b F).trans (congrArg (fun g =>
       productTensor gaussianProduct gaussianProduct F g) hb)
 
-private theorem tensor_inner (a b c d : GaussianL2) :
+theorem tensor_inner (a b c d : GaussianL2) :
     inner ℝ (productTensor gaussianProduct gaussianProduct a b)
       (productTensor gaussianProduct gaussianProduct c d) = inner ℝ a c * inner ℝ b d := by
   rw [L2_inner_eq_integral]

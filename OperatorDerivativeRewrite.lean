@@ -3137,3 +3137,5 @@ import Foundation.StochasticCauchyBoundaryConstraint
 import Foundation.StochasticCauchyBrownianRealization
 
 import Foundation.StochasticCauchyParameterizedObstruction
+
+import Foundation.StochasticCauchyJointPastIntegral
