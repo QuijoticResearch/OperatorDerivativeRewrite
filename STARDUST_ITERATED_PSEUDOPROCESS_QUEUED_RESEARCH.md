@@ -1,3 +1,46 @@
+# Authoritative queue reorder — November2,2026: Yang–Mills NEXT
+
+Explicit user instruction: "can you move Yang Mills to be after the current
+campaign". Move the EXISTING queued Stochastic Quantization Route to 4D
+Continuum Yang–Mills campaign from LAST to immediately after the currently
+ACTIVE iterated/time-changed higher-order pseudoprocess calculus campaign.
+The full mission remains in
+STARDUST_STOCHASTIC_QUANTIZATION_YANG_MILLS_QUEUED_RESEARCH.md. Reuse and preserve
+the earlier paused Yang–Mills, actual Wilson/multiblock and source audits;
+this reorder neither certifies their completion nor discards their obstructions.
+
+Current authoritative order:
+1. Iterated/time-changed higher-order pseudoprocess calculus — ACTIVE.
+2. Yang–Mills: queued stochastic-quantization/4D continuum campaign — NEXT,
+   after the active campaign's mathematically justified, fully verified stopping
+   checkpoint and exact two-branch backup. Do not activate prematurely.
+3. Fractional diffusion.
+4. Black noise.
+5. AI mathematics exploration.
+6. Generalized Cauchy and Stable-Process Calculus.
+7. Hermite-process calculus.
+8. All remaining previously saved cumulative backlog in its existing relative
+   order, with every paused obligation and return point preserved.
+
+The earlier LAST/end-of-queue placement of the stochastic-quantization
+Yang–Mills campaign is SUPERSEDED by this explicit reorder. Older dated queue
+headers and checkpoint records below are historical and remain preserved.
+All other relative priorities/statuses are unchanged. A2/RH remains frozen
+UNRESOLVED; no Cauchy/Bakry/IBM campaign is reactivated. The current verified
+research checkpoint1955 is2358c9722f91ab552a5136f96aa6ef2c35c67a11;
+this instruction-only update changes no mathematical result or original source.
+
+Preserve every full-build/transitive-axiom/type/proof/independent-check,
+source-integrity, manuscript-preservation, publication-role separation, Git
+and exact BOTH-branch backup requirement. Repository remains PUBLIC, visibility
+exclusively user-controlled; never change it. ResearchSources stays immutable
+and uncommitted. No expiration date or new research goal/session/automation.
+For this docs-only change, retain1955 verification ONLY after authenticating
+exact identity of all3150 mathematical source/root files and3 configurations
+under STARDUST_BUILD_OPTIMIZATION.md. No fresh build or new theorem is claimed.
+
+---
+
 # Authoritative automatic transition — November2,2026: iterated pseudoprocess calculus ACTIVE
 
 Execute the STANDING November1 user queue instruction: "After its verified

@@ -64949,3 +64949,28 @@ consistency obstruction. Alternatively match a useful state-space/two-channel
 lift to the existing analytic operator calculus if it resolves that obligation.
 Preserve the finite-clock impossibility; do not stop at re-proving scalar PDE
 formulas or add unrelated infrastructure. Campaign remains ACTIVE.
+
+
+## Checkpoint1956 — user-directed Yang–Mills queue reorder (instructions only)
+
+November2,2026. User explicitly moved Yang–Mills after the current campaign.
+The EXISTING queued Stochastic Quantization Route to 4D Continuum Yang–Mills
+campaign moves from last to NEXT after iterated/time-changed pseudoprocess
+calculus reaches its justified fully verified and backed-up stopping checkpoint.
+Current pseudoprocess campaign stays ACTIVE. Prior Yang–Mills/multiblock audits
+and paused obligations are preserved as inputs. The rest remains fractional
+diffusion -> black noise -> AI mathematics -> generalized Cauchy/stable ->
+Hermite -> remaining saved backlog, without other reprioritization. Historical
+queue and mission text remains preserved below authoritative new headers.
+
+Updated AGENTS.md,STARDUST_CAMPAIGN_QUEUE.md and both affected campaign briefs.
+No mathematical source, original manuscript, publication artifact, Git branch
+policy, repository visibility, scheduled task or active research goal changed.
+Authenticated exact identity of3150 Foundation/root sources and3 configs against
+closed1955 approval2358c9722f91ab552a5136f96aa6ef2c35c67a11. Retain its full7374-job
+build,66666-declaration complete axiom audit, all47 type/proof reviews,20 checks
+and persisted axiom ledger under the verified docs-only identity rule; no new
+build or mathematical verification is claimed. Existing source-integrity checks
+preserve all inventories and paused scratch. Receipt:
+STARDUST_YANG_MILLS_NEXT_QUEUE_VERIFICATION.json. Exact commit and independently
+verified BOTH-branch PUBLIC backup confirmation recorded separately at closure.
