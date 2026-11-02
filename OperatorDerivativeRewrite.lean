@@ -3240,3 +3240,4 @@ import Foundation.StochasticCauchyOccupationProcess
 import Foundation.RiemannKernelLaguerreJets
 import Foundation.RiemannKernelTailJets
 import Foundation.RiemannKernelPrefixJets
+import Foundation.RiemannStochasticBridge
