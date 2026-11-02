@@ -212,3 +212,113 @@ the remaining native C1 Type-II integration, Gaussian-mixture score/data
 independence, GFDM rate, nonlinear projected closure, weak auxiliary/time
 reversal and endpoint obligations. No campaign completion or novelty claim.
 Exact audited BOTH-ref backup is recorded only after independent verification.
+
+## Checkpoint1967 — actual MA-OU/Type-II interior convergence; endpoint obstruction retained
+
+Fractional diffusion remains ACTIVE. Previous goal turn is PROGRESS:1966 was
+fully verified, committed at106c375ab7195aebdb18f4feb172cd41f5bbeaa1 and
+independently BOTH-branch backed at19:25:32.170831Z. No paused campaign resumed.
+
+The new Foundation.FractionalMAHorizon gives a concrete positive repair to
+the manuscript's GFDM kernel-convergence argument, rather than extrapolating
+the generic1966 counterexample. Use the ORIGINAL common-Brownian variables
+Y_t^gamma from GaussianExponentialMarkovPrediction.value and the actual
+Gamma-normalized Type-II variable from FractionalNoisingTransfer.typeII.
+For every finite number n, every REAL weight vector w, every NONNEGATIVE rate
+vector gamma (including the Brownian zero-rate limit), and every H>0, define
+ E_t=sum_i w_i*Y_t^(gamma_i)-B_t^H.
+actual_error proves this exact identity on the existing Gaussian product.
+No independent OU coordinates or fitted covariance surrogates are substituted.
+For0<H<1 this is the precise Type-II normalization in the source manuscript.
+The larger H>0 range is valid for the already constructed RL kernel; it does
+not extend stationary-increment fBM claims beyond their actual range.
+
+The explicit L2 lag error is
+ e(u)=sum_i w_i*exp(-gamma_i*u)-u^(H-1/2)/Gamma(H+1/2).
+errorVector_coeFn and error_energy prove, with actual integrability,
+ ||E_t||_2^2=integral_0^t e(u)^2 du.
+The error is centered. Its deterministic positive-time input belongs to the
+ORIGINAL fullPredictable space; error_native_integral identifies its actual
+Ito integral with E_t. error_source_derivative proves membership in the
+ORIGINAL closed Gaussian source derivative graph with the exact kernel tensor1.
+This is Brownian SOURCE calculus, not an identification with intrinsic D_BH.
+
+Consequently the actual squared error V(t) is NONDECREASING. This is a
+special convolution structure; the earlier arbitrary adapted counterexample
+E_t=(1-t)B_t need not have it. Time integrability of V is proved from monotonicity,
+not assumed. Positivity and averaging now give the useful quantitative bridge:
+ (S-t)*V(t) <= integral_0^S V(s)ds, for0<=t<=S;
+ V(t) <= [integral_0^S V(s)ds]/(S-t), for t<S.
+The bound is uniform over0<=t<=t0<S with denominator S-t0. It is uniform
+pointwise mean-square control, NOT an L2 norm of a sample-path supremum.
+actual_interior_convergence proves strong actual Gaussian L2 convergence of
+the errors from time-averaged mean-square convergence, for ANY sequence of
+finite weights/rates satisfying that explicitly stated premise. No geometric
+grid, positivity of weights, optimality or convergence rate is presumed.
+
+weighted_actual_interior_convergence reuses1965's verified same-source
+weighted-observable transfer. Under its explicit Bochner integrability domains,
+bounded q on[0,t], and averaged driver convergence on the LARGER horizon S>t,
+the actual integration-by-parts noising observables converge in Gaussian L2.
+For C1 noising q=f', this is the correct deterministic filter. The native
+Type-II stochastic-integral identification and automatic discharge of those
+Bochner domains for the manuscript's full C1 class remain separate obligations.
+The result does not construct a Markov auxiliary, reverse SDE or path-space limit.
+
+Primary-source calibration: Nobis et al., arXiv2310.17638v3, Proposition3.3/
+equation8 uses time-integrated mean-square approximation error. AppendixA.1,
+equation22 and the Type-II restriction after it use the same Gamma prefactor
+in the positive-time Brownian integral. Exact sources:
+https://arxiv.org/html/2310.17638v3#S3 and
+https://arxiv.org/html/2310.17638v3#A1.
+The new bridge rigorously transfers that TYPE of error to strict interior
+times. It does not prove the specific Daems optimal coefficients have vanishing
+averaged error or the manuscript's quoted exponential rate. To use the endpoint
+T in the source's evaluation interval[epsilon,T], either establish approximation
+on a genuinely larger horizon S>T or supply an additional terminal estimate.
+The factor1/(S-T) is visible; no endpoint limit in this constant is taken.
+
+A verified obstruction shows why the strict boundary cannot simply disappear
+from an averaging-only argument. Reuse GaussianPowerVolterra to construct
+ Z_n(t)=sqrt(2n+1)*W((t-s)^n*1_(0,t](s)).
+The spike declarations prove endpoint energy1, averaged unit-horizon energy
+1/(2n+2)->0, and failure of EVERY finite uniform endpoint-energy comparison.
+These are actual Gaussian L2 variables on the original source. This is a
+counterexample in the LARGER higher-integrated Gaussian Volterra class, not a
+counterexample specifically to the optimized MA-OU sequence or fixed-H fBM.
+It strengthens the trace obstruction without discarding the positive interior
+result. No optimality claim is made for the interior comparison constant.
+
+Verification:285 lines,23 public theorems and8 definitions; all31 canonical
+types and entire proofs reviewed.7381-job complete root build, full namespace
+transitive standard-three axiom audit,22 Lean boundary checks and persisted
+AxiomAudit passed. Tests include empty MA sums, all actual domains/native graphs,
+strict/non-strict horizon cases, and exact H=1/2 Brownian normalization.
+Independent diagnostics:64 exact rational power-energy checks and144 ordinary
+floating checks of OU/RL covariance, derivative, monotonicity, averaged-Fubini
+and interior inequalities (208 total). The maximum covariance/derivative/
+averaging discrepancies were about2.7e-13/5.4e-11/2.1e-12. Floating diagnostics
+are not interval certificates or proofs of rates. mpmath was unavailable;
+the original failed diagnostic was preserved and standard-library Simpson/
+Taylor calculations used without installing packages or changing the environment.
+The double-time Fubini identity was numerically tested; the positive Lean bridge
+uses the proved one-time energy identity and monotonicity instead, so does not
+rely on an unformalized Fubini claim. All failed elaboration/check logs retained;
+no compiler/trust/resource/version or verification settings changed.
+
+All3157 Foundation/root source hashes accounted for:3156 Foundation modules,
+3155 root-reachable, AxiomAudit only unrooted. Only the new leaf/root/audit
+changed; all3 configurations,113 archive originals,21 Yang–Mills originals,
+Cauchy/fractional originals,46 archived Yang–Mills artifacts, earlier tools
+and paused work unchanged. ResearchSources remains immutable and uncommitted.
+
+Remaining central obligations: actual optimal-coefficient averaged consistency
+and valid rates; exact original finite-GFDM alpha identification with the corrected
+weighted construction including c(t); native C1 Type-II transfer and its Bochner
+domains; actual Gaussian-mixture score with data independence; nonlinear causal
+closure away from H=1/2; conditional weak auxiliary/reverse-process and endpoint
+assumptions. Next prioritize automatic native domain/transfer identification
+or actual coefficient consistency, not unrelated infrastructure. This is a
+classical analytic mechanism with a concrete verified application; no novelty,
+complete manuscript repair or campaign completion is claimed. Exact audited
+BOTH-ref backup is recorded separately after independent remote verification.

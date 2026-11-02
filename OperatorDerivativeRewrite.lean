@@ -3251,3 +3251,4 @@ import Foundation.BiharmonicBranchReconstruction
 import Foundation.WilsonRadialLangevin
 import Foundation.FractionalNoisingTransfer
 import Foundation.FractionalNoisingTopology
+import Foundation.FractionalMAHorizon
