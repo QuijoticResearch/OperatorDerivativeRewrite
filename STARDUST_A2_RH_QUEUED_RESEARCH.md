@@ -1,3 +1,44 @@
+# Authoritative transition — November 2, 2026: A(2)/RH revisit ACTIVE
+
+The user explicitly instructed: "move onto the next objective". The saved queue
+places the A(2)/RH revisit immediately after Cauchy. This instruction activates
+A(2)/RH and PAUSES Cauchy as INCOMPLETE at verified checkpoint1944,
+`6a99f5909ec5079218f00034b2a9048eff6513e7`, independently verified on BOTH
+PUBLIC backup branches at2026-11-02T10:49:17Z. No Lean/Lake process was active
+at transition. Preserve `STARDUST_CAUCHY_PAUSE.md`, all existing proofs and the
+unverified1945 inverse-clock scratch; do not represent its failed target as a
+verified theorem. No original manuscript or mathematical source is modified.
+
+This explicit user transition supersedes the earlier Cauchy-completion
+prerequisite for A(2) activation ONLY; it does not certify Cauchy completion.
+Older dated active labels and stopping records below remain historical.
+
+Current order: A(2)/RH revisit (ACTIVE) -> iterated/time-changed pseudoprocess
+calculus -> fractional diffusion -> black noise -> AI mathematics -> Generalized
+Cauchy and Stable-Process Calculus -> Hermite-process calculus -> all previously
+saved cumulative backlog -> stochastic quantization Yang–Mills LAST.
+Preserve Cauchy, Yang–Mills, Bakry and IBM unfinished obligations and return
+points; this does not reactivate them or reorder the remaining queue.
+
+A(2) scope: attempt the genuine classical threshold/RH objective using the
+cumulative library; begin with exact theorem/domain reuse and the existing
+A(2), real-order and upstream audits, not duplication. Distinguish the actual Xi
+kernel from generic entire functions, production results from isolated upstream
+adapters, and arithmetic half-plane bounds from deformation thresholds. No
+A(4)/A(6) transfer, k-dependent sandwich or RH consequence is assumed.
+Current resumption ledger: `STARDUST_A2_RH_REVISIT_AUDIT.md`.
+
+All existing full-build, complete axiom/type/proof/independent checks, source
+integrity, exact Git receipts and guarded BOTH-branch backups remain mandatory.
+For this instruction-only transition, reuse1944 evidence ONLY after authenticating
+exact identity of all3142 Foundation/root sources and all3 configurations under
+STARDUST_BUILD_OPTIMIZATION.md. No new mathematical result is certified here.
+ResearchSources is immutable/uncommitted. Publication responsibilities remain
+separate; no manuscript/PDF/README work. No expiration date. Repository remains
+PUBLIC and visibility is exclusively user-controlled; never change it.
+
+---
+
 # Authoritative priority amendment — November 1, 2026: A(2)/RH immediately after Cauchy
 
 The user explicitly moved A(2)/RH to immediately after Cauchy is done.

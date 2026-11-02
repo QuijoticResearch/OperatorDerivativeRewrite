@@ -64579,3 +64579,49 @@ Twelve independent tests: nonnegative actual rate; zero horizon primitive; ident
 Authenticated integrity:3142 Foundation/root source hashes,3141 Foundation files and3140 root-reachable modules; AxiomAudit remains the only separate source. The EXACT1943 approved source manifest is authenticated before comparison. Only the NEW occupation-process leaf, root import and appended AxiomAudit declarations change mathematically. All older Lean source bytes,3 configurations,113 archive originals,21Yang-Mills originals,Cauchy original50050bytes SHA3154d5c35ac6c1a1c984847cda8f94d953e29ae783f4f4536933f8c973033e8c,and2 numeric probes remain unchanged. Explicit FIVE-path checkpoint includes those3 mathematical paths and2 research ledgers. ResearchSources is never staged. Preserve master/publication branches and unrelated drafts. Exact approval and guarded independent BOTH authorized ref/PUBLIC verification remain required before closing this checkpoint; never change visibility.
 
 NEXT substantive bottleneck: strict pre-exit clock control for genuine nonvanishing conformal derivatives OR conditional real/cross-energy martingale identities. Existing StickyTimeChangeClock is a REUSE CANDIDATE only: its clock t+kappa*L(t) needs continuous monotone L with L(0)=0. A proven positive derivative lower bound c and nonnegative excess-rate integral could normalize an EXTENDED helper clock into that form. The physical killed clock remains flat after exit; helper continuation is not a physical bracket. Need prove lower bound on compact disk, exceptional-sample handling, post-exit extension, exact pre-exit agreement, normalization/inverse scaling, inverse stopping-time events and lifetime. No such inverse or stochastic conformal law is supplied here. Preserve1942 entire-test law obstruction and all fractional/random-exit domain counterexamples. Continuation .lake/stardust-1944-route.md; indefinite goal ACTIVE.
+
+## Checkpoint1946 — User-directed Cauchy pause and A(2)/RH activation (November2,2026)
+
+User explicitly instructed "move onto the next objective". The saved immediate
+next campaign is A(2)/RH. It is now ACTIVE; Cauchy is PAUSED/INCOMPLETE at exact
+fully audited and BOTH-public-backed mathematical checkpoint1944,
+6a99f5909ec5079218f00034b2a9048eff6513e7. No live Lean/Lake process existed at
+transition. The new explicit transition supersedes the old Cauchy-completion
+activation gate only; it does not certify unresolved Cauchy mathematics.
+
+STARDUST_CAUCHY_PAUSE.md records the verified native/physical stochastic
+identities, conditional martingale reconstruction, genuine occupation energy
+and continuous adapted clock, all important negative results and open conformal
+law/inverse/domain obligations. Scratch1945 remains unverified: target2 fails
+at interval-integral addition, auxiliary rate normalization and a real bound.
+All four original artifacts are preserved locally and duplicated byte-for-byte
+under tmp/stardust-cauchy-pause-1946/; exact hashes/sizes appear in the transition
+verification JSON. Neither unfinished proof nor ResearchSources is imported,
+staged or falsely reported remotely backed up.
+
+A(2)/RH initial reuse review inspected the prior stopping/method/upstream audits
+and actual finite-threshold/arithmetic-heat declarations. Preserve the existing
+finite attained actual threshold, production <=1/2 and isolated audited7/8-to-9/32
+integration, their exact Xi normalization and every explicit premise. Neither
+bound determines the sign. New Cauchy clock regularity supplies no automatic
+Xi-zero estimate. STARDUST_A2_RH_REVISIT_AUDIT.md records the resumed target and
+concrete bottleneck: substantively new control of the SAME actual threshold or
+its arithmetic nonvanishing premise, with exact upper/lower/limit hypotheses.
+No new theorem, improved arithmetic bound, RH implication or novelty is claimed.
+
+AGENTS, authoritative queue, research campaign state and both campaign briefs
+are amended consistently by a superseding current header. All later relative
+priorities remain, with stochastic-quantization Yang–Mills LAST. Original source
+bytes, earlier histories, paused Bakry/IBM/Yang–Mills, publication-role separation,
+no expiration date and user-controlled PUBLIC visibility are preserved.
+
+Instruction-only verification authenticates1944 exact approval/evidence and
+proves ALL3142 mathematical source hashes and ALL3 configurations identical;
+all113 archive,21Yang–Mills and1Cauchy original source hashes remain identical.
+Under the permanent exact-input-identity rule, retain1944 complete7366-job build,
+66410-declaration axiom audit, ALL14 public types/full proofs,12 independent checks
+and complete persisted AxiomAudit. This avoids rerunning unchanged verification
+while retaining its exact coverage. No mathematical result or gate changes.
+Explicit documentation-only commit, exact approval and guarded independent
+BOTH authorized branch verification are required for closure. Indefinite goal
+remains ACTIVE; no new goal/session/automation or publication work is created.
