@@ -3197,3 +3197,5 @@ import Foundation.StochasticCauchyContinuousPolynomials
 import Foundation.StochasticCauchyPolynomialEnergy
 
 import Foundation.FractionalCovarianceMeasureObstruction
+
+import Foundation.FractionalGridProjection
