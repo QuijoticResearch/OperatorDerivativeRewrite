@@ -65264,3 +65264,33 @@ remain unchanged. ResearchSources remains immutable/uncommitted. No manuscripts,
 PDFs, editorial README, campaign-queue, repository-visibility or toolchain changes.
 Exact commit approval, guarded BOTH-branch backup and independent confirmation
 are recorded separately. Repository remains PUBLIC, exclusively user-controlled.
+
+## Checkpoint1961 — user-directed pseudoprocess pause; Yang–Mills activation
+
+The user explicitly requested pausing the current objective and moving to the
+next saved objective. Iterated/time-changed pseudoprocess calculus is PAUSED /
+INCOMPLETE at fully audited, BOTH-public-backed1959,f6cc168310a912ede2da18ff20031e2117b009a2.
+Yang–Mills stochastic quantization /4D continuum is now ACTIVE. This explicit
+transition supersedes the earlier completion prerequisite; no mathematical
+completion or exhaustion is inferred. The overarching indefinite goal continues.
+
+The four controlling queue/mission files carry an identical authoritative
+transition prefix, with all previous contents retained below. The remaining
+queue order is unchanged. STARDUST_ITERATED_PSEUDOPROCESS_PAUSE.md records exact
+positive results, counterexamples and unresolved domains. Targeted-only1960
+phase-germ scratch/logs/status/route have exact LOCAL copies/hashes; they were
+not integrated, certified as milestone-verified or claimed remotely backed up.
+No Lean/Lake worker was active, and no proof or verification cycle interrupted.
+
+The new active research ledger records inherited actual-Wilson multiblock
+obstructions and the first feasibility/theorem-transfer audit obligations.
+No fresh stochastic-quantization, 4D existence or mass-gap result is claimed.
+Historical YM stopping records and every Bakry/IBM/Cauchy/A2 obligation remain.
+
+Instruction-only verification authenticates exact identity of all3153
+Foundation/root sources and3 configurations against approved1959 and retains
+its complete build/axiom/type/proof/check evidence under the verified build
+policy. Source inventories, numerical tools and prior paused scratch remain
+unchanged. No fresh Lean build, source-original modification, publication work,
+repository-visibility change, new goal/session or automation. Exact audited Git
+commit and independent BOTH-branch confirmation are recorded separately.

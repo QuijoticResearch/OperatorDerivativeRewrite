@@ -1,3 +1,54 @@
+# Authoritative user transition — November 2, 2026: Yang–Mills ACTIVE; pseudoprocess PAUSED
+
+The user explicitly instructed: "Please pause and current objective and move
+onto the next objective." This PAUSES the iterated/time-changed higher-order
+pseudoprocess campaign as INCOMPLETE and ACTIVATES the saved NEXT campaign:
+Stochastic Quantization Route to 4D Continuum Yang–Mills. The user-directed
+transition supersedes the earlier requirement to finish the pseudoprocess
+campaign before activation. It does not certify its completion or exhaustion.
+
+Preserved verified return point: checkpoint1959,
+f6cc168310a912ede2da18ff20031e2117b009a2, full build/axiom/type/proof/independent/
+integrity gates passed; BOTH authorized PUBLIC backup branches independently
+matched at2026-11-02T17:43:36Z. No Lean/Lake worker was active at transition.
+Read STARDUST_ITERATED_PSEUDOPROCESS_PAUSE.md before any later resumption.
+The1960 initial-germ scratch passed targeted elaboration ONLY; preserve it and
+its hashes locally, without promoting it to the verified library or claiming
+remote backup of that unaudited scratch. No mathematical source changes here.
+
+ACTIVE: stochastic-quantization Yang–Mills under the complete preserved mission
+in STARDUST_STOCHASTIC_QUANTIZATION_YANG_MILLS_QUEUED_RESEARCH.md.
+Start with bounded feasibility/literature and exact theorem-transfer audits;
+read the historical focused-YM pause and multiblock obstructions. Seek a genuine
+Wilson-system stochastic-quantization bridge, retaining actual dependent laws,
+gauge domains, ultraviolet versus infrared distinctions, and physical-distance
+versus stochastic-time distinctions. Lower-dimensional results and finite
+lattice ergodicity do not establish 4D existence or a physical mass gap.
+Current ledger: STARDUST_STOCHASTIC_QUANTIZATION_YANG_MILLS_AUDIT.md.
+
+Order: Yang–Mills stochastic quantization (ACTIVE) -> fractional diffusion ->
+black noise -> AI mathematics -> Generalized Cauchy and Stable-Process Calculus
+-> Hermite-process calculus -> remaining saved backlog in its existing order.
+Pseudoprocess is PAUSED/INCOMPLETE with its return point preserved; do not resume
+it during Yang–Mills without a new priority instruction. Other paused Bakry,
+IBM and Cauchy obligations and frozen unresolved A2 status are unchanged.
+The historical focused-YM stopping record is input to this new active campaign,
+not a claim that its earlier multiblock obligations were completed.
+
+This is an instruction-only checkpoint1961. Exact identity of all3153
+Foundation/root mathematical sources and3 configurations is authenticated
+against approved1959 before retaining its complete verification evidence under
+STARDUST_BUILD_OPTIMIZATION.md. No fresh Lean build or new theorem is claimed.
+Preserve all complete verification/audit, research-ledger, original-source,
+publication-role separation, Git and exact BOTH-branch backup requirements.
+ResearchSources remains immutable/uncommitted. Repository remains PUBLIC;
+visibility is exclusively user-controlled and must never be changed. No new
+research goal, session, automation or expiration date. The indefinite research
+goal continues; only its active campaign changes. Older headers below remain
+historical where superseded by this explicit transition.
+
+---
+
 # Authoritative queue reorder — November2,2026: Yang–Mills NEXT
 
 Explicit user instruction: "can you move Yang Mills to be after the current
