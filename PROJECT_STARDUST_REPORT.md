@@ -66004,3 +66004,132 @@ maps compatible with the actual spatial derivative adjoints? Preserve output
 convergence as a partial reduction. Prove genuine sticky-sector conditions
 before transferring Gaussian/IBM core results; if maps fail, isolate the
 missing range/domain or conditional-kernel condition explicitly.
+
+## Checkpoint1971 — endpoint memory: an actual finite-law obstruction and positive terminal refinement
+
+Black noise remains ACTIVE. Previous goal turn is PROGRESS:1970 passed every
+mathematical gate and BOTH PUBLIC backup branches independently matched
+686f3b53f59a6726050befa25fca058b1ad01ea3 at20:35:12Z. Its raw-norm
+nonclosability obstruction remains preserved. No campaign, original source,
+publication role or verification policy changes here.
+
+### A quantitative obstruction in actual probability
+
+Foundation.BlackPairRefinement constructs the actual uniform probability on
+Bool x Bool x Bool through the existing Mathlib PMF machinery already used by
+ComplexFourthRootNoise. All eight paths have mass1/8. The three-time law
+factors explicitly as initial1/2 times two reset transitions1/2. This is a
+finite reset-chain joint law, not a claimed continuous process or LJR flow.
+For independent symmetric signs X0,X1,X2, set W=X0*X2. It is bounded, has
+energy E W^2=1, and is centered for EVERY starting state X0 (the explicit
+conditional finite sum is zero). For ANY functions g,h of adjacent states,
+A=g(X0,X1)+h(X1,X2), the verified actual integral identity is
+
+    E(W*A)=0;  E(W-A)^2 = 1 + E A^2 >= 1.
+
+Thus no such A agrees almost surely with W and NO SEQUENCE of adjacent-pair
+functions approaches W in mean square. Zero g,h attains the bound (checked
+independently in Lean), so the quantitative obstruction is sharp. The result
+allows all adjacent functions, not just conditionally centered ones. It
+therefore also excludes the smaller martingale-difference class. Completing
+the unaugmented adjacent-pair output space cannot cure the missing direction.
+This is an actual finite probability integral/AE result, not just a formal
+eight-point identity or a claim inferred from numerical rank.
+
+The manuscript def:dynamic-div allows a state-indexed slice family u_k(z)
+whose divergence is a function of the slice's two endpoints. Arbitrary such
+families can retain the ORIGINAL starting state. That state is absent from
+the current-state-only frame after refinement. The finite model proves that
+Markov joint laws plus conditional centering ALONE cannot justify a universal
+unaugmented pairwise refinement theorem. It is NOT an actual sticky-process
+counterexample, and no physical Green-domain identification is asserted.
+Keeping the starting state as an augmented parameter restores a centered
+refinement for this example: first difference0, second differenceX0*X2.
+augmented_refinement_centered verifies its final-state centering, not a
+complete augmented Hilbert module or actual derivative/adjoint transport.
+
+### Positive theorem: terminal observables survive
+
+The manuscript thm:dynamic uses a fixed terminal test f. It is narrower than
+the arbitrary start-dependent family above and is NOT refuted. For finite
+kernels P,Q and R=P Q, the new action_comp identifies the actual finite
+kernel composition and the following refinement is exact:
+
+    f(c)-R f(a)
+      = [Q f(b)-R f(a)] + [f(c)-Q f(b)].
+
+For normalized rows, both increments are centered under their respective
+transition weights. conditional_variance_split and terminal_refinement_energy
+prove that the weighted coarse squared output equals the sum of the two
+refined squared outputs. For NONNEGATIVE stochastic kernels these are actual
+conditional L2 energies, so the refinement is isometric in divergence-output
+norm, precisely the candidate norm that survived1970. These are classical
+conditional-variance/Markov identities formally verified as a targeted repair,
+not a novelty claim or new stochastic integration foundation.
+
+The algebraic theorems also hold for signed real matrices with the stated
+row normalization, but such squared weighted sums need not be positive.
+No probability, conditional-expectation or norm interpretation is transferred
+to pseudoprocess kernels merely from these algebraic equalities.
+
+The positive finite identities do NOT construct maps between the manuscript's
+actual spatial one-form fibers. Required bridges remain: actual conditional
+Green/adjoint domains and dense cores, joint measurability of chosen operators
+or domain-valued maps, covariance/energy compatibility under refinement,
+retention of history for general observables, and convergence in an intrinsic
+integrand topology. Merely identifying output martingale differences does not
+supply these domains. Existing ObservableProjectedDivergenceCore.
+projected_closure_eq_adjoint can be reused only AFTER its actual closedness
+and both density hypotheses are established; it is not a refinement theorem.
+
+### Sources and complete verification
+
+Read def:dynamic-div and compare thm:dynamic, rem:driverless(3) and
+prob:multitime in the immutable ResearchSources/Incoming/blackito.tex.
+SHA256 remains D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D.
+Primary-source orientation rechecked: Le Jan–Raimond,
+https://arxiv.org/abs/math/0212269v2 (blackness), and
+https://arxiv.org/abs/math/0203221v6 (flows). Their abstracts do not provide
+the missing intrinsic continuum-integrand construction. No assertion of
+literature novelty, line blackness or full black Clark-Ocone is made.
+
+All24 canonical public types and all158 source/proof lines reviewed, including
+its actual measure, AE and mean-square conclusions and the weaker purely
+algebraic signed-kernel scope. Full root build, complete transitive axiom audit
+accepting only propext/Classical.choice/Quot.sound,12 independent Lean examples
+and persisted complete axiom ledger pass. No resource/trust/compiler/version
+changes, new axioms, sorry or oracles. A recursive rewrite loop was repaired
+by a single explicit finite-sum step; no recursion limit was increased.
+Failed targeted logs remain preserved.
+
+Independent Fraction tests:128 arbitrary signed adjacent-function projection
+calibrations on all eight positive-mass paths, plus64 nonnegative stochastic
+matrix cases (2–5 states) testing every starting state for conditional
+centering, telescoping and variance refinement;192 exact rational cases.
+These are regression tests, not substitutes for the proofs.
+
+Source integrity:3160 Foundation/root files,3159 Foundation modules,3158
+root-reachable, AxiomAudit only unrooted. Only the new leaf/root/audit changed
+against approved1970.3 configurations, all inventoried originals and paused
+artifacts remain byte-preserved. No ResearchSources file staged or committed.
+Exact audited BOTH-ref backup recorded only after independent verification.
+
+Actual-process reuse check at closure: BrownianStickyL2Transitions already
+constructs current-state conditional Hilbert transitions and identifies their
+conditional kernels. composition_defect and composition_iff_residual_zero
+provide the EXACT obstruction to Chapman-Kolmogorov. The companion
+BrownianStickyL2MarkovProperties proves constants, positivity and coordinate
+preservation, explicitly not composition or stationarity. Current-state
+subspaces are not automatically nested natural-past subspaces. Separately,
+StickyGeneratorClosure proves a densely defined closable C0 relation; its
+header explicitly assumes neither a range condition nor identification with
+a semigroup. Neither result supplies the missing point-start Hilbert Green
+derivative. The saved next route tests this actual conditional-transition
+bridge before applying the finite semigroup refinement identity.
+
+Next focus: use the positive semigroup-coherent refinement to identify the
+strongest honest integrand space, allowing past-state parameters explicitly.
+Test whether actual sticky or general Feller domain results suffice to build
+its derivative adjoint and retain energy duality. If not, isolate the exact
+kernel/Green/domain bridge, rather than completing terminal outputs and
+calling that the missing intrinsic calculus.

@@ -3255,3 +3255,5 @@ import Foundation.FractionalMAHorizon
 import Foundation.FractionalConvolutionDomains
 
 import Foundation.BlackSliceRefinement
+
+import Foundation.BlackPairRefinement
