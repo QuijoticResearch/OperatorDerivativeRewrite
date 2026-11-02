@@ -1,3 +1,43 @@
+# Authoritative automatic transition — November2,2026: iterated pseudoprocess calculus ACTIVE
+
+Execute the STANDING November1 user queue instruction: "After its verified
+stopping checkpoint, begin iterated pseudoprocess calculus." A2/RH reached its
+justified endpoint-strategy stopping checkpoint1951,
+`eb782ee626d4e294b8dd810b6eda01832ac8362d`, independently verified on BOTH
+PUBLIC backup branches at2026-11-02T15:06:25Z. No Lean/Lake worker was active.
+The1951 recommendation itself did not change the queue; this continuation now
+executes the previously authorized automatic transition. No new user permission,
+new research goal, parallel session or automation is inferred or created.
+
+A2/RH is FROZEN/UNRESOLVED, not proved or completed. Preserve
+STARDUST_A2_RH_FREEZE.md, all higher-order and Gaussian1950 results and the open
+kernel fifth-sign/Hermite/vacuum/Jensen/covariance obligations. Do not reopen A2
+or extend the Gaussian audit during this campaign without substantive direct
+support or a new priority instruction. Existing Cauchy/YM/Bakry/IBM paused
+obligations remain preserved; this does not reactivate them.
+
+ACTIVE: iterated and time-changed higher-order pseudoprocess calculus, under
+STARDUST_ITERATED_PSEUDOPROCESS_QUEUED_RESEARCH.md. Start with the actual
+Cinque–Orsingher source and exact library-domain reuse audit; prioritize rigorous
+signed composition and convergence over bulk infrastructure. Preserve the old
+completed multichannel calculus, IBM observed-domain obstructions and signed
+path-measure limitations. No ordinary stochastic-law/filtration assumptions for
+signed objects. Current ledger: STARDUST_ITERATED_PSEUDOPROCESS_RESEARCH_AUDIT.md.
+
+Current order: iterated/time-changed pseudoprocess calculus (ACTIVE) -> fractional
+diffusion -> black noise -> AI mathematics -> Generalized Cauchy and Stable-Process
+Calculus -> Hermite-process calculus -> saved cumulative backlog -> stochastic
+quantization Yang–Mills LAST. Other relative priorities/statuses unchanged.
+No expiration date. Retain every full-build/transitive-axiom/type/proof/independent
+check, source integrity, manuscript preservation, publication-role separation,
+exact Git receipt and guarded BOTH-branch backup requirement. Repository remains
+PUBLIC and visibility exclusively user-controlled. ResearchSources is immutable
+and uncommitted. This instruction-only transition reuses1951 verification ONLY
+after authenticating EXACT identity of all3147 mathematical source files and3
+configurations per STARDUST_BUILD_OPTIMIZATION.md; no new theorem is certified.
+
+---
+
 # Authoritative priority amendment — November 1, 2026: A(2)/RH immediately after Cauchy
 
 The user explicitly moved A(2)/RH to immediately after Cauchy is done.
