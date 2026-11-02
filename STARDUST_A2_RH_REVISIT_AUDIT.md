@@ -1,5 +1,7 @@
 # A(2)/RH revisit — active resumption audit
 
+Current1947: ACTUAL Xi theta-kernel Laguerre hierarchy has a VERIFIED exact finite-jet representation on the positive sqrt-coordinate domain. Levelk/outputn depends only on the original normalized jet throughn+2k; actual fifth level reduces to order10. Fixed-scalar normalization law/sign invariance proved. Two independent high-precision derivative calculations find a fifth-level NEGATIVE CANDIDATE near t=1/1024, with first4 point values positive; this is NOT an interval/Lean sign certificate. No all-level positivity, new Xi zero bound, threshold improvement or RH conclusion. NEXT: certify actual0..10 coefficient intervals and theta-tail errors, then verified outward propagation. A2 ACTIVE; Cauchy remains paused.
+
 Activated November2,2026 by explicit "move onto the next objective". Cauchy is
 paused incomplete at1944; see STARDUST_CAUCHY_PAUSE.md. This resumption preserves
 the exact genuine A(2)=0/RH research objective in STARDUST_A2_RH_QUEUED_RESEARCH.md.
