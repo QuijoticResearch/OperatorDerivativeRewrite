@@ -3217,3 +3217,5 @@ import Foundation.StochasticCauchyStoppedDomains
 import Foundation.StochasticCauchyJointSteps
 
 import Foundation.StochasticCauchyStoppedIndicators
+
+import Foundation.StochasticCauchyExitClock
