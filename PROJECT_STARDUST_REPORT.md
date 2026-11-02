@@ -65075,3 +65075,91 @@ Match the constructed Brownian modification to native Gaussian L2 representative
 Then audit the completed observed filtration and a reconstruction retaining the
 initial-sign residual. Do not claim that an ordinary complex process repairs
 real signed path-space existence or proves the canonical inverse-clock joint law.
+
+## Checkpoint1958 — actual native complex stochastic integral and branchwise polynomial Ito
+
+VERIFIED Foundation.GaussianComplexPolynomialIto:323 lines,26 public theorems,
+11 definitions and1 abbreviation; all38 public types and complete source proofs
+reviewed. Reuses original GaussianPredictableFull and GaussianScalarPolynomialIto
+rather than building a substitute stochastic theory. No private declarations,
+new axioms, trust/resource settings or toolchain changes. The current iterated
+pseudoprocess campaign remains ACTIVE; Yang-Mills remains NEXT under1956.
+
+Construct Native as a pair of ORIGINAL real fullPredictable Gaussian L2 fields,
+and integral as the complex combination of their actual Brownian Ito integrals.
+The exact identity is ||integral U||^2=||field U||^2 for field U in COMPLEX
+L2(time x probability). It is NOT an isometry for the default product-supremum
+norm on Native: equal unit real/imaginary components give squared field norm2
+versus squared product norm1. Both the distinction and diagonal norm formula
+are explicitly tested. No false product-Hilbert assertion is introduced.
+
+For every complex polynomial Q and horizon T, value(T,Q) is an actual complex
+Gaussian L2 class, AE equal to Q(B_T) for the continuous Brownian clockPath.
+It is norm-continuous in time and its second-derivative drift is genuinely
+Bochner interval-integrable in Gaussian L2. The verified unique native integrand
+has real/imaginary scalarCurry fields equal AE-time to the horizon-indicated
+polynomial derivative values, and
+ value(T,Q)-constant(Q(0)) = integral U + (1/2) integral_0^T value(s,Q'')ds.
+Uniqueness concerns the integrand with the specified derivative field, using
+original injective scalarCurry, not an unproved arbitrary-filtration theorem.
+
+For each FIXED sign b, let Z_b=(1+i*sign(b))B and evaluate real P by its
+holomorphic complex extension. The chain rule verifies phase^2=2*i*sign(b),
+so the ACTUAL STOCHASTIC identity in complex Gaussian L2 is
+ P^C(Z_b(T))-P(0) = integral U + i*sign(b) integral_0^T (P'')^C(Z_b(s))ds.
+The unique U has complex time slice phase(b)*(P')^C(Z_b(s)) on(0,T].
+This is stronger than an expectation-level heat formula. All drift terms are
+actual Bochner L2 integrals. For original predictable past-step coefficients
+A+iB at s<=t, the constructed integral agrees AE with the genuine product
+(A+iB)*(Brownian_t-Brownian_s). The original natural-filtration measurability
+and L2 hypotheses are retained. Every native integral has ordinary complex
+expectation zero.
+
+This yields a sharp ACTUAL-domain obstruction: for every T>0 and either branch,
+P=X^2 has mean2*i*T*sign(b), so branchValue(T,b,X^2) is NOT integral U for any
+Native U. The T=0 exception is verified. This does not rule out reconstruction
+with the branch mean/residual, and does not rule out a multichannel theorem.
+The quartic phase cancellation is also independently verified:
+ branchPolynomial(b,X^4)=(-4)*X^4.
+The distinction suggests branch-conditional polynomial reconstruction via the
+existing backward Gaussian polynomial martingale, with an explicit sign residual,
+as a productive next route. Such reconstruction remains UNPROVED here.
+
+Reuse audit: coefficient extraction uses only the unrestricted finite-polynomial
+realPolynomial_coeff from EvenEntirePolynomialApproximation and map_eval_real
+from RealRootedLaguerreLimit. Their original Xi/zero-control applications are
+not hypotheses of this proof; no A2 campaign is reopened or RH consequence
+claimed. The complex Ito extension is classical mathematical machinery transferred
+rigorously to the1957 analytic biharmonic process, not a novelty claim. Earlier
+Fresnel/rod-vibration references and pending full normalization/novelty comparison
+in1957 remain preserved. No new external literature theorem is assumed.
+
+Still open: completed observed-filtration/right-initial-germ identification;
+conditional residual/Clark-Ocone reconstruction; completed analytic-H actual
+probability L1/L2 agreement; and canonical source inverse-clock multitime
+identification. A continuous COMPLEX probability realization and its branchwise
+calculus are not a real signed path measure or full signed stochastic composition.
+The1954 signed-clock obstruction and1955 analytic-domain restrictions remain.
+
+Verification: full7376-job root build, complete66820-declaration transitive
+standard-three axiom audit, persisted Foundation/AxiomAudit.lean, all38 canonical
+types/full proofs,21 independent Lean examples all PASS. Independent exact rational
+checks cover240 branch drift/expectation cases,528 coefficient chain cases and75
+complex step norm cases, plus an explicit product-norm counterexample; these
+finite checks supplement rather than replace stochastic proofs. Failed test-only
+namespace/simp attempts are retained locally; two evaluation checks were repaired
+by pointwise AE transitivity and eval_X_pow. Production sources were unchanged
+through those test repairs, so their successful full build/audit remains exact.
+
+Integrity: authenticated prior approved1957 source snapshot;3152 Foundation/root
+files,3151 Foundation modules,3150 root-reachable (only AxiomAudit unrooted).
+Only the new leaf/root import/persisted audit change mathematically. All older
+source bytes,3 configurations,113 archive originals,21 Yang-Mills originals,
+Cauchy original, numerical tools and paused1945 scratch remain unchanged.
+ResearchSources is immutable and uncommitted; no manuscripts/PDF/README changes.
+Exact Git approval, guarded two-branch synchronization and independent remote
+confirmation are recorded separately. Repository is PUBLIC under exclusive user
+visibility control; never change it. Previous goal-turn classification: PROGRESS
+in1956 queue update and1957 actual-process construction; the brief confirmation
+turn added no mathematical change, and this turn resumes the unfinished1958
+test/verification checkpoint. No new goal, session or automation.
