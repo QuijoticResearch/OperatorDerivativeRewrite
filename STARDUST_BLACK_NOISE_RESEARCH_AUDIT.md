@@ -267,3 +267,142 @@ Test whether actual sticky or general Feller domain results suffice to build
 its derivative adjoint and retain energy duality. If not, isolate the exact
 kernel/Green/domain bridge, rather than completing terminal outputs and
 calling that the missing intrinsic calculus.
+
+## Checkpoint1972 — actual sticky boundary restart and nonlinear observed-past laws
+
+Black noise remains ACTIVE. Previous goal turn is PROGRESS:1971 passed every
+complete gate and BOTH PUBLIC branches independently matched
+3a9d321bfdf2be511399ef7536b287ed50d3e30b at20:47:45Z. Its finite endpoint-memory
+obstruction and positive terminal refinement are preserved. This checkpoint
+addresses a previously explicit ACTUAL-PROCESS gap, rather than extending the
+finite surrogate. No paused campaign or publication responsibility changes.
+
+### Native construction, not an assumed Markov law
+
+Foundation.StickyBoundaryRestart starts with the already constructed scalar
+path X_t = B_(C^-1(t)), C(r)=r+kappa L_r, and its existing Borel Wiener-path
+realization. It reuses BrownianSmoothMassPath's EXACT half-curvature mass
+approximants, the SAME fixed BrownianMassFastSubsequence, and the proved
+compact-convergence limit. The generic approximation agrees definitionally
+with the old random approximation on the original Brownian path; it is not
+a replacement local time or a differently normalized process.
+
+Good is an explicitly BOREL full-path event: these approximants converge to
+the ORIGINAL chosen BrownianMassPathFunctional.functional, which is zero
+at0 and increasing. Good holds under the original Wiener law. The existing
+BrownianFiniteStrongMarkov.path_law transports this SAME event to the whole
+centered Brownian path after every supplied everywhere-finite stopping time.
+No collection of per-time AE statements is evaluated at an unjustified random
+time, and no new stopping-time or Markov theorem is assumed as an axiom.
+
+At a path restart a with B_a=0, the smooth approximants obey the exact integral
+identity A_e(restart,u)=A_e(original,a+u)-A_e(original,a). Passing to the actual
+continuous-path limit proves the local-mass cocycle. Inverting the ORIGINAL
+strictly increasing clock then gives the physical-time inverse-clock identity.
+This is not just independence at a deterministic operational-time increment.
+
+### Actual boundary regeneration and nonlinear laws
+
+For fixed kappa,s, put tau=C^-1(s) and R_u=B_(tau+u)-B_tau. The new theorem
+physical_boundary_restart states, on ONE full-measure event handling EVERY
+future u simultaneously,
+
+    X_s=0  ==>  X_(s+u) = stickyPath_kappa(R)_u.
+
+Thus the independently realized fresh sticky restart is now IDENTIFIED with
+the original physical-time continuation ON THE BOUNDARY EVENT. The old
+StickyRestartRealization only supplied fresh law and independence without
+this identification. Its theorem is preserved and reused, not overwritten.
+The observation time s is deterministic here; no common null set over all s
+or a strong-Markov theorem at arbitrary physical stopping times is claimed.
+
+Using the already verified independence from the AMBIENT-NULL-AUGMENTED
+observed natural past, boundary_past_factorization proves, for any event H
+measurable in that past with H contained in {X_s=0}, and EVERY Borel A,
+
+    P(H and X_(s+u) in A) = P(H) P(X_u in A).
+
+This is a nonlinear actual-probability result, beyond linear-coordinate or
+Fourier tests. It gives the corresponding boundary conditional-future law
+against every such observed-past event. The theorem does not discard the
+observed-filtration hypotheses or replace physical time with operational time.
+
+For a positive-mass boundary atom, boundary_kernel_row identifies the ORIGINAL
+regular conditional kernel exactly as a MEASURE:
+
+    pairKernel(kappa,s,s+u)(0) = marginal(kappa,u).
+
+The atom-nonzero condition is explicit and indispensable to this version-safe
+row identification. Off-support kernel versions remain uncontrolled, as in
+StickyInitialKernelNonuniqueness. Reusing BrownianStickyBoundaryAtom's proved
+positive-holding result, exists_nontrivial_boundary_restart shows that for
+kappa>0 and every T>0 there exists SOME deterministic 0<s<=T where the boundary
+event has positive probability and the restart theorem applies. It does NOT
+assert a positive atom at every deterministic time. The boundary result is
+therefore nonvacuous in the existing genuine time-changed construction.
+
+### Exact scope and remaining bridges
+
+This discharges the fresh-restart/physical-continuation gap at zero for the
+existing scalar process. It is neither an all-state transition semigroup nor
+a full-past Markov law away from the boundary. There is no claim of LJR
+all-n-point consistency, a black noise realization, actual two-point CKC
+bounds, point-start spatial derivative/Green domain identification, or a common
+continuum intrinsic integral. The generalization away from zero needs the
+correct shifted spatial level of local mass; restarting a zero-level
+functional at a nonzero state is not justified by centered Brownian restart.
+The finite endpoint-memory obstruction also remains relevant to arbitrary
+slice-domain refinement even if Markov composition is ultimately proved.
+
+The manuscript blackito.tex (def:dynamic-div, thm:dynamic, prob:multitime) is
+the motivation, not an imported theorem or agent instruction. Its original
+SHA256 remains D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D.
+The existing scalar sticky-library/source integrity is retained. No publication
+or literature novelty is asserted: this is a concrete verified realization
+bridge built from the accumulated original construction. Primary background
+references remain the Le Jan–Raimond sources recorded in the earlier audit;
+no assertion that their blackness result supplies this intrinsic calculus.
+
+### Verification and independent calibration
+
+All22 canonical public types and all284 definition/proof lines reviewed,
+especially the disappearance of Good and stopping-time hypotheses from the
+actual physical_boundary_restart statement, its fixed-s/all-u quantifiers,
+observed-past measurability in boundary_past_factorization, and the explicit
+atom condition in boundary_kernel_row. An additional selected-import pp.explicit review confirms the exact hidden
+conditioning measurable-space argument is augmentedNaturalPast(kappa)(s).
+This was a targeted domain-ambiguity check, not a replacement complete audit.
+The generic functional lemmas retain
+BOTH good-path hypotheses and B_a=0; no pathwise universal cocycle is invented.
+
+Full root build, COMPLETE transitive axiom audit accepting only
+propext/Classical.choice/Quot.sound,10 independent Lean examples, and persisted
+complete axiom ledger pass. No new axiom, sorry, oracle, resource/trust/compiler
+setting or version/configuration change. An initial measurability elaboration
+timeout was repaired with explicit types; no heartbeat increase. A nested
+inverse rewrite was replaced by an explicit calculation. All failed targeted
+logs remain local evidence, not successful theorem claims.
+
+Independent tests:128 exact rational piecewise-affine clock cases, each
+checking four physical future times with independently inverted shifted
+slopes, plus64 floating analytic smooth-curvature calibrations retaining the
+original1/2 factor. Floating diagnostics are NOT proof certificates for
+Brownian local time or null-set transfer. A nonzero-start smooth diagnostic
+also shows why the boundary condition cannot simply be dropped; it is not
+a counterexample satisfying Good or a refutation of actual all-start sticky
+Markovness. Full stochastic claims rest on the reviewed Lean proof.
+
+Source integrity:3161 Foundation/root files,3160 Foundation modules,3159
+root-reachable, AxiomAudit only unrooted. Only StickyBoundaryRestart and its
+root/audit integration changed versus approved1971;3 configurations,113 archive
+originals and all other inventoried originals/paused artifacts are preserved.
+ResearchSources remains immutable and uncommitted. Exact audited BOTH-ref
+backup is recorded only after independent remote verification.
+
+Next examine the strongest route from this actual boundary row to the
+manuscript's slice domains: either prove a useful boundary-conditioned
+operator/energy transfer with all adjoint hypotheses, or construct the
+shifted-level clock restart needed away from zero. First audit existing
+level/hitting-time and mass-support results to avoid rebuilding foundations.
+Preserve the actual-process nature of this gain; do not replace the remaining
+intrinsic Green/refinement obligations with output-only representations.
