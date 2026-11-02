@@ -3229,3 +3229,4 @@ import Foundation.StochasticCauchyUntruncatedPolynomial
 import Foundation.StochasticCauchyDiskCompletion
 import Foundation.StochasticCauchyDiskDerivative
 import Foundation.StochasticCauchyResolventChronological
+import Foundation.StochasticCauchyResolventExit
