@@ -322,3 +322,97 @@ or actual coefficient consistency, not unrelated infrastructure. This is a
 classical analytic mechanism with a concrete verified application; no novelty,
 complete manuscript repair or campaign completion is claimed. Exact audited
 BOTH-ref backup is recorded separately after independent remote verification.
+
+## Checkpoint1968 — actual Type-II weighted domains and finite-horizon native integration
+
+Fractional diffusion remains ACTIVE. Previous goal turn is PROGRESS:1967 was
+fully verified, committed ate51993bd97311d70218f5794e4e2d30f4a51be19 and
+independently BOTH-branch backed at19:50:30.983268Z. Every paused campaign and
+original source remains preserved; no priority or publication-agent change.
+
+Foundation.FractionalConvolutionDomains discharges a substantial domain gap
+in1967: actual Type-II and finite MA-OU kernel curves are continuous in the
+ORIGINAL Lebesgue time L2 space, and weighted Bochner integrability follows
+from CONTINUITY ON THE FINITE WORKING INTERVAL. Neither global continuity of
+the weight nor uniform pointwise domination of a singular kernel is assumed.
+The rough-kernel singularity near the diagonal is handled in L2.
+
+The precise general hypothesis is an EXISTING family K_t in TimeHilbert with
+AE profile1_(0,t](x)*k(t-x), for a fixed real lag function k. This AE convolution
+hypothesis is an explicit parameter of convolution_continuous and all generic
+weighted theorems; continuity is not smuggled into it. On t<=S, the proved
+convolution_projection identity is
+ K_t=P_positive[translate_(S-t) K_S],
+where translation acts as f(x)->f(x+S-t), and P_positive is the ORIGINAL
+orthogonal projection onto the closed supportedL2(Ioi0) subspace. Pointwise
+AE support and orthogonality prove the identity, including t=0. Existing
+Mathlib Continuous.compMeasurePreservingLp, actual Lebesgue translations and
+bounded projection then prove L2 continuity; localize S=t0+1 to cover all
+nonnegative times. No new covariance or stochastic law is postulated.
+
+Actual typeII_vector_continuous and ma_vector_continuous instantiate the
+1967 AE profiles, for every H>0 and every finite real weight/nonnegative rate
+vector. typeII_observable_continuous transfers continuity to the EXISTING
+Gaussian L2 realization. These are mean-square continuity results, NOT proofs
+of sample-path continuity or equality of observed filtrations.
+
+For every q continuous ON uIcc(a,b), q(s)K_(s.toNNReal) is actually Bochner
+interval integrable. The concrete Type-II and finite MA versions retain those
+local domains. On a nonnegative horizon T, the profile
+ A=f(T)K_T-integral_0^T q(s)K_s ds
+belongs to the ORIGINAL closed supportedL2(0,T] space: finite-horizon causality
+is proved, not just positive-time support. Its deterministic tensor with the
+original gaussianOne belongs to the ORIGINAL fullPredictable input space.
+convolution_weighted_native_integral identifies its actual original Ito
+integral with f(T)W(K_T)-integral q(s)W(K_s)ds. The original closed SOURCE
+Malliavin derivative graph has the exact profile tensor1. No new derivative,
+projection or integral was defined to force these equalities.
+
+For genuine C1 noising, use q=f' on[0,T]. The construction itself permits
+arbitrary deterministic endpoint function f and interval-continuous q; it does
+not claim q=f' automatically. Agreement with the original Type-II deterministic
+stochastic Riemann–Stieltjes STEP limit remains a separate obligation. Nor is
+the Brownian source derivative identified with intrinsic D_BH. These scope
+limits preserve the earlier full-D all-L2 obstruction and causal-space issues.
+
+weighted_interior_convergence_continuous removes ALL extra Bochner-domain
+and bound hypotheses from1967's weighted theorem, using only local q continuity
+and the actual finite MA/Type-II curves. Its remaining substantive convergence
+premise is vanishing time-averaged driver error on a LARGER horizon S>t.
+That premise for the specified optimized coefficients and its rate are still
+open. The theorem does not cover t=S, reverse-SDE convergence, a path-supremum
+norm or a completed repair of every manuscript claim.
+
+Verification:210 lines,18 theorems+2 definitions; all20 canonical types and
+entire definitions/proofs reviewed. Complete root build and whole namespace
+transitive standard-three axiom audit,20 Lean boundary checks and persisted
+AxiomAudit passed. The generic convolution-profile assumption is present in
+the canonical printed types; the concrete application types carry no irrelevant
+section parameters. Boundary checks include H=1/4, zero horizon, constant
+noising and a weight with a jump OUTSIDE the evaluation interval, which is
+properly admitted by local continuity. Independent diagnostics:672 exact
+rational support/argument translation identities plus64 scalar floating L2
+continuity/weighted-energy tests (736 total); worst weighted-energy discrepancy
+about7.3e-13. Floating tests are not certificates, step-limit proofs or path
+regularity theorems. All failed draft/check logs retained. No trust/resource,
+verification, Lean/Mathlib version or compiler settings changed. The newly
+used Mathlib continuous-composition theorem is a pinned existing dependency.
+
+Integrity:all3158 Foundation/root sources accounted for,3157 Foundation
+modules and3156 root-reachable, with AxiomAudit only unrooted. Only the new
+leaf/root/persisted audit changed.3 configurations,113 archive originals,
+21 Yang–Mills originals, Cauchy/fractional originals,46 archived Yang–Mills
+artifacts and earlier paused work/tools are byte-preserved. ResearchSources
+remains uncommitted; no manuscript/PDF/README maintenance occurred.
+
+Next central obligation: prove convergence of actual deterministic C1
+stochastic step sums to this native construction, preferably reusing existing
+finite Abel/Riemann/continuous-integrand machinery; then identify the correct
+transfer kernel including c(t). The proposed Gamma-convolution bridge to
+integrated Brownian history is still UNVERIFIED and may support a later
+completed observed-past/causal-domain identification. Actual optimized MA
+consistency/rates, the Gaussian-mixture score with data independence and
+analytic domains, nonlinear Type-II causal closure, and conditional auxiliary/
+reverse-SDE hypotheses remain open. This is classical functional analysis
+applied to concrete stochastic objects, not a novelty or completion claim.
+Exact audited BOTH-ref backup is recorded only after independent verification.
