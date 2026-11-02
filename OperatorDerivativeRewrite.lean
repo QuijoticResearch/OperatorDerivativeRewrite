@@ -3203,3 +3203,5 @@ import Foundation.FractionalGridProjection
 import Foundation.FractionalAdaptedAdjointObstruction
 
 import Foundation.FractionalCausalGridObstruction
+
+import Foundation.FractionalPredictiveIntegral
