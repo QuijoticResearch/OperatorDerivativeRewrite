@@ -3219,3 +3219,4 @@ import Foundation.StochasticCauchyJointSteps
 import Foundation.StochasticCauchyStoppedIndicators
 
 import Foundation.StochasticCauchyExitClock
+import Foundation.StochasticCauchyExitOccupation
