@@ -3201,3 +3201,5 @@ import Foundation.FractionalCovarianceMeasureObstruction
 import Foundation.FractionalGridProjection
 
 import Foundation.FractionalAdaptedAdjointObstruction
+
+import Foundation.FractionalCausalGridObstruction
