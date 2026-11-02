@@ -3211,3 +3211,5 @@ import Foundation.FractionalPredictivePartitions
 import Foundation.FractionalPredictiveTags
 
 import Foundation.StochasticCauchyModulus
+
+import Foundation.StochasticCauchyStoppedDomains
