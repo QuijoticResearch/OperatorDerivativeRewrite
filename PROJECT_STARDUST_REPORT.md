@@ -66272,3 +66272,131 @@ shifted-level clock restart needed away from zero. First audit existing
 level/hitting-time and mass-support results to avoid rebuilding foundations.
 Preserve the actual-process nature of this gain; do not replace the remaining
 intrinsic Green/refinement obligations with output-only representations.
+
+## Checkpoint1973 — continuous first-hit stopping and actual pre/post-hit sticky trajectories
+
+Black noise remains ACTIVE. Previous goal turn is PROGRESS:1972 passed all
+complete gates and BOTH PUBLIC branches independently matched
+ff298460f28b87491dd06fd2bed54f3abbf51b8a at21:05:05Z. Its actual scalar
+boundary-regeneration and nonlinear observed-past results remain preserved.
+No campaign or publication priority changes here.
+
+### Necessary continuous-time hitting foundation, reusing the existing definition
+
+The pinned Mathlib Probability.Process.HittingTime explicitly supplies its
+stopping lemmas for DISCRETE (countable, well-founded) time. They cannot be
+instantiated for NNReal Brownian time. Foundation.StickyHittingRestart reuses
+Mathlib's original hittingBtwn, with the ZERO level and deterministic window
+[a,T], proving the missing continuous-real-path argument rather than inventing
+a different hitting time. If no zero occurs the value is T, exactly as before.
+This is a bounded finite-window construction, not an unbounded recurrence theorem.
+
+Compactness of the zero set in the window proves first-hit attainment whenever
+there is a zero, and in particular when the hit is strictly before T. Earlier
+times in the window are zero-free. For t<T, hit<=t iff a zero occurs on [a,t].
+The set of continuous compact-prefix paths that have a zero is CLOSED: it is
+the projection of a closed zero-evaluation set along a compact time factor.
+For continuous paths with evaluations measurable in a filtration, the window
+restriction is measurable in the actual time-t sigma algebra. Thus
+hit_isStoppingTime proves a genuine continuous-time stopping theorem WITHOUT
+countability/well-foundedness or a right-continuous-filtration assumption.
+The state space here is scalar R and the target is0; no arbitrary-state-space
+or arbitrary closed-target theorem is claimed.
+
+### Actual Brownian stop and the original physical sticky clock
+
+brownianHit_stopping instantiates the theorem for the ALREADY constructed
+continuous Brownian path in its explicit augmented filtration. A variable
+lower endpoint a is retained: starting Brownian motion's first-zero window
+at0 would give a trivial hit and would not address off-boundary continuation.
+The theorem allows deterministic positive a; no claim of positive hitting
+probability in every such window is inferred without a separate proof.
+
+stopped_boundary_restart extends1972's pathwise clock argument to ANY supplied
+everywhere-finite OPERATIONAL stopping time tau with its proved stopping
+hypothesis. On B_tau=0, simultaneously for every future u,
+
+    X_(C(tau)+u) = stickyPath_kappa(B_(tau+.)-B_tau)_u.
+
+This uses the original smooth-mass limit and existing full Brownian strong
+Markov path law, not a freshly assumed physical Markov law. The independent
+fresh-path law/independence remain the previously verified
+StickyRestartRealization results. first_hit_restart applies this actual identity
+to the first zero H in [a,T] on H<T. The strict event supplies a zero; H=T
+could be a cutoff with no zero, so no false endpoint-hit assertion is made.
+The more general stopped theorem still applies if a boundary at the endpoint
+is established independently.
+
+The other half of the splice is verified directly on the SAME original
+process. BrownianMassZeroFreeIntervals.zero_free_constant and the existing
+mass identification show that mass L_r equals L_a before H. Continuity extends
+this equality through H; no local-time atom at the hitting endpoint is assumed.
+Consequently physical_before_hit proves, for a<=r<=H,
+
+    X_(C(a)+(r-a)) = B_r.
+
+Together these give actual pre-hit Brownian motion and post-hit fresh sticky
+continuation, at their correct physical clock times, on the stated events.
+These are actual path identities, not expectation heat formulas or bounds.
+All quantified r (respectively future u) share one AE event for the fixed
+parameters. The mass/trajectory declarations retain an ordered window a<=T;
+the mass proof in fact does not need that extra hypothesis, but it is not
+silently removed or used to assert a larger process theorem.
+
+### Remaining actual-process bridge and scope
+
+The current lower window endpoint a is DETERMINISTIC. To derive an off-boundary
+observed-filtration Markov law at deterministic physical s, one still needs
+the first zero after the RANDOM operational time C^-1(s), appropriate stopping
+measurability and a history/state-parametrized continuation construction. A
+finite-horizon random-start hitting argument may avoid rebuilding full
+spatial local time; it must be proved, not assumed. Alternatively, an all-start
+shifted-level mass realization needs its own joint measurability and convergence
+hypotheses. No Brownian recurrence theorem is required for the present cutoff.
+
+A finite operational stopping theorem is NOT automatically a theorem at every
+physical stopping time in the observed filtration. No all-state transition
+semigroup, full LJR/all-n-point consistency, CKC, actual point-start spatial
+Green/adjoint domains or common intrinsic continuum integral is certified.
+The finite endpoint-memory and raw-norm obstructions remain in force.
+This checkpoint supplies necessary actual-process splicing tools; it does not
+replace the unresolved intrinsic calculus with an output representation.
+
+### Source, verification and independent tests
+
+The motivation remains immutable ResearchSources/Incoming/blackito.tex,
+especially its dynamic slice construction and open continuum problem. Its
+SHA256 remains D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D.
+Pinned Mathlib source restrictions and exact Foundation theorem reuse were
+reviewed directly. These are classical hitting/restart mechanisms newly
+verified for the native construction, not a publication novelty claim.
+No original manuscript, publication draft, PDF or editorial README was modified.
+
+All17 canonical public types and all193 source/proof lines reviewed. Full root
+build, COMPLETE transitive axiom audit allowing only propext/Classical.choice/
+Quot.sound,10 independent Lean examples, and persisted full axiom ledger pass.
+No new axiom, sorry, oracle, resource/trust/compiler/version/configuration
+change. Targeted elaboration errors were repaired by explicit inference and
+ordinary membership simplification; no compiler limits or checks were changed.
+Failed targeted logs remain local evidence.
+
+Independent pure-Fraction tests cover128 exact rational continuous polygon
+windows, including a tangent zero and a flat zero interval. They check hit
+attainment/cutoff, before-hit exclusion, event equivalence and physical pre-hit
+clock inversion for independently constructed support-compatible clocks.
+These deterministic regressions are NOT Brownian simulations or certificates
+for stochastic stopping/Markov properties. Native stochastic results rely on
+the reviewed Lean proof and its original process law.
+
+Source integrity:3162 Foundation/root files,3161 Foundation modules,3160
+root-reachable, AxiomAudit only unrooted. Only StickyHittingRestart and its
+root/audit integration changed versus approved1972.3 configurations and all
+inventoried originals/paused artifacts remain byte-preserved. ResearchSources
+is immutable and uncommitted. Exact audited BOTH-ref backup is recorded only
+after independent remote verification.
+
+Next: extend the continuous compact-prefix hitting argument to a random finite
+starting stop and finite random cutoff, with explicit filtration measurability.
+Then test whether the resulting actual physical continuation is a measurable
+function of the current state and independent Brownian restart. Do not assume
+that the deterministic-window result already supplies that off-boundary law.

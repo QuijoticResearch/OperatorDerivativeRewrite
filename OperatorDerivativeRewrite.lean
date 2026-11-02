@@ -3259,3 +3259,5 @@ import Foundation.BlackSliceRefinement
 import Foundation.BlackPairRefinement
 
 import Foundation.StickyBoundaryRestart
+
+import Foundation.StickyHittingRestart
