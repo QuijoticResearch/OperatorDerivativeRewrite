@@ -1,3 +1,43 @@
+# Authoritative user transition — November 2, 2026: black noise ACTIVE; fractional diffusion PAUSED
+
+The user's latest explicit instruction is to pause the current objective and
+move to the next objective. Fractional diffusion is now PAUSED/INCOMPLETE at
+fully verified checkpoint1968, ee643570e40f7a6bea13f8614255904df7b7b5e0,
+independently backed up on BOTH authorized PUBLIC branches before transition.
+Read STARDUST_FRACTIONAL_DIFFUSION_PAUSE.md before any resumption. No active
+Lean/Lake proof worker was interrupted and no mathematical result is changed.
+This supersedes the fractional-completion prerequisite for transition only;
+it does not certify completion or exhaustion of that campaign.
+
+ACTIVE: black-noise manuscript repair under the preserved complete mission in
+STARDUST_BLACK_NOISE_QUEUED_AUDIT.md. Reuse BLACKITO_MANUSCRIPT_AUDIT.md and
+STARDUST_BLACKITO_VERIFICATION.json before proposing new proofs. The original
+ResearchSources/Incoming/blackito.tex hash is unchanged. Prior finite-coordinate
+obstructions are established; actual point-start CKC/complement estimates,
+sector density/closability, all-sector consistency, circle-to-line transfer,
+and a common continuum adapted integral remain unverified obligations.
+Do not infer black-flow realization from the verified sticky pair or a full
+stochastic calculus from static Green reconstruction or partition telescoping.
+Current ledger: STARDUST_BLACK_NOISE_RESEARCH_AUDIT.md.
+
+Order: black noise (ACTIVE) -> AI mathematics -> Generalized Cauchy and
+Stable-Process Calculus -> Hermite-process calculus -> remaining saved backlog
+in its existing order. Fractional diffusion, Yang–Mills and iterated
+pseudoprocess calculus are PAUSED/INCOMPLETE. Other Bakry/IBM/Cauchy obligations
+and frozen unresolved A2 status are unchanged. No paused campaign is resumed.
+
+Instruction-only checkpoint1969 authenticates exact identity of all3158
+Foundation/root sources and3 configurations against approved1968 and retains
+its complete full-build/transitive-axiom/type/proof/independent-check gates.
+No new Lean theorem or fresh build is claimed. Preserve ResearchSources,
+all original manuscripts, existing histories and publication-role separation.
+No manuscript/PDF/README maintenance. Preserve exact Git receipts and guarded
+BOTH-branch backups. Repository remains PUBLIC and visibility exclusively
+user-controlled; never change it. No new goal, session, automation or deadline.
+Older dated active/queue labels below are historical where superseded here.
+
+---
+
 # Authoritative priority amendment — November 1, 2026: A(2)/RH immediately after Cauchy
 
 The user explicitly moved A(2)/RH to immediately after Cauchy is done.
