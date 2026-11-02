@@ -64733,3 +64733,55 @@ Instruction-only eight-path transition updates AGENTS,queue,iterated brief,A2 le
 Initial source evidence: Cinque–Orsingher arxiv2402.13691v2 HTML authors/version/abstract, introduction, Definition1.1 and opening Section2 hypotheses selectively read. Abstract endpoint cache-missed; HTML available. Complete proof/publication comparison remains OPEN. A concrete PREPROOF issue is signed mass versus total variation in the composition boundedness discussion: normalized signed clocks with growing TV may yield unbounded composition of bounded tests. The active audit records explicit interval/two-atom candidates and a possible fractional-time2 finite-clock Laplace obstruction, all unproved here. Do not mislabel these candidates as Lean results or as refuting the conditional main PDE theorem. First next work is a theorem-level reuse and exact signed-clock/domain test.
 
 All prior Lean sources,ResearchSources,publication drafts,source inventories,branch histories and mathematical verification standards preserved. Repository PUBLIC solely user-controlled; never change visibility. Exact receipt and independent guarded BOTH-ref backup remain necessary for closure. Continuation.lake/stardust-1952-route.md; indefinite goal ACTIVE.
+
+
+## Checkpoint1953 — genuine signed-clock composition and continuity obstruction
+
+VERIFIED: Foundation.SignedClockComposition (130 lines; 13 public proofs and
+4 definitions). Reuses SignedDensityIntegral.integral_density to identify an
+ACTUAL signed-measure integral, not an assigned moment functional.
+On nonnegative operational times let g_t=(1+t)1_[0,1)-t1_[1,2).
+Each density is measurable and integrable; its actual finite SignedMeasure has
+mass1. The fixed measurable bounded observable f=1_[0,1) has actual signed
+integral1+t. Thus constant signed mass does not bound these compositions, even
+essentially in t: an independent Lean example rules out every AE constant bound
+by a positive-measure unit interval beyond it. Joint measurability is checked.
+Negative-time support vanishes; endpoint membership and negative density are
+independently tested. No positivity is assumed or inferred from mass1.
+
+The production composition_bound proves |integral f*g| <= M integral |g|
+for integrable g and AE strongly measurable f with pointwise |f|<=M, including
+product integrability. Uniform L1 control therefore supplies a valid uniform
+bound; signed mass alone does not. law_mass and signed_observable_composition
+prove the exact signed-measure realization. This corrects the general signed
+boundedness discussion after Definition1.1 in Cinque-Orsingher,
+https://arxiv.org/html/2402.13691v2 (12 November2024).
+It does NOT refute Theorem2.1: the counterexample has not been shown to satisfy
+its separate clock PDE, boundary and initial conditions. Sections2 and3 and
+Eq3.17 were selectively inspected, not every proof or the publication version.
+
+Full root build7372 jobs passed49.502815s; complete transitive audit66565
+declarations passed54.123333s, standard three axioms only. All17 canonical types
+and complete source proofs reviewed. Fourteen independent Lean examples passed
+26.667883s; persisted complete AxiomAudit passed62.068732s. Failed initial test
+normalizations and an unqualified test lemma were repaired only in tests; their
+logs remain. Five exact rational clocks and125 bounded coefficient tests passed
+as consistency checks, not substitutes for continuous signed-integral proofs.
+The rational variation value1+2t is not a newly formalized TV equality.
+
+Source integrity authenticates prior1952 approval and all3148 Foundation/root
+sources: only the new leaf, root import and axiom ledger differ. All older
+mathematics,3 configs,113 archived originals,21 YM originals, Cauchy original,
+both old numerical tools,1947 probes and4 paused1945 scratch copies preserved.
+Receipt: STARDUST_SIGNED_CLOCK_COMPOSITION_VERIFICATION.json. Exact commit and
+both-branch PUBLIC remote confirmation are recorded separately at closure.
+
+NEXT concrete question (UNPROVED): source Eq3.17 at fractional order2 suggests
+operational Laplace multiplier E_(2,1)(-lambda*t^2)=cos(t*sqrt(lambda)).
+A finite signed clock supported on[0,infinity) should have a Laplace transform
+converging to its atom at0 as lambda grows. Prove that limit and the incompatible
+cosine subsequences with exact hypotheses before asserting any impossibility.
+An analytic-dual or distributional clock may remain valid. Distinguish such a
+clock from a finite signed measure, a process, and an operator cosine family.
+Do not return to A2 or launch broad infrastructure; actual iterated calculus,
+channel identities and completed-domain convergence remain unresolved.

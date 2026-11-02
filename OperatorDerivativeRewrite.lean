@@ -3242,3 +3242,4 @@ import Foundation.RiemannKernelTailJets
 import Foundation.RiemannKernelPrefixJets
 import Foundation.RiemannStochasticBridge
 import Foundation.RiemannOrderEndpointAudit
+import Foundation.SignedClockComposition
