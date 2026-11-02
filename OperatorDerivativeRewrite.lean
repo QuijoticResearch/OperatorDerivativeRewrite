@@ -3232,3 +3232,4 @@ import Foundation.StochasticCauchyResolventChronological
 import Foundation.StochasticCauchyResolventExit
 import Foundation.StochasticCauchyJointBoundaryObstruction
 import Foundation.StochasticCauchyCayleyDomain
+import Foundation.StochasticCauchyAnalyticDisk
