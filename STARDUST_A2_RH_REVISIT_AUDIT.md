@@ -1,5 +1,7 @@
 # A(2)/RH revisit — active resumption audit
 
+Current1948: INFINITE actual theta-tail coefficient error is now LEAN VERIFIED: at ORIGINAL u=1/32, the genuine kernel and literal16-term prefix differ by<10^-100 in EVERY normalized Taylor coefficient0..10. Exact complex disk/holomorphy, Cauchy estimates, factorial normalization and complex-to-real iterated derivative restriction all proved. This bound is in u, NOT automatically in v=u^2=1/1024 and NOT a statement about heat-flow time. The1947 fifth-level negative candidate remains UNCERTIFIED: finite-prefix enclosures, real coordinate conversion and five-stage interval propagation remain open. No improved Xi zero bound/threshold/RH claim. A2 ACTIVE; Cauchy paused.
+
 Current1947: ACTUAL Xi theta-kernel Laguerre hierarchy has a VERIFIED exact finite-jet representation on the positive sqrt-coordinate domain. Levelk/outputn depends only on the original normalized jet throughn+2k; actual fifth level reduces to order10. Fixed-scalar normalization law/sign invariance proved. Two independent high-precision derivative calculations find a fifth-level NEGATIVE CANDIDATE near t=1/1024, with first4 point values positive; this is NOT an interval/Lean sign certificate. No all-level positivity, new Xi zero bound, threshold improvement or RH conclusion. NEXT: certify actual0..10 coefficient intervals and theta-tail errors, then verified outward propagation. A2 ACTIVE; Cauchy remains paused.
 
 Activated November2,2026 by explicit "move onto the next objective". Cauchy is

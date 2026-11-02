@@ -1,0 +1,108 @@
+{
+  "checkpoint": 1948,
+  "status": "VERIFIED infinite theta-tail Taylor-coefficient error through order10 in ORIGINAL u coordinate",
+  "baseline_commit": "4a6794c250dac43cf2fd6a720f46a8201e521f4a",
+  "active_campaign": "A(2)/RH revisit",
+  "verified": {
+    "checkpoint": 1948,
+    "time_utc": "2026-11-02T13:35:44.093644+00:00",
+    "source_statistics": {
+      "lines": 238,
+      "public_types": 17,
+      "public_proofs": 14,
+      "public_definitions": 3,
+      "public_abbreviations": 0,
+      "private_proofs": 3,
+      "private_definitions": 0,
+      "private_abbreviations": 0,
+      "local_instances": 0,
+      "public_instances": 0,
+      "private_instances": 0
+    },
+    "source_sha256": "bcb8306c850de4b7acf003e98e3d7c91c13683f0e261de350c932225daee9131",
+    "public_types_reviewed": 17,
+    "canonical_public_types": 17,
+    "transitive_audited_declarations": 66474,
+    "independent_examples": 12,
+    "verification": {
+      "build": {
+        "seconds": 44.815938999992795,
+        "exit_code": 0
+      },
+      "audit": {
+        "seconds": 51.23221889999695,
+        "exit_code": 0
+      },
+      "checks": {
+        "seconds": 32.34097439999459,
+        "exit_code": 0
+      },
+      "axiom-ledger": {
+        "seconds": 58.87180880000233,
+        "exit_code": 0
+      }
+    },
+    "type_output_sha256": "14e01d20066ef27ed42936fea0b04ead389be0cb62f58a2372b9392cd5d17a05",
+    "independent_source_sha256": "38346b69b2af8701ff83590c53a62a9d5704d5645fea79a824e994cb92f916ff",
+    "library_index_sha256": "0bddf3500a6e4d7aac438e1ef7168fa0c2dfb0fdbb3a0270f821a90f5721c7cd",
+    "review_scope": "ALL17 canonical types and ALL public/private proofs: literal finite actual complex theta prefix, exact real restriction, generic cutoff remainder, disk1/32 radius1/64 and true Re(exp4u)>=1/2, original moment2/4 tail reuse, uniform amplitude264(N+1)^4 exp(-pi(N+1)^2/2), complex differentiability on CLOSED disk before Cauchy, all-order factorial-normalized derivative bound, exact16-term/order<=10 rational majorant, global REAL-point analyticity and iterated complex-to-real derivative restriction, actual real coefficient difference<10^-100. No complex sqrt branch assumed, no square-root-coordinate coefficient enclosure, no fifth-sign or RH theorem."
+  },
+  "coordinate": {
+    "u_center": "1/32",
+    "complex_disk_radius": "1/64",
+    "sqrt_coordinate_v": "1/1024; NOT de Bruijn-Newman flow time",
+    "cutoff_prefix_terms": 16,
+    "first_omitted_integer_index": 17,
+    "normalization": "iterated derivative order n divided by n!, n<=10",
+    "strict_absolute_error": "1/10^100"
+  },
+  "actual_infinite_tail_certified": true,
+  "finite_prefix_enclosure_certified": false,
+  "sqrt_coordinate_chain_certified": false,
+  "actual_kernel_fifth_sign_formalized": false,
+  "new_RH_or_threshold_bound": false,
+  "independent_consistency": {
+    "scope": "Independent arithmetic/series consistency check ONLY; finite numerical omitted sum does not prove an infinite-tail theorem. Actual infinite-tail certification is in Lean.",
+    "artifact": ".lake/stardust-1948-direct-tail-check.json",
+    "sha256": "f992772ab359fbe8de0bf1b5c6be6d48ffc5f1d5ddc71458ecb741f1dfd1011f",
+    "script": ".lake/stardust-1948-direct-tail-check.py",
+    "script_sha256": "2128b979bd7e300228f8ee72e87825b009384fe422e183d3d9042e28e1fbc024",
+    "exact_rational_cases": 11,
+    "selected_finite_series_rows": [
+      {
+        "n": 0,
+        "finite_omitted_sum_17_through_48": "3.41036735618896088309226506105887637209016114387968722641539389663066062515441664059244065958946626700649670082649016382689639292830078782899111267518207140053430145179937076818294545386229475345151850818926719333899005511947236505707842881E-441",
+        "cauchy_rational_majorant": "1.98811492464771253584197653555300272215345970272841547465348873372988606387980382378264716553290704132911001187870727303451693126690535303078413090761460551109233317264284567996711418314648338500444034923642605302087642542146314231358711630E-123"
+      },
+      {
+        "n": 5,
+        "finite_omitted_sum_17_through_48": "-3.28537490972987568892428429524141704966010009107290715170708715983756000670332807793917394883316321479659141121701304786933266725255796267074239531226831743298053941508320492825629220780051338228447057183541317126269031290841094906846840112E-425",
+        "cauchy_rational_majorant": "2.13472214551285741566262926104988199156202102911810660838426276091857818554248107451055414706773353857916196845130481411014822473740958459863808087099688201052073405320923602095840944302797512900036202868831711741175656311064180317656261024E-114"
+      },
+      {
+        "n": 10,
+        "finite_omitted_sum_17_through_48": "1.22540452196316277499690319304913155615777713336163345008491252031401798630534145669086975188169181727388233052150083501457616668136654087898622138440618016400630658583021606631352459898219212510205959079951295252499418729933513048150093731E-411",
+        "cauchy_rational_majorant": "2.29214045025616893694551771139547244460455706893163290111297198980399005643099405843044231712327246125996374039633448628261149173990808840202396087028370078828932017211179813879038478349568209803948402134413394914012165111839164355345133117E-105"
+      }
+    ]
+  },
+  "missing_certification": [
+    "Rigorously enclose actual finite16-term prefix coefficients in u.",
+    "Prove and outwardly propagate real-coordinate conversion v=u^2 at u=1/32, tracking amplification; no transfer of10^-100 unchanged to v coefficients.",
+    "Use verified Laguerre jet recurrence with rigorous intervals through all five stages and prove the desired sign; numerical candidate remains unproved."
+  ],
+  "source_integrity": {
+    "foundation_and_root_files": 3144,
+    "foundation_files": 3143,
+    "root_reachable_foundation_modules": 3142,
+    "all_older_lean_sources_unchanged": true,
+    "configuration_files_unchanged": 3,
+    "archive_originals_unchanged": 113,
+    "YM_originals_unchanged": 21,
+    "cauchy_original_unchanged": true,
+    "prior_two_numeric_probes_unchanged": true,
+    "both1947_exploration_tools_unchanged": true,
+    "all_four_paused1945_artifacts_and_local_copies_unchanged": true
+  },
+  "backup_status": "PENDING exact approval and independent BOTH-ref PUBLIC verification; never change visibility"
+}
