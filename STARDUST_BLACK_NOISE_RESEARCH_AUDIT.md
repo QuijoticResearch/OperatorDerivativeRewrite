@@ -653,3 +653,67 @@ Next: construct and test the finite-horizon current-state/Brownian-restart
 splicing map, first auditing existing measurable path-shift, parameterized
 independence and conditional-kernel tools. Prove both its Borel measurability
 and its equality with the native process before asserting a conditional law.
+
+## Checkpoint1975 — actual sticky observed transition law; user-directed pause
+
+Foundation.StickyStateSplice constructs a jointly Borel map V(kappa,h,x,p)
+for fixed kappa,h. For sigma the first zero of x+p on[0,h], with fallback h,
+V is the fresh sticky path of the centered shifted p at elapsed h-sigma
+when sigma<h; otherwise V=x+p(h). Initial zero, endpoint/no hit and h=0
+are retained. Continuous offset/shift, measurable hit time and exact hit-window
+translation are proved, using the existing random-hitting/clock construction.
+
+For the ORIGINAL scalar sticky process, fixed deterministic kappa,s,h:
+
+    X_(s+h) = V(kappa,h,X_s,R_tau) almost surely, tau=C^-1(s).
+    E[f(X_(s+h)) | F_s^X] = Q_h f(X_s),
+    Q_h f(x) = integral f(V(kappa,h,x,p)) dWiener(p).
+
+The second identity holds for every bounded Borel f on the ENTIRE raw observed
+history and its ambient-null augmentation. The whole Brownian innovation R_tau
+is independent of that history and has the verified Wiener path law. This
+literally reuses IndependentInnovationConditioning.conditional_integral,
+BrownianFiniteStrongMarkov.path_independent/path_law and the original native
+inverse-clock pre/post-hit identities. No Markov or spatial-Green hypothesis
+is added. The post-hit identity quantifies all elapsed times inside one AE
+event before evaluating at a random residual duration. No simultaneous AE
+event over all s,h or all-start semigroup composition is claimed.
+
+This closes1974's measurable state-splice and deterministic-time observed
+conditional-law gap. It does NOT construct a complete LJR black flow or full
+black stochastic calculus. L2 composition/conditional-kernel uniqueness,
+arbitrary physical stopping times, spatial derivative/adjoint/Green domains,
+CKC, higher sectors, circle-to-line transfer and a common continuum integral
+remain open. Previously verified endpoint-memory and raw-norm nonclosability
+obstructions remain unchanged. No novelty assertion is made for this classical
+mechanism verified on the actual native construction.
+
+All214 production lines/proofs and19 canonical types reviewed; explicit
+conditional_augmented print confirms conditioning on the actual augmented
+observed filtration. Full root build, complete transitive axiom audit (ONLY
+propext,Classical.choice,Quot.sound), ten independent Lean examples and persisted
+full axiom ledger PASS. Examples include zero horizon, bounded cosine and
+Borel indicators. Original compiler/resource/toolchain settings unchanged;
+elaboration was repaired with typed measurable intermediates, not higher limits.
+Failed development logs preserved; diagnostic logging removed before full build.
+
+Independent128 exact rational deterministic-model tests compare absolute and
+relative hits and compatible time-change splices, including79 interior hits,
+49 cutoff/endpoint cases,36 initial zeros,19 zero horizons and8 endpoint zeros.
+These are regression tests, NOT Brownian simulations, certificates for the
+chosen Wiener local-time functional or proofs of conditional expectation.
+Those stochastic claims are established by the reviewed Lean proofs.
+
+Integrity authenticates3164 Foundation/root sources (3163 Foundation,
+3162 root-reachable; AxiomAudit only unrooted), all3 configurations and all
+inventoried originals/paused artifacts. Only this leaf and root/audit integration
+changed against approved1974. Immutable blackito.tex SHA256 remains
+D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D.
+ResearchSources stays unmodified/uncommitted; no publication maintenance.
+
+The user's latest instruction is to PAUSE this objective and move next.
+After exact checkpoint backup, black noise is PAUSED/INCOMPLETE, not completed.
+Do not continue the prospective L2 composition route during the next campaign.
+AI Mathematics Exploration is the next saved objective. All open obligations,
+proofs, counterexamples and return route are preserved for explicit resumption.
+Exact BOTH-branch backup is recorded only after independent remote verification.

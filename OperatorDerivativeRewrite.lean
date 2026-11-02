@@ -3263,3 +3263,5 @@ import Foundation.StickyBoundaryRestart
 import Foundation.StickyHittingRestart
 
 import Foundation.StickyRandomHitting
+
+import Foundation.StickyStateSplice
