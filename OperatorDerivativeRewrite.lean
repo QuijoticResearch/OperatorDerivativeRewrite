@@ -3222,3 +3222,4 @@ import Foundation.StochasticCauchyExitClock
 import Foundation.StochasticCauchyExitOccupation
 import Foundation.StochasticCauchyExitMoments
 import Foundation.StochasticCauchyExitLaw
+import Foundation.StochasticCauchyStoppedCoefficients
