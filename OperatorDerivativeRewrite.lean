@@ -3207,3 +3207,5 @@ import Foundation.FractionalCausalGridObstruction
 import Foundation.FractionalPredictiveIntegral
 
 import Foundation.FractionalPredictivePartitions
+
+import Foundation.FractionalPredictiveTags
