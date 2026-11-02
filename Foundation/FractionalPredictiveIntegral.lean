@@ -414,4 +414,33 @@ theorem integral_observed_measurable :
     stronglyMeasurable_condExp.aestronglyMeasurable
   exact hm.congr (integral_observed H hH0 hH1).symm
 
+/-- Reusable actual forecast-increment orthogonality for chronological refinements. -/
+theorem prediction_increment_orthogonal {a b c d : ℝ≥0}
+    (hab : a≤b) (hbc : b≤c) (hcd : c≤d) :
+    inner ℝ (predictionDirection H hH0 hH1 b-predictionDirection H hH0 hH1 a)
+      (predictionDirection H hH0 hH1 d-predictionDirection H hH0 hH1 c)=0 :=
+  forecast_increment_orthogonal H hH0 hH1 hab hbc hcd
+
+/-- Reusable finite-energy bound on the SAME actual full-past forecasts. -/
+theorem prediction_energy_bound (N : ℕ) (a b : ℕ → ℝ≥0)
+    (hab : ∀ i<N, a i≤b i) (hsep : ∀ i<N, ∀ j<N, i<j → b i≤a j) :
+    (∑ i ∈ Finset.range N, ‖predictionDirection H hH0 hH1 (b i)-predictionDirection H hH0 hH1 (a i)‖^2)≤1 :=
+  forecast_energy_bound H hH0 hH1 N a b hab hsep
+/-- The covariance of the actual Gaussian forecast is its increasing variance clock. -/
+theorem prediction_time_pairing (s t : ℝ≥0) :
+    inner ℝ (predictionDirection H hH0 hH1 s) (predictionDirection H hH0 hH1 t)=
+      ‖predictionDirection H hH0 hH1 (min s t)‖^2 := by
+  rcases le_total s t with hst | hts
+  · rw [min_eq_left hst,real_inner_comm]
+    have ht := forecast_pairing H hH0 hH1 t _
+      (past_mono H hH0 hH1 hst (forecast_mem H hH0 hH1 s))
+    have hs := forecast_pairing H hH0 hH1 s _ (forecast_mem H hH0 hH1 s)
+    rw [real_inner_self_eq_norm_sq] at hs
+    exact ht.trans hs.symm
+  · rw [min_eq_right hts]
+    have hs := forecast_pairing H hH0 hH1 s _
+      (past_mono H hH0 hH1 hts (forecast_mem H hH0 hH1 t))
+    have ht := forecast_pairing H hH0 hH1 t _ (forecast_mem H hH0 hH1 t)
+    rw [real_inner_self_eq_norm_sq] at ht
+    exact hs.trans ht.symm
 end OperatorDerivativeRewrite.Foundation.FractionalPredictiveIntegral

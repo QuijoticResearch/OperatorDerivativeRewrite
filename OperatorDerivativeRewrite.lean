@@ -3205,3 +3205,5 @@ import Foundation.FractionalAdaptedAdjointObstruction
 import Foundation.FractionalCausalGridObstruction
 
 import Foundation.FractionalPredictiveIntegral
+
+import Foundation.FractionalPredictivePartitions
