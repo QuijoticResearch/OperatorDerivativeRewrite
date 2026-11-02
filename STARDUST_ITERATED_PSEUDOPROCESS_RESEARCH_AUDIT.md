@@ -473,3 +473,104 @@ visibility control; never change it. Previous goal-turn classification: PROGRESS
 in1956 queue update and1957 actual-process construction; the brief confirmation
 turn added no mathematical change, and this turn resumes the unfinished1958
 test/verification checkpoint. No new goal, session or automation.
+
+## Checkpoint1959 — actual branch-conditional Clark-Ocone and a sharp residual criterion
+
+VERIFIED Foundation.BiharmonicBranchReconstruction:214 lines,20 public theorems
+and3 definitions; all23 canonical types and all complete proofs reviewed.
+Previous goal turn is PROGRESS:1958 actual branchwise Ito, all gates and exact
+BOTH-ref backup closed at1e234b96f8cf6ebb57df4e3b602c40d602b43fe7. This turn
+revalidates that authoritative state and advances reconstruction. Current iterated
+pseudoprocess campaign remains ACTIVE; Yang-Mills remains NEXT under1956.
+
+For EVERY complex polynomial Q(B_T), construct its actual native complex Brownian
+representer by applying the EXISTING bounded predictableAdjoint to the original
+real and imaginary polynomial L2 values. Prove the required pastL2 T membership
+using GaussianPolynomialMartingale.valueL2_mem_past, then use past_mem_brownian
+and the PROVED GaussianBrownianPRP.brownian_representation. No claim that all
+ambient Gaussian L2 is Brownian generated. The result is unique among ALL Native
+inputs, using injectivity of the actual complex integral, and each component
+is fixed by predictableCut T. The component-mean formula is proved equal to the
+ordinary complex Gaussian expectation, not introduced as a substitute law.
+
+Closed derivative membership is ESTABLISHED, not imposed as a new hypothesis:
+polynomialDomain uses closedCylindricalDerivative_core_mem on the actual original
+pastCoefficient cylinder. Thus each representer component equals the ORIGINAL
+predictableProjection of its ORIGINAL closedCylindricalDerivative. The exact
+reconstruction has actual derivative, causal domain, genuine integral and L2
+energy identity; it is not merely a bounded-adjoint formal expression. The norm
+is the complex time-probability field norm from1958, not the default Native
+product-supremum norm. No new foundational derivative or integral is constructed.
+
+Write A_T(P)=fair branch mean and C_T(P)=branch contrast from1957. Actual branch
+Gaussian integration gives E_b[P^C(Z_b(T))]=A_T(P)+sign(b)*C_T(P). Consequently
+ branchValue(T,b,P)-constant(A_T(P))
+   = constant(sign(b)*C_T(P)) + J(U_b),
+where U_b is the pair of projected actual closed derivatives. This is the proved
+branch_clark_ocone theorem on EVERY real polynomial's holomorphic extension,
+including uniqueness of the centered branch representer and causal cutoff.
+All equalities are in actual complex Gaussian L2. The sign is fixed before the
+Brownian branch, and its residual is explicitly retained.
+
+Sharp result branch_centered_native_iff:
+ [there exists Native U with J(U)=branchValue(T,b,P)-constant(A_T(P))]
+                  if and only if C_T(P)=0.
+Necessity uses actual expectation-zero of every original native integral;
+sufficiency uses the verified representation. It holds for all T>=0 and either
+branch, without an arbitrary invertibility or positivity assumption. In
+particular C_T(X^2)=2*i*T is nonzero for T>0, but EVERY C_T(X^(4*n))=0. The latter
+has a positive UNIQUE centered native reconstruction for every n, including
+n=0 and T=0. One- or two-channel obstructions are not misreported as impossibility
+of reconstruction with a phase residual.
+
+Independent exact rational test:144 degree<=12 branch/backward-heat kernel cases
+check the backward PDE, terminal polynomial, initial actual Gaussian branch mean
+and centered-variance versus proposed kernel energy;144 mean/contrast residual
+cases also pass. A concrete wrong transfer is exposed for Q=-4*x^4,T=1:
+using its running derivative -16*B_s^3 as the centered reconstruction integrand
+has energy960, while centered terminal variance is1536. The proposed correct
+conditional kernel is -16*(B_s^3+3*(T-s)*B_s), whose exact computed energy agrees.
+These are supplementary rational checks of polynomial/moment identities, NOT a
+formal identification of that explicit kernel with predictableProjection or a
+proof of stochastic convergence. The Lean theorem uses the actual proved
+projection; explicit backward-heat kernel identification remains a useful next
+bridge. Do not substitute1958's running-derivative Ito integrand for the
+conditional reconstruction kernel: its nonzero Bochner drift matters.
+
+Precise scope/still open: no equality of the completed observed filtration with
+the initially enlarged Brownian/sign filtration; no completed right-germ theorem
+or identification of the phase residual as that germ's conditional projection;
+no completed analytic-H actual probability L1/L2 extension; no canonical source
+inverse-clock multitime distribution identification or real signed path measure.
+This is actual branch-conditional polynomial calculus for the1957 complex
+probability realization, NOT completion of full signed pseudoprocess Clark-Ocone.
+The original Cinque-Orsingher composition question and1954 signed-clock
+obstruction remain. General Brownian Clark-Ocone is classical reused machinery;
+no novelty is claimed for it or for classical Fresnel/Brownian representations.
+
+Cross-campaign hypothesis audit: IBMObservedInitialGerm.initial_condExp_zero
+concerns actual IBM coordinates on its own joint source and right-germ filtration.
+It cannot be imported for the present phase-visible quadratic observable, whose
+branch mean is nonzero. Preserve IBM's result and the present residual rather
+than asserting zero initial information by analogy. The next observed-domain
+investigation must establish its own completed-filtration hypotheses, potentially
+using countable-time phase recovery and GeneratedFamilyModification. Nothing in
+this checkpoint proves a simultaneous ratio recovery at every real time.
+
+Verification: full7377-job build, complete66855-declaration transitive standard-
+three axiom audit, persisted Foundation/AxiomAudit.lean, all23 public types/full
+proofs and20 Lean instantiation/boundary checks PASS. Failed scratch rewrite
+attempts are preserved locally (value_eq and Pi.sub_apply fixes); final production
+proofs contain no sorry, new axiom, oracle or changed trust/resource option.
+Original build settings retained; no benchmark speedup claim. The exact timings
+and evidence hashes are in STARDUST_BIHARMONIC_BRANCH_RECONSTRUCTION_VERIFICATION.json.
+
+Integrity:3153 Foundation/root files;3152 Foundation modules,3151 root-reachable
+with only AxiomAudit unrooted. Authenticated prior approved1958 source snapshot;
+only new leaf/root import/persisted audit change mathematically. All older source
+bytes,3 configurations,113 archive originals,21 Yang-Mills originals, Cauchy
+original, both numerical exploration tools and all paused1945 scratch copies
+remain unchanged. ResearchSources remains immutable/uncommitted. No manuscripts,
+PDFs, editorial README, campaign-queue, repository-visibility or toolchain changes.
+Exact commit approval, guarded BOTH-branch backup and independent confirmation
+are recorded separately. Repository remains PUBLIC, exclusively user-controlled.
