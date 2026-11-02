@@ -3227,3 +3227,4 @@ import Foundation.StochasticCauchyStoppedErrors
 import Foundation.StochasticCauchyStoppedPolynomialIto
 import Foundation.StochasticCauchyUntruncatedPolynomial
 import Foundation.StochasticCauchyDiskCompletion
+import Foundation.StochasticCauchyDiskDerivative
