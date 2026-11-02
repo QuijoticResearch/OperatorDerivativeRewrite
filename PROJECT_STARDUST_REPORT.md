@@ -65409,3 +65409,22 @@ source/evidence originals and local copies unchanged. Only new leaf/root import/
 persisted audit change mathematically. ResearchSources remains immutable and
 uncommitted; no manuscripts/PDF maintenance, README, queue, visibility or toolchain
 changes. Exact approval and independent BOTH-ref public backup follow separately.
+
+
+## Checkpoint1964 — explicit pause of Yang–Mills; fractional diffusion ACTIVE
+
+The user requested pausing the current objective and moving to the next.
+Yang–Mills stochastic quantization is PAUSED/INCOMPLETE at verified1962,
+b8735c70a503c4c9dd3adc8628b763716fc9c84e. Its1963 production angular draft
+failed its full build and is preserved as LOCAL unverified scratch, with all46
+archived artifact hashes in STARDUST_FRACTIONAL_DIFFUSION_ACTIVATION_VERIFICATION.json.
+No angular calculus completion or global curvature obstruction is claimed.
+Exact1962 mathematical bytes and3 configurations were authenticated before
+retaining its complete verification gates for this instruction-only change.
+Original archives and earlier paused work are unchanged.
+
+Fractional diffusion is ACTIVE; see its research audit, immutable source
+inventory and preserved mission. Queue continues black noise, AI mathematics,
+generalized Cauchy/stable calculus, Hermite calculus, then saved backlog.
+All previously paused/incomplete campaigns remain preserved. Exact audited
+both-branch backup is required before treating this transition as closed.

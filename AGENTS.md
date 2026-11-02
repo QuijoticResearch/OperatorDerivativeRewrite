@@ -1,3 +1,48 @@
+# Authoritative user transition — November 2, 2026: fractional diffusion ACTIVE; Yang–Mills PAUSED
+
+The user explicitly instructed: "Please pause and current objective and move
+onto the next objective." This new transition PAUSES the currently active
+stochastic-quantization Yang–Mills campaign as INCOMPLETE and ACTIVATES the
+saved NEXT campaign: fractional diffusion. It supersedes earlier requirements
+to finish Yang–Mills before transition; it does not certify completion.
+
+Verified Yang–Mills return point: checkpoint1962,
+b8735c70a503c4c9dd3adc8628b763716fc9c84e. Both authorized PUBLIC branches
+independently matched at2026-11-02T18:20:26.606591Z. Read
+STARDUST_STOCHASTIC_QUANTIZATION_YANG_MILLS_PAUSE.md before resumption.
+The1963 angular draft FAILED its production full build; it is not a verified
+library result. All46 draft/evidence files are preserved locally with hashes
+in the activation receipt. Its exploratory1964 curvature test is NOT Lean
+verified. Neither draft is claimed remotely backed up. The failed worker
+finished before transition; no Lean/Lake process was interrupted.
+
+ACTIVE: fractional-diffusion audit under the preserved mathematical mission in
+STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md. Begin with read-only source
+inventory and exact theorem/domain reuse, followed by selective claim tests.
+Current ledger: STARDUST_FRACTIONAL_DIFFUSION_RESEARCH_AUDIT.md. Repair mathematics
+in Lean and research ledgers; do not perform publication-agent maintenance.
+Do not infer stochastic realizations from formal fractional operators.
+
+Order: fractional diffusion (ACTIVE) -> black noise -> AI mathematics ->
+Generalized Cauchy and Stable-Process Calculus -> Hermite-process calculus ->
+remaining saved backlog in its existing order. Yang–Mills and iterated
+pseudoprocess calculus are PAUSED/INCOMPLETE; other Bakry/IBM/Cauchy obligations
+and frozen unresolved A2 status remain unchanged. No paused campaign is
+reactivated. Preserve every return point and existing mathematical result.
+
+Instruction-only checkpoint1964 retains1962 verification only after exact
+identity checks of all3154 Foundation/root sources and3 configurations.
+The unaudited1963 import/audit integration was archived before restoring the
+exact1962 bytes; no mathematical theorem is changed or newly certified.
+Preserve full-build, complete transitive axiom/type/proof/independent checks,
+original-source integrity, exact Git receipts and guarded BOTH-branch backups.
+ResearchSources remains immutable and uncommitted. Repository stays PUBLIC;
+visibility is exclusively user-controlled and must never be changed. No new
+research goal, session, automation or expiration date. Older dated instructions
+below are historical where superseded by this explicit user transition.
+
+---
+
 # Authoritative user transition — November 2, 2026: Yang–Mills ACTIVE; pseudoprocess PAUSED
 
 The user explicitly instructed: "Please pause and current objective and move
