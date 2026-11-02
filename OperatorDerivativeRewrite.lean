@@ -3209,3 +3209,5 @@ import Foundation.FractionalPredictiveIntegral
 import Foundation.FractionalPredictivePartitions
 
 import Foundation.FractionalPredictiveTags
+
+import Foundation.StochasticCauchyModulus
