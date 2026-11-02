@@ -534,3 +534,122 @@ starting stop and finite random cutoff, with explicit filtration measurability.
 Then test whether the resulting actual physical continuation is a measurable
 function of the current state and independent Brownian restart. Do not assume
 that the deterministic-window result already supplies that off-boundary law.
+
+## Checkpoint1974 — random-start hitting and actual inverse-clock physical splicing
+
+Black noise remains ACTIVE. Previous goal turn is PROGRESS:1973 passed every
+complete gate and BOTH PUBLIC branches independently matched
+dd91ebecaad96ca14a9f1f83f5e9ee39d69a80ba at21:19:37Z. Its deterministic-window
+hitting/sticky identities remain unchanged. No paused campaign is reactivated.
+
+### Random-start stopping without a discrete-time substitution
+
+Foundation.StickyRandomHitting reuses1973's actual scalar hittingBtwn geometry.
+For a supplied everywhere-finite stopping time tau and finite h>=0, define
+H as the first zero of the continuous adapted path in [tau,tau+h], with fallback
+tau+h if no zero occurs. randomHit_stopping proves that H is a stopping time
+in the SAME filtration. No countable/well-founded time assumption, usual
+conditions, or unproved physical Markov theorem is introduced.
+
+The crucial measurable-event identity is
+
+    {H<=t} = {tau+h<=t}
+      union ({tau<=t} intersect {a zero occurs on[tau,t]}).
+
+The variable-lower-bound compact-prefix zero event is CLOSED by compact time
+projection. The lower endpoint used in that event is min(tau,t), whose time-t
+measurability comes from the EXISTING Mathlib IsStoppingTime.min_const and
+measurable_of_le, followed by WithTop.untopD. The finite delayed cutoff uses
+BrownianStoppedFourier.delay_isStoppingTime. These previously verified facts
+are reused; no alternate stopping-time foundation was built. h=0 and no-hit
+cutoff cases are retained explicitly, without treating a cutoff as a zero.
+
+### Null-set quantifiers and genuine physical trajectories
+
+An important strengthening is all_window_mass:
+
+    AE omega, FOR ALL a,T and all a<=r<=firstZero_[a,T](omega), L_r=L_a.
+
+This is proved on the ONE original zero-free-mass/continuous-limit event before
+any random starting time is substituted. The old statement FOR EACH a,T,
+AE omega would not justify evaluating at a=tau(omega). This is an actual
+quantifier/domain repair, not a numerical or informal random-time substitution.
+The proof retains the original Brownian mass and its continuous endpoint
+extension; no new local time or process law is defined.
+
+It follows that, up to H, C(r)=C(tau)+(r-tau), and the original sticky trajectory
+satisfies X_(C(tau)+(r-tau))=B_r. For stopping tau, H is now a verified finite
+operational stop; on H<tau+h, the original Brownian strong-Markov path restart
+and1973's stopped_boundary_restart give
+
+    X_(C(H)+u) = freshSticky_after_H(u),  for every u>=0.
+
+Native inverse_clock_prehit and inverse_clock_posthit instantiate
+ tau=C^-1(s) at a DETERMINISTIC PHYSICAL observation s and make the physical
+clock offset explicit:
+
+    X_(s+(r-tau)) = B_r,                   tau<=r<=H;
+    X_(s+(H-tau)+u) = freshSticky_after_H(u), H<tau+h, every u>=0.
+
+Thus the random operational start needed after a physical observation is now
+covered, with actual path identities and verified stopping measurability.
+The pre-hit pathwise result allows arbitrary finite random tau; its stopping
+hypothesis is only needed for the stochastic post-hit restart law. Each native
+statement uses one full-measure event for its stated parameters and all
+quantified r/u. No universal AE event over every physical s is asserted.
+
+### What this does not yet prove
+
+These identities do NOT by themselves prove that the conditional law depends
+only on X_s. The next required bridge is a JOINTLY MEASURABLE splicing map
+of current state x and the independent whole Brownian restart at tau, with a
+proved actual representation of X_(s+h). That map must handle no-hit, initial
+zero, tangent/endpoint hit and zero horizon cases correctly. Only then can
+independent-path disintegration be applied to prove the off-boundary observed-
+filtration law or semigroup composition. Current-state sufficiency is not
+assumed merely because H is a stopping time.
+
+Actual spatial derivative/Green domains, CKC, higher-sector consistency and
+common intrinsic continuum integral/refinement remain open. No full LJR flow,
+blackness transfer, arbitrary physical stopping-time theorem or complete black
+Clark-Ocone calculus is claimed. Finite endpoint-memory and raw-norm obstructions
+are preserved. The current work supports the SAME active black-noise objective;
+it is not a new campaign or a substitute output-only calculus.
+
+### Source and complete verification
+
+Motivation remains the immutable blackito.tex dynamic slice construction and
+open continuum problem; SHA256 remains
+D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D. Pinned
+Mathlib and exact Foundation statements were inspected. No publication novelty
+is asserted for classical stopping/splicing mechanisms formalized on the
+original construction. ResearchSources and all drafts/history remain preserved;
+no manuscript/PDF/README maintenance occurred.
+
+All10 canonical public types and all159 source/proof lines reviewed, including
+an additional EXPLICIT implicit-argument print of truncated_stop_measurable
+inside the same complete audit. It confirms time-t filtration measurability.
+Full root build, COMPLETE transitive axiom audit accepting only propext,
+Classical.choice, Quot.sound,10 independent Lean examples and persisted full
+axiom ledger pass. No new axiom, sorry, oracle, resource/trust/compiler/version
+or configuration changes. Targeted inference errors were repaired without
+relaxing checks; failed logs are preserved locally.
+
+Independent exact Fraction tests cover128 path-dependent lower endpoints,
+random-window event decompositions (including t<tau and h=0), cutoff/zero
+geometry and physical offsets under independently inverted support-compatible
+deterministic clocks. These pathwise regressions are NOT simulations or proof
+certificates for Brownian measurability, local time or Markovness; the native
+stochastic statements are the reviewed Lean theorems.
+
+Source integrity:3163 Foundation/root files,3162 Foundation modules,3161
+root-reachable, AxiomAudit only unrooted. Only StickyRandomHitting and its root/
+audit integration changed against approved1973.3 configurations and all
+inventoried originals/paused artifacts remain byte-preserved. ResearchSources
+is uncommitted. Exact audited BOTH-ref backup is recorded only after independent
+remote verification.
+
+Next: construct and test the finite-horizon current-state/Brownian-restart
+splicing map, first auditing existing measurable path-shift, parameterized
+independence and conditional-kernel tools. Prove both its Borel measurability
+and its equality with the native process before asserting a conditional law.
