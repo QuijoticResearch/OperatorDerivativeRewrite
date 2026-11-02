@@ -3235,3 +3235,4 @@ import Foundation.StochasticCauchyCayleyDomain
 import Foundation.StochasticCauchyAnalyticDisk
 import Foundation.StochasticCauchyAnalyticMartingale
 import Foundation.StochasticCauchyHolomorphicLawObstruction
+import Foundation.StochasticCauchyOccupationEnergy
