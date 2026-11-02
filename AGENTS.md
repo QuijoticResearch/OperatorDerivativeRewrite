@@ -1,3 +1,39 @@
+# Authoritative user transition — November 2, 2026: AI mathematics ACTIVE; black noise PAUSED
+
+The user explicitly instructed: "Please pause and current objective and move
+onto the next objective." Black noise is now PAUSED/INCOMPLETE at fully audited
+checkpoint1975, f617d790dec92716ea240ac2d240a7b04175132a, independently verified
+on BOTH authorized PUBLIC backup branches before transition. Read
+STARDUST_BLACK_NOISE_PAUSE.md before resuming. Verification finished normally;
+no active Lean/Lake worker was stopped. This supersedes the black-noise
+completion prerequisite for this transition only; it does not certify completion.
+
+ACTIVE: AI Mathematics Exploration under the complete preserved mission in
+STARDUST_AI_MATHEMATICS_QUEUED_RESEARCH.md. Investigate exact verified stochastic/
+operator connections to AI; distinguish theorem reuse, conjectures, algorithms
+and empirical performance. Prioritize a concrete construction or decisive
+obstruction; test advantages against counterexamples and published methods
+before claiming novelty. Do not manufacture a positive AI application.
+Current ledger: STARDUST_AI_MATHEMATICS_RESEARCH_AUDIT.md.
+
+Order: AI mathematics (ACTIVE) -> Generalized Cauchy and Stable-Process Calculus
+-> Hermite-process calculus -> remaining saved backlog in its existing order.
+Black noise, fractional diffusion, Yang–Mills and iterated pseudoprocess work
+remain PAUSED/INCOMPLETE. Other Bakry/IBM/Cauchy obligations and frozen unresolved
+A2 status are unchanged; no paused campaign is reactivated.
+
+Instruction-only checkpoint1976 authenticates exact identity of all3164
+Foundation/root sources and3 configurations against approved1975 and retains
+its complete full-build/transitive-axiom/type/proof/independent-check gates.
+No new mathematical result or fresh Lean build is claimed. ResearchSources
+remains immutable/uncommitted; no manuscript/PDF/README or publication work.
+Preserve all verification, source-integrity, Git and guarded exact BOTH-branch
+backup requirements. Repository remains PUBLIC and visibility exclusively
+user-controlled; never change it. No new goal, session, automation or deadline.
+Older active labels and completion gates below are historical where superseded.
+
+---
+
 # Authoritative user transition — November 2, 2026: black noise ACTIVE; fractional diffusion PAUSED
 
 The user's latest explicit instruction is to pause the current objective and
