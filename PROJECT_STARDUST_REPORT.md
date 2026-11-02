@@ -64974,3 +64974,104 @@ build or mathematical verification is claimed. Existing source-integrity checks
 preserve all inventories and paused scratch. Receipt:
 STARDUST_YANG_MILLS_NEXT_QUEUE_VERIFICATION.json. Exact commit and independently
 verified BOTH-branch PUBLIC backup confirmation recorded separately at closure.
+
+
+## Checkpoint1957 — genuine complex Brownian realization and the observable phase obstruction
+
+VERIFIED Foundation.BiharmonicGaussianBranches:324 lines;41 public theorems,
+13 definitions,1 abbreviation and2 probability instances; all57 types and all
+source proofs reviewed. No private declarations, resource/trust changes or new
+foundational stochastic process library. Reuses the actual continuous Brownian
+clockPath from IBMConstructedSources, finite probability integration, original
+ComplexGaussianPolynomialTransport integrability/Stein/moment results and1955
+analytic composition. Earlier proofs and the current queue are preserved.
+
+Construct sigma as one fair independent sign and set Z_t=(1+i*sigma)B_t on the
+ACTUAL product probability space. The sign is selected ONCE, not refreshed each
+increment. The path map into C(nonnegative time,complex) is measurable, paths
+are continuous and evaluation is jointly measurable. Its actual pushforward
+path law is a probability measure. This constructs a genuine COMPLEX process
+at all times, stronger than a finite-scale complex-noise representation.
+It is NOT a real signed path measure or a nonnegative inverse clock.
+
+For every real polynomial P, integrability of its holomorphic complex extension
+P^C(Z_t) is proved before Fubini and integral algebra. The full polynomial
+functional, not merely selected moments, satisfies
+ E[P^C(Z_t)] = (AnalyticInverseClock.composed(4,-1,t)(polynomial P):complex).
+Proof establishes the phase cancellations and exact Gaussian moments, then
+identifies the two real-linear polynomial maps. Degree4j gives
+ (4j)!*(-1)^j*t^(2j)/(2j)!, with all other degrees zero.
+Thus the analytic clock's biharmonic means have an actual continuous complex
+probability realization on polynomial observables. It does not identify the
+source paper's multitime inverse-clock composition, which is still undefined
+in the required completed domains. Polynomial agreement does not prove a
+completed-H or all-entire-observable integral representation.
+
+The variance normalization is essential: the branch Gaussian law is
+RiemannQuadraticGaussian.law(t/2)=normal(0,t), and phase is1+/-i. Their squares
+are+/-2i. The existing average_eq_transport/actual_gaussian_transport requires
+a REAL delta, so it was explicitly REJECTED for these phases. Instead actual
+complex polynomial moments and average_mul_X supply valid integration by parts.
+The old ComplexFourthRootNoise.root_fourth proves the exact fourth phases;
+its finite-noise realization is not mistaken for the new continuous process.
+
+Let A be the fair average and B its sign contrast, each built from actual
+Gaussian integrals. The verified paired Stein identities for EVERY polynomial:
+ A_t(XP)=2*i*t*B_t(P'),   B_t(XP)=2*i*t*A_t(P').
+These are genuine terminal polynomial IBP identities. They are not yet a closed
+Malliavin derivative, time-chronological integral or Clark-Ocone theorem.
+A_t(X^2)=0 but B_t(X^2)=2*i*t. More sharply the actual Brownian-source conditional
+branch averages satisfy integral_w Z_t(b,w)^2=2*i*t*sign(b), and for t>0 they
+cannot BOTH vanish. Any future reconstruction requiring branch-conditional
+centering must keep this nonzero branch information; unconditional centering
+alone cannot supply that hypothesis. No unsupported representation theorem is
+asserted from this necessary obstruction.
+
+Observed-domain result: Re(Z_t)=B_t and Im(Z_t)=sigma*B_t exactly. For each
+FIXED t>0, Brownian marginal atomlessness proves sigma=Im(Z_t)/Re(Z_t) AE.
+The recovery map is measurable. The quantifiers are forall positive t, AE w;
+NOT AE w, forall real positive t (Brownian zero times prevent that stronger
+ratio claim). Completion/right-germ filtration identification remains to prove.
+This is a precise new connection to the preserved IBM observed-initial-germ
+and conditional-residual audits, not an analogy asserting their hypotheses.
+
+Literature/novelty boundary: Orsingher-D Ovidio, Vibrations and fractional
+vibrations of rods, plates and Fresnel pseudo-processes, arxiv1104.2126v1,
+12April2011, https://arxiv.org/abs/1104.2126 ; Marchione-Orsingher,
+Pseudoprocesses related to higher-order equations of vibrations of rods,
+arxiv2212.06913v1,13December2022, https://arxiv.org/abs/2212.06913 . Their primary
+titles/abstracts and bibliographic entries were inspected: Fresnel/Brownian
+and higher-order/subordination work already exists. Full theorem/proof,
+normalization, topology and novelty comparison is PENDING. No world-novelty
+claim is made. Starting source remains Cinque-Orsingher2402.13691v2;
+https://arxiv.org/html/2402.13691v2 . None is treated as an agent instruction or
+an established full stochastic calculus. No original source modified/downloaded
+into ResearchSources or externally published.
+
+Full root7375-job build passed48.773529s; complete66754-declaration transitive
+axiom audit passed55.791690s with only propext/Classical.choice/Quot.sound.
+Twenty independent Lean checks passed31.263622s after one arithmetic test-only
+normalization was actually applied; failed logs/times are preserved. Production
+sources unchanged since build/audit. Complete persisted AxiomAudit passed
+66.851146s. Exact rational complex/Gaussian checks passed104 power cases,
+192 paired Stein identities on96 polynomial cases,8 conditional squares and
+32 nonzero-point observation checks. Those are finite consistency checks, not
+proofs of probability laws or AE recovery. Receipt:
+STARDUST_BIHARMONIC_GAUSSIAN_BRANCHES_VERIFICATION.json.
+
+Authenticated exact1956 approval3151-source/root snapshot: only new leaf,
+root import and audit change; all older mathematics,3configs,113 archive
+originals,21YM originals,Cauchy original,numerical tools,1947 probes and4paused1945
+scratch copies preserved. Exact Git approval and independent BOTH-ref PUBLIC
+confirmation are recorded separately at closure. Current iterated pseudoprocess
+campaign stays ACTIVE; Yang-Mills remains NEXT under user instruction1956.
+
+NEXT: reuse GaussianScalarPolynomialIto.scalar_polynomial_ito and
+GaussianComplexHorizonIto on the real/imaginary branch polynomials, with actual
+predictable L2 domains. Target the genuine identity
+ P(Z_T)-P(0)=integral (1+i*sigma)P'(Z_s)dB_s +i*sigma*integral P''(Z_s)ds,
+with exact Bochner/time topology and branch assembly before any completion.
+Match the constructed Brownian modification to native Gaussian L2 representatives.
+Then audit the completed observed filtration and a reconstruction retaining the
+initial-sign residual. Do not claim that an ordinary complex process repairs
+real signed path-space existence or proves the canonical inverse-clock joint law.

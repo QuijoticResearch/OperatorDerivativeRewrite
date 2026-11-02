@@ -3245,3 +3245,4 @@ import Foundation.RiemannOrderEndpointAudit
 import Foundation.SignedClockComposition
 import Foundation.SignedClockLaplaceObstruction
 import Foundation.AnalyticInverseClock
+import Foundation.BiharmonicGaussianBranches
