@@ -120,3 +120,79 @@ An analytic-dual or distributional clock may remain valid. Distinguish such a
 clock from a finite signed measure, a process, and an operator cosine family.
 Do not return to A2 or launch broad infrastructure; actual iterated calculus,
 channel identities and completed-domain convergence remain unresolved.
+
+
+## Checkpoint1954 — finite signed inverse-clock obstruction at time order2
+
+VERIFIED Foundation.SignedClockLaplaceObstruction:155 lines,12 public proofs,
+3 definitions, no private declarations or trust/resource changes.
+The actual vector integral L_nu(q)=integral exp(-q*s) dnu(s) for a finite signed
+measure on NONNEGATIVE operational times satisfies
+ L_nu(q) -> nu({0}) as q->positive infinity.
+Proof uses existing VectorMeasure dominated convergence with bound1 against
+finite total variation, including the atom at0; origin_eq_atom identifies the
+limit exactly. The signed mass nu(univ) is NOT substituted for that atom.
+The working Laplace domain is q>=0, on which these bounded observables are
+integrable. Totalized definitions at negative q assert no integrability there.
+
+inverseTwo is the ACTUAL series sum_n (-q*t^2)^n/Gamma(2*n+1).
+inverseTwo_hasSum proves convergence for all real t and q>=0 using the verified
+Gamma-factorial and cosine series; inverseTwo_eq_cos proves cos(t*sqrt(q)).
+No assigned transform or unsupported Mittag-Leffler library is introduced.
+For every t>0 no finite SignedMeasure NNReal has that Laplace transform for
+ALL q>=0. The proof reparametrizes q=(x/t)^2, so any such measure would force
+cos(x) to have a limit; natural even/odd phase sequences give1 and-1.
+At t=0 an explicit Dirac0 clock DOES work. The exceptional endpoint is retained.
+
+This applies DIRECTLY to actual HigherHeatL2.symbol2, with its verified2*pi
+frequency normalization: no single finite signed operational clock can integrate
+even its real multipliers into inverseTwo(t,(2*pi*xi)^4) for every real xi.
+The fourth-root substitution xi=sqrt(sqrt(q))/(2*pi) proves that the actual
+spectral rates cover EVERY q>=0, including zero. inverseTwo_biharmonic identifies
+the transformed multiplier as cos(t*(2*pi*xi)^2).
+
+The scalar addition formula has the exact negative sine-product correction.
+inverseTwo_not_semigroup gives the positive-time witness s=t=pi/2 at rate1:
+C(s+t)=-1 while C(s)C(t)=0. Hence scalar semigroup/independent-increment results
+cannot simply be reused. The sine channel is a positive algebraic repair, not
+a completed stochastic calculus, natural filtration or closed-operator theorem.
+
+Source comparison: Cinque-Orsingher arxiv2402.13691v2,12November2024,
+https://arxiv.org/html/2402.13691v2 Section3 after Eq3.17, asserts operational
+Laplace multiplier E_(nu,1)(-q*t^nu). The nu=2 specialization cannot be an
+ordinary finite-TV signed clock. This is a rigorous restriction on that
+interpretation, NOT a blanket refutation of the paper's conditional PDE results
+or a generalized analytic-functional interpretation. Other fractional orders,
+publication-version comparison and novelty remain open. No original modified.
+
+Full root7373-job build passed45.204554s; all66598 transitive declarations
+passed51.699472s with standard propext/Classical.choice/Quot.sound only.
+All15 canonical types and full155-line source proofs reviewed. Fifteen independent
+Lean examples passed26.285282s; complete persisted axiom ledger passed62.979829s.
+Independent tests include Dirac endpoints, a mass1 signed clock with limit atom2,
+actual Gamma-series summability, normalized biharmonic frequency and semigroup
+counterexample. One initial test required norm_num for2-1=1; its failed log/time
+are preserved, mathematical sources unchanged. Forty-nine Decimal/cosine and30
+phase/frequency numerical consistency checks passed; they are NOT universal
+proofs. Receipt: STARDUST_SIGNED_CLOCK_LAPLACE_VERIFICATION.json.
+
+Authenticated exact1953 approval:3149 Foundation/root source hashes, only new
+leaf/root/audit changed; all older mathematics,3configs,113 archived originals,
+21YM originals,Cauchy original,old tools,1947 probes and4paused1945 scratch copies
+preserved. Exact-commit approval and independent BOTH-branch PUBLIC backup
+confirmation recorded separately at closure. Campaign and goal remain ACTIVE.
+
+NEXT: construct an admissible analytic-functional/operator composition using
+existing FactorialAnalyticDomain/Heat/Functions and signed cylinder machinery.
+Candidate, NOT PROVED: Phi_t(f)=sum_n t^(2*n)*f^(n)(0)/(2*n)!, realized on an
+explicit derivative-controlled domain. FactorialAnalyticDomain.H is l1 of
+UNSCALED derivative jets: exp(-q*s) belongs only for |q|<1. Do not claim all
+spectral rates belong to that fixed domain; scaled derivative bounds or another
+already verified domain must be matched. A bounded two-component operator
+exponential using the existing shift might realize the even series and its
+velocity channel without a scalar clock measure. Prove its norm/domain,
+polynomial transport and convergence before any signed Ito/Clark-Ocone claim.
+No ordinary tempered-distribution clock is inferred merely from failure of
+finite measures. A finite spatial signed law for cos(t*xi^2) is ALSO not decided
+here; test uniform continuity of Fourier-Stieltjes transforms before claiming
+one-time realization. Preserve this distinction between clock and output.
