@@ -1,3 +1,19 @@
+# Authoritative A(2k) endpoint-strategy audit — November2,2026
+
+A(2) is the k=1 endpoint of the original higher-order program. Consult
+STARDUST_A2K_ENDPOINT_REUSE_AUDIT.md and its1951 verification receipt before
+further A2 work. The existing Gaussian1950 audit is preserved as SUPPORT and
+must not replace the original A2k strategy. The fresh audit verifies genuine
+order convergence and a quadratic decay corollary, but finds no new zero-time
+zero-control bridge: global reality fails throughout1<k<2 at nonzero time.
+It recommends stopping the current A2/RH attempt with the problem unresolved.
+This recommendation does NOT change the saved queue, complete the research
+goal or authorize a new campaign. All unfinished kernel-sign/Gaussian claims
+remain explicitly open. Preserve the verified stopping evidence and all
+existing build/axiom/type/source/Git/user-controlled PUBLIC backup safeguards.
+
+---
+
 # Authoritative transition — November 2, 2026: A(2)/RH revisit ACTIVE
 
 The user explicitly instructed: "move onto the next objective". The saved queue
