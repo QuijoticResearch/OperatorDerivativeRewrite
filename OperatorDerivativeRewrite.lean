@@ -3199,3 +3199,5 @@ import Foundation.StochasticCauchyPolynomialEnergy
 import Foundation.FractionalCovarianceMeasureObstruction
 
 import Foundation.FractionalGridProjection
+
+import Foundation.FractionalAdaptedAdjointObstruction
