@@ -3253,3 +3253,5 @@ import Foundation.FractionalNoisingTransfer
 import Foundation.FractionalNoisingTopology
 import Foundation.FractionalMAHorizon
 import Foundation.FractionalConvolutionDomains
+
+import Foundation.BlackSliceRefinement
