@@ -196,3 +196,91 @@ No ordinary tempered-distribution clock is inferred merely from failure of
 finite measures. A finite spatial signed law for cos(t*xi^2) is ALSO not decided
 here; test uniform continuity of Fourier-Stieltjes transforms before claiming
 one-time realization. Preserve this distinction between clock and output.
+
+
+## Checkpoint1955 — constructed analytic clock and actual signed polynomial composition
+
+VERIFIED Foundation.AnalyticInverseClock:336 lines;40 public proofs,7 definitions.
+Reuses L1BoundedSynthesis and the existing FactorialAnalyticDomain/Heat/Functions;
+no new foundational Banach space, probability assumption or clock measure.
+H is l1 of UNSCALED real derivative jets u_n, faithfully realized by an actual
+smooth function f_u with a globally convergent factorial series and f_u^(n)(0)=u_n. A contractive even-coordinate embedding
+J has (Ju)_(2n)=u_n and (Ju)_(2n+1)=0. Define
+ Phi_t(u)=FactorialAnalyticHeat.mean(1,t)(Ju).
+This is an ACTUAL continuous linear functional with norm<=exp|t| and the proved
+convergent derivative series sum_n f_u^(n)(0)*t^(2n)/(2n)!.
+It is not merely a prescribed collection of moments. The t=0 value is u_0,
+initial velocity is0, and Phi_t is C^n for every finite n for each u.
+Even-coordinate intertwining proves d_t^2 Phi_t(u)=Phi_t(Du).
+
+On actual polynomial functions Phi_t(s^n)=n!*t^(2n)/(2n)!.
+The nonnegative actual square (s-t^2/2)^2 has value -t^4/6, so Phi_t is NOT
+positive for t>0. This is a separate exact positivity obstruction, not a
+finite-signed-measure assertion. The previous1954 global finite-clock
+impossibility remains preserved. The new functional uses a stronger analytic
+norm, not sup norm on arbitrary bounded measurable functions.
+
+The exponential domain is EXACT, not assumed: an H-realization of exp(-q*s)
+exists iff |q|<1. For0<=q<1 the constructed functional equals the ACTUAL Gamma
+series inverseTwo(t,q)=E_(2,1)(-q*t^2)=cos(t*sqrt(q)). At q=1 the exponential
+already lies outside this fixed domain. No all-frequency clock representation
+or continuity beyond the proved domain is inferred.
+
+For every positive integer p and |c|<=1 the contractive heatJet map sends
+u_n to c^n*u_(p*n). Its faithful function realization is EXACTLY the existing
+operator mean s->mean(p,c*s)(u), including all real s as the canonical analytic
+extension. For the physical sign c=(-1)^(m+1),p=2m and polynomial P, its values
+at every positive operational time s agree with the ACTUAL signed higher-heat
+kernel expectation via FactorialAnalyticHeat.actual_mean. This is a genuine
+one-time signed-kernel connection, not a moment-only surrogate.
+
+C_t=Phi_t composed with heatJet is a bounded H->R dual mean, norm<=exp|t|,
+with convergent series sum_n c^n*u_(p*n)*t^(2n)/(2n)!.
+It is the unique continuous extension of its polynomial action, and
+H-norm approximation gives UNIFORM convergence for |t|<=T, with quantitative
+error <=exp(T)*norm(u-v). For every u this is a smooth classical solution of
+ d_t^2 C_t(u)=C_t(c*D^p u), C_0(u)=u_0, d_t C_t(u)|_0=0.
+Smoothness is explicitly proved; no totalized-derivative shortcut is used.
+C_t is a DUAL FUNCTIONAL, not a claimed full H->H operator cosine family.
+General H kernel-integral agreement is NOT yet proved: actual signed integrals
+are identified on polynomials, with the unique analytic extension thereafter.
+
+Independent concrete biharmonic tests, p=4,c=-1, prove
+ C_t(x^4)=-12*t^2 and C_t(x^8)=1680*t^4,
+as well as normalization, clock positivity obstruction, q=1 exclusion, actual
+q=1/2 exponential evaluation, even/odd coordinates, smoothness, physical generator
+sign, initial conditions, actual kernel agreement and compact-time convergence.
+Twenty independent Lean examples passed27.831549s after initial test-only
+arithmetic/coefficient/sign normalizations; failed logs/times remain. The
+mathematical sources were unchanged after the full build/audit passed.
+Exact rational checks on18 degree12 rational polynomials,5 positive orders,
+4 coefficients and4 times passed1440 compositions and360 time-second versus
+spatial-generator identities, plus4 negative-square checks. These finite checks
+are consistency evidence, not proofs of the completed-domain statements.
+
+Full root7374-job build passed46.298754s; complete66666-declaration transitive
+axiom audit passed48.007787s with propext/Classical.choice/Quot.sound only.
+All47 canonical types and complete336-line source proofs reviewed; persisted
+complete axiom ledger passed56.946566s. Receipt:
+STARDUST_ANALYTIC_INVERSE_CLOCK_VERIFICATION.json. Exact3150-source/root identity
+authenticates1954 and changes only new leaf/root/audit; all old mathematics,
+3configs,113 archive originals,21YM originals,Cauchy original,old numerical tools,
+1947 probes and4paused1945 scratch copies preserved. Exact commit and guarded
+BOTH-ref PUBLIC confirmation recorded separately at closure.
+
+Interpretation and remaining bridge: this rigorously repairs ONE-TIME analytic
+composition at source time order2 (Cinque-Orsingher arxiv2402.13691v2,
+https://arxiv.org/html/2402.13691v2), not its entire stochastic theory. Classical
+analytic/transmutation facts are distinguished from any unestablished novelty.
+The univariate H is NOT the old HigherHeatAnalyticCylinderDomain.Domain.
+No multitime clock law, consistent time-changed cylinders, natural filtration,
+causal projection, adjoint integral, Ito or Clark-Ocone theorem follows yet.
+Do not substitute independently chosen clock marginals or a finite-scale
+complex-noise representation for those missing hypotheses.
+
+NEXT concrete audit: identify a justified multitime signed-functional composition
+and its relationship to the source inverse-clock claims, or isolate the precise
+consistency obstruction. Alternatively match a useful state-space/two-channel
+lift to the existing analytic operator calculus if it resolves that obligation.
+Preserve the finite-clock impossibility; do not stop at re-proving scalar PDE
+formulas or add unrelated infrastructure. Campaign remains ACTIVE.
